@@ -34,6 +34,12 @@ UpdateFleetPortSettingsResult& UpdateFleetPortSettingsResult::operator =(const A
 
   }
 
+  if(jsonValue.ValueExists("FleetArn"))
+  {
+    m_fleetArn = jsonValue.GetString("FleetArn");
+
+  }
+
 
 
   return *this;

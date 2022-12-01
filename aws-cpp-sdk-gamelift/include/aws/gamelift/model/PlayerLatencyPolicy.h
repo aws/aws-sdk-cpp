@@ -27,8 +27,7 @@ namespace Model
    * where a player reports latency higher than the cap. Latency policies are used
    * only with placement request that provide player latency information. Player
    * latency policies can be stacked to gradually relax latency requirements over
-   * time. </p> <p>Latency policies are part of a
-   * <a>GameSessionQueue</a>.</p><p><h3>See Also:</h3>   <a
+   * time. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/PlayerLatencyPolicy">AWS
    * API Reference</a></p>
    */

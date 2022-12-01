@@ -46,7 +46,10 @@ FleetAttributes::FleetAttributes() :
     m_metricGroupsHasBeenSet(false),
     m_stoppedActionsHasBeenSet(false),
     m_instanceRoleArnHasBeenSet(false),
-    m_certificateConfigurationHasBeenSet(false)
+    m_certificateConfigurationHasBeenSet(false),
+    m_computeType(ComputeType::NOT_SET),
+    m_computeTypeHasBeenSet(false),
+    m_anywhereConfigurationHasBeenSet(false)
 {
 }
 
@@ -78,7 +81,10 @@ FleetAttributes::FleetAttributes(JsonView jsonValue) :
     m_metricGroupsHasBeenSet(false),
     m_stoppedActionsHasBeenSet(false),
     m_instanceRoleArnHasBeenSet(false),
-    m_certificateConfigurationHasBeenSet(false)
+    m_certificateConfigurationHasBeenSet(false),
+    m_computeType(ComputeType::NOT_SET),
+    m_computeTypeHasBeenSet(false),
+    m_anywhereConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -255,6 +261,20 @@ FleetAttributes& FleetAttributes::operator =(JsonView jsonValue)
     m_certificateConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ComputeType"))
+  {
+    m_computeType = ComputeTypeMapper::GetComputeTypeForName(jsonValue.GetString("ComputeType"));
+
+    m_computeTypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AnywhereConfiguration"))
+  {
+    m_anywhereConfiguration = jsonValue.GetObject("AnywhereConfiguration");
+
+    m_anywhereConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -405,6 +425,17 @@ JsonValue FleetAttributes::Jsonize() const
   if(m_certificateConfigurationHasBeenSet)
   {
    payload.WithObject("CertificateConfiguration", m_certificateConfiguration.Jsonize());
+
+  }
+
+  if(m_computeTypeHasBeenSet)
+  {
+   payload.WithString("ComputeType", ComputeTypeMapper::GetNameForComputeType(m_computeType));
+  }
+
+  if(m_anywhereConfigurationHasBeenSet)
+  {
+   payload.WithObject("AnywhereConfiguration", m_anywhereConfiguration.Jsonize());
 
   }
 

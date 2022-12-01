@@ -40,114 +40,130 @@ namespace Model
 
     /**
      * <p>A descriptive label that is associated with a script. Script names do not
-     * need to be unique. You can use <a>UpdateScript</a> to change this value later.
-     * </p>
+     * need to be unique. You can use <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateScript.html">UpdateScript</a>
+     * to change this value later. </p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
      * <p>A descriptive label that is associated with a script. Script names do not
-     * need to be unique. You can use <a>UpdateScript</a> to change this value later.
-     * </p>
+     * need to be unique. You can use <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateScript.html">UpdateScript</a>
+     * to change this value later. </p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>A descriptive label that is associated with a script. Script names do not
-     * need to be unique. You can use <a>UpdateScript</a> to change this value later.
-     * </p>
+     * need to be unique. You can use <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateScript.html">UpdateScript</a>
+     * to change this value later. </p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
      * <p>A descriptive label that is associated with a script. Script names do not
-     * need to be unique. You can use <a>UpdateScript</a> to change this value later.
-     * </p>
+     * need to be unique. You can use <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateScript.html">UpdateScript</a>
+     * to change this value later. </p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>A descriptive label that is associated with a script. Script names do not
-     * need to be unique. You can use <a>UpdateScript</a> to change this value later.
-     * </p>
+     * need to be unique. You can use <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateScript.html">UpdateScript</a>
+     * to change this value later. </p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
      * <p>A descriptive label that is associated with a script. Script names do not
-     * need to be unique. You can use <a>UpdateScript</a> to change this value later.
-     * </p>
+     * need to be unique. You can use <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateScript.html">UpdateScript</a>
+     * to change this value later. </p>
      */
     inline CreateScriptRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
      * <p>A descriptive label that is associated with a script. Script names do not
-     * need to be unique. You can use <a>UpdateScript</a> to change this value later.
-     * </p>
+     * need to be unique. You can use <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateScript.html">UpdateScript</a>
+     * to change this value later. </p>
      */
     inline CreateScriptRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>A descriptive label that is associated with a script. Script names do not
-     * need to be unique. You can use <a>UpdateScript</a> to change this value later.
-     * </p>
+     * need to be unique. You can use <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateScript.html">UpdateScript</a>
+     * to change this value later. </p>
      */
     inline CreateScriptRequest& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
-     * <p>Version information that is associated with a build or script. Version
-     * strings do not need to be unique. You can use <a>UpdateScript</a> to change this
-     * value later. </p>
+     * <p>Version information associated with a build or script. Version strings do not
+     * need to be unique. You can use <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateScript.html">UpdateScript</a>
+     * to change this value later. </p>
      */
     inline const Aws::String& GetVersion() const{ return m_version; }
 
     /**
-     * <p>Version information that is associated with a build or script. Version
-     * strings do not need to be unique. You can use <a>UpdateScript</a> to change this
-     * value later. </p>
+     * <p>Version information associated with a build or script. Version strings do not
+     * need to be unique. You can use <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateScript.html">UpdateScript</a>
+     * to change this value later. </p>
      */
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
 
     /**
-     * <p>Version information that is associated with a build or script. Version
-     * strings do not need to be unique. You can use <a>UpdateScript</a> to change this
-     * value later. </p>
+     * <p>Version information associated with a build or script. Version strings do not
+     * need to be unique. You can use <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateScript.html">UpdateScript</a>
+     * to change this value later. </p>
      */
     inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
 
     /**
-     * <p>Version information that is associated with a build or script. Version
-     * strings do not need to be unique. You can use <a>UpdateScript</a> to change this
-     * value later. </p>
+     * <p>Version information associated with a build or script. Version strings do not
+     * need to be unique. You can use <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateScript.html">UpdateScript</a>
+     * to change this value later. </p>
      */
     inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
 
     /**
-     * <p>Version information that is associated with a build or script. Version
-     * strings do not need to be unique. You can use <a>UpdateScript</a> to change this
-     * value later. </p>
+     * <p>Version information associated with a build or script. Version strings do not
+     * need to be unique. You can use <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateScript.html">UpdateScript</a>
+     * to change this value later. </p>
      */
     inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
 
     /**
-     * <p>Version information that is associated with a build or script. Version
-     * strings do not need to be unique. You can use <a>UpdateScript</a> to change this
-     * value later. </p>
+     * <p>Version information associated with a build or script. Version strings do not
+     * need to be unique. You can use <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateScript.html">UpdateScript</a>
+     * to change this value later. </p>
      */
     inline CreateScriptRequest& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
 
     /**
-     * <p>Version information that is associated with a build or script. Version
-     * strings do not need to be unique. You can use <a>UpdateScript</a> to change this
-     * value later. </p>
+     * <p>Version information associated with a build or script. Version strings do not
+     * need to be unique. You can use <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateScript.html">UpdateScript</a>
+     * to change this value later. </p>
      */
     inline CreateScriptRequest& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
 
     /**
-     * <p>Version information that is associated with a build or script. Version
-     * strings do not need to be unique. You can use <a>UpdateScript</a> to change this
-     * value later. </p>
+     * <p>Version information associated with a build or script. Version strings do not
+     * need to be unique. You can use <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateScript.html">UpdateScript</a>
+     * to change this value later. </p>
      */
     inline CreateScriptRequest& WithVersion(const char* value) { SetVersion(value); return *this;}
 
@@ -293,10 +309,14 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging
      * Amazon Web Services Resources</a> in the <i>Amazon Web Services General
-     * Reference</i>. Once the resource is created, you can use <a>TagResource</a>,
-     * <a>UntagResource</a>, and <a>ListTagsForResource</a> to add, remove, and view
-     * tags. The maximum tag limit may be lower than stated. See the Amazon Web
-     * Services General Reference for actual tagging limits.</p>
+     * Reference</i>. Once the resource is created, you can use <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_TagResource.html">TagResource</a>,
+     * <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UntagResource.html">UntagResource</a>,
+     * and <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListTagsForResource.html">ListTagsForResource</a>
+     * to add, remove, and view tags. The maximum tag limit may be lower than stated.
+     * See the Amazon Web Services General Reference for actual tagging limits.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
@@ -307,10 +327,14 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging
      * Amazon Web Services Resources</a> in the <i>Amazon Web Services General
-     * Reference</i>. Once the resource is created, you can use <a>TagResource</a>,
-     * <a>UntagResource</a>, and <a>ListTagsForResource</a> to add, remove, and view
-     * tags. The maximum tag limit may be lower than stated. See the Amazon Web
-     * Services General Reference for actual tagging limits.</p>
+     * Reference</i>. Once the resource is created, you can use <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_TagResource.html">TagResource</a>,
+     * <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UntagResource.html">UntagResource</a>,
+     * and <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListTagsForResource.html">ListTagsForResource</a>
+     * to add, remove, and view tags. The maximum tag limit may be lower than stated.
+     * See the Amazon Web Services General Reference for actual tagging limits.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
@@ -321,10 +345,14 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging
      * Amazon Web Services Resources</a> in the <i>Amazon Web Services General
-     * Reference</i>. Once the resource is created, you can use <a>TagResource</a>,
-     * <a>UntagResource</a>, and <a>ListTagsForResource</a> to add, remove, and view
-     * tags. The maximum tag limit may be lower than stated. See the Amazon Web
-     * Services General Reference for actual tagging limits.</p>
+     * Reference</i>. Once the resource is created, you can use <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_TagResource.html">TagResource</a>,
+     * <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UntagResource.html">UntagResource</a>,
+     * and <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListTagsForResource.html">ListTagsForResource</a>
+     * to add, remove, and view tags. The maximum tag limit may be lower than stated.
+     * See the Amazon Web Services General Reference for actual tagging limits.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
@@ -335,10 +363,14 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging
      * Amazon Web Services Resources</a> in the <i>Amazon Web Services General
-     * Reference</i>. Once the resource is created, you can use <a>TagResource</a>,
-     * <a>UntagResource</a>, and <a>ListTagsForResource</a> to add, remove, and view
-     * tags. The maximum tag limit may be lower than stated. See the Amazon Web
-     * Services General Reference for actual tagging limits.</p>
+     * Reference</i>. Once the resource is created, you can use <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_TagResource.html">TagResource</a>,
+     * <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UntagResource.html">UntagResource</a>,
+     * and <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListTagsForResource.html">ListTagsForResource</a>
+     * to add, remove, and view tags. The maximum tag limit may be lower than stated.
+     * See the Amazon Web Services General Reference for actual tagging limits.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
@@ -349,10 +381,14 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging
      * Amazon Web Services Resources</a> in the <i>Amazon Web Services General
-     * Reference</i>. Once the resource is created, you can use <a>TagResource</a>,
-     * <a>UntagResource</a>, and <a>ListTagsForResource</a> to add, remove, and view
-     * tags. The maximum tag limit may be lower than stated. See the Amazon Web
-     * Services General Reference for actual tagging limits.</p>
+     * Reference</i>. Once the resource is created, you can use <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_TagResource.html">TagResource</a>,
+     * <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UntagResource.html">UntagResource</a>,
+     * and <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListTagsForResource.html">ListTagsForResource</a>
+     * to add, remove, and view tags. The maximum tag limit may be lower than stated.
+     * See the Amazon Web Services General Reference for actual tagging limits.</p>
      */
     inline CreateScriptRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
@@ -363,10 +399,14 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging
      * Amazon Web Services Resources</a> in the <i>Amazon Web Services General
-     * Reference</i>. Once the resource is created, you can use <a>TagResource</a>,
-     * <a>UntagResource</a>, and <a>ListTagsForResource</a> to add, remove, and view
-     * tags. The maximum tag limit may be lower than stated. See the Amazon Web
-     * Services General Reference for actual tagging limits.</p>
+     * Reference</i>. Once the resource is created, you can use <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_TagResource.html">TagResource</a>,
+     * <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UntagResource.html">UntagResource</a>,
+     * and <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListTagsForResource.html">ListTagsForResource</a>
+     * to add, remove, and view tags. The maximum tag limit may be lower than stated.
+     * See the Amazon Web Services General Reference for actual tagging limits.</p>
      */
     inline CreateScriptRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
@@ -377,10 +417,14 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging
      * Amazon Web Services Resources</a> in the <i>Amazon Web Services General
-     * Reference</i>. Once the resource is created, you can use <a>TagResource</a>,
-     * <a>UntagResource</a>, and <a>ListTagsForResource</a> to add, remove, and view
-     * tags. The maximum tag limit may be lower than stated. See the Amazon Web
-     * Services General Reference for actual tagging limits.</p>
+     * Reference</i>. Once the resource is created, you can use <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_TagResource.html">TagResource</a>,
+     * <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UntagResource.html">UntagResource</a>,
+     * and <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListTagsForResource.html">ListTagsForResource</a>
+     * to add, remove, and view tags. The maximum tag limit may be lower than stated.
+     * See the Amazon Web Services General Reference for actual tagging limits.</p>
      */
     inline CreateScriptRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
@@ -391,10 +435,14 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging
      * Amazon Web Services Resources</a> in the <i>Amazon Web Services General
-     * Reference</i>. Once the resource is created, you can use <a>TagResource</a>,
-     * <a>UntagResource</a>, and <a>ListTagsForResource</a> to add, remove, and view
-     * tags. The maximum tag limit may be lower than stated. See the Amazon Web
-     * Services General Reference for actual tagging limits.</p>
+     * Reference</i>. Once the resource is created, you can use <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_TagResource.html">TagResource</a>,
+     * <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UntagResource.html">UntagResource</a>,
+     * and <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListTagsForResource.html">ListTagsForResource</a>
+     * to add, remove, and view tags. The maximum tag limit may be lower than stated.
+     * See the Amazon Web Services General Reference for actual tagging limits.</p>
      */
     inline CreateScriptRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 

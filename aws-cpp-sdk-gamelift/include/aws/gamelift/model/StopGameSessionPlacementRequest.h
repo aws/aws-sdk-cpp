@@ -17,9 +17,6 @@ namespace Model
 {
 
   /**
-   * <p>Represents the input for a request operation.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StopGameSessionPlacementInput">AWS
-   * API Reference</a></p>
    */
   class AWS_GAMELIFT_API StopGameSessionPlacementRequest : public GameLiftRequest
   {
@@ -38,42 +35,42 @@ namespace Model
 
 
     /**
-     * <p>A unique identifier for a game session placement to cancel.</p>
+     * <p>A unique identifier for a game session placement to stop.</p>
      */
     inline const Aws::String& GetPlacementId() const{ return m_placementId; }
 
     /**
-     * <p>A unique identifier for a game session placement to cancel.</p>
+     * <p>A unique identifier for a game session placement to stop.</p>
      */
     inline bool PlacementIdHasBeenSet() const { return m_placementIdHasBeenSet; }
 
     /**
-     * <p>A unique identifier for a game session placement to cancel.</p>
+     * <p>A unique identifier for a game session placement to stop.</p>
      */
     inline void SetPlacementId(const Aws::String& value) { m_placementIdHasBeenSet = true; m_placementId = value; }
 
     /**
-     * <p>A unique identifier for a game session placement to cancel.</p>
+     * <p>A unique identifier for a game session placement to stop.</p>
      */
     inline void SetPlacementId(Aws::String&& value) { m_placementIdHasBeenSet = true; m_placementId = std::move(value); }
 
     /**
-     * <p>A unique identifier for a game session placement to cancel.</p>
+     * <p>A unique identifier for a game session placement to stop.</p>
      */
     inline void SetPlacementId(const char* value) { m_placementIdHasBeenSet = true; m_placementId.assign(value); }
 
     /**
-     * <p>A unique identifier for a game session placement to cancel.</p>
+     * <p>A unique identifier for a game session placement to stop.</p>
      */
     inline StopGameSessionPlacementRequest& WithPlacementId(const Aws::String& value) { SetPlacementId(value); return *this;}
 
     /**
-     * <p>A unique identifier for a game session placement to cancel.</p>
+     * <p>A unique identifier for a game session placement to stop.</p>
      */
     inline StopGameSessionPlacementRequest& WithPlacementId(Aws::String&& value) { SetPlacementId(std::move(value)); return *this;}
 
     /**
-     * <p>A unique identifier for a game session placement to cancel.</p>
+     * <p>A unique identifier for a game session placement to stop.</p>
      */
     inline StopGameSessionPlacementRequest& WithPlacementId(const char* value) { SetPlacementId(value); return *this;}
 

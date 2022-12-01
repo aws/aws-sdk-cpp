@@ -39,50 +39,50 @@ namespace Model
 
 
     /**
-     * <p>A unique identifier for the game server group. Use either the
-     * <a>GameServerGroup</a> name or ARN value.</p>
+     * <p>A unique identifier for the game server group. Use either the name or ARN
+     * value.</p>
      */
     inline const Aws::String& GetGameServerGroupName() const{ return m_gameServerGroupName; }
 
     /**
-     * <p>A unique identifier for the game server group. Use either the
-     * <a>GameServerGroup</a> name or ARN value.</p>
+     * <p>A unique identifier for the game server group. Use either the name or ARN
+     * value.</p>
      */
     inline bool GameServerGroupNameHasBeenSet() const { return m_gameServerGroupNameHasBeenSet; }
 
     /**
-     * <p>A unique identifier for the game server group. Use either the
-     * <a>GameServerGroup</a> name or ARN value.</p>
+     * <p>A unique identifier for the game server group. Use either the name or ARN
+     * value.</p>
      */
     inline void SetGameServerGroupName(const Aws::String& value) { m_gameServerGroupNameHasBeenSet = true; m_gameServerGroupName = value; }
 
     /**
-     * <p>A unique identifier for the game server group. Use either the
-     * <a>GameServerGroup</a> name or ARN value.</p>
+     * <p>A unique identifier for the game server group. Use either the name or ARN
+     * value.</p>
      */
     inline void SetGameServerGroupName(Aws::String&& value) { m_gameServerGroupNameHasBeenSet = true; m_gameServerGroupName = std::move(value); }
 
     /**
-     * <p>A unique identifier for the game server group. Use either the
-     * <a>GameServerGroup</a> name or ARN value.</p>
+     * <p>A unique identifier for the game server group. Use either the name or ARN
+     * value.</p>
      */
     inline void SetGameServerGroupName(const char* value) { m_gameServerGroupNameHasBeenSet = true; m_gameServerGroupName.assign(value); }
 
     /**
-     * <p>A unique identifier for the game server group. Use either the
-     * <a>GameServerGroup</a> name or ARN value.</p>
+     * <p>A unique identifier for the game server group. Use either the name or ARN
+     * value.</p>
      */
     inline UpdateGameServerGroupRequest& WithGameServerGroupName(const Aws::String& value) { SetGameServerGroupName(value); return *this;}
 
     /**
-     * <p>A unique identifier for the game server group. Use either the
-     * <a>GameServerGroup</a> name or ARN value.</p>
+     * <p>A unique identifier for the game server group. Use either the name or ARN
+     * value.</p>
      */
     inline UpdateGameServerGroupRequest& WithGameServerGroupName(Aws::String&& value) { SetGameServerGroupName(std::move(value)); return *this;}
 
     /**
-     * <p>A unique identifier for the game server group. Use either the
-     * <a>GameServerGroup</a> name or ARN value.</p>
+     * <p>A unique identifier for the game server group. Use either the name or ARN
+     * value.</p>
      */
     inline UpdateGameServerGroupRequest& WithGameServerGroupName(const char* value) { SetGameServerGroupName(value); return *this;}
 

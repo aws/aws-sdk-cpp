@@ -41,8 +41,7 @@ namespace Model
    * place game sessions on the first destination fleet listed. If that fleet has
    * multiple locations, the game session is placed on the first location (when
    * listed alphabetically).</p> </li> </ul> <p>Changing the priority order will
-   * affect how game sessions are placed.</p> <p>Priority configurations are part of
-   * a <a>GameSessionQueue</a>.</p><p><h3>See Also:</h3>   <a
+   * affect how game sessions are placed.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/PriorityConfiguration">AWS
    * API Reference</a></p>
    */

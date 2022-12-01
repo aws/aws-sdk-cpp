@@ -26,8 +26,9 @@ namespace Model
   /**
    * <p>Temporary access credentials used for uploading game build files to Amazon
    * GameLift. They are valid for a limited time. If they expire before you upload
-   * your game build, get a new set by calling
-   * <a>RequestUploadCredentials</a>.</p><p><h3>See Also:</h3>   <a
+   * your game build, get a new set by calling <a
+   * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_RequestUploadCredentials.html">RequestUploadCredentials</a>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/AwsCredentials">AWS
    * API Reference</a></p>
    */

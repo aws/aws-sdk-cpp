@@ -25,12 +25,6 @@ namespace GameLift
 {
 namespace Model
 {
-  /**
-   * <p>Represents the returned data in response to a request
-   * operation.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeEC2InstanceLimitsOutput">AWS
-   * API Reference</a></p>
-   */
   class AWS_GAMELIFT_API DescribeEC2InstanceLimitsResult
   {
   public:

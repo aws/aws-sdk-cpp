@@ -103,6 +103,31 @@ namespace Model
      */
     inline DocumentClass& WithScore(double value) { SetScore(value); return *this;}
 
+
+    /**
+     * <p>Page number in the input document. This field is present in the response only
+     * if your request includes the <code>Byte</code> parameter. </p>
+     */
+    inline int GetPage() const{ return m_page; }
+
+    /**
+     * <p>Page number in the input document. This field is present in the response only
+     * if your request includes the <code>Byte</code> parameter. </p>
+     */
+    inline bool PageHasBeenSet() const { return m_pageHasBeenSet; }
+
+    /**
+     * <p>Page number in the input document. This field is present in the response only
+     * if your request includes the <code>Byte</code> parameter. </p>
+     */
+    inline void SetPage(int value) { m_pageHasBeenSet = true; m_page = value; }
+
+    /**
+     * <p>Page number in the input document. This field is present in the response only
+     * if your request includes the <code>Byte</code> parameter. </p>
+     */
+    inline DocumentClass& WithPage(int value) { SetPage(value); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -110,6 +135,9 @@ namespace Model
 
     double m_score;
     bool m_scoreHasBeenSet = false;
+
+    int m_page;
+    bool m_pageHasBeenSet = false;
   };
 
 } // namespace Model

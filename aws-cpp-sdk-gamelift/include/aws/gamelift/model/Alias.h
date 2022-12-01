@@ -27,8 +27,7 @@ namespace Model
 
   /**
    * <p>Properties that describe an alias resource.</p> <p> <b>Related actions</b>
-   * </p> <p> <a>CreateAlias</a> | <a>ListAliases</a> | <a>DescribeAlias</a> |
-   * <a>UpdateAlias</a> | <a>DeleteAlias</a> | <a>ResolveAlias</a> | <a
+   * </p> <p> <a
    * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All
    * APIs by task</a> </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/Alias">AWS API

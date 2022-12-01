@@ -375,6 +375,56 @@ namespace Model
      */
     inline DescribeStateMachineResult& WithTracingConfiguration(TracingConfiguration&& value) { SetTracingConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p>A user-defined or an auto-generated string that identifies a <code>Map</code>
+     * state. This parameter is present only if the <code>stateMachineArn</code>
+     * specified in input is a qualified state machine ARN.</p>
+     */
+    inline const Aws::String& GetLabel() const{ return m_label; }
+
+    /**
+     * <p>A user-defined or an auto-generated string that identifies a <code>Map</code>
+     * state. This parameter is present only if the <code>stateMachineArn</code>
+     * specified in input is a qualified state machine ARN.</p>
+     */
+    inline void SetLabel(const Aws::String& value) { m_label = value; }
+
+    /**
+     * <p>A user-defined or an auto-generated string that identifies a <code>Map</code>
+     * state. This parameter is present only if the <code>stateMachineArn</code>
+     * specified in input is a qualified state machine ARN.</p>
+     */
+    inline void SetLabel(Aws::String&& value) { m_label = std::move(value); }
+
+    /**
+     * <p>A user-defined or an auto-generated string that identifies a <code>Map</code>
+     * state. This parameter is present only if the <code>stateMachineArn</code>
+     * specified in input is a qualified state machine ARN.</p>
+     */
+    inline void SetLabel(const char* value) { m_label.assign(value); }
+
+    /**
+     * <p>A user-defined or an auto-generated string that identifies a <code>Map</code>
+     * state. This parameter is present only if the <code>stateMachineArn</code>
+     * specified in input is a qualified state machine ARN.</p>
+     */
+    inline DescribeStateMachineResult& WithLabel(const Aws::String& value) { SetLabel(value); return *this;}
+
+    /**
+     * <p>A user-defined or an auto-generated string that identifies a <code>Map</code>
+     * state. This parameter is present only if the <code>stateMachineArn</code>
+     * specified in input is a qualified state machine ARN.</p>
+     */
+    inline DescribeStateMachineResult& WithLabel(Aws::String&& value) { SetLabel(std::move(value)); return *this;}
+
+    /**
+     * <p>A user-defined or an auto-generated string that identifies a <code>Map</code>
+     * state. This parameter is present only if the <code>stateMachineArn</code>
+     * specified in input is a qualified state machine ARN.</p>
+     */
+    inline DescribeStateMachineResult& WithLabel(const char* value) { SetLabel(value); return *this;}
+
   private:
 
     Aws::String m_stateMachineArn;
@@ -394,6 +444,8 @@ namespace Model
     LoggingConfiguration m_loggingConfiguration;
 
     TracingConfiguration m_tracingConfiguration;
+
+    Aws::String m_label;
   };
 
 } // namespace Model

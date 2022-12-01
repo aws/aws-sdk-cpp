@@ -25,8 +25,7 @@ namespace Model
 
   /**
    * <p>Player information for use when creating player sessions using a game session
-   * placement request with <a>StartGameSessionPlacement</a>.</p><p><h3>See
-   * Also:</h3>   <a
+   * placement request.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DesiredPlayerSession">AWS
    * API Reference</a></p>
    */

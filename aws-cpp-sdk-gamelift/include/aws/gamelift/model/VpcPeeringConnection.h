@@ -28,10 +28,7 @@ namespace Model
    * <p>Represents a peering connection between a VPC on one of your Amazon Web
    * Services accounts and the VPC for your Amazon GameLift fleets. This record may
    * be for an active peering connection or a pending connection that has not yet
-   * been established.</p> <p> <b>Related actions</b> </p> <p>
-   * <a>CreateVpcPeeringAuthorization</a> | <a>DescribeVpcPeeringAuthorizations</a> |
-   * <a>DeleteVpcPeeringAuthorization</a> | <a>CreateVpcPeeringConnection</a> |
-   * <a>DescribeVpcPeeringConnections</a> | <a>DeleteVpcPeeringConnection</a> | <a
+   * been established.</p> <p> <b>Related actions</b> </p> <p> <a
    * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All
    * APIs by task</a> </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/VpcPeeringConnection">AWS
@@ -96,56 +93,56 @@ namespace Model
 
 
     /**
-     * <p> The Amazon Resource Name (<a
+     * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * associated with the GameLift fleet resource for this connection. </p>
      */
     inline const Aws::String& GetFleetArn() const{ return m_fleetArn; }
 
     /**
-     * <p> The Amazon Resource Name (<a
+     * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * associated with the GameLift fleet resource for this connection. </p>
      */
     inline bool FleetArnHasBeenSet() const { return m_fleetArnHasBeenSet; }
 
     /**
-     * <p> The Amazon Resource Name (<a
+     * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * associated with the GameLift fleet resource for this connection. </p>
      */
     inline void SetFleetArn(const Aws::String& value) { m_fleetArnHasBeenSet = true; m_fleetArn = value; }
 
     /**
-     * <p> The Amazon Resource Name (<a
+     * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * associated with the GameLift fleet resource for this connection. </p>
      */
     inline void SetFleetArn(Aws::String&& value) { m_fleetArnHasBeenSet = true; m_fleetArn = std::move(value); }
 
     /**
-     * <p> The Amazon Resource Name (<a
+     * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * associated with the GameLift fleet resource for this connection. </p>
      */
     inline void SetFleetArn(const char* value) { m_fleetArnHasBeenSet = true; m_fleetArn.assign(value); }
 
     /**
-     * <p> The Amazon Resource Name (<a
+     * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * associated with the GameLift fleet resource for this connection. </p>
      */
     inline VpcPeeringConnection& WithFleetArn(const Aws::String& value) { SetFleetArn(value); return *this;}
 
     /**
-     * <p> The Amazon Resource Name (<a
+     * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * associated with the GameLift fleet resource for this connection. </p>
      */
     inline VpcPeeringConnection& WithFleetArn(Aws::String&& value) { SetFleetArn(std::move(value)); return *this;}
 
     /**
-     * <p> The Amazon Resource Name (<a
+     * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * associated with the GameLift fleet resource for this connection. </p>
      */
@@ -212,56 +209,56 @@ namespace Model
     /**
      * <p>A unique identifier that is automatically assigned to the connection record.
      * This ID is referenced in VPC peering connection events, and is used when
-     * deleting a connection with <a>DeleteVpcPeeringConnection</a>. </p>
+     * deleting a connection.</p>
      */
     inline const Aws::String& GetVpcPeeringConnectionId() const{ return m_vpcPeeringConnectionId; }
 
     /**
      * <p>A unique identifier that is automatically assigned to the connection record.
      * This ID is referenced in VPC peering connection events, and is used when
-     * deleting a connection with <a>DeleteVpcPeeringConnection</a>. </p>
+     * deleting a connection.</p>
      */
     inline bool VpcPeeringConnectionIdHasBeenSet() const { return m_vpcPeeringConnectionIdHasBeenSet; }
 
     /**
      * <p>A unique identifier that is automatically assigned to the connection record.
      * This ID is referenced in VPC peering connection events, and is used when
-     * deleting a connection with <a>DeleteVpcPeeringConnection</a>. </p>
+     * deleting a connection.</p>
      */
     inline void SetVpcPeeringConnectionId(const Aws::String& value) { m_vpcPeeringConnectionIdHasBeenSet = true; m_vpcPeeringConnectionId = value; }
 
     /**
      * <p>A unique identifier that is automatically assigned to the connection record.
      * This ID is referenced in VPC peering connection events, and is used when
-     * deleting a connection with <a>DeleteVpcPeeringConnection</a>. </p>
+     * deleting a connection.</p>
      */
     inline void SetVpcPeeringConnectionId(Aws::String&& value) { m_vpcPeeringConnectionIdHasBeenSet = true; m_vpcPeeringConnectionId = std::move(value); }
 
     /**
      * <p>A unique identifier that is automatically assigned to the connection record.
      * This ID is referenced in VPC peering connection events, and is used when
-     * deleting a connection with <a>DeleteVpcPeeringConnection</a>. </p>
+     * deleting a connection.</p>
      */
     inline void SetVpcPeeringConnectionId(const char* value) { m_vpcPeeringConnectionIdHasBeenSet = true; m_vpcPeeringConnectionId.assign(value); }
 
     /**
      * <p>A unique identifier that is automatically assigned to the connection record.
      * This ID is referenced in VPC peering connection events, and is used when
-     * deleting a connection with <a>DeleteVpcPeeringConnection</a>. </p>
+     * deleting a connection.</p>
      */
     inline VpcPeeringConnection& WithVpcPeeringConnectionId(const Aws::String& value) { SetVpcPeeringConnectionId(value); return *this;}
 
     /**
      * <p>A unique identifier that is automatically assigned to the connection record.
      * This ID is referenced in VPC peering connection events, and is used when
-     * deleting a connection with <a>DeleteVpcPeeringConnection</a>. </p>
+     * deleting a connection.</p>
      */
     inline VpcPeeringConnection& WithVpcPeeringConnectionId(Aws::String&& value) { SetVpcPeeringConnectionId(std::move(value)); return *this;}
 
     /**
      * <p>A unique identifier that is automatically assigned to the connection record.
      * This ID is referenced in VPC peering connection events, and is used when
-     * deleting a connection with <a>DeleteVpcPeeringConnection</a>. </p>
+     * deleting a connection.</p>
      */
     inline VpcPeeringConnection& WithVpcPeeringConnectionId(const char* value) { SetVpcPeeringConnectionId(value); return *this;}
 

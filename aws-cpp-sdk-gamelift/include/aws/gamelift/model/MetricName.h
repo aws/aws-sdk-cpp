@@ -26,7 +26,8 @@ namespace Model
     PercentAvailableGameSessions,
     PercentIdleInstances,
     QueueDepth,
-    WaitTime
+    WaitTime,
+    ConcurrentActivatableGameSessions
   };
 
 namespace MetricNameMapper

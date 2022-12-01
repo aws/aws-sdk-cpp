@@ -70,6 +70,18 @@ DescribeStateMachineForExecutionResult& DescribeStateMachineForExecutionResult::
 
   }
 
+  if(jsonValue.ValueExists("mapRunArn"))
+  {
+    m_mapRunArn = jsonValue.GetString("mapRunArn");
+
+  }
+
+  if(jsonValue.ValueExists("label"))
+  {
+    m_label = jsonValue.GetString("label");
+
+  }
+
 
 
   return *this;

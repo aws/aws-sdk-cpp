@@ -29,7 +29,8 @@ Build::Build() :
     m_sizeOnDiskHasBeenSet(false),
     m_operatingSystem(OperatingSystem::NOT_SET),
     m_operatingSystemHasBeenSet(false),
-    m_creationTimeHasBeenSet(false)
+    m_creationTimeHasBeenSet(false),
+    m_serverSdkVersionHasBeenSet(false)
 {
 }
 
@@ -44,7 +45,8 @@ Build::Build(JsonView jsonValue) :
     m_sizeOnDiskHasBeenSet(false),
     m_operatingSystem(OperatingSystem::NOT_SET),
     m_operatingSystemHasBeenSet(false),
-    m_creationTimeHasBeenSet(false)
+    m_creationTimeHasBeenSet(false),
+    m_serverSdkVersionHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -107,6 +109,13 @@ Build& Build::operator =(JsonView jsonValue)
     m_creationTimeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ServerSdkVersion"))
+  {
+    m_serverSdkVersion = jsonValue.GetString("ServerSdkVersion");
+
+    m_serverSdkVersionHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -157,6 +166,12 @@ JsonValue Build::Jsonize() const
   if(m_creationTimeHasBeenSet)
   {
    payload.WithDouble("CreationTime", m_creationTime.SecondsWithMSPrecision());
+  }
+
+  if(m_serverSdkVersionHasBeenSet)
+  {
+   payload.WithString("ServerSdkVersion", m_serverSdkVersion);
+
   }
 
   return payload;

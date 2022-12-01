@@ -18,9 +18,6 @@ namespace Model
 {
 
   /**
-   * <p>Represents the input for a request operation.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetCapacityInput">AWS
-   * API Reference</a></p>
    */
   class AWS_GAMELIFT_API DescribeFleetCapacityRequest : public GameLiftRequest
   {
@@ -39,65 +36,65 @@ namespace Model
 
 
     /**
-     * <p>A unique identifier for the fleet(s) to retrieve capacity information for.
-     * You can use either the fleet ID or ARN value. Leave this parameter empty to
-     * retrieve capacity information for all fleets.</p>
+     * <p>A unique identifier for the fleet to retrieve capacity information for. You
+     * can use either the fleet ID or ARN value. Leave this parameter empty to retrieve
+     * capacity information for all fleets.</p>
      */
     inline const Aws::Vector<Aws::String>& GetFleetIds() const{ return m_fleetIds; }
 
     /**
-     * <p>A unique identifier for the fleet(s) to retrieve capacity information for.
-     * You can use either the fleet ID or ARN value. Leave this parameter empty to
-     * retrieve capacity information for all fleets.</p>
+     * <p>A unique identifier for the fleet to retrieve capacity information for. You
+     * can use either the fleet ID or ARN value. Leave this parameter empty to retrieve
+     * capacity information for all fleets.</p>
      */
     inline bool FleetIdsHasBeenSet() const { return m_fleetIdsHasBeenSet; }
 
     /**
-     * <p>A unique identifier for the fleet(s) to retrieve capacity information for.
-     * You can use either the fleet ID or ARN value. Leave this parameter empty to
-     * retrieve capacity information for all fleets.</p>
+     * <p>A unique identifier for the fleet to retrieve capacity information for. You
+     * can use either the fleet ID or ARN value. Leave this parameter empty to retrieve
+     * capacity information for all fleets.</p>
      */
     inline void SetFleetIds(const Aws::Vector<Aws::String>& value) { m_fleetIdsHasBeenSet = true; m_fleetIds = value; }
 
     /**
-     * <p>A unique identifier for the fleet(s) to retrieve capacity information for.
-     * You can use either the fleet ID or ARN value. Leave this parameter empty to
-     * retrieve capacity information for all fleets.</p>
+     * <p>A unique identifier for the fleet to retrieve capacity information for. You
+     * can use either the fleet ID or ARN value. Leave this parameter empty to retrieve
+     * capacity information for all fleets.</p>
      */
     inline void SetFleetIds(Aws::Vector<Aws::String>&& value) { m_fleetIdsHasBeenSet = true; m_fleetIds = std::move(value); }
 
     /**
-     * <p>A unique identifier for the fleet(s) to retrieve capacity information for.
-     * You can use either the fleet ID or ARN value. Leave this parameter empty to
-     * retrieve capacity information for all fleets.</p>
+     * <p>A unique identifier for the fleet to retrieve capacity information for. You
+     * can use either the fleet ID or ARN value. Leave this parameter empty to retrieve
+     * capacity information for all fleets.</p>
      */
     inline DescribeFleetCapacityRequest& WithFleetIds(const Aws::Vector<Aws::String>& value) { SetFleetIds(value); return *this;}
 
     /**
-     * <p>A unique identifier for the fleet(s) to retrieve capacity information for.
-     * You can use either the fleet ID or ARN value. Leave this parameter empty to
-     * retrieve capacity information for all fleets.</p>
+     * <p>A unique identifier for the fleet to retrieve capacity information for. You
+     * can use either the fleet ID or ARN value. Leave this parameter empty to retrieve
+     * capacity information for all fleets.</p>
      */
     inline DescribeFleetCapacityRequest& WithFleetIds(Aws::Vector<Aws::String>&& value) { SetFleetIds(std::move(value)); return *this;}
 
     /**
-     * <p>A unique identifier for the fleet(s) to retrieve capacity information for.
-     * You can use either the fleet ID or ARN value. Leave this parameter empty to
-     * retrieve capacity information for all fleets.</p>
+     * <p>A unique identifier for the fleet to retrieve capacity information for. You
+     * can use either the fleet ID or ARN value. Leave this parameter empty to retrieve
+     * capacity information for all fleets.</p>
      */
     inline DescribeFleetCapacityRequest& AddFleetIds(const Aws::String& value) { m_fleetIdsHasBeenSet = true; m_fleetIds.push_back(value); return *this; }
 
     /**
-     * <p>A unique identifier for the fleet(s) to retrieve capacity information for.
-     * You can use either the fleet ID or ARN value. Leave this parameter empty to
-     * retrieve capacity information for all fleets.</p>
+     * <p>A unique identifier for the fleet to retrieve capacity information for. You
+     * can use either the fleet ID or ARN value. Leave this parameter empty to retrieve
+     * capacity information for all fleets.</p>
      */
     inline DescribeFleetCapacityRequest& AddFleetIds(Aws::String&& value) { m_fleetIdsHasBeenSet = true; m_fleetIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A unique identifier for the fleet(s) to retrieve capacity information for.
-     * You can use either the fleet ID or ARN value. Leave this parameter empty to
-     * retrieve capacity information for all fleets.</p>
+     * <p>A unique identifier for the fleet to retrieve capacity information for. You
+     * can use either the fleet ID or ARN value. Leave this parameter empty to retrieve
+     * capacity information for all fleets.</p>
      */
     inline DescribeFleetCapacityRequest& AddFleetIds(const char* value) { m_fleetIdsHasBeenSet = true; m_fleetIds.push_back(value); return *this; }
 

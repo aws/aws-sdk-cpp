@@ -25,11 +25,11 @@ namespace Model
 
   /**
    * <p>Regional latency information for a player, used when requesting a new game
-   * session with <a>StartGameSessionPlacement</a>. This value indicates the amount
-   * of time lag that exists when the player is connected to a fleet in the specified
-   * Region. The relative difference between a player's latency values for multiple
-   * Regions are used to determine which fleets are best suited to place a new game
-   * session for the player. </p><p><h3>See Also:</h3>   <a
+   * session. This value indicates the amount of time lag that exists when the player
+   * is connected to a fleet in the specified Region. The relative difference between
+   * a player's latency values for multiple Regions are used to determine which
+   * fleets are best suited to place a new game session for the player.
+   * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/PlayerLatency">AWS
    * API Reference</a></p>
    */

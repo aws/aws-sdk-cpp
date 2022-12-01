@@ -86,6 +86,12 @@ DescribeStateMachineResult& DescribeStateMachineResult::operator =(const Aws::Am
 
   }
 
+  if(jsonValue.ValueExists("label"))
+  {
+    m_label = jsonValue.GetString("label");
+
+  }
+
 
 
   return *this;

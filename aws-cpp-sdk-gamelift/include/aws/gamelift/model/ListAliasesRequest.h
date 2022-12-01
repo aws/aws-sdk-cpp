@@ -18,9 +18,6 @@ namespace Model
 {
 
   /**
-   * <p>Represents the input for a request operation.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ListAliasesInput">AWS
-   * API Reference</a></p>
    */
   class AWS_GAMELIFT_API ListAliasesRequest : public GameLiftRequest
   {
@@ -46,7 +43,9 @@ namespace Model
      * type when routing to active fleets.</p> </li> <li> <p> <b>TERMINAL</b> -- The
      * alias does not resolve to a fleet but instead can be used to display a message
      * to the user. A terminal alias throws a TerminalRoutingStrategyException with the
-     * <a>RoutingStrategy</a> message embedded.</p> </li> </ul>
+     * <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_RoutingStrategy.html">RoutingStrategy</a>
+     * message embedded.</p> </li> </ul>
      */
     inline const RoutingStrategyType& GetRoutingStrategyType() const{ return m_routingStrategyType; }
 
@@ -58,7 +57,9 @@ namespace Model
      * type when routing to active fleets.</p> </li> <li> <p> <b>TERMINAL</b> -- The
      * alias does not resolve to a fleet but instead can be used to display a message
      * to the user. A terminal alias throws a TerminalRoutingStrategyException with the
-     * <a>RoutingStrategy</a> message embedded.</p> </li> </ul>
+     * <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_RoutingStrategy.html">RoutingStrategy</a>
+     * message embedded.</p> </li> </ul>
      */
     inline bool RoutingStrategyTypeHasBeenSet() const { return m_routingStrategyTypeHasBeenSet; }
 
@@ -70,7 +71,9 @@ namespace Model
      * type when routing to active fleets.</p> </li> <li> <p> <b>TERMINAL</b> -- The
      * alias does not resolve to a fleet but instead can be used to display a message
      * to the user. A terminal alias throws a TerminalRoutingStrategyException with the
-     * <a>RoutingStrategy</a> message embedded.</p> </li> </ul>
+     * <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_RoutingStrategy.html">RoutingStrategy</a>
+     * message embedded.</p> </li> </ul>
      */
     inline void SetRoutingStrategyType(const RoutingStrategyType& value) { m_routingStrategyTypeHasBeenSet = true; m_routingStrategyType = value; }
 
@@ -82,7 +85,9 @@ namespace Model
      * type when routing to active fleets.</p> </li> <li> <p> <b>TERMINAL</b> -- The
      * alias does not resolve to a fleet but instead can be used to display a message
      * to the user. A terminal alias throws a TerminalRoutingStrategyException with the
-     * <a>RoutingStrategy</a> message embedded.</p> </li> </ul>
+     * <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_RoutingStrategy.html">RoutingStrategy</a>
+     * message embedded.</p> </li> </ul>
      */
     inline void SetRoutingStrategyType(RoutingStrategyType&& value) { m_routingStrategyTypeHasBeenSet = true; m_routingStrategyType = std::move(value); }
 
@@ -94,7 +99,9 @@ namespace Model
      * type when routing to active fleets.</p> </li> <li> <p> <b>TERMINAL</b> -- The
      * alias does not resolve to a fleet but instead can be used to display a message
      * to the user. A terminal alias throws a TerminalRoutingStrategyException with the
-     * <a>RoutingStrategy</a> message embedded.</p> </li> </ul>
+     * <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_RoutingStrategy.html">RoutingStrategy</a>
+     * message embedded.</p> </li> </ul>
      */
     inline ListAliasesRequest& WithRoutingStrategyType(const RoutingStrategyType& value) { SetRoutingStrategyType(value); return *this;}
 
@@ -106,7 +113,9 @@ namespace Model
      * type when routing to active fleets.</p> </li> <li> <p> <b>TERMINAL</b> -- The
      * alias does not resolve to a fleet but instead can be used to display a message
      * to the user. A terminal alias throws a TerminalRoutingStrategyException with the
-     * <a>RoutingStrategy</a> message embedded.</p> </li> </ul>
+     * <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_RoutingStrategy.html">RoutingStrategy</a>
+     * message embedded.</p> </li> </ul>
      */
     inline ListAliasesRequest& WithRoutingStrategyType(RoutingStrategyType&& value) { SetRoutingStrategyType(std::move(value)); return *this;}
 

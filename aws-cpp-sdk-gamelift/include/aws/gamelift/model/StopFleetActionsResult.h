@@ -24,11 +24,6 @@ namespace GameLift
 {
 namespace Model
 {
-  /**
-   * <p>Represents the input for a request operation.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StopFleetActionsOutput">AWS
-   * API Reference</a></p>
-   */
   class AWS_GAMELIFT_API StopFleetActionsResult
   {
   public:

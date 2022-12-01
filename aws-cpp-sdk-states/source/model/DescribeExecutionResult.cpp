@@ -96,6 +96,24 @@ DescribeExecutionResult& DescribeExecutionResult::operator =(const Aws::AmazonWe
 
   }
 
+  if(jsonValue.ValueExists("mapRunArn"))
+  {
+    m_mapRunArn = jsonValue.GetString("mapRunArn");
+
+  }
+
+  if(jsonValue.ValueExists("error"))
+  {
+    m_error = jsonValue.GetString("error");
+
+  }
+
+  if(jsonValue.ValueExists("cause"))
+  {
+    m_cause = jsonValue.GetString("cause");
+
+  }
+
 
 
   return *this;

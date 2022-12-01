@@ -18,7 +18,8 @@ CreateBuildRequest::CreateBuildRequest() :
     m_storageLocationHasBeenSet(false),
     m_operatingSystem(OperatingSystem::NOT_SET),
     m_operatingSystemHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_serverSdkVersionHasBeenSet(false)
 {
 }
 
@@ -57,6 +58,12 @@ Aws::String CreateBuildRequest::SerializePayload() const
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("Tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_serverSdkVersionHasBeenSet)
+  {
+   payload.WithString("ServerSdkVersion", m_serverSdkVersion);
 
   }
 

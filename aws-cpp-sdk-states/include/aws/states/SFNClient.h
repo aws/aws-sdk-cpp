@@ -176,8 +176,15 @@ namespace SFN
         /**
          * <p>Deletes a state machine. This is an asynchronous operation: It sets the state
          * machine's status to <code>DELETING</code> and begins the deletion process. </p>
-         *  <p>For <code>EXPRESS</code> state machines, the deletion will happen
-         * eventually (usually less than a minute). Running executions may emit logs after
+         * <p>If the given state machine Amazon Resource Name (ARN) is a qualified state
+         * machine ARN, it will fail with ValidationException.</p> <p>A qualified state
+         * machine ARN refers to a <i>Distributed Map state</i> defined within a state
+         * machine. For example, the qualified state machine ARN
+         * <code>arn:partition:states:region:account-id:stateMachine:stateMachineName/mapStateLabel</code>
+         * refers to a <i>Distributed Map state</i> with a label <code>mapStateLabel</code>
+         * in the state machine named <code>stateMachineName</code>.</p>  <p>For
+         * <code>EXPRESS</code> state machines, the deletion will happen eventually
+         * (usually less than a minute). Running executions may emit logs after
          * <code>DeleteStateMachine</code> API is called.</p> <p><h3>See Also:</h3> 
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DeleteStateMachine">AWS
@@ -215,10 +222,14 @@ namespace SFN
         virtual void DescribeActivityAsync(const Model::DescribeActivityRequest& request, const DescribeActivityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes an execution.</p>  <p>This operation is eventually
-         * consistent. The results are best effort and may not reflect very recent updates
-         * and changes.</p>  <p>This API action is not supported by
-         * <code>EXPRESS</code> state machines.</p><p><h3>See Also:</h3>   <a
+         * <p>Provides all information about a state machine execution, such as the state
+         * machine associated with the execution, the execution input and output, and
+         * relevant execution metadata. Use this API action to return the Map Run ARN if
+         * the execution was dispatched by a Map Run.</p>  <p>This operation is
+         * eventually consistent. The results are best effort and may not reflect very
+         * recent updates and changes.</p>  <p>This API action is not supported by
+         * <code>EXPRESS</code> state machine executions unless they were dispatched by a
+         * Map Run.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DescribeExecution">AWS
          * API Reference</a></p>
          */
@@ -235,9 +246,38 @@ namespace SFN
         virtual void DescribeExecutionAsync(const Model::DescribeExecutionRequest& request, const DescribeExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes a state machine.</p>  <p>This operation is eventually
-         * consistent. The results are best effort and may not reflect very recent updates
-         * and changes.</p> <p><h3>See Also:</h3>   <a
+         * <p>Provides information about a Map Run's configuration, progress, and results.
+         * For more information, see <a
+         * href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-examine-map-run.html">Examining
+         * Map Run</a> in the <i>Step Functions Developer Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DescribeMapRun">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeMapRunOutcome DescribeMapRun(const Model::DescribeMapRunRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeMapRun that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeMapRunOutcomeCallable DescribeMapRunCallable(const Model::DescribeMapRunRequest& request) const;
+
+        /**
+         * An Async wrapper for DescribeMapRun that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeMapRunAsync(const Model::DescribeMapRunRequest& request, const DescribeMapRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Provides information about a state machine's definition, its IAM role Amazon
+         * Resource Name (ARN), and configuration. If the state machine ARN is a qualified
+         * state machine ARN, the response returned includes the <code>Map</code> state's
+         * label.</p> <p>A qualified state machine ARN refers to a <i>Distributed Map
+         * state</i> defined within a state machine. For example, the qualified state
+         * machine ARN
+         * <code>arn:partition:states:region:account-id:stateMachine:stateMachineName/mapStateLabel</code>
+         * refers to a <i>Distributed Map state</i> with a label <code>mapStateLabel</code>
+         * in the state machine named <code>stateMachineName</code>.</p>  <p>This
+         * operation is eventually consistent. The results are best effort and may not
+         * reflect very recent updates and changes.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DescribeStateMachine">AWS
          * API Reference</a></p>
          */
@@ -254,11 +294,13 @@ namespace SFN
         virtual void DescribeStateMachineAsync(const Model::DescribeStateMachineRequest& request, const DescribeStateMachineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes the state machine associated with a specific execution.</p> 
-         * <p>This operation is eventually consistent. The results are best effort and may
-         * not reflect very recent updates and changes.</p>  <p>This API action is
-         * not supported by <code>EXPRESS</code> state machines.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Provides information about a state machine's definition, its execution role
+         * ARN, and configuration. If an execution was dispatched by a Map Run, the Map Run
+         * is returned in the response. Additionally, the state machine returned will be
+         * the state machine associated with the Map Run.</p>  <p>This operation is
+         * eventually consistent. The results are best effort and may not reflect very
+         * recent updates and changes.</p>  <p>This API action is not supported by
+         * <code>EXPRESS</code> state machines.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DescribeStateMachineForExecution">AWS
          * API Reference</a></p>
          */
@@ -355,17 +397,19 @@ namespace SFN
         virtual void ListActivitiesAsync(const Model::ListActivitiesRequest& request, const ListActivitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the executions of a state machine that meet the filtering criteria.
-         * Results are sorted by time, with the most recent execution first.</p> <p>If
-         * <code>nextToken</code> is returned, there are more results available. The value
-         * of <code>nextToken</code> is a unique pagination token for each page. Make the
-         * call again using the returned token to retrieve the next page. Keep all other
-         * arguments unchanged. Each pagination token expires after 24 hours. Using an
-         * expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
-         *  <p>This operation is eventually consistent. The results are best effort
-         * and may not reflect very recent updates and changes.</p>  <p>This API
-         * action is not supported by <code>EXPRESS</code> state machines.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Lists all executions of a state machine or a Map Run. You can list all
+         * executions related to a state machine by specifying a state machine Amazon
+         * Resource Name (ARN), or those related to a Map Run by specifying a Map Run
+         * ARN.</p> <p>Results are sorted by time, with the most recent execution
+         * first.</p> <p>If <code>nextToken</code> is returned, there are more results
+         * available. The value of <code>nextToken</code> is a unique pagination token for
+         * each page. Make the call again using the returned token to retrieve the next
+         * page. Keep all other arguments unchanged. Each pagination token expires after 24
+         * hours. Using an expired pagination token will return an <i>HTTP 400
+         * InvalidToken</i> error.</p>  <p>This operation is eventually consistent.
+         * The results are best effort and may not reflect very recent updates and
+         * changes.</p>  <p>This API action is not supported by <code>EXPRESS</code>
+         * state machines.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/ListExecutions">AWS
          * API Reference</a></p>
          */
@@ -380,6 +424,26 @@ namespace SFN
          * An Async wrapper for ListExecutions that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListExecutionsAsync(const Model::ListExecutionsRequest& request, const ListExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Lists all Map Runs that were started by a given state machine execution. Use
+         * this API action to obtain Map Run ARNs, and then call
+         * <code>DescribeMapRun</code> to obtain more information, if needed.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/ListMapRuns">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListMapRunsOutcome ListMapRuns(const Model::ListMapRunsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListMapRuns that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListMapRunsOutcomeCallable ListMapRunsCallable(const Model::ListMapRunsRequest& request) const;
+
+        /**
+         * An Async wrapper for ListMapRuns that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListMapRunsAsync(const Model::ListMapRunsRequest& request, const ListMapRunsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the existing state machines.</p> <p>If <code>nextToken</code> is
@@ -499,14 +563,22 @@ namespace SFN
         virtual void SendTaskSuccessAsync(const Model::SendTaskSuccessRequest& request, const SendTaskSuccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Starts a state machine execution.</p>  <p> <code>StartExecution</code>
-         * is idempotent for <code>STANDARD</code> workflows. For a <code>STANDARD</code>
-         * workflow, if <code>StartExecution</code> is called with the same name and input
-         * as a running execution, the call will succeed and return the same response as
-         * the original request. If the execution is closed or if the input is different,
-         * it will return a <code>400 ExecutionAlreadyExists</code> error. Names can be
-         * reused after 90 days. </p> <p> <code>StartExecution</code> is not idempotent for
-         * <code>EXPRESS</code> workflows. </p> <p><h3>See Also:</h3>   <a
+         * <p>Starts a state machine execution. If the given state machine Amazon Resource
+         * Name (ARN) is a qualified state machine ARN, it will fail with
+         * ValidationException.</p> <p>A qualified state machine ARN refers to a
+         * <i>Distributed Map state</i> defined within a state machine. For example, the
+         * qualified state machine ARN
+         * <code>arn:partition:states:region:account-id:stateMachine:stateMachineName/mapStateLabel</code>
+         * refers to a <i>Distributed Map state</i> with a label <code>mapStateLabel</code>
+         * in the state machine named <code>stateMachineName</code>.</p>  <p>
+         * <code>StartExecution</code> is idempotent for <code>STANDARD</code> workflows.
+         * For a <code>STANDARD</code> workflow, if <code>StartExecution</code> is called
+         * with the same name and input as a running execution, the call will succeed and
+         * return the same response as the original request. If the execution is closed or
+         * if the input is different, it will return a <code>400
+         * ExecutionAlreadyExists</code> error. Names can be reused after 90 days. </p> <p>
+         * <code>StartExecution</code> is not idempotent for <code>EXPRESS</code>
+         * workflows. </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/StartExecution">AWS
          * API Reference</a></p>
          */
@@ -608,12 +680,38 @@ namespace SFN
         virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Updates an in-progress Map Run's configuration to include changes to the
+         * settings that control maximum concurrency and Map Run failure.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/UpdateMapRun">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateMapRunOutcome UpdateMapRun(const Model::UpdateMapRunRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateMapRun that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateMapRunOutcomeCallable UpdateMapRunCallable(const Model::UpdateMapRunRequest& request) const;
+
+        /**
+         * An Async wrapper for UpdateMapRun that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateMapRunAsync(const Model::UpdateMapRunRequest& request, const UpdateMapRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Updates an existing state machine by modifying its <code>definition</code>,
          * <code>roleArn</code>, or <code>loggingConfiguration</code>. Running executions
          * will continue to use the previous <code>definition</code> and
          * <code>roleArn</code>. You must include at least one of <code>definition</code>
          * or <code>roleArn</code> or you will receive a
-         * <code>MissingRequiredParameter</code> error.</p>  <p>All
+         * <code>MissingRequiredParameter</code> error.</p> <p>If the given state machine
+         * Amazon Resource Name (ARN) is a qualified state machine ARN, it will fail with
+         * ValidationException.</p> <p>A qualified state machine ARN refers to a
+         * <i>Distributed Map state</i> defined within a state machine. For example, the
+         * qualified state machine ARN
+         * <code>arn:partition:states:region:account-id:stateMachine:stateMachineName/mapStateLabel</code>
+         * refers to a <i>Distributed Map state</i> with a label <code>mapStateLabel</code>
+         * in the state machine named <code>stateMachineName</code>.</p>  <p>All
          * <code>StartExecution</code> calls within a few seconds will use the updated
          * <code>definition</code> and <code>roleArn</code>. Executions started immediately
          * after calling <code>UpdateStateMachine</code> may use the previous state machine

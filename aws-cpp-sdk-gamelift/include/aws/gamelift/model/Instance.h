@@ -30,8 +30,7 @@ namespace Model
   /**
    * <p>Represents an EC2 instance of virtual computing resources that hosts one or
    * more game servers. In GameLift, a fleet can contain zero or more instances.</p>
-   * <p> <b>Related actions</b> </p> <p> <a>DescribeInstances</a> </p><p><h3>See
-   * Also:</h3>   <a
+   * <p> <b>Related actions</b> </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/Instance">AWS
    * API Reference</a></p>
    */

@@ -31,13 +31,7 @@ namespace Model
    * server group properties (see <code>DescribeGameServerGroup</code> and with the
    * EC2 launch template that was used when creating the game server group. </p>
    * <p>Retrieve game server instances for a game server group by calling
-   * <code>DescribeGameServerInstances</code>. </p> <p> <b>Related actions</b> </p>
-   * <p> <a>CreateGameServerGroup</a> | <a>ListGameServerGroups</a> |
-   * <a>DescribeGameServerGroup</a> | <a>UpdateGameServerGroup</a> |
-   * <a>DeleteGameServerGroup</a> | <a>ResumeGameServerGroup</a> |
-   * <a>SuspendGameServerGroup</a> | <a>DescribeGameServerInstances</a> | <a
-   * href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/reference-awssdk-fleetiq.html">All
-   * APIs by task</a> </p><p><h3>See Also:</h3>   <a
+   * <code>DescribeGameServerInstances</code>. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/GameServerInstance">AWS
    * API Reference</a></p>
    */
@@ -214,86 +208,32 @@ namespace Model
 
 
     /**
-     * <p> Current status of the game server instance. </p> <ul> <li> <p> <b>ACTIVE</b>
-     * -- The instance is viable for hosting game servers. </p> </li> <li> <p>
-     * <b>DRAINING</b> -- The instance is not viable for hosting game servers. Existing
-     * game servers are in the process of ending, and new game servers are not started
-     * on this instance unless no other resources are available. When the instance is
-     * put in DRAINING, a new instance is started up to replace it. Once the instance
-     * has no UTILIZED game servers, it will be terminated in favor of the new
-     * instance.</p> </li> <li> <p> <b>SPOT_TERMINATING</b> -- The instance is in the
-     * process of shutting down due to a Spot instance interruption. No new game
-     * servers are started on this instance.</p> </li> </ul>
+     * <p>Current status of the game server instance</p>
      */
     inline const GameServerInstanceStatus& GetInstanceStatus() const{ return m_instanceStatus; }
 
     /**
-     * <p> Current status of the game server instance. </p> <ul> <li> <p> <b>ACTIVE</b>
-     * -- The instance is viable for hosting game servers. </p> </li> <li> <p>
-     * <b>DRAINING</b> -- The instance is not viable for hosting game servers. Existing
-     * game servers are in the process of ending, and new game servers are not started
-     * on this instance unless no other resources are available. When the instance is
-     * put in DRAINING, a new instance is started up to replace it. Once the instance
-     * has no UTILIZED game servers, it will be terminated in favor of the new
-     * instance.</p> </li> <li> <p> <b>SPOT_TERMINATING</b> -- The instance is in the
-     * process of shutting down due to a Spot instance interruption. No new game
-     * servers are started on this instance.</p> </li> </ul>
+     * <p>Current status of the game server instance</p>
      */
     inline bool InstanceStatusHasBeenSet() const { return m_instanceStatusHasBeenSet; }
 
     /**
-     * <p> Current status of the game server instance. </p> <ul> <li> <p> <b>ACTIVE</b>
-     * -- The instance is viable for hosting game servers. </p> </li> <li> <p>
-     * <b>DRAINING</b> -- The instance is not viable for hosting game servers. Existing
-     * game servers are in the process of ending, and new game servers are not started
-     * on this instance unless no other resources are available. When the instance is
-     * put in DRAINING, a new instance is started up to replace it. Once the instance
-     * has no UTILIZED game servers, it will be terminated in favor of the new
-     * instance.</p> </li> <li> <p> <b>SPOT_TERMINATING</b> -- The instance is in the
-     * process of shutting down due to a Spot instance interruption. No new game
-     * servers are started on this instance.</p> </li> </ul>
+     * <p>Current status of the game server instance</p>
      */
     inline void SetInstanceStatus(const GameServerInstanceStatus& value) { m_instanceStatusHasBeenSet = true; m_instanceStatus = value; }
 
     /**
-     * <p> Current status of the game server instance. </p> <ul> <li> <p> <b>ACTIVE</b>
-     * -- The instance is viable for hosting game servers. </p> </li> <li> <p>
-     * <b>DRAINING</b> -- The instance is not viable for hosting game servers. Existing
-     * game servers are in the process of ending, and new game servers are not started
-     * on this instance unless no other resources are available. When the instance is
-     * put in DRAINING, a new instance is started up to replace it. Once the instance
-     * has no UTILIZED game servers, it will be terminated in favor of the new
-     * instance.</p> </li> <li> <p> <b>SPOT_TERMINATING</b> -- The instance is in the
-     * process of shutting down due to a Spot instance interruption. No new game
-     * servers are started on this instance.</p> </li> </ul>
+     * <p>Current status of the game server instance</p>
      */
     inline void SetInstanceStatus(GameServerInstanceStatus&& value) { m_instanceStatusHasBeenSet = true; m_instanceStatus = std::move(value); }
 
     /**
-     * <p> Current status of the game server instance. </p> <ul> <li> <p> <b>ACTIVE</b>
-     * -- The instance is viable for hosting game servers. </p> </li> <li> <p>
-     * <b>DRAINING</b> -- The instance is not viable for hosting game servers. Existing
-     * game servers are in the process of ending, and new game servers are not started
-     * on this instance unless no other resources are available. When the instance is
-     * put in DRAINING, a new instance is started up to replace it. Once the instance
-     * has no UTILIZED game servers, it will be terminated in favor of the new
-     * instance.</p> </li> <li> <p> <b>SPOT_TERMINATING</b> -- The instance is in the
-     * process of shutting down due to a Spot instance interruption. No new game
-     * servers are started on this instance.</p> </li> </ul>
+     * <p>Current status of the game server instance</p>
      */
     inline GameServerInstance& WithInstanceStatus(const GameServerInstanceStatus& value) { SetInstanceStatus(value); return *this;}
 
     /**
-     * <p> Current status of the game server instance. </p> <ul> <li> <p> <b>ACTIVE</b>
-     * -- The instance is viable for hosting game servers. </p> </li> <li> <p>
-     * <b>DRAINING</b> -- The instance is not viable for hosting game servers. Existing
-     * game servers are in the process of ending, and new game servers are not started
-     * on this instance unless no other resources are available. When the instance is
-     * put in DRAINING, a new instance is started up to replace it. Once the instance
-     * has no UTILIZED game servers, it will be terminated in favor of the new
-     * instance.</p> </li> <li> <p> <b>SPOT_TERMINATING</b> -- The instance is in the
-     * process of shutting down due to a Spot instance interruption. No new game
-     * servers are started on this instance.</p> </li> </ul>
+     * <p>Current status of the game server instance</p>
      */
     inline GameServerInstance& WithInstanceStatus(GameServerInstanceStatus&& value) { SetInstanceStatus(std::move(value)); return *this;}
 

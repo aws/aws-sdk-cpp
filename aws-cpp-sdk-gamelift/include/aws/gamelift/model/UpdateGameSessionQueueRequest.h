@@ -22,9 +22,6 @@ namespace Model
 {
 
   /**
-   * <p>Represents the input for a request operation.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateGameSessionQueueInput">AWS
-   * API Reference</a></p>
    */
   class AWS_GAMELIFT_API UpdateGameSessionQueueRequest : public GameLiftRequest
   {
@@ -393,50 +390,50 @@ namespace Model
 
 
     /**
-     * <p> Information to be added to all events that are related to this game session
-     * queue. </p>
+     * <p>Information to be added to all events that are related to this game session
+     * queue.</p>
      */
     inline const Aws::String& GetCustomEventData() const{ return m_customEventData; }
 
     /**
-     * <p> Information to be added to all events that are related to this game session
-     * queue. </p>
+     * <p>Information to be added to all events that are related to this game session
+     * queue.</p>
      */
     inline bool CustomEventDataHasBeenSet() const { return m_customEventDataHasBeenSet; }
 
     /**
-     * <p> Information to be added to all events that are related to this game session
-     * queue. </p>
+     * <p>Information to be added to all events that are related to this game session
+     * queue.</p>
      */
     inline void SetCustomEventData(const Aws::String& value) { m_customEventDataHasBeenSet = true; m_customEventData = value; }
 
     /**
-     * <p> Information to be added to all events that are related to this game session
-     * queue. </p>
+     * <p>Information to be added to all events that are related to this game session
+     * queue.</p>
      */
     inline void SetCustomEventData(Aws::String&& value) { m_customEventDataHasBeenSet = true; m_customEventData = std::move(value); }
 
     /**
-     * <p> Information to be added to all events that are related to this game session
-     * queue. </p>
+     * <p>Information to be added to all events that are related to this game session
+     * queue.</p>
      */
     inline void SetCustomEventData(const char* value) { m_customEventDataHasBeenSet = true; m_customEventData.assign(value); }
 
     /**
-     * <p> Information to be added to all events that are related to this game session
-     * queue. </p>
+     * <p>Information to be added to all events that are related to this game session
+     * queue.</p>
      */
     inline UpdateGameSessionQueueRequest& WithCustomEventData(const Aws::String& value) { SetCustomEventData(value); return *this;}
 
     /**
-     * <p> Information to be added to all events that are related to this game session
-     * queue. </p>
+     * <p>Information to be added to all events that are related to this game session
+     * queue.</p>
      */
     inline UpdateGameSessionQueueRequest& WithCustomEventData(Aws::String&& value) { SetCustomEventData(std::move(value)); return *this;}
 
     /**
-     * <p> Information to be added to all events that are related to this game session
-     * queue. </p>
+     * <p>Information to be added to all events that are related to this game session
+     * queue.</p>
      */
     inline UpdateGameSessionQueueRequest& WithCustomEventData(const char* value) { SetCustomEventData(value); return *this;}
 

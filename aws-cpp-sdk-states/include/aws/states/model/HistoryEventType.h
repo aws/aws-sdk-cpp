@@ -70,7 +70,11 @@ namespace Model
     TaskTimedOut,
     WaitStateAborted,
     WaitStateEntered,
-    WaitStateExited
+    WaitStateExited,
+    MapRunAborted,
+    MapRunFailed,
+    MapRunStarted,
+    MapRunSucceeded
   };
 
 namespace HistoryEventTypeMapper

@@ -24,7 +24,8 @@ namespace Model
     ACTIVE,
     DELETING,
     ERROR_,
-    TERMINATED
+    TERMINATED,
+    NOT_FOUND
   };
 
 namespace FleetStatusMapper

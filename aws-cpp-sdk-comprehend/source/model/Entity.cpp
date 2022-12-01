@@ -27,7 +27,8 @@ Entity::Entity() :
     m_beginOffset(0),
     m_beginOffsetHasBeenSet(false),
     m_endOffset(0),
-    m_endOffsetHasBeenSet(false)
+    m_endOffsetHasBeenSet(false),
+    m_blockReferencesHasBeenSet(false)
 {
 }
 
@@ -40,7 +41,8 @@ Entity::Entity(JsonView jsonValue) :
     m_beginOffset(0),
     m_beginOffsetHasBeenSet(false),
     m_endOffset(0),
-    m_endOffsetHasBeenSet(false)
+    m_endOffsetHasBeenSet(false),
+    m_blockReferencesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -82,6 +84,16 @@ Entity& Entity::operator =(JsonView jsonValue)
     m_endOffsetHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("BlockReferences"))
+  {
+    Aws::Utils::Array<JsonView> blockReferencesJsonList = jsonValue.GetArray("BlockReferences");
+    for(unsigned blockReferencesIndex = 0; blockReferencesIndex < blockReferencesJsonList.GetLength(); ++blockReferencesIndex)
+    {
+      m_blockReferences.push_back(blockReferencesJsonList[blockReferencesIndex].AsObject());
+    }
+    m_blockReferencesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -115,6 +127,17 @@ JsonValue Entity::Jsonize() const
   if(m_endOffsetHasBeenSet)
   {
    payload.WithInteger("EndOffset", m_endOffset);
+
+  }
+
+  if(m_blockReferencesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> blockReferencesJsonList(m_blockReferences.size());
+   for(unsigned blockReferencesIndex = 0; blockReferencesIndex < blockReferencesJsonList.GetLength(); ++blockReferencesIndex)
+   {
+     blockReferencesJsonList[blockReferencesIndex].AsObject(m_blockReferences[blockReferencesIndex].Jsonize());
+   }
+   payload.WithArray("BlockReferences", std::move(blockReferencesJsonList));
 
   }
 

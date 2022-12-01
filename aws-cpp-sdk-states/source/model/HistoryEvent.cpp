@@ -57,7 +57,9 @@ HistoryEvent::HistoryEvent() :
     m_lambdaFunctionSucceededEventDetailsHasBeenSet(false),
     m_lambdaFunctionTimedOutEventDetailsHasBeenSet(false),
     m_stateEnteredEventDetailsHasBeenSet(false),
-    m_stateExitedEventDetailsHasBeenSet(false)
+    m_stateExitedEventDetailsHasBeenSet(false),
+    m_mapRunStartedEventDetailsHasBeenSet(false),
+    m_mapRunFailedEventDetailsHasBeenSet(false)
 {
 }
 
@@ -100,7 +102,9 @@ HistoryEvent::HistoryEvent(JsonView jsonValue) :
     m_lambdaFunctionSucceededEventDetailsHasBeenSet(false),
     m_lambdaFunctionTimedOutEventDetailsHasBeenSet(false),
     m_stateEnteredEventDetailsHasBeenSet(false),
-    m_stateExitedEventDetailsHasBeenSet(false)
+    m_stateExitedEventDetailsHasBeenSet(false),
+    m_mapRunStartedEventDetailsHasBeenSet(false),
+    m_mapRunFailedEventDetailsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -359,6 +363,20 @@ HistoryEvent& HistoryEvent::operator =(JsonView jsonValue)
     m_stateExitedEventDetailsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("mapRunStartedEventDetails"))
+  {
+    m_mapRunStartedEventDetails = jsonValue.GetObject("mapRunStartedEventDetails");
+
+    m_mapRunStartedEventDetailsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("mapRunFailedEventDetails"))
+  {
+    m_mapRunFailedEventDetails = jsonValue.GetObject("mapRunFailedEventDetails");
+
+    m_mapRunFailedEventDetailsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -577,6 +595,18 @@ JsonValue HistoryEvent::Jsonize() const
   if(m_stateExitedEventDetailsHasBeenSet)
   {
    payload.WithObject("stateExitedEventDetails", m_stateExitedEventDetails.Jsonize());
+
+  }
+
+  if(m_mapRunStartedEventDetailsHasBeenSet)
+  {
+   payload.WithObject("mapRunStartedEventDetails", m_mapRunStartedEventDetails.Jsonize());
+
+  }
+
+  if(m_mapRunFailedEventDetailsHasBeenSet)
+  {
+   payload.WithObject("mapRunFailedEventDetails", m_mapRunFailedEventDetails.Jsonize());
 
   }
 

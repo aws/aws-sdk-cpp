@@ -5,6 +5,7 @@
 
 #include <aws/comprehend/model/DetectEntitiesRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/HashingUtils.h>
 
 #include <utility>
 
@@ -16,7 +17,9 @@ DetectEntitiesRequest::DetectEntitiesRequest() :
     m_textHasBeenSet(false),
     m_languageCode(LanguageCode::NOT_SET),
     m_languageCodeHasBeenSet(false),
-    m_endpointArnHasBeenSet(false)
+    m_endpointArnHasBeenSet(false),
+    m_bytesHasBeenSet(false),
+    m_documentReaderConfigHasBeenSet(false)
 {
 }
 
@@ -38,6 +41,17 @@ Aws::String DetectEntitiesRequest::SerializePayload() const
   if(m_endpointArnHasBeenSet)
   {
    payload.WithString("EndpointArn", m_endpointArn);
+
+  }
+
+  if(m_bytesHasBeenSet)
+  {
+   payload.WithString("Bytes", HashingUtils::Base64Encode(m_bytes));
+  }
+
+  if(m_documentReaderConfigHasBeenSet)
+  {
+   payload.WithObject("DocumentReaderConfig", m_documentReaderConfig.Jsonize());
 
   }
 

@@ -5,6 +5,7 @@
 
 #include <aws/comprehend/model/ClassifyDocumentRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/HashingUtils.h>
 
 #include <utility>
 
@@ -14,7 +15,9 @@ using namespace Aws::Utils;
 
 ClassifyDocumentRequest::ClassifyDocumentRequest() : 
     m_textHasBeenSet(false),
-    m_endpointArnHasBeenSet(false)
+    m_endpointArnHasBeenSet(false),
+    m_bytesHasBeenSet(false),
+    m_documentReaderConfigHasBeenSet(false)
 {
 }
 
@@ -31,6 +34,17 @@ Aws::String ClassifyDocumentRequest::SerializePayload() const
   if(m_endpointArnHasBeenSet)
   {
    payload.WithString("EndpointArn", m_endpointArn);
+
+  }
+
+  if(m_bytesHasBeenSet)
+  {
+   payload.WithString("Bytes", HashingUtils::Base64Encode(m_bytes));
+  }
+
+  if(m_documentReaderConfigHasBeenSet)
+  {
+   payload.WithObject("DocumentReaderConfig", m_documentReaderConfig.Jsonize());
 
   }
 
