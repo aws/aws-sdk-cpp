@@ -37,49 +37,49 @@ namespace Model
 
     /**
      * <p>An identifier for the game server group to retrieve a list of game servers
-     * from. Use either the <a>GameServerGroup</a> name or ARN value.</p>
+     * from. Use either the name or ARN value.</p>
      */
     inline const Aws::String& GetGameServerGroupName() const{ return m_gameServerGroupName; }
 
     /**
      * <p>An identifier for the game server group to retrieve a list of game servers
-     * from. Use either the <a>GameServerGroup</a> name or ARN value.</p>
+     * from. Use either the name or ARN value.</p>
      */
     inline bool GameServerGroupNameHasBeenSet() const { return m_gameServerGroupNameHasBeenSet; }
 
     /**
      * <p>An identifier for the game server group to retrieve a list of game servers
-     * from. Use either the <a>GameServerGroup</a> name or ARN value.</p>
+     * from. Use either the name or ARN value.</p>
      */
     inline void SetGameServerGroupName(const Aws::String& value) { m_gameServerGroupNameHasBeenSet = true; m_gameServerGroupName = value; }
 
     /**
      * <p>An identifier for the game server group to retrieve a list of game servers
-     * from. Use either the <a>GameServerGroup</a> name or ARN value.</p>
+     * from. Use either the name or ARN value.</p>
      */
     inline void SetGameServerGroupName(Aws::String&& value) { m_gameServerGroupNameHasBeenSet = true; m_gameServerGroupName = std::move(value); }
 
     /**
      * <p>An identifier for the game server group to retrieve a list of game servers
-     * from. Use either the <a>GameServerGroup</a> name or ARN value.</p>
+     * from. Use either the name or ARN value.</p>
      */
     inline void SetGameServerGroupName(const char* value) { m_gameServerGroupNameHasBeenSet = true; m_gameServerGroupName.assign(value); }
 
     /**
      * <p>An identifier for the game server group to retrieve a list of game servers
-     * from. Use either the <a>GameServerGroup</a> name or ARN value.</p>
+     * from. Use either the name or ARN value.</p>
      */
     inline ListGameServersRequest& WithGameServerGroupName(const Aws::String& value) { SetGameServerGroupName(value); return *this;}
 
     /**
      * <p>An identifier for the game server group to retrieve a list of game servers
-     * from. Use either the <a>GameServerGroup</a> name or ARN value.</p>
+     * from. Use either the name or ARN value.</p>
      */
     inline ListGameServersRequest& WithGameServerGroupName(Aws::String&& value) { SetGameServerGroupName(std::move(value)); return *this;}
 
     /**
      * <p>An identifier for the game server group to retrieve a list of game servers
-     * from. Use either the <a>GameServerGroup</a> name or ARN value.</p>
+     * from. Use either the name or ARN value.</p>
      */
     inline ListGameServersRequest& WithGameServerGroupName(const char* value) { SetGameServerGroupName(value); return *this;}
 

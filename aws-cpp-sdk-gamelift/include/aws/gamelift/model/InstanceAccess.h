@@ -26,8 +26,8 @@ namespace Model
 {
 
   /**
-   * <p>Information required to remotely connect to a fleet instance. Access is
-   * requested by calling <a>GetInstanceAccess</a>. </p><p><h3>See Also:</h3>   <a
+   * <p>Information required to remotely connect to a fleet instance. </p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/InstanceAccess">AWS
    * API Reference</a></p>
    */

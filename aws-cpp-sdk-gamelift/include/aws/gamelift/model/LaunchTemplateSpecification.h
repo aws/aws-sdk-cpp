@@ -28,8 +28,7 @@ namespace Model
    * groups.</b> </p> <p>An Amazon Elastic Compute Cloud launch template that
    * contains configuration settings and game server code to be deployed to all
    * instances in a game server group. The launch template is specified when creating
-   * a new game server group with <a>CreateGameServerGroup</a>. </p><p><h3>See
-   * Also:</h3>   <a
+   * a new game server group. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/LaunchTemplateSpecification">AWS
    * API Reference</a></p>
    */

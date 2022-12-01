@@ -32,13 +32,8 @@ namespace Model
 
   /**
    * <p>Rule that controls how a fleet is scaled. Scaling policies are uniquely
-   * identified by the combination of name and fleet ID.</p> <p> <b>Related
-   * actions</b> </p> <p> <a>DescribeFleetCapacity</a> | <a>UpdateFleetCapacity</a> |
-   * <a>DescribeEC2InstanceLimits</a> | <a>PutScalingPolicy</a> |
-   * <a>DescribeScalingPolicies</a> | <a>DeleteScalingPolicy</a> |
-   * <a>StopFleetActions</a> | <a>StartFleetActions</a> | <a
-   * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All
-   * APIs by task</a> </p><p><h3>See Also:</h3>   <a
+   * identified by the combination of name and fleet ID.</p><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ScalingPolicy">AWS
    * API Reference</a></p>
    */
@@ -225,108 +220,96 @@ namespace Model
     /**
      * <p>Current status of the scaling policy. The scaling policy can be in force only
      * when in an <code>ACTIVE</code> status. Scaling policies can be suspended for
-     * individual fleets (see <a>StopFleetActions</a>; if suspended for a fleet, the
-     * policy status does not change. View a fleet's stopped actions by calling
-     * <a>DescribeFleetCapacity</a>.</p> <ul> <li> <p> <b>ACTIVE</b> -- The scaling
-     * policy can be used for auto-scaling a fleet.</p> </li> <li> <p>
-     * <b>UPDATE_REQUESTED</b> -- A request to update the scaling policy has been
-     * received.</p> </li> <li> <p> <b>UPDATING</b> -- A change is being made to the
-     * scaling policy.</p> </li> <li> <p> <b>DELETE_REQUESTED</b> -- A request to
-     * delete the scaling policy has been received.</p> </li> <li> <p> <b>DELETING</b>
-     * -- The scaling policy is being deleted.</p> </li> <li> <p> <b>DELETED</b> -- The
-     * scaling policy has been deleted.</p> </li> <li> <p> <b>ERROR</b> -- An error
-     * occurred in creating the policy. It should be removed and recreated.</p> </li>
-     * </ul>
+     * individual fleets. If the policy is suspended for a fleet, the policy status
+     * does not change.</p> <ul> <li> <p> <b>ACTIVE</b> -- The scaling policy can be
+     * used for auto-scaling a fleet.</p> </li> <li> <p> <b>UPDATE_REQUESTED</b> -- A
+     * request to update the scaling policy has been received.</p> </li> <li> <p>
+     * <b>UPDATING</b> -- A change is being made to the scaling policy.</p> </li> <li>
+     * <p> <b>DELETE_REQUESTED</b> -- A request to delete the scaling policy has been
+     * received.</p> </li> <li> <p> <b>DELETING</b> -- The scaling policy is being
+     * deleted.</p> </li> <li> <p> <b>DELETED</b> -- The scaling policy has been
+     * deleted.</p> </li> <li> <p> <b>ERROR</b> -- An error occurred in creating the
+     * policy. It should be removed and recreated.</p> </li> </ul>
      */
     inline const ScalingStatusType& GetStatus() const{ return m_status; }
 
     /**
      * <p>Current status of the scaling policy. The scaling policy can be in force only
      * when in an <code>ACTIVE</code> status. Scaling policies can be suspended for
-     * individual fleets (see <a>StopFleetActions</a>; if suspended for a fleet, the
-     * policy status does not change. View a fleet's stopped actions by calling
-     * <a>DescribeFleetCapacity</a>.</p> <ul> <li> <p> <b>ACTIVE</b> -- The scaling
-     * policy can be used for auto-scaling a fleet.</p> </li> <li> <p>
-     * <b>UPDATE_REQUESTED</b> -- A request to update the scaling policy has been
-     * received.</p> </li> <li> <p> <b>UPDATING</b> -- A change is being made to the
-     * scaling policy.</p> </li> <li> <p> <b>DELETE_REQUESTED</b> -- A request to
-     * delete the scaling policy has been received.</p> </li> <li> <p> <b>DELETING</b>
-     * -- The scaling policy is being deleted.</p> </li> <li> <p> <b>DELETED</b> -- The
-     * scaling policy has been deleted.</p> </li> <li> <p> <b>ERROR</b> -- An error
-     * occurred in creating the policy. It should be removed and recreated.</p> </li>
-     * </ul>
+     * individual fleets. If the policy is suspended for a fleet, the policy status
+     * does not change.</p> <ul> <li> <p> <b>ACTIVE</b> -- The scaling policy can be
+     * used for auto-scaling a fleet.</p> </li> <li> <p> <b>UPDATE_REQUESTED</b> -- A
+     * request to update the scaling policy has been received.</p> </li> <li> <p>
+     * <b>UPDATING</b> -- A change is being made to the scaling policy.</p> </li> <li>
+     * <p> <b>DELETE_REQUESTED</b> -- A request to delete the scaling policy has been
+     * received.</p> </li> <li> <p> <b>DELETING</b> -- The scaling policy is being
+     * deleted.</p> </li> <li> <p> <b>DELETED</b> -- The scaling policy has been
+     * deleted.</p> </li> <li> <p> <b>ERROR</b> -- An error occurred in creating the
+     * policy. It should be removed and recreated.</p> </li> </ul>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>Current status of the scaling policy. The scaling policy can be in force only
      * when in an <code>ACTIVE</code> status. Scaling policies can be suspended for
-     * individual fleets (see <a>StopFleetActions</a>; if suspended for a fleet, the
-     * policy status does not change. View a fleet's stopped actions by calling
-     * <a>DescribeFleetCapacity</a>.</p> <ul> <li> <p> <b>ACTIVE</b> -- The scaling
-     * policy can be used for auto-scaling a fleet.</p> </li> <li> <p>
-     * <b>UPDATE_REQUESTED</b> -- A request to update the scaling policy has been
-     * received.</p> </li> <li> <p> <b>UPDATING</b> -- A change is being made to the
-     * scaling policy.</p> </li> <li> <p> <b>DELETE_REQUESTED</b> -- A request to
-     * delete the scaling policy has been received.</p> </li> <li> <p> <b>DELETING</b>
-     * -- The scaling policy is being deleted.</p> </li> <li> <p> <b>DELETED</b> -- The
-     * scaling policy has been deleted.</p> </li> <li> <p> <b>ERROR</b> -- An error
-     * occurred in creating the policy. It should be removed and recreated.</p> </li>
-     * </ul>
+     * individual fleets. If the policy is suspended for a fleet, the policy status
+     * does not change.</p> <ul> <li> <p> <b>ACTIVE</b> -- The scaling policy can be
+     * used for auto-scaling a fleet.</p> </li> <li> <p> <b>UPDATE_REQUESTED</b> -- A
+     * request to update the scaling policy has been received.</p> </li> <li> <p>
+     * <b>UPDATING</b> -- A change is being made to the scaling policy.</p> </li> <li>
+     * <p> <b>DELETE_REQUESTED</b> -- A request to delete the scaling policy has been
+     * received.</p> </li> <li> <p> <b>DELETING</b> -- The scaling policy is being
+     * deleted.</p> </li> <li> <p> <b>DELETED</b> -- The scaling policy has been
+     * deleted.</p> </li> <li> <p> <b>ERROR</b> -- An error occurred in creating the
+     * policy. It should be removed and recreated.</p> </li> </ul>
      */
     inline void SetStatus(const ScalingStatusType& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
      * <p>Current status of the scaling policy. The scaling policy can be in force only
      * when in an <code>ACTIVE</code> status. Scaling policies can be suspended for
-     * individual fleets (see <a>StopFleetActions</a>; if suspended for a fleet, the
-     * policy status does not change. View a fleet's stopped actions by calling
-     * <a>DescribeFleetCapacity</a>.</p> <ul> <li> <p> <b>ACTIVE</b> -- The scaling
-     * policy can be used for auto-scaling a fleet.</p> </li> <li> <p>
-     * <b>UPDATE_REQUESTED</b> -- A request to update the scaling policy has been
-     * received.</p> </li> <li> <p> <b>UPDATING</b> -- A change is being made to the
-     * scaling policy.</p> </li> <li> <p> <b>DELETE_REQUESTED</b> -- A request to
-     * delete the scaling policy has been received.</p> </li> <li> <p> <b>DELETING</b>
-     * -- The scaling policy is being deleted.</p> </li> <li> <p> <b>DELETED</b> -- The
-     * scaling policy has been deleted.</p> </li> <li> <p> <b>ERROR</b> -- An error
-     * occurred in creating the policy. It should be removed and recreated.</p> </li>
-     * </ul>
+     * individual fleets. If the policy is suspended for a fleet, the policy status
+     * does not change.</p> <ul> <li> <p> <b>ACTIVE</b> -- The scaling policy can be
+     * used for auto-scaling a fleet.</p> </li> <li> <p> <b>UPDATE_REQUESTED</b> -- A
+     * request to update the scaling policy has been received.</p> </li> <li> <p>
+     * <b>UPDATING</b> -- A change is being made to the scaling policy.</p> </li> <li>
+     * <p> <b>DELETE_REQUESTED</b> -- A request to delete the scaling policy has been
+     * received.</p> </li> <li> <p> <b>DELETING</b> -- The scaling policy is being
+     * deleted.</p> </li> <li> <p> <b>DELETED</b> -- The scaling policy has been
+     * deleted.</p> </li> <li> <p> <b>ERROR</b> -- An error occurred in creating the
+     * policy. It should be removed and recreated.</p> </li> </ul>
      */
     inline void SetStatus(ScalingStatusType&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
      * <p>Current status of the scaling policy. The scaling policy can be in force only
      * when in an <code>ACTIVE</code> status. Scaling policies can be suspended for
-     * individual fleets (see <a>StopFleetActions</a>; if suspended for a fleet, the
-     * policy status does not change. View a fleet's stopped actions by calling
-     * <a>DescribeFleetCapacity</a>.</p> <ul> <li> <p> <b>ACTIVE</b> -- The scaling
-     * policy can be used for auto-scaling a fleet.</p> </li> <li> <p>
-     * <b>UPDATE_REQUESTED</b> -- A request to update the scaling policy has been
-     * received.</p> </li> <li> <p> <b>UPDATING</b> -- A change is being made to the
-     * scaling policy.</p> </li> <li> <p> <b>DELETE_REQUESTED</b> -- A request to
-     * delete the scaling policy has been received.</p> </li> <li> <p> <b>DELETING</b>
-     * -- The scaling policy is being deleted.</p> </li> <li> <p> <b>DELETED</b> -- The
-     * scaling policy has been deleted.</p> </li> <li> <p> <b>ERROR</b> -- An error
-     * occurred in creating the policy. It should be removed and recreated.</p> </li>
-     * </ul>
+     * individual fleets. If the policy is suspended for a fleet, the policy status
+     * does not change.</p> <ul> <li> <p> <b>ACTIVE</b> -- The scaling policy can be
+     * used for auto-scaling a fleet.</p> </li> <li> <p> <b>UPDATE_REQUESTED</b> -- A
+     * request to update the scaling policy has been received.</p> </li> <li> <p>
+     * <b>UPDATING</b> -- A change is being made to the scaling policy.</p> </li> <li>
+     * <p> <b>DELETE_REQUESTED</b> -- A request to delete the scaling policy has been
+     * received.</p> </li> <li> <p> <b>DELETING</b> -- The scaling policy is being
+     * deleted.</p> </li> <li> <p> <b>DELETED</b> -- The scaling policy has been
+     * deleted.</p> </li> <li> <p> <b>ERROR</b> -- An error occurred in creating the
+     * policy. It should be removed and recreated.</p> </li> </ul>
      */
     inline ScalingPolicy& WithStatus(const ScalingStatusType& value) { SetStatus(value); return *this;}
 
     /**
      * <p>Current status of the scaling policy. The scaling policy can be in force only
      * when in an <code>ACTIVE</code> status. Scaling policies can be suspended for
-     * individual fleets (see <a>StopFleetActions</a>; if suspended for a fleet, the
-     * policy status does not change. View a fleet's stopped actions by calling
-     * <a>DescribeFleetCapacity</a>.</p> <ul> <li> <p> <b>ACTIVE</b> -- The scaling
-     * policy can be used for auto-scaling a fleet.</p> </li> <li> <p>
-     * <b>UPDATE_REQUESTED</b> -- A request to update the scaling policy has been
-     * received.</p> </li> <li> <p> <b>UPDATING</b> -- A change is being made to the
-     * scaling policy.</p> </li> <li> <p> <b>DELETE_REQUESTED</b> -- A request to
-     * delete the scaling policy has been received.</p> </li> <li> <p> <b>DELETING</b>
-     * -- The scaling policy is being deleted.</p> </li> <li> <p> <b>DELETED</b> -- The
-     * scaling policy has been deleted.</p> </li> <li> <p> <b>ERROR</b> -- An error
-     * occurred in creating the policy. It should be removed and recreated.</p> </li>
-     * </ul>
+     * individual fleets. If the policy is suspended for a fleet, the policy status
+     * does not change.</p> <ul> <li> <p> <b>ACTIVE</b> -- The scaling policy can be
+     * used for auto-scaling a fleet.</p> </li> <li> <p> <b>UPDATE_REQUESTED</b> -- A
+     * request to update the scaling policy has been received.</p> </li> <li> <p>
+     * <b>UPDATING</b> -- A change is being made to the scaling policy.</p> </li> <li>
+     * <p> <b>DELETE_REQUESTED</b> -- A request to delete the scaling policy has been
+     * received.</p> </li> <li> <p> <b>DELETING</b> -- The scaling policy is being
+     * deleted.</p> </li> <li> <p> <b>DELETED</b> -- The scaling policy has been
+     * deleted.</p> </li> <li> <p> <b>ERROR</b> -- An error occurred in creating the
+     * policy. It should be removed and recreated.</p> </li> </ul>
      */
     inline ScalingPolicy& WithStatus(ScalingStatusType&& value) { SetStatus(std::move(value)); return *this;}
 
@@ -353,74 +336,74 @@ namespace Model
 
 
     /**
-     * <p>The type of adjustment to make to a fleet's instance count (see
-     * <a>FleetCapacity</a>):</p> <ul> <li> <p> <b>ChangeInCapacity</b> -- add (or
-     * subtract) the scaling adjustment value from the current instance count. Positive
-     * values scale up while negative values scale down.</p> </li> <li> <p>
-     * <b>ExactCapacity</b> -- set the instance count to the scaling adjustment
-     * value.</p> </li> <li> <p> <b>PercentChangeInCapacity</b> -- increase or reduce
-     * the current instance count by the scaling adjustment, read as a percentage.
-     * Positive values scale up while negative values scale down.</p> </li> </ul>
+     * <p>The type of adjustment to make to a fleet's instance count.</p> <ul> <li> <p>
+     * <b>ChangeInCapacity</b> -- add (or subtract) the scaling adjustment value from
+     * the current instance count. Positive values scale up while negative values scale
+     * down.</p> </li> <li> <p> <b>ExactCapacity</b> -- set the instance count to the
+     * scaling adjustment value.</p> </li> <li> <p> <b>PercentChangeInCapacity</b> --
+     * increase or reduce the current instance count by the scaling adjustment, read as
+     * a percentage. Positive values scale up while negative values scale down.</p>
+     * </li> </ul>
      */
     inline const ScalingAdjustmentType& GetScalingAdjustmentType() const{ return m_scalingAdjustmentType; }
 
     /**
-     * <p>The type of adjustment to make to a fleet's instance count (see
-     * <a>FleetCapacity</a>):</p> <ul> <li> <p> <b>ChangeInCapacity</b> -- add (or
-     * subtract) the scaling adjustment value from the current instance count. Positive
-     * values scale up while negative values scale down.</p> </li> <li> <p>
-     * <b>ExactCapacity</b> -- set the instance count to the scaling adjustment
-     * value.</p> </li> <li> <p> <b>PercentChangeInCapacity</b> -- increase or reduce
-     * the current instance count by the scaling adjustment, read as a percentage.
-     * Positive values scale up while negative values scale down.</p> </li> </ul>
+     * <p>The type of adjustment to make to a fleet's instance count.</p> <ul> <li> <p>
+     * <b>ChangeInCapacity</b> -- add (or subtract) the scaling adjustment value from
+     * the current instance count. Positive values scale up while negative values scale
+     * down.</p> </li> <li> <p> <b>ExactCapacity</b> -- set the instance count to the
+     * scaling adjustment value.</p> </li> <li> <p> <b>PercentChangeInCapacity</b> --
+     * increase or reduce the current instance count by the scaling adjustment, read as
+     * a percentage. Positive values scale up while negative values scale down.</p>
+     * </li> </ul>
      */
     inline bool ScalingAdjustmentTypeHasBeenSet() const { return m_scalingAdjustmentTypeHasBeenSet; }
 
     /**
-     * <p>The type of adjustment to make to a fleet's instance count (see
-     * <a>FleetCapacity</a>):</p> <ul> <li> <p> <b>ChangeInCapacity</b> -- add (or
-     * subtract) the scaling adjustment value from the current instance count. Positive
-     * values scale up while negative values scale down.</p> </li> <li> <p>
-     * <b>ExactCapacity</b> -- set the instance count to the scaling adjustment
-     * value.</p> </li> <li> <p> <b>PercentChangeInCapacity</b> -- increase or reduce
-     * the current instance count by the scaling adjustment, read as a percentage.
-     * Positive values scale up while negative values scale down.</p> </li> </ul>
+     * <p>The type of adjustment to make to a fleet's instance count.</p> <ul> <li> <p>
+     * <b>ChangeInCapacity</b> -- add (or subtract) the scaling adjustment value from
+     * the current instance count. Positive values scale up while negative values scale
+     * down.</p> </li> <li> <p> <b>ExactCapacity</b> -- set the instance count to the
+     * scaling adjustment value.</p> </li> <li> <p> <b>PercentChangeInCapacity</b> --
+     * increase or reduce the current instance count by the scaling adjustment, read as
+     * a percentage. Positive values scale up while negative values scale down.</p>
+     * </li> </ul>
      */
     inline void SetScalingAdjustmentType(const ScalingAdjustmentType& value) { m_scalingAdjustmentTypeHasBeenSet = true; m_scalingAdjustmentType = value; }
 
     /**
-     * <p>The type of adjustment to make to a fleet's instance count (see
-     * <a>FleetCapacity</a>):</p> <ul> <li> <p> <b>ChangeInCapacity</b> -- add (or
-     * subtract) the scaling adjustment value from the current instance count. Positive
-     * values scale up while negative values scale down.</p> </li> <li> <p>
-     * <b>ExactCapacity</b> -- set the instance count to the scaling adjustment
-     * value.</p> </li> <li> <p> <b>PercentChangeInCapacity</b> -- increase or reduce
-     * the current instance count by the scaling adjustment, read as a percentage.
-     * Positive values scale up while negative values scale down.</p> </li> </ul>
+     * <p>The type of adjustment to make to a fleet's instance count.</p> <ul> <li> <p>
+     * <b>ChangeInCapacity</b> -- add (or subtract) the scaling adjustment value from
+     * the current instance count. Positive values scale up while negative values scale
+     * down.</p> </li> <li> <p> <b>ExactCapacity</b> -- set the instance count to the
+     * scaling adjustment value.</p> </li> <li> <p> <b>PercentChangeInCapacity</b> --
+     * increase or reduce the current instance count by the scaling adjustment, read as
+     * a percentage. Positive values scale up while negative values scale down.</p>
+     * </li> </ul>
      */
     inline void SetScalingAdjustmentType(ScalingAdjustmentType&& value) { m_scalingAdjustmentTypeHasBeenSet = true; m_scalingAdjustmentType = std::move(value); }
 
     /**
-     * <p>The type of adjustment to make to a fleet's instance count (see
-     * <a>FleetCapacity</a>):</p> <ul> <li> <p> <b>ChangeInCapacity</b> -- add (or
-     * subtract) the scaling adjustment value from the current instance count. Positive
-     * values scale up while negative values scale down.</p> </li> <li> <p>
-     * <b>ExactCapacity</b> -- set the instance count to the scaling adjustment
-     * value.</p> </li> <li> <p> <b>PercentChangeInCapacity</b> -- increase or reduce
-     * the current instance count by the scaling adjustment, read as a percentage.
-     * Positive values scale up while negative values scale down.</p> </li> </ul>
+     * <p>The type of adjustment to make to a fleet's instance count.</p> <ul> <li> <p>
+     * <b>ChangeInCapacity</b> -- add (or subtract) the scaling adjustment value from
+     * the current instance count. Positive values scale up while negative values scale
+     * down.</p> </li> <li> <p> <b>ExactCapacity</b> -- set the instance count to the
+     * scaling adjustment value.</p> </li> <li> <p> <b>PercentChangeInCapacity</b> --
+     * increase or reduce the current instance count by the scaling adjustment, read as
+     * a percentage. Positive values scale up while negative values scale down.</p>
+     * </li> </ul>
      */
     inline ScalingPolicy& WithScalingAdjustmentType(const ScalingAdjustmentType& value) { SetScalingAdjustmentType(value); return *this;}
 
     /**
-     * <p>The type of adjustment to make to a fleet's instance count (see
-     * <a>FleetCapacity</a>):</p> <ul> <li> <p> <b>ChangeInCapacity</b> -- add (or
-     * subtract) the scaling adjustment value from the current instance count. Positive
-     * values scale up while negative values scale down.</p> </li> <li> <p>
-     * <b>ExactCapacity</b> -- set the instance count to the scaling adjustment
-     * value.</p> </li> <li> <p> <b>PercentChangeInCapacity</b> -- increase or reduce
-     * the current instance count by the scaling adjustment, read as a percentage.
-     * Positive values scale up while negative values scale down.</p> </li> </ul>
+     * <p>The type of adjustment to make to a fleet's instance count.</p> <ul> <li> <p>
+     * <b>ChangeInCapacity</b> -- add (or subtract) the scaling adjustment value from
+     * the current instance count. Positive values scale up while negative values scale
+     * down.</p> </li> <li> <p> <b>ExactCapacity</b> -- set the instance count to the
+     * scaling adjustment value.</p> </li> <li> <p> <b>PercentChangeInCapacity</b> --
+     * increase or reduce the current instance count by the scaling adjustment, read as
+     * a percentage. Positive values scale up while negative values scale down.</p>
+     * </li> </ul>
      */
     inline ScalingPolicy& WithScalingAdjustmentType(ScalingAdjustmentType&& value) { SetScalingAdjustmentType(std::move(value)); return *this;}
 

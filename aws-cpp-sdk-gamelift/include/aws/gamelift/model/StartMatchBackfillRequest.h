@@ -19,9 +19,6 @@ namespace Model
 {
 
   /**
-   * <p>Represents the input for a request operation.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StartMatchBackfillInput">AWS
-   * API Reference</a></p>
    */
   class AWS_GAMELIFT_API StartMatchBackfillRequest : public GameLiftRequest
   {
@@ -107,7 +104,7 @@ namespace Model
     /**
      * <p>Name of the matchmaker to use for this request. You can use either the
      * configuration name or ARN value. The ARN of the matchmaker that was used with
-     * the original game session is listed in the <a>GameSession</a> object,
+     * the original game session is listed in the <code>GameSession</code> object,
      * <code>MatchmakerData</code> property.</p>
      */
     inline const Aws::String& GetConfigurationName() const{ return m_configurationName; }
@@ -115,7 +112,7 @@ namespace Model
     /**
      * <p>Name of the matchmaker to use for this request. You can use either the
      * configuration name or ARN value. The ARN of the matchmaker that was used with
-     * the original game session is listed in the <a>GameSession</a> object,
+     * the original game session is listed in the <code>GameSession</code> object,
      * <code>MatchmakerData</code> property.</p>
      */
     inline bool ConfigurationNameHasBeenSet() const { return m_configurationNameHasBeenSet; }
@@ -123,7 +120,7 @@ namespace Model
     /**
      * <p>Name of the matchmaker to use for this request. You can use either the
      * configuration name or ARN value. The ARN of the matchmaker that was used with
-     * the original game session is listed in the <a>GameSession</a> object,
+     * the original game session is listed in the <code>GameSession</code> object,
      * <code>MatchmakerData</code> property.</p>
      */
     inline void SetConfigurationName(const Aws::String& value) { m_configurationNameHasBeenSet = true; m_configurationName = value; }
@@ -131,7 +128,7 @@ namespace Model
     /**
      * <p>Name of the matchmaker to use for this request. You can use either the
      * configuration name or ARN value. The ARN of the matchmaker that was used with
-     * the original game session is listed in the <a>GameSession</a> object,
+     * the original game session is listed in the <code>GameSession</code> object,
      * <code>MatchmakerData</code> property.</p>
      */
     inline void SetConfigurationName(Aws::String&& value) { m_configurationNameHasBeenSet = true; m_configurationName = std::move(value); }
@@ -139,7 +136,7 @@ namespace Model
     /**
      * <p>Name of the matchmaker to use for this request. You can use either the
      * configuration name or ARN value. The ARN of the matchmaker that was used with
-     * the original game session is listed in the <a>GameSession</a> object,
+     * the original game session is listed in the <code>GameSession</code> object,
      * <code>MatchmakerData</code> property.</p>
      */
     inline void SetConfigurationName(const char* value) { m_configurationNameHasBeenSet = true; m_configurationName.assign(value); }
@@ -147,7 +144,7 @@ namespace Model
     /**
      * <p>Name of the matchmaker to use for this request. You can use either the
      * configuration name or ARN value. The ARN of the matchmaker that was used with
-     * the original game session is listed in the <a>GameSession</a> object,
+     * the original game session is listed in the <code>GameSession</code> object,
      * <code>MatchmakerData</code> property.</p>
      */
     inline StartMatchBackfillRequest& WithConfigurationName(const Aws::String& value) { SetConfigurationName(value); return *this;}
@@ -155,7 +152,7 @@ namespace Model
     /**
      * <p>Name of the matchmaker to use for this request. You can use either the
      * configuration name or ARN value. The ARN of the matchmaker that was used with
-     * the original game session is listed in the <a>GameSession</a> object,
+     * the original game session is listed in the <code>GameSession</code> object,
      * <code>MatchmakerData</code> property.</p>
      */
     inline StartMatchBackfillRequest& WithConfigurationName(Aws::String&& value) { SetConfigurationName(std::move(value)); return *this;}
@@ -163,7 +160,7 @@ namespace Model
     /**
      * <p>Name of the matchmaker to use for this request. You can use either the
      * configuration name or ARN value. The ARN of the matchmaker that was used with
-     * the original game session is listed in the <a>GameSession</a> object,
+     * the original game session is listed in the <code>GameSession</code> object,
      * <code>MatchmakerData</code> property.</p>
      */
     inline StartMatchBackfillRequest& WithConfigurationName(const char* value) { SetConfigurationName(value); return *this;}
@@ -229,11 +226,12 @@ namespace Model
     /**
      * <p>Match information on all players that are currently assigned to the game
      * session. This information is used by the matchmaker to find new players and add
-     * them to the existing game.</p> <ul> <li> <p>PlayerID, PlayerAttributes, Team --
-     * This information is maintained in the <a>GameSession</a> object,
-     * <code>MatchmakerData</code> property, for all players who are currently assigned
-     * to the game session. The matchmaker data is in JSON syntax, formatted as a
-     * string. For more details, see <a
+     * them to the existing game.</p> <p>You can include up to 199 <code>Players</code>
+     * in a <code>StartMatchBackfill</code> request.</p> <ul> <li> <p>PlayerID,
+     * PlayerAttributes, Team -- This information is maintained in the
+     * <code>GameSession</code> object, <code>MatchmakerData</code> property, for all
+     * players who are currently assigned to the game session. The matchmaker data is
+     * in JSON syntax, formatted as a string. For more details, see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-server.html#match-server-data">
      * Match Data</a>. </p> <p>The backfill request must specify the team membership
      * for every player. Do not specify team if you are not using backfill.</p> </li>
@@ -246,11 +244,12 @@ namespace Model
     /**
      * <p>Match information on all players that are currently assigned to the game
      * session. This information is used by the matchmaker to find new players and add
-     * them to the existing game.</p> <ul> <li> <p>PlayerID, PlayerAttributes, Team --
-     * This information is maintained in the <a>GameSession</a> object,
-     * <code>MatchmakerData</code> property, for all players who are currently assigned
-     * to the game session. The matchmaker data is in JSON syntax, formatted as a
-     * string. For more details, see <a
+     * them to the existing game.</p> <p>You can include up to 199 <code>Players</code>
+     * in a <code>StartMatchBackfill</code> request.</p> <ul> <li> <p>PlayerID,
+     * PlayerAttributes, Team -- This information is maintained in the
+     * <code>GameSession</code> object, <code>MatchmakerData</code> property, for all
+     * players who are currently assigned to the game session. The matchmaker data is
+     * in JSON syntax, formatted as a string. For more details, see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-server.html#match-server-data">
      * Match Data</a>. </p> <p>The backfill request must specify the team membership
      * for every player. Do not specify team if you are not using backfill.</p> </li>
@@ -263,11 +262,12 @@ namespace Model
     /**
      * <p>Match information on all players that are currently assigned to the game
      * session. This information is used by the matchmaker to find new players and add
-     * them to the existing game.</p> <ul> <li> <p>PlayerID, PlayerAttributes, Team --
-     * This information is maintained in the <a>GameSession</a> object,
-     * <code>MatchmakerData</code> property, for all players who are currently assigned
-     * to the game session. The matchmaker data is in JSON syntax, formatted as a
-     * string. For more details, see <a
+     * them to the existing game.</p> <p>You can include up to 199 <code>Players</code>
+     * in a <code>StartMatchBackfill</code> request.</p> <ul> <li> <p>PlayerID,
+     * PlayerAttributes, Team -- This information is maintained in the
+     * <code>GameSession</code> object, <code>MatchmakerData</code> property, for all
+     * players who are currently assigned to the game session. The matchmaker data is
+     * in JSON syntax, formatted as a string. For more details, see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-server.html#match-server-data">
      * Match Data</a>. </p> <p>The backfill request must specify the team membership
      * for every player. Do not specify team if you are not using backfill.</p> </li>
@@ -280,11 +280,12 @@ namespace Model
     /**
      * <p>Match information on all players that are currently assigned to the game
      * session. This information is used by the matchmaker to find new players and add
-     * them to the existing game.</p> <ul> <li> <p>PlayerID, PlayerAttributes, Team --
-     * This information is maintained in the <a>GameSession</a> object,
-     * <code>MatchmakerData</code> property, for all players who are currently assigned
-     * to the game session. The matchmaker data is in JSON syntax, formatted as a
-     * string. For more details, see <a
+     * them to the existing game.</p> <p>You can include up to 199 <code>Players</code>
+     * in a <code>StartMatchBackfill</code> request.</p> <ul> <li> <p>PlayerID,
+     * PlayerAttributes, Team -- This information is maintained in the
+     * <code>GameSession</code> object, <code>MatchmakerData</code> property, for all
+     * players who are currently assigned to the game session. The matchmaker data is
+     * in JSON syntax, formatted as a string. For more details, see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-server.html#match-server-data">
      * Match Data</a>. </p> <p>The backfill request must specify the team membership
      * for every player. Do not specify team if you are not using backfill.</p> </li>
@@ -297,11 +298,12 @@ namespace Model
     /**
      * <p>Match information on all players that are currently assigned to the game
      * session. This information is used by the matchmaker to find new players and add
-     * them to the existing game.</p> <ul> <li> <p>PlayerID, PlayerAttributes, Team --
-     * This information is maintained in the <a>GameSession</a> object,
-     * <code>MatchmakerData</code> property, for all players who are currently assigned
-     * to the game session. The matchmaker data is in JSON syntax, formatted as a
-     * string. For more details, see <a
+     * them to the existing game.</p> <p>You can include up to 199 <code>Players</code>
+     * in a <code>StartMatchBackfill</code> request.</p> <ul> <li> <p>PlayerID,
+     * PlayerAttributes, Team -- This information is maintained in the
+     * <code>GameSession</code> object, <code>MatchmakerData</code> property, for all
+     * players who are currently assigned to the game session. The matchmaker data is
+     * in JSON syntax, formatted as a string. For more details, see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-server.html#match-server-data">
      * Match Data</a>. </p> <p>The backfill request must specify the team membership
      * for every player. Do not specify team if you are not using backfill.</p> </li>
@@ -314,11 +316,12 @@ namespace Model
     /**
      * <p>Match information on all players that are currently assigned to the game
      * session. This information is used by the matchmaker to find new players and add
-     * them to the existing game.</p> <ul> <li> <p>PlayerID, PlayerAttributes, Team --
-     * This information is maintained in the <a>GameSession</a> object,
-     * <code>MatchmakerData</code> property, for all players who are currently assigned
-     * to the game session. The matchmaker data is in JSON syntax, formatted as a
-     * string. For more details, see <a
+     * them to the existing game.</p> <p>You can include up to 199 <code>Players</code>
+     * in a <code>StartMatchBackfill</code> request.</p> <ul> <li> <p>PlayerID,
+     * PlayerAttributes, Team -- This information is maintained in the
+     * <code>GameSession</code> object, <code>MatchmakerData</code> property, for all
+     * players who are currently assigned to the game session. The matchmaker data is
+     * in JSON syntax, formatted as a string. For more details, see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-server.html#match-server-data">
      * Match Data</a>. </p> <p>The backfill request must specify the team membership
      * for every player. Do not specify team if you are not using backfill.</p> </li>
@@ -331,11 +334,12 @@ namespace Model
     /**
      * <p>Match information on all players that are currently assigned to the game
      * session. This information is used by the matchmaker to find new players and add
-     * them to the existing game.</p> <ul> <li> <p>PlayerID, PlayerAttributes, Team --
-     * This information is maintained in the <a>GameSession</a> object,
-     * <code>MatchmakerData</code> property, for all players who are currently assigned
-     * to the game session. The matchmaker data is in JSON syntax, formatted as a
-     * string. For more details, see <a
+     * them to the existing game.</p> <p>You can include up to 199 <code>Players</code>
+     * in a <code>StartMatchBackfill</code> request.</p> <ul> <li> <p>PlayerID,
+     * PlayerAttributes, Team -- This information is maintained in the
+     * <code>GameSession</code> object, <code>MatchmakerData</code> property, for all
+     * players who are currently assigned to the game session. The matchmaker data is
+     * in JSON syntax, formatted as a string. For more details, see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-server.html#match-server-data">
      * Match Data</a>. </p> <p>The backfill request must specify the team membership
      * for every player. Do not specify team if you are not using backfill.</p> </li>
@@ -348,11 +352,12 @@ namespace Model
     /**
      * <p>Match information on all players that are currently assigned to the game
      * session. This information is used by the matchmaker to find new players and add
-     * them to the existing game.</p> <ul> <li> <p>PlayerID, PlayerAttributes, Team --
-     * This information is maintained in the <a>GameSession</a> object,
-     * <code>MatchmakerData</code> property, for all players who are currently assigned
-     * to the game session. The matchmaker data is in JSON syntax, formatted as a
-     * string. For more details, see <a
+     * them to the existing game.</p> <p>You can include up to 199 <code>Players</code>
+     * in a <code>StartMatchBackfill</code> request.</p> <ul> <li> <p>PlayerID,
+     * PlayerAttributes, Team -- This information is maintained in the
+     * <code>GameSession</code> object, <code>MatchmakerData</code> property, for all
+     * players who are currently assigned to the game session. The matchmaker data is
+     * in JSON syntax, formatted as a string. For more details, see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-server.html#match-server-data">
      * Match Data</a>. </p> <p>The backfill request must specify the team membership
      * for every player. Do not specify team if you are not using backfill.</p> </li>

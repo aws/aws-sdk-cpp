@@ -19,9 +19,6 @@ namespace Model
 {
 
   /**
-   * <p>Represents the input for a request operation.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateMatchmakingRuleSetInput">AWS
-   * API Reference</a></p>
    */
   class AWS_GAMELIFT_API CreateMatchmakingRuleSetRequest : public GameLiftRequest
   {
@@ -152,10 +149,7 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging
      * Amazon Web Services Resources</a> in the <i>Amazon Web Services General
-     * Reference</i>. Once the resource is created, you can use <a>TagResource</a>,
-     * <a>UntagResource</a>, and <a>ListTagsForResource</a> to add, remove, and view
-     * tags. The maximum tag limit may be lower than stated. See the Amazon Web
-     * Services General Reference for actual tagging limits.</p>
+     * Reference</i>.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
@@ -166,10 +160,7 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging
      * Amazon Web Services Resources</a> in the <i>Amazon Web Services General
-     * Reference</i>. Once the resource is created, you can use <a>TagResource</a>,
-     * <a>UntagResource</a>, and <a>ListTagsForResource</a> to add, remove, and view
-     * tags. The maximum tag limit may be lower than stated. See the Amazon Web
-     * Services General Reference for actual tagging limits.</p>
+     * Reference</i>.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
@@ -180,10 +171,7 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging
      * Amazon Web Services Resources</a> in the <i>Amazon Web Services General
-     * Reference</i>. Once the resource is created, you can use <a>TagResource</a>,
-     * <a>UntagResource</a>, and <a>ListTagsForResource</a> to add, remove, and view
-     * tags. The maximum tag limit may be lower than stated. See the Amazon Web
-     * Services General Reference for actual tagging limits.</p>
+     * Reference</i>.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
@@ -194,10 +182,7 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging
      * Amazon Web Services Resources</a> in the <i>Amazon Web Services General
-     * Reference</i>. Once the resource is created, you can use <a>TagResource</a>,
-     * <a>UntagResource</a>, and <a>ListTagsForResource</a> to add, remove, and view
-     * tags. The maximum tag limit may be lower than stated. See the Amazon Web
-     * Services General Reference for actual tagging limits.</p>
+     * Reference</i>.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
@@ -208,10 +193,7 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging
      * Amazon Web Services Resources</a> in the <i>Amazon Web Services General
-     * Reference</i>. Once the resource is created, you can use <a>TagResource</a>,
-     * <a>UntagResource</a>, and <a>ListTagsForResource</a> to add, remove, and view
-     * tags. The maximum tag limit may be lower than stated. See the Amazon Web
-     * Services General Reference for actual tagging limits.</p>
+     * Reference</i>.</p>
      */
     inline CreateMatchmakingRuleSetRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
@@ -222,10 +204,7 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging
      * Amazon Web Services Resources</a> in the <i>Amazon Web Services General
-     * Reference</i>. Once the resource is created, you can use <a>TagResource</a>,
-     * <a>UntagResource</a>, and <a>ListTagsForResource</a> to add, remove, and view
-     * tags. The maximum tag limit may be lower than stated. See the Amazon Web
-     * Services General Reference for actual tagging limits.</p>
+     * Reference</i>.</p>
      */
     inline CreateMatchmakingRuleSetRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
@@ -236,10 +215,7 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging
      * Amazon Web Services Resources</a> in the <i>Amazon Web Services General
-     * Reference</i>. Once the resource is created, you can use <a>TagResource</a>,
-     * <a>UntagResource</a>, and <a>ListTagsForResource</a> to add, remove, and view
-     * tags. The maximum tag limit may be lower than stated. See the Amazon Web
-     * Services General Reference for actual tagging limits.</p>
+     * Reference</i>.</p>
      */
     inline CreateMatchmakingRuleSetRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
@@ -250,10 +226,7 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging
      * Amazon Web Services Resources</a> in the <i>Amazon Web Services General
-     * Reference</i>. Once the resource is created, you can use <a>TagResource</a>,
-     * <a>UntagResource</a>, and <a>ListTagsForResource</a> to add, remove, and view
-     * tags. The maximum tag limit may be lower than stated. See the Amazon Web
-     * Services General Reference for actual tagging limits.</p>
+     * Reference</i>.</p>
      */
     inline CreateMatchmakingRuleSetRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 

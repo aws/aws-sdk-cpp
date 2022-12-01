@@ -36,65 +36,65 @@ namespace Model
 
     /**
      * <p>A unique identifier for the game server group where the game server is
-     * running. Use either the <a>GameServerGroup</a> name or ARN value. If you are not
-     * specifying a game server to claim, this value identifies where you want GameLift
-     * FleetIQ to look for an available game server to claim. </p>
+     * running. If you are not specifying a game server to claim, this value identifies
+     * where you want GameLift FleetIQ to look for an available game server to claim.
+     * </p>
      */
     inline const Aws::String& GetGameServerGroupName() const{ return m_gameServerGroupName; }
 
     /**
      * <p>A unique identifier for the game server group where the game server is
-     * running. Use either the <a>GameServerGroup</a> name or ARN value. If you are not
-     * specifying a game server to claim, this value identifies where you want GameLift
-     * FleetIQ to look for an available game server to claim. </p>
+     * running. If you are not specifying a game server to claim, this value identifies
+     * where you want GameLift FleetIQ to look for an available game server to claim.
+     * </p>
      */
     inline bool GameServerGroupNameHasBeenSet() const { return m_gameServerGroupNameHasBeenSet; }
 
     /**
      * <p>A unique identifier for the game server group where the game server is
-     * running. Use either the <a>GameServerGroup</a> name or ARN value. If you are not
-     * specifying a game server to claim, this value identifies where you want GameLift
-     * FleetIQ to look for an available game server to claim. </p>
+     * running. If you are not specifying a game server to claim, this value identifies
+     * where you want GameLift FleetIQ to look for an available game server to claim.
+     * </p>
      */
     inline void SetGameServerGroupName(const Aws::String& value) { m_gameServerGroupNameHasBeenSet = true; m_gameServerGroupName = value; }
 
     /**
      * <p>A unique identifier for the game server group where the game server is
-     * running. Use either the <a>GameServerGroup</a> name or ARN value. If you are not
-     * specifying a game server to claim, this value identifies where you want GameLift
-     * FleetIQ to look for an available game server to claim. </p>
+     * running. If you are not specifying a game server to claim, this value identifies
+     * where you want GameLift FleetIQ to look for an available game server to claim.
+     * </p>
      */
     inline void SetGameServerGroupName(Aws::String&& value) { m_gameServerGroupNameHasBeenSet = true; m_gameServerGroupName = std::move(value); }
 
     /**
      * <p>A unique identifier for the game server group where the game server is
-     * running. Use either the <a>GameServerGroup</a> name or ARN value. If you are not
-     * specifying a game server to claim, this value identifies where you want GameLift
-     * FleetIQ to look for an available game server to claim. </p>
+     * running. If you are not specifying a game server to claim, this value identifies
+     * where you want GameLift FleetIQ to look for an available game server to claim.
+     * </p>
      */
     inline void SetGameServerGroupName(const char* value) { m_gameServerGroupNameHasBeenSet = true; m_gameServerGroupName.assign(value); }
 
     /**
      * <p>A unique identifier for the game server group where the game server is
-     * running. Use either the <a>GameServerGroup</a> name or ARN value. If you are not
-     * specifying a game server to claim, this value identifies where you want GameLift
-     * FleetIQ to look for an available game server to claim. </p>
+     * running. If you are not specifying a game server to claim, this value identifies
+     * where you want GameLift FleetIQ to look for an available game server to claim.
+     * </p>
      */
     inline ClaimGameServerRequest& WithGameServerGroupName(const Aws::String& value) { SetGameServerGroupName(value); return *this;}
 
     /**
      * <p>A unique identifier for the game server group where the game server is
-     * running. Use either the <a>GameServerGroup</a> name or ARN value. If you are not
-     * specifying a game server to claim, this value identifies where you want GameLift
-     * FleetIQ to look for an available game server to claim. </p>
+     * running. If you are not specifying a game server to claim, this value identifies
+     * where you want GameLift FleetIQ to look for an available game server to claim.
+     * </p>
      */
     inline ClaimGameServerRequest& WithGameServerGroupName(Aws::String&& value) { SetGameServerGroupName(std::move(value)); return *this;}
 
     /**
      * <p>A unique identifier for the game server group where the game server is
-     * running. Use either the <a>GameServerGroup</a> name or ARN value. If you are not
-     * specifying a game server to claim, this value identifies where you want GameLift
-     * FleetIQ to look for an available game server to claim. </p>
+     * running. If you are not specifying a game server to claim, this value identifies
+     * where you want GameLift FleetIQ to look for an available game server to claim.
+     * </p>
      */
     inline ClaimGameServerRequest& WithGameServerGroupName(const char* value) { SetGameServerGroupName(value); return *this;}
 
@@ -159,56 +159,56 @@ namespace Model
     /**
      * <p>A set of custom game server properties, formatted as a single string value.
      * This data is passed to a game client or service when it requests information on
-     * game servers using <a>ListGameServers</a> or <a>ClaimGameServer</a>. </p>
+     * game servers. </p>
      */
     inline const Aws::String& GetGameServerData() const{ return m_gameServerData; }
 
     /**
      * <p>A set of custom game server properties, formatted as a single string value.
      * This data is passed to a game client or service when it requests information on
-     * game servers using <a>ListGameServers</a> or <a>ClaimGameServer</a>. </p>
+     * game servers. </p>
      */
     inline bool GameServerDataHasBeenSet() const { return m_gameServerDataHasBeenSet; }
 
     /**
      * <p>A set of custom game server properties, formatted as a single string value.
      * This data is passed to a game client or service when it requests information on
-     * game servers using <a>ListGameServers</a> or <a>ClaimGameServer</a>. </p>
+     * game servers. </p>
      */
     inline void SetGameServerData(const Aws::String& value) { m_gameServerDataHasBeenSet = true; m_gameServerData = value; }
 
     /**
      * <p>A set of custom game server properties, formatted as a single string value.
      * This data is passed to a game client or service when it requests information on
-     * game servers using <a>ListGameServers</a> or <a>ClaimGameServer</a>. </p>
+     * game servers. </p>
      */
     inline void SetGameServerData(Aws::String&& value) { m_gameServerDataHasBeenSet = true; m_gameServerData = std::move(value); }
 
     /**
      * <p>A set of custom game server properties, formatted as a single string value.
      * This data is passed to a game client or service when it requests information on
-     * game servers using <a>ListGameServers</a> or <a>ClaimGameServer</a>. </p>
+     * game servers. </p>
      */
     inline void SetGameServerData(const char* value) { m_gameServerDataHasBeenSet = true; m_gameServerData.assign(value); }
 
     /**
      * <p>A set of custom game server properties, formatted as a single string value.
      * This data is passed to a game client or service when it requests information on
-     * game servers using <a>ListGameServers</a> or <a>ClaimGameServer</a>. </p>
+     * game servers. </p>
      */
     inline ClaimGameServerRequest& WithGameServerData(const Aws::String& value) { SetGameServerData(value); return *this;}
 
     /**
      * <p>A set of custom game server properties, formatted as a single string value.
      * This data is passed to a game client or service when it requests information on
-     * game servers using <a>ListGameServers</a> or <a>ClaimGameServer</a>. </p>
+     * game servers. </p>
      */
     inline ClaimGameServerRequest& WithGameServerData(Aws::String&& value) { SetGameServerData(std::move(value)); return *this;}
 
     /**
      * <p>A set of custom game server properties, formatted as a single string value.
      * This data is passed to a game client or service when it requests information on
-     * game servers using <a>ListGameServers</a> or <a>ClaimGameServer</a>. </p>
+     * game servers. </p>
      */
     inline ClaimGameServerRequest& WithGameServerData(const char* value) { SetGameServerData(value); return *this;}
 

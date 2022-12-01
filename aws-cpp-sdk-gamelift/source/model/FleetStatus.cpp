@@ -29,6 +29,7 @@ namespace Aws
         static const int DELETING_HASH = HashingUtils::HashString("DELETING");
         static const int ERROR__HASH = HashingUtils::HashString("ERROR");
         static const int TERMINATED_HASH = HashingUtils::HashString("TERMINATED");
+        static const int NOT_FOUND_HASH = HashingUtils::HashString("NOT_FOUND");
 
 
         FleetStatus GetFleetStatusForName(const Aws::String& name)
@@ -70,6 +71,10 @@ namespace Aws
           {
             return FleetStatus::TERMINATED;
           }
+          else if (hashCode == NOT_FOUND_HASH)
+          {
+            return FleetStatus::NOT_FOUND;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -102,6 +107,8 @@ namespace Aws
             return "ERROR";
           case FleetStatus::TERMINATED:
             return "TERMINATED";
+          case FleetStatus::NOT_FOUND:
+            return "NOT_FOUND";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

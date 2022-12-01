@@ -6,7 +6,11 @@
 #pragma once
 #include <aws/comprehend/Comprehend_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/comprehend/model/DocumentMetadata.h>
 #include <aws/comprehend/model/Entity.h>
+#include <aws/comprehend/model/DocumentTypeListItem.h>
+#include <aws/comprehend/model/Block.h>
+#include <aws/comprehend/model/ErrorsListItem.h>
 #include <utility>
 
 namespace Aws
@@ -124,9 +128,210 @@ namespace Model
      */
     inline DetectEntitiesResult& AddEntities(Entity&& value) { m_entities.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Information about the document, discovered during text extraction. This field
+     * is present in the response only if your request used the <code>Byte</code>
+     * parameter. </p>
+     */
+    inline const DocumentMetadata& GetDocumentMetadata() const{ return m_documentMetadata; }
+
+    /**
+     * <p>Information about the document, discovered during text extraction. This field
+     * is present in the response only if your request used the <code>Byte</code>
+     * parameter. </p>
+     */
+    inline void SetDocumentMetadata(const DocumentMetadata& value) { m_documentMetadata = value; }
+
+    /**
+     * <p>Information about the document, discovered during text extraction. This field
+     * is present in the response only if your request used the <code>Byte</code>
+     * parameter. </p>
+     */
+    inline void SetDocumentMetadata(DocumentMetadata&& value) { m_documentMetadata = std::move(value); }
+
+    /**
+     * <p>Information about the document, discovered during text extraction. This field
+     * is present in the response only if your request used the <code>Byte</code>
+     * parameter. </p>
+     */
+    inline DetectEntitiesResult& WithDocumentMetadata(const DocumentMetadata& value) { SetDocumentMetadata(value); return *this;}
+
+    /**
+     * <p>Information about the document, discovered during text extraction. This field
+     * is present in the response only if your request used the <code>Byte</code>
+     * parameter. </p>
+     */
+    inline DetectEntitiesResult& WithDocumentMetadata(DocumentMetadata&& value) { SetDocumentMetadata(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The document type for each page in the input document. This field is present
+     * in the response only if your request used the <code>Byte</code> parameter. </p>
+     */
+    inline const Aws::Vector<DocumentTypeListItem>& GetDocumentType() const{ return m_documentType; }
+
+    /**
+     * <p>The document type for each page in the input document. This field is present
+     * in the response only if your request used the <code>Byte</code> parameter. </p>
+     */
+    inline void SetDocumentType(const Aws::Vector<DocumentTypeListItem>& value) { m_documentType = value; }
+
+    /**
+     * <p>The document type for each page in the input document. This field is present
+     * in the response only if your request used the <code>Byte</code> parameter. </p>
+     */
+    inline void SetDocumentType(Aws::Vector<DocumentTypeListItem>&& value) { m_documentType = std::move(value); }
+
+    /**
+     * <p>The document type for each page in the input document. This field is present
+     * in the response only if your request used the <code>Byte</code> parameter. </p>
+     */
+    inline DetectEntitiesResult& WithDocumentType(const Aws::Vector<DocumentTypeListItem>& value) { SetDocumentType(value); return *this;}
+
+    /**
+     * <p>The document type for each page in the input document. This field is present
+     * in the response only if your request used the <code>Byte</code> parameter. </p>
+     */
+    inline DetectEntitiesResult& WithDocumentType(Aws::Vector<DocumentTypeListItem>&& value) { SetDocumentType(std::move(value)); return *this;}
+
+    /**
+     * <p>The document type for each page in the input document. This field is present
+     * in the response only if your request used the <code>Byte</code> parameter. </p>
+     */
+    inline DetectEntitiesResult& AddDocumentType(const DocumentTypeListItem& value) { m_documentType.push_back(value); return *this; }
+
+    /**
+     * <p>The document type for each page in the input document. This field is present
+     * in the response only if your request used the <code>Byte</code> parameter. </p>
+     */
+    inline DetectEntitiesResult& AddDocumentType(DocumentTypeListItem&& value) { m_documentType.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>Information about each block of text in the input document. Blocks are
+     * nested. A page block contains a block for each line of text, which contains a
+     * block for each word. </p> <p>The <code>Block</code> content for a Word input
+     * document does not include a <code>Geometry</code> field.</p> <p>The
+     * <code>Block</code> field is not present in the response for plain-text
+     * inputs.</p>
+     */
+    inline const Aws::Vector<Block>& GetBlocks() const{ return m_blocks; }
+
+    /**
+     * <p>Information about each block of text in the input document. Blocks are
+     * nested. A page block contains a block for each line of text, which contains a
+     * block for each word. </p> <p>The <code>Block</code> content for a Word input
+     * document does not include a <code>Geometry</code> field.</p> <p>The
+     * <code>Block</code> field is not present in the response for plain-text
+     * inputs.</p>
+     */
+    inline void SetBlocks(const Aws::Vector<Block>& value) { m_blocks = value; }
+
+    /**
+     * <p>Information about each block of text in the input document. Blocks are
+     * nested. A page block contains a block for each line of text, which contains a
+     * block for each word. </p> <p>The <code>Block</code> content for a Word input
+     * document does not include a <code>Geometry</code> field.</p> <p>The
+     * <code>Block</code> field is not present in the response for plain-text
+     * inputs.</p>
+     */
+    inline void SetBlocks(Aws::Vector<Block>&& value) { m_blocks = std::move(value); }
+
+    /**
+     * <p>Information about each block of text in the input document. Blocks are
+     * nested. A page block contains a block for each line of text, which contains a
+     * block for each word. </p> <p>The <code>Block</code> content for a Word input
+     * document does not include a <code>Geometry</code> field.</p> <p>The
+     * <code>Block</code> field is not present in the response for plain-text
+     * inputs.</p>
+     */
+    inline DetectEntitiesResult& WithBlocks(const Aws::Vector<Block>& value) { SetBlocks(value); return *this;}
+
+    /**
+     * <p>Information about each block of text in the input document. Blocks are
+     * nested. A page block contains a block for each line of text, which contains a
+     * block for each word. </p> <p>The <code>Block</code> content for a Word input
+     * document does not include a <code>Geometry</code> field.</p> <p>The
+     * <code>Block</code> field is not present in the response for plain-text
+     * inputs.</p>
+     */
+    inline DetectEntitiesResult& WithBlocks(Aws::Vector<Block>&& value) { SetBlocks(std::move(value)); return *this;}
+
+    /**
+     * <p>Information about each block of text in the input document. Blocks are
+     * nested. A page block contains a block for each line of text, which contains a
+     * block for each word. </p> <p>The <code>Block</code> content for a Word input
+     * document does not include a <code>Geometry</code> field.</p> <p>The
+     * <code>Block</code> field is not present in the response for plain-text
+     * inputs.</p>
+     */
+    inline DetectEntitiesResult& AddBlocks(const Block& value) { m_blocks.push_back(value); return *this; }
+
+    /**
+     * <p>Information about each block of text in the input document. Blocks are
+     * nested. A page block contains a block for each line of text, which contains a
+     * block for each word. </p> <p>The <code>Block</code> content for a Word input
+     * document does not include a <code>Geometry</code> field.</p> <p>The
+     * <code>Block</code> field is not present in the response for plain-text
+     * inputs.</p>
+     */
+    inline DetectEntitiesResult& AddBlocks(Block&& value) { m_blocks.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>Page-level errors that the system detected while processing the input
+     * document. The field is empty if the system encountered no errors.</p>
+     */
+    inline const Aws::Vector<ErrorsListItem>& GetErrors() const{ return m_errors; }
+
+    /**
+     * <p>Page-level errors that the system detected while processing the input
+     * document. The field is empty if the system encountered no errors.</p>
+     */
+    inline void SetErrors(const Aws::Vector<ErrorsListItem>& value) { m_errors = value; }
+
+    /**
+     * <p>Page-level errors that the system detected while processing the input
+     * document. The field is empty if the system encountered no errors.</p>
+     */
+    inline void SetErrors(Aws::Vector<ErrorsListItem>&& value) { m_errors = std::move(value); }
+
+    /**
+     * <p>Page-level errors that the system detected while processing the input
+     * document. The field is empty if the system encountered no errors.</p>
+     */
+    inline DetectEntitiesResult& WithErrors(const Aws::Vector<ErrorsListItem>& value) { SetErrors(value); return *this;}
+
+    /**
+     * <p>Page-level errors that the system detected while processing the input
+     * document. The field is empty if the system encountered no errors.</p>
+     */
+    inline DetectEntitiesResult& WithErrors(Aws::Vector<ErrorsListItem>&& value) { SetErrors(std::move(value)); return *this;}
+
+    /**
+     * <p>Page-level errors that the system detected while processing the input
+     * document. The field is empty if the system encountered no errors.</p>
+     */
+    inline DetectEntitiesResult& AddErrors(const ErrorsListItem& value) { m_errors.push_back(value); return *this; }
+
+    /**
+     * <p>Page-level errors that the system detected while processing the input
+     * document. The field is empty if the system encountered no errors.</p>
+     */
+    inline DetectEntitiesResult& AddErrors(ErrorsListItem&& value) { m_errors.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::Vector<Entity> m_entities;
+
+    DocumentMetadata m_documentMetadata;
+
+    Aws::Vector<DocumentTypeListItem> m_documentType;
+
+    Aws::Vector<Block> m_blocks;
+
+    Aws::Vector<ErrorsListItem> m_errors;
   };
 
 } // namespace Model

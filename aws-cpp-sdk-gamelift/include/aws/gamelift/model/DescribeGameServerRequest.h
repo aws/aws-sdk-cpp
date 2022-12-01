@@ -36,49 +36,49 @@ namespace Model
 
     /**
      * <p>A unique identifier for the game server group where the game server is
-     * running. Use either the <a>GameServerGroup</a> name or ARN value.</p>
+     * running.</p>
      */
     inline const Aws::String& GetGameServerGroupName() const{ return m_gameServerGroupName; }
 
     /**
      * <p>A unique identifier for the game server group where the game server is
-     * running. Use either the <a>GameServerGroup</a> name or ARN value.</p>
+     * running.</p>
      */
     inline bool GameServerGroupNameHasBeenSet() const { return m_gameServerGroupNameHasBeenSet; }
 
     /**
      * <p>A unique identifier for the game server group where the game server is
-     * running. Use either the <a>GameServerGroup</a> name or ARN value.</p>
+     * running.</p>
      */
     inline void SetGameServerGroupName(const Aws::String& value) { m_gameServerGroupNameHasBeenSet = true; m_gameServerGroupName = value; }
 
     /**
      * <p>A unique identifier for the game server group where the game server is
-     * running. Use either the <a>GameServerGroup</a> name or ARN value.</p>
+     * running.</p>
      */
     inline void SetGameServerGroupName(Aws::String&& value) { m_gameServerGroupNameHasBeenSet = true; m_gameServerGroupName = std::move(value); }
 
     /**
      * <p>A unique identifier for the game server group where the game server is
-     * running. Use either the <a>GameServerGroup</a> name or ARN value.</p>
+     * running.</p>
      */
     inline void SetGameServerGroupName(const char* value) { m_gameServerGroupNameHasBeenSet = true; m_gameServerGroupName.assign(value); }
 
     /**
      * <p>A unique identifier for the game server group where the game server is
-     * running. Use either the <a>GameServerGroup</a> name or ARN value.</p>
+     * running.</p>
      */
     inline DescribeGameServerRequest& WithGameServerGroupName(const Aws::String& value) { SetGameServerGroupName(value); return *this;}
 
     /**
      * <p>A unique identifier for the game server group where the game server is
-     * running. Use either the <a>GameServerGroup</a> name or ARN value.</p>
+     * running.</p>
      */
     inline DescribeGameServerRequest& WithGameServerGroupName(Aws::String&& value) { SetGameServerGroupName(std::move(value)); return *this;}
 
     /**
      * <p>A unique identifier for the game server group where the game server is
-     * running. Use either the <a>GameServerGroup</a> name or ARN value.</p>
+     * running.</p>
      */
     inline DescribeGameServerRequest& WithGameServerGroupName(const char* value) { SetGameServerGroupName(value); return *this;}
 

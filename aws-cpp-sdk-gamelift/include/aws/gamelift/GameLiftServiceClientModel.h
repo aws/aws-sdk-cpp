@@ -27,6 +27,7 @@
 #include <aws/gamelift/model/CreateGameServerGroupResult.h>
 #include <aws/gamelift/model/CreateGameSessionResult.h>
 #include <aws/gamelift/model/CreateGameSessionQueueResult.h>
+#include <aws/gamelift/model/CreateLocationResult.h>
 #include <aws/gamelift/model/CreateMatchmakingConfigurationResult.h>
 #include <aws/gamelift/model/CreateMatchmakingRuleSetResult.h>
 #include <aws/gamelift/model/CreatePlayerSessionResult.h>
@@ -37,12 +38,15 @@
 #include <aws/gamelift/model/DeleteFleetLocationsResult.h>
 #include <aws/gamelift/model/DeleteGameServerGroupResult.h>
 #include <aws/gamelift/model/DeleteGameSessionQueueResult.h>
+#include <aws/gamelift/model/DeleteLocationResult.h>
 #include <aws/gamelift/model/DeleteMatchmakingConfigurationResult.h>
 #include <aws/gamelift/model/DeleteMatchmakingRuleSetResult.h>
 #include <aws/gamelift/model/DeleteVpcPeeringAuthorizationResult.h>
 #include <aws/gamelift/model/DeleteVpcPeeringConnectionResult.h>
+#include <aws/gamelift/model/DeregisterComputeResult.h>
 #include <aws/gamelift/model/DescribeAliasResult.h>
 #include <aws/gamelift/model/DescribeBuildResult.h>
+#include <aws/gamelift/model/DescribeComputeResult.h>
 #include <aws/gamelift/model/DescribeEC2InstanceLimitsResult.h>
 #include <aws/gamelift/model/DescribeFleetAttributesResult.h>
 #include <aws/gamelift/model/DescribeFleetCapacityResult.h>
@@ -69,16 +73,21 @@
 #include <aws/gamelift/model/DescribeScriptResult.h>
 #include <aws/gamelift/model/DescribeVpcPeeringAuthorizationsResult.h>
 #include <aws/gamelift/model/DescribeVpcPeeringConnectionsResult.h>
+#include <aws/gamelift/model/GetComputeAccessResult.h>
+#include <aws/gamelift/model/GetComputeAuthTokenResult.h>
 #include <aws/gamelift/model/GetGameSessionLogUrlResult.h>
 #include <aws/gamelift/model/GetInstanceAccessResult.h>
 #include <aws/gamelift/model/ListAliasesResult.h>
 #include <aws/gamelift/model/ListBuildsResult.h>
+#include <aws/gamelift/model/ListComputeResult.h>
 #include <aws/gamelift/model/ListFleetsResult.h>
 #include <aws/gamelift/model/ListGameServerGroupsResult.h>
 #include <aws/gamelift/model/ListGameServersResult.h>
+#include <aws/gamelift/model/ListLocationsResult.h>
 #include <aws/gamelift/model/ListScriptsResult.h>
 #include <aws/gamelift/model/ListTagsForResourceResult.h>
 #include <aws/gamelift/model/PutScalingPolicyResult.h>
+#include <aws/gamelift/model/RegisterComputeResult.h>
 #include <aws/gamelift/model/RegisterGameServerResult.h>
 #include <aws/gamelift/model/RequestUploadCredentialsResult.h>
 #include <aws/gamelift/model/ResolveAliasResult.h>
@@ -157,6 +166,7 @@ namespace Aws
       class CreateGameServerGroupRequest;
       class CreateGameSessionRequest;
       class CreateGameSessionQueueRequest;
+      class CreateLocationRequest;
       class CreateMatchmakingConfigurationRequest;
       class CreateMatchmakingRuleSetRequest;
       class CreatePlayerSessionRequest;
@@ -170,15 +180,18 @@ namespace Aws
       class DeleteFleetLocationsRequest;
       class DeleteGameServerGroupRequest;
       class DeleteGameSessionQueueRequest;
+      class DeleteLocationRequest;
       class DeleteMatchmakingConfigurationRequest;
       class DeleteMatchmakingRuleSetRequest;
       class DeleteScalingPolicyRequest;
       class DeleteScriptRequest;
       class DeleteVpcPeeringAuthorizationRequest;
       class DeleteVpcPeeringConnectionRequest;
+      class DeregisterComputeRequest;
       class DeregisterGameServerRequest;
       class DescribeAliasRequest;
       class DescribeBuildRequest;
+      class DescribeComputeRequest;
       class DescribeEC2InstanceLimitsRequest;
       class DescribeFleetAttributesRequest;
       class DescribeFleetCapacityRequest;
@@ -205,16 +218,21 @@ namespace Aws
       class DescribeScriptRequest;
       class DescribeVpcPeeringAuthorizationsRequest;
       class DescribeVpcPeeringConnectionsRequest;
+      class GetComputeAccessRequest;
+      class GetComputeAuthTokenRequest;
       class GetGameSessionLogUrlRequest;
       class GetInstanceAccessRequest;
       class ListAliasesRequest;
       class ListBuildsRequest;
+      class ListComputeRequest;
       class ListFleetsRequest;
       class ListGameServerGroupsRequest;
       class ListGameServersRequest;
+      class ListLocationsRequest;
       class ListScriptsRequest;
       class ListTagsForResourceRequest;
       class PutScalingPolicyRequest;
+      class RegisterComputeRequest;
       class RegisterGameServerRequest;
       class RequestUploadCredentialsRequest;
       class ResolveAliasRequest;
@@ -255,6 +273,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<CreateGameServerGroupResult, GameLiftError> CreateGameServerGroupOutcome;
       typedef Aws::Utils::Outcome<CreateGameSessionResult, GameLiftError> CreateGameSessionOutcome;
       typedef Aws::Utils::Outcome<CreateGameSessionQueueResult, GameLiftError> CreateGameSessionQueueOutcome;
+      typedef Aws::Utils::Outcome<CreateLocationResult, GameLiftError> CreateLocationOutcome;
       typedef Aws::Utils::Outcome<CreateMatchmakingConfigurationResult, GameLiftError> CreateMatchmakingConfigurationOutcome;
       typedef Aws::Utils::Outcome<CreateMatchmakingRuleSetResult, GameLiftError> CreateMatchmakingRuleSetOutcome;
       typedef Aws::Utils::Outcome<CreatePlayerSessionResult, GameLiftError> CreatePlayerSessionOutcome;
@@ -268,15 +287,18 @@ namespace Aws
       typedef Aws::Utils::Outcome<DeleteFleetLocationsResult, GameLiftError> DeleteFleetLocationsOutcome;
       typedef Aws::Utils::Outcome<DeleteGameServerGroupResult, GameLiftError> DeleteGameServerGroupOutcome;
       typedef Aws::Utils::Outcome<DeleteGameSessionQueueResult, GameLiftError> DeleteGameSessionQueueOutcome;
+      typedef Aws::Utils::Outcome<DeleteLocationResult, GameLiftError> DeleteLocationOutcome;
       typedef Aws::Utils::Outcome<DeleteMatchmakingConfigurationResult, GameLiftError> DeleteMatchmakingConfigurationOutcome;
       typedef Aws::Utils::Outcome<DeleteMatchmakingRuleSetResult, GameLiftError> DeleteMatchmakingRuleSetOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, GameLiftError> DeleteScalingPolicyOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, GameLiftError> DeleteScriptOutcome;
       typedef Aws::Utils::Outcome<DeleteVpcPeeringAuthorizationResult, GameLiftError> DeleteVpcPeeringAuthorizationOutcome;
       typedef Aws::Utils::Outcome<DeleteVpcPeeringConnectionResult, GameLiftError> DeleteVpcPeeringConnectionOutcome;
+      typedef Aws::Utils::Outcome<DeregisterComputeResult, GameLiftError> DeregisterComputeOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, GameLiftError> DeregisterGameServerOutcome;
       typedef Aws::Utils::Outcome<DescribeAliasResult, GameLiftError> DescribeAliasOutcome;
       typedef Aws::Utils::Outcome<DescribeBuildResult, GameLiftError> DescribeBuildOutcome;
+      typedef Aws::Utils::Outcome<DescribeComputeResult, GameLiftError> DescribeComputeOutcome;
       typedef Aws::Utils::Outcome<DescribeEC2InstanceLimitsResult, GameLiftError> DescribeEC2InstanceLimitsOutcome;
       typedef Aws::Utils::Outcome<DescribeFleetAttributesResult, GameLiftError> DescribeFleetAttributesOutcome;
       typedef Aws::Utils::Outcome<DescribeFleetCapacityResult, GameLiftError> DescribeFleetCapacityOutcome;
@@ -303,16 +325,21 @@ namespace Aws
       typedef Aws::Utils::Outcome<DescribeScriptResult, GameLiftError> DescribeScriptOutcome;
       typedef Aws::Utils::Outcome<DescribeVpcPeeringAuthorizationsResult, GameLiftError> DescribeVpcPeeringAuthorizationsOutcome;
       typedef Aws::Utils::Outcome<DescribeVpcPeeringConnectionsResult, GameLiftError> DescribeVpcPeeringConnectionsOutcome;
+      typedef Aws::Utils::Outcome<GetComputeAccessResult, GameLiftError> GetComputeAccessOutcome;
+      typedef Aws::Utils::Outcome<GetComputeAuthTokenResult, GameLiftError> GetComputeAuthTokenOutcome;
       typedef Aws::Utils::Outcome<GetGameSessionLogUrlResult, GameLiftError> GetGameSessionLogUrlOutcome;
       typedef Aws::Utils::Outcome<GetInstanceAccessResult, GameLiftError> GetInstanceAccessOutcome;
       typedef Aws::Utils::Outcome<ListAliasesResult, GameLiftError> ListAliasesOutcome;
       typedef Aws::Utils::Outcome<ListBuildsResult, GameLiftError> ListBuildsOutcome;
+      typedef Aws::Utils::Outcome<ListComputeResult, GameLiftError> ListComputeOutcome;
       typedef Aws::Utils::Outcome<ListFleetsResult, GameLiftError> ListFleetsOutcome;
       typedef Aws::Utils::Outcome<ListGameServerGroupsResult, GameLiftError> ListGameServerGroupsOutcome;
       typedef Aws::Utils::Outcome<ListGameServersResult, GameLiftError> ListGameServersOutcome;
+      typedef Aws::Utils::Outcome<ListLocationsResult, GameLiftError> ListLocationsOutcome;
       typedef Aws::Utils::Outcome<ListScriptsResult, GameLiftError> ListScriptsOutcome;
       typedef Aws::Utils::Outcome<ListTagsForResourceResult, GameLiftError> ListTagsForResourceOutcome;
       typedef Aws::Utils::Outcome<PutScalingPolicyResult, GameLiftError> PutScalingPolicyOutcome;
+      typedef Aws::Utils::Outcome<RegisterComputeResult, GameLiftError> RegisterComputeOutcome;
       typedef Aws::Utils::Outcome<RegisterGameServerResult, GameLiftError> RegisterGameServerOutcome;
       typedef Aws::Utils::Outcome<RequestUploadCredentialsResult, GameLiftError> RequestUploadCredentialsOutcome;
       typedef Aws::Utils::Outcome<ResolveAliasResult, GameLiftError> ResolveAliasOutcome;
@@ -353,6 +380,7 @@ namespace Aws
       typedef std::future<CreateGameServerGroupOutcome> CreateGameServerGroupOutcomeCallable;
       typedef std::future<CreateGameSessionOutcome> CreateGameSessionOutcomeCallable;
       typedef std::future<CreateGameSessionQueueOutcome> CreateGameSessionQueueOutcomeCallable;
+      typedef std::future<CreateLocationOutcome> CreateLocationOutcomeCallable;
       typedef std::future<CreateMatchmakingConfigurationOutcome> CreateMatchmakingConfigurationOutcomeCallable;
       typedef std::future<CreateMatchmakingRuleSetOutcome> CreateMatchmakingRuleSetOutcomeCallable;
       typedef std::future<CreatePlayerSessionOutcome> CreatePlayerSessionOutcomeCallable;
@@ -366,15 +394,18 @@ namespace Aws
       typedef std::future<DeleteFleetLocationsOutcome> DeleteFleetLocationsOutcomeCallable;
       typedef std::future<DeleteGameServerGroupOutcome> DeleteGameServerGroupOutcomeCallable;
       typedef std::future<DeleteGameSessionQueueOutcome> DeleteGameSessionQueueOutcomeCallable;
+      typedef std::future<DeleteLocationOutcome> DeleteLocationOutcomeCallable;
       typedef std::future<DeleteMatchmakingConfigurationOutcome> DeleteMatchmakingConfigurationOutcomeCallable;
       typedef std::future<DeleteMatchmakingRuleSetOutcome> DeleteMatchmakingRuleSetOutcomeCallable;
       typedef std::future<DeleteScalingPolicyOutcome> DeleteScalingPolicyOutcomeCallable;
       typedef std::future<DeleteScriptOutcome> DeleteScriptOutcomeCallable;
       typedef std::future<DeleteVpcPeeringAuthorizationOutcome> DeleteVpcPeeringAuthorizationOutcomeCallable;
       typedef std::future<DeleteVpcPeeringConnectionOutcome> DeleteVpcPeeringConnectionOutcomeCallable;
+      typedef std::future<DeregisterComputeOutcome> DeregisterComputeOutcomeCallable;
       typedef std::future<DeregisterGameServerOutcome> DeregisterGameServerOutcomeCallable;
       typedef std::future<DescribeAliasOutcome> DescribeAliasOutcomeCallable;
       typedef std::future<DescribeBuildOutcome> DescribeBuildOutcomeCallable;
+      typedef std::future<DescribeComputeOutcome> DescribeComputeOutcomeCallable;
       typedef std::future<DescribeEC2InstanceLimitsOutcome> DescribeEC2InstanceLimitsOutcomeCallable;
       typedef std::future<DescribeFleetAttributesOutcome> DescribeFleetAttributesOutcomeCallable;
       typedef std::future<DescribeFleetCapacityOutcome> DescribeFleetCapacityOutcomeCallable;
@@ -401,16 +432,21 @@ namespace Aws
       typedef std::future<DescribeScriptOutcome> DescribeScriptOutcomeCallable;
       typedef std::future<DescribeVpcPeeringAuthorizationsOutcome> DescribeVpcPeeringAuthorizationsOutcomeCallable;
       typedef std::future<DescribeVpcPeeringConnectionsOutcome> DescribeVpcPeeringConnectionsOutcomeCallable;
+      typedef std::future<GetComputeAccessOutcome> GetComputeAccessOutcomeCallable;
+      typedef std::future<GetComputeAuthTokenOutcome> GetComputeAuthTokenOutcomeCallable;
       typedef std::future<GetGameSessionLogUrlOutcome> GetGameSessionLogUrlOutcomeCallable;
       typedef std::future<GetInstanceAccessOutcome> GetInstanceAccessOutcomeCallable;
       typedef std::future<ListAliasesOutcome> ListAliasesOutcomeCallable;
       typedef std::future<ListBuildsOutcome> ListBuildsOutcomeCallable;
+      typedef std::future<ListComputeOutcome> ListComputeOutcomeCallable;
       typedef std::future<ListFleetsOutcome> ListFleetsOutcomeCallable;
       typedef std::future<ListGameServerGroupsOutcome> ListGameServerGroupsOutcomeCallable;
       typedef std::future<ListGameServersOutcome> ListGameServersOutcomeCallable;
+      typedef std::future<ListLocationsOutcome> ListLocationsOutcomeCallable;
       typedef std::future<ListScriptsOutcome> ListScriptsOutcomeCallable;
       typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
       typedef std::future<PutScalingPolicyOutcome> PutScalingPolicyOutcomeCallable;
+      typedef std::future<RegisterComputeOutcome> RegisterComputeOutcomeCallable;
       typedef std::future<RegisterGameServerOutcome> RegisterGameServerOutcomeCallable;
       typedef std::future<RequestUploadCredentialsOutcome> RequestUploadCredentialsOutcomeCallable;
       typedef std::future<ResolveAliasOutcome> ResolveAliasOutcomeCallable;
@@ -454,6 +490,7 @@ namespace Aws
     typedef std::function<void(const GameLiftClient*, const Model::CreateGameServerGroupRequest&, const Model::CreateGameServerGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateGameServerGroupResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::CreateGameSessionRequest&, const Model::CreateGameSessionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateGameSessionResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::CreateGameSessionQueueRequest&, const Model::CreateGameSessionQueueOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateGameSessionQueueResponseReceivedHandler;
+    typedef std::function<void(const GameLiftClient*, const Model::CreateLocationRequest&, const Model::CreateLocationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateLocationResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::CreateMatchmakingConfigurationRequest&, const Model::CreateMatchmakingConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateMatchmakingConfigurationResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::CreateMatchmakingRuleSetRequest&, const Model::CreateMatchmakingRuleSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateMatchmakingRuleSetResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::CreatePlayerSessionRequest&, const Model::CreatePlayerSessionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreatePlayerSessionResponseReceivedHandler;
@@ -467,15 +504,18 @@ namespace Aws
     typedef std::function<void(const GameLiftClient*, const Model::DeleteFleetLocationsRequest&, const Model::DeleteFleetLocationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteFleetLocationsResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::DeleteGameServerGroupRequest&, const Model::DeleteGameServerGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteGameServerGroupResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::DeleteGameSessionQueueRequest&, const Model::DeleteGameSessionQueueOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteGameSessionQueueResponseReceivedHandler;
+    typedef std::function<void(const GameLiftClient*, const Model::DeleteLocationRequest&, const Model::DeleteLocationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteLocationResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::DeleteMatchmakingConfigurationRequest&, const Model::DeleteMatchmakingConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteMatchmakingConfigurationResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::DeleteMatchmakingRuleSetRequest&, const Model::DeleteMatchmakingRuleSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteMatchmakingRuleSetResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::DeleteScalingPolicyRequest&, const Model::DeleteScalingPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteScalingPolicyResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::DeleteScriptRequest&, const Model::DeleteScriptOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteScriptResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::DeleteVpcPeeringAuthorizationRequest&, const Model::DeleteVpcPeeringAuthorizationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteVpcPeeringAuthorizationResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::DeleteVpcPeeringConnectionRequest&, const Model::DeleteVpcPeeringConnectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteVpcPeeringConnectionResponseReceivedHandler;
+    typedef std::function<void(const GameLiftClient*, const Model::DeregisterComputeRequest&, const Model::DeregisterComputeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeregisterComputeResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::DeregisterGameServerRequest&, const Model::DeregisterGameServerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeregisterGameServerResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::DescribeAliasRequest&, const Model::DescribeAliasOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAliasResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::DescribeBuildRequest&, const Model::DescribeBuildOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeBuildResponseReceivedHandler;
+    typedef std::function<void(const GameLiftClient*, const Model::DescribeComputeRequest&, const Model::DescribeComputeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeComputeResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::DescribeEC2InstanceLimitsRequest&, const Model::DescribeEC2InstanceLimitsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeEC2InstanceLimitsResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::DescribeFleetAttributesRequest&, const Model::DescribeFleetAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeFleetAttributesResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::DescribeFleetCapacityRequest&, const Model::DescribeFleetCapacityOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeFleetCapacityResponseReceivedHandler;
@@ -502,16 +542,21 @@ namespace Aws
     typedef std::function<void(const GameLiftClient*, const Model::DescribeScriptRequest&, const Model::DescribeScriptOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeScriptResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::DescribeVpcPeeringAuthorizationsRequest&, const Model::DescribeVpcPeeringAuthorizationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeVpcPeeringAuthorizationsResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::DescribeVpcPeeringConnectionsRequest&, const Model::DescribeVpcPeeringConnectionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeVpcPeeringConnectionsResponseReceivedHandler;
+    typedef std::function<void(const GameLiftClient*, const Model::GetComputeAccessRequest&, const Model::GetComputeAccessOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetComputeAccessResponseReceivedHandler;
+    typedef std::function<void(const GameLiftClient*, const Model::GetComputeAuthTokenRequest&, const Model::GetComputeAuthTokenOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetComputeAuthTokenResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::GetGameSessionLogUrlRequest&, const Model::GetGameSessionLogUrlOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetGameSessionLogUrlResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::GetInstanceAccessRequest&, const Model::GetInstanceAccessOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetInstanceAccessResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::ListAliasesRequest&, const Model::ListAliasesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAliasesResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::ListBuildsRequest&, const Model::ListBuildsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBuildsResponseReceivedHandler;
+    typedef std::function<void(const GameLiftClient*, const Model::ListComputeRequest&, const Model::ListComputeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListComputeResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::ListFleetsRequest&, const Model::ListFleetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListFleetsResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::ListGameServerGroupsRequest&, const Model::ListGameServerGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListGameServerGroupsResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::ListGameServersRequest&, const Model::ListGameServersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListGameServersResponseReceivedHandler;
+    typedef std::function<void(const GameLiftClient*, const Model::ListLocationsRequest&, const Model::ListLocationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListLocationsResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::ListScriptsRequest&, const Model::ListScriptsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListScriptsResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::PutScalingPolicyRequest&, const Model::PutScalingPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutScalingPolicyResponseReceivedHandler;
+    typedef std::function<void(const GameLiftClient*, const Model::RegisterComputeRequest&, const Model::RegisterComputeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RegisterComputeResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::RegisterGameServerRequest&, const Model::RegisterGameServerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RegisterGameServerResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::RequestUploadCredentialsRequest&, const Model::RequestUploadCredentialsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RequestUploadCredentialsResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::ResolveAliasRequest&, const Model::ResolveAliasOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ResolveAliasResponseReceivedHandler;

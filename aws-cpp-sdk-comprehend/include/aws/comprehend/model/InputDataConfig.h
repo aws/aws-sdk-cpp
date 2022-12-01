@@ -26,7 +26,9 @@ namespace Model
 {
 
   /**
-   * <p>The input properties for an inference job.</p><p><h3>See Also:</h3>   <a
+   * <p>The input properties for an inference job. The document reader config field
+   * applies only to non-text inputs for custom analysis.</p><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/InputDataConfig">AWS
    * API Reference</a></p>
    */
@@ -182,50 +184,38 @@ namespace Model
 
 
     /**
-     * <p>The document reader config field applies only for InputDataConfig of
-     * StartEntitiesDetectionJob. </p> <p>Use DocumentReaderConfig to provide
-     * specifications about how you want your inference documents read. Currently it
-     * applies for PDF documents in StartEntitiesDetectionJob custom inference.</p>
+     * <p>Provides configuration parameters to override the default actions for
+     * extracting text from PDF documents and image files.</p>
      */
     inline const DocumentReaderConfig& GetDocumentReaderConfig() const{ return m_documentReaderConfig; }
 
     /**
-     * <p>The document reader config field applies only for InputDataConfig of
-     * StartEntitiesDetectionJob. </p> <p>Use DocumentReaderConfig to provide
-     * specifications about how you want your inference documents read. Currently it
-     * applies for PDF documents in StartEntitiesDetectionJob custom inference.</p>
+     * <p>Provides configuration parameters to override the default actions for
+     * extracting text from PDF documents and image files.</p>
      */
     inline bool DocumentReaderConfigHasBeenSet() const { return m_documentReaderConfigHasBeenSet; }
 
     /**
-     * <p>The document reader config field applies only for InputDataConfig of
-     * StartEntitiesDetectionJob. </p> <p>Use DocumentReaderConfig to provide
-     * specifications about how you want your inference documents read. Currently it
-     * applies for PDF documents in StartEntitiesDetectionJob custom inference.</p>
+     * <p>Provides configuration parameters to override the default actions for
+     * extracting text from PDF documents and image files.</p>
      */
     inline void SetDocumentReaderConfig(const DocumentReaderConfig& value) { m_documentReaderConfigHasBeenSet = true; m_documentReaderConfig = value; }
 
     /**
-     * <p>The document reader config field applies only for InputDataConfig of
-     * StartEntitiesDetectionJob. </p> <p>Use DocumentReaderConfig to provide
-     * specifications about how you want your inference documents read. Currently it
-     * applies for PDF documents in StartEntitiesDetectionJob custom inference.</p>
+     * <p>Provides configuration parameters to override the default actions for
+     * extracting text from PDF documents and image files.</p>
      */
     inline void SetDocumentReaderConfig(DocumentReaderConfig&& value) { m_documentReaderConfigHasBeenSet = true; m_documentReaderConfig = std::move(value); }
 
     /**
-     * <p>The document reader config field applies only for InputDataConfig of
-     * StartEntitiesDetectionJob. </p> <p>Use DocumentReaderConfig to provide
-     * specifications about how you want your inference documents read. Currently it
-     * applies for PDF documents in StartEntitiesDetectionJob custom inference.</p>
+     * <p>Provides configuration parameters to override the default actions for
+     * extracting text from PDF documents and image files.</p>
      */
     inline InputDataConfig& WithDocumentReaderConfig(const DocumentReaderConfig& value) { SetDocumentReaderConfig(value); return *this;}
 
     /**
-     * <p>The document reader config field applies only for InputDataConfig of
-     * StartEntitiesDetectionJob. </p> <p>Use DocumentReaderConfig to provide
-     * specifications about how you want your inference documents read. Currently it
-     * applies for PDF documents in StartEntitiesDetectionJob custom inference.</p>
+     * <p>Provides configuration parameters to override the default actions for
+     * extracting text from PDF documents and image files.</p>
      */
     inline InputDataConfig& WithDocumentReaderConfig(DocumentReaderConfig&& value) { SetDocumentReaderConfig(std::move(value)); return *this;}
 

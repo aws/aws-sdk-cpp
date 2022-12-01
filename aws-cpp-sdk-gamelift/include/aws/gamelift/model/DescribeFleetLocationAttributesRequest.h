@@ -18,9 +18,6 @@ namespace Model
 {
 
   /**
-   * <p>Represents the input for a request operation.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetLocationAttributesInput">AWS
-   * API Reference</a></p>
    */
   class AWS_GAMELIFT_API DescribeFleetLocationAttributesRequest : public GameLiftRequest
   {
@@ -154,28 +151,28 @@ namespace Model
     /**
      * <p>The maximum number of results to return. Use this parameter with
      * <code>NextToken</code> to get results as a set of sequential pages. This limit
-     * is not currently enforced. </p>
+     * is not currently enforced.</p>
      */
     inline int GetLimit() const{ return m_limit; }
 
     /**
      * <p>The maximum number of results to return. Use this parameter with
      * <code>NextToken</code> to get results as a set of sequential pages. This limit
-     * is not currently enforced. </p>
+     * is not currently enforced.</p>
      */
     inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
 
     /**
      * <p>The maximum number of results to return. Use this parameter with
      * <code>NextToken</code> to get results as a set of sequential pages. This limit
-     * is not currently enforced. </p>
+     * is not currently enforced.</p>
      */
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /**
      * <p>The maximum number of results to return. Use this parameter with
      * <code>NextToken</code> to get results as a set of sequential pages. This limit
-     * is not currently enforced. </p>
+     * is not currently enforced.</p>
      */
     inline DescribeFleetLocationAttributesRequest& WithLimit(int value) { SetLimit(value); return *this;}
 

@@ -18,7 +18,8 @@ ListExecutionsRequest::ListExecutionsRequest() :
     m_statusFilterHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
+    m_nextTokenHasBeenSet(false),
+    m_mapRunArnHasBeenSet(false)
 {
 }
 
@@ -46,6 +47,12 @@ Aws::String ListExecutionsRequest::SerializePayload() const
   if(m_nextTokenHasBeenSet)
   {
    payload.WithString("nextToken", m_nextToken);
+
+  }
+
+  if(m_mapRunArnHasBeenSet)
+  {
+   payload.WithString("mapRunArn", m_mapRunArn);
 
   }
 

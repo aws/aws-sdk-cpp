@@ -25,8 +25,7 @@ namespace Model
    * <p>Resource capacity settings. Fleet capacity is measured in Amazon EC2
    * instances. Pending and terminating counts are non-zero when the fleet capacity
    * is adjusting to a scaling event or if access to resources is temporarily
-   * affected.</p> <p>EC2 instance counts are part of
-   * <a>FleetCapacity</a>.</p><p><h3>See Also:</h3>   <a
+   * affected.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/EC2InstanceCounts">AWS
    * API Reference</a></p>
    */

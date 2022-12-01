@@ -24,12 +24,11 @@ namespace Model
 {
 
   /**
-   * <p>Represents status information for a VPC peering connection. Status is
-   * associated with a <a>VpcPeeringConnection</a> object. Status codes and messages
-   * are provided from EC2 (see <a
+   * <p>Represents status information for a VPC peering connection. Status codes and
+   * messages are provided from EC2 (see <a
    * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_VpcPeeringConnectionStateReason.html">VpcPeeringConnectionStateReason</a>).
    * Connection status information is also communicated as a fleet
-   * <a>Event</a>.</p><p><h3>See Also:</h3>   <a
+   * event.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/VpcPeeringConnectionStatus">AWS
    * API Reference</a></p>
    */

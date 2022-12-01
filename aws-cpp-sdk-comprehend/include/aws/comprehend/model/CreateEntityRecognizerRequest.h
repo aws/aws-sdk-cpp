@@ -369,49 +369,55 @@ namespace Model
 
 
     /**
-     * <p> You can specify any of the following languages supported by Amazon
-     * Comprehend: English ("en"), Spanish ("es"), French ("fr"), Italian ("it"),
-     * German ("de"), or Portuguese ("pt"). All documents must be in the same
+     * <p> You can specify any of the following languages: English ("en"), Spanish
+     * ("es"), French ("fr"), Italian ("it"), German ("de"), or Portuguese ("pt"). If
+     * you plan to use this entity recognizer with PDF, Word, or image input files, you
+     * must specify English as the language. All training documents must be in the same
      * language.</p>
      */
     inline const LanguageCode& GetLanguageCode() const{ return m_languageCode; }
 
     /**
-     * <p> You can specify any of the following languages supported by Amazon
-     * Comprehend: English ("en"), Spanish ("es"), French ("fr"), Italian ("it"),
-     * German ("de"), or Portuguese ("pt"). All documents must be in the same
+     * <p> You can specify any of the following languages: English ("en"), Spanish
+     * ("es"), French ("fr"), Italian ("it"), German ("de"), or Portuguese ("pt"). If
+     * you plan to use this entity recognizer with PDF, Word, or image input files, you
+     * must specify English as the language. All training documents must be in the same
      * language.</p>
      */
     inline bool LanguageCodeHasBeenSet() const { return m_languageCodeHasBeenSet; }
 
     /**
-     * <p> You can specify any of the following languages supported by Amazon
-     * Comprehend: English ("en"), Spanish ("es"), French ("fr"), Italian ("it"),
-     * German ("de"), or Portuguese ("pt"). All documents must be in the same
+     * <p> You can specify any of the following languages: English ("en"), Spanish
+     * ("es"), French ("fr"), Italian ("it"), German ("de"), or Portuguese ("pt"). If
+     * you plan to use this entity recognizer with PDF, Word, or image input files, you
+     * must specify English as the language. All training documents must be in the same
      * language.</p>
      */
     inline void SetLanguageCode(const LanguageCode& value) { m_languageCodeHasBeenSet = true; m_languageCode = value; }
 
     /**
-     * <p> You can specify any of the following languages supported by Amazon
-     * Comprehend: English ("en"), Spanish ("es"), French ("fr"), Italian ("it"),
-     * German ("de"), or Portuguese ("pt"). All documents must be in the same
+     * <p> You can specify any of the following languages: English ("en"), Spanish
+     * ("es"), French ("fr"), Italian ("it"), German ("de"), or Portuguese ("pt"). If
+     * you plan to use this entity recognizer with PDF, Word, or image input files, you
+     * must specify English as the language. All training documents must be in the same
      * language.</p>
      */
     inline void SetLanguageCode(LanguageCode&& value) { m_languageCodeHasBeenSet = true; m_languageCode = std::move(value); }
 
     /**
-     * <p> You can specify any of the following languages supported by Amazon
-     * Comprehend: English ("en"), Spanish ("es"), French ("fr"), Italian ("it"),
-     * German ("de"), or Portuguese ("pt"). All documents must be in the same
+     * <p> You can specify any of the following languages: English ("en"), Spanish
+     * ("es"), French ("fr"), Italian ("it"), German ("de"), or Portuguese ("pt"). If
+     * you plan to use this entity recognizer with PDF, Word, or image input files, you
+     * must specify English as the language. All training documents must be in the same
      * language.</p>
      */
     inline CreateEntityRecognizerRequest& WithLanguageCode(const LanguageCode& value) { SetLanguageCode(value); return *this;}
 
     /**
-     * <p> You can specify any of the following languages supported by Amazon
-     * Comprehend: English ("en"), Spanish ("es"), French ("fr"), Italian ("it"),
-     * German ("de"), or Portuguese ("pt"). All documents must be in the same
+     * <p> You can specify any of the following languages: English ("en"), Spanish
+     * ("es"), French ("fr"), Italian ("it"), German ("de"), or Portuguese ("pt"). If
+     * you plan to use this entity recognizer with PDF, Word, or image input files, you
+     * must specify English as the language. All training documents must be in the same
      * language.</p>
      */
     inline CreateEntityRecognizerRequest& WithLanguageCode(LanguageCode&& value) { SetLanguageCode(std::move(value)); return *this;}

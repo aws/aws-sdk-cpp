@@ -27,10 +27,9 @@ namespace Model
   /**
    * <p>Set of rule statements, used with FlexMatch, that determine how to build your
    * player matches. Each rule set describes a type of group to be created and
-   * defines the parameters for acceptable player matches. Rule sets are used in
-   * <a>MatchmakingConfiguration</a> objects.</p> <p>A rule set may define the
-   * following elements for a match. For detailed information and examples showing
-   * how to construct a rule set, see <a
+   * defines the parameters for acceptable player matches.</p> <p>A rule set may
+   * define the following elements for a match. For detailed information and examples
+   * showing how to construct a rule set, see <a
    * href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-rulesets.html">Build
    * a FlexMatch rule set</a>. </p> <ul> <li> <p>Teams -- Required. A rule set must
    * define one or multiple teams for the match and set minimum and maximum team

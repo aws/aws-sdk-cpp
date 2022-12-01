@@ -17,9 +17,6 @@ namespace Model
 {
 
   /**
-   * <p>Represents the input for a request operation.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteVpcPeeringConnectionInput">AWS
-   * API Reference</a></p>
    */
   class AWS_GAMELIFT_API DeleteVpcPeeringConnectionRequest : public GameLiftRequest
   {
@@ -95,58 +92,42 @@ namespace Model
 
 
     /**
-     * <p>A unique identifier for a VPC peering connection. This value is included in
-     * the <a>VpcPeeringConnection</a> object, which can be retrieved by calling
-     * <a>DescribeVpcPeeringConnections</a>.</p>
+     * <p>A unique identifier for a VPC peering connection.</p>
      */
     inline const Aws::String& GetVpcPeeringConnectionId() const{ return m_vpcPeeringConnectionId; }
 
     /**
-     * <p>A unique identifier for a VPC peering connection. This value is included in
-     * the <a>VpcPeeringConnection</a> object, which can be retrieved by calling
-     * <a>DescribeVpcPeeringConnections</a>.</p>
+     * <p>A unique identifier for a VPC peering connection.</p>
      */
     inline bool VpcPeeringConnectionIdHasBeenSet() const { return m_vpcPeeringConnectionIdHasBeenSet; }
 
     /**
-     * <p>A unique identifier for a VPC peering connection. This value is included in
-     * the <a>VpcPeeringConnection</a> object, which can be retrieved by calling
-     * <a>DescribeVpcPeeringConnections</a>.</p>
+     * <p>A unique identifier for a VPC peering connection.</p>
      */
     inline void SetVpcPeeringConnectionId(const Aws::String& value) { m_vpcPeeringConnectionIdHasBeenSet = true; m_vpcPeeringConnectionId = value; }
 
     /**
-     * <p>A unique identifier for a VPC peering connection. This value is included in
-     * the <a>VpcPeeringConnection</a> object, which can be retrieved by calling
-     * <a>DescribeVpcPeeringConnections</a>.</p>
+     * <p>A unique identifier for a VPC peering connection.</p>
      */
     inline void SetVpcPeeringConnectionId(Aws::String&& value) { m_vpcPeeringConnectionIdHasBeenSet = true; m_vpcPeeringConnectionId = std::move(value); }
 
     /**
-     * <p>A unique identifier for a VPC peering connection. This value is included in
-     * the <a>VpcPeeringConnection</a> object, which can be retrieved by calling
-     * <a>DescribeVpcPeeringConnections</a>.</p>
+     * <p>A unique identifier for a VPC peering connection.</p>
      */
     inline void SetVpcPeeringConnectionId(const char* value) { m_vpcPeeringConnectionIdHasBeenSet = true; m_vpcPeeringConnectionId.assign(value); }
 
     /**
-     * <p>A unique identifier for a VPC peering connection. This value is included in
-     * the <a>VpcPeeringConnection</a> object, which can be retrieved by calling
-     * <a>DescribeVpcPeeringConnections</a>.</p>
+     * <p>A unique identifier for a VPC peering connection.</p>
      */
     inline DeleteVpcPeeringConnectionRequest& WithVpcPeeringConnectionId(const Aws::String& value) { SetVpcPeeringConnectionId(value); return *this;}
 
     /**
-     * <p>A unique identifier for a VPC peering connection. This value is included in
-     * the <a>VpcPeeringConnection</a> object, which can be retrieved by calling
-     * <a>DescribeVpcPeeringConnections</a>.</p>
+     * <p>A unique identifier for a VPC peering connection.</p>
      */
     inline DeleteVpcPeeringConnectionRequest& WithVpcPeeringConnectionId(Aws::String&& value) { SetVpcPeeringConnectionId(std::move(value)); return *this;}
 
     /**
-     * <p>A unique identifier for a VPC peering connection. This value is included in
-     * the <a>VpcPeeringConnection</a> object, which can be retrieved by calling
-     * <a>DescribeVpcPeeringConnections</a>.</p>
+     * <p>A unique identifier for a VPC peering connection.</p>
      */
     inline DeleteVpcPeeringConnectionRequest& WithVpcPeeringConnectionId(const char* value) { SetVpcPeeringConnectionId(value); return *this;}
 

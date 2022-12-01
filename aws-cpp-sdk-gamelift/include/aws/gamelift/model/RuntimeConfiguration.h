@@ -32,12 +32,10 @@ namespace Model
    * as needed. Each instance checks regularly for an updated runtime configuration.
    * </p> <p>A GameLift instance is limited to 50 processes running concurrently. To
    * calculate the total number of processes in a runtime configuration, add the
-   * values of the <code>ConcurrentExecutions</code> parameter for each
-   * <a>ServerProcess</a>. Learn more about <a
+   * values of the <code>ConcurrentExecutions</code> parameter for each server
+   * process. Learn more about <a
    * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-multiprocess.html">
-   * Running Multiple Processes on a Fleet</a>.</p> <p> <b>Related actions</b> </p>
-   * <p> <a>DescribeRuntimeConfiguration</a> | <a>UpdateRuntimeConfiguration</a>
-   * </p><p><h3>See Also:</h3>   <a
+   * Running Multiple Processes on a Fleet</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/RuntimeConfiguration">AWS
    * API Reference</a></p>
    */
