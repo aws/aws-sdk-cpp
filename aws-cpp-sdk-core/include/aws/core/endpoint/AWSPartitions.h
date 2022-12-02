@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <cstddef>
 #include <aws/core/Core_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSArray.h>
 
