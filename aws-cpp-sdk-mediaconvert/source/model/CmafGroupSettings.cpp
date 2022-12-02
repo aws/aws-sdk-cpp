@@ -41,6 +41,8 @@ CmafGroupSettings::CmafGroupSettings() :
     m_minBufferTimeHasBeenSet(false),
     m_minFinalSegmentLength(0.0),
     m_minFinalSegmentLengthHasBeenSet(false),
+    m_mpdManifestBandwidthType(CmafMpdManifestBandwidthType::NOT_SET),
+    m_mpdManifestBandwidthTypeHasBeenSet(false),
     m_mpdProfile(CmafMpdProfile::NOT_SET),
     m_mpdProfileHasBeenSet(false),
     m_ptsOffsetHandlingForBFrames(CmafPtsOffsetHandlingForBFrames::NOT_SET),
@@ -55,6 +57,8 @@ CmafGroupSettings::CmafGroupSettings() :
     m_streamInfResolutionHasBeenSet(false),
     m_targetDurationCompatibilityMode(CmafTargetDurationCompatibilityMode::NOT_SET),
     m_targetDurationCompatibilityModeHasBeenSet(false),
+    m_videoCompositionOffsets(CmafVideoCompositionOffsets::NOT_SET),
+    m_videoCompositionOffsetsHasBeenSet(false),
     m_writeDashManifest(CmafWriteDASHManifest::NOT_SET),
     m_writeDashManifestHasBeenSet(false),
     m_writeHlsManifest(CmafWriteHLSManifest::NOT_SET),
@@ -87,6 +91,8 @@ CmafGroupSettings::CmafGroupSettings(JsonView jsonValue) :
     m_minBufferTimeHasBeenSet(false),
     m_minFinalSegmentLength(0.0),
     m_minFinalSegmentLengthHasBeenSet(false),
+    m_mpdManifestBandwidthType(CmafMpdManifestBandwidthType::NOT_SET),
+    m_mpdManifestBandwidthTypeHasBeenSet(false),
     m_mpdProfile(CmafMpdProfile::NOT_SET),
     m_mpdProfileHasBeenSet(false),
     m_ptsOffsetHandlingForBFrames(CmafPtsOffsetHandlingForBFrames::NOT_SET),
@@ -101,6 +107,8 @@ CmafGroupSettings::CmafGroupSettings(JsonView jsonValue) :
     m_streamInfResolutionHasBeenSet(false),
     m_targetDurationCompatibilityMode(CmafTargetDurationCompatibilityMode::NOT_SET),
     m_targetDurationCompatibilityModeHasBeenSet(false),
+    m_videoCompositionOffsets(CmafVideoCompositionOffsets::NOT_SET),
+    m_videoCompositionOffsetsHasBeenSet(false),
     m_writeDashManifest(CmafWriteDASHManifest::NOT_SET),
     m_writeDashManifestHasBeenSet(false),
     m_writeHlsManifest(CmafWriteHLSManifest::NOT_SET),
@@ -214,6 +222,13 @@ CmafGroupSettings& CmafGroupSettings::operator =(JsonView jsonValue)
     m_minFinalSegmentLengthHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("mpdManifestBandwidthType"))
+  {
+    m_mpdManifestBandwidthType = CmafMpdManifestBandwidthTypeMapper::GetCmafMpdManifestBandwidthTypeForName(jsonValue.GetString("mpdManifestBandwidthType"));
+
+    m_mpdManifestBandwidthTypeHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("mpdProfile"))
   {
     m_mpdProfile = CmafMpdProfileMapper::GetCmafMpdProfileForName(jsonValue.GetString("mpdProfile"));
@@ -261,6 +276,13 @@ CmafGroupSettings& CmafGroupSettings::operator =(JsonView jsonValue)
     m_targetDurationCompatibilityMode = CmafTargetDurationCompatibilityModeMapper::GetCmafTargetDurationCompatibilityModeForName(jsonValue.GetString("targetDurationCompatibilityMode"));
 
     m_targetDurationCompatibilityModeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("videoCompositionOffsets"))
+  {
+    m_videoCompositionOffsets = CmafVideoCompositionOffsetsMapper::GetCmafVideoCompositionOffsetsForName(jsonValue.GetString("videoCompositionOffsets"));
+
+    m_videoCompositionOffsetsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("writeDashManifest"))
@@ -375,6 +397,11 @@ JsonValue CmafGroupSettings::Jsonize() const
 
   }
 
+  if(m_mpdManifestBandwidthTypeHasBeenSet)
+  {
+   payload.WithString("mpdManifestBandwidthType", CmafMpdManifestBandwidthTypeMapper::GetNameForCmafMpdManifestBandwidthType(m_mpdManifestBandwidthType));
+  }
+
   if(m_mpdProfileHasBeenSet)
   {
    payload.WithString("mpdProfile", CmafMpdProfileMapper::GetNameForCmafMpdProfile(m_mpdProfile));
@@ -409,6 +436,11 @@ JsonValue CmafGroupSettings::Jsonize() const
   if(m_targetDurationCompatibilityModeHasBeenSet)
   {
    payload.WithString("targetDurationCompatibilityMode", CmafTargetDurationCompatibilityModeMapper::GetNameForCmafTargetDurationCompatibilityMode(m_targetDurationCompatibilityMode));
+  }
+
+  if(m_videoCompositionOffsetsHasBeenSet)
+  {
+   payload.WithString("videoCompositionOffsets", CmafVideoCompositionOffsetsMapper::GetNameForCmafVideoCompositionOffsets(m_videoCompositionOffsets));
   }
 
   if(m_writeDashManifestHasBeenSet)

@@ -7,6 +7,8 @@
 #include <aws/redshift-serverless/RedshiftServerless_EXPORTS.h>
 #include <aws/redshift-serverless/RedshiftServerlessRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/redshift-serverless/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -136,6 +138,63 @@ namespace Model
      */
     inline ConvertRecoveryPointToSnapshotRequest& WithSnapshotName(const char* value) { SetSnapshotName(value); return *this;}
 
+
+    /**
+     * <p>An array of <a
+     * href="https://docs.aws.amazon.com/redshift-serverless/latest/APIReference/API_Tag.html">Tag
+     * objects</a> to associate with the created snapshot.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>An array of <a
+     * href="https://docs.aws.amazon.com/redshift-serverless/latest/APIReference/API_Tag.html">Tag
+     * objects</a> to associate with the created snapshot.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>An array of <a
+     * href="https://docs.aws.amazon.com/redshift-serverless/latest/APIReference/API_Tag.html">Tag
+     * objects</a> to associate with the created snapshot.</p>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>An array of <a
+     * href="https://docs.aws.amazon.com/redshift-serverless/latest/APIReference/API_Tag.html">Tag
+     * objects</a> to associate with the created snapshot.</p>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>An array of <a
+     * href="https://docs.aws.amazon.com/redshift-serverless/latest/APIReference/API_Tag.html">Tag
+     * objects</a> to associate with the created snapshot.</p>
+     */
+    inline ConvertRecoveryPointToSnapshotRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>An array of <a
+     * href="https://docs.aws.amazon.com/redshift-serverless/latest/APIReference/API_Tag.html">Tag
+     * objects</a> to associate with the created snapshot.</p>
+     */
+    inline ConvertRecoveryPointToSnapshotRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>An array of <a
+     * href="https://docs.aws.amazon.com/redshift-serverless/latest/APIReference/API_Tag.html">Tag
+     * objects</a> to associate with the created snapshot.</p>
+     */
+    inline ConvertRecoveryPointToSnapshotRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>An array of <a
+     * href="https://docs.aws.amazon.com/redshift-serverless/latest/APIReference/API_Tag.html">Tag
+     * objects</a> to associate with the created snapshot.</p>
+     */
+    inline ConvertRecoveryPointToSnapshotRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_recoveryPointId;
@@ -146,6 +205,9 @@ namespace Model
 
     Aws::String m_snapshotName;
     bool m_snapshotNameHasBeenSet = false;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

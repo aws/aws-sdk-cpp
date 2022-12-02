@@ -117,83 +117,123 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the snapshot to restore from.</p>
+     * <p>The Amazon Resource Name (ARN) of the snapshot to restore from. Required if
+     * restoring from Amazon Redshift Serverless to a provisioned cluster. Must not be
+     * specified at the same time as <code>snapshotName</code>.</p> <p>The format of
+     * the ARN is
+     * arn:aws:redshift:&lt;region&gt;:&lt;account_id&gt;:snapshot:&lt;cluster_identifier&gt;/&lt;snapshot_identifier&gt;.</p>
      */
     inline const Aws::String& GetSnapshotArn() const{ return m_snapshotArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the snapshot to restore from.</p>
+     * <p>The Amazon Resource Name (ARN) of the snapshot to restore from. Required if
+     * restoring from Amazon Redshift Serverless to a provisioned cluster. Must not be
+     * specified at the same time as <code>snapshotName</code>.</p> <p>The format of
+     * the ARN is
+     * arn:aws:redshift:&lt;region&gt;:&lt;account_id&gt;:snapshot:&lt;cluster_identifier&gt;/&lt;snapshot_identifier&gt;.</p>
      */
     inline bool SnapshotArnHasBeenSet() const { return m_snapshotArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the snapshot to restore from.</p>
+     * <p>The Amazon Resource Name (ARN) of the snapshot to restore from. Required if
+     * restoring from Amazon Redshift Serverless to a provisioned cluster. Must not be
+     * specified at the same time as <code>snapshotName</code>.</p> <p>The format of
+     * the ARN is
+     * arn:aws:redshift:&lt;region&gt;:&lt;account_id&gt;:snapshot:&lt;cluster_identifier&gt;/&lt;snapshot_identifier&gt;.</p>
      */
     inline void SetSnapshotArn(const Aws::String& value) { m_snapshotArnHasBeenSet = true; m_snapshotArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the snapshot to restore from.</p>
+     * <p>The Amazon Resource Name (ARN) of the snapshot to restore from. Required if
+     * restoring from Amazon Redshift Serverless to a provisioned cluster. Must not be
+     * specified at the same time as <code>snapshotName</code>.</p> <p>The format of
+     * the ARN is
+     * arn:aws:redshift:&lt;region&gt;:&lt;account_id&gt;:snapshot:&lt;cluster_identifier&gt;/&lt;snapshot_identifier&gt;.</p>
      */
     inline void SetSnapshotArn(Aws::String&& value) { m_snapshotArnHasBeenSet = true; m_snapshotArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the snapshot to restore from.</p>
+     * <p>The Amazon Resource Name (ARN) of the snapshot to restore from. Required if
+     * restoring from Amazon Redshift Serverless to a provisioned cluster. Must not be
+     * specified at the same time as <code>snapshotName</code>.</p> <p>The format of
+     * the ARN is
+     * arn:aws:redshift:&lt;region&gt;:&lt;account_id&gt;:snapshot:&lt;cluster_identifier&gt;/&lt;snapshot_identifier&gt;.</p>
      */
     inline void SetSnapshotArn(const char* value) { m_snapshotArnHasBeenSet = true; m_snapshotArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the snapshot to restore from.</p>
+     * <p>The Amazon Resource Name (ARN) of the snapshot to restore from. Required if
+     * restoring from Amazon Redshift Serverless to a provisioned cluster. Must not be
+     * specified at the same time as <code>snapshotName</code>.</p> <p>The format of
+     * the ARN is
+     * arn:aws:redshift:&lt;region&gt;:&lt;account_id&gt;:snapshot:&lt;cluster_identifier&gt;/&lt;snapshot_identifier&gt;.</p>
      */
     inline RestoreFromSnapshotRequest& WithSnapshotArn(const Aws::String& value) { SetSnapshotArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the snapshot to restore from.</p>
+     * <p>The Amazon Resource Name (ARN) of the snapshot to restore from. Required if
+     * restoring from Amazon Redshift Serverless to a provisioned cluster. Must not be
+     * specified at the same time as <code>snapshotName</code>.</p> <p>The format of
+     * the ARN is
+     * arn:aws:redshift:&lt;region&gt;:&lt;account_id&gt;:snapshot:&lt;cluster_identifier&gt;/&lt;snapshot_identifier&gt;.</p>
      */
     inline RestoreFromSnapshotRequest& WithSnapshotArn(Aws::String&& value) { SetSnapshotArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the snapshot to restore from.</p>
+     * <p>The Amazon Resource Name (ARN) of the snapshot to restore from. Required if
+     * restoring from Amazon Redshift Serverless to a provisioned cluster. Must not be
+     * specified at the same time as <code>snapshotName</code>.</p> <p>The format of
+     * the ARN is
+     * arn:aws:redshift:&lt;region&gt;:&lt;account_id&gt;:snapshot:&lt;cluster_identifier&gt;/&lt;snapshot_identifier&gt;.</p>
      */
     inline RestoreFromSnapshotRequest& WithSnapshotArn(const char* value) { SetSnapshotArn(value); return *this;}
 
 
     /**
-     * <p>The name of the snapshot to restore from.</p>
+     * <p>The name of the snapshot to restore from. Must not be specified at the same
+     * time as <code>snapshotArn</code>.</p>
      */
     inline const Aws::String& GetSnapshotName() const{ return m_snapshotName; }
 
     /**
-     * <p>The name of the snapshot to restore from.</p>
+     * <p>The name of the snapshot to restore from. Must not be specified at the same
+     * time as <code>snapshotArn</code>.</p>
      */
     inline bool SnapshotNameHasBeenSet() const { return m_snapshotNameHasBeenSet; }
 
     /**
-     * <p>The name of the snapshot to restore from.</p>
+     * <p>The name of the snapshot to restore from. Must not be specified at the same
+     * time as <code>snapshotArn</code>.</p>
      */
     inline void SetSnapshotName(const Aws::String& value) { m_snapshotNameHasBeenSet = true; m_snapshotName = value; }
 
     /**
-     * <p>The name of the snapshot to restore from.</p>
+     * <p>The name of the snapshot to restore from. Must not be specified at the same
+     * time as <code>snapshotArn</code>.</p>
      */
     inline void SetSnapshotName(Aws::String&& value) { m_snapshotNameHasBeenSet = true; m_snapshotName = std::move(value); }
 
     /**
-     * <p>The name of the snapshot to restore from.</p>
+     * <p>The name of the snapshot to restore from. Must not be specified at the same
+     * time as <code>snapshotArn</code>.</p>
      */
     inline void SetSnapshotName(const char* value) { m_snapshotNameHasBeenSet = true; m_snapshotName.assign(value); }
 
     /**
-     * <p>The name of the snapshot to restore from.</p>
+     * <p>The name of the snapshot to restore from. Must not be specified at the same
+     * time as <code>snapshotArn</code>.</p>
      */
     inline RestoreFromSnapshotRequest& WithSnapshotName(const Aws::String& value) { SetSnapshotName(value); return *this;}
 
     /**
-     * <p>The name of the snapshot to restore from.</p>
+     * <p>The name of the snapshot to restore from. Must not be specified at the same
+     * time as <code>snapshotArn</code>.</p>
      */
     inline RestoreFromSnapshotRequest& WithSnapshotName(Aws::String&& value) { SetSnapshotName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the snapshot to restore from.</p>
+     * <p>The name of the snapshot to restore from. Must not be specified at the same
+     * time as <code>snapshotArn</code>.</p>
      */
     inline RestoreFromSnapshotRequest& WithSnapshotName(const char* value) { SetSnapshotName(value); return *this;}
 

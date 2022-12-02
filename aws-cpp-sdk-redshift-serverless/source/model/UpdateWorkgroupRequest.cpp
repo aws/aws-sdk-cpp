@@ -18,6 +18,8 @@ UpdateWorkgroupRequest::UpdateWorkgroupRequest() :
     m_configParametersHasBeenSet(false),
     m_enhancedVpcRouting(false),
     m_enhancedVpcRoutingHasBeenSet(false),
+    m_port(0),
+    m_portHasBeenSet(false),
     m_publiclyAccessible(false),
     m_publiclyAccessibleHasBeenSet(false),
     m_securityGroupIdsHasBeenSet(false),
@@ -50,6 +52,12 @@ Aws::String UpdateWorkgroupRequest::SerializePayload() const
   if(m_enhancedVpcRoutingHasBeenSet)
   {
    payload.WithBool("enhancedVpcRouting", m_enhancedVpcRouting);
+
+  }
+
+  if(m_portHasBeenSet)
+  {
+   payload.WithInteger("port", m_port);
 
   }
 

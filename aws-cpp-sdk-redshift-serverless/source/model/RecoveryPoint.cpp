@@ -19,6 +19,7 @@ namespace Model
 {
 
 RecoveryPoint::RecoveryPoint() : 
+    m_namespaceArnHasBeenSet(false),
     m_namespaceNameHasBeenSet(false),
     m_recoveryPointCreateTimeHasBeenSet(false),
     m_recoveryPointIdHasBeenSet(false),
@@ -29,6 +30,7 @@ RecoveryPoint::RecoveryPoint() :
 }
 
 RecoveryPoint::RecoveryPoint(JsonView jsonValue) : 
+    m_namespaceArnHasBeenSet(false),
     m_namespaceNameHasBeenSet(false),
     m_recoveryPointCreateTimeHasBeenSet(false),
     m_recoveryPointIdHasBeenSet(false),
@@ -41,6 +43,13 @@ RecoveryPoint::RecoveryPoint(JsonView jsonValue) :
 
 RecoveryPoint& RecoveryPoint::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("namespaceArn"))
+  {
+    m_namespaceArn = jsonValue.GetString("namespaceArn");
+
+    m_namespaceArnHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("namespaceName"))
   {
     m_namespaceName = jsonValue.GetString("namespaceName");
@@ -82,6 +91,12 @@ RecoveryPoint& RecoveryPoint::operator =(JsonView jsonValue)
 JsonValue RecoveryPoint::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_namespaceArnHasBeenSet)
+  {
+   payload.WithString("namespaceArn", m_namespaceArn);
+
+  }
 
   if(m_namespaceNameHasBeenSet)
   {

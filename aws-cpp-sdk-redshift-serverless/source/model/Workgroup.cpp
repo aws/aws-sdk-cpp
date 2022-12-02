@@ -27,6 +27,8 @@ Workgroup::Workgroup() :
     m_enhancedVpcRouting(false),
     m_enhancedVpcRoutingHasBeenSet(false),
     m_namespaceNameHasBeenSet(false),
+    m_port(0),
+    m_portHasBeenSet(false),
     m_publiclyAccessible(false),
     m_publiclyAccessibleHasBeenSet(false),
     m_securityGroupIdsHasBeenSet(false),
@@ -48,6 +50,8 @@ Workgroup::Workgroup(JsonView jsonValue) :
     m_enhancedVpcRouting(false),
     m_enhancedVpcRoutingHasBeenSet(false),
     m_namespaceNameHasBeenSet(false),
+    m_port(0),
+    m_portHasBeenSet(false),
     m_publiclyAccessible(false),
     m_publiclyAccessibleHasBeenSet(false),
     m_securityGroupIdsHasBeenSet(false),
@@ -106,6 +110,13 @@ Workgroup& Workgroup::operator =(JsonView jsonValue)
     m_namespaceName = jsonValue.GetString("namespaceName");
 
     m_namespaceNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("port"))
+  {
+    m_port = jsonValue.GetInteger("port");
+
+    m_portHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("publiclyAccessible"))
@@ -207,6 +218,12 @@ JsonValue Workgroup::Jsonize() const
   if(m_namespaceNameHasBeenSet)
   {
    payload.WithString("namespaceName", m_namespaceName);
+
+  }
+
+  if(m_portHasBeenSet)
+  {
+   payload.WithInteger("port", m_port);
 
   }
 

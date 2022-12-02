@@ -16,7 +16,8 @@ namespace Model
   enum class ThirdPartyFirewall
   {
     NOT_SET,
-    PALO_ALTO_NETWORKS_CLOUD_NGFW
+    PALO_ALTO_NETWORKS_CLOUD_NGFW,
+    FORTIGATE_CLOUD_NATIVE_FIREWALL
   };
 
 namespace ThirdPartyFirewallMapper

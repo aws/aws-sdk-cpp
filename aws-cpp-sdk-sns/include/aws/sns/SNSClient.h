@@ -99,8 +99,11 @@ namespace SNS
 
         /**
          * <p>Adds a statement to a topic's access control policy, granting access for the
-         * specified Amazon Web Services accounts to the specified actions.</p><p><h3>See
-         * Also:</h3>   <a
+         * specified Amazon Web Services accounts to the specified actions.</p> 
+         * <p>To remove the ability to change topic permissions, you must deny permissions
+         * to the <code>AddPermission</code>, <code>RemovePermission</code>, and
+         * <code>SetTopicAttributes</code> actions in your IAM policy.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/AddPermission">AWS
          * API Reference</a></p>
          */
@@ -842,8 +845,11 @@ namespace SNS
         virtual void PutDataProtectionPolicyAsync(const Model::PutDataProtectionPolicyRequest& request, const PutDataProtectionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Removes a statement from a topic's access control policy.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Removes a statement from a topic's access control policy.</p>  <p>To
+         * remove the ability to change topic permissions, you must deny permissions to the
+         * <code>AddPermission</code>, <code>RemovePermission</code>, and
+         * <code>SetTopicAttributes</code> actions in your IAM policy.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/RemovePermission">AWS
          * API Reference</a></p>
          */
@@ -950,8 +956,11 @@ namespace SNS
         virtual void SetSubscriptionAttributesAsync(const Model::SetSubscriptionAttributesRequest& request, const SetSubscriptionAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Allows a topic owner to set an attribute of the topic to a new
-         * value.</p><p><h3>See Also:</h3>   <a
+         * <p>Allows a topic owner to set an attribute of the topic to a new value.</p>
+         *  <p>To remove the ability to change topic permissions, you must deny
+         * permissions to the <code>AddPermission</code>, <code>RemovePermission</code>,
+         * and <code>SetTopicAttributes</code> actions in your IAM policy.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetTopicAttributes">AWS
          * API Reference</a></p>
          */
@@ -1027,8 +1036,11 @@ namespace SNS
          * <code>Unsubscribe</code> call does not require authentication and the requester
          * is not the subscription owner, a final cancellation message is delivered to the
          * endpoint, so that the endpoint owner can easily resubscribe to the topic if the
-         * <code>Unsubscribe</code> request was unintended.</p> <p>This action is throttled
-         * at 100 transactions per second (TPS).</p><p><h3>See Also:</h3>   <a
+         * <code>Unsubscribe</code> request was unintended.</p>  <p>Amazon SQS queue
+         * subscriptions require authentication for deletion. Only the owner of the
+         * subscription, or the owner of the topic can unsubscribe using the required
+         * Amazon Web Services signature.</p>  <p>This action is throttled at 100
+         * transactions per second (TPS).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/Unsubscribe">AWS API
          * Reference</a></p>
          */

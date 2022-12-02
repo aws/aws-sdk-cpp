@@ -50,7 +50,8 @@ namespace Model
     ca_ES,
     de_AT,
     yue_CN,
-    ar_AE
+    ar_AE,
+    fi_FI
   };
 
 namespace LanguageCodeMapper

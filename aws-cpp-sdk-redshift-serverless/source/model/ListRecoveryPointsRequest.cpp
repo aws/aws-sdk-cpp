@@ -16,6 +16,7 @@ ListRecoveryPointsRequest::ListRecoveryPointsRequest() :
     m_endTimeHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
+    m_namespaceArnHasBeenSet(false),
     m_namespaceNameHasBeenSet(false),
     m_nextTokenHasBeenSet(false),
     m_startTimeHasBeenSet(false)
@@ -34,6 +35,12 @@ Aws::String ListRecoveryPointsRequest::SerializePayload() const
   if(m_maxResultsHasBeenSet)
   {
    payload.WithInteger("maxResults", m_maxResults);
+
+  }
+
+  if(m_namespaceArnHasBeenSet)
+  {
+   payload.WithString("namespaceArn", m_namespaceArn);
 
   }
 

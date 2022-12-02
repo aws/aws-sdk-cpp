@@ -309,9 +309,9 @@ namespace RedshiftServerless
          * authorization to log in to Amazon Redshift Serverless.</p> <p>By default, the
          * temporary credentials expire in 900 seconds. You can optionally specify a
          * duration between 900 seconds (15 minutes) and 3600 seconds (60 minutes).</p>
-         * <pre><code> &lt;p&gt; The Identity and Access Management (IAM) user or role that
+         * <pre><code> &lt;p&gt;The Identity and Access Management (IAM) user or role that
          * runs GetCredentials must have an IAM policy attached that allows access to all
-         * necessary actions and resources. &lt;/p&gt; &lt;p&gt; If the
+         * necessary actions and resources.&lt;/p&gt; &lt;p&gt;If the
          * &lt;code&gt;DbName&lt;/code&gt; parameter is specified, the IAM policy must
          * allow access to the resource dbname for the specified database name.&lt;/p&gt;
          * </code></pre><p><h3>See Also:</h3>   <a
@@ -418,6 +418,24 @@ namespace RedshiftServerless
         virtual void GetSnapshotAsync(const Model::GetSnapshotRequest& request, const GetSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Returns information about a <code>TableRestoreStatus</code>
+         * object.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/GetTableRestoreStatus">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetTableRestoreStatusOutcome GetTableRestoreStatus(const Model::GetTableRestoreStatusRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetTableRestoreStatus that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetTableRestoreStatusOutcomeCallable GetTableRestoreStatusCallable(const Model::GetTableRestoreStatusRequest& request) const;
+
+        /**
+         * An Async wrapper for GetTableRestoreStatus that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetTableRestoreStatusAsync(const Model::GetTableRestoreStatusRequest& request, const GetTableRestoreStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Returns information about a usage limit.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/GetUsageLimit">AWS
          * API Reference</a></p>
@@ -520,6 +538,24 @@ namespace RedshiftServerless
          * An Async wrapper for ListSnapshots that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListSnapshotsAsync(const Model::ListSnapshotsRequest& request, const ListSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns information about an array of <code>TableRestoreStatus</code>
+         * objects.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/ListTableRestoreStatus">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListTableRestoreStatusOutcome ListTableRestoreStatus(const Model::ListTableRestoreStatusRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListTableRestoreStatus that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListTableRestoreStatusOutcomeCallable ListTableRestoreStatusCallable(const Model::ListTableRestoreStatusRequest& request) const;
+
+        /**
+         * An Async wrapper for ListTableRestoreStatus that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListTableRestoreStatusAsync(const Model::ListTableRestoreStatusRequest& request, const ListTableRestoreStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the tags assigned to a resource.</p><p><h3>See Also:</h3>   <a
@@ -626,6 +662,24 @@ namespace RedshiftServerless
          * An Async wrapper for RestoreFromSnapshot that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void RestoreFromSnapshotAsync(const Model::RestoreFromSnapshotRequest& request, const RestoreFromSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Restores a table from a snapshot to your Amazon Redshift Serverless
+         * instance.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/RestoreTableFromSnapshot">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::RestoreTableFromSnapshotOutcome RestoreTableFromSnapshot(const Model::RestoreTableFromSnapshotRequest& request) const;
+
+        /**
+         * A Callable wrapper for RestoreTableFromSnapshot that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::RestoreTableFromSnapshotOutcomeCallable RestoreTableFromSnapshotCallable(const Model::RestoreTableFromSnapshotRequest& request) const;
+
+        /**
+         * An Async wrapper for RestoreTableFromSnapshot that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void RestoreTableFromSnapshotAsync(const Model::RestoreTableFromSnapshotRequest& request, const RestoreTableFromSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Assigns one or more tags to a resource.</p><p><h3>See Also:</h3>   <a
