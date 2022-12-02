@@ -21,6 +21,7 @@ namespace Aws
       {
 
         static const int PALO_ALTO_NETWORKS_CLOUD_NGFW_HASH = HashingUtils::HashString("PALO_ALTO_NETWORKS_CLOUD_NGFW");
+        static const int FORTIGATE_CLOUD_NATIVE_FIREWALL_HASH = HashingUtils::HashString("FORTIGATE_CLOUD_NATIVE_FIREWALL");
 
 
         ThirdPartyFirewall GetThirdPartyFirewallForName(const Aws::String& name)
@@ -29,6 +30,10 @@ namespace Aws
           if (hashCode == PALO_ALTO_NETWORKS_CLOUD_NGFW_HASH)
           {
             return ThirdPartyFirewall::PALO_ALTO_NETWORKS_CLOUD_NGFW;
+          }
+          else if (hashCode == FORTIGATE_CLOUD_NATIVE_FIREWALL_HASH)
+          {
+            return ThirdPartyFirewall::FORTIGATE_CLOUD_NATIVE_FIREWALL;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -46,6 +51,8 @@ namespace Aws
           {
           case ThirdPartyFirewall::PALO_ALTO_NETWORKS_CLOUD_NGFW:
             return "PALO_ALTO_NETWORKS_CLOUD_NGFW";
+          case ThirdPartyFirewall::FORTIGATE_CLOUD_NATIVE_FIREWALL:
+            return "FORTIGATE_CLOUD_NATIVE_FIREWALL";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

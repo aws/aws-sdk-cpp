@@ -36,22 +36,34 @@ namespace Model
 
 
     /**
-     * <p>The new limit amount. For more information about this parameter.</p>
+     * <p>The new limit amount. If time-based, this amount is in Redshift Processing
+     * Units (RPU) consumed per hour. If data-based, this amount is in terabytes (TB)
+     * of data transferred between Regions in cross-account sharing. The value must be
+     * a positive number.</p>
      */
     inline long long GetAmount() const{ return m_amount; }
 
     /**
-     * <p>The new limit amount. For more information about this parameter.</p>
+     * <p>The new limit amount. If time-based, this amount is in Redshift Processing
+     * Units (RPU) consumed per hour. If data-based, this amount is in terabytes (TB)
+     * of data transferred between Regions in cross-account sharing. The value must be
+     * a positive number.</p>
      */
     inline bool AmountHasBeenSet() const { return m_amountHasBeenSet; }
 
     /**
-     * <p>The new limit amount. For more information about this parameter.</p>
+     * <p>The new limit amount. If time-based, this amount is in Redshift Processing
+     * Units (RPU) consumed per hour. If data-based, this amount is in terabytes (TB)
+     * of data transferred between Regions in cross-account sharing. The value must be
+     * a positive number.</p>
      */
     inline void SetAmount(long long value) { m_amountHasBeenSet = true; m_amount = value; }
 
     /**
-     * <p>The new limit amount. For more information about this parameter.</p>
+     * <p>The new limit amount. If time-based, this amount is in Redshift Processing
+     * Units (RPU) consumed per hour. If data-based, this amount is in terabytes (TB)
+     * of data transferred between Regions in cross-account sharing. The value must be
+     * a positive number.</p>
      */
     inline UpdateUsageLimitRequest& WithAmount(long long value) { SetAmount(value); return *this;}
 

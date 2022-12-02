@@ -36,81 +36,81 @@ namespace Model
 
     /**
      * <p>An optional parameter that specifies the maximum number of results to return.
-     * You can use <code>nextToken</code> to get the next page of results.</p>
+     * You can use <code>nextToken</code> to display the next page of results.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
      * <p>An optional parameter that specifies the maximum number of results to return.
-     * You can use <code>nextToken</code> to get the next page of results.</p>
+     * You can use <code>nextToken</code> to display the next page of results.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * <p>An optional parameter that specifies the maximum number of results to return.
-     * You can use <code>nextToken</code> to get the next page of results.</p>
+     * You can use <code>nextToken</code> to display the next page of results.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
      * <p>An optional parameter that specifies the maximum number of results to return.
-     * You can use <code>nextToken</code> to get the next page of results.</p>
+     * You can use <code>nextToken</code> to display the next page of results.</p>
      */
     inline ListWorkgroupsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
 
     /**
      * <p>If your initial ListWorkgroups operation returns a <code>nextToken</code>,
-     * you can include the returned <code>nextToken</code> in subsequent ListNamespaces
+     * you can include the returned <code>nextToken</code> in following ListNamespaces
      * operations, which returns results in the next page.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
      * <p>If your initial ListWorkgroups operation returns a <code>nextToken</code>,
-     * you can include the returned <code>nextToken</code> in subsequent ListNamespaces
+     * you can include the returned <code>nextToken</code> in following ListNamespaces
      * operations, which returns results in the next page.</p>
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>If your initial ListWorkgroups operation returns a <code>nextToken</code>,
-     * you can include the returned <code>nextToken</code> in subsequent ListNamespaces
+     * you can include the returned <code>nextToken</code> in following ListNamespaces
      * operations, which returns results in the next page.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
      * <p>If your initial ListWorkgroups operation returns a <code>nextToken</code>,
-     * you can include the returned <code>nextToken</code> in subsequent ListNamespaces
+     * you can include the returned <code>nextToken</code> in following ListNamespaces
      * operations, which returns results in the next page.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>If your initial ListWorkgroups operation returns a <code>nextToken</code>,
-     * you can include the returned <code>nextToken</code> in subsequent ListNamespaces
+     * you can include the returned <code>nextToken</code> in following ListNamespaces
      * operations, which returns results in the next page.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
      * <p>If your initial ListWorkgroups operation returns a <code>nextToken</code>,
-     * you can include the returned <code>nextToken</code> in subsequent ListNamespaces
+     * you can include the returned <code>nextToken</code> in following ListNamespaces
      * operations, which returns results in the next page.</p>
      */
     inline ListWorkgroupsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
      * <p>If your initial ListWorkgroups operation returns a <code>nextToken</code>,
-     * you can include the returned <code>nextToken</code> in subsequent ListNamespaces
+     * you can include the returned <code>nextToken</code> in following ListNamespaces
      * operations, which returns results in the next page.</p>
      */
     inline ListWorkgroupsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>If your initial ListWorkgroups operation returns a <code>nextToken</code>,
-     * you can include the returned <code>nextToken</code> in subsequent ListNamespaces
+     * you can include the returned <code>nextToken</code> in following ListNamespaces
      * operations, which returns results in the next page.</p>
      */
     inline ListWorkgroupsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}

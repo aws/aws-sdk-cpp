@@ -1565,42 +1565,42 @@ namespace Model
     /**
      * Specify whether this output's video uses the D10 syntax. Keep the default value
      * to  not use the syntax. Related settings: When you choose D10 (D_10) for your
-     * MXF  profile (profile), you must also set this value to to D10 (D_10).
+     * MXF  profile (profile), you must also set this value to D10 (D_10).
      */
     inline const Mpeg2Syntax& GetSyntax() const{ return m_syntax; }
 
     /**
      * Specify whether this output's video uses the D10 syntax. Keep the default value
      * to  not use the syntax. Related settings: When you choose D10 (D_10) for your
-     * MXF  profile (profile), you must also set this value to to D10 (D_10).
+     * MXF  profile (profile), you must also set this value to D10 (D_10).
      */
     inline bool SyntaxHasBeenSet() const { return m_syntaxHasBeenSet; }
 
     /**
      * Specify whether this output's video uses the D10 syntax. Keep the default value
      * to  not use the syntax. Related settings: When you choose D10 (D_10) for your
-     * MXF  profile (profile), you must also set this value to to D10 (D_10).
+     * MXF  profile (profile), you must also set this value to D10 (D_10).
      */
     inline void SetSyntax(const Mpeg2Syntax& value) { m_syntaxHasBeenSet = true; m_syntax = value; }
 
     /**
      * Specify whether this output's video uses the D10 syntax. Keep the default value
      * to  not use the syntax. Related settings: When you choose D10 (D_10) for your
-     * MXF  profile (profile), you must also set this value to to D10 (D_10).
+     * MXF  profile (profile), you must also set this value to D10 (D_10).
      */
     inline void SetSyntax(Mpeg2Syntax&& value) { m_syntaxHasBeenSet = true; m_syntax = std::move(value); }
 
     /**
      * Specify whether this output's video uses the D10 syntax. Keep the default value
      * to  not use the syntax. Related settings: When you choose D10 (D_10) for your
-     * MXF  profile (profile), you must also set this value to to D10 (D_10).
+     * MXF  profile (profile), you must also set this value to D10 (D_10).
      */
     inline Mpeg2Settings& WithSyntax(const Mpeg2Syntax& value) { SetSyntax(value); return *this;}
 
     /**
      * Specify whether this output's video uses the D10 syntax. Keep the default value
      * to  not use the syntax. Related settings: When you choose D10 (D_10) for your
-     * MXF  profile (profile), you must also set this value to to D10 (D_10).
+     * MXF  profile (profile), you must also set this value to D10 (D_10).
      */
     inline Mpeg2Settings& WithSyntax(Mpeg2Syntax&& value) { SetSyntax(std::move(value)); return *this;}
 

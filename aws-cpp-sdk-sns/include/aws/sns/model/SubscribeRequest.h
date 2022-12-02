@@ -371,7 +371,12 @@ namespace Model
      * failed deliveries to HTTP/S endpoints.</p> </li> <li> <p>
      * <code>FilterPolicy</code> – The simple JSON object that lets your subscriber
      * receive only a subset of messages, rather than receiving every message published
-     * to the topic.</p> </li> <li> <p> <code>RawMessageDelivery</code> – When set to
+     * to the topic.</p> </li> <li> <p> <code>FilterPolicyScope</code> – This attribute
+     * lets you choose the filtering scope by using one of the following string value
+     * types:</p> <ul> <li> <p> <code>MessageAttributes</code> (default) – The filter
+     * is applied on the message attributes.</p> </li> <li> <p>
+     * <code>MessageBody</code> – The filter is applied on the message body.</p> </li>
+     * </ul> </li> <li> <p> <code>RawMessageDelivery</code> – When set to
      * <code>true</code>, enables raw message delivery to Amazon SQS or HTTP/S
      * endpoints. This eliminates the need for the endpoints to process JSON
      * formatting, which is otherwise created for Amazon SNS metadata.</p> </li> <li>
@@ -401,7 +406,12 @@ namespace Model
      * failed deliveries to HTTP/S endpoints.</p> </li> <li> <p>
      * <code>FilterPolicy</code> – The simple JSON object that lets your subscriber
      * receive only a subset of messages, rather than receiving every message published
-     * to the topic.</p> </li> <li> <p> <code>RawMessageDelivery</code> – When set to
+     * to the topic.</p> </li> <li> <p> <code>FilterPolicyScope</code> – This attribute
+     * lets you choose the filtering scope by using one of the following string value
+     * types:</p> <ul> <li> <p> <code>MessageAttributes</code> (default) – The filter
+     * is applied on the message attributes.</p> </li> <li> <p>
+     * <code>MessageBody</code> – The filter is applied on the message body.</p> </li>
+     * </ul> </li> <li> <p> <code>RawMessageDelivery</code> – When set to
      * <code>true</code>, enables raw message delivery to Amazon SQS or HTTP/S
      * endpoints. This eliminates the need for the endpoints to process JSON
      * formatting, which is otherwise created for Amazon SNS metadata.</p> </li> <li>
@@ -431,7 +441,12 @@ namespace Model
      * failed deliveries to HTTP/S endpoints.</p> </li> <li> <p>
      * <code>FilterPolicy</code> – The simple JSON object that lets your subscriber
      * receive only a subset of messages, rather than receiving every message published
-     * to the topic.</p> </li> <li> <p> <code>RawMessageDelivery</code> – When set to
+     * to the topic.</p> </li> <li> <p> <code>FilterPolicyScope</code> – This attribute
+     * lets you choose the filtering scope by using one of the following string value
+     * types:</p> <ul> <li> <p> <code>MessageAttributes</code> (default) – The filter
+     * is applied on the message attributes.</p> </li> <li> <p>
+     * <code>MessageBody</code> – The filter is applied on the message body.</p> </li>
+     * </ul> </li> <li> <p> <code>RawMessageDelivery</code> – When set to
      * <code>true</code>, enables raw message delivery to Amazon SQS or HTTP/S
      * endpoints. This eliminates the need for the endpoints to process JSON
      * formatting, which is otherwise created for Amazon SNS metadata.</p> </li> <li>
@@ -461,7 +476,12 @@ namespace Model
      * failed deliveries to HTTP/S endpoints.</p> </li> <li> <p>
      * <code>FilterPolicy</code> – The simple JSON object that lets your subscriber
      * receive only a subset of messages, rather than receiving every message published
-     * to the topic.</p> </li> <li> <p> <code>RawMessageDelivery</code> – When set to
+     * to the topic.</p> </li> <li> <p> <code>FilterPolicyScope</code> – This attribute
+     * lets you choose the filtering scope by using one of the following string value
+     * types:</p> <ul> <li> <p> <code>MessageAttributes</code> (default) – The filter
+     * is applied on the message attributes.</p> </li> <li> <p>
+     * <code>MessageBody</code> – The filter is applied on the message body.</p> </li>
+     * </ul> </li> <li> <p> <code>RawMessageDelivery</code> – When set to
      * <code>true</code>, enables raw message delivery to Amazon SQS or HTTP/S
      * endpoints. This eliminates the need for the endpoints to process JSON
      * formatting, which is otherwise created for Amazon SNS metadata.</p> </li> <li>
@@ -491,7 +511,12 @@ namespace Model
      * failed deliveries to HTTP/S endpoints.</p> </li> <li> <p>
      * <code>FilterPolicy</code> – The simple JSON object that lets your subscriber
      * receive only a subset of messages, rather than receiving every message published
-     * to the topic.</p> </li> <li> <p> <code>RawMessageDelivery</code> – When set to
+     * to the topic.</p> </li> <li> <p> <code>FilterPolicyScope</code> – This attribute
+     * lets you choose the filtering scope by using one of the following string value
+     * types:</p> <ul> <li> <p> <code>MessageAttributes</code> (default) – The filter
+     * is applied on the message attributes.</p> </li> <li> <p>
+     * <code>MessageBody</code> – The filter is applied on the message body.</p> </li>
+     * </ul> </li> <li> <p> <code>RawMessageDelivery</code> – When set to
      * <code>true</code>, enables raw message delivery to Amazon SQS or HTTP/S
      * endpoints. This eliminates the need for the endpoints to process JSON
      * formatting, which is otherwise created for Amazon SNS metadata.</p> </li> <li>
@@ -521,7 +546,12 @@ namespace Model
      * failed deliveries to HTTP/S endpoints.</p> </li> <li> <p>
      * <code>FilterPolicy</code> – The simple JSON object that lets your subscriber
      * receive only a subset of messages, rather than receiving every message published
-     * to the topic.</p> </li> <li> <p> <code>RawMessageDelivery</code> – When set to
+     * to the topic.</p> </li> <li> <p> <code>FilterPolicyScope</code> – This attribute
+     * lets you choose the filtering scope by using one of the following string value
+     * types:</p> <ul> <li> <p> <code>MessageAttributes</code> (default) – The filter
+     * is applied on the message attributes.</p> </li> <li> <p>
+     * <code>MessageBody</code> – The filter is applied on the message body.</p> </li>
+     * </ul> </li> <li> <p> <code>RawMessageDelivery</code> – When set to
      * <code>true</code>, enables raw message delivery to Amazon SQS or HTTP/S
      * endpoints. This eliminates the need for the endpoints to process JSON
      * formatting, which is otherwise created for Amazon SNS metadata.</p> </li> <li>
@@ -551,7 +581,12 @@ namespace Model
      * failed deliveries to HTTP/S endpoints.</p> </li> <li> <p>
      * <code>FilterPolicy</code> – The simple JSON object that lets your subscriber
      * receive only a subset of messages, rather than receiving every message published
-     * to the topic.</p> </li> <li> <p> <code>RawMessageDelivery</code> – When set to
+     * to the topic.</p> </li> <li> <p> <code>FilterPolicyScope</code> – This attribute
+     * lets you choose the filtering scope by using one of the following string value
+     * types:</p> <ul> <li> <p> <code>MessageAttributes</code> (default) – The filter
+     * is applied on the message attributes.</p> </li> <li> <p>
+     * <code>MessageBody</code> – The filter is applied on the message body.</p> </li>
+     * </ul> </li> <li> <p> <code>RawMessageDelivery</code> – When set to
      * <code>true</code>, enables raw message delivery to Amazon SQS or HTTP/S
      * endpoints. This eliminates the need for the endpoints to process JSON
      * formatting, which is otherwise created for Amazon SNS metadata.</p> </li> <li>
@@ -581,7 +616,12 @@ namespace Model
      * failed deliveries to HTTP/S endpoints.</p> </li> <li> <p>
      * <code>FilterPolicy</code> – The simple JSON object that lets your subscriber
      * receive only a subset of messages, rather than receiving every message published
-     * to the topic.</p> </li> <li> <p> <code>RawMessageDelivery</code> – When set to
+     * to the topic.</p> </li> <li> <p> <code>FilterPolicyScope</code> – This attribute
+     * lets you choose the filtering scope by using one of the following string value
+     * types:</p> <ul> <li> <p> <code>MessageAttributes</code> (default) – The filter
+     * is applied on the message attributes.</p> </li> <li> <p>
+     * <code>MessageBody</code> – The filter is applied on the message body.</p> </li>
+     * </ul> </li> <li> <p> <code>RawMessageDelivery</code> – When set to
      * <code>true</code>, enables raw message delivery to Amazon SQS or HTTP/S
      * endpoints. This eliminates the need for the endpoints to process JSON
      * formatting, which is otherwise created for Amazon SNS metadata.</p> </li> <li>
@@ -611,7 +651,12 @@ namespace Model
      * failed deliveries to HTTP/S endpoints.</p> </li> <li> <p>
      * <code>FilterPolicy</code> – The simple JSON object that lets your subscriber
      * receive only a subset of messages, rather than receiving every message published
-     * to the topic.</p> </li> <li> <p> <code>RawMessageDelivery</code> – When set to
+     * to the topic.</p> </li> <li> <p> <code>FilterPolicyScope</code> – This attribute
+     * lets you choose the filtering scope by using one of the following string value
+     * types:</p> <ul> <li> <p> <code>MessageAttributes</code> (default) – The filter
+     * is applied on the message attributes.</p> </li> <li> <p>
+     * <code>MessageBody</code> – The filter is applied on the message body.</p> </li>
+     * </ul> </li> <li> <p> <code>RawMessageDelivery</code> – When set to
      * <code>true</code>, enables raw message delivery to Amazon SQS or HTTP/S
      * endpoints. This eliminates the need for the endpoints to process JSON
      * formatting, which is otherwise created for Amazon SNS metadata.</p> </li> <li>
@@ -641,7 +686,12 @@ namespace Model
      * failed deliveries to HTTP/S endpoints.</p> </li> <li> <p>
      * <code>FilterPolicy</code> – The simple JSON object that lets your subscriber
      * receive only a subset of messages, rather than receiving every message published
-     * to the topic.</p> </li> <li> <p> <code>RawMessageDelivery</code> – When set to
+     * to the topic.</p> </li> <li> <p> <code>FilterPolicyScope</code> – This attribute
+     * lets you choose the filtering scope by using one of the following string value
+     * types:</p> <ul> <li> <p> <code>MessageAttributes</code> (default) – The filter
+     * is applied on the message attributes.</p> </li> <li> <p>
+     * <code>MessageBody</code> – The filter is applied on the message body.</p> </li>
+     * </ul> </li> <li> <p> <code>RawMessageDelivery</code> – When set to
      * <code>true</code>, enables raw message delivery to Amazon SQS or HTTP/S
      * endpoints. This eliminates the need for the endpoints to process JSON
      * formatting, which is otherwise created for Amazon SNS metadata.</p> </li> <li>
@@ -671,7 +721,12 @@ namespace Model
      * failed deliveries to HTTP/S endpoints.</p> </li> <li> <p>
      * <code>FilterPolicy</code> – The simple JSON object that lets your subscriber
      * receive only a subset of messages, rather than receiving every message published
-     * to the topic.</p> </li> <li> <p> <code>RawMessageDelivery</code> – When set to
+     * to the topic.</p> </li> <li> <p> <code>FilterPolicyScope</code> – This attribute
+     * lets you choose the filtering scope by using one of the following string value
+     * types:</p> <ul> <li> <p> <code>MessageAttributes</code> (default) – The filter
+     * is applied on the message attributes.</p> </li> <li> <p>
+     * <code>MessageBody</code> – The filter is applied on the message body.</p> </li>
+     * </ul> </li> <li> <p> <code>RawMessageDelivery</code> – When set to
      * <code>true</code>, enables raw message delivery to Amazon SQS or HTTP/S
      * endpoints. This eliminates the need for the endpoints to process JSON
      * formatting, which is otherwise created for Amazon SNS metadata.</p> </li> <li>
@@ -701,7 +756,12 @@ namespace Model
      * failed deliveries to HTTP/S endpoints.</p> </li> <li> <p>
      * <code>FilterPolicy</code> – The simple JSON object that lets your subscriber
      * receive only a subset of messages, rather than receiving every message published
-     * to the topic.</p> </li> <li> <p> <code>RawMessageDelivery</code> – When set to
+     * to the topic.</p> </li> <li> <p> <code>FilterPolicyScope</code> – This attribute
+     * lets you choose the filtering scope by using one of the following string value
+     * types:</p> <ul> <li> <p> <code>MessageAttributes</code> (default) – The filter
+     * is applied on the message attributes.</p> </li> <li> <p>
+     * <code>MessageBody</code> – The filter is applied on the message body.</p> </li>
+     * </ul> </li> <li> <p> <code>RawMessageDelivery</code> – When set to
      * <code>true</code>, enables raw message delivery to Amazon SQS or HTTP/S
      * endpoints. This eliminates the need for the endpoints to process JSON
      * formatting, which is otherwise created for Amazon SNS metadata.</p> </li> <li>
@@ -731,7 +791,12 @@ namespace Model
      * failed deliveries to HTTP/S endpoints.</p> </li> <li> <p>
      * <code>FilterPolicy</code> – The simple JSON object that lets your subscriber
      * receive only a subset of messages, rather than receiving every message published
-     * to the topic.</p> </li> <li> <p> <code>RawMessageDelivery</code> – When set to
+     * to the topic.</p> </li> <li> <p> <code>FilterPolicyScope</code> – This attribute
+     * lets you choose the filtering scope by using one of the following string value
+     * types:</p> <ul> <li> <p> <code>MessageAttributes</code> (default) – The filter
+     * is applied on the message attributes.</p> </li> <li> <p>
+     * <code>MessageBody</code> – The filter is applied on the message body.</p> </li>
+     * </ul> </li> <li> <p> <code>RawMessageDelivery</code> – When set to
      * <code>true</code>, enables raw message delivery to Amazon SQS or HTTP/S
      * endpoints. This eliminates the need for the endpoints to process JSON
      * formatting, which is otherwise created for Amazon SNS metadata.</p> </li> <li>

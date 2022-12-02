@@ -68,25 +68,25 @@ namespace Model
 
     /**
      * <p>An optional parameter that specifies the maximum number of results to return.
-     * You can use <code>nextToken</code> to get the next page of results.</p>
+     * You can use <code>nextToken</code> to display the next page of results.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
      * <p>An optional parameter that specifies the maximum number of results to return.
-     * You can use <code>nextToken</code> to get the next page of results.</p>
+     * You can use <code>nextToken</code> to display the next page of results.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * <p>An optional parameter that specifies the maximum number of results to return.
-     * You can use <code>nextToken</code> to get the next page of results.</p>
+     * You can use <code>nextToken</code> to display the next page of results.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
      * <p>An optional parameter that specifies the maximum number of results to return.
-     * You can use <code>nextToken</code> to get the next page of results.</p>
+     * You can use <code>nextToken</code> to display the next page of results.</p>
      */
     inline ListSnapshotsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 

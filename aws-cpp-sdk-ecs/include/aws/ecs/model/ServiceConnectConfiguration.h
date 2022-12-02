@@ -155,10 +155,9 @@ namespace Model
     /**
      * <p>The list of Service Connect service objects. These are names and aliases
      * (also known as endpoints) that are used by other Amazon ECS services to connect
-     * to this service. You can specify up to X (30?) objects per Amazon ECS
-     * service.</p> <p>This field is not required for a "client" Amazon ECS service
-     * that's a member of a namespace only to connect to other services within the
-     * namespace. An example of this would be a frontend application that accepts
+     * to this service. </p> <p>This field is not required for a "client" Amazon ECS
+     * service that's a member of a namespace only to connect to other services within
+     * the namespace. An example of this would be a frontend application that accepts
      * incoming requests from either a load balancer that's attached to the service or
      * by other means.</p> <p>An object selects a port from the task definition,
      * assigns a name for the Cloud Map service, and a list of aliases (endpoints) and
@@ -169,10 +168,9 @@ namespace Model
     /**
      * <p>The list of Service Connect service objects. These are names and aliases
      * (also known as endpoints) that are used by other Amazon ECS services to connect
-     * to this service. You can specify up to X (30?) objects per Amazon ECS
-     * service.</p> <p>This field is not required for a "client" Amazon ECS service
-     * that's a member of a namespace only to connect to other services within the
-     * namespace. An example of this would be a frontend application that accepts
+     * to this service. </p> <p>This field is not required for a "client" Amazon ECS
+     * service that's a member of a namespace only to connect to other services within
+     * the namespace. An example of this would be a frontend application that accepts
      * incoming requests from either a load balancer that's attached to the service or
      * by other means.</p> <p>An object selects a port from the task definition,
      * assigns a name for the Cloud Map service, and a list of aliases (endpoints) and
@@ -183,10 +181,9 @@ namespace Model
     /**
      * <p>The list of Service Connect service objects. These are names and aliases
      * (also known as endpoints) that are used by other Amazon ECS services to connect
-     * to this service. You can specify up to X (30?) objects per Amazon ECS
-     * service.</p> <p>This field is not required for a "client" Amazon ECS service
-     * that's a member of a namespace only to connect to other services within the
-     * namespace. An example of this would be a frontend application that accepts
+     * to this service. </p> <p>This field is not required for a "client" Amazon ECS
+     * service that's a member of a namespace only to connect to other services within
+     * the namespace. An example of this would be a frontend application that accepts
      * incoming requests from either a load balancer that's attached to the service or
      * by other means.</p> <p>An object selects a port from the task definition,
      * assigns a name for the Cloud Map service, and a list of aliases (endpoints) and
@@ -197,10 +194,9 @@ namespace Model
     /**
      * <p>The list of Service Connect service objects. These are names and aliases
      * (also known as endpoints) that are used by other Amazon ECS services to connect
-     * to this service. You can specify up to X (30?) objects per Amazon ECS
-     * service.</p> <p>This field is not required for a "client" Amazon ECS service
-     * that's a member of a namespace only to connect to other services within the
-     * namespace. An example of this would be a frontend application that accepts
+     * to this service. </p> <p>This field is not required for a "client" Amazon ECS
+     * service that's a member of a namespace only to connect to other services within
+     * the namespace. An example of this would be a frontend application that accepts
      * incoming requests from either a load balancer that's attached to the service or
      * by other means.</p> <p>An object selects a port from the task definition,
      * assigns a name for the Cloud Map service, and a list of aliases (endpoints) and
@@ -211,10 +207,9 @@ namespace Model
     /**
      * <p>The list of Service Connect service objects. These are names and aliases
      * (also known as endpoints) that are used by other Amazon ECS services to connect
-     * to this service. You can specify up to X (30?) objects per Amazon ECS
-     * service.</p> <p>This field is not required for a "client" Amazon ECS service
-     * that's a member of a namespace only to connect to other services within the
-     * namespace. An example of this would be a frontend application that accepts
+     * to this service. </p> <p>This field is not required for a "client" Amazon ECS
+     * service that's a member of a namespace only to connect to other services within
+     * the namespace. An example of this would be a frontend application that accepts
      * incoming requests from either a load balancer that's attached to the service or
      * by other means.</p> <p>An object selects a port from the task definition,
      * assigns a name for the Cloud Map service, and a list of aliases (endpoints) and
@@ -225,10 +220,9 @@ namespace Model
     /**
      * <p>The list of Service Connect service objects. These are names and aliases
      * (also known as endpoints) that are used by other Amazon ECS services to connect
-     * to this service. You can specify up to X (30?) objects per Amazon ECS
-     * service.</p> <p>This field is not required for a "client" Amazon ECS service
-     * that's a member of a namespace only to connect to other services within the
-     * namespace. An example of this would be a frontend application that accepts
+     * to this service. </p> <p>This field is not required for a "client" Amazon ECS
+     * service that's a member of a namespace only to connect to other services within
+     * the namespace. An example of this would be a frontend application that accepts
      * incoming requests from either a load balancer that's attached to the service or
      * by other means.</p> <p>An object selects a port from the task definition,
      * assigns a name for the Cloud Map service, and a list of aliases (endpoints) and
@@ -239,10 +233,9 @@ namespace Model
     /**
      * <p>The list of Service Connect service objects. These are names and aliases
      * (also known as endpoints) that are used by other Amazon ECS services to connect
-     * to this service. You can specify up to X (30?) objects per Amazon ECS
-     * service.</p> <p>This field is not required for a "client" Amazon ECS service
-     * that's a member of a namespace only to connect to other services within the
-     * namespace. An example of this would be a frontend application that accepts
+     * to this service. </p> <p>This field is not required for a "client" Amazon ECS
+     * service that's a member of a namespace only to connect to other services within
+     * the namespace. An example of this would be a frontend application that accepts
      * incoming requests from either a load balancer that's attached to the service or
      * by other means.</p> <p>An object selects a port from the task definition,
      * assigns a name for the Cloud Map service, and a list of aliases (endpoints) and
@@ -253,10 +246,9 @@ namespace Model
     /**
      * <p>The list of Service Connect service objects. These are names and aliases
      * (also known as endpoints) that are used by other Amazon ECS services to connect
-     * to this service. You can specify up to X (30?) objects per Amazon ECS
-     * service.</p> <p>This field is not required for a "client" Amazon ECS service
-     * that's a member of a namespace only to connect to other services within the
-     * namespace. An example of this would be a frontend application that accepts
+     * to this service. </p> <p>This field is not required for a "client" Amazon ECS
+     * service that's a member of a namespace only to connect to other services within
+     * the namespace. An example of this would be a frontend application that accepts
      * incoming requests from either a load balancer that's attached to the service or
      * by other means.</p> <p>An object selects a port from the task definition,
      * assigns a name for the Cloud Map service, and a list of aliases (endpoints) and

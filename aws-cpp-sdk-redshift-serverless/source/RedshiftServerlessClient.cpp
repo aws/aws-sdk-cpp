@@ -39,18 +39,21 @@
 #include <aws/redshift-serverless/model/GetRecoveryPointRequest.h>
 #include <aws/redshift-serverless/model/GetResourcePolicyRequest.h>
 #include <aws/redshift-serverless/model/GetSnapshotRequest.h>
+#include <aws/redshift-serverless/model/GetTableRestoreStatusRequest.h>
 #include <aws/redshift-serverless/model/GetUsageLimitRequest.h>
 #include <aws/redshift-serverless/model/GetWorkgroupRequest.h>
 #include <aws/redshift-serverless/model/ListEndpointAccessRequest.h>
 #include <aws/redshift-serverless/model/ListNamespacesRequest.h>
 #include <aws/redshift-serverless/model/ListRecoveryPointsRequest.h>
 #include <aws/redshift-serverless/model/ListSnapshotsRequest.h>
+#include <aws/redshift-serverless/model/ListTableRestoreStatusRequest.h>
 #include <aws/redshift-serverless/model/ListTagsForResourceRequest.h>
 #include <aws/redshift-serverless/model/ListUsageLimitsRequest.h>
 #include <aws/redshift-serverless/model/ListWorkgroupsRequest.h>
 #include <aws/redshift-serverless/model/PutResourcePolicyRequest.h>
 #include <aws/redshift-serverless/model/RestoreFromRecoveryPointRequest.h>
 #include <aws/redshift-serverless/model/RestoreFromSnapshotRequest.h>
+#include <aws/redshift-serverless/model/RestoreTableFromSnapshotRequest.h>
 #include <aws/redshift-serverless/model/TagResourceRequest.h>
 #include <aws/redshift-serverless/model/UntagResourceRequest.h>
 #include <aws/redshift-serverless/model/UpdateEndpointAccessRequest.h>
@@ -618,6 +621,30 @@ void RedshiftServerlessClient::GetSnapshotAsync(const GetSnapshotRequest& reques
     } );
 }
 
+GetTableRestoreStatusOutcome RedshiftServerlessClient::GetTableRestoreStatus(const GetTableRestoreStatusRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetTableRestoreStatus, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetTableRestoreStatus, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetTableRestoreStatusOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetTableRestoreStatusOutcomeCallable RedshiftServerlessClient::GetTableRestoreStatusCallable(const GetTableRestoreStatusRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetTableRestoreStatusOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetTableRestoreStatus(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void RedshiftServerlessClient::GetTableRestoreStatusAsync(const GetTableRestoreStatusRequest& request, const GetTableRestoreStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetTableRestoreStatus(request), context);
+    } );
+}
+
 GetUsageLimitOutcome RedshiftServerlessClient::GetUsageLimit(const GetUsageLimitRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetUsageLimit, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -762,6 +789,30 @@ void RedshiftServerlessClient::ListSnapshotsAsync(const ListSnapshotsRequest& re
     } );
 }
 
+ListTableRestoreStatusOutcome RedshiftServerlessClient::ListTableRestoreStatus(const ListTableRestoreStatusRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTableRestoreStatus, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListTableRestoreStatus, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ListTableRestoreStatusOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListTableRestoreStatusOutcomeCallable RedshiftServerlessClient::ListTableRestoreStatusCallable(const ListTableRestoreStatusRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListTableRestoreStatusOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTableRestoreStatus(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void RedshiftServerlessClient::ListTableRestoreStatusAsync(const ListTableRestoreStatusRequest& request, const ListTableRestoreStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListTableRestoreStatus(request), context);
+    } );
+}
+
 ListTagsForResourceOutcome RedshiftServerlessClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -903,6 +954,30 @@ void RedshiftServerlessClient::RestoreFromSnapshotAsync(const RestoreFromSnapsho
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, RestoreFromSnapshot(request), context);
+    } );
+}
+
+RestoreTableFromSnapshotOutcome RedshiftServerlessClient::RestoreTableFromSnapshot(const RestoreTableFromSnapshotRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, RestoreTableFromSnapshot, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, RestoreTableFromSnapshot, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return RestoreTableFromSnapshotOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+RestoreTableFromSnapshotOutcomeCallable RedshiftServerlessClient::RestoreTableFromSnapshotCallable(const RestoreTableFromSnapshotRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< RestoreTableFromSnapshotOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RestoreTableFromSnapshot(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void RedshiftServerlessClient::RestoreTableFromSnapshotAsync(const RestoreTableFromSnapshotRequest& request, const RestoreTableFromSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, RestoreTableFromSnapshot(request), context);
     } );
 }
 

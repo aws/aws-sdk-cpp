@@ -40,6 +40,55 @@ namespace Model
 
 
     /**
+     * <p>The Amazon Resource Name (ARN) of the namespace the recovery point is
+     * associated with.</p>
+     */
+    inline const Aws::String& GetNamespaceArn() const{ return m_namespaceArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the namespace the recovery point is
+     * associated with.</p>
+     */
+    inline bool NamespaceArnHasBeenSet() const { return m_namespaceArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the namespace the recovery point is
+     * associated with.</p>
+     */
+    inline void SetNamespaceArn(const Aws::String& value) { m_namespaceArnHasBeenSet = true; m_namespaceArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the namespace the recovery point is
+     * associated with.</p>
+     */
+    inline void SetNamespaceArn(Aws::String&& value) { m_namespaceArnHasBeenSet = true; m_namespaceArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the namespace the recovery point is
+     * associated with.</p>
+     */
+    inline void SetNamespaceArn(const char* value) { m_namespaceArnHasBeenSet = true; m_namespaceArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the namespace the recovery point is
+     * associated with.</p>
+     */
+    inline RecoveryPoint& WithNamespaceArn(const Aws::String& value) { SetNamespaceArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the namespace the recovery point is
+     * associated with.</p>
+     */
+    inline RecoveryPoint& WithNamespaceArn(Aws::String&& value) { SetNamespaceArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the namespace the recovery point is
+     * associated with.</p>
+     */
+    inline RecoveryPoint& WithNamespaceArn(const char* value) { SetNamespaceArn(value); return *this;}
+
+
+    /**
      * <p>The name of the namespace the recovery point is associated with.</p>
      */
     inline const Aws::String& GetNamespaceName() const{ return m_namespaceName; }
@@ -214,6 +263,9 @@ namespace Model
     inline RecoveryPoint& WithWorkgroupName(const char* value) { SetWorkgroupName(value); return *this;}
 
   private:
+
+    Aws::String m_namespaceArn;
+    bool m_namespaceArnHasBeenSet = false;
 
     Aws::String m_namespaceName;
     bool m_namespaceNameHasBeenSet = false;

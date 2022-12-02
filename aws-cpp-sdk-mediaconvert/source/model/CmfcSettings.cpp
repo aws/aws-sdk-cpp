@@ -31,12 +31,18 @@ CmfcSettings::CmfcSettings() :
     m_iFrameOnlyManifestHasBeenSet(false),
     m_klvMetadata(CmfcKlvMetadata::NOT_SET),
     m_klvMetadataHasBeenSet(false),
+    m_manifestMetadataSignaling(CmfcManifestMetadataSignaling::NOT_SET),
+    m_manifestMetadataSignalingHasBeenSet(false),
     m_scte35Esam(CmfcScte35Esam::NOT_SET),
     m_scte35EsamHasBeenSet(false),
     m_scte35Source(CmfcScte35Source::NOT_SET),
     m_scte35SourceHasBeenSet(false),
     m_timedMetadata(CmfcTimedMetadata::NOT_SET),
-    m_timedMetadataHasBeenSet(false)
+    m_timedMetadataHasBeenSet(false),
+    m_timedMetadataBoxVersion(CmfcTimedMetadataBoxVersion::NOT_SET),
+    m_timedMetadataBoxVersionHasBeenSet(false),
+    m_timedMetadataSchemeIdUriHasBeenSet(false),
+    m_timedMetadataValueHasBeenSet(false)
 {
 }
 
@@ -53,12 +59,18 @@ CmfcSettings::CmfcSettings(JsonView jsonValue) :
     m_iFrameOnlyManifestHasBeenSet(false),
     m_klvMetadata(CmfcKlvMetadata::NOT_SET),
     m_klvMetadataHasBeenSet(false),
+    m_manifestMetadataSignaling(CmfcManifestMetadataSignaling::NOT_SET),
+    m_manifestMetadataSignalingHasBeenSet(false),
     m_scte35Esam(CmfcScte35Esam::NOT_SET),
     m_scte35EsamHasBeenSet(false),
     m_scte35Source(CmfcScte35Source::NOT_SET),
     m_scte35SourceHasBeenSet(false),
     m_timedMetadata(CmfcTimedMetadata::NOT_SET),
-    m_timedMetadataHasBeenSet(false)
+    m_timedMetadataHasBeenSet(false),
+    m_timedMetadataBoxVersion(CmfcTimedMetadataBoxVersion::NOT_SET),
+    m_timedMetadataBoxVersionHasBeenSet(false),
+    m_timedMetadataSchemeIdUriHasBeenSet(false),
+    m_timedMetadataValueHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -114,6 +126,13 @@ CmfcSettings& CmfcSettings::operator =(JsonView jsonValue)
     m_klvMetadataHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("manifestMetadataSignaling"))
+  {
+    m_manifestMetadataSignaling = CmfcManifestMetadataSignalingMapper::GetCmfcManifestMetadataSignalingForName(jsonValue.GetString("manifestMetadataSignaling"));
+
+    m_manifestMetadataSignalingHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("scte35Esam"))
   {
     m_scte35Esam = CmfcScte35EsamMapper::GetCmfcScte35EsamForName(jsonValue.GetString("scte35Esam"));
@@ -133,6 +152,27 @@ CmfcSettings& CmfcSettings::operator =(JsonView jsonValue)
     m_timedMetadata = CmfcTimedMetadataMapper::GetCmfcTimedMetadataForName(jsonValue.GetString("timedMetadata"));
 
     m_timedMetadataHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("timedMetadataBoxVersion"))
+  {
+    m_timedMetadataBoxVersion = CmfcTimedMetadataBoxVersionMapper::GetCmfcTimedMetadataBoxVersionForName(jsonValue.GetString("timedMetadataBoxVersion"));
+
+    m_timedMetadataBoxVersionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("timedMetadataSchemeIdUri"))
+  {
+    m_timedMetadataSchemeIdUri = jsonValue.GetString("timedMetadataSchemeIdUri");
+
+    m_timedMetadataSchemeIdUriHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("timedMetadataValue"))
+  {
+    m_timedMetadataValue = jsonValue.GetString("timedMetadataValue");
+
+    m_timedMetadataValueHasBeenSet = true;
   }
 
   return *this;
@@ -179,6 +219,11 @@ JsonValue CmfcSettings::Jsonize() const
    payload.WithString("klvMetadata", CmfcKlvMetadataMapper::GetNameForCmfcKlvMetadata(m_klvMetadata));
   }
 
+  if(m_manifestMetadataSignalingHasBeenSet)
+  {
+   payload.WithString("manifestMetadataSignaling", CmfcManifestMetadataSignalingMapper::GetNameForCmfcManifestMetadataSignaling(m_manifestMetadataSignaling));
+  }
+
   if(m_scte35EsamHasBeenSet)
   {
    payload.WithString("scte35Esam", CmfcScte35EsamMapper::GetNameForCmfcScte35Esam(m_scte35Esam));
@@ -192,6 +237,23 @@ JsonValue CmfcSettings::Jsonize() const
   if(m_timedMetadataHasBeenSet)
   {
    payload.WithString("timedMetadata", CmfcTimedMetadataMapper::GetNameForCmfcTimedMetadata(m_timedMetadata));
+  }
+
+  if(m_timedMetadataBoxVersionHasBeenSet)
+  {
+   payload.WithString("timedMetadataBoxVersion", CmfcTimedMetadataBoxVersionMapper::GetNameForCmfcTimedMetadataBoxVersion(m_timedMetadataBoxVersion));
+  }
+
+  if(m_timedMetadataSchemeIdUriHasBeenSet)
+  {
+   payload.WithString("timedMetadataSchemeIdUri", m_timedMetadataSchemeIdUri);
+
+  }
+
+  if(m_timedMetadataValueHasBeenSet)
+  {
+   payload.WithString("timedMetadataValue", m_timedMetadataValue);
+
   }
 
   return payload;
