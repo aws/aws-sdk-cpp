@@ -48,8 +48,10 @@
 #include <aws/ce/model/GetUsageForecastRequest.h>
 #include <aws/ce/model/ListCostAllocationTagsRequest.h>
 #include <aws/ce/model/ListCostCategoryDefinitionsRequest.h>
+#include <aws/ce/model/ListSavingsPlansPurchaseRecommendationGenerationRequest.h>
 #include <aws/ce/model/ListTagsForResourceRequest.h>
 #include <aws/ce/model/ProvideAnomalyFeedbackRequest.h>
+#include <aws/ce/model/StartSavingsPlansPurchaseRecommendationGenerationRequest.h>
 #include <aws/ce/model/TagResourceRequest.h>
 #include <aws/ce/model/UntagResourceRequest.h>
 #include <aws/ce/model/UpdateAnomalyMonitorRequest.h>
@@ -832,6 +834,30 @@ void CostExplorerClient::ListCostCategoryDefinitionsAsync(const ListCostCategory
     } );
 }
 
+ListSavingsPlansPurchaseRecommendationGenerationOutcome CostExplorerClient::ListSavingsPlansPurchaseRecommendationGeneration(const ListSavingsPlansPurchaseRecommendationGenerationRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListSavingsPlansPurchaseRecommendationGeneration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListSavingsPlansPurchaseRecommendationGeneration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ListSavingsPlansPurchaseRecommendationGenerationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListSavingsPlansPurchaseRecommendationGenerationOutcomeCallable CostExplorerClient::ListSavingsPlansPurchaseRecommendationGenerationCallable(const ListSavingsPlansPurchaseRecommendationGenerationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListSavingsPlansPurchaseRecommendationGenerationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListSavingsPlansPurchaseRecommendationGeneration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CostExplorerClient::ListSavingsPlansPurchaseRecommendationGenerationAsync(const ListSavingsPlansPurchaseRecommendationGenerationRequest& request, const ListSavingsPlansPurchaseRecommendationGenerationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListSavingsPlansPurchaseRecommendationGeneration(request), context);
+    } );
+}
+
 ListTagsForResourceOutcome CostExplorerClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -877,6 +903,30 @@ void CostExplorerClient::ProvideAnomalyFeedbackAsync(const ProvideAnomalyFeedbac
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, ProvideAnomalyFeedback(request), context);
+    } );
+}
+
+StartSavingsPlansPurchaseRecommendationGenerationOutcome CostExplorerClient::StartSavingsPlansPurchaseRecommendationGeneration(const StartSavingsPlansPurchaseRecommendationGenerationRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartSavingsPlansPurchaseRecommendationGeneration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartSavingsPlansPurchaseRecommendationGeneration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return StartSavingsPlansPurchaseRecommendationGenerationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+StartSavingsPlansPurchaseRecommendationGenerationOutcomeCallable CostExplorerClient::StartSavingsPlansPurchaseRecommendationGenerationCallable(const StartSavingsPlansPurchaseRecommendationGenerationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StartSavingsPlansPurchaseRecommendationGenerationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartSavingsPlansPurchaseRecommendationGeneration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CostExplorerClient::StartSavingsPlansPurchaseRecommendationGenerationAsync(const StartSavingsPlansPurchaseRecommendationGenerationRequest& request, const StartSavingsPlansPurchaseRecommendationGenerationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, StartSavingsPlansPurchaseRecommendationGeneration(request), context);
     } );
 }
 

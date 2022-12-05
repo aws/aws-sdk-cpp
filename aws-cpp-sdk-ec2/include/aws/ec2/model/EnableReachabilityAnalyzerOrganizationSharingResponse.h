@@ -32,13 +32,22 @@ namespace Model
     EnableReachabilityAnalyzerOrganizationSharingResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
-    
+    /**
+     * <p>Returns <code>true</code> if the request succeeds; otherwise, returns an
+     * error.</p>
+     */
     inline bool GetReturnValue() const{ return m_returnValue; }
 
-    
+    /**
+     * <p>Returns <code>true</code> if the request succeeds; otherwise, returns an
+     * error.</p>
+     */
     inline void SetReturnValue(bool value) { m_returnValue = value; }
 
-    
+    /**
+     * <p>Returns <code>true</code> if the request succeeds; otherwise, returns an
+     * error.</p>
+     */
     inline EnableReachabilityAnalyzerOrganizationSharingResponse& WithReturnValue(bool value) { SetReturnValue(value); return *this;}
 
 

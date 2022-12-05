@@ -80,31 +80,49 @@ namespace Model
     inline StartNetworkInsightsAnalysisRequest& WithNetworkInsightsPathId(const char* value) { SetNetworkInsightsPathId(value); return *this;}
 
 
-    
+    /**
+     * <p>The member accounts that contain resources that the path can traverse.</p>
+     */
     inline const Aws::Vector<Aws::String>& GetAdditionalAccounts() const{ return m_additionalAccounts; }
 
-    
+    /**
+     * <p>The member accounts that contain resources that the path can traverse.</p>
+     */
     inline bool AdditionalAccountsHasBeenSet() const { return m_additionalAccountsHasBeenSet; }
 
-    
+    /**
+     * <p>The member accounts that contain resources that the path can traverse.</p>
+     */
     inline void SetAdditionalAccounts(const Aws::Vector<Aws::String>& value) { m_additionalAccountsHasBeenSet = true; m_additionalAccounts = value; }
 
-    
+    /**
+     * <p>The member accounts that contain resources that the path can traverse.</p>
+     */
     inline void SetAdditionalAccounts(Aws::Vector<Aws::String>&& value) { m_additionalAccountsHasBeenSet = true; m_additionalAccounts = std::move(value); }
 
-    
+    /**
+     * <p>The member accounts that contain resources that the path can traverse.</p>
+     */
     inline StartNetworkInsightsAnalysisRequest& WithAdditionalAccounts(const Aws::Vector<Aws::String>& value) { SetAdditionalAccounts(value); return *this;}
 
-    
+    /**
+     * <p>The member accounts that contain resources that the path can traverse.</p>
+     */
     inline StartNetworkInsightsAnalysisRequest& WithAdditionalAccounts(Aws::Vector<Aws::String>&& value) { SetAdditionalAccounts(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The member accounts that contain resources that the path can traverse.</p>
+     */
     inline StartNetworkInsightsAnalysisRequest& AddAdditionalAccounts(const Aws::String& value) { m_additionalAccountsHasBeenSet = true; m_additionalAccounts.push_back(value); return *this; }
 
-    
+    /**
+     * <p>The member accounts that contain resources that the path can traverse.</p>
+     */
     inline StartNetworkInsightsAnalysisRequest& AddAdditionalAccounts(Aws::String&& value) { m_additionalAccountsHasBeenSet = true; m_additionalAccounts.push_back(std::move(value)); return *this; }
 
-    
+    /**
+     * <p>The member accounts that contain resources that the path can traverse.</p>
+     */
     inline StartNetworkInsightsAnalysisRequest& AddAdditionalAccounts(const char* value) { m_additionalAccountsHasBeenSet = true; m_additionalAccounts.push_back(value); return *this; }
 
 

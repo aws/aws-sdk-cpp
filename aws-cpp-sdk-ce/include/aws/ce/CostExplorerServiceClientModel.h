@@ -45,8 +45,10 @@
 #include <aws/ce/model/GetUsageForecastResult.h>
 #include <aws/ce/model/ListCostAllocationTagsResult.h>
 #include <aws/ce/model/ListCostCategoryDefinitionsResult.h>
+#include <aws/ce/model/ListSavingsPlansPurchaseRecommendationGenerationResult.h>
 #include <aws/ce/model/ListTagsForResourceResult.h>
 #include <aws/ce/model/ProvideAnomalyFeedbackResult.h>
+#include <aws/ce/model/StartSavingsPlansPurchaseRecommendationGenerationResult.h>
 #include <aws/ce/model/TagResourceResult.h>
 #include <aws/ce/model/UntagResourceResult.h>
 #include <aws/ce/model/UpdateAnomalyMonitorResult.h>
@@ -120,8 +122,10 @@ namespace Aws
       class GetUsageForecastRequest;
       class ListCostAllocationTagsRequest;
       class ListCostCategoryDefinitionsRequest;
+      class ListSavingsPlansPurchaseRecommendationGenerationRequest;
       class ListTagsForResourceRequest;
       class ProvideAnomalyFeedbackRequest;
+      class StartSavingsPlansPurchaseRecommendationGenerationRequest;
       class TagResourceRequest;
       class UntagResourceRequest;
       class UpdateAnomalyMonitorRequest;
@@ -158,8 +162,10 @@ namespace Aws
       typedef Aws::Utils::Outcome<GetUsageForecastResult, CostExplorerError> GetUsageForecastOutcome;
       typedef Aws::Utils::Outcome<ListCostAllocationTagsResult, CostExplorerError> ListCostAllocationTagsOutcome;
       typedef Aws::Utils::Outcome<ListCostCategoryDefinitionsResult, CostExplorerError> ListCostCategoryDefinitionsOutcome;
+      typedef Aws::Utils::Outcome<ListSavingsPlansPurchaseRecommendationGenerationResult, CostExplorerError> ListSavingsPlansPurchaseRecommendationGenerationOutcome;
       typedef Aws::Utils::Outcome<ListTagsForResourceResult, CostExplorerError> ListTagsForResourceOutcome;
       typedef Aws::Utils::Outcome<ProvideAnomalyFeedbackResult, CostExplorerError> ProvideAnomalyFeedbackOutcome;
+      typedef Aws::Utils::Outcome<StartSavingsPlansPurchaseRecommendationGenerationResult, CostExplorerError> StartSavingsPlansPurchaseRecommendationGenerationOutcome;
       typedef Aws::Utils::Outcome<TagResourceResult, CostExplorerError> TagResourceOutcome;
       typedef Aws::Utils::Outcome<UntagResourceResult, CostExplorerError> UntagResourceOutcome;
       typedef Aws::Utils::Outcome<UpdateAnomalyMonitorResult, CostExplorerError> UpdateAnomalyMonitorOutcome;
@@ -196,8 +202,10 @@ namespace Aws
       typedef std::future<GetUsageForecastOutcome> GetUsageForecastOutcomeCallable;
       typedef std::future<ListCostAllocationTagsOutcome> ListCostAllocationTagsOutcomeCallable;
       typedef std::future<ListCostCategoryDefinitionsOutcome> ListCostCategoryDefinitionsOutcomeCallable;
+      typedef std::future<ListSavingsPlansPurchaseRecommendationGenerationOutcome> ListSavingsPlansPurchaseRecommendationGenerationOutcomeCallable;
       typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
       typedef std::future<ProvideAnomalyFeedbackOutcome> ProvideAnomalyFeedbackOutcomeCallable;
+      typedef std::future<StartSavingsPlansPurchaseRecommendationGenerationOutcome> StartSavingsPlansPurchaseRecommendationGenerationOutcomeCallable;
       typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
       typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
       typedef std::future<UpdateAnomalyMonitorOutcome> UpdateAnomalyMonitorOutcomeCallable;
@@ -237,8 +245,10 @@ namespace Aws
     typedef std::function<void(const CostExplorerClient*, const Model::GetUsageForecastRequest&, const Model::GetUsageForecastOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetUsageForecastResponseReceivedHandler;
     typedef std::function<void(const CostExplorerClient*, const Model::ListCostAllocationTagsRequest&, const Model::ListCostAllocationTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCostAllocationTagsResponseReceivedHandler;
     typedef std::function<void(const CostExplorerClient*, const Model::ListCostCategoryDefinitionsRequest&, const Model::ListCostCategoryDefinitionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCostCategoryDefinitionsResponseReceivedHandler;
+    typedef std::function<void(const CostExplorerClient*, const Model::ListSavingsPlansPurchaseRecommendationGenerationRequest&, const Model::ListSavingsPlansPurchaseRecommendationGenerationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSavingsPlansPurchaseRecommendationGenerationResponseReceivedHandler;
     typedef std::function<void(const CostExplorerClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const CostExplorerClient*, const Model::ProvideAnomalyFeedbackRequest&, const Model::ProvideAnomalyFeedbackOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ProvideAnomalyFeedbackResponseReceivedHandler;
+    typedef std::function<void(const CostExplorerClient*, const Model::StartSavingsPlansPurchaseRecommendationGenerationRequest&, const Model::StartSavingsPlansPurchaseRecommendationGenerationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartSavingsPlansPurchaseRecommendationGenerationResponseReceivedHandler;
     typedef std::function<void(const CostExplorerClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const CostExplorerClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const CostExplorerClient*, const Model::UpdateAnomalyMonitorRequest&, const Model::UpdateAnomalyMonitorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateAnomalyMonitorResponseReceivedHandler;
