@@ -5064,7 +5064,7 @@ namespace EC2
         virtual void DescribeAvailabilityZonesAsync(const Model::DescribeAvailabilityZonesRequest& request, const DescribeAvailabilityZonesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes the curent Infrastructure Performance metric
+         * <p>Describes the current Infrastructure Performance metric
          * subscriptions.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAwsNetworkPerformanceMetricSubscriptions">AWS
          * API Reference</a></p>
@@ -8738,7 +8738,13 @@ namespace EC2
         virtual void EnableIpamOrganizationAdminAccountAsync(const Model::EnableIpamOrganizationAdminAccountRequest& request, const EnableIpamOrganizationAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * 
+         * <p>Establishes a trust relationship between Reachability Analyzer and
+         * Organizations. This operation must be performed by the management account for
+         * the organization.</p> <p>After you establish a trust relationship, a user in the
+         * management account or a delegated administrator account can run a cross-account
+         * analysis using resources from the member accounts.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableReachabilityAnalyzerOrganizationSharing">AWS
+         * API Reference</a></p>
          */
         virtual Model::EnableReachabilityAnalyzerOrganizationSharingOutcome EnableReachabilityAnalyzerOrganizationSharing(const Model::EnableReachabilityAnalyzerOrganizationSharingRequest& request) const;
 
