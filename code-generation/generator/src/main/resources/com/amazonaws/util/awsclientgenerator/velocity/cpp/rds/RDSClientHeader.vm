@@ -9,7 +9,7 @@
 \#include <aws/core/client/ClientConfiguration.h>
 \#include <aws/core/AmazonSerializableWebServiceRequest.h>
 \#include <aws/core/client/AWSClient.h>
-\#include <aws/core/client/AWSAsyncOperationTemplate.h>
+\#include <aws/core/client/AWSClientAsyncCRTP.h>
 \#include <aws/core/utils/xml/XmlSerializer.h>
 \#include <aws/$metadata.projectName/${metadata.classNamePrefix}ServiceClientModel.h>
 
@@ -26,7 +26,7 @@ namespace ${rootNamespace}
     #if($serviceModel.enableVirtualOperations)
     #set($finalClass = "")
     #end
-    class ${CppViewHelper.computeExportValue($metadata.classNamePrefix)} ${className}$finalClass : public Aws::Client::AWSXMLClient
+    class ${CppViewHelper.computeExportValue($metadata.classNamePrefix)} ${className}$finalClass : public Aws::Client::AWSXMLClient, public Aws::Client::ClientWithAsyncTemplateMethods<${className}>
     {
     public:
     typedef Aws::Client::AWSXMLClient BASECLASS;
@@ -34,7 +34,6 @@ namespace ${rootNamespace}
     static const char* ALLOCATION_TAG;
 
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientHeaderConstructors.vm")
-#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/ServiceClientHeaderAsyncTemplates.vm")
 
     #if($metadata.protocol == "query")
 
@@ -56,6 +55,7 @@ namespace ${rootNamespace}
         std::shared_ptr<${metadata.classNamePrefix}EndpointProviderBase>& accessEndpointProvider();
 #end
     private:
+        friend class Aws::Client::ClientWithAsyncTemplateMethods<${className}>;
 #if(!$serviceModel.endpointRules)
         void init(const Aws::Client::ClientConfiguration& clientConfiguration);
 #else

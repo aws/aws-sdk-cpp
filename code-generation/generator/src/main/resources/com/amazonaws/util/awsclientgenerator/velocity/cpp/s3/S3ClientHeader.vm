@@ -17,7 +17,7 @@
 \#include <aws/crt/http/HttpRequestResponse.h>
 #end
 \#include <aws/core/client/AWSClient.h>
-\#include <aws/core/client/AWSAsyncOperationTemplate.h>
+\#include <aws/core/client/AWSClientAsyncCRTP.h>
 \#include <aws/core/auth/AWSAuthSigner.h>
 \#include <aws/core/utils/xml/XmlSerializer.h>
 \#include <aws/core/utils/DNS.h>
@@ -86,7 +86,7 @@ namespace ${rootNamespace}
 #if($serviceModel.enableVirtualOperations)
 #set($finalClass = "")
 #end
-    class ${CppViewHelper.computeExportValue($metadata.classNamePrefix)} ${className}${finalClass} : public Aws::Client::AWSXMLClient
+    class ${CppViewHelper.computeExportValue($metadata.classNamePrefix)} ${className}${finalClass} : public Aws::Client::AWSXMLClient, public Aws::Client::ClientWithAsyncTemplateMethods<${className}>
     {
     public:
         typedef Aws::Client::AWSXMLClient BASECLASS;
@@ -94,7 +94,6 @@ namespace ${rootNamespace}
         static const char* ALLOCATION_TAG;
 
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientHeaderConstructors.vm")
-#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/ServiceClientHeaderAsyncTemplates.vm")
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientHeaderOperations.vm")
 
         Aws::String GeneratePresignedUrl(const Aws::String& bucket,
@@ -204,6 +203,7 @@ namespace ${rootNamespace}
 
 #end
     private:
+        friend class Aws::Client::ClientWithAsyncTemplateMethods<${className}>;
 #if($serviceNamespace == "S3Crt")
         void init(const S3Crt::ClientConfiguration& clientConfiguration, const std::shared_ptr<Aws::Auth::AWSCredentialsProvider> credentialsProvider);
 
