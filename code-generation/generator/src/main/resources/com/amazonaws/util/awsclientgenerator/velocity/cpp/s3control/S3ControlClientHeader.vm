@@ -13,6 +13,7 @@
 \#include <aws/${metadata.projectName}/${metadata.classNamePrefix}EndpointProvider.h>
 #end
 \#include <aws/core/client/AWSClient.h>
+\#include <aws/core/client/AWSAsyncOperationTemplate.h>
 \#include <aws/core/auth/AWSAuthSigner.h>
 \#include <aws/core/utils/xml/XmlSerializer.h>
 \#include <aws/core/utils/DNS.h>
@@ -54,7 +55,7 @@ namespace ${metadata.namespace}
         static const char* ALLOCATION_TAG;
 
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientHeaderConstructors.vm")
-
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/ServiceClientHeaderAsyncTemplates.vm")
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientHeaderOperations.vm")
 
         void OverrideEndpoint(const Aws::String& endpoint);

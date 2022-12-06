@@ -2,6 +2,7 @@
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * SPDX-License-Identifier: Apache-2.0.
  */
+#pragma once
 
 #define AWS_SDK_VERSION_STRING "@AWSSDK_VERSION_STRING@"
 #define AWS_SDK_VERSION_MAJOR @AWSSDK_VERSION_MAJOR@

@@ -42,6 +42,12 @@ namespace Aws
                     return SubmitToThread(std::move(callable));
                 }
 
+                /* explicit _overload_ of the template function above to avoid template bloat */
+                bool Submit(std::function<void()>&& callable)
+                {
+                    return SubmitToThread(std::move(callable));
+                }
+
             protected:
                 /**
                 * To implement your own executor implementation, then simply subclass Executor and implement this method.

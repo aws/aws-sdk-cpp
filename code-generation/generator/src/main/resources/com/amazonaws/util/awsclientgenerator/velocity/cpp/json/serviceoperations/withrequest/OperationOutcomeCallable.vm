@@ -1,7 +1,0 @@
-${operation.name}OutcomeCallable ${className}::${operation.name}Callable(${constText}${operation.request.shape.name}& request) const
-{
-  auto task = Aws::MakeShared< std::packaged_task< ${operation.name}Outcome() > >(ALLOCATION_TAG, [this, ${refText}request](){ return this->${operation.name}(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
-}
