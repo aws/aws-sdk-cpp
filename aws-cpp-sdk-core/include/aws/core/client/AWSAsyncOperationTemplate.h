@@ -8,6 +8,7 @@
 #include <aws/core/Core_EXPORTS.h>
 #include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/core/utils/memory/stl/AWSAllocator.h>
+#include <aws/core/utils/threading/Executor.h>
 #include <functional>
 #include <future>
 
@@ -119,7 +120,6 @@ namespace Client
                 [clientThis, operationFunc, request]() // note capture by value
                 {
                     auto futureOutcome = (clientThis->*operationFunc)(request);
-                    requestDeleter(request);
                     return futureOutcome;
                 } );
 
