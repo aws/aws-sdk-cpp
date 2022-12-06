@@ -104,10 +104,11 @@ namespace SageMakerFeatureStoreRuntime
         virtual void BatchGetRecordAsync(const Model::BatchGetRecordRequest& request, const BatchGetRecordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a <code>Record</code> from a <code>FeatureGroup</code>. A new record
-         * will show up in the <code>OfflineStore</code> when the <code>DeleteRecord</code>
-         * API is called. This record will have a value of <code>True</code> in the
-         * <code>is_deleted</code> column.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a <code>Record</code> from a <code>FeatureGroup</code>. When the
+         * <code>DeleteRecord</code> API is called a new record will be added to the
+         * <code>OfflineStore</code> and the <code>Record</code> will be removed from the
+         * <code>OnlineStore</code>. This record will have a value of <code>True</code> in
+         * the <code>is_deleted</code> column.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-featurestore-runtime-2020-07-01/DeleteRecord">AWS
          * API Reference</a></p>
          */

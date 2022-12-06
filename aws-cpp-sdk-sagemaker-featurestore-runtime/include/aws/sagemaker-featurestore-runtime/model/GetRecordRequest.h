@@ -40,42 +40,42 @@ namespace Model
 
 
     /**
-     * <p>The name of the feature group in which you want to put the records.</p>
+     * <p>The name of the feature group from which you want to retrieve a record.</p>
      */
     inline const Aws::String& GetFeatureGroupName() const{ return m_featureGroupName; }
 
     /**
-     * <p>The name of the feature group in which you want to put the records.</p>
+     * <p>The name of the feature group from which you want to retrieve a record.</p>
      */
     inline bool FeatureGroupNameHasBeenSet() const { return m_featureGroupNameHasBeenSet; }
 
     /**
-     * <p>The name of the feature group in which you want to put the records.</p>
+     * <p>The name of the feature group from which you want to retrieve a record.</p>
      */
     inline void SetFeatureGroupName(const Aws::String& value) { m_featureGroupNameHasBeenSet = true; m_featureGroupName = value; }
 
     /**
-     * <p>The name of the feature group in which you want to put the records.</p>
+     * <p>The name of the feature group from which you want to retrieve a record.</p>
      */
     inline void SetFeatureGroupName(Aws::String&& value) { m_featureGroupNameHasBeenSet = true; m_featureGroupName = std::move(value); }
 
     /**
-     * <p>The name of the feature group in which you want to put the records.</p>
+     * <p>The name of the feature group from which you want to retrieve a record.</p>
      */
     inline void SetFeatureGroupName(const char* value) { m_featureGroupNameHasBeenSet = true; m_featureGroupName.assign(value); }
 
     /**
-     * <p>The name of the feature group in which you want to put the records.</p>
+     * <p>The name of the feature group from which you want to retrieve a record.</p>
      */
     inline GetRecordRequest& WithFeatureGroupName(const Aws::String& value) { SetFeatureGroupName(value); return *this;}
 
     /**
-     * <p>The name of the feature group in which you want to put the records.</p>
+     * <p>The name of the feature group from which you want to retrieve a record.</p>
      */
     inline GetRecordRequest& WithFeatureGroupName(Aws::String&& value) { SetFeatureGroupName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the feature group in which you want to put the records.</p>
+     * <p>The name of the feature group from which you want to retrieve a record.</p>
      */
     inline GetRecordRequest& WithFeatureGroupName(const char* value) { SetFeatureGroupName(value); return *this;}
 

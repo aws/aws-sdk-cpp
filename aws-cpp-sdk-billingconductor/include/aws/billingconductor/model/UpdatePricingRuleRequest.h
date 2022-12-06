@@ -8,6 +8,7 @@
 #include <aws/billingconductor/BillingConductorRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/billingconductor/model/PricingRuleType.h>
+#include <aws/billingconductor/model/UpdateTieringInput.h>
 #include <utility>
 
 namespace Aws
@@ -215,6 +216,37 @@ namespace Model
      */
     inline UpdatePricingRuleRequest& WithModifierPercentage(double value) { SetModifierPercentage(value); return *this;}
 
+
+    /**
+     * <p> The set of tiering configurations for the pricing rule. </p>
+     */
+    inline const UpdateTieringInput& GetTiering() const{ return m_tiering; }
+
+    /**
+     * <p> The set of tiering configurations for the pricing rule. </p>
+     */
+    inline bool TieringHasBeenSet() const { return m_tieringHasBeenSet; }
+
+    /**
+     * <p> The set of tiering configurations for the pricing rule. </p>
+     */
+    inline void SetTiering(const UpdateTieringInput& value) { m_tieringHasBeenSet = true; m_tiering = value; }
+
+    /**
+     * <p> The set of tiering configurations for the pricing rule. </p>
+     */
+    inline void SetTiering(UpdateTieringInput&& value) { m_tieringHasBeenSet = true; m_tiering = std::move(value); }
+
+    /**
+     * <p> The set of tiering configurations for the pricing rule. </p>
+     */
+    inline UpdatePricingRuleRequest& WithTiering(const UpdateTieringInput& value) { SetTiering(value); return *this;}
+
+    /**
+     * <p> The set of tiering configurations for the pricing rule. </p>
+     */
+    inline UpdatePricingRuleRequest& WithTiering(UpdateTieringInput&& value) { SetTiering(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_arn;
@@ -231,6 +263,9 @@ namespace Model
 
     double m_modifierPercentage;
     bool m_modifierPercentageHasBeenSet = false;
+
+    UpdateTieringInput m_tiering;
+    bool m_tieringHasBeenSet = false;
   };
 
 } // namespace Model

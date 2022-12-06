@@ -294,7 +294,14 @@ namespace Connect
          * <p>Claims an available phone number to your Amazon Connect instance or traffic
          * distribution group. You can call this API only in the same Amazon Web Services
          * Region where the Amazon Connect instance or traffic distribution group was
-         * created.</p>  <p>You can call the <a
+         * created.</p> <p>For more information about how to use this operation, see <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/claim-phone-number.html">Claim
+         * a phone number in your country</a> and <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/claim-phone-numbers-traffic-distribution-groups.html">Claim
+         * phone numbers to traffic distribution groups</a> in the <i>Amazon Connect
+         * Administrator Guide</i>. </p>  <p>You can call the <a
+         * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_SearchAvailablePhoneNumbers.html">SearchAvailablePhoneNumbers</a>
+         * API for available phone numbers that you can claim. Call the <a
          * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribePhoneNumber.html">DescribePhoneNumber</a>
          * API to verify the status of a previous <a
          * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ClaimPhoneNumber.html">ClaimPhoneNumber</a>
@@ -497,6 +504,24 @@ namespace Connect
          * An Async wrapper for CreateRoutingProfile that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateRoutingProfileAsync(const Model::CreateRoutingProfileRequest& request, const CreateRoutingProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates a rule for the specified Amazon Connect instance.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateRule">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateRuleOutcome CreateRule(const Model::CreateRuleRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateRule that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateRuleOutcomeCallable CreateRuleCallable(const Model::CreateRuleRequest& request) const;
+
+        /**
+         * An Async wrapper for CreateRule that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateRuleAsync(const Model::CreateRuleRequest& request, const CreateRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>This API is in preview release for Amazon Connect and is subject to
@@ -745,6 +770,24 @@ namespace Connect
          * An Async wrapper for DeleteQuickConnect that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteQuickConnectAsync(const Model::DeleteQuickConnectRequest& request, const DeleteQuickConnectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes a rule for the specified Amazon Connect instance.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteRule">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteRuleOutcome DeleteRule(const Model::DeleteRuleRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteRule that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteRuleOutcomeCallable DeleteRuleCallable(const Model::DeleteRuleRequest& request) const;
+
+        /**
+         * An Async wrapper for DeleteRule that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteRuleAsync(const Model::DeleteRuleRequest& request, const DeleteRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>This API is in preview release for Amazon Connect and is subject to
@@ -1112,6 +1155,24 @@ namespace Connect
          * An Async wrapper for DescribeRoutingProfile that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeRoutingProfileAsync(const Model::DescribeRoutingProfileRequest& request, const DescribeRoutingProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Describes a rule for the specified Amazon Connect instance.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeRule">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeRuleOutcome DescribeRule(const Model::DescribeRuleRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeRule that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeRuleOutcomeCallable DescribeRuleCallable(const Model::DescribeRuleRequest& request) const;
+
+        /**
+         * An Async wrapper for DescribeRule that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeRuleAsync(const Model::DescribeRuleRequest& request, const DescribeRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>This API is in preview release for Amazon Connect and is subject to
@@ -2004,6 +2065,24 @@ namespace Connect
          * An Async wrapper for ListRoutingProfiles that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListRoutingProfilesAsync(const Model::ListRoutingProfilesRequest& request, const ListRoutingProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>List all rules for the specified Amazon Connect instance.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListRules">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListRulesOutcome ListRules(const Model::ListRulesRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListRules that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListRulesOutcomeCallable ListRulesCallable(const Model::ListRulesRequest& request) const;
+
+        /**
+         * An Async wrapper for ListRules that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListRulesAsync(const Model::ListRulesRequest& request, const ListRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>This API is in preview release for Amazon Connect and is subject to
@@ -3173,6 +3252,24 @@ namespace Connect
          * An Async wrapper for UpdateRoutingProfileQueues that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateRoutingProfileQueuesAsync(const Model::UpdateRoutingProfileQueuesRequest& request, const UpdateRoutingProfileQueuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Updates a rule for the specified Amazon Connect instance.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateRule">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateRuleOutcome UpdateRule(const Model::UpdateRuleRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateRule that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateRuleOutcomeCallable UpdateRuleCallable(const Model::UpdateRuleRequest& request) const;
+
+        /**
+         * An Async wrapper for UpdateRule that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateRuleAsync(const Model::UpdateRuleRequest& request, const UpdateRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>This API is in preview release for Amazon Connect and is subject to

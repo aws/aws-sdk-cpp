@@ -10,6 +10,7 @@
 #include <aws/billingconductor/model/PricingRuleScope.h>
 #include <aws/billingconductor/model/PricingRuleType.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/billingconductor/model/CreateTieringInput.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -442,6 +443,37 @@ namespace Model
      */
     inline CreatePricingRuleRequest& WithBillingEntity(const char* value) { SetBillingEntity(value); return *this;}
 
+
+    /**
+     * <p> The set of tiering configurations for the pricing rule. </p>
+     */
+    inline const CreateTieringInput& GetTiering() const{ return m_tiering; }
+
+    /**
+     * <p> The set of tiering configurations for the pricing rule. </p>
+     */
+    inline bool TieringHasBeenSet() const { return m_tieringHasBeenSet; }
+
+    /**
+     * <p> The set of tiering configurations for the pricing rule. </p>
+     */
+    inline void SetTiering(const CreateTieringInput& value) { m_tieringHasBeenSet = true; m_tiering = value; }
+
+    /**
+     * <p> The set of tiering configurations for the pricing rule. </p>
+     */
+    inline void SetTiering(CreateTieringInput&& value) { m_tieringHasBeenSet = true; m_tiering = std::move(value); }
+
+    /**
+     * <p> The set of tiering configurations for the pricing rule. </p>
+     */
+    inline CreatePricingRuleRequest& WithTiering(const CreateTieringInput& value) { SetTiering(value); return *this;}
+
+    /**
+     * <p> The set of tiering configurations for the pricing rule. </p>
+     */
+    inline CreatePricingRuleRequest& WithTiering(CreateTieringInput&& value) { SetTiering(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_clientToken;
@@ -470,6 +502,9 @@ namespace Model
 
     Aws::String m_billingEntity;
     bool m_billingEntityHasBeenSet = false;
+
+    CreateTieringInput m_tiering;
+    bool m_tieringHasBeenSet = false;
   };
 
 } // namespace Model

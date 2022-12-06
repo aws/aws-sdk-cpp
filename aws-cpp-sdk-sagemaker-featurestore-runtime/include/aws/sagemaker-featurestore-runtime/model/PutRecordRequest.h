@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sagemaker-featurestore-runtime/model/FeatureValue.h>
+#include <aws/sagemaker-featurestore-runtime/model/TargetStore.h>
 #include <utility>
 
 namespace Aws
@@ -147,6 +148,63 @@ namespace Model
      */
     inline PutRecordRequest& AddRecord(FeatureValue&& value) { m_recordHasBeenSet = true; m_record.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>A list of stores to which you're adding the record. By default, Feature Store
+     * adds the record to all of the stores that you're using for the
+     * <code>FeatureGroup</code>.</p>
+     */
+    inline const Aws::Vector<TargetStore>& GetTargetStores() const{ return m_targetStores; }
+
+    /**
+     * <p>A list of stores to which you're adding the record. By default, Feature Store
+     * adds the record to all of the stores that you're using for the
+     * <code>FeatureGroup</code>.</p>
+     */
+    inline bool TargetStoresHasBeenSet() const { return m_targetStoresHasBeenSet; }
+
+    /**
+     * <p>A list of stores to which you're adding the record. By default, Feature Store
+     * adds the record to all of the stores that you're using for the
+     * <code>FeatureGroup</code>.</p>
+     */
+    inline void SetTargetStores(const Aws::Vector<TargetStore>& value) { m_targetStoresHasBeenSet = true; m_targetStores = value; }
+
+    /**
+     * <p>A list of stores to which you're adding the record. By default, Feature Store
+     * adds the record to all of the stores that you're using for the
+     * <code>FeatureGroup</code>.</p>
+     */
+    inline void SetTargetStores(Aws::Vector<TargetStore>&& value) { m_targetStoresHasBeenSet = true; m_targetStores = std::move(value); }
+
+    /**
+     * <p>A list of stores to which you're adding the record. By default, Feature Store
+     * adds the record to all of the stores that you're using for the
+     * <code>FeatureGroup</code>.</p>
+     */
+    inline PutRecordRequest& WithTargetStores(const Aws::Vector<TargetStore>& value) { SetTargetStores(value); return *this;}
+
+    /**
+     * <p>A list of stores to which you're adding the record. By default, Feature Store
+     * adds the record to all of the stores that you're using for the
+     * <code>FeatureGroup</code>.</p>
+     */
+    inline PutRecordRequest& WithTargetStores(Aws::Vector<TargetStore>&& value) { SetTargetStores(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of stores to which you're adding the record. By default, Feature Store
+     * adds the record to all of the stores that you're using for the
+     * <code>FeatureGroup</code>.</p>
+     */
+    inline PutRecordRequest& AddTargetStores(const TargetStore& value) { m_targetStoresHasBeenSet = true; m_targetStores.push_back(value); return *this; }
+
+    /**
+     * <p>A list of stores to which you're adding the record. By default, Feature Store
+     * adds the record to all of the stores that you're using for the
+     * <code>FeatureGroup</code>.</p>
+     */
+    inline PutRecordRequest& AddTargetStores(TargetStore&& value) { m_targetStoresHasBeenSet = true; m_targetStores.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_featureGroupName;
@@ -154,6 +212,9 @@ namespace Model
 
     Aws::Vector<FeatureValue> m_record;
     bool m_recordHasBeenSet = false;
+
+    Aws::Vector<TargetStore> m_targetStores;
+    bool m_targetStoresHasBeenSet = false;
   };
 
 } // namespace Model

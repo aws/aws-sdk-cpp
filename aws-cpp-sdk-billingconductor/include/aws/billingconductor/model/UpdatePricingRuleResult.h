@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/billingconductor/model/PricingRuleScope.h>
 #include <aws/billingconductor/model/PricingRuleType.h>
+#include <aws/billingconductor/model/UpdateTieringInput.h>
 #include <utility>
 
 namespace Aws
@@ -353,6 +354,32 @@ namespace Model
      */
     inline UpdatePricingRuleResult& WithBillingEntity(const char* value) { SetBillingEntity(value); return *this;}
 
+
+    /**
+     * <p> The set of tiering configurations for the pricing rule. </p>
+     */
+    inline const UpdateTieringInput& GetTiering() const{ return m_tiering; }
+
+    /**
+     * <p> The set of tiering configurations for the pricing rule. </p>
+     */
+    inline void SetTiering(const UpdateTieringInput& value) { m_tiering = value; }
+
+    /**
+     * <p> The set of tiering configurations for the pricing rule. </p>
+     */
+    inline void SetTiering(UpdateTieringInput&& value) { m_tiering = std::move(value); }
+
+    /**
+     * <p> The set of tiering configurations for the pricing rule. </p>
+     */
+    inline UpdatePricingRuleResult& WithTiering(const UpdateTieringInput& value) { SetTiering(value); return *this;}
+
+    /**
+     * <p> The set of tiering configurations for the pricing rule. </p>
+     */
+    inline UpdatePricingRuleResult& WithTiering(UpdateTieringInput&& value) { SetTiering(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_arn;
@@ -374,6 +401,8 @@ namespace Model
     long long m_lastModifiedTime;
 
     Aws::String m_billingEntity;
+
+    UpdateTieringInput m_tiering;
   };
 
 } // namespace Model
