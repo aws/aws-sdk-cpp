@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/billingconductor/model/PricingRuleScope.h>
 #include <aws/billingconductor/model/PricingRuleType.h>
+#include <aws/billingconductor/model/Tiering.h>
 #include <utility>
 
 namespace Aws
@@ -419,6 +420,37 @@ namespace Model
      */
     inline PricingRuleListElement& WithBillingEntity(const char* value) { SetBillingEntity(value); return *this;}
 
+
+    /**
+     * <p> The set of tiering configurations for the pricing rule. </p>
+     */
+    inline const Tiering& GetTiering() const{ return m_tiering; }
+
+    /**
+     * <p> The set of tiering configurations for the pricing rule. </p>
+     */
+    inline bool TieringHasBeenSet() const { return m_tieringHasBeenSet; }
+
+    /**
+     * <p> The set of tiering configurations for the pricing rule. </p>
+     */
+    inline void SetTiering(const Tiering& value) { m_tieringHasBeenSet = true; m_tiering = value; }
+
+    /**
+     * <p> The set of tiering configurations for the pricing rule. </p>
+     */
+    inline void SetTiering(Tiering&& value) { m_tieringHasBeenSet = true; m_tiering = std::move(value); }
+
+    /**
+     * <p> The set of tiering configurations for the pricing rule. </p>
+     */
+    inline PricingRuleListElement& WithTiering(const Tiering& value) { SetTiering(value); return *this;}
+
+    /**
+     * <p> The set of tiering configurations for the pricing rule. </p>
+     */
+    inline PricingRuleListElement& WithTiering(Tiering&& value) { SetTiering(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -453,6 +485,9 @@ namespace Model
 
     Aws::String m_billingEntity;
     bool m_billingEntityHasBeenSet = false;
+
+    Tiering m_tiering;
+    bool m_tieringHasBeenSet = false;
   };
 
 } // namespace Model

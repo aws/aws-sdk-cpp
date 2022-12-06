@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     MARKUP,
-    DISCOUNT
+    DISCOUNT,
+    TIERING
   };
 
 namespace PricingRuleTypeMapper

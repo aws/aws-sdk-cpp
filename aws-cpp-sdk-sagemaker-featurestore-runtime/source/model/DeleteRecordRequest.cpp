@@ -18,7 +18,8 @@ using namespace Aws::Http;
 DeleteRecordRequest::DeleteRecordRequest() : 
     m_featureGroupNameHasBeenSet(false),
     m_recordIdentifierValueAsStringHasBeenSet(false),
-    m_eventTimeHasBeenSet(false)
+    m_eventTimeHasBeenSet(false),
+    m_targetStoresHasBeenSet(false)
 {
 }
 
@@ -42,6 +43,16 @@ void DeleteRecordRequest::AddQueryStringParameters(URI& uri) const
       ss << m_eventTime;
       uri.AddQueryStringParameter("EventTime", ss.str());
       ss.str("");
+    }
+
+    if(m_targetStoresHasBeenSet)
+    {
+      for(const auto& item : m_targetStores)
+      {
+        ss << TargetStoreMapper::GetNameForTargetStore(item);
+        uri.AddQueryStringParameter("TargetStores", ss.str());
+        ss.str("");
+      }
     }
 
 }

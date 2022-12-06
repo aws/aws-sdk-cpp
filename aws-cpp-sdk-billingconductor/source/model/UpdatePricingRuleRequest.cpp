@@ -19,7 +19,8 @@ UpdatePricingRuleRequest::UpdatePricingRuleRequest() :
     m_type(PricingRuleType::NOT_SET),
     m_typeHasBeenSet(false),
     m_modifierPercentage(0.0),
-    m_modifierPercentageHasBeenSet(false)
+    m_modifierPercentageHasBeenSet(false),
+    m_tieringHasBeenSet(false)
 {
 }
 
@@ -53,6 +54,12 @@ Aws::String UpdatePricingRuleRequest::SerializePayload() const
   if(m_modifierPercentageHasBeenSet)
   {
    payload.WithDouble("ModifierPercentage", m_modifierPercentage);
+
+  }
+
+  if(m_tieringHasBeenSet)
+  {
+   payload.WithObject("Tiering", m_tiering.Jsonize());
 
   }
 

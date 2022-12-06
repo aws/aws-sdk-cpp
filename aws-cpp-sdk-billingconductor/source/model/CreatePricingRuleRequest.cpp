@@ -26,7 +26,8 @@ CreatePricingRuleRequest::CreatePricingRuleRequest() :
     m_modifierPercentageHasBeenSet(false),
     m_serviceHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_billingEntityHasBeenSet(false)
+    m_billingEntityHasBeenSet(false),
+    m_tieringHasBeenSet(false)
 {
 }
 
@@ -82,6 +83,12 @@ Aws::String CreatePricingRuleRequest::SerializePayload() const
   if(m_billingEntityHasBeenSet)
   {
    payload.WithString("BillingEntity", m_billingEntity);
+
+  }
+
+  if(m_tieringHasBeenSet)
+  {
+   payload.WithObject("Tiering", m_tiering.Jsonize());
 
   }
 
