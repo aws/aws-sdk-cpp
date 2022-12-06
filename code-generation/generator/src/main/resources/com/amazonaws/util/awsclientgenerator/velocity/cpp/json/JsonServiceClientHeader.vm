@@ -8,6 +8,7 @@
 \#include <aws/$metadata.projectName/${metadata.classNamePrefix}_EXPORTS.h>
 \#include <aws/core/client/ClientConfiguration.h>
 \#include <aws/core/client/AWSClient.h>
+\#include <aws/core/client/AWSAsyncOperationTemplate.h>
 \#include <aws/core/utils/json/JsonSerializer.h>
 \#include <aws/$metadata.projectName/${metadata.classNamePrefix}ServiceClientModel.h>
 
@@ -32,7 +33,7 @@ namespace ${serviceNamespace}
       static const char* ALLOCATION_TAG;
 
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientHeaderConstructors.vm")
-
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/ServiceClientHeaderAsyncTemplates.vm")
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientHeaderOperations.vm")
 
       void OverrideEndpoint(const Aws::String& endpoint);

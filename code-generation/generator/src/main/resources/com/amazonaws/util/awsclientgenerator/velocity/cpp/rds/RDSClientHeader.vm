@@ -9,6 +9,7 @@
 \#include <aws/core/client/ClientConfiguration.h>
 \#include <aws/core/AmazonSerializableWebServiceRequest.h>
 \#include <aws/core/client/AWSClient.h>
+\#include <aws/core/client/AWSAsyncOperationTemplate.h>
 \#include <aws/core/utils/xml/XmlSerializer.h>
 \#include <aws/$metadata.projectName/${metadata.classNamePrefix}ServiceClientModel.h>
 
@@ -32,7 +33,8 @@ namespace ${rootNamespace}
     static const char* SERVICE_NAME;
     static const char* ALLOCATION_TAG;
 
-    #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientHeaderConstructors.vm")
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientHeaderConstructors.vm")
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/ServiceClientHeaderAsyncTemplates.vm")
 
     #if($metadata.protocol == "query")
 
