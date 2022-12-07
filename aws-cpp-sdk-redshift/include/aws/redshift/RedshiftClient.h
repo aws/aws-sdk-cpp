@@ -8,6 +8,7 @@
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/redshift/RedshiftServiceClientModel.h>
 
@@ -39,7 +40,7 @@ namespace Redshift
    * Redshift Database Developer Guide</a> explains how to design, build, query, and
    * maintain the databases that make up your data warehouse. </p>
    */
-  class AWS_REDSHIFT_API RedshiftClient : public Aws::Client::AWSXMLClient
+  class AWS_REDSHIFT_API RedshiftClient : public Aws::Client::AWSXMLClient, public Aws::Client::ClientWithAsyncTemplateMethods<RedshiftClient>
   {
     public:
       typedef Aws::Client::AWSXMLClient BASECLASS;
@@ -2648,6 +2649,7 @@ namespace Redshift
         void OverrideEndpoint(const Aws::String& endpoint);
         std::shared_ptr<RedshiftEndpointProviderBase>& accessEndpointProvider();
   private:
+        friend class Aws::Client::ClientWithAsyncTemplateMethods<RedshiftClient>;
         void init(const RedshiftClientConfiguration& clientConfiguration);
 
         RedshiftClientConfiguration m_clientConfiguration;

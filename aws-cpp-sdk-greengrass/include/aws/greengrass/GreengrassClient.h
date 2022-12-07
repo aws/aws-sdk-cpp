@@ -7,6 +7,7 @@
 #include <aws/greengrass/Greengrass_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/greengrass/GreengrassServiceClientModel.h>
 
@@ -22,7 +23,7 @@ namespace Greengrass
    * IoT Greengrass minimizes the cost of transmitting data to the cloud by allowing
    * you to author AWS Lambda functions that execute locally.
    */
-  class AWS_GREENGRASS_API GreengrassClient : public Aws::Client::AWSJsonClient
+  class AWS_GREENGRASS_API GreengrassClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<GreengrassClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -76,7 +77,6 @@ namespace Greengrass
 
         /* End of legacy constructors due deprecation */
         virtual ~GreengrassClient();
-
 
         /**
          * Associates a role with a group. Your Greengrass core will use the role to access
@@ -1722,6 +1722,7 @@ namespace Greengrass
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<GreengrassEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<GreengrassClient>;
       void init(const GreengrassClientConfiguration& clientConfiguration);
 
       GreengrassClientConfiguration m_clientConfiguration;

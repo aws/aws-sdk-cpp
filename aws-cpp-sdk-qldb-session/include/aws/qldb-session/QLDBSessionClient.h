@@ -7,6 +7,7 @@
 #include <aws/qldb-session/QLDBSession_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/qldb-session/QLDBSessionServiceClientModel.h>
 
@@ -30,7 +31,7 @@ namespace QLDBSession
    * href="https://docs.aws.amazon.com/qldb/latest/developerguide/data-shell.html">Accessing
    * Amazon QLDB using the QLDB shell</a>.</p> </li> </ul> 
    */
-  class AWS_QLDBSESSION_API QLDBSessionClient : public Aws::Client::AWSJsonClient
+  class AWS_QLDBSESSION_API QLDBSessionClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<QLDBSessionClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -85,7 +86,6 @@ namespace QLDBSession
         /* End of legacy constructors due deprecation */
         virtual ~QLDBSessionClient();
 
-
         /**
          * <p>Sends a command to an Amazon QLDB ledger.</p>  <p>Instead of
          * interacting directly with this API, we recommend using the QLDB driver or the
@@ -121,6 +121,7 @@ namespace QLDBSession
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<QLDBSessionEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<QLDBSessionClient>;
       void init(const QLDBSessionClientConfiguration& clientConfiguration);
 
       QLDBSessionClientConfiguration m_clientConfiguration;

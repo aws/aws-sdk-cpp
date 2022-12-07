@@ -7,6 +7,7 @@
 #include <aws/backupstorage/BackupStorage_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/backupstorage/BackupStorageServiceClientModel.h>
 
@@ -17,7 +18,7 @@ namespace BackupStorage
   /**
    * The frontend service for Cryo Storage.
    */
-  class AWS_BACKUPSTORAGE_API BackupStorageClient : public Aws::Client::AWSJsonClient
+  class AWS_BACKUPSTORAGE_API BackupStorageClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<BackupStorageClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -71,7 +72,6 @@ namespace BackupStorage
 
         /* End of legacy constructors due deprecation */
         virtual ~BackupStorageClient();
-
 
         /**
          * Delete Object from the incremental base Backup.<p><h3>See Also:</h3>   <a
@@ -231,6 +231,7 @@ namespace BackupStorage
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<BackupStorageEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<BackupStorageClient>;
       void init(const BackupStorageClientConfiguration& clientConfiguration);
 
       BackupStorageClientConfiguration m_clientConfiguration;

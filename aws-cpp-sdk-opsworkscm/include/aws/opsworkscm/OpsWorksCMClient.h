@@ -7,6 +7,7 @@
 #include <aws/opsworkscm/OpsWorksCM_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/opsworkscm/OpsWorksCMServiceClientModel.h>
 
@@ -58,7 +59,7 @@ namespace OpsWorksCM
    * <b>Throttling limits</b> </p> <p>All API operations allow for five requests per
    * second with a burst of 10 requests per second.</p>
    */
-  class AWS_OPSWORKSCM_API OpsWorksCMClient : public Aws::Client::AWSJsonClient
+  class AWS_OPSWORKSCM_API OpsWorksCMClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<OpsWorksCMClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -112,7 +113,6 @@ namespace OpsWorksCM
 
         /* End of legacy constructors due deprecation */
         virtual ~OpsWorksCMClient();
-
 
         /**
          * <p> Associates a new node with the server. For more information about how to
@@ -578,6 +578,7 @@ namespace OpsWorksCM
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<OpsWorksCMEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<OpsWorksCMClient>;
       void init(const OpsWorksCMClientConfiguration& clientConfiguration);
 
       OpsWorksCMClientConfiguration m_clientConfiguration;

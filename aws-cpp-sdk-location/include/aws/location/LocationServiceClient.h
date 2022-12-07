@@ -7,6 +7,7 @@
 #include <aws/location/LocationService_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/location/LocationServiceServiceClientModel.h>
 
@@ -18,7 +19,7 @@ namespace LocationService
    * <p>"Suite of geospatial services including Maps, Places, Routes, Tracking, and
    * Geofencing"</p>
    */
-  class AWS_LOCATIONSERVICE_API LocationServiceClient : public Aws::Client::AWSJsonClient
+  class AWS_LOCATIONSERVICE_API LocationServiceClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<LocationServiceClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -72,7 +73,6 @@ namespace LocationService
 
         /* End of legacy constructors due deprecation */
         virtual ~LocationServiceClient();
-
 
         /**
          * <p>Creates an association between a geofence collection and a tracker resource.
@@ -1185,6 +1185,7 @@ namespace LocationService
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<LocationServiceEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<LocationServiceClient>;
       void init(const LocationServiceClientConfiguration& clientConfiguration);
 
       LocationServiceClientConfiguration m_clientConfiguration;

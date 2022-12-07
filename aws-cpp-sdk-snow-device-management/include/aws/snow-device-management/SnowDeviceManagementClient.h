@@ -7,6 +7,7 @@
 #include <aws/snow-device-management/SnowDeviceManagement_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/snow-device-management/SnowDeviceManagementServiceClientModel.h>
 
@@ -17,7 +18,7 @@ namespace SnowDeviceManagement
   /**
    * <p>Amazon Web Services Snow Device Management documentation.</p>
    */
-  class AWS_SNOWDEVICEMANAGEMENT_API SnowDeviceManagementClient : public Aws::Client::AWSJsonClient
+  class AWS_SNOWDEVICEMANAGEMENT_API SnowDeviceManagementClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<SnowDeviceManagementClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -71,7 +72,6 @@ namespace SnowDeviceManagement
 
         /* End of legacy constructors due deprecation */
         virtual ~SnowDeviceManagementClient();
-
 
         /**
          * <p>Sends a cancel request for a specified task. You can cancel a task only if
@@ -316,6 +316,7 @@ namespace SnowDeviceManagement
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<SnowDeviceManagementEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<SnowDeviceManagementClient>;
       void init(const SnowDeviceManagementClientConfiguration& clientConfiguration);
 
       SnowDeviceManagementClientConfiguration m_clientConfiguration;

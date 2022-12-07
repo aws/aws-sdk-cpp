@@ -7,6 +7,7 @@
 #include <aws/glue/Glue_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/glue/GlueServiceClientModel.h>
 
@@ -18,7 +19,7 @@ namespace Glue
    * <fullname>Glue</fullname> <p>Defines the public endpoint for the Glue
    * service.</p>
    */
-  class AWS_GLUE_API GlueClient : public Aws::Client::AWSJsonClient
+  class AWS_GLUE_API GlueClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<GlueClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -72,7 +73,6 @@ namespace Glue
 
         /* End of legacy constructors due deprecation */
         virtual ~GlueClient();
-
 
         /**
          * <p>Creates one or more partitions in a batch operation.</p><p><h3>See Also:</h3>
@@ -3936,6 +3936,7 @@ namespace Glue
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<GlueEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<GlueClient>;
       void init(const GlueClientConfiguration& clientConfiguration);
 
       GlueClientConfiguration m_clientConfiguration;

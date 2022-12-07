@@ -7,6 +7,7 @@
 #include <aws/opensearchserverless/OpenSearchServerless_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/opensearchserverless/OpenSearchServerlessServiceClientModel.h>
 
@@ -26,7 +27,7 @@ namespace OpenSearchServerless
    * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-overview.html">What
    * is Amazon OpenSearch Serverless?</a> </p>
    */
-  class AWS_OPENSEARCHSERVERLESS_API OpenSearchServerlessClient : public Aws::Client::AWSJsonClient
+  class AWS_OPENSEARCHSERVERLESS_API OpenSearchServerlessClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<OpenSearchServerlessClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -80,7 +81,6 @@ namespace OpenSearchServerless
 
         /* End of legacy constructors due deprecation */
         virtual ~OpenSearchServerlessClient();
-
 
         /**
          * <p>Returns attributes for one or more collections, including the collection
@@ -718,6 +718,7 @@ namespace OpenSearchServerless
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<OpenSearchServerlessEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<OpenSearchServerlessClient>;
       void init(const OpenSearchServerlessClientConfiguration& clientConfiguration);
 
       OpenSearchServerlessClientConfiguration m_clientConfiguration;

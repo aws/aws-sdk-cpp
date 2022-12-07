@@ -7,6 +7,7 @@
 #include <aws/sso-admin/SSOAdmin_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/sso-admin/SSOAdminServiceClientModel.h>
 
@@ -42,7 +43,7 @@ namespace SSOAdmin
    * <a href="http://aws.amazon.com/tools/">Tools for Amazon Web Services</a>.</p>
    * 
    */
-  class AWS_SSOADMIN_API SSOAdminClient : public Aws::Client::AWSJsonClient
+  class AWS_SSOADMIN_API SSOAdminClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<SSOAdminClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -96,7 +97,6 @@ namespace SSOAdmin
 
         /* End of legacy constructors due deprecation */
         virtual ~SSOAdminClient();
-
 
         /**
          * <p>Attaches the specified customer managed policy to the specified
@@ -812,6 +812,7 @@ namespace SSOAdmin
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<SSOAdminEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<SSOAdminClient>;
       void init(const SSOAdminClientConfiguration& clientConfiguration);
 
       SSOAdminClientConfiguration m_clientConfiguration;

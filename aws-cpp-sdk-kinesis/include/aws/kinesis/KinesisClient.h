@@ -7,6 +7,7 @@
 #include <aws/kinesis/Kinesis_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/kinesis/KinesisServiceClientModel.h>
 
@@ -19,7 +20,7 @@ namespace Kinesis
    * Kinesis Data Streams is a managed service that scales elastically for real-time
    * processing of streaming big data.</p>
    */
-  class AWS_KINESIS_API KinesisClient : public Aws::Client::AWSJsonClient
+  class AWS_KINESIS_API KinesisClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<KinesisClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -73,7 +74,6 @@ namespace Kinesis
 
         /* End of legacy constructors due deprecation */
         virtual ~KinesisClient();
-
 
         /**
          * <p>Adds or updates tags for the specified Kinesis data stream. You can assign up
@@ -1064,6 +1064,7 @@ namespace Kinesis
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<KinesisEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<KinesisClient>;
       void init(const KinesisClientConfiguration& clientConfiguration);
 
       KinesisClientConfiguration m_clientConfiguration;

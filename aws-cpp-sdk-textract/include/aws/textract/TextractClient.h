@@ -7,6 +7,7 @@
 #include <aws/textract/Textract_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/textract/TextractServiceClientModel.h>
 
@@ -19,7 +20,7 @@ namespace Textract
    * machine-readable text. This is the API reference documentation for Amazon
    * Textract.</p>
    */
-  class AWS_TEXTRACT_API TextractClient : public Aws::Client::AWSJsonClient
+  class AWS_TEXTRACT_API TextractClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<TextractClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -73,7 +74,6 @@ namespace Textract
 
         /* End of legacy constructors due deprecation */
         virtual ~TextractClient();
-
 
         /**
          * <p>Analyzes an input document for relationships between detected items. </p>
@@ -539,6 +539,7 @@ namespace Textract
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<TextractEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<TextractClient>;
       void init(const TextractClientConfiguration& clientConfiguration);
 
       TextractClientConfiguration m_clientConfiguration;

@@ -8,6 +8,7 @@
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/elasticloadbalancing/ElasticLoadBalancingServiceClientModel.h>
 
@@ -37,7 +38,7 @@ namespace ElasticLoadBalancing
    * operations are <i>idempotent</i>, which means that they complete at most one
    * time. If you repeat an operation, it succeeds with a 200 OK response code.</p>
    */
-  class AWS_ELASTICLOADBALANCING_API ElasticLoadBalancingClient : public Aws::Client::AWSXMLClient
+  class AWS_ELASTICLOADBALANCING_API ElasticLoadBalancingClient : public Aws::Client::AWSXMLClient, public Aws::Client::ClientWithAsyncTemplateMethods<ElasticLoadBalancingClient>
   {
     public:
       typedef Aws::Client::AWSXMLClient BASECLASS;
@@ -791,6 +792,7 @@ namespace ElasticLoadBalancing
         void OverrideEndpoint(const Aws::String& endpoint);
         std::shared_ptr<ElasticLoadBalancingEndpointProviderBase>& accessEndpointProvider();
   private:
+        friend class Aws::Client::ClientWithAsyncTemplateMethods<ElasticLoadBalancingClient>;
         void init(const ElasticLoadBalancingClientConfiguration& clientConfiguration);
 
         ElasticLoadBalancingClientConfiguration m_clientConfiguration;

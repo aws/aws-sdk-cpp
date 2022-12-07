@@ -7,6 +7,7 @@
 #include <aws/workspaces-web/WorkSpacesWeb_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/workspaces-web/WorkSpacesWebServiceClientModel.h>
 
@@ -23,7 +24,7 @@ namespace WorkSpacesWeb
    * tailored for user interactions, while offloading common tasks like capacity
    * management, scaling, and maintaining browser images.</p>
    */
-  class AWS_WORKSPACESWEB_API WorkSpacesWebClient : public Aws::Client::AWSJsonClient
+  class AWS_WORKSPACESWEB_API WorkSpacesWebClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<WorkSpacesWebClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -77,7 +78,6 @@ namespace WorkSpacesWeb
 
         /* End of legacy constructors due deprecation */
         virtual ~WorkSpacesWebClient();
-
 
         /**
          * <p>Associates a browser settings resource with a web portal.</p><p><h3>See
@@ -976,6 +976,7 @@ namespace WorkSpacesWeb
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<WorkSpacesWebEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<WorkSpacesWebClient>;
       void init(const WorkSpacesWebClientConfiguration& clientConfiguration);
 
       WorkSpacesWebClientConfiguration m_clientConfiguration;

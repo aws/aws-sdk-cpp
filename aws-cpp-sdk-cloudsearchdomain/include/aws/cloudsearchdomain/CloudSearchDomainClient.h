@@ -7,6 +7,7 @@
 #include <aws/cloudsearchdomain/CloudSearchDomain_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/cloudsearchdomain/CloudSearchDomainServiceClientModel.h>
 
@@ -26,7 +27,7 @@ namespace CloudSearchDomain
    * href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide">Amazon
    * CloudSearch Developer Guide</a>.</p>
    */
-  class AWS_CLOUDSEARCHDOMAIN_API CloudSearchDomainClient : public Aws::Client::AWSJsonClient
+  class AWS_CLOUDSEARCHDOMAIN_API CloudSearchDomainClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<CloudSearchDomainClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -80,7 +81,6 @@ namespace CloudSearchDomain
 
         /* End of legacy constructors due deprecation */
         virtual ~CloudSearchDomainClient();
-
 
         /**
          * <p>Retrieves a list of documents that match the specified search criteria. How
@@ -192,6 +192,7 @@ namespace CloudSearchDomain
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<CloudSearchDomainEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<CloudSearchDomainClient>;
       void init(const CloudSearchDomainClientConfiguration& clientConfiguration);
 
       CloudSearchDomainClientConfiguration m_clientConfiguration;

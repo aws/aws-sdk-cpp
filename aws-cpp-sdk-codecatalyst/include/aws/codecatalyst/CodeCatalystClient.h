@@ -7,6 +7,7 @@
 #include <aws/codecatalyst/CodeCatalyst_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/codecatalyst/CodeCatalystServiceClientModel.h>
 
@@ -58,7 +59,7 @@ namespace CodeCatalyst
    * a list of events that occurred during a specified time period in a space.</p>
    * </li> </ul>
    */
-  class AWS_CODECATALYST_API CodeCatalystClient : public Aws::Client::AWSJsonClient
+  class AWS_CODECATALYST_API CodeCatalystClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<CodeCatalystClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -82,7 +83,6 @@ namespace CodeCatalyst
 
         /* End of legacy constructors due deprecation */
         virtual ~CodeCatalystClient();
-
 
         /**
          * <p>Creates a personal access token (PAT) for the current user. A personal access
@@ -527,6 +527,7 @@ namespace CodeCatalyst
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<CodeCatalystEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<CodeCatalystClient>;
       void init(const CodeCatalystClientConfiguration& clientConfiguration);
 
       CodeCatalystClientConfiguration m_clientConfiguration;

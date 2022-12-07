@@ -7,6 +7,7 @@
 #include <aws/wellarchitected/WellArchitected_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/wellarchitected/WellArchitectedServiceClientModel.h>
 
@@ -24,7 +25,7 @@ namespace WellArchitected
    * href="https://docs.aws.amazon.com/wellarchitected/latest/userguide/intro.html">Well-Architected
    * Tool User Guide</a>.</p>
    */
-  class AWS_WELLARCHITECTED_API WellArchitectedClient : public Aws::Client::AWSJsonClient
+  class AWS_WELLARCHITECTED_API WellArchitectedClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<WellArchitectedClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -78,7 +79,6 @@ namespace WellArchitected
 
         /* End of legacy constructors due deprecation */
         virtual ~WellArchitectedClient();
-
 
         /**
          * <p>Associate a lens to a workload.</p> <p>Up to 10 lenses can be associated with
@@ -891,6 +891,7 @@ namespace WellArchitected
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<WellArchitectedEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<WellArchitectedClient>;
       void init(const WellArchitectedClientConfiguration& clientConfiguration);
 
       WellArchitectedClientConfiguration m_clientConfiguration;

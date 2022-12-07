@@ -7,6 +7,7 @@
 #include <aws/rekognition/Rekognition_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/rekognition/RekognitionServiceClientModel.h>
 
@@ -150,7 +151,7 @@ namespace Rekognition
    * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_UpdateStreamProcessor.html">UpdateStreamProcessor</a>
    * </p> </li> </ul>
    */
-  class AWS_REKOGNITION_API RekognitionClient : public Aws::Client::AWSJsonClient
+  class AWS_REKOGNITION_API RekognitionClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<RekognitionClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -204,7 +205,6 @@ namespace Rekognition
 
         /* End of legacy constructors due deprecation */
         virtual ~RekognitionClient();
-
 
         /**
          * <p>Compares a face in the <i>source</i> input image with each of the 100 largest
@@ -2236,6 +2236,7 @@ namespace Rekognition
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<RekognitionEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<RekognitionClient>;
       void init(const RekognitionClientConfiguration& clientConfiguration);
 
       RekognitionClientConfiguration m_clientConfiguration;

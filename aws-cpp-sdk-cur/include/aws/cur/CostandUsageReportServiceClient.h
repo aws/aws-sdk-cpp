@@ -7,6 +7,7 @@
 #include <aws/cur/CostandUsageReportService_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/cur/CostandUsageReportServiceServiceClientModel.h>
 
@@ -25,7 +26,7 @@ namespace CostandUsageReportService
    * API provides the following endpoint:</p> <ul> <li>
    * <p>cur.us-east-1.amazonaws.com</p> </li> </ul>
    */
-  class AWS_COSTANDUSAGEREPORTSERVICE_API CostandUsageReportServiceClient : public Aws::Client::AWSJsonClient
+  class AWS_COSTANDUSAGEREPORTSERVICE_API CostandUsageReportServiceClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<CostandUsageReportServiceClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -79,7 +80,6 @@ namespace CostandUsageReportService
 
         /* End of legacy constructors due deprecation */
         virtual ~CostandUsageReportServiceClient();
-
 
         /**
          * <p>Deletes the specified report.</p><p><h3>See Also:</h3>   <a
@@ -156,6 +156,7 @@ namespace CostandUsageReportService
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<CostandUsageReportServiceEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<CostandUsageReportServiceClient>;
       void init(const CostandUsageReportServiceClientConfiguration& clientConfiguration);
 
       CostandUsageReportServiceClientConfiguration m_clientConfiguration;

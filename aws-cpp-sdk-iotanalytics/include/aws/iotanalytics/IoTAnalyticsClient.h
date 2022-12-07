@@ -7,6 +7,7 @@
 #include <aws/iotanalytics/IoTAnalytics_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/iotanalytics/IoTAnalyticsServiceClientModel.h>
 
@@ -37,7 +38,7 @@ namespace IoTAnalytics
    * are about to fail or which customers are at risk of abandoning their wearable
    * devices.</p>
    */
-  class AWS_IOTANALYTICS_API IoTAnalyticsClient : public Aws::Client::AWSJsonClient
+  class AWS_IOTANALYTICS_API IoTAnalyticsClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<IoTAnalyticsClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -91,7 +92,6 @@ namespace IoTAnalytics
 
         /* End of legacy constructors due deprecation */
         virtual ~IoTAnalyticsClient();
-
 
         /**
          * <p>Sends messages to a channel.</p><p><h3>See Also:</h3>   <a
@@ -709,6 +709,7 @@ namespace IoTAnalytics
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<IoTAnalyticsEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<IoTAnalyticsClient>;
       void init(const IoTAnalyticsClientConfiguration& clientConfiguration);
 
       IoTAnalyticsClientConfiguration m_clientConfiguration;

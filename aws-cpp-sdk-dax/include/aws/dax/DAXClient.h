@@ -7,6 +7,7 @@
 #include <aws/dax/DAX_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/dax/DAXServiceClientModel.h>
 
@@ -22,7 +23,7 @@ namespace DAX
    * simple modifications to your code, your application can begin taking advantage
    * of the DAX cluster and realize significant improvements in read performance.</p>
    */
-  class AWS_DAX_API DAXClient : public Aws::Client::AWSJsonClient
+  class AWS_DAX_API DAXClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<DAXClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -76,7 +77,6 @@ namespace DAX
 
         /* End of legacy constructors due deprecation */
         virtual ~DAXClient();
-
 
         /**
          * <p>Creates a DAX cluster. All nodes in the cluster run the same DAX caching
@@ -483,6 +483,7 @@ namespace DAX
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<DAXEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<DAXClient>;
       void init(const DAXClientConfiguration& clientConfiguration);
 
       DAXClientConfiguration m_clientConfiguration;

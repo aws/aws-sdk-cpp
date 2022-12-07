@@ -8,6 +8,7 @@
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/autoscaling/AutoScalingServiceClientModel.h>
 
@@ -25,7 +26,7 @@ namespace AutoScaling
    * href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/Welcome.html">Amazon
    * EC2 Auto Scaling API Reference</a>.</p>
    */
-  class AWS_AUTOSCALING_API AutoScalingClient : public Aws::Client::AWSXMLClient
+  class AWS_AUTOSCALING_API AutoScalingClient : public Aws::Client::AWSXMLClient, public Aws::Client::ClientWithAsyncTemplateMethods<AutoScalingClient>
   {
     public:
       typedef Aws::Client::AWSXMLClient BASECLASS;
@@ -1643,6 +1644,7 @@ namespace AutoScaling
         void OverrideEndpoint(const Aws::String& endpoint);
         std::shared_ptr<AutoScalingEndpointProviderBase>& accessEndpointProvider();
   private:
+        friend class Aws::Client::ClientWithAsyncTemplateMethods<AutoScalingClient>;
         void init(const AutoScalingClientConfiguration& clientConfiguration);
 
         AutoScalingClientConfiguration m_clientConfiguration;

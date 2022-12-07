@@ -7,6 +7,7 @@
 #include <aws/arc-zonal-shift/ARCZonalShift_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/arc-zonal-shift/ARCZonalShiftServiceClientModel.h>
 
@@ -39,7 +40,7 @@ namespace ARCZonalShift
    * href="https://docs.aws.amazon.com/r53recovery/latest/dg/what-is-route53-recovery.html">Amazon
    * Route 53 Application Recovery Controller Developer Guide</a>.</p>
    */
-  class AWS_ARCZONALSHIFT_API ARCZonalShiftClient : public Aws::Client::AWSJsonClient
+  class AWS_ARCZONALSHIFT_API ARCZonalShiftClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<ARCZonalShiftClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -93,7 +94,6 @@ namespace ARCZonalShift
 
         /* End of legacy constructors due deprecation */
         virtual ~ARCZonalShiftClient();
-
 
         /**
          * <p>Cancel a zonal shift in Amazon Route 53 Application Recovery Controller that
@@ -231,6 +231,7 @@ namespace ARCZonalShift
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<ARCZonalShiftEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<ARCZonalShiftClient>;
       void init(const ARCZonalShiftClientConfiguration& clientConfiguration);
 
       ARCZonalShiftClientConfiguration m_clientConfiguration;

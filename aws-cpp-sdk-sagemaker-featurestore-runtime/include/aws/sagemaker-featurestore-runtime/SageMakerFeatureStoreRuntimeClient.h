@@ -7,6 +7,7 @@
 #include <aws/sagemaker-featurestore-runtime/SageMakerFeatureStoreRuntime_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/sagemaker-featurestore-runtime/SageMakerFeatureStoreRuntimeServiceClientModel.h>
 
@@ -29,7 +30,7 @@ namespace SageMakerFeatureStoreRuntime
    * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListFeatureGroups.html">ListFeatureGroups</a>
    * </p> </li> </ul>
    */
-  class AWS_SAGEMAKERFEATURESTORERUNTIME_API SageMakerFeatureStoreRuntimeClient : public Aws::Client::AWSJsonClient
+  class AWS_SAGEMAKERFEATURESTORERUNTIME_API SageMakerFeatureStoreRuntimeClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<SageMakerFeatureStoreRuntimeClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -83,7 +84,6 @@ namespace SageMakerFeatureStoreRuntime
 
         /* End of legacy constructors due deprecation */
         virtual ~SageMakerFeatureStoreRuntimeClient();
-
 
         /**
          * <p>Retrieves a batch of <code>Records</code> from a
@@ -171,6 +171,7 @@ namespace SageMakerFeatureStoreRuntime
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<SageMakerFeatureStoreRuntimeEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<SageMakerFeatureStoreRuntimeClient>;
       void init(const SageMakerFeatureStoreRuntimeClientConfiguration& clientConfiguration);
 
       SageMakerFeatureStoreRuntimeClientConfiguration m_clientConfiguration;

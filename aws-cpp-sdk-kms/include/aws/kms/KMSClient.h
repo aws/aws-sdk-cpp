@@ -7,6 +7,7 @@
 #include <aws/kms/KMS_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/kms/KMSServiceClientModel.h>
 
@@ -78,7 +79,7 @@ namespace KMS
    * <a>GenerateDataKey</a> </p> </li> <li> <p>
    * <a>GenerateDataKeyWithoutPlaintext</a> </p> </li> </ul>
    */
-  class AWS_KMS_API KMSClient : public Aws::Client::AWSJsonClient
+  class AWS_KMS_API KMSClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<KMSClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -132,7 +133,6 @@ namespace KMS
 
         /* End of legacy constructors due deprecation */
         virtual ~KMSClient();
-
 
         /**
          * <p>Cancels the deletion of a KMS key. When this operation succeeds, the key
@@ -2911,6 +2911,7 @@ namespace KMS
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<KMSEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<KMSClient>;
       void init(const KMSClientConfiguration& clientConfiguration);
 
       KMSClientConfiguration m_clientConfiguration;

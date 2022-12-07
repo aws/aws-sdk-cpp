@@ -7,6 +7,7 @@
 #include <aws/lookoutmetrics/LookoutMetrics_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/lookoutmetrics/LookoutMetricsServiceClientModel.h>
 
@@ -20,7 +21,7 @@ namespace LookoutMetrics
    * href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev">Amazon Lookout for
    * Metrics Developer Guide</a>.</p>
    */
-  class AWS_LOOKOUTMETRICS_API LookoutMetricsClient : public Aws::Client::AWSJsonClient
+  class AWS_LOOKOUTMETRICS_API LookoutMetricsClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<LookoutMetricsClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -74,7 +75,6 @@ namespace LookoutMetrics
 
         /* End of legacy constructors due deprecation */
         virtual ~LookoutMetricsClient();
-
 
         /**
          * <p>Activates an anomaly detector.</p><p><h3>See Also:</h3>   <a
@@ -625,6 +625,7 @@ namespace LookoutMetrics
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<LookoutMetricsEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<LookoutMetricsClient>;
       void init(const LookoutMetricsClientConfiguration& clientConfiguration);
 
       LookoutMetricsClientConfiguration m_clientConfiguration;

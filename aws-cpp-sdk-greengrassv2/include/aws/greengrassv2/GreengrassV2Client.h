@@ -7,6 +7,7 @@
 #include <aws/greengrassv2/GreengrassV2_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/greengrassv2/GreengrassV2ServiceClientModel.h>
 
@@ -30,7 +31,7 @@ namespace GreengrassV2
    * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/what-is-iot-greengrass.html">What
    * is IoT Greengrass?</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
    */
-  class AWS_GREENGRASSV2_API GreengrassV2Client : public Aws::Client::AWSJsonClient
+  class AWS_GREENGRASSV2_API GreengrassV2Client : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<GreengrassV2Client>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -84,7 +85,6 @@ namespace GreengrassV2
 
         /* End of legacy constructors due deprecation */
         virtual ~GreengrassV2Client();
-
 
         /**
          * <p>Associates a Greengrass service role with IoT Greengrass for your Amazon Web
@@ -770,6 +770,7 @@ namespace GreengrassV2
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<GreengrassV2EndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<GreengrassV2Client>;
       void init(const GreengrassV2ClientConfiguration& clientConfiguration);
 
       GreengrassV2ClientConfiguration m_clientConfiguration;

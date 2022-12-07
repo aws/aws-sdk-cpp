@@ -7,6 +7,7 @@
 #include <aws/medialive/MediaLive_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/medialive/MediaLiveServiceClientModel.h>
 
@@ -17,7 +18,7 @@ namespace MediaLive
   /**
    * API for AWS Elemental MediaLive
    */
-  class AWS_MEDIALIVE_API MediaLiveClient : public Aws::Client::AWSJsonClient
+  class AWS_MEDIALIVE_API MediaLiveClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<MediaLiveClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -71,7 +72,6 @@ namespace MediaLive
 
         /* End of legacy constructors due deprecation */
         virtual ~MediaLiveClient();
-
 
         /**
          * Accept an incoming input device transfer. The ownership of the device will
@@ -1105,6 +1105,7 @@ namespace MediaLive
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<MediaLiveEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<MediaLiveClient>;
       void init(const MediaLiveClientConfiguration& clientConfiguration);
 
       MediaLiveClientConfiguration m_clientConfiguration;

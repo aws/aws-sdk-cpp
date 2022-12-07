@@ -7,6 +7,7 @@
 #include <aws/auditmanager/AuditManager_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/auditmanager/AuditManagerServiceClientModel.h>
 
@@ -42,7 +43,7 @@ namespace AuditManager
    * href="https://docs.aws.amazon.com/audit-manager/latest/userguide/what-is.html">
    * Audit Manager User Guide</a>.</p>
    */
-  class AWS_AUDITMANAGER_API AuditManagerClient : public Aws::Client::AWSJsonClient
+  class AWS_AUDITMANAGER_API AuditManagerClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<AuditManagerClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -96,7 +97,6 @@ namespace AuditManager
 
         /* End of legacy constructors due deprecation */
         virtual ~AuditManagerClient();
-
 
         /**
          * <p> Associates an evidence folder to an assessment report in a Audit Manager
@@ -1352,6 +1352,7 @@ namespace AuditManager
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<AuditManagerEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<AuditManagerClient>;
       void init(const AuditManagerClientConfiguration& clientConfiguration);
 
       AuditManagerClientConfiguration m_clientConfiguration;

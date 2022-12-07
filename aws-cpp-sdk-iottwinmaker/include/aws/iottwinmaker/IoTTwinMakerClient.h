@@ -7,6 +7,7 @@
 #include <aws/iottwinmaker/IoTTwinMaker_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/iottwinmaker/IoTTwinMakerServiceClientModel.h>
 
@@ -22,7 +23,7 @@ namespace IoTTwinMaker
    * You can use this real-world data to monitor operations and diagnose and repair
    * errors.</p>
    */
-  class AWS_IOTTWINMAKER_API IoTTwinMakerClient : public Aws::Client::AWSJsonClient
+  class AWS_IOTTWINMAKER_API IoTTwinMakerClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<IoTTwinMakerClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -76,7 +77,6 @@ namespace IoTTwinMaker
 
         /* End of legacy constructors due deprecation */
         virtual ~IoTTwinMakerClient();
-
 
         /**
          * <p>Sets values for multiple time series properties.</p><p><h3>See Also:</h3>  
@@ -585,6 +585,7 @@ namespace IoTTwinMaker
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<IoTTwinMakerEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<IoTTwinMakerClient>;
       void init(const IoTTwinMakerClientConfiguration& clientConfiguration);
 
       IoTTwinMakerClientConfiguration m_clientConfiguration;

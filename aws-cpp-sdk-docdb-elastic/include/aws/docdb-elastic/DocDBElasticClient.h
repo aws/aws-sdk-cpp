@@ -7,6 +7,7 @@
 #include <aws/docdb-elastic/DocDBElastic_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/docdb-elastic/DocDBElasticServiceClientModel.h>
 
@@ -17,7 +18,7 @@ namespace DocDBElastic
   /**
    * <p>The new Amazon Elastic DocumentDB service endpoint.</p>
    */
-  class AWS_DOCDBELASTIC_API DocDBElasticClient : public Aws::Client::AWSJsonClient
+  class AWS_DOCDBELASTIC_API DocDBElasticClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<DocDBElasticClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -71,7 +72,6 @@ namespace DocDBElastic
 
         /* End of legacy constructors due deprecation */
         virtual ~DocDBElasticClient();
-
 
         /**
          * <p>Creates a new Elastic DocumentDB cluster and returns its Cluster
@@ -308,6 +308,7 @@ namespace DocDBElastic
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<DocDBElasticEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<DocDBElasticClient>;
       void init(const DocDBElasticClientConfiguration& clientConfiguration);
 
       DocDBElasticClientConfiguration m_clientConfiguration;

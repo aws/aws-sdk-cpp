@@ -7,6 +7,7 @@
 #include <aws/ce/CostExplorer_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/ce/CostExplorerServiceClientModel.h>
 
@@ -26,7 +27,7 @@ namespace CostExplorer
    * <a href="http://aws.amazon.com/aws-cost-management/pricing/">Amazon Web Services
    * Cost Management Pricing</a>.</p>
    */
-  class AWS_COSTEXPLORER_API CostExplorerClient : public Aws::Client::AWSJsonClient
+  class AWS_COSTEXPLORER_API CostExplorerClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<CostExplorerClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -80,7 +81,6 @@ namespace CostExplorer
 
         /* End of legacy constructors due deprecation */
         virtual ~CostExplorerClient();
-
 
         /**
          * <p>Creates a new cost anomaly detection monitor with the requested type and
@@ -871,6 +871,7 @@ namespace CostExplorer
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<CostExplorerEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<CostExplorerClient>;
       void init(const CostExplorerClientConfiguration& clientConfiguration);
 
       CostExplorerClientConfiguration m_clientConfiguration;

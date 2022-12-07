@@ -7,6 +7,7 @@
 #include <aws/gamelift/GameLift_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/gamelift/GameLiftServiceClientModel.h>
 
@@ -52,7 +53,7 @@ namespace GameLift
    * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-components.html">
    * GameLift tools and resources</a> </p> </li> </ul>
    */
-  class AWS_GAMELIFT_API GameLiftClient : public Aws::Client::AWSJsonClient
+  class AWS_GAMELIFT_API GameLiftClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<GameLiftClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -106,7 +107,6 @@ namespace GameLift
 
         /* End of legacy constructors due deprecation */
         virtual ~GameLiftClient();
-
 
         /**
          * <p>Registers a player's acceptance or rejection of a proposed FlexMatch match. A
@@ -3311,6 +3311,7 @@ namespace GameLift
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<GameLiftEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<GameLiftClient>;
       void init(const GameLiftClientConfiguration& clientConfiguration);
 
       GameLiftClientConfiguration m_clientConfiguration;

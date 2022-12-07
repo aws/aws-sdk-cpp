@@ -7,6 +7,7 @@
 #include <aws/chime-sdk-identity/ChimeSDKIdentity_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/chime-sdk-identity/ChimeSDKIdentityServiceClientModel.h>
 
@@ -22,7 +23,7 @@ namespace ChimeSDKIdentity
    * href="https://docs.aws.amazon.com/chime/latest/APIReference/API_Operations_Amazon_Chime_SDK_Identity.html">Amazon
    * Chime SDK identity</a>.</p>
    */
-  class AWS_CHIMESDKIDENTITY_API ChimeSDKIdentityClient : public Aws::Client::AWSJsonClient
+  class AWS_CHIMESDKIDENTITY_API ChimeSDKIdentityClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<ChimeSDKIdentityClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -76,7 +77,6 @@ namespace ChimeSDKIdentity
 
         /* End of legacy constructors due deprecation */
         virtual ~ChimeSDKIdentityClient();
-
 
         /**
          * <p>Creates an Amazon Chime SDK messaging <code>AppInstance</code> under an AWS
@@ -522,6 +522,7 @@ namespace ChimeSDKIdentity
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<ChimeSDKIdentityEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<ChimeSDKIdentityClient>;
       void init(const ChimeSDKIdentityClientConfiguration& clientConfiguration);
 
       ChimeSDKIdentityClientConfiguration m_clientConfiguration;

@@ -7,6 +7,7 @@
 #include <aws/mturk-requester/MTurk_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/mturk-requester/MTurkServiceClientModel.h>
 
@@ -17,7 +18,7 @@ namespace MTurk
   /**
    * <fullname>Amazon Mechanical Turk API Reference</fullname>
    */
-  class AWS_MTURK_API MTurkClient : public Aws::Client::AWSJsonClient
+  class AWS_MTURK_API MTurkClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<MTurkClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -71,7 +72,6 @@ namespace MTurk
 
         /* End of legacy constructors due deprecation */
         virtual ~MTurkClient();
-
 
         /**
          * <p> The <code>AcceptQualificationRequest</code> operation approves a Worker's
@@ -984,6 +984,7 @@ namespace MTurk
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<MTurkEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<MTurkClient>;
       void init(const MTurkClientConfiguration& clientConfiguration);
 
       MTurkClientConfiguration m_clientConfiguration;

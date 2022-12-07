@@ -7,6 +7,7 @@
 #include <aws/ssm-incidents/SSMIncidents_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/ssm-incidents/SSMIncidentsServiceClientModel.h>
 
@@ -25,7 +26,7 @@ namespace SSMIncidents
    * critical incidents, Incident Manager automates response plans and enables
    * responder team escalation. </p>
    */
-  class AWS_SSMINCIDENTS_API SSMIncidentsClient : public Aws::Client::AWSJsonClient
+  class AWS_SSMINCIDENTS_API SSMIncidentsClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<SSMIncidentsClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -79,7 +80,6 @@ namespace SSMIncidents
 
         /* End of legacy constructors due deprecation */
         virtual ~SSMIncidentsClient();
-
 
         /**
          * <p>A replication set replicates and encrypts your data to the provided Regions
@@ -612,6 +612,7 @@ namespace SSMIncidents
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<SSMIncidentsEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<SSMIncidentsClient>;
       void init(const SSMIncidentsClientConfiguration& clientConfiguration);
 
       SSMIncidentsClientConfiguration m_clientConfiguration;

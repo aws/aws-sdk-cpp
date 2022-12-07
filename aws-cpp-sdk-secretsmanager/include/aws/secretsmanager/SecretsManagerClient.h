@@ -7,6 +7,7 @@
 #include <aws/secretsmanager/SecretsManager_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/secretsmanager/SecretsManagerServiceClientModel.h>
 
@@ -46,7 +47,7 @@ namespace SecretsManager
    * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/what_is_cloud_trail_top_level.html">Amazon
    * Web Services CloudTrail User Guide</a>.</p>
    */
-  class AWS_SECRETSMANAGER_API SecretsManagerClient : public Aws::Client::AWSJsonClient
+  class AWS_SECRETSMANAGER_API SecretsManagerClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<SecretsManagerClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -100,7 +101,6 @@ namespace SecretsManager
 
         /* End of legacy constructors due deprecation */
         virtual ~SecretsManagerClient();
-
 
         /**
          * <p>Turns off automatic rotation, and if a rotation is currently in progress,
@@ -949,6 +949,7 @@ namespace SecretsManager
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<SecretsManagerEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<SecretsManagerClient>;
       void init(const SecretsManagerClientConfiguration& clientConfiguration);
 
       SecretsManagerClientConfiguration m_clientConfiguration;

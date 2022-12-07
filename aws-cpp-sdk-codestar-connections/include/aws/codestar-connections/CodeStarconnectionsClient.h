@@ -7,6 +7,7 @@
 #include <aws/codestar-connections/CodeStarconnections_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/codestar-connections/CodeStarconnectionsServiceClientModel.h>
 
@@ -55,7 +56,7 @@ namespace CodeStarconnections
    * href="https://docs.aws.amazon.com/dtconsole/latest/userguide/welcome-connections.html">Developer
    * Tools User Guide</a>.</p>
    */
-  class AWS_CODESTARCONNECTIONS_API CodeStarconnectionsClient : public Aws::Client::AWSJsonClient
+  class AWS_CODESTARCONNECTIONS_API CodeStarconnectionsClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<CodeStarconnectionsClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -109,7 +110,6 @@ namespace CodeStarconnections
 
         /* End of legacy constructors due deprecation */
         virtual ~CodeStarconnectionsClient();
-
 
         /**
          * <p>Creates a connection that can then be given to other AWS services like
@@ -337,6 +337,7 @@ namespace CodeStarconnections
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<CodeStarconnectionsEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<CodeStarconnectionsClient>;
       void init(const CodeStarconnectionsClientConfiguration& clientConfiguration);
 
       CodeStarconnectionsClientConfiguration m_clientConfiguration;

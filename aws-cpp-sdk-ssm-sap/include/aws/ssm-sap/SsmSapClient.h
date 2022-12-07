@@ -7,6 +7,7 @@
 #include <aws/ssm-sap/SsmSap_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/ssm-sap/SsmSapServiceClientModel.h>
 
@@ -19,7 +20,7 @@ namespace SsmSap
    * each of the actions and data types for AWS Systems Manager for SAP. The topic
    * for each action shows the API request parameters and responses. </p>
    */
-  class AWS_SSMSAP_API SsmSapClient : public Aws::Client::AWSJsonClient
+  class AWS_SSMSAP_API SsmSapClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<SsmSapClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -73,7 +74,6 @@ namespace SsmSap
 
         /* End of legacy constructors due deprecation */
         virtual ~SsmSapClient();
-
 
         /**
          * <p>Removes permissions associated with the target database.</p><p><h3>See
@@ -370,6 +370,7 @@ namespace SsmSap
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<SsmSapEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<SsmSapClient>;
       void init(const SsmSapClientConfiguration& clientConfiguration);
 
       SsmSapClientConfiguration m_clientConfiguration;

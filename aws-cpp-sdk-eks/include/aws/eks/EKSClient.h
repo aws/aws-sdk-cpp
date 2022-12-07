@@ -7,6 +7,7 @@
 #include <aws/eks/EKS_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/eks/EKSServiceClientModel.h>
 
@@ -27,7 +28,7 @@ namespace EKS
    * means that you can easily migrate any standard Kubernetes application to Amazon
    * EKS without any code modification required.</p>
    */
-  class AWS_EKS_API EKSClient : public Aws::Client::AWSJsonClient
+  class AWS_EKS_API EKSClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<EKSClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -81,7 +82,6 @@ namespace EKS
 
         /* End of legacy constructors due deprecation */
         virtual ~EKSClient();
-
 
         /**
          * <p>Associate encryption configuration to an existing cluster.</p> <p>You can use
@@ -883,6 +883,7 @@ namespace EKS
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<EKSEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<EKSClient>;
       void init(const EKSClientConfiguration& clientConfiguration);
 
       EKSClientConfiguration m_clientConfiguration;

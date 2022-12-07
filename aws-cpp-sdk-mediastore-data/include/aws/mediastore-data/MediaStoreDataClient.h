@@ -7,6 +7,7 @@
 #include <aws/mediastore-data/MediaStoreData_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/mediastore-data/MediaStoreDataServiceClientModel.h>
 
@@ -19,7 +20,7 @@ namespace MediaStoreData
    * Amazon S3 service. Objects are the fundamental entities that are stored in AWS
    * Elemental MediaStore.</p>
    */
-  class AWS_MEDIASTOREDATA_API MediaStoreDataClient : public Aws::Client::AWSJsonClient
+  class AWS_MEDIASTOREDATA_API MediaStoreDataClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<MediaStoreDataClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -73,7 +74,6 @@ namespace MediaStoreData
 
         /* End of legacy constructors due deprecation */
         virtual ~MediaStoreDataClient();
-
 
         /**
          * <p>Deletes an object at the specified path.</p><p><h3>See Also:</h3>   <a
@@ -171,6 +171,7 @@ namespace MediaStoreData
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<MediaStoreDataEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<MediaStoreDataClient>;
       void init(const MediaStoreDataClientConfiguration& clientConfiguration);
 
       MediaStoreDataClientConfiguration m_clientConfiguration;

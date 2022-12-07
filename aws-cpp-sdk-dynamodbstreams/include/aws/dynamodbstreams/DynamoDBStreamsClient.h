@@ -7,6 +7,7 @@
 #include <aws/dynamodbstreams/DynamoDBStreams_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/dynamodbstreams/DynamoDBStreamsServiceClientModel.h>
 
@@ -22,7 +23,7 @@ namespace DynamoDBStreams
    * Table Activity with DynamoDB Streams</a> in the Amazon DynamoDB Developer
    * Guide.</p>
    */
-  class AWS_DYNAMODBSTREAMS_API DynamoDBStreamsClient : public Aws::Client::AWSJsonClient
+  class AWS_DYNAMODBSTREAMS_API DynamoDBStreamsClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<DynamoDBStreamsClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -76,7 +77,6 @@ namespace DynamoDBStreams
 
         /* End of legacy constructors due deprecation */
         virtual ~DynamoDBStreamsClient();
-
 
         /**
          * <p>Returns information about a stream, including the current status of the
@@ -176,6 +176,7 @@ namespace DynamoDBStreams
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<DynamoDBStreamsEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<DynamoDBStreamsClient>;
       void init(const DynamoDBStreamsClientConfiguration& clientConfiguration);
 
       DynamoDBStreamsClientConfiguration m_clientConfiguration;

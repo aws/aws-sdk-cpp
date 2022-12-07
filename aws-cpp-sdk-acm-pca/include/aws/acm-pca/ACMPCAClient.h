@@ -7,6 +7,7 @@
 #include <aws/acm-pca/ACMPCA_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/acm-pca/ACMPCAServiceClientModel.h>
 
@@ -36,7 +37,7 @@ namespace ACMPCA
    * href="https://console.aws.amazon.com/servicequotas/">Service Quotas</a>
    * console.</p>
    */
-  class AWS_ACMPCA_API ACMPCAClient : public Aws::Client::AWSJsonClient
+  class AWS_ACMPCA_API ACMPCAClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<ACMPCAClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -90,7 +91,6 @@ namespace ACMPCA
 
         /* End of legacy constructors due deprecation */
         virtual ~ACMPCAClient();
-
 
         /**
          * <p>Creates a root or subordinate private certificate authority (CA). You must
@@ -856,6 +856,7 @@ namespace ACMPCA
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<ACMPCAEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<ACMPCAClient>;
       void init(const ACMPCAClientConfiguration& clientConfiguration);
 
       ACMPCAClientConfiguration m_clientConfiguration;
