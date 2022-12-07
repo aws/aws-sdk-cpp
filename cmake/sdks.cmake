@@ -182,14 +182,10 @@ LIST(REMOVE_DUPLICATES SDK_DEPENDENCY_BUILD_LIST)
 function(add_sdks)
     LIST(APPEND EXPORTS "")
     foreach(SDK IN LISTS SDK_BUILD_LIST)
-        if(WIN32 AND ("ec2" STREQUAL "${SDK}"))
-            add_subdirectory("aws-cpp-sdk-ec2-win")
-            LIST(APPEND EXPORTS "aws-cpp-sdk-ec2")
-        else()
-            set(SDK_DIR "aws-cpp-sdk-${SDK}")
-            add_subdirectory("${SDK_DIR}")
-            LIST(APPEND EXPORTS "${SDK_DIR}")
-        endif()
+        set(SDK_DIR "aws-cpp-sdk-${SDK}")
+
+        add_subdirectory("${SDK_DIR}")
+        LIST(APPEND EXPORTS "${SDK_DIR}")
     endforeach()
 
     #testing
