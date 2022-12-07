@@ -159,7 +159,7 @@ TEST_F(KinesisTest, EnhancedFanOut)
         .WithShardId(shardId)
         .WithStartingPosition(position);
     subscribeRequest.SetEventStreamHandler(handler);
-    const auto subscribeOutcome = m_client->SubscribeToShard(subscribeRequest);
+    const auto subscribeOutcome = m_client->SubmitCallable(&KinesisClient::SubscribeToShard, subscribeRequest).get();
     AWS_ASSERT_SUCCESS(subscribeOutcome);
 
     // Deregister the consumer from fan-out (we're only allowed 5, so we must cleanup)
