@@ -431,7 +431,7 @@ TEST_F(TableOperationTest, TestThrottling)
         putItemRequest.AddItem(testValueColumnName, testValueAttribute);
         ss.str("");
 
-        putItemResults.push_back(m_client->PutItemCallable(putItemRequest));
+        putItemResults.push_back(m_client->SubmitCallable(&DynamoDBClient::PutItem, putItemRequest));
     }
 
     int throttleCount = 0;
@@ -484,7 +484,7 @@ TEST_F(TableOperationTest, TestCrudOperations)
         putItemRequest.AddItem(testValueColumnName, testValueAttribute);
         ss.str("");
 
-        putItemResults.push_back(m_client->PutItemCallable(putItemRequest));
+        putItemResults.push_back(m_client->SubmitCallable(&DynamoDBClient::PutItem, putItemRequest));
     }
 
     //wait for put operations to finish
@@ -510,7 +510,7 @@ TEST_F(TableOperationTest, TestCrudOperations)
         attributesToGet.push_back(HASH_KEY_NAME);
         attributesToGet.push_back(testValueColumnName);
         ss.str("");
-        getItemOutcomes.push_back(m_client->GetItemCallable(getItemRequest));
+        getItemOutcomes.push_back(m_client->SubmitCallable(&DynamoDBClient::GetItem, getItemRequest));
     }
 
     //verify the values
@@ -554,7 +554,7 @@ TEST_F(TableOperationTest, TestCrudOperations)
         testValueAttribute.SetValue(valueAttribute);
         updateItemRequest.AddAttributeUpdates(testValueColumnName, testValueAttribute);
         ss.str("");
-        updateItemOutcomes.push_back(m_client->UpdateItemCallable(updateItemRequest));
+        updateItemOutcomes.push_back(m_client->SubmitCallable(&DynamoDBClient::UpdateItem, updateItemRequest));
     }
 
     //wait for operations to finish.
@@ -580,7 +580,7 @@ TEST_F(TableOperationTest, TestCrudOperations)
         attributesToGet.push_back(HASH_KEY_NAME);
         attributesToGet.push_back(testValueColumnName);
         ss.str("");
-        getItemOutcomes.push_back(m_client->GetItemCallable(getItemRequest));
+        getItemOutcomes.push_back(m_client->SubmitCallable(&DynamoDBClient::GetItem,getItemRequest));
     }
 
     //verify values.
@@ -611,7 +611,7 @@ TEST_F(TableOperationTest, TestCrudOperations)
         deleteItemRequest.SetReturnValues(ReturnValue::ALL_OLD);
         ss.str("");
 
-        deleteItemOutcomes.push_back(m_client->DeleteItemCallable(deleteItemRequest));
+        deleteItemOutcomes.push_back(m_client->SubmitCallable(&DynamoDBClient::DeleteItem, deleteItemRequest));
     }
 
     //verify that we properly returned the old values.
@@ -664,7 +664,7 @@ TEST_F(TableOperationTest, TestCrudOperationsWithCallbacks)
         testValueAttribute.SetS(ss.str());
         putItemRequest.AddItem(testValueColumnName, testValueAttribute);
         ss.str("");
-        m_client->PutItemAsync(putItemRequest, putItemHandler);
+        m_client->SubmitAsync(&DynamoDBClient::PutItem, putItemRequest, putItemHandler);
     }
 
     //wait for the callbacks to finish.
@@ -686,7 +686,7 @@ TEST_F(TableOperationTest, TestCrudOperationsWithCallbacks)
         attributesToGet.push_back(HASH_KEY_NAME);
         attributesToGet.push_back(testValueColumnName);
         ss.str("");
-        m_client->GetItemAsync(getItemRequest, getItemHandler);
+        m_client->SubmitAsync(&DynamoDBClient::GetItem, getItemRequest, getItemHandler);
     }
 
     //wait for the callbacks to finish.
@@ -739,7 +739,7 @@ TEST_F(TableOperationTest, TestCrudOperationsWithCallbacks)
         testValueAttribute.SetValue(valueAttribute);
         updateItemRequest.AddAttributeUpdates(testValueColumnName, testValueAttribute);
         ss.str("");
-        m_client->UpdateItemAsync(updateItemRequest, updateItemHandler);
+        m_client->SubmitAsync(&DynamoDBClient::UpdateItem, updateItemRequest, updateItemHandler);
     }
 
     //wait for the callbacks to finish.
@@ -765,7 +765,7 @@ TEST_F(TableOperationTest, TestCrudOperationsWithCallbacks)
         attributesToGet.push_back(HASH_KEY_NAME);
         attributesToGet.push_back(testValueColumnName);
         ss.str("");
-        m_client->GetItemAsync(getItemRequest, getItemHandler);
+        m_client->SubmitAsync(&DynamoDBClient::GetItem, getItemRequest, getItemHandler);
     }
 
     //wait for the callbacks to finish.
@@ -802,7 +802,7 @@ TEST_F(TableOperationTest, TestCrudOperationsWithCallbacks)
         deleteItemRequest.SetTableName(crudCallbacksTestTableName);
         deleteItemRequest.SetReturnValues(ReturnValue::ALL_OLD);
         ss.str("");
-        m_client->DeleteItemAsync(deleteItemRequest, deleteItemHandler);
+        m_client->SubmitAsync(&DynamoDBClient::DeleteItem, deleteItemRequest, deleteItemHandler);
     }
 
     //wait for the callbacks to finish.
@@ -853,7 +853,7 @@ void PutBlobs(DynamoDBClient* client, uint32_t blobRowStartIndex)
         testValueAttribute.SetS(ss.str());
         putItemRequest.AddItem(testValueColumnName, testValueAttribute);
 
-        putItemResults.push_back(client->PutItemCallable(putItemRequest));
+        putItemResults.push_back(client->SubmitCallable(&DynamoDBClient::PutItem, putItemRequest));
     }
 
     for (auto& putItemResult : putItemResults)

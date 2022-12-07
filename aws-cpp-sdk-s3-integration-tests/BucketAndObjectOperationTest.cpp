@@ -269,7 +269,7 @@ namespace
             uploadPart1Request.SetContentLength(static_cast<long>(partStream->tellg()));
             partStream->seekg(startingPoint);
 
-            return Client->UploadPartCallable(uploadPart1Request);
+            return Client->SubmitCallable(&S3Client::UploadPart, uploadPart1Request);
         }
 
         static void VerifyUploadPartOutcome(UploadPartOutcome& outcome, const ByteBuffer& md5OfStream)
@@ -698,7 +698,7 @@ namespace
         getObjectRequest.SetKey(TEST_OBJ_KEY);
 
         // because we use std::launch::async we know this will go to another thread
-        auto&& getCallable = Client->GetObjectCallable(getObjectRequest);
+        auto&& getCallable = Client->SubmitCallable(&S3Client::GetObject, getObjectRequest);
 
         Client->DisableRequestProcessing();
 
@@ -935,7 +935,7 @@ namespace
             ASSERT_STREQ("TestObjectKey", request.GetKey().c_str());
             sem.ReleaseAll();
         };
-        Client->GetObjectAsync(getObjectAsyncRequest, getObjectCallback, nullptr);
+        Client->SubmitAsync(&S3Client::GetObject, getObjectAsyncRequest, getObjectCallback, nullptr);
         sem.WaitOne();
 
         GetObjectRequest getObjectRequest;
