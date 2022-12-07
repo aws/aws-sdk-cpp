@@ -7,6 +7,7 @@
 #include <aws/opensearch/OpenSearchService_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/opensearch/OpenSearchServiceServiceClientModel.h>
 
@@ -29,7 +30,7 @@ namespace OpenSearchService
    * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#service-regions">Amazon
    * Web Services service endpoints</a>.</p>
    */
-  class AWS_OPENSEARCHSERVICE_API OpenSearchServiceClient : public Aws::Client::AWSJsonClient
+  class AWS_OPENSEARCHSERVICE_API OpenSearchServiceClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<OpenSearchServiceClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -83,7 +84,6 @@ namespace OpenSearchService
 
         /* End of legacy constructors due deprecation */
         virtual ~OpenSearchServiceClient();
-
 
         /**
          * <p>Allows the destination Amazon OpenSearch Service domain owner to accept an
@@ -1031,6 +1031,7 @@ namespace OpenSearchService
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<OpenSearchServiceEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<OpenSearchServiceClient>;
       void init(const OpenSearchServiceClientConfiguration& clientConfiguration);
 
       OpenSearchServiceClientConfiguration m_clientConfiguration;

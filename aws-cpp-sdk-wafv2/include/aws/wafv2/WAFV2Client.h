@@ -7,6 +7,7 @@
 #include <aws/wafv2/WAFV2_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/wafv2/WAFV2ServiceClientModel.h>
 
@@ -65,7 +66,7 @@ namespace WAFV2
    * groups include capacity settings, so you know the maximum cost of a rule group
    * when you use it.</p> </li> </ul>
    */
-  class AWS_WAFV2_API WAFV2Client : public Aws::Client::AWSJsonClient
+  class AWS_WAFV2_API WAFV2Client : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<WAFV2Client>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -119,7 +120,6 @@ namespace WAFV2
 
         /* End of legacy constructors due deprecation */
         virtual ~WAFV2Client();
-
 
         /**
          * <p>Associates a web ACL with a regional application resource, to protect the
@@ -1254,6 +1254,7 @@ namespace WAFV2
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<WAFV2EndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<WAFV2Client>;
       void init(const WAFV2ClientConfiguration& clientConfiguration);
 
       WAFV2ClientConfiguration m_clientConfiguration;

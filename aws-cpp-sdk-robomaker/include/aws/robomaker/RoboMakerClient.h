@@ -7,6 +7,7 @@
 #include <aws/robomaker/RoboMaker_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/robomaker/RoboMakerServiceClientModel.h>
 
@@ -17,7 +18,7 @@ namespace RoboMaker
   /**
    * <p>This section provides documentation for the AWS RoboMaker API operations.</p>
    */
-  class AWS_ROBOMAKER_API RoboMakerClient : public Aws::Client::AWSJsonClient
+  class AWS_ROBOMAKER_API RoboMakerClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<RoboMakerClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -71,7 +72,6 @@ namespace RoboMaker
 
         /* End of legacy constructors due deprecation */
         virtual ~RoboMakerClient();
-
 
         /**
          * <p>Deletes one or more worlds in a batch operation.</p><p><h3>See Also:</h3>  
@@ -812,6 +812,7 @@ namespace RoboMaker
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<RoboMakerEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<RoboMakerClient>;
       void init(const RoboMakerClientConfiguration& clientConfiguration);
 
       RoboMakerClientConfiguration m_clientConfiguration;

@@ -8,6 +8,7 @@
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/ec2/EC2ServiceClientModel.h>
 
@@ -39,7 +40,7 @@ namespace EC2
    * href="http://aws.amazon.com/documentation/vpn">Amazon Web Services VPN
    * documentation</a> </p> </li> </ul>
    */
-  class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient
+  class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient, public Aws::Client::ClientWithAsyncTemplateMethods<EC2Client>
   {
     public:
       typedef Aws::Client::AWSXMLClient BASECLASS;
@@ -13136,6 +13137,7 @@ namespace EC2
         void OverrideEndpoint(const Aws::String& endpoint);
         std::shared_ptr<EC2EndpointProviderBase>& accessEndpointProvider();
   private:
+        friend class Aws::Client::ClientWithAsyncTemplateMethods<EC2Client>;
         void init(const EC2ClientConfiguration& clientConfiguration);
 
         EC2ClientConfiguration m_clientConfiguration;

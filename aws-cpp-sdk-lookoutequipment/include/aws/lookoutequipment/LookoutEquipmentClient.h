@@ -7,6 +7,7 @@
 #include <aws/lookoutequipment/LookoutEquipment_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/lookoutequipment/LookoutEquipmentServiceClientModel.h>
 
@@ -19,7 +20,7 @@ namespace LookoutEquipment
    * analytics to identify anomalies in machines from sensor data for use in
    * predictive maintenance. </p>
    */
-  class AWS_LOOKOUTEQUIPMENT_API LookoutEquipmentClient : public Aws::Client::AWSJsonClient
+  class AWS_LOOKOUTEQUIPMENT_API LookoutEquipmentClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<LookoutEquipmentClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -73,7 +74,6 @@ namespace LookoutEquipment
 
         /* End of legacy constructors due deprecation */
         virtual ~LookoutEquipmentClient();
-
 
         /**
          * <p>Creates a container for a collection of data being ingested for analysis. The
@@ -687,6 +687,7 @@ namespace LookoutEquipment
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<LookoutEquipmentEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<LookoutEquipmentClient>;
       void init(const LookoutEquipmentClientConfiguration& clientConfiguration);
 
       LookoutEquipmentClientConfiguration m_clientConfiguration;

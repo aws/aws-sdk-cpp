@@ -7,6 +7,7 @@
 #include <aws/managedblockchain/ManagedBlockchain_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/managedblockchain/ManagedBlockchainServiceClientModel.h>
 
@@ -28,7 +29,7 @@ namespace ManagedBlockchain
    * framework or frameworks to which it applies. Data types and properties that
    * apply only in the context of a particular framework are similarly indicated.</p>
    */
-  class AWS_MANAGEDBLOCKCHAIN_API ManagedBlockchainClient : public Aws::Client::AWSJsonClient
+  class AWS_MANAGEDBLOCKCHAIN_API ManagedBlockchainClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<ManagedBlockchainClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -82,7 +83,6 @@ namespace ManagedBlockchain
 
         /* End of legacy constructors due deprecation */
         virtual ~ManagedBlockchainClient();
-
 
         /**
          *  <p>The token based access feature is in preview release for Ethereum
@@ -637,6 +637,7 @@ namespace ManagedBlockchain
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<ManagedBlockchainEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<ManagedBlockchainClient>;
       void init(const ManagedBlockchainClientConfiguration& clientConfiguration);
 
       ManagedBlockchainClientConfiguration m_clientConfiguration;

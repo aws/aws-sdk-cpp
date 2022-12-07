@@ -7,6 +7,7 @@
 #include <aws/outposts/Outposts_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/outposts/OutpostsServiceClientModel.h>
 
@@ -23,7 +24,7 @@ namespace Outposts
    * compute and storage resources for lower latency and local data processing
    * needs.</p>
    */
-  class AWS_OUTPOSTS_API OutpostsClient : public Aws::Client::AWSJsonClient
+  class AWS_OUTPOSTS_API OutpostsClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<OutpostsClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -77,7 +78,6 @@ namespace Outposts
 
         /* End of legacy constructors due deprecation */
         virtual ~OutpostsClient();
-
 
         /**
          * <p>Cancels the specified order for an Outpost.</p><p><h3>See Also:</h3>   <a
@@ -574,6 +574,7 @@ namespace Outposts
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<OutpostsEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<OutpostsClient>;
       void init(const OutpostsClientConfiguration& clientConfiguration);
 
       OutpostsClientConfiguration m_clientConfiguration;

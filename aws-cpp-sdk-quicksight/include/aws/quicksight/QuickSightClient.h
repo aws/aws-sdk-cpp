@@ -7,6 +7,7 @@
 #include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/quicksight/QuickSightServiceClientModel.h>
 
@@ -21,7 +22,7 @@ namespace QuickSight
    * your organization. This API reference contains documentation for a programming
    * interface that you can use to manage Amazon QuickSight. </p>
    */
-  class AWS_QUICKSIGHT_API QuickSightClient : public Aws::Client::AWSJsonClient
+  class AWS_QUICKSIGHT_API QuickSightClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<QuickSightClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -75,7 +76,6 @@ namespace QuickSight
 
         /* End of legacy constructors due deprecation */
         virtual ~QuickSightClient();
-
 
         /**
          * <p>Cancels an ongoing ingestion of data into SPICE.</p><p><h3>See Also:</h3>  
@@ -2618,6 +2618,7 @@ namespace QuickSight
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<QuickSightEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<QuickSightClient>;
       void init(const QuickSightClientConfiguration& clientConfiguration);
 
       QuickSightClientConfiguration m_clientConfiguration;

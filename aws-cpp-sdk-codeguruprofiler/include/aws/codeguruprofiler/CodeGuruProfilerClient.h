@@ -7,6 +7,7 @@
 #include <aws/codeguruprofiler/CodeGuruProfiler_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/codeguruprofiler/CodeGuruProfilerServiceClientModel.h>
 
@@ -33,7 +34,7 @@ namespace CodeGuruProfiler
    * is Amazon CodeGuru Profiler</a> in the <i>Amazon CodeGuru Profiler User
    * Guide</i>. </p>
    */
-  class AWS_CODEGURUPROFILER_API CodeGuruProfilerClient : public Aws::Client::AWSJsonClient
+  class AWS_CODEGURUPROFILER_API CodeGuruProfilerClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<CodeGuruProfilerClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -87,7 +88,6 @@ namespace CodeGuruProfiler
 
         /* End of legacy constructors due deprecation */
         virtual ~CodeGuruProfilerClient();
-
 
         /**
          * <p>Add up to 2 anomaly notifications channels for a profiling
@@ -587,6 +587,7 @@ namespace CodeGuruProfiler
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<CodeGuruProfilerEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<CodeGuruProfilerClient>;
       void init(const CodeGuruProfilerClientConfiguration& clientConfiguration);
 
       CodeGuruProfilerClientConfiguration m_clientConfiguration;

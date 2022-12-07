@@ -7,6 +7,7 @@
 #include <aws/securitylake/SecurityLake_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/securitylake/SecurityLakeServiceClientModel.h>
 
@@ -35,7 +36,7 @@ namespace SecurityLake
    * to the data that's stored in Security Lake for incident response and security
    * data analytics.</p>
    */
-  class AWS_SECURITYLAKE_API SecurityLakeClient : public Aws::Client::AWSJsonClient
+  class AWS_SECURITYLAKE_API SecurityLakeClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<SecurityLakeClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -89,7 +90,6 @@ namespace SecurityLake
 
         /* End of legacy constructors due deprecation */
         virtual ~SecurityLakeClient();
-
 
         /**
          * <p>Adds a natively-supported Amazon Web Services service as a Security Lake
@@ -721,6 +721,7 @@ namespace SecurityLake
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<SecurityLakeEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<SecurityLakeClient>;
       void init(const SecurityLakeClientConfiguration& clientConfiguration);
 
       SecurityLakeClientConfiguration m_clientConfiguration;

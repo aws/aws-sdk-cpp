@@ -8,6 +8,7 @@
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/monitoring/CloudWatchServiceClientModel.h>
 
@@ -30,7 +31,7 @@ namespace CloudWatch
    * system-wide visibility into resource utilization, application performance, and
    * operational health.</p>
    */
-  class AWS_CLOUDWATCH_API CloudWatchClient : public Aws::Client::AWSXMLClient
+  class AWS_CLOUDWATCH_API CloudWatchClient : public Aws::Client::AWSXMLClient, public Aws::Client::ClientWithAsyncTemplateMethods<CloudWatchClient>
   {
     public:
       typedef Aws::Client::AWSXMLClient BASECLASS;
@@ -1153,6 +1154,7 @@ namespace CloudWatch
         void OverrideEndpoint(const Aws::String& endpoint);
         std::shared_ptr<CloudWatchEndpointProviderBase>& accessEndpointProvider();
   private:
+        friend class Aws::Client::ClientWithAsyncTemplateMethods<CloudWatchClient>;
         void init(const CloudWatchClientConfiguration& clientConfiguration);
 
         CloudWatchClientConfiguration m_clientConfiguration;

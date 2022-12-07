@@ -7,6 +7,7 @@
 #include <aws/machinelearning/MachineLearning_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/machinelearning/MachineLearningServiceClientModel.h>
 
@@ -17,7 +18,7 @@ namespace MachineLearning
   /**
    * Definition of the public APIs exposed by Amazon Machine Learning
    */
-  class AWS_MACHINELEARNING_API MachineLearningClient : public Aws::Client::AWSJsonClient
+  class AWS_MACHINELEARNING_API MachineLearningClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<MachineLearningClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -71,7 +72,6 @@ namespace MachineLearning
 
         /* End of legacy constructors due deprecation */
         virtual ~MachineLearningClient();
-
 
         /**
          * <p>Adds one or more tags to an object, up to a limit of 10. Each tag consists of
@@ -733,6 +733,7 @@ namespace MachineLearning
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<MachineLearningEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<MachineLearningClient>;
       void init(const MachineLearningClientConfiguration& clientConfiguration);
 
       MachineLearningClientConfiguration m_clientConfiguration;

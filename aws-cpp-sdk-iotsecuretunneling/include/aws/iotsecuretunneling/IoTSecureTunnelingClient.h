@@ -7,6 +7,7 @@
 #include <aws/iotsecuretunneling/IoTSecureTunneling_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/iotsecuretunneling/IoTSecureTunnelingServiceClientModel.h>
 
@@ -21,7 +22,7 @@ namespace IoTSecureTunneling
    * href="https://docs.aws.amazon.com/iot/latest/developerguide/secure-tunneling.html">IoT
    * Secure Tunneling</a>.</p>
    */
-  class AWS_IOTSECURETUNNELING_API IoTSecureTunnelingClient : public Aws::Client::AWSJsonClient
+  class AWS_IOTSECURETUNNELING_API IoTSecureTunnelingClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<IoTSecureTunnelingClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -75,7 +76,6 @@ namespace IoTSecureTunneling
 
         /* End of legacy constructors due deprecation */
         virtual ~IoTSecureTunnelingClient();
-
 
         /**
          * <p>Closes a tunnel identified by the unique tunnel id. When a
@@ -241,6 +241,7 @@ namespace IoTSecureTunneling
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<IoTSecureTunnelingEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<IoTSecureTunnelingClient>;
       void init(const IoTSecureTunnelingClientConfiguration& clientConfiguration);
 
       IoTSecureTunnelingClientConfiguration m_clientConfiguration;

@@ -7,6 +7,7 @@
 #include <aws/appconfig/AppConfig_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/appconfig/AppConfigServiceClientModel.h>
 
@@ -47,7 +48,7 @@ namespace AppConfig
    * href="http://docs.aws.amazon.com/appconfig/latest/userguide/what-is-appconfig.html">AppConfig
    * User Guide</a>.</p>
    */
-  class AWS_APPCONFIG_API AppConfigClient : public Aws::Client::AWSJsonClient
+  class AWS_APPCONFIG_API AppConfigClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<AppConfigClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -101,7 +102,6 @@ namespace AppConfig
 
         /* End of legacy constructors due deprecation */
         virtual ~AppConfigClient();
-
 
         /**
          * <p>Creates an application. In AppConfig, an application is simply an
@@ -927,6 +927,7 @@ namespace AppConfig
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<AppConfigEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<AppConfigClient>;
       void init(const AppConfigClientConfiguration& clientConfiguration);
 
       AppConfigClientConfiguration m_clientConfiguration;

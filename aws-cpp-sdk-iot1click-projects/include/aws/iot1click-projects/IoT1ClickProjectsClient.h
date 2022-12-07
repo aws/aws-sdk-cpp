@@ -7,6 +7,7 @@
 #include <aws/iot1click-projects/IoT1ClickProjects_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/iot1click-projects/IoT1ClickProjectsServiceClientModel.h>
 
@@ -17,7 +18,7 @@ namespace IoT1ClickProjects
   /**
    * <p>The AWS IoT 1-Click Projects API Reference</p>
    */
-  class AWS_IOT1CLICKPROJECTS_API IoT1ClickProjectsClient : public Aws::Client::AWSJsonClient
+  class AWS_IOT1CLICKPROJECTS_API IoT1ClickProjectsClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<IoT1ClickProjectsClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -71,7 +72,6 @@ namespace IoT1ClickProjects
 
         /* End of legacy constructors due deprecation */
         virtual ~IoT1ClickProjectsClient();
-
 
         /**
          * <p>Associates a physical device with a placement.</p><p><h3>See Also:</h3>   <a
@@ -367,6 +367,7 @@ namespace IoT1ClickProjects
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<IoT1ClickProjectsEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<IoT1ClickProjectsClient>;
       void init(const IoT1ClickProjectsClientConfiguration& clientConfiguration);
 
       IoT1ClickProjectsClientConfiguration m_clientConfiguration;

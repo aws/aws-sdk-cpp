@@ -7,6 +7,7 @@
 #include <aws/forecastquery/ForecastQueryService_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/forecastquery/ForecastQueryServiceServiceClientModel.h>
 
@@ -17,7 +18,7 @@ namespace ForecastQueryService
   /**
    * <p>Provides APIs for creating and managing Amazon Forecast resources.</p>
    */
-  class AWS_FORECASTQUERYSERVICE_API ForecastQueryServiceClient : public Aws::Client::AWSJsonClient
+  class AWS_FORECASTQUERYSERVICE_API ForecastQueryServiceClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<ForecastQueryServiceClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -72,7 +73,6 @@ namespace ForecastQueryService
         /* End of legacy constructors due deprecation */
         virtual ~ForecastQueryServiceClient();
 
-
         /**
          * <p>Retrieves a forecast for a single item, filtered by the supplied
          * criteria.</p> <p>The criteria is a key-value pair. The key is either
@@ -122,6 +122,7 @@ namespace ForecastQueryService
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<ForecastQueryServiceEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<ForecastQueryServiceClient>;
       void init(const ForecastQueryServiceClientConfiguration& clientConfiguration);
 
       ForecastQueryServiceClientConfiguration m_clientConfiguration;

@@ -7,6 +7,7 @@
 #include <aws/cloudcontrol/CloudControlApi_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/cloudcontrol/CloudControlApiServiceClientModel.h>
 
@@ -19,7 +20,7 @@ namespace CloudControlApi
    * href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/what-is-cloudcontrolapi.html">Amazon
    * Web Services Cloud Control API User Guide</a>.</p>
    */
-  class AWS_CLOUDCONTROLAPI_API CloudControlApiClient : public Aws::Client::AWSJsonClient
+  class AWS_CLOUDCONTROLAPI_API CloudControlApiClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<CloudControlApiClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -73,7 +74,6 @@ namespace CloudControlApi
 
         /* End of legacy constructors due deprecation */
         virtual ~CloudControlApiClient();
-
 
         /**
          * <p>Cancels the specified resource operation request. For more information, see
@@ -273,6 +273,7 @@ namespace CloudControlApi
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<CloudControlApiEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<CloudControlApiClient>;
       void init(const CloudControlApiClientConfiguration& clientConfiguration);
 
       CloudControlApiClientConfiguration m_clientConfiguration;

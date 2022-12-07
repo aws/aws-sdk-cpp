@@ -7,6 +7,7 @@
 #include <aws/amplifybackend/AmplifyBackend_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/amplifybackend/AmplifyBackendServiceClientModel.h>
 
@@ -17,7 +18,7 @@ namespace AmplifyBackend
   /**
    * <p>AWS Amplify Admin API</p>
    */
-  class AWS_AMPLIFYBACKEND_API AmplifyBackendClient : public Aws::Client::AWSJsonClient
+  class AWS_AMPLIFYBACKEND_API AmplifyBackendClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<AmplifyBackendClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -71,7 +72,6 @@ namespace AmplifyBackend
 
         /* End of legacy constructors due deprecation */
         virtual ~AmplifyBackendClient();
-
 
         /**
          * <p>This operation clones an existing backend.</p><p><h3>See Also:</h3>   <a
@@ -619,6 +619,7 @@ namespace AmplifyBackend
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<AmplifyBackendEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<AmplifyBackendClient>;
       void init(const AmplifyBackendClientConfiguration& clientConfiguration);
 
       AmplifyBackendClientConfiguration m_clientConfiguration;

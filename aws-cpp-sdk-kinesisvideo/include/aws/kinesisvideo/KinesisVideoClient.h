@@ -7,6 +7,7 @@
 #include <aws/kinesisvideo/KinesisVideo_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/kinesisvideo/KinesisVideoServiceClientModel.h>
 
@@ -17,7 +18,7 @@ namespace KinesisVideo
   /**
    * <p/>
    */
-  class AWS_KINESISVIDEO_API KinesisVideoClient : public Aws::Client::AWSJsonClient
+  class AWS_KINESISVIDEO_API KinesisVideoClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<KinesisVideoClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -71,7 +72,6 @@ namespace KinesisVideo
 
         /* End of legacy constructors due deprecation */
         virtual ~KinesisVideoClient();
-
 
         /**
          * <p>Creates a signaling channel. </p> <p> <code>CreateSignalingChannel</code> is
@@ -569,6 +569,7 @@ namespace KinesisVideo
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<KinesisVideoEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<KinesisVideoClient>;
       void init(const KinesisVideoClientConfiguration& clientConfiguration);
 
       KinesisVideoClientConfiguration m_clientConfiguration;

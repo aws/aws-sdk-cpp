@@ -7,6 +7,7 @@
 #include <aws/timestream-write/TimestreamWrite_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/timestream-write/TimestreamWriteServiceClientModel.h>
 
@@ -29,7 +30,7 @@ namespace TimestreamWrite
    * grows over time, Timestream’s adaptive query processing engine spans across
    * storage tiers to provide fast analysis while reducing costs.</p>
    */
-  class AWS_TIMESTREAMWRITE_API TimestreamWriteClient : public Aws::Client::AWSJsonClient
+  class AWS_TIMESTREAMWRITE_API TimestreamWriteClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<TimestreamWriteClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -83,7 +84,6 @@ namespace TimestreamWrite
 
         /* End of legacy constructors due deprecation */
         virtual ~TimestreamWriteClient();
-
 
         /**
          * <p>Creates a new Timestream database. If the KMS key is not specified, the
@@ -462,6 +462,7 @@ namespace TimestreamWrite
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<TimestreamWriteEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<TimestreamWriteClient>;
       void init(const TimestreamWriteClientConfiguration& clientConfiguration);
 
       mutable Aws::Utils::ConcurrentCache<Aws::String, Aws::String> m_endpointsCache;

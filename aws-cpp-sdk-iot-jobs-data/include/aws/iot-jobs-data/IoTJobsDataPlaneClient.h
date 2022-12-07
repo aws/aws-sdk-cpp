@@ -7,6 +7,7 @@
 #include <aws/iot-jobs-data/IoTJobsDataPlane_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/iot-jobs-data/IoTJobsDataPlaneServiceClientModel.h>
 
@@ -29,7 +30,7 @@ namespace IoTJobsDataPlane
    * The Jobs service provides commands to track the progress of a job on a specific
    * target and for all the targets of the job</p>
    */
-  class AWS_IOTJOBSDATAPLANE_API IoTJobsDataPlaneClient : public Aws::Client::AWSJsonClient
+  class AWS_IOTJOBSDATAPLANE_API IoTJobsDataPlaneClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<IoTJobsDataPlaneClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -83,7 +84,6 @@ namespace IoTJobsDataPlane
 
         /* End of legacy constructors due deprecation */
         virtual ~IoTJobsDataPlaneClient();
-
 
         /**
          * <p>Gets details of a job execution.</p><p><h3>See Also:</h3>   <a
@@ -159,6 +159,7 @@ namespace IoTJobsDataPlane
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<IoTJobsDataPlaneEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<IoTJobsDataPlaneClient>;
       void init(const IoTJobsDataPlaneClientConfiguration& clientConfiguration);
 
       IoTJobsDataPlaneClientConfiguration m_clientConfiguration;

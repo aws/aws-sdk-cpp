@@ -7,6 +7,7 @@
 #include <aws/sms/SMS_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/sms/SMSServiceClientModel.h>
 
@@ -29,7 +30,7 @@ namespace SMS
    * href="https://docs.aws.amazon.com/server-migration-service/latest/userguide/">Server
    * Migration Service User Guide</a> </p> </li> </ul>
    */
-  class AWS_SMS_API SMSClient : public Aws::Client::AWSJsonClient
+  class AWS_SMS_API SMSClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<SMSClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -83,7 +84,6 @@ namespace SMS
 
         /* End of legacy constructors due deprecation */
         virtual ~SMSClient();
-
 
         /**
          * <p>Creates an application. An application consists of one or more server groups.
@@ -728,6 +728,7 @@ namespace SMS
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<SMSEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<SMSClient>;
       void init(const SMSClientConfiguration& clientConfiguration);
 
       SMSClientConfiguration m_clientConfiguration;

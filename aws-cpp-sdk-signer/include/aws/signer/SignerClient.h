@@ -7,6 +7,7 @@
 #include <aws/signer/Signer_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/signer/SignerServiceClientModel.h>
 
@@ -33,7 +34,7 @@ namespace signer
    * href="http://docs.aws.amazon.com/signer/latest/developerguide/Welcome.html">AWS
    * Signer Developer Guide</a>.</p> <p/>
    */
-  class AWS_SIGNER_API SignerClient : public Aws::Client::AWSJsonClient
+  class AWS_SIGNER_API SignerClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<SignerClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -87,7 +88,6 @@ namespace signer
 
         /* End of legacy constructors due deprecation */
         virtual ~SignerClient();
-
 
         /**
          * <p>Adds cross-account permissions to a signing profile.</p><p><h3>See Also:</h3>
@@ -443,6 +443,7 @@ namespace signer
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<SignerEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<SignerClient>;
       void init(const SignerClientConfiguration& clientConfiguration);
 
       SignerClientConfiguration m_clientConfiguration;

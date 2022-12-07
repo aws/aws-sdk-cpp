@@ -7,6 +7,7 @@
 #include <aws/marketplacecommerceanalytics/MarketplaceCommerceAnalytics_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/marketplacecommerceanalytics/MarketplaceCommerceAnalyticsServiceClientModel.h>
 
@@ -17,7 +18,7 @@ namespace MarketplaceCommerceAnalytics
   /**
    * Provides AWS Marketplace business intelligence data on-demand.
    */
-  class AWS_MARKETPLACECOMMERCEANALYTICS_API MarketplaceCommerceAnalyticsClient : public Aws::Client::AWSJsonClient
+  class AWS_MARKETPLACECOMMERCEANALYTICS_API MarketplaceCommerceAnalyticsClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<MarketplaceCommerceAnalyticsClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -71,7 +72,6 @@ namespace MarketplaceCommerceAnalytics
 
         /* End of legacy constructors due deprecation */
         virtual ~MarketplaceCommerceAnalyticsClient();
-
 
         /**
          * Given a data set type and data set publication date, asynchronously publishes
@@ -131,6 +131,7 @@ namespace MarketplaceCommerceAnalytics
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<MarketplaceCommerceAnalyticsEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<MarketplaceCommerceAnalyticsClient>;
       void init(const MarketplaceCommerceAnalyticsClientConfiguration& clientConfiguration);
 
       MarketplaceCommerceAnalyticsClientConfiguration m_clientConfiguration;

@@ -7,6 +7,7 @@
 #include <aws/grafana/ManagedGrafana_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/grafana/ManagedGrafanaServiceClientModel.h>
 
@@ -25,7 +26,7 @@ namespace ManagedGrafana
    * visualizations to analyze your metrics, logs, and traces without having to
    * build, package, or deploy any hardware to run Grafana servers. </p>
    */
-  class AWS_MANAGEDGRAFANA_API ManagedGrafanaClient : public Aws::Client::AWSJsonClient
+  class AWS_MANAGEDGRAFANA_API ManagedGrafanaClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<ManagedGrafanaClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -79,7 +80,6 @@ namespace ManagedGrafana
 
         /* End of legacy constructors due deprecation */
         virtual ~ManagedGrafanaClient();
-
 
         /**
          * <p>Assigns a Grafana Enterprise license to a workspace. Upgrading to Grafana
@@ -440,6 +440,7 @@ namespace ManagedGrafana
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<ManagedGrafanaEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<ManagedGrafanaClient>;
       void init(const ManagedGrafanaClientConfiguration& clientConfiguration);
 
       ManagedGrafanaClientConfiguration m_clientConfiguration;

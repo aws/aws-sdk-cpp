@@ -8,6 +8,7 @@
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/neptune/NeptuneServiceClientModel.h>
 
@@ -35,7 +36,7 @@ namespace Neptune
    * maintenance window. The reference structure is as follows, and we list following
    * some related topics from the user guide.</p>
    */
-  class AWS_NEPTUNE_API NeptuneClient : public Aws::Client::AWSXMLClient
+  class AWS_NEPTUNE_API NeptuneClient : public Aws::Client::AWSXMLClient, public Aws::Client::ClientWithAsyncTemplateMethods<NeptuneClient>
   {
     public:
       typedef Aws::Client::AWSXMLClient BASECLASS;
@@ -1561,6 +1562,7 @@ namespace Neptune
         void OverrideEndpoint(const Aws::String& endpoint);
         std::shared_ptr<NeptuneEndpointProviderBase>& accessEndpointProvider();
   private:
+        friend class Aws::Client::ClientWithAsyncTemplateMethods<NeptuneClient>;
         void init(const NeptuneClientConfiguration& clientConfiguration);
 
         NeptuneClientConfiguration m_clientConfiguration;

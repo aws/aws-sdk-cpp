@@ -7,6 +7,7 @@
 #include <aws/connectcampaigns/ConnectCampaigns_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/connectcampaigns/ConnectCampaignsServiceClientModel.h>
 
@@ -17,7 +18,7 @@ namespace ConnectCampaigns
   /**
    * <p>Provide APIs to create and manage Amazon Connect Campaigns.</p>
    */
-  class AWS_CONNECTCAMPAIGNS_API ConnectCampaignsClient : public Aws::Client::AWSJsonClient
+  class AWS_CONNECTCAMPAIGNS_API ConnectCampaignsClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<ConnectCampaignsClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -71,7 +72,6 @@ namespace ConnectCampaigns
 
         /* End of legacy constructors due deprecation */
         virtual ~ConnectCampaignsClient();
-
 
         /**
          * <p>Creates a campaign for the specified Amazon Connect account. This API is
@@ -468,6 +468,7 @@ namespace ConnectCampaigns
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<ConnectCampaignsEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<ConnectCampaignsClient>;
       void init(const ConnectCampaignsClientConfiguration& clientConfiguration);
 
       ConnectCampaignsClientConfiguration m_clientConfiguration;

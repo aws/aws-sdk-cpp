@@ -7,6 +7,7 @@
 #include <aws/translate/Translate_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/translate/TranslateServiceClientModel.h>
 
@@ -18,7 +19,7 @@ namespace Translate
    * <p>Provides language translation for input text in the source language to the
    * specified target language.</p>
    */
-  class AWS_TRANSLATE_API TranslateClient : public Aws::Client::AWSJsonClient
+  class AWS_TRANSLATE_API TranslateClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<TranslateClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -72,7 +73,6 @@ namespace Translate
 
         /* End of legacy constructors due deprecation */
         virtual ~TranslateClient();
-
 
         /**
          * <p>Creates a parallel data resource in Amazon Translate by importing an input
@@ -437,6 +437,7 @@ namespace Translate
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<TranslateEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<TranslateClient>;
       void init(const TranslateClientConfiguration& clientConfiguration);
 
       TranslateClientConfiguration m_clientConfiguration;

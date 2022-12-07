@@ -7,6 +7,7 @@
 #include <aws/inspector2/Inspector2_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/inspector2/Inspector2ServiceClientModel.h>
 
@@ -19,7 +20,7 @@ namespace Inspector2
    * continuous scanning for security vulnerabilities within your Amazon EC2 and
    * Amazon ECR environments.</p>
    */
-  class AWS_INSPECTOR2_API Inspector2Client : public Aws::Client::AWSJsonClient
+  class AWS_INSPECTOR2_API Inspector2Client : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<Inspector2Client>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -73,7 +74,6 @@ namespace Inspector2
 
         /* End of legacy constructors due deprecation */
         virtual ~Inspector2Client();
-
 
         /**
          * <p>Associates an Amazon Web Services account with an Amazon Inspector delegated
@@ -647,6 +647,7 @@ namespace Inspector2
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<Inspector2EndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<Inspector2Client>;
       void init(const Inspector2ClientConfiguration& clientConfiguration);
 
       Inspector2ClientConfiguration m_clientConfiguration;

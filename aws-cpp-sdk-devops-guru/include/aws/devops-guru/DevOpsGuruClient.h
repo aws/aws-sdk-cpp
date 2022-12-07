@@ -7,6 +7,7 @@
 #include <aws/devops-guru/DevOpsGuru_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/devops-guru/DevOpsGuruServiceClientModel.h>
 
@@ -34,7 +35,7 @@ namespace DevOpsGuru
    * href="https://docs.aws.amazon.com/devops-guru/latest/userguide/concepts.html">Concepts
    * in DevOps Guru</a>. </p>
    */
-  class AWS_DEVOPSGURU_API DevOpsGuruClient : public Aws::Client::AWSJsonClient
+  class AWS_DEVOPSGURU_API DevOpsGuruClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<DevOpsGuruClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -88,7 +89,6 @@ namespace DevOpsGuru
 
         /* End of legacy constructors due deprecation */
         virtual ~DevOpsGuruClient();
-
 
         /**
          * <p> Adds a notification channel to DevOps Guru. A notification channel is used
@@ -727,6 +727,7 @@ namespace DevOpsGuru
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<DevOpsGuruEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<DevOpsGuruClient>;
       void init(const DevOpsGuruClientConfiguration& clientConfiguration);
 
       DevOpsGuruClientConfiguration m_clientConfiguration;

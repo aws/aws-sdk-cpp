@@ -7,6 +7,7 @@
 #include <aws/worklink/WorkLink_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/worklink/WorkLinkServiceClientModel.h>
 
@@ -24,7 +25,7 @@ namespace WorkLink
    * secure rendering service in the AWS cloud. Amazon WorkLink doesn't download or
    * store any internal web content on mobile devices.</p>
    */
-  class AWS_WORKLINK_API WorkLinkClient : public Aws::Client::AWSJsonClient
+  class AWS_WORKLINK_API WorkLinkClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<WorkLinkClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -80,10 +81,10 @@ namespace WorkLink
         virtual ~WorkLinkClient();
 
 
-
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<WorkLinkEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<WorkLinkClient>;
       void init(const WorkLinkClientConfiguration& clientConfiguration);
 
       WorkLinkClientConfiguration m_clientConfiguration;

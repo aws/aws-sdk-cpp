@@ -7,6 +7,7 @@
 #include <aws/servicediscovery/ServiceDiscovery_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/servicediscovery/ServiceDiscoveryServiceClientModel.h>
 
@@ -23,7 +24,7 @@ namespace ServiceDiscovery
    * submit public or private DNS queries, or HTTP requests, for the service receive
    * an answer that contains up to eight healthy records. </p>
    */
-  class AWS_SERVICEDISCOVERY_API ServiceDiscoveryClient : public Aws::Client::AWSJsonClient
+  class AWS_SERVICEDISCOVERY_API ServiceDiscoveryClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<ServiceDiscoveryClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -77,7 +78,6 @@ namespace ServiceDiscovery
 
         /* End of legacy constructors due deprecation */
         virtual ~ServiceDiscoveryClient();
-
 
         /**
          * <p>Creates an HTTP namespace. Service instances registered using an HTTP
@@ -633,6 +633,7 @@ namespace ServiceDiscovery
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<ServiceDiscoveryEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<ServiceDiscoveryClient>;
       void init(const ServiceDiscoveryClientConfiguration& clientConfiguration);
 
       ServiceDiscoveryClientConfiguration m_clientConfiguration;

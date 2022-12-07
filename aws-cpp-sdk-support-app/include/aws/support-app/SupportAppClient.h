@@ -7,6 +7,7 @@
 #include <aws/support-app/SupportApp_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/support-app/SupportAppServiceClientModel.h>
 
@@ -46,7 +47,7 @@ namespace SupportApp
    * Web Services Support App in Slack endpoints</a> in the <i>Amazon Web Services
    * General Reference</i>.</p> </li> </ul> </p>
    */
-  class AWS_SUPPORTAPP_API SupportAppClient : public Aws::Client::AWSJsonClient
+  class AWS_SUPPORTAPP_API SupportAppClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<SupportAppClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -100,7 +101,6 @@ namespace SupportApp
 
         /* End of legacy constructors due deprecation */
         virtual ~SupportAppClient();
-
 
         /**
          * <p>Creates a Slack channel configuration for your Amazon Web Services
@@ -328,6 +328,7 @@ namespace SupportApp
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<SupportAppEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<SupportAppClient>;
       void init(const SupportAppClientConfiguration& clientConfiguration);
 
       SupportAppClientConfiguration m_clientConfiguration;

@@ -7,6 +7,7 @@
 #include <aws/connectparticipant/ConnectParticipant_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/connectparticipant/ConnectParticipantServiceClientModel.h>
 
@@ -21,7 +22,7 @@ namespace ConnectParticipant
    * voice or chat.</p> <p>The APIs described here are used by chat participants,
    * such as agents and customers.</p>
    */
-  class AWS_CONNECTPARTICIPANT_API ConnectParticipantClient : public Aws::Client::AWSJsonClient
+  class AWS_CONNECTPARTICIPANT_API ConnectParticipantClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<ConnectParticipantClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -75,7 +76,6 @@ namespace ConnectParticipant
 
         /* End of legacy constructors due deprecation */
         virtual ~ConnectParticipantClient();
-
 
         /**
          * <p>Allows you to confirm that the attachment has been uploaded using the
@@ -269,6 +269,7 @@ namespace ConnectParticipant
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<ConnectParticipantEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<ConnectParticipantClient>;
       void init(const ConnectParticipantClientConfiguration& clientConfiguration);
 
       ConnectParticipantClientConfiguration m_clientConfiguration;

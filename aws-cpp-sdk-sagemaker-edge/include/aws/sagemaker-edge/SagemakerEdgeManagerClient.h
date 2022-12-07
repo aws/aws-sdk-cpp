@@ -7,6 +7,7 @@
 #include <aws/sagemaker-edge/SagemakerEdgeManager_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/sagemaker-edge/SagemakerEdgeManagerServiceClientModel.h>
 
@@ -18,7 +19,7 @@ namespace SagemakerEdgeManager
    * <p>SageMaker Edge Manager dataplane service for communicating with active
    * agents.</p>
    */
-  class AWS_SAGEMAKEREDGEMANAGER_API SagemakerEdgeManagerClient : public Aws::Client::AWSJsonClient
+  class AWS_SAGEMAKEREDGEMANAGER_API SagemakerEdgeManagerClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<SagemakerEdgeManagerClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -72,7 +73,6 @@ namespace SagemakerEdgeManager
 
         /* End of legacy constructors due deprecation */
         virtual ~SagemakerEdgeManagerClient();
-
 
         /**
          * <p>Use to get the active deployments from a device.</p><p><h3>See Also:</h3>  
@@ -132,6 +132,7 @@ namespace SagemakerEdgeManager
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<SagemakerEdgeManagerEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<SagemakerEdgeManagerClient>;
       void init(const SagemakerEdgeManagerClientConfiguration& clientConfiguration);
 
       SagemakerEdgeManagerClientConfiguration m_clientConfiguration;
