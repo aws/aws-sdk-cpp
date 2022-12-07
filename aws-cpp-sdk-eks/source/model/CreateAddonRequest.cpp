@@ -21,7 +21,8 @@ CreateAddonRequest::CreateAddonRequest() :
     m_resolveConflictsHasBeenSet(false),
     m_clientRequestToken(Aws::Utils::UUID::RandomUUID()),
     m_clientRequestTokenHasBeenSet(true),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_configurationValuesHasBeenSet(false)
 {
 }
 
@@ -66,6 +67,12 @@ Aws::String CreateAddonRequest::SerializePayload() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("tags", std::move(tagsJsonMap));
+
+  }
+
+  if(m_configurationValuesHasBeenSet)
+  {
+   payload.WithString("configurationValues", m_configurationValues);
 
   }
 

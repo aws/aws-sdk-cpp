@@ -184,88 +184,88 @@ namespace Model
 
 
     /**
-     * <p>* CreateCustom</p> <p>Specifies the certificate for an CloudHSM key store.
-     * This parameter is required for custom key stores with a
-     * <code>CustomKeyStoreType</code> of <code>AWS_CLOUDHSM</code>.</p> <p>Enter the
-     * content of the trust anchor certificate for the CloudHSM cluster. This is the
-     * content of the <code>customerCA.crt</code> file that you created when you <a
+     * <p>Specifies the certificate for an CloudHSM key store. This parameter is
+     * required for custom key stores with a <code>CustomKeyStoreType</code> of
+     * <code>AWS_CLOUDHSM</code>.</p> <p>Enter the content of the trust anchor
+     * certificate for the CloudHSM cluster. This is the content of the
+     * <code>customerCA.crt</code> file that you created when you <a
      * href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/initialize-cluster.html">initialized
      * the cluster</a>.</p>
      */
     inline const Aws::String& GetTrustAnchorCertificate() const{ return m_trustAnchorCertificate; }
 
     /**
-     * <p>* CreateCustom</p> <p>Specifies the certificate for an CloudHSM key store.
-     * This parameter is required for custom key stores with a
-     * <code>CustomKeyStoreType</code> of <code>AWS_CLOUDHSM</code>.</p> <p>Enter the
-     * content of the trust anchor certificate for the CloudHSM cluster. This is the
-     * content of the <code>customerCA.crt</code> file that you created when you <a
+     * <p>Specifies the certificate for an CloudHSM key store. This parameter is
+     * required for custom key stores with a <code>CustomKeyStoreType</code> of
+     * <code>AWS_CLOUDHSM</code>.</p> <p>Enter the content of the trust anchor
+     * certificate for the CloudHSM cluster. This is the content of the
+     * <code>customerCA.crt</code> file that you created when you <a
      * href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/initialize-cluster.html">initialized
      * the cluster</a>.</p>
      */
     inline bool TrustAnchorCertificateHasBeenSet() const { return m_trustAnchorCertificateHasBeenSet; }
 
     /**
-     * <p>* CreateCustom</p> <p>Specifies the certificate for an CloudHSM key store.
-     * This parameter is required for custom key stores with a
-     * <code>CustomKeyStoreType</code> of <code>AWS_CLOUDHSM</code>.</p> <p>Enter the
-     * content of the trust anchor certificate for the CloudHSM cluster. This is the
-     * content of the <code>customerCA.crt</code> file that you created when you <a
+     * <p>Specifies the certificate for an CloudHSM key store. This parameter is
+     * required for custom key stores with a <code>CustomKeyStoreType</code> of
+     * <code>AWS_CLOUDHSM</code>.</p> <p>Enter the content of the trust anchor
+     * certificate for the CloudHSM cluster. This is the content of the
+     * <code>customerCA.crt</code> file that you created when you <a
      * href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/initialize-cluster.html">initialized
      * the cluster</a>.</p>
      */
     inline void SetTrustAnchorCertificate(const Aws::String& value) { m_trustAnchorCertificateHasBeenSet = true; m_trustAnchorCertificate = value; }
 
     /**
-     * <p>* CreateCustom</p> <p>Specifies the certificate for an CloudHSM key store.
-     * This parameter is required for custom key stores with a
-     * <code>CustomKeyStoreType</code> of <code>AWS_CLOUDHSM</code>.</p> <p>Enter the
-     * content of the trust anchor certificate for the CloudHSM cluster. This is the
-     * content of the <code>customerCA.crt</code> file that you created when you <a
+     * <p>Specifies the certificate for an CloudHSM key store. This parameter is
+     * required for custom key stores with a <code>CustomKeyStoreType</code> of
+     * <code>AWS_CLOUDHSM</code>.</p> <p>Enter the content of the trust anchor
+     * certificate for the CloudHSM cluster. This is the content of the
+     * <code>customerCA.crt</code> file that you created when you <a
      * href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/initialize-cluster.html">initialized
      * the cluster</a>.</p>
      */
     inline void SetTrustAnchorCertificate(Aws::String&& value) { m_trustAnchorCertificateHasBeenSet = true; m_trustAnchorCertificate = std::move(value); }
 
     /**
-     * <p>* CreateCustom</p> <p>Specifies the certificate for an CloudHSM key store.
-     * This parameter is required for custom key stores with a
-     * <code>CustomKeyStoreType</code> of <code>AWS_CLOUDHSM</code>.</p> <p>Enter the
-     * content of the trust anchor certificate for the CloudHSM cluster. This is the
-     * content of the <code>customerCA.crt</code> file that you created when you <a
+     * <p>Specifies the certificate for an CloudHSM key store. This parameter is
+     * required for custom key stores with a <code>CustomKeyStoreType</code> of
+     * <code>AWS_CLOUDHSM</code>.</p> <p>Enter the content of the trust anchor
+     * certificate for the CloudHSM cluster. This is the content of the
+     * <code>customerCA.crt</code> file that you created when you <a
      * href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/initialize-cluster.html">initialized
      * the cluster</a>.</p>
      */
     inline void SetTrustAnchorCertificate(const char* value) { m_trustAnchorCertificateHasBeenSet = true; m_trustAnchorCertificate.assign(value); }
 
     /**
-     * <p>* CreateCustom</p> <p>Specifies the certificate for an CloudHSM key store.
-     * This parameter is required for custom key stores with a
-     * <code>CustomKeyStoreType</code> of <code>AWS_CLOUDHSM</code>.</p> <p>Enter the
-     * content of the trust anchor certificate for the CloudHSM cluster. This is the
-     * content of the <code>customerCA.crt</code> file that you created when you <a
+     * <p>Specifies the certificate for an CloudHSM key store. This parameter is
+     * required for custom key stores with a <code>CustomKeyStoreType</code> of
+     * <code>AWS_CLOUDHSM</code>.</p> <p>Enter the content of the trust anchor
+     * certificate for the CloudHSM cluster. This is the content of the
+     * <code>customerCA.crt</code> file that you created when you <a
      * href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/initialize-cluster.html">initialized
      * the cluster</a>.</p>
      */
     inline CreateCustomKeyStoreRequest& WithTrustAnchorCertificate(const Aws::String& value) { SetTrustAnchorCertificate(value); return *this;}
 
     /**
-     * <p>* CreateCustom</p> <p>Specifies the certificate for an CloudHSM key store.
-     * This parameter is required for custom key stores with a
-     * <code>CustomKeyStoreType</code> of <code>AWS_CLOUDHSM</code>.</p> <p>Enter the
-     * content of the trust anchor certificate for the CloudHSM cluster. This is the
-     * content of the <code>customerCA.crt</code> file that you created when you <a
+     * <p>Specifies the certificate for an CloudHSM key store. This parameter is
+     * required for custom key stores with a <code>CustomKeyStoreType</code> of
+     * <code>AWS_CLOUDHSM</code>.</p> <p>Enter the content of the trust anchor
+     * certificate for the CloudHSM cluster. This is the content of the
+     * <code>customerCA.crt</code> file that you created when you <a
      * href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/initialize-cluster.html">initialized
      * the cluster</a>.</p>
      */
     inline CreateCustomKeyStoreRequest& WithTrustAnchorCertificate(Aws::String&& value) { SetTrustAnchorCertificate(std::move(value)); return *this;}
 
     /**
-     * <p>* CreateCustom</p> <p>Specifies the certificate for an CloudHSM key store.
-     * This parameter is required for custom key stores with a
-     * <code>CustomKeyStoreType</code> of <code>AWS_CLOUDHSM</code>.</p> <p>Enter the
-     * content of the trust anchor certificate for the CloudHSM cluster. This is the
-     * content of the <code>customerCA.crt</code> file that you created when you <a
+     * <p>Specifies the certificate for an CloudHSM key store. This parameter is
+     * required for custom key stores with a <code>CustomKeyStoreType</code> of
+     * <code>AWS_CLOUDHSM</code>.</p> <p>Enter the content of the trust anchor
+     * certificate for the CloudHSM cluster. This is the content of the
+     * <code>customerCA.crt</code> file that you created when you <a
      * href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/initialize-cluster.html">initialized
      * the cluster</a>.</p>
      */

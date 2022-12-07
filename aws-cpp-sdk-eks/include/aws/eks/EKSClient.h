@@ -385,6 +385,23 @@ namespace EKS
         virtual void DescribeAddonAsync(const Model::DescribeAddonRequest& request, const DescribeAddonResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Returns configuration options.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeAddonConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeAddonConfigurationOutcome DescribeAddonConfiguration(const Model::DescribeAddonConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeAddonConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeAddonConfigurationOutcomeCallable DescribeAddonConfigurationCallable(const Model::DescribeAddonConfigurationRequest& request) const;
+
+        /**
+         * An Async wrapper for DescribeAddonConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeAddonConfigurationAsync(const Model::DescribeAddonConfigurationRequest& request, const DescribeAddonConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Describes the versions for an add-on. Information such as the Kubernetes
          * versions that you can use the add-on with, the <code>owner</code>,
          * <code>publisher</code>, and the <code>type</code> of the add-on are returned.

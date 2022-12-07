@@ -2154,6 +2154,34 @@ namespace CloudFront
         virtual void UpdateDistribution2020_05_31Async(const Model::UpdateDistribution2020_05_31Request& request, const UpdateDistribution2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Copies the staging distribution's configuration to its corresponding primary
+         * distribution. The primary distribution retains its <code>Aliases</code> (also
+         * known as alternate domain names or CNAMEs) and
+         * <code>ContinuousDeploymentPolicyId</code> value, but otherwise its configuration
+         * is overwritten to match the staging distribution.</p> <p>You can use this
+         * operation in a continuous deployment workflow after you have tested
+         * configuration changes on the staging distribution. After using a continuous
+         * deployment policy to move a portion of your domain name’s traffic to the staging
+         * distribution and verifying that it works as intended, you can use this operation
+         * to copy the staging distribution’s configuration to the primary distribution.
+         * This action will disable the continuous deployment policy and move your domain’s
+         * traffic back to the primary distribution.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateDistributionWithStagingConfig2020_05_31">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateDistributionWithStagingConfig2020_05_31Outcome UpdateDistributionWithStagingConfig2020_05_31(const Model::UpdateDistributionWithStagingConfig2020_05_31Request& request) const;
+
+        /**
+         * A Callable wrapper for UpdateDistributionWithStagingConfig2020_05_31 that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateDistributionWithStagingConfig2020_05_31OutcomeCallable UpdateDistributionWithStagingConfig2020_05_31Callable(const Model::UpdateDistributionWithStagingConfig2020_05_31Request& request) const;
+
+        /**
+         * An Async wrapper for UpdateDistributionWithStagingConfig2020_05_31 that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateDistributionWithStagingConfig2020_05_31Async(const Model::UpdateDistributionWithStagingConfig2020_05_31Request& request, const UpdateDistributionWithStagingConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Update a field-level encryption configuration. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateFieldLevelEncryptionConfig2020_05_31">AWS
          * API Reference</a></p>

@@ -96,6 +96,7 @@
 #include <aws/cloudfront/model/UpdateCloudFrontOriginAccessIdentity2020_05_31Result.h>
 #include <aws/cloudfront/model/UpdateContinuousDeploymentPolicy2020_05_31Result.h>
 #include <aws/cloudfront/model/UpdateDistribution2020_05_31Result.h>
+#include <aws/cloudfront/model/UpdateDistributionWithStagingConfig2020_05_31Result.h>
 #include <aws/cloudfront/model/UpdateFieldLevelEncryptionConfig2020_05_31Result.h>
 #include <aws/cloudfront/model/UpdateFieldLevelEncryptionProfile2020_05_31Result.h>
 #include <aws/cloudfront/model/UpdateFunction2020_05_31Result.h>
@@ -242,6 +243,7 @@ namespace Aws
       class UpdateCloudFrontOriginAccessIdentity2020_05_31Request;
       class UpdateContinuousDeploymentPolicy2020_05_31Request;
       class UpdateDistribution2020_05_31Request;
+      class UpdateDistributionWithStagingConfig2020_05_31Request;
       class UpdateFieldLevelEncryptionConfig2020_05_31Request;
       class UpdateFieldLevelEncryptionProfile2020_05_31Request;
       class UpdateFunction2020_05_31Request;
@@ -350,6 +352,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<UpdateCloudFrontOriginAccessIdentity2020_05_31Result, CloudFrontError> UpdateCloudFrontOriginAccessIdentity2020_05_31Outcome;
       typedef Aws::Utils::Outcome<UpdateContinuousDeploymentPolicy2020_05_31Result, CloudFrontError> UpdateContinuousDeploymentPolicy2020_05_31Outcome;
       typedef Aws::Utils::Outcome<UpdateDistribution2020_05_31Result, CloudFrontError> UpdateDistribution2020_05_31Outcome;
+      typedef Aws::Utils::Outcome<UpdateDistributionWithStagingConfig2020_05_31Result, CloudFrontError> UpdateDistributionWithStagingConfig2020_05_31Outcome;
       typedef Aws::Utils::Outcome<UpdateFieldLevelEncryptionConfig2020_05_31Result, CloudFrontError> UpdateFieldLevelEncryptionConfig2020_05_31Outcome;
       typedef Aws::Utils::Outcome<UpdateFieldLevelEncryptionProfile2020_05_31Result, CloudFrontError> UpdateFieldLevelEncryptionProfile2020_05_31Outcome;
       typedef Aws::Utils::Outcome<UpdateFunction2020_05_31Result, CloudFrontError> UpdateFunction2020_05_31Outcome;
@@ -458,6 +461,7 @@ namespace Aws
       typedef std::future<UpdateCloudFrontOriginAccessIdentity2020_05_31Outcome> UpdateCloudFrontOriginAccessIdentity2020_05_31OutcomeCallable;
       typedef std::future<UpdateContinuousDeploymentPolicy2020_05_31Outcome> UpdateContinuousDeploymentPolicy2020_05_31OutcomeCallable;
       typedef std::future<UpdateDistribution2020_05_31Outcome> UpdateDistribution2020_05_31OutcomeCallable;
+      typedef std::future<UpdateDistributionWithStagingConfig2020_05_31Outcome> UpdateDistributionWithStagingConfig2020_05_31OutcomeCallable;
       typedef std::future<UpdateFieldLevelEncryptionConfig2020_05_31Outcome> UpdateFieldLevelEncryptionConfig2020_05_31OutcomeCallable;
       typedef std::future<UpdateFieldLevelEncryptionProfile2020_05_31Outcome> UpdateFieldLevelEncryptionProfile2020_05_31OutcomeCallable;
       typedef std::future<UpdateFunction2020_05_31Outcome> UpdateFunction2020_05_31OutcomeCallable;
@@ -569,6 +573,7 @@ namespace Aws
     typedef std::function<void(const CloudFrontClient*, const Model::UpdateCloudFrontOriginAccessIdentity2020_05_31Request&, const Model::UpdateCloudFrontOriginAccessIdentity2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateCloudFrontOriginAccessIdentity2020_05_31ResponseReceivedHandler;
     typedef std::function<void(const CloudFrontClient*, const Model::UpdateContinuousDeploymentPolicy2020_05_31Request&, const Model::UpdateContinuousDeploymentPolicy2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateContinuousDeploymentPolicy2020_05_31ResponseReceivedHandler;
     typedef std::function<void(const CloudFrontClient*, const Model::UpdateDistribution2020_05_31Request&, const Model::UpdateDistribution2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDistribution2020_05_31ResponseReceivedHandler;
+    typedef std::function<void(const CloudFrontClient*, const Model::UpdateDistributionWithStagingConfig2020_05_31Request&, const Model::UpdateDistributionWithStagingConfig2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDistributionWithStagingConfig2020_05_31ResponseReceivedHandler;
     typedef std::function<void(const CloudFrontClient*, const Model::UpdateFieldLevelEncryptionConfig2020_05_31Request&, const Model::UpdateFieldLevelEncryptionConfig2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateFieldLevelEncryptionConfig2020_05_31ResponseReceivedHandler;
     typedef std::function<void(const CloudFrontClient*, const Model::UpdateFieldLevelEncryptionProfile2020_05_31Request&, const Model::UpdateFieldLevelEncryptionProfile2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateFieldLevelEncryptionProfile2020_05_31ResponseReceivedHandler;
     typedef std::function<void(const CloudFrontClient*, const Model::UpdateFunction2020_05_31Request&, const Model::UpdateFunction2020_05_31Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateFunction2020_05_31ResponseReceivedHandler;

@@ -24,8 +24,10 @@ namespace Model
 {
 
   /**
-   * <p>The combination of Amazon Web Service, linked account, Region, and usage type
-   * where a cost anomaly is observed. </p><p><h3>See Also:</h3>   <a
+   * <p>The combination of Amazon Web Service, linked account, linked account name,
+   * Region, and usage type where a cost anomaly is observed. The linked account name
+   * will only be available when the account name can be identified.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/RootCause">AWS API
    * Reference</a></p>
    */
@@ -209,6 +211,47 @@ namespace Model
      */
     inline RootCause& WithUsageType(const char* value) { SetUsageType(value); return *this;}
 
+
+    /**
+     * <p>The member account name value that's associated with the cost anomaly.</p>
+     */
+    inline const Aws::String& GetLinkedAccountName() const{ return m_linkedAccountName; }
+
+    /**
+     * <p>The member account name value that's associated with the cost anomaly.</p>
+     */
+    inline bool LinkedAccountNameHasBeenSet() const { return m_linkedAccountNameHasBeenSet; }
+
+    /**
+     * <p>The member account name value that's associated with the cost anomaly.</p>
+     */
+    inline void SetLinkedAccountName(const Aws::String& value) { m_linkedAccountNameHasBeenSet = true; m_linkedAccountName = value; }
+
+    /**
+     * <p>The member account name value that's associated with the cost anomaly.</p>
+     */
+    inline void SetLinkedAccountName(Aws::String&& value) { m_linkedAccountNameHasBeenSet = true; m_linkedAccountName = std::move(value); }
+
+    /**
+     * <p>The member account name value that's associated with the cost anomaly.</p>
+     */
+    inline void SetLinkedAccountName(const char* value) { m_linkedAccountNameHasBeenSet = true; m_linkedAccountName.assign(value); }
+
+    /**
+     * <p>The member account name value that's associated with the cost anomaly.</p>
+     */
+    inline RootCause& WithLinkedAccountName(const Aws::String& value) { SetLinkedAccountName(value); return *this;}
+
+    /**
+     * <p>The member account name value that's associated with the cost anomaly.</p>
+     */
+    inline RootCause& WithLinkedAccountName(Aws::String&& value) { SetLinkedAccountName(std::move(value)); return *this;}
+
+    /**
+     * <p>The member account name value that's associated with the cost anomaly.</p>
+     */
+    inline RootCause& WithLinkedAccountName(const char* value) { SetLinkedAccountName(value); return *this;}
+
   private:
 
     Aws::String m_service;
@@ -222,6 +265,9 @@ namespace Model
 
     Aws::String m_usageType;
     bool m_usageTypeHasBeenSet = false;
+
+    Aws::String m_linkedAccountName;
+    bool m_linkedAccountNameHasBeenSet = false;
   };
 
 } // namespace Model
