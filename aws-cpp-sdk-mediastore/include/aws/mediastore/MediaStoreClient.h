@@ -7,6 +7,7 @@
 #include <aws/mediastore/MediaStore_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/mediastore/MediaStoreServiceClientModel.h>
 
@@ -18,7 +19,7 @@ namespace MediaStore
    * <p>An AWS Elemental MediaStore container is a namespace that holds folders and
    * objects. You use a container endpoint to create, read, and delete objects. </p>
    */
-  class AWS_MEDIASTORE_API MediaStoreClient : public Aws::Client::AWSJsonClient
+  class AWS_MEDIASTORE_API MediaStoreClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<MediaStoreClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -72,7 +73,6 @@ namespace MediaStore
 
         /* End of legacy constructors due deprecation */
         virtual ~MediaStoreClient();
-
 
         /**
          * <p>Creates a storage container to hold objects. A container is similar to a
@@ -512,6 +512,7 @@ namespace MediaStore
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<MediaStoreEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<MediaStoreClient>;
       void init(const MediaStoreClientConfiguration& clientConfiguration);
 
       MediaStoreClientConfiguration m_clientConfiguration;

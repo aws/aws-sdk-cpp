@@ -7,6 +7,7 @@
 #include <aws/appsync/AppSync_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/appsync/AppSyncServiceClientModel.h>
 
@@ -18,7 +19,7 @@ namespace AppSync
    * <p>AppSync provides API actions for creating and interacting with data sources
    * using GraphQL from your application.</p>
    */
-  class AWS_APPSYNC_API AppSyncClient : public Aws::Client::AWSJsonClient
+  class AWS_APPSYNC_API AppSyncClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<AppSyncClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -72,7 +73,6 @@ namespace AppSync
 
         /* End of legacy constructors due deprecation */
         virtual ~AppSyncClient();
-
 
         /**
          * <p>Maps an endpoint to your custom domain.</p><p><h3>See Also:</h3>   <a
@@ -977,6 +977,7 @@ namespace AppSync
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<AppSyncEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<AppSyncClient>;
       void init(const AppSyncClientConfiguration& clientConfiguration);
 
       AppSyncClientConfiguration m_clientConfiguration;

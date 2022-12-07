@@ -7,6 +7,7 @@
 #include <aws/kinesis-video-signaling/KinesisVideoSignalingChannels_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/kinesis-video-signaling/KinesisVideoSignalingChannelsServiceClientModel.h>
 
@@ -20,7 +21,7 @@ namespace KinesisVideoSignalingChannels
    * and answers in order to establish peer-to-peer connection in webRTC
    * technology.</p>
    */
-  class AWS_KINESISVIDEOSIGNALINGCHANNELS_API KinesisVideoSignalingChannelsClient : public Aws::Client::AWSJsonClient
+  class AWS_KINESISVIDEOSIGNALINGCHANNELS_API KinesisVideoSignalingChannelsClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<KinesisVideoSignalingChannelsClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -74,7 +75,6 @@ namespace KinesisVideoSignalingChannels
 
         /* End of legacy constructors due deprecation */
         virtual ~KinesisVideoSignalingChannelsClient();
-
 
         /**
          * <p>Gets the Interactive Connectivity Establishment (ICE) server configuration
@@ -134,6 +134,7 @@ namespace KinesisVideoSignalingChannels
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<KinesisVideoSignalingChannelsEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<KinesisVideoSignalingChannelsClient>;
       void init(const KinesisVideoSignalingChannelsClientConfiguration& clientConfiguration);
 
       KinesisVideoSignalingChannelsClientConfiguration m_clientConfiguration;

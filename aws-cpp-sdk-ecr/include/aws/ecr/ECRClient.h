@@ -7,6 +7,7 @@
 #include <aws/ecr/ECR_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/ecr/ECRServiceClientModel.h>
 
@@ -27,7 +28,7 @@ namespace ECR
    * href="https://docs.aws.amazon.com/general/latest/gr/ecr.html">Amazon ECR
    * endpoints</a> in the <i>Amazon Web Services General Reference</i>.</p>
    */
-  class AWS_ECR_API ECRClient : public Aws::Client::AWSJsonClient
+  class AWS_ECR_API ECRClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<ECRClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -81,7 +82,6 @@ namespace ECR
 
         /* End of legacy constructors due deprecation */
         virtual ~ECRClient();
-
 
         /**
          * <p>Checks the availability of one or more image layers in a repository.</p>
@@ -915,6 +915,7 @@ namespace ECR
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<ECREndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<ECRClient>;
       void init(const ECRClientConfiguration& clientConfiguration);
 
       ECRClientConfiguration m_clientConfiguration;

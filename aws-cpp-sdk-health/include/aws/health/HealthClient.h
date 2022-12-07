@@ -7,6 +7,7 @@
 #include <aws/health/Health_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/health/HealthServiceClientModel.h>
 
@@ -55,7 +56,7 @@ namespace Health
    * <code>nextToken</code> in the next request to return more results.</p> </li>
    * </ul> 
    */
-  class AWS_HEALTH_API HealthClient : public Aws::Client::AWSJsonClient
+  class AWS_HEALTH_API HealthClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<HealthClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -109,7 +110,6 @@ namespace Health
 
         /* End of legacy constructors due deprecation */
         virtual ~HealthClient();
-
 
         /**
          * <p>Returns a list of accounts in the organization from Organizations that are
@@ -506,6 +506,7 @@ namespace Health
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<HealthEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<HealthClient>;
       void init(const HealthClientConfiguration& clientConfiguration);
 
       HealthClientConfiguration m_clientConfiguration;

@@ -7,6 +7,7 @@
 #include <aws/mwaa/MWAA_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/mwaa/MWAAServiceClientModel.h>
 
@@ -51,7 +52,7 @@ namespace MWAA
    * href="https://docs.aws.amazon.com/mwaa/latest/userguide/what-is-mwaa.html#regions-mwaa">Region
    * availability</a> in the <i>Amazon MWAA User Guide</i>.</p></p>
    */
-  class AWS_MWAA_API MWAAClient : public Aws::Client::AWSJsonClient
+  class AWS_MWAA_API MWAAClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<MWAAClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -105,7 +106,6 @@ namespace MWAA
 
         /* End of legacy constructors due deprecation */
         virtual ~MWAAClient();
-
 
         /**
          * <p>Creates a CLI token for the Airflow CLI. To learn more, see <a
@@ -313,6 +313,7 @@ namespace MWAA
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<MWAAEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<MWAAClient>;
       void init(const MWAAClientConfiguration& clientConfiguration);
 
       MWAAClientConfiguration m_clientConfiguration;

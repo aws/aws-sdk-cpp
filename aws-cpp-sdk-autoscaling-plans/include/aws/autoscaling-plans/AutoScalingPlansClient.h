@@ -7,6 +7,7 @@
 #include <aws/autoscaling-plans/AutoScalingPlans_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/autoscaling-plans/AutoScalingPlansServiceClientModel.h>
 
@@ -31,7 +32,7 @@ namespace AutoScalingPlans
    * href="https://docs.aws.amazon.com/autoscaling/plans/userguide/what-is-aws-auto-scaling.html">AWS
    * Auto Scaling User Guide</a>. </p>
    */
-  class AWS_AUTOSCALINGPLANS_API AutoScalingPlansClient : public Aws::Client::AWSJsonClient
+  class AWS_AUTOSCALINGPLANS_API AutoScalingPlansClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<AutoScalingPlansClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -85,7 +86,6 @@ namespace AutoScalingPlans
 
         /* End of legacy constructors due deprecation */
         virtual ~AutoScalingPlansClient();
-
 
         /**
          * <p>Creates a scaling plan. </p><p><h3>See Also:</h3>   <a
@@ -203,6 +203,7 @@ namespace AutoScalingPlans
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<AutoScalingPlansEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<AutoScalingPlansClient>;
       void init(const AutoScalingPlansClientConfiguration& clientConfiguration);
 
       AutoScalingPlansClientConfiguration m_clientConfiguration;

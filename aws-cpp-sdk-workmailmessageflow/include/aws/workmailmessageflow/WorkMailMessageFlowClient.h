@@ -7,6 +7,7 @@
 #include <aws/workmailmessageflow/WorkMailMessageFlow_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/workmailmessageflow/WorkMailMessageFlowServiceClientModel.h>
 
@@ -18,7 +19,7 @@ namespace WorkMailMessageFlow
    * <p>The WorkMail Message Flow API provides access to email messages as they are
    * being sent and received by a WorkMail organization.</p>
    */
-  class AWS_WORKMAILMESSAGEFLOW_API WorkMailMessageFlowClient : public Aws::Client::AWSJsonClient
+  class AWS_WORKMAILMESSAGEFLOW_API WorkMailMessageFlowClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<WorkMailMessageFlowClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -73,7 +74,6 @@ namespace WorkMailMessageFlow
         /* End of legacy constructors due deprecation */
         virtual ~WorkMailMessageFlowClient();
 
-
         /**
          * <p>Retrieves the raw content of an in-transit email message, in MIME
          * format.</p><p><h3>See Also:</h3>   <a
@@ -124,6 +124,7 @@ namespace WorkMailMessageFlow
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<WorkMailMessageFlowEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<WorkMailMessageFlowClient>;
       void init(const WorkMailMessageFlowClientConfiguration& clientConfiguration);
 
       WorkMailMessageFlowClientConfiguration m_clientConfiguration;

@@ -7,6 +7,7 @@
 #include <aws/drs/Drs_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/drs/DrsServiceClientModel.h>
 
@@ -17,7 +18,7 @@ namespace drs
   /**
    * <p>AWS Elastic Disaster Recovery Service.</p>
    */
-  class AWS_DRS_API DrsClient : public Aws::Client::AWSJsonClient
+  class AWS_DRS_API DrsClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<DrsClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -71,7 +72,6 @@ namespace drs
 
         /* End of legacy constructors due deprecation */
         virtual ~DrsClient();
-
 
         /**
          * <p>Create an extended source server in the target Account based on the source
@@ -745,6 +745,7 @@ namespace drs
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<DrsEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<DrsClient>;
       void init(const DrsClientConfiguration& clientConfiguration);
 
       DrsClientConfiguration m_clientConfiguration;

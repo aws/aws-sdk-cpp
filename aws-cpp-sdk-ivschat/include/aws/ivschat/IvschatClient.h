@@ -7,6 +7,7 @@
 #include <aws/ivschat/Ivschat_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/ivschat/IvschatServiceClientModel.h>
 
@@ -126,7 +127,7 @@ namespace ivschat
    * href="https://docs.aws.amazon.com/ivs/latest/chatmsgapireference/chat-messaging-api.html">
    * Amazon IVS Chat Messaging API Reference</a>.</p>
    */
-  class AWS_IVSCHAT_API IvschatClient : public Aws::Client::AWSJsonClient
+  class AWS_IVSCHAT_API IvschatClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<IvschatClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -180,7 +181,6 @@ namespace ivschat
 
         /* End of legacy constructors due deprecation */
         virtual ~IvschatClient();
-
 
         /**
          * <p>Creates an encrypted token that is used by a chat participant to establish an
@@ -507,6 +507,7 @@ namespace ivschat
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<IvschatEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<IvschatClient>;
       void init(const IvschatClientConfiguration& clientConfiguration);
 
       IvschatClientConfiguration m_clientConfiguration;

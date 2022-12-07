@@ -7,6 +7,7 @@
 #include <aws/mediapackage-vod/MediaPackageVod_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/mediapackage-vod/MediaPackageVodServiceClientModel.h>
 
@@ -17,7 +18,7 @@ namespace MediaPackageVod
   /**
    * AWS Elemental MediaPackage VOD
    */
-  class AWS_MEDIAPACKAGEVOD_API MediaPackageVodClient : public Aws::Client::AWSJsonClient
+  class AWS_MEDIAPACKAGEVOD_API MediaPackageVodClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<MediaPackageVodClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -71,7 +72,6 @@ namespace MediaPackageVod
 
         /* End of legacy constructors due deprecation */
         virtual ~MediaPackageVodClient();
-
 
         /**
          * Changes the packaging group's properities to configure log
@@ -380,6 +380,7 @@ namespace MediaPackageVod
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<MediaPackageVodEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<MediaPackageVodClient>;
       void init(const MediaPackageVodClientConfiguration& clientConfiguration);
 
       MediaPackageVodClientConfiguration m_clientConfiguration;

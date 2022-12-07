@@ -7,6 +7,7 @@
 #include <aws/kinesis-video-archived-media/KinesisVideoArchivedMedia_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/kinesis-video-archived-media/KinesisVideoArchivedMediaServiceClientModel.h>
 
@@ -17,7 +18,7 @@ namespace KinesisVideoArchivedMedia
   /**
    * <p/>
    */
-  class AWS_KINESISVIDEOARCHIVEDMEDIA_API KinesisVideoArchivedMediaClient : public Aws::Client::AWSJsonClient
+  class AWS_KINESISVIDEOARCHIVEDMEDIA_API KinesisVideoArchivedMediaClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<KinesisVideoArchivedMediaClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -71,7 +72,6 @@ namespace KinesisVideoArchivedMedia
 
         /* End of legacy constructors due deprecation */
         virtual ~KinesisVideoArchivedMediaClient();
-
 
         /**
          * <p>Downloads an MP4 file (clip) containing the archived, on-demand media from
@@ -474,6 +474,7 @@ namespace KinesisVideoArchivedMedia
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<KinesisVideoArchivedMediaEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<KinesisVideoArchivedMediaClient>;
       void init(const KinesisVideoArchivedMediaClientConfiguration& clientConfiguration);
 
       KinesisVideoArchivedMediaClientConfiguration m_clientConfiguration;

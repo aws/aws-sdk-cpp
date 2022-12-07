@@ -7,6 +7,7 @@
 #include <aws/personalize/Personalize_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/personalize/PersonalizeServiceClientModel.h>
 
@@ -18,7 +19,7 @@ namespace Personalize
    * <p>Amazon Personalize is a machine learning service that makes it easy to add
    * individualized recommendations to customers.</p>
    */
-  class AWS_PERSONALIZE_API PersonalizeClient : public Aws::Client::AWSJsonClient
+  class AWS_PERSONALIZE_API PersonalizeClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<PersonalizeClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -72,7 +73,6 @@ namespace Personalize
 
         /* End of legacy constructors due deprecation */
         virtual ~PersonalizeClient();
-
 
         /**
          * <p>Creates a batch inference job. The operation can handle up to 50 million
@@ -1649,6 +1649,7 @@ namespace Personalize
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<PersonalizeEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<PersonalizeClient>;
       void init(const PersonalizeClientConfiguration& clientConfiguration);
 
       PersonalizeClientConfiguration m_clientConfiguration;

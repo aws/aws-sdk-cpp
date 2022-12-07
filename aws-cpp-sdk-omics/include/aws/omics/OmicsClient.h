@@ -7,6 +7,7 @@
 #include <aws/omics/Omics_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/omics/OmicsServiceClientModel.h>
 
@@ -19,7 +20,7 @@ namespace Omics
    * service, see <a href="https://docs.aws.amazon.com/omics/latest/dev/">What is
    * Amazon Omics?</a> in the <i>Amazon Omics Developer Guide</i>.</p>
    */
-  class AWS_OMICS_API OmicsClient : public Aws::Client::AWSJsonClient
+  class AWS_OMICS_API OmicsClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<OmicsClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -73,7 +74,6 @@ namespace Omics
 
         /* End of legacy constructors due deprecation */
         virtual ~OmicsClient();
-
 
         /**
          * <p>Deletes one or more read sets.</p><p><h3>See Also:</h3>   <a
@@ -1204,6 +1204,7 @@ namespace Omics
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<OmicsEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<OmicsClient>;
       void init(const OmicsClientConfiguration& clientConfiguration);
 
       OmicsClientConfiguration m_clientConfiguration;

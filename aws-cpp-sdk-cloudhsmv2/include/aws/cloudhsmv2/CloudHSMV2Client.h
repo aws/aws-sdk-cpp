@@ -7,6 +7,7 @@
 #include <aws/cloudhsmv2/CloudHSMV2_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/cloudhsmv2/CloudHSMV2ServiceClientModel.h>
 
@@ -20,7 +21,7 @@ namespace CloudHSMV2
    * href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User
    * Guide</a>.</p>
    */
-  class AWS_CLOUDHSMV2_API CloudHSMV2Client : public Aws::Client::AWSJsonClient
+  class AWS_CLOUDHSMV2_API CloudHSMV2Client : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<CloudHSMV2Client>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -74,7 +75,6 @@ namespace CloudHSMV2
 
         /* End of legacy constructors due deprecation */
         virtual ~CloudHSMV2Client();
-
 
         /**
          * <p>Copy an AWS CloudHSM cluster backup to a different region.</p><p><h3>See
@@ -371,6 +371,7 @@ namespace CloudHSMV2
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<CloudHSMV2EndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<CloudHSMV2Client>;
       void init(const CloudHSMV2ClientConfiguration& clientConfiguration);
 
       CloudHSMV2ClientConfiguration m_clientConfiguration;

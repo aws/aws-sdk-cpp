@@ -7,6 +7,7 @@
 #include <aws/config/ConfigService_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/config/ConfigServiceServiceClientModel.h>
 
@@ -39,7 +40,7 @@ namespace ConfigService
    * href="https://docs.aws.amazon.com/config/latest/developerguide/WhatIsConfig.html">What
    * Is Config</a> in the <i>Config Developer Guide</i>.</p>
    */
-  class AWS_CONFIGSERVICE_API ConfigServiceClient : public Aws::Client::AWSJsonClient
+  class AWS_CONFIGSERVICE_API ConfigServiceClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<ConfigServiceClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -93,7 +94,6 @@ namespace ConfigService
 
         /* End of legacy constructors due deprecation */
         virtual ~ConfigServiceClient();
-
 
         /**
          * <p>Returns the current configuration items for resources that are present in
@@ -2233,6 +2233,7 @@ namespace ConfigService
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<ConfigServiceEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<ConfigServiceClient>;
       void init(const ConfigServiceClientConfiguration& clientConfiguration);
 
       ConfigServiceClientConfiguration m_clientConfiguration;

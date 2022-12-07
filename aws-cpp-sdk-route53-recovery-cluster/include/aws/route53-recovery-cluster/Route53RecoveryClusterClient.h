@@ -7,6 +7,7 @@
 #include <aws/route53-recovery-cluster/Route53RecoveryCluster_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/route53-recovery-cluster/Route53RecoveryClusterServiceClientModel.h>
 
@@ -59,7 +60,7 @@ namespace Route53RecoveryCluster
    * href="https://docs.aws.amazon.com/r53recovery/latest/dg/">Amazon Route 53
    * Application Recovery Controller Developer Guide</a>.</p> </li> </ul>
    */
-  class AWS_ROUTE53RECOVERYCLUSTER_API Route53RecoveryClusterClient : public Aws::Client::AWSJsonClient
+  class AWS_ROUTE53RECOVERYCLUSTER_API Route53RecoveryClusterClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<Route53RecoveryClusterClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -113,7 +114,6 @@ namespace Route53RecoveryCluster
 
         /* End of legacy constructors due deprecation */
         virtual ~Route53RecoveryClusterClient();
-
 
         /**
          * <p>Get the state for a routing control. A routing control is a simple on/off
@@ -287,6 +287,7 @@ namespace Route53RecoveryCluster
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<Route53RecoveryClusterEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<Route53RecoveryClusterClient>;
       void init(const Route53RecoveryClusterClientConfiguration& clientConfiguration);
 
       Route53RecoveryClusterClientConfiguration m_clientConfiguration;

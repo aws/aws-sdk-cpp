@@ -7,6 +7,7 @@
 #include <aws/athena/Athena_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/athena/AthenaServiceClientModel.h>
 
@@ -33,7 +34,7 @@ namespace Athena
    * href="https://docs.aws.amazon.com/athena/latest/ug/code-samples.html">Examples
    * and Code Samples</a> in the <i>Amazon Athena User Guide</i>.</p>
    */
-  class AWS_ATHENA_API AthenaClient : public Aws::Client::AWSJsonClient
+  class AWS_ATHENA_API AthenaClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<AthenaClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -87,7 +88,6 @@ namespace Athena
 
         /* End of legacy constructors due deprecation */
         virtual ~AthenaClient();
-
 
         /**
          * <p>Returns the details of a single named query or a list of up to 50 queries,
@@ -1272,6 +1272,7 @@ namespace Athena
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<AthenaEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<AthenaClient>;
       void init(const AthenaClientConfiguration& clientConfiguration);
 
       AthenaClientConfiguration m_clientConfiguration;

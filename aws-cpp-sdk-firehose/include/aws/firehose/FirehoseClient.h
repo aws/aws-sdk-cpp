@@ -7,6 +7,7 @@
 #include <aws/firehose/Firehose_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/firehose/FirehoseServiceClientModel.h>
 
@@ -21,7 +22,7 @@ namespace Firehose
    * S3), Amazon OpenSearch Service, Amazon Redshift, Splunk, and various other
    * supportd destinations.</p>
    */
-  class AWS_FIREHOSE_API FirehoseClient : public Aws::Client::AWSJsonClient
+  class AWS_FIREHOSE_API FirehoseClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<FirehoseClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -75,7 +76,6 @@ namespace Firehose
 
         /* End of legacy constructors due deprecation */
         virtual ~FirehoseClient();
-
 
         /**
          * <p>Creates a Kinesis Data Firehose delivery stream.</p> <p>By default, you can
@@ -552,6 +552,7 @@ namespace Firehose
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<FirehoseEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<FirehoseClient>;
       void init(const FirehoseClientConfiguration& clientConfiguration);
 
       FirehoseClientConfiguration m_clientConfiguration;

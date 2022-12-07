@@ -7,6 +7,7 @@
 #include <aws/rolesanywhere/RolesAnywhere_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/rolesanywhere/RolesAnywhereServiceClientModel.h>
 
@@ -31,7 +32,7 @@ namespace RolesAnywhere
    * can call programmatically. For general information about IAM Roles Anywhere see
    * <a href="https://docs.aws.amazon.com/">https://docs.aws.amazon.com/</a> </p>
    */
-  class AWS_ROLESANYWHERE_API RolesAnywhereClient : public Aws::Client::AWSJsonClient
+  class AWS_ROLESANYWHERE_API RolesAnywhereClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<RolesAnywhereClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -85,7 +86,6 @@ namespace RolesAnywhere
 
         /* End of legacy constructors due deprecation */
         virtual ~RolesAnywhereClient();
-
 
         /**
          * <p>Creates a profile. A profile is configuration resource to list the roles that
@@ -603,6 +603,7 @@ namespace RolesAnywhere
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<RolesAnywhereEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<RolesAnywhereClient>;
       void init(const RolesAnywhereClientConfiguration& clientConfiguration);
 
       RolesAnywhereClientConfiguration m_clientConfiguration;

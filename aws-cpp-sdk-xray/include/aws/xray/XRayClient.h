@@ -7,6 +7,7 @@
 #include <aws/xray/XRay_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/xray/XRayServiceClientModel.h>
 
@@ -18,7 +19,7 @@ namespace XRay
    * <p>Amazon Web Services X-Ray provides APIs for managing debug traces and
    * retrieving service maps and other data created by processing those traces.</p>
    */
-  class AWS_XRAY_API XRayClient : public Aws::Client::AWSJsonClient
+  class AWS_XRAY_API XRayClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<XRayClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -72,7 +73,6 @@ namespace XRay
 
         /* End of legacy constructors due deprecation */
         virtual ~XRayClient();
-
 
         /**
          * <p>Retrieves a list of traces specified by ID. Each trace is a collection of
@@ -681,6 +681,7 @@ namespace XRay
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<XRayEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<XRayClient>;
       void init(const XRayClientConfiguration& clientConfiguration);
 
       XRayClientConfiguration m_clientConfiguration;

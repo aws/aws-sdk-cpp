@@ -7,6 +7,7 @@
 #include <aws/glacier/Glacier_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/glacier/GlacierServiceClientModel.h>
 
@@ -42,7 +43,7 @@ namespace Glacier
    * download archives, retrieving the job output, and deleting archives.</p> </li>
    * </ul>
    */
-  class AWS_GLACIER_API GlacierClient : public Aws::Client::AWSJsonClient
+  class AWS_GLACIER_API GlacierClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<GlacierClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -96,7 +97,6 @@ namespace Glacier
 
         /* End of legacy constructors due deprecation */
         virtual ~GlacierClient();
-
 
         /**
          * <p>This operation aborts a multipart upload identified by the upload ID.</p>
@@ -1250,6 +1250,7 @@ namespace Glacier
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<GlacierEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<GlacierClient>;
       void init(const GlacierClientConfiguration& clientConfiguration);
 
       GlacierClientConfiguration m_clientConfiguration;

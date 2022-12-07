@@ -7,6 +7,7 @@
 #include <aws/fsx/FSx_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/fsx/FSxServiceClientModel.h>
 
@@ -18,7 +19,7 @@ namespace FSx
    * <p>Amazon FSx is a fully managed service that makes it easy for storage and
    * application administrators to launch and use shared file storage.</p>
    */
-  class AWS_FSX_API FSxClient : public Aws::Client::AWSJsonClient
+  class AWS_FSX_API FSxClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<FSxClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -72,7 +73,6 @@ namespace FSx
 
         /* End of legacy constructors due deprecation */
         virtual ~FSxClient();
-
 
         /**
          * <p>Use this action to associate one or more Domain Name Server (DNS) aliases
@@ -1209,6 +1209,7 @@ namespace FSx
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<FSxEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<FSxClient>;
       void init(const FSxClientConfiguration& clientConfiguration);
 
       FSxClientConfiguration m_clientConfiguration;

@@ -7,6 +7,7 @@
 #include <aws/pinpoint-sms-voice-v2/PinpointSMSVoiceV2_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/pinpoint-sms-voice-v2/PinpointSMSVoiceV2ServiceClientModel.h>
 
@@ -32,7 +33,7 @@ namespace PinpointSMSVoiceV2
    * provides key information, such as Amazon Pinpoint integration with other Amazon
    * Web Services services, and the quotas that apply to use of the service.</p>
    */
-  class AWS_PINPOINTSMSVOICEV2_API PinpointSMSVoiceV2Client : public Aws::Client::AWSJsonClient
+  class AWS_PINPOINTSMSVOICEV2_API PinpointSMSVoiceV2Client : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<PinpointSMSVoiceV2Client>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -86,7 +87,6 @@ namespace PinpointSMSVoiceV2
 
         /* End of legacy constructors due deprecation */
         virtual ~PinpointSMSVoiceV2Client();
-
 
         /**
          * <p>Associates the specified origination identity with a pool.</p> <p>If the
@@ -1040,6 +1040,7 @@ namespace PinpointSMSVoiceV2
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<PinpointSMSVoiceV2EndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<PinpointSMSVoiceV2Client>;
       void init(const PinpointSMSVoiceV2ClientConfiguration& clientConfiguration);
 
       PinpointSMSVoiceV2ClientConfiguration m_clientConfiguration;

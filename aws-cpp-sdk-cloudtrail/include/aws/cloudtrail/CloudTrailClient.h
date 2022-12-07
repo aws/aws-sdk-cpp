@@ -7,6 +7,7 @@
 #include <aws/cloudtrail/CloudTrail_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/cloudtrail/CloudTrailServiceClientModel.h>
 
@@ -35,7 +36,7 @@ namespace CloudTrail
    * User Guide</a> for information about the data that is included with each Amazon
    * Web Services API call listed in the log files.</p>
    */
-  class AWS_CLOUDTRAIL_API CloudTrailClient : public Aws::Client::AWSJsonClient
+  class AWS_CLOUDTRAIL_API CloudTrailClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<CloudTrailClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -89,7 +90,6 @@ namespace CloudTrail
 
         /* End of legacy constructors due deprecation */
         virtual ~CloudTrailClient();
-
 
         /**
          * <p>Adds one or more tags to a trail or event data store, up to a limit of 50.
@@ -940,6 +940,7 @@ namespace CloudTrail
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<CloudTrailEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<CloudTrailClient>;
       void init(const CloudTrailClientConfiguration& clientConfiguration);
 
       CloudTrailClientConfiguration m_clientConfiguration;

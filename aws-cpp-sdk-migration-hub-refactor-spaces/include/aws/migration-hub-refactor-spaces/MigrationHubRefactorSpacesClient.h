@@ -7,6 +7,7 @@
 #include <aws/migration-hub-refactor-spaces/MigrationHubRefactorSpaces_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/migration-hub-refactor-spaces/MigrationHubRefactorSpacesServiceClientModel.h>
 
@@ -31,7 +32,7 @@ namespace MigrationHubRefactorSpaces
    * in the &lt;i&gt;Amazon Web Services RAM API Reference&lt;/i&gt;.&lt;/p&gt;
    * </code></pre>
    */
-  class AWS_MIGRATIONHUBREFACTORSPACES_API MigrationHubRefactorSpacesClient : public Aws::Client::AWSJsonClient
+  class AWS_MIGRATIONHUBREFACTORSPACES_API MigrationHubRefactorSpacesClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<MigrationHubRefactorSpacesClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -85,7 +86,6 @@ namespace MigrationHubRefactorSpaces
 
         /* End of legacy constructors due deprecation */
         virtual ~MigrationHubRefactorSpacesClient();
-
 
         /**
          * <p>Creates an Amazon Web Services Migration Hub Refactor Spaces application. The
@@ -598,6 +598,7 @@ namespace MigrationHubRefactorSpaces
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<MigrationHubRefactorSpacesEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<MigrationHubRefactorSpacesClient>;
       void init(const MigrationHubRefactorSpacesClientConfiguration& clientConfiguration);
 
       MigrationHubRefactorSpacesClientConfiguration m_clientConfiguration;

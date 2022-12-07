@@ -7,6 +7,7 @@
 #include <aws/migrationhub-config/MigrationHubConfig_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/migrationhub-config/MigrationHubConfigServiceClientModel.h>
 
@@ -28,7 +29,7 @@ namespace MigrationHubConfig
    * home region.</p> </li> </ul> <p>For specific API usage, see the sections that
    * follow in this AWS Migration Hub Home Region API reference. </p>
    */
-  class AWS_MIGRATIONHUBCONFIG_API MigrationHubConfigClient : public Aws::Client::AWSJsonClient
+  class AWS_MIGRATIONHUBCONFIG_API MigrationHubConfigClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<MigrationHubConfigClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -82,7 +83,6 @@ namespace MigrationHubConfig
 
         /* End of legacy constructors due deprecation */
         virtual ~MigrationHubConfigClient();
-
 
         /**
          * <p>This API sets up the home region for the calling account only.</p><p><h3>See
@@ -146,6 +146,7 @@ namespace MigrationHubConfig
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<MigrationHubConfigEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<MigrationHubConfigClient>;
       void init(const MigrationHubConfigClientConfiguration& clientConfiguration);
 
       MigrationHubConfigClientConfiguration m_clientConfiguration;

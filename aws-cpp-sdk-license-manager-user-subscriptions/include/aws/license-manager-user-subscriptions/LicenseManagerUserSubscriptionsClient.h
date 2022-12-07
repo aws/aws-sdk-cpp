@@ -7,6 +7,7 @@
 #include <aws/license-manager-user-subscriptions/LicenseManagerUserSubscriptions_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/license-manager-user-subscriptions/LicenseManagerUserSubscriptionsServiceClientModel.h>
 
@@ -18,7 +19,7 @@ namespace LicenseManagerUserSubscriptions
    * <p>With License Manager, you can create user-based subscriptions to utilize
    * licensed software with a per user subscription fee on Amazon EC2 instances.</p>
    */
-  class AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API LicenseManagerUserSubscriptionsClient : public Aws::Client::AWSJsonClient
+  class AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API LicenseManagerUserSubscriptionsClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<LicenseManagerUserSubscriptionsClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -72,7 +73,6 @@ namespace LicenseManagerUserSubscriptions
 
         /* End of legacy constructors due deprecation */
         virtual ~LicenseManagerUserSubscriptionsClient();
-
 
         /**
          * <p>Associates the user to an EC2 instance to utilize user-based
@@ -288,6 +288,7 @@ namespace LicenseManagerUserSubscriptions
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<LicenseManagerUserSubscriptionsEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<LicenseManagerUserSubscriptionsClient>;
       void init(const LicenseManagerUserSubscriptionsClientConfiguration& clientConfiguration);
 
       LicenseManagerUserSubscriptionsClientConfiguration m_clientConfiguration;

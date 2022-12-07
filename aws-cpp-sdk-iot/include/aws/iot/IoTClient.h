@@ -7,6 +7,7 @@
 #include <aws/iot/IoT_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/iot/IoTServiceClientModel.h>
 
@@ -36,7 +37,7 @@ namespace IoT
    * href="https://docs.aws.amazon.com/iot/latest/developerguide/authorizing-direct-aws.html">Authorizing
    * Direct Calls to Amazon Web Services Services</a>.</p>
    */
-  class AWS_IOT_API IoTClient : public Aws::Client::AWSJsonClient
+  class AWS_IOT_API IoTClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<IoTClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -90,7 +91,6 @@ namespace IoT
 
         /* End of legacy constructors due deprecation */
         virtual ~IoTClient();
-
 
         /**
          * <p>Accepts a pending certificate transfer. The default state of the certificate
@@ -4894,6 +4894,7 @@ namespace IoT
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<IoTEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<IoTClient>;
       void init(const IoTClientConfiguration& clientConfiguration);
 
       IoTClientConfiguration m_clientConfiguration;

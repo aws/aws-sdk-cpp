@@ -7,6 +7,7 @@
 #include <aws/applicationcostprofiler/ApplicationCostProfiler_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/applicationcostprofiler/ApplicationCostProfilerServiceClientModel.h>
 
@@ -23,7 +24,7 @@ namespace ApplicationCostProfiler
    * href="https://docs.aws.amazon.com/application-cost-profiler/latest/userguide/introduction.html">AWS
    * Application Cost Profiler User Guide</a>.</p>
    */
-  class AWS_APPLICATIONCOSTPROFILER_API ApplicationCostProfilerClient : public Aws::Client::AWSJsonClient
+  class AWS_APPLICATIONCOSTPROFILER_API ApplicationCostProfilerClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<ApplicationCostProfilerClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -77,7 +78,6 @@ namespace ApplicationCostProfiler
 
         /* End of legacy constructors due deprecation */
         virtual ~ApplicationCostProfilerClient();
-
 
         /**
          * <p>Deletes the specified report definition in AWS Application Cost Profiler.
@@ -195,6 +195,7 @@ namespace ApplicationCostProfiler
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<ApplicationCostProfilerEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<ApplicationCostProfilerClient>;
       void init(const ApplicationCostProfilerClientConfiguration& clientConfiguration);
 
       ApplicationCostProfilerClientConfiguration m_clientConfiguration;

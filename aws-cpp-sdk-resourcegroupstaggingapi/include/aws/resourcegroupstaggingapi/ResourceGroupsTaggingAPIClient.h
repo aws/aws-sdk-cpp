@@ -7,6 +7,7 @@
 #include <aws/resourcegroupstaggingapi/ResourceGroupsTaggingAPI_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/resourcegroupstaggingapi/ResourceGroupsTaggingAPIServiceClientModel.h>
 
@@ -17,7 +18,7 @@ namespace ResourceGroupsTaggingAPI
   /**
    * <fullname>Resource Groups Tagging API</fullname>
    */
-  class AWS_RESOURCEGROUPSTAGGINGAPI_API ResourceGroupsTaggingAPIClient : public Aws::Client::AWSJsonClient
+  class AWS_RESOURCEGROUPSTAGGINGAPI_API ResourceGroupsTaggingAPIClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<ResourceGroupsTaggingAPIClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -71,7 +72,6 @@ namespace ResourceGroupsTaggingAPI
 
         /* End of legacy constructors due deprecation */
         virtual ~ResourceGroupsTaggingAPIClient();
-
 
         /**
          * <p>Describes the status of the <code>StartReportCreation</code> operation. </p>
@@ -306,6 +306,7 @@ namespace ResourceGroupsTaggingAPI
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<ResourceGroupsTaggingAPIEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<ResourceGroupsTaggingAPIClient>;
       void init(const ResourceGroupsTaggingAPIClientConfiguration& clientConfiguration);
 
       ResourceGroupsTaggingAPIClientConfiguration m_clientConfiguration;

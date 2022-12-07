@@ -7,6 +7,7 @@
 #include <aws/codestar/CodeStar_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/codestar/CodeStarServiceClientModel.h>
 
@@ -46,7 +47,7 @@ namespace CodeStar
    * <code>UpdateUserProfile</code>, which updates the profile for a user.</p> </li>
    * </ul>
    */
-  class AWS_CODESTAR_API CodeStarClient : public Aws::Client::AWSJsonClient
+  class AWS_CODESTAR_API CodeStarClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<CodeStarClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -100,7 +101,6 @@ namespace CodeStar
 
         /* End of legacy constructors due deprecation */
         virtual ~CodeStarClient();
-
 
         /**
          * <p>Adds an IAM user to the team for an AWS CodeStar project.</p><p><h3>See
@@ -439,6 +439,7 @@ namespace CodeStar
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<CodeStarEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<CodeStarClient>;
       void init(const CodeStarClientConfiguration& clientConfiguration);
 
       CodeStarClientConfiguration m_clientConfiguration;

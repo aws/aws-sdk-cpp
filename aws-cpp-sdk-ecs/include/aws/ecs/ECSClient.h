@@ -7,6 +7,7 @@
 #include <aws/ecs/ECS_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/ecs/ECSServiceClientModel.h>
 
@@ -31,7 +32,7 @@ namespace ECS
    * management systems. You also don't need to worry about scaling your management
    * infrastructure.</p>
    */
-  class AWS_ECS_API ECSClient : public Aws::Client::AWSJsonClient
+  class AWS_ECS_API ECSClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<ECSClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -85,7 +86,6 @@ namespace ECS
 
         /* End of legacy constructors due deprecation */
         virtual ~ECSClient();
-
 
         /**
          * <p>Creates a new capacity provider. Capacity providers are associated with an
@@ -1572,6 +1572,7 @@ namespace ECS
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<ECSEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<ECSClient>;
       void init(const ECSClientConfiguration& clientConfiguration);
 
       ECSClientConfiguration m_clientConfiguration;

@@ -7,6 +7,7 @@
 #include <aws/network-firewall/NetworkFirewall_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/network-firewall/NetworkFirewallServiceClientModel.h>
 
@@ -67,7 +68,7 @@ namespace NetworkFirewall
    * <p>In Amazon VPC, use ingress routing enhancements to route traffic through the
    * new firewall endpoints.</p> </li> </ol>
    */
-  class AWS_NETWORKFIREWALL_API NetworkFirewallClient : public Aws::Client::AWSJsonClient
+  class AWS_NETWORKFIREWALL_API NetworkFirewallClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<NetworkFirewallClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -121,7 +122,6 @@ namespace NetworkFirewall
 
         /* End of legacy constructors due deprecation */
         virtual ~NetworkFirewallClient();
-
 
         /**
          * <p>Associates a <a>FirewallPolicy</a> to a <a>Firewall</a>. </p> <p>A firewall
@@ -782,6 +782,7 @@ namespace NetworkFirewall
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<NetworkFirewallEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<NetworkFirewallClient>;
       void init(const NetworkFirewallClientConfiguration& clientConfiguration);
 
       NetworkFirewallClientConfiguration m_clientConfiguration;

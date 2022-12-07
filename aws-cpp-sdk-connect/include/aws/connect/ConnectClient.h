@@ -7,6 +7,7 @@
 #include <aws/connect/Connect_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/connect/ConnectServiceClientModel.h>
 
@@ -32,7 +33,7 @@ namespace Connect
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon
    * Connect Flow language</a>.</p> 
    */
-  class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient
+  class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<ConnectClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -86,7 +87,6 @@ namespace Connect
 
         /* End of legacy constructors due deprecation */
         virtual ~ConnectClient();
-
 
         /**
          * <p>This API is in preview release for Amazon Connect and is subject to
@@ -3466,6 +3466,7 @@ namespace Connect
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<ConnectEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<ConnectClient>;
       void init(const ConnectClientConfiguration& clientConfiguration);
 
       ConnectClientConfiguration m_clientConfiguration;

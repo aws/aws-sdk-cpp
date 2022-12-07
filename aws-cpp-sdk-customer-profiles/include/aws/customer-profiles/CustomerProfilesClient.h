@@ -7,6 +7,7 @@
 #include <aws/customer-profiles/CustomerProfiles_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/customer-profiles/CustomerProfilesServiceClientModel.h>
 
@@ -25,7 +26,7 @@ namespace CustomerProfiles
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/">Amazon Connect
    * Administrator Guide</a>.</p>
    */
-  class AWS_CUSTOMERPROFILES_API CustomerProfilesClient : public Aws::Client::AWSJsonClient
+  class AWS_CUSTOMERPROFILES_API CustomerProfilesClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<CustomerProfilesClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -79,7 +80,6 @@ namespace CustomerProfiles
 
         /* End of legacy constructors due deprecation */
         virtual ~CustomerProfilesClient();
-
 
         /**
          * <p>Associates a new key value with a specific profile, such as a Contact Record
@@ -891,6 +891,7 @@ namespace CustomerProfiles
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<CustomerProfilesEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<CustomerProfilesClient>;
       void init(const CustomerProfilesClientConfiguration& clientConfiguration);
 
       CustomerProfilesClientConfiguration m_clientConfiguration;

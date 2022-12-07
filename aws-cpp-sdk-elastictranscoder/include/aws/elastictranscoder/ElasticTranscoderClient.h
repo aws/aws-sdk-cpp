@@ -7,6 +7,7 @@
 #include <aws/elastictranscoder/ElasticTranscoder_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/elastictranscoder/ElasticTranscoderServiceClientModel.h>
 
@@ -18,7 +19,7 @@ namespace ElasticTranscoder
    * <fullname>AWS Elastic Transcoder Service</fullname> <p>The AWS Elastic
    * Transcoder Service.</p>
    */
-  class AWS_ELASTICTRANSCODER_API ElasticTranscoderClient : public Aws::Client::AWSJsonClient
+  class AWS_ELASTICTRANSCODER_API ElasticTranscoderClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<ElasticTranscoderClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -72,7 +73,6 @@ namespace ElasticTranscoder
 
         /* End of legacy constructors due deprecation */
         virtual ~ElasticTranscoderClient();
-
 
         /**
          * <p>The CancelJob operation cancels an unfinished job.</p>  <p>You can only
@@ -403,6 +403,7 @@ namespace ElasticTranscoder
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<ElasticTranscoderEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<ElasticTranscoderClient>;
       void init(const ElasticTranscoderClientConfiguration& clientConfiguration);
 
       ElasticTranscoderClientConfiguration m_clientConfiguration;

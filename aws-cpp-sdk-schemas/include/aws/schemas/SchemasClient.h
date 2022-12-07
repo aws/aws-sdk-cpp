@@ -7,6 +7,7 @@
 #include <aws/schemas/Schemas_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/schemas/SchemasServiceClientModel.h>
 
@@ -17,7 +18,7 @@ namespace Schemas
   /**
    * <p>Amazon EventBridge Schema Registry</p>
    */
-  class AWS_SCHEMAS_API SchemasClient : public Aws::Client::AWSJsonClient
+  class AWS_SCHEMAS_API SchemasClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<SchemasClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -71,7 +72,6 @@ namespace Schemas
 
         /* End of legacy constructors due deprecation */
         virtual ~SchemasClient();
-
 
         /**
          * <p>Creates a discoverer.</p><p><h3>See Also:</h3>   <a
@@ -608,6 +608,7 @@ namespace Schemas
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<SchemasEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<SchemasClient>;
       void init(const SchemasClientConfiguration& clientConfiguration);
 
       SchemasClientConfiguration m_clientConfiguration;

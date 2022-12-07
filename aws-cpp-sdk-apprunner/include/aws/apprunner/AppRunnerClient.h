@@ -7,6 +7,7 @@
 #include <aws/apprunner/AppRunner_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/apprunner/AppRunnerServiceClientModel.h>
 
@@ -36,7 +37,7 @@ namespace AppRunner
    * endpoints and quotas</a> in the <i>Amazon Web Services General
    * Reference</i>.</p>
    */
-  class AWS_APPRUNNER_API AppRunnerClient : public Aws::Client::AWSJsonClient
+  class AWS_APPRUNNER_API AppRunnerClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<AppRunnerClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -90,7 +91,6 @@ namespace AppRunner
 
         /* End of legacy constructors due deprecation */
         virtual ~AppRunnerClient();
-
 
         /**
          * <p>Associate your own domain name with the App Runner subdomain URL of your App
@@ -818,6 +818,7 @@ namespace AppRunner
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<AppRunnerEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<AppRunnerClient>;
       void init(const AppRunnerClientConfiguration& clientConfiguration);
 
       AppRunnerClientConfiguration m_clientConfiguration;

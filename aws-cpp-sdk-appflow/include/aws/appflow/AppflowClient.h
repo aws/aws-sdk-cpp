@@ -7,6 +7,7 @@
 #include <aws/appflow/Appflow_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/appflow/AppflowServiceClientModel.h>
 
@@ -43,7 +44,7 @@ namespace Appflow
    * href="https://help.salesforce.com/articleView?id=remoteaccess_authenticate.htm">
    * <i>Authorize Apps with OAuth</i> </a> documentation.</p>
    */
-  class AWS_APPFLOW_API AppflowClient : public Aws::Client::AWSJsonClient
+  class AWS_APPFLOW_API AppflowClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<AppflowClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -97,7 +98,6 @@ namespace Appflow
 
         /* End of legacy constructors due deprecation */
         virtual ~AppflowClient();
-
 
         /**
          * <p> Creates a new connector profile associated with your Amazon Web Services
@@ -543,6 +543,7 @@ namespace Appflow
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<AppflowEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<AppflowClient>;
       void init(const AppflowClientConfiguration& clientConfiguration);
 
       AppflowClientConfiguration m_clientConfiguration;

@@ -7,6 +7,7 @@
 #include <aws/transcribestreaming/TranscribeStreamingService_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/transcribestreaming/TranscribeStreamingServiceServiceClientModel.h>
 
@@ -26,7 +27,7 @@ namespace TranscribeStreamingService
    * center audio on two different channels; if you're looking for insight into
    * customer service calls, use this option. Refer to for details.</p> </li> </ul>
    */
-  class AWS_TRANSCRIBESTREAMINGSERVICE_API TranscribeStreamingServiceClient : public Aws::Client::AWSJsonClient
+  class AWS_TRANSCRIBESTREAMINGSERVICE_API TranscribeStreamingServiceClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<TranscribeStreamingServiceClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -80,7 +81,6 @@ namespace TranscribeStreamingService
 
         /* End of legacy constructors due deprecation */
         virtual ~TranscribeStreamingServiceClient();
-
 
         /**
          * <p>Starts a bidirectional HTTP/2 or WebSocket stream where audio is streamed to
@@ -151,6 +151,7 @@ namespace TranscribeStreamingService
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<TranscribeStreamingServiceEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<TranscribeStreamingServiceClient>;
       void init(const TranscribeStreamingServiceClientConfiguration& clientConfiguration);
 
       TranscribeStreamingServiceClientConfiguration m_clientConfiguration;

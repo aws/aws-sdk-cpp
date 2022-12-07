@@ -7,6 +7,7 @@
 #include <aws/rbin/RecycleBin_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/rbin/RecycleBinServiceClientModel.h>
 
@@ -30,7 +31,7 @@ namespace RecycleBin
    * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshot-recycle-bin.html">
    * Recycle Bin</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
    */
-  class AWS_RECYCLEBIN_API RecycleBinClient : public Aws::Client::AWSJsonClient
+  class AWS_RECYCLEBIN_API RecycleBinClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<RecycleBinClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -84,7 +85,6 @@ namespace RecycleBin
 
         /* End of legacy constructors due deprecation */
         virtual ~RecycleBinClient();
-
 
         /**
          * <p>Creates a Recycle Bin retention rule. For more information, see <a
@@ -275,6 +275,7 @@ namespace RecycleBin
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<RecycleBinEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<RecycleBinClient>;
       void init(const RecycleBinClientConfiguration& clientConfiguration);
 
       RecycleBinClientConfiguration m_clientConfiguration;

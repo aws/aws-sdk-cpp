@@ -7,6 +7,7 @@
 #include <aws/logs/CloudWatchLogs_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/logs/CloudWatchLogsServiceClientModel.h>
 
@@ -41,7 +42,7 @@ namespace CloudWatchLogs
    * log service. You can then access the raw log data when you need it.</p> </li>
    * </ul>
    */
-  class AWS_CLOUDWATCHLOGS_API CloudWatchLogsClient : public Aws::Client::AWSJsonClient
+  class AWS_CLOUDWATCHLOGS_API CloudWatchLogsClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<CloudWatchLogsClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -95,7 +96,6 @@ namespace CloudWatchLogs
 
         /* End of legacy constructors due deprecation */
         virtual ~CloudWatchLogsClient();
-
 
         /**
          * <p>Associates the specified KMS key with the specified log group.</p>
@@ -1206,6 +1206,7 @@ namespace CloudWatchLogs
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<CloudWatchLogsEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<CloudWatchLogsClient>;
       void init(const CloudWatchLogsClientConfiguration& clientConfiguration);
 
       CloudWatchLogsClientConfiguration m_clientConfiguration;

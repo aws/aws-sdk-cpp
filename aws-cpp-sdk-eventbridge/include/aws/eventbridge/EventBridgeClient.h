@@ -7,6 +7,7 @@
 #include <aws/eventbridge/EventBridge_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/eventbridge/EventBridgeServiceClientModel.h>
 
@@ -30,7 +31,7 @@ namespace EventBridge
    * href="https://docs.aws.amazon.com/eventbridge/latest/userguide">Amazon
    * EventBridge User Guide</a>.</p>
    */
-  class AWS_EVENTBRIDGE_API EventBridgeClient : public Aws::Client::AWSJsonClient
+  class AWS_EVENTBRIDGE_API EventBridgeClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<EventBridgeClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -84,7 +85,6 @@ namespace EventBridge
 
         /* End of legacy constructors due deprecation */
         virtual ~EventBridgeClient();
-
 
         /**
          * <p>Activates a partner event source that has been deactivated. Once activated,
@@ -1384,6 +1384,7 @@ namespace EventBridge
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<EventBridgeEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<EventBridgeClient>;
       void init(const EventBridgeClientConfiguration& clientConfiguration);
 
       EventBridgeClientConfiguration m_clientConfiguration;

@@ -7,6 +7,7 @@
 #include <aws/lambda/Lambda_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/lambda/LambdaServiceClientModel.h>
 
@@ -68,7 +69,7 @@ namespace Lambda
    * href="http://aws.amazon.com/certificate-manager/faqs/#certificates">Amazon Web
    * Services Certificate Manager FAQs.</a> </p>
    */
-  class AWS_LAMBDA_API LambdaClient : public Aws::Client::AWSJsonClient
+  class AWS_LAMBDA_API LambdaClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<LambdaClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -122,7 +123,6 @@ namespace Lambda
 
         /* End of legacy constructors due deprecation */
         virtual ~LambdaClient();
-
 
         /**
          * <p>Adds permissions to the resource-based policy of a version of an <a
@@ -1586,6 +1586,7 @@ namespace Lambda
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<LambdaEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<LambdaClient>;
       void init(const LambdaClientConfiguration& clientConfiguration);
 
       LambdaClientConfiguration m_clientConfiguration;

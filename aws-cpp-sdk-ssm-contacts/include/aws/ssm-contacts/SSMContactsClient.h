@@ -7,6 +7,7 @@
 #include <aws/ssm-contacts/SSMContacts_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/ssm-contacts/SSMContactsServiceClientModel.h>
 
@@ -25,7 +26,7 @@ namespace SSMContacts
    * critical incidents, Incident Manager automates response plans and enables
    * responder team escalation. </p>
    */
-  class AWS_SSMCONTACTS_API SSMContactsClient : public Aws::Client::AWSJsonClient
+  class AWS_SSMCONTACTS_API SSMContactsClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<SSMContactsClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -79,7 +80,6 @@ namespace SSMContacts
 
         /* End of legacy constructors due deprecation */
         virtual ~SSMContactsClient();
-
 
         /**
          * <p>Used to acknowledge an engagement to a contact channel during an
@@ -584,6 +584,7 @@ namespace SSMContacts
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<SSMContactsEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<SSMContactsClient>;
       void init(const SSMContactsClientConfiguration& clientConfiguration);
 
       SSMContactsClientConfiguration m_clientConfiguration;

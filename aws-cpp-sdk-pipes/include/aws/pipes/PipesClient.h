@@ -7,6 +7,7 @@
 #include <aws/pipes/Pipes_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/pipes/PipesServiceClientModel.h>
 
@@ -22,7 +23,7 @@ namespace Pipes
    * set up a pipe, you select the event source, add optional event filtering, define
    * optional enrichment, and select the target for the event data. </p>
    */
-  class AWS_PIPES_API PipesClient : public Aws::Client::AWSJsonClient
+  class AWS_PIPES_API PipesClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<PipesClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -76,7 +77,6 @@ namespace Pipes
 
         /* End of legacy constructors due deprecation */
         virtual ~PipesClient();
-
 
         /**
          * <p>Create a pipe. Amazon EventBridge Pipes connect event sources to targets and
@@ -287,6 +287,7 @@ namespace Pipes
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<PipesEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<PipesClient>;
       void init(const PipesClientConfiguration& clientConfiguration);
 
       PipesClientConfiguration m_clientConfiguration;

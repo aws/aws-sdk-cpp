@@ -7,6 +7,7 @@
 #include <aws/amplifyuibuilder/AmplifyUIBuilder_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/amplifyuibuilder/AmplifyUIBuilderServiceClientModel.h>
 
@@ -30,7 +31,7 @@ namespace AmplifyUIBuilder
    * href="https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html">Amplify
    * User Guide</a>.</p>
    */
-  class AWS_AMPLIFYUIBUILDER_API AmplifyUIBuilderClient : public Aws::Client::AWSJsonClient
+  class AWS_AMPLIFYUIBUILDER_API AmplifyUIBuilderClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<AmplifyUIBuilderClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -84,7 +85,6 @@ namespace AmplifyUIBuilder
 
         /* End of legacy constructors due deprecation */
         virtual ~AmplifyUIBuilderClient();
-
 
         /**
          * <p>Creates a new component for an Amplify app.</p><p><h3>See Also:</h3>   <a
@@ -474,6 +474,7 @@ namespace AmplifyUIBuilder
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<AmplifyUIBuilderEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<AmplifyUIBuilderClient>;
       void init(const AmplifyUIBuilderClientConfiguration& clientConfiguration);
 
       AmplifyUIBuilderClientConfiguration m_clientConfiguration;

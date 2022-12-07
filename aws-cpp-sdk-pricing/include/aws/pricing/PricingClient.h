@@ -7,6 +7,7 @@
 #include <aws/pricing/Pricing_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/pricing/PricingServiceClientModel.h>
 
@@ -36,7 +37,7 @@ namespace Pricing
    * <p>https://api.pricing.us-east-1.amazonaws.com</p> </li> <li>
    * <p>https://api.pricing.ap-south-1.amazonaws.com</p> </li> </ul>
    */
-  class AWS_PRICING_API PricingClient : public Aws::Client::AWSJsonClient
+  class AWS_PRICING_API PricingClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<PricingClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -90,7 +91,6 @@ namespace Pricing
 
         /* End of legacy constructors due deprecation */
         virtual ~PricingClient();
-
 
         /**
          * <p>Returns the metadata for one service or a list of the metadata for all
@@ -160,6 +160,7 @@ namespace Pricing
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<PricingEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<PricingClient>;
       void init(const PricingClientConfiguration& clientConfiguration);
 
       PricingClientConfiguration m_clientConfiguration;

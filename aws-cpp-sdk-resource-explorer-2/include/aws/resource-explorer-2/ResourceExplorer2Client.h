@@ -7,6 +7,7 @@
 #include <aws/resource-explorer-2/ResourceExplorer2_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/resource-explorer-2/ResourceExplorer2ServiceClientModel.h>
 
@@ -45,7 +46,7 @@ namespace ResourceExplorer2
    * href="https://docs.aws.amazon.com/resource-explorer/latest/userguide/">Amazon
    * Web Services Resource Explorer User Guide</a>.</p>
    */
-  class AWS_RESOURCEEXPLORER2_API ResourceExplorer2Client : public Aws::Client::AWSJsonClient
+  class AWS_RESOURCEEXPLORER2_API ResourceExplorer2Client : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<ResourceExplorer2Client>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -99,7 +100,6 @@ namespace ResourceExplorer2
 
         /* End of legacy constructors due deprecation */
         virtual ~ResourceExplorer2Client();
-
 
         /**
          * <p>Sets the specified view as the default for the Amazon Web Services Region in
@@ -576,6 +576,7 @@ namespace ResourceExplorer2
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<ResourceExplorer2EndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<ResourceExplorer2Client>;
       void init(const ResourceExplorer2ClientConfiguration& clientConfiguration);
 
       ResourceExplorer2ClientConfiguration m_clientConfiguration;

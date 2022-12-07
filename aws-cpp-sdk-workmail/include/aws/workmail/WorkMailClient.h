@@ -7,6 +7,7 @@
 #include <aws/workmail/WorkMail_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/workmail/WorkMailServiceClientModel.h>
 
@@ -35,7 +36,7 @@ namespace WorkMail
    * perform the scenarios listed above, as well as give users the ability to grant
    * access on a selective basis using the IAM model.</p>
    */
-  class AWS_WORKMAIL_API WorkMailClient : public Aws::Client::AWSJsonClient
+  class AWS_WORKMAIL_API WorkMailClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<WorkMailClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -89,7 +90,6 @@ namespace WorkMail
 
         /* End of legacy constructors due deprecation */
         virtual ~WorkMailClient();
-
 
         /**
          * <p>Adds a member (user or group) to the resource's set of
@@ -1603,6 +1603,7 @@ namespace WorkMail
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<WorkMailEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<WorkMailClient>;
       void init(const WorkMailClientConfiguration& clientConfiguration);
 
       WorkMailClientConfiguration m_clientConfiguration;

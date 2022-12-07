@@ -7,6 +7,7 @@
 #include <aws/marketplace-catalog/MarketplaceCatalog_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/marketplace-catalog/MarketplaceCatalogServiceClientModel.h>
 
@@ -22,7 +23,7 @@ namespace MarketplaceCatalog
    * deployment pipelines. You can also create your own applications on top of the
    * Catalog API to manage your products on AWS Marketplace.</p>
    */
-  class AWS_MARKETPLACECATALOG_API MarketplaceCatalogClient : public Aws::Client::AWSJsonClient
+  class AWS_MARKETPLACECATALOG_API MarketplaceCatalogClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<MarketplaceCatalogClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -76,7 +77,6 @@ namespace MarketplaceCatalog
 
         /* End of legacy constructors due deprecation */
         virtual ~MarketplaceCatalogClient();
-
 
         /**
          * <p>Used to cancel an open change request. Must be sent before the status of the
@@ -269,6 +269,7 @@ namespace MarketplaceCatalog
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<MarketplaceCatalogEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<MarketplaceCatalogClient>;
       void init(const MarketplaceCatalogClientConfiguration& clientConfiguration);
 
       MarketplaceCatalogClientConfiguration m_clientConfiguration;

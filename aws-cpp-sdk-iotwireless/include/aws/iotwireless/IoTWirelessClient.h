@@ -7,6 +7,7 @@
 #include <aws/iotwireless/IoTWireless_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/iotwireless/IoTWirelessServiceClientModel.h>
 
@@ -29,7 +30,7 @@ namespace IoTWireless
    * schedule a session to update the firmware of individual devices or an entire
    * group of devices in a multicast group.</p>
    */
-  class AWS_IOTWIRELESS_API IoTWirelessClient : public Aws::Client::AWSJsonClient
+  class AWS_IOTWIRELESS_API IoTWirelessClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<IoTWirelessClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -83,7 +84,6 @@ namespace IoTWireless
 
         /* End of legacy constructors due deprecation */
         virtual ~IoTWirelessClient();
-
 
         /**
          * <p>Associates a partner account with your AWS account.</p><p><h3>See Also:</h3> 
@@ -1788,6 +1788,7 @@ namespace IoTWireless
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<IoTWirelessEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<IoTWirelessClient>;
       void init(const IoTWirelessClientConfiguration& clientConfiguration);
 
       IoTWirelessClientConfiguration m_clientConfiguration;

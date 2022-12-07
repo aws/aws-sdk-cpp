@@ -7,6 +7,7 @@
 #include <aws/gamesparks/GameSparks_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/gamesparks/GameSparksServiceClientModel.h>
 
@@ -17,7 +18,7 @@ namespace GameSparks
   /**
    * <p/>
    */
-  class AWS_GAMESPARKS_API GameSparksClient : public Aws::Client::AWSJsonClient
+  class AWS_GAMESPARKS_API GameSparksClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<GameSparksClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -71,7 +72,6 @@ namespace GameSparks
 
         /* End of legacy constructors due deprecation */
         virtual ~GameSparksClient();
-
 
         /**
          * <p> Creates a new game with an empty configuration. After creating your game,
@@ -672,6 +672,7 @@ namespace GameSparks
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<GameSparksEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<GameSparksClient>;
       void init(const GameSparksClientConfiguration& clientConfiguration);
 
       GameSparksClientConfiguration m_clientConfiguration;

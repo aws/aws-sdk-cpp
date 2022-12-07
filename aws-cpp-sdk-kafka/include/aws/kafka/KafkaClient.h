@@ -7,6 +7,7 @@
 #include <aws/kafka/Kafka_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/kafka/KafkaServiceClientModel.h>
 
@@ -20,7 +21,7 @@ namespace Kafka
       
    *      
    */
-  class AWS_KAFKA_API KafkaClient : public Aws::Client::AWSJsonClient
+  class AWS_KAFKA_API KafkaClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<KafkaClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -74,7 +75,6 @@ namespace Kafka
 
         /* End of legacy constructors due deprecation */
         virtual ~KafkaClient();
-
 
         /**
          * 
@@ -798,6 +798,7 @@ namespace Kafka
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<KafkaEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<KafkaClient>;
       void init(const KafkaClientConfiguration& clientConfiguration);
 
       KafkaClientConfiguration m_clientConfiguration;

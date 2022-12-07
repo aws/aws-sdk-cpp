@@ -7,6 +7,7 @@
 #include <aws/account/Account_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/account/AccountServiceClientModel.h>
 
@@ -17,7 +18,7 @@ namespace Account
   /**
    * <p>Operations for Amazon Web Services Account Management</p>
    */
-  class AWS_ACCOUNT_API AccountClient : public Aws::Client::AWSJsonClient
+  class AWS_ACCOUNT_API AccountClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<AccountClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -71,7 +72,6 @@ namespace Account
 
         /* End of legacy constructors due deprecation */
         virtual ~AccountClient();
-
 
         /**
          * <p>Deletes the specified alternate contact from an Amazon Web Services
@@ -200,6 +200,7 @@ namespace Account
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<AccountEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<AccountClient>;
       void init(const AccountClientConfiguration& clientConfiguration);
 
       AccountClientConfiguration m_clientConfiguration;

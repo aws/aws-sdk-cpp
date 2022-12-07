@@ -7,6 +7,7 @@
 #include <aws/backup/Backup_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/backup/BackupServiceClientModel.h>
 
@@ -20,7 +21,7 @@ namespace Backup
    * simplifies the creation, migration, restoration, and deletion of backups, while
    * also providing reporting and auditing.</p>
    */
-  class AWS_BACKUP_API BackupClient : public Aws::Client::AWSJsonClient
+  class AWS_BACKUP_API BackupClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<BackupClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -74,7 +75,6 @@ namespace Backup
 
         /* End of legacy constructors due deprecation */
         virtual ~BackupClient();
-
 
         /**
          * <p>This action removes the specified legal hold on a recovery point. This action
@@ -1463,6 +1463,7 @@ namespace Backup
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<BackupEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<BackupClient>;
       void init(const BackupClientConfiguration& clientConfiguration);
 
       BackupClientConfiguration m_clientConfiguration;

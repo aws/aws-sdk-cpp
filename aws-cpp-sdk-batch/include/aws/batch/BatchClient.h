@@ -7,6 +7,7 @@
 #include <aws/batch/Batch_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/batch/BatchServiceClientModel.h>
 
@@ -30,7 +31,7 @@ namespace Batch
    * install or manage batch computing software. This means that you can focus on
    * analyzing results and solving your specific problems instead.</p>
    */
-  class AWS_BATCH_API BatchClient : public Aws::Client::AWSJsonClient
+  class AWS_BATCH_API BatchClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<BatchClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -84,7 +85,6 @@ namespace Batch
 
         /* End of legacy constructors due deprecation */
         virtual ~BatchClient();
-
 
         /**
          * <p>Cancels a job in an Batch job queue. Jobs that are in the
@@ -635,6 +635,7 @@ namespace Batch
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<BatchEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<BatchClient>;
       void init(const BatchClientConfiguration& clientConfiguration);
 
       BatchClientConfiguration m_clientConfiguration;

@@ -7,6 +7,7 @@
 #include <aws/lightsail/Lightsail_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/lightsail/LightsailServiceClientModel.h>
 
@@ -34,7 +35,7 @@ namespace Lightsail
    * Lightsail Endpoints and Quotas</a> in the <i>Amazon Web Services General
    * Reference</i>.</p>
    */
-  class AWS_LIGHTSAIL_API LightsailClient : public Aws::Client::AWSJsonClient
+  class AWS_LIGHTSAIL_API LightsailClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<LightsailClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -88,7 +89,6 @@ namespace Lightsail
 
         /* End of legacy constructors due deprecation */
         virtual ~LightsailClient();
-
 
         /**
          * <p>Allocates a static IP address.</p><p><h3>See Also:</h3>   <a
@@ -3492,6 +3492,7 @@ namespace Lightsail
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<LightsailEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<LightsailClient>;
       void init(const LightsailClientConfiguration& clientConfiguration);
 
       LightsailClientConfiguration m_clientConfiguration;

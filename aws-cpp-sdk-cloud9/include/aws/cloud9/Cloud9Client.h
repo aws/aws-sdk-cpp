@@ -7,6 +7,7 @@
 #include <aws/cloud9/Cloud9_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/cloud9/Cloud9ServiceClientModel.h>
 
@@ -42,7 +43,7 @@ namespace Cloud9
    * Changes the settings of an existing environment member for an environment.</p>
    * </li> </ul>
    */
-  class AWS_CLOUD9_API Cloud9Client : public Aws::Client::AWSJsonClient
+  class AWS_CLOUD9_API Cloud9Client : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<Cloud9Client>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -96,7 +97,6 @@ namespace Cloud9
 
         /* End of legacy constructors due deprecation */
         virtual ~Cloud9Client();
-
 
         /**
          * <p>Creates an Cloud9 development environment, launches an Amazon Elastic Compute
@@ -339,6 +339,7 @@ namespace Cloud9
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<Cloud9EndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<Cloud9Client>;
       void init(const Cloud9ClientConfiguration& clientConfiguration);
 
       Cloud9ClientConfiguration m_clientConfiguration;

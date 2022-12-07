@@ -8,6 +8,7 @@
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/email/SESServiceClientModel.h>
 
@@ -28,7 +29,7 @@ namespace SES
    * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/Welcome.html">Amazon
    * SES Developer Guide</a>.</p> 
    */
-  class AWS_SES_API SESClient : public Aws::Client::AWSXMLClient
+  class AWS_SES_API SESClient : public Aws::Client::AWSXMLClient, public Aws::Client::ClientWithAsyncTemplateMethods<SESClient>
   {
     public:
       typedef Aws::Client::AWSXMLClient BASECLASS;
@@ -1844,6 +1845,7 @@ namespace SES
         void OverrideEndpoint(const Aws::String& endpoint);
         std::shared_ptr<SESEndpointProviderBase>& accessEndpointProvider();
   private:
+        friend class Aws::Client::ClientWithAsyncTemplateMethods<SESClient>;
         void init(const SESClientConfiguration& clientConfiguration);
 
         SESClientConfiguration m_clientConfiguration;

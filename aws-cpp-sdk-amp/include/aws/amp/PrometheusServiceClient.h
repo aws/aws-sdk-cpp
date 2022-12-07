@@ -7,6 +7,7 @@
 #include <aws/amp/PrometheusService_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/amp/PrometheusServiceServiceClientModel.h>
 
@@ -17,7 +18,7 @@ namespace PrometheusService
   /**
    * <p>Amazon Managed Service for Prometheus</p>
    */
-  class AWS_PROMETHEUSSERVICE_API PrometheusServiceClient : public Aws::Client::AWSJsonClient
+  class AWS_PROMETHEUSSERVICE_API PrometheusServiceClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<PrometheusServiceClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -71,7 +72,6 @@ namespace PrometheusService
 
         /* End of legacy constructors due deprecation */
         virtual ~PrometheusServiceClient();
-
 
         /**
          * <p>Create an alert manager definition.</p><p><h3>See Also:</h3>   <a
@@ -436,6 +436,7 @@ namespace PrometheusService
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<PrometheusServiceEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<PrometheusServiceClient>;
       void init(const PrometheusServiceClientConfiguration& clientConfiguration);
 
       PrometheusServiceClientConfiguration m_clientConfiguration;

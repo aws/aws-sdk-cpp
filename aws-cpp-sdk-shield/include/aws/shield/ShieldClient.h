@@ -7,6 +7,7 @@
 #include <aws/shield/Shield_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/shield/ShieldServiceClientModel.h>
 
@@ -23,7 +24,7 @@ namespace Shield
    * href="https://docs.aws.amazon.com/waf/latest/developerguide/">WAF and Shield
    * Developer Guide</a>.</p>
    */
-  class AWS_SHIELD_API ShieldClient : public Aws::Client::AWSJsonClient
+  class AWS_SHIELD_API ShieldClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<ShieldClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -77,7 +78,6 @@ namespace Shield
 
         /* End of legacy constructors due deprecation */
         virtual ~ShieldClient();
-
 
         /**
          * <p>Authorizes the Shield Response Team (SRT) to access the specified Amazon S3
@@ -837,6 +837,7 @@ namespace Shield
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<ShieldEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<ShieldClient>;
       void init(const ShieldClientConfiguration& clientConfiguration);
 
       ShieldClientConfiguration m_clientConfiguration;

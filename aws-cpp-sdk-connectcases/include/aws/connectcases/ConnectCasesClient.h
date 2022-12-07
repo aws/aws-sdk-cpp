@@ -7,6 +7,7 @@
 #include <aws/connectcases/ConnectCases_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/connectcases/ConnectCasesServiceClientModel.h>
 
@@ -24,7 +25,7 @@ namespace ConnectCases
    * Connect Cases&lt;/a&gt; in the &lt;i&gt;Amazon Connect Administrator
    * Guide&lt;/i&gt;. &lt;/p&gt; </code></pre>
    */
-  class AWS_CONNECTCASES_API ConnectCasesClient : public Aws::Client::AWSJsonClient
+  class AWS_CONNECTCASES_API ConnectCasesClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<ConnectCasesClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -78,7 +79,6 @@ namespace ConnectCases
 
         /* End of legacy constructors due deprecation */
         virtual ~ConnectCasesClient();
-
 
         /**
          * <p>Returns the description for the list of fields in the request parameters.
@@ -632,6 +632,7 @@ namespace ConnectCases
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<ConnectCasesEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<ConnectCasesClient>;
       void init(const ConnectCasesClientConfiguration& clientConfiguration);
 
       ConnectCasesClientConfiguration m_clientConfiguration;

@@ -7,6 +7,7 @@
 #include <aws/lex/LexRuntimeService_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/lex/LexRuntimeServiceServiceClientModel.h>
 
@@ -27,7 +28,7 @@ namespace LexRuntimeService
    * and manage your Amazon Lex bot. For a list of build-time operations, see the
    * build-time API, . </p>
    */
-  class AWS_LEXRUNTIMESERVICE_API LexRuntimeServiceClient : public Aws::Client::AWSJsonClient
+  class AWS_LEXRUNTIMESERVICE_API LexRuntimeServiceClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<LexRuntimeServiceClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -81,7 +82,6 @@ namespace LexRuntimeService
 
         /* End of legacy constructors due deprecation */
         virtual ~LexRuntimeServiceClient();
-
 
         /**
          * <p>Removes session information for a specified bot, alias, and user ID.
@@ -251,6 +251,7 @@ namespace LexRuntimeService
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<LexRuntimeServiceEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<LexRuntimeServiceClient>;
       void init(const LexRuntimeServiceClientConfiguration& clientConfiguration);
 
       LexRuntimeServiceClientConfiguration m_clientConfiguration;

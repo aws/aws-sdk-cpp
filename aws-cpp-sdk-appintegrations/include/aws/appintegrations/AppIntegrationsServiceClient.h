@@ -7,6 +7,7 @@
 #include <aws/appintegrations/AppIntegrationsService_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/appintegrations/AppIntegrationsServiceServiceClientModel.h>
 
@@ -24,7 +25,7 @@ namespace AppIntegrationsService
    * information to agents using Amazon Connect Wisdom</a> in the <i>Amazon Connect
    * Administrator Guide</i>.</p>
    */
-  class AWS_APPINTEGRATIONSSERVICE_API AppIntegrationsServiceClient : public Aws::Client::AWSJsonClient
+  class AWS_APPINTEGRATIONSSERVICE_API AppIntegrationsServiceClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<AppIntegrationsServiceClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -78,7 +79,6 @@ namespace AppIntegrationsService
 
         /* End of legacy constructors due deprecation */
         virtual ~AppIntegrationsServiceClient();
-
 
         /**
          * <p>Creates and persists a DataIntegration resource.</p>  <p>You cannot
@@ -381,6 +381,7 @@ namespace AppIntegrationsService
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<AppIntegrationsServiceEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<AppIntegrationsServiceClient>;
       void init(const AppIntegrationsServiceClientConfiguration& clientConfiguration);
 
       AppIntegrationsServiceClientConfiguration m_clientConfiguration;

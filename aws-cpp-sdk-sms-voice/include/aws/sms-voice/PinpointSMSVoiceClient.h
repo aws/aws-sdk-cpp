@@ -7,6 +7,7 @@
 #include <aws/sms-voice/PinpointSMSVoice_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/sms-voice/PinpointSMSVoiceServiceClientModel.h>
 
@@ -17,7 +18,7 @@ namespace PinpointSMSVoice
   /**
    * Pinpoint SMS and Voice Messaging public facing APIs
    */
-  class AWS_PINPOINTSMSVOICE_API PinpointSMSVoiceClient : public Aws::Client::AWSJsonClient
+  class AWS_PINPOINTSMSVOICE_API PinpointSMSVoiceClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<PinpointSMSVoiceClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -71,7 +72,6 @@ namespace PinpointSMSVoice
 
         /* End of legacy constructors due deprecation */
         virtual ~PinpointSMSVoiceClient();
-
 
         /**
          * Create a new configuration set. After you create the configuration set, you can
@@ -221,6 +221,7 @@ namespace PinpointSMSVoice
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<PinpointSMSVoiceEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<PinpointSMSVoiceClient>;
       void init(const PinpointSMSVoiceClientConfiguration& clientConfiguration);
 
       PinpointSMSVoiceClientConfiguration m_clientConfiguration;

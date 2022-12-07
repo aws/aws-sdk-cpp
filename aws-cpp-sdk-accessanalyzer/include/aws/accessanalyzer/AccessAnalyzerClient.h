@@ -7,6 +7,7 @@
 #include <aws/accessanalyzer/AccessAnalyzer_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/accessanalyzer/AccessAnalyzerServiceClientModel.h>
 
@@ -30,7 +31,7 @@ namespace AccessAnalyzer
    * and Access Management Access Analyzer</a> in the <b>IAM User Guide</b>.</p>
    * <p>To start using IAM Access Analyzer, you first need to create an analyzer.</p>
    */
-  class AWS_ACCESSANALYZER_API AccessAnalyzerClient : public Aws::Client::AWSJsonClient
+  class AWS_ACCESSANALYZER_API AccessAnalyzerClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<AccessAnalyzerClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -84,7 +85,6 @@ namespace AccessAnalyzer
 
         /* End of legacy constructors due deprecation */
         virtual ~AccessAnalyzerClient();
-
 
         /**
          * <p>Retroactively applies the archive rule to existing findings that meet the
@@ -602,6 +602,7 @@ namespace AccessAnalyzer
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<AccessAnalyzerEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<AccessAnalyzerClient>;
       void init(const AccessAnalyzerClientConfiguration& clientConfiguration);
 
       AccessAnalyzerClientConfiguration m_clientConfiguration;

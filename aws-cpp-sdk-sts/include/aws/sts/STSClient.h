@@ -8,6 +8,7 @@
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/sts/STSServiceClientModel.h>
 
@@ -24,7 +25,7 @@ namespace STS
    * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp.html">Temporary
    * Security Credentials</a>.</p>
    */
-  class AWS_STS_API STSClient : public Aws::Client::AWSXMLClient
+  class AWS_STS_API STSClient : public Aws::Client::AWSXMLClient, public Aws::Client::ClientWithAsyncTemplateMethods<STSClient>
   {
     public:
       typedef Aws::Client::AWSXMLClient BASECLASS;
@@ -745,6 +746,7 @@ namespace STS
         void OverrideEndpoint(const Aws::String& endpoint);
         std::shared_ptr<STSEndpointProviderBase>& accessEndpointProvider();
   private:
+        friend class Aws::Client::ClientWithAsyncTemplateMethods<STSClient>;
         void init(const STSClientConfiguration& clientConfiguration);
 
         STSClientConfiguration m_clientConfiguration;

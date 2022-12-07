@@ -7,6 +7,7 @@
 #include <aws/guardduty/GuardDuty_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/guardduty/GuardDutyServiceClientModel.h>
 
@@ -35,7 +36,7 @@ namespace GuardDuty
    * href="https://docs.aws.amazon.com/guardduty/latest/ug/what-is-guardduty.html">Amazon
    * GuardDuty User Guide</a> </i>. </p>
    */
-  class AWS_GUARDDUTY_API GuardDutyClient : public Aws::Client::AWSJsonClient
+  class AWS_GUARDDUTY_API GuardDutyClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<GuardDutyClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -89,7 +90,6 @@ namespace GuardDuty
 
         /* End of legacy constructors due deprecation */
         virtual ~GuardDutyClient();
-
 
         /**
          * <p>Accepts the invitation to be a member account and get monitored by a
@@ -1246,6 +1246,7 @@ namespace GuardDuty
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<GuardDutyEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<GuardDutyClient>;
       void init(const GuardDutyClientConfiguration& clientConfiguration);
 
       GuardDutyClientConfiguration m_clientConfiguration;

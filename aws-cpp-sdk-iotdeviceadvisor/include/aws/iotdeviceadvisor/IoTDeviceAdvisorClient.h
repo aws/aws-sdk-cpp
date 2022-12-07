@@ -7,6 +7,7 @@
 #include <aws/iotdeviceadvisor/IoTDeviceAdvisor_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/iotdeviceadvisor/IoTDeviceAdvisorServiceClientModel.h>
 
@@ -27,7 +28,7 @@ namespace IoTDeviceAdvisor
    * Web Services Partner Device Catalog without the need to send your device in and
    * wait for it to be tested.</p>
    */
-  class AWS_IOTDEVICEADVISOR_API IoTDeviceAdvisorClient : public Aws::Client::AWSJsonClient
+  class AWS_IOTDEVICEADVISOR_API IoTDeviceAdvisorClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<IoTDeviceAdvisorClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -81,7 +82,6 @@ namespace IoTDeviceAdvisor
 
         /* End of legacy constructors due deprecation */
         virtual ~IoTDeviceAdvisorClient();
-
 
         /**
          * <p>Creates a Device Advisor test suite.</p> <p>Requires permission to access the
@@ -366,6 +366,7 @@ namespace IoTDeviceAdvisor
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<IoTDeviceAdvisorEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<IoTDeviceAdvisorClient>;
       void init(const IoTDeviceAdvisorClientConfiguration& clientConfiguration);
 
       IoTDeviceAdvisorClientConfiguration m_clientConfiguration;

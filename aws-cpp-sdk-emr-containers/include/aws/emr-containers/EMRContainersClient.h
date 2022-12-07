@@ -7,6 +7,7 @@
 #include <aws/emr-containers/EMRContainers_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/emr-containers/EMRContainersServiceClientModel.h>
 
@@ -37,7 +38,7 @@ namespace EMRContainers
    * href="https://docs.aws.amazon.com/emr/latest/EMR-on-EKS-DevelopmentGuide/service-quotas.html#service-endpoints">Amazon
    * EMR on EKS Service Endpoints</a>.</p> </li> </ul>
    */
-  class AWS_EMRCONTAINERS_API EMRContainersClient : public Aws::Client::AWSJsonClient
+  class AWS_EMRCONTAINERS_API EMRContainersClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<EMRContainersClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -91,7 +92,6 @@ namespace EMRContainers
 
         /* End of legacy constructors due deprecation */
         virtual ~EMRContainersClient();
-
 
         /**
          * <p>Cancels a job run. A job run is a unit of work, such as a Spark jar, PySpark
@@ -479,6 +479,7 @@ namespace EMRContainers
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<EMRContainersEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<EMRContainersClient>;
       void init(const EMRContainersClientConfiguration& clientConfiguration);
 
       EMRContainersClientConfiguration m_clientConfiguration;

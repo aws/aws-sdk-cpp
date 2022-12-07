@@ -7,6 +7,7 @@
 #include <aws/datasync/DataSync_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/datasync/DataSyncServiceClientModel.h>
 
@@ -24,7 +25,7 @@ namespace DataSync
    * href="https://docs.aws.amazon.com/datasync/latest/userguide/what-is-datasync.html">DataSync
    * User Guide</a> </i>.</p>
    */
-  class AWS_DATASYNC_API DataSyncClient : public Aws::Client::AWSJsonClient
+  class AWS_DATASYNC_API DataSyncClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<DataSyncClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -78,7 +79,6 @@ namespace DataSync
 
         /* End of legacy constructors due deprecation */
         virtual ~DataSyncClient();
-
 
         /**
          * <p>Stops an DataSync task execution that's in progress. The transfer of some
@@ -952,6 +952,7 @@ namespace DataSync
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<DataSyncEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<DataSyncClient>;
       void init(const DataSyncClientConfiguration& clientConfiguration);
 
       DataSyncClientConfiguration m_clientConfiguration;

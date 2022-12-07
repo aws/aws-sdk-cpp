@@ -8,6 +8,7 @@
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/elasticbeanstalk/ElasticBeanstalkServiceClientModel.h>
 
@@ -31,7 +32,7 @@ namespace ElasticBeanstalk
    * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#elasticbeanstalk_region">Regions
    * and Endpoints</a> in the <i>Amazon Web Services Glossary</i>.</p>
    */
-  class AWS_ELASTICBEANSTALK_API ElasticBeanstalkClient : public Aws::Client::AWSXMLClient
+  class AWS_ELASTICBEANSTALK_API ElasticBeanstalkClient : public Aws::Client::AWSXMLClient, public Aws::Client::ClientWithAsyncTemplateMethods<ElasticBeanstalkClient>
   {
     public:
       typedef Aws::Client::AWSXMLClient BASECLASS;
@@ -1058,6 +1059,7 @@ namespace ElasticBeanstalk
         void OverrideEndpoint(const Aws::String& endpoint);
         std::shared_ptr<ElasticBeanstalkEndpointProviderBase>& accessEndpointProvider();
   private:
+        friend class Aws::Client::ClientWithAsyncTemplateMethods<ElasticBeanstalkClient>;
         void init(const ElasticBeanstalkClientConfiguration& clientConfiguration);
 
         ElasticBeanstalkClientConfiguration m_clientConfiguration;

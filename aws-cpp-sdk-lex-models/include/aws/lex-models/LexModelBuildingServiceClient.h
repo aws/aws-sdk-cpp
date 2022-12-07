@@ -7,6 +7,7 @@
 #include <aws/lex-models/LexModelBuildingService_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/lex-models/LexModelBuildingServiceServiceClientModel.h>
 
@@ -20,7 +21,7 @@ namespace LexModelBuildingService
    * to create, update, and delete conversational bots for new and existing client
    * applications. </p>
    */
-  class AWS_LEXMODELBUILDINGSERVICE_API LexModelBuildingServiceClient : public Aws::Client::AWSJsonClient
+  class AWS_LEXMODELBUILDINGSERVICE_API LexModelBuildingServiceClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<LexModelBuildingServiceClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -74,7 +75,6 @@ namespace LexModelBuildingService
 
         /* End of legacy constructors due deprecation */
         virtual ~LexModelBuildingServiceClient();
-
 
         /**
          * <p>Creates a new version of the bot based on the <code>$LATEST</code> version.
@@ -1052,6 +1052,7 @@ namespace LexModelBuildingService
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<LexModelBuildingServiceEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<LexModelBuildingServiceClient>;
       void init(const LexModelBuildingServiceClientConfiguration& clientConfiguration);
 
       LexModelBuildingServiceClientConfiguration m_clientConfiguration;

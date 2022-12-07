@@ -7,6 +7,7 @@
 #include <aws/mobile/Mobile_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/mobile/MobileServiceClientModel.h>
 
@@ -20,7 +21,7 @@ namespace Mobile
    * desktop projects with the necessary SDKs, constants, tools and samples to make
    * use of those resources. </p>
    */
-  class AWS_MOBILE_API MobileClient : public Aws::Client::AWSJsonClient
+  class AWS_MOBILE_API MobileClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<MobileClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -74,7 +75,6 @@ namespace Mobile
 
         /* End of legacy constructors due deprecation */
         virtual ~MobileClient();
-
 
         /**
          * <p> Creates an AWS Mobile Hub project. </p><p><h3>See Also:</h3>   <a
@@ -240,6 +240,7 @@ namespace Mobile
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<MobileEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<MobileClient>;
       void init(const MobileClientConfiguration& clientConfiguration);
 
       MobileClientConfiguration m_clientConfiguration;

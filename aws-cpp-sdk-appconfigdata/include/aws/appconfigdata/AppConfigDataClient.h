@@ -7,6 +7,7 @@
 #include <aws/appconfigdata/AppConfigData_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/appconfigdata/AppConfigDataServiceClientModel.h>
 
@@ -47,7 +48,7 @@ namespace AppConfigData
    * href="http://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-retrieving-the-configuration">Receiving
    * the configuration</a> in the <i>AppConfig User Guide</i>.</p>
    */
-  class AWS_APPCONFIGDATA_API AppConfigDataClient : public Aws::Client::AWSJsonClient
+  class AWS_APPCONFIGDATA_API AppConfigDataClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<AppConfigDataClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -101,7 +102,6 @@ namespace AppConfigData
 
         /* End of legacy constructors due deprecation */
         virtual ~AppConfigDataClient();
-
 
         /**
          * <p>Retrieves the latest deployed configuration. This API may return empty
@@ -160,6 +160,7 @@ namespace AppConfigData
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<AppConfigDataEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<AppConfigDataClient>;
       void init(const AppConfigDataClientConfiguration& clientConfiguration);
 
       AppConfigDataClientConfiguration m_clientConfiguration;

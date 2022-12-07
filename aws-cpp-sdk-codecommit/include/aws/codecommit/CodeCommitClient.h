@@ -7,6 +7,7 @@
 #include <aws/codecommit/CodeCommit_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/codecommit/CodeCommitServiceClientModel.h>
 
@@ -174,7 +175,7 @@ namespace CodeCommit
    * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS
    * CodeCommit User Guide</a>.</p>
    */
-  class AWS_CODECOMMIT_API CodeCommitClient : public Aws::Client::AWSJsonClient
+  class AWS_CODECOMMIT_API CodeCommitClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<CodeCommitClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -228,7 +229,6 @@ namespace CodeCommit
 
         /* End of legacy constructors due deprecation */
         virtual ~CodeCommitClient();
-
 
         /**
          * <p>Creates an association between an approval rule template and a specified
@@ -1707,6 +1707,7 @@ namespace CodeCommit
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<CodeCommitEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<CodeCommitClient>;
       void init(const CodeCommitClientConfiguration& clientConfiguration);
 
       CodeCommitClientConfiguration m_clientConfiguration;

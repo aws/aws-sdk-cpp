@@ -7,6 +7,7 @@
 #include <aws/chime-sdk-messaging/ChimeSDKMessaging_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/chime-sdk-messaging/ChimeSDKMessagingServiceClientModel.h>
 
@@ -22,7 +23,7 @@ namespace ChimeSDKMessaging
    * href="https://docs.aws.amazon.com/chime/latest/APIReference/API_Operations_Amazon_Chime_SDK_Messaging.html">Amazon
    * Chime SDK messaging</a>.</p>
    */
-  class AWS_CHIMESDKMESSAGING_API ChimeSDKMessagingClient : public Aws::Client::AWSJsonClient
+  class AWS_CHIMESDKMESSAGING_API ChimeSDKMessagingClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<ChimeSDKMessagingClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -76,7 +77,6 @@ namespace ChimeSDKMessaging
 
         /* End of legacy constructors due deprecation */
         virtual ~ChimeSDKMessagingClient();
-
 
         /**
          * <p>Associates a channel flow with a channel. Once associated, all messages to
@@ -1075,6 +1075,7 @@ namespace ChimeSDKMessaging
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<ChimeSDKMessagingEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<ChimeSDKMessagingClient>;
       void init(const ChimeSDKMessagingClientConfiguration& clientConfiguration);
 
       ChimeSDKMessagingClientConfiguration m_clientConfiguration;

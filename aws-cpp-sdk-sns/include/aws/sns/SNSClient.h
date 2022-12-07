@@ -8,6 +8,7 @@
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/sns/SNSServiceClientModel.h>
 
@@ -35,7 +36,7 @@ namespace SNS
    * available SDKs, go to <a href="http://aws.amazon.com/tools/">Tools for Amazon
    * Web Services</a>. </p>
    */
-  class AWS_SNS_API SNSClient : public Aws::Client::AWSXMLClient
+  class AWS_SNS_API SNSClient : public Aws::Client::AWSXMLClient, public Aws::Client::ClientWithAsyncTemplateMethods<SNSClient>
   {
     public:
       typedef Aws::Client::AWSXMLClient BASECLASS;
@@ -1107,6 +1108,7 @@ namespace SNS
         void OverrideEndpoint(const Aws::String& endpoint);
         std::shared_ptr<SNSEndpointProviderBase>& accessEndpointProvider();
   private:
+        friend class Aws::Client::ClientWithAsyncTemplateMethods<SNSClient>;
         void init(const SNSClientConfiguration& clientConfiguration);
 
         SNSClientConfiguration m_clientConfiguration;

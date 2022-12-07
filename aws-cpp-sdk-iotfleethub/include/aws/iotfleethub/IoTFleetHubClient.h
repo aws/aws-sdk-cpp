@@ -7,6 +7,7 @@
 #include <aws/iotfleethub/IoTFleetHub_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/iotfleethub/IoTFleetHubServiceClientModel.h>
 
@@ -20,7 +21,7 @@ namespace IoTFleetHub
    * <p>Fleet Hub for AWS IoT Device Management is in public preview and is subject
    * to change.</p> 
    */
-  class AWS_IOTFLEETHUB_API IoTFleetHubClient : public Aws::Client::AWSJsonClient
+  class AWS_IOTFLEETHUB_API IoTFleetHubClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<IoTFleetHubClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -74,7 +75,6 @@ namespace IoTFleetHub
 
         /* End of legacy constructors due deprecation */
         virtual ~IoTFleetHubClient();
-
 
         /**
          * <p>Creates a Fleet Hub for AWS IoT Device Management web application.</p> 
@@ -233,6 +233,7 @@ namespace IoTFleetHub
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<IoTFleetHubEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<IoTFleetHubClient>;
       void init(const IoTFleetHubClientConfiguration& clientConfiguration);
 
       IoTFleetHubClientConfiguration m_clientConfiguration;

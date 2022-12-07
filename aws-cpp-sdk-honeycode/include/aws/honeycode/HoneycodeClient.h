@@ -7,6 +7,7 @@
 #include <aws/honeycode/Honeycode_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/honeycode/HoneycodeServiceClientModel.h>
 
@@ -20,7 +21,7 @@ namespace Honeycode
    * managing almost anything, like projects, customers, operations, approvals,
    * resources, and even your team. </p>
    */
-  class AWS_HONEYCODE_API HoneycodeClient : public Aws::Client::AWSJsonClient
+  class AWS_HONEYCODE_API HoneycodeClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<HoneycodeClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -74,7 +75,6 @@ namespace Honeycode
 
         /* End of legacy constructors due deprecation */
         virtual ~HoneycodeClient();
-
 
         /**
          * <p> The BatchCreateTableRows API allows you to create one or more rows at the
@@ -380,6 +380,7 @@ namespace Honeycode
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<HoneycodeEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<HoneycodeClient>;
       void init(const HoneycodeClientConfiguration& clientConfiguration);
 
       HoneycodeClientConfiguration m_clientConfiguration;

@@ -7,6 +7,7 @@
 #include <aws/ram/RAM_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/ram/RAMServiceClientModel.h>
 
@@ -30,7 +31,7 @@ namespace RAM
    * href="https://docs.aws.amazon.com/ram/latest/userguide/">Resource Access Manager
    * User Guide</a> </p> </li> </ul>
    */
-  class AWS_RAM_API RAMClient : public Aws::Client::AWSJsonClient
+  class AWS_RAM_API RAMClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<RAMClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -84,7 +85,6 @@ namespace RAM
 
         /* End of legacy constructors due deprecation */
         virtual ~RAMClient();
-
 
         /**
          * <p>Accepts an invitation to a resource share from another Amazon Web Services
@@ -573,6 +573,7 @@ namespace RAM
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<RAMEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<RAMClient>;
       void init(const RAMClientConfiguration& clientConfiguration);
 
       RAMClientConfiguration m_clientConfiguration;

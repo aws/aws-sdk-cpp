@@ -7,6 +7,7 @@
 #include <aws/frauddetector/FraudDetector_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/frauddetector/FraudDetectorServiceClientModel.h>
 
@@ -33,7 +34,7 @@ namespace FraudDetector
    * href="https://docs.aws.amazon.com/https:/aws.amazon.com/tools/">Tools to build
    * on AWS</a>. </p>
    */
-  class AWS_FRAUDDETECTOR_API FraudDetectorClient : public Aws::Client::AWSJsonClient
+  class AWS_FRAUDDETECTOR_API FraudDetectorClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<FraudDetectorClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -87,7 +88,6 @@ namespace FraudDetector
 
         /* End of legacy constructors due deprecation */
         virtual ~FraudDetectorClient();
-
 
         /**
          * <p>Creates a batch of variables.</p><p><h3>See Also:</h3>   <a
@@ -1427,6 +1427,7 @@ namespace FraudDetector
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<FraudDetectorEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<FraudDetectorClient>;
       void init(const FraudDetectorClientConfiguration& clientConfiguration);
 
       FraudDetectorClientConfiguration m_clientConfiguration;

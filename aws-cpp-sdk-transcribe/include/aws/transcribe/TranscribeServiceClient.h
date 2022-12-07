@@ -7,6 +7,7 @@
 #include <aws/transcribe/TranscribeService_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/transcribe/TranscribeServiceServiceClientModel.h>
 
@@ -26,7 +27,7 @@ namespace TranscribeService
    * looking for insight into customer service calls, use this option. Refer to for
    * details.</p> </li> </ul>
    */
-  class AWS_TRANSCRIBESERVICE_API TranscribeServiceClient : public Aws::Client::AWSJsonClient
+  class AWS_TRANSCRIBESERVICE_API TranscribeServiceClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<TranscribeServiceClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -80,7 +81,6 @@ namespace TranscribeService
 
         /* End of legacy constructors due deprecation */
         virtual ~TranscribeServiceClient();
-
 
         /**
          * <p>Creates a new Call Analytics category.</p> <p>All categories are
@@ -1003,6 +1003,7 @@ namespace TranscribeService
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<TranscribeServiceEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<TranscribeServiceClient>;
       void init(const TranscribeServiceClientConfiguration& clientConfiguration);
 
       TranscribeServiceClientConfiguration m_clientConfiguration;

@@ -7,6 +7,7 @@
 #include <aws/budgets/Budgets_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/budgets/BudgetsServiceClientModel.h>
 
@@ -42,7 +43,7 @@ namespace Budgets
    * API, see <a href="https://aws.amazon.com/aws-cost-management/pricing/">Amazon
    * Web Services Cost Management Pricing</a>.</p>
    */
-  class AWS_BUDGETS_API BudgetsClient : public Aws::Client::AWSJsonClient
+  class AWS_BUDGETS_API BudgetsClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<BudgetsClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -96,7 +97,6 @@ namespace Budgets
 
         /* End of legacy constructors due deprecation */
         virtual ~BudgetsClient();
-
 
         /**
          * <p>Creates a budget and, if included, notifications and subscribers. </p>
@@ -532,6 +532,7 @@ namespace Budgets
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<BudgetsEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<BudgetsClient>;
       void init(const BudgetsClientConfiguration& clientConfiguration);
 
       BudgetsClientConfiguration m_clientConfiguration;

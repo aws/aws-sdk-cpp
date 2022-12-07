@@ -7,6 +7,7 @@
 #include <aws/redshift-data/RedshiftDataAPIService_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/redshift-data/RedshiftDataAPIServiceServiceClientModel.h>
 
@@ -23,7 +24,7 @@ namespace RedshiftDataAPIService
    * Amazon Redshift Data API</a> in the <i>Amazon Redshift Cluster Management
    * Guide</i>. </p>
    */
-  class AWS_REDSHIFTDATAAPISERVICE_API RedshiftDataAPIServiceClient : public Aws::Client::AWSJsonClient
+  class AWS_REDSHIFTDATAAPISERVICE_API RedshiftDataAPIServiceClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<RedshiftDataAPIServiceClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -77,7 +78,6 @@ namespace RedshiftDataAPIService
 
         /* End of legacy constructors due deprecation */
         virtual ~RedshiftDataAPIServiceClient();
-
 
         /**
          * <p>Runs one or more SQL statements, which can be data manipulation language
@@ -342,6 +342,7 @@ namespace RedshiftDataAPIService
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<RedshiftDataAPIServiceEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<RedshiftDataAPIServiceClient>;
       void init(const RedshiftDataAPIServiceClientConfiguration& clientConfiguration);
 
       RedshiftDataAPIServiceClientConfiguration m_clientConfiguration;

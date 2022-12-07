@@ -7,6 +7,7 @@
 #include <aws/ebs/EBS_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/ebs/EBSServiceClientModel.h>
 
@@ -41,7 +42,7 @@ namespace EBS
    * Elastic Block Store Endpoints and Quotas</a> in the <i>Amazon Web Services
    * General Reference</i>.</p>
    */
-  class AWS_EBS_API EBSClient : public Aws::Client::AWSJsonClient
+  class AWS_EBS_API EBSClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<EBSClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -95,7 +96,6 @@ namespace EBS
 
         /* End of legacy constructors due deprecation */
         virtual ~EBSClient();
-
 
         /**
          * <p>Seals and completes the snapshot after all of the required blocks of data
@@ -218,6 +218,7 @@ namespace EBS
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<EBSEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<EBSClient>;
       void init(const EBSClientConfiguration& clientConfiguration);
 
       EBSClientConfiguration m_clientConfiguration;

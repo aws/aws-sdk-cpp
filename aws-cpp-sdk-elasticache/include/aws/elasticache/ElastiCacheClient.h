@@ -8,6 +8,7 @@
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/elasticache/ElastiCacheServiceClientModel.h>
 
@@ -26,7 +27,7 @@ namespace ElastiCache
    * customers get enhanced visibility into the key performance statistics associated
    * with their cache and can receive alarms if a part of their cache runs hot.</p>
    */
-  class AWS_ELASTICACHE_API ElastiCacheClient : public Aws::Client::AWSXMLClient
+  class AWS_ELASTICACHE_API ElastiCacheClient : public Aws::Client::AWSXMLClient, public Aws::Client::ClientWithAsyncTemplateMethods<ElastiCacheClient>
   {
     public:
       typedef Aws::Client::AWSXMLClient BASECLASS;
@@ -1537,6 +1538,7 @@ namespace ElastiCache
         void OverrideEndpoint(const Aws::String& endpoint);
         std::shared_ptr<ElastiCacheEndpointProviderBase>& accessEndpointProvider();
   private:
+        friend class Aws::Client::ClientWithAsyncTemplateMethods<ElastiCacheClient>;
         void init(const ElastiCacheClientConfiguration& clientConfiguration);
 
         ElastiCacheClientConfiguration m_clientConfiguration;

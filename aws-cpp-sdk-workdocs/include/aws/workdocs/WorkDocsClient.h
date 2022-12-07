@@ -7,6 +7,7 @@
 #include <aws/workdocs/WorkDocs_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/workdocs/WorkDocsServiceClientModel.h>
 
@@ -48,7 +49,7 @@ namespace WorkDocs
    * href="https://aws.amazon.com/workdocs/pricing/">Amazon WorkDocs Pricing</a>.</p>
    * 
    */
-  class AWS_WORKDOCS_API WorkDocsClient : public Aws::Client::AWSJsonClient
+  class AWS_WORKDOCS_API WorkDocsClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<WorkDocsClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -102,7 +103,6 @@ namespace WorkDocs
 
         /* End of legacy constructors due deprecation */
         virtual ~WorkDocsClient();
-
 
         /**
          * <p>Aborts the upload of the specified document version that was previously
@@ -923,6 +923,7 @@ namespace WorkDocs
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<WorkDocsEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<WorkDocsClient>;
       void init(const WorkDocsClientConfiguration& clientConfiguration);
 
       WorkDocsClientConfiguration m_clientConfiguration;

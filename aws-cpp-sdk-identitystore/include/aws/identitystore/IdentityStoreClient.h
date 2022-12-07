@@ -7,6 +7,7 @@
 #include <aws/identitystore/IdentityStore_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/identitystore/IdentityStoreServiceClientModel.h>
 
@@ -30,7 +31,7 @@ namespace IdentityStore
    * programatically and includes detailed information on data types and
    * errors.&lt;/p&gt; </code></pre>
    */
-  class AWS_IDENTITYSTORE_API IdentityStoreClient : public Aws::Client::AWSJsonClient
+  class AWS_IDENTITYSTORE_API IdentityStoreClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<IdentityStoreClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -84,7 +85,6 @@ namespace IdentityStore
 
         /* End of legacy constructors due deprecation */
         virtual ~IdentityStoreClient();
-
 
         /**
          * <p>Creates a group within the specified identity store.</p><p><h3>See Also:</h3>
@@ -440,6 +440,7 @@ namespace IdentityStore
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<IdentityStoreEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<IdentityStoreClient>;
       void init(const IdentityStoreClientConfiguration& clientConfiguration);
 
       IdentityStoreClientConfiguration m_clientConfiguration;

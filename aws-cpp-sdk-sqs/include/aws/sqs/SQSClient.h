@@ -8,6 +8,7 @@
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/sqs/SQSServiceClientModel.h>
 
@@ -42,7 +43,7 @@ namespace SQS
    * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#sqs_region">Regions
    * and Endpoints</a> </p> </li> </ul> </li> </ul>
    */
-  class AWS_SQS_API SQSClient : public Aws::Client::AWSXMLClient
+  class AWS_SQS_API SQSClient : public Aws::Client::AWSXMLClient, public Aws::Client::ClientWithAsyncTemplateMethods<SQSClient>
   {
     public:
       typedef Aws::Client::AWSXMLClient BASECLASS;
@@ -763,6 +764,7 @@ namespace SQS
         void OverrideEndpoint(const Aws::String& endpoint);
         std::shared_ptr<SQSEndpointProviderBase>& accessEndpointProvider();
   private:
+        friend class Aws::Client::ClientWithAsyncTemplateMethods<SQSClient>;
         void init(const SQSClientConfiguration& clientConfiguration);
 
         SQSClientConfiguration m_clientConfiguration;

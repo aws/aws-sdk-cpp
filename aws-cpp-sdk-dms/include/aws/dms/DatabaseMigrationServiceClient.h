@@ -7,6 +7,7 @@
 #include <aws/dms/DatabaseMigrationService_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/dms/DatabaseMigrationServiceServiceClientModel.h>
 
@@ -27,7 +28,7 @@ namespace DatabaseMigrationService
    * Database Migration Service?</a> in the <i>Database Migration Service User
    * Guide.</i> </p>
    */
-  class AWS_DATABASEMIGRATIONSERVICE_API DatabaseMigrationServiceClient : public Aws::Client::AWSJsonClient
+  class AWS_DATABASEMIGRATIONSERVICE_API DatabaseMigrationServiceClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<DatabaseMigrationServiceClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -81,7 +82,6 @@ namespace DatabaseMigrationService
 
         /* End of legacy constructors due deprecation */
         virtual ~DatabaseMigrationServiceClient();
-
 
         /**
          * <p>Adds metadata tags to an DMS resource, including replication instance,
@@ -1385,6 +1385,7 @@ namespace DatabaseMigrationService
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<DatabaseMigrationServiceEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<DatabaseMigrationServiceClient>;
       void init(const DatabaseMigrationServiceClientConfiguration& clientConfiguration);
 
       DatabaseMigrationServiceClientConfiguration m_clientConfiguration;

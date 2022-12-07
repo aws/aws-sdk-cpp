@@ -7,6 +7,7 @@
 #include <aws/application-autoscaling/ApplicationAutoScaling_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/application-autoscaling/ApplicationAutoScalingServiceClientModel.h>
 
@@ -48,7 +49,7 @@ namespace ApplicationAutoScaling
    * href="https://docs.aws.amazon.com/autoscaling/application/userguide/what-is-application-auto-scaling.html">Application
    * Auto Scaling User Guide</a>.</p>
    */
-  class AWS_APPLICATIONAUTOSCALING_API ApplicationAutoScalingClient : public Aws::Client::AWSJsonClient
+  class AWS_APPLICATIONAUTOSCALING_API ApplicationAutoScalingClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<ApplicationAutoScalingClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -102,7 +103,6 @@ namespace ApplicationAutoScaling
 
         /* End of legacy constructors due deprecation */
         virtual ~ApplicationAutoScalingClient();
-
 
         /**
          * <p>Deletes the specified scaling policy for an Application Auto Scaling scalable
@@ -384,6 +384,7 @@ namespace ApplicationAutoScaling
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<ApplicationAutoScalingEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<ApplicationAutoScalingClient>;
       void init(const ApplicationAutoScalingClientConfiguration& clientConfiguration);
 
       ApplicationAutoScalingClientConfiguration m_clientConfiguration;

@@ -7,6 +7,7 @@
 #include <aws/codedeploy/CodeDeploy_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/codedeploy/CodeDeployServiceClientModel.h>
 
@@ -71,7 +72,7 @@ namespace CodeDeploy
    * href="https://forums.aws.amazon.com/forum.jspa?forumID=179">CodeDeploy Developer
    * Forum</a> </p> </li> </ul>
    */
-  class AWS_CODEDEPLOY_API CodeDeployClient : public Aws::Client::AWSJsonClient
+  class AWS_CODEDEPLOY_API CodeDeployClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<CodeDeployClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -125,7 +126,6 @@ namespace CodeDeploy
 
         /* End of legacy constructors due deprecation */
         virtual ~CodeDeployClient();
-
 
         /**
          * <p>Adds tags to on-premises instances.</p><p><h3>See Also:</h3>   <a
@@ -928,6 +928,7 @@ namespace CodeDeploy
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<CodeDeployEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<CodeDeployClient>;
       void init(const CodeDeployClientConfiguration& clientConfiguration);
 
       CodeDeployClientConfiguration m_clientConfiguration;

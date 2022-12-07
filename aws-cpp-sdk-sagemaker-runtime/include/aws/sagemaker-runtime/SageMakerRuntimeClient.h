@@ -7,6 +7,7 @@
 #include <aws/sagemaker-runtime/SageMakerRuntime_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/sagemaker-runtime/SageMakerRuntimeServiceClientModel.h>
 
@@ -17,7 +18,7 @@ namespace SageMakerRuntime
   /**
    * <p> The Amazon SageMaker runtime API. </p>
    */
-  class AWS_SAGEMAKERRUNTIME_API SageMakerRuntimeClient : public Aws::Client::AWSJsonClient
+  class AWS_SAGEMAKERRUNTIME_API SageMakerRuntimeClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<SageMakerRuntimeClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -71,7 +72,6 @@ namespace SageMakerRuntime
 
         /* End of legacy constructors due deprecation */
         virtual ~SageMakerRuntimeClient();
-
 
         /**
          * <p>After you deploy a model into production using Amazon SageMaker hosting
@@ -145,6 +145,7 @@ namespace SageMakerRuntime
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<SageMakerRuntimeEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<SageMakerRuntimeClient>;
       void init(const SageMakerRuntimeClientConfiguration& clientConfiguration);
 
       SageMakerRuntimeClientConfiguration m_clientConfiguration;

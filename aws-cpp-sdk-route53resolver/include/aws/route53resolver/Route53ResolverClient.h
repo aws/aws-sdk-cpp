@@ -7,6 +7,7 @@
 #include <aws/route53resolver/Route53Resolver_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/route53resolver/Route53ResolverServiceClientModel.h>
 
@@ -45,7 +46,7 @@ namespace Route53Resolver
    * queries from your VPCs to your network (outbound queries), from your network to
    * your VPCs (inbound queries), or both.</p>
    */
-  class AWS_ROUTE53RESOLVER_API Route53ResolverClient : public Aws::Client::AWSJsonClient
+  class AWS_ROUTE53RESOLVER_API Route53ResolverClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<Route53ResolverClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -99,7 +100,6 @@ namespace Route53Resolver
 
         /* End of legacy constructors due deprecation */
         virtual ~Route53ResolverClient();
-
 
         /**
          * <p>Associates a <a>FirewallRuleGroup</a> with a VPC, to provide DNS filtering
@@ -1344,6 +1344,7 @@ namespace Route53Resolver
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<Route53ResolverEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<Route53ResolverClient>;
       void init(const Route53ResolverClientConfiguration& clientConfiguration);
 
       Route53ResolverClientConfiguration m_clientConfiguration;

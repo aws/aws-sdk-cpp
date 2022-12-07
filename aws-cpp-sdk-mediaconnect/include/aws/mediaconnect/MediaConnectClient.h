@@ -7,6 +7,7 @@
 #include <aws/mediaconnect/MediaConnect_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/mediaconnect/MediaConnectServiceClientModel.h>
 
@@ -17,7 +18,7 @@ namespace MediaConnect
   /**
    * API for AWS Elemental MediaConnect
    */
-  class AWS_MEDIACONNECT_API MediaConnectClient : public Aws::Client::AWSJsonClient
+  class AWS_MEDIACONNECT_API MediaConnectClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<MediaConnectClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -71,7 +72,6 @@ namespace MediaConnect
 
         /* End of legacy constructors due deprecation */
         virtual ~MediaConnectClient();
-
 
         /**
          * Adds media streams to an existing flow. After you add a media stream to a flow,
@@ -626,6 +626,7 @@ namespace MediaConnect
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<MediaConnectEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<MediaConnectClient>;
       void init(const MediaConnectClientConfiguration& clientConfiguration);
 
       MediaConnectClientConfiguration m_clientConfiguration;

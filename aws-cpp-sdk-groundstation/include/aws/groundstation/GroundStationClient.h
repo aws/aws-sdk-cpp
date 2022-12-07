@@ -7,6 +7,7 @@
 #include <aws/groundstation/GroundStation_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/groundstation/GroundStationServiceClientModel.h>
 
@@ -21,7 +22,7 @@ namespace GroundStation
    * efficiently and cost-effectively without having to build or manage your own
    * ground station infrastructure.</p>
    */
-  class AWS_GROUNDSTATION_API GroundStationClient : public Aws::Client::AWSJsonClient
+  class AWS_GROUNDSTATION_API GroundStationClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<GroundStationClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -75,7 +76,6 @@ namespace GroundStation
 
         /* End of legacy constructors due deprecation */
         virtual ~GroundStationClient();
-
 
         /**
          * <p>Cancels a contact with a specified contact ID.</p><p><h3>See Also:</h3>   <a
@@ -613,6 +613,7 @@ namespace GroundStation
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<GroundStationEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<GroundStationClient>;
       void init(const GroundStationClientConfiguration& clientConfiguration);
 
       GroundStationClientConfiguration m_clientConfiguration;

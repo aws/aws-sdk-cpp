@@ -7,6 +7,7 @@
 #include <aws/globalaccelerator/GlobalAccelerator_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/globalaccelerator/GlobalAcceleratorServiceClientModel.h>
 
@@ -68,7 +69,7 @@ namespace GlobalAccelerator
    * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/what-is-global-accelerator.html">Global
    * Accelerator Developer Guide</a>.</p>
    */
-  class AWS_GLOBALACCELERATOR_API GlobalAcceleratorClient : public Aws::Client::AWSJsonClient
+  class AWS_GLOBALACCELERATOR_API GlobalAcceleratorClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<GlobalAcceleratorClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -122,7 +123,6 @@ namespace GlobalAccelerator
 
         /* End of legacy constructors due deprecation */
         virtual ~GlobalAcceleratorClient();
-
 
         /**
          * <p>Associate a virtual private cloud (VPC) subnet endpoint with your custom
@@ -1153,6 +1153,7 @@ namespace GlobalAccelerator
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<GlobalAcceleratorEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<GlobalAcceleratorClient>;
       void init(const GlobalAcceleratorClientConfiguration& clientConfiguration);
 
       GlobalAcceleratorClientConfiguration m_clientConfiguration;

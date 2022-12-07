@@ -7,6 +7,7 @@
 #include <aws/chime-sdk-meetings/ChimeSDKMeetings_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/chime-sdk-meetings/ChimeSDKMeetingsServiceClientModel.h>
 
@@ -22,7 +23,7 @@ namespace ChimeSDKMeetings
    * href="https://docs.aws.amazon.com/chime/latest/APIReference/API_Operations_Amazon_Chime_SDK_Meetings.html">Amazon
    * Chime SDK meetings</a>.</p>
    */
-  class AWS_CHIMESDKMEETINGS_API ChimeSDKMeetingsClient : public Aws::Client::AWSJsonClient
+  class AWS_CHIMESDKMEETINGS_API ChimeSDKMeetingsClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<ChimeSDKMeetingsClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -76,7 +77,6 @@ namespace ChimeSDKMeetings
 
         /* End of legacy constructors due deprecation */
         virtual ~ChimeSDKMeetingsClient();
-
 
         /**
          * <p>Creates up to 100 attendees for an active Amazon Chime SDK meeting. For more
@@ -455,6 +455,7 @@ namespace ChimeSDKMeetings
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<ChimeSDKMeetingsEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<ChimeSDKMeetingsClient>;
       void init(const ChimeSDKMeetingsClientConfiguration& clientConfiguration);
 
       ChimeSDKMeetingsClientConfiguration m_clientConfiguration;

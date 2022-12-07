@@ -7,6 +7,7 @@
 #include <aws/elastic-inference/ElasticInference_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/elastic-inference/ElasticInferenceServiceClientModel.h>
 
@@ -17,7 +18,7 @@ namespace ElasticInference
   /**
    * <p> Elastic Inference public APIs. </p>
    */
-  class AWS_ELASTICINFERENCE_API ElasticInferenceClient : public Aws::Client::AWSJsonClient
+  class AWS_ELASTICINFERENCE_API ElasticInferenceClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<ElasticInferenceClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -71,7 +72,6 @@ namespace ElasticInference
 
         /* End of legacy constructors due deprecation */
         virtual ~ElasticInferenceClient();
-
 
         /**
          * <p> Describes the locations in which a given accelerator type or set of types is
@@ -186,6 +186,7 @@ namespace ElasticInference
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<ElasticInferenceEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<ElasticInferenceClient>;
       void init(const ElasticInferenceClientConfiguration& clientConfiguration);
 
       ElasticInferenceClientConfiguration m_clientConfiguration;

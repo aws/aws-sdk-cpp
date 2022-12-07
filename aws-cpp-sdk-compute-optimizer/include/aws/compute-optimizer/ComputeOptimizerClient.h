@@ -7,6 +7,7 @@
 #include <aws/compute-optimizer/ComputeOptimizer_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/compute-optimizer/ComputeOptimizerServiceClientModel.h>
 
@@ -30,7 +31,7 @@ namespace ComputeOptimizer
    * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/">Compute
    * Optimizer User Guide</a>.</p>
    */
-  class AWS_COMPUTEOPTIMIZER_API ComputeOptimizerClient : public Aws::Client::AWSJsonClient
+  class AWS_COMPUTEOPTIMIZER_API ComputeOptimizerClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<ComputeOptimizerClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -84,7 +85,6 @@ namespace ComputeOptimizer
 
         /* End of legacy constructors due deprecation */
         virtual ~ComputeOptimizerClient();
-
 
         /**
          * <p>Deletes a recommendation preference, such as enhanced infrastructure
@@ -512,6 +512,7 @@ namespace ComputeOptimizer
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<ComputeOptimizerEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<ComputeOptimizerClient>;
       void init(const ComputeOptimizerClientConfiguration& clientConfiguration);
 
       ComputeOptimizerClientConfiguration m_clientConfiguration;

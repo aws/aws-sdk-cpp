@@ -7,6 +7,7 @@
 #include <aws/support/Support_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/support/SupportServiceClientModel.h>
 
@@ -67,7 +68,7 @@ namespace Support
    * your support cases, and how to call Trusted Advisor for results of checks on
    * your resources.</p>
    */
-  class AWS_SUPPORT_API SupportClient : public Aws::Client::AWSJsonClient
+  class AWS_SUPPORT_API SupportClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<SupportClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -121,7 +122,6 @@ namespace Support
 
         /* End of legacy constructors due deprecation */
         virtual ~SupportClient();
-
 
         /**
          * <p>Adds one or more attachments to an attachment set. </p> <p>An attachment set
@@ -568,6 +568,7 @@ namespace Support
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<SupportEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<SupportClient>;
       void init(const SupportClientConfiguration& clientConfiguration);
 
       SupportClientConfiguration m_clientConfiguration;

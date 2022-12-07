@@ -7,6 +7,7 @@
 #include <aws/appstream/AppStream_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/appstream/AppStreamServiceClientModel.h>
 
@@ -33,7 +34,7 @@ namespace AppStream
    * href="http://aws.amazon.com/documentation/appstream2">Amazon AppStream 2.0
    * documentation</a> </p> </li> </ul>
    */
-  class AWS_APPSTREAM_API AppStreamClient : public Aws::Client::AWSJsonClient
+  class AWS_APPSTREAM_API AppStreamClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<AppStreamClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -87,7 +88,6 @@ namespace AppStream
 
         /* End of legacy constructors due deprecation */
         virtual ~AppStreamClient();
-
 
         /**
          * <p>Associates the specified application with the specified fleet. This is only
@@ -1326,6 +1326,7 @@ namespace AppStream
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<AppStreamEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<AppStreamClient>;
       void init(const AppStreamClientConfiguration& clientConfiguration);
 
       AppStreamClientConfiguration m_clientConfiguration;

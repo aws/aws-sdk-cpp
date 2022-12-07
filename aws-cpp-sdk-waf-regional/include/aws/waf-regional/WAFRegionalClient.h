@@ -7,6 +7,7 @@
 #include <aws/waf-regional/WAFRegional_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/waf-regional/WAFRegionalServiceClientModel.h>
 
@@ -37,7 +38,7 @@ namespace WAFRegional
    * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
    * WAF Classic</a> in the developer guide.</p>
    */
-  class AWS_WAFREGIONAL_API WAFRegionalClient : public Aws::Client::AWSJsonClient
+  class AWS_WAFREGIONAL_API WAFRegionalClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<WAFRegionalClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -91,7 +92,6 @@ namespace WAFRegional
 
         /* End of legacy constructors due deprecation */
         virtual ~WAFRegionalClient();
-
 
         /**
          *  <p>This is <b>AWS WAF Classic Regional</b> documentation. For more
@@ -2902,6 +2902,7 @@ namespace WAFRegional
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<WAFRegionalEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<WAFRegionalClient>;
       void init(const WAFRegionalClientConfiguration& clientConfiguration);
 
       WAFRegionalClientConfiguration m_clientConfiguration;

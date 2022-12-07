@@ -7,6 +7,7 @@
 #include <aws/panorama/Panorama_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/panorama/PanoramaServiceClientModel.h>
 
@@ -20,7 +21,7 @@ namespace Panorama
    * href="https://docs.aws.amazon.com/panorama/latest/dev/panorama-welcome.html">What
    * is AWS Panorama?</a> in the <i>AWS Panorama Developer Guide</i>.</p></p>
    */
-  class AWS_PANORAMA_API PanoramaClient : public Aws::Client::AWSJsonClient
+  class AWS_PANORAMA_API PanoramaClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<PanoramaClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -74,7 +75,6 @@ namespace Panorama
 
         /* End of legacy constructors due deprecation */
         virtual ~PanoramaClient();
-
 
         /**
          * <p>Creates an application instance and deploys it to a device.</p><p><h3>See
@@ -672,6 +672,7 @@ namespace Panorama
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<PanoramaEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<PanoramaClient>;
       void init(const PanoramaClientConfiguration& clientConfiguration);
 
       PanoramaClientConfiguration m_clientConfiguration;

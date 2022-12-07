@@ -7,6 +7,7 @@
 #include <aws/scheduler/Scheduler_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/scheduler/SchedulerServiceClientModel.h>
 
@@ -22,7 +23,7 @@ namespace Scheduler
    * reference lists the available API actions, and data types for EventBridge
    * Scheduler. </p>
    */
-  class AWS_SCHEDULER_API SchedulerClient : public Aws::Client::AWSJsonClient
+  class AWS_SCHEDULER_API SchedulerClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<SchedulerClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -76,7 +77,6 @@ namespace Scheduler
 
         /* End of legacy constructors due deprecation */
         virtual ~SchedulerClient();
-
 
         /**
          * <p>Creates the specified schedule.</p><p><h3>See Also:</h3>   <a
@@ -306,6 +306,7 @@ namespace Scheduler
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<SchedulerEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<SchedulerClient>;
       void init(const SchedulerClientConfiguration& clientConfiguration);
 
       SchedulerClientConfiguration m_clientConfiguration;

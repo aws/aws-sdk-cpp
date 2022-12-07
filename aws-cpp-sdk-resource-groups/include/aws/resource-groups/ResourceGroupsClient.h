@@ -7,6 +7,7 @@
 #include <aws/resource-groups/ResourceGroups_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/resource-groups/ResourceGroupsServiceClientModel.h>
 
@@ -40,7 +41,7 @@ namespace ResourceGroups
    * resources that are members of a group</p> </li> <li> <p>Searching AWS resources
    * based on a resource query</p> </li> </ul>
    */
-  class AWS_RESOURCEGROUPS_API ResourceGroupsClient : public Aws::Client::AWSJsonClient
+  class AWS_RESOURCEGROUPS_API ResourceGroupsClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<ResourceGroupsClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -94,7 +95,6 @@ namespace ResourceGroups
 
         /* End of legacy constructors due deprecation */
         virtual ~ResourceGroupsClient();
-
 
         /**
          * <p>Creates a resource group with the specified name and description. You can
@@ -454,6 +454,7 @@ namespace ResourceGroups
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<ResourceGroupsEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<ResourceGroupsClient>;
       void init(const ResourceGroupsClientConfiguration& clientConfiguration);
 
       ResourceGroupsClientConfiguration m_clientConfiguration;

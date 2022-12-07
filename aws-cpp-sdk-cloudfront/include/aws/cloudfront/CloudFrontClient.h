@@ -8,6 +8,7 @@
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/cloudfront/CloudFrontServiceClientModel.h>
 
@@ -21,7 +22,7 @@ namespace CloudFront
    * CloudFront API actions, data types, and errors. For detailed information about
    * CloudFront features, see the <i>Amazon CloudFront Developer Guide</i>.</p>
    */
-  class AWS_CLOUDFRONT_API CloudFrontClient : public Aws::Client::AWSXMLClient
+  class AWS_CLOUDFRONT_API CloudFrontClient : public Aws::Client::AWSXMLClient, public Aws::Client::ClientWithAsyncTemplateMethods<CloudFrontClient>
   {
     public:
       typedef Aws::Client::AWSXMLClient BASECLASS;
@@ -2396,6 +2397,7 @@ namespace CloudFront
         void OverrideEndpoint(const Aws::String& endpoint);
         std::shared_ptr<CloudFrontEndpointProviderBase>& accessEndpointProvider();
   private:
+        friend class Aws::Client::ClientWithAsyncTemplateMethods<CloudFrontClient>;
         void init(const CloudFrontClientConfiguration& clientConfiguration);
 
         CloudFrontClientConfiguration m_clientConfiguration;

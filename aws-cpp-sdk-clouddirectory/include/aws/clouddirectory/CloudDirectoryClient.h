@@ -7,6 +7,7 @@
 #include <aws/clouddirectory/CloudDirectory_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/clouddirectory/CloudDirectoryServiceClientModel.h>
 
@@ -26,7 +27,7 @@ namespace CloudDirectory
    * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/what_is_cloud_directory.html">Amazon
    * Cloud Directory Developer Guide</a>.</p>
    */
-  class AWS_CLOUDDIRECTORY_API CloudDirectoryClient : public Aws::Client::AWSJsonClient
+  class AWS_CLOUDDIRECTORY_API CloudDirectoryClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<CloudDirectoryClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -80,7 +81,6 @@ namespace CloudDirectory
 
         /* End of legacy constructors due deprecation */
         virtual ~CloudDirectoryClient();
-
 
         /**
          * <p>Adds a new <a>Facet</a> to an object. An object can have more than one facet
@@ -1344,6 +1344,7 @@ namespace CloudDirectory
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<CloudDirectoryEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<CloudDirectoryClient>;
       void init(const CloudDirectoryClientConfiguration& clientConfiguration);
 
       CloudDirectoryClientConfiguration m_clientConfiguration;

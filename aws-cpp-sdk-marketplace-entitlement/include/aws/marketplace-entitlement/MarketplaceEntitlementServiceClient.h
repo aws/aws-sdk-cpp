@@ -7,6 +7,7 @@
 #include <aws/marketplace-entitlement/MarketplaceEntitlementService_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/marketplace-entitlement/MarketplaceEntitlementServiceServiceClientModel.h>
 
@@ -25,7 +26,7 @@ namespace MarketplaceEntitlementService
    * <i>GetEntitlements</i>- Gets the entitlements for a Marketplace product.</p>
    * </li> </ul>
    */
-  class AWS_MARKETPLACEENTITLEMENTSERVICE_API MarketplaceEntitlementServiceClient : public Aws::Client::AWSJsonClient
+  class AWS_MARKETPLACEENTITLEMENTSERVICE_API MarketplaceEntitlementServiceClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<MarketplaceEntitlementServiceClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -80,7 +81,6 @@ namespace MarketplaceEntitlementService
         /* End of legacy constructors due deprecation */
         virtual ~MarketplaceEntitlementServiceClient();
 
-
         /**
          * <p>GetEntitlements retrieves entitlement values for a given product. The results
          * can be filtered based on customer identifier or product
@@ -104,6 +104,7 @@ namespace MarketplaceEntitlementService
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<MarketplaceEntitlementServiceEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<MarketplaceEntitlementServiceClient>;
       void init(const MarketplaceEntitlementServiceClientConfiguration& clientConfiguration);
 
       MarketplaceEntitlementServiceClientConfiguration m_clientConfiguration;

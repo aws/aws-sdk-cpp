@@ -7,6 +7,7 @@
 #include <aws/license-manager/LicenseManager_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/license-manager/LicenseManagerServiceClientModel.h>
 
@@ -18,7 +19,7 @@ namespace LicenseManager
    * <p>License Manager makes it easier to manage licenses from software vendors
    * across multiple Amazon Web Services accounts and on-premises servers.</p>
    */
-  class AWS_LICENSEMANAGER_API LicenseManagerClient : public Aws::Client::AWSJsonClient
+  class AWS_LICENSEMANAGER_API LicenseManagerClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<LicenseManagerClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -72,7 +73,6 @@ namespace LicenseManager
 
         /* End of legacy constructors due deprecation */
         virtual ~LicenseManagerClient();
-
 
         /**
          * <p>Accepts the specified grant.</p><p><h3>See Also:</h3>   <a
@@ -983,6 +983,7 @@ namespace LicenseManager
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<LicenseManagerEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<LicenseManagerClient>;
       void init(const LicenseManagerClientConfiguration& clientConfiguration);
 
       LicenseManagerClientConfiguration m_clientConfiguration;

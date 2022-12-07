@@ -7,6 +7,7 @@
 #include <aws/healthlake/HealthLake_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/healthlake/HealthLakeServiceClientModel.h>
 
@@ -19,7 +20,7 @@ namespace HealthLake
    * store, transform, query, and analyze their FHIR-formatted data in a consistent
    * fashion in the cloud.</p>
    */
-  class AWS_HEALTHLAKE_API HealthLakeClient : public Aws::Client::AWSJsonClient
+  class AWS_HEALTHLAKE_API HealthLakeClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<HealthLakeClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -73,7 +74,6 @@ namespace HealthLake
 
         /* End of legacy constructors due deprecation */
         virtual ~HealthLakeClient();
-
 
         /**
          * <p>Creates a Data Store that can ingest and export FHIR formatted
@@ -310,6 +310,7 @@ namespace HealthLake
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<HealthLakeEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<HealthLakeClient>;
       void init(const HealthLakeClientConfiguration& clientConfiguration);
 
       HealthLakeClientConfiguration m_clientConfiguration;

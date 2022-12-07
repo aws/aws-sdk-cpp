@@ -7,6 +7,7 @@
 #include <aws/personalize-runtime/PersonalizeRuntime_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/personalize-runtime/PersonalizeRuntimeServiceClientModel.h>
 
@@ -17,7 +18,7 @@ namespace PersonalizeRuntime
   /**
    * <p/>
    */
-  class AWS_PERSONALIZERUNTIME_API PersonalizeRuntimeClient : public Aws::Client::AWSJsonClient
+  class AWS_PERSONALIZERUNTIME_API PersonalizeRuntimeClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<PersonalizeRuntimeClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -72,7 +73,6 @@ namespace PersonalizeRuntime
         /* End of legacy constructors due deprecation */
         virtual ~PersonalizeRuntimeClient();
 
-
         /**
          * <p>Re-ranks a list of recommended items for the given user. The first item in
          * the list is deemed the most likely item to be of interest to the user.</p>
@@ -126,6 +126,7 @@ namespace PersonalizeRuntime
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<PersonalizeRuntimeEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<PersonalizeRuntimeClient>;
       void init(const PersonalizeRuntimeClientConfiguration& clientConfiguration);
 
       PersonalizeRuntimeClientConfiguration m_clientConfiguration;

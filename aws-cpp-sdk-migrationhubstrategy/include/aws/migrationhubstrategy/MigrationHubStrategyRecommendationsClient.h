@@ -7,6 +7,7 @@
 #include <aws/migrationhubstrategy/MigrationHubStrategyRecommendations_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/migrationhubstrategy/MigrationHubStrategyRecommendationsServiceClientModel.h>
 
@@ -25,7 +26,7 @@ namespace MigrationHubStrategyRecommendations
    * href=&quot;http://aws.amazon.com/tools/#SDKs&quot;&gt;AWS
    * SDKs&lt;/a&gt;.&lt;/p&gt; </code></pre>
    */
-  class AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API MigrationHubStrategyRecommendationsClient : public Aws::Client::AWSJsonClient
+  class AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API MigrationHubStrategyRecommendationsClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<MigrationHubStrategyRecommendationsClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -79,7 +80,6 @@ namespace MigrationHubStrategyRecommendations
 
         /* End of legacy constructors due deprecation */
         virtual ~MigrationHubStrategyRecommendationsClient();
-
 
         /**
          * <p> Retrieves details about an application component. </p><p><h3>See Also:</h3> 
@@ -442,6 +442,7 @@ namespace MigrationHubStrategyRecommendations
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<MigrationHubStrategyRecommendationsEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<MigrationHubStrategyRecommendationsClient>;
       void init(const MigrationHubStrategyRecommendationsClientConfiguration& clientConfiguration);
 
       MigrationHubStrategyRecommendationsClientConfiguration m_clientConfiguration;

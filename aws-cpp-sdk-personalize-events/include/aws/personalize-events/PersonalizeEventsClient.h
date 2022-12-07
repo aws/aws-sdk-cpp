@@ -7,6 +7,7 @@
 #include <aws/personalize-events/PersonalizeEvents_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/personalize-events/PersonalizeEventsServiceClientModel.h>
 
@@ -21,7 +22,7 @@ namespace PersonalizeEvents
    * href="https://docs.aws.amazon.com/personalize/latest/dg/recording-events.html">Recording
    * Events</a>.</p>
    */
-  class AWS_PERSONALIZEEVENTS_API PersonalizeEventsClient : public Aws::Client::AWSJsonClient
+  class AWS_PERSONALIZEEVENTS_API PersonalizeEventsClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<PersonalizeEventsClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -75,7 +76,6 @@ namespace PersonalizeEvents
 
         /* End of legacy constructors due deprecation */
         virtual ~PersonalizeEventsClient();
-
 
         /**
          * <p>Records user interaction event data. For more information see <a
@@ -138,6 +138,7 @@ namespace PersonalizeEvents
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<PersonalizeEventsEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<PersonalizeEventsClient>;
       void init(const PersonalizeEventsClientConfiguration& clientConfiguration);
 
       PersonalizeEventsClientConfiguration m_clientConfiguration;

@@ -184,16 +184,13 @@ AddPermissionOutcomeCallable SQSClient::AddPermissionCallable(const AddPermissio
   return task->get_future();
 }
 
-void SQSClient::AddPermissionAsync(const AddPermissionRequest& request,
-      const AddPermissionResponseReceivedHandler& handler,
-      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& handlerContext) const
+void SQSClient::AddPermissionAsync(const AddPermissionRequest& request, const AddPermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, handlerContext]()
+  m_executor->Submit( [this, request, handler, context]()
     {
-      handler(this, request, AddPermission(request), handlerContext);
+      handler(this, request, AddPermission(request), context);
     } );
 }
-
 ChangeMessageVisibilityOutcome SQSClient::ChangeMessageVisibility(const ChangeMessageVisibilityRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ChangeMessageVisibility, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -208,16 +205,13 @@ ChangeMessageVisibilityOutcomeCallable SQSClient::ChangeMessageVisibilityCallabl
   return task->get_future();
 }
 
-void SQSClient::ChangeMessageVisibilityAsync(const ChangeMessageVisibilityRequest& request,
-      const ChangeMessageVisibilityResponseReceivedHandler& handler,
-      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& handlerContext) const
+void SQSClient::ChangeMessageVisibilityAsync(const ChangeMessageVisibilityRequest& request, const ChangeMessageVisibilityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, handlerContext]()
+  m_executor->Submit( [this, request, handler, context]()
     {
-      handler(this, request, ChangeMessageVisibility(request), handlerContext);
+      handler(this, request, ChangeMessageVisibility(request), context);
     } );
 }
-
 ChangeMessageVisibilityBatchOutcome SQSClient::ChangeMessageVisibilityBatch(const ChangeMessageVisibilityBatchRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ChangeMessageVisibilityBatch, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -232,16 +226,13 @@ ChangeMessageVisibilityBatchOutcomeCallable SQSClient::ChangeMessageVisibilityBa
   return task->get_future();
 }
 
-void SQSClient::ChangeMessageVisibilityBatchAsync(const ChangeMessageVisibilityBatchRequest& request,
-      const ChangeMessageVisibilityBatchResponseReceivedHandler& handler,
-      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& handlerContext) const
+void SQSClient::ChangeMessageVisibilityBatchAsync(const ChangeMessageVisibilityBatchRequest& request, const ChangeMessageVisibilityBatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, handlerContext]()
+  m_executor->Submit( [this, request, handler, context]()
     {
-      handler(this, request, ChangeMessageVisibilityBatch(request), handlerContext);
+      handler(this, request, ChangeMessageVisibilityBatch(request), context);
     } );
 }
-
 CreateQueueOutcome SQSClient::CreateQueue(const CreateQueueRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateQueue, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -258,16 +249,13 @@ CreateQueueOutcomeCallable SQSClient::CreateQueueCallable(const CreateQueueReque
   return task->get_future();
 }
 
-void SQSClient::CreateQueueAsync(const CreateQueueRequest& request,
-      const CreateQueueResponseReceivedHandler& handler,
-      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& handlerContext) const
+void SQSClient::CreateQueueAsync(const CreateQueueRequest& request, const CreateQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, handlerContext]()
+  m_executor->Submit( [this, request, handler, context]()
     {
-      handler(this, request, CreateQueue(request), handlerContext);
+      handler(this, request, CreateQueue(request), context);
     } );
 }
-
 DeleteMessageOutcome SQSClient::DeleteMessage(const DeleteMessageRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteMessage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -282,16 +270,13 @@ DeleteMessageOutcomeCallable SQSClient::DeleteMessageCallable(const DeleteMessag
   return task->get_future();
 }
 
-void SQSClient::DeleteMessageAsync(const DeleteMessageRequest& request,
-      const DeleteMessageResponseReceivedHandler& handler,
-      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& handlerContext) const
+void SQSClient::DeleteMessageAsync(const DeleteMessageRequest& request, const DeleteMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, handlerContext]()
+  m_executor->Submit( [this, request, handler, context]()
     {
-      handler(this, request, DeleteMessage(request), handlerContext);
+      handler(this, request, DeleteMessage(request), context);
     } );
 }
-
 DeleteMessageBatchOutcome SQSClient::DeleteMessageBatch(const DeleteMessageBatchRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteMessageBatch, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -306,16 +291,13 @@ DeleteMessageBatchOutcomeCallable SQSClient::DeleteMessageBatchCallable(const De
   return task->get_future();
 }
 
-void SQSClient::DeleteMessageBatchAsync(const DeleteMessageBatchRequest& request,
-      const DeleteMessageBatchResponseReceivedHandler& handler,
-      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& handlerContext) const
+void SQSClient::DeleteMessageBatchAsync(const DeleteMessageBatchRequest& request, const DeleteMessageBatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, handlerContext]()
+  m_executor->Submit( [this, request, handler, context]()
     {
-      handler(this, request, DeleteMessageBatch(request), handlerContext);
+      handler(this, request, DeleteMessageBatch(request), context);
     } );
 }
-
 DeleteQueueOutcome SQSClient::DeleteQueue(const DeleteQueueRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteQueue, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -330,16 +312,13 @@ DeleteQueueOutcomeCallable SQSClient::DeleteQueueCallable(const DeleteQueueReque
   return task->get_future();
 }
 
-void SQSClient::DeleteQueueAsync(const DeleteQueueRequest& request,
-      const DeleteQueueResponseReceivedHandler& handler,
-      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& handlerContext) const
+void SQSClient::DeleteQueueAsync(const DeleteQueueRequest& request, const DeleteQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, handlerContext]()
+  m_executor->Submit( [this, request, handler, context]()
     {
-      handler(this, request, DeleteQueue(request), handlerContext);
+      handler(this, request, DeleteQueue(request), context);
     } );
 }
-
 GetQueueAttributesOutcome SQSClient::GetQueueAttributes(const GetQueueAttributesRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetQueueAttributes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -354,16 +333,13 @@ GetQueueAttributesOutcomeCallable SQSClient::GetQueueAttributesCallable(const Ge
   return task->get_future();
 }
 
-void SQSClient::GetQueueAttributesAsync(const GetQueueAttributesRequest& request,
-      const GetQueueAttributesResponseReceivedHandler& handler,
-      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& handlerContext) const
+void SQSClient::GetQueueAttributesAsync(const GetQueueAttributesRequest& request, const GetQueueAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, handlerContext]()
+  m_executor->Submit( [this, request, handler, context]()
     {
-      handler(this, request, GetQueueAttributes(request), handlerContext);
+      handler(this, request, GetQueueAttributes(request), context);
     } );
 }
-
 GetQueueUrlOutcome SQSClient::GetQueueUrl(const GetQueueUrlRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetQueueUrl, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -380,16 +356,13 @@ GetQueueUrlOutcomeCallable SQSClient::GetQueueUrlCallable(const GetQueueUrlReque
   return task->get_future();
 }
 
-void SQSClient::GetQueueUrlAsync(const GetQueueUrlRequest& request,
-      const GetQueueUrlResponseReceivedHandler& handler,
-      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& handlerContext) const
+void SQSClient::GetQueueUrlAsync(const GetQueueUrlRequest& request, const GetQueueUrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, handlerContext]()
+  m_executor->Submit( [this, request, handler, context]()
     {
-      handler(this, request, GetQueueUrl(request), handlerContext);
+      handler(this, request, GetQueueUrl(request), context);
     } );
 }
-
 ListDeadLetterSourceQueuesOutcome SQSClient::ListDeadLetterSourceQueues(const ListDeadLetterSourceQueuesRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListDeadLetterSourceQueues, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -404,16 +377,13 @@ ListDeadLetterSourceQueuesOutcomeCallable SQSClient::ListDeadLetterSourceQueuesC
   return task->get_future();
 }
 
-void SQSClient::ListDeadLetterSourceQueuesAsync(const ListDeadLetterSourceQueuesRequest& request,
-      const ListDeadLetterSourceQueuesResponseReceivedHandler& handler,
-      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& handlerContext) const
+void SQSClient::ListDeadLetterSourceQueuesAsync(const ListDeadLetterSourceQueuesRequest& request, const ListDeadLetterSourceQueuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, handlerContext]()
+  m_executor->Submit( [this, request, handler, context]()
     {
-      handler(this, request, ListDeadLetterSourceQueues(request), handlerContext);
+      handler(this, request, ListDeadLetterSourceQueues(request), context);
     } );
 }
-
 ListQueueTagsOutcome SQSClient::ListQueueTags(const ListQueueTagsRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListQueueTags, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -428,16 +398,13 @@ ListQueueTagsOutcomeCallable SQSClient::ListQueueTagsCallable(const ListQueueTag
   return task->get_future();
 }
 
-void SQSClient::ListQueueTagsAsync(const ListQueueTagsRequest& request,
-      const ListQueueTagsResponseReceivedHandler& handler,
-      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& handlerContext) const
+void SQSClient::ListQueueTagsAsync(const ListQueueTagsRequest& request, const ListQueueTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, handlerContext]()
+  m_executor->Submit( [this, request, handler, context]()
     {
-      handler(this, request, ListQueueTags(request), handlerContext);
+      handler(this, request, ListQueueTags(request), context);
     } );
 }
-
 ListQueuesOutcome SQSClient::ListQueues(const ListQueuesRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListQueues, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -454,16 +421,13 @@ ListQueuesOutcomeCallable SQSClient::ListQueuesCallable(const ListQueuesRequest&
   return task->get_future();
 }
 
-void SQSClient::ListQueuesAsync(const ListQueuesRequest& request,
-      const ListQueuesResponseReceivedHandler& handler,
-      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& handlerContext) const
+void SQSClient::ListQueuesAsync(const ListQueuesRequest& request, const ListQueuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, handlerContext]()
+  m_executor->Submit( [this, request, handler, context]()
     {
-      handler(this, request, ListQueues(request), handlerContext);
+      handler(this, request, ListQueues(request), context);
     } );
 }
-
 PurgeQueueOutcome SQSClient::PurgeQueue(const PurgeQueueRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PurgeQueue, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -478,16 +442,13 @@ PurgeQueueOutcomeCallable SQSClient::PurgeQueueCallable(const PurgeQueueRequest&
   return task->get_future();
 }
 
-void SQSClient::PurgeQueueAsync(const PurgeQueueRequest& request,
-      const PurgeQueueResponseReceivedHandler& handler,
-      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& handlerContext) const
+void SQSClient::PurgeQueueAsync(const PurgeQueueRequest& request, const PurgeQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, handlerContext]()
+  m_executor->Submit( [this, request, handler, context]()
     {
-      handler(this, request, PurgeQueue(request), handlerContext);
+      handler(this, request, PurgeQueue(request), context);
     } );
 }
-
 ReceiveMessageOutcome SQSClient::ReceiveMessage(const ReceiveMessageRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ReceiveMessage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -502,16 +463,13 @@ ReceiveMessageOutcomeCallable SQSClient::ReceiveMessageCallable(const ReceiveMes
   return task->get_future();
 }
 
-void SQSClient::ReceiveMessageAsync(const ReceiveMessageRequest& request,
-      const ReceiveMessageResponseReceivedHandler& handler,
-      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& handlerContext) const
+void SQSClient::ReceiveMessageAsync(const ReceiveMessageRequest& request, const ReceiveMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, handlerContext]()
+  m_executor->Submit( [this, request, handler, context]()
     {
-      handler(this, request, ReceiveMessage(request), handlerContext);
+      handler(this, request, ReceiveMessage(request), context);
     } );
 }
-
 RemovePermissionOutcome SQSClient::RemovePermission(const RemovePermissionRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, RemovePermission, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -526,16 +484,13 @@ RemovePermissionOutcomeCallable SQSClient::RemovePermissionCallable(const Remove
   return task->get_future();
 }
 
-void SQSClient::RemovePermissionAsync(const RemovePermissionRequest& request,
-      const RemovePermissionResponseReceivedHandler& handler,
-      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& handlerContext) const
+void SQSClient::RemovePermissionAsync(const RemovePermissionRequest& request, const RemovePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, handlerContext]()
+  m_executor->Submit( [this, request, handler, context]()
     {
-      handler(this, request, RemovePermission(request), handlerContext);
+      handler(this, request, RemovePermission(request), context);
     } );
 }
-
 SendMessageOutcome SQSClient::SendMessage(const SendMessageRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, SendMessage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -550,16 +505,13 @@ SendMessageOutcomeCallable SQSClient::SendMessageCallable(const SendMessageReque
   return task->get_future();
 }
 
-void SQSClient::SendMessageAsync(const SendMessageRequest& request,
-      const SendMessageResponseReceivedHandler& handler,
-      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& handlerContext) const
+void SQSClient::SendMessageAsync(const SendMessageRequest& request, const SendMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, handlerContext]()
+  m_executor->Submit( [this, request, handler, context]()
     {
-      handler(this, request, SendMessage(request), handlerContext);
+      handler(this, request, SendMessage(request), context);
     } );
 }
-
 SendMessageBatchOutcome SQSClient::SendMessageBatch(const SendMessageBatchRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, SendMessageBatch, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -574,16 +526,13 @@ SendMessageBatchOutcomeCallable SQSClient::SendMessageBatchCallable(const SendMe
   return task->get_future();
 }
 
-void SQSClient::SendMessageBatchAsync(const SendMessageBatchRequest& request,
-      const SendMessageBatchResponseReceivedHandler& handler,
-      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& handlerContext) const
+void SQSClient::SendMessageBatchAsync(const SendMessageBatchRequest& request, const SendMessageBatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, handlerContext]()
+  m_executor->Submit( [this, request, handler, context]()
     {
-      handler(this, request, SendMessageBatch(request), handlerContext);
+      handler(this, request, SendMessageBatch(request), context);
     } );
 }
-
 SetQueueAttributesOutcome SQSClient::SetQueueAttributes(const SetQueueAttributesRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, SetQueueAttributes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -598,16 +547,13 @@ SetQueueAttributesOutcomeCallable SQSClient::SetQueueAttributesCallable(const Se
   return task->get_future();
 }
 
-void SQSClient::SetQueueAttributesAsync(const SetQueueAttributesRequest& request,
-      const SetQueueAttributesResponseReceivedHandler& handler,
-      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& handlerContext) const
+void SQSClient::SetQueueAttributesAsync(const SetQueueAttributesRequest& request, const SetQueueAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, handlerContext]()
+  m_executor->Submit( [this, request, handler, context]()
     {
-      handler(this, request, SetQueueAttributes(request), handlerContext);
+      handler(this, request, SetQueueAttributes(request), context);
     } );
 }
-
 TagQueueOutcome SQSClient::TagQueue(const TagQueueRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagQueue, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -622,16 +568,13 @@ TagQueueOutcomeCallable SQSClient::TagQueueCallable(const TagQueueRequest& reque
   return task->get_future();
 }
 
-void SQSClient::TagQueueAsync(const TagQueueRequest& request,
-      const TagQueueResponseReceivedHandler& handler,
-      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& handlerContext) const
+void SQSClient::TagQueueAsync(const TagQueueRequest& request, const TagQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, handlerContext]()
+  m_executor->Submit( [this, request, handler, context]()
     {
-      handler(this, request, TagQueue(request), handlerContext);
+      handler(this, request, TagQueue(request), context);
     } );
 }
-
 UntagQueueOutcome SQSClient::UntagQueue(const UntagQueueRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagQueue, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -646,13 +589,10 @@ UntagQueueOutcomeCallable SQSClient::UntagQueueCallable(const UntagQueueRequest&
   return task->get_future();
 }
 
-void SQSClient::UntagQueueAsync(const UntagQueueRequest& request,
-      const UntagQueueResponseReceivedHandler& handler,
-      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& handlerContext) const
+void SQSClient::UntagQueueAsync(const UntagQueueRequest& request, const UntagQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, handlerContext]()
+  m_executor->Submit( [this, request, handler, context]()
     {
-      handler(this, request, UntagQueue(request), handlerContext);
+      handler(this, request, UntagQueue(request), context);
     } );
 }
-

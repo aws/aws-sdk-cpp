@@ -7,6 +7,7 @@
 #include <aws/serverlessrepo/ServerlessApplicationRepository_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/serverlessrepo/ServerlessApplicationRepositoryServiceClientModel.h>
 
@@ -61,7 +62,7 @@ namespace ServerlessApplicationRepository
    * </li>
  </ul>
    */
-  class AWS_SERVERLESSAPPLICATIONREPOSITORY_API ServerlessApplicationRepositoryClient : public Aws::Client::AWSJsonClient
+  class AWS_SERVERLESSAPPLICATIONREPOSITORY_API ServerlessApplicationRepositoryClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<ServerlessApplicationRepositoryClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -115,7 +116,6 @@ namespace ServerlessApplicationRepository
 
         /* End of legacy constructors due deprecation */
         virtual ~ServerlessApplicationRepositoryClient();
-
 
         /**
          * <p>Creates an application, optionally including an AWS SAM file to create the
@@ -370,6 +370,7 @@ namespace ServerlessApplicationRepository
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<ServerlessApplicationRepositoryEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<ServerlessApplicationRepositoryClient>;
       void init(const ServerlessApplicationRepositoryClientConfiguration& clientConfiguration);
 
       ServerlessApplicationRepositoryClientConfiguration m_clientConfiguration;

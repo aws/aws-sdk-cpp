@@ -8,6 +8,7 @@
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/route53/Route53ServiceClientModel.h>
 
@@ -28,7 +29,7 @@ namespace Route53
    * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/welcome-health-checks.html">How
    * Route 53 checks the health of your resources</a>.</p> </li> </ul>
    */
-  class AWS_ROUTE53_API Route53Client : public Aws::Client::AWSXMLClient
+  class AWS_ROUTE53_API Route53Client : public Aws::Client::AWSXMLClient, public Aws::Client::ClientWithAsyncTemplateMethods<Route53Client>
   {
     public:
       typedef Aws::Client::AWSXMLClient BASECLASS;
@@ -1968,6 +1969,7 @@ namespace Route53
         void OverrideEndpoint(const Aws::String& endpoint);
         std::shared_ptr<Route53EndpointProviderBase>& accessEndpointProvider();
   private:
+        friend class Aws::Client::ClientWithAsyncTemplateMethods<Route53Client>;
         void init(const Route53ClientConfiguration& clientConfiguration);
 
         Route53ClientConfiguration m_clientConfiguration;

@@ -7,6 +7,7 @@
 #include <aws/fis/FIS_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/fis/FISServiceClientModel.h>
 
@@ -21,7 +22,7 @@ namespace FIS
    * href="https://docs.aws.amazon.com/fis/latest/userguide/">Fault Injection
    * Simulator User Guide</a>.</p>
    */
-  class AWS_FIS_API FISClient : public Aws::Client::AWSJsonClient
+  class AWS_FIS_API FISClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<FISClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -75,7 +76,6 @@ namespace FIS
 
         /* End of legacy constructors due deprecation */
         virtual ~FISClient();
-
 
         /**
          * <p>Creates an experiment template. </p> <p>An experiment template includes the
@@ -371,6 +371,7 @@ namespace FIS
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<FISEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<FISClient>;
       void init(const FISClientConfiguration& clientConfiguration);
 
       FISClientConfiguration m_clientConfiguration;

@@ -7,6 +7,7 @@
 #include <aws/iot1click-devices/IoT1ClickDevicesService_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/iot1click-devices/IoT1ClickDevicesServiceServiceClientModel.h>
 
@@ -21,7 +22,7 @@ namespace IoT1ClickDevicesService
    * web services
  protocols.</p>
    */
-  class AWS_IOT1CLICKDEVICESSERVICE_API IoT1ClickDevicesServiceClient : public Aws::Client::AWSJsonClient
+  class AWS_IOT1CLICKDEVICESSERVICE_API IoT1ClickDevicesServiceClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<IoT1ClickDevicesServiceClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -75,7 +76,6 @@ namespace IoT1ClickDevicesService
 
         /* End of legacy constructors due deprecation */
         virtual ~IoT1ClickDevicesServiceClient();
-
 
         /**
          * <p>Adds device(s) to your account (i.e., claim one or more devices) if and only
@@ -339,6 +339,7 @@ namespace IoT1ClickDevicesService
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<IoT1ClickDevicesServiceEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<IoT1ClickDevicesServiceClient>;
       void init(const IoT1ClickDevicesServiceClientConfiguration& clientConfiguration);
 
       IoT1ClickDevicesServiceClientConfiguration m_clientConfiguration;

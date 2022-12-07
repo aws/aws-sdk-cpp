@@ -7,6 +7,7 @@
 #include <aws/apigatewayv2/ApiGatewayV2_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/apigatewayv2/ApiGatewayV2ServiceClientModel.h>
 
@@ -17,7 +18,7 @@ namespace ApiGatewayV2
   /**
    * <p>Amazon API Gateway V2</p>
    */
-  class AWS_APIGATEWAYV2_API ApiGatewayV2Client : public Aws::Client::AWSJsonClient
+  class AWS_APIGATEWAYV2_API ApiGatewayV2Client : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<ApiGatewayV2Client>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -71,7 +72,6 @@ namespace ApiGatewayV2
 
         /* End of legacy constructors due deprecation */
         virtual ~ApiGatewayV2Client();
-
 
         /**
          * <p>Creates an Api resource.</p><p><h3>See Also:</h3>   <a
@@ -1302,6 +1302,7 @@ namespace ApiGatewayV2
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<ApiGatewayV2EndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<ApiGatewayV2Client>;
       void init(const ApiGatewayV2ClientConfiguration& clientConfiguration);
 
       ApiGatewayV2ClientConfiguration m_clientConfiguration;

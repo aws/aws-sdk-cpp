@@ -7,6 +7,7 @@
 #include <aws/ssm/SSM_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/ssm/SSMServiceClientModel.h>
 
@@ -44,7 +45,7 @@ namespace SSM
    * href="https://docs.aws.amazon.com/incident-manager/latest/APIReference/">Incident
    * Manager API Reference</a>.</p> </li> </ul>
    */
-  class AWS_SSM_API SSMClient : public Aws::Client::AWSJsonClient
+  class AWS_SSM_API SSMClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<SSMClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -98,7 +99,6 @@ namespace SSM
 
         /* End of legacy constructors due deprecation */
         virtual ~SSMClient();
-
 
         /**
          * <p>Adds or overwrites one or more tags for the specified resource. <i>Tags</i>
@@ -3040,6 +3040,7 @@ namespace SSM
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<SSMEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<SSMClient>;
       void init(const SSMClientConfiguration& clientConfiguration);
 
       SSMClientConfiguration m_clientConfiguration;

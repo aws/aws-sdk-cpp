@@ -7,6 +7,7 @@
 #include <aws/mediapackage/MediaPackage_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/mediapackage/MediaPackageServiceClientModel.h>
 
@@ -17,7 +18,7 @@ namespace MediaPackage
   /**
    * AWS Elemental MediaPackage
    */
-  class AWS_MEDIAPACKAGE_API MediaPackageClient : public Aws::Client::AWSJsonClient
+  class AWS_MEDIAPACKAGE_API MediaPackageClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<MediaPackageClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -71,7 +72,6 @@ namespace MediaPackage
 
         /* End of legacy constructors due deprecation */
         virtual ~MediaPackageClient();
-
 
         /**
          * Changes the Channel's properities to configure log subscription<p><h3>See
@@ -379,6 +379,7 @@ namespace MediaPackage
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<MediaPackageEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<MediaPackageClient>;
       void init(const MediaPackageClientConfiguration& clientConfiguration);
 
       MediaPackageClientConfiguration m_clientConfiguration;

@@ -8,6 +8,7 @@
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/sdb/SimpleDBServiceClientModel.h>
 
@@ -31,7 +32,7 @@ namespace SimpleDB
    * href="http://aws.amazon.com/simpledb/">http://aws.amazon.com/simpledb/</a> for
    * more information. </p>
    */
-  class AWS_SIMPLEDB_API SimpleDBClient : public Aws::Client::AWSXMLClient
+  class AWS_SIMPLEDB_API SimpleDBClient : public Aws::Client::AWSXMLClient, public Aws::Client::ClientWithAsyncTemplateMethods<SimpleDBClient>
   {
     public:
       typedef Aws::Client::AWSXMLClient BASECLASS;
@@ -378,6 +379,7 @@ namespace SimpleDB
         void OverrideEndpoint(const Aws::String& endpoint);
         std::shared_ptr<SimpleDBEndpointProviderBase>& accessEndpointProvider();
   private:
+        friend class Aws::Client::ClientWithAsyncTemplateMethods<SimpleDBClient>;
         void init(const SimpleDBClientConfiguration& clientConfiguration);
 
         SimpleDBClientConfiguration m_clientConfiguration;

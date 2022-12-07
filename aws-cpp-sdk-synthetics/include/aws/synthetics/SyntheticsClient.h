@@ -7,6 +7,7 @@
 #include <aws/synthetics/Synthetics_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/synthetics/SyntheticsServiceClientModel.h>
 
@@ -31,7 +32,7 @@ namespace Synthetics
    * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/servicelens_canaries_security.html">Security
    * Considerations for Synthetics Canaries</a>.</p>
    */
-  class AWS_SYNTHETICS_API SyntheticsClient : public Aws::Client::AWSJsonClient
+  class AWS_SYNTHETICS_API SyntheticsClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<SyntheticsClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -85,7 +86,6 @@ namespace Synthetics
 
         /* End of legacy constructors due deprecation */
         virtual ~SyntheticsClient();
-
 
         /**
          * <p>Associates a canary with a group. Using groups can help you with managing and
@@ -567,6 +567,7 @@ namespace Synthetics
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<SyntheticsEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<SyntheticsClient>;
       void init(const SyntheticsClientConfiguration& clientConfiguration);
 
       SyntheticsClientConfiguration m_clientConfiguration;

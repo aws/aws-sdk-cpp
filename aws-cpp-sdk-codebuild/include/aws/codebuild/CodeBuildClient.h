@@ -7,6 +7,7 @@
 #include <aws/codebuild/CodeBuild_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/codebuild/CodeBuildServiceClientModel.h>
 
@@ -27,7 +28,7 @@ namespace CodeBuild
    * href="https://docs.aws.amazon.com/codebuild/latest/userguide/welcome.html">CodeBuild
    * User Guide</a>.</i> </p>
    */
-  class AWS_CODEBUILD_API CodeBuildClient : public Aws::Client::AWSJsonClient
+  class AWS_CODEBUILD_API CodeBuildClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<CodeBuildClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -81,7 +82,6 @@ namespace CodeBuild
 
         /* End of legacy constructors due deprecation */
         virtual ~CodeBuildClient();
-
 
         /**
          * <p>Deletes one or more builds.</p><p><h3>See Also:</h3>   <a
@@ -919,6 +919,7 @@ namespace CodeBuild
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<CodeBuildEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<CodeBuildClient>;
       void init(const CodeBuildClientConfiguration& clientConfiguration);
 
       CodeBuildClientConfiguration m_clientConfiguration;

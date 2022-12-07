@@ -7,6 +7,7 @@
 #include <aws/discovery/ApplicationDiscoveryService_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/discovery/ApplicationDiscoveryServiceServiceClientModel.h>
 
@@ -76,7 +77,7 @@ namespace ApplicationDiscoveryService
    * You can operate Application Discovery Service offline to inspect collected data
    * before it is shared with the service.</p> 
    */
-  class AWS_APPLICATIONDISCOVERYSERVICE_API ApplicationDiscoveryServiceClient : public Aws::Client::AWSJsonClient
+  class AWS_APPLICATIONDISCOVERYSERVICE_API ApplicationDiscoveryServiceClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<ApplicationDiscoveryServiceClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -130,7 +131,6 @@ namespace ApplicationDiscoveryService
 
         /* End of legacy constructors due deprecation */
         virtual ~ApplicationDiscoveryServiceClient();
-
 
         /**
          * <p>Associates one or more configuration items with an application.</p><p><h3>See
@@ -611,6 +611,7 @@ namespace ApplicationDiscoveryService
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<ApplicationDiscoveryServiceEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<ApplicationDiscoveryServiceClient>;
       void init(const ApplicationDiscoveryServiceClientConfiguration& clientConfiguration);
 
       ApplicationDiscoveryServiceClientConfiguration m_clientConfiguration;

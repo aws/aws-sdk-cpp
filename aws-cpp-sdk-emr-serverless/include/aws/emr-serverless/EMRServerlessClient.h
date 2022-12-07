@@ -7,6 +7,7 @@
 #include <aws/emr-serverless/EMRServerless_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/emr-serverless/EMRServerlessServiceClientModel.h>
 
@@ -32,7 +33,7 @@ namespace EMRServerless
    * in Amazon EMR Serverless service endpoints. For example,
    * <code>emr-serverless.us-east-2.amazonaws.com</code>.</p> </li> </ul>
    */
-  class AWS_EMRSERVERLESS_API EMRServerlessClient : public Aws::Client::AWSJsonClient
+  class AWS_EMRSERVERLESS_API EMRServerlessClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<EMRServerlessClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -86,7 +87,6 @@ namespace EMRServerless
 
         /* End of legacy constructors due deprecation */
         virtual ~EMRServerlessClient();
-
 
         /**
          * <p>Cancels a job run.</p><p><h3>See Also:</h3>   <a
@@ -359,6 +359,7 @@ namespace EMRServerless
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<EMRServerlessEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<EMRServerlessClient>;
       void init(const EMRServerlessClientConfiguration& clientConfiguration);
 
       EMRServerlessClientConfiguration m_clientConfiguration;

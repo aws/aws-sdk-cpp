@@ -7,6 +7,7 @@
 #include <aws/chime/Chime_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/chime/ChimeServiceClientModel.h>
 
@@ -53,7 +54,7 @@ namespace Chime
    * and Access Management for Amazon Chime</a> in the <i>Amazon Chime Administration
    * Guide</i>.</p>
    */
-  class AWS_CHIME_API ChimeClient : public Aws::Client::AWSJsonClient
+  class AWS_CHIME_API ChimeClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<ChimeClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -107,7 +108,6 @@ namespace Chime
 
         /* End of legacy constructors due deprecation */
         virtual ~ChimeClient();
-
 
         /**
          * <p>Associates a phone number with the specified Amazon Chime user.</p><p><h3>See
@@ -3822,6 +3822,7 @@ namespace Chime
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<ChimeEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<ChimeClient>;
       void init(const ChimeClientConfiguration& clientConfiguration);
 
       ChimeClientConfiguration m_clientConfiguration;

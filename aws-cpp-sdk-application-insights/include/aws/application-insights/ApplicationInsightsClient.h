@@ -7,6 +7,7 @@
 #include <aws/application-insights/ApplicationInsights_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/application-insights/ApplicationInsightsServiceClientModel.h>
 
@@ -29,7 +30,7 @@ namespace ApplicationInsights
    * SQL Server database is occurring. It bases this analysis on impactful metrics
    * and log errors. </p>
    */
-  class AWS_APPLICATIONINSIGHTS_API ApplicationInsightsClient : public Aws::Client::AWSJsonClient
+  class AWS_APPLICATIONINSIGHTS_API ApplicationInsightsClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<ApplicationInsightsClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -83,7 +84,6 @@ namespace ApplicationInsights
 
         /* End of legacy constructors due deprecation */
         virtual ~ApplicationInsightsClient();
-
 
         /**
          * <p>Adds an application that is created from a resource group.</p><p><h3>See
@@ -589,6 +589,7 @@ namespace ApplicationInsights
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<ApplicationInsightsEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<ApplicationInsightsClient>;
       void init(const ApplicationInsightsClientConfiguration& clientConfiguration);
 
       ApplicationInsightsClientConfiguration m_clientConfiguration;

@@ -7,6 +7,7 @@
 #include <aws/awstransfer/Transfer_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/awstransfer/TransferServiceClientModel.h>
 
@@ -28,7 +29,7 @@ namespace Transfer
    * archiving. Getting started with Transfer Family is easy since there is no
    * infrastructure to buy and set up.</p>
    */
-  class AWS_TRANSFER_API TransferClient : public Aws::Client::AWSJsonClient
+  class AWS_TRANSFER_API TransferClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<TransferClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -82,7 +83,6 @@ namespace Transfer
 
         /* End of legacy constructors due deprecation */
         virtual ~TransferClient();
-
 
         /**
          * <p>Used by administrators to choose which groups in the directory should have
@@ -1232,6 +1232,7 @@ namespace Transfer
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<TransferEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<TransferClient>;
       void init(const TransferClientConfiguration& clientConfiguration);
 
       TransferClientConfiguration m_clientConfiguration;

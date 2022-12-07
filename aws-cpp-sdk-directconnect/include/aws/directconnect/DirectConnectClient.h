@@ -7,6 +7,7 @@
 #include <aws/directconnect/DirectConnect_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/directconnect/DirectConnectServiceClientModel.h>
 
@@ -25,7 +26,7 @@ namespace DirectConnect
    * Regions. Amazon Web Services resources in the China Regions can only be accessed
    * through locations associated with those Regions.</p>
    */
-  class AWS_DIRECTCONNECT_API DirectConnectClient : public Aws::Client::AWSJsonClient
+  class AWS_DIRECTCONNECT_API DirectConnectClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<DirectConnectClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -79,7 +80,6 @@ namespace DirectConnect
 
         /* End of legacy constructors due deprecation */
         virtual ~DirectConnectClient();
-
 
         /**
          * <p>Accepts a proposal request to attach a virtual private gateway or transit
@@ -1380,6 +1380,7 @@ namespace DirectConnect
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<DirectConnectEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<DirectConnectClient>;
       void init(const DirectConnectClientConfiguration& clientConfiguration);
 
       DirectConnectClientConfiguration m_clientConfiguration;

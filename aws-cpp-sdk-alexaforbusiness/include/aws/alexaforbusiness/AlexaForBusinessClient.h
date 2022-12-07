@@ -7,6 +7,7 @@
 #include <aws/alexaforbusiness/AlexaForBusiness_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/alexaforbusiness/AlexaForBusinessServiceClientModel.h>
 
@@ -26,7 +27,7 @@ namespace AlexaForBusiness
    * solutions, register their products with Alexa for Business, and manage them as
    * shared devices in their organization. </p>
    */
-  class AWS_ALEXAFORBUSINESS_API AlexaForBusinessClient : public Aws::Client::AWSJsonClient
+  class AWS_ALEXAFORBUSINESS_API AlexaForBusinessClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<AlexaForBusinessClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -80,7 +81,6 @@ namespace AlexaForBusiness
 
         /* End of legacy constructors due deprecation */
         virtual ~AlexaForBusinessClient();
-
 
         /**
          * <p>Associates a skill with the organization under the customer's AWS account. If
@@ -1764,6 +1764,7 @@ namespace AlexaForBusiness
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<AlexaForBusinessEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<AlexaForBusinessClient>;
       void init(const AlexaForBusinessClientConfiguration& clientConfiguration);
 
       AlexaForBusinessClientConfiguration m_clientConfiguration;

@@ -7,6 +7,7 @@
 #include <aws/forecast/ForecastService_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/forecast/ForecastServiceServiceClientModel.h>
 
@@ -17,7 +18,7 @@ namespace ForecastService
   /**
    * <p>Provides APIs for creating and managing Amazon Forecast resources.</p>
    */
-  class AWS_FORECASTSERVICE_API ForecastServiceClient : public Aws::Client::AWSJsonClient
+  class AWS_FORECASTSERVICE_API ForecastServiceClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<ForecastServiceClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -71,7 +72,6 @@ namespace ForecastService
 
         /* End of legacy constructors due deprecation */
         virtual ~ForecastServiceClient();
-
 
         /**
          * <p>Creates an Amazon Forecast predictor.</p> <p>Amazon Forecast creates
@@ -1658,6 +1658,7 @@ namespace ForecastService
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<ForecastServiceEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<ForecastServiceClient>;
       void init(const ForecastServiceClientConfiguration& clientConfiguration);
 
       ForecastServiceClientConfiguration m_clientConfiguration;

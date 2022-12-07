@@ -7,6 +7,7 @@
 #include <aws/timestream-query/TimestreamQuery_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/timestream-query/TimestreamQueryServiceClientModel.h>
 
@@ -17,7 +18,7 @@ namespace TimestreamQuery
   /**
    * <fullname>Amazon Timestream Query </fullname> <p/>
    */
-  class AWS_TIMESTREAMQUERY_API TimestreamQueryClient : public Aws::Client::AWSJsonClient
+  class AWS_TIMESTREAMQUERY_API TimestreamQueryClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<TimestreamQueryClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -71,7 +72,6 @@ namespace TimestreamQuery
 
         /* End of legacy constructors due deprecation */
         virtual ~TimestreamQueryClient();
-
 
         /**
          * <p> Cancels a query that has been issued. Cancellation is provided only if the
@@ -349,6 +349,7 @@ namespace TimestreamQuery
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<TimestreamQueryEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<TimestreamQueryClient>;
       void init(const TimestreamQueryClientConfiguration& clientConfiguration);
 
       mutable Aws::Utils::ConcurrentCache<Aws::String, Aws::String> m_endpointsCache;

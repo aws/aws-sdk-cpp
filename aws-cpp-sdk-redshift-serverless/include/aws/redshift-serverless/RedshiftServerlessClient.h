@@ -7,6 +7,7 @@
 #include <aws/redshift-serverless/RedshiftServerless_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/redshift-serverless/RedshiftServerlessServiceClientModel.h>
 
@@ -28,7 +29,7 @@ namespace RedshiftServerless
    * href="https://docs.aws.amazon.com/redshift/latest/mgmt/serverless-whatis.html">What
    * is Amazon Redshift Serverless</a>. </p>
    */
-  class AWS_REDSHIFTSERVERLESS_API RedshiftServerlessClient : public Aws::Client::AWSJsonClient
+  class AWS_REDSHIFTSERVERLESS_API RedshiftServerlessClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<RedshiftServerlessClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -82,7 +83,6 @@ namespace RedshiftServerless
 
         /* End of legacy constructors due deprecation */
         virtual ~RedshiftServerlessClient();
-
 
         /**
          * <p>Converts a recovery point to a snapshot. For more information about recovery
@@ -808,6 +808,7 @@ namespace RedshiftServerless
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<RedshiftServerlessEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<RedshiftServerlessClient>;
       void init(const RedshiftServerlessClientConfiguration& clientConfiguration);
 
       RedshiftServerlessClientConfiguration m_clientConfiguration;

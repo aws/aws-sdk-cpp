@@ -7,6 +7,7 @@
 #include <aws/mgn/Mgn_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/mgn/MgnServiceClientModel.h>
 
@@ -17,7 +18,7 @@ namespace mgn
   /**
    * <p>The Application Migration Service service.</p>
    */
-  class AWS_MGN_API MgnClient : public Aws::Client::AWSJsonClient
+  class AWS_MGN_API MgnClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<MgnClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -71,7 +72,6 @@ namespace mgn
 
         /* End of legacy constructors due deprecation */
         virtual ~MgnClient();
-
 
         /**
          * <p>Archive application.</p><p><h3>See Also:</h3>   <a
@@ -1076,6 +1076,7 @@ namespace mgn
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<MgnEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<MgnClient>;
       void init(const MgnClientConfiguration& clientConfiguration);
 
       MgnClientConfiguration m_clientConfiguration;

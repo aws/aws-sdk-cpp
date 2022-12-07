@@ -7,6 +7,7 @@
 #include <aws/codeartifact/CodeArtifact_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/codeartifact/CodeArtifactServiceClientModel.h>
 
@@ -144,7 +145,7 @@ namespace CodeArtifact
    * versions of a package.</p> </li> <li> <p> <code>UpdateRepository</code>: Updates
    * the properties of a repository.</p> </li> </ul>
    */
-  class AWS_CODEARTIFACT_API CodeArtifactClient : public Aws::Client::AWSJsonClient
+  class AWS_CODEARTIFACT_API CodeArtifactClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<CodeArtifactClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -198,7 +199,6 @@ namespace CodeArtifact
 
         /* End of legacy constructors due deprecation */
         virtual ~CodeArtifactClient();
-
 
         /**
          * <p>Adds an existing external connection to a repository. One external connection
@@ -965,6 +965,7 @@ namespace CodeArtifact
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<CodeArtifactEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<CodeArtifactClient>;
       void init(const CodeArtifactClientConfiguration& clientConfiguration);
 
       CodeArtifactClientConfiguration m_clientConfiguration;

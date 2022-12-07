@@ -7,6 +7,7 @@
 #include <aws/sso/SSO_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/sso/SSOServiceClientModel.h>
 
@@ -33,7 +34,7 @@ namespace SSO
    * to download and install them, see <a href="http://aws.amazon.com/tools/">Tools
    * for Amazon Web Services</a>.</p> 
    */
-  class AWS_SSO_API SSOClient : public Aws::Client::AWSJsonClient
+  class AWS_SSO_API SSOClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<SSOClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -87,7 +88,6 @@ namespace SSO
 
         /* End of legacy constructors due deprecation */
         virtual ~SSOClient();
-
 
         /**
          * <p>Returns the STS short-term credentials for a given role name that is assigned
@@ -180,6 +180,7 @@ namespace SSO
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<SSOEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<SSOClient>;
       void init(const SSOClientConfiguration& clientConfiguration);
 
       SSOClientConfiguration m_clientConfiguration;

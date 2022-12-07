@@ -7,6 +7,7 @@
 #include <aws/pinpoint-email/PinpointEmail_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/pinpoint-email/PinpointEmailServiceClientModel.h>
 
@@ -50,7 +51,7 @@ namespace PinpointEmail
    * href="http://aws.amazon.com/about-aws/global-infrastructure/">AWS Global
    * Infrastructure</a>.</p>
    */
-  class AWS_PINPOINTEMAIL_API PinpointEmailClient : public Aws::Client::AWSJsonClient
+  class AWS_PINPOINTEMAIL_API PinpointEmailClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<PinpointEmailClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -104,7 +105,6 @@ namespace PinpointEmail
 
         /* End of legacy constructors due deprecation */
         virtual ~PinpointEmailClient();
-
 
         /**
          * <p>Create a configuration set. <i>Configuration sets</i> are groups of rules
@@ -986,6 +986,7 @@ namespace PinpointEmail
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<PinpointEmailEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<PinpointEmailClient>;
       void init(const PinpointEmailClientConfiguration& clientConfiguration);
 
       PinpointEmailClientConfiguration m_clientConfiguration;

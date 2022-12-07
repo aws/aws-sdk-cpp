@@ -7,6 +7,7 @@
 #include <aws/iotsitewise/IoTSiteWise_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/iotsitewise/IoTSiteWiseServiceClientModel.h>
 
@@ -25,7 +26,7 @@ namespace IoTSiteWise
    * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
    * in the <i>IoT SiteWise User Guide</i>.</p>
    */
-  class AWS_IOTSITEWISE_API IoTSiteWiseClient : public Aws::Client::AWSJsonClient
+  class AWS_IOTSITEWISE_API IoTSiteWiseClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<IoTSiteWiseClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -79,7 +80,6 @@ namespace IoTSiteWise
 
         /* End of legacy constructors due deprecation */
         virtual ~IoTSiteWiseClient();
-
 
         /**
          * <p>Associates a child asset with the given parent asset through a hierarchy
@@ -1564,6 +1564,7 @@ namespace IoTSiteWise
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<IoTSiteWiseEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<IoTSiteWiseClient>;
       void init(const IoTSiteWiseClientConfiguration& clientConfiguration);
 
       IoTSiteWiseClientConfiguration m_clientConfiguration;

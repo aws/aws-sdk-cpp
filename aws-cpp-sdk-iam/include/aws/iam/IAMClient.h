@@ -8,6 +8,7 @@
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/iam/IAMServiceClientModel.h>
 
@@ -26,7 +27,7 @@ namespace IAM
    * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/">Identity and Access
    * Management User Guide</a>.</p>
    */
-  class AWS_IAM_API IAMClient : public Aws::Client::AWSXMLClient
+  class AWS_IAM_API IAMClient : public Aws::Client::AWSXMLClient, public Aws::Client::ClientWithAsyncTemplateMethods<IAMClient>
   {
     public:
       typedef Aws::Client::AWSXMLClient BASECLASS;
@@ -4419,6 +4420,7 @@ namespace IAM
         void OverrideEndpoint(const Aws::String& endpoint);
         std::shared_ptr<IAMEndpointProviderBase>& accessEndpointProvider();
   private:
+        friend class Aws::Client::ClientWithAsyncTemplateMethods<IAMClient>;
         void init(const IAMClientConfiguration& clientConfiguration);
 
         IAMClientConfiguration m_clientConfiguration;

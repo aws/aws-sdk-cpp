@@ -7,6 +7,7 @@
 #include <aws/fms/FMS_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/fms/FMSServiceClientModel.h>
 
@@ -25,7 +26,7 @@ namespace FMS
    * href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-api-permissions-ref.html">Firewall
    * Manager required permissions for API actions</a>. </p>
    */
-  class AWS_FMS_API FMSClient : public Aws::Client::AWSJsonClient
+  class AWS_FMS_API FMSClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<FMSClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -79,7 +80,6 @@ namespace FMS
 
         /* End of legacy constructors due deprecation */
         virtual ~FMSClient();
-
 
         /**
          * <p>Sets the Firewall Manager administrator account. The account must be a member
@@ -816,6 +816,7 @@ namespace FMS
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<FMSEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<FMSClient>;
       void init(const FMSClientConfiguration& clientConfiguration);
 
       FMSClientConfiguration m_clientConfiguration;

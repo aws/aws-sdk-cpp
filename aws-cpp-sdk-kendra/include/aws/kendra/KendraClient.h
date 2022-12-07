@@ -7,6 +7,7 @@
 #include <aws/kendra/Kendra_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/kendra/KendraServiceClientModel.h>
 
@@ -17,7 +18,7 @@ namespace kendra
   /**
    * <p>Amazon Kendra is a service for indexing large document sets.</p>
    */
-  class AWS_KENDRA_API KendraClient : public Aws::Client::AWSJsonClient
+  class AWS_KENDRA_API KendraClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<KendraClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -71,7 +72,6 @@ namespace kendra
 
         /* End of legacy constructors due deprecation */
         virtual ~KendraClient();
-
 
         /**
          * <p>Grants users or groups in your IAM Identity Center identity source access to
@@ -1381,6 +1381,7 @@ namespace kendra
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<KendraEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<KendraClient>;
       void init(const KendraClientConfiguration& clientConfiguration);
 
       KendraClientConfiguration m_clientConfiguration;

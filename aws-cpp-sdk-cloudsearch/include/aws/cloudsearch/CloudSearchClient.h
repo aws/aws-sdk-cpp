@@ -8,6 +8,7 @@
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/cloudsearch/CloudSearchServiceClientModel.h>
 
@@ -28,7 +29,7 @@ namespace CloudSearch
    * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#cloudsearch_region"
    * target="_blank">Regions and Endpoints</a>.</p>
    */
-  class AWS_CLOUDSEARCH_API CloudSearchClient : public Aws::Client::AWSXMLClient
+  class AWS_CLOUDSEARCH_API CloudSearchClient : public Aws::Client::AWSXMLClient, public Aws::Client::ClientWithAsyncTemplateMethods<CloudSearchClient>
   {
     public:
       typedef Aws::Client::AWSXMLClient BASECLASS;
@@ -672,6 +673,7 @@ namespace CloudSearch
         void OverrideEndpoint(const Aws::String& endpoint);
         std::shared_ptr<CloudSearchEndpointProviderBase>& accessEndpointProvider();
   private:
+        friend class Aws::Client::ClientWithAsyncTemplateMethods<CloudSearchClient>;
         void init(const CloudSearchClientConfiguration& clientConfiguration);
 
         CloudSearchClientConfiguration m_clientConfiguration;

@@ -7,6 +7,7 @@
 #include <aws/chime-sdk-voice/ChimeSDKVoice_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/chime-sdk-voice/ChimeSDKVoiceServiceClientModel.h>
 
@@ -14,7 +15,7 @@ namespace Aws
 {
 namespace ChimeSDKVoice
 {
-  class AWS_CHIMESDKVOICE_API ChimeSDKVoiceClient : public Aws::Client::AWSJsonClient
+  class AWS_CHIMESDKVOICE_API ChimeSDKVoiceClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<ChimeSDKVoiceClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -68,7 +69,6 @@ namespace ChimeSDKVoice
 
         /* End of legacy constructors due deprecation */
         virtual ~ChimeSDKVoiceClient();
-
 
         /**
          * 
@@ -1181,6 +1181,7 @@ namespace ChimeSDKVoice
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<ChimeSDKVoiceEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<ChimeSDKVoiceClient>;
       void init(const ChimeSDKVoiceClientConfiguration& clientConfiguration);
 
       ChimeSDKVoiceClientConfiguration m_clientConfiguration;

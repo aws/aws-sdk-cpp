@@ -8,6 +8,7 @@
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/docdb/DocDBServiceClientModel.h>
 
@@ -18,7 +19,7 @@ namespace DocDB
   /**
    * <p>Amazon DocumentDB API documentation</p>
    */
-  class AWS_DOCDB_API DocDBClient : public Aws::Client::AWSXMLClient
+  class AWS_DOCDB_API DocDBClient : public Aws::Client::AWSXMLClient, public Aws::Client::ClientWithAsyncTemplateMethods<DocDBClient>
   {
     public:
       typedef Aws::Client::AWSXMLClient BASECLASS;
@@ -1176,6 +1177,7 @@ namespace DocDB
         void OverrideEndpoint(const Aws::String& endpoint);
         std::shared_ptr<DocDBEndpointProviderBase>& accessEndpointProvider();
   private:
+        friend class Aws::Client::ClientWithAsyncTemplateMethods<DocDBClient>;
         void init(const DocDBClientConfiguration& clientConfiguration);
 
         DocDBClientConfiguration m_clientConfiguration;

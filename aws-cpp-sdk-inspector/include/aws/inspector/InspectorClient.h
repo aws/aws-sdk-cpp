@@ -7,6 +7,7 @@
 #include <aws/inspector/Inspector_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/inspector/InspectorServiceClientModel.h>
 
@@ -21,7 +22,7 @@ namespace Inspector
    * href="https://docs.aws.amazon.com/inspector/latest/userguide/inspector_introduction.html">
    * Amazon Inspector User Guide</a>.</p>
    */
-  class AWS_INSPECTOR_API InspectorClient : public Aws::Client::AWSJsonClient
+  class AWS_INSPECTOR_API InspectorClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<InspectorClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -75,7 +76,6 @@ namespace Inspector
 
         /* End of legacy constructors due deprecation */
         virtual ~InspectorClient();
-
 
         /**
          * <p>Assigns attributes (key and value pairs) to the findings that are specified
@@ -778,6 +778,7 @@ namespace Inspector
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<InspectorEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<InspectorClient>;
       void init(const InspectorClientConfiguration& clientConfiguration);
 
       InspectorClientConfiguration m_clientConfiguration;

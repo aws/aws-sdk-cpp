@@ -7,6 +7,7 @@
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/sagemaker/SageMakerServiceClientModel.h>
 
@@ -22,7 +23,7 @@ namespace SageMaker
    * href="https://docs.aws.amazon.com/augmented-ai/2019-11-07/APIReference/Welcome.html">Amazon
    * Augmented AI Runtime API Reference</a> </p> </li> </ul>
    */
-  class AWS_SAGEMAKER_API SageMakerClient : public Aws::Client::AWSJsonClient
+  class AWS_SAGEMAKER_API SageMakerClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<SageMakerClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -76,7 +77,6 @@ namespace SageMaker
 
         /* End of legacy constructors due deprecation */
         virtual ~SageMakerClient();
-
 
         /**
          * <p>Creates an <i>association</i> between the source and the destination. A
@@ -6063,6 +6063,7 @@ namespace SageMaker
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<SageMakerEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<SageMakerClient>;
       void init(const SageMakerClientConfiguration& clientConfiguration);
 
       SageMakerClientConfiguration m_clientConfiguration;

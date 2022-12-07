@@ -7,6 +7,7 @@
 #include <aws/lakeformation/LakeFormation_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/lakeformation/LakeFormationServiceClientModel.h>
 
@@ -18,7 +19,7 @@ namespace LakeFormation
    * <fullname>Lake Formation</fullname> <p>Defines the public endpoint for the Lake
    * Formation service.</p>
    */
-  class AWS_LAKEFORMATION_API LakeFormationClient : public Aws::Client::AWSJsonClient
+  class AWS_LAKEFORMATION_API LakeFormationClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<LakeFormationClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -72,7 +73,6 @@ namespace LakeFormation
 
         /* End of legacy constructors due deprecation */
         virtual ~LakeFormationClient();
-
 
         /**
          * <p>Attaches one or more LF-tags to an existing resource.</p><p><h3>See
@@ -970,6 +970,7 @@ namespace LakeFormation
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<LakeFormationEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<LakeFormationClient>;
       void init(const LakeFormationClientConfiguration& clientConfiguration);
 
       LakeFormationClientConfiguration m_clientConfiguration;

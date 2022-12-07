@@ -7,6 +7,7 @@
 #include <aws/chime-sdk-media-pipelines/ChimeSDKMediaPipelines_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/chime-sdk-media-pipelines/ChimeSDKMediaPipelinesServiceClientModel.h>
 
@@ -22,7 +23,7 @@ namespace ChimeSDKMediaPipelines
    * href="http://amazonaws.com/chime/latest/APIReference/API_Operations_Amazon_Chime_SDK_Media_Pipelines.html">Amazon
    * Chime SDK media pipelines</a>. </p>
    */
-  class AWS_CHIMESDKMEDIAPIPELINES_API ChimeSDKMediaPipelinesClient : public Aws::Client::AWSJsonClient
+  class AWS_CHIMESDKMEDIAPIPELINES_API ChimeSDKMediaPipelinesClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<ChimeSDKMediaPipelinesClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -76,7 +77,6 @@ namespace ChimeSDKMediaPipelines
 
         /* End of legacy constructors due deprecation */
         virtual ~ChimeSDKMediaPipelinesClient();
-
 
         /**
          * <p>Creates a media pipeline.</p><p><h3>See Also:</h3>   <a
@@ -288,6 +288,7 @@ namespace ChimeSDKMediaPipelines
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<ChimeSDKMediaPipelinesEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<ChimeSDKMediaPipelinesClient>;
       void init(const ChimeSDKMediaPipelinesClientConfiguration& clientConfiguration);
 
       ChimeSDKMediaPipelinesClientConfiguration m_clientConfiguration;

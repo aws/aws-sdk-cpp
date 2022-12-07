@@ -7,6 +7,7 @@
 #include <aws/iot-data/IoTDataPlane_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/iot-data/IoTDataPlaneServiceClientModel.h>
 
@@ -28,7 +29,7 @@ namespace IoTDataPlane
    * Web ServicesSignature Version 4</a> to sign requests is:
    * <i>iotdevicegateway</i>.</p>
    */
-  class AWS_IOTDATAPLANE_API IoTDataPlaneClient : public Aws::Client::AWSJsonClient
+  class AWS_IOTDATAPLANE_API IoTDataPlaneClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<IoTDataPlaneClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -82,7 +83,6 @@ namespace IoTDataPlane
 
         /* End of legacy constructors due deprecation */
         virtual ~IoTDataPlaneClient();
-
 
         /**
          * <p>Deletes the shadow for the specified thing.</p> <p>Requires permission to
@@ -252,6 +252,7 @@ namespace IoTDataPlane
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<IoTDataPlaneEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<IoTDataPlaneClient>;
       void init(const IoTDataPlaneClientConfiguration& clientConfiguration);
 
       IoTDataPlaneClientConfiguration m_clientConfiguration;

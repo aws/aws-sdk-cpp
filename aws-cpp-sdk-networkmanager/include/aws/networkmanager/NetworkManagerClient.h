@@ -7,6 +7,7 @@
 #include <aws/networkmanager/NetworkManager_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/networkmanager/NetworkManagerServiceClientModel.h>
 
@@ -19,7 +20,7 @@ namespace NetworkManager
    * Cloud WAN core network and your Transit Gateway network across Amazon Web
    * Services accounts, Regions, and on-premises locations.</p>
    */
-  class AWS_NETWORKMANAGER_API NetworkManagerClient : public Aws::Client::AWSJsonClient
+  class AWS_NETWORKMANAGER_API NetworkManagerClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<NetworkManagerClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -73,7 +74,6 @@ namespace NetworkManager
 
         /* End of legacy constructors due deprecation */
         virtual ~NetworkManagerClient();
-
 
         /**
          * <p>Accepts a core network attachment request. </p> <p>Once the attachment
@@ -1636,6 +1636,7 @@ namespace NetworkManager
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<NetworkManagerEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<NetworkManagerClient>;
       void init(const NetworkManagerClientConfiguration& clientConfiguration);
 
       NetworkManagerClientConfiguration m_clientConfiguration;

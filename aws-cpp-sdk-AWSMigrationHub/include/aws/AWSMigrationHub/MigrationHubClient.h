@@ -7,6 +7,7 @@
 #include <aws/AWSMigrationHub/MigrationHub_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/AWSMigrationHub/MigrationHubServiceClientModel.h>
 
@@ -22,7 +23,7 @@ namespace MigrationHub
    * or a <code>HomeRegionNotSetException</code> error will be returned. Also, you
    * must make the API calls while in your home region.</p>
    */
-  class AWS_MIGRATIONHUB_API MigrationHubClient : public Aws::Client::AWSJsonClient
+  class AWS_MIGRATIONHUB_API MigrationHubClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<MigrationHubClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -76,7 +77,6 @@ namespace MigrationHub
 
         /* End of legacy constructors due deprecation */
         virtual ~MigrationHubClient();
-
 
         /**
          * <p>Associates a created artifact of an AWS cloud resource, the target receiving
@@ -457,6 +457,7 @@ namespace MigrationHub
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<MigrationHubEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<MigrationHubClient>;
       void init(const MigrationHubClientConfiguration& clientConfiguration);
 
       MigrationHubClientConfiguration m_clientConfiguration;

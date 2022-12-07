@@ -7,6 +7,7 @@
 #include <aws/databrew/GlueDataBrew_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/databrew/GlueDataBrewServiceClientModel.h>
 
@@ -21,7 +22,7 @@ namespace GlueDataBrew
    * visualize the data and perform one-click data transformations, with no coding
    * required.</p>
    */
-  class AWS_GLUEDATABREW_API GlueDataBrewClient : public Aws::Client::AWSJsonClient
+  class AWS_GLUEDATABREW_API GlueDataBrewClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<GlueDataBrewClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -75,7 +76,6 @@ namespace GlueDataBrew
 
         /* End of legacy constructors due deprecation */
         virtual ~GlueDataBrewClient();
-
 
         /**
          * <p>Deletes one or more versions of a recipe at a time.</p> <p>The entire request
@@ -867,6 +867,7 @@ namespace GlueDataBrew
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<GlueDataBrewEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<GlueDataBrewClient>;
       void init(const GlueDataBrewClientConfiguration& clientConfiguration);
 
       GlueDataBrewClientConfiguration m_clientConfiguration;

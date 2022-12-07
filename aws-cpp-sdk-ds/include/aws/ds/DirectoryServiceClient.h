@@ -7,6 +7,7 @@
 #include <aws/ds/DirectoryService_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/ds/DirectoryServiceServiceClientModel.h>
 
@@ -32,7 +33,7 @@ namespace DirectoryService
    * href="http://aws.amazon.com/tools/">Tools for Amazon Web Services</a>.</p>
    * 
    */
-  class AWS_DIRECTORYSERVICE_API DirectoryServiceClient : public Aws::Client::AWSJsonClient
+  class AWS_DIRECTORYSERVICE_API DirectoryServiceClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<DirectoryServiceClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -86,7 +87,6 @@ namespace DirectoryService
 
         /* End of legacy constructors due deprecation */
         virtual ~DirectoryServiceClient();
-
 
         /**
          * <p>Accepts a directory sharing request that was sent from the directory owner
@@ -1415,6 +1415,7 @@ namespace DirectoryService
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<DirectoryServiceEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<DirectoryServiceClient>;
       void init(const DirectoryServiceClientConfiguration& clientConfiguration);
 
       DirectoryServiceClientConfiguration m_clientConfiguration;

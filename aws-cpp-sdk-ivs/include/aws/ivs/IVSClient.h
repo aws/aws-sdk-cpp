@@ -7,6 +7,7 @@
 #include <aws/ivs/IVS_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/ivs/IVSServiceClientModel.h>
 
@@ -161,7 +162,7 @@ namespace IVS
    * ARN.</p> </li> <li> <p> <a>ListTagsForResource</a> — Gets information about
    * Amazon Web Services tags for the specified ARN.</p> </li> </ul>
    */
-  class AWS_IVS_API IVSClient : public Aws::Client::AWSJsonClient
+  class AWS_IVS_API IVSClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<IVSClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -215,7 +216,6 @@ namespace IVS
 
         /* End of legacy constructors due deprecation */
         virtual ~IVSClient();
-
 
         /**
          * <p>Performs <a>GetChannel</a> on multiple ARNs simultaneously.</p><p><h3>See
@@ -778,6 +778,7 @@ namespace IVS
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<IVSEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<IVSClient>;
       void init(const IVSClientConfiguration& clientConfiguration);
 
       IVSClientConfiguration m_clientConfiguration;
