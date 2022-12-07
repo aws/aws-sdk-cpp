@@ -7,6 +7,7 @@
 #include <aws/s3control/S3Control_EXPORTS.h>
 #include <aws/s3control/S3ControlEndpointProvider.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/DNS.h>
@@ -21,7 +22,7 @@ namespace S3Control
      * <p> Amazon Web Services S3 Control provides access to Amazon S3 control plane
    * actions. </p>
      */
-    class AWS_S3CONTROL_API S3ControlClient : public Aws::Client::AWSXMLClient
+    class AWS_S3CONTROL_API S3ControlClient : public Aws::Client::AWSXMLClient, public Aws::Client::ClientWithAsyncTemplateMethods<S3ControlClient>
     {
     public:
         typedef Aws::Client::AWSXMLClient BASECLASS;
@@ -75,7 +76,6 @@ namespace S3Control
 
         /* End of legacy constructors due deprecation */
         virtual ~S3ControlClient();
-
 
         /**
          * <p>Creates an access point and associates it with the specified bucket. For more
@@ -2108,6 +2108,7 @@ namespace S3Control
         void OverrideEndpoint(const Aws::String& endpoint);
         std::shared_ptr<S3ControlEndpointProviderBase>& accessEndpointProvider();
     private:
+        friend class Aws::Client::ClientWithAsyncTemplateMethods<S3ControlClient>;
         void init(const S3ControlClientConfiguration& clientConfiguration);
         S3ControlClientConfiguration m_clientConfiguration;
         std::shared_ptr<Utils::Threading::Executor> m_executor;

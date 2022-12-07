@@ -8,6 +8,7 @@
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/rds/RDSServiceClientModel.h>
 
@@ -54,14 +55,14 @@ namespace Aws
    * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Using_the_Query_API.html">Using
    * the Query API</a>.</p> </li> </ul>
      */
-                class AWS_RDS_API RDSClient : public Aws::Client::AWSXMLClient
+                class AWS_RDS_API RDSClient : public Aws::Client::AWSXMLClient, public Aws::Client::ClientWithAsyncTemplateMethods<RDSClient>
     {
     public:
     typedef Aws::Client::AWSXMLClient BASECLASS;
     static const char* SERVICE_NAME;
     static const char* ALLOCATION_TAG;
 
-           /**
+       /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
@@ -3474,6 +3475,7 @@ namespace Aws
         void OverrideEndpoint(const Aws::String& endpoint);
         std::shared_ptr<RDSEndpointProviderBase>& accessEndpointProvider();
     private:
+        friend class Aws::Client::ClientWithAsyncTemplateMethods<RDSClient>;
         void init(const RDSClientConfiguration& clientConfiguration);
 
         RDSClientConfiguration m_clientConfiguration;

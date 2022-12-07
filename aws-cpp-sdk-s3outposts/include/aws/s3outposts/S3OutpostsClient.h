@@ -7,6 +7,7 @@
 #include <aws/s3outposts/S3Outposts_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/s3outposts/S3OutpostsServiceClientModel.h>
 
@@ -17,7 +18,7 @@ namespace S3Outposts
   /**
    * <p>Amazon S3 on Outposts provides access to S3 on Outposts operations.</p>
    */
-  class AWS_S3OUTPOSTS_API S3OutpostsClient : public Aws::Client::AWSJsonClient
+  class AWS_S3OUTPOSTS_API S3OutpostsClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<S3OutpostsClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -71,7 +72,6 @@ namespace S3Outposts
 
         /* End of legacy constructors due deprecation */
         virtual ~S3OutpostsClient();
-
 
         /**
          * <p>Creates an endpoint and associates it with the specified Outpost.</p> 
@@ -168,6 +168,7 @@ namespace S3Outposts
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<S3OutpostsEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<S3OutpostsClient>;
       void init(const S3OutpostsClientConfiguration& clientConfiguration);
 
       S3OutpostsClientConfiguration m_clientConfiguration;

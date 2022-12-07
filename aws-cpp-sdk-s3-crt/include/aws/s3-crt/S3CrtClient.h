@@ -14,6 +14,7 @@
 #include <aws/crt/auth/Sigv4Signing.h>
 #include <aws/crt/http/HttpRequestResponse.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/DNS.h>
@@ -46,7 +47,7 @@ namespace Aws
     /**
      * <p/>
      */
-    class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient
+    class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient, public Aws::Client::ClientWithAsyncTemplateMethods<S3CrtClient>
     {
     public:
         typedef Aws::Client::AWSXMLClient BASECLASS;
@@ -4748,6 +4749,7 @@ namespace Aws
         Aws::Client::StreamOutcome GenerateStreamOutcome(const std::shared_ptr<Http::HttpResponse>& response) const;
 
     private:
+        friend class Aws::Client::ClientWithAsyncTemplateMethods<S3CrtClient>;
         void init(const S3Crt::ClientConfiguration& clientConfiguration, const std::shared_ptr<Aws::Auth::AWSCredentialsProvider> credentialsProvider);
 
         struct CrtClientShutdownCallbackDataWrapper {

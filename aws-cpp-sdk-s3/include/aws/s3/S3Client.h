@@ -7,6 +7,7 @@
 #include <aws/s3/S3_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/DNS.h>
@@ -38,7 +39,7 @@ namespace Aws
     /**
      * <p/>
      */
-    class AWS_S3_API S3Client : public Aws::Client::AWSXMLClient
+    class AWS_S3_API S3Client : public Aws::Client::AWSXMLClient, public Aws::Client::ClientWithAsyncTemplateMethods<S3Client>
     {
     public:
         typedef Aws::Client::AWSXMLClient BASECLASS;
@@ -4755,6 +4756,7 @@ namespace Aws
         std::shared_ptr<S3EndpointProviderBase>& accessEndpointProvider();
 
     private:
+        friend class Aws::Client::ClientWithAsyncTemplateMethods<S3Client>;
         void init(const S3ClientConfiguration& clientConfiguration);
         S3ClientConfiguration m_clientConfiguration;
         std::shared_ptr<Utils::Threading::Executor> m_executor;

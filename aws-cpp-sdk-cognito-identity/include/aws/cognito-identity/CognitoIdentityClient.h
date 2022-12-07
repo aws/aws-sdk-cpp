@@ -7,6 +7,7 @@
 #include <aws/cognito-identity/CognitoIdentity_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/cognito-identity/CognitoIdentityServiceClientModel.h>
 
@@ -32,7 +33,7 @@ namespace CognitoIdentity
    * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-identity.html">Amazon
    * Cognito Federated Identities</a>.</p>
    */
-  class AWS_COGNITOIDENTITY_API CognitoIdentityClient : public Aws::Client::AWSJsonClient
+  class AWS_COGNITOIDENTITY_API CognitoIdentityClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<CognitoIdentityClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -86,7 +87,6 @@ namespace CognitoIdentity
 
         /* End of legacy constructors due deprecation */
         virtual ~CognitoIdentityClient();
-
 
         /**
          * <p>Creates a new identity pool. The identity pool is a store of user identity
@@ -588,6 +588,7 @@ namespace CognitoIdentity
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<CognitoIdentityEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<CognitoIdentityClient>;
       void init(const CognitoIdentityClientConfiguration& clientConfiguration);
 
       CognitoIdentityClientConfiguration m_clientConfiguration;
