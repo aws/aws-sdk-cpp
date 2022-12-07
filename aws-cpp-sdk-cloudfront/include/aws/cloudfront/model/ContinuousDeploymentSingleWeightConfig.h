@@ -23,8 +23,8 @@ namespace Model
 {
 
   /**
-   * <p>Contains the percentage of traffic to send to a staging distribution,
-   * expressed as a decimal number between 0 and 1.</p><p><h3>See Also:</h3>   <a
+   * <p>Contains the percentage of traffic to send to a staging
+   * distribution.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ContinuousDeploymentSingleWeightConfig">AWS
    * API Reference</a></p>
    */
@@ -39,26 +39,26 @@ namespace Model
 
 
     /**
-     * <p>The percentage of traffic to send to the staging distribution, expressed as a
-     * decimal number between 0 and 1.</p>
+     * <p>The percentage of traffic to send to a staging distribution, expressed as a
+     * decimal number between 0 and .15.</p>
      */
     inline double GetWeight() const{ return m_weight; }
 
     /**
-     * <p>The percentage of traffic to send to the staging distribution, expressed as a
-     * decimal number between 0 and 1.</p>
+     * <p>The percentage of traffic to send to a staging distribution, expressed as a
+     * decimal number between 0 and .15.</p>
      */
     inline bool WeightHasBeenSet() const { return m_weightHasBeenSet; }
 
     /**
-     * <p>The percentage of traffic to send to the staging distribution, expressed as a
-     * decimal number between 0 and 1.</p>
+     * <p>The percentage of traffic to send to a staging distribution, expressed as a
+     * decimal number between 0 and .15.</p>
      */
     inline void SetWeight(double value) { m_weightHasBeenSet = true; m_weight = value; }
 
     /**
-     * <p>The percentage of traffic to send to the staging distribution, expressed as a
-     * decimal number between 0 and 1.</p>
+     * <p>The percentage of traffic to send to a staging distribution, expressed as a
+     * decimal number between 0 and .15.</p>
      */
     inline ContinuousDeploymentSingleWeightConfig& WithWeight(double value) { SetWeight(value); return *this;}
 

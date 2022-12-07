@@ -32,7 +32,8 @@ Addon::Addon() :
     m_tagsHasBeenSet(false),
     m_publisherHasBeenSet(false),
     m_ownerHasBeenSet(false),
-    m_marketplaceInformationHasBeenSet(false)
+    m_marketplaceInformationHasBeenSet(false),
+    m_configurationValuesHasBeenSet(false)
 {
 }
 
@@ -50,7 +51,8 @@ Addon::Addon(JsonView jsonValue) :
     m_tagsHasBeenSet(false),
     m_publisherHasBeenSet(false),
     m_ownerHasBeenSet(false),
-    m_marketplaceInformationHasBeenSet(false)
+    m_marketplaceInformationHasBeenSet(false),
+    m_configurationValuesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -151,6 +153,13 @@ Addon& Addon::operator =(JsonView jsonValue)
     m_marketplaceInformationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("configurationValues"))
+  {
+    m_configurationValues = jsonValue.GetString("configurationValues");
+
+    m_configurationValuesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -235,6 +244,12 @@ JsonValue Addon::Jsonize() const
   if(m_marketplaceInformationHasBeenSet)
   {
    payload.WithObject("marketplaceInformation", m_marketplaceInformation.Jsonize());
+
+  }
+
+  if(m_configurationValuesHasBeenSet)
+  {
+   payload.WithString("configurationValues", m_configurationValues);
 
   }
 
