@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/panorama-2019-07-24/ResourceNotFoundException">AWS
    * API Reference</a></p>
    */
-  class AWS_PANORAMA_API ResourceNotFoundException
+  class ResourceNotFoundException
   {
   public:
-    ResourceNotFoundException();
-    ResourceNotFoundException(Aws::Utils::Json::JsonView jsonValue);
-    ResourceNotFoundException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PANORAMA_API ResourceNotFoundException();
+    AWS_PANORAMA_API ResourceNotFoundException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PANORAMA_API ResourceNotFoundException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PANORAMA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

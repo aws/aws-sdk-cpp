@@ -30,12 +30,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeChapCredentialsOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_STORAGEGATEWAY_API DescribeChapCredentialsResult
+  class DescribeChapCredentialsResult
   {
   public:
-    DescribeChapCredentialsResult();
-    DescribeChapCredentialsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeChapCredentialsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_STORAGEGATEWAY_API DescribeChapCredentialsResult();
+    AWS_STORAGEGATEWAY_API DescribeChapCredentialsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_STORAGEGATEWAY_API DescribeChapCredentialsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

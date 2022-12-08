@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/MethodSetting">AWS
    * API Reference</a></p>
    */
-  class AWS_APIGATEWAY_API MethodSetting
+  class MethodSetting
   {
   public:
-    MethodSetting();
-    MethodSetting(Aws::Utils::Json::JsonView jsonValue);
-    MethodSetting& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APIGATEWAY_API MethodSetting();
+    AWS_APIGATEWAY_API MethodSetting(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APIGATEWAY_API MethodSetting& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APIGATEWAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

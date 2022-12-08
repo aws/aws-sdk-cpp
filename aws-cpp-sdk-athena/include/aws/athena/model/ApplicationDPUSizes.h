@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ApplicationDPUSizes">AWS
    * API Reference</a></p>
    */
-  class AWS_ATHENA_API ApplicationDPUSizes
+  class ApplicationDPUSizes
   {
   public:
-    ApplicationDPUSizes();
-    ApplicationDPUSizes(Aws::Utils::Json::JsonView jsonValue);
-    ApplicationDPUSizes& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ATHENA_API ApplicationDPUSizes();
+    AWS_ATHENA_API ApplicationDPUSizes(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ATHENA_API ApplicationDPUSizes& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ATHENA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

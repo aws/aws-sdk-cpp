@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/ThrottlingException">AWS
    * API Reference</a></p>
    */
-  class AWS_SIGNER_API ThrottlingException
+  class ThrottlingException
   {
   public:
-    ThrottlingException();
-    ThrottlingException(Aws::Utils::Json::JsonView jsonValue);
-    ThrottlingException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SIGNER_API ThrottlingException();
+    AWS_SIGNER_API ThrottlingException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SIGNER_API ThrottlingException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SIGNER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

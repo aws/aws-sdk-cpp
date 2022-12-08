@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/OracleParameters">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API OracleParameters
+  class OracleParameters
   {
   public:
-    OracleParameters();
-    OracleParameters(Aws::Utils::Json::JsonView jsonValue);
-    OracleParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API OracleParameters();
+    AWS_QUICKSIGHT_API OracleParameters(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API OracleParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

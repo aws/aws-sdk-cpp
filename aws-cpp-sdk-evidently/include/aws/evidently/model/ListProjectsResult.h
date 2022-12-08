@@ -26,12 +26,12 @@ namespace CloudWatchEvidently
 {
 namespace Model
 {
-  class AWS_CLOUDWATCHEVIDENTLY_API ListProjectsResult
+  class ListProjectsResult
   {
   public:
-    ListProjectsResult();
-    ListProjectsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListProjectsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CLOUDWATCHEVIDENTLY_API ListProjectsResult();
+    AWS_CLOUDWATCHEVIDENTLY_API ListProjectsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CLOUDWATCHEVIDENTLY_API ListProjectsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

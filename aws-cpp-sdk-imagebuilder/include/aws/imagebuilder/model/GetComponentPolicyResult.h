@@ -24,12 +24,12 @@ namespace imagebuilder
 {
 namespace Model
 {
-  class AWS_IMAGEBUILDER_API GetComponentPolicyResult
+  class GetComponentPolicyResult
   {
   public:
-    GetComponentPolicyResult();
-    GetComponentPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetComponentPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IMAGEBUILDER_API GetComponentPolicyResult();
+    AWS_IMAGEBUILDER_API GetComponentPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IMAGEBUILDER_API GetComponentPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

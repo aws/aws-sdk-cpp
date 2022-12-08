@@ -37,13 +37,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/PolicyComplianceStatus">AWS
    * API Reference</a></p>
    */
-  class AWS_FMS_API PolicyComplianceStatus
+  class PolicyComplianceStatus
   {
   public:
-    PolicyComplianceStatus();
-    PolicyComplianceStatus(Aws::Utils::Json::JsonView jsonValue);
-    PolicyComplianceStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FMS_API PolicyComplianceStatus();
+    AWS_FMS_API PolicyComplianceStatus(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FMS_API PolicyComplianceStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -26,12 +26,12 @@ namespace AuditManager
 {
 namespace Model
 {
-  class AWS_AUDITMANAGER_API ListAssessmentFrameworksResult
+  class ListAssessmentFrameworksResult
   {
   public:
-    ListAssessmentFrameworksResult();
-    ListAssessmentFrameworksResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListAssessmentFrameworksResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_AUDITMANAGER_API ListAssessmentFrameworksResult();
+    AWS_AUDITMANAGER_API ListAssessmentFrameworksResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_AUDITMANAGER_API ListAssessmentFrameworksResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

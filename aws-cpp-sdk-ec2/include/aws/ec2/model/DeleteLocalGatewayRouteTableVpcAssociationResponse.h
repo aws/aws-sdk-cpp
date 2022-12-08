@@ -25,12 +25,12 @@ namespace EC2
 {
 namespace Model
 {
-  class AWS_EC2_API DeleteLocalGatewayRouteTableVpcAssociationResponse
+  class DeleteLocalGatewayRouteTableVpcAssociationResponse
   {
   public:
-    DeleteLocalGatewayRouteTableVpcAssociationResponse();
-    DeleteLocalGatewayRouteTableVpcAssociationResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DeleteLocalGatewayRouteTableVpcAssociationResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API DeleteLocalGatewayRouteTableVpcAssociationResponse();
+    AWS_EC2_API DeleteLocalGatewayRouteTableVpcAssociationResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API DeleteLocalGatewayRouteTableVpcAssociationResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

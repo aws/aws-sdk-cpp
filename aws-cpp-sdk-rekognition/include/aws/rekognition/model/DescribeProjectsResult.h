@@ -26,12 +26,12 @@ namespace Rekognition
 {
 namespace Model
 {
-  class AWS_REKOGNITION_API DescribeProjectsResult
+  class DescribeProjectsResult
   {
   public:
-    DescribeProjectsResult();
-    DescribeProjectsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeProjectsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_REKOGNITION_API DescribeProjectsResult();
+    AWS_REKOGNITION_API DescribeProjectsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_REKOGNITION_API DescribeProjectsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

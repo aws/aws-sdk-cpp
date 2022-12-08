@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SkillGroupData">AWS
    * API Reference</a></p>
    */
-  class AWS_ALEXAFORBUSINESS_API SkillGroupData
+  class SkillGroupData
   {
   public:
-    SkillGroupData();
-    SkillGroupData(Aws::Utils::Json::JsonView jsonValue);
-    SkillGroupData& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ALEXAFORBUSINESS_API SkillGroupData();
+    AWS_ALEXAFORBUSINESS_API SkillGroupData(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ALEXAFORBUSINESS_API SkillGroupData& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ALEXAFORBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

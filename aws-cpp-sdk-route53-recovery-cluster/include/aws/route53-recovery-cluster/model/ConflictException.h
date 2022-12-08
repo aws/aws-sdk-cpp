@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-cluster-2019-12-02/ConflictException">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53RECOVERYCLUSTER_API ConflictException
+  class ConflictException
   {
   public:
-    ConflictException();
-    ConflictException(Aws::Utils::Json::JsonView jsonValue);
-    ConflictException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ROUTE53RECOVERYCLUSTER_API ConflictException();
+    AWS_ROUTE53RECOVERYCLUSTER_API ConflictException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROUTE53RECOVERYCLUSTER_API ConflictException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROUTE53RECOVERYCLUSTER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

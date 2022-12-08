@@ -24,12 +24,12 @@ namespace SimpleDB
 {
 namespace Model
 {
-  class AWS_SIMPLEDB_API DomainMetadataResult
+  class DomainMetadataResult
   {
   public:
-    DomainMetadataResult();
-    DomainMetadataResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DomainMetadataResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_SIMPLEDB_API DomainMetadataResult();
+    AWS_SIMPLEDB_API DomainMetadataResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_SIMPLEDB_API DomainMetadataResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

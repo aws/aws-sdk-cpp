@@ -22,12 +22,12 @@ namespace Comprehend
 {
 namespace Model
 {
-  class AWS_COMPREHEND_API DeleteDocumentClassifierResult
+  class DeleteDocumentClassifierResult
   {
   public:
-    DeleteDocumentClassifierResult();
-    DeleteDocumentClassifierResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteDocumentClassifierResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_COMPREHEND_API DeleteDocumentClassifierResult();
+    AWS_COMPREHEND_API DeleteDocumentClassifierResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_COMPREHEND_API DeleteDocumentClassifierResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

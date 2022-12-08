@@ -24,12 +24,12 @@ namespace RolesAnywhere
 {
 namespace Model
 {
-  class AWS_ROLESANYWHERE_API DeleteTrustAnchorResult
+  class DeleteTrustAnchorResult
   {
   public:
-    DeleteTrustAnchorResult();
-    DeleteTrustAnchorResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteTrustAnchorResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ROLESANYWHERE_API DeleteTrustAnchorResult();
+    AWS_ROLESANYWHERE_API DeleteTrustAnchorResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ROLESANYWHERE_API DeleteTrustAnchorResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

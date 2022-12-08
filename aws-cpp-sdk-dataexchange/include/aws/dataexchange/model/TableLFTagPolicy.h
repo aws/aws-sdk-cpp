@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/TableLFTagPolicy">AWS
    * API Reference</a></p>
    */
-  class AWS_DATAEXCHANGE_API TableLFTagPolicy
+  class TableLFTagPolicy
   {
   public:
-    TableLFTagPolicy();
-    TableLFTagPolicy(Aws::Utils::Json::JsonView jsonValue);
-    TableLFTagPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DATAEXCHANGE_API TableLFTagPolicy();
+    AWS_DATAEXCHANGE_API TableLFTagPolicy(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATAEXCHANGE_API TableLFTagPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATAEXCHANGE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

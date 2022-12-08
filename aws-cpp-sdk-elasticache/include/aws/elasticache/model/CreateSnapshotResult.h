@@ -25,12 +25,12 @@ namespace ElastiCache
 {
 namespace Model
 {
-  class AWS_ELASTICACHE_API CreateSnapshotResult
+  class CreateSnapshotResult
   {
   public:
-    CreateSnapshotResult();
-    CreateSnapshotResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    CreateSnapshotResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ELASTICACHE_API CreateSnapshotResult();
+    AWS_ELASTICACHE_API CreateSnapshotResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ELASTICACHE_API CreateSnapshotResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     

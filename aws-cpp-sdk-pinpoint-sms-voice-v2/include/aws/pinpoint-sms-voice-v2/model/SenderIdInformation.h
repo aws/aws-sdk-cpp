@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/SenderIdInformation">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINTSMSVOICEV2_API SenderIdInformation
+  class SenderIdInformation
   {
   public:
-    SenderIdInformation();
-    SenderIdInformation(Aws::Utils::Json::JsonView jsonValue);
-    SenderIdInformation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINTSMSVOICEV2_API SenderIdInformation();
+    AWS_PINPOINTSMSVOICEV2_API SenderIdInformation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINTSMSVOICEV2_API SenderIdInformation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINTSMSVOICEV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

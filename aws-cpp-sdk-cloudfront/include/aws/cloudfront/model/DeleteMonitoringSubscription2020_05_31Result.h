@@ -22,12 +22,12 @@ namespace CloudFront
 {
 namespace Model
 {
-  class AWS_CLOUDFRONT_API DeleteMonitoringSubscription2020_05_31Result
+  class DeleteMonitoringSubscription2020_05_31Result
   {
   public:
-    DeleteMonitoringSubscription2020_05_31Result();
-    DeleteMonitoringSubscription2020_05_31Result(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DeleteMonitoringSubscription2020_05_31Result& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_CLOUDFRONT_API DeleteMonitoringSubscription2020_05_31Result();
+    AWS_CLOUDFRONT_API DeleteMonitoringSubscription2020_05_31Result(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_CLOUDFRONT_API DeleteMonitoringSubscription2020_05_31Result& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
   };
 

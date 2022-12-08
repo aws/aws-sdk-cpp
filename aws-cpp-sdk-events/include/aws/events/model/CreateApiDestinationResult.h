@@ -26,12 +26,12 @@ namespace CloudWatchEvents
 {
 namespace Model
 {
-  class AWS_CLOUDWATCHEVENTS_API CreateApiDestinationResult
+  class CreateApiDestinationResult
   {
   public:
-    CreateApiDestinationResult();
-    CreateApiDestinationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateApiDestinationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CLOUDWATCHEVENTS_API CreateApiDestinationResult();
+    AWS_CLOUDWATCHEVENTS_API CreateApiDestinationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CLOUDWATCHEVENTS_API CreateApiDestinationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

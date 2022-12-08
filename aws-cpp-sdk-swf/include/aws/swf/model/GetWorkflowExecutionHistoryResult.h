@@ -34,12 +34,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/History">AWS API
    * Reference</a></p>
    */
-  class AWS_SWF_API GetWorkflowExecutionHistoryResult
+  class GetWorkflowExecutionHistoryResult
   {
   public:
-    GetWorkflowExecutionHistoryResult();
-    GetWorkflowExecutionHistoryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetWorkflowExecutionHistoryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SWF_API GetWorkflowExecutionHistoryResult();
+    AWS_SWF_API GetWorkflowExecutionHistoryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SWF_API GetWorkflowExecutionHistoryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

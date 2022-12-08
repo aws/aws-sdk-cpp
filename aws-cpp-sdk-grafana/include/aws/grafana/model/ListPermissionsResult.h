@@ -26,12 +26,12 @@ namespace ManagedGrafana
 {
 namespace Model
 {
-  class AWS_MANAGEDGRAFANA_API ListPermissionsResult
+  class ListPermissionsResult
   {
   public:
-    ListPermissionsResult();
-    ListPermissionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListPermissionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MANAGEDGRAFANA_API ListPermissionsResult();
+    AWS_MANAGEDGRAFANA_API ListPermissionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MANAGEDGRAFANA_API ListPermissionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

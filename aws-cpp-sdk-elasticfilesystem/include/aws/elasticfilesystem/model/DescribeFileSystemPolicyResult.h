@@ -24,12 +24,12 @@ namespace EFS
 {
 namespace Model
 {
-  class AWS_EFS_API DescribeFileSystemPolicyResult
+  class DescribeFileSystemPolicyResult
   {
   public:
-    DescribeFileSystemPolicyResult();
-    DescribeFileSystemPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeFileSystemPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_EFS_API DescribeFileSystemPolicyResult();
+    AWS_EFS_API DescribeFileSystemPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_EFS_API DescribeFileSystemPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

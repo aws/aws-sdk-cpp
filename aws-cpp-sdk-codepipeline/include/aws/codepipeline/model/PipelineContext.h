@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PipelineContext">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEPIPELINE_API PipelineContext
+  class PipelineContext
   {
   public:
-    PipelineContext();
-    PipelineContext(Aws::Utils::Json::JsonView jsonValue);
-    PipelineContext& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEPIPELINE_API PipelineContext();
+    AWS_CODEPIPELINE_API PipelineContext(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEPIPELINE_API PipelineContext& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

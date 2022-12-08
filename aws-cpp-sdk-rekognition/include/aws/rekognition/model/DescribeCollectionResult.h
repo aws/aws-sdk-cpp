@@ -25,12 +25,12 @@ namespace Rekognition
 {
 namespace Model
 {
-  class AWS_REKOGNITION_API DescribeCollectionResult
+  class DescribeCollectionResult
   {
   public:
-    DescribeCollectionResult();
-    DescribeCollectionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeCollectionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_REKOGNITION_API DescribeCollectionResult();
+    AWS_REKOGNITION_API DescribeCollectionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_REKOGNITION_API DescribeCollectionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

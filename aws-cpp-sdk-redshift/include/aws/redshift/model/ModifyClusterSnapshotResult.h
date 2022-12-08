@@ -25,12 +25,12 @@ namespace Redshift
 {
 namespace Model
 {
-  class AWS_REDSHIFT_API ModifyClusterSnapshotResult
+  class ModifyClusterSnapshotResult
   {
   public:
-    ModifyClusterSnapshotResult();
-    ModifyClusterSnapshotResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ModifyClusterSnapshotResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_REDSHIFT_API ModifyClusterSnapshotResult();
+    AWS_REDSHIFT_API ModifyClusterSnapshotResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_REDSHIFT_API ModifyClusterSnapshotResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     

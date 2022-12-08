@@ -27,12 +27,12 @@ namespace IoTTwinMaker
 {
 namespace Model
 {
-  class AWS_IOTTWINMAKER_API ExecuteQueryResult
+  class ExecuteQueryResult
   {
   public:
-    ExecuteQueryResult();
-    ExecuteQueryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ExecuteQueryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOTTWINMAKER_API ExecuteQueryResult();
+    AWS_IOTTWINMAKER_API ExecuteQueryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOTTWINMAKER_API ExecuteQueryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

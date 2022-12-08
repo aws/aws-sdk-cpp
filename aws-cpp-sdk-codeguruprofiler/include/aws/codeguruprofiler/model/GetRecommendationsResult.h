@@ -34,12 +34,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/GetRecommendationsResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEGURUPROFILER_API GetRecommendationsResult
+  class GetRecommendationsResult
   {
   public:
-    GetRecommendationsResult();
-    GetRecommendationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetRecommendationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODEGURUPROFILER_API GetRecommendationsResult();
+    AWS_CODEGURUPROFILER_API GetRecommendationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODEGURUPROFILER_API GetRecommendationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

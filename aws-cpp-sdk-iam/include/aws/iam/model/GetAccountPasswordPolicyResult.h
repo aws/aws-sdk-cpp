@@ -31,12 +31,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetAccountPasswordPolicyResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_IAM_API GetAccountPasswordPolicyResult
+  class GetAccountPasswordPolicyResult
   {
   public:
-    GetAccountPasswordPolicyResult();
-    GetAccountPasswordPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    GetAccountPasswordPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_IAM_API GetAccountPasswordPolicyResult();
+    AWS_IAM_API GetAccountPasswordPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_IAM_API GetAccountPasswordPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

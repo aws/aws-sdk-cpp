@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-featurestore-runtime-2020-07-01/BatchGetRecordIdentifier">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKERFEATURESTORERUNTIME_API BatchGetRecordIdentifier
+  class BatchGetRecordIdentifier
   {
   public:
-    BatchGetRecordIdentifier();
-    BatchGetRecordIdentifier(Aws::Utils::Json::JsonView jsonValue);
-    BatchGetRecordIdentifier& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKERFEATURESTORERUNTIME_API BatchGetRecordIdentifier();
+    AWS_SAGEMAKERFEATURESTORERUNTIME_API BatchGetRecordIdentifier(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKERFEATURESTORERUNTIME_API BatchGetRecordIdentifier& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKERFEATURESTORERUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

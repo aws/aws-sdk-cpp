@@ -26,12 +26,12 @@ namespace CodeBuild
 {
 namespace Model
 {
-  class AWS_CODEBUILD_API BatchGetReportsResult
+  class BatchGetReportsResult
   {
   public:
-    BatchGetReportsResult();
-    BatchGetReportsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    BatchGetReportsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODEBUILD_API BatchGetReportsResult();
+    AWS_CODEBUILD_API BatchGetReportsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODEBUILD_API BatchGetReportsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/CidrAuthorizationContext">AWS
    * API Reference</a></p>
    */
-  class AWS_GLOBALACCELERATOR_API CidrAuthorizationContext
+  class CidrAuthorizationContext
   {
   public:
-    CidrAuthorizationContext();
-    CidrAuthorizationContext(Aws::Utils::Json::JsonView jsonValue);
-    CidrAuthorizationContext& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLOBALACCELERATOR_API CidrAuthorizationContext();
+    AWS_GLOBALACCELERATOR_API CidrAuthorizationContext(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLOBALACCELERATOR_API CidrAuthorizationContext& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLOBALACCELERATOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

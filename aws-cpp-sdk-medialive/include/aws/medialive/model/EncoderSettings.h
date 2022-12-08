@@ -40,13 +40,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/EncoderSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API EncoderSettings
+  class EncoderSettings
   {
   public:
-    EncoderSettings();
-    EncoderSettings(Aws::Utils::Json::JsonView jsonValue);
-    EncoderSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API EncoderSettings();
+    AWS_MEDIALIVE_API EncoderSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API EncoderSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

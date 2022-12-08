@@ -26,12 +26,12 @@ namespace Kafka
 {
 namespace Model
 {
-  class AWS_KAFKA_API CreateClusterV2Result
+  class CreateClusterV2Result
   {
   public:
-    CreateClusterV2Result();
-    CreateClusterV2Result(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateClusterV2Result& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KAFKA_API CreateClusterV2Result();
+    AWS_KAFKA_API CreateClusterV2Result(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KAFKA_API CreateClusterV2Result& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

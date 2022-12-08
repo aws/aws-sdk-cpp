@@ -30,12 +30,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/CheckDomainTransferabilityResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53DOMAINS_API CheckDomainTransferabilityResult
+  class CheckDomainTransferabilityResult
   {
   public:
-    CheckDomainTransferabilityResult();
-    CheckDomainTransferabilityResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CheckDomainTransferabilityResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ROUTE53DOMAINS_API CheckDomainTransferabilityResult();
+    AWS_ROUTE53DOMAINS_API CheckDomainTransferabilityResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ROUTE53DOMAINS_API CheckDomainTransferabilityResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

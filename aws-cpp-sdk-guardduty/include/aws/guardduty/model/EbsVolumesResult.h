@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/EbsVolumesResult">AWS
    * API Reference</a></p>
    */
-  class AWS_GUARDDUTY_API EbsVolumesResult
+  class EbsVolumesResult
   {
   public:
-    EbsVolumesResult();
-    EbsVolumesResult(Aws::Utils::Json::JsonView jsonValue);
-    EbsVolumesResult& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GUARDDUTY_API EbsVolumesResult();
+    AWS_GUARDDUTY_API EbsVolumesResult(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API EbsVolumesResult& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

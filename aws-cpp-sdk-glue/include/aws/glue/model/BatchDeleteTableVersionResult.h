@@ -25,12 +25,12 @@ namespace Glue
 {
 namespace Model
 {
-  class AWS_GLUE_API BatchDeleteTableVersionResult
+  class BatchDeleteTableVersionResult
   {
   public:
-    BatchDeleteTableVersionResult();
-    BatchDeleteTableVersionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    BatchDeleteTableVersionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GLUE_API BatchDeleteTableVersionResult();
+    AWS_GLUE_API BatchDeleteTableVersionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GLUE_API BatchDeleteTableVersionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

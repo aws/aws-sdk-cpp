@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/InstanceMetadata">AWS
    * API Reference</a></p>
    */
-  class AWS_SSOADMIN_API InstanceMetadata
+  class InstanceMetadata
   {
   public:
-    InstanceMetadata();
-    InstanceMetadata(Aws::Utils::Json::JsonView jsonValue);
-    InstanceMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSOADMIN_API InstanceMetadata();
+    AWS_SSOADMIN_API InstanceMetadata(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSOADMIN_API InstanceMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSOADMIN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

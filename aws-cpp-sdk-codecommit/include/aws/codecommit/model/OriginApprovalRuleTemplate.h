@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/OriginApprovalRuleTemplate">AWS
    * API Reference</a></p>
    */
-  class AWS_CODECOMMIT_API OriginApprovalRuleTemplate
+  class OriginApprovalRuleTemplate
   {
   public:
-    OriginApprovalRuleTemplate();
-    OriginApprovalRuleTemplate(Aws::Utils::Json::JsonView jsonValue);
-    OriginApprovalRuleTemplate& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODECOMMIT_API OriginApprovalRuleTemplate();
+    AWS_CODECOMMIT_API OriginApprovalRuleTemplate(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODECOMMIT_API OriginApprovalRuleTemplate& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODECOMMIT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

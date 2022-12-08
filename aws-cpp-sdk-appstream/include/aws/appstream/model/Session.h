@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/Session">AWS
    * API Reference</a></p>
    */
-  class AWS_APPSTREAM_API Session
+  class Session
   {
   public:
-    Session();
-    Session(Aws::Utils::Json::JsonView jsonValue);
-    Session& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPSTREAM_API Session();
+    AWS_APPSTREAM_API Session(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPSTREAM_API Session& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPSTREAM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

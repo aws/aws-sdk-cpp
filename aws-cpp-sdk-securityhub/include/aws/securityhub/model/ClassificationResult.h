@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ClassificationResult">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API ClassificationResult
+  class ClassificationResult
   {
   public:
-    ClassificationResult();
-    ClassificationResult(Aws::Utils::Json::JsonView jsonValue);
-    ClassificationResult& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API ClassificationResult();
+    AWS_SECURITYHUB_API ClassificationResult(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API ClassificationResult& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

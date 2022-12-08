@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/JobTemplate">AWS
    * API Reference</a></p>
    */
-  class AWS_EMRCONTAINERS_API JobTemplate
+  class JobTemplate
   {
   public:
-    JobTemplate();
-    JobTemplate(Aws::Utils::Json::JsonView jsonValue);
-    JobTemplate& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EMRCONTAINERS_API JobTemplate();
+    AWS_EMRCONTAINERS_API JobTemplate(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMRCONTAINERS_API JobTemplate& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMRCONTAINERS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

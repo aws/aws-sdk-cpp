@@ -26,12 +26,12 @@ namespace SageMakerGeospatial
 {
 namespace Model
 {
-  class AWS_SAGEMAKERGEOSPATIAL_API ListEarthObservationJobsResult
+  class ListEarthObservationJobsResult
   {
   public:
-    ListEarthObservationJobsResult();
-    ListEarthObservationJobsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListEarthObservationJobsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SAGEMAKERGEOSPATIAL_API ListEarthObservationJobsResult();
+    AWS_SAGEMAKERGEOSPATIAL_API ListEarthObservationJobsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SAGEMAKERGEOSPATIAL_API ListEarthObservationJobsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

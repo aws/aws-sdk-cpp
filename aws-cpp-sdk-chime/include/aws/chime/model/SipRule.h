@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/SipRule">AWS API
    * Reference</a></p>
    */
-  class AWS_CHIME_API SipRule
+  class SipRule
   {
   public:
-    SipRule();
-    SipRule(Aws::Utils::Json::JsonView jsonValue);
-    SipRule& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIME_API SipRule();
+    AWS_CHIME_API SipRule(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API SipRule& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

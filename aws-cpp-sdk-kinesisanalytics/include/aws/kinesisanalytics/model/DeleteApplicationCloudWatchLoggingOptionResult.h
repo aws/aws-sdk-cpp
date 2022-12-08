@@ -22,12 +22,12 @@ namespace KinesisAnalytics
 {
 namespace Model
 {
-  class AWS_KINESISANALYTICS_API DeleteApplicationCloudWatchLoggingOptionResult
+  class DeleteApplicationCloudWatchLoggingOptionResult
   {
   public:
-    DeleteApplicationCloudWatchLoggingOptionResult();
-    DeleteApplicationCloudWatchLoggingOptionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteApplicationCloudWatchLoggingOptionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KINESISANALYTICS_API DeleteApplicationCloudWatchLoggingOptionResult();
+    AWS_KINESISANALYTICS_API DeleteApplicationCloudWatchLoggingOptionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KINESISANALYTICS_API DeleteApplicationCloudWatchLoggingOptionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

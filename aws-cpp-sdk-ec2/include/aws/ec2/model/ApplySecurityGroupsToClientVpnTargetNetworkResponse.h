@@ -26,12 +26,12 @@ namespace EC2
 {
 namespace Model
 {
-  class AWS_EC2_API ApplySecurityGroupsToClientVpnTargetNetworkResponse
+  class ApplySecurityGroupsToClientVpnTargetNetworkResponse
   {
   public:
-    ApplySecurityGroupsToClientVpnTargetNetworkResponse();
-    ApplySecurityGroupsToClientVpnTargetNetworkResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ApplySecurityGroupsToClientVpnTargetNetworkResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API ApplySecurityGroupsToClientVpnTargetNetworkResponse();
+    AWS_EC2_API ApplySecurityGroupsToClientVpnTargetNetworkResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API ApplySecurityGroupsToClientVpnTargetNetworkResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

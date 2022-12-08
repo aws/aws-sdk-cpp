@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/EnrollmentConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_VOICEID_API EnrollmentConfig
+  class EnrollmentConfig
   {
   public:
-    EnrollmentConfig();
-    EnrollmentConfig(Aws::Utils::Json::JsonView jsonValue);
-    EnrollmentConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_VOICEID_API EnrollmentConfig();
+    AWS_VOICEID_API EnrollmentConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_VOICEID_API EnrollmentConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_VOICEID_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

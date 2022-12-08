@@ -27,12 +27,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateThingResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API UpdateThingResult
+  class UpdateThingResult
   {
   public:
-    UpdateThingResult();
-    UpdateThingResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateThingResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOT_API UpdateThingResult();
+    AWS_IOT_API UpdateThingResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOT_API UpdateThingResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

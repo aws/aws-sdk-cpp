@@ -22,12 +22,12 @@ namespace Connect
 {
 namespace Model
 {
-  class AWS_CONNECT_API StartContactRecordingResult
+  class StartContactRecordingResult
   {
   public:
-    StartContactRecordingResult();
-    StartContactRecordingResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    StartContactRecordingResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CONNECT_API StartContactRecordingResult();
+    AWS_CONNECT_API StartContactRecordingResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CONNECT_API StartContactRecordingResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

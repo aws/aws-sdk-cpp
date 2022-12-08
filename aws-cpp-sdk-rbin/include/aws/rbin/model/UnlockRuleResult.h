@@ -32,12 +32,12 @@ namespace RecycleBin
 {
 namespace Model
 {
-  class AWS_RECYCLEBIN_API UnlockRuleResult
+  class UnlockRuleResult
   {
   public:
-    UnlockRuleResult();
-    UnlockRuleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UnlockRuleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_RECYCLEBIN_API UnlockRuleResult();
+    AWS_RECYCLEBIN_API UnlockRuleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_RECYCLEBIN_API UnlockRuleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

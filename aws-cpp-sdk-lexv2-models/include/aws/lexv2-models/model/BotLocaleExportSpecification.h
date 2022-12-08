@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/BotLocaleExportSpecification">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELSV2_API BotLocaleExportSpecification
+  class BotLocaleExportSpecification
   {
   public:
-    BotLocaleExportSpecification();
-    BotLocaleExportSpecification(Aws::Utils::Json::JsonView jsonValue);
-    BotLocaleExportSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELSV2_API BotLocaleExportSpecification();
+    AWS_LEXMODELSV2_API BotLocaleExportSpecification(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API BotLocaleExportSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

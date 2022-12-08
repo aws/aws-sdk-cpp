@@ -22,12 +22,12 @@ namespace SsmSap
 {
 namespace Model
 {
-  class AWS_SSMSAP_API TagResourceResult
+  class TagResourceResult
   {
   public:
-    TagResourceResult();
-    TagResourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    TagResourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSMSAP_API TagResourceResult();
+    AWS_SSMSAP_API TagResourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSMSAP_API TagResourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

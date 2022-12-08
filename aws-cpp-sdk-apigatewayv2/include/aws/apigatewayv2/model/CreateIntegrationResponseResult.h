@@ -26,12 +26,12 @@ namespace ApiGatewayV2
 {
 namespace Model
 {
-  class AWS_APIGATEWAYV2_API CreateIntegrationResponseResult
+  class CreateIntegrationResponseResult
   {
   public:
-    CreateIntegrationResponseResult();
-    CreateIntegrationResponseResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateIntegrationResponseResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APIGATEWAYV2_API CreateIntegrationResponseResult();
+    AWS_APIGATEWAYV2_API CreateIntegrationResponseResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APIGATEWAYV2_API CreateIntegrationResponseResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

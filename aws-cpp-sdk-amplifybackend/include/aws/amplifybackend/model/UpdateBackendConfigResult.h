@@ -25,12 +25,12 @@ namespace AmplifyBackend
 {
 namespace Model
 {
-  class AWS_AMPLIFYBACKEND_API UpdateBackendConfigResult
+  class UpdateBackendConfigResult
   {
   public:
-    UpdateBackendConfigResult();
-    UpdateBackendConfigResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateBackendConfigResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_AMPLIFYBACKEND_API UpdateBackendConfigResult();
+    AWS_AMPLIFYBACKEND_API UpdateBackendConfigResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_AMPLIFYBACKEND_API UpdateBackendConfigResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

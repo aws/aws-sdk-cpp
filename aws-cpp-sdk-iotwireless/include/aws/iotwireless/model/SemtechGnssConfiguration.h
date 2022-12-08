@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/SemtechGnssConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTWIRELESS_API SemtechGnssConfiguration
+  class SemtechGnssConfiguration
   {
   public:
-    SemtechGnssConfiguration();
-    SemtechGnssConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    SemtechGnssConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTWIRELESS_API SemtechGnssConfiguration();
+    AWS_IOTWIRELESS_API SemtechGnssConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API SemtechGnssConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

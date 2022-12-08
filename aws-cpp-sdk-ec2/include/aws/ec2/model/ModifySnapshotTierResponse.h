@@ -26,12 +26,12 @@ namespace EC2
 {
 namespace Model
 {
-  class AWS_EC2_API ModifySnapshotTierResponse
+  class ModifySnapshotTierResponse
   {
   public:
-    ModifySnapshotTierResponse();
-    ModifySnapshotTierResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ModifySnapshotTierResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API ModifySnapshotTierResponse();
+    AWS_EC2_API ModifySnapshotTierResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API ModifySnapshotTierResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

@@ -26,12 +26,12 @@ namespace TranscribeService
 {
 namespace Model
 {
-  class AWS_TRANSCRIBESERVICE_API GetVocabularyFilterResult
+  class GetVocabularyFilterResult
   {
   public:
-    GetVocabularyFilterResult();
-    GetVocabularyFilterResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetVocabularyFilterResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_TRANSCRIBESERVICE_API GetVocabularyFilterResult();
+    AWS_TRANSCRIBESERVICE_API GetVocabularyFilterResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_TRANSCRIBESERVICE_API GetVocabularyFilterResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

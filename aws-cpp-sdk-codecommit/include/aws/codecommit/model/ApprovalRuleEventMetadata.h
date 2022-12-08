@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/ApprovalRuleEventMetadata">AWS
    * API Reference</a></p>
    */
-  class AWS_CODECOMMIT_API ApprovalRuleEventMetadata
+  class ApprovalRuleEventMetadata
   {
   public:
-    ApprovalRuleEventMetadata();
-    ApprovalRuleEventMetadata(Aws::Utils::Json::JsonView jsonValue);
-    ApprovalRuleEventMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODECOMMIT_API ApprovalRuleEventMetadata();
+    AWS_CODECOMMIT_API ApprovalRuleEventMetadata(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODECOMMIT_API ApprovalRuleEventMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODECOMMIT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

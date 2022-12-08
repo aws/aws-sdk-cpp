@@ -26,12 +26,12 @@ namespace WellArchitected
 {
 namespace Model
 {
-  class AWS_WELLARCHITECTED_API ListNotificationsResult
+  class ListNotificationsResult
   {
   public:
-    ListNotificationsResult();
-    ListNotificationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListNotificationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WELLARCHITECTED_API ListNotificationsResult();
+    AWS_WELLARCHITECTED_API ListNotificationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WELLARCHITECTED_API ListNotificationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

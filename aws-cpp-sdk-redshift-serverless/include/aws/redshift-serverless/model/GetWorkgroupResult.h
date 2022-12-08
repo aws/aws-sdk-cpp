@@ -24,12 +24,12 @@ namespace RedshiftServerless
 {
 namespace Model
 {
-  class AWS_REDSHIFTSERVERLESS_API GetWorkgroupResult
+  class GetWorkgroupResult
   {
   public:
-    GetWorkgroupResult();
-    GetWorkgroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetWorkgroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_REDSHIFTSERVERLESS_API GetWorkgroupResult();
+    AWS_REDSHIFTSERVERLESS_API GetWorkgroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_REDSHIFTSERVERLESS_API GetWorkgroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -33,12 +33,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/GetPipelineStateOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEPIPELINE_API GetPipelineStateResult
+  class GetPipelineStateResult
   {
   public:
-    GetPipelineStateResult();
-    GetPipelineStateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetPipelineStateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODEPIPELINE_API GetPipelineStateResult();
+    AWS_CODEPIPELINE_API GetPipelineStateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODEPIPELINE_API GetPipelineStateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

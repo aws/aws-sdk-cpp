@@ -24,12 +24,12 @@ namespace AppRunner
 {
 namespace Model
 {
-  class AWS_APPRUNNER_API DeleteAutoScalingConfigurationResult
+  class DeleteAutoScalingConfigurationResult
   {
   public:
-    DeleteAutoScalingConfigurationResult();
-    DeleteAutoScalingConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteAutoScalingConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPRUNNER_API DeleteAutoScalingConfigurationResult();
+    AWS_APPRUNNER_API DeleteAutoScalingConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPRUNNER_API DeleteAutoScalingConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

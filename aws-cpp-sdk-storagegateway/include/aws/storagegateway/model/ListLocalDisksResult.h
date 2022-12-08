@@ -26,12 +26,12 @@ namespace StorageGateway
 {
 namespace Model
 {
-  class AWS_STORAGEGATEWAY_API ListLocalDisksResult
+  class ListLocalDisksResult
   {
   public:
-    ListLocalDisksResult();
-    ListLocalDisksResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListLocalDisksResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_STORAGEGATEWAY_API ListLocalDisksResult();
+    AWS_STORAGEGATEWAY_API ListLocalDisksResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_STORAGEGATEWAY_API ListLocalDisksResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     

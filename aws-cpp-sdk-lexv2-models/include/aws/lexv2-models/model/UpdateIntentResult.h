@@ -36,12 +36,12 @@ namespace LexModelsV2
 {
 namespace Model
 {
-  class AWS_LEXMODELSV2_API UpdateIntentResult
+  class UpdateIntentResult
   {
   public:
-    UpdateIntentResult();
-    UpdateIntentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateIntentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LEXMODELSV2_API UpdateIntentResult();
+    AWS_LEXMODELSV2_API UpdateIntentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LEXMODELSV2_API UpdateIntentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

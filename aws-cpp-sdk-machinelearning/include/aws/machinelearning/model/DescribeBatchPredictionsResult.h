@@ -33,12 +33,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/DescribeBatchPredictionsOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_MACHINELEARNING_API DescribeBatchPredictionsResult
+  class DescribeBatchPredictionsResult
   {
   public:
-    DescribeBatchPredictionsResult();
-    DescribeBatchPredictionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeBatchPredictionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MACHINELEARNING_API DescribeBatchPredictionsResult();
+    AWS_MACHINELEARNING_API DescribeBatchPredictionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MACHINELEARNING_API DescribeBatchPredictionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

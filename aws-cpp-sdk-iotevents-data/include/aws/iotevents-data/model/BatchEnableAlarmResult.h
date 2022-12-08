@@ -25,12 +25,12 @@ namespace IoTEventsData
 {
 namespace Model
 {
-  class AWS_IOTEVENTSDATA_API BatchEnableAlarmResult
+  class BatchEnableAlarmResult
   {
   public:
-    BatchEnableAlarmResult();
-    BatchEnableAlarmResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    BatchEnableAlarmResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOTEVENTSDATA_API BatchEnableAlarmResult();
+    AWS_IOTEVENTSDATA_API BatchEnableAlarmResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOTEVENTSDATA_API BatchEnableAlarmResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

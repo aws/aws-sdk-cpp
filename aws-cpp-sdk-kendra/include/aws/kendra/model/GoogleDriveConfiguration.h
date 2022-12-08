@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/GoogleDriveConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_KENDRA_API GoogleDriveConfiguration
+  class GoogleDriveConfiguration
   {
   public:
-    GoogleDriveConfiguration();
-    GoogleDriveConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    GoogleDriveConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KENDRA_API GoogleDriveConfiguration();
+    AWS_KENDRA_API GoogleDriveConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API GoogleDriveConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

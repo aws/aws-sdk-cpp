@@ -33,12 +33,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeScheduledInstanceAvailabilityResult">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API DescribeScheduledInstanceAvailabilityResponse
+  class DescribeScheduledInstanceAvailabilityResponse
   {
   public:
-    DescribeScheduledInstanceAvailabilityResponse();
-    DescribeScheduledInstanceAvailabilityResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeScheduledInstanceAvailabilityResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API DescribeScheduledInstanceAvailabilityResponse();
+    AWS_EC2_API DescribeScheduledInstanceAvailabilityResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API DescribeScheduledInstanceAvailabilityResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

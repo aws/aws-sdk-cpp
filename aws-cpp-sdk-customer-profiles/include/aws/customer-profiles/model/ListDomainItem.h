@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListDomainItem">AWS
    * API Reference</a></p>
    */
-  class AWS_CUSTOMERPROFILES_API ListDomainItem
+  class ListDomainItem
   {
   public:
-    ListDomainItem();
-    ListDomainItem(Aws::Utils::Json::JsonView jsonValue);
-    ListDomainItem& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CUSTOMERPROFILES_API ListDomainItem();
+    AWS_CUSTOMERPROFILES_API ListDomainItem(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CUSTOMERPROFILES_API ListDomainItem& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CUSTOMERPROFILES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

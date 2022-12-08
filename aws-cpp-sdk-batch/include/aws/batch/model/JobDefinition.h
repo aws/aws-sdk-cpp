@@ -38,13 +38,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/JobDefinition">AWS
    * API Reference</a></p>
    */
-  class AWS_BATCH_API JobDefinition
+  class JobDefinition
   {
   public:
-    JobDefinition();
-    JobDefinition(Aws::Utils::Json::JsonView jsonValue);
-    JobDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BATCH_API JobDefinition();
+    AWS_BATCH_API JobDefinition(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BATCH_API JobDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BATCH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

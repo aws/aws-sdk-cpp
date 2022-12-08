@@ -23,13 +23,13 @@ namespace IoT1ClickDevicesService
 namespace Model
 {
 
-  class AWS_IOT1CLICKDEVICESSERVICE_API InvalidRequestException
+  class InvalidRequestException
   {
   public:
-    InvalidRequestException();
-    InvalidRequestException(Aws::Utils::Json::JsonView jsonValue);
-    InvalidRequestException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT1CLICKDEVICESSERVICE_API InvalidRequestException();
+    AWS_IOT1CLICKDEVICESSERVICE_API InvalidRequestException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT1CLICKDEVICESSERVICE_API InvalidRequestException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT1CLICKDEVICESSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

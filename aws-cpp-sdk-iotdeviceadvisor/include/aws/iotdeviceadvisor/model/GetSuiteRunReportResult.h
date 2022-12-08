@@ -24,12 +24,12 @@ namespace IoTDeviceAdvisor
 {
 namespace Model
 {
-  class AWS_IOTDEVICEADVISOR_API GetSuiteRunReportResult
+  class GetSuiteRunReportResult
   {
   public:
-    GetSuiteRunReportResult();
-    GetSuiteRunReportResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetSuiteRunReportResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOTDEVICEADVISOR_API GetSuiteRunReportResult();
+    AWS_IOTDEVICEADVISOR_API GetSuiteRunReportResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOTDEVICEADVISOR_API GetSuiteRunReportResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

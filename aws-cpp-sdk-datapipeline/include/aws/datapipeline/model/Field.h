@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/Field">AWS
    * API Reference</a></p>
    */
-  class AWS_DATAPIPELINE_API Field
+  class Field
   {
   public:
-    Field();
-    Field(Aws::Utils::Json::JsonView jsonValue);
-    Field& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DATAPIPELINE_API Field();
+    AWS_DATAPIPELINE_API Field(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATAPIPELINE_API Field& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATAPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

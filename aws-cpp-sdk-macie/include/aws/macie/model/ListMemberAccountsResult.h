@@ -26,12 +26,12 @@ namespace Macie
 {
 namespace Model
 {
-  class AWS_MACIE_API ListMemberAccountsResult
+  class ListMemberAccountsResult
   {
   public:
-    ListMemberAccountsResult();
-    ListMemberAccountsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListMemberAccountsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MACIE_API ListMemberAccountsResult();
+    AWS_MACIE_API ListMemberAccountsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MACIE_API ListMemberAccountsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -26,12 +26,12 @@ namespace CloudWatchEvidently
 {
 namespace Model
 {
-  class AWS_CLOUDWATCHEVIDENTLY_API ListSegmentReferencesResult
+  class ListSegmentReferencesResult
   {
   public:
-    ListSegmentReferencesResult();
-    ListSegmentReferencesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListSegmentReferencesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CLOUDWATCHEVIDENTLY_API ListSegmentReferencesResult();
+    AWS_CLOUDWATCHEVIDENTLY_API ListSegmentReferencesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CLOUDWATCHEVIDENTLY_API ListSegmentReferencesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

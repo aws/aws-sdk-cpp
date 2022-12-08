@@ -31,12 +31,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/ApiKeyIds">AWS
    * API Reference</a></p>
    */
-  class AWS_APIGATEWAY_API ImportApiKeysResult
+  class ImportApiKeysResult
   {
   public:
-    ImportApiKeysResult();
-    ImportApiKeysResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ImportApiKeysResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APIGATEWAY_API ImportApiKeysResult();
+    AWS_APIGATEWAY_API ImportApiKeysResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APIGATEWAY_API ImportApiKeysResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

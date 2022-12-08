@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/FilterDropDownControl">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API FilterDropDownControl
+  class FilterDropDownControl
   {
   public:
-    FilterDropDownControl();
-    FilterDropDownControl(Aws::Utils::Json::JsonView jsonValue);
-    FilterDropDownControl& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API FilterDropDownControl();
+    AWS_QUICKSIGHT_API FilterDropDownControl(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API FilterDropDownControl& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

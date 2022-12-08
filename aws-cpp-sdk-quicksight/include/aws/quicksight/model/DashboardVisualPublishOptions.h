@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DashboardVisualPublishOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API DashboardVisualPublishOptions
+  class DashboardVisualPublishOptions
   {
   public:
-    DashboardVisualPublishOptions();
-    DashboardVisualPublishOptions(Aws::Utils::Json::JsonView jsonValue);
-    DashboardVisualPublishOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API DashboardVisualPublishOptions();
+    AWS_QUICKSIGHT_API DashboardVisualPublishOptions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API DashboardVisualPublishOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

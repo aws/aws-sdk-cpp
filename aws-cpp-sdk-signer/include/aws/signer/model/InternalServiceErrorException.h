@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/InternalServiceErrorException">AWS
    * API Reference</a></p>
    */
-  class AWS_SIGNER_API InternalServiceErrorException
+  class InternalServiceErrorException
   {
   public:
-    InternalServiceErrorException();
-    InternalServiceErrorException(Aws::Utils::Json::JsonView jsonValue);
-    InternalServiceErrorException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SIGNER_API InternalServiceErrorException();
+    AWS_SIGNER_API InternalServiceErrorException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SIGNER_API InternalServiceErrorException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SIGNER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

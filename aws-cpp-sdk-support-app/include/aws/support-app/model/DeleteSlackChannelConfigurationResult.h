@@ -22,12 +22,12 @@ namespace SupportApp
 {
 namespace Model
 {
-  class AWS_SUPPORTAPP_API DeleteSlackChannelConfigurationResult
+  class DeleteSlackChannelConfigurationResult
   {
   public:
-    DeleteSlackChannelConfigurationResult();
-    DeleteSlackChannelConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteSlackChannelConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SUPPORTAPP_API DeleteSlackChannelConfigurationResult();
+    AWS_SUPPORTAPP_API DeleteSlackChannelConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SUPPORTAPP_API DeleteSlackChannelConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

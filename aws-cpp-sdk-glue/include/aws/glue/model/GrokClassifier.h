@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GrokClassifier">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API GrokClassifier
+  class GrokClassifier
   {
   public:
-    GrokClassifier();
-    GrokClassifier(Aws::Utils::Json::JsonView jsonValue);
-    GrokClassifier& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API GrokClassifier();
+    AWS_GLUE_API GrokClassifier(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API GrokClassifier& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

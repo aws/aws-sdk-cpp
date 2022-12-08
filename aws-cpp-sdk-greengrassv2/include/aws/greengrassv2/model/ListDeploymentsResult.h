@@ -26,12 +26,12 @@ namespace GreengrassV2
 {
 namespace Model
 {
-  class AWS_GREENGRASSV2_API ListDeploymentsResult
+  class ListDeploymentsResult
   {
   public:
-    ListDeploymentsResult();
-    ListDeploymentsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListDeploymentsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GREENGRASSV2_API ListDeploymentsResult();
+    AWS_GREENGRASSV2_API ListDeploymentsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GREENGRASSV2_API ListDeploymentsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

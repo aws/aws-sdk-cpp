@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DriftCheckBaselines">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API DriftCheckBaselines
+  class DriftCheckBaselines
   {
   public:
-    DriftCheckBaselines();
-    DriftCheckBaselines(Aws::Utils::Json::JsonView jsonValue);
-    DriftCheckBaselines& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API DriftCheckBaselines();
+    AWS_SAGEMAKER_API DriftCheckBaselines(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API DriftCheckBaselines& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

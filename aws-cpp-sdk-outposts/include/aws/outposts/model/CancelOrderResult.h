@@ -22,12 +22,12 @@ namespace Outposts
 {
 namespace Model
 {
-  class AWS_OUTPOSTS_API CancelOrderResult
+  class CancelOrderResult
   {
   public:
-    CancelOrderResult();
-    CancelOrderResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CancelOrderResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OUTPOSTS_API CancelOrderResult();
+    AWS_OUTPOSTS_API CancelOrderResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OUTPOSTS_API CancelOrderResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

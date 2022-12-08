@@ -22,12 +22,12 @@ namespace Macie2
 {
 namespace Model
 {
-  class AWS_MACIE2_API AcceptInvitationResult
+  class AcceptInvitationResult
   {
   public:
-    AcceptInvitationResult();
-    AcceptInvitationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AcceptInvitationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MACIE2_API AcceptInvitationResult();
+    AWS_MACIE2_API AcceptInvitationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MACIE2_API AcceptInvitationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

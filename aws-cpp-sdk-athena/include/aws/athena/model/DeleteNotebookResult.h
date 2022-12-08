@@ -22,12 +22,12 @@ namespace Athena
 {
 namespace Model
 {
-  class AWS_ATHENA_API DeleteNotebookResult
+  class DeleteNotebookResult
   {
   public:
-    DeleteNotebookResult();
-    DeleteNotebookResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteNotebookResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ATHENA_API DeleteNotebookResult();
+    AWS_ATHENA_API DeleteNotebookResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ATHENA_API DeleteNotebookResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

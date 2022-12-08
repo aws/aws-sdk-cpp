@@ -26,12 +26,12 @@ namespace AppSync
 {
 namespace Model
 {
-  class AWS_APPSYNC_API ListResolversByFunctionResult
+  class ListResolversByFunctionResult
   {
   public:
-    ListResolversByFunctionResult();
-    ListResolversByFunctionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListResolversByFunctionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPSYNC_API ListResolversByFunctionResult();
+    AWS_APPSYNC_API ListResolversByFunctionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPSYNC_API ListResolversByFunctionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

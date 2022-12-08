@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UserSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_CHIME_API UserSettings
+  class UserSettings
   {
   public:
-    UserSettings();
-    UserSettings(Aws::Utils::Json::JsonView jsonValue);
-    UserSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIME_API UserSettings();
+    AWS_CHIME_API UserSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API UserSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

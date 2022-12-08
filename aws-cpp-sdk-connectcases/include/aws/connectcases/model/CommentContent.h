@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/CommentContent">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECTCASES_API CommentContent
+  class CommentContent
   {
   public:
-    CommentContent();
-    CommentContent(Aws::Utils::Json::JsonView jsonValue);
-    CommentContent& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECTCASES_API CommentContent();
+    AWS_CONNECTCASES_API CommentContent(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTCASES_API CommentContent& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTCASES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -30,13 +30,13 @@ namespace Model
    * <a href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/Node">AWS API
    * Reference</a></p>
    */
-  class AWS_DAX_API Node
+  class Node
   {
   public:
-    Node();
-    Node(Aws::Utils::Json::JsonView jsonValue);
-    Node& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DAX_API Node();
+    AWS_DAX_API Node(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DAX_API Node& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DAX_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

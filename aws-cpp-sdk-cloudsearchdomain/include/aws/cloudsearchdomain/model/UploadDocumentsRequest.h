@@ -22,10 +22,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearchdomain-2013-01-01/UploadDocumentsRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDSEARCHDOMAIN_API UploadDocumentsRequest : public StreamingCloudSearchDomainRequest
+  class UploadDocumentsRequest : public StreamingCloudSearchDomainRequest
   {
   public:
-    UploadDocumentsRequest();
+    AWS_CLOUDSEARCHDOMAIN_API UploadDocumentsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.

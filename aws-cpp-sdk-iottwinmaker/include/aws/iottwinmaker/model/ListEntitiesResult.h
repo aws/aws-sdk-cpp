@@ -26,12 +26,12 @@ namespace IoTTwinMaker
 {
 namespace Model
 {
-  class AWS_IOTTWINMAKER_API ListEntitiesResult
+  class ListEntitiesResult
   {
   public:
-    ListEntitiesResult();
-    ListEntitiesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListEntitiesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOTTWINMAKER_API ListEntitiesResult();
+    AWS_IOTTWINMAKER_API ListEntitiesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOTTWINMAKER_API ListEntitiesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

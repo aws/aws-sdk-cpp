@@ -26,12 +26,12 @@ namespace IVS
 {
 namespace Model
 {
-  class AWS_IVS_API ListRecordingConfigurationsResult
+  class ListRecordingConfigurationsResult
   {
   public:
-    ListRecordingConfigurationsResult();
-    ListRecordingConfigurationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListRecordingConfigurationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IVS_API ListRecordingConfigurationsResult();
+    AWS_IVS_API ListRecordingConfigurationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IVS_API ListRecordingConfigurationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

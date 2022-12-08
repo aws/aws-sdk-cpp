@@ -22,12 +22,12 @@ namespace SMS
 {
 namespace Model
 {
-  class AWS_SMS_API DeleteReplicationJobResult
+  class DeleteReplicationJobResult
   {
   public:
-    DeleteReplicationJobResult();
-    DeleteReplicationJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteReplicationJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SMS_API DeleteReplicationJobResult();
+    AWS_SMS_API DeleteReplicationJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SMS_API DeleteReplicationJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

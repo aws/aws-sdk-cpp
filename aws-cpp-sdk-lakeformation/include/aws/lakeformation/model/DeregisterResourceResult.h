@@ -22,12 +22,12 @@ namespace LakeFormation
 {
 namespace Model
 {
-  class AWS_LAKEFORMATION_API DeregisterResourceResult
+  class DeregisterResourceResult
   {
   public:
-    DeregisterResourceResult();
-    DeregisterResourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeregisterResourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LAKEFORMATION_API DeregisterResourceResult();
+    AWS_LAKEFORMATION_API DeregisterResourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LAKEFORMATION_API DeregisterResourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

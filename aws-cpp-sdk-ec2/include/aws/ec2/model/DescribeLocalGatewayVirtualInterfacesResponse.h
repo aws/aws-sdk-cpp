@@ -27,12 +27,12 @@ namespace EC2
 {
 namespace Model
 {
-  class AWS_EC2_API DescribeLocalGatewayVirtualInterfacesResponse
+  class DescribeLocalGatewayVirtualInterfacesResponse
   {
   public:
-    DescribeLocalGatewayVirtualInterfacesResponse();
-    DescribeLocalGatewayVirtualInterfacesResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeLocalGatewayVirtualInterfacesResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API DescribeLocalGatewayVirtualInterfacesResponse();
+    AWS_EC2_API DescribeLocalGatewayVirtualInterfacesResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API DescribeLocalGatewayVirtualInterfacesResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

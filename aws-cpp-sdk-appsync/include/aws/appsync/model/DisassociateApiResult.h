@@ -22,12 +22,12 @@ namespace AppSync
 {
 namespace Model
 {
-  class AWS_APPSYNC_API DisassociateApiResult
+  class DisassociateApiResult
   {
   public:
-    DisassociateApiResult();
-    DisassociateApiResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DisassociateApiResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPSYNC_API DisassociateApiResult();
+    AWS_APPSYNC_API DisassociateApiResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPSYNC_API DisassociateApiResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

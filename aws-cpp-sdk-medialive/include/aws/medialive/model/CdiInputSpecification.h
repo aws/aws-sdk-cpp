@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CdiInputSpecification">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API CdiInputSpecification
+  class CdiInputSpecification
   {
   public:
-    CdiInputSpecification();
-    CdiInputSpecification(Aws::Utils::Json::JsonView jsonValue);
-    CdiInputSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API CdiInputSpecification();
+    AWS_MEDIALIVE_API CdiInputSpecification(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API CdiInputSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

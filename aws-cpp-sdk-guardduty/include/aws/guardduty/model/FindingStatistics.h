@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/FindingStatistics">AWS
    * API Reference</a></p>
    */
-  class AWS_GUARDDUTY_API FindingStatistics
+  class FindingStatistics
   {
   public:
-    FindingStatistics();
-    FindingStatistics(Aws::Utils::Json::JsonView jsonValue);
-    FindingStatistics& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GUARDDUTY_API FindingStatistics();
+    AWS_GUARDDUTY_API FindingStatistics(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API FindingStatistics& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

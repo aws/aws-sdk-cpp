@@ -24,12 +24,12 @@ namespace LexModelsV2
 {
 namespace Model
 {
-  class AWS_LEXMODELSV2_API CreateResourcePolicyStatementResult
+  class CreateResourcePolicyStatementResult
   {
   public:
-    CreateResourcePolicyStatementResult();
-    CreateResourcePolicyStatementResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateResourcePolicyStatementResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LEXMODELSV2_API CreateResourcePolicyStatementResult();
+    AWS_LEXMODELSV2_API CreateResourcePolicyStatementResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LEXMODELSV2_API CreateResourcePolicyStatementResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

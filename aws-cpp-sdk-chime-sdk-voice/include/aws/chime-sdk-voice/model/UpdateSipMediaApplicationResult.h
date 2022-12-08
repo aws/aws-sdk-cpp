@@ -24,12 +24,12 @@ namespace ChimeSDKVoice
 {
 namespace Model
 {
-  class AWS_CHIMESDKVOICE_API UpdateSipMediaApplicationResult
+  class UpdateSipMediaApplicationResult
   {
   public:
-    UpdateSipMediaApplicationResult();
-    UpdateSipMediaApplicationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateSipMediaApplicationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CHIMESDKVOICE_API UpdateSipMediaApplicationResult();
+    AWS_CHIMESDKVOICE_API UpdateSipMediaApplicationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CHIMESDKVOICE_API UpdateSipMediaApplicationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     

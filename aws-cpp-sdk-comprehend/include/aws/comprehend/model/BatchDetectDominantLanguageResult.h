@@ -26,12 +26,12 @@ namespace Comprehend
 {
 namespace Model
 {
-  class AWS_COMPREHEND_API BatchDetectDominantLanguageResult
+  class BatchDetectDominantLanguageResult
   {
   public:
-    BatchDetectDominantLanguageResult();
-    BatchDetectDominantLanguageResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    BatchDetectDominantLanguageResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_COMPREHEND_API BatchDetectDominantLanguageResult();
+    AWS_COMPREHEND_API BatchDetectDominantLanguageResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_COMPREHEND_API BatchDetectDominantLanguageResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

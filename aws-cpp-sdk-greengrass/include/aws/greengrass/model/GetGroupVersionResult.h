@@ -25,12 +25,12 @@ namespace Greengrass
 {
 namespace Model
 {
-  class AWS_GREENGRASS_API GetGroupVersionResult
+  class GetGroupVersionResult
   {
   public:
-    GetGroupVersionResult();
-    GetGroupVersionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetGroupVersionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GREENGRASS_API GetGroupVersionResult();
+    AWS_GREENGRASS_API GetGroupVersionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GREENGRASS_API GetGroupVersionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

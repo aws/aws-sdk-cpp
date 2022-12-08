@@ -26,12 +26,12 @@ namespace WAF
 {
 namespace Model
 {
-  class AWS_WAF_API GetSampledRequestsResult
+  class GetSampledRequestsResult
   {
   public:
-    GetSampledRequestsResult();
-    GetSampledRequestsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetSampledRequestsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WAF_API GetSampledRequestsResult();
+    AWS_WAF_API GetSampledRequestsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WAF_API GetSampledRequestsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

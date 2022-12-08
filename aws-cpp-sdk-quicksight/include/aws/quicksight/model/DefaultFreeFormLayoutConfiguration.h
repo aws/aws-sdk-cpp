@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DefaultFreeFormLayoutConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API DefaultFreeFormLayoutConfiguration
+  class DefaultFreeFormLayoutConfiguration
   {
   public:
-    DefaultFreeFormLayoutConfiguration();
-    DefaultFreeFormLayoutConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    DefaultFreeFormLayoutConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API DefaultFreeFormLayoutConfiguration();
+    AWS_QUICKSIGHT_API DefaultFreeFormLayoutConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API DefaultFreeFormLayoutConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

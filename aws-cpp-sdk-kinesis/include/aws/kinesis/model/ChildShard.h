@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/ChildShard">AWS
    * API Reference</a></p>
    */
-  class AWS_KINESIS_API ChildShard
+  class ChildShard
   {
   public:
-    ChildShard();
-    ChildShard(Aws::Utils::Json::JsonView jsonValue);
-    ChildShard& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KINESIS_API ChildShard();
+    AWS_KINESIS_API ChildShard(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESIS_API ChildShard& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESIS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

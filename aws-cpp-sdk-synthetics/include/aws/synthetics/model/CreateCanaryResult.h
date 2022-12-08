@@ -24,12 +24,12 @@ namespace Synthetics
 {
 namespace Model
 {
-  class AWS_SYNTHETICS_API CreateCanaryResult
+  class CreateCanaryResult
   {
   public:
-    CreateCanaryResult();
-    CreateCanaryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateCanaryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SYNTHETICS_API CreateCanaryResult();
+    AWS_SYNTHETICS_API CreateCanaryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SYNTHETICS_API CreateCanaryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

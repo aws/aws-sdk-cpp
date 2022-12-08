@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/Member">AWS
    * API Reference</a></p>
    */
-  class AWS_MANAGEDBLOCKCHAIN_API Member
+  class Member
   {
   public:
-    Member();
-    Member(Aws::Utils::Json::JsonView jsonValue);
-    Member& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MANAGEDBLOCKCHAIN_API Member();
+    AWS_MANAGEDBLOCKCHAIN_API Member(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MANAGEDBLOCKCHAIN_API Member& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MANAGEDBLOCKCHAIN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

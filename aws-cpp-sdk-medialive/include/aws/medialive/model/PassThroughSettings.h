@@ -26,13 +26,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/PassThroughSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API PassThroughSettings
+  class PassThroughSettings
   {
   public:
-    PassThroughSettings();
-    PassThroughSettings(Aws::Utils::Json::JsonView jsonValue);
-    PassThroughSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API PassThroughSettings();
+    AWS_MEDIALIVE_API PassThroughSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API PassThroughSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
   };
 

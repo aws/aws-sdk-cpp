@@ -22,12 +22,12 @@ namespace CloudDirectory
 {
 namespace Model
 {
-  class AWS_CLOUDDIRECTORY_API RemoveFacetFromObjectResult
+  class RemoveFacetFromObjectResult
   {
   public:
-    RemoveFacetFromObjectResult();
-    RemoveFacetFromObjectResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    RemoveFacetFromObjectResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CLOUDDIRECTORY_API RemoveFacetFromObjectResult();
+    AWS_CLOUDDIRECTORY_API RemoveFacetFromObjectResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CLOUDDIRECTORY_API RemoveFacetFromObjectResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

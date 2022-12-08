@@ -30,15 +30,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/PolicyTypeDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICLOADBALANCING_API PolicyTypeDescription
+  class PolicyTypeDescription
   {
   public:
-    PolicyTypeDescription();
-    PolicyTypeDescription(const Aws::Utils::Xml::XmlNode& xmlNode);
-    PolicyTypeDescription& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICLOADBALANCING_API PolicyTypeDescription();
+    AWS_ELASTICLOADBALANCING_API PolicyTypeDescription(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICLOADBALANCING_API PolicyTypeDescription& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_ELASTICLOADBALANCING_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_ELASTICLOADBALANCING_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**

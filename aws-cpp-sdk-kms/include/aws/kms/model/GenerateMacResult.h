@@ -26,12 +26,12 @@ namespace KMS
 {
 namespace Model
 {
-  class AWS_KMS_API GenerateMacResult
+  class GenerateMacResult
   {
   public:
-    GenerateMacResult();
-    GenerateMacResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GenerateMacResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KMS_API GenerateMacResult();
+    AWS_KMS_API GenerateMacResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KMS_API GenerateMacResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -33,14 +33,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CloudWatchAlarmConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53_API CloudWatchAlarmConfiguration
+  class CloudWatchAlarmConfiguration
   {
   public:
-    CloudWatchAlarmConfiguration();
-    CloudWatchAlarmConfiguration(const Aws::Utils::Xml::XmlNode& xmlNode);
-    CloudWatchAlarmConfiguration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ROUTE53_API CloudWatchAlarmConfiguration();
+    AWS_ROUTE53_API CloudWatchAlarmConfiguration(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ROUTE53_API CloudWatchAlarmConfiguration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_ROUTE53_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**

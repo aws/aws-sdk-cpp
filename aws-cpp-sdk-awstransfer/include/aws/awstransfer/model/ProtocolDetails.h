@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ProtocolDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_TRANSFER_API ProtocolDetails
+  class ProtocolDetails
   {
   public:
-    ProtocolDetails();
-    ProtocolDetails(Aws::Utils::Json::JsonView jsonValue);
-    ProtocolDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TRANSFER_API ProtocolDetails();
+    AWS_TRANSFER_API ProtocolDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSFER_API ProtocolDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSFER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

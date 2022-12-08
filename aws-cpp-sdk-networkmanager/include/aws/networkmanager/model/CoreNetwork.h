@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/CoreNetwork">AWS
    * API Reference</a></p>
    */
-  class AWS_NETWORKMANAGER_API CoreNetwork
+  class CoreNetwork
   {
   public:
-    CoreNetwork();
-    CoreNetwork(Aws::Utils::Json::JsonView jsonValue);
-    CoreNetwork& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_NETWORKMANAGER_API CoreNetwork();
+    AWS_NETWORKMANAGER_API CoreNetwork(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKMANAGER_API CoreNetwork& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

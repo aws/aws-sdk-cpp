@@ -24,12 +24,12 @@ namespace Route53RecoveryControlConfig
 {
 namespace Model
 {
-  class AWS_ROUTE53RECOVERYCONTROLCONFIG_API UpdateRoutingControlResult
+  class UpdateRoutingControlResult
   {
   public:
-    UpdateRoutingControlResult();
-    UpdateRoutingControlResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateRoutingControlResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ROUTE53RECOVERYCONTROLCONFIG_API UpdateRoutingControlResult();
+    AWS_ROUTE53RECOVERYCONTROLCONFIG_API UpdateRoutingControlResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ROUTE53RECOVERYCONTROLCONFIG_API UpdateRoutingControlResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

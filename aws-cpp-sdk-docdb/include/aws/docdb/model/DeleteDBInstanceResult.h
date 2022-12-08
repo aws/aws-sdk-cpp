@@ -25,12 +25,12 @@ namespace DocDB
 {
 namespace Model
 {
-  class AWS_DOCDB_API DeleteDBInstanceResult
+  class DeleteDBInstanceResult
   {
   public:
-    DeleteDBInstanceResult();
-    DeleteDBInstanceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DeleteDBInstanceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_DOCDB_API DeleteDBInstanceResult();
+    AWS_DOCDB_API DeleteDBInstanceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_DOCDB_API DeleteDBInstanceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     

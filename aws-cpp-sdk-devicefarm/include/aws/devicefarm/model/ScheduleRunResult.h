@@ -30,12 +30,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ScheduleRunResult">AWS
    * API Reference</a></p>
    */
-  class AWS_DEVICEFARM_API ScheduleRunResult
+  class ScheduleRunResult
   {
   public:
-    ScheduleRunResult();
-    ScheduleRunResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ScheduleRunResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DEVICEFARM_API ScheduleRunResult();
+    AWS_DEVICEFARM_API ScheduleRunResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DEVICEFARM_API ScheduleRunResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -30,12 +30,12 @@ namespace mgn
 {
 namespace Model
 {
-  class AWS_MGN_API StartReplicationResult
+  class StartReplicationResult
   {
   public:
-    StartReplicationResult();
-    StartReplicationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    StartReplicationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MGN_API StartReplicationResult();
+    AWS_MGN_API StartReplicationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MGN_API StartReplicationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

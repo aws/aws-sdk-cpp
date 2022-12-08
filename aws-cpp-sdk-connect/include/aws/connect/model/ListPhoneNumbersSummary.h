@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListPhoneNumbersSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECT_API ListPhoneNumbersSummary
+  class ListPhoneNumbersSummary
   {
   public:
-    ListPhoneNumbersSummary();
-    ListPhoneNumbersSummary(Aws::Utils::Json::JsonView jsonValue);
-    ListPhoneNumbersSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECT_API ListPhoneNumbersSummary();
+    AWS_CONNECT_API ListPhoneNumbersSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API ListPhoneNumbersSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

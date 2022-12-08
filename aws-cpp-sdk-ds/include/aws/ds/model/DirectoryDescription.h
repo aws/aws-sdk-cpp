@@ -44,13 +44,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DirectoryDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_DIRECTORYSERVICE_API DirectoryDescription
+  class DirectoryDescription
   {
   public:
-    DirectoryDescription();
-    DirectoryDescription(Aws::Utils::Json::JsonView jsonValue);
-    DirectoryDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DIRECTORYSERVICE_API DirectoryDescription();
+    AWS_DIRECTORYSERVICE_API DirectoryDescription(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTORYSERVICE_API DirectoryDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTORYSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

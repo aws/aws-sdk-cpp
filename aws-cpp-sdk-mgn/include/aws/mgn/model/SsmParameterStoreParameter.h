@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/SsmParameterStoreParameter">AWS
    * API Reference</a></p>
    */
-  class AWS_MGN_API SsmParameterStoreParameter
+  class SsmParameterStoreParameter
   {
   public:
-    SsmParameterStoreParameter();
-    SsmParameterStoreParameter(Aws::Utils::Json::JsonView jsonValue);
-    SsmParameterStoreParameter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MGN_API SsmParameterStoreParameter();
+    AWS_MGN_API SsmParameterStoreParameter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MGN_API SsmParameterStoreParameter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MGN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

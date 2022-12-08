@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/ScalableTarget">AWS
    * API Reference</a></p>
    */
-  class AWS_APPLICATIONAUTOSCALING_API ScalableTarget
+  class ScalableTarget
   {
   public:
-    ScalableTarget();
-    ScalableTarget(Aws::Utils::Json::JsonView jsonValue);
-    ScalableTarget& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPLICATIONAUTOSCALING_API ScalableTarget();
+    AWS_APPLICATIONAUTOSCALING_API ScalableTarget(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPLICATIONAUTOSCALING_API ScalableTarget& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPLICATIONAUTOSCALING_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

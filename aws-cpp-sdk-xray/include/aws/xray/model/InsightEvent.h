@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/InsightEvent">AWS
    * API Reference</a></p>
    */
-  class AWS_XRAY_API InsightEvent
+  class InsightEvent
   {
   public:
-    InsightEvent();
-    InsightEvent(Aws::Utils::Json::JsonView jsonValue);
-    InsightEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_XRAY_API InsightEvent();
+    AWS_XRAY_API InsightEvent(Aws::Utils::Json::JsonView jsonValue);
+    AWS_XRAY_API InsightEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_XRAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

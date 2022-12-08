@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DataSetIdentifierDeclaration">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API DataSetIdentifierDeclaration
+  class DataSetIdentifierDeclaration
   {
   public:
-    DataSetIdentifierDeclaration();
-    DataSetIdentifierDeclaration(Aws::Utils::Json::JsonView jsonValue);
-    DataSetIdentifierDeclaration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API DataSetIdentifierDeclaration();
+    AWS_QUICKSIGHT_API DataSetIdentifierDeclaration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API DataSetIdentifierDeclaration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

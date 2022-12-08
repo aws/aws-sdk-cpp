@@ -31,12 +31,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/ListAnalyzedResourcesResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_ACCESSANALYZER_API ListAnalyzedResourcesResult
+  class ListAnalyzedResourcesResult
   {
   public:
-    ListAnalyzedResourcesResult();
-    ListAnalyzedResourcesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListAnalyzedResourcesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ACCESSANALYZER_API ListAnalyzedResourcesResult();
+    AWS_ACCESSANALYZER_API ListAnalyzedResourcesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ACCESSANALYZER_API ListAnalyzedResourcesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

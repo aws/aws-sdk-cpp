@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/RegionDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_DIRECTORYSERVICE_API RegionDescription
+  class RegionDescription
   {
   public:
-    RegionDescription();
-    RegionDescription(Aws::Utils::Json::JsonView jsonValue);
-    RegionDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DIRECTORYSERVICE_API RegionDescription();
+    AWS_DIRECTORYSERVICE_API RegionDescription(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTORYSERVICE_API RegionDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTORYSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

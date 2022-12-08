@@ -22,12 +22,12 @@ namespace RecycleBin
 {
 namespace Model
 {
-  class AWS_RECYCLEBIN_API DeleteRuleResult
+  class DeleteRuleResult
   {
   public:
-    DeleteRuleResult();
-    DeleteRuleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteRuleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_RECYCLEBIN_API DeleteRuleResult();
+    AWS_RECYCLEBIN_API DeleteRuleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_RECYCLEBIN_API DeleteRuleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

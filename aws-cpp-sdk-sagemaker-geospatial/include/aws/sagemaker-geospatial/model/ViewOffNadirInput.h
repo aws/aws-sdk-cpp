@@ -26,13 +26,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-geospatial-2020-05-27/ViewOffNadirInput">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKERGEOSPATIAL_API ViewOffNadirInput
+  class ViewOffNadirInput
   {
   public:
-    ViewOffNadirInput();
-    ViewOffNadirInput(Aws::Utils::Json::JsonView jsonValue);
-    ViewOffNadirInput& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKERGEOSPATIAL_API ViewOffNadirInput();
+    AWS_SAGEMAKERGEOSPATIAL_API ViewOffNadirInput(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKERGEOSPATIAL_API ViewOffNadirInput& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKERGEOSPATIAL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

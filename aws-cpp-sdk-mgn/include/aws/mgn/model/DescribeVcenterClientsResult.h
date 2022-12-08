@@ -26,12 +26,12 @@ namespace mgn
 {
 namespace Model
 {
-  class AWS_MGN_API DescribeVcenterClientsResult
+  class DescribeVcenterClientsResult
   {
   public:
-    DescribeVcenterClientsResult();
-    DescribeVcenterClientsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeVcenterClientsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MGN_API DescribeVcenterClientsResult();
+    AWS_MGN_API DescribeVcenterClientsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MGN_API DescribeVcenterClientsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/AppSummary">AWS API
    * Reference</a></p>
    */
-  class AWS_SMS_API AppSummary
+  class AppSummary
   {
   public:
-    AppSummary();
-    AppSummary(Aws::Utils::Json::JsonView jsonValue);
-    AppSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SMS_API AppSummary();
+    AWS_SMS_API AppSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SMS_API AppSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -22,12 +22,12 @@ namespace Batch
 {
 namespace Model
 {
-  class AWS_BATCH_API DeregisterJobDefinitionResult
+  class DeregisterJobDefinitionResult
   {
   public:
-    DeregisterJobDefinitionResult();
-    DeregisterJobDefinitionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeregisterJobDefinitionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_BATCH_API DeregisterJobDefinitionResult();
+    AWS_BATCH_API DeregisterJobDefinitionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_BATCH_API DeregisterJobDefinitionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

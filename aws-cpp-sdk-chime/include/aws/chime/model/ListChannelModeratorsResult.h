@@ -26,12 +26,12 @@ namespace Chime
 {
 namespace Model
 {
-  class AWS_CHIME_API ListChannelModeratorsResult
+  class ListChannelModeratorsResult
   {
   public:
-    ListChannelModeratorsResult();
-    ListChannelModeratorsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListChannelModeratorsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CHIME_API ListChannelModeratorsResult();
+    AWS_CHIME_API ListChannelModeratorsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CHIME_API ListChannelModeratorsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

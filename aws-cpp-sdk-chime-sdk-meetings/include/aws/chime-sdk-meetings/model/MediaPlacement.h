@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/MediaPlacement">AWS
    * API Reference</a></p>
    */
-  class AWS_CHIMESDKMEETINGS_API MediaPlacement
+  class MediaPlacement
   {
   public:
-    MediaPlacement();
-    MediaPlacement(Aws::Utils::Json::JsonView jsonValue);
-    MediaPlacement& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIMESDKMEETINGS_API MediaPlacement();
+    AWS_CHIMESDKMEETINGS_API MediaPlacement(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKMEETINGS_API MediaPlacement& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKMEETINGS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

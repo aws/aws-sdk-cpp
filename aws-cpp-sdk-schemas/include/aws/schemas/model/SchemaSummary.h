@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/SchemaSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_SCHEMAS_API SchemaSummary
+  class SchemaSummary
   {
   public:
-    SchemaSummary();
-    SchemaSummary(Aws::Utils::Json::JsonView jsonValue);
-    SchemaSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SCHEMAS_API SchemaSummary();
+    AWS_SCHEMAS_API SchemaSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SCHEMAS_API SchemaSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SCHEMAS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -26,12 +26,12 @@ namespace ComputeOptimizer
 {
 namespace Model
 {
-  class AWS_COMPUTEOPTIMIZER_API GetEnrollmentStatusesForOrganizationResult
+  class GetEnrollmentStatusesForOrganizationResult
   {
   public:
-    GetEnrollmentStatusesForOrganizationResult();
-    GetEnrollmentStatusesForOrganizationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetEnrollmentStatusesForOrganizationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_COMPUTEOPTIMIZER_API GetEnrollmentStatusesForOrganizationResult();
+    AWS_COMPUTEOPTIMIZER_API GetEnrollmentStatusesForOrganizationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_COMPUTEOPTIMIZER_API GetEnrollmentStatusesForOrganizationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

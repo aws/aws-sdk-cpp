@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsWafRegionalWebAclRulesListOverrideActionDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsWafRegionalWebAclRulesListOverrideActionDetails
+  class AwsWafRegionalWebAclRulesListOverrideActionDetails
   {
   public:
-    AwsWafRegionalWebAclRulesListOverrideActionDetails();
-    AwsWafRegionalWebAclRulesListOverrideActionDetails(Aws::Utils::Json::JsonView jsonValue);
-    AwsWafRegionalWebAclRulesListOverrideActionDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsWafRegionalWebAclRulesListOverrideActionDetails();
+    AWS_SECURITYHUB_API AwsWafRegionalWebAclRulesListOverrideActionDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsWafRegionalWebAclRulesListOverrideActionDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

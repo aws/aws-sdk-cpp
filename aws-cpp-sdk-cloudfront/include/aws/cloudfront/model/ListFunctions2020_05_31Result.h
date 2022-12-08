@@ -24,12 +24,12 @@ namespace CloudFront
 {
 namespace Model
 {
-  class AWS_CLOUDFRONT_API ListFunctions2020_05_31Result
+  class ListFunctions2020_05_31Result
   {
   public:
-    ListFunctions2020_05_31Result();
-    ListFunctions2020_05_31Result(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ListFunctions2020_05_31Result& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_CLOUDFRONT_API ListFunctions2020_05_31Result();
+    AWS_CLOUDFRONT_API ListFunctions2020_05_31Result(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_CLOUDFRONT_API ListFunctions2020_05_31Result& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

@@ -26,12 +26,12 @@ namespace FSx
 {
 namespace Model
 {
-  class AWS_FSX_API DescribeSnapshotsResult
+  class DescribeSnapshotsResult
   {
   public:
-    DescribeSnapshotsResult();
-    DescribeSnapshotsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeSnapshotsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_FSX_API DescribeSnapshotsResult();
+    AWS_FSX_API DescribeSnapshotsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_FSX_API DescribeSnapshotsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

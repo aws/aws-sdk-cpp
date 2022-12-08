@@ -24,12 +24,12 @@ namespace ServiceQuotas
 {
 namespace Model
 {
-  class AWS_SERVICEQUOTAS_API GetAssociationForServiceQuotaTemplateResult
+  class GetAssociationForServiceQuotaTemplateResult
   {
   public:
-    GetAssociationForServiceQuotaTemplateResult();
-    GetAssociationForServiceQuotaTemplateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetAssociationForServiceQuotaTemplateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SERVICEQUOTAS_API GetAssociationForServiceQuotaTemplateResult();
+    AWS_SERVICEQUOTAS_API GetAssociationForServiceQuotaTemplateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SERVICEQUOTAS_API GetAssociationForServiceQuotaTemplateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -24,12 +24,12 @@ namespace Lambda
 {
 namespace Model
 {
-  class AWS_LAMBDA_API UpdateCodeSigningConfigResult
+  class UpdateCodeSigningConfigResult
   {
   public:
-    UpdateCodeSigningConfigResult();
-    UpdateCodeSigningConfigResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateCodeSigningConfigResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LAMBDA_API UpdateCodeSigningConfigResult();
+    AWS_LAMBDA_API UpdateCodeSigningConfigResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LAMBDA_API UpdateCodeSigningConfigResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

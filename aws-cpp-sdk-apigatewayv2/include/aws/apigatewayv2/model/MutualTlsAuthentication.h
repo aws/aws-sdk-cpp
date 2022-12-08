@@ -24,13 +24,13 @@ namespace ApiGatewayV2
 namespace Model
 {
 
-  class AWS_APIGATEWAYV2_API MutualTlsAuthentication
+  class MutualTlsAuthentication
   {
   public:
-    MutualTlsAuthentication();
-    MutualTlsAuthentication(Aws::Utils::Json::JsonView jsonValue);
-    MutualTlsAuthentication& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APIGATEWAYV2_API MutualTlsAuthentication();
+    AWS_APIGATEWAYV2_API MutualTlsAuthentication(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APIGATEWAYV2_API MutualTlsAuthentication& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APIGATEWAYV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

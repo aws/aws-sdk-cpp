@@ -24,12 +24,12 @@ namespace MemoryDB
 {
 namespace Model
 {
-  class AWS_MEMORYDB_API DeleteACLResult
+  class DeleteACLResult
   {
   public:
-    DeleteACLResult();
-    DeleteACLResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteACLResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MEMORYDB_API DeleteACLResult();
+    AWS_MEMORYDB_API DeleteACLResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MEMORYDB_API DeleteACLResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

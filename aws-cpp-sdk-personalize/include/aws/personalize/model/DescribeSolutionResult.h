@@ -24,12 +24,12 @@ namespace Personalize
 {
 namespace Model
 {
-  class AWS_PERSONALIZE_API DescribeSolutionResult
+  class DescribeSolutionResult
   {
   public:
-    DescribeSolutionResult();
-    DescribeSolutionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeSolutionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PERSONALIZE_API DescribeSolutionResult();
+    AWS_PERSONALIZE_API DescribeSolutionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PERSONALIZE_API DescribeSolutionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

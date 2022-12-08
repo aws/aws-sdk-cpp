@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/OAuth2CustomParameter">AWS
    * API Reference</a></p>
    */
-  class AWS_APPFLOW_API OAuth2CustomParameter
+  class OAuth2CustomParameter
   {
   public:
-    OAuth2CustomParameter();
-    OAuth2CustomParameter(Aws::Utils::Json::JsonView jsonValue);
-    OAuth2CustomParameter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPFLOW_API OAuth2CustomParameter();
+    AWS_APPFLOW_API OAuth2CustomParameter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API OAuth2CustomParameter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

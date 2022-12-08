@@ -24,12 +24,12 @@ namespace GameLift
 {
 namespace Model
 {
-  class AWS_GAMELIFT_API StartFleetActionsResult
+  class StartFleetActionsResult
   {
   public:
-    StartFleetActionsResult();
-    StartFleetActionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    StartFleetActionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GAMELIFT_API StartFleetActionsResult();
+    AWS_GAMELIFT_API StartFleetActionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GAMELIFT_API StartFleetActionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

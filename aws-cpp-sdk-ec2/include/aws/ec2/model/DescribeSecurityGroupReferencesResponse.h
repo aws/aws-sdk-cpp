@@ -26,12 +26,12 @@ namespace EC2
 {
 namespace Model
 {
-  class AWS_EC2_API DescribeSecurityGroupReferencesResponse
+  class DescribeSecurityGroupReferencesResponse
   {
   public:
-    DescribeSecurityGroupReferencesResponse();
-    DescribeSecurityGroupReferencesResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeSecurityGroupReferencesResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API DescribeSecurityGroupReferencesResponse();
+    AWS_EC2_API DescribeSecurityGroupReferencesResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API DescribeSecurityGroupReferencesResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

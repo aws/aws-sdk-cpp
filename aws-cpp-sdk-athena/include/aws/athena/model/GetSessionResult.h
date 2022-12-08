@@ -28,12 +28,12 @@ namespace Athena
 {
 namespace Model
 {
-  class AWS_ATHENA_API GetSessionResult
+  class GetSessionResult
   {
   public:
-    GetSessionResult();
-    GetSessionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetSessionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ATHENA_API GetSessionResult();
+    AWS_ATHENA_API GetSessionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ATHENA_API GetSessionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

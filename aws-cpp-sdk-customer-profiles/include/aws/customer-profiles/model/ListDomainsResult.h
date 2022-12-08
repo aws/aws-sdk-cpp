@@ -26,12 +26,12 @@ namespace CustomerProfiles
 {
 namespace Model
 {
-  class AWS_CUSTOMERPROFILES_API ListDomainsResult
+  class ListDomainsResult
   {
   public:
-    ListDomainsResult();
-    ListDomainsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListDomainsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CUSTOMERPROFILES_API ListDomainsResult();
+    AWS_CUSTOMERPROFILES_API ListDomainsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CUSTOMERPROFILES_API ListDomainsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

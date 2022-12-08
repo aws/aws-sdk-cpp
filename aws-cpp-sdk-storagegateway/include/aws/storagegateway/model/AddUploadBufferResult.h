@@ -24,12 +24,12 @@ namespace StorageGateway
 {
 namespace Model
 {
-  class AWS_STORAGEGATEWAY_API AddUploadBufferResult
+  class AddUploadBufferResult
   {
   public:
-    AddUploadBufferResult();
-    AddUploadBufferResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AddUploadBufferResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_STORAGEGATEWAY_API AddUploadBufferResult();
+    AWS_STORAGEGATEWAY_API AddUploadBufferResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_STORAGEGATEWAY_API AddUploadBufferResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     

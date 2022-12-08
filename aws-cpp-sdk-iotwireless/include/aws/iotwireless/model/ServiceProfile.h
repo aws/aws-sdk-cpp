@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ServiceProfile">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTWIRELESS_API ServiceProfile
+  class ServiceProfile
   {
   public:
-    ServiceProfile();
-    ServiceProfile(Aws::Utils::Json::JsonView jsonValue);
-    ServiceProfile& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTWIRELESS_API ServiceProfile();
+    AWS_IOTWIRELESS_API ServiceProfile(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API ServiceProfile& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

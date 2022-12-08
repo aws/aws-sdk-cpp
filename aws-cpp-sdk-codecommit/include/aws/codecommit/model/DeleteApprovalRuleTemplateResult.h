@@ -24,12 +24,12 @@ namespace CodeCommit
 {
 namespace Model
 {
-  class AWS_CODECOMMIT_API DeleteApprovalRuleTemplateResult
+  class DeleteApprovalRuleTemplateResult
   {
   public:
-    DeleteApprovalRuleTemplateResult();
-    DeleteApprovalRuleTemplateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteApprovalRuleTemplateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODECOMMIT_API DeleteApprovalRuleTemplateResult();
+    AWS_CODECOMMIT_API DeleteApprovalRuleTemplateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODECOMMIT_API DeleteApprovalRuleTemplateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

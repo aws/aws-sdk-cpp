@@ -32,12 +32,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/PurchaseScheduledInstancesResult">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API PurchaseScheduledInstancesResponse
+  class PurchaseScheduledInstancesResponse
   {
   public:
-    PurchaseScheduledInstancesResponse();
-    PurchaseScheduledInstancesResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    PurchaseScheduledInstancesResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API PurchaseScheduledInstancesResponse();
+    AWS_EC2_API PurchaseScheduledInstancesResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API PurchaseScheduledInstancesResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

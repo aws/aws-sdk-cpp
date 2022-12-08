@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/BotSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELSV2_API BotSummary
+  class BotSummary
   {
   public:
-    BotSummary();
-    BotSummary(Aws::Utils::Json::JsonView jsonValue);
-    BotSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELSV2_API BotSummary();
+    AWS_LEXMODELSV2_API BotSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API BotSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

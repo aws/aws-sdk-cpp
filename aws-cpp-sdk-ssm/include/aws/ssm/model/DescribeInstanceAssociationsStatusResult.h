@@ -26,12 +26,12 @@ namespace SSM
 {
 namespace Model
 {
-  class AWS_SSM_API DescribeInstanceAssociationsStatusResult
+  class DescribeInstanceAssociationsStatusResult
   {
   public:
-    DescribeInstanceAssociationsStatusResult();
-    DescribeInstanceAssociationsStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeInstanceAssociationsStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSM_API DescribeInstanceAssociationsStatusResult();
+    AWS_SSM_API DescribeInstanceAssociationsStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSM_API DescribeInstanceAssociationsStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

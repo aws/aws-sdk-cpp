@@ -27,12 +27,12 @@ namespace EC2
 {
 namespace Model
 {
-  class AWS_EC2_API DescribeEgressOnlyInternetGatewaysResponse
+  class DescribeEgressOnlyInternetGatewaysResponse
   {
   public:
-    DescribeEgressOnlyInternetGatewaysResponse();
-    DescribeEgressOnlyInternetGatewaysResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeEgressOnlyInternetGatewaysResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API DescribeEgressOnlyInternetGatewaysResponse();
+    AWS_EC2_API DescribeEgressOnlyInternetGatewaysResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API DescribeEgressOnlyInternetGatewaysResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

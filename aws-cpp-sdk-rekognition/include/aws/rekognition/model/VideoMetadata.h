@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/VideoMetadata">AWS
    * API Reference</a></p>
    */
-  class AWS_REKOGNITION_API VideoMetadata
+  class VideoMetadata
   {
   public:
-    VideoMetadata();
-    VideoMetadata(Aws::Utils::Json::JsonView jsonValue);
-    VideoMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_REKOGNITION_API VideoMetadata();
+    AWS_REKOGNITION_API VideoMetadata(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API VideoMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

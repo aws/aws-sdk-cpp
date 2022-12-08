@@ -24,12 +24,12 @@ namespace GameLift
 {
 namespace Model
 {
-  class AWS_GAMELIFT_API DescribeRuntimeConfigurationResult
+  class DescribeRuntimeConfigurationResult
   {
   public:
-    DescribeRuntimeConfigurationResult();
-    DescribeRuntimeConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeRuntimeConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GAMELIFT_API DescribeRuntimeConfigurationResult();
+    AWS_GAMELIFT_API DescribeRuntimeConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GAMELIFT_API DescribeRuntimeConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/InvalidSecurityGroupIDException">AWS
    * API Reference</a></p>
    */
-  class AWS_LAMBDA_API InvalidSecurityGroupIDException
+  class InvalidSecurityGroupIDException
   {
   public:
-    InvalidSecurityGroupIDException();
-    InvalidSecurityGroupIDException(Aws::Utils::Json::JsonView jsonValue);
-    InvalidSecurityGroupIDException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LAMBDA_API InvalidSecurityGroupIDException();
+    AWS_LAMBDA_API InvalidSecurityGroupIDException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAMBDA_API InvalidSecurityGroupIDException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAMBDA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

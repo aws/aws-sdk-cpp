@@ -22,12 +22,12 @@ namespace MediaPackageVod
 {
 namespace Model
 {
-  class AWS_MEDIAPACKAGEVOD_API DeletePackagingConfigurationResult
+  class DeletePackagingConfigurationResult
   {
   public:
-    DeletePackagingConfigurationResult();
-    DeletePackagingConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeletePackagingConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MEDIAPACKAGEVOD_API DeletePackagingConfigurationResult();
+    AWS_MEDIAPACKAGEVOD_API DeletePackagingConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MEDIAPACKAGEVOD_API DeletePackagingConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/LineItemRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_OUTPOSTS_API LineItemRequest
+  class LineItemRequest
   {
   public:
-    LineItemRequest();
-    LineItemRequest(Aws::Utils::Json::JsonView jsonValue);
-    LineItemRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OUTPOSTS_API LineItemRequest();
+    AWS_OUTPOSTS_API LineItemRequest(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OUTPOSTS_API LineItemRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OUTPOSTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

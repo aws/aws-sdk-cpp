@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/scheduler-2021-06-30/SageMakerPipelineParameters">AWS
    * API Reference</a></p>
    */
-  class AWS_SCHEDULER_API SageMakerPipelineParameters
+  class SageMakerPipelineParameters
   {
   public:
-    SageMakerPipelineParameters();
-    SageMakerPipelineParameters(Aws::Utils::Json::JsonView jsonValue);
-    SageMakerPipelineParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SCHEDULER_API SageMakerPipelineParameters();
+    AWS_SCHEDULER_API SageMakerPipelineParameters(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SCHEDULER_API SageMakerPipelineParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SCHEDULER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -26,12 +26,12 @@ namespace AppRunner
 {
 namespace Model
 {
-  class AWS_APPRUNNER_API ListVpcConnectorsResult
+  class ListVpcConnectorsResult
   {
   public:
-    ListVpcConnectorsResult();
-    ListVpcConnectorsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListVpcConnectorsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPRUNNER_API ListVpcConnectorsResult();
+    AWS_APPRUNNER_API ListVpcConnectorsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPRUNNER_API ListVpcConnectorsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

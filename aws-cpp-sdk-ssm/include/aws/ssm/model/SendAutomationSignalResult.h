@@ -22,12 +22,12 @@ namespace SSM
 {
 namespace Model
 {
-  class AWS_SSM_API SendAutomationSignalResult
+  class SendAutomationSignalResult
   {
   public:
-    SendAutomationSignalResult();
-    SendAutomationSignalResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    SendAutomationSignalResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSM_API SendAutomationSignalResult();
+    AWS_SSM_API SendAutomationSignalResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSM_API SendAutomationSignalResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

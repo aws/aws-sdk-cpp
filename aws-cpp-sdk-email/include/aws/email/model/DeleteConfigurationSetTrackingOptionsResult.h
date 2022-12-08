@@ -30,12 +30,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteConfigurationSetTrackingOptionsResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_SES_API DeleteConfigurationSetTrackingOptionsResult
+  class DeleteConfigurationSetTrackingOptionsResult
   {
   public:
-    DeleteConfigurationSetTrackingOptionsResult();
-    DeleteConfigurationSetTrackingOptionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DeleteConfigurationSetTrackingOptionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_SES_API DeleteConfigurationSetTrackingOptionsResult();
+    AWS_SES_API DeleteConfigurationSetTrackingOptionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_SES_API DeleteConfigurationSetTrackingOptionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     

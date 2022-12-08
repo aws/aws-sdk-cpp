@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/AssumedRole">AWS
    * API Reference</a></p>
    */
-  class AWS_MACIE2_API AssumedRole
+  class AssumedRole
   {
   public:
-    AssumedRole();
-    AssumedRole(Aws::Utils::Json::JsonView jsonValue);
-    AssumedRole& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MACIE2_API AssumedRole();
+    AWS_MACIE2_API AssumedRole(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API AssumedRole& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

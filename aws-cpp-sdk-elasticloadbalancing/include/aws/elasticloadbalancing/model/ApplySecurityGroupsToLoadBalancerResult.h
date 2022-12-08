@@ -32,12 +32,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/ApplySecurityGroupsToLoadBalancerOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICLOADBALANCING_API ApplySecurityGroupsToLoadBalancerResult
+  class ApplySecurityGroupsToLoadBalancerResult
   {
   public:
-    ApplySecurityGroupsToLoadBalancerResult();
-    ApplySecurityGroupsToLoadBalancerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ApplySecurityGroupsToLoadBalancerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ELASTICLOADBALANCING_API ApplySecurityGroupsToLoadBalancerResult();
+    AWS_ELASTICLOADBALANCING_API ApplySecurityGroupsToLoadBalancerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ELASTICLOADBALANCING_API ApplySecurityGroupsToLoadBalancerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

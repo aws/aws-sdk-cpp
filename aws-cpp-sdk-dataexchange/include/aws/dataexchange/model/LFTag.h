@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/LFTag">AWS
    * API Reference</a></p>
    */
-  class AWS_DATAEXCHANGE_API LFTag
+  class LFTag
   {
   public:
-    LFTag();
-    LFTag(Aws::Utils::Json::JsonView jsonValue);
-    LFTag& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DATAEXCHANGE_API LFTag();
+    AWS_DATAEXCHANGE_API LFTag(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATAEXCHANGE_API LFTag& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATAEXCHANGE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

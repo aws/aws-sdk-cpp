@@ -24,12 +24,12 @@ namespace DynamoDB
 {
 namespace Model
 {
-  class AWS_DYNAMODB_API UpdateTableReplicaAutoScalingResult
+  class UpdateTableReplicaAutoScalingResult
   {
   public:
-    UpdateTableReplicaAutoScalingResult();
-    UpdateTableReplicaAutoScalingResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateTableReplicaAutoScalingResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DYNAMODB_API UpdateTableReplicaAutoScalingResult();
+    AWS_DYNAMODB_API UpdateTableReplicaAutoScalingResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DYNAMODB_API UpdateTableReplicaAutoScalingResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

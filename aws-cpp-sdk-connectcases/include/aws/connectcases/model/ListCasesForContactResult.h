@@ -26,12 +26,12 @@ namespace ConnectCases
 {
 namespace Model
 {
-  class AWS_CONNECTCASES_API ListCasesForContactResult
+  class ListCasesForContactResult
   {
   public:
-    ListCasesForContactResult();
-    ListCasesForContactResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListCasesForContactResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CONNECTCASES_API ListCasesForContactResult();
+    AWS_CONNECTCASES_API ListCasesForContactResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CONNECTCASES_API ListCasesForContactResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

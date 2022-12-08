@@ -40,13 +40,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/Workforce">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API Workforce
+  class Workforce
   {
   public:
-    Workforce();
-    Workforce(Aws::Utils::Json::JsonView jsonValue);
-    Workforce& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API Workforce();
+    AWS_SAGEMAKER_API Workforce(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Workforce& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

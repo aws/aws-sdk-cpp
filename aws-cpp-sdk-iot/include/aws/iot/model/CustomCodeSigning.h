@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CustomCodeSigning">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API CustomCodeSigning
+  class CustomCodeSigning
   {
   public:
-    CustomCodeSigning();
-    CustomCodeSigning(Aws::Utils::Json::JsonView jsonValue);
-    CustomCodeSigning& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API CustomCodeSigning();
+    AWS_IOT_API CustomCodeSigning(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API CustomCodeSigning& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

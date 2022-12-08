@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ShortFormatText">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API ShortFormatText
+  class ShortFormatText
   {
   public:
-    ShortFormatText();
-    ShortFormatText(Aws::Utils::Json::JsonView jsonValue);
-    ShortFormatText& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API ShortFormatText();
+    AWS_QUICKSIGHT_API ShortFormatText(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API ShortFormatText& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -24,12 +24,12 @@ namespace Proton
 {
 namespace Model
 {
-  class AWS_PROTON_API DeleteEnvironmentTemplateVersionResult
+  class DeleteEnvironmentTemplateVersionResult
   {
   public:
-    DeleteEnvironmentTemplateVersionResult();
-    DeleteEnvironmentTemplateVersionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteEnvironmentTemplateVersionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PROTON_API DeleteEnvironmentTemplateVersionResult();
+    AWS_PROTON_API DeleteEnvironmentTemplateVersionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PROTON_API DeleteEnvironmentTemplateVersionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

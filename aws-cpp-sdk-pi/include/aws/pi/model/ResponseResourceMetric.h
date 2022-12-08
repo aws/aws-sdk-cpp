@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pi-2018-02-27/ResponseResourceMetric">AWS
    * API Reference</a></p>
    */
-  class AWS_PI_API ResponseResourceMetric
+  class ResponseResourceMetric
   {
   public:
-    ResponseResourceMetric();
-    ResponseResourceMetric(Aws::Utils::Json::JsonView jsonValue);
-    ResponseResourceMetric& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PI_API ResponseResourceMetric();
+    AWS_PI_API ResponseResourceMetric(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PI_API ResponseResourceMetric& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PI_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

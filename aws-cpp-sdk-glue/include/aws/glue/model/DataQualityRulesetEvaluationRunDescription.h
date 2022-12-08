@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DataQualityRulesetEvaluationRunDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API DataQualityRulesetEvaluationRunDescription
+  class DataQualityRulesetEvaluationRunDescription
   {
   public:
-    DataQualityRulesetEvaluationRunDescription();
-    DataQualityRulesetEvaluationRunDescription(Aws::Utils::Json::JsonView jsonValue);
-    DataQualityRulesetEvaluationRunDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API DataQualityRulesetEvaluationRunDescription();
+    AWS_GLUE_API DataQualityRulesetEvaluationRunDescription(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API DataQualityRulesetEvaluationRunDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

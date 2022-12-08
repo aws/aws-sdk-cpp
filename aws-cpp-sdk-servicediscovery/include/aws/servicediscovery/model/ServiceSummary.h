@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/ServiceSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_SERVICEDISCOVERY_API ServiceSummary
+  class ServiceSummary
   {
   public:
-    ServiceSummary();
-    ServiceSummary(Aws::Utils::Json::JsonView jsonValue);
-    ServiceSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SERVICEDISCOVERY_API ServiceSummary();
+    AWS_SERVICEDISCOVERY_API ServiceSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICEDISCOVERY_API ServiceSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICEDISCOVERY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

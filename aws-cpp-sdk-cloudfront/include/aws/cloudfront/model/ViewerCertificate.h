@@ -69,14 +69,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ViewerCertificate">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFRONT_API ViewerCertificate
+  class ViewerCertificate
   {
   public:
-    ViewerCertificate();
-    ViewerCertificate(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ViewerCertificate& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API ViewerCertificate();
+    AWS_CLOUDFRONT_API ViewerCertificate(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API ViewerCertificate& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**

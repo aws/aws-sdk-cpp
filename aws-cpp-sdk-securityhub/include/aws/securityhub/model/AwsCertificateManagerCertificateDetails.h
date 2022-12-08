@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsCertificateManagerCertificateDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsCertificateManagerCertificateDetails
+  class AwsCertificateManagerCertificateDetails
   {
   public:
-    AwsCertificateManagerCertificateDetails();
-    AwsCertificateManagerCertificateDetails(Aws::Utils::Json::JsonView jsonValue);
-    AwsCertificateManagerCertificateDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsCertificateManagerCertificateDetails();
+    AWS_SECURITYHUB_API AwsCertificateManagerCertificateDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsCertificateManagerCertificateDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

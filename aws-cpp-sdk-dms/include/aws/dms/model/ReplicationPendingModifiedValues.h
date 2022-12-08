@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ReplicationPendingModifiedValues">AWS
    * API Reference</a></p>
    */
-  class AWS_DATABASEMIGRATIONSERVICE_API ReplicationPendingModifiedValues
+  class ReplicationPendingModifiedValues
   {
   public:
-    ReplicationPendingModifiedValues();
-    ReplicationPendingModifiedValues(Aws::Utils::Json::JsonView jsonValue);
-    ReplicationPendingModifiedValues& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DATABASEMIGRATIONSERVICE_API ReplicationPendingModifiedValues();
+    AWS_DATABASEMIGRATIONSERVICE_API ReplicationPendingModifiedValues(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATABASEMIGRATIONSERVICE_API ReplicationPendingModifiedValues& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATABASEMIGRATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ErrorDetail">AWS API
    * Reference</a></p>
    */
-  class AWS_EKS_API ErrorDetail
+  class ErrorDetail
   {
   public:
-    ErrorDetail();
-    ErrorDetail(Aws::Utils::Json::JsonView jsonValue);
-    ErrorDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EKS_API ErrorDetail();
+    AWS_EKS_API ErrorDetail(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EKS_API ErrorDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EKS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

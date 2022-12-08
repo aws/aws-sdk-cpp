@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/GeofenceGeometry">AWS
    * API Reference</a></p>
    */
-  class AWS_LOCATIONSERVICE_API GeofenceGeometry
+  class GeofenceGeometry
   {
   public:
-    GeofenceGeometry();
-    GeofenceGeometry(Aws::Utils::Json::JsonView jsonValue);
-    GeofenceGeometry& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LOCATIONSERVICE_API GeofenceGeometry();
+    AWS_LOCATIONSERVICE_API GeofenceGeometry(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOCATIONSERVICE_API GeofenceGeometry& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOCATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

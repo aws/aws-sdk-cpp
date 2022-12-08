@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListVariantImportJobsFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_OMICS_API ListVariantImportJobsFilter
+  class ListVariantImportJobsFilter
   {
   public:
-    ListVariantImportJobsFilter();
-    ListVariantImportJobsFilter(Aws::Utils::Json::JsonView jsonValue);
-    ListVariantImportJobsFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OMICS_API ListVariantImportJobsFilter();
+    AWS_OMICS_API ListVariantImportJobsFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OMICS_API ListVariantImportJobsFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OMICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

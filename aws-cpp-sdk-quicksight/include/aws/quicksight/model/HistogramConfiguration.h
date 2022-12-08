@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/HistogramConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API HistogramConfiguration
+  class HistogramConfiguration
   {
   public:
-    HistogramConfiguration();
-    HistogramConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    HistogramConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API HistogramConfiguration();
+    AWS_QUICKSIGHT_API HistogramConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API HistogramConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

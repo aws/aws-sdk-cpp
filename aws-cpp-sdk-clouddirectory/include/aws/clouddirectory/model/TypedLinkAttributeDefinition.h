@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/TypedLinkAttributeDefinition">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDDIRECTORY_API TypedLinkAttributeDefinition
+  class TypedLinkAttributeDefinition
   {
   public:
-    TypedLinkAttributeDefinition();
-    TypedLinkAttributeDefinition(Aws::Utils::Json::JsonView jsonValue);
-    TypedLinkAttributeDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDDIRECTORY_API TypedLinkAttributeDefinition();
+    AWS_CLOUDDIRECTORY_API TypedLinkAttributeDefinition(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDDIRECTORY_API TypedLinkAttributeDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDDIRECTORY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

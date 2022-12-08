@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/ApplicationLayerAutomaticResponseConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_SHIELD_API ApplicationLayerAutomaticResponseConfiguration
+  class ApplicationLayerAutomaticResponseConfiguration
   {
   public:
-    ApplicationLayerAutomaticResponseConfiguration();
-    ApplicationLayerAutomaticResponseConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    ApplicationLayerAutomaticResponseConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SHIELD_API ApplicationLayerAutomaticResponseConfiguration();
+    AWS_SHIELD_API ApplicationLayerAutomaticResponseConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SHIELD_API ApplicationLayerAutomaticResponseConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SHIELD_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/migrationhuborchestrator-2021-08-28/PluginSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_MIGRATIONHUBORCHESTRATOR_API PluginSummary
+  class PluginSummary
   {
   public:
-    PluginSummary();
-    PluginSummary(Aws::Utils::Json::JsonView jsonValue);
-    PluginSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MIGRATIONHUBORCHESTRATOR_API PluginSummary();
+    AWS_MIGRATIONHUBORCHESTRATOR_API PluginSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MIGRATIONHUBORCHESTRATOR_API PluginSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MIGRATIONHUBORCHESTRATOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

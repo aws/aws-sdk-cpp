@@ -28,12 +28,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeleteConditionalForwarderResult">AWS
    * API Reference</a></p>
    */
-  class AWS_DIRECTORYSERVICE_API DeleteConditionalForwarderResult
+  class DeleteConditionalForwarderResult
   {
   public:
-    DeleteConditionalForwarderResult();
-    DeleteConditionalForwarderResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteConditionalForwarderResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DIRECTORYSERVICE_API DeleteConditionalForwarderResult();
+    AWS_DIRECTORYSERVICE_API DeleteConditionalForwarderResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DIRECTORYSERVICE_API DeleteConditionalForwarderResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

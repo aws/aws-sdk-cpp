@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/OnPremiseConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_KENDRA_API OnPremiseConfiguration
+  class OnPremiseConfiguration
   {
   public:
-    OnPremiseConfiguration();
-    OnPremiseConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    OnPremiseConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KENDRA_API OnPremiseConfiguration();
+    AWS_KENDRA_API OnPremiseConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API OnPremiseConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

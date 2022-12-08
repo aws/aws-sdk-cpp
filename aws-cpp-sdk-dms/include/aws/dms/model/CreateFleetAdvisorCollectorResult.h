@@ -24,12 +24,12 @@ namespace DatabaseMigrationService
 {
 namespace Model
 {
-  class AWS_DATABASEMIGRATIONSERVICE_API CreateFleetAdvisorCollectorResult
+  class CreateFleetAdvisorCollectorResult
   {
   public:
-    CreateFleetAdvisorCollectorResult();
-    CreateFleetAdvisorCollectorResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateFleetAdvisorCollectorResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DATABASEMIGRATIONSERVICE_API CreateFleetAdvisorCollectorResult();
+    AWS_DATABASEMIGRATIONSERVICE_API CreateFleetAdvisorCollectorResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DATABASEMIGRATIONSERVICE_API CreateFleetAdvisorCollectorResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

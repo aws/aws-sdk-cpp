@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/DescribeJobsRequestFilters">AWS
    * API Reference</a></p>
    */
-  class AWS_DRS_API DescribeJobsRequestFilters
+  class DescribeJobsRequestFilters
   {
   public:
-    DescribeJobsRequestFilters();
-    DescribeJobsRequestFilters(Aws::Utils::Json::JsonView jsonValue);
-    DescribeJobsRequestFilters& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DRS_API DescribeJobsRequestFilters();
+    AWS_DRS_API DescribeJobsRequestFilters(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DRS_API DescribeJobsRequestFilters& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DRS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

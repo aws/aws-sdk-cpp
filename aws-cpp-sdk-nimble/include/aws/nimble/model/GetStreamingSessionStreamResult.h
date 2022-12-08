@@ -24,12 +24,12 @@ namespace NimbleStudio
 {
 namespace Model
 {
-  class AWS_NIMBLESTUDIO_API GetStreamingSessionStreamResult
+  class GetStreamingSessionStreamResult
   {
   public:
-    GetStreamingSessionStreamResult();
-    GetStreamingSessionStreamResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetStreamingSessionStreamResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_NIMBLESTUDIO_API GetStreamingSessionStreamResult();
+    AWS_NIMBLESTUDIO_API GetStreamingSessionStreamResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_NIMBLESTUDIO_API GetStreamingSessionStreamResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/EngineVersionsSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_MAINFRAMEMODERNIZATION_API EngineVersionsSummary
+  class EngineVersionsSummary
   {
   public:
-    EngineVersionsSummary();
-    EngineVersionsSummary(Aws::Utils::Json::JsonView jsonValue);
-    EngineVersionsSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MAINFRAMEMODERNIZATION_API EngineVersionsSummary();
+    AWS_MAINFRAMEMODERNIZATION_API EngineVersionsSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MAINFRAMEMODERNIZATION_API EngineVersionsSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MAINFRAMEMODERNIZATION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

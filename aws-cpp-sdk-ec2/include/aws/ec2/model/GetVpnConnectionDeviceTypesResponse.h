@@ -27,12 +27,12 @@ namespace EC2
 {
 namespace Model
 {
-  class AWS_EC2_API GetVpnConnectionDeviceTypesResponse
+  class GetVpnConnectionDeviceTypesResponse
   {
   public:
-    GetVpnConnectionDeviceTypesResponse();
-    GetVpnConnectionDeviceTypesResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    GetVpnConnectionDeviceTypesResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API GetVpnConnectionDeviceTypesResponse();
+    AWS_EC2_API GetVpnConnectionDeviceTypesResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API GetVpnConnectionDeviceTypesResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

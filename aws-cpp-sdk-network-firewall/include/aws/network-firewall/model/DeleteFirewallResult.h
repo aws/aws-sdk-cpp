@@ -25,12 +25,12 @@ namespace NetworkFirewall
 {
 namespace Model
 {
-  class AWS_NETWORKFIREWALL_API DeleteFirewallResult
+  class DeleteFirewallResult
   {
   public:
-    DeleteFirewallResult();
-    DeleteFirewallResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteFirewallResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_NETWORKFIREWALL_API DeleteFirewallResult();
+    AWS_NETWORKFIREWALL_API DeleteFirewallResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_NETWORKFIREWALL_API DeleteFirewallResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     

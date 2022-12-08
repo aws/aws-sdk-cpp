@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/InvalidSignalDecoder">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTFLEETWISE_API InvalidSignalDecoder
+  class InvalidSignalDecoder
   {
   public:
-    InvalidSignalDecoder();
-    InvalidSignalDecoder(Aws::Utils::Json::JsonView jsonValue);
-    InvalidSignalDecoder& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTFLEETWISE_API InvalidSignalDecoder();
+    AWS_IOTFLEETWISE_API InvalidSignalDecoder(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTFLEETWISE_API InvalidSignalDecoder& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTFLEETWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -26,13 +26,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/JobStats">AWS
    * API Reference</a></p>
    */
-  class AWS_CUSTOMERPROFILES_API JobStats
+  class JobStats
   {
   public:
-    JobStats();
-    JobStats(Aws::Utils::Json::JsonView jsonValue);
-    JobStats& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CUSTOMERPROFILES_API JobStats();
+    AWS_CUSTOMERPROFILES_API JobStats(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CUSTOMERPROFILES_API JobStats& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CUSTOMERPROFILES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

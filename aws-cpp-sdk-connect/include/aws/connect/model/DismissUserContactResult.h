@@ -22,12 +22,12 @@ namespace Connect
 {
 namespace Model
 {
-  class AWS_CONNECT_API DismissUserContactResult
+  class DismissUserContactResult
   {
   public:
-    DismissUserContactResult();
-    DismissUserContactResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DismissUserContactResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CONNECT_API DismissUserContactResult();
+    AWS_CONNECT_API DismissUserContactResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CONNECT_API DismissUserContactResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

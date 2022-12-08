@@ -30,12 +30,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/UpdateAppResult">AWS
    * API Reference</a></p>
    */
-  class AWS_AMPLIFY_API UpdateAppResult
+  class UpdateAppResult
   {
   public:
-    UpdateAppResult();
-    UpdateAppResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateAppResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_AMPLIFY_API UpdateAppResult();
+    AWS_AMPLIFY_API UpdateAppResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_AMPLIFY_API UpdateAppResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

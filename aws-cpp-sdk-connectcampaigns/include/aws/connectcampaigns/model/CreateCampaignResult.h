@@ -30,12 +30,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/connectcampaigns-2021-01-30/CreateCampaignResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECTCAMPAIGNS_API CreateCampaignResult
+  class CreateCampaignResult
   {
   public:
-    CreateCampaignResult();
-    CreateCampaignResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateCampaignResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CONNECTCAMPAIGNS_API CreateCampaignResult();
+    AWS_CONNECTCAMPAIGNS_API CreateCampaignResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CONNECTCAMPAIGNS_API CreateCampaignResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     

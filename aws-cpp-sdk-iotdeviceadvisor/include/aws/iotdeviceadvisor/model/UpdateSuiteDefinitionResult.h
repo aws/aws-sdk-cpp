@@ -25,12 +25,12 @@ namespace IoTDeviceAdvisor
 {
 namespace Model
 {
-  class AWS_IOTDEVICEADVISOR_API UpdateSuiteDefinitionResult
+  class UpdateSuiteDefinitionResult
   {
   public:
-    UpdateSuiteDefinitionResult();
-    UpdateSuiteDefinitionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateSuiteDefinitionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOTDEVICEADVISOR_API UpdateSuiteDefinitionResult();
+    AWS_IOTDEVICEADVISOR_API UpdateSuiteDefinitionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOTDEVICEADVISOR_API UpdateSuiteDefinitionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

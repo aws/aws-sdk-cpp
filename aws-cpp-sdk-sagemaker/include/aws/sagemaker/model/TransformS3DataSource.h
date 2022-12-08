@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/TransformS3DataSource">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API TransformS3DataSource
+  class TransformS3DataSource
   {
   public:
-    TransformS3DataSource();
-    TransformS3DataSource(Aws::Utils::Json::JsonView jsonValue);
-    TransformS3DataSource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API TransformS3DataSource();
+    AWS_SAGEMAKER_API TransformS3DataSource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API TransformS3DataSource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

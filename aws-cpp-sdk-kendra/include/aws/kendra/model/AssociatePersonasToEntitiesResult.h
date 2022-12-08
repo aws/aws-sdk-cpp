@@ -25,12 +25,12 @@ namespace kendra
 {
 namespace Model
 {
-  class AWS_KENDRA_API AssociatePersonasToEntitiesResult
+  class AssociatePersonasToEntitiesResult
   {
   public:
-    AssociatePersonasToEntitiesResult();
-    AssociatePersonasToEntitiesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AssociatePersonasToEntitiesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KENDRA_API AssociatePersonasToEntitiesResult();
+    AWS_KENDRA_API AssociatePersonasToEntitiesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KENDRA_API AssociatePersonasToEntitiesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

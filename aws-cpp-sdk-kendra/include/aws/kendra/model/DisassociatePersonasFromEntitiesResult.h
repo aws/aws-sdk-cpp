@@ -25,12 +25,12 @@ namespace kendra
 {
 namespace Model
 {
-  class AWS_KENDRA_API DisassociatePersonasFromEntitiesResult
+  class DisassociatePersonasFromEntitiesResult
   {
   public:
-    DisassociatePersonasFromEntitiesResult();
-    DisassociatePersonasFromEntitiesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DisassociatePersonasFromEntitiesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KENDRA_API DisassociatePersonasFromEntitiesResult();
+    AWS_KENDRA_API DisassociatePersonasFromEntitiesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KENDRA_API DisassociatePersonasFromEntitiesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

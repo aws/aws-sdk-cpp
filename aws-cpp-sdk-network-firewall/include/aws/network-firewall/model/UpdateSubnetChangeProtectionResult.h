@@ -24,12 +24,12 @@ namespace NetworkFirewall
 {
 namespace Model
 {
-  class AWS_NETWORKFIREWALL_API UpdateSubnetChangeProtectionResult
+  class UpdateSubnetChangeProtectionResult
   {
   public:
-    UpdateSubnetChangeProtectionResult();
-    UpdateSubnetChangeProtectionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateSubnetChangeProtectionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_NETWORKFIREWALL_API UpdateSubnetChangeProtectionResult();
+    AWS_NETWORKFIREWALL_API UpdateSubnetChangeProtectionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_NETWORKFIREWALL_API UpdateSubnetChangeProtectionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

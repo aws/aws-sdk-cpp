@@ -36,12 +36,12 @@ namespace KafkaConnect
 {
 namespace Model
 {
-  class AWS_KAFKACONNECT_API DescribeConnectorResult
+  class DescribeConnectorResult
   {
   public:
-    DescribeConnectorResult();
-    DescribeConnectorResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeConnectorResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KAFKACONNECT_API DescribeConnectorResult();
+    AWS_KAFKACONNECT_API DescribeConnectorResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KAFKACONNECT_API DescribeConnectorResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

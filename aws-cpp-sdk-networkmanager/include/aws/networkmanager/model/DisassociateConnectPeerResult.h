@@ -24,12 +24,12 @@ namespace NetworkManager
 {
 namespace Model
 {
-  class AWS_NETWORKMANAGER_API DisassociateConnectPeerResult
+  class DisassociateConnectPeerResult
   {
   public:
-    DisassociateConnectPeerResult();
-    DisassociateConnectPeerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DisassociateConnectPeerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_NETWORKMANAGER_API DisassociateConnectPeerResult();
+    AWS_NETWORKMANAGER_API DisassociateConnectPeerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_NETWORKMANAGER_API DisassociateConnectPeerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

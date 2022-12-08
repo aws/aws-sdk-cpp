@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/IotSiteWiseCustomerManagedDatastoreS3Storage">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTANALYTICS_API IotSiteWiseCustomerManagedDatastoreS3Storage
+  class IotSiteWiseCustomerManagedDatastoreS3Storage
   {
   public:
-    IotSiteWiseCustomerManagedDatastoreS3Storage();
-    IotSiteWiseCustomerManagedDatastoreS3Storage(Aws::Utils::Json::JsonView jsonValue);
-    IotSiteWiseCustomerManagedDatastoreS3Storage& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTANALYTICS_API IotSiteWiseCustomerManagedDatastoreS3Storage();
+    AWS_IOTANALYTICS_API IotSiteWiseCustomerManagedDatastoreS3Storage(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTANALYTICS_API IotSiteWiseCustomerManagedDatastoreS3Storage& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

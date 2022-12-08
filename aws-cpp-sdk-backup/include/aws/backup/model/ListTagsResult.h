@@ -25,12 +25,12 @@ namespace Backup
 {
 namespace Model
 {
-  class AWS_BACKUP_API ListTagsResult
+  class ListTagsResult
   {
   public:
-    ListTagsResult();
-    ListTagsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListTagsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_BACKUP_API ListTagsResult();
+    AWS_BACKUP_API ListTagsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_BACKUP_API ListTagsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

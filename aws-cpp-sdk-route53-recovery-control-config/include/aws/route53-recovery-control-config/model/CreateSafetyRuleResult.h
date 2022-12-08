@@ -25,12 +25,12 @@ namespace Route53RecoveryControlConfig
 {
 namespace Model
 {
-  class AWS_ROUTE53RECOVERYCONTROLCONFIG_API CreateSafetyRuleResult
+  class CreateSafetyRuleResult
   {
   public:
-    CreateSafetyRuleResult();
-    CreateSafetyRuleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateSafetyRuleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ROUTE53RECOVERYCONTROLCONFIG_API CreateSafetyRuleResult();
+    AWS_ROUTE53RECOVERYCONTROLCONFIG_API CreateSafetyRuleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ROUTE53RECOVERYCONTROLCONFIG_API CreateSafetyRuleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

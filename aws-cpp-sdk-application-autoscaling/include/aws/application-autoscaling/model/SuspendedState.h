@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/SuspendedState">AWS
    * API Reference</a></p>
    */
-  class AWS_APPLICATIONAUTOSCALING_API SuspendedState
+  class SuspendedState
   {
   public:
-    SuspendedState();
-    SuspendedState(Aws::Utils::Json::JsonView jsonValue);
-    SuspendedState& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPLICATIONAUTOSCALING_API SuspendedState();
+    AWS_APPLICATIONAUTOSCALING_API SuspendedState(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPLICATIONAUTOSCALING_API SuspendedState& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPLICATIONAUTOSCALING_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

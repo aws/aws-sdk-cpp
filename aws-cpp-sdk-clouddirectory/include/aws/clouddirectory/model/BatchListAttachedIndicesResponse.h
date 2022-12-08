@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/BatchListAttachedIndicesResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDDIRECTORY_API BatchListAttachedIndicesResponse
+  class BatchListAttachedIndicesResponse
   {
   public:
-    BatchListAttachedIndicesResponse();
-    BatchListAttachedIndicesResponse(Aws::Utils::Json::JsonView jsonValue);
-    BatchListAttachedIndicesResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDDIRECTORY_API BatchListAttachedIndicesResponse();
+    AWS_CLOUDDIRECTORY_API BatchListAttachedIndicesResponse(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDDIRECTORY_API BatchListAttachedIndicesResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDDIRECTORY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

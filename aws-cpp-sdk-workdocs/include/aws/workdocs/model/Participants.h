@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/Participants">AWS
    * API Reference</a></p>
    */
-  class AWS_WORKDOCS_API Participants
+  class Participants
   {
   public:
-    Participants();
-    Participants(Aws::Utils::Json::JsonView jsonValue);
-    Participants& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WORKDOCS_API Participants();
+    AWS_WORKDOCS_API Participants(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKDOCS_API Participants& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKDOCS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

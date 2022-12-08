@@ -24,12 +24,12 @@ namespace ServiceDiscovery
 {
 namespace Model
 {
-  class AWS_SERVICEDISCOVERY_API GetInstanceResult
+  class GetInstanceResult
   {
   public:
-    GetInstanceResult();
-    GetInstanceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetInstanceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SERVICEDISCOVERY_API GetInstanceResult();
+    AWS_SERVICEDISCOVERY_API GetInstanceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SERVICEDISCOVERY_API GetInstanceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

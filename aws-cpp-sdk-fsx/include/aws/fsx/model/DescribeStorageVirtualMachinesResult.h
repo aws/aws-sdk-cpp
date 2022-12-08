@@ -26,12 +26,12 @@ namespace FSx
 {
 namespace Model
 {
-  class AWS_FSX_API DescribeStorageVirtualMachinesResult
+  class DescribeStorageVirtualMachinesResult
   {
   public:
-    DescribeStorageVirtualMachinesResult();
-    DescribeStorageVirtualMachinesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeStorageVirtualMachinesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_FSX_API DescribeStorageVirtualMachinesResult();
+    AWS_FSX_API DescribeStorageVirtualMachinesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_FSX_API DescribeStorageVirtualMachinesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -24,12 +24,12 @@ namespace kendra
 {
 namespace Model
 {
-  class AWS_KENDRA_API CreateQuerySuggestionsBlockListResult
+  class CreateQuerySuggestionsBlockListResult
   {
   public:
-    CreateQuerySuggestionsBlockListResult();
-    CreateQuerySuggestionsBlockListResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateQuerySuggestionsBlockListResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KENDRA_API CreateQuerySuggestionsBlockListResult();
+    AWS_KENDRA_API CreateQuerySuggestionsBlockListResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KENDRA_API CreateQuerySuggestionsBlockListResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

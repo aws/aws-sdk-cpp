@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/SocketAddress">AWS
    * API Reference</a></p>
    */
-  class AWS_GLOBALACCELERATOR_API SocketAddress
+  class SocketAddress
   {
   public:
-    SocketAddress();
-    SocketAddress(Aws::Utils::Json::JsonView jsonValue);
-    SocketAddress& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLOBALACCELERATOR_API SocketAddress();
+    AWS_GLOBALACCELERATOR_API SocketAddress(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLOBALACCELERATOR_API SocketAddress& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLOBALACCELERATOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

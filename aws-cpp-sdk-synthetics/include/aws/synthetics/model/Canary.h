@@ -38,13 +38,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/synthetics-2017-10-11/Canary">AWS
    * API Reference</a></p>
    */
-  class AWS_SYNTHETICS_API Canary
+  class Canary
   {
   public:
-    Canary();
-    Canary(Aws::Utils::Json::JsonView jsonValue);
-    Canary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SYNTHETICS_API Canary();
+    AWS_SYNTHETICS_API Canary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SYNTHETICS_API Canary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SYNTHETICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

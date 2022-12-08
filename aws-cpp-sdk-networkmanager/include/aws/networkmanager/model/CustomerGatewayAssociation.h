@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/CustomerGatewayAssociation">AWS
    * API Reference</a></p>
    */
-  class AWS_NETWORKMANAGER_API CustomerGatewayAssociation
+  class CustomerGatewayAssociation
   {
   public:
-    CustomerGatewayAssociation();
-    CustomerGatewayAssociation(Aws::Utils::Json::JsonView jsonValue);
-    CustomerGatewayAssociation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_NETWORKMANAGER_API CustomerGatewayAssociation();
+    AWS_NETWORKMANAGER_API CustomerGatewayAssociation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKMANAGER_API CustomerGatewayAssociation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

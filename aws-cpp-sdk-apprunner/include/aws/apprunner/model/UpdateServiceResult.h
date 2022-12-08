@@ -25,12 +25,12 @@ namespace AppRunner
 {
 namespace Model
 {
-  class AWS_APPRUNNER_API UpdateServiceResult
+  class UpdateServiceResult
   {
   public:
-    UpdateServiceResult();
-    UpdateServiceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateServiceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPRUNNER_API UpdateServiceResult();
+    AWS_APPRUNNER_API UpdateServiceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPRUNNER_API UpdateServiceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -22,12 +22,12 @@ namespace IoTWireless
 {
 namespace Model
 {
-  class AWS_IOTWIRELESS_API DisassociateAwsAccountFromPartnerAccountResult
+  class DisassociateAwsAccountFromPartnerAccountResult
   {
   public:
-    DisassociateAwsAccountFromPartnerAccountResult();
-    DisassociateAwsAccountFromPartnerAccountResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DisassociateAwsAccountFromPartnerAccountResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOTWIRELESS_API DisassociateAwsAccountFromPartnerAccountResult();
+    AWS_IOTWIRELESS_API DisassociateAwsAccountFromPartnerAccountResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOTWIRELESS_API DisassociateAwsAccountFromPartnerAccountResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

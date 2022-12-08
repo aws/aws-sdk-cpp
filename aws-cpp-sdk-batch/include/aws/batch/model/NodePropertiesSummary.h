@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/NodePropertiesSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_BATCH_API NodePropertiesSummary
+  class NodePropertiesSummary
   {
   public:
-    NodePropertiesSummary();
-    NodePropertiesSummary(Aws::Utils::Json::JsonView jsonValue);
-    NodePropertiesSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BATCH_API NodePropertiesSummary();
+    AWS_BATCH_API NodePropertiesSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BATCH_API NodePropertiesSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BATCH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

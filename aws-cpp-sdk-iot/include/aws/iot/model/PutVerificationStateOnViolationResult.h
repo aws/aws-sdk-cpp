@@ -22,12 +22,12 @@ namespace IoT
 {
 namespace Model
 {
-  class AWS_IOT_API PutVerificationStateOnViolationResult
+  class PutVerificationStateOnViolationResult
   {
   public:
-    PutVerificationStateOnViolationResult();
-    PutVerificationStateOnViolationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PutVerificationStateOnViolationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOT_API PutVerificationStateOnViolationResult();
+    AWS_IOT_API PutVerificationStateOnViolationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOT_API PutVerificationStateOnViolationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

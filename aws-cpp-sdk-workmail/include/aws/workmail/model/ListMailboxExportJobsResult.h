@@ -26,12 +26,12 @@ namespace WorkMail
 {
 namespace Model
 {
-  class AWS_WORKMAIL_API ListMailboxExportJobsResult
+  class ListMailboxExportJobsResult
   {
   public:
-    ListMailboxExportJobsResult();
-    ListMailboxExportJobsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListMailboxExportJobsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WORKMAIL_API ListMailboxExportJobsResult();
+    AWS_WORKMAIL_API ListMailboxExportJobsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WORKMAIL_API ListMailboxExportJobsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

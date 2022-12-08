@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/Master">AWS
    * API Reference</a></p>
    */
-  class AWS_GUARDDUTY_API Master
+  class Master
   {
   public:
-    Master();
-    Master(Aws::Utils::Json::JsonView jsonValue);
-    Master& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GUARDDUTY_API Master();
+    AWS_GUARDDUTY_API Master(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API Master& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

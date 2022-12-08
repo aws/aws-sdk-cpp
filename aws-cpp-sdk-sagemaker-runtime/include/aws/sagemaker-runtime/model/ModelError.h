@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/runtime.sagemaker-2017-05-13/ModelError">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKERRUNTIME_API ModelError
+  class ModelError
   {
   public:
-    ModelError();
-    ModelError(Aws::Utils::Json::JsonView jsonValue);
-    ModelError& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKERRUNTIME_API ModelError();
+    AWS_SAGEMAKERRUNTIME_API ModelError(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKERRUNTIME_API ModelError& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKERRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

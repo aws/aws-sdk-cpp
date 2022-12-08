@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/WebvttDestinationSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API WebvttDestinationSettings
+  class WebvttDestinationSettings
   {
   public:
-    WebvttDestinationSettings();
-    WebvttDestinationSettings(Aws::Utils::Json::JsonView jsonValue);
-    WebvttDestinationSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API WebvttDestinationSettings();
+    AWS_MEDIACONVERT_API WebvttDestinationSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API WebvttDestinationSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

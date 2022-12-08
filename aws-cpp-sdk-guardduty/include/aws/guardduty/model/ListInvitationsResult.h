@@ -26,12 +26,12 @@ namespace GuardDuty
 {
 namespace Model
 {
-  class AWS_GUARDDUTY_API ListInvitationsResult
+  class ListInvitationsResult
   {
   public:
-    ListInvitationsResult();
-    ListInvitationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListInvitationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GUARDDUTY_API ListInvitationsResult();
+    AWS_GUARDDUTY_API ListInvitationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GUARDDUTY_API ListInvitationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

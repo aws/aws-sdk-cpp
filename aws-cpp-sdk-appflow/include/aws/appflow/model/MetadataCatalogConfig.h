@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/MetadataCatalogConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_APPFLOW_API MetadataCatalogConfig
+  class MetadataCatalogConfig
   {
   public:
-    MetadataCatalogConfig();
-    MetadataCatalogConfig(Aws::Utils::Json::JsonView jsonValue);
-    MetadataCatalogConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPFLOW_API MetadataCatalogConfig();
+    AWS_APPFLOW_API MetadataCatalogConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API MetadataCatalogConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

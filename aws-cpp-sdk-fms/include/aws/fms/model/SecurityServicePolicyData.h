@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/SecurityServicePolicyData">AWS
    * API Reference</a></p>
    */
-  class AWS_FMS_API SecurityServicePolicyData
+  class SecurityServicePolicyData
   {
   public:
-    SecurityServicePolicyData();
-    SecurityServicePolicyData(Aws::Utils::Json::JsonView jsonValue);
-    SecurityServicePolicyData& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FMS_API SecurityServicePolicyData();
+    AWS_FMS_API SecurityServicePolicyData(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FMS_API SecurityServicePolicyData& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

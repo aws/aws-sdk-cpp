@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DocumentLabel">AWS
    * API Reference</a></p>
    */
-  class AWS_COMPREHEND_API DocumentLabel
+  class DocumentLabel
   {
   public:
-    DocumentLabel();
-    DocumentLabel(Aws::Utils::Json::JsonView jsonValue);
-    DocumentLabel& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COMPREHEND_API DocumentLabel();
+    AWS_COMPREHEND_API DocumentLabel(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHEND_API DocumentLabel& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHEND_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

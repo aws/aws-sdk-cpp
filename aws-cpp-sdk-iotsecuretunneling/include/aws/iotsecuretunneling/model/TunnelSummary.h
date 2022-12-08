@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotsecuretunneling-2018-10-05/TunnelSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTSECURETUNNELING_API TunnelSummary
+  class TunnelSummary
   {
   public:
-    TunnelSummary();
-    TunnelSummary(Aws::Utils::Json::JsonView jsonValue);
-    TunnelSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTSECURETUNNELING_API TunnelSummary();
+    AWS_IOTSECURETUNNELING_API TunnelSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSECURETUNNELING_API TunnelSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSECURETUNNELING_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

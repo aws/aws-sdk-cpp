@@ -35,15 +35,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/AnalysisScheme">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDSEARCH_API AnalysisScheme
+  class AnalysisScheme
   {
   public:
-    AnalysisScheme();
-    AnalysisScheme(const Aws::Utils::Xml::XmlNode& xmlNode);
-    AnalysisScheme& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDSEARCH_API AnalysisScheme();
+    AWS_CLOUDSEARCH_API AnalysisScheme(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDSEARCH_API AnalysisScheme& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_CLOUDSEARCH_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_CLOUDSEARCH_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     

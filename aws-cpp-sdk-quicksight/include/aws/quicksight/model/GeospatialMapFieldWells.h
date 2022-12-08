@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/GeospatialMapFieldWells">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API GeospatialMapFieldWells
+  class GeospatialMapFieldWells
   {
   public:
-    GeospatialMapFieldWells();
-    GeospatialMapFieldWells(Aws::Utils::Json::JsonView jsonValue);
-    GeospatialMapFieldWells& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API GeospatialMapFieldWells();
+    AWS_QUICKSIGHT_API GeospatialMapFieldWells(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API GeospatialMapFieldWells& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

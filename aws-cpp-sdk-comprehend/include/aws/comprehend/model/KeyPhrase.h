@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/KeyPhrase">AWS
    * API Reference</a></p>
    */
-  class AWS_COMPREHEND_API KeyPhrase
+  class KeyPhrase
   {
   public:
-    KeyPhrase();
-    KeyPhrase(Aws::Utils::Json::JsonView jsonValue);
-    KeyPhrase& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COMPREHEND_API KeyPhrase();
+    AWS_COMPREHEND_API KeyPhrase(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHEND_API KeyPhrase& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHEND_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

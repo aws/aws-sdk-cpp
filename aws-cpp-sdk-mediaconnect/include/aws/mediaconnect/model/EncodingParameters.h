@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/EncodingParameters">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONNECT_API EncodingParameters
+  class EncodingParameters
   {
   public:
-    EncodingParameters();
-    EncodingParameters(Aws::Utils::Json::JsonView jsonValue);
-    EncodingParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONNECT_API EncodingParameters();
+    AWS_MEDIACONNECT_API EncodingParameters(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONNECT_API EncodingParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

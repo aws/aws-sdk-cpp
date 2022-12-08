@@ -26,12 +26,12 @@ namespace CodeCommit
 {
 namespace Model
 {
-  class AWS_CODECOMMIT_API GetDifferencesResult
+  class GetDifferencesResult
   {
   public:
-    GetDifferencesResult();
-    GetDifferencesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetDifferencesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODECOMMIT_API GetDifferencesResult();
+    AWS_CODECOMMIT_API GetDifferencesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODECOMMIT_API GetDifferencesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

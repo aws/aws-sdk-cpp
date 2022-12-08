@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/LoadBalancerInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEDEPLOY_API LoadBalancerInfo
+  class LoadBalancerInfo
   {
   public:
-    LoadBalancerInfo();
-    LoadBalancerInfo(Aws::Utils::Json::JsonView jsonValue);
-    LoadBalancerInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEDEPLOY_API LoadBalancerInfo();
+    AWS_CODEDEPLOY_API LoadBalancerInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEDEPLOY_API LoadBalancerInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEDEPLOY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

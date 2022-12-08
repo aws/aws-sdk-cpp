@@ -22,12 +22,12 @@ namespace Route53RecoveryControlConfig
 {
 namespace Model
 {
-  class AWS_ROUTE53RECOVERYCONTROLCONFIG_API UntagResourceResult
+  class UntagResourceResult
   {
   public:
-    UntagResourceResult();
-    UntagResourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UntagResourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ROUTE53RECOVERYCONTROLCONFIG_API UntagResourceResult();
+    AWS_ROUTE53RECOVERYCONTROLCONFIG_API UntagResourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ROUTE53RECOVERYCONTROLCONFIG_API UntagResourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

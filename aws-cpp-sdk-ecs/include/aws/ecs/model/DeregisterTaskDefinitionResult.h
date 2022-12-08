@@ -24,12 +24,12 @@ namespace ECS
 {
 namespace Model
 {
-  class AWS_ECS_API DeregisterTaskDefinitionResult
+  class DeregisterTaskDefinitionResult
   {
   public:
-    DeregisterTaskDefinitionResult();
-    DeregisterTaskDefinitionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeregisterTaskDefinitionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ECS_API DeregisterTaskDefinitionResult();
+    AWS_ECS_API DeregisterTaskDefinitionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ECS_API DeregisterTaskDefinitionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

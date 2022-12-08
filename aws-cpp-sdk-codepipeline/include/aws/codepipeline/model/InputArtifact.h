@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/InputArtifact">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEPIPELINE_API InputArtifact
+  class InputArtifact
   {
   public:
-    InputArtifact();
-    InputArtifact(Aws::Utils::Json::JsonView jsonValue);
-    InputArtifact& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEPIPELINE_API InputArtifact();
+    AWS_CODEPIPELINE_API InputArtifact(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEPIPELINE_API InputArtifact& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

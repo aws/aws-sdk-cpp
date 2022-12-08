@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/PlayerLatencyPolicy">AWS
    * API Reference</a></p>
    */
-  class AWS_GAMELIFT_API PlayerLatencyPolicy
+  class PlayerLatencyPolicy
   {
   public:
-    PlayerLatencyPolicy();
-    PlayerLatencyPolicy(Aws::Utils::Json::JsonView jsonValue);
-    PlayerLatencyPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GAMELIFT_API PlayerLatencyPolicy();
+    AWS_GAMELIFT_API PlayerLatencyPolicy(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMELIFT_API PlayerLatencyPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

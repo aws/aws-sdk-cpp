@@ -22,12 +22,12 @@ namespace Route53RecoveryControlConfig
 {
 namespace Model
 {
-  class AWS_ROUTE53RECOVERYCONTROLCONFIG_API DeleteClusterResult
+  class DeleteClusterResult
   {
   public:
-    DeleteClusterResult();
-    DeleteClusterResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteClusterResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ROUTE53RECOVERYCONTROLCONFIG_API DeleteClusterResult();
+    AWS_ROUTE53RECOVERYCONTROLCONFIG_API DeleteClusterResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ROUTE53RECOVERYCONTROLCONFIG_API DeleteClusterResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

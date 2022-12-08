@@ -38,13 +38,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/Deployment">AWS API
    * Reference</a></p>
    */
-  class AWS_ECS_API Deployment
+  class Deployment
   {
   public:
-    Deployment();
-    Deployment(Aws::Utils::Json::JsonView jsonValue);
-    Deployment& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ECS_API Deployment();
+    AWS_ECS_API Deployment(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECS_API Deployment& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

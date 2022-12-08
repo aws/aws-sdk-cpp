@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/FilterTextFieldControl">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API FilterTextFieldControl
+  class FilterTextFieldControl
   {
   public:
-    FilterTextFieldControl();
-    FilterTextFieldControl(Aws::Utils::Json::JsonView jsonValue);
-    FilterTextFieldControl& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API FilterTextFieldControl();
+    AWS_QUICKSIGHT_API FilterTextFieldControl(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API FilterTextFieldControl& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

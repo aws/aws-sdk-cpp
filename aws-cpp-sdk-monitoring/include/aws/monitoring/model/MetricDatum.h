@@ -34,15 +34,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/MetricDatum">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDWATCH_API MetricDatum
+  class MetricDatum
   {
   public:
-    MetricDatum();
-    MetricDatum(const Aws::Utils::Xml::XmlNode& xmlNode);
-    MetricDatum& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDWATCH_API MetricDatum();
+    AWS_CLOUDWATCH_API MetricDatum(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDWATCH_API MetricDatum& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_CLOUDWATCH_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_CLOUDWATCH_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**

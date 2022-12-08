@@ -32,12 +32,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/ListBackendEnvironmentsResult">AWS
    * API Reference</a></p>
    */
-  class AWS_AMPLIFY_API ListBackendEnvironmentsResult
+  class ListBackendEnvironmentsResult
   {
   public:
-    ListBackendEnvironmentsResult();
-    ListBackendEnvironmentsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListBackendEnvironmentsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_AMPLIFY_API ListBackendEnvironmentsResult();
+    AWS_AMPLIFY_API ListBackendEnvironmentsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_AMPLIFY_API ListBackendEnvironmentsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

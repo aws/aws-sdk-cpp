@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/emr-serverless-2021-07-13/JobRunSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_EMRSERVERLESS_API JobRunSummary
+  class JobRunSummary
   {
   public:
-    JobRunSummary();
-    JobRunSummary(Aws::Utils::Json::JsonView jsonValue);
-    JobRunSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EMRSERVERLESS_API JobRunSummary();
+    AWS_EMRSERVERLESS_API JobRunSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMRSERVERLESS_API JobRunSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMRSERVERLESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

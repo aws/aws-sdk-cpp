@@ -22,12 +22,12 @@ namespace mgn
 {
 namespace Model
 {
-  class AWS_MGN_API DisassociateApplicationsResult
+  class DisassociateApplicationsResult
   {
   public:
-    DisassociateApplicationsResult();
-    DisassociateApplicationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DisassociateApplicationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MGN_API DisassociateApplicationsResult();
+    AWS_MGN_API DisassociateApplicationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MGN_API DisassociateApplicationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

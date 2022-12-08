@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/Server">AWS API
    * Reference</a></p>
    */
-  class AWS_SMS_API Server
+  class Server
   {
   public:
-    Server();
-    Server(Aws::Utils::Json::JsonView jsonValue);
-    Server& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SMS_API Server();
+    AWS_SMS_API Server(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SMS_API Server& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

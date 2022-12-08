@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/BrokerInstanceOption">AWS
    * API Reference</a></p>
    */
-  class AWS_MQ_API BrokerInstanceOption
+  class BrokerInstanceOption
   {
   public:
-    BrokerInstanceOption();
-    BrokerInstanceOption(Aws::Utils::Json::JsonView jsonValue);
-    BrokerInstanceOption& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MQ_API BrokerInstanceOption();
+    AWS_MQ_API BrokerInstanceOption(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MQ_API BrokerInstanceOption& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MQ_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

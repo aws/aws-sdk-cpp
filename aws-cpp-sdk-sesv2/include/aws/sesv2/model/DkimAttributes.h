@@ -43,13 +43,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/DkimAttributes">AWS
    * API Reference</a></p>
    */
-  class AWS_SESV2_API DkimAttributes
+  class DkimAttributes
   {
   public:
-    DkimAttributes();
-    DkimAttributes(Aws::Utils::Json::JsonView jsonValue);
-    DkimAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SESV2_API DkimAttributes();
+    AWS_SESV2_API DkimAttributes(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SESV2_API DkimAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SESV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotdeviceadvisor-2020-09-18/SuiteDefinitionInformation">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTDEVICEADVISOR_API SuiteDefinitionInformation
+  class SuiteDefinitionInformation
   {
   public:
-    SuiteDefinitionInformation();
-    SuiteDefinitionInformation(Aws::Utils::Json::JsonView jsonValue);
-    SuiteDefinitionInformation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTDEVICEADVISOR_API SuiteDefinitionInformation();
+    AWS_IOTDEVICEADVISOR_API SuiteDefinitionInformation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTDEVICEADVISOR_API SuiteDefinitionInformation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTDEVICEADVISOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

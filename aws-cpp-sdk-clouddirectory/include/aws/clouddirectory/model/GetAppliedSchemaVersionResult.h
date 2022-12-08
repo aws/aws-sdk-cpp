@@ -24,12 +24,12 @@ namespace CloudDirectory
 {
 namespace Model
 {
-  class AWS_CLOUDDIRECTORY_API GetAppliedSchemaVersionResult
+  class GetAppliedSchemaVersionResult
   {
   public:
-    GetAppliedSchemaVersionResult();
-    GetAppliedSchemaVersionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetAppliedSchemaVersionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CLOUDDIRECTORY_API GetAppliedSchemaVersionResult();
+    AWS_CLOUDDIRECTORY_API GetAppliedSchemaVersionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CLOUDDIRECTORY_API GetAppliedSchemaVersionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

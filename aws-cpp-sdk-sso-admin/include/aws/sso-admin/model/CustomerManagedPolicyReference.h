@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/CustomerManagedPolicyReference">AWS
    * API Reference</a></p>
    */
-  class AWS_SSOADMIN_API CustomerManagedPolicyReference
+  class CustomerManagedPolicyReference
   {
   public:
-    CustomerManagedPolicyReference();
-    CustomerManagedPolicyReference(Aws::Utils::Json::JsonView jsonValue);
-    CustomerManagedPolicyReference& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSOADMIN_API CustomerManagedPolicyReference();
+    AWS_SSOADMIN_API CustomerManagedPolicyReference(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSOADMIN_API CustomerManagedPolicyReference& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSOADMIN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/UpdateBackendAuthMFAConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_AMPLIFYBACKEND_API UpdateBackendAuthMFAConfig
+  class UpdateBackendAuthMFAConfig
   {
   public:
-    UpdateBackendAuthMFAConfig();
-    UpdateBackendAuthMFAConfig(Aws::Utils::Json::JsonView jsonValue);
-    UpdateBackendAuthMFAConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_AMPLIFYBACKEND_API UpdateBackendAuthMFAConfig();
+    AWS_AMPLIFYBACKEND_API UpdateBackendAuthMFAConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFYBACKEND_API UpdateBackendAuthMFAConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFYBACKEND_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

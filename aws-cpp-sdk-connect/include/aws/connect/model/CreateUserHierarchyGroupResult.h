@@ -24,12 +24,12 @@ namespace Connect
 {
 namespace Model
 {
-  class AWS_CONNECT_API CreateUserHierarchyGroupResult
+  class CreateUserHierarchyGroupResult
   {
   public:
-    CreateUserHierarchyGroupResult();
-    CreateUserHierarchyGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateUserHierarchyGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CONNECT_API CreateUserHierarchyGroupResult();
+    AWS_CONNECT_API CreateUserHierarchyGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CONNECT_API CreateUserHierarchyGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

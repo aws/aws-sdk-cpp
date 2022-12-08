@@ -22,12 +22,12 @@ namespace DeviceFarm
 {
 namespace Model
 {
-  class AWS_DEVICEFARM_API DeleteNetworkProfileResult
+  class DeleteNetworkProfileResult
   {
   public:
-    DeleteNetworkProfileResult();
-    DeleteNetworkProfileResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteNetworkProfileResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DEVICEFARM_API DeleteNetworkProfileResult();
+    AWS_DEVICEFARM_API DeleteNetworkProfileResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DEVICEFARM_API DeleteNetworkProfileResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

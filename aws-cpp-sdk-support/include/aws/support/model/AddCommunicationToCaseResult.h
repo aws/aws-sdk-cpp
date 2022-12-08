@@ -28,12 +28,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/AddCommunicationToCaseResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_SUPPORT_API AddCommunicationToCaseResult
+  class AddCommunicationToCaseResult
   {
   public:
-    AddCommunicationToCaseResult();
-    AddCommunicationToCaseResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AddCommunicationToCaseResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SUPPORT_API AddCommunicationToCaseResult();
+    AWS_SUPPORT_API AddCommunicationToCaseResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SUPPORT_API AddCommunicationToCaseResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

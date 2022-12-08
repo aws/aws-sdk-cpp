@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/Ipv6CidrBlockAssociation">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API Ipv6CidrBlockAssociation
+  class Ipv6CidrBlockAssociation
   {
   public:
-    Ipv6CidrBlockAssociation();
-    Ipv6CidrBlockAssociation(Aws::Utils::Json::JsonView jsonValue);
-    Ipv6CidrBlockAssociation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API Ipv6CidrBlockAssociation();
+    AWS_SECURITYHUB_API Ipv6CidrBlockAssociation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Ipv6CidrBlockAssociation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

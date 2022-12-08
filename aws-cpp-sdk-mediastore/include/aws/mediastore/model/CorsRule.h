@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/CorsRule">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIASTORE_API CorsRule
+  class CorsRule
   {
   public:
-    CorsRule();
-    CorsRule(Aws::Utils::Json::JsonView jsonValue);
-    CorsRule& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIASTORE_API CorsRule();
+    AWS_MEDIASTORE_API CorsRule(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIASTORE_API CorsRule& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIASTORE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

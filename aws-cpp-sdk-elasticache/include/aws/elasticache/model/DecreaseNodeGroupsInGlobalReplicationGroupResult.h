@@ -25,12 +25,12 @@ namespace ElastiCache
 {
 namespace Model
 {
-  class AWS_ELASTICACHE_API DecreaseNodeGroupsInGlobalReplicationGroupResult
+  class DecreaseNodeGroupsInGlobalReplicationGroupResult
   {
   public:
-    DecreaseNodeGroupsInGlobalReplicationGroupResult();
-    DecreaseNodeGroupsInGlobalReplicationGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DecreaseNodeGroupsInGlobalReplicationGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ELASTICACHE_API DecreaseNodeGroupsInGlobalReplicationGroupResult();
+    AWS_ELASTICACHE_API DecreaseNodeGroupsInGlobalReplicationGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ELASTICACHE_API DecreaseNodeGroupsInGlobalReplicationGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     

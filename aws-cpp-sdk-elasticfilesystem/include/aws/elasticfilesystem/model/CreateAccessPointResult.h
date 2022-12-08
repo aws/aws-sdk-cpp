@@ -35,12 +35,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/AccessPointDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_EFS_API CreateAccessPointResult
+  class CreateAccessPointResult
   {
   public:
-    CreateAccessPointResult();
-    CreateAccessPointResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateAccessPointResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_EFS_API CreateAccessPointResult();
+    AWS_EFS_API CreateAccessPointResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_EFS_API CreateAccessPointResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

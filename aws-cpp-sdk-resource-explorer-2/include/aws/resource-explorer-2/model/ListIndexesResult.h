@@ -26,12 +26,12 @@ namespace ResourceExplorer2
 {
 namespace Model
 {
-  class AWS_RESOURCEEXPLORER2_API ListIndexesResult
+  class ListIndexesResult
   {
   public:
-    ListIndexesResult();
-    ListIndexesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListIndexesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_RESOURCEEXPLORER2_API ListIndexesResult();
+    AWS_RESOURCEEXPLORER2_API ListIndexesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_RESOURCEEXPLORER2_API ListIndexesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -24,12 +24,12 @@ namespace EMR
 {
 namespace Model
 {
-  class AWS_EMR_API StartNotebookExecutionResult
+  class StartNotebookExecutionResult
   {
   public:
-    StartNotebookExecutionResult();
-    StartNotebookExecutionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    StartNotebookExecutionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_EMR_API StartNotebookExecutionResult();
+    AWS_EMR_API StartNotebookExecutionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_EMR_API StartNotebookExecutionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

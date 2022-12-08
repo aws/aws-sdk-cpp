@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DonutOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API DonutOptions
+  class DonutOptions
   {
   public:
-    DonutOptions();
-    DonutOptions(Aws::Utils::Json::JsonView jsonValue);
-    DonutOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API DonutOptions();
+    AWS_QUICKSIGHT_API DonutOptions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API DonutOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

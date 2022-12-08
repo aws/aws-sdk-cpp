@@ -31,12 +31,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeAppsResult">AWS
    * API Reference</a></p>
    */
-  class AWS_OPSWORKS_API DescribeAppsResult
+  class DescribeAppsResult
   {
   public:
-    DescribeAppsResult();
-    DescribeAppsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeAppsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OPSWORKS_API DescribeAppsResult();
+    AWS_OPSWORKS_API DescribeAppsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OPSWORKS_API DescribeAppsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -27,12 +27,12 @@ namespace ECS
 {
 namespace Model
 {
-  class AWS_ECS_API DescribeCapacityProvidersResult
+  class DescribeCapacityProvidersResult
   {
   public:
-    DescribeCapacityProvidersResult();
-    DescribeCapacityProvidersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeCapacityProvidersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ECS_API DescribeCapacityProvidersResult();
+    AWS_ECS_API DescribeCapacityProvidersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ECS_API DescribeCapacityProvidersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

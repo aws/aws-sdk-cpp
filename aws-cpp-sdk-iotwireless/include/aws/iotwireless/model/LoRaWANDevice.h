@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/LoRaWANDevice">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTWIRELESS_API LoRaWANDevice
+  class LoRaWANDevice
   {
   public:
-    LoRaWANDevice();
-    LoRaWANDevice(Aws::Utils::Json::JsonView jsonValue);
-    LoRaWANDevice& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTWIRELESS_API LoRaWANDevice();
+    AWS_IOTWIRELESS_API LoRaWANDevice(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API LoRaWANDevice& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

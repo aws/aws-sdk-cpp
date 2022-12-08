@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/ReservedInstanceOffering">AWS
    * API Reference</a></p>
    */
-  class AWS_OPENSEARCHSERVICE_API ReservedInstanceOffering
+  class ReservedInstanceOffering
   {
   public:
-    ReservedInstanceOffering();
-    ReservedInstanceOffering(Aws::Utils::Json::JsonView jsonValue);
-    ReservedInstanceOffering& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OPENSEARCHSERVICE_API ReservedInstanceOffering();
+    AWS_OPENSEARCHSERVICE_API ReservedInstanceOffering(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPENSEARCHSERVICE_API ReservedInstanceOffering& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPENSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

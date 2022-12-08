@@ -24,12 +24,12 @@ namespace NetworkManager
 {
 namespace Model
 {
-  class AWS_NETWORKMANAGER_API DeleteGlobalNetworkResult
+  class DeleteGlobalNetworkResult
   {
   public:
-    DeleteGlobalNetworkResult();
-    DeleteGlobalNetworkResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteGlobalNetworkResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_NETWORKMANAGER_API DeleteGlobalNetworkResult();
+    AWS_NETWORKMANAGER_API DeleteGlobalNetworkResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_NETWORKMANAGER_API DeleteGlobalNetworkResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

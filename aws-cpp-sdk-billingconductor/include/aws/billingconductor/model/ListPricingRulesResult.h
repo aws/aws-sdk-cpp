@@ -26,12 +26,12 @@ namespace BillingConductor
 {
 namespace Model
 {
-  class AWS_BILLINGCONDUCTOR_API ListPricingRulesResult
+  class ListPricingRulesResult
   {
   public:
-    ListPricingRulesResult();
-    ListPricingRulesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListPricingRulesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_BILLINGCONDUCTOR_API ListPricingRulesResult();
+    AWS_BILLINGCONDUCTOR_API ListPricingRulesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_BILLINGCONDUCTOR_API ListPricingRulesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

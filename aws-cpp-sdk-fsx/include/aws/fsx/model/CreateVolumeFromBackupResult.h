@@ -24,12 +24,12 @@ namespace FSx
 {
 namespace Model
 {
-  class AWS_FSX_API CreateVolumeFromBackupResult
+  class CreateVolumeFromBackupResult
   {
   public:
-    CreateVolumeFromBackupResult();
-    CreateVolumeFromBackupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateVolumeFromBackupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_FSX_API CreateVolumeFromBackupResult();
+    AWS_FSX_API CreateVolumeFromBackupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_FSX_API CreateVolumeFromBackupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

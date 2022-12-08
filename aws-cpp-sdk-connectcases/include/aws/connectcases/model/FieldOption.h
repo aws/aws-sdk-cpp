@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/FieldOption">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECTCASES_API FieldOption
+  class FieldOption
   {
   public:
-    FieldOption();
-    FieldOption(Aws::Utils::Json::JsonView jsonValue);
-    FieldOption& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECTCASES_API FieldOption();
+    AWS_CONNECTCASES_API FieldOption(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTCASES_API FieldOption& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTCASES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

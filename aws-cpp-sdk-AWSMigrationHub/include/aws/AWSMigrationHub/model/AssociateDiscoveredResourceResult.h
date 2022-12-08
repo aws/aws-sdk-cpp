@@ -22,12 +22,12 @@ namespace MigrationHub
 {
 namespace Model
 {
-  class AWS_MIGRATIONHUB_API AssociateDiscoveredResourceResult
+  class AssociateDiscoveredResourceResult
   {
   public:
-    AssociateDiscoveredResourceResult();
-    AssociateDiscoveredResourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AssociateDiscoveredResourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MIGRATIONHUB_API AssociateDiscoveredResourceResult();
+    AWS_MIGRATIONHUB_API AssociateDiscoveredResourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MIGRATIONHUB_API AssociateDiscoveredResourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

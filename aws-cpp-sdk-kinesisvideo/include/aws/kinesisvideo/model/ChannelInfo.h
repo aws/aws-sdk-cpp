@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/ChannelInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_KINESISVIDEO_API ChannelInfo
+  class ChannelInfo
   {
   public:
-    ChannelInfo();
-    ChannelInfo(Aws::Utils::Json::JsonView jsonValue);
-    ChannelInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KINESISVIDEO_API ChannelInfo();
+    AWS_KINESISVIDEO_API ChannelInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISVIDEO_API ChannelInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISVIDEO_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

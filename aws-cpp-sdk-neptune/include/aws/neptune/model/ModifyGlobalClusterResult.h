@@ -25,12 +25,12 @@ namespace Neptune
 {
 namespace Model
 {
-  class AWS_NEPTUNE_API ModifyGlobalClusterResult
+  class ModifyGlobalClusterResult
   {
   public:
-    ModifyGlobalClusterResult();
-    ModifyGlobalClusterResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ModifyGlobalClusterResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_NEPTUNE_API ModifyGlobalClusterResult();
+    AWS_NEPTUNE_API ModifyGlobalClusterResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_NEPTUNE_API ModifyGlobalClusterResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     

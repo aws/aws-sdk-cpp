@@ -22,12 +22,12 @@ namespace XRay
 {
 namespace Model
 {
-  class AWS_XRAY_API PutTelemetryRecordsResult
+  class PutTelemetryRecordsResult
   {
   public:
-    PutTelemetryRecordsResult();
-    PutTelemetryRecordsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PutTelemetryRecordsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_XRAY_API PutTelemetryRecordsResult();
+    AWS_XRAY_API PutTelemetryRecordsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_XRAY_API PutTelemetryRecordsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

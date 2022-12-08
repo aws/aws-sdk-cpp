@@ -22,12 +22,12 @@ namespace Glue
 {
 namespace Model
 {
-  class AWS_GLUE_API CancelDataQualityRulesetEvaluationRunResult
+  class CancelDataQualityRulesetEvaluationRunResult
   {
   public:
-    CancelDataQualityRulesetEvaluationRunResult();
-    CancelDataQualityRulesetEvaluationRunResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CancelDataQualityRulesetEvaluationRunResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GLUE_API CancelDataQualityRulesetEvaluationRunResult();
+    AWS_GLUE_API CancelDataQualityRulesetEvaluationRunResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GLUE_API CancelDataQualityRulesetEvaluationRunResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

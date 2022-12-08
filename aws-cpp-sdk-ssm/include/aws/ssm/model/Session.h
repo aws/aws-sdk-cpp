@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/Session">AWS API
    * Reference</a></p>
    */
-  class AWS_SSM_API Session
+  class Session
   {
   public:
-    Session();
-    Session(Aws::Utils::Json::JsonView jsonValue);
-    Session& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSM_API Session();
+    AWS_SSM_API Session(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API Session& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

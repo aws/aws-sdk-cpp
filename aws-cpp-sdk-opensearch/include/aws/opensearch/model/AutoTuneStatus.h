@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/AutoTuneStatus">AWS
    * API Reference</a></p>
    */
-  class AWS_OPENSEARCHSERVICE_API AutoTuneStatus
+  class AutoTuneStatus
   {
   public:
-    AutoTuneStatus();
-    AutoTuneStatus(Aws::Utils::Json::JsonView jsonValue);
-    AutoTuneStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OPENSEARCHSERVICE_API AutoTuneStatus();
+    AWS_OPENSEARCHSERVICE_API AutoTuneStatus(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPENSEARCHSERVICE_API AutoTuneStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPENSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

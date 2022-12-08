@@ -34,12 +34,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ConfigurationSettingsDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICBEANSTALK_API CreateConfigurationTemplateResult
+  class CreateConfigurationTemplateResult
   {
   public:
-    CreateConfigurationTemplateResult();
-    CreateConfigurationTemplateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    CreateConfigurationTemplateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ELASTICBEANSTALK_API CreateConfigurationTemplateResult();
+    AWS_ELASTICBEANSTALK_API CreateConfigurationTemplateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ELASTICBEANSTALK_API CreateConfigurationTemplateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

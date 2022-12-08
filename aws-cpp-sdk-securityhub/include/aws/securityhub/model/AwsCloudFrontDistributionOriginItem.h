@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsCloudFrontDistributionOriginItem">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsCloudFrontDistributionOriginItem
+  class AwsCloudFrontDistributionOriginItem
   {
   public:
-    AwsCloudFrontDistributionOriginItem();
-    AwsCloudFrontDistributionOriginItem(Aws::Utils::Json::JsonView jsonValue);
-    AwsCloudFrontDistributionOriginItem& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsCloudFrontDistributionOriginItem();
+    AWS_SECURITYHUB_API AwsCloudFrontDistributionOriginItem(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsCloudFrontDistributionOriginItem& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

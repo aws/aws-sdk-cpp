@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/UnprocessedCluster">AWS
    * API Reference</a></p>
    */
-  class AWS_MEMORYDB_API UnprocessedCluster
+  class UnprocessedCluster
   {
   public:
-    UnprocessedCluster();
-    UnprocessedCluster(Aws::Utils::Json::JsonView jsonValue);
-    UnprocessedCluster& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEMORYDB_API UnprocessedCluster();
+    AWS_MEMORYDB_API UnprocessedCluster(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEMORYDB_API UnprocessedCluster& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEMORYDB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

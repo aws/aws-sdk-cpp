@@ -29,12 +29,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/RemoveTagsOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICLOADBALANCING_API RemoveTagsResult
+  class RemoveTagsResult
   {
   public:
-    RemoveTagsResult();
-    RemoveTagsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    RemoveTagsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ELASTICLOADBALANCING_API RemoveTagsResult();
+    AWS_ELASTICLOADBALANCING_API RemoveTagsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ELASTICLOADBALANCING_API RemoveTagsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     

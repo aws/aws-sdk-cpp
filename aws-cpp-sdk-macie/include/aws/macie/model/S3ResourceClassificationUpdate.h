@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie-2017-12-19/S3ResourceClassificationUpdate">AWS
    * API Reference</a></p>
    */
-  class AWS_MACIE_API S3ResourceClassificationUpdate
+  class S3ResourceClassificationUpdate
   {
   public:
-    S3ResourceClassificationUpdate();
-    S3ResourceClassificationUpdate(Aws::Utils::Json::JsonView jsonValue);
-    S3ResourceClassificationUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MACIE_API S3ResourceClassificationUpdate();
+    AWS_MACIE_API S3ResourceClassificationUpdate(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE_API S3ResourceClassificationUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

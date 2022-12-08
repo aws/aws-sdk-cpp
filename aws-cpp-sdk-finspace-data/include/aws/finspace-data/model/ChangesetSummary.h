@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/ChangesetSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_FINSPACEDATA_API ChangesetSummary
+  class ChangesetSummary
   {
   public:
-    ChangesetSummary();
-    ChangesetSummary(Aws::Utils::Json::JsonView jsonValue);
-    ChangesetSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FINSPACEDATA_API ChangesetSummary();
+    AWS_FINSPACEDATA_API ChangesetSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FINSPACEDATA_API ChangesetSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FINSPACEDATA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

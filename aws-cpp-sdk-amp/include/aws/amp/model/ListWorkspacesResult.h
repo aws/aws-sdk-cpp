@@ -32,12 +32,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/ListWorkspacesResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_PROMETHEUSSERVICE_API ListWorkspacesResult
+  class ListWorkspacesResult
   {
   public:
-    ListWorkspacesResult();
-    ListWorkspacesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListWorkspacesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PROMETHEUSSERVICE_API ListWorkspacesResult();
+    AWS_PROMETHEUSSERVICE_API ListWorkspacesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PROMETHEUSSERVICE_API ListWorkspacesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

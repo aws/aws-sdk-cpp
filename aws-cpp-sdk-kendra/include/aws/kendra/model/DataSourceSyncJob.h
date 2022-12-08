@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DataSourceSyncJob">AWS
    * API Reference</a></p>
    */
-  class AWS_KENDRA_API DataSourceSyncJob
+  class DataSourceSyncJob
   {
   public:
-    DataSourceSyncJob();
-    DataSourceSyncJob(Aws::Utils::Json::JsonView jsonValue);
-    DataSourceSyncJob& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KENDRA_API DataSourceSyncJob();
+    AWS_KENDRA_API DataSourceSyncJob(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API DataSourceSyncJob& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

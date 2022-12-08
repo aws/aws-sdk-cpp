@@ -59,13 +59,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/FaceDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_REKOGNITION_API FaceDetail
+  class FaceDetail
   {
   public:
-    FaceDetail();
-    FaceDetail(Aws::Utils::Json::JsonView jsonValue);
-    FaceDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_REKOGNITION_API FaceDetail();
+    AWS_REKOGNITION_API FaceDetail(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API FaceDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

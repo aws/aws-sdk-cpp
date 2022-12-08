@@ -26,12 +26,12 @@ namespace ECRPublic
 {
 namespace Model
 {
-  class AWS_ECRPUBLIC_API DescribeRepositoriesResult
+  class DescribeRepositoriesResult
   {
   public:
-    DescribeRepositoriesResult();
-    DescribeRepositoriesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeRepositoriesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ECRPUBLIC_API DescribeRepositoriesResult();
+    AWS_ECRPUBLIC_API DescribeRepositoriesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ECRPUBLIC_API DescribeRepositoriesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

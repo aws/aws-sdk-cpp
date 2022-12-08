@@ -27,12 +27,12 @@ namespace IAM
 {
 namespace Model
 {
-  class AWS_IAM_API ListPoliciesGrantingServiceAccessResult
+  class ListPoliciesGrantingServiceAccessResult
   {
   public:
-    ListPoliciesGrantingServiceAccessResult();
-    ListPoliciesGrantingServiceAccessResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ListPoliciesGrantingServiceAccessResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_IAM_API ListPoliciesGrantingServiceAccessResult();
+    AWS_IAM_API ListPoliciesGrantingServiceAccessResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_IAM_API ListPoliciesGrantingServiceAccessResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

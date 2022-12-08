@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsRedshiftClusterClusterNode">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsRedshiftClusterClusterNode
+  class AwsRedshiftClusterClusterNode
   {
   public:
-    AwsRedshiftClusterClusterNode();
-    AwsRedshiftClusterClusterNode(Aws::Utils::Json::JsonView jsonValue);
-    AwsRedshiftClusterClusterNode& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsRedshiftClusterClusterNode();
+    AWS_SECURITYHUB_API AwsRedshiftClusterClusterNode(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsRedshiftClusterClusterNode& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

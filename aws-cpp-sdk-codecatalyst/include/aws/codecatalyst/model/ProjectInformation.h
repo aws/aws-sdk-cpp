@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codecatalyst-2022-09-28/ProjectInformation">AWS
    * API Reference</a></p>
    */
-  class AWS_CODECATALYST_API ProjectInformation
+  class ProjectInformation
   {
   public:
-    ProjectInformation();
-    ProjectInformation(Aws::Utils::Json::JsonView jsonValue);
-    ProjectInformation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODECATALYST_API ProjectInformation();
+    AWS_CODECATALYST_API ProjectInformation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODECATALYST_API ProjectInformation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODECATALYST_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

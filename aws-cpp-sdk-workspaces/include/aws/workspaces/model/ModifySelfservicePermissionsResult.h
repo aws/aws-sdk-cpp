@@ -22,12 +22,12 @@ namespace WorkSpaces
 {
 namespace Model
 {
-  class AWS_WORKSPACES_API ModifySelfservicePermissionsResult
+  class ModifySelfservicePermissionsResult
   {
   public:
-    ModifySelfservicePermissionsResult();
-    ModifySelfservicePermissionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ModifySelfservicePermissionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WORKSPACES_API ModifySelfservicePermissionsResult();
+    AWS_WORKSPACES_API ModifySelfservicePermissionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WORKSPACES_API ModifySelfservicePermissionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

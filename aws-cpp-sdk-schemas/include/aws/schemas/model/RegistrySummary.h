@@ -24,13 +24,13 @@ namespace Schemas
 namespace Model
 {
 
-  class AWS_SCHEMAS_API RegistrySummary
+  class RegistrySummary
   {
   public:
-    RegistrySummary();
-    RegistrySummary(Aws::Utils::Json::JsonView jsonValue);
-    RegistrySummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SCHEMAS_API RegistrySummary();
+    AWS_SCHEMAS_API RegistrySummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SCHEMAS_API RegistrySummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SCHEMAS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

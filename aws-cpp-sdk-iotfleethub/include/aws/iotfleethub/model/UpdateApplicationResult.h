@@ -22,12 +22,12 @@ namespace IoTFleetHub
 {
 namespace Model
 {
-  class AWS_IOTFLEETHUB_API UpdateApplicationResult
+  class UpdateApplicationResult
   {
   public:
-    UpdateApplicationResult();
-    UpdateApplicationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateApplicationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOTFLEETHUB_API UpdateApplicationResult();
+    AWS_IOTFLEETHUB_API UpdateApplicationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOTFLEETHUB_API UpdateApplicationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

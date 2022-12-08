@@ -24,12 +24,12 @@ namespace EC2
 {
 namespace Model
 {
-  class AWS_EC2_API ModifySecurityGroupRulesResponse
+  class ModifySecurityGroupRulesResponse
   {
   public:
-    ModifySecurityGroupRulesResponse();
-    ModifySecurityGroupRulesResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ModifySecurityGroupRulesResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API ModifySecurityGroupRulesResponse();
+    AWS_EC2_API ModifySecurityGroupRulesResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API ModifySecurityGroupRulesResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

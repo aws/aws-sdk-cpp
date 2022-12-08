@@ -24,12 +24,12 @@ namespace ChimeSDKVoice
 {
 namespace Model
 {
-  class AWS_CHIMESDKVOICE_API GetPhoneNumberOrderResult
+  class GetPhoneNumberOrderResult
   {
   public:
-    GetPhoneNumberOrderResult();
-    GetPhoneNumberOrderResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetPhoneNumberOrderResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CHIMESDKVOICE_API GetPhoneNumberOrderResult();
+    AWS_CHIMESDKVOICE_API GetPhoneNumberOrderResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CHIMESDKVOICE_API GetPhoneNumberOrderResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     

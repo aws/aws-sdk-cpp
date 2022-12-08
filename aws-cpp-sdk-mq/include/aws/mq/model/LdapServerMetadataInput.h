@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/LdapServerMetadataInput">AWS
    * API Reference</a></p>
    */
-  class AWS_MQ_API LdapServerMetadataInput
+  class LdapServerMetadataInput
   {
   public:
-    LdapServerMetadataInput();
-    LdapServerMetadataInput(Aws::Utils::Json::JsonView jsonValue);
-    LdapServerMetadataInput& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MQ_API LdapServerMetadataInput();
+    AWS_MQ_API LdapServerMetadataInput(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MQ_API LdapServerMetadataInput& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MQ_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

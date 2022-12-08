@@ -26,12 +26,12 @@ namespace Proton
 {
 namespace Model
 {
-  class AWS_PROTON_API ListServiceTemplateVersionsResult
+  class ListServiceTemplateVersionsResult
   {
   public:
-    ListServiceTemplateVersionsResult();
-    ListServiceTemplateVersionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListServiceTemplateVersionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PROTON_API ListServiceTemplateVersionsResult();
+    AWS_PROTON_API ListServiceTemplateVersionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PROTON_API ListServiceTemplateVersionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

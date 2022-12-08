@@ -28,12 +28,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/PutAccountSendingAttributesResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINTEMAIL_API PutAccountSendingAttributesResult
+  class PutAccountSendingAttributesResult
   {
   public:
-    PutAccountSendingAttributesResult();
-    PutAccountSendingAttributesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PutAccountSendingAttributesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PINPOINTEMAIL_API PutAccountSendingAttributesResult();
+    AWS_PINPOINTEMAIL_API PutAccountSendingAttributesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PINPOINTEMAIL_API PutAccountSendingAttributesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

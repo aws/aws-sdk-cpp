@@ -24,12 +24,12 @@ namespace ComprehendMedical
 {
 namespace Model
 {
-  class AWS_COMPREHENDMEDICAL_API StopICD10CMInferenceJobResult
+  class StopICD10CMInferenceJobResult
   {
   public:
-    StopICD10CMInferenceJobResult();
-    StopICD10CMInferenceJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    StopICD10CMInferenceJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_COMPREHENDMEDICAL_API StopICD10CMInferenceJobResult();
+    AWS_COMPREHENDMEDICAL_API StopICD10CMInferenceJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_COMPREHENDMEDICAL_API StopICD10CMInferenceJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

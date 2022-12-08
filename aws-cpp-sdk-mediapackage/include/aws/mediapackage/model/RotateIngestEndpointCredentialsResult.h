@@ -28,12 +28,12 @@ namespace MediaPackage
 {
 namespace Model
 {
-  class AWS_MEDIAPACKAGE_API RotateIngestEndpointCredentialsResult
+  class RotateIngestEndpointCredentialsResult
   {
   public:
-    RotateIngestEndpointCredentialsResult();
-    RotateIngestEndpointCredentialsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    RotateIngestEndpointCredentialsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MEDIAPACKAGE_API RotateIngestEndpointCredentialsResult();
+    AWS_MEDIAPACKAGE_API RotateIngestEndpointCredentialsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MEDIAPACKAGE_API RotateIngestEndpointCredentialsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

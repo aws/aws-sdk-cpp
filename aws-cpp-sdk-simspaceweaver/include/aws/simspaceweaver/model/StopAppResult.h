@@ -22,12 +22,12 @@ namespace SimSpaceWeaver
 {
 namespace Model
 {
-  class AWS_SIMSPACEWEAVER_API StopAppResult
+  class StopAppResult
   {
   public:
-    StopAppResult();
-    StopAppResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    StopAppResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SIMSPACEWEAVER_API StopAppResult();
+    AWS_SIMSPACEWEAVER_API StopAppResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SIMSPACEWEAVER_API StopAppResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

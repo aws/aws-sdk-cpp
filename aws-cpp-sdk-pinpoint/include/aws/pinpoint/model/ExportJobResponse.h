@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/ExportJobResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API ExportJobResponse
+  class ExportJobResponse
   {
   public:
-    ExportJobResponse();
-    ExportJobResponse(Aws::Utils::Json::JsonView jsonValue);
-    ExportJobResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API ExportJobResponse();
+    AWS_PINPOINT_API ExportJobResponse(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API ExportJobResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/RecoveryInstanceDataReplicationInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_DRS_API RecoveryInstanceDataReplicationInfo
+  class RecoveryInstanceDataReplicationInfo
   {
   public:
-    RecoveryInstanceDataReplicationInfo();
-    RecoveryInstanceDataReplicationInfo(Aws::Utils::Json::JsonView jsonValue);
-    RecoveryInstanceDataReplicationInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DRS_API RecoveryInstanceDataReplicationInfo();
+    AWS_DRS_API RecoveryInstanceDataReplicationInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DRS_API RecoveryInstanceDataReplicationInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DRS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

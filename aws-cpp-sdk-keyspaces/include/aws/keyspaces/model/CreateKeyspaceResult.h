@@ -24,12 +24,12 @@ namespace Keyspaces
 {
 namespace Model
 {
-  class AWS_KEYSPACES_API CreateKeyspaceResult
+  class CreateKeyspaceResult
   {
   public:
-    CreateKeyspaceResult();
-    CreateKeyspaceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateKeyspaceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KEYSPACES_API CreateKeyspaceResult();
+    AWS_KEYSPACES_API CreateKeyspaceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KEYSPACES_API CreateKeyspaceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

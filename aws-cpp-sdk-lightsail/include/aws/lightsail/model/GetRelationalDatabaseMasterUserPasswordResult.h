@@ -25,12 +25,12 @@ namespace Lightsail
 {
 namespace Model
 {
-  class AWS_LIGHTSAIL_API GetRelationalDatabaseMasterUserPasswordResult
+  class GetRelationalDatabaseMasterUserPasswordResult
   {
   public:
-    GetRelationalDatabaseMasterUserPasswordResult();
-    GetRelationalDatabaseMasterUserPasswordResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetRelationalDatabaseMasterUserPasswordResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LIGHTSAIL_API GetRelationalDatabaseMasterUserPasswordResult();
+    AWS_LIGHTSAIL_API GetRelationalDatabaseMasterUserPasswordResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LIGHTSAIL_API GetRelationalDatabaseMasterUserPasswordResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

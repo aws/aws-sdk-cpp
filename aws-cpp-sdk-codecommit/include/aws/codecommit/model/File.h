@@ -29,13 +29,13 @@ namespace Model
    * <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/File">AWS
    * API Reference</a></p>
    */
-  class AWS_CODECOMMIT_API File
+  class File
   {
   public:
-    File();
-    File(Aws::Utils::Json::JsonView jsonValue);
-    File& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODECOMMIT_API File();
+    AWS_CODECOMMIT_API File(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODECOMMIT_API File& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODECOMMIT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

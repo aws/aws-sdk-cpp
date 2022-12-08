@@ -24,12 +24,12 @@ namespace RolesAnywhere
 {
 namespace Model
 {
-  class AWS_ROLESANYWHERE_API UpdateTrustAnchorResult
+  class UpdateTrustAnchorResult
   {
   public:
-    UpdateTrustAnchorResult();
-    UpdateTrustAnchorResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateTrustAnchorResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ROLESANYWHERE_API UpdateTrustAnchorResult();
+    AWS_ROLESANYWHERE_API UpdateTrustAnchorResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ROLESANYWHERE_API UpdateTrustAnchorResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

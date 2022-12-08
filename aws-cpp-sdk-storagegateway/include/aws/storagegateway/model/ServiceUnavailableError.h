@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ServiceUnavailableError">AWS
    * API Reference</a></p>
    */
-  class AWS_STORAGEGATEWAY_API ServiceUnavailableError
+  class ServiceUnavailableError
   {
   public:
-    ServiceUnavailableError();
-    ServiceUnavailableError(Aws::Utils::Json::JsonView jsonValue);
-    ServiceUnavailableError& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_STORAGEGATEWAY_API ServiceUnavailableError();
+    AWS_STORAGEGATEWAY_API ServiceUnavailableError(Aws::Utils::Json::JsonView jsonValue);
+    AWS_STORAGEGATEWAY_API ServiceUnavailableError& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_STORAGEGATEWAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

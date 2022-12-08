@@ -22,12 +22,12 @@ namespace Greengrass
 {
 namespace Model
 {
-  class AWS_GREENGRASS_API UpdateDeviceDefinitionResult
+  class UpdateDeviceDefinitionResult
   {
   public:
-    UpdateDeviceDefinitionResult();
-    UpdateDeviceDefinitionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateDeviceDefinitionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GREENGRASS_API UpdateDeviceDefinitionResult();
+    AWS_GREENGRASS_API UpdateDeviceDefinitionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GREENGRASS_API UpdateDeviceDefinitionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

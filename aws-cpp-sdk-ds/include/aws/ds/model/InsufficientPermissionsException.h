@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/InsufficientPermissionsException">AWS
    * API Reference</a></p>
    */
-  class AWS_DIRECTORYSERVICE_API InsufficientPermissionsException
+  class InsufficientPermissionsException
   {
   public:
-    InsufficientPermissionsException();
-    InsufficientPermissionsException(Aws::Utils::Json::JsonView jsonValue);
-    InsufficientPermissionsException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DIRECTORYSERVICE_API InsufficientPermissionsException();
+    AWS_DIRECTORYSERVICE_API InsufficientPermissionsException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTORYSERVICE_API InsufficientPermissionsException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTORYSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

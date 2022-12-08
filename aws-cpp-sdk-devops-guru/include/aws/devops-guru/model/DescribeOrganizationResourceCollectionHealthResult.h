@@ -29,12 +29,12 @@ namespace DevOpsGuru
 {
 namespace Model
 {
-  class AWS_DEVOPSGURU_API DescribeOrganizationResourceCollectionHealthResult
+  class DescribeOrganizationResourceCollectionHealthResult
   {
   public:
-    DescribeOrganizationResourceCollectionHealthResult();
-    DescribeOrganizationResourceCollectionHealthResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeOrganizationResourceCollectionHealthResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DEVOPSGURU_API DescribeOrganizationResourceCollectionHealthResult();
+    AWS_DEVOPSGURU_API DescribeOrganizationResourceCollectionHealthResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DEVOPSGURU_API DescribeOrganizationResourceCollectionHealthResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

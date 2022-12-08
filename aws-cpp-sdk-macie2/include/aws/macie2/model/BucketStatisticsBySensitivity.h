@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/BucketStatisticsBySensitivity">AWS
    * API Reference</a></p>
    */
-  class AWS_MACIE2_API BucketStatisticsBySensitivity
+  class BucketStatisticsBySensitivity
   {
   public:
-    BucketStatisticsBySensitivity();
-    BucketStatisticsBySensitivity(Aws::Utils::Json::JsonView jsonValue);
-    BucketStatisticsBySensitivity& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MACIE2_API BucketStatisticsBySensitivity();
+    AWS_MACIE2_API BucketStatisticsBySensitivity(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API BucketStatisticsBySensitivity& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

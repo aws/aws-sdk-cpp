@@ -25,12 +25,12 @@ namespace Lightsail
 {
 namespace Model
 {
-  class AWS_LIGHTSAIL_API DetachInstancesFromLoadBalancerResult
+  class DetachInstancesFromLoadBalancerResult
   {
   public:
-    DetachInstancesFromLoadBalancerResult();
-    DetachInstancesFromLoadBalancerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DetachInstancesFromLoadBalancerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LIGHTSAIL_API DetachInstancesFromLoadBalancerResult();
+    AWS_LIGHTSAIL_API DetachInstancesFromLoadBalancerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LIGHTSAIL_API DetachInstancesFromLoadBalancerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

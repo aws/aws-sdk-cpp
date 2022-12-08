@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/StatefulEngineOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_NETWORKFIREWALL_API StatefulEngineOptions
+  class StatefulEngineOptions
   {
   public:
-    StatefulEngineOptions();
-    StatefulEngineOptions(Aws::Utils::Json::JsonView jsonValue);
-    StatefulEngineOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_NETWORKFIREWALL_API StatefulEngineOptions();
+    AWS_NETWORKFIREWALL_API StatefulEngineOptions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKFIREWALL_API StatefulEngineOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKFIREWALL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

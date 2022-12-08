@@ -25,12 +25,12 @@ namespace GuardDuty
 {
 namespace Model
 {
-  class AWS_GUARDDUTY_API DeleteInvitationsResult
+  class DeleteInvitationsResult
   {
   public:
-    DeleteInvitationsResult();
-    DeleteInvitationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteInvitationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GUARDDUTY_API DeleteInvitationsResult();
+    AWS_GUARDDUTY_API DeleteInvitationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GUARDDUTY_API DeleteInvitationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

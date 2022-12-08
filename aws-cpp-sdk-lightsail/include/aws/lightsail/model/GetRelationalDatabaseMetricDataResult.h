@@ -26,12 +26,12 @@ namespace Lightsail
 {
 namespace Model
 {
-  class AWS_LIGHTSAIL_API GetRelationalDatabaseMetricDataResult
+  class GetRelationalDatabaseMetricDataResult
   {
   public:
-    GetRelationalDatabaseMetricDataResult();
-    GetRelationalDatabaseMetricDataResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetRelationalDatabaseMetricDataResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LIGHTSAIL_API GetRelationalDatabaseMetricDataResult();
+    AWS_LIGHTSAIL_API GetRelationalDatabaseMetricDataResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LIGHTSAIL_API GetRelationalDatabaseMetricDataResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

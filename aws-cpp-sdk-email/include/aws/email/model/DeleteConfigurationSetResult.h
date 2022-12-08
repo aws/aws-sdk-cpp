@@ -30,12 +30,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteConfigurationSetResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_SES_API DeleteConfigurationSetResult
+  class DeleteConfigurationSetResult
   {
   public:
-    DeleteConfigurationSetResult();
-    DeleteConfigurationSetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DeleteConfigurationSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_SES_API DeleteConfigurationSetResult();
+    AWS_SES_API DeleteConfigurationSetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_SES_API DeleteConfigurationSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     

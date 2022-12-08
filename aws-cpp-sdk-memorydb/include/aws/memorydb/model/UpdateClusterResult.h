@@ -24,12 +24,12 @@ namespace MemoryDB
 {
 namespace Model
 {
-  class AWS_MEMORYDB_API UpdateClusterResult
+  class UpdateClusterResult
   {
   public:
-    UpdateClusterResult();
-    UpdateClusterResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateClusterResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MEMORYDB_API UpdateClusterResult();
+    AWS_MEMORYDB_API UpdateClusterResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MEMORYDB_API UpdateClusterResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

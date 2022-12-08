@@ -28,12 +28,12 @@ namespace MigrationHubOrchestrator
 {
 namespace Model
 {
-  class AWS_MIGRATIONHUBORCHESTRATOR_API GetTemplateStepResult
+  class GetTemplateStepResult
   {
   public:
-    GetTemplateStepResult();
-    GetTemplateStepResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetTemplateStepResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MIGRATIONHUBORCHESTRATOR_API GetTemplateStepResult();
+    AWS_MIGRATIONHUBORCHESTRATOR_API GetTemplateStepResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MIGRATIONHUBORCHESTRATOR_API GetTemplateStepResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

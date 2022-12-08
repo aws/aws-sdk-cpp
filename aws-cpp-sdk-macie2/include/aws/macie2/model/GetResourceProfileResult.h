@@ -25,12 +25,12 @@ namespace Macie2
 {
 namespace Model
 {
-  class AWS_MACIE2_API GetResourceProfileResult
+  class GetResourceProfileResult
   {
   public:
-    GetResourceProfileResult();
-    GetResourceProfileResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetResourceProfileResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MACIE2_API GetResourceProfileResult();
+    AWS_MACIE2_API GetResourceProfileResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MACIE2_API GetResourceProfileResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/ComprehendMedicalAsyncJobFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_COMPREHENDMEDICAL_API ComprehendMedicalAsyncJobFilter
+  class ComprehendMedicalAsyncJobFilter
   {
   public:
-    ComprehendMedicalAsyncJobFilter();
-    ComprehendMedicalAsyncJobFilter(Aws::Utils::Json::JsonView jsonValue);
-    ComprehendMedicalAsyncJobFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COMPREHENDMEDICAL_API ComprehendMedicalAsyncJobFilter();
+    AWS_COMPREHENDMEDICAL_API ComprehendMedicalAsyncJobFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHENDMEDICAL_API ComprehendMedicalAsyncJobFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHENDMEDICAL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

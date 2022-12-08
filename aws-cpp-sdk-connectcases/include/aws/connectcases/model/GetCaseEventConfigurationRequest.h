@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_CONNECTCASES_API GetCaseEventConfigurationRequest : public ConnectCasesRequest
+  class GetCaseEventConfigurationRequest : public ConnectCasesRequest
   {
   public:
-    GetCaseEventConfigurationRequest();
+    AWS_CONNECTCASES_API GetCaseEventConfigurationRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,7 +29,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "GetCaseEventConfiguration"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CONNECTCASES_API Aws::String SerializePayload() const override;
 
 
     /**

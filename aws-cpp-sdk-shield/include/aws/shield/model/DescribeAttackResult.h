@@ -24,12 +24,12 @@ namespace Shield
 {
 namespace Model
 {
-  class AWS_SHIELD_API DescribeAttackResult
+  class DescribeAttackResult
   {
   public:
-    DescribeAttackResult();
-    DescribeAttackResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeAttackResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SHIELD_API DescribeAttackResult();
+    AWS_SHIELD_API DescribeAttackResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SHIELD_API DescribeAttackResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

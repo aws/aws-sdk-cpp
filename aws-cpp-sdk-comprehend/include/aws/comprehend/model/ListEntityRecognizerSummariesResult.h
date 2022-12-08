@@ -26,12 +26,12 @@ namespace Comprehend
 {
 namespace Model
 {
-  class AWS_COMPREHEND_API ListEntityRecognizerSummariesResult
+  class ListEntityRecognizerSummariesResult
   {
   public:
-    ListEntityRecognizerSummariesResult();
-    ListEntityRecognizerSummariesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListEntityRecognizerSummariesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_COMPREHEND_API ListEntityRecognizerSummariesResult();
+    AWS_COMPREHEND_API ListEntityRecognizerSummariesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_COMPREHEND_API ListEntityRecognizerSummariesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

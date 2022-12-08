@@ -26,12 +26,12 @@ namespace MigrationHubStrategyRecommendations
 {
 namespace Model
 {
-  class AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API ListImportFileTaskResult
+  class ListImportFileTaskResult
   {
   public:
-    ListImportFileTaskResult();
-    ListImportFileTaskResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListImportFileTaskResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API ListImportFileTaskResult();
+    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API ListImportFileTaskResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API ListImportFileTaskResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

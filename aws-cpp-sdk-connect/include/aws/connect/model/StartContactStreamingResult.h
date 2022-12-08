@@ -24,12 +24,12 @@ namespace Connect
 {
 namespace Model
 {
-  class AWS_CONNECT_API StartContactStreamingResult
+  class StartContactStreamingResult
   {
   public:
-    StartContactStreamingResult();
-    StartContactStreamingResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    StartContactStreamingResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CONNECT_API StartContactStreamingResult();
+    AWS_CONNECT_API StartContactStreamingResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CONNECT_API StartContactStreamingResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

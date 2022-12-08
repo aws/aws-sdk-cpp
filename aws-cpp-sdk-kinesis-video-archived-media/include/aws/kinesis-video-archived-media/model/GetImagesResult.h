@@ -26,12 +26,12 @@ namespace KinesisVideoArchivedMedia
 {
 namespace Model
 {
-  class AWS_KINESISVIDEOARCHIVEDMEDIA_API GetImagesResult
+  class GetImagesResult
   {
   public:
-    GetImagesResult();
-    GetImagesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetImagesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KINESISVIDEOARCHIVEDMEDIA_API GetImagesResult();
+    AWS_KINESISVIDEOARCHIVEDMEDIA_API GetImagesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KINESISVIDEOARCHIVEDMEDIA_API GetImagesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

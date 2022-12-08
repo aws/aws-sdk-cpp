@@ -26,12 +26,12 @@ namespace CodeCommit
 {
 namespace Model
 {
-  class AWS_CODECOMMIT_API BatchDisassociateApprovalRuleTemplateFromRepositoriesResult
+  class BatchDisassociateApprovalRuleTemplateFromRepositoriesResult
   {
   public:
-    BatchDisassociateApprovalRuleTemplateFromRepositoriesResult();
-    BatchDisassociateApprovalRuleTemplateFromRepositoriesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    BatchDisassociateApprovalRuleTemplateFromRepositoriesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODECOMMIT_API BatchDisassociateApprovalRuleTemplateFromRepositoriesResult();
+    AWS_CODECOMMIT_API BatchDisassociateApprovalRuleTemplateFromRepositoriesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODECOMMIT_API BatchDisassociateApprovalRuleTemplateFromRepositoriesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

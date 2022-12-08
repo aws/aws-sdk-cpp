@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ResultReuseByAgeConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_ATHENA_API ResultReuseByAgeConfiguration
+  class ResultReuseByAgeConfiguration
   {
   public:
-    ResultReuseByAgeConfiguration();
-    ResultReuseByAgeConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    ResultReuseByAgeConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ATHENA_API ResultReuseByAgeConfiguration();
+    AWS_ATHENA_API ResultReuseByAgeConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ATHENA_API ResultReuseByAgeConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ATHENA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

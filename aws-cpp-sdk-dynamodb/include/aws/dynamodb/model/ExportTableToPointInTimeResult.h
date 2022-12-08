@@ -24,12 +24,12 @@ namespace DynamoDB
 {
 namespace Model
 {
-  class AWS_DYNAMODB_API ExportTableToPointInTimeResult
+  class ExportTableToPointInTimeResult
   {
   public:
-    ExportTableToPointInTimeResult();
-    ExportTableToPointInTimeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ExportTableToPointInTimeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DYNAMODB_API ExportTableToPointInTimeResult();
+    AWS_DYNAMODB_API ExportTableToPointInTimeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DYNAMODB_API ExportTableToPointInTimeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

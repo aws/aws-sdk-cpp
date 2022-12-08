@@ -25,12 +25,12 @@ namespace ElasticBeanstalk
 {
 namespace Model
 {
-  class AWS_ELASTICBEANSTALK_API DescribeAccountAttributesResult
+  class DescribeAccountAttributesResult
   {
   public:
-    DescribeAccountAttributesResult();
-    DescribeAccountAttributesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeAccountAttributesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ELASTICBEANSTALK_API DescribeAccountAttributesResult();
+    AWS_ELASTICBEANSTALK_API DescribeAccountAttributesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ELASTICBEANSTALK_API DescribeAccountAttributesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

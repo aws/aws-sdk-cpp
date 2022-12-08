@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/Environment">AWS
    * API Reference</a></p>
    */
-  class AWS_FINSPACE_API Environment
+  class Environment
   {
   public:
-    Environment();
-    Environment(Aws::Utils::Json::JsonView jsonValue);
-    Environment& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FINSPACE_API Environment();
+    AWS_FINSPACE_API Environment(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FINSPACE_API Environment& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FINSPACE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

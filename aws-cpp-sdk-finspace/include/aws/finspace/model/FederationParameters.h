@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/FederationParameters">AWS
    * API Reference</a></p>
    */
-  class AWS_FINSPACE_API FederationParameters
+  class FederationParameters
   {
   public:
-    FederationParameters();
-    FederationParameters(Aws::Utils::Json::JsonView jsonValue);
-    FederationParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FINSPACE_API FederationParameters();
+    AWS_FINSPACE_API FederationParameters(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FINSPACE_API FederationParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FINSPACE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

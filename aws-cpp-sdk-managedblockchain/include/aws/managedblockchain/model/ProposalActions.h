@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/ProposalActions">AWS
    * API Reference</a></p>
    */
-  class AWS_MANAGEDBLOCKCHAIN_API ProposalActions
+  class ProposalActions
   {
   public:
-    ProposalActions();
-    ProposalActions(Aws::Utils::Json::JsonView jsonValue);
-    ProposalActions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MANAGEDBLOCKCHAIN_API ProposalActions();
+    AWS_MANAGEDBLOCKCHAIN_API ProposalActions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MANAGEDBLOCKCHAIN_API ProposalActions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MANAGEDBLOCKCHAIN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

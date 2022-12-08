@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/NetworkInterface">AWS
    * API Reference</a></p>
    */
-  class AWS_GUARDDUTY_API NetworkInterface
+  class NetworkInterface
   {
   public:
-    NetworkInterface();
-    NetworkInterface(Aws::Utils::Json::JsonView jsonValue);
-    NetworkInterface& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GUARDDUTY_API NetworkInterface();
+    AWS_GUARDDUTY_API NetworkInterface(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API NetworkInterface& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -24,12 +24,12 @@ namespace WAFV2
 {
 namespace Model
 {
-  class AWS_WAFV2_API UpdateWebACLResult
+  class UpdateWebACLResult
   {
   public:
-    UpdateWebACLResult();
-    UpdateWebACLResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateWebACLResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WAFV2_API UpdateWebACLResult();
+    AWS_WAFV2_API UpdateWebACLResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WAFV2_API UpdateWebACLResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

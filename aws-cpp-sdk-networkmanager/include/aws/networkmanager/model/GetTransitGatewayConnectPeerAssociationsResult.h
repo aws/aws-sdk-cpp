@@ -26,12 +26,12 @@ namespace NetworkManager
 {
 namespace Model
 {
-  class AWS_NETWORKMANAGER_API GetTransitGatewayConnectPeerAssociationsResult
+  class GetTransitGatewayConnectPeerAssociationsResult
   {
   public:
-    GetTransitGatewayConnectPeerAssociationsResult();
-    GetTransitGatewayConnectPeerAssociationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetTransitGatewayConnectPeerAssociationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_NETWORKMANAGER_API GetTransitGatewayConnectPeerAssociationsResult();
+    AWS_NETWORKMANAGER_API GetTransitGatewayConnectPeerAssociationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_NETWORKMANAGER_API GetTransitGatewayConnectPeerAssociationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/Resource">AWS
    * API Reference</a></p>
    */
-  class AWS_APIGATEWAY_API Resource
+  class Resource
   {
   public:
-    Resource();
-    Resource(Aws::Utils::Json::JsonView jsonValue);
-    Resource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APIGATEWAY_API Resource();
+    AWS_APIGATEWAY_API Resource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APIGATEWAY_API Resource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APIGATEWAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

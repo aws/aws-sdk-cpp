@@ -25,12 +25,12 @@ namespace Kafka
 {
 namespace Model
 {
-  class AWS_KAFKA_API DeleteConfigurationResult
+  class DeleteConfigurationResult
   {
   public:
-    DeleteConfigurationResult();
-    DeleteConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KAFKA_API DeleteConfigurationResult();
+    AWS_KAFKA_API DeleteConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KAFKA_API DeleteConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

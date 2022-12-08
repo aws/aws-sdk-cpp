@@ -25,12 +25,12 @@ namespace DocDB
 {
 namespace Model
 {
-  class AWS_DOCDB_API CreateDBClusterSnapshotResult
+  class CreateDBClusterSnapshotResult
   {
   public:
-    CreateDBClusterSnapshotResult();
-    CreateDBClusterSnapshotResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    CreateDBClusterSnapshotResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_DOCDB_API CreateDBClusterSnapshotResult();
+    AWS_DOCDB_API CreateDBClusterSnapshotResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_DOCDB_API CreateDBClusterSnapshotResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     

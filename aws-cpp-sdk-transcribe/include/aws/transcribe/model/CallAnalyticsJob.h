@@ -47,13 +47,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/CallAnalyticsJob">AWS
    * API Reference</a></p>
    */
-  class AWS_TRANSCRIBESERVICE_API CallAnalyticsJob
+  class CallAnalyticsJob
   {
   public:
-    CallAnalyticsJob();
-    CallAnalyticsJob(Aws::Utils::Json::JsonView jsonValue);
-    CallAnalyticsJob& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TRANSCRIBESERVICE_API CallAnalyticsJob();
+    AWS_TRANSCRIBESERVICE_API CallAnalyticsJob(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSCRIBESERVICE_API CallAnalyticsJob& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSCRIBESERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

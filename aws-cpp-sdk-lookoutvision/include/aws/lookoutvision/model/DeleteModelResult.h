@@ -24,12 +24,12 @@ namespace LookoutforVision
 {
 namespace Model
 {
-  class AWS_LOOKOUTFORVISION_API DeleteModelResult
+  class DeleteModelResult
   {
   public:
-    DeleteModelResult();
-    DeleteModelResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteModelResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LOOKOUTFORVISION_API DeleteModelResult();
+    AWS_LOOKOUTFORVISION_API DeleteModelResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LOOKOUTFORVISION_API DeleteModelResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

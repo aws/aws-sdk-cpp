@@ -22,12 +22,12 @@ namespace LakeFormation
 {
 namespace Model
 {
-  class AWS_LAKEFORMATION_API CancelTransactionResult
+  class CancelTransactionResult
   {
   public:
-    CancelTransactionResult();
-    CancelTransactionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CancelTransactionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LAKEFORMATION_API CancelTransactionResult();
+    AWS_LAKEFORMATION_API CancelTransactionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LAKEFORMATION_API CancelTransactionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

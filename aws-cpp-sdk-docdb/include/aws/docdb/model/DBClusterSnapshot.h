@@ -30,15 +30,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DBClusterSnapshot">AWS
    * API Reference</a></p>
    */
-  class AWS_DOCDB_API DBClusterSnapshot
+  class DBClusterSnapshot
   {
   public:
-    DBClusterSnapshot();
-    DBClusterSnapshot(const Aws::Utils::Xml::XmlNode& xmlNode);
-    DBClusterSnapshot& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_DOCDB_API DBClusterSnapshot();
+    AWS_DOCDB_API DBClusterSnapshot(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_DOCDB_API DBClusterSnapshot& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_DOCDB_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_DOCDB_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**

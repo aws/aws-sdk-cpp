@@ -22,12 +22,12 @@ namespace KinesisAnalyticsV2
 {
 namespace Model
 {
-  class AWS_KINESISANALYTICSV2_API StopApplicationResult
+  class StopApplicationResult
   {
   public:
-    StopApplicationResult();
-    StopApplicationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    StopApplicationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KINESISANALYTICSV2_API StopApplicationResult();
+    AWS_KINESISANALYTICSV2_API StopApplicationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KINESISANALYTICSV2_API StopApplicationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

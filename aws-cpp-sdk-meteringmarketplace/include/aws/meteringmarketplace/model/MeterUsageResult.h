@@ -24,12 +24,12 @@ namespace MarketplaceMetering
 {
 namespace Model
 {
-  class AWS_MARKETPLACEMETERING_API MeterUsageResult
+  class MeterUsageResult
   {
   public:
-    MeterUsageResult();
-    MeterUsageResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    MeterUsageResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MARKETPLACEMETERING_API MeterUsageResult();
+    AWS_MARKETPLACEMETERING_API MeterUsageResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MARKETPLACEMETERING_API MeterUsageResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/WaterfallChartSortConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API WaterfallChartSortConfiguration
+  class WaterfallChartSortConfiguration
   {
   public:
-    WaterfallChartSortConfiguration();
-    WaterfallChartSortConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    WaterfallChartSortConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API WaterfallChartSortConfiguration();
+    AWS_QUICKSIGHT_API WaterfallChartSortConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API WaterfallChartSortConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

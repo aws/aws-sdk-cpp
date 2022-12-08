@@ -44,13 +44,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/Run">AWS API
    * Reference</a></p>
    */
-  class AWS_DEVICEFARM_API Run
+  class Run
   {
   public:
-    Run();
-    Run(Aws::Utils::Json::JsonView jsonValue);
-    Run& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DEVICEFARM_API Run();
+    AWS_DEVICEFARM_API Run(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVICEFARM_API Run& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVICEFARM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

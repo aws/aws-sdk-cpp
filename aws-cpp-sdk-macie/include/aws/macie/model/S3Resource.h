@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie-2017-12-19/S3Resource">AWS
    * API Reference</a></p>
    */
-  class AWS_MACIE_API S3Resource
+  class S3Resource
   {
   public:
-    S3Resource();
-    S3Resource(Aws::Utils::Json::JsonView jsonValue);
-    S3Resource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MACIE_API S3Resource();
+    AWS_MACIE_API S3Resource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE_API S3Resource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

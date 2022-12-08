@@ -24,12 +24,12 @@ namespace MemoryDB
 {
 namespace Model
 {
-  class AWS_MEMORYDB_API ResetParameterGroupResult
+  class ResetParameterGroupResult
   {
   public:
-    ResetParameterGroupResult();
-    ResetParameterGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ResetParameterGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MEMORYDB_API ResetParameterGroupResult();
+    AWS_MEMORYDB_API ResetParameterGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MEMORYDB_API ResetParameterGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

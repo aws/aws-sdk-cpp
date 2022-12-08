@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/SingleHeader">AWS
    * API Reference</a></p>
    */
-  class AWS_WAFV2_API SingleHeader
+  class SingleHeader
   {
   public:
-    SingleHeader();
-    SingleHeader(Aws::Utils::Json::JsonView jsonValue);
-    SingleHeader& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WAFV2_API SingleHeader();
+    AWS_WAFV2_API SingleHeader(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API SingleHeader& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

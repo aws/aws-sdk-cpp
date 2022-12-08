@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/RedshiftSource">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API RedshiftSource
+  class RedshiftSource
   {
   public:
-    RedshiftSource();
-    RedshiftSource(Aws::Utils::Json::JsonView jsonValue);
-    RedshiftSource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API RedshiftSource();
+    AWS_GLUE_API RedshiftSource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API RedshiftSource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

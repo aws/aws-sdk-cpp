@@ -32,12 +32,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeCommunicationsResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_SUPPORT_API DescribeCommunicationsResult
+  class DescribeCommunicationsResult
   {
   public:
-    DescribeCommunicationsResult();
-    DescribeCommunicationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeCommunicationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SUPPORT_API DescribeCommunicationsResult();
+    AWS_SUPPORT_API DescribeCommunicationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SUPPORT_API DescribeCommunicationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

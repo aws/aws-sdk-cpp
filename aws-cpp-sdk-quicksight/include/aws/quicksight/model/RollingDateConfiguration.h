@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/RollingDateConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API RollingDateConfiguration
+  class RollingDateConfiguration
   {
   public:
-    RollingDateConfiguration();
-    RollingDateConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    RollingDateConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API RollingDateConfiguration();
+    AWS_QUICKSIGHT_API RollingDateConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API RollingDateConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

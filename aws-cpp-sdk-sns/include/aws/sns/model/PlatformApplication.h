@@ -29,15 +29,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/PlatformApplication">AWS
    * API Reference</a></p>
    */
-  class AWS_SNS_API PlatformApplication
+  class PlatformApplication
   {
   public:
-    PlatformApplication();
-    PlatformApplication(const Aws::Utils::Xml::XmlNode& xmlNode);
-    PlatformApplication& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_SNS_API PlatformApplication();
+    AWS_SNS_API PlatformApplication(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_SNS_API PlatformApplication& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_SNS_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_SNS_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**

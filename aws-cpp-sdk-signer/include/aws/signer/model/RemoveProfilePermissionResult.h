@@ -24,12 +24,12 @@ namespace signer
 {
 namespace Model
 {
-  class AWS_SIGNER_API RemoveProfilePermissionResult
+  class RemoveProfilePermissionResult
   {
   public:
-    RemoveProfilePermissionResult();
-    RemoveProfilePermissionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    RemoveProfilePermissionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SIGNER_API RemoveProfilePermissionResult();
+    AWS_SIGNER_API RemoveProfilePermissionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SIGNER_API RemoveProfilePermissionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

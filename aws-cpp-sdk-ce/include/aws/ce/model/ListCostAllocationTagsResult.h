@@ -26,12 +26,12 @@ namespace CostExplorer
 {
 namespace Model
 {
-  class AWS_COSTEXPLORER_API ListCostAllocationTagsResult
+  class ListCostAllocationTagsResult
   {
   public:
-    ListCostAllocationTagsResult();
-    ListCostAllocationTagsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListCostAllocationTagsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_COSTEXPLORER_API ListCostAllocationTagsResult();
+    AWS_COSTEXPLORER_API ListCostAllocationTagsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_COSTEXPLORER_API ListCostAllocationTagsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

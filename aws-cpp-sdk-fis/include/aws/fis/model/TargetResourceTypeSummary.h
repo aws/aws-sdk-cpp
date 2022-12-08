@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/TargetResourceTypeSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_FIS_API TargetResourceTypeSummary
+  class TargetResourceTypeSummary
   {
   public:
-    TargetResourceTypeSummary();
-    TargetResourceTypeSummary(Aws::Utils::Json::JsonView jsonValue);
-    TargetResourceTypeSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FIS_API TargetResourceTypeSummary();
+    AWS_FIS_API TargetResourceTypeSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FIS_API TargetResourceTypeSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FIS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

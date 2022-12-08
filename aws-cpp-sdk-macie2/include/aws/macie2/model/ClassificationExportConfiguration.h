@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ClassificationExportConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_MACIE2_API ClassificationExportConfiguration
+  class ClassificationExportConfiguration
   {
   public:
-    ClassificationExportConfiguration();
-    ClassificationExportConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    ClassificationExportConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MACIE2_API ClassificationExportConfiguration();
+    AWS_MACIE2_API ClassificationExportConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API ClassificationExportConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

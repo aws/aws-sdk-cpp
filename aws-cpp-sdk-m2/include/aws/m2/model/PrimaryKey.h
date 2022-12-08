@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/PrimaryKey">AWS API
    * Reference</a></p>
    */
-  class AWS_MAINFRAMEMODERNIZATION_API PrimaryKey
+  class PrimaryKey
   {
   public:
-    PrimaryKey();
-    PrimaryKey(Aws::Utils::Json::JsonView jsonValue);
-    PrimaryKey& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MAINFRAMEMODERNIZATION_API PrimaryKey();
+    AWS_MAINFRAMEMODERNIZATION_API PrimaryKey(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MAINFRAMEMODERNIZATION_API PrimaryKey& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MAINFRAMEMODERNIZATION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

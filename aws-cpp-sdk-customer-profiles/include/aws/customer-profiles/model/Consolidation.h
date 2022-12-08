@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/Consolidation">AWS
    * API Reference</a></p>
    */
-  class AWS_CUSTOMERPROFILES_API Consolidation
+  class Consolidation
   {
   public:
-    Consolidation();
-    Consolidation(Aws::Utils::Json::JsonView jsonValue);
-    Consolidation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CUSTOMERPROFILES_API Consolidation();
+    AWS_CUSTOMERPROFILES_API Consolidation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CUSTOMERPROFILES_API Consolidation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CUSTOMERPROFILES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

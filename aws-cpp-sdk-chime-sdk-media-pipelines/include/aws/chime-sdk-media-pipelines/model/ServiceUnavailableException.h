@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/ServiceUnavailableException">AWS
    * API Reference</a></p>
    */
-  class AWS_CHIMESDKMEDIAPIPELINES_API ServiceUnavailableException
+  class ServiceUnavailableException
   {
   public:
-    ServiceUnavailableException();
-    ServiceUnavailableException(Aws::Utils::Json::JsonView jsonValue);
-    ServiceUnavailableException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIMESDKMEDIAPIPELINES_API ServiceUnavailableException();
+    AWS_CHIMESDKMEDIAPIPELINES_API ServiceUnavailableException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKMEDIAPIPELINES_API ServiceUnavailableException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKMEDIAPIPELINES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

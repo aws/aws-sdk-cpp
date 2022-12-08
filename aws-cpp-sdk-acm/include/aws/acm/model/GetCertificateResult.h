@@ -24,12 +24,12 @@ namespace ACM
 {
 namespace Model
 {
-  class AWS_ACM_API GetCertificateResult
+  class GetCertificateResult
   {
   public:
-    GetCertificateResult();
-    GetCertificateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetCertificateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ACM_API GetCertificateResult();
+    AWS_ACM_API GetCertificateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ACM_API GetCertificateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

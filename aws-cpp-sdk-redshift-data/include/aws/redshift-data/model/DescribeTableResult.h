@@ -26,12 +26,12 @@ namespace RedshiftDataAPIService
 {
 namespace Model
 {
-  class AWS_REDSHIFTDATAAPISERVICE_API DescribeTableResult
+  class DescribeTableResult
   {
   public:
-    DescribeTableResult();
-    DescribeTableResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeTableResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_REDSHIFTDATAAPISERVICE_API DescribeTableResult();
+    AWS_REDSHIFTDATAAPISERVICE_API DescribeTableResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_REDSHIFTDATAAPISERVICE_API DescribeTableResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

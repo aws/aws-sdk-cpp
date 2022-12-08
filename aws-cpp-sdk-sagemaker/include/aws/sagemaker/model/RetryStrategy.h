@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/RetryStrategy">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API RetryStrategy
+  class RetryStrategy
   {
   public:
-    RetryStrategy();
-    RetryStrategy(Aws::Utils::Json::JsonView jsonValue);
-    RetryStrategy& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API RetryStrategy();
+    AWS_SAGEMAKER_API RetryStrategy(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API RetryStrategy& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

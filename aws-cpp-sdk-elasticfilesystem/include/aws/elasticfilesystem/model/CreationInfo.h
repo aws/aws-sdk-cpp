@@ -40,13 +40,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/CreationInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_EFS_API CreationInfo
+  class CreationInfo
   {
   public:
-    CreationInfo();
-    CreationInfo(Aws::Utils::Json::JsonView jsonValue);
-    CreationInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EFS_API CreationInfo();
+    AWS_EFS_API CreationInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EFS_API CreationInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EFS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

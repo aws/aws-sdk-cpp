@@ -26,12 +26,12 @@ namespace ServiceDiscovery
 {
 namespace Model
 {
-  class AWS_SERVICEDISCOVERY_API ListServicesResult
+  class ListServicesResult
   {
   public:
-    ListServicesResult();
-    ListServicesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListServicesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SERVICEDISCOVERY_API ListServicesResult();
+    AWS_SERVICEDISCOVERY_API ListServicesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SERVICEDISCOVERY_API ListServicesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

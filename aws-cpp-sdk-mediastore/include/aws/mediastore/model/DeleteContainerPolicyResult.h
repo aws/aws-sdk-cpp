@@ -22,12 +22,12 @@ namespace MediaStore
 {
 namespace Model
 {
-  class AWS_MEDIASTORE_API DeleteContainerPolicyResult
+  class DeleteContainerPolicyResult
   {
   public:
-    DeleteContainerPolicyResult();
-    DeleteContainerPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteContainerPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MEDIASTORE_API DeleteContainerPolicyResult();
+    AWS_MEDIASTORE_API DeleteContainerPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MEDIASTORE_API DeleteContainerPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

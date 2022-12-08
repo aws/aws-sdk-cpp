@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/UpdateFailoverConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONNECT_API UpdateFailoverConfig
+  class UpdateFailoverConfig
   {
   public:
-    UpdateFailoverConfig();
-    UpdateFailoverConfig(Aws::Utils::Json::JsonView jsonValue);
-    UpdateFailoverConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONNECT_API UpdateFailoverConfig();
+    AWS_MEDIACONNECT_API UpdateFailoverConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONNECT_API UpdateFailoverConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

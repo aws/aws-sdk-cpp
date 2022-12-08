@@ -24,12 +24,12 @@ namespace CloudControlApi
 {
 namespace Model
 {
-  class AWS_CLOUDCONTROLAPI_API CancelResourceRequestResult
+  class CancelResourceRequestResult
   {
   public:
-    CancelResourceRequestResult();
-    CancelResourceRequestResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CancelResourceRequestResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CLOUDCONTROLAPI_API CancelResourceRequestResult();
+    AWS_CLOUDCONTROLAPI_API CancelResourceRequestResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CLOUDCONTROLAPI_API CancelResourceRequestResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     

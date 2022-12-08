@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutvision-2020-11-20/ModelMetadata">AWS
    * API Reference</a></p>
    */
-  class AWS_LOOKOUTFORVISION_API ModelMetadata
+  class ModelMetadata
   {
   public:
-    ModelMetadata();
-    ModelMetadata(Aws::Utils::Json::JsonView jsonValue);
-    ModelMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LOOKOUTFORVISION_API ModelMetadata();
+    AWS_LOOKOUTFORVISION_API ModelMetadata(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTFORVISION_API ModelMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTFORVISION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

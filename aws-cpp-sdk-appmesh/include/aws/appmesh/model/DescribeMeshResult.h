@@ -29,12 +29,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/DescribeMeshOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_APPMESH_API DescribeMeshResult
+  class DescribeMeshResult
   {
   public:
-    DescribeMeshResult();
-    DescribeMeshResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeMeshResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPMESH_API DescribeMeshResult();
+    AWS_APPMESH_API DescribeMeshResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPMESH_API DescribeMeshResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

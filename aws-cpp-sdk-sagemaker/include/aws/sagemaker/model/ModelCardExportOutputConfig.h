@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ModelCardExportOutputConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API ModelCardExportOutputConfig
+  class ModelCardExportOutputConfig
   {
   public:
-    ModelCardExportOutputConfig();
-    ModelCardExportOutputConfig(Aws::Utils::Json::JsonView jsonValue);
-    ModelCardExportOutputConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API ModelCardExportOutputConfig();
+    AWS_SAGEMAKER_API ModelCardExportOutputConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API ModelCardExportOutputConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

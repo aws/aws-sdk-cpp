@@ -26,12 +26,12 @@ namespace IoT
 {
 namespace Model
 {
-  class AWS_IOT_API CreateProvisioningClaimResult
+  class CreateProvisioningClaimResult
   {
   public:
-    CreateProvisioningClaimResult();
-    CreateProvisioningClaimResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateProvisioningClaimResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOT_API CreateProvisioningClaimResult();
+    AWS_IOT_API CreateProvisioningClaimResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOT_API CreateProvisioningClaimResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

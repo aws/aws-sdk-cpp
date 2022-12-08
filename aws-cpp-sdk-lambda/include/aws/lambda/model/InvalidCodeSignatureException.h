@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/InvalidCodeSignatureException">AWS
    * API Reference</a></p>
    */
-  class AWS_LAMBDA_API InvalidCodeSignatureException
+  class InvalidCodeSignatureException
   {
   public:
-    InvalidCodeSignatureException();
-    InvalidCodeSignatureException(Aws::Utils::Json::JsonView jsonValue);
-    InvalidCodeSignatureException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LAMBDA_API InvalidCodeSignatureException();
+    AWS_LAMBDA_API InvalidCodeSignatureException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAMBDA_API InvalidCodeSignatureException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAMBDA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

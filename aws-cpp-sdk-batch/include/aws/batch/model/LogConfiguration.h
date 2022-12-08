@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/LogConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_BATCH_API LogConfiguration
+  class LogConfiguration
   {
   public:
-    LogConfiguration();
-    LogConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    LogConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BATCH_API LogConfiguration();
+    AWS_BATCH_API LogConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BATCH_API LogConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BATCH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

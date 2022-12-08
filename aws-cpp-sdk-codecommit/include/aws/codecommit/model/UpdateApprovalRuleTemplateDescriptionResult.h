@@ -24,12 +24,12 @@ namespace CodeCommit
 {
 namespace Model
 {
-  class AWS_CODECOMMIT_API UpdateApprovalRuleTemplateDescriptionResult
+  class UpdateApprovalRuleTemplateDescriptionResult
   {
   public:
-    UpdateApprovalRuleTemplateDescriptionResult();
-    UpdateApprovalRuleTemplateDescriptionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateApprovalRuleTemplateDescriptionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODECOMMIT_API UpdateApprovalRuleTemplateDescriptionResult();
+    AWS_CODECOMMIT_API UpdateApprovalRuleTemplateDescriptionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODECOMMIT_API UpdateApprovalRuleTemplateDescriptionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

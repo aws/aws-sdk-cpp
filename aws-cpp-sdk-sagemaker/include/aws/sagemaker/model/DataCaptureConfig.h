@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DataCaptureConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API DataCaptureConfig
+  class DataCaptureConfig
   {
   public:
-    DataCaptureConfig();
-    DataCaptureConfig(Aws::Utils::Json::JsonView jsonValue);
-    DataCaptureConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API DataCaptureConfig();
+    AWS_SAGEMAKER_API DataCaptureConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API DataCaptureConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

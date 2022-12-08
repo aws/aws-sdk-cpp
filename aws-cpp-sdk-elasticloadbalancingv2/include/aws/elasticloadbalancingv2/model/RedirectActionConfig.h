@@ -38,15 +38,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/RedirectActionConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICLOADBALANCINGV2_API RedirectActionConfig
+  class RedirectActionConfig
   {
   public:
-    RedirectActionConfig();
-    RedirectActionConfig(const Aws::Utils::Xml::XmlNode& xmlNode);
-    RedirectActionConfig& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICLOADBALANCINGV2_API RedirectActionConfig();
+    AWS_ELASTICLOADBALANCINGV2_API RedirectActionConfig(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICLOADBALANCINGV2_API RedirectActionConfig& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_ELASTICLOADBALANCINGV2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_ELASTICLOADBALANCINGV2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**

@@ -24,12 +24,12 @@ namespace CodeArtifact
 {
 namespace Model
 {
-  class AWS_CODEARTIFACT_API CreateRepositoryResult
+  class CreateRepositoryResult
   {
   public:
-    CreateRepositoryResult();
-    CreateRepositoryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateRepositoryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODEARTIFACT_API CreateRepositoryResult();
+    AWS_CODEARTIFACT_API CreateRepositoryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODEARTIFACT_API CreateRepositoryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/Tag">AWS API
    * Reference</a></p>
    */
-  class AWS_PERSONALIZE_API Tag
+  class Tag
   {
   public:
-    Tag();
-    Tag(Aws::Utils::Json::JsonView jsonValue);
-    Tag& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PERSONALIZE_API Tag();
+    AWS_PERSONALIZE_API Tag(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PERSONALIZE_API Tag& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PERSONALIZE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

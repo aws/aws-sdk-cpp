@@ -22,12 +22,12 @@ namespace IoTSiteWise
 {
 namespace Model
 {
-  class AWS_IOTSITEWISE_API UpdateDashboardResult
+  class UpdateDashboardResult
   {
   public:
-    UpdateDashboardResult();
-    UpdateDashboardResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateDashboardResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOTSITEWISE_API UpdateDashboardResult();
+    AWS_IOTSITEWISE_API UpdateDashboardResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOTSITEWISE_API UpdateDashboardResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

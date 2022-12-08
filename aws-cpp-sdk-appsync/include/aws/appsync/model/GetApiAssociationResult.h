@@ -24,12 +24,12 @@ namespace AppSync
 {
 namespace Model
 {
-  class AWS_APPSYNC_API GetApiAssociationResult
+  class GetApiAssociationResult
   {
   public:
-    GetApiAssociationResult();
-    GetApiAssociationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetApiAssociationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPSYNC_API GetApiAssociationResult();
+    AWS_APPSYNC_API GetApiAssociationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPSYNC_API GetApiAssociationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

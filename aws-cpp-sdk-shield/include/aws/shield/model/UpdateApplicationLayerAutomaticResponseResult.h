@@ -22,12 +22,12 @@ namespace Shield
 {
 namespace Model
 {
-  class AWS_SHIELD_API UpdateApplicationLayerAutomaticResponseResult
+  class UpdateApplicationLayerAutomaticResponseResult
   {
   public:
-    UpdateApplicationLayerAutomaticResponseResult();
-    UpdateApplicationLayerAutomaticResponseResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateApplicationLayerAutomaticResponseResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SHIELD_API UpdateApplicationLayerAutomaticResponseResult();
+    AWS_SHIELD_API UpdateApplicationLayerAutomaticResponseResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SHIELD_API UpdateApplicationLayerAutomaticResponseResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

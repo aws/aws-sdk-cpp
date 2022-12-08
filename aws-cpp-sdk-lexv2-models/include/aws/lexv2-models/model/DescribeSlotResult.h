@@ -29,12 +29,12 @@ namespace LexModelsV2
 {
 namespace Model
 {
-  class AWS_LEXMODELSV2_API DescribeSlotResult
+  class DescribeSlotResult
   {
   public:
-    DescribeSlotResult();
-    DescribeSlotResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeSlotResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LEXMODELSV2_API DescribeSlotResult();
+    AWS_LEXMODELSV2_API DescribeSlotResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LEXMODELSV2_API DescribeSlotResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

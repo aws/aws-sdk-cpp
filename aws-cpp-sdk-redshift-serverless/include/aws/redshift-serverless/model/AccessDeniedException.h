@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/AccessDeniedException">AWS
    * API Reference</a></p>
    */
-  class AWS_REDSHIFTSERVERLESS_API AccessDeniedException
+  class AccessDeniedException
   {
   public:
-    AccessDeniedException();
-    AccessDeniedException(Aws::Utils::Json::JsonView jsonValue);
-    AccessDeniedException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_REDSHIFTSERVERLESS_API AccessDeniedException();
+    AWS_REDSHIFTSERVERLESS_API AccessDeniedException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REDSHIFTSERVERLESS_API AccessDeniedException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REDSHIFTSERVERLESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

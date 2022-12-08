@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/HttpAuthorization">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API HttpAuthorization
+  class HttpAuthorization
   {
   public:
-    HttpAuthorization();
-    HttpAuthorization(Aws::Utils::Json::JsonView jsonValue);
-    HttpAuthorization& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API HttpAuthorization();
+    AWS_IOT_API HttpAuthorization(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API HttpAuthorization& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

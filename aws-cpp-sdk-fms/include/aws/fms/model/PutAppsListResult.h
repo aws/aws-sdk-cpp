@@ -25,12 +25,12 @@ namespace FMS
 {
 namespace Model
 {
-  class AWS_FMS_API PutAppsListResult
+  class PutAppsListResult
   {
   public:
-    PutAppsListResult();
-    PutAppsListResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PutAppsListResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_FMS_API PutAppsListResult();
+    AWS_FMS_API PutAppsListResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_FMS_API PutAppsListResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

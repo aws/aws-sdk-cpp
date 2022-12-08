@@ -24,12 +24,12 @@ namespace EMRContainers
 {
 namespace Model
 {
-  class AWS_EMRCONTAINERS_API DeleteManagedEndpointResult
+  class DeleteManagedEndpointResult
   {
   public:
-    DeleteManagedEndpointResult();
-    DeleteManagedEndpointResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteManagedEndpointResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_EMRCONTAINERS_API DeleteManagedEndpointResult();
+    AWS_EMRCONTAINERS_API DeleteManagedEndpointResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_EMRCONTAINERS_API DeleteManagedEndpointResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

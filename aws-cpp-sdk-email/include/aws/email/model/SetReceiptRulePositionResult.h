@@ -30,12 +30,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SetReceiptRulePositionResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_SES_API SetReceiptRulePositionResult
+  class SetReceiptRulePositionResult
   {
   public:
-    SetReceiptRulePositionResult();
-    SetReceiptRulePositionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    SetReceiptRulePositionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_SES_API SetReceiptRulePositionResult();
+    AWS_SES_API SetReceiptRulePositionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_SES_API SetReceiptRulePositionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     

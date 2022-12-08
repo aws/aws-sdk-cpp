@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/LoRaWANGetServiceProfileInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTWIRELESS_API LoRaWANGetServiceProfileInfo
+  class LoRaWANGetServiceProfileInfo
   {
   public:
-    LoRaWANGetServiceProfileInfo();
-    LoRaWANGetServiceProfileInfo(Aws::Utils::Json::JsonView jsonValue);
-    LoRaWANGetServiceProfileInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTWIRELESS_API LoRaWANGetServiceProfileInfo();
+    AWS_IOTWIRELESS_API LoRaWANGetServiceProfileInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API LoRaWANGetServiceProfileInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

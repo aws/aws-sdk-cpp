@@ -24,12 +24,12 @@ namespace HealthLake
 {
 namespace Model
 {
-  class AWS_HEALTHLAKE_API DescribeFHIRImportJobResult
+  class DescribeFHIRImportJobResult
   {
   public:
-    DescribeFHIRImportJobResult();
-    DescribeFHIRImportJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeFHIRImportJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_HEALTHLAKE_API DescribeFHIRImportJobResult();
+    AWS_HEALTHLAKE_API DescribeFHIRImportJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_HEALTHLAKE_API DescribeFHIRImportJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

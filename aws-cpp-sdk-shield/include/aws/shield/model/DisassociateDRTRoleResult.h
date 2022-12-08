@@ -22,12 +22,12 @@ namespace Shield
 {
 namespace Model
 {
-  class AWS_SHIELD_API DisassociateDRTRoleResult
+  class DisassociateDRTRoleResult
   {
   public:
-    DisassociateDRTRoleResult();
-    DisassociateDRTRoleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DisassociateDRTRoleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SHIELD_API DisassociateDRTRoleResult();
+    AWS_SHIELD_API DisassociateDRTRoleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SHIELD_API DisassociateDRTRoleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

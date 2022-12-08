@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/OutputContext">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELBUILDINGSERVICE_API OutputContext
+  class OutputContext
   {
   public:
-    OutputContext();
-    OutputContext(Aws::Utils::Json::JsonView jsonValue);
-    OutputContext& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELBUILDINGSERVICE_API OutputContext();
+    AWS_LEXMODELBUILDINGSERVICE_API OutputContext(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELBUILDINGSERVICE_API OutputContext& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELBUILDINGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

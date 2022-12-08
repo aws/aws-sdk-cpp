@@ -29,15 +29,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/LaunchTemplateEbsBlockDevice">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API LaunchTemplateEbsBlockDevice
+  class LaunchTemplateEbsBlockDevice
   {
   public:
-    LaunchTemplateEbsBlockDevice();
-    LaunchTemplateEbsBlockDevice(const Aws::Utils::Xml::XmlNode& xmlNode);
-    LaunchTemplateEbsBlockDevice& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API LaunchTemplateEbsBlockDevice();
+    AWS_EC2_API LaunchTemplateEbsBlockDevice(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API LaunchTemplateEbsBlockDevice& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**

@@ -33,12 +33,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/GetBlacklistReportsResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_SESV2_API GetBlacklistReportsResult
+  class GetBlacklistReportsResult
   {
   public:
-    GetBlacklistReportsResult();
-    GetBlacklistReportsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetBlacklistReportsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SESV2_API GetBlacklistReportsResult();
+    AWS_SESV2_API GetBlacklistReportsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SESV2_API GetBlacklistReportsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

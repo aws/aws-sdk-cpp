@@ -24,12 +24,12 @@ namespace MediaConvert
 {
 namespace Model
 {
-  class AWS_MEDIACONVERT_API GetQueueResult
+  class GetQueueResult
   {
   public:
-    GetQueueResult();
-    GetQueueResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetQueueResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MEDIACONVERT_API GetQueueResult();
+    AWS_MEDIACONVERT_API GetQueueResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MEDIACONVERT_API GetQueueResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/TdscdmaObj">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTWIRELESS_API TdscdmaObj
+  class TdscdmaObj
   {
   public:
-    TdscdmaObj();
-    TdscdmaObj(Aws::Utils::Json::JsonView jsonValue);
-    TdscdmaObj& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTWIRELESS_API TdscdmaObj();
+    AWS_IOTWIRELESS_API TdscdmaObj(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API TdscdmaObj& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

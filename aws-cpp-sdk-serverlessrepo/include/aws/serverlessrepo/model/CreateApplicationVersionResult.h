@@ -27,12 +27,12 @@ namespace ServerlessApplicationRepository
 {
 namespace Model
 {
-  class AWS_SERVERLESSAPPLICATIONREPOSITORY_API CreateApplicationVersionResult
+  class CreateApplicationVersionResult
   {
   public:
-    CreateApplicationVersionResult();
-    CreateApplicationVersionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateApplicationVersionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SERVERLESSAPPLICATIONREPOSITORY_API CreateApplicationVersionResult();
+    AWS_SERVERLESSAPPLICATIONREPOSITORY_API CreateApplicationVersionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SERVERLESSAPPLICATIONREPOSITORY_API CreateApplicationVersionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

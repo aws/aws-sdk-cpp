@@ -24,12 +24,12 @@ namespace SSMIncidents
 {
 namespace Model
 {
-  class AWS_SSMINCIDENTS_API GetReplicationSetResult
+  class GetReplicationSetResult
   {
   public:
-    GetReplicationSetResult();
-    GetReplicationSetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetReplicationSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSMINCIDENTS_API GetReplicationSetResult();
+    AWS_SSMINCIDENTS_API GetReplicationSetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSMINCIDENTS_API GetReplicationSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -26,12 +26,12 @@ namespace SageMaker
 {
 namespace Model
 {
-  class AWS_SAGEMAKER_API ListEdgeDeploymentPlansResult
+  class ListEdgeDeploymentPlansResult
   {
   public:
-    ListEdgeDeploymentPlansResult();
-    ListEdgeDeploymentPlansResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListEdgeDeploymentPlansResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SAGEMAKER_API ListEdgeDeploymentPlansResult();
+    AWS_SAGEMAKER_API ListEdgeDeploymentPlansResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SAGEMAKER_API ListEdgeDeploymentPlansResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

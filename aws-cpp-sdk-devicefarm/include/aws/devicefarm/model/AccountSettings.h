@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/AccountSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_DEVICEFARM_API AccountSettings
+  class AccountSettings
   {
   public:
-    AccountSettings();
-    AccountSettings(Aws::Utils::Json::JsonView jsonValue);
-    AccountSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DEVICEFARM_API AccountSettings();
+    AWS_DEVICEFARM_API AccountSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVICEFARM_API AccountSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVICEFARM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

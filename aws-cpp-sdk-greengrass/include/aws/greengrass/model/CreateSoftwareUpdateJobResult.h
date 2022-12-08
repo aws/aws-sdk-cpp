@@ -24,12 +24,12 @@ namespace Greengrass
 {
 namespace Model
 {
-  class AWS_GREENGRASS_API CreateSoftwareUpdateJobResult
+  class CreateSoftwareUpdateJobResult
   {
   public:
-    CreateSoftwareUpdateJobResult();
-    CreateSoftwareUpdateJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateSoftwareUpdateJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GREENGRASS_API CreateSoftwareUpdateJobResult();
+    AWS_GREENGRASS_API CreateSoftwareUpdateJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GREENGRASS_API CreateSoftwareUpdateJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

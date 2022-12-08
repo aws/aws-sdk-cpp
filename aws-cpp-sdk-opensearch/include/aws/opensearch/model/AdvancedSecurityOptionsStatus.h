@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/AdvancedSecurityOptionsStatus">AWS
    * API Reference</a></p>
    */
-  class AWS_OPENSEARCHSERVICE_API AdvancedSecurityOptionsStatus
+  class AdvancedSecurityOptionsStatus
   {
   public:
-    AdvancedSecurityOptionsStatus();
-    AdvancedSecurityOptionsStatus(Aws::Utils::Json::JsonView jsonValue);
-    AdvancedSecurityOptionsStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OPENSEARCHSERVICE_API AdvancedSecurityOptionsStatus();
+    AWS_OPENSEARCHSERVICE_API AdvancedSecurityOptionsStatus(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPENSEARCHSERVICE_API AdvancedSecurityOptionsStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPENSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

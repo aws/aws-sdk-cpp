@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/PanelTitleOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API PanelTitleOptions
+  class PanelTitleOptions
   {
   public:
-    PanelTitleOptions();
-    PanelTitleOptions(Aws::Utils::Json::JsonView jsonValue);
-    PanelTitleOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API PanelTitleOptions();
+    AWS_QUICKSIGHT_API PanelTitleOptions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API PanelTitleOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

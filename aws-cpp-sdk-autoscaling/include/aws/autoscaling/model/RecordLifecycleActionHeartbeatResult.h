@@ -24,12 +24,12 @@ namespace AutoScaling
 {
 namespace Model
 {
-  class AWS_AUTOSCALING_API RecordLifecycleActionHeartbeatResult
+  class RecordLifecycleActionHeartbeatResult
   {
   public:
-    RecordLifecycleActionHeartbeatResult();
-    RecordLifecycleActionHeartbeatResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    RecordLifecycleActionHeartbeatResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_AUTOSCALING_API RecordLifecycleActionHeartbeatResult();
+    AWS_AUTOSCALING_API RecordLifecycleActionHeartbeatResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_AUTOSCALING_API RecordLifecycleActionHeartbeatResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     

@@ -25,12 +25,12 @@ namespace WAFV2
 {
 namespace Model
 {
-  class AWS_WAFV2_API GetRuleGroupResult
+  class GetRuleGroupResult
   {
   public:
-    GetRuleGroupResult();
-    GetRuleGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetRuleGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WAFV2_API GetRuleGroupResult();
+    AWS_WAFV2_API GetRuleGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WAFV2_API GetRuleGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

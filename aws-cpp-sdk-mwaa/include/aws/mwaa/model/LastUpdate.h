@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mwaa-2020-07-01/LastUpdate">AWS API
    * Reference</a></p>
    */
-  class AWS_MWAA_API LastUpdate
+  class LastUpdate
   {
   public:
-    LastUpdate();
-    LastUpdate(Aws::Utils::Json::JsonView jsonValue);
-    LastUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MWAA_API LastUpdate();
+    AWS_MWAA_API LastUpdate(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MWAA_API LastUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MWAA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

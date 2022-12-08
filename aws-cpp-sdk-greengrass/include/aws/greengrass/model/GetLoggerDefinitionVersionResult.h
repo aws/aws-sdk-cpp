@@ -25,12 +25,12 @@ namespace Greengrass
 {
 namespace Model
 {
-  class AWS_GREENGRASS_API GetLoggerDefinitionVersionResult
+  class GetLoggerDefinitionVersionResult
   {
   public:
-    GetLoggerDefinitionVersionResult();
-    GetLoggerDefinitionVersionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetLoggerDefinitionVersionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GREENGRASS_API GetLoggerDefinitionVersionResult();
+    AWS_GREENGRASS_API GetLoggerDefinitionVersionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GREENGRASS_API GetLoggerDefinitionVersionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

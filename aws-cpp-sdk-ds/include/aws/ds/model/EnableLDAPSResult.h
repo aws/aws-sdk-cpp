@@ -22,12 +22,12 @@ namespace DirectoryService
 {
 namespace Model
 {
-  class AWS_DIRECTORYSERVICE_API EnableLDAPSResult
+  class EnableLDAPSResult
   {
   public:
-    EnableLDAPSResult();
-    EnableLDAPSResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    EnableLDAPSResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DIRECTORYSERVICE_API EnableLDAPSResult();
+    AWS_DIRECTORYSERVICE_API EnableLDAPSResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DIRECTORYSERVICE_API EnableLDAPSResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

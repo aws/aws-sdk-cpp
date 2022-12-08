@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/Distribution">AWS
    * API Reference</a></p>
    */
-  class AWS_IMAGEBUILDER_API Distribution
+  class Distribution
   {
   public:
-    Distribution();
-    Distribution(Aws::Utils::Json::JsonView jsonValue);
-    Distribution& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IMAGEBUILDER_API Distribution();
+    AWS_IMAGEBUILDER_API Distribution(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IMAGEBUILDER_API Distribution& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IMAGEBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

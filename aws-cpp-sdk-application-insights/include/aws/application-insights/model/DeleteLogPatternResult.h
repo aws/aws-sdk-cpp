@@ -22,12 +22,12 @@ namespace ApplicationInsights
 {
 namespace Model
 {
-  class AWS_APPLICATIONINSIGHTS_API DeleteLogPatternResult
+  class DeleteLogPatternResult
   {
   public:
-    DeleteLogPatternResult();
-    DeleteLogPatternResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteLogPatternResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPLICATIONINSIGHTS_API DeleteLogPatternResult();
+    AWS_APPLICATIONINSIGHTS_API DeleteLogPatternResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPLICATIONINSIGHTS_API DeleteLogPatternResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

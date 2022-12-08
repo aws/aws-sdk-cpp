@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/CanDbcDefinition">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTFLEETWISE_API CanDbcDefinition
+  class CanDbcDefinition
   {
   public:
-    CanDbcDefinition();
-    CanDbcDefinition(Aws::Utils::Json::JsonView jsonValue);
-    CanDbcDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTFLEETWISE_API CanDbcDefinition();
+    AWS_IOTFLEETWISE_API CanDbcDefinition(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTFLEETWISE_API CanDbcDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTFLEETWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -28,12 +28,12 @@ namespace MediaPackage
 {
 namespace Model
 {
-  class AWS_MEDIAPACKAGE_API UpdateChannelResult
+  class UpdateChannelResult
   {
   public:
-    UpdateChannelResult();
-    UpdateChannelResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateChannelResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MEDIAPACKAGE_API UpdateChannelResult();
+    AWS_MEDIAPACKAGE_API UpdateChannelResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MEDIAPACKAGE_API UpdateChannelResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

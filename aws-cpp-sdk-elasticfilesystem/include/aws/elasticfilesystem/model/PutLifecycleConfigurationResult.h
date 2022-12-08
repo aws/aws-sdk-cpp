@@ -25,12 +25,12 @@ namespace EFS
 {
 namespace Model
 {
-  class AWS_EFS_API PutLifecycleConfigurationResult
+  class PutLifecycleConfigurationResult
   {
   public:
-    PutLifecycleConfigurationResult();
-    PutLifecycleConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PutLifecycleConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_EFS_API PutLifecycleConfigurationResult();
+    AWS_EFS_API PutLifecycleConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_EFS_API PutLifecycleConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

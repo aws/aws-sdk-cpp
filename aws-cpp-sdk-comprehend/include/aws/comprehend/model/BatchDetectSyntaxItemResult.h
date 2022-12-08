@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/BatchDetectSyntaxItemResult">AWS
    * API Reference</a></p>
    */
-  class AWS_COMPREHEND_API BatchDetectSyntaxItemResult
+  class BatchDetectSyntaxItemResult
   {
   public:
-    BatchDetectSyntaxItemResult();
-    BatchDetectSyntaxItemResult(Aws::Utils::Json::JsonView jsonValue);
-    BatchDetectSyntaxItemResult& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COMPREHEND_API BatchDetectSyntaxItemResult();
+    AWS_COMPREHEND_API BatchDetectSyntaxItemResult(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHEND_API BatchDetectSyntaxItemResult& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHEND_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/Source">AWS
    * API Reference</a></p>
    */
-  class AWS_GROUNDSTATION_API Source
+  class Source
   {
   public:
-    Source();
-    Source(Aws::Utils::Json::JsonView jsonValue);
-    Source& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GROUNDSTATION_API Source();
+    AWS_GROUNDSTATION_API Source(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GROUNDSTATION_API Source& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GROUNDSTATION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

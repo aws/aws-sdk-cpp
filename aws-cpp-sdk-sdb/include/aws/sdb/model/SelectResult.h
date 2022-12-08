@@ -27,12 +27,12 @@ namespace SimpleDB
 {
 namespace Model
 {
-  class AWS_SIMPLEDB_API SelectResult
+  class SelectResult
   {
   public:
-    SelectResult();
-    SelectResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    SelectResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_SIMPLEDB_API SelectResult();
+    AWS_SIMPLEDB_API SelectResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_SIMPLEDB_API SelectResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

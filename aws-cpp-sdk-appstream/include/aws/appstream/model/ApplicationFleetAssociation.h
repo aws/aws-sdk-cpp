@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ApplicationFleetAssociation">AWS
    * API Reference</a></p>
    */
-  class AWS_APPSTREAM_API ApplicationFleetAssociation
+  class ApplicationFleetAssociation
   {
   public:
-    ApplicationFleetAssociation();
-    ApplicationFleetAssociation(Aws::Utils::Json::JsonView jsonValue);
-    ApplicationFleetAssociation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPSTREAM_API ApplicationFleetAssociation();
+    AWS_APPSTREAM_API ApplicationFleetAssociation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPSTREAM_API ApplicationFleetAssociation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPSTREAM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

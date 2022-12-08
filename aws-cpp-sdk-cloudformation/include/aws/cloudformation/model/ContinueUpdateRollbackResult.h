@@ -30,12 +30,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ContinueUpdateRollbackOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFORMATION_API ContinueUpdateRollbackResult
+  class ContinueUpdateRollbackResult
   {
   public:
-    ContinueUpdateRollbackResult();
-    ContinueUpdateRollbackResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ContinueUpdateRollbackResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_CLOUDFORMATION_API ContinueUpdateRollbackResult();
+    AWS_CLOUDFORMATION_API ContinueUpdateRollbackResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_CLOUDFORMATION_API ContinueUpdateRollbackResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     

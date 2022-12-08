@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-geospatial-2020-05-27/MapMatchingConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKERGEOSPATIAL_API MapMatchingConfig
+  class MapMatchingConfig
   {
   public:
-    MapMatchingConfig();
-    MapMatchingConfig(Aws::Utils::Json::JsonView jsonValue);
-    MapMatchingConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKERGEOSPATIAL_API MapMatchingConfig();
+    AWS_SAGEMAKERGEOSPATIAL_API MapMatchingConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKERGEOSPATIAL_API MapMatchingConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKERGEOSPATIAL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

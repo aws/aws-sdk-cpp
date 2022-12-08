@@ -26,12 +26,12 @@ namespace PinpointSMSVoiceV2
 {
 namespace Model
 {
-  class AWS_PINPOINTSMSVOICEV2_API DescribeAccountLimitsResult
+  class DescribeAccountLimitsResult
   {
   public:
-    DescribeAccountLimitsResult();
-    DescribeAccountLimitsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeAccountLimitsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PINPOINTSMSVOICEV2_API DescribeAccountLimitsResult();
+    AWS_PINPOINTSMSVOICEV2_API DescribeAccountLimitsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PINPOINTSMSVOICEV2_API DescribeAccountLimitsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

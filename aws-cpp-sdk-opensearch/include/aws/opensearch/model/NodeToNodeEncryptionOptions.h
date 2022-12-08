@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/NodeToNodeEncryptionOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_OPENSEARCHSERVICE_API NodeToNodeEncryptionOptions
+  class NodeToNodeEncryptionOptions
   {
   public:
-    NodeToNodeEncryptionOptions();
-    NodeToNodeEncryptionOptions(Aws::Utils::Json::JsonView jsonValue);
-    NodeToNodeEncryptionOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OPENSEARCHSERVICE_API NodeToNodeEncryptionOptions();
+    AWS_OPENSEARCHSERVICE_API NodeToNodeEncryptionOptions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPENSEARCHSERVICE_API NodeToNodeEncryptionOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPENSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

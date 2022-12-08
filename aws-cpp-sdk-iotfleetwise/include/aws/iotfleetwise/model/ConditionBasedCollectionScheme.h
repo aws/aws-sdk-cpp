@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/ConditionBasedCollectionScheme">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTFLEETWISE_API ConditionBasedCollectionScheme
+  class ConditionBasedCollectionScheme
   {
   public:
-    ConditionBasedCollectionScheme();
-    ConditionBasedCollectionScheme(Aws::Utils::Json::JsonView jsonValue);
-    ConditionBasedCollectionScheme& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTFLEETWISE_API ConditionBasedCollectionScheme();
+    AWS_IOTFLEETWISE_API ConditionBasedCollectionScheme(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTFLEETWISE_API ConditionBasedCollectionScheme& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTFLEETWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

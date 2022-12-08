@@ -26,12 +26,12 @@ namespace mgn
 {
 namespace Model
 {
-  class AWS_MGN_API ListSourceServerActionsResult
+  class ListSourceServerActionsResult
   {
   public:
-    ListSourceServerActionsResult();
-    ListSourceServerActionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListSourceServerActionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MGN_API ListSourceServerActionsResult();
+    AWS_MGN_API ListSourceServerActionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MGN_API ListSourceServerActionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

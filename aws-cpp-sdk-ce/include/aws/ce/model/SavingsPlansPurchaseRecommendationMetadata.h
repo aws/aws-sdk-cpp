@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/SavingsPlansPurchaseRecommendationMetadata">AWS
    * API Reference</a></p>
    */
-  class AWS_COSTEXPLORER_API SavingsPlansPurchaseRecommendationMetadata
+  class SavingsPlansPurchaseRecommendationMetadata
   {
   public:
-    SavingsPlansPurchaseRecommendationMetadata();
-    SavingsPlansPurchaseRecommendationMetadata(Aws::Utils::Json::JsonView jsonValue);
-    SavingsPlansPurchaseRecommendationMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COSTEXPLORER_API SavingsPlansPurchaseRecommendationMetadata();
+    AWS_COSTEXPLORER_API SavingsPlansPurchaseRecommendationMetadata(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API SavingsPlansPurchaseRecommendationMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -22,12 +22,12 @@ namespace Route53
 {
 namespace Model
 {
-  class AWS_ROUTE53_API DeleteCidrCollectionResult
+  class DeleteCidrCollectionResult
   {
   public:
-    DeleteCidrCollectionResult();
-    DeleteCidrCollectionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DeleteCidrCollectionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ROUTE53_API DeleteCidrCollectionResult();
+    AWS_ROUTE53_API DeleteCidrCollectionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ROUTE53_API DeleteCidrCollectionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
   };
 

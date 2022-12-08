@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codecatalyst-2022-09-28/ProjectListFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_CODECATALYST_API ProjectListFilter
+  class ProjectListFilter
   {
   public:
-    ProjectListFilter();
-    ProjectListFilter(Aws::Utils::Json::JsonView jsonValue);
-    ProjectListFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODECATALYST_API ProjectListFilter();
+    AWS_CODECATALYST_API ProjectListFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODECATALYST_API ProjectListFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODECATALYST_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

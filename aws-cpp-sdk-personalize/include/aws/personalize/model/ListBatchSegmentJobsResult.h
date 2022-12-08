@@ -26,12 +26,12 @@ namespace Personalize
 {
 namespace Model
 {
-  class AWS_PERSONALIZE_API ListBatchSegmentJobsResult
+  class ListBatchSegmentJobsResult
   {
   public:
-    ListBatchSegmentJobsResult();
-    ListBatchSegmentJobsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListBatchSegmentJobsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PERSONALIZE_API ListBatchSegmentJobsResult();
+    AWS_PERSONALIZE_API ListBatchSegmentJobsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PERSONALIZE_API ListBatchSegmentJobsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

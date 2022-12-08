@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/TargetInstance">AWS
    * API Reference</a></p>
    */
-  class AWS_COSTEXPLORER_API TargetInstance
+  class TargetInstance
   {
   public:
-    TargetInstance();
-    TargetInstance(Aws::Utils::Json::JsonView jsonValue);
-    TargetInstance& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COSTEXPLORER_API TargetInstance();
+    AWS_COSTEXPLORER_API TargetInstance(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API TargetInstance& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

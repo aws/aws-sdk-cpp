@@ -22,12 +22,12 @@ namespace KinesisAnalytics
 {
 namespace Model
 {
-  class AWS_KINESISANALYTICS_API AddApplicationCloudWatchLoggingOptionResult
+  class AddApplicationCloudWatchLoggingOptionResult
   {
   public:
-    AddApplicationCloudWatchLoggingOptionResult();
-    AddApplicationCloudWatchLoggingOptionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AddApplicationCloudWatchLoggingOptionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KINESISANALYTICS_API AddApplicationCloudWatchLoggingOptionResult();
+    AWS_KINESISANALYTICS_API AddApplicationCloudWatchLoggingOptionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KINESISANALYTICS_API AddApplicationCloudWatchLoggingOptionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

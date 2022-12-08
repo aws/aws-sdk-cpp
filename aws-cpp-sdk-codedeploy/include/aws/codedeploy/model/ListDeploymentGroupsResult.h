@@ -31,12 +31,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListDeploymentGroupsOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEDEPLOY_API ListDeploymentGroupsResult
+  class ListDeploymentGroupsResult
   {
   public:
-    ListDeploymentGroupsResult();
-    ListDeploymentGroupsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListDeploymentGroupsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODEDEPLOY_API ListDeploymentGroupsResult();
+    AWS_CODEDEPLOY_API ListDeploymentGroupsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODEDEPLOY_API ListDeploymentGroupsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

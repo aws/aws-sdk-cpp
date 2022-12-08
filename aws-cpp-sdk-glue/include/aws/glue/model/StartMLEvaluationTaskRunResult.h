@@ -24,12 +24,12 @@ namespace Glue
 {
 namespace Model
 {
-  class AWS_GLUE_API StartMLEvaluationTaskRunResult
+  class StartMLEvaluationTaskRunResult
   {
   public:
-    StartMLEvaluationTaskRunResult();
-    StartMLEvaluationTaskRunResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    StartMLEvaluationTaskRunResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GLUE_API StartMLEvaluationTaskRunResult();
+    AWS_GLUE_API StartMLEvaluationTaskRunResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GLUE_API StartMLEvaluationTaskRunResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -24,12 +24,12 @@ namespace CodeArtifact
 {
 namespace Model
 {
-  class AWS_CODEARTIFACT_API PutRepositoryPermissionsPolicyResult
+  class PutRepositoryPermissionsPolicyResult
   {
   public:
-    PutRepositoryPermissionsPolicyResult();
-    PutRepositoryPermissionsPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PutRepositoryPermissionsPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODEARTIFACT_API PutRepositoryPermissionsPolicyResult();
+    AWS_CODEARTIFACT_API PutRepositoryPermissionsPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODEARTIFACT_API PutRepositoryPermissionsPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

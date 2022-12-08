@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/RegionInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_SSMINCIDENTS_API RegionInfo
+  class RegionInfo
   {
   public:
-    RegionInfo();
-    RegionInfo(Aws::Utils::Json::JsonView jsonValue);
-    RegionInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSMINCIDENTS_API RegionInfo();
+    AWS_SSMINCIDENTS_API RegionInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSMINCIDENTS_API RegionInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSMINCIDENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-streaming-2017-10-26/CharacterOffsets">AWS
    * API Reference</a></p>
    */
-  class AWS_TRANSCRIBESTREAMINGSERVICE_API CharacterOffsets
+  class CharacterOffsets
   {
   public:
-    CharacterOffsets();
-    CharacterOffsets(Aws::Utils::Json::JsonView jsonValue);
-    CharacterOffsets& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TRANSCRIBESTREAMINGSERVICE_API CharacterOffsets();
+    AWS_TRANSCRIBESTREAMINGSERVICE_API CharacterOffsets(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSCRIBESTREAMINGSERVICE_API CharacterOffsets& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSCRIBESTREAMINGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

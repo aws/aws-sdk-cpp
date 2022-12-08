@@ -25,12 +25,12 @@ namespace Lightsail
 {
 namespace Model
 {
-  class AWS_LIGHTSAIL_API AttachDiskResult
+  class AttachDiskResult
   {
   public:
-    AttachDiskResult();
-    AttachDiskResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AttachDiskResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LIGHTSAIL_API AttachDiskResult();
+    AWS_LIGHTSAIL_API AttachDiskResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LIGHTSAIL_API AttachDiskResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

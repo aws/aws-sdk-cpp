@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/Pipeline">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICTRANSCODER_API Pipeline
+  class Pipeline
   {
   public:
-    Pipeline();
-    Pipeline(Aws::Utils::Json::JsonView jsonValue);
-    Pipeline& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ELASTICTRANSCODER_API Pipeline();
+    AWS_ELASTICTRANSCODER_API Pipeline(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICTRANSCODER_API Pipeline& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICTRANSCODER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

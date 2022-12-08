@@ -30,12 +30,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/CheckDomainAvailabilityResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53DOMAINS_API CheckDomainAvailabilityResult
+  class CheckDomainAvailabilityResult
   {
   public:
-    CheckDomainAvailabilityResult();
-    CheckDomainAvailabilityResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CheckDomainAvailabilityResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ROUTE53DOMAINS_API CheckDomainAvailabilityResult();
+    AWS_ROUTE53DOMAINS_API CheckDomainAvailabilityResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ROUTE53DOMAINS_API CheckDomainAvailabilityResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

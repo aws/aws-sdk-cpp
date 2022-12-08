@@ -24,12 +24,12 @@ namespace EC2
 {
 namespace Model
 {
-  class AWS_EC2_API UpdateSecurityGroupRuleDescriptionsEgressResponse
+  class UpdateSecurityGroupRuleDescriptionsEgressResponse
   {
   public:
-    UpdateSecurityGroupRuleDescriptionsEgressResponse();
-    UpdateSecurityGroupRuleDescriptionsEgressResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    UpdateSecurityGroupRuleDescriptionsEgressResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API UpdateSecurityGroupRuleDescriptionsEgressResponse();
+    AWS_EC2_API UpdateSecurityGroupRuleDescriptionsEgressResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API UpdateSecurityGroupRuleDescriptionsEgressResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

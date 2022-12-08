@@ -24,12 +24,12 @@ namespace BillingConductor
 {
 namespace Model
 {
-  class AWS_BILLINGCONDUCTOR_API CreateCustomLineItemResult
+  class CreateCustomLineItemResult
   {
   public:
-    CreateCustomLineItemResult();
-    CreateCustomLineItemResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateCustomLineItemResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_BILLINGCONDUCTOR_API CreateCustomLineItemResult();
+    AWS_BILLINGCONDUCTOR_API CreateCustomLineItemResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_BILLINGCONDUCTOR_API CreateCustomLineItemResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

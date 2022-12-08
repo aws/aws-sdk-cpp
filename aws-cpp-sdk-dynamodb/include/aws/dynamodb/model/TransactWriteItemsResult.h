@@ -28,12 +28,12 @@ namespace DynamoDB
 {
 namespace Model
 {
-  class AWS_DYNAMODB_API TransactWriteItemsResult
+  class TransactWriteItemsResult
   {
   public:
-    TransactWriteItemsResult();
-    TransactWriteItemsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    TransactWriteItemsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DYNAMODB_API TransactWriteItemsResult();
+    AWS_DYNAMODB_API TransactWriteItemsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DYNAMODB_API TransactWriteItemsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

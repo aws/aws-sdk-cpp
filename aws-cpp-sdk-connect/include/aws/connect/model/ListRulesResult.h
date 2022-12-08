@@ -26,12 +26,12 @@ namespace Connect
 {
 namespace Model
 {
-  class AWS_CONNECT_API ListRulesResult
+  class ListRulesResult
   {
   public:
-    ListRulesResult();
-    ListRulesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListRulesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CONNECT_API ListRulesResult();
+    AWS_CONNECT_API ListRulesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CONNECT_API ListRulesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

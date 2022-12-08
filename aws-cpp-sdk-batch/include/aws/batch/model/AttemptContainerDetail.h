@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/AttemptContainerDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_BATCH_API AttemptContainerDetail
+  class AttemptContainerDetail
   {
   public:
-    AttemptContainerDetail();
-    AttemptContainerDetail(Aws::Utils::Json::JsonView jsonValue);
-    AttemptContainerDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BATCH_API AttemptContainerDetail();
+    AWS_BATCH_API AttemptContainerDetail(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BATCH_API AttemptContainerDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BATCH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

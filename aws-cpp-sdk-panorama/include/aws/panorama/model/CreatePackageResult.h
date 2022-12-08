@@ -25,12 +25,12 @@ namespace Panorama
 {
 namespace Model
 {
-  class AWS_PANORAMA_API CreatePackageResult
+  class CreatePackageResult
   {
   public:
-    CreatePackageResult();
-    CreatePackageResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreatePackageResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PANORAMA_API CreatePackageResult();
+    AWS_PANORAMA_API CreatePackageResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PANORAMA_API CreatePackageResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

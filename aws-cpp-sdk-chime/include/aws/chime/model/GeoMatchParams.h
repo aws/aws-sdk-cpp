@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GeoMatchParams">AWS
    * API Reference</a></p>
    */
-  class AWS_CHIME_API GeoMatchParams
+  class GeoMatchParams
   {
   public:
-    GeoMatchParams();
-    GeoMatchParams(Aws::Utils::Json::JsonView jsonValue);
-    GeoMatchParams& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIME_API GeoMatchParams();
+    AWS_CHIME_API GeoMatchParams(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API GeoMatchParams& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

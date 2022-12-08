@@ -24,12 +24,12 @@ namespace BackupGateway
 {
 namespace Model
 {
-  class AWS_BACKUPGATEWAY_API GetVirtualMachineResult
+  class GetVirtualMachineResult
   {
   public:
-    GetVirtualMachineResult();
-    GetVirtualMachineResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetVirtualMachineResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_BACKUPGATEWAY_API GetVirtualMachineResult();
+    AWS_BACKUPGATEWAY_API GetVirtualMachineResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_BACKUPGATEWAY_API GetVirtualMachineResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

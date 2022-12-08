@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-streaming-2017-10-26/Transcript">AWS
    * API Reference</a></p>
    */
-  class AWS_TRANSCRIBESTREAMINGSERVICE_API Transcript
+  class Transcript
   {
   public:
-    Transcript();
-    Transcript(Aws::Utils::Json::JsonView jsonValue);
-    Transcript& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TRANSCRIBESTREAMINGSERVICE_API Transcript();
+    AWS_TRANSCRIBESTREAMINGSERVICE_API Transcript(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSCRIBESTREAMINGSERVICE_API Transcript& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSCRIBESTREAMINGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

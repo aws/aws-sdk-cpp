@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/ShardDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_MEMORYDB_API ShardDetail
+  class ShardDetail
   {
   public:
-    ShardDetail();
-    ShardDetail(Aws::Utils::Json::JsonView jsonValue);
-    ShardDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEMORYDB_API ShardDetail();
+    AWS_MEMORYDB_API ShardDetail(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEMORYDB_API ShardDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEMORYDB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

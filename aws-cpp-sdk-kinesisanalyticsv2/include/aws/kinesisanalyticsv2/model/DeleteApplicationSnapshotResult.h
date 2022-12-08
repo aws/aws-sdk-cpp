@@ -22,12 +22,12 @@ namespace KinesisAnalyticsV2
 {
 namespace Model
 {
-  class AWS_KINESISANALYTICSV2_API DeleteApplicationSnapshotResult
+  class DeleteApplicationSnapshotResult
   {
   public:
-    DeleteApplicationSnapshotResult();
-    DeleteApplicationSnapshotResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteApplicationSnapshotResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KINESISANALYTICSV2_API DeleteApplicationSnapshotResult();
+    AWS_KINESISANALYTICSV2_API DeleteApplicationSnapshotResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KINESISANALYTICSV2_API DeleteApplicationSnapshotResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

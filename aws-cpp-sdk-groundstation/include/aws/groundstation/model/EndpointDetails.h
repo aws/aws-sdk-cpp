@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/EndpointDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_GROUNDSTATION_API EndpointDetails
+  class EndpointDetails
   {
   public:
-    EndpointDetails();
-    EndpointDetails(Aws::Utils::Json::JsonView jsonValue);
-    EndpointDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GROUNDSTATION_API EndpointDetails();
+    AWS_GROUNDSTATION_API EndpointDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GROUNDSTATION_API EndpointDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GROUNDSTATION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

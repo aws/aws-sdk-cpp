@@ -24,12 +24,12 @@ namespace IoTTwinMaker
 {
 namespace Model
 {
-  class AWS_IOTTWINMAKER_API UpdateWorkspaceResult
+  class UpdateWorkspaceResult
   {
   public:
-    UpdateWorkspaceResult();
-    UpdateWorkspaceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateWorkspaceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOTTWINMAKER_API UpdateWorkspaceResult();
+    AWS_IOTTWINMAKER_API UpdateWorkspaceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOTTWINMAKER_API UpdateWorkspaceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

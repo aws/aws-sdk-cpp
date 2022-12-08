@@ -22,12 +22,12 @@ namespace Route53Domains
 {
 namespace Model
 {
-  class AWS_ROUTE53DOMAINS_API DeleteTagsForDomainResult
+  class DeleteTagsForDomainResult
   {
   public:
-    DeleteTagsForDomainResult();
-    DeleteTagsForDomainResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteTagsForDomainResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ROUTE53DOMAINS_API DeleteTagsForDomainResult();
+    AWS_ROUTE53DOMAINS_API DeleteTagsForDomainResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ROUTE53DOMAINS_API DeleteTagsForDomainResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

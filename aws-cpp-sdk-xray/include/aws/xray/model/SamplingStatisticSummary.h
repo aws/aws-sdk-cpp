@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/SamplingStatisticSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_XRAY_API SamplingStatisticSummary
+  class SamplingStatisticSummary
   {
   public:
-    SamplingStatisticSummary();
-    SamplingStatisticSummary(Aws::Utils::Json::JsonView jsonValue);
-    SamplingStatisticSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_XRAY_API SamplingStatisticSummary();
+    AWS_XRAY_API SamplingStatisticSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_XRAY_API SamplingStatisticSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_XRAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

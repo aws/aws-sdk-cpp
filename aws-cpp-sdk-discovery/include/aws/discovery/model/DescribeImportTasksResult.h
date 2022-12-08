@@ -26,12 +26,12 @@ namespace ApplicationDiscoveryService
 {
 namespace Model
 {
-  class AWS_APPLICATIONDISCOVERYSERVICE_API DescribeImportTasksResult
+  class DescribeImportTasksResult
   {
   public:
-    DescribeImportTasksResult();
-    DescribeImportTasksResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeImportTasksResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPLICATIONDISCOVERYSERVICE_API DescribeImportTasksResult();
+    AWS_APPLICATIONDISCOVERYSERVICE_API DescribeImportTasksResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPLICATIONDISCOVERYSERVICE_API DescribeImportTasksResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

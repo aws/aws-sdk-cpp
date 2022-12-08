@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/Attachment">AWS
    * API Reference</a></p>
    */
-  class AWS_NETWORKFIREWALL_API Attachment
+  class Attachment
   {
   public:
-    Attachment();
-    Attachment(Aws::Utils::Json::JsonView jsonValue);
-    Attachment& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_NETWORKFIREWALL_API Attachment();
+    AWS_NETWORKFIREWALL_API Attachment(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKFIREWALL_API Attachment& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKFIREWALL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -26,12 +26,12 @@ namespace MediaConnect
 {
 namespace Model
 {
-  class AWS_MEDIACONNECT_API AddFlowVpcInterfacesResult
+  class AddFlowVpcInterfacesResult
   {
   public:
-    AddFlowVpcInterfacesResult();
-    AddFlowVpcInterfacesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AddFlowVpcInterfacesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MEDIACONNECT_API AddFlowVpcInterfacesResult();
+    AWS_MEDIACONNECT_API AddFlowVpcInterfacesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MEDIACONNECT_API AddFlowVpcInterfacesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

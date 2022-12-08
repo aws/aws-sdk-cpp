@@ -24,12 +24,12 @@ namespace Redshift
 {
 namespace Model
 {
-  class AWS_REDSHIFT_API DescribeStorageResult
+  class DescribeStorageResult
   {
   public:
-    DescribeStorageResult();
-    DescribeStorageResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeStorageResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_REDSHIFT_API DescribeStorageResult();
+    AWS_REDSHIFT_API DescribeStorageResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_REDSHIFT_API DescribeStorageResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

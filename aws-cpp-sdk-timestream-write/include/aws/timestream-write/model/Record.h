@@ -48,13 +48,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/timestream-write-2018-11-01/Record">AWS
    * API Reference</a></p>
    */
-  class AWS_TIMESTREAMWRITE_API Record
+  class Record
   {
   public:
-    Record();
-    Record(Aws::Utils::Json::JsonView jsonValue);
-    Record& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TIMESTREAMWRITE_API Record();
+    AWS_TIMESTREAMWRITE_API Record(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TIMESTREAMWRITE_API Record& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TIMESTREAMWRITE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

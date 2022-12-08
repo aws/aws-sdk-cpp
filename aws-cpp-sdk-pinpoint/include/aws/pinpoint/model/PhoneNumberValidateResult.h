@@ -24,12 +24,12 @@ namespace Pinpoint
 {
 namespace Model
 {
-  class AWS_PINPOINT_API PhoneNumberValidateResult
+  class PhoneNumberValidateResult
   {
   public:
-    PhoneNumberValidateResult();
-    PhoneNumberValidateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PhoneNumberValidateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PINPOINT_API PhoneNumberValidateResult();
+    AWS_PINPOINT_API PhoneNumberValidateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PINPOINT_API PhoneNumberValidateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     

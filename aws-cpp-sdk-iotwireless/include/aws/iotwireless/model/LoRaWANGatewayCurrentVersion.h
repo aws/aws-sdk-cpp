@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/LoRaWANGatewayCurrentVersion">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTWIRELESS_API LoRaWANGatewayCurrentVersion
+  class LoRaWANGatewayCurrentVersion
   {
   public:
-    LoRaWANGatewayCurrentVersion();
-    LoRaWANGatewayCurrentVersion(Aws::Utils::Json::JsonView jsonValue);
-    LoRaWANGatewayCurrentVersion& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTWIRELESS_API LoRaWANGatewayCurrentVersion();
+    AWS_IOTWIRELESS_API LoRaWANGatewayCurrentVersion(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API LoRaWANGatewayCurrentVersion& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

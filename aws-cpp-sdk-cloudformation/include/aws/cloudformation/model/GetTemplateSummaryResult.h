@@ -35,12 +35,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/GetTemplateSummaryOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFORMATION_API GetTemplateSummaryResult
+  class GetTemplateSummaryResult
   {
   public:
-    GetTemplateSummaryResult();
-    GetTemplateSummaryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    GetTemplateSummaryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_CLOUDFORMATION_API GetTemplateSummaryResult();
+    AWS_CLOUDFORMATION_API GetTemplateSummaryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_CLOUDFORMATION_API GetTemplateSummaryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

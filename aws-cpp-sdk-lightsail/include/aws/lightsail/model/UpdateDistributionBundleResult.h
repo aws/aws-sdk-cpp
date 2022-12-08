@@ -24,12 +24,12 @@ namespace Lightsail
 {
 namespace Model
 {
-  class AWS_LIGHTSAIL_API UpdateDistributionBundleResult
+  class UpdateDistributionBundleResult
   {
   public:
-    UpdateDistributionBundleResult();
-    UpdateDistributionBundleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateDistributionBundleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LIGHTSAIL_API UpdateDistributionBundleResult();
+    AWS_LIGHTSAIL_API UpdateDistributionBundleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LIGHTSAIL_API UpdateDistributionBundleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

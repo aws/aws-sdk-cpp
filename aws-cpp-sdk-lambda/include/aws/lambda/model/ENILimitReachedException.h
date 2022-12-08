@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ENILimitReachedException">AWS
    * API Reference</a></p>
    */
-  class AWS_LAMBDA_API ENILimitReachedException
+  class ENILimitReachedException
   {
   public:
-    ENILimitReachedException();
-    ENILimitReachedException(Aws::Utils::Json::JsonView jsonValue);
-    ENILimitReachedException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LAMBDA_API ENILimitReachedException();
+    AWS_LAMBDA_API ENILimitReachedException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAMBDA_API ENILimitReachedException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAMBDA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

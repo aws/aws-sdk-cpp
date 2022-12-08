@@ -32,12 +32,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/PutRuleGroupsNamespaceResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_PROMETHEUSSERVICE_API PutRuleGroupsNamespaceResult
+  class PutRuleGroupsNamespaceResult
   {
   public:
-    PutRuleGroupsNamespaceResult();
-    PutRuleGroupsNamespaceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PutRuleGroupsNamespaceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PROMETHEUSSERVICE_API PutRuleGroupsNamespaceResult();
+    AWS_PROMETHEUSSERVICE_API PutRuleGroupsNamespaceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PROMETHEUSSERVICE_API PutRuleGroupsNamespaceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

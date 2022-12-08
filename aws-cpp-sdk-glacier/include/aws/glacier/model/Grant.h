@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/Grant">AWS API
    * Reference</a></p>
    */
-  class AWS_GLACIER_API Grant
+  class Grant
   {
   public:
-    Grant();
-    Grant(Aws::Utils::Json::JsonView jsonValue);
-    Grant& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLACIER_API Grant();
+    AWS_GLACIER_API Grant(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLACIER_API Grant& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLACIER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

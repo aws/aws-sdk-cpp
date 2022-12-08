@@ -22,12 +22,12 @@ namespace DLM
 {
 namespace Model
 {
-  class AWS_DLM_API DeleteLifecyclePolicyResult
+  class DeleteLifecyclePolicyResult
   {
   public:
-    DeleteLifecyclePolicyResult();
-    DeleteLifecyclePolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteLifecyclePolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DLM_API DeleteLifecyclePolicyResult();
+    AWS_DLM_API DeleteLifecyclePolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DLM_API DeleteLifecyclePolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

@@ -22,12 +22,12 @@ namespace IoTWireless
 {
 namespace Model
 {
-  class AWS_IOTWIRELESS_API ResetAllResourceLogLevelsResult
+  class ResetAllResourceLogLevelsResult
   {
   public:
-    ResetAllResourceLogLevelsResult();
-    ResetAllResourceLogLevelsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ResetAllResourceLogLevelsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOTWIRELESS_API ResetAllResourceLogLevelsResult();
+    AWS_IOTWIRELESS_API ResetAllResourceLogLevelsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOTWIRELESS_API ResetAllResourceLogLevelsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

@@ -26,12 +26,12 @@ namespace CodeStarconnections
 {
 namespace Model
 {
-  class AWS_CODESTARCONNECTIONS_API ListConnectionsResult
+  class ListConnectionsResult
   {
   public:
-    ListConnectionsResult();
-    ListConnectionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListConnectionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODESTARCONNECTIONS_API ListConnectionsResult();
+    AWS_CODESTARCONNECTIONS_API ListConnectionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODESTARCONNECTIONS_API ListConnectionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

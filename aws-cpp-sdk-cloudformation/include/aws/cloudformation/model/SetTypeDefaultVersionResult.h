@@ -24,12 +24,12 @@ namespace CloudFormation
 {
 namespace Model
 {
-  class AWS_CLOUDFORMATION_API SetTypeDefaultVersionResult
+  class SetTypeDefaultVersionResult
   {
   public:
-    SetTypeDefaultVersionResult();
-    SetTypeDefaultVersionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    SetTypeDefaultVersionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_CLOUDFORMATION_API SetTypeDefaultVersionResult();
+    AWS_CLOUDFORMATION_API SetTypeDefaultVersionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_CLOUDFORMATION_API SetTypeDefaultVersionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     

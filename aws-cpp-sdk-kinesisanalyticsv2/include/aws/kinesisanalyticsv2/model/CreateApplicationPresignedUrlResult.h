@@ -24,12 +24,12 @@ namespace KinesisAnalyticsV2
 {
 namespace Model
 {
-  class AWS_KINESISANALYTICSV2_API CreateApplicationPresignedUrlResult
+  class CreateApplicationPresignedUrlResult
   {
   public:
-    CreateApplicationPresignedUrlResult();
-    CreateApplicationPresignedUrlResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateApplicationPresignedUrlResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KINESISANALYTICSV2_API CreateApplicationPresignedUrlResult();
+    AWS_KINESISANALYTICSV2_API CreateApplicationPresignedUrlResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KINESISANALYTICSV2_API CreateApplicationPresignedUrlResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

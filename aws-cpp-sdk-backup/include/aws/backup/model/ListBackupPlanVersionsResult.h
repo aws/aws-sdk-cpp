@@ -26,12 +26,12 @@ namespace Backup
 {
 namespace Model
 {
-  class AWS_BACKUP_API ListBackupPlanVersionsResult
+  class ListBackupPlanVersionsResult
   {
   public:
-    ListBackupPlanVersionsResult();
-    ListBackupPlanVersionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListBackupPlanVersionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_BACKUP_API ListBackupPlanVersionsResult();
+    AWS_BACKUP_API ListBackupPlanVersionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_BACKUP_API ListBackupPlanVersionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -29,12 +29,12 @@ namespace ApiGatewayV2
 {
 namespace Model
 {
-  class AWS_APIGATEWAYV2_API ImportApiResult
+  class ImportApiResult
   {
   public:
-    ImportApiResult();
-    ImportApiResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ImportApiResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APIGATEWAYV2_API ImportApiResult();
+    AWS_APIGATEWAYV2_API ImportApiResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APIGATEWAYV2_API ImportApiResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

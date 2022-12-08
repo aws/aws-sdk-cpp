@@ -25,12 +25,12 @@ namespace AuditManager
 {
 namespace Model
 {
-  class AWS_AUDITMANAGER_API ValidateAssessmentReportIntegrityResult
+  class ValidateAssessmentReportIntegrityResult
   {
   public:
-    ValidateAssessmentReportIntegrityResult();
-    ValidateAssessmentReportIntegrityResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ValidateAssessmentReportIntegrityResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_AUDITMANAGER_API ValidateAssessmentReportIntegrityResult();
+    AWS_AUDITMANAGER_API ValidateAssessmentReportIntegrityResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_AUDITMANAGER_API ValidateAssessmentReportIntegrityResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

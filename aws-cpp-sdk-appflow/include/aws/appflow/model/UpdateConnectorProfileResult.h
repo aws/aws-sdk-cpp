@@ -24,12 +24,12 @@ namespace Appflow
 {
 namespace Model
 {
-  class AWS_APPFLOW_API UpdateConnectorProfileResult
+  class UpdateConnectorProfileResult
   {
   public:
-    UpdateConnectorProfileResult();
-    UpdateConnectorProfileResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateConnectorProfileResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPFLOW_API UpdateConnectorProfileResult();
+    AWS_APPFLOW_API UpdateConnectorProfileResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPFLOW_API UpdateConnectorProfileResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

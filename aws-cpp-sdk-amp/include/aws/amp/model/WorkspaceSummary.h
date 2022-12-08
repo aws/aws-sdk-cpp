@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/WorkspaceSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_PROMETHEUSSERVICE_API WorkspaceSummary
+  class WorkspaceSummary
   {
   public:
-    WorkspaceSummary();
-    WorkspaceSummary(Aws::Utils::Json::JsonView jsonValue);
-    WorkspaceSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PROMETHEUSSERVICE_API WorkspaceSummary();
+    AWS_PROMETHEUSSERVICE_API WorkspaceSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PROMETHEUSSERVICE_API WorkspaceSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PROMETHEUSSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

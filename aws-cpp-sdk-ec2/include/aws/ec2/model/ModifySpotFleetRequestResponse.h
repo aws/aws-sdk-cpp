@@ -29,12 +29,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifySpotFleetRequestResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API ModifySpotFleetRequestResponse
+  class ModifySpotFleetRequestResponse
   {
   public:
-    ModifySpotFleetRequestResponse();
-    ModifySpotFleetRequestResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ModifySpotFleetRequestResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API ModifySpotFleetRequestResponse();
+    AWS_EC2_API ModifySpotFleetRequestResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API ModifySpotFleetRequestResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

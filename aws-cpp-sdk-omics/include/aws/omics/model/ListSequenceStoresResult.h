@@ -26,12 +26,12 @@ namespace Omics
 {
 namespace Model
 {
-  class AWS_OMICS_API ListSequenceStoresResult
+  class ListSequenceStoresResult
   {
   public:
-    ListSequenceStoresResult();
-    ListSequenceStoresResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListSequenceStoresResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OMICS_API ListSequenceStoresResult();
+    AWS_OMICS_API ListSequenceStoresResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OMICS_API ListSequenceStoresResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

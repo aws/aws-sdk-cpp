@@ -29,12 +29,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/AddTagsToResourceOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_STORAGEGATEWAY_API AddTagsToResourceResult
+  class AddTagsToResourceResult
   {
   public:
-    AddTagsToResourceResult();
-    AddTagsToResourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AddTagsToResourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_STORAGEGATEWAY_API AddTagsToResourceResult();
+    AWS_STORAGEGATEWAY_API AddTagsToResourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_STORAGEGATEWAY_API AddTagsToResourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

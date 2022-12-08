@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/RecommendationRelatedEventResource">AWS
    * API Reference</a></p>
    */
-  class AWS_DEVOPSGURU_API RecommendationRelatedEventResource
+  class RecommendationRelatedEventResource
   {
   public:
-    RecommendationRelatedEventResource();
-    RecommendationRelatedEventResource(Aws::Utils::Json::JsonView jsonValue);
-    RecommendationRelatedEventResource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DEVOPSGURU_API RecommendationRelatedEventResource();
+    AWS_DEVOPSGURU_API RecommendationRelatedEventResource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVOPSGURU_API RecommendationRelatedEventResource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVOPSGURU_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

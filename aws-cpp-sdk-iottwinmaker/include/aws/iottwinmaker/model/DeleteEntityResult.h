@@ -24,12 +24,12 @@ namespace IoTTwinMaker
 {
 namespace Model
 {
-  class AWS_IOTTWINMAKER_API DeleteEntityResult
+  class DeleteEntityResult
   {
   public:
-    DeleteEntityResult();
-    DeleteEntityResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteEntityResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOTTWINMAKER_API DeleteEntityResult();
+    AWS_IOTTWINMAKER_API DeleteEntityResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOTTWINMAKER_API DeleteEntityResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

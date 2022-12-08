@@ -31,12 +31,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/GetConfigurationSetEventDestinationsResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINTEMAIL_API GetConfigurationSetEventDestinationsResult
+  class GetConfigurationSetEventDestinationsResult
   {
   public:
-    GetConfigurationSetEventDestinationsResult();
-    GetConfigurationSetEventDestinationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetConfigurationSetEventDestinationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PINPOINTEMAIL_API GetConfigurationSetEventDestinationsResult();
+    AWS_PINPOINTEMAIL_API GetConfigurationSetEventDestinationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PINPOINTEMAIL_API GetConfigurationSetEventDestinationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

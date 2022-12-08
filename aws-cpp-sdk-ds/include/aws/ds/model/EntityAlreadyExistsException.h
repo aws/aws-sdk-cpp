@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/EntityAlreadyExistsException">AWS
    * API Reference</a></p>
    */
-  class AWS_DIRECTORYSERVICE_API EntityAlreadyExistsException
+  class EntityAlreadyExistsException
   {
   public:
-    EntityAlreadyExistsException();
-    EntityAlreadyExistsException(Aws::Utils::Json::JsonView jsonValue);
-    EntityAlreadyExistsException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DIRECTORYSERVICE_API EntityAlreadyExistsException();
+    AWS_DIRECTORYSERVICE_API EntityAlreadyExistsException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTORYSERVICE_API EntityAlreadyExistsException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTORYSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

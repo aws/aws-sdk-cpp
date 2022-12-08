@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/PathOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUEDATABREW_API PathOptions
+  class PathOptions
   {
   public:
-    PathOptions();
-    PathOptions(Aws::Utils::Json::JsonView jsonValue);
-    PathOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUEDATABREW_API PathOptions();
+    AWS_GLUEDATABREW_API PathOptions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUEDATABREW_API PathOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUEDATABREW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

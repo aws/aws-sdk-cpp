@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/ResourceNotFoundException">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDWATCHEVIDENTLY_API ResourceNotFoundException
+  class ResourceNotFoundException
   {
   public:
-    ResourceNotFoundException();
-    ResourceNotFoundException(Aws::Utils::Json::JsonView jsonValue);
-    ResourceNotFoundException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDWATCHEVIDENTLY_API ResourceNotFoundException();
+    AWS_CLOUDWATCHEVIDENTLY_API ResourceNotFoundException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHEVIDENTLY_API ResourceNotFoundException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHEVIDENTLY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

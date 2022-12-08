@@ -25,12 +25,12 @@ namespace CodeArtifact
 {
 namespace Model
 {
-  class AWS_CODEARTIFACT_API GetPackageVersionReadmeResult
+  class GetPackageVersionReadmeResult
   {
   public:
-    GetPackageVersionReadmeResult();
-    GetPackageVersionReadmeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetPackageVersionReadmeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODEARTIFACT_API GetPackageVersionReadmeResult();
+    AWS_CODEARTIFACT_API GetPackageVersionReadmeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODEARTIFACT_API GetPackageVersionReadmeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

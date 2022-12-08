@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/VirtualGatewayClientPolicyTls">AWS
    * API Reference</a></p>
    */
-  class AWS_APPMESH_API VirtualGatewayClientPolicyTls
+  class VirtualGatewayClientPolicyTls
   {
   public:
-    VirtualGatewayClientPolicyTls();
-    VirtualGatewayClientPolicyTls(Aws::Utils::Json::JsonView jsonValue);
-    VirtualGatewayClientPolicyTls& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPMESH_API VirtualGatewayClientPolicyTls();
+    AWS_APPMESH_API VirtualGatewayClientPolicyTls(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API VirtualGatewayClientPolicyTls& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -24,12 +24,12 @@ namespace AccessAnalyzer
 {
 namespace Model
 {
-  class AWS_ACCESSANALYZER_API StartPolicyGenerationResult
+  class StartPolicyGenerationResult
   {
   public:
-    StartPolicyGenerationResult();
-    StartPolicyGenerationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    StartPolicyGenerationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ACCESSANALYZER_API StartPolicyGenerationResult();
+    AWS_ACCESSANALYZER_API StartPolicyGenerationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ACCESSANALYZER_API StartPolicyGenerationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

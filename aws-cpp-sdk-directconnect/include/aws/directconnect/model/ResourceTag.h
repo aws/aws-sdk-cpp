@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/ResourceTag">AWS
    * API Reference</a></p>
    */
-  class AWS_DIRECTCONNECT_API ResourceTag
+  class ResourceTag
   {
   public:
-    ResourceTag();
-    ResourceTag(Aws::Utils::Json::JsonView jsonValue);
-    ResourceTag& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DIRECTCONNECT_API ResourceTag();
+    AWS_DIRECTCONNECT_API ResourceTag(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTCONNECT_API ResourceTag& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTCONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

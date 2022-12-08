@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/RunConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_KINESISANALYTICSV2_API RunConfiguration
+  class RunConfiguration
   {
   public:
-    RunConfiguration();
-    RunConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    RunConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KINESISANALYTICSV2_API RunConfiguration();
+    AWS_KINESISANALYTICSV2_API RunConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICSV2_API RunConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

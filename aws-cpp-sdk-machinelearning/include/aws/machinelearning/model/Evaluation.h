@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/Evaluation">AWS
    * API Reference</a></p>
    */
-  class AWS_MACHINELEARNING_API Evaluation
+  class Evaluation
   {
   public:
-    Evaluation();
-    Evaluation(Aws::Utils::Json::JsonView jsonValue);
-    Evaluation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MACHINELEARNING_API Evaluation();
+    AWS_MACHINELEARNING_API Evaluation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACHINELEARNING_API Evaluation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACHINELEARNING_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/qldb-session-2019-07-11/StartSessionResult">AWS
    * API Reference</a></p>
    */
-  class AWS_QLDBSESSION_API StartSessionResult
+  class StartSessionResult
   {
   public:
-    StartSessionResult();
-    StartSessionResult(Aws::Utils::Json::JsonView jsonValue);
-    StartSessionResult& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QLDBSESSION_API StartSessionResult();
+    AWS_QLDBSESSION_API StartSessionResult(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QLDBSESSION_API StartSessionResult& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QLDBSESSION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

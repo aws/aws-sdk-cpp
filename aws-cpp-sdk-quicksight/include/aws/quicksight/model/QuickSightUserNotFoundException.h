@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/QuickSightUserNotFoundException">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API QuickSightUserNotFoundException
+  class QuickSightUserNotFoundException
   {
   public:
-    QuickSightUserNotFoundException();
-    QuickSightUserNotFoundException(Aws::Utils::Json::JsonView jsonValue);
-    QuickSightUserNotFoundException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API QuickSightUserNotFoundException();
+    AWS_QUICKSIGHT_API QuickSightUserNotFoundException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API QuickSightUserNotFoundException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

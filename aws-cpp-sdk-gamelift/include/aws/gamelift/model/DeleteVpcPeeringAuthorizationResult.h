@@ -22,12 +22,12 @@ namespace GameLift
 {
 namespace Model
 {
-  class AWS_GAMELIFT_API DeleteVpcPeeringAuthorizationResult
+  class DeleteVpcPeeringAuthorizationResult
   {
   public:
-    DeleteVpcPeeringAuthorizationResult();
-    DeleteVpcPeeringAuthorizationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteVpcPeeringAuthorizationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GAMELIFT_API DeleteVpcPeeringAuthorizationResult();
+    AWS_GAMELIFT_API DeleteVpcPeeringAuthorizationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GAMELIFT_API DeleteVpcPeeringAuthorizationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

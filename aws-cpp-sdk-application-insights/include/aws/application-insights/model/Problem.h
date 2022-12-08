@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/Problem">AWS
    * API Reference</a></p>
    */
-  class AWS_APPLICATIONINSIGHTS_API Problem
+  class Problem
   {
   public:
-    Problem();
-    Problem(Aws::Utils::Json::JsonView jsonValue);
-    Problem& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPLICATIONINSIGHTS_API Problem();
+    AWS_APPLICATIONINSIGHTS_API Problem(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPLICATIONINSIGHTS_API Problem& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPLICATIONINSIGHTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

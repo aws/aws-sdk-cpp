@@ -25,21 +25,21 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/GetProfileResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEGURUPROFILER_API GetProfileResult
+  class GetProfileResult
   {
   public:
-    GetProfileResult();
+    AWS_CODEGURUPROFILER_API GetProfileResult();
     //We have to define these because Microsoft doesn't auto generate them
-    GetProfileResult(GetProfileResult&&);
-    GetProfileResult& operator=(GetProfileResult&&);
+    AWS_CODEGURUPROFILER_API GetProfileResult(GetProfileResult&&);
+    AWS_CODEGURUPROFILER_API GetProfileResult& operator=(GetProfileResult&&);
     //we delete these because Microsoft doesn't handle move generation correctly
     //and we therefore don't trust them to get it right here either.
     GetProfileResult(const GetProfileResult&) = delete;
     GetProfileResult& operator=(const GetProfileResult&) = delete;
 
 
-    GetProfileResult(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
-    GetProfileResult& operator=(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
+    AWS_CODEGURUPROFILER_API GetProfileResult(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
+    AWS_CODEGURUPROFILER_API GetProfileResult& operator=(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
 
 
 

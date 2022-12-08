@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/Tag">AWS
    * API Reference</a></p>
    */
-  class AWS_LICENSEMANAGER_API Tag
+  class Tag
   {
   public:
-    Tag();
-    Tag(Aws::Utils::Json::JsonView jsonValue);
-    Tag& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LICENSEMANAGER_API Tag();
+    AWS_LICENSEMANAGER_API Tag(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LICENSEMANAGER_API Tag& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LICENSEMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

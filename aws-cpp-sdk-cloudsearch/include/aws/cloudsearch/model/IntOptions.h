@@ -30,15 +30,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/IntOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDSEARCH_API IntOptions
+  class IntOptions
   {
   public:
-    IntOptions();
-    IntOptions(const Aws::Utils::Xml::XmlNode& xmlNode);
-    IntOptions& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDSEARCH_API IntOptions();
+    AWS_CLOUDSEARCH_API IntOptions(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDSEARCH_API IntOptions& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_CLOUDSEARCH_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_CLOUDSEARCH_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**

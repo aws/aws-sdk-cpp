@@ -24,12 +24,12 @@ namespace OpenSearchServerless
 {
 namespace Model
 {
-  class AWS_OPENSEARCHSERVERLESS_API GetAccessPolicyResult
+  class GetAccessPolicyResult
   {
   public:
-    GetAccessPolicyResult();
-    GetAccessPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetAccessPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OPENSEARCHSERVERLESS_API GetAccessPolicyResult();
+    AWS_OPENSEARCHSERVERLESS_API GetAccessPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OPENSEARCHSERVERLESS_API GetAccessPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ViolationEventAdditionalInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API ViolationEventAdditionalInfo
+  class ViolationEventAdditionalInfo
   {
   public:
-    ViolationEventAdditionalInfo();
-    ViolationEventAdditionalInfo(Aws::Utils::Json::JsonView jsonValue);
-    ViolationEventAdditionalInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API ViolationEventAdditionalInfo();
+    AWS_IOT_API ViolationEventAdditionalInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API ViolationEventAdditionalInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

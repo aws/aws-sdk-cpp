@@ -26,12 +26,12 @@ namespace EC2
 {
 namespace Model
 {
-  class AWS_EC2_API GetTransitGatewayPolicyTableEntriesResponse
+  class GetTransitGatewayPolicyTableEntriesResponse
   {
   public:
-    GetTransitGatewayPolicyTableEntriesResponse();
-    GetTransitGatewayPolicyTableEntriesResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    GetTransitGatewayPolicyTableEntriesResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API GetTransitGatewayPolicyTableEntriesResponse();
+    AWS_EC2_API GetTransitGatewayPolicyTableEntriesResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API GetTransitGatewayPolicyTableEntriesResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

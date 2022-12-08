@@ -29,15 +29,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/Ebs">AWS API
    * Reference</a></p>
    */
-  class AWS_AUTOSCALING_API Ebs
+  class Ebs
   {
   public:
-    Ebs();
-    Ebs(const Aws::Utils::Xml::XmlNode& xmlNode);
-    Ebs& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_AUTOSCALING_API Ebs();
+    AWS_AUTOSCALING_API Ebs(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_AUTOSCALING_API Ebs& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_AUTOSCALING_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_AUTOSCALING_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**

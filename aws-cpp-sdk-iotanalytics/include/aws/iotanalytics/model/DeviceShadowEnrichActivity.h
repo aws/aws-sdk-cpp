@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/DeviceShadowEnrichActivity">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTANALYTICS_API DeviceShadowEnrichActivity
+  class DeviceShadowEnrichActivity
   {
   public:
-    DeviceShadowEnrichActivity();
-    DeviceShadowEnrichActivity(Aws::Utils::Json::JsonView jsonValue);
-    DeviceShadowEnrichActivity& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTANALYTICS_API DeviceShadowEnrichActivity();
+    AWS_IOTANALYTICS_API DeviceShadowEnrichActivity(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTANALYTICS_API DeviceShadowEnrichActivity& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

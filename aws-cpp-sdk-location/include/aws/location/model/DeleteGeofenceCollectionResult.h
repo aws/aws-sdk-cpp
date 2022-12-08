@@ -22,12 +22,12 @@ namespace LocationService
 {
 namespace Model
 {
-  class AWS_LOCATIONSERVICE_API DeleteGeofenceCollectionResult
+  class DeleteGeofenceCollectionResult
   {
   public:
-    DeleteGeofenceCollectionResult();
-    DeleteGeofenceCollectionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteGeofenceCollectionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LOCATIONSERVICE_API DeleteGeofenceCollectionResult();
+    AWS_LOCATIONSERVICE_API DeleteGeofenceCollectionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LOCATIONSERVICE_API DeleteGeofenceCollectionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

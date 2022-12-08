@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/DetectedProperties">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICTRANSCODER_API DetectedProperties
+  class DetectedProperties
   {
   public:
-    DetectedProperties();
-    DetectedProperties(Aws::Utils::Json::JsonView jsonValue);
-    DetectedProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ELASTICTRANSCODER_API DetectedProperties();
+    AWS_ELASTICTRANSCODER_API DetectedProperties(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICTRANSCODER_API DetectedProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICTRANSCODER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

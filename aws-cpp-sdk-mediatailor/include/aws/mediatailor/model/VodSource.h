@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/VodSource">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIATAILOR_API VodSource
+  class VodSource
   {
   public:
-    VodSource();
-    VodSource(Aws::Utils::Json::JsonView jsonValue);
-    VodSource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIATAILOR_API VodSource();
+    AWS_MEDIATAILOR_API VodSource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIATAILOR_API VodSource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIATAILOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

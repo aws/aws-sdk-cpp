@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/LoadingAnimation">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API LoadingAnimation
+  class LoadingAnimation
   {
   public:
-    LoadingAnimation();
-    LoadingAnimation(Aws::Utils::Json::JsonView jsonValue);
-    LoadingAnimation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API LoadingAnimation();
+    AWS_QUICKSIGHT_API LoadingAnimation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API LoadingAnimation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

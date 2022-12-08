@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/timestream-query-2018-11-01/MixedMeasureMapping">AWS
    * API Reference</a></p>
    */
-  class AWS_TIMESTREAMQUERY_API MixedMeasureMapping
+  class MixedMeasureMapping
   {
   public:
-    MixedMeasureMapping();
-    MixedMeasureMapping(Aws::Utils::Json::JsonView jsonValue);
-    MixedMeasureMapping& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TIMESTREAMQUERY_API MixedMeasureMapping();
+    AWS_TIMESTREAMQUERY_API MixedMeasureMapping(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TIMESTREAMQUERY_API MixedMeasureMapping& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TIMESTREAMQUERY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

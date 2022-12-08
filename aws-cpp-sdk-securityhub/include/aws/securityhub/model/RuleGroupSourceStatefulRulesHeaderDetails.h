@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/RuleGroupSourceStatefulRulesHeaderDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API RuleGroupSourceStatefulRulesHeaderDetails
+  class RuleGroupSourceStatefulRulesHeaderDetails
   {
   public:
-    RuleGroupSourceStatefulRulesHeaderDetails();
-    RuleGroupSourceStatefulRulesHeaderDetails(Aws::Utils::Json::JsonView jsonValue);
-    RuleGroupSourceStatefulRulesHeaderDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API RuleGroupSourceStatefulRulesHeaderDetails();
+    AWS_SECURITYHUB_API RuleGroupSourceStatefulRulesHeaderDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API RuleGroupSourceStatefulRulesHeaderDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

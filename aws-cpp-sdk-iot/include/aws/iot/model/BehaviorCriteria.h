@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/BehaviorCriteria">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API BehaviorCriteria
+  class BehaviorCriteria
   {
   public:
-    BehaviorCriteria();
-    BehaviorCriteria(Aws::Utils::Json::JsonView jsonValue);
-    BehaviorCriteria& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API BehaviorCriteria();
+    AWS_IOT_API BehaviorCriteria(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API BehaviorCriteria& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

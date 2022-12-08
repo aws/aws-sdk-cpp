@@ -24,12 +24,12 @@ namespace ApplicationInsights
 {
 namespace Model
 {
-  class AWS_APPLICATIONINSIGHTS_API DescribeObservationResult
+  class DescribeObservationResult
   {
   public:
-    DescribeObservationResult();
-    DescribeObservationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeObservationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPLICATIONINSIGHTS_API DescribeObservationResult();
+    AWS_APPLICATIONINSIGHTS_API DescribeObservationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPLICATIONINSIGHTS_API DescribeObservationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/ComponentBindingPropertiesValue">AWS
    * API Reference</a></p>
    */
-  class AWS_AMPLIFYUIBUILDER_API ComponentBindingPropertiesValue
+  class ComponentBindingPropertiesValue
   {
   public:
-    ComponentBindingPropertiesValue();
-    ComponentBindingPropertiesValue(Aws::Utils::Json::JsonView jsonValue);
-    ComponentBindingPropertiesValue& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_AMPLIFYUIBUILDER_API ComponentBindingPropertiesValue();
+    AWS_AMPLIFYUIBUILDER_API ComponentBindingPropertiesValue(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFYUIBUILDER_API ComponentBindingPropertiesValue& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFYUIBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

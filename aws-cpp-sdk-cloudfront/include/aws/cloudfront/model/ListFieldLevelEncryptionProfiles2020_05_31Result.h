@@ -24,12 +24,12 @@ namespace CloudFront
 {
 namespace Model
 {
-  class AWS_CLOUDFRONT_API ListFieldLevelEncryptionProfiles2020_05_31Result
+  class ListFieldLevelEncryptionProfiles2020_05_31Result
   {
   public:
-    ListFieldLevelEncryptionProfiles2020_05_31Result();
-    ListFieldLevelEncryptionProfiles2020_05_31Result(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ListFieldLevelEncryptionProfiles2020_05_31Result& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_CLOUDFRONT_API ListFieldLevelEncryptionProfiles2020_05_31Result();
+    AWS_CLOUDFRONT_API ListFieldLevelEncryptionProfiles2020_05_31Result(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_CLOUDFRONT_API ListFieldLevelEncryptionProfiles2020_05_31Result& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/AccessControlRule">AWS
    * API Reference</a></p>
    */
-  class AWS_WORKMAIL_API AccessControlRule
+  class AccessControlRule
   {
   public:
-    AccessControlRule();
-    AccessControlRule(Aws::Utils::Json::JsonView jsonValue);
-    AccessControlRule& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WORKMAIL_API AccessControlRule();
+    AWS_WORKMAIL_API AccessControlRule(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKMAIL_API AccessControlRule& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKMAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

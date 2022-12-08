@@ -25,12 +25,12 @@ namespace SSM
 {
 namespace Model
 {
-  class AWS_SSM_API ListDocumentMetadataHistoryResult
+  class ListDocumentMetadataHistoryResult
   {
   public:
-    ListDocumentMetadataHistoryResult();
-    ListDocumentMetadataHistoryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListDocumentMetadataHistoryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSM_API ListDocumentMetadataHistoryResult();
+    AWS_SSM_API ListDocumentMetadataHistoryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSM_API ListDocumentMetadataHistoryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

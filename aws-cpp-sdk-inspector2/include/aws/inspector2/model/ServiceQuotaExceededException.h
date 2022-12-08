@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/ServiceQuotaExceededException">AWS
    * API Reference</a></p>
    */
-  class AWS_INSPECTOR2_API ServiceQuotaExceededException
+  class ServiceQuotaExceededException
   {
   public:
-    ServiceQuotaExceededException();
-    ServiceQuotaExceededException(Aws::Utils::Json::JsonView jsonValue);
-    ServiceQuotaExceededException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_INSPECTOR2_API ServiceQuotaExceededException();
+    AWS_INSPECTOR2_API ServiceQuotaExceededException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR2_API ServiceQuotaExceededException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

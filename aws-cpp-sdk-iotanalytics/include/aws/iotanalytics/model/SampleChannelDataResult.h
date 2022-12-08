@@ -25,12 +25,12 @@ namespace IoTAnalytics
 {
 namespace Model
 {
-  class AWS_IOTANALYTICS_API SampleChannelDataResult
+  class SampleChannelDataResult
   {
   public:
-    SampleChannelDataResult();
-    SampleChannelDataResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    SampleChannelDataResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOTANALYTICS_API SampleChannelDataResult();
+    AWS_IOTANALYTICS_API SampleChannelDataResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOTANALYTICS_API SampleChannelDataResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

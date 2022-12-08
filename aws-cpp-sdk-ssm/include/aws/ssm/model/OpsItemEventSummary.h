@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/OpsItemEventSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_SSM_API OpsItemEventSummary
+  class OpsItemEventSummary
   {
   public:
-    OpsItemEventSummary();
-    OpsItemEventSummary(Aws::Utils::Json::JsonView jsonValue);
-    OpsItemEventSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSM_API OpsItemEventSummary();
+    AWS_SSM_API OpsItemEventSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API OpsItemEventSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

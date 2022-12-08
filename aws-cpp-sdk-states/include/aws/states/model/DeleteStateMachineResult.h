@@ -22,12 +22,12 @@ namespace SFN
 {
 namespace Model
 {
-  class AWS_SFN_API DeleteStateMachineResult
+  class DeleteStateMachineResult
   {
   public:
-    DeleteStateMachineResult();
-    DeleteStateMachineResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteStateMachineResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SFN_API DeleteStateMachineResult();
+    AWS_SFN_API DeleteStateMachineResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SFN_API DeleteStateMachineResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

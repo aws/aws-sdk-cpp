@@ -25,12 +25,12 @@ namespace ServerlessApplicationRepository
 {
 namespace Model
 {
-  class AWS_SERVERLESSAPPLICATIONREPOSITORY_API PutApplicationPolicyResult
+  class PutApplicationPolicyResult
   {
   public:
-    PutApplicationPolicyResult();
-    PutApplicationPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PutApplicationPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SERVERLESSAPPLICATIONREPOSITORY_API PutApplicationPolicyResult();
+    AWS_SERVERLESSAPPLICATIONREPOSITORY_API PutApplicationPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SERVERLESSAPPLICATIONREPOSITORY_API PutApplicationPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

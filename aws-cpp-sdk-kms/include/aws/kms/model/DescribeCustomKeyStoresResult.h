@@ -26,12 +26,12 @@ namespace KMS
 {
 namespace Model
 {
-  class AWS_KMS_API DescribeCustomKeyStoresResult
+  class DescribeCustomKeyStoresResult
   {
   public:
-    DescribeCustomKeyStoresResult();
-    DescribeCustomKeyStoresResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeCustomKeyStoresResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KMS_API DescribeCustomKeyStoresResult();
+    AWS_KMS_API DescribeCustomKeyStoresResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KMS_API DescribeCustomKeyStoresResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

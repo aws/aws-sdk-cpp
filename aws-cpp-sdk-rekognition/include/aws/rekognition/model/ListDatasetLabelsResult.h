@@ -26,12 +26,12 @@ namespace Rekognition
 {
 namespace Model
 {
-  class AWS_REKOGNITION_API ListDatasetLabelsResult
+  class ListDatasetLabelsResult
   {
   public:
-    ListDatasetLabelsResult();
-    ListDatasetLabelsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListDatasetLabelsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_REKOGNITION_API ListDatasetLabelsResult();
+    AWS_REKOGNITION_API ListDatasetLabelsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_REKOGNITION_API ListDatasetLabelsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

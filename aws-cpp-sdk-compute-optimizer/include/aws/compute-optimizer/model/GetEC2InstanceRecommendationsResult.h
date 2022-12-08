@@ -27,12 +27,12 @@ namespace ComputeOptimizer
 {
 namespace Model
 {
-  class AWS_COMPUTEOPTIMIZER_API GetEC2InstanceRecommendationsResult
+  class GetEC2InstanceRecommendationsResult
   {
   public:
-    GetEC2InstanceRecommendationsResult();
-    GetEC2InstanceRecommendationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetEC2InstanceRecommendationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_COMPUTEOPTIMIZER_API GetEC2InstanceRecommendationsResult();
+    AWS_COMPUTEOPTIMIZER_API GetEC2InstanceRecommendationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_COMPUTEOPTIMIZER_API GetEC2InstanceRecommendationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

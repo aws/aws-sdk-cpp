@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/MediaConcatenationPipeline">AWS
    * API Reference</a></p>
    */
-  class AWS_CHIMESDKMEDIAPIPELINES_API MediaConcatenationPipeline
+  class MediaConcatenationPipeline
   {
   public:
-    MediaConcatenationPipeline();
-    MediaConcatenationPipeline(Aws::Utils::Json::JsonView jsonValue);
-    MediaConcatenationPipeline& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIMESDKMEDIAPIPELINES_API MediaConcatenationPipeline();
+    AWS_CHIMESDKMEDIAPIPELINES_API MediaConcatenationPipeline(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKMEDIAPIPELINES_API MediaConcatenationPipeline& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKMEDIAPIPELINES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

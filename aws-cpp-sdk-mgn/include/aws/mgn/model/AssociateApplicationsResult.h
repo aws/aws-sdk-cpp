@@ -22,12 +22,12 @@ namespace mgn
 {
 namespace Model
 {
-  class AWS_MGN_API AssociateApplicationsResult
+  class AssociateApplicationsResult
   {
   public:
-    AssociateApplicationsResult();
-    AssociateApplicationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AssociateApplicationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MGN_API AssociateApplicationsResult();
+    AWS_MGN_API AssociateApplicationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MGN_API AssociateApplicationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

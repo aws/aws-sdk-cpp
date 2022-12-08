@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/ResourceNotFoundException">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEARTIFACT_API ResourceNotFoundException
+  class ResourceNotFoundException
   {
   public:
-    ResourceNotFoundException();
-    ResourceNotFoundException(Aws::Utils::Json::JsonView jsonValue);
-    ResourceNotFoundException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEARTIFACT_API ResourceNotFoundException();
+    AWS_CODEARTIFACT_API ResourceNotFoundException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEARTIFACT_API ResourceNotFoundException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEARTIFACT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

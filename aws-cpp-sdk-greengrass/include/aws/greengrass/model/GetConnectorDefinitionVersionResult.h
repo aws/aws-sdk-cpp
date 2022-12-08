@@ -25,12 +25,12 @@ namespace Greengrass
 {
 namespace Model
 {
-  class AWS_GREENGRASS_API GetConnectorDefinitionVersionResult
+  class GetConnectorDefinitionVersionResult
   {
   public:
-    GetConnectorDefinitionVersionResult();
-    GetConnectorDefinitionVersionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetConnectorDefinitionVersionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GREENGRASS_API GetConnectorDefinitionVersionResult();
+    AWS_GREENGRASS_API GetConnectorDefinitionVersionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GREENGRASS_API GetConnectorDefinitionVersionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/OfflineStoreConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API OfflineStoreConfig
+  class OfflineStoreConfig
   {
   public:
-    OfflineStoreConfig();
-    OfflineStoreConfig(Aws::Utils::Json::JsonView jsonValue);
-    OfflineStoreConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API OfflineStoreConfig();
+    AWS_SAGEMAKER_API OfflineStoreConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API OfflineStoreConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

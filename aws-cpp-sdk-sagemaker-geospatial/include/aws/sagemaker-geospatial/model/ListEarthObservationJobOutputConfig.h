@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-geospatial-2020-05-27/ListEarthObservationJobOutputConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKERGEOSPATIAL_API ListEarthObservationJobOutputConfig
+  class ListEarthObservationJobOutputConfig
   {
   public:
-    ListEarthObservationJobOutputConfig();
-    ListEarthObservationJobOutputConfig(Aws::Utils::Json::JsonView jsonValue);
-    ListEarthObservationJobOutputConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKERGEOSPATIAL_API ListEarthObservationJobOutputConfig();
+    AWS_SAGEMAKERGEOSPATIAL_API ListEarthObservationJobOutputConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKERGEOSPATIAL_API ListEarthObservationJobOutputConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKERGEOSPATIAL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -24,12 +24,12 @@ namespace Personalize
 {
 namespace Model
 {
-  class AWS_PERSONALIZE_API DescribeBatchInferenceJobResult
+  class DescribeBatchInferenceJobResult
   {
   public:
-    DescribeBatchInferenceJobResult();
-    DescribeBatchInferenceJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeBatchInferenceJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PERSONALIZE_API DescribeBatchInferenceJobResult();
+    AWS_PERSONALIZE_API DescribeBatchInferenceJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PERSONALIZE_API DescribeBatchInferenceJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

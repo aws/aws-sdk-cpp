@@ -26,12 +26,12 @@ namespace ConnectWisdomService
 {
 namespace Model
 {
-  class AWS_CONNECTWISDOMSERVICE_API ListContentsResult
+  class ListContentsResult
   {
   public:
-    ListContentsResult();
-    ListContentsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListContentsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CONNECTWISDOMSERVICE_API ListContentsResult();
+    AWS_CONNECTWISDOMSERVICE_API ListContentsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CONNECTWISDOMSERVICE_API ListContentsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

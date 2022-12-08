@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ProvisioningTemplateSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API ProvisioningTemplateSummary
+  class ProvisioningTemplateSummary
   {
   public:
-    ProvisioningTemplateSummary();
-    ProvisioningTemplateSummary(Aws::Utils::Json::JsonView jsonValue);
-    ProvisioningTemplateSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API ProvisioningTemplateSummary();
+    AWS_IOT_API ProvisioningTemplateSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API ProvisioningTemplateSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

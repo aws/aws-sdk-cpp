@@ -26,12 +26,12 @@ namespace Omics
 {
 namespace Model
 {
-  class AWS_OMICS_API ListReferenceImportJobsResult
+  class ListReferenceImportJobsResult
   {
   public:
-    ListReferenceImportJobsResult();
-    ListReferenceImportJobsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListReferenceImportJobsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OMICS_API ListReferenceImportJobsResult();
+    AWS_OMICS_API ListReferenceImportJobsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OMICS_API ListReferenceImportJobsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

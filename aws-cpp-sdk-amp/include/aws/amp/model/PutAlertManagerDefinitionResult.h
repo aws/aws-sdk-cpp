@@ -30,12 +30,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/PutAlertManagerDefinitionResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_PROMETHEUSSERVICE_API PutAlertManagerDefinitionResult
+  class PutAlertManagerDefinitionResult
   {
   public:
-    PutAlertManagerDefinitionResult();
-    PutAlertManagerDefinitionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PutAlertManagerDefinitionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PROMETHEUSSERVICE_API PutAlertManagerDefinitionResult();
+    AWS_PROMETHEUSSERVICE_API PutAlertManagerDefinitionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PROMETHEUSSERVICE_API PutAlertManagerDefinitionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

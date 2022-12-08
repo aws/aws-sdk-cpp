@@ -25,12 +25,12 @@ namespace Neptune
 {
 namespace Model
 {
-  class AWS_NEPTUNE_API CopyDBClusterParameterGroupResult
+  class CopyDBClusterParameterGroupResult
   {
   public:
-    CopyDBClusterParameterGroupResult();
-    CopyDBClusterParameterGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    CopyDBClusterParameterGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_NEPTUNE_API CopyDBClusterParameterGroupResult();
+    AWS_NEPTUNE_API CopyDBClusterParameterGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_NEPTUNE_API CopyDBClusterParameterGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     

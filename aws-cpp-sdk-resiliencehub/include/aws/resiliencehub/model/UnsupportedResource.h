@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/UnsupportedResource">AWS
    * API Reference</a></p>
    */
-  class AWS_RESILIENCEHUB_API UnsupportedResource
+  class UnsupportedResource
   {
   public:
-    UnsupportedResource();
-    UnsupportedResource(Aws::Utils::Json::JsonView jsonValue);
-    UnsupportedResource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_RESILIENCEHUB_API UnsupportedResource();
+    AWS_RESILIENCEHUB_API UnsupportedResource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RESILIENCEHUB_API UnsupportedResource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RESILIENCEHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -39,13 +39,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DatasetGroup">AWS
    * API Reference</a></p>
    */
-  class AWS_PERSONALIZE_API DatasetGroup
+  class DatasetGroup
   {
   public:
-    DatasetGroup();
-    DatasetGroup(Aws::Utils::Json::JsonView jsonValue);
-    DatasetGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PERSONALIZE_API DatasetGroup();
+    AWS_PERSONALIZE_API DatasetGroup(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PERSONALIZE_API DatasetGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PERSONALIZE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

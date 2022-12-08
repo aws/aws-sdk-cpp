@@ -24,12 +24,12 @@ namespace IoTWireless
 {
 namespace Model
 {
-  class AWS_IOTWIRELESS_API GetMulticastGroupSessionResult
+  class GetMulticastGroupSessionResult
   {
   public:
-    GetMulticastGroupSessionResult();
-    GetMulticastGroupSessionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetMulticastGroupSessionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOTWIRELESS_API GetMulticastGroupSessionResult();
+    AWS_IOTWIRELESS_API GetMulticastGroupSessionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOTWIRELESS_API GetMulticastGroupSessionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     

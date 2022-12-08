@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/ConversionProperties">AWS
    * API Reference</a></p>
    */
-  class AWS_DRS_API ConversionProperties
+  class ConversionProperties
   {
   public:
-    ConversionProperties();
-    ConversionProperties(Aws::Utils::Json::JsonView jsonValue);
-    ConversionProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DRS_API ConversionProperties();
+    AWS_DRS_API ConversionProperties(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DRS_API ConversionProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DRS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

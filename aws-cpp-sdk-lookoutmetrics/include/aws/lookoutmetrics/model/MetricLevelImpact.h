@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/MetricLevelImpact">AWS
    * API Reference</a></p>
    */
-  class AWS_LOOKOUTMETRICS_API MetricLevelImpact
+  class MetricLevelImpact
   {
   public:
-    MetricLevelImpact();
-    MetricLevelImpact(Aws::Utils::Json::JsonView jsonValue);
-    MetricLevelImpact& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LOOKOUTMETRICS_API MetricLevelImpact();
+    AWS_LOOKOUTMETRICS_API MetricLevelImpact(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTMETRICS_API MetricLevelImpact& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTMETRICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

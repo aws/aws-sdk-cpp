@@ -26,12 +26,12 @@ namespace LicenseManager
 {
 namespace Model
 {
-  class AWS_LICENSEMANAGER_API ListReceivedGrantsForOrganizationResult
+  class ListReceivedGrantsForOrganizationResult
   {
   public:
-    ListReceivedGrantsForOrganizationResult();
-    ListReceivedGrantsForOrganizationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListReceivedGrantsForOrganizationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LICENSEMANAGER_API ListReceivedGrantsForOrganizationResult();
+    AWS_LICENSEMANAGER_API ListReceivedGrantsForOrganizationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LICENSEMANAGER_API ListReceivedGrantsForOrganizationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

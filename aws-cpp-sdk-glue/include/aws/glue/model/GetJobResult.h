@@ -24,12 +24,12 @@ namespace Glue
 {
 namespace Model
 {
-  class AWS_GLUE_API GetJobResult
+  class GetJobResult
   {
   public:
-    GetJobResult();
-    GetJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GLUE_API GetJobResult();
+    AWS_GLUE_API GetJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GLUE_API GetJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

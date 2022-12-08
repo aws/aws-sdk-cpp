@@ -22,12 +22,12 @@ namespace Macie2
 {
 namespace Model
 {
-  class AWS_MACIE2_API TestCustomDataIdentifierResult
+  class TestCustomDataIdentifierResult
   {
   public:
-    TestCustomDataIdentifierResult();
-    TestCustomDataIdentifierResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    TestCustomDataIdentifierResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MACIE2_API TestCustomDataIdentifierResult();
+    AWS_MACIE2_API TestCustomDataIdentifierResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MACIE2_API TestCustomDataIdentifierResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

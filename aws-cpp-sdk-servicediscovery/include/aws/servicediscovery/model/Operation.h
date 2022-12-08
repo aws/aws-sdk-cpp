@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/Operation">AWS
    * API Reference</a></p>
    */
-  class AWS_SERVICEDISCOVERY_API Operation
+  class Operation
   {
   public:
-    Operation();
-    Operation(Aws::Utils::Json::JsonView jsonValue);
-    Operation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SERVICEDISCOVERY_API Operation();
+    AWS_SERVICEDISCOVERY_API Operation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICEDISCOVERY_API Operation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICEDISCOVERY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

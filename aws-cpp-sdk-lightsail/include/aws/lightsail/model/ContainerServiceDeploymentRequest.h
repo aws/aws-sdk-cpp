@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/ContainerServiceDeploymentRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_LIGHTSAIL_API ContainerServiceDeploymentRequest
+  class ContainerServiceDeploymentRequest
   {
   public:
-    ContainerServiceDeploymentRequest();
-    ContainerServiceDeploymentRequest(Aws::Utils::Json::JsonView jsonValue);
-    ContainerServiceDeploymentRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LIGHTSAIL_API ContainerServiceDeploymentRequest();
+    AWS_LIGHTSAIL_API ContainerServiceDeploymentRequest(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API ContainerServiceDeploymentRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

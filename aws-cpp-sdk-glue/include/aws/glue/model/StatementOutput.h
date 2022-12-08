@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StatementOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API StatementOutput
+  class StatementOutput
   {
   public:
-    StatementOutput();
-    StatementOutput(Aws::Utils::Json::JsonView jsonValue);
-    StatementOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API StatementOutput();
+    AWS_GLUE_API StatementOutput(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API StatementOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

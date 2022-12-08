@@ -22,12 +22,12 @@ namespace Shield
 {
 namespace Model
 {
-  class AWS_SHIELD_API AssociateDRTLogBucketResult
+  class AssociateDRTLogBucketResult
   {
   public:
-    AssociateDRTLogBucketResult();
-    AssociateDRTLogBucketResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AssociateDRTLogBucketResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SHIELD_API AssociateDRTLogBucketResult();
+    AWS_SHIELD_API AssociateDRTLogBucketResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SHIELD_API AssociateDRTLogBucketResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

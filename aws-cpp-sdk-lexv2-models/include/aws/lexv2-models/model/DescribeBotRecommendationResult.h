@@ -30,12 +30,12 @@ namespace LexModelsV2
 {
 namespace Model
 {
-  class AWS_LEXMODELSV2_API DescribeBotRecommendationResult
+  class DescribeBotRecommendationResult
   {
   public:
-    DescribeBotRecommendationResult();
-    DescribeBotRecommendationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeBotRecommendationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LEXMODELSV2_API DescribeBotRecommendationResult();
+    AWS_LEXMODELSV2_API DescribeBotRecommendationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LEXMODELSV2_API DescribeBotRecommendationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

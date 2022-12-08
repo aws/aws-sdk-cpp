@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/ConflictException">AWS
    * API Reference</a></p>
    */
-  class AWS_SSMINCIDENTS_API ConflictException
+  class ConflictException
   {
   public:
-    ConflictException();
-    ConflictException(Aws::Utils::Json::JsonView jsonValue);
-    ConflictException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSMINCIDENTS_API ConflictException();
+    AWS_SSMINCIDENTS_API ConflictException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSMINCIDENTS_API ConflictException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSMINCIDENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

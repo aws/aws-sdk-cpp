@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DatabaseShortInfoResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_DATABASEMIGRATIONSERVICE_API DatabaseShortInfoResponse
+  class DatabaseShortInfoResponse
   {
   public:
-    DatabaseShortInfoResponse();
-    DatabaseShortInfoResponse(Aws::Utils::Json::JsonView jsonValue);
-    DatabaseShortInfoResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DATABASEMIGRATIONSERVICE_API DatabaseShortInfoResponse();
+    AWS_DATABASEMIGRATIONSERVICE_API DatabaseShortInfoResponse(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATABASEMIGRATIONSERVICE_API DatabaseShortInfoResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATABASEMIGRATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/Attribute">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTFLEETWISE_API Attribute
+  class Attribute
   {
   public:
-    Attribute();
-    Attribute(Aws::Utils::Json::JsonView jsonValue);
-    Attribute& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTFLEETWISE_API Attribute();
+    AWS_IOTFLEETWISE_API Attribute(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTFLEETWISE_API Attribute& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTFLEETWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

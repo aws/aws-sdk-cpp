@@ -26,12 +26,12 @@ namespace SageMaker
 {
 namespace Model
 {
-  class AWS_SAGEMAKER_API ListModelExplainabilityJobDefinitionsResult
+  class ListModelExplainabilityJobDefinitionsResult
   {
   public:
-    ListModelExplainabilityJobDefinitionsResult();
-    ListModelExplainabilityJobDefinitionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListModelExplainabilityJobDefinitionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SAGEMAKER_API ListModelExplainabilityJobDefinitionsResult();
+    AWS_SAGEMAKER_API ListModelExplainabilityJobDefinitionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SAGEMAKER_API ListModelExplainabilityJobDefinitionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

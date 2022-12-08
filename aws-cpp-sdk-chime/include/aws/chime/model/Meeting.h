@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/Meeting">AWS API
    * Reference</a></p>
    */
-  class AWS_CHIME_API Meeting
+  class Meeting
   {
   public:
-    Meeting();
-    Meeting(Aws::Utils::Json::JsonView jsonValue);
-    Meeting& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIME_API Meeting();
+    AWS_CHIME_API Meeting(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API Meeting& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

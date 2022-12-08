@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/MonitoringScheduleSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API MonitoringScheduleSummary
+  class MonitoringScheduleSummary
   {
   public:
-    MonitoringScheduleSummary();
-    MonitoringScheduleSummary(Aws::Utils::Json::JsonView jsonValue);
-    MonitoringScheduleSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API MonitoringScheduleSummary();
+    AWS_SAGEMAKER_API MonitoringScheduleSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API MonitoringScheduleSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -60,13 +60,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/RateBasedStatement">AWS
    * API Reference</a></p>
    */
-  class AWS_WAFV2_API RateBasedStatement
+  class RateBasedStatement
   {
   public:
-    RateBasedStatement();
-    RateBasedStatement(Aws::Utils::Json::JsonView jsonValue);
-    RateBasedStatement& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WAFV2_API RateBasedStatement();
+    AWS_WAFV2_API RateBasedStatement(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API RateBasedStatement& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -166,7 +166,7 @@ namespace Model
      * nestable <a>Statement</a> in the scope-down statement, and you can nest
      * statements at any level, the same as you can for a rule statement. </p>
      */
-    const Statement& GetScopeDownStatement() const;
+    AWS_WAFV2_API const Statement& GetScopeDownStatement() const;
 
     /**
      * <p>An optional nested statement that narrows the scope of the web requests that
@@ -175,7 +175,7 @@ namespace Model
      * nestable <a>Statement</a> in the scope-down statement, and you can nest
      * statements at any level, the same as you can for a rule statement. </p>
      */
-    bool ScopeDownStatementHasBeenSet() const;
+    AWS_WAFV2_API bool ScopeDownStatementHasBeenSet() const;
 
     /**
      * <p>An optional nested statement that narrows the scope of the web requests that
@@ -184,7 +184,7 @@ namespace Model
      * nestable <a>Statement</a> in the scope-down statement, and you can nest
      * statements at any level, the same as you can for a rule statement. </p>
      */
-    void SetScopeDownStatement(const Statement& value);
+    AWS_WAFV2_API void SetScopeDownStatement(const Statement& value);
 
     /**
      * <p>An optional nested statement that narrows the scope of the web requests that
@@ -193,7 +193,7 @@ namespace Model
      * nestable <a>Statement</a> in the scope-down statement, and you can nest
      * statements at any level, the same as you can for a rule statement. </p>
      */
-    void SetScopeDownStatement(Statement&& value);
+    AWS_WAFV2_API void SetScopeDownStatement(Statement&& value);
 
     /**
      * <p>An optional nested statement that narrows the scope of the web requests that
@@ -202,7 +202,7 @@ namespace Model
      * nestable <a>Statement</a> in the scope-down statement, and you can nest
      * statements at any level, the same as you can for a rule statement. </p>
      */
-    RateBasedStatement& WithScopeDownStatement(const Statement& value);
+    AWS_WAFV2_API RateBasedStatement& WithScopeDownStatement(const Statement& value);
 
     /**
      * <p>An optional nested statement that narrows the scope of the web requests that
@@ -211,7 +211,7 @@ namespace Model
      * nestable <a>Statement</a> in the scope-down statement, and you can nest
      * statements at any level, the same as you can for a rule statement. </p>
      */
-    RateBasedStatement& WithScopeDownStatement(Statement&& value);
+    AWS_WAFV2_API RateBasedStatement& WithScopeDownStatement(Statement&& value);
 
 
     /**

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ProxyConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_KENDRA_API ProxyConfiguration
+  class ProxyConfiguration
   {
   public:
-    ProxyConfiguration();
-    ProxyConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    ProxyConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KENDRA_API ProxyConfiguration();
+    AWS_KENDRA_API ProxyConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API ProxyConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

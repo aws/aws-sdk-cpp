@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/HlsCaptionLanguageMapping">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API HlsCaptionLanguageMapping
+  class HlsCaptionLanguageMapping
   {
   public:
-    HlsCaptionLanguageMapping();
-    HlsCaptionLanguageMapping(Aws::Utils::Json::JsonView jsonValue);
-    HlsCaptionLanguageMapping& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API HlsCaptionLanguageMapping();
+    AWS_MEDIACONVERT_API HlsCaptionLanguageMapping(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API HlsCaptionLanguageMapping& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

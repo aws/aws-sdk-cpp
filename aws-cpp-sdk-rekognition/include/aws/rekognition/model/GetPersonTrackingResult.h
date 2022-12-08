@@ -28,12 +28,12 @@ namespace Rekognition
 {
 namespace Model
 {
-  class AWS_REKOGNITION_API GetPersonTrackingResult
+  class GetPersonTrackingResult
   {
   public:
-    GetPersonTrackingResult();
-    GetPersonTrackingResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetPersonTrackingResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_REKOGNITION_API GetPersonTrackingResult();
+    AWS_REKOGNITION_API GetPersonTrackingResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_REKOGNITION_API GetPersonTrackingResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

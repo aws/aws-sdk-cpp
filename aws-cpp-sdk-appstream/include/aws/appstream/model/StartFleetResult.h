@@ -22,12 +22,12 @@ namespace AppStream
 {
 namespace Model
 {
-  class AWS_APPSTREAM_API StartFleetResult
+  class StartFleetResult
   {
   public:
-    StartFleetResult();
-    StartFleetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    StartFleetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPSTREAM_API StartFleetResult();
+    AWS_APPSTREAM_API StartFleetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPSTREAM_API StartFleetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

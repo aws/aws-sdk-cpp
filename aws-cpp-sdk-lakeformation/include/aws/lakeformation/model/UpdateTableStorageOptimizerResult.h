@@ -24,12 +24,12 @@ namespace LakeFormation
 {
 namespace Model
 {
-  class AWS_LAKEFORMATION_API UpdateTableStorageOptimizerResult
+  class UpdateTableStorageOptimizerResult
   {
   public:
-    UpdateTableStorageOptimizerResult();
-    UpdateTableStorageOptimizerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateTableStorageOptimizerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LAKEFORMATION_API UpdateTableStorageOptimizerResult();
+    AWS_LAKEFORMATION_API UpdateTableStorageOptimizerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LAKEFORMATION_API UpdateTableStorageOptimizerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

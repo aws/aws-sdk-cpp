@@ -31,12 +31,12 @@ namespace IoT
 {
 namespace Model
 {
-  class AWS_IOT_API DescribeDomainConfigurationResult
+  class DescribeDomainConfigurationResult
   {
   public:
-    DescribeDomainConfigurationResult();
-    DescribeDomainConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeDomainConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOT_API DescribeDomainConfigurationResult();
+    AWS_IOT_API DescribeDomainConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOT_API DescribeDomainConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/Component">AWS
    * API Reference</a></p>
    */
-  class AWS_SSMSAP_API Component
+  class Component
   {
   public:
-    Component();
-    Component(Aws::Utils::Json::JsonView jsonValue);
-    Component& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSMSAP_API Component();
+    AWS_SSMSAP_API Component(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSMSAP_API Component& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSMSAP_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

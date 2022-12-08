@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/KeyValuePair">AWS
    * API Reference</a></p>
    */
-  class AWS_BATCH_API KeyValuePair
+  class KeyValuePair
   {
   public:
-    KeyValuePair();
-    KeyValuePair(Aws::Utils::Json::JsonView jsonValue);
-    KeyValuePair& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BATCH_API KeyValuePair();
+    AWS_BATCH_API KeyValuePair(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BATCH_API KeyValuePair& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BATCH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

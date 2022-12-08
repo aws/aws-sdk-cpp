@@ -23,21 +23,21 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/GetWorkUnitResultsResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_LAKEFORMATION_API GetWorkUnitResultsResult
+  class GetWorkUnitResultsResult
   {
   public:
-    GetWorkUnitResultsResult();
+    AWS_LAKEFORMATION_API GetWorkUnitResultsResult();
     //We have to define these because Microsoft doesn't auto generate them
-    GetWorkUnitResultsResult(GetWorkUnitResultsResult&&);
-    GetWorkUnitResultsResult& operator=(GetWorkUnitResultsResult&&);
+    AWS_LAKEFORMATION_API GetWorkUnitResultsResult(GetWorkUnitResultsResult&&);
+    AWS_LAKEFORMATION_API GetWorkUnitResultsResult& operator=(GetWorkUnitResultsResult&&);
     //we delete these because Microsoft doesn't handle move generation correctly
     //and we therefore don't trust them to get it right here either.
     GetWorkUnitResultsResult(const GetWorkUnitResultsResult&) = delete;
     GetWorkUnitResultsResult& operator=(const GetWorkUnitResultsResult&) = delete;
 
 
-    GetWorkUnitResultsResult(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
-    GetWorkUnitResultsResult& operator=(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
+    AWS_LAKEFORMATION_API GetWorkUnitResultsResult(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
+    AWS_LAKEFORMATION_API GetWorkUnitResultsResult& operator=(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
 
 
 

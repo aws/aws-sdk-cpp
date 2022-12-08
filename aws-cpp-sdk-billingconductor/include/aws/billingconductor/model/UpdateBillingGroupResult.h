@@ -25,12 +25,12 @@ namespace BillingConductor
 {
 namespace Model
 {
-  class AWS_BILLINGCONDUCTOR_API UpdateBillingGroupResult
+  class UpdateBillingGroupResult
   {
   public:
-    UpdateBillingGroupResult();
-    UpdateBillingGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateBillingGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_BILLINGCONDUCTOR_API UpdateBillingGroupResult();
+    AWS_BILLINGCONDUCTOR_API UpdateBillingGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_BILLINGCONDUCTOR_API UpdateBillingGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

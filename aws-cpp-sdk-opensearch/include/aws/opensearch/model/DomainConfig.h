@@ -43,13 +43,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DomainConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_OPENSEARCHSERVICE_API DomainConfig
+  class DomainConfig
   {
   public:
-    DomainConfig();
-    DomainConfig(Aws::Utils::Json::JsonView jsonValue);
-    DomainConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OPENSEARCHSERVICE_API DomainConfig();
+    AWS_OPENSEARCHSERVICE_API DomainConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPENSEARCHSERVICE_API DomainConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPENSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -30,12 +30,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateStackOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFORMATION_API CreateStackResult
+  class CreateStackResult
   {
   public:
-    CreateStackResult();
-    CreateStackResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    CreateStackResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_CLOUDFORMATION_API CreateStackResult();
+    AWS_CLOUDFORMATION_API CreateStackResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_CLOUDFORMATION_API CreateStackResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

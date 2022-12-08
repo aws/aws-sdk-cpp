@@ -34,12 +34,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ScanOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_DYNAMODB_API ScanResult
+  class ScanResult
   {
   public:
-    ScanResult();
-    ScanResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ScanResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DYNAMODB_API ScanResult();
+    AWS_DYNAMODB_API ScanResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DYNAMODB_API ScanResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

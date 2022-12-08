@@ -24,12 +24,12 @@ namespace WorkSpacesWeb
 {
 namespace Model
 {
-  class AWS_WORKSPACESWEB_API AssociateUserAccessLoggingSettingsResult
+  class AssociateUserAccessLoggingSettingsResult
   {
   public:
-    AssociateUserAccessLoggingSettingsResult();
-    AssociateUserAccessLoggingSettingsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AssociateUserAccessLoggingSettingsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WORKSPACESWEB_API AssociateUserAccessLoggingSettingsResult();
+    AWS_WORKSPACESWEB_API AssociateUserAccessLoggingSettingsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WORKSPACESWEB_API AssociateUserAccessLoggingSettingsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

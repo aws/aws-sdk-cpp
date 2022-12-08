@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/Action">AWS API
    * Reference</a></p>
    */
-  class AWS_BUDGETS_API Action
+  class Action
   {
   public:
-    Action();
-    Action(Aws::Utils::Json::JsonView jsonValue);
-    Action& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BUDGETS_API Action();
+    AWS_BUDGETS_API Action(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BUDGETS_API Action& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BUDGETS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

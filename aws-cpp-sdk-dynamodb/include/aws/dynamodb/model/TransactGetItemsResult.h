@@ -26,12 +26,12 @@ namespace DynamoDB
 {
 namespace Model
 {
-  class AWS_DYNAMODB_API TransactGetItemsResult
+  class TransactGetItemsResult
   {
   public:
-    TransactGetItemsResult();
-    TransactGetItemsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    TransactGetItemsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DYNAMODB_API TransactGetItemsResult();
+    AWS_DYNAMODB_API TransactGetItemsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DYNAMODB_API TransactGetItemsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

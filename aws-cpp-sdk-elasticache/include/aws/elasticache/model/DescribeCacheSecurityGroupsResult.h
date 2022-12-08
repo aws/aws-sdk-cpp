@@ -33,12 +33,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CacheSecurityGroupMessage">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICACHE_API DescribeCacheSecurityGroupsResult
+  class DescribeCacheSecurityGroupsResult
   {
   public:
-    DescribeCacheSecurityGroupsResult();
-    DescribeCacheSecurityGroupsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeCacheSecurityGroupsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ELASTICACHE_API DescribeCacheSecurityGroupsResult();
+    AWS_ELASTICACHE_API DescribeCacheSecurityGroupsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ELASTICACHE_API DescribeCacheSecurityGroupsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

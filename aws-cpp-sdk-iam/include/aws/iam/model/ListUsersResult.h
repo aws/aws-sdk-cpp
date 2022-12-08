@@ -33,12 +33,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListUsersResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_IAM_API ListUsersResult
+  class ListUsersResult
   {
   public:
-    ListUsersResult();
-    ListUsersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ListUsersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_IAM_API ListUsersResult();
+    AWS_IAM_API ListUsersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_IAM_API ListUsersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

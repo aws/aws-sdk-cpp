@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ImageVersion">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API ImageVersion
+  class ImageVersion
   {
   public:
-    ImageVersion();
-    ImageVersion(Aws::Utils::Json::JsonView jsonValue);
-    ImageVersion& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API ImageVersion();
+    AWS_SAGEMAKER_API ImageVersion(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API ImageVersion& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

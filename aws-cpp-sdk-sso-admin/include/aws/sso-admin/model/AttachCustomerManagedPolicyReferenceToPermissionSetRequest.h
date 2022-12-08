@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_SSOADMIN_API AttachCustomerManagedPolicyReferenceToPermissionSetRequest : public SSOAdminRequest
+  class AttachCustomerManagedPolicyReferenceToPermissionSetRequest : public SSOAdminRequest
   {
   public:
-    AttachCustomerManagedPolicyReferenceToPermissionSetRequest();
+    AWS_SSOADMIN_API AttachCustomerManagedPolicyReferenceToPermissionSetRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,9 +30,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "AttachCustomerManagedPolicyReferenceToPermissionSet"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SSOADMIN_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_SSOADMIN_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**

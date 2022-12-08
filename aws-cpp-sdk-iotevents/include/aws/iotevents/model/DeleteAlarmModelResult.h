@@ -22,12 +22,12 @@ namespace IoTEvents
 {
 namespace Model
 {
-  class AWS_IOTEVENTS_API DeleteAlarmModelResult
+  class DeleteAlarmModelResult
   {
   public:
-    DeleteAlarmModelResult();
-    DeleteAlarmModelResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteAlarmModelResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOTEVENTS_API DeleteAlarmModelResult();
+    AWS_IOTEVENTS_API DeleteAlarmModelResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOTEVENTS_API DeleteAlarmModelResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

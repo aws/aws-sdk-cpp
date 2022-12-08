@@ -26,13 +26,13 @@ namespace EFS
 namespace Model
 {
 
-  class AWS_EFS_API ReplicationConfigurationDescription
+  class ReplicationConfigurationDescription
   {
   public:
-    ReplicationConfigurationDescription();
-    ReplicationConfigurationDescription(Aws::Utils::Json::JsonView jsonValue);
-    ReplicationConfigurationDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EFS_API ReplicationConfigurationDescription();
+    AWS_EFS_API ReplicationConfigurationDescription(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EFS_API ReplicationConfigurationDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EFS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

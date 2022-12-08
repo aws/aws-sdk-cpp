@@ -31,12 +31,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeAgentVersionsResult">AWS
    * API Reference</a></p>
    */
-  class AWS_OPSWORKS_API DescribeAgentVersionsResult
+  class DescribeAgentVersionsResult
   {
   public:
-    DescribeAgentVersionsResult();
-    DescribeAgentVersionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeAgentVersionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OPSWORKS_API DescribeAgentVersionsResult();
+    AWS_OPSWORKS_API DescribeAgentVersionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OPSWORKS_API DescribeAgentVersionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

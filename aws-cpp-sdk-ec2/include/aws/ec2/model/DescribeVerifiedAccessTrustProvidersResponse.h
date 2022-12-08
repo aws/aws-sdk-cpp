@@ -27,12 +27,12 @@ namespace EC2
 {
 namespace Model
 {
-  class AWS_EC2_API DescribeVerifiedAccessTrustProvidersResponse
+  class DescribeVerifiedAccessTrustProvidersResponse
   {
   public:
-    DescribeVerifiedAccessTrustProvidersResponse();
-    DescribeVerifiedAccessTrustProvidersResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeVerifiedAccessTrustProvidersResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API DescribeVerifiedAccessTrustProvidersResponse();
+    AWS_EC2_API DescribeVerifiedAccessTrustProvidersResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API DescribeVerifiedAccessTrustProvidersResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

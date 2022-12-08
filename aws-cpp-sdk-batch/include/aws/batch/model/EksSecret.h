@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/EksSecret">AWS API
    * Reference</a></p>
    */
-  class AWS_BATCH_API EksSecret
+  class EksSecret
   {
   public:
-    EksSecret();
-    EksSecret(Aws::Utils::Json::JsonView jsonValue);
-    EksSecret& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BATCH_API EksSecret();
+    AWS_BATCH_API EksSecret(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BATCH_API EksSecret& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BATCH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

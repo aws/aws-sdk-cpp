@@ -22,12 +22,12 @@ namespace SecurityHub
 {
 namespace Model
 {
-  class AWS_SECURITYHUB_API UpdateStandardsControlResult
+  class UpdateStandardsControlResult
   {
   public:
-    UpdateStandardsControlResult();
-    UpdateStandardsControlResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateStandardsControlResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SECURITYHUB_API UpdateStandardsControlResult();
+    AWS_SECURITYHUB_API UpdateStandardsControlResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SECURITYHUB_API UpdateStandardsControlResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

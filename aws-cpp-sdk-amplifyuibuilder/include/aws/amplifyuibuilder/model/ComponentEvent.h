@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/ComponentEvent">AWS
    * API Reference</a></p>
    */
-  class AWS_AMPLIFYUIBUILDER_API ComponentEvent
+  class ComponentEvent
   {
   public:
-    ComponentEvent();
-    ComponentEvent(Aws::Utils::Json::JsonView jsonValue);
-    ComponentEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_AMPLIFYUIBUILDER_API ComponentEvent();
+    AWS_AMPLIFYUIBUILDER_API ComponentEvent(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFYUIBUILDER_API ComponentEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFYUIBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

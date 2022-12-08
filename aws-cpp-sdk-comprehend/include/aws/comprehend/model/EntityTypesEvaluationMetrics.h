@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/EntityTypesEvaluationMetrics">AWS
    * API Reference</a></p>
    */
-  class AWS_COMPREHEND_API EntityTypesEvaluationMetrics
+  class EntityTypesEvaluationMetrics
   {
   public:
-    EntityTypesEvaluationMetrics();
-    EntityTypesEvaluationMetrics(Aws::Utils::Json::JsonView jsonValue);
-    EntityTypesEvaluationMetrics& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COMPREHEND_API EntityTypesEvaluationMetrics();
+    AWS_COMPREHEND_API EntityTypesEvaluationMetrics(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHEND_API EntityTypesEvaluationMetrics& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHEND_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

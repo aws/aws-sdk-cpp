@@ -31,12 +31,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/PurchaseReservedElasticsearchInstanceOfferingResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICSEARCHSERVICE_API PurchaseReservedElasticsearchInstanceOfferingResult
+  class PurchaseReservedElasticsearchInstanceOfferingResult
   {
   public:
-    PurchaseReservedElasticsearchInstanceOfferingResult();
-    PurchaseReservedElasticsearchInstanceOfferingResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PurchaseReservedElasticsearchInstanceOfferingResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ELASTICSEARCHSERVICE_API PurchaseReservedElasticsearchInstanceOfferingResult();
+    AWS_ELASTICSEARCHSERVICE_API PurchaseReservedElasticsearchInstanceOfferingResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ELASTICSEARCHSERVICE_API PurchaseReservedElasticsearchInstanceOfferingResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

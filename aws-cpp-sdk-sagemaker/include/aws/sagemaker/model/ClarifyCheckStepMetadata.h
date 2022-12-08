@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ClarifyCheckStepMetadata">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API ClarifyCheckStepMetadata
+  class ClarifyCheckStepMetadata
   {
   public:
-    ClarifyCheckStepMetadata();
-    ClarifyCheckStepMetadata(Aws::Utils::Json::JsonView jsonValue);
-    ClarifyCheckStepMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API ClarifyCheckStepMetadata();
+    AWS_SAGEMAKER_API ClarifyCheckStepMetadata(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API ClarifyCheckStepMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

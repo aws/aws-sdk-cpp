@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/runtime.lex-2016-11-28/IntentSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXRUNTIMESERVICE_API IntentSummary
+  class IntentSummary
   {
   public:
-    IntentSummary();
-    IntentSummary(Aws::Utils::Json::JsonView jsonValue);
-    IntentSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXRUNTIMESERVICE_API IntentSummary();
+    AWS_LEXRUNTIMESERVICE_API IntentSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXRUNTIMESERVICE_API IntentSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXRUNTIMESERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

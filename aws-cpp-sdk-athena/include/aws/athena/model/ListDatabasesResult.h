@@ -26,12 +26,12 @@ namespace Athena
 {
 namespace Model
 {
-  class AWS_ATHENA_API ListDatabasesResult
+  class ListDatabasesResult
   {
   public:
-    ListDatabasesResult();
-    ListDatabasesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListDatabasesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ATHENA_API ListDatabasesResult();
+    AWS_ATHENA_API ListDatabasesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ATHENA_API ListDatabasesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/VPCEConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_DEVICEFARM_API VPCEConfiguration
+  class VPCEConfiguration
   {
   public:
-    VPCEConfiguration();
-    VPCEConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    VPCEConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DEVICEFARM_API VPCEConfiguration();
+    AWS_DEVICEFARM_API VPCEConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVICEFARM_API VPCEConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVICEFARM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -26,12 +26,12 @@ namespace Omics
 {
 namespace Model
 {
-  class AWS_OMICS_API ListRunGroupsResult
+  class ListRunGroupsResult
   {
   public:
-    ListRunGroupsResult();
-    ListRunGroupsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListRunGroupsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OMICS_API ListRunGroupsResult();
+    AWS_OMICS_API ListRunGroupsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OMICS_API ListRunGroupsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

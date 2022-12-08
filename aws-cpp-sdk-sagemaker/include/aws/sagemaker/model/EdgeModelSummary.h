@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/EdgeModelSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API EdgeModelSummary
+  class EdgeModelSummary
   {
   public:
-    EdgeModelSummary();
-    EdgeModelSummary(Aws::Utils::Json::JsonView jsonValue);
-    EdgeModelSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API EdgeModelSummary();
+    AWS_SAGEMAKER_API EdgeModelSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API EdgeModelSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

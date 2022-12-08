@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/runtime.lex-2016-11-28/PredictedIntent">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXRUNTIMESERVICE_API PredictedIntent
+  class PredictedIntent
   {
   public:
-    PredictedIntent();
-    PredictedIntent(Aws::Utils::Json::JsonView jsonValue);
-    PredictedIntent& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXRUNTIMESERVICE_API PredictedIntent();
+    AWS_LEXRUNTIMESERVICE_API PredictedIntent(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXRUNTIMESERVICE_API PredictedIntent& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXRUNTIMESERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

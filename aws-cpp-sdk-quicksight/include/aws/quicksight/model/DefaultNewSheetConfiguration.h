@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DefaultNewSheetConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API DefaultNewSheetConfiguration
+  class DefaultNewSheetConfiguration
   {
   public:
-    DefaultNewSheetConfiguration();
-    DefaultNewSheetConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    DefaultNewSheetConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API DefaultNewSheetConfiguration();
+    AWS_QUICKSIGHT_API DefaultNewSheetConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API DefaultNewSheetConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

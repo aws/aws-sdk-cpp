@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-edge-2020-09-23/DeploymentResult">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKEREDGEMANAGER_API DeploymentResult
+  class DeploymentResult
   {
   public:
-    DeploymentResult();
-    DeploymentResult(Aws::Utils::Json::JsonView jsonValue);
-    DeploymentResult& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKEREDGEMANAGER_API DeploymentResult();
+    AWS_SAGEMAKEREDGEMANAGER_API DeploymentResult(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKEREDGEMANAGER_API DeploymentResult& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKEREDGEMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -26,12 +26,12 @@ namespace SageMaker
 {
 namespace Model
 {
-  class AWS_SAGEMAKER_API ListPipelineExecutionStepsResult
+  class ListPipelineExecutionStepsResult
   {
   public:
-    ListPipelineExecutionStepsResult();
-    ListPipelineExecutionStepsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListPipelineExecutionStepsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SAGEMAKER_API ListPipelineExecutionStepsResult();
+    AWS_SAGEMAKER_API ListPipelineExecutionStepsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SAGEMAKER_API ListPipelineExecutionStepsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -24,12 +24,12 @@ namespace DatabaseMigrationService
 {
 namespace Model
 {
-  class AWS_DATABASEMIGRATIONSERVICE_API ReloadTablesResult
+  class ReloadTablesResult
   {
   public:
-    ReloadTablesResult();
-    ReloadTablesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ReloadTablesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DATABASEMIGRATIONSERVICE_API ReloadTablesResult();
+    AWS_DATABASEMIGRATIONSERVICE_API ReloadTablesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DATABASEMIGRATIONSERVICE_API ReloadTablesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

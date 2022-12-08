@@ -24,12 +24,12 @@ namespace FSx
 {
 namespace Model
 {
-  class AWS_FSX_API CreateDataRepositoryAssociationResult
+  class CreateDataRepositoryAssociationResult
   {
   public:
-    CreateDataRepositoryAssociationResult();
-    CreateDataRepositoryAssociationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateDataRepositoryAssociationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_FSX_API CreateDataRepositoryAssociationResult();
+    AWS_FSX_API CreateDataRepositoryAssociationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_FSX_API CreateDataRepositoryAssociationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

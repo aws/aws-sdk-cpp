@@ -31,12 +31,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetApplicationsOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEDEPLOY_API BatchGetApplicationsResult
+  class BatchGetApplicationsResult
   {
   public:
-    BatchGetApplicationsResult();
-    BatchGetApplicationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    BatchGetApplicationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODEDEPLOY_API BatchGetApplicationsResult();
+    AWS_CODEDEPLOY_API BatchGetApplicationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODEDEPLOY_API BatchGetApplicationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

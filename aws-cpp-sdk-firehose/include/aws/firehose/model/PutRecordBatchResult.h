@@ -25,12 +25,12 @@ namespace Firehose
 {
 namespace Model
 {
-  class AWS_FIREHOSE_API PutRecordBatchResult
+  class PutRecordBatchResult
   {
   public:
-    PutRecordBatchResult();
-    PutRecordBatchResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PutRecordBatchResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_FIREHOSE_API PutRecordBatchResult();
+    AWS_FIREHOSE_API PutRecordBatchResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_FIREHOSE_API PutRecordBatchResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

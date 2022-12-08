@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/SelfManagedActiveDirectoryConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_FSX_API SelfManagedActiveDirectoryConfiguration
+  class SelfManagedActiveDirectoryConfiguration
   {
   public:
-    SelfManagedActiveDirectoryConfiguration();
-    SelfManagedActiveDirectoryConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    SelfManagedActiveDirectoryConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FSX_API SelfManagedActiveDirectoryConfiguration();
+    AWS_FSX_API SelfManagedActiveDirectoryConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API SelfManagedActiveDirectoryConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

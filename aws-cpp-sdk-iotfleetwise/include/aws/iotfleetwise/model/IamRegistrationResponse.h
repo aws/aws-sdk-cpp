@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/IamRegistrationResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTFLEETWISE_API IamRegistrationResponse
+  class IamRegistrationResponse
   {
   public:
-    IamRegistrationResponse();
-    IamRegistrationResponse(Aws::Utils::Json::JsonView jsonValue);
-    IamRegistrationResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTFLEETWISE_API IamRegistrationResponse();
+    AWS_IOTFLEETWISE_API IamRegistrationResponse(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTFLEETWISE_API IamRegistrationResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTFLEETWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

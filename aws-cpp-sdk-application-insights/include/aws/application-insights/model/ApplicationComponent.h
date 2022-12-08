@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/ApplicationComponent">AWS
    * API Reference</a></p>
    */
-  class AWS_APPLICATIONINSIGHTS_API ApplicationComponent
+  class ApplicationComponent
   {
   public:
-    ApplicationComponent();
-    ApplicationComponent(Aws::Utils::Json::JsonView jsonValue);
-    ApplicationComponent& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPLICATIONINSIGHTS_API ApplicationComponent();
+    AWS_APPLICATIONINSIGHTS_API ApplicationComponent(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPLICATIONINSIGHTS_API ApplicationComponent& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPLICATIONINSIGHTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

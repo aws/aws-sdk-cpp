@@ -22,12 +22,12 @@ namespace ServiceDiscovery
 {
 namespace Model
 {
-  class AWS_SERVICEDISCOVERY_API TagResourceResult
+  class TagResourceResult
   {
   public:
-    TagResourceResult();
-    TagResourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    TagResourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SERVICEDISCOVERY_API TagResourceResult();
+    AWS_SERVICEDISCOVERY_API TagResourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SERVICEDISCOVERY_API TagResourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

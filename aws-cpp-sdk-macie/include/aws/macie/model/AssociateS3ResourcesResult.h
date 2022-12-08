@@ -25,12 +25,12 @@ namespace Macie
 {
 namespace Model
 {
-  class AWS_MACIE_API AssociateS3ResourcesResult
+  class AssociateS3ResourcesResult
   {
   public:
-    AssociateS3ResourcesResult();
-    AssociateS3ResourcesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AssociateS3ResourcesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MACIE_API AssociateS3ResourcesResult();
+    AWS_MACIE_API AssociateS3ResourcesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MACIE_API AssociateS3ResourcesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -31,12 +31,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DefineSuggesterResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDSEARCH_API DefineSuggesterResult
+  class DefineSuggesterResult
   {
   public:
-    DefineSuggesterResult();
-    DefineSuggesterResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DefineSuggesterResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_CLOUDSEARCH_API DefineSuggesterResult();
+    AWS_CLOUDSEARCH_API DefineSuggesterResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_CLOUDSEARCH_API DefineSuggesterResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     

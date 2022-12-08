@@ -31,15 +31,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ReservedNodeConfigurationOption">AWS
    * API Reference</a></p>
    */
-  class AWS_REDSHIFT_API ReservedNodeConfigurationOption
+  class ReservedNodeConfigurationOption
   {
   public:
-    ReservedNodeConfigurationOption();
-    ReservedNodeConfigurationOption(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ReservedNodeConfigurationOption& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_REDSHIFT_API ReservedNodeConfigurationOption();
+    AWS_REDSHIFT_API ReservedNodeConfigurationOption(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_REDSHIFT_API ReservedNodeConfigurationOption& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_REDSHIFT_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_REDSHIFT_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     

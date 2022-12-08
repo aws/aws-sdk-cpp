@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/DeploymentLaunchConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_ROBOMAKER_API DeploymentLaunchConfig
+  class DeploymentLaunchConfig
   {
   public:
-    DeploymentLaunchConfig();
-    DeploymentLaunchConfig(Aws::Utils::Json::JsonView jsonValue);
-    DeploymentLaunchConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ROBOMAKER_API DeploymentLaunchConfig();
+    AWS_ROBOMAKER_API DeploymentLaunchConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROBOMAKER_API DeploymentLaunchConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROBOMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

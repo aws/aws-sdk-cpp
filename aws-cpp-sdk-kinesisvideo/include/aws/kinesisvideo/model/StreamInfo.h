@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/StreamInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_KINESISVIDEO_API StreamInfo
+  class StreamInfo
   {
   public:
-    StreamInfo();
-    StreamInfo(Aws::Utils::Json::JsonView jsonValue);
-    StreamInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KINESISVIDEO_API StreamInfo();
+    AWS_KINESISVIDEO_API StreamInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISVIDEO_API StreamInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISVIDEO_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

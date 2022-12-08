@@ -36,12 +36,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/Lag">AWS
    * API Reference</a></p>
    */
-  class AWS_DIRECTCONNECT_API DeleteLagResult
+  class DeleteLagResult
   {
   public:
-    DeleteLagResult();
-    DeleteLagResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteLagResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DIRECTCONNECT_API DeleteLagResult();
+    AWS_DIRECTCONNECT_API DeleteLagResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DIRECTCONNECT_API DeleteLagResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

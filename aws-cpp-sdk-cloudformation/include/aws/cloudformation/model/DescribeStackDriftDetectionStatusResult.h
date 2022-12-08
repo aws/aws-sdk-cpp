@@ -28,12 +28,12 @@ namespace CloudFormation
 {
 namespace Model
 {
-  class AWS_CLOUDFORMATION_API DescribeStackDriftDetectionStatusResult
+  class DescribeStackDriftDetectionStatusResult
   {
   public:
-    DescribeStackDriftDetectionStatusResult();
-    DescribeStackDriftDetectionStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeStackDriftDetectionStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_CLOUDFORMATION_API DescribeStackDriftDetectionStatusResult();
+    AWS_CLOUDFORMATION_API DescribeStackDriftDetectionStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_CLOUDFORMATION_API DescribeStackDriftDetectionStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

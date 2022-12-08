@@ -25,12 +25,12 @@ namespace Redshift
 {
 namespace Model
 {
-  class AWS_REDSHIFT_API CreateAuthenticationProfileResult
+  class CreateAuthenticationProfileResult
   {
   public:
-    CreateAuthenticationProfileResult();
-    CreateAuthenticationProfileResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    CreateAuthenticationProfileResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_REDSHIFT_API CreateAuthenticationProfileResult();
+    AWS_REDSHIFT_API CreateAuthenticationProfileResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_REDSHIFT_API CreateAuthenticationProfileResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

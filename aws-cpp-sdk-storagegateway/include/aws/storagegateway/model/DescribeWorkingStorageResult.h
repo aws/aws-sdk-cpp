@@ -30,12 +30,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeWorkingStorageOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_STORAGEGATEWAY_API DescribeWorkingStorageResult
+  class DescribeWorkingStorageResult
   {
   public:
-    DescribeWorkingStorageResult();
-    DescribeWorkingStorageResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeWorkingStorageResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_STORAGEGATEWAY_API DescribeWorkingStorageResult();
+    AWS_STORAGEGATEWAY_API DescribeWorkingStorageResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_STORAGEGATEWAY_API DescribeWorkingStorageResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     

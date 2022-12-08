@@ -30,12 +30,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SetIdentityHeadersInNotificationsEnabledResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_SES_API SetIdentityHeadersInNotificationsEnabledResult
+  class SetIdentityHeadersInNotificationsEnabledResult
   {
   public:
-    SetIdentityHeadersInNotificationsEnabledResult();
-    SetIdentityHeadersInNotificationsEnabledResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    SetIdentityHeadersInNotificationsEnabledResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_SES_API SetIdentityHeadersInNotificationsEnabledResult();
+    AWS_SES_API SetIdentityHeadersInNotificationsEnabledResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_SES_API SetIdentityHeadersInNotificationsEnabledResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     

@@ -37,13 +37,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CertificateBasedAuthProperties">AWS
    * API Reference</a></p>
    */
-  class AWS_APPSTREAM_API CertificateBasedAuthProperties
+  class CertificateBasedAuthProperties
   {
   public:
-    CertificateBasedAuthProperties();
-    CertificateBasedAuthProperties(Aws::Utils::Json::JsonView jsonValue);
-    CertificateBasedAuthProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPSTREAM_API CertificateBasedAuthProperties();
+    AWS_APPSTREAM_API CertificateBasedAuthProperties(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPSTREAM_API CertificateBasedAuthProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPSTREAM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

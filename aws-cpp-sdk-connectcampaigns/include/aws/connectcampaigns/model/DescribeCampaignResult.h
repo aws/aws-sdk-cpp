@@ -29,12 +29,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/connectcampaigns-2021-01-30/DescribeCampaignResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECTCAMPAIGNS_API DescribeCampaignResult
+  class DescribeCampaignResult
   {
   public:
-    DescribeCampaignResult();
-    DescribeCampaignResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeCampaignResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CONNECTCAMPAIGNS_API DescribeCampaignResult();
+    AWS_CONNECTCAMPAIGNS_API DescribeCampaignResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CONNECTCAMPAIGNS_API DescribeCampaignResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     

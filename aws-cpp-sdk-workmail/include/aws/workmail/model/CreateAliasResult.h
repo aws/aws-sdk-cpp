@@ -22,12 +22,12 @@ namespace WorkMail
 {
 namespace Model
 {
-  class AWS_WORKMAIL_API CreateAliasResult
+  class CreateAliasResult
   {
   public:
-    CreateAliasResult();
-    CreateAliasResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateAliasResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WORKMAIL_API CreateAliasResult();
+    AWS_WORKMAIL_API CreateAliasResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WORKMAIL_API CreateAliasResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

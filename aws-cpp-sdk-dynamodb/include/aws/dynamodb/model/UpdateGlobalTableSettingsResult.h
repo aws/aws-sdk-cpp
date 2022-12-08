@@ -26,12 +26,12 @@ namespace DynamoDB
 {
 namespace Model
 {
-  class AWS_DYNAMODB_API UpdateGlobalTableSettingsResult
+  class UpdateGlobalTableSettingsResult
   {
   public:
-    UpdateGlobalTableSettingsResult();
-    UpdateGlobalTableSettingsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateGlobalTableSettingsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DYNAMODB_API UpdateGlobalTableSettingsResult();
+    AWS_DYNAMODB_API UpdateGlobalTableSettingsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DYNAMODB_API UpdateGlobalTableSettingsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

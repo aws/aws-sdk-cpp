@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/AccountAggregationResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_INSPECTOR2_API AccountAggregationResponse
+  class AccountAggregationResponse
   {
   public:
-    AccountAggregationResponse();
-    AccountAggregationResponse(Aws::Utils::Json::JsonView jsonValue);
-    AccountAggregationResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_INSPECTOR2_API AccountAggregationResponse();
+    AWS_INSPECTOR2_API AccountAggregationResponse(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR2_API AccountAggregationResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

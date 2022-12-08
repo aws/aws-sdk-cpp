@@ -25,12 +25,12 @@ namespace SSMContacts
 {
 namespace Model
 {
-  class AWS_SSMCONTACTS_API DescribeEngagementResult
+  class DescribeEngagementResult
   {
   public:
-    DescribeEngagementResult();
-    DescribeEngagementResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeEngagementResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSMCONTACTS_API DescribeEngagementResult();
+    AWS_SSMCONTACTS_API DescribeEngagementResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSMCONTACTS_API DescribeEngagementResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

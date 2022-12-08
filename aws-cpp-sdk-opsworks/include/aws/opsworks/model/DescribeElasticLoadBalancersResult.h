@@ -31,12 +31,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeElasticLoadBalancersResult">AWS
    * API Reference</a></p>
    */
-  class AWS_OPSWORKS_API DescribeElasticLoadBalancersResult
+  class DescribeElasticLoadBalancersResult
   {
   public:
-    DescribeElasticLoadBalancersResult();
-    DescribeElasticLoadBalancersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeElasticLoadBalancersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OPSWORKS_API DescribeElasticLoadBalancersResult();
+    AWS_OPSWORKS_API DescribeElasticLoadBalancersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OPSWORKS_API DescribeElasticLoadBalancersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

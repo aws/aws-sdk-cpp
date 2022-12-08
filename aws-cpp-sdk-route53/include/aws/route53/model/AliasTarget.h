@@ -33,14 +33,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/AliasTarget">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53_API AliasTarget
+  class AliasTarget
   {
   public:
-    AliasTarget();
-    AliasTarget(const Aws::Utils::Xml::XmlNode& xmlNode);
-    AliasTarget& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ROUTE53_API AliasTarget();
+    AWS_ROUTE53_API AliasTarget(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ROUTE53_API AliasTarget& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_ROUTE53_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**

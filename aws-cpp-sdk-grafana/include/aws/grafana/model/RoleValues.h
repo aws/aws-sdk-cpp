@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/RoleValues">AWS
    * API Reference</a></p>
    */
-  class AWS_MANAGEDGRAFANA_API RoleValues
+  class RoleValues
   {
   public:
-    RoleValues();
-    RoleValues(Aws::Utils::Json::JsonView jsonValue);
-    RoleValues& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MANAGEDGRAFANA_API RoleValues();
+    AWS_MANAGEDGRAFANA_API RoleValues(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MANAGEDGRAFANA_API RoleValues& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MANAGEDGRAFANA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

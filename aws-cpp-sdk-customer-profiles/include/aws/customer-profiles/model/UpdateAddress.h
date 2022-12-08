@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/UpdateAddress">AWS
    * API Reference</a></p>
    */
-  class AWS_CUSTOMERPROFILES_API UpdateAddress
+  class UpdateAddress
   {
   public:
-    UpdateAddress();
-    UpdateAddress(Aws::Utils::Json::JsonView jsonValue);
-    UpdateAddress& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CUSTOMERPROFILES_API UpdateAddress();
+    AWS_CUSTOMERPROFILES_API UpdateAddress(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CUSTOMERPROFILES_API UpdateAddress& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CUSTOMERPROFILES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

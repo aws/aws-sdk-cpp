@@ -26,12 +26,12 @@ namespace RAM
 {
 namespace Model
 {
-  class AWS_RAM_API ListPermissionVersionsResult
+  class ListPermissionVersionsResult
   {
   public:
-    ListPermissionVersionsResult();
-    ListPermissionVersionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListPermissionVersionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_RAM_API ListPermissionVersionsResult();
+    AWS_RAM_API ListPermissionVersionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_RAM_API ListPermissionVersionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

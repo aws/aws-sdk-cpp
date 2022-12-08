@@ -22,12 +22,12 @@ namespace Macie2
 {
 namespace Model
 {
-  class AWS_MACIE2_API DescribeOrganizationConfigurationResult
+  class DescribeOrganizationConfigurationResult
   {
   public:
-    DescribeOrganizationConfigurationResult();
-    DescribeOrganizationConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeOrganizationConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MACIE2_API DescribeOrganizationConfigurationResult();
+    AWS_MACIE2_API DescribeOrganizationConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MACIE2_API DescribeOrganizationConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

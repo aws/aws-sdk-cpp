@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/NetworkFirewallBlackHoleRouteDetectedViolation">AWS
    * API Reference</a></p>
    */
-  class AWS_FMS_API NetworkFirewallBlackHoleRouteDetectedViolation
+  class NetworkFirewallBlackHoleRouteDetectedViolation
   {
   public:
-    NetworkFirewallBlackHoleRouteDetectedViolation();
-    NetworkFirewallBlackHoleRouteDetectedViolation(Aws::Utils::Json::JsonView jsonValue);
-    NetworkFirewallBlackHoleRouteDetectedViolation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FMS_API NetworkFirewallBlackHoleRouteDetectedViolation();
+    AWS_FMS_API NetworkFirewallBlackHoleRouteDetectedViolation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FMS_API NetworkFirewallBlackHoleRouteDetectedViolation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ImportResourceSpecification">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELSV2_API ImportResourceSpecification
+  class ImportResourceSpecification
   {
   public:
-    ImportResourceSpecification();
-    ImportResourceSpecification(Aws::Utils::Json::JsonView jsonValue);
-    ImportResourceSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELSV2_API ImportResourceSpecification();
+    AWS_LEXMODELSV2_API ImportResourceSpecification(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API ImportResourceSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -26,12 +26,12 @@ namespace Redshift
 {
 namespace Model
 {
-  class AWS_REDSHIFT_API DescribeAccountAttributesResult
+  class DescribeAccountAttributesResult
   {
   public:
-    DescribeAccountAttributesResult();
-    DescribeAccountAttributesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeAccountAttributesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_REDSHIFT_API DescribeAccountAttributesResult();
+    AWS_REDSHIFT_API DescribeAccountAttributesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_REDSHIFT_API DescribeAccountAttributesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

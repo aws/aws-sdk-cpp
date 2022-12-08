@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/DatastoreStorageSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTANALYTICS_API DatastoreStorageSummary
+  class DatastoreStorageSummary
   {
   public:
-    DatastoreStorageSummary();
-    DatastoreStorageSummary(Aws::Utils::Json::JsonView jsonValue);
-    DatastoreStorageSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTANALYTICS_API DatastoreStorageSummary();
+    AWS_IOTANALYTICS_API DatastoreStorageSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTANALYTICS_API DatastoreStorageSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

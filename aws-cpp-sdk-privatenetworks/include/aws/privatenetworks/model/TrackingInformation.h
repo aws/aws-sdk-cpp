@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/privatenetworks-2021-12-03/TrackingInformation">AWS
    * API Reference</a></p>
    */
-  class AWS_PRIVATENETWORKS_API TrackingInformation
+  class TrackingInformation
   {
   public:
-    TrackingInformation();
-    TrackingInformation(Aws::Utils::Json::JsonView jsonValue);
-    TrackingInformation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PRIVATENETWORKS_API TrackingInformation();
+    AWS_PRIVATENETWORKS_API TrackingInformation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PRIVATENETWORKS_API TrackingInformation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PRIVATENETWORKS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

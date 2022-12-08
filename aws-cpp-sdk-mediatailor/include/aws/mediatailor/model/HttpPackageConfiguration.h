@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/HttpPackageConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIATAILOR_API HttpPackageConfiguration
+  class HttpPackageConfiguration
   {
   public:
-    HttpPackageConfiguration();
-    HttpPackageConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    HttpPackageConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIATAILOR_API HttpPackageConfiguration();
+    AWS_MEDIATAILOR_API HttpPackageConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIATAILOR_API HttpPackageConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIATAILOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

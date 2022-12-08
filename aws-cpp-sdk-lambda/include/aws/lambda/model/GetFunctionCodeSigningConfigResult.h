@@ -24,12 +24,12 @@ namespace Lambda
 {
 namespace Model
 {
-  class AWS_LAMBDA_API GetFunctionCodeSigningConfigResult
+  class GetFunctionCodeSigningConfigResult
   {
   public:
-    GetFunctionCodeSigningConfigResult();
-    GetFunctionCodeSigningConfigResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetFunctionCodeSigningConfigResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LAMBDA_API GetFunctionCodeSigningConfigResult();
+    AWS_LAMBDA_API GetFunctionCodeSigningConfigResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LAMBDA_API GetFunctionCodeSigningConfigResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -22,12 +22,12 @@ namespace IoTAnalytics
 {
 namespace Model
 {
-  class AWS_IOTANALYTICS_API CancelPipelineReprocessingResult
+  class CancelPipelineReprocessingResult
   {
   public:
-    CancelPipelineReprocessingResult();
-    CancelPipelineReprocessingResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CancelPipelineReprocessingResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOTANALYTICS_API CancelPipelineReprocessingResult();
+    AWS_IOTANALYTICS_API CancelPipelineReprocessingResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOTANALYTICS_API CancelPipelineReprocessingResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

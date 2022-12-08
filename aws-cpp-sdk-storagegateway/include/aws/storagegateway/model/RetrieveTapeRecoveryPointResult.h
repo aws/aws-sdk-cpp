@@ -29,12 +29,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/RetrieveTapeRecoveryPointOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_STORAGEGATEWAY_API RetrieveTapeRecoveryPointResult
+  class RetrieveTapeRecoveryPointResult
   {
   public:
-    RetrieveTapeRecoveryPointResult();
-    RetrieveTapeRecoveryPointResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    RetrieveTapeRecoveryPointResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_STORAGEGATEWAY_API RetrieveTapeRecoveryPointResult();
+    AWS_STORAGEGATEWAY_API RetrieveTapeRecoveryPointResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_STORAGEGATEWAY_API RetrieveTapeRecoveryPointResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

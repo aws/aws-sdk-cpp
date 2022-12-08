@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/WorldGenerationJobSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_ROBOMAKER_API WorldGenerationJobSummary
+  class WorldGenerationJobSummary
   {
   public:
-    WorldGenerationJobSummary();
-    WorldGenerationJobSummary(Aws::Utils::Json::JsonView jsonValue);
-    WorldGenerationJobSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ROBOMAKER_API WorldGenerationJobSummary();
+    AWS_ROBOMAKER_API WorldGenerationJobSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROBOMAKER_API WorldGenerationJobSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROBOMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

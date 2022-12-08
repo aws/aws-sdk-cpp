@@ -41,13 +41,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/Permission">AWS
    * API Reference</a></p>
    */
-  class AWS_ACMPCA_API Permission
+  class Permission
   {
   public:
-    Permission();
-    Permission(Aws::Utils::Json::JsonView jsonValue);
-    Permission& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ACMPCA_API Permission();
+    AWS_ACMPCA_API Permission(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACMPCA_API Permission& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACMPCA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

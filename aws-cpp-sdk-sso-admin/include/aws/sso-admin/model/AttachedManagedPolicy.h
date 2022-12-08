@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/AttachedManagedPolicy">AWS
    * API Reference</a></p>
    */
-  class AWS_SSOADMIN_API AttachedManagedPolicy
+  class AttachedManagedPolicy
   {
   public:
-    AttachedManagedPolicy();
-    AttachedManagedPolicy(Aws::Utils::Json::JsonView jsonValue);
-    AttachedManagedPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSOADMIN_API AttachedManagedPolicy();
+    AWS_SSOADMIN_API AttachedManagedPolicy(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSOADMIN_API AttachedManagedPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSOADMIN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

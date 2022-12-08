@@ -22,12 +22,12 @@ namespace Honeycode
 {
 namespace Model
 {
-  class AWS_HONEYCODE_API InvokeScreenAutomationResult
+  class InvokeScreenAutomationResult
   {
   public:
-    InvokeScreenAutomationResult();
-    InvokeScreenAutomationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    InvokeScreenAutomationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_HONEYCODE_API InvokeScreenAutomationResult();
+    AWS_HONEYCODE_API InvokeScreenAutomationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_HONEYCODE_API InvokeScreenAutomationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

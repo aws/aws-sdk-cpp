@@ -33,12 +33,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/SimulatePolicyResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_IAM_API SimulateCustomPolicyResult
+  class SimulateCustomPolicyResult
   {
   public:
-    SimulateCustomPolicyResult();
-    SimulateCustomPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    SimulateCustomPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_IAM_API SimulateCustomPolicyResult();
+    AWS_IAM_API SimulateCustomPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_IAM_API SimulateCustomPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ScheduleRunTest">AWS
    * API Reference</a></p>
    */
-  class AWS_DEVICEFARM_API ScheduleRunTest
+  class ScheduleRunTest
   {
   public:
-    ScheduleRunTest();
-    ScheduleRunTest(Aws::Utils::Json::JsonView jsonValue);
-    ScheduleRunTest& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DEVICEFARM_API ScheduleRunTest();
+    AWS_DEVICEFARM_API ScheduleRunTest(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVICEFARM_API ScheduleRunTest& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVICEFARM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

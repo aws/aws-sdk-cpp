@@ -25,21 +25,21 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/SdkResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_APIGATEWAY_API GetSdkResult
+  class GetSdkResult
   {
   public:
-    GetSdkResult();
+    AWS_APIGATEWAY_API GetSdkResult();
     //We have to define these because Microsoft doesn't auto generate them
-    GetSdkResult(GetSdkResult&&);
-    GetSdkResult& operator=(GetSdkResult&&);
+    AWS_APIGATEWAY_API GetSdkResult(GetSdkResult&&);
+    AWS_APIGATEWAY_API GetSdkResult& operator=(GetSdkResult&&);
     //we delete these because Microsoft doesn't handle move generation correctly
     //and we therefore don't trust them to get it right here either.
     GetSdkResult(const GetSdkResult&) = delete;
     GetSdkResult& operator=(const GetSdkResult&) = delete;
 
 
-    GetSdkResult(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
-    GetSdkResult& operator=(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
+    AWS_APIGATEWAY_API GetSdkResult(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
+    AWS_APIGATEWAY_API GetSdkResult& operator=(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
 
 
 

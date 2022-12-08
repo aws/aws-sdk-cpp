@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/SourceFiles">AWS
    * API Reference</a></p>
    */
-  class AWS_OMICS_API SourceFiles
+  class SourceFiles
   {
   public:
-    SourceFiles();
-    SourceFiles(Aws::Utils::Json::JsonView jsonValue);
-    SourceFiles& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OMICS_API SourceFiles();
+    AWS_OMICS_API SourceFiles(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OMICS_API SourceFiles& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OMICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

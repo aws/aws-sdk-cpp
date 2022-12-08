@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListControlDisplayOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API ListControlDisplayOptions
+  class ListControlDisplayOptions
   {
   public:
-    ListControlDisplayOptions();
-    ListControlDisplayOptions(Aws::Utils::Json::JsonView jsonValue);
-    ListControlDisplayOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API ListControlDisplayOptions();
+    AWS_QUICKSIGHT_API ListControlDisplayOptions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API ListControlDisplayOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

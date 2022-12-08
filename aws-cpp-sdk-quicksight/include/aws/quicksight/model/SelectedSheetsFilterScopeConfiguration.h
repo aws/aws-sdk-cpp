@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/SelectedSheetsFilterScopeConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API SelectedSheetsFilterScopeConfiguration
+  class SelectedSheetsFilterScopeConfiguration
   {
   public:
-    SelectedSheetsFilterScopeConfiguration();
-    SelectedSheetsFilterScopeConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    SelectedSheetsFilterScopeConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API SelectedSheetsFilterScopeConfiguration();
+    AWS_QUICKSIGHT_API SelectedSheetsFilterScopeConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API SelectedSheetsFilterScopeConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

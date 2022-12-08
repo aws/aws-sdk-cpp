@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/Correction">AWS
    * API Reference</a></p>
    */
-  class AWS_KENDRA_API Correction
+  class Correction
   {
   public:
-    Correction();
-    Correction(Aws::Utils::Json::JsonView jsonValue);
-    Correction& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KENDRA_API Correction();
+    AWS_KENDRA_API Correction(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API Correction& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

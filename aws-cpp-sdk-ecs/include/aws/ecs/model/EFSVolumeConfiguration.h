@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/EFSVolumeConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_ECS_API EFSVolumeConfiguration
+  class EFSVolumeConfiguration
   {
   public:
-    EFSVolumeConfiguration();
-    EFSVolumeConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    EFSVolumeConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ECS_API EFSVolumeConfiguration();
+    AWS_ECS_API EFSVolumeConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECS_API EFSVolumeConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

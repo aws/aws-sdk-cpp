@@ -26,12 +26,12 @@ namespace ECRPublic
 {
 namespace Model
 {
-  class AWS_ECRPUBLIC_API DescribeImageTagsResult
+  class DescribeImageTagsResult
   {
   public:
-    DescribeImageTagsResult();
-    DescribeImageTagsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeImageTagsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ECRPUBLIC_API DescribeImageTagsResult();
+    AWS_ECRPUBLIC_API DescribeImageTagsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ECRPUBLIC_API DescribeImageTagsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

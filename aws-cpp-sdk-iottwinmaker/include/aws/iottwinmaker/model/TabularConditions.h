@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/TabularConditions">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTTWINMAKER_API TabularConditions
+  class TabularConditions
   {
   public:
-    TabularConditions();
-    TabularConditions(Aws::Utils::Json::JsonView jsonValue);
-    TabularConditions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTTWINMAKER_API TabularConditions();
+    AWS_IOTTWINMAKER_API TabularConditions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTTWINMAKER_API TabularConditions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTTWINMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

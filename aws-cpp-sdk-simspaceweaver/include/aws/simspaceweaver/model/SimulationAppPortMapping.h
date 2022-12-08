@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/simspaceweaver-2022-10-28/SimulationAppPortMapping">AWS
    * API Reference</a></p>
    */
-  class AWS_SIMSPACEWEAVER_API SimulationAppPortMapping
+  class SimulationAppPortMapping
   {
   public:
-    SimulationAppPortMapping();
-    SimulationAppPortMapping(Aws::Utils::Json::JsonView jsonValue);
-    SimulationAppPortMapping& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SIMSPACEWEAVER_API SimulationAppPortMapping();
+    AWS_SIMSPACEWEAVER_API SimulationAppPortMapping(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SIMSPACEWEAVER_API SimulationAppPortMapping& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SIMSPACEWEAVER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

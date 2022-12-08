@@ -25,12 +25,12 @@ namespace Chime
 {
 namespace Model
 {
-  class AWS_CHIME_API CreateChannelMembershipResult
+  class CreateChannelMembershipResult
   {
   public:
-    CreateChannelMembershipResult();
-    CreateChannelMembershipResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateChannelMembershipResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CHIME_API CreateChannelMembershipResult();
+    AWS_CHIME_API CreateChannelMembershipResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CHIME_API CreateChannelMembershipResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

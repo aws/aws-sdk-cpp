@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/LambdaFunctionRecipeSource">AWS
    * API Reference</a></p>
    */
-  class AWS_GREENGRASSV2_API LambdaFunctionRecipeSource
+  class LambdaFunctionRecipeSource
   {
   public:
-    LambdaFunctionRecipeSource();
-    LambdaFunctionRecipeSource(Aws::Utils::Json::JsonView jsonValue);
-    LambdaFunctionRecipeSource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GREENGRASSV2_API LambdaFunctionRecipeSource();
+    AWS_GREENGRASSV2_API LambdaFunctionRecipeSource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASSV2_API LambdaFunctionRecipeSource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

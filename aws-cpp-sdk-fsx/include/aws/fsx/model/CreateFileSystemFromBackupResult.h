@@ -30,12 +30,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateFileSystemFromBackupResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_FSX_API CreateFileSystemFromBackupResult
+  class CreateFileSystemFromBackupResult
   {
   public:
-    CreateFileSystemFromBackupResult();
-    CreateFileSystemFromBackupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateFileSystemFromBackupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_FSX_API CreateFileSystemFromBackupResult();
+    AWS_FSX_API CreateFileSystemFromBackupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_FSX_API CreateFileSystemFromBackupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

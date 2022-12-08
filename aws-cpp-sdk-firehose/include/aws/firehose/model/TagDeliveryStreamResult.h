@@ -22,12 +22,12 @@ namespace Firehose
 {
 namespace Model
 {
-  class AWS_FIREHOSE_API TagDeliveryStreamResult
+  class TagDeliveryStreamResult
   {
   public:
-    TagDeliveryStreamResult();
-    TagDeliveryStreamResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    TagDeliveryStreamResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_FIREHOSE_API TagDeliveryStreamResult();
+    AWS_FIREHOSE_API TagDeliveryStreamResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_FIREHOSE_API TagDeliveryStreamResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

@@ -41,13 +41,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/Eac3Settings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API Eac3Settings
+  class Eac3Settings
   {
   public:
-    Eac3Settings();
-    Eac3Settings(Aws::Utils::Json::JsonView jsonValue);
-    Eac3Settings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API Eac3Settings();
+    AWS_MEDIALIVE_API Eac3Settings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Eac3Settings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

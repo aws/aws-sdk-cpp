@@ -31,12 +31,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetSendQuotaResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_SES_API GetSendQuotaResult
+  class GetSendQuotaResult
   {
   public:
-    GetSendQuotaResult();
-    GetSendQuotaResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    GetSendQuotaResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_SES_API GetSendQuotaResult();
+    AWS_SES_API GetSendQuotaResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_SES_API GetSendQuotaResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

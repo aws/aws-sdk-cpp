@@ -40,13 +40,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/Condition">AWS
    * API Reference</a></p>
    */
-  class AWS_DYNAMODB_API Condition
+  class Condition
   {
   public:
-    Condition();
-    Condition(Aws::Utils::Json::JsonView jsonValue);
-    Condition& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DYNAMODB_API Condition();
+    AWS_DYNAMODB_API Condition(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API Condition& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

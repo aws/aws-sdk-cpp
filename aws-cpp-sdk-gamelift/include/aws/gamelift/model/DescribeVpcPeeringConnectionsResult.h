@@ -25,12 +25,12 @@ namespace GameLift
 {
 namespace Model
 {
-  class AWS_GAMELIFT_API DescribeVpcPeeringConnectionsResult
+  class DescribeVpcPeeringConnectionsResult
   {
   public:
-    DescribeVpcPeeringConnectionsResult();
-    DescribeVpcPeeringConnectionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeVpcPeeringConnectionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GAMELIFT_API DescribeVpcPeeringConnectionsResult();
+    AWS_GAMELIFT_API DescribeVpcPeeringConnectionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GAMELIFT_API DescribeVpcPeeringConnectionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

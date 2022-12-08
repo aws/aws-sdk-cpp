@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ComponentParameterDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_IMAGEBUILDER_API ComponentParameterDetail
+  class ComponentParameterDetail
   {
   public:
-    ComponentParameterDetail();
-    ComponentParameterDetail(Aws::Utils::Json::JsonView jsonValue);
-    ComponentParameterDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IMAGEBUILDER_API ComponentParameterDetail();
+    AWS_IMAGEBUILDER_API ComponentParameterDetail(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IMAGEBUILDER_API ComponentParameterDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IMAGEBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

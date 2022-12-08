@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_CLOUDCONTROLAPI_API CreateResourceRequest : public CloudControlApiRequest
+  class CreateResourceRequest : public CloudControlApiRequest
   {
   public:
-    CreateResourceRequest();
+    AWS_CLOUDCONTROLAPI_API CreateResourceRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,9 +30,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateResource"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CLOUDCONTROLAPI_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_CLOUDCONTROLAPI_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**

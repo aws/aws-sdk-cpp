@@ -22,12 +22,12 @@ namespace MTurk
 {
 namespace Model
 {
-  class AWS_MTURK_API SendBonusResult
+  class SendBonusResult
   {
   public:
-    SendBonusResult();
-    SendBonusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    SendBonusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MTURK_API SendBonusResult();
+    AWS_MTURK_API SendBonusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MTURK_API SendBonusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

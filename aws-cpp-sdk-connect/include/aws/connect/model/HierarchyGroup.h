@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/HierarchyGroup">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECT_API HierarchyGroup
+  class HierarchyGroup
   {
   public:
-    HierarchyGroup();
-    HierarchyGroup(Aws::Utils::Json::JsonView jsonValue);
-    HierarchyGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECT_API HierarchyGroup();
+    AWS_CONNECT_API HierarchyGroup(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API HierarchyGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

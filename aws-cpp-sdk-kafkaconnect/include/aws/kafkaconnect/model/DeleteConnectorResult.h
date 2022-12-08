@@ -25,12 +25,12 @@ namespace KafkaConnect
 {
 namespace Model
 {
-  class AWS_KAFKACONNECT_API DeleteConnectorResult
+  class DeleteConnectorResult
   {
   public:
-    DeleteConnectorResult();
-    DeleteConnectorResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteConnectorResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KAFKACONNECT_API DeleteConnectorResult();
+    AWS_KAFKACONNECT_API DeleteConnectorResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KAFKACONNECT_API DeleteConnectorResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

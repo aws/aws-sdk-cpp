@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/UnauthorizedException">AWS
    * API Reference</a></p>
    */
-  class AWS_KAFKA_API UnauthorizedException
+  class UnauthorizedException
   {
   public:
-    UnauthorizedException();
-    UnauthorizedException(Aws::Utils::Json::JsonView jsonValue);
-    UnauthorizedException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KAFKA_API UnauthorizedException();
+    AWS_KAFKA_API UnauthorizedException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKA_API UnauthorizedException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

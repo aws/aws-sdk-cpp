@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DestinationToCreate">AWS
    * API Reference</a></p>
    */
-  class AWS_EFS_API DestinationToCreate
+  class DestinationToCreate
   {
   public:
-    DestinationToCreate();
-    DestinationToCreate(Aws::Utils::Json::JsonView jsonValue);
-    DestinationToCreate& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EFS_API DestinationToCreate();
+    AWS_EFS_API DestinationToCreate(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EFS_API DestinationToCreate& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EFS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -26,12 +26,12 @@ namespace SSOAdmin
 {
 namespace Model
 {
-  class AWS_SSOADMIN_API DescribeInstanceAccessControlAttributeConfigurationResult
+  class DescribeInstanceAccessControlAttributeConfigurationResult
   {
   public:
-    DescribeInstanceAccessControlAttributeConfigurationResult();
-    DescribeInstanceAccessControlAttributeConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeInstanceAccessControlAttributeConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSOADMIN_API DescribeInstanceAccessControlAttributeConfigurationResult();
+    AWS_SSOADMIN_API DescribeInstanceAccessControlAttributeConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSOADMIN_API DescribeInstanceAccessControlAttributeConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

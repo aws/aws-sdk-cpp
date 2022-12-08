@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/JobExecutionSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API JobExecutionSummary
+  class JobExecutionSummary
   {
   public:
-    JobExecutionSummary();
-    JobExecutionSummary(Aws::Utils::Json::JsonView jsonValue);
-    JobExecutionSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API JobExecutionSummary();
+    AWS_IOT_API JobExecutionSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API JobExecutionSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

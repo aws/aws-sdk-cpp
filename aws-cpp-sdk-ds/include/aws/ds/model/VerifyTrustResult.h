@@ -29,12 +29,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/VerifyTrustResult">AWS
    * API Reference</a></p>
    */
-  class AWS_DIRECTORYSERVICE_API VerifyTrustResult
+  class VerifyTrustResult
   {
   public:
-    VerifyTrustResult();
-    VerifyTrustResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    VerifyTrustResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DIRECTORYSERVICE_API VerifyTrustResult();
+    AWS_DIRECTORYSERVICE_API VerifyTrustResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DIRECTORYSERVICE_API VerifyTrustResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

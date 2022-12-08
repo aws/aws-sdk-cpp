@@ -24,12 +24,12 @@ namespace AppSync
 {
 namespace Model
 {
-  class AWS_APPSYNC_API UpdateGraphqlApiResult
+  class UpdateGraphqlApiResult
   {
   public:
-    UpdateGraphqlApiResult();
-    UpdateGraphqlApiResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateGraphqlApiResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPSYNC_API UpdateGraphqlApiResult();
+    AWS_APPSYNC_API UpdateGraphqlApiResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPSYNC_API UpdateGraphqlApiResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

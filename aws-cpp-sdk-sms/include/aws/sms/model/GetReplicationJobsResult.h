@@ -26,12 +26,12 @@ namespace SMS
 {
 namespace Model
 {
-  class AWS_SMS_API GetReplicationJobsResult
+  class GetReplicationJobsResult
   {
   public:
-    GetReplicationJobsResult();
-    GetReplicationJobsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetReplicationJobsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SMS_API GetReplicationJobsResult();
+    AWS_SMS_API GetReplicationJobsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SMS_API GetReplicationJobsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

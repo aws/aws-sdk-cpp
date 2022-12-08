@@ -24,12 +24,12 @@ namespace TranscribeService
 {
 namespace Model
 {
-  class AWS_TRANSCRIBESERVICE_API GetTranscriptionJobResult
+  class GetTranscriptionJobResult
   {
   public:
-    GetTranscriptionJobResult();
-    GetTranscriptionJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetTranscriptionJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_TRANSCRIBESERVICE_API GetTranscriptionJobResult();
+    AWS_TRANSCRIBESERVICE_API GetTranscriptionJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_TRANSCRIBESERVICE_API GetTranscriptionJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

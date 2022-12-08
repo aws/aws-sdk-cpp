@@ -24,12 +24,12 @@ namespace Rekognition
 {
 namespace Model
 {
-  class AWS_REKOGNITION_API CreateProjectVersionResult
+  class CreateProjectVersionResult
   {
   public:
-    CreateProjectVersionResult();
-    CreateProjectVersionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateProjectVersionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_REKOGNITION_API CreateProjectVersionResult();
+    AWS_REKOGNITION_API CreateProjectVersionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_REKOGNITION_API CreateProjectVersionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

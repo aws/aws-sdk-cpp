@@ -50,13 +50,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/Action">AWS API
    * Reference</a></p>
    */
-  class AWS_IOT_API Action
+  class Action
   {
   public:
-    Action();
-    Action(Aws::Utils::Json::JsonView jsonValue);
-    Action& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API Action();
+    AWS_IOT_API Action(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Action& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -26,12 +26,12 @@ namespace CloudTrail
 {
 namespace Model
 {
-  class AWS_CLOUDTRAIL_API ListEventDataStoresResult
+  class ListEventDataStoresResult
   {
   public:
-    ListEventDataStoresResult();
-    ListEventDataStoresResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListEventDataStoresResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CLOUDTRAIL_API ListEventDataStoresResult();
+    AWS_CLOUDTRAIL_API ListEventDataStoresResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CLOUDTRAIL_API ListEventDataStoresResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

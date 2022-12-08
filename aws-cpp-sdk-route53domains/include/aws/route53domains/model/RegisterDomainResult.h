@@ -30,12 +30,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/RegisterDomainResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53DOMAINS_API RegisterDomainResult
+  class RegisterDomainResult
   {
   public:
-    RegisterDomainResult();
-    RegisterDomainResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    RegisterDomainResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ROUTE53DOMAINS_API RegisterDomainResult();
+    AWS_ROUTE53DOMAINS_API RegisterDomainResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ROUTE53DOMAINS_API RegisterDomainResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

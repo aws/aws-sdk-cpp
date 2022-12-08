@@ -37,13 +37,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/Insight">AWS API
    * Reference</a></p>
    */
-  class AWS_XRAY_API Insight
+  class Insight
   {
   public:
-    Insight();
-    Insight(Aws::Utils::Json::JsonView jsonValue);
-    Insight& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_XRAY_API Insight();
+    AWS_XRAY_API Insight(Aws::Utils::Json::JsonView jsonValue);
+    AWS_XRAY_API Insight& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_XRAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

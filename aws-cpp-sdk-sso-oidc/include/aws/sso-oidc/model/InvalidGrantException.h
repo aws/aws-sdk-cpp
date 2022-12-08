@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sso-oidc-2019-06-10/InvalidGrantException">AWS
    * API Reference</a></p>
    */
-  class AWS_SSOOIDC_API InvalidGrantException
+  class InvalidGrantException
   {
   public:
-    InvalidGrantException();
-    InvalidGrantException(Aws::Utils::Json::JsonView jsonValue);
-    InvalidGrantException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSOOIDC_API InvalidGrantException();
+    AWS_SSOOIDC_API InvalidGrantException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSOOIDC_API InvalidGrantException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSOOIDC_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

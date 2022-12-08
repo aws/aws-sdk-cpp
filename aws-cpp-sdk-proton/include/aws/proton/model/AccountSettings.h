@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/AccountSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_PROTON_API AccountSettings
+  class AccountSettings
   {
   public:
-    AccountSettings();
-    AccountSettings(Aws::Utils::Json::JsonView jsonValue);
-    AccountSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PROTON_API AccountSettings();
+    AWS_PROTON_API AccountSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PROTON_API AccountSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PROTON_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

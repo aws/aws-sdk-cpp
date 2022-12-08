@@ -27,12 +27,12 @@ namespace CloudWatchLogs
 {
 namespace Model
 {
-  class AWS_CLOUDWATCHLOGS_API GetQueryResultsResult
+  class GetQueryResultsResult
   {
   public:
-    GetQueryResultsResult();
-    GetQueryResultsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetQueryResultsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CLOUDWATCHLOGS_API GetQueryResultsResult();
+    AWS_CLOUDWATCHLOGS_API GetQueryResultsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CLOUDWATCHLOGS_API GetQueryResultsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

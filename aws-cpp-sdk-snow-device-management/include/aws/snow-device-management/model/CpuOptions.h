@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/snow-device-management-2021-08-04/CpuOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_SNOWDEVICEMANAGEMENT_API CpuOptions
+  class CpuOptions
   {
   public:
-    CpuOptions();
-    CpuOptions(Aws::Utils::Json::JsonView jsonValue);
-    CpuOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SNOWDEVICEMANAGEMENT_API CpuOptions();
+    AWS_SNOWDEVICEMANAGEMENT_API CpuOptions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SNOWDEVICEMANAGEMENT_API CpuOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SNOWDEVICEMANAGEMENT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

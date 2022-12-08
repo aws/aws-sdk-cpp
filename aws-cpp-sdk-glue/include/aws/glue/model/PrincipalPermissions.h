@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/PrincipalPermissions">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API PrincipalPermissions
+  class PrincipalPermissions
   {
   public:
-    PrincipalPermissions();
-    PrincipalPermissions(Aws::Utils::Json::JsonView jsonValue);
-    PrincipalPermissions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API PrincipalPermissions();
+    AWS_GLUE_API PrincipalPermissions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API PrincipalPermissions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/ComputeFarmConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_NIMBLESTUDIO_API ComputeFarmConfiguration
+  class ComputeFarmConfiguration
   {
   public:
-    ComputeFarmConfiguration();
-    ComputeFarmConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    ComputeFarmConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_NIMBLESTUDIO_API ComputeFarmConfiguration();
+    AWS_NIMBLESTUDIO_API ComputeFarmConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NIMBLESTUDIO_API ComputeFarmConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NIMBLESTUDIO_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

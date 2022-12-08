@@ -24,12 +24,12 @@ namespace CodeArtifact
 {
 namespace Model
 {
-  class AWS_CODEARTIFACT_API DisassociateExternalConnectionResult
+  class DisassociateExternalConnectionResult
   {
   public:
-    DisassociateExternalConnectionResult();
-    DisassociateExternalConnectionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DisassociateExternalConnectionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODEARTIFACT_API DisassociateExternalConnectionResult();
+    AWS_CODEARTIFACT_API DisassociateExternalConnectionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODEARTIFACT_API DisassociateExternalConnectionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -30,14 +30,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/TrafficConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFRONT_API TrafficConfig
+  class TrafficConfig
   {
   public:
-    TrafficConfig();
-    TrafficConfig(const Aws::Utils::Xml::XmlNode& xmlNode);
-    TrafficConfig& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API TrafficConfig();
+    AWS_CLOUDFRONT_API TrafficConfig(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API TrafficConfig& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**

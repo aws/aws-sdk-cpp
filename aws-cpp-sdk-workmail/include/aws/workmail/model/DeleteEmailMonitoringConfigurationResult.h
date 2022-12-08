@@ -22,12 +22,12 @@ namespace WorkMail
 {
 namespace Model
 {
-  class AWS_WORKMAIL_API DeleteEmailMonitoringConfigurationResult
+  class DeleteEmailMonitoringConfigurationResult
   {
   public:
-    DeleteEmailMonitoringConfigurationResult();
-    DeleteEmailMonitoringConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteEmailMonitoringConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WORKMAIL_API DeleteEmailMonitoringConfigurationResult();
+    AWS_WORKMAIL_API DeleteEmailMonitoringConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WORKMAIL_API DeleteEmailMonitoringConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

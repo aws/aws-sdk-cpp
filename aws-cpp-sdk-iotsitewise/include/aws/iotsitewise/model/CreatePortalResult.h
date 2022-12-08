@@ -25,12 +25,12 @@ namespace IoTSiteWise
 {
 namespace Model
 {
-  class AWS_IOTSITEWISE_API CreatePortalResult
+  class CreatePortalResult
   {
   public:
-    CreatePortalResult();
-    CreatePortalResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreatePortalResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOTSITEWISE_API CreatePortalResult();
+    AWS_IOTSITEWISE_API CreatePortalResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOTSITEWISE_API CreatePortalResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

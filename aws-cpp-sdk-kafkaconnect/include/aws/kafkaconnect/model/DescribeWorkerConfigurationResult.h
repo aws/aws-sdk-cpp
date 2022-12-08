@@ -26,12 +26,12 @@ namespace KafkaConnect
 {
 namespace Model
 {
-  class AWS_KAFKACONNECT_API DescribeWorkerConfigurationResult
+  class DescribeWorkerConfigurationResult
   {
   public:
-    DescribeWorkerConfigurationResult();
-    DescribeWorkerConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeWorkerConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KAFKACONNECT_API DescribeWorkerConfigurationResult();
+    AWS_KAFKACONNECT_API DescribeWorkerConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KAFKACONNECT_API DescribeWorkerConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

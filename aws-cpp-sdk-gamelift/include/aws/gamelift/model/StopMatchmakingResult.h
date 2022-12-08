@@ -22,12 +22,12 @@ namespace GameLift
 {
 namespace Model
 {
-  class AWS_GAMELIFT_API StopMatchmakingResult
+  class StopMatchmakingResult
   {
   public:
-    StopMatchmakingResult();
-    StopMatchmakingResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    StopMatchmakingResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GAMELIFT_API StopMatchmakingResult();
+    AWS_GAMELIFT_API StopMatchmakingResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GAMELIFT_API StopMatchmakingResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

@@ -25,12 +25,12 @@ namespace EC2
 {
 namespace Model
 {
-  class AWS_EC2_API CreateTransitGatewayRouteTableAnnouncementResponse
+  class CreateTransitGatewayRouteTableAnnouncementResponse
   {
   public:
-    CreateTransitGatewayRouteTableAnnouncementResponse();
-    CreateTransitGatewayRouteTableAnnouncementResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    CreateTransitGatewayRouteTableAnnouncementResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API CreateTransitGatewayRouteTableAnnouncementResponse();
+    AWS_EC2_API CreateTransitGatewayRouteTableAnnouncementResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API CreateTransitGatewayRouteTableAnnouncementResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

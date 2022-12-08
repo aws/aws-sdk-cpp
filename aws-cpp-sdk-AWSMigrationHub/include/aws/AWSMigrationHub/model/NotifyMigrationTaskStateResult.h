@@ -22,12 +22,12 @@ namespace MigrationHub
 {
 namespace Model
 {
-  class AWS_MIGRATIONHUB_API NotifyMigrationTaskStateResult
+  class NotifyMigrationTaskStateResult
   {
   public:
-    NotifyMigrationTaskStateResult();
-    NotifyMigrationTaskStateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    NotifyMigrationTaskStateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MIGRATIONHUB_API NotifyMigrationTaskStateResult();
+    AWS_MIGRATIONHUB_API NotifyMigrationTaskStateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MIGRATIONHUB_API NotifyMigrationTaskStateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

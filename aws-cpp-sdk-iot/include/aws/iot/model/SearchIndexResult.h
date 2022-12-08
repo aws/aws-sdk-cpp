@@ -27,12 +27,12 @@ namespace IoT
 {
 namespace Model
 {
-  class AWS_IOT_API SearchIndexResult
+  class SearchIndexResult
   {
   public:
-    SearchIndexResult();
-    SearchIndexResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    SearchIndexResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOT_API SearchIndexResult();
+    AWS_IOT_API SearchIndexResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOT_API SearchIndexResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

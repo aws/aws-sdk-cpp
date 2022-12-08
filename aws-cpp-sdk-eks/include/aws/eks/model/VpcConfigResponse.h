@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/VpcConfigResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_EKS_API VpcConfigResponse
+  class VpcConfigResponse
   {
   public:
-    VpcConfigResponse();
-    VpcConfigResponse(Aws::Utils::Json::JsonView jsonValue);
-    VpcConfigResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EKS_API VpcConfigResponse();
+    AWS_EKS_API VpcConfigResponse(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EKS_API VpcConfigResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EKS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

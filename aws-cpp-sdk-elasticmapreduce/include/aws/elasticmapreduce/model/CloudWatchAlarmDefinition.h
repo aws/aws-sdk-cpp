@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/CloudWatchAlarmDefinition">AWS
    * API Reference</a></p>
    */
-  class AWS_EMR_API CloudWatchAlarmDefinition
+  class CloudWatchAlarmDefinition
   {
   public:
-    CloudWatchAlarmDefinition();
-    CloudWatchAlarmDefinition(Aws::Utils::Json::JsonView jsonValue);
-    CloudWatchAlarmDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EMR_API CloudWatchAlarmDefinition();
+    AWS_EMR_API CloudWatchAlarmDefinition(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMR_API CloudWatchAlarmDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

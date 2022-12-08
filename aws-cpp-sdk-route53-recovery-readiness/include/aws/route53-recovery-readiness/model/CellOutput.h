@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-readiness-2019-12-02/CellOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53RECOVERYREADINESS_API CellOutput
+  class CellOutput
   {
   public:
-    CellOutput();
-    CellOutput(Aws::Utils::Json::JsonView jsonValue);
-    CellOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ROUTE53RECOVERYREADINESS_API CellOutput();
+    AWS_ROUTE53RECOVERYREADINESS_API CellOutput(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROUTE53RECOVERYREADINESS_API CellOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROUTE53RECOVERYREADINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

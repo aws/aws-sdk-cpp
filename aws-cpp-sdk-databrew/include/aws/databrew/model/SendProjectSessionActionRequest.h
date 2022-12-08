@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_GLUEDATABREW_API SendProjectSessionActionRequest : public GlueDataBrewRequest
+  class SendProjectSessionActionRequest : public GlueDataBrewRequest
   {
   public:
-    SendProjectSessionActionRequest();
+    AWS_GLUEDATABREW_API SendProjectSessionActionRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,7 +31,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "SendProjectSessionAction"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_GLUEDATABREW_API Aws::String SerializePayload() const override;
 
 
     /**

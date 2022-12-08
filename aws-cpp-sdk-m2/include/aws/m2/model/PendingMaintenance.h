@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/PendingMaintenance">AWS
    * API Reference</a></p>
    */
-  class AWS_MAINFRAMEMODERNIZATION_API PendingMaintenance
+  class PendingMaintenance
   {
   public:
-    PendingMaintenance();
-    PendingMaintenance(Aws::Utils::Json::JsonView jsonValue);
-    PendingMaintenance& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MAINFRAMEMODERNIZATION_API PendingMaintenance();
+    AWS_MAINFRAMEMODERNIZATION_API PendingMaintenance(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MAINFRAMEMODERNIZATION_API PendingMaintenance& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MAINFRAMEMODERNIZATION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

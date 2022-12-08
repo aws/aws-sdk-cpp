@@ -25,12 +25,12 @@ namespace Redshift
 {
 namespace Model
 {
-  class AWS_REDSHIFT_API RevokeSnapshotAccessResult
+  class RevokeSnapshotAccessResult
   {
   public:
-    RevokeSnapshotAccessResult();
-    RevokeSnapshotAccessResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    RevokeSnapshotAccessResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_REDSHIFT_API RevokeSnapshotAccessResult();
+    AWS_REDSHIFT_API RevokeSnapshotAccessResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_REDSHIFT_API RevokeSnapshotAccessResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/Point">AWS
    * API Reference</a></p>
    */
-  class AWS_COMPREHEND_API Point
+  class Point
   {
   public:
-    Point();
-    Point(Aws::Utils::Json::JsonView jsonValue);
-    Point& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COMPREHEND_API Point();
+    AWS_COMPREHEND_API Point(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHEND_API Point& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHEND_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

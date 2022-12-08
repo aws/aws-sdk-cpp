@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/LFResourceDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_DATAEXCHANGE_API LFResourceDetails
+  class LFResourceDetails
   {
   public:
-    LFResourceDetails();
-    LFResourceDetails(Aws::Utils::Json::JsonView jsonValue);
-    LFResourceDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DATAEXCHANGE_API LFResourceDetails();
+    AWS_DATAEXCHANGE_API LFResourceDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATAEXCHANGE_API LFResourceDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATAEXCHANGE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

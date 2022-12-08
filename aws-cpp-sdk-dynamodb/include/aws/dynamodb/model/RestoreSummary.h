@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/RestoreSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_DYNAMODB_API RestoreSummary
+  class RestoreSummary
   {
   public:
-    RestoreSummary();
-    RestoreSummary(Aws::Utils::Json::JsonView jsonValue);
-    RestoreSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DYNAMODB_API RestoreSummary();
+    AWS_DYNAMODB_API RestoreSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API RestoreSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

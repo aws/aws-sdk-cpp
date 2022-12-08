@@ -32,12 +32,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/AttachLoadBalancerToSubnetsOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICLOADBALANCING_API AttachLoadBalancerToSubnetsResult
+  class AttachLoadBalancerToSubnetsResult
   {
   public:
-    AttachLoadBalancerToSubnetsResult();
-    AttachLoadBalancerToSubnetsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    AttachLoadBalancerToSubnetsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ELASTICLOADBALANCING_API AttachLoadBalancerToSubnetsResult();
+    AWS_ELASTICLOADBALANCING_API AttachLoadBalancerToSubnetsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ELASTICLOADBALANCING_API AttachLoadBalancerToSubnetsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

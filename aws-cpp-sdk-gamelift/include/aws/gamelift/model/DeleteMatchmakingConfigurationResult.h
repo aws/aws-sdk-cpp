@@ -22,12 +22,12 @@ namespace GameLift
 {
 namespace Model
 {
-  class AWS_GAMELIFT_API DeleteMatchmakingConfigurationResult
+  class DeleteMatchmakingConfigurationResult
   {
   public:
-    DeleteMatchmakingConfigurationResult();
-    DeleteMatchmakingConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteMatchmakingConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GAMELIFT_API DeleteMatchmakingConfigurationResult();
+    AWS_GAMELIFT_API DeleteMatchmakingConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GAMELIFT_API DeleteMatchmakingConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

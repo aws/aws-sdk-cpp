@@ -22,12 +22,12 @@ namespace MediaStore
 {
 namespace Model
 {
-  class AWS_MEDIASTORE_API DeleteCorsPolicyResult
+  class DeleteCorsPolicyResult
   {
   public:
-    DeleteCorsPolicyResult();
-    DeleteCorsPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteCorsPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MEDIASTORE_API DeleteCorsPolicyResult();
+    AWS_MEDIASTORE_API DeleteCorsPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MEDIASTORE_API DeleteCorsPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

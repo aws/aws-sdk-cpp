@@ -23,10 +23,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/PurchaseReservedInstanceOfferingRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_OPENSEARCHSERVICE_API PurchaseReservedInstanceOfferingRequest : public OpenSearchServiceRequest
+  class PurchaseReservedInstanceOfferingRequest : public OpenSearchServiceRequest
   {
   public:
-    PurchaseReservedInstanceOfferingRequest();
+    AWS_OPENSEARCHSERVICE_API PurchaseReservedInstanceOfferingRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,7 +34,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "PurchaseReservedInstanceOffering"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_OPENSEARCHSERVICE_API Aws::String SerializePayload() const override;
 
 
     /**

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/FindMatchesTaskRunProperties">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API FindMatchesTaskRunProperties
+  class FindMatchesTaskRunProperties
   {
   public:
-    FindMatchesTaskRunProperties();
-    FindMatchesTaskRunProperties(Aws::Utils::Json::JsonView jsonValue);
-    FindMatchesTaskRunProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API FindMatchesTaskRunProperties();
+    AWS_GLUE_API FindMatchesTaskRunProperties(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API FindMatchesTaskRunProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

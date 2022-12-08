@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/ServerEvent">AWS
    * API Reference</a></p>
    */
-  class AWS_OPSWORKSCM_API ServerEvent
+  class ServerEvent
   {
   public:
-    ServerEvent();
-    ServerEvent(Aws::Utils::Json::JsonView jsonValue);
-    ServerEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OPSWORKSCM_API ServerEvent();
+    AWS_OPSWORKSCM_API ServerEvent(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPSWORKSCM_API ServerEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPSWORKSCM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/EntityPropertyReference">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTTWINMAKER_API EntityPropertyReference
+  class EntityPropertyReference
   {
   public:
-    EntityPropertyReference();
-    EntityPropertyReference(Aws::Utils::Json::JsonView jsonValue);
-    EntityPropertyReference& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTTWINMAKER_API EntityPropertyReference();
+    AWS_IOTTWINMAKER_API EntityPropertyReference(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTTWINMAKER_API EntityPropertyReference& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTTWINMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

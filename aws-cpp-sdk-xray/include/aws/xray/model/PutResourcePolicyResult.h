@@ -24,12 +24,12 @@ namespace XRay
 {
 namespace Model
 {
-  class AWS_XRAY_API PutResourcePolicyResult
+  class PutResourcePolicyResult
   {
   public:
-    PutResourcePolicyResult();
-    PutResourcePolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PutResourcePolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_XRAY_API PutResourcePolicyResult();
+    AWS_XRAY_API PutResourcePolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_XRAY_API PutResourcePolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

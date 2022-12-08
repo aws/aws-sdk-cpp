@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/BoxPlotOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API BoxPlotOptions
+  class BoxPlotOptions
   {
   public:
-    BoxPlotOptions();
-    BoxPlotOptions(Aws::Utils::Json::JsonView jsonValue);
-    BoxPlotOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API BoxPlotOptions();
+    AWS_QUICKSIGHT_API BoxPlotOptions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API BoxPlotOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

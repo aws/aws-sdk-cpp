@@ -26,12 +26,12 @@ namespace XRay
 {
 namespace Model
 {
-  class AWS_XRAY_API GetSamplingRulesResult
+  class GetSamplingRulesResult
   {
   public:
-    GetSamplingRulesResult();
-    GetSamplingRulesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetSamplingRulesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_XRAY_API GetSamplingRulesResult();
+    AWS_XRAY_API GetSamplingRulesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_XRAY_API GetSamplingRulesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

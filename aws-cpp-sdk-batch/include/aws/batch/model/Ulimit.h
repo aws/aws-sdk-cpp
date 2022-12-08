@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/Ulimit">AWS API
    * Reference</a></p>
    */
-  class AWS_BATCH_API Ulimit
+  class Ulimit
   {
   public:
-    Ulimit();
-    Ulimit(Aws::Utils::Json::JsonView jsonValue);
-    Ulimit& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BATCH_API Ulimit();
+    AWS_BATCH_API Ulimit(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BATCH_API Ulimit& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BATCH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/EnabledControlSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_CONTROLTOWER_API EnabledControlSummary
+  class EnabledControlSummary
   {
   public:
-    EnabledControlSummary();
-    EnabledControlSummary(Aws::Utils::Json::JsonView jsonValue);
-    EnabledControlSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONTROLTOWER_API EnabledControlSummary();
+    AWS_CONTROLTOWER_API EnabledControlSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONTROLTOWER_API EnabledControlSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONTROLTOWER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

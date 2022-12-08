@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/SNSTopicPublishAction">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTEVENTS_API SNSTopicPublishAction
+  class SNSTopicPublishAction
   {
   public:
-    SNSTopicPublishAction();
-    SNSTopicPublishAction(Aws::Utils::Json::JsonView jsonValue);
-    SNSTopicPublishAction& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTEVENTS_API SNSTopicPublishAction();
+    AWS_IOTEVENTS_API SNSTopicPublishAction(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTEVENTS_API SNSTopicPublishAction& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTEVENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

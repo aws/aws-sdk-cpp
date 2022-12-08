@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dlm-2018-01-12/EventParameters">AWS
    * API Reference</a></p>
    */
-  class AWS_DLM_API EventParameters
+  class EventParameters
   {
   public:
-    EventParameters();
-    EventParameters(Aws::Utils::Json::JsonView jsonValue);
-    EventParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DLM_API EventParameters();
+    AWS_DLM_API EventParameters(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DLM_API EventParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DLM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

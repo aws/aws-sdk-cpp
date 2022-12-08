@@ -35,13 +35,13 @@ namespace Model
    * <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/Condition">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDWATCHEVENTS_API Condition
+  class Condition
   {
   public:
-    Condition();
-    Condition(Aws::Utils::Json::JsonView jsonValue);
-    Condition& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDWATCHEVENTS_API Condition();
+    AWS_CLOUDWATCHEVENTS_API Condition(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHEVENTS_API Condition& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHEVENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

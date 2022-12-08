@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/ServerGroup">AWS API
    * Reference</a></p>
    */
-  class AWS_SMS_API ServerGroup
+  class ServerGroup
   {
   public:
-    ServerGroup();
-    ServerGroup(Aws::Utils::Json::JsonView jsonValue);
-    ServerGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SMS_API ServerGroup();
+    AWS_SMS_API ServerGroup(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SMS_API ServerGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

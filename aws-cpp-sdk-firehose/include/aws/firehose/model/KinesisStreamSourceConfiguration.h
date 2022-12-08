@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/KinesisStreamSourceConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_FIREHOSE_API KinesisStreamSourceConfiguration
+  class KinesisStreamSourceConfiguration
   {
   public:
-    KinesisStreamSourceConfiguration();
-    KinesisStreamSourceConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    KinesisStreamSourceConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FIREHOSE_API KinesisStreamSourceConfiguration();
+    AWS_FIREHOSE_API KinesisStreamSourceConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FIREHOSE_API KinesisStreamSourceConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FIREHOSE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

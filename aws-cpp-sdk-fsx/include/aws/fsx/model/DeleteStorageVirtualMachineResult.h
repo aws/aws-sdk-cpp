@@ -25,12 +25,12 @@ namespace FSx
 {
 namespace Model
 {
-  class AWS_FSX_API DeleteStorageVirtualMachineResult
+  class DeleteStorageVirtualMachineResult
   {
   public:
-    DeleteStorageVirtualMachineResult();
-    DeleteStorageVirtualMachineResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteStorageVirtualMachineResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_FSX_API DeleteStorageVirtualMachineResult();
+    AWS_FSX_API DeleteStorageVirtualMachineResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_FSX_API DeleteStorageVirtualMachineResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

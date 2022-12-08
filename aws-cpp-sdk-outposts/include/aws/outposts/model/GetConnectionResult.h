@@ -25,12 +25,12 @@ namespace Outposts
 {
 namespace Model
 {
-  class AWS_OUTPOSTS_API GetConnectionResult
+  class GetConnectionResult
   {
   public:
-    GetConnectionResult();
-    GetConnectionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetConnectionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OUTPOSTS_API GetConnectionResult();
+    AWS_OUTPOSTS_API GetConnectionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OUTPOSTS_API GetConnectionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

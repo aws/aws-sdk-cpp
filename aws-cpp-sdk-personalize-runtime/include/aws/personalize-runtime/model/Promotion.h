@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-runtime-2018-05-22/Promotion">AWS
    * API Reference</a></p>
    */
-  class AWS_PERSONALIZERUNTIME_API Promotion
+  class Promotion
   {
   public:
-    Promotion();
-    Promotion(Aws::Utils::Json::JsonView jsonValue);
-    Promotion& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PERSONALIZERUNTIME_API Promotion();
+    AWS_PERSONALIZERUNTIME_API Promotion(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PERSONALIZERUNTIME_API Promotion& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PERSONALIZERUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

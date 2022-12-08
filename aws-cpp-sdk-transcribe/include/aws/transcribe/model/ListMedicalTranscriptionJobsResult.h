@@ -27,12 +27,12 @@ namespace TranscribeService
 {
 namespace Model
 {
-  class AWS_TRANSCRIBESERVICE_API ListMedicalTranscriptionJobsResult
+  class ListMedicalTranscriptionJobsResult
   {
   public:
-    ListMedicalTranscriptionJobsResult();
-    ListMedicalTranscriptionJobsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListMedicalTranscriptionJobsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_TRANSCRIBESERVICE_API ListMedicalTranscriptionJobsResult();
+    AWS_TRANSCRIBESERVICE_API ListMedicalTranscriptionJobsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_TRANSCRIBESERVICE_API ListMedicalTranscriptionJobsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

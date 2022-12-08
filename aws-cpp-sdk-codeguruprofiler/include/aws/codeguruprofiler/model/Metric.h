@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/Metric">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEGURUPROFILER_API Metric
+  class Metric
   {
   public:
-    Metric();
-    Metric(Aws::Utils::Json::JsonView jsonValue);
-    Metric& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEGURUPROFILER_API Metric();
+    AWS_CODEGURUPROFILER_API Metric(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEGURUPROFILER_API Metric& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEGURUPROFILER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

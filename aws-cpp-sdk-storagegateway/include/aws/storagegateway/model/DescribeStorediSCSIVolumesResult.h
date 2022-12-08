@@ -25,12 +25,12 @@ namespace StorageGateway
 {
 namespace Model
 {
-  class AWS_STORAGEGATEWAY_API DescribeStorediSCSIVolumesResult
+  class DescribeStorediSCSIVolumesResult
   {
   public:
-    DescribeStorediSCSIVolumesResult();
-    DescribeStorediSCSIVolumesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeStorediSCSIVolumesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_STORAGEGATEWAY_API DescribeStorediSCSIVolumesResult();
+    AWS_STORAGEGATEWAY_API DescribeStorediSCSIVolumesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_STORAGEGATEWAY_API DescribeStorediSCSIVolumesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/MinimumHealthyHosts">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEDEPLOY_API MinimumHealthyHosts
+  class MinimumHealthyHosts
   {
   public:
-    MinimumHealthyHosts();
-    MinimumHealthyHosts(Aws::Utils::Json::JsonView jsonValue);
-    MinimumHealthyHosts& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEDEPLOY_API MinimumHealthyHosts();
+    AWS_CODEDEPLOY_API MinimumHealthyHosts(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEDEPLOY_API MinimumHealthyHosts& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEDEPLOY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -32,12 +32,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ClusterSecurityGroupMessage">AWS
    * API Reference</a></p>
    */
-  class AWS_REDSHIFT_API DescribeClusterSecurityGroupsResult
+  class DescribeClusterSecurityGroupsResult
   {
   public:
-    DescribeClusterSecurityGroupsResult();
-    DescribeClusterSecurityGroupsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeClusterSecurityGroupsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_REDSHIFT_API DescribeClusterSecurityGroupsResult();
+    AWS_REDSHIFT_API DescribeClusterSecurityGroupsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_REDSHIFT_API DescribeClusterSecurityGroupsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

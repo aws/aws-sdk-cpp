@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ResourceIdentifier">AWS
    * API Reference</a></p>
    */
-  class AWS_CONFIGSERVICE_API ResourceIdentifier
+  class ResourceIdentifier
   {
   public:
-    ResourceIdentifier();
-    ResourceIdentifier(Aws::Utils::Json::JsonView jsonValue);
-    ResourceIdentifier& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONFIGSERVICE_API ResourceIdentifier();
+    AWS_CONFIGSERVICE_API ResourceIdentifier(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API ResourceIdentifier& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

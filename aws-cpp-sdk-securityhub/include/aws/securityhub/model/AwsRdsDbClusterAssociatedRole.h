@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsRdsDbClusterAssociatedRole">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsRdsDbClusterAssociatedRole
+  class AwsRdsDbClusterAssociatedRole
   {
   public:
-    AwsRdsDbClusterAssociatedRole();
-    AwsRdsDbClusterAssociatedRole(Aws::Utils::Json::JsonView jsonValue);
-    AwsRdsDbClusterAssociatedRole& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsRdsDbClusterAssociatedRole();
+    AWS_SECURITYHUB_API AwsRdsDbClusterAssociatedRole(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsRdsDbClusterAssociatedRole& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

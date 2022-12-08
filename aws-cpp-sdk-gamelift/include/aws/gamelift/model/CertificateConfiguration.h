@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CertificateConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_GAMELIFT_API CertificateConfiguration
+  class CertificateConfiguration
   {
   public:
-    CertificateConfiguration();
-    CertificateConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    CertificateConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GAMELIFT_API CertificateConfiguration();
+    AWS_GAMELIFT_API CertificateConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMELIFT_API CertificateConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

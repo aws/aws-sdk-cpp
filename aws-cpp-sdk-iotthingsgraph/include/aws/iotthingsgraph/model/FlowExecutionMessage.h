@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/FlowExecutionMessage">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTTHINGSGRAPH_API FlowExecutionMessage
+  class FlowExecutionMessage
   {
   public:
-    FlowExecutionMessage();
-    FlowExecutionMessage(Aws::Utils::Json::JsonView jsonValue);
-    FlowExecutionMessage& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTTHINGSGRAPH_API FlowExecutionMessage();
+    AWS_IOTTHINGSGRAPH_API FlowExecutionMessage(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTTHINGSGRAPH_API FlowExecutionMessage& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTTHINGSGRAPH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

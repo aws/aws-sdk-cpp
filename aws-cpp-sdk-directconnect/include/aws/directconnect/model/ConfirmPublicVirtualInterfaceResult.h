@@ -24,12 +24,12 @@ namespace DirectConnect
 {
 namespace Model
 {
-  class AWS_DIRECTCONNECT_API ConfirmPublicVirtualInterfaceResult
+  class ConfirmPublicVirtualInterfaceResult
   {
   public:
-    ConfirmPublicVirtualInterfaceResult();
-    ConfirmPublicVirtualInterfaceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ConfirmPublicVirtualInterfaceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DIRECTCONNECT_API ConfirmPublicVirtualInterfaceResult();
+    AWS_DIRECTCONNECT_API ConfirmPublicVirtualInterfaceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DIRECTCONNECT_API ConfirmPublicVirtualInterfaceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

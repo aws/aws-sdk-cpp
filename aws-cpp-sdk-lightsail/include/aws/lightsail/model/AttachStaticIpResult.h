@@ -25,12 +25,12 @@ namespace Lightsail
 {
 namespace Model
 {
-  class AWS_LIGHTSAIL_API AttachStaticIpResult
+  class AttachStaticIpResult
   {
   public:
-    AttachStaticIpResult();
-    AttachStaticIpResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AttachStaticIpResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LIGHTSAIL_API AttachStaticIpResult();
+    AWS_LIGHTSAIL_API AttachStaticIpResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LIGHTSAIL_API AttachStaticIpResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

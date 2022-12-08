@@ -26,12 +26,12 @@ namespace ComputeOptimizer
 {
 namespace Model
 {
-  class AWS_COMPUTEOPTIMIZER_API GetLambdaFunctionRecommendationsResult
+  class GetLambdaFunctionRecommendationsResult
   {
   public:
-    GetLambdaFunctionRecommendationsResult();
-    GetLambdaFunctionRecommendationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetLambdaFunctionRecommendationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_COMPUTEOPTIMIZER_API GetLambdaFunctionRecommendationsResult();
+    AWS_COMPUTEOPTIMIZER_API GetLambdaFunctionRecommendationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_COMPUTEOPTIMIZER_API GetLambdaFunctionRecommendationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

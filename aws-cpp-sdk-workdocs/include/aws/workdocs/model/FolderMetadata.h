@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/FolderMetadata">AWS
    * API Reference</a></p>
    */
-  class AWS_WORKDOCS_API FolderMetadata
+  class FolderMetadata
   {
   public:
-    FolderMetadata();
-    FolderMetadata(Aws::Utils::Json::JsonView jsonValue);
-    FolderMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WORKDOCS_API FolderMetadata();
+    AWS_WORKDOCS_API FolderMetadata(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKDOCS_API FolderMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKDOCS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

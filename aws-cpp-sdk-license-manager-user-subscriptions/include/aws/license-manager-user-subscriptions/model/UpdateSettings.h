@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-user-subscriptions-2018-05-10/UpdateSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API UpdateSettings
+  class UpdateSettings
   {
   public:
-    UpdateSettings();
-    UpdateSettings(Aws::Utils::Json::JsonView jsonValue);
-    UpdateSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API UpdateSettings();
+    AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API UpdateSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API UpdateSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

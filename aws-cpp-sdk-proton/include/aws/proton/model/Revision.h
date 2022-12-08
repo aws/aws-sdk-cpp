@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/Revision">AWS API
    * Reference</a></p>
    */
-  class AWS_PROTON_API Revision
+  class Revision
   {
   public:
-    Revision();
-    Revision(Aws::Utils::Json::JsonView jsonValue);
-    Revision& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PROTON_API Revision();
+    AWS_PROTON_API Revision(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PROTON_API Revision& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PROTON_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

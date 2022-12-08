@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/MetricAttributionOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_PERSONALIZE_API MetricAttributionOutput
+  class MetricAttributionOutput
   {
   public:
-    MetricAttributionOutput();
-    MetricAttributionOutput(Aws::Utils::Json::JsonView jsonValue);
-    MetricAttributionOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PERSONALIZE_API MetricAttributionOutput();
+    AWS_PERSONALIZE_API MetricAttributionOutput(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PERSONALIZE_API MetricAttributionOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PERSONALIZE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

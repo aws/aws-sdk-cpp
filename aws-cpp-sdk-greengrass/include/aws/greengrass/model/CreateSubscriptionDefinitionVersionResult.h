@@ -24,12 +24,12 @@ namespace Greengrass
 {
 namespace Model
 {
-  class AWS_GREENGRASS_API CreateSubscriptionDefinitionVersionResult
+  class CreateSubscriptionDefinitionVersionResult
   {
   public:
-    CreateSubscriptionDefinitionVersionResult();
-    CreateSubscriptionDefinitionVersionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateSubscriptionDefinitionVersionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GREENGRASS_API CreateSubscriptionDefinitionVersionResult();
+    AWS_GREENGRASS_API CreateSubscriptionDefinitionVersionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GREENGRASS_API CreateSubscriptionDefinitionVersionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

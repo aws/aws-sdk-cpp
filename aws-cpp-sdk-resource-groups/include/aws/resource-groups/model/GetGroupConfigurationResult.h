@@ -24,12 +24,12 @@ namespace ResourceGroups
 {
 namespace Model
 {
-  class AWS_RESOURCEGROUPS_API GetGroupConfigurationResult
+  class GetGroupConfigurationResult
   {
   public:
-    GetGroupConfigurationResult();
-    GetGroupConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetGroupConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_RESOURCEGROUPS_API GetGroupConfigurationResult();
+    AWS_RESOURCEGROUPS_API GetGroupConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_RESOURCEGROUPS_API GetGroupConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

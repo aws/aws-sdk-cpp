@@ -30,12 +30,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeEventTopicsResult">AWS
    * API Reference</a></p>
    */
-  class AWS_DIRECTORYSERVICE_API DescribeEventTopicsResult
+  class DescribeEventTopicsResult
   {
   public:
-    DescribeEventTopicsResult();
-    DescribeEventTopicsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeEventTopicsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DIRECTORYSERVICE_API DescribeEventTopicsResult();
+    AWS_DIRECTORYSERVICE_API DescribeEventTopicsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DIRECTORYSERVICE_API DescribeEventTopicsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

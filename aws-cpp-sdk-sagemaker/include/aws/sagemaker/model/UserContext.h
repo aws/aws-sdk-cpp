@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UserContext">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API UserContext
+  class UserContext
   {
   public:
-    UserContext();
-    UserContext(Aws::Utils::Json::JsonView jsonValue);
-    UserContext& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API UserContext();
+    AWS_SAGEMAKER_API UserContext(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API UserContext& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

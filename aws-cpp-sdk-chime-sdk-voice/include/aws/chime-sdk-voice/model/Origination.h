@@ -24,13 +24,13 @@ namespace ChimeSDKVoice
 namespace Model
 {
 
-  class AWS_CHIMESDKVOICE_API Origination
+  class Origination
   {
   public:
-    Origination();
-    Origination(Aws::Utils::Json::JsonView jsonValue);
-    Origination& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIMESDKVOICE_API Origination();
+    AWS_CHIMESDKVOICE_API Origination(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKVOICE_API Origination& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKVOICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/CustomDataIdentifiersDetections">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API CustomDataIdentifiersDetections
+  class CustomDataIdentifiersDetections
   {
   public:
-    CustomDataIdentifiersDetections();
-    CustomDataIdentifiersDetections(Aws::Utils::Json::JsonView jsonValue);
-    CustomDataIdentifiersDetections& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API CustomDataIdentifiersDetections();
+    AWS_SECURITYHUB_API CustomDataIdentifiersDetections(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API CustomDataIdentifiersDetections& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

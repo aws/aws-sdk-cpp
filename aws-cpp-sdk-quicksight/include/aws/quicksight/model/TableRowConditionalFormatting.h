@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/TableRowConditionalFormatting">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API TableRowConditionalFormatting
+  class TableRowConditionalFormatting
   {
   public:
-    TableRowConditionalFormatting();
-    TableRowConditionalFormatting(Aws::Utils::Json::JsonView jsonValue);
-    TableRowConditionalFormatting& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API TableRowConditionalFormatting();
+    AWS_QUICKSIGHT_API TableRowConditionalFormatting(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API TableRowConditionalFormatting& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

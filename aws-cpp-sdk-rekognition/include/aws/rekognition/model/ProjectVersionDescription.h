@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/ProjectVersionDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_REKOGNITION_API ProjectVersionDescription
+  class ProjectVersionDescription
   {
   public:
-    ProjectVersionDescription();
-    ProjectVersionDescription(Aws::Utils::Json::JsonView jsonValue);
-    ProjectVersionDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_REKOGNITION_API ProjectVersionDescription();
+    AWS_REKOGNITION_API ProjectVersionDescription(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API ProjectVersionDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -31,12 +31,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateKeysAndCertificateResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API CreateKeysAndCertificateResult
+  class CreateKeysAndCertificateResult
   {
   public:
-    CreateKeysAndCertificateResult();
-    CreateKeysAndCertificateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateKeysAndCertificateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOT_API CreateKeysAndCertificateResult();
+    AWS_IOT_API CreateKeysAndCertificateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOT_API CreateKeysAndCertificateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

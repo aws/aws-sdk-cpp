@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ItemSizeLimitExceededException">AWS
    * API Reference</a></p>
    */
-  class AWS_SSM_API ItemSizeLimitExceededException
+  class ItemSizeLimitExceededException
   {
   public:
-    ItemSizeLimitExceededException();
-    ItemSizeLimitExceededException(Aws::Utils::Json::JsonView jsonValue);
-    ItemSizeLimitExceededException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSM_API ItemSizeLimitExceededException();
+    AWS_SSM_API ItemSizeLimitExceededException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API ItemSizeLimitExceededException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

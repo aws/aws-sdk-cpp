@@ -29,15 +29,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/InvalidFirehoseDestinationException">AWS
    * API Reference</a></p>
    */
-  class AWS_SES_API InvalidFirehoseDestinationException
+  class InvalidFirehoseDestinationException
   {
   public:
-    InvalidFirehoseDestinationException();
-    InvalidFirehoseDestinationException(const Aws::Utils::Xml::XmlNode& xmlNode);
-    InvalidFirehoseDestinationException& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_SES_API InvalidFirehoseDestinationException();
+    AWS_SES_API InvalidFirehoseDestinationException(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_SES_API InvalidFirehoseDestinationException& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_SES_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_SES_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**

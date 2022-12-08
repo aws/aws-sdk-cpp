@@ -51,13 +51,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/Options">AWS
    * API Reference</a></p>
    */
-  class AWS_DATASYNC_API Options
+  class Options
   {
   public:
-    Options();
-    Options(Aws::Utils::Json::JsonView jsonValue);
-    Options& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DATASYNC_API Options();
+    AWS_DATASYNC_API Options(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATASYNC_API Options& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATASYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

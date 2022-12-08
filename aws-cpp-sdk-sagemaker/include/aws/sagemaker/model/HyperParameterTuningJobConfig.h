@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/HyperParameterTuningJobConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API HyperParameterTuningJobConfig
+  class HyperParameterTuningJobConfig
   {
   public:
-    HyperParameterTuningJobConfig();
-    HyperParameterTuningJobConfig(Aws::Utils::Json::JsonView jsonValue);
-    HyperParameterTuningJobConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API HyperParameterTuningJobConfig();
+    AWS_SAGEMAKER_API HyperParameterTuningJobConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API HyperParameterTuningJobConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

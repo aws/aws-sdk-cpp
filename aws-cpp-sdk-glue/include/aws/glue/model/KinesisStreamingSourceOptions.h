@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/KinesisStreamingSourceOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API KinesisStreamingSourceOptions
+  class KinesisStreamingSourceOptions
   {
   public:
-    KinesisStreamingSourceOptions();
-    KinesisStreamingSourceOptions(Aws::Utils::Json::JsonView jsonValue);
-    KinesisStreamingSourceOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API KinesisStreamingSourceOptions();
+    AWS_GLUE_API KinesisStreamingSourceOptions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API KinesisStreamingSourceOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

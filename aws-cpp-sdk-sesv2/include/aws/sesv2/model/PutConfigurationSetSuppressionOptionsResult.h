@@ -28,12 +28,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutConfigurationSetSuppressionOptionsResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_SESV2_API PutConfigurationSetSuppressionOptionsResult
+  class PutConfigurationSetSuppressionOptionsResult
   {
   public:
-    PutConfigurationSetSuppressionOptionsResult();
-    PutConfigurationSetSuppressionOptionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PutConfigurationSetSuppressionOptionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SESV2_API PutConfigurationSetSuppressionOptionsResult();
+    AWS_SESV2_API PutConfigurationSetSuppressionOptionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SESV2_API PutConfigurationSetSuppressionOptionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

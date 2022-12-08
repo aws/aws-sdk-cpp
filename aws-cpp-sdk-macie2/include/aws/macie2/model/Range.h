@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/Range">AWS API
    * Reference</a></p>
    */
-  class AWS_MACIE2_API Range
+  class Range
   {
   public:
-    Range();
-    Range(Aws::Utils::Json::JsonView jsonValue);
-    Range& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MACIE2_API Range();
+    AWS_MACIE2_API Range(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API Range& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

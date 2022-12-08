@@ -164,13 +164,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/Decision">AWS API
    * Reference</a></p>
    */
-  class AWS_SWF_API Decision
+  class Decision
   {
   public:
-    Decision();
-    Decision(Aws::Utils::Json::JsonView jsonValue);
-    Decision& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SWF_API Decision();
+    AWS_SWF_API Decision(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SWF_API Decision& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SWF_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

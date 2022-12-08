@@ -25,12 +25,12 @@ namespace WorkSpacesWeb
 {
 namespace Model
 {
-  class AWS_WORKSPACESWEB_API GetTrustStoreCertificateResult
+  class GetTrustStoreCertificateResult
   {
   public:
-    GetTrustStoreCertificateResult();
-    GetTrustStoreCertificateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetTrustStoreCertificateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WORKSPACESWEB_API GetTrustStoreCertificateResult();
+    AWS_WORKSPACESWEB_API GetTrustStoreCertificateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WORKSPACESWEB_API GetTrustStoreCertificateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

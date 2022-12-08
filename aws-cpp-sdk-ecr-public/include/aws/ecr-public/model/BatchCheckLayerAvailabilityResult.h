@@ -26,12 +26,12 @@ namespace ECRPublic
 {
 namespace Model
 {
-  class AWS_ECRPUBLIC_API BatchCheckLayerAvailabilityResult
+  class BatchCheckLayerAvailabilityResult
   {
   public:
-    BatchCheckLayerAvailabilityResult();
-    BatchCheckLayerAvailabilityResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    BatchCheckLayerAvailabilityResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ECRPUBLIC_API BatchCheckLayerAvailabilityResult();
+    AWS_ECRPUBLIC_API BatchCheckLayerAvailabilityResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ECRPUBLIC_API BatchCheckLayerAvailabilityResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

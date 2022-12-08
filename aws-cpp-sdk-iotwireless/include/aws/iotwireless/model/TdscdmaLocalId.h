@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/TdscdmaLocalId">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTWIRELESS_API TdscdmaLocalId
+  class TdscdmaLocalId
   {
   public:
-    TdscdmaLocalId();
-    TdscdmaLocalId(Aws::Utils::Json::JsonView jsonValue);
-    TdscdmaLocalId& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTWIRELESS_API TdscdmaLocalId();
+    AWS_IOTWIRELESS_API TdscdmaLocalId(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API TdscdmaLocalId& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/SessionStatus">AWS
    * API Reference</a></p>
    */
-  class AWS_ATHENA_API SessionStatus
+  class SessionStatus
   {
   public:
-    SessionStatus();
-    SessionStatus(Aws::Utils::Json::JsonView jsonValue);
-    SessionStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ATHENA_API SessionStatus();
+    AWS_ATHENA_API SessionStatus(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ATHENA_API SessionStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ATHENA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

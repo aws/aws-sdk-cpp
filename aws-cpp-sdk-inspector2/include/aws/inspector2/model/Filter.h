@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/Filter">AWS
    * API Reference</a></p>
    */
-  class AWS_INSPECTOR2_API Filter
+  class Filter
   {
   public:
-    Filter();
-    Filter(Aws::Utils::Json::JsonView jsonValue);
-    Filter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_INSPECTOR2_API Filter();
+    AWS_INSPECTOR2_API Filter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR2_API Filter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

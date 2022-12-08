@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/NumberValidateResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API NumberValidateResponse
+  class NumberValidateResponse
   {
   public:
-    NumberValidateResponse();
-    NumberValidateResponse(Aws::Utils::Json::JsonView jsonValue);
-    NumberValidateResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API NumberValidateResponse();
+    AWS_PINPOINT_API NumberValidateResponse(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API NumberValidateResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

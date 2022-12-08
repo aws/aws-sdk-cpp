@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/TrustedAdvisorCheckSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_SUPPORT_API TrustedAdvisorCheckSummary
+  class TrustedAdvisorCheckSummary
   {
   public:
-    TrustedAdvisorCheckSummary();
-    TrustedAdvisorCheckSummary(Aws::Utils::Json::JsonView jsonValue);
-    TrustedAdvisorCheckSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SUPPORT_API TrustedAdvisorCheckSummary();
+    AWS_SUPPORT_API TrustedAdvisorCheckSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SUPPORT_API TrustedAdvisorCheckSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SUPPORT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

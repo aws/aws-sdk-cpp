@@ -22,12 +22,12 @@ namespace RAM
 {
 namespace Model
 {
-  class AWS_RAM_API EnableSharingWithAwsOrganizationResult
+  class EnableSharingWithAwsOrganizationResult
   {
   public:
-    EnableSharingWithAwsOrganizationResult();
-    EnableSharingWithAwsOrganizationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    EnableSharingWithAwsOrganizationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_RAM_API EnableSharingWithAwsOrganizationResult();
+    AWS_RAM_API EnableSharingWithAwsOrganizationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_RAM_API EnableSharingWithAwsOrganizationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

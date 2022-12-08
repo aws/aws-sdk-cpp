@@ -24,12 +24,12 @@ namespace SSM
 {
 namespace Model
 {
-  class AWS_SSM_API CreateOpsItemResult
+  class CreateOpsItemResult
   {
   public:
-    CreateOpsItemResult();
-    CreateOpsItemResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateOpsItemResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSM_API CreateOpsItemResult();
+    AWS_SSM_API CreateOpsItemResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSM_API CreateOpsItemResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

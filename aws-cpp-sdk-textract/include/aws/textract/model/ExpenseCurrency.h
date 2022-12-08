@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/ExpenseCurrency">AWS
    * API Reference</a></p>
    */
-  class AWS_TEXTRACT_API ExpenseCurrency
+  class ExpenseCurrency
   {
   public:
-    ExpenseCurrency();
-    ExpenseCurrency(Aws::Utils::Json::JsonView jsonValue);
-    ExpenseCurrency& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TEXTRACT_API ExpenseCurrency();
+    AWS_TEXTRACT_API ExpenseCurrency(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TEXTRACT_API ExpenseCurrency& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TEXTRACT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

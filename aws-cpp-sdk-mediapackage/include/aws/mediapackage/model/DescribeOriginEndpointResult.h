@@ -32,12 +32,12 @@ namespace MediaPackage
 {
 namespace Model
 {
-  class AWS_MEDIAPACKAGE_API DescribeOriginEndpointResult
+  class DescribeOriginEndpointResult
   {
   public:
-    DescribeOriginEndpointResult();
-    DescribeOriginEndpointResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeOriginEndpointResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MEDIAPACKAGE_API DescribeOriginEndpointResult();
+    AWS_MEDIAPACKAGE_API DescribeOriginEndpointResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MEDIAPACKAGE_API DescribeOriginEndpointResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

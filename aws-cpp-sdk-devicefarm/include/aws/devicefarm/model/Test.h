@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/Test">AWS API
    * Reference</a></p>
    */
-  class AWS_DEVICEFARM_API Test
+  class Test
   {
   public:
-    Test();
-    Test(Aws::Utils::Json::JsonView jsonValue);
-    Test& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DEVICEFARM_API Test();
+    AWS_DEVICEFARM_API Test(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVICEFARM_API Test& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVICEFARM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

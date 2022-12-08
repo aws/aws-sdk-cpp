@@ -25,12 +25,12 @@ namespace IoTAnalytics
 {
 namespace Model
 {
-  class AWS_IOTANALYTICS_API DescribeDatastoreResult
+  class DescribeDatastoreResult
   {
   public:
-    DescribeDatastoreResult();
-    DescribeDatastoreResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeDatastoreResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOTANALYTICS_API DescribeDatastoreResult();
+    AWS_IOTANALYTICS_API DescribeDatastoreResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOTANALYTICS_API DescribeDatastoreResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

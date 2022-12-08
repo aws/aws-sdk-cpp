@@ -27,12 +27,12 @@ namespace IoTWireless
 {
 namespace Model
 {
-  class AWS_IOTWIRELESS_API GetLogLevelsByResourceTypesResult
+  class GetLogLevelsByResourceTypesResult
   {
   public:
-    GetLogLevelsByResourceTypesResult();
-    GetLogLevelsByResourceTypesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetLogLevelsByResourceTypesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOTWIRELESS_API GetLogLevelsByResourceTypesResult();
+    AWS_IOTWIRELESS_API GetLogLevelsByResourceTypesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOTWIRELESS_API GetLogLevelsByResourceTypesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsIamAccessKeyDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsIamAccessKeyDetails
+  class AwsIamAccessKeyDetails
   {
   public:
-    AwsIamAccessKeyDetails();
-    AwsIamAccessKeyDetails(Aws::Utils::Json::JsonView jsonValue);
-    AwsIamAccessKeyDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsIamAccessKeyDetails();
+    AWS_SECURITYHUB_API AwsIamAccessKeyDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsIamAccessKeyDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -27,12 +27,12 @@ namespace IoT
 {
 namespace Model
 {
-  class AWS_IOT_API DescribeThingGroupResult
+  class DescribeThingGroupResult
   {
   public:
-    DescribeThingGroupResult();
-    DescribeThingGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeThingGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOT_API DescribeThingGroupResult();
+    AWS_IOT_API DescribeThingGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOT_API DescribeThingGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

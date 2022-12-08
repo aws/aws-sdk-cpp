@@ -40,13 +40,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UsagePlan">AWS
    * API Reference</a></p>
    */
-  class AWS_APIGATEWAY_API UsagePlan
+  class UsagePlan
   {
   public:
-    UsagePlan();
-    UsagePlan(Aws::Utils::Json::JsonView jsonValue);
-    UsagePlan& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APIGATEWAY_API UsagePlan();
+    AWS_APIGATEWAY_API UsagePlan(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APIGATEWAY_API UsagePlan& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APIGATEWAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

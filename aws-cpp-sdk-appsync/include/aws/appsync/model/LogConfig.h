@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/LogConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_APPSYNC_API LogConfig
+  class LogConfig
   {
   public:
-    LogConfig();
-    LogConfig(Aws::Utils::Json::JsonView jsonValue);
-    LogConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPSYNC_API LogConfig();
+    AWS_APPSYNC_API LogConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPSYNC_API LogConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPSYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -32,12 +32,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DetachLoadBalancerFromSubnetsOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICLOADBALANCING_API DetachLoadBalancerFromSubnetsResult
+  class DetachLoadBalancerFromSubnetsResult
   {
   public:
-    DetachLoadBalancerFromSubnetsResult();
-    DetachLoadBalancerFromSubnetsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DetachLoadBalancerFromSubnetsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ELASTICLOADBALANCING_API DetachLoadBalancerFromSubnetsResult();
+    AWS_ELASTICLOADBALANCING_API DetachLoadBalancerFromSubnetsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ELASTICLOADBALANCING_API DetachLoadBalancerFromSubnetsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

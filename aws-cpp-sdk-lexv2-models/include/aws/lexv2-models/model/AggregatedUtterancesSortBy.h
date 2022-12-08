@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/AggregatedUtterancesSortBy">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELSV2_API AggregatedUtterancesSortBy
+  class AggregatedUtterancesSortBy
   {
   public:
-    AggregatedUtterancesSortBy();
-    AggregatedUtterancesSortBy(Aws::Utils::Json::JsonView jsonValue);
-    AggregatedUtterancesSortBy& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELSV2_API AggregatedUtterancesSortBy();
+    AWS_LEXMODELSV2_API AggregatedUtterancesSortBy(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API AggregatedUtterancesSortBy& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

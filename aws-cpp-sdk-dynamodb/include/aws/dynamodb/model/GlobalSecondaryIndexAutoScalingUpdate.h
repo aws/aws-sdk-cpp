@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/GlobalSecondaryIndexAutoScalingUpdate">AWS
    * API Reference</a></p>
    */
-  class AWS_DYNAMODB_API GlobalSecondaryIndexAutoScalingUpdate
+  class GlobalSecondaryIndexAutoScalingUpdate
   {
   public:
-    GlobalSecondaryIndexAutoScalingUpdate();
-    GlobalSecondaryIndexAutoScalingUpdate(Aws::Utils::Json::JsonView jsonValue);
-    GlobalSecondaryIndexAutoScalingUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DYNAMODB_API GlobalSecondaryIndexAutoScalingUpdate();
+    AWS_DYNAMODB_API GlobalSecondaryIndexAutoScalingUpdate(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API GlobalSecondaryIndexAutoScalingUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

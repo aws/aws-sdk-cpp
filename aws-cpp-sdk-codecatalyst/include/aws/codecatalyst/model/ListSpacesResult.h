@@ -26,12 +26,12 @@ namespace CodeCatalyst
 {
 namespace Model
 {
-  class AWS_CODECATALYST_API ListSpacesResult
+  class ListSpacesResult
   {
   public:
-    ListSpacesResult();
-    ListSpacesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListSpacesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODECATALYST_API ListSpacesResult();
+    AWS_CODECATALYST_API ListSpacesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODECATALYST_API ListSpacesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

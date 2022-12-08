@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/TableAutoScalingDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_DYNAMODB_API TableAutoScalingDescription
+  class TableAutoScalingDescription
   {
   public:
-    TableAutoScalingDescription();
-    TableAutoScalingDescription(Aws::Utils::Json::JsonView jsonValue);
-    TableAutoScalingDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DYNAMODB_API TableAutoScalingDescription();
+    AWS_DYNAMODB_API TableAutoScalingDescription(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API TableAutoScalingDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -22,12 +22,12 @@ namespace EMR
 {
 namespace Model
 {
-  class AWS_EMR_API RemoveAutoScalingPolicyResult
+  class RemoveAutoScalingPolicyResult
   {
   public:
-    RemoveAutoScalingPolicyResult();
-    RemoveAutoScalingPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    RemoveAutoScalingPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_EMR_API RemoveAutoScalingPolicyResult();
+    AWS_EMR_API RemoveAutoScalingPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_EMR_API RemoveAutoScalingPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

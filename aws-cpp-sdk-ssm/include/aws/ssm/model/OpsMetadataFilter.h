@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/OpsMetadataFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_SSM_API OpsMetadataFilter
+  class OpsMetadataFilter
   {
   public:
-    OpsMetadataFilter();
-    OpsMetadataFilter(Aws::Utils::Json::JsonView jsonValue);
-    OpsMetadataFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSM_API OpsMetadataFilter();
+    AWS_SSM_API OpsMetadataFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API OpsMetadataFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

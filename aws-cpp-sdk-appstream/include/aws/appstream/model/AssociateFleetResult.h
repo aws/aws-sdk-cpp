@@ -22,12 +22,12 @@ namespace AppStream
 {
 namespace Model
 {
-  class AWS_APPSTREAM_API AssociateFleetResult
+  class AssociateFleetResult
   {
   public:
-    AssociateFleetResult();
-    AssociateFleetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AssociateFleetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPSTREAM_API AssociateFleetResult();
+    AWS_APPSTREAM_API AssociateFleetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPSTREAM_API AssociateFleetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

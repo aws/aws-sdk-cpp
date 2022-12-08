@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsLambdaFunctionCode">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsLambdaFunctionCode
+  class AwsLambdaFunctionCode
   {
   public:
-    AwsLambdaFunctionCode();
-    AwsLambdaFunctionCode(Aws::Utils::Json::JsonView jsonValue);
-    AwsLambdaFunctionCode& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsLambdaFunctionCode();
+    AWS_SECURITYHUB_API AwsLambdaFunctionCode(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsLambdaFunctionCode& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

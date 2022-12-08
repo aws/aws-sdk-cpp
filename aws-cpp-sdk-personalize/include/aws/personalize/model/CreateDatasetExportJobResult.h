@@ -24,12 +24,12 @@ namespace Personalize
 {
 namespace Model
 {
-  class AWS_PERSONALIZE_API CreateDatasetExportJobResult
+  class CreateDatasetExportJobResult
   {
   public:
-    CreateDatasetExportJobResult();
-    CreateDatasetExportJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateDatasetExportJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PERSONALIZE_API CreateDatasetExportJobResult();
+    AWS_PERSONALIZE_API CreateDatasetExportJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PERSONALIZE_API CreateDatasetExportJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

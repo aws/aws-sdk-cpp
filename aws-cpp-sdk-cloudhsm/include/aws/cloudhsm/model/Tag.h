@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/Tag">AWS API
    * Reference</a></p>
    */
-  class AWS_CLOUDHSM_API Tag
+  class Tag
   {
   public:
-    Tag();
-    Tag(Aws::Utils::Json::JsonView jsonValue);
-    Tag& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDHSM_API Tag();
+    AWS_CLOUDHSM_API Tag(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDHSM_API Tag& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDHSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

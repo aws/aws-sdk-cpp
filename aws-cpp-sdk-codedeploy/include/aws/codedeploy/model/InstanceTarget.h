@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/InstanceTarget">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEDEPLOY_API InstanceTarget
+  class InstanceTarget
   {
   public:
-    InstanceTarget();
-    InstanceTarget(Aws::Utils::Json::JsonView jsonValue);
-    InstanceTarget& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEDEPLOY_API InstanceTarget();
+    AWS_CODEDEPLOY_API InstanceTarget(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEDEPLOY_API InstanceTarget& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEDEPLOY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

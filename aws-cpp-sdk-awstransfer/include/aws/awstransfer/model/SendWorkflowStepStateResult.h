@@ -22,12 +22,12 @@ namespace Transfer
 {
 namespace Model
 {
-  class AWS_TRANSFER_API SendWorkflowStepStateResult
+  class SendWorkflowStepStateResult
   {
   public:
-    SendWorkflowStepStateResult();
-    SendWorkflowStepStateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    SendWorkflowStepStateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_TRANSFER_API SendWorkflowStepStateResult();
+    AWS_TRANSFER_API SendWorkflowStepStateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_TRANSFER_API SendWorkflowStepStateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

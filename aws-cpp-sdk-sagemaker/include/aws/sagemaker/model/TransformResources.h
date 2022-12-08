@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/TransformResources">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API TransformResources
+  class TransformResources
   {
   public:
-    TransformResources();
-    TransformResources(Aws::Utils::Json::JsonView jsonValue);
-    TransformResources& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API TransformResources();
+    AWS_SAGEMAKER_API TransformResources(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API TransformResources& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

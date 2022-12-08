@@ -24,12 +24,12 @@ namespace ServiceDiscovery
 {
 namespace Model
 {
-  class AWS_SERVICEDISCOVERY_API CreatePublicDnsNamespaceResult
+  class CreatePublicDnsNamespaceResult
   {
   public:
-    CreatePublicDnsNamespaceResult();
-    CreatePublicDnsNamespaceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreatePublicDnsNamespaceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SERVICEDISCOVERY_API CreatePublicDnsNamespaceResult();
+    AWS_SERVICEDISCOVERY_API CreatePublicDnsNamespaceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SERVICEDISCOVERY_API CreatePublicDnsNamespaceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

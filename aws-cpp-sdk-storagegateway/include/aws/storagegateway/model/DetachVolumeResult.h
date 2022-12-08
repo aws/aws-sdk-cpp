@@ -29,12 +29,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DetachVolumeOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_STORAGEGATEWAY_API DetachVolumeResult
+  class DetachVolumeResult
   {
   public:
-    DetachVolumeResult();
-    DetachVolumeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DetachVolumeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_STORAGEGATEWAY_API DetachVolumeResult();
+    AWS_STORAGEGATEWAY_API DetachVolumeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_STORAGEGATEWAY_API DetachVolumeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

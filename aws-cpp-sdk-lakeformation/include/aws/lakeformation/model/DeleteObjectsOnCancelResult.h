@@ -22,12 +22,12 @@ namespace LakeFormation
 {
 namespace Model
 {
-  class AWS_LAKEFORMATION_API DeleteObjectsOnCancelResult
+  class DeleteObjectsOnCancelResult
   {
   public:
-    DeleteObjectsOnCancelResult();
-    DeleteObjectsOnCancelResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteObjectsOnCancelResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LAKEFORMATION_API DeleteObjectsOnCancelResult();
+    AWS_LAKEFORMATION_API DeleteObjectsOnCancelResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LAKEFORMATION_API DeleteObjectsOnCancelResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

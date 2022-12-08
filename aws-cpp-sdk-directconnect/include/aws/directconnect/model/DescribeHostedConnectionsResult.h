@@ -25,12 +25,12 @@ namespace DirectConnect
 {
 namespace Model
 {
-  class AWS_DIRECTCONNECT_API DescribeHostedConnectionsResult
+  class DescribeHostedConnectionsResult
   {
   public:
-    DescribeHostedConnectionsResult();
-    DescribeHostedConnectionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeHostedConnectionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DIRECTCONNECT_API DescribeHostedConnectionsResult();
+    AWS_DIRECTCONNECT_API DescribeHostedConnectionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DIRECTCONNECT_API DescribeHostedConnectionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

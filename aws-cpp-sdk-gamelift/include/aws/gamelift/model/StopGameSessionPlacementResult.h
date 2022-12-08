@@ -24,12 +24,12 @@ namespace GameLift
 {
 namespace Model
 {
-  class AWS_GAMELIFT_API StopGameSessionPlacementResult
+  class StopGameSessionPlacementResult
   {
   public:
-    StopGameSessionPlacementResult();
-    StopGameSessionPlacementResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    StopGameSessionPlacementResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GAMELIFT_API StopGameSessionPlacementResult();
+    AWS_GAMELIFT_API StopGameSessionPlacementResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GAMELIFT_API StopGameSessionPlacementResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -22,12 +22,12 @@ namespace CodeBuild
 {
 namespace Model
 {
-  class AWS_CODEBUILD_API InvalidateProjectCacheResult
+  class InvalidateProjectCacheResult
   {
   public:
-    InvalidateProjectCacheResult();
-    InvalidateProjectCacheResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    InvalidateProjectCacheResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODEBUILD_API InvalidateProjectCacheResult();
+    AWS_CODEBUILD_API InvalidateProjectCacheResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODEBUILD_API InvalidateProjectCacheResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

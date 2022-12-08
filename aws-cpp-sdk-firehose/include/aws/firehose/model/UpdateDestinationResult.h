@@ -22,12 +22,12 @@ namespace Firehose
 {
 namespace Model
 {
-  class AWS_FIREHOSE_API UpdateDestinationResult
+  class UpdateDestinationResult
   {
   public:
-    UpdateDestinationResult();
-    UpdateDestinationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateDestinationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_FIREHOSE_API UpdateDestinationResult();
+    AWS_FIREHOSE_API UpdateDestinationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_FIREHOSE_API UpdateDestinationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

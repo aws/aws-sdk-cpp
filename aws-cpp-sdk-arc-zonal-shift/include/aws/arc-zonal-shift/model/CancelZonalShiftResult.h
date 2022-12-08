@@ -26,12 +26,12 @@ namespace ARCZonalShift
 {
 namespace Model
 {
-  class AWS_ARCZONALSHIFT_API CancelZonalShiftResult
+  class CancelZonalShiftResult
   {
   public:
-    CancelZonalShiftResult();
-    CancelZonalShiftResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CancelZonalShiftResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ARCZONALSHIFT_API CancelZonalShiftResult();
+    AWS_ARCZONALSHIFT_API CancelZonalShiftResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ARCZONALSHIFT_API CancelZonalShiftResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

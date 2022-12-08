@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ElasticsearchAction">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API ElasticsearchAction
+  class ElasticsearchAction
   {
   public:
-    ElasticsearchAction();
-    ElasticsearchAction(Aws::Utils::Json::JsonView jsonValue);
-    ElasticsearchAction& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API ElasticsearchAction();
+    AWS_IOT_API ElasticsearchAction(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API ElasticsearchAction& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

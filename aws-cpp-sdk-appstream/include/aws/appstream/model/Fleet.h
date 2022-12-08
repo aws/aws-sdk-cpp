@@ -39,13 +39,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/Fleet">AWS API
    * Reference</a></p>
    */
-  class AWS_APPSTREAM_API Fleet
+  class Fleet
   {
   public:
-    Fleet();
-    Fleet(Aws::Utils::Json::JsonView jsonValue);
-    Fleet& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPSTREAM_API Fleet();
+    AWS_APPSTREAM_API Fleet(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPSTREAM_API Fleet& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPSTREAM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

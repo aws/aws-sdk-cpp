@@ -22,12 +22,12 @@ namespace Shield
 {
 namespace Model
 {
-  class AWS_SHIELD_API DisableApplicationLayerAutomaticResponseResult
+  class DisableApplicationLayerAutomaticResponseResult
   {
   public:
-    DisableApplicationLayerAutomaticResponseResult();
-    DisableApplicationLayerAutomaticResponseResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DisableApplicationLayerAutomaticResponseResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SHIELD_API DisableApplicationLayerAutomaticResponseResult();
+    AWS_SHIELD_API DisableApplicationLayerAutomaticResponseResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SHIELD_API DisableApplicationLayerAutomaticResponseResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

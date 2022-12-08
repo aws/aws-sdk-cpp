@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ParameterRange">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API ParameterRange
+  class ParameterRange
   {
   public:
-    ParameterRange();
-    ParameterRange(Aws::Utils::Json::JsonView jsonValue);
-    ParameterRange& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API ParameterRange();
+    AWS_SAGEMAKER_API ParameterRange(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API ParameterRange& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

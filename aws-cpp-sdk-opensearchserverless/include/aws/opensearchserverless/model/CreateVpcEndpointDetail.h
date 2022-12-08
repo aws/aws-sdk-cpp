@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/CreateVpcEndpointDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_OPENSEARCHSERVERLESS_API CreateVpcEndpointDetail
+  class CreateVpcEndpointDetail
   {
   public:
-    CreateVpcEndpointDetail();
-    CreateVpcEndpointDetail(Aws::Utils::Json::JsonView jsonValue);
-    CreateVpcEndpointDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OPENSEARCHSERVERLESS_API CreateVpcEndpointDetail();
+    AWS_OPENSEARCHSERVERLESS_API CreateVpcEndpointDetail(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPENSEARCHSERVERLESS_API CreateVpcEndpointDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPENSEARCHSERVERLESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

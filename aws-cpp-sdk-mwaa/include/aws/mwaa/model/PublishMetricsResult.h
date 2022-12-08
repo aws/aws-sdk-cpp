@@ -22,12 +22,12 @@ namespace MWAA
 {
 namespace Model
 {
-  class AWS_MWAA_API PublishMetricsResult
+  class PublishMetricsResult
   {
   public:
-    PublishMetricsResult();
-    PublishMetricsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PublishMetricsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MWAA_API PublishMetricsResult();
+    AWS_MWAA_API PublishMetricsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MWAA_API PublishMetricsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

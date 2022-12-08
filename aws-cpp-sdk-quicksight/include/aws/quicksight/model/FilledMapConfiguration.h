@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/FilledMapConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API FilledMapConfiguration
+  class FilledMapConfiguration
   {
   public:
-    FilledMapConfiguration();
-    FilledMapConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    FilledMapConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API FilledMapConfiguration();
+    AWS_QUICKSIGHT_API FilledMapConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API FilledMapConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

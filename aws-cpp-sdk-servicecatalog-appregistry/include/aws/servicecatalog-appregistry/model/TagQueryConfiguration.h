@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/TagQueryConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_APPREGISTRY_API TagQueryConfiguration
+  class TagQueryConfiguration
   {
   public:
-    TagQueryConfiguration();
-    TagQueryConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    TagQueryConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPREGISTRY_API TagQueryConfiguration();
+    AWS_APPREGISTRY_API TagQueryConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPREGISTRY_API TagQueryConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPREGISTRY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

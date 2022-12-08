@@ -24,12 +24,12 @@ namespace WAF
 {
 namespace Model
 {
-  class AWS_WAF_API GetGeoMatchSetResult
+  class GetGeoMatchSetResult
   {
   public:
-    GetGeoMatchSetResult();
-    GetGeoMatchSetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetGeoMatchSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WAF_API GetGeoMatchSetResult();
+    AWS_WAF_API GetGeoMatchSetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WAF_API GetGeoMatchSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

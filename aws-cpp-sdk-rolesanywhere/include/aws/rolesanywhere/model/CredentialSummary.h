@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rolesanywhere-2018-05-10/CredentialSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_ROLESANYWHERE_API CredentialSummary
+  class CredentialSummary
   {
   public:
-    CredentialSummary();
-    CredentialSummary(Aws::Utils::Json::JsonView jsonValue);
-    CredentialSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ROLESANYWHERE_API CredentialSummary();
+    AWS_ROLESANYWHERE_API CredentialSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROLESANYWHERE_API CredentialSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROLESANYWHERE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

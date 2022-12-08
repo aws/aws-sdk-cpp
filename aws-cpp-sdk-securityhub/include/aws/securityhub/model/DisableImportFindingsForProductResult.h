@@ -22,12 +22,12 @@ namespace SecurityHub
 {
 namespace Model
 {
-  class AWS_SECURITYHUB_API DisableImportFindingsForProductResult
+  class DisableImportFindingsForProductResult
   {
   public:
-    DisableImportFindingsForProductResult();
-    DisableImportFindingsForProductResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DisableImportFindingsForProductResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SECURITYHUB_API DisableImportFindingsForProductResult();
+    AWS_SECURITYHUB_API DisableImportFindingsForProductResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SECURITYHUB_API DisableImportFindingsForProductResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

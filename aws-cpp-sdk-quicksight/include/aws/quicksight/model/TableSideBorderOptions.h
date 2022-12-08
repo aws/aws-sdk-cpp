@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/TableSideBorderOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API TableSideBorderOptions
+  class TableSideBorderOptions
   {
   public:
-    TableSideBorderOptions();
-    TableSideBorderOptions(Aws::Utils::Json::JsonView jsonValue);
-    TableSideBorderOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API TableSideBorderOptions();
+    AWS_QUICKSIGHT_API TableSideBorderOptions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API TableSideBorderOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

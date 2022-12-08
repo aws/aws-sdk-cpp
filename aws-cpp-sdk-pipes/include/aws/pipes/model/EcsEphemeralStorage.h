@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pipes-2015-10-07/EcsEphemeralStorage">AWS
    * API Reference</a></p>
    */
-  class AWS_PIPES_API EcsEphemeralStorage
+  class EcsEphemeralStorage
   {
   public:
-    EcsEphemeralStorage();
-    EcsEphemeralStorage(Aws::Utils::Json::JsonView jsonValue);
-    EcsEphemeralStorage& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PIPES_API EcsEphemeralStorage();
+    AWS_PIPES_API EcsEphemeralStorage(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PIPES_API EcsEphemeralStorage& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PIPES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

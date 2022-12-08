@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/S3BucketTranscriptSource">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELSV2_API S3BucketTranscriptSource
+  class S3BucketTranscriptSource
   {
   public:
-    S3BucketTranscriptSource();
-    S3BucketTranscriptSource(Aws::Utils::Json::JsonView jsonValue);
-    S3BucketTranscriptSource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELSV2_API S3BucketTranscriptSource();
+    AWS_LEXMODELSV2_API S3BucketTranscriptSource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API S3BucketTranscriptSource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

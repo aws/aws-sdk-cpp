@@ -30,12 +30,12 @@ namespace mgn
 {
 namespace Model
 {
-  class AWS_MGN_API RetryDataReplicationResult
+  class RetryDataReplicationResult
   {
   public:
-    RetryDataReplicationResult();
-    RetryDataReplicationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    RetryDataReplicationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MGN_API RetryDataReplicationResult();
+    AWS_MGN_API RetryDataReplicationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MGN_API RetryDataReplicationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

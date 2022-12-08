@@ -31,12 +31,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/ListVirtualRoutersOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_APPMESH_API ListVirtualRoutersResult
+  class ListVirtualRoutersResult
   {
   public:
-    ListVirtualRoutersResult();
-    ListVirtualRoutersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListVirtualRoutersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPMESH_API ListVirtualRoutersResult();
+    AWS_APPMESH_API ListVirtualRoutersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPMESH_API ListVirtualRoutersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

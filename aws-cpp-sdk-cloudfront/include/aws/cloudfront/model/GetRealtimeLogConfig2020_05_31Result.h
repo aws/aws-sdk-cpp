@@ -24,12 +24,12 @@ namespace CloudFront
 {
 namespace Model
 {
-  class AWS_CLOUDFRONT_API GetRealtimeLogConfig2020_05_31Result
+  class GetRealtimeLogConfig2020_05_31Result
   {
   public:
-    GetRealtimeLogConfig2020_05_31Result();
-    GetRealtimeLogConfig2020_05_31Result(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    GetRealtimeLogConfig2020_05_31Result& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_CLOUDFRONT_API GetRealtimeLogConfig2020_05_31Result();
+    AWS_CLOUDFRONT_API GetRealtimeLogConfig2020_05_31Result(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_CLOUDFRONT_API GetRealtimeLogConfig2020_05_31Result& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

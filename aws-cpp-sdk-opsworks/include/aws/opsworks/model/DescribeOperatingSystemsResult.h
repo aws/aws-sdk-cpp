@@ -31,12 +31,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeOperatingSystemsResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_OPSWORKS_API DescribeOperatingSystemsResult
+  class DescribeOperatingSystemsResult
   {
   public:
-    DescribeOperatingSystemsResult();
-    DescribeOperatingSystemsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeOperatingSystemsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OPSWORKS_API DescribeOperatingSystemsResult();
+    AWS_OPSWORKS_API DescribeOperatingSystemsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OPSWORKS_API DescribeOperatingSystemsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

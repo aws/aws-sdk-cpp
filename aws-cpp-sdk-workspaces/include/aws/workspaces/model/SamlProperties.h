@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/SamlProperties">AWS
    * API Reference</a></p>
    */
-  class AWS_WORKSPACES_API SamlProperties
+  class SamlProperties
   {
   public:
-    SamlProperties();
-    SamlProperties(Aws::Utils::Json::JsonView jsonValue);
-    SamlProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WORKSPACES_API SamlProperties();
+    AWS_WORKSPACES_API SamlProperties(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKSPACES_API SamlProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

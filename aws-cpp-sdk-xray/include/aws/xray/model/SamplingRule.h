@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/SamplingRule">AWS
    * API Reference</a></p>
    */
-  class AWS_XRAY_API SamplingRule
+  class SamplingRule
   {
   public:
-    SamplingRule();
-    SamplingRule(Aws::Utils::Json::JsonView jsonValue);
-    SamplingRule& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_XRAY_API SamplingRule();
+    AWS_XRAY_API SamplingRule(Aws::Utils::Json::JsonView jsonValue);
+    AWS_XRAY_API SamplingRule& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_XRAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

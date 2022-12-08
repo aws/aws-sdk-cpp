@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ArcOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API ArcOptions
+  class ArcOptions
   {
   public:
-    ArcOptions();
-    ArcOptions(Aws::Utils::Json::JsonView jsonValue);
-    ArcOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API ArcOptions();
+    AWS_QUICKSIGHT_API ArcOptions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API ArcOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

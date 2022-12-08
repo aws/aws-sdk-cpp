@@ -30,12 +30,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/UpdateConfigurationSetEventDestinationResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_SES_API UpdateConfigurationSetEventDestinationResult
+  class UpdateConfigurationSetEventDestinationResult
   {
   public:
-    UpdateConfigurationSetEventDestinationResult();
-    UpdateConfigurationSetEventDestinationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    UpdateConfigurationSetEventDestinationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_SES_API UpdateConfigurationSetEventDestinationResult();
+    AWS_SES_API UpdateConfigurationSetEventDestinationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_SES_API UpdateConfigurationSetEventDestinationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     

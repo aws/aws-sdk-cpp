@@ -29,12 +29,12 @@ namespace DataExchange
 {
 namespace Model
 {
-  class AWS_DATAEXCHANGE_API GetDataSetResult
+  class GetDataSetResult
   {
   public:
-    GetDataSetResult();
-    GetDataSetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetDataSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DATAEXCHANGE_API GetDataSetResult();
+    AWS_DATAEXCHANGE_API GetDataSetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DATAEXCHANGE_API GetDataSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

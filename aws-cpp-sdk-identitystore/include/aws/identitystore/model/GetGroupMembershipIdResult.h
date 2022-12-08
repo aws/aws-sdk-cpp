@@ -24,12 +24,12 @@ namespace IdentityStore
 {
 namespace Model
 {
-  class AWS_IDENTITYSTORE_API GetGroupMembershipIdResult
+  class GetGroupMembershipIdResult
   {
   public:
-    GetGroupMembershipIdResult();
-    GetGroupMembershipIdResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetGroupMembershipIdResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IDENTITYSTORE_API GetGroupMembershipIdResult();
+    AWS_IDENTITYSTORE_API GetGroupMembershipIdResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IDENTITYSTORE_API GetGroupMembershipIdResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

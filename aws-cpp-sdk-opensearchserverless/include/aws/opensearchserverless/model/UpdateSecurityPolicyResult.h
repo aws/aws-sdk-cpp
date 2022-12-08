@@ -24,12 +24,12 @@ namespace OpenSearchServerless
 {
 namespace Model
 {
-  class AWS_OPENSEARCHSERVERLESS_API UpdateSecurityPolicyResult
+  class UpdateSecurityPolicyResult
   {
   public:
-    UpdateSecurityPolicyResult();
-    UpdateSecurityPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateSecurityPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OPENSEARCHSERVERLESS_API UpdateSecurityPolicyResult();
+    AWS_OPENSEARCHSERVERLESS_API UpdateSecurityPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OPENSEARCHSERVERLESS_API UpdateSecurityPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

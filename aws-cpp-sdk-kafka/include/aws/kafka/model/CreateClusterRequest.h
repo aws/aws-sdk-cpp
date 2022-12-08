@@ -27,10 +27,10 @@ namespace Model
 
   /**
    */
-  class AWS_KAFKA_API CreateClusterRequest : public KafkaRequest
+  class CreateClusterRequest : public KafkaRequest
   {
   public:
-    CreateClusterRequest();
+    AWS_KAFKA_API CreateClusterRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,7 +38,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateCluster"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_KAFKA_API Aws::String SerializePayload() const override;
 
 
     /**

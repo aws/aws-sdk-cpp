@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/FillMissingValues">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API FillMissingValues
+  class FillMissingValues
   {
   public:
-    FillMissingValues();
-    FillMissingValues(Aws::Utils::Json::JsonView jsonValue);
-    FillMissingValues& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API FillMissingValues();
+    AWS_GLUE_API FillMissingValues(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API FillMissingValues& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -30,12 +30,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/RefreshTrustedAdvisorCheckResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_SUPPORT_API RefreshTrustedAdvisorCheckResult
+  class RefreshTrustedAdvisorCheckResult
   {
   public:
-    RefreshTrustedAdvisorCheckResult();
-    RefreshTrustedAdvisorCheckResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    RefreshTrustedAdvisorCheckResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SUPPORT_API RefreshTrustedAdvisorCheckResult();
+    AWS_SUPPORT_API RefreshTrustedAdvisorCheckResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SUPPORT_API RefreshTrustedAdvisorCheckResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

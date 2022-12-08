@@ -26,12 +26,12 @@ namespace EC2
 {
 namespace Model
 {
-  class AWS_EC2_API AssociateSubnetCidrBlockResponse
+  class AssociateSubnetCidrBlockResponse
   {
   public:
-    AssociateSubnetCidrBlockResponse();
-    AssociateSubnetCidrBlockResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    AssociateSubnetCidrBlockResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API AssociateSubnetCidrBlockResponse();
+    AWS_EC2_API AssociateSubnetCidrBlockResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API AssociateSubnetCidrBlockResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

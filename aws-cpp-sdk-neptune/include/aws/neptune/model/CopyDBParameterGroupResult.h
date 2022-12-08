@@ -25,12 +25,12 @@ namespace Neptune
 {
 namespace Model
 {
-  class AWS_NEPTUNE_API CopyDBParameterGroupResult
+  class CopyDBParameterGroupResult
   {
   public:
-    CopyDBParameterGroupResult();
-    CopyDBParameterGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    CopyDBParameterGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_NEPTUNE_API CopyDBParameterGroupResult();
+    AWS_NEPTUNE_API CopyDBParameterGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_NEPTUNE_API CopyDBParameterGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     

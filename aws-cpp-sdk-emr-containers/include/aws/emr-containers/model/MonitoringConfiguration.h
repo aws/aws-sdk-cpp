@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/MonitoringConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_EMRCONTAINERS_API MonitoringConfiguration
+  class MonitoringConfiguration
   {
   public:
-    MonitoringConfiguration();
-    MonitoringConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    MonitoringConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EMRCONTAINERS_API MonitoringConfiguration();
+    AWS_EMRCONTAINERS_API MonitoringConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMRCONTAINERS_API MonitoringConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMRCONTAINERS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

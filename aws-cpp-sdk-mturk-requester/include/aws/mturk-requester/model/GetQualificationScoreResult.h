@@ -24,12 +24,12 @@ namespace MTurk
 {
 namespace Model
 {
-  class AWS_MTURK_API GetQualificationScoreResult
+  class GetQualificationScoreResult
   {
   public:
-    GetQualificationScoreResult();
-    GetQualificationScoreResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetQualificationScoreResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MTURK_API GetQualificationScoreResult();
+    AWS_MTURK_API GetQualificationScoreResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MTURK_API GetQualificationScoreResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

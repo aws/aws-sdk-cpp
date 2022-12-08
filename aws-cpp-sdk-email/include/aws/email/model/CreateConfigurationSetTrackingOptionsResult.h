@@ -30,12 +30,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/CreateConfigurationSetTrackingOptionsResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_SES_API CreateConfigurationSetTrackingOptionsResult
+  class CreateConfigurationSetTrackingOptionsResult
   {
   public:
-    CreateConfigurationSetTrackingOptionsResult();
-    CreateConfigurationSetTrackingOptionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    CreateConfigurationSetTrackingOptionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_SES_API CreateConfigurationSetTrackingOptionsResult();
+    AWS_SES_API CreateConfigurationSetTrackingOptionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_SES_API CreateConfigurationSetTrackingOptionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     

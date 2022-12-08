@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DependencyTimeout">AWS
    * API Reference</a></p>
    */
-  class AWS_EFS_API DependencyTimeout
+  class DependencyTimeout
   {
   public:
-    DependencyTimeout();
-    DependencyTimeout(Aws::Utils::Json::JsonView jsonValue);
-    DependencyTimeout& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EFS_API DependencyTimeout();
+    AWS_EFS_API DependencyTimeout(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EFS_API DependencyTimeout& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EFS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

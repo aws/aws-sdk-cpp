@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/MediaStream">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONNECT_API MediaStream
+  class MediaStream
   {
   public:
-    MediaStream();
-    MediaStream(Aws::Utils::Json::JsonView jsonValue);
-    MediaStream& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONNECT_API MediaStream();
+    AWS_MEDIACONNECT_API MediaStream(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONNECT_API MediaStream& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/HlsOutputSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API HlsOutputSettings
+  class HlsOutputSettings
   {
   public:
-    HlsOutputSettings();
-    HlsOutputSettings(Aws::Utils::Json::JsonView jsonValue);
-    HlsOutputSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API HlsOutputSettings();
+    AWS_MEDIALIVE_API HlsOutputSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API HlsOutputSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

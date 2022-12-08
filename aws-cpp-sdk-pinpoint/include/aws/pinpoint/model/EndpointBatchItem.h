@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/EndpointBatchItem">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API EndpointBatchItem
+  class EndpointBatchItem
   {
   public:
-    EndpointBatchItem();
-    EndpointBatchItem(Aws::Utils::Json::JsonView jsonValue);
-    EndpointBatchItem& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API EndpointBatchItem();
+    AWS_PINPOINT_API EndpointBatchItem(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API EndpointBatchItem& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

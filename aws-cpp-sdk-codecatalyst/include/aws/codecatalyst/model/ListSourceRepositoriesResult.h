@@ -26,12 +26,12 @@ namespace CodeCatalyst
 {
 namespace Model
 {
-  class AWS_CODECATALYST_API ListSourceRepositoriesResult
+  class ListSourceRepositoriesResult
   {
   public:
-    ListSourceRepositoriesResult();
-    ListSourceRepositoriesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListSourceRepositoriesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODECATALYST_API ListSourceRepositoriesResult();
+    AWS_CODECATALYST_API ListSourceRepositoriesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODECATALYST_API ListSourceRepositoriesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

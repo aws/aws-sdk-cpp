@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/AggregationAuthorization">AWS
    * API Reference</a></p>
    */
-  class AWS_CONFIGSERVICE_API AggregationAuthorization
+  class AggregationAuthorization
   {
   public:
-    AggregationAuthorization();
-    AggregationAuthorization(Aws::Utils::Json::JsonView jsonValue);
-    AggregationAuthorization& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONFIGSERVICE_API AggregationAuthorization();
+    AWS_CONFIGSERVICE_API AggregationAuthorization(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API AggregationAuthorization& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

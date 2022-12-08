@@ -33,12 +33,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListRemoteAccessSessionsResult">AWS
    * API Reference</a></p>
    */
-  class AWS_DEVICEFARM_API ListRemoteAccessSessionsResult
+  class ListRemoteAccessSessionsResult
   {
   public:
-    ListRemoteAccessSessionsResult();
-    ListRemoteAccessSessionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListRemoteAccessSessionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DEVICEFARM_API ListRemoteAccessSessionsResult();
+    AWS_DEVICEFARM_API ListRemoteAccessSessionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DEVICEFARM_API ListRemoteAccessSessionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

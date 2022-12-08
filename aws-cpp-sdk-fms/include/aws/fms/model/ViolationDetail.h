@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ViolationDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_FMS_API ViolationDetail
+  class ViolationDetail
   {
   public:
-    ViolationDetail();
-    ViolationDetail(Aws::Utils::Json::JsonView jsonValue);
-    ViolationDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FMS_API ViolationDetail();
+    AWS_FMS_API ViolationDetail(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FMS_API ViolationDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

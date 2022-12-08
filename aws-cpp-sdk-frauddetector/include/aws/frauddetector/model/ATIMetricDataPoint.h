@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/ATIMetricDataPoint">AWS
    * API Reference</a></p>
    */
-  class AWS_FRAUDDETECTOR_API ATIMetricDataPoint
+  class ATIMetricDataPoint
   {
   public:
-    ATIMetricDataPoint();
-    ATIMetricDataPoint(Aws::Utils::Json::JsonView jsonValue);
-    ATIMetricDataPoint& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FRAUDDETECTOR_API ATIMetricDataPoint();
+    AWS_FRAUDDETECTOR_API ATIMetricDataPoint(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FRAUDDETECTOR_API ATIMetricDataPoint& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FRAUDDETECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

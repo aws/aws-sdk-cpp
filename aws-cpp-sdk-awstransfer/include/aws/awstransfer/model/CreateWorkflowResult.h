@@ -24,12 +24,12 @@ namespace Transfer
 {
 namespace Model
 {
-  class AWS_TRANSFER_API CreateWorkflowResult
+  class CreateWorkflowResult
   {
   public:
-    CreateWorkflowResult();
-    CreateWorkflowResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateWorkflowResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_TRANSFER_API CreateWorkflowResult();
+    AWS_TRANSFER_API CreateWorkflowResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_TRANSFER_API CreateWorkflowResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListedWorkflow">AWS
    * API Reference</a></p>
    */
-  class AWS_TRANSFER_API ListedWorkflow
+  class ListedWorkflow
   {
   public:
-    ListedWorkflow();
-    ListedWorkflow(Aws::Utils::Json::JsonView jsonValue);
-    ListedWorkflow& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TRANSFER_API ListedWorkflow();
+    AWS_TRANSFER_API ListedWorkflow(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSFER_API ListedWorkflow& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSFER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

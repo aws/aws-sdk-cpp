@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/Subtitles">AWS
    * API Reference</a></p>
    */
-  class AWS_TRANSCRIBESERVICE_API Subtitles
+  class Subtitles
   {
   public:
-    Subtitles();
-    Subtitles(Aws::Utils::Json::JsonView jsonValue);
-    Subtitles& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TRANSCRIBESERVICE_API Subtitles();
+    AWS_TRANSCRIBESERVICE_API Subtitles(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSCRIBESERVICE_API Subtitles& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSCRIBESERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

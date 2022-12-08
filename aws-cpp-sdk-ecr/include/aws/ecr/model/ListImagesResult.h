@@ -26,12 +26,12 @@ namespace ECR
 {
 namespace Model
 {
-  class AWS_ECR_API ListImagesResult
+  class ListImagesResult
   {
   public:
-    ListImagesResult();
-    ListImagesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListImagesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ECR_API ListImagesResult();
+    AWS_ECR_API ListImagesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ECR_API ListImagesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

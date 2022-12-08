@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DataSourceToIndexFieldMapping">AWS
    * API Reference</a></p>
    */
-  class AWS_KENDRA_API DataSourceToIndexFieldMapping
+  class DataSourceToIndexFieldMapping
   {
   public:
-    DataSourceToIndexFieldMapping();
-    DataSourceToIndexFieldMapping(Aws::Utils::Json::JsonView jsonValue);
-    DataSourceToIndexFieldMapping& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KENDRA_API DataSourceToIndexFieldMapping();
+    AWS_KENDRA_API DataSourceToIndexFieldMapping(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API DataSourceToIndexFieldMapping& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

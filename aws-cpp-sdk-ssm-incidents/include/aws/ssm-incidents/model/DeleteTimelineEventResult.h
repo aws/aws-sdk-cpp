@@ -22,12 +22,12 @@ namespace SSMIncidents
 {
 namespace Model
 {
-  class AWS_SSMINCIDENTS_API DeleteTimelineEventResult
+  class DeleteTimelineEventResult
   {
   public:
-    DeleteTimelineEventResult();
-    DeleteTimelineEventResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteTimelineEventResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSMINCIDENTS_API DeleteTimelineEventResult();
+    AWS_SSMINCIDENTS_API DeleteTimelineEventResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSMINCIDENTS_API DeleteTimelineEventResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

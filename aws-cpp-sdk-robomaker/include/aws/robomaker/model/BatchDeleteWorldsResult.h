@@ -25,12 +25,12 @@ namespace RoboMaker
 {
 namespace Model
 {
-  class AWS_ROBOMAKER_API BatchDeleteWorldsResult
+  class BatchDeleteWorldsResult
   {
   public:
-    BatchDeleteWorldsResult();
-    BatchDeleteWorldsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    BatchDeleteWorldsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ROBOMAKER_API BatchDeleteWorldsResult();
+    AWS_ROBOMAKER_API BatchDeleteWorldsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ROBOMAKER_API BatchDeleteWorldsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -27,12 +27,12 @@ namespace Neptune
 {
 namespace Model
 {
-  class AWS_NEPTUNE_API DescribeOrderableDBInstanceOptionsResult
+  class DescribeOrderableDBInstanceOptionsResult
   {
   public:
-    DescribeOrderableDBInstanceOptionsResult();
-    DescribeOrderableDBInstanceOptionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeOrderableDBInstanceOptionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_NEPTUNE_API DescribeOrderableDBInstanceOptionsResult();
+    AWS_NEPTUNE_API DescribeOrderableDBInstanceOptionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_NEPTUNE_API DescribeOrderableDBInstanceOptionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

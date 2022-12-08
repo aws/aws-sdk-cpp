@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/GameServer">AWS
    * API Reference</a></p>
    */
-  class AWS_GAMELIFT_API GameServer
+  class GameServer
   {
   public:
-    GameServer();
-    GameServer(Aws::Utils::Json::JsonView jsonValue);
-    GameServer& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GAMELIFT_API GameServer();
+    AWS_GAMELIFT_API GameServer(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMELIFT_API GameServer& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

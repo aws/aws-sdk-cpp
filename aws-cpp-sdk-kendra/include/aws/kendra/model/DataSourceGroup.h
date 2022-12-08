@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DataSourceGroup">AWS
    * API Reference</a></p>
    */
-  class AWS_KENDRA_API DataSourceGroup
+  class DataSourceGroup
   {
   public:
-    DataSourceGroup();
-    DataSourceGroup(Aws::Utils::Json::JsonView jsonValue);
-    DataSourceGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KENDRA_API DataSourceGroup();
+    AWS_KENDRA_API DataSourceGroup(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API DataSourceGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

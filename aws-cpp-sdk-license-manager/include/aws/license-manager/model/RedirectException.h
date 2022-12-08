@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/RedirectException">AWS
    * API Reference</a></p>
    */
-  class AWS_LICENSEMANAGER_API RedirectException
+  class RedirectException
   {
   public:
-    RedirectException();
-    RedirectException(Aws::Utils::Json::JsonView jsonValue);
-    RedirectException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LICENSEMANAGER_API RedirectException();
+    AWS_LICENSEMANAGER_API RedirectException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LICENSEMANAGER_API RedirectException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LICENSEMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

@@ -29,12 +29,12 @@ namespace EC2
 {
 namespace Model
 {
-  class AWS_EC2_API ExportImageResponse
+  class ExportImageResponse
   {
   public:
-    ExportImageResponse();
-    ExportImageResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ExportImageResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API ExportImageResponse();
+    AWS_EC2_API ExportImageResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API ExportImageResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

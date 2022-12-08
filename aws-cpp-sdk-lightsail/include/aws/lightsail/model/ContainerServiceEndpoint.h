@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/ContainerServiceEndpoint">AWS
    * API Reference</a></p>
    */
-  class AWS_LIGHTSAIL_API ContainerServiceEndpoint
+  class ContainerServiceEndpoint
   {
   public:
-    ContainerServiceEndpoint();
-    ContainerServiceEndpoint(Aws::Utils::Json::JsonView jsonValue);
-    ContainerServiceEndpoint& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LIGHTSAIL_API ContainerServiceEndpoint();
+    AWS_LIGHTSAIL_API ContainerServiceEndpoint(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API ContainerServiceEndpoint& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

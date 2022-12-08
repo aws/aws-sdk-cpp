@@ -26,12 +26,12 @@ namespace Connect
 {
 namespace Model
 {
-  class AWS_CONNECT_API SearchSecurityProfilesResult
+  class SearchSecurityProfilesResult
   {
   public:
-    SearchSecurityProfilesResult();
-    SearchSecurityProfilesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    SearchSecurityProfilesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CONNECT_API SearchSecurityProfilesResult();
+    AWS_CONNECT_API SearchSecurityProfilesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CONNECT_API SearchSecurityProfilesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

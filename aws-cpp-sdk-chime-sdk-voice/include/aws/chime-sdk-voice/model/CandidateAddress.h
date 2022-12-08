@@ -23,13 +23,13 @@ namespace ChimeSDKVoice
 namespace Model
 {
 
-  class AWS_CHIMESDKVOICE_API CandidateAddress
+  class CandidateAddress
   {
   public:
-    CandidateAddress();
-    CandidateAddress(Aws::Utils::Json::JsonView jsonValue);
-    CandidateAddress& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIMESDKVOICE_API CandidateAddress();
+    AWS_CHIMESDKVOICE_API CandidateAddress(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKVOICE_API CandidateAddress& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKVOICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

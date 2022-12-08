@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/CurrentInstance">AWS
    * API Reference</a></p>
    */
-  class AWS_COSTEXPLORER_API CurrentInstance
+  class CurrentInstance
   {
   public:
-    CurrentInstance();
-    CurrentInstance(Aws::Utils::Json::JsonView jsonValue);
-    CurrentInstance& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COSTEXPLORER_API CurrentInstance();
+    AWS_COSTEXPLORER_API CurrentInstance(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API CurrentInstance& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

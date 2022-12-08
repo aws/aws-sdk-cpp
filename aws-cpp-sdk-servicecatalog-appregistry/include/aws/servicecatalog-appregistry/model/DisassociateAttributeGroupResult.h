@@ -24,12 +24,12 @@ namespace AppRegistry
 {
 namespace Model
 {
-  class AWS_APPREGISTRY_API DisassociateAttributeGroupResult
+  class DisassociateAttributeGroupResult
   {
   public:
-    DisassociateAttributeGroupResult();
-    DisassociateAttributeGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DisassociateAttributeGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPREGISTRY_API DisassociateAttributeGroupResult();
+    AWS_APPREGISTRY_API DisassociateAttributeGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPREGISTRY_API DisassociateAttributeGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

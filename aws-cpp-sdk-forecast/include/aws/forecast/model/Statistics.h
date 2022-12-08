@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/Statistics">AWS
    * API Reference</a></p>
    */
-  class AWS_FORECASTSERVICE_API Statistics
+  class Statistics
   {
   public:
-    Statistics();
-    Statistics(Aws::Utils::Json::JsonView jsonValue);
-    Statistics& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FORECASTSERVICE_API Statistics();
+    AWS_FORECASTSERVICE_API Statistics(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FORECASTSERVICE_API Statistics& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FORECASTSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

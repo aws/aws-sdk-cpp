@@ -26,13 +26,13 @@ namespace ChimeSDKVoice
 namespace Model
 {
 
-  class AWS_CHIMESDKVOICE_API SipMediaApplication
+  class SipMediaApplication
   {
   public:
-    SipMediaApplication();
-    SipMediaApplication(Aws::Utils::Json::JsonView jsonValue);
-    SipMediaApplication& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIMESDKVOICE_API SipMediaApplication();
+    AWS_CHIMESDKVOICE_API SipMediaApplication(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKVOICE_API SipMediaApplication& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKVOICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

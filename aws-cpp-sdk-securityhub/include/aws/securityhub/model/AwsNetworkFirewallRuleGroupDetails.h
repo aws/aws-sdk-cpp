@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsNetworkFirewallRuleGroupDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsNetworkFirewallRuleGroupDetails
+  class AwsNetworkFirewallRuleGroupDetails
   {
   public:
-    AwsNetworkFirewallRuleGroupDetails();
-    AwsNetworkFirewallRuleGroupDetails(Aws::Utils::Json::JsonView jsonValue);
-    AwsNetworkFirewallRuleGroupDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsNetworkFirewallRuleGroupDetails();
+    AWS_SECURITYHUB_API AwsNetworkFirewallRuleGroupDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsNetworkFirewallRuleGroupDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

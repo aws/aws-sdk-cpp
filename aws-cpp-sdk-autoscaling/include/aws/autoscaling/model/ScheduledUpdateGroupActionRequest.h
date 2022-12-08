@@ -31,15 +31,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/ScheduledUpdateGroupActionRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_AUTOSCALING_API ScheduledUpdateGroupActionRequest
+  class ScheduledUpdateGroupActionRequest
   {
   public:
-    ScheduledUpdateGroupActionRequest();
-    ScheduledUpdateGroupActionRequest(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ScheduledUpdateGroupActionRequest& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_AUTOSCALING_API ScheduledUpdateGroupActionRequest();
+    AWS_AUTOSCALING_API ScheduledUpdateGroupActionRequest(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_AUTOSCALING_API ScheduledUpdateGroupActionRequest& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_AUTOSCALING_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_AUTOSCALING_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**

@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/LaunchTemplateSpecification">AWS
    * API Reference</a></p>
    */
-  class AWS_BATCH_API LaunchTemplateSpecification
+  class LaunchTemplateSpecification
   {
   public:
-    LaunchTemplateSpecification();
-    LaunchTemplateSpecification(Aws::Utils::Json::JsonView jsonValue);
-    LaunchTemplateSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BATCH_API LaunchTemplateSpecification();
+    AWS_BATCH_API LaunchTemplateSpecification(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BATCH_API LaunchTemplateSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BATCH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

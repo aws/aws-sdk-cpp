@@ -26,12 +26,12 @@ namespace Detective
 {
 namespace Model
 {
-  class AWS_DETECTIVE_API ListOrganizationAdminAccountsResult
+  class ListOrganizationAdminAccountsResult
   {
   public:
-    ListOrganizationAdminAccountsResult();
-    ListOrganizationAdminAccountsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListOrganizationAdminAccountsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DETECTIVE_API ListOrganizationAdminAccountsResult();
+    AWS_DETECTIVE_API ListOrganizationAdminAccountsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DETECTIVE_API ListOrganizationAdminAccountsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

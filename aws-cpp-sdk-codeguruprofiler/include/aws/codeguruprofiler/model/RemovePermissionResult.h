@@ -30,12 +30,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/RemovePermissionResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEGURUPROFILER_API RemovePermissionResult
+  class RemovePermissionResult
   {
   public:
-    RemovePermissionResult();
-    RemovePermissionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    RemovePermissionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODEGURUPROFILER_API RemovePermissionResult();
+    AWS_CODEGURUPROFILER_API RemovePermissionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODEGURUPROFILER_API RemovePermissionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

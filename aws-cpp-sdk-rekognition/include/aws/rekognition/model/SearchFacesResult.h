@@ -26,12 +26,12 @@ namespace Rekognition
 {
 namespace Model
 {
-  class AWS_REKOGNITION_API SearchFacesResult
+  class SearchFacesResult
   {
   public:
-    SearchFacesResult();
-    SearchFacesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    SearchFacesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_REKOGNITION_API SearchFacesResult();
+    AWS_REKOGNITION_API SearchFacesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_REKOGNITION_API SearchFacesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

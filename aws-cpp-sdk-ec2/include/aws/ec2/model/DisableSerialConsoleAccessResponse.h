@@ -24,12 +24,12 @@ namespace EC2
 {
 namespace Model
 {
-  class AWS_EC2_API DisableSerialConsoleAccessResponse
+  class DisableSerialConsoleAccessResponse
   {
   public:
-    DisableSerialConsoleAccessResponse();
-    DisableSerialConsoleAccessResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DisableSerialConsoleAccessResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API DisableSerialConsoleAccessResponse();
+    AWS_EC2_API DisableSerialConsoleAccessResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API DisableSerialConsoleAccessResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

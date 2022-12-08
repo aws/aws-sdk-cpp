@@ -30,12 +30,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeNFSFileSharesOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_STORAGEGATEWAY_API DescribeNFSFileSharesResult
+  class DescribeNFSFileSharesResult
   {
   public:
-    DescribeNFSFileSharesResult();
-    DescribeNFSFileSharesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeNFSFileSharesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_STORAGEGATEWAY_API DescribeNFSFileSharesResult();
+    AWS_STORAGEGATEWAY_API DescribeNFSFileSharesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_STORAGEGATEWAY_API DescribeNFSFileSharesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

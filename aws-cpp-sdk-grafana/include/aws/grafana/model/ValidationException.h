@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/ValidationException">AWS
    * API Reference</a></p>
    */
-  class AWS_MANAGEDGRAFANA_API ValidationException
+  class ValidationException
   {
   public:
-    ValidationException();
-    ValidationException(Aws::Utils::Json::JsonView jsonValue);
-    ValidationException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MANAGEDGRAFANA_API ValidationException();
+    AWS_MANAGEDGRAFANA_API ValidationException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MANAGEDGRAFANA_API ValidationException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MANAGEDGRAFANA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

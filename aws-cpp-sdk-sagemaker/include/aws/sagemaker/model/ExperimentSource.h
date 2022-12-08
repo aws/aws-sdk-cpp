@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ExperimentSource">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API ExperimentSource
+  class ExperimentSource
   {
   public:
-    ExperimentSource();
-    ExperimentSource(Aws::Utils::Json::JsonView jsonValue);
-    ExperimentSource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API ExperimentSource();
+    AWS_SAGEMAKER_API ExperimentSource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API ExperimentSource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

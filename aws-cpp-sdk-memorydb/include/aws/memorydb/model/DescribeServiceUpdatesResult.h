@@ -26,12 +26,12 @@ namespace MemoryDB
 {
 namespace Model
 {
-  class AWS_MEMORYDB_API DescribeServiceUpdatesResult
+  class DescribeServiceUpdatesResult
   {
   public:
-    DescribeServiceUpdatesResult();
-    DescribeServiceUpdatesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeServiceUpdatesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MEMORYDB_API DescribeServiceUpdatesResult();
+    AWS_MEMORYDB_API DescribeServiceUpdatesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MEMORYDB_API DescribeServiceUpdatesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

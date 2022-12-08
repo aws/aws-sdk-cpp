@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/NotebookMetadata">AWS
    * API Reference</a></p>
    */
-  class AWS_ATHENA_API NotebookMetadata
+  class NotebookMetadata
   {
   public:
-    NotebookMetadata();
-    NotebookMetadata(Aws::Utils::Json::JsonView jsonValue);
-    NotebookMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ATHENA_API NotebookMetadata();
+    AWS_ATHENA_API NotebookMetadata(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ATHENA_API NotebookMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ATHENA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

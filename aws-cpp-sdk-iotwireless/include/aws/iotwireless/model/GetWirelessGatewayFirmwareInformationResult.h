@@ -24,12 +24,12 @@ namespace IoTWireless
 {
 namespace Model
 {
-  class AWS_IOTWIRELESS_API GetWirelessGatewayFirmwareInformationResult
+  class GetWirelessGatewayFirmwareInformationResult
   {
   public:
-    GetWirelessGatewayFirmwareInformationResult();
-    GetWirelessGatewayFirmwareInformationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetWirelessGatewayFirmwareInformationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOTWIRELESS_API GetWirelessGatewayFirmwareInformationResult();
+    AWS_IOTWIRELESS_API GetWirelessGatewayFirmwareInformationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOTWIRELESS_API GetWirelessGatewayFirmwareInformationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

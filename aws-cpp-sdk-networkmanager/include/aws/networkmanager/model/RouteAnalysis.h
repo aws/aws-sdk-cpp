@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/RouteAnalysis">AWS
    * API Reference</a></p>
    */
-  class AWS_NETWORKMANAGER_API RouteAnalysis
+  class RouteAnalysis
   {
   public:
-    RouteAnalysis();
-    RouteAnalysis(Aws::Utils::Json::JsonView jsonValue);
-    RouteAnalysis& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_NETWORKMANAGER_API RouteAnalysis();
+    AWS_NETWORKMANAGER_API RouteAnalysis(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKMANAGER_API RouteAnalysis& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -32,12 +32,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/GetDatasetResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_FINSPACEDATA_API GetDatasetResult
+  class GetDatasetResult
   {
   public:
-    GetDatasetResult();
-    GetDatasetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetDatasetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_FINSPACEDATA_API GetDatasetResult();
+    AWS_FINSPACEDATA_API GetDatasetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_FINSPACEDATA_API GetDatasetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

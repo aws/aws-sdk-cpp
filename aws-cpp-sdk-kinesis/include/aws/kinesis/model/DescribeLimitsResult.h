@@ -22,12 +22,12 @@ namespace Kinesis
 {
 namespace Model
 {
-  class AWS_KINESIS_API DescribeLimitsResult
+  class DescribeLimitsResult
   {
   public:
-    DescribeLimitsResult();
-    DescribeLimitsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeLimitsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KINESIS_API DescribeLimitsResult();
+    AWS_KINESIS_API DescribeLimitsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KINESIS_API DescribeLimitsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

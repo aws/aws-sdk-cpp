@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie-2017-12-19/LimitExceededException">AWS
    * API Reference</a></p>
    */
-  class AWS_MACIE_API LimitExceededException
+  class LimitExceededException
   {
   public:
-    LimitExceededException();
-    LimitExceededException(Aws::Utils::Json::JsonView jsonValue);
-    LimitExceededException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MACIE_API LimitExceededException();
+    AWS_MACIE_API LimitExceededException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE_API LimitExceededException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

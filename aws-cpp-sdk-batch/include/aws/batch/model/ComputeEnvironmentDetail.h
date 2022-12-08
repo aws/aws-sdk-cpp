@@ -37,13 +37,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/ComputeEnvironmentDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_BATCH_API ComputeEnvironmentDetail
+  class ComputeEnvironmentDetail
   {
   public:
-    ComputeEnvironmentDetail();
-    ComputeEnvironmentDetail(Aws::Utils::Json::JsonView jsonValue);
-    ComputeEnvironmentDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BATCH_API ComputeEnvironmentDetail();
+    AWS_BATCH_API ComputeEnvironmentDetail(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BATCH_API ComputeEnvironmentDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BATCH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

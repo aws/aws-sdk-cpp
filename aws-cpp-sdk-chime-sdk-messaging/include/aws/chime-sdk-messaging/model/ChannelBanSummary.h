@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/ChannelBanSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_CHIMESDKMESSAGING_API ChannelBanSummary
+  class ChannelBanSummary
   {
   public:
-    ChannelBanSummary();
-    ChannelBanSummary(Aws::Utils::Json::JsonView jsonValue);
-    ChannelBanSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIMESDKMESSAGING_API ChannelBanSummary();
+    AWS_CHIMESDKMESSAGING_API ChannelBanSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKMESSAGING_API ChannelBanSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKMESSAGING_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/BatchGetVariableError">AWS
    * API Reference</a></p>
    */
-  class AWS_FRAUDDETECTOR_API BatchGetVariableError
+  class BatchGetVariableError
   {
   public:
-    BatchGetVariableError();
-    BatchGetVariableError(Aws::Utils::Json::JsonView jsonValue);
-    BatchGetVariableError& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FRAUDDETECTOR_API BatchGetVariableError();
+    AWS_FRAUDDETECTOR_API BatchGetVariableError(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FRAUDDETECTOR_API BatchGetVariableError& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FRAUDDETECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

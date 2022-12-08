@@ -24,12 +24,12 @@ namespace WAF
 {
 namespace Model
 {
-  class AWS_WAF_API DeleteWebACLResult
+  class DeleteWebACLResult
   {
   public:
-    DeleteWebACLResult();
-    DeleteWebACLResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteWebACLResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WAF_API DeleteWebACLResult();
+    AWS_WAF_API DeleteWebACLResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WAF_API DeleteWebACLResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

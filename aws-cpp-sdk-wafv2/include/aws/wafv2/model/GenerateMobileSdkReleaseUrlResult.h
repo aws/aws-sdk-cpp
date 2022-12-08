@@ -24,12 +24,12 @@ namespace WAFV2
 {
 namespace Model
 {
-  class AWS_WAFV2_API GenerateMobileSdkReleaseUrlResult
+  class GenerateMobileSdkReleaseUrlResult
   {
   public:
-    GenerateMobileSdkReleaseUrlResult();
-    GenerateMobileSdkReleaseUrlResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GenerateMobileSdkReleaseUrlResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WAFV2_API GenerateMobileSdkReleaseUrlResult();
+    AWS_WAFV2_API GenerateMobileSdkReleaseUrlResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WAFV2_API GenerateMobileSdkReleaseUrlResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -34,13 +34,13 @@ namespace Model
    * <a href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/Output">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUEDATABREW_API Output
+  class Output
   {
   public:
-    Output();
-    Output(Aws::Utils::Json::JsonView jsonValue);
-    Output& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUEDATABREW_API Output();
+    AWS_GLUEDATABREW_API Output(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUEDATABREW_API Output& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUEDATABREW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GsmObj">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTWIRELESS_API GsmObj
+  class GsmObj
   {
   public:
-    GsmObj();
-    GsmObj(Aws::Utils::Json::JsonView jsonValue);
-    GsmObj& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTWIRELESS_API GsmObj();
+    AWS_IOTWIRELESS_API GsmObj(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API GsmObj& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

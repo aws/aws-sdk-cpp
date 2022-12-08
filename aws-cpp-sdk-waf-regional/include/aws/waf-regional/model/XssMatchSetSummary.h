@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/XssMatchSetSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_WAFREGIONAL_API XssMatchSetSummary
+  class XssMatchSetSummary
   {
   public:
-    XssMatchSetSummary();
-    XssMatchSetSummary(Aws::Utils::Json::JsonView jsonValue);
-    XssMatchSetSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WAFREGIONAL_API XssMatchSetSummary();
+    AWS_WAFREGIONAL_API XssMatchSetSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFREGIONAL_API XssMatchSetSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFREGIONAL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

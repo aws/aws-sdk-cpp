@@ -31,12 +31,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mobile-2017-07-01/DeleteProjectResult">AWS
    * API Reference</a></p>
    */
-  class AWS_MOBILE_API DeleteProjectResult
+  class DeleteProjectResult
   {
   public:
-    DeleteProjectResult();
-    DeleteProjectResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteProjectResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MOBILE_API DeleteProjectResult();
+    AWS_MOBILE_API DeleteProjectResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MOBILE_API DeleteProjectResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

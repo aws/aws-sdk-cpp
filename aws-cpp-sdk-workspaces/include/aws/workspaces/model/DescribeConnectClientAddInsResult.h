@@ -26,12 +26,12 @@ namespace WorkSpaces
 {
 namespace Model
 {
-  class AWS_WORKSPACES_API DescribeConnectClientAddInsResult
+  class DescribeConnectClientAddInsResult
   {
   public:
-    DescribeConnectClientAddInsResult();
-    DescribeConnectClientAddInsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeConnectClientAddInsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WORKSPACES_API DescribeConnectClientAddInsResult();
+    AWS_WORKSPACES_API DescribeConnectClientAddInsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WORKSPACES_API DescribeConnectClientAddInsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

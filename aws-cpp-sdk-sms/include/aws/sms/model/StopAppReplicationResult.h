@@ -22,12 +22,12 @@ namespace SMS
 {
 namespace Model
 {
-  class AWS_SMS_API StopAppReplicationResult
+  class StopAppReplicationResult
   {
   public:
-    StopAppReplicationResult();
-    StopAppReplicationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    StopAppReplicationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SMS_API StopAppReplicationResult();
+    AWS_SMS_API StopAppReplicationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SMS_API StopAppReplicationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

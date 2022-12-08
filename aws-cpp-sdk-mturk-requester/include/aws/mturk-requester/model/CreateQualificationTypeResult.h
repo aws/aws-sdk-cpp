@@ -24,12 +24,12 @@ namespace MTurk
 {
 namespace Model
 {
-  class AWS_MTURK_API CreateQualificationTypeResult
+  class CreateQualificationTypeResult
   {
   public:
-    CreateQualificationTypeResult();
-    CreateQualificationTypeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateQualificationTypeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MTURK_API CreateQualificationTypeResult();
+    AWS_MTURK_API CreateQualificationTypeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MTURK_API CreateQualificationTypeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

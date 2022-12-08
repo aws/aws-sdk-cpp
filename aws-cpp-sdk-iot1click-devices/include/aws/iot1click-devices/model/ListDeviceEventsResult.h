@@ -26,12 +26,12 @@ namespace IoT1ClickDevicesService
 {
 namespace Model
 {
-  class AWS_IOT1CLICKDEVICESSERVICE_API ListDeviceEventsResult
+  class ListDeviceEventsResult
   {
   public:
-    ListDeviceEventsResult();
-    ListDeviceEventsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListDeviceEventsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOT1CLICKDEVICESSERVICE_API ListDeviceEventsResult();
+    AWS_IOT1CLICKDEVICESSERVICE_API ListDeviceEventsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOT1CLICKDEVICESSERVICE_API ListDeviceEventsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

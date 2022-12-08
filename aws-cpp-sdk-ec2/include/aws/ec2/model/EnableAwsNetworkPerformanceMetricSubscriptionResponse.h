@@ -24,12 +24,12 @@ namespace EC2
 {
 namespace Model
 {
-  class AWS_EC2_API EnableAwsNetworkPerformanceMetricSubscriptionResponse
+  class EnableAwsNetworkPerformanceMetricSubscriptionResponse
   {
   public:
-    EnableAwsNetworkPerformanceMetricSubscriptionResponse();
-    EnableAwsNetworkPerformanceMetricSubscriptionResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    EnableAwsNetworkPerformanceMetricSubscriptionResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API EnableAwsNetworkPerformanceMetricSubscriptionResponse();
+    AWS_EC2_API EnableAwsNetworkPerformanceMetricSubscriptionResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API EnableAwsNetworkPerformanceMetricSubscriptionResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

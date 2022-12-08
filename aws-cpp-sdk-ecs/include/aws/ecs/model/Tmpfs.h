@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/Tmpfs">AWS API
    * Reference</a></p>
    */
-  class AWS_ECS_API Tmpfs
+  class Tmpfs
   {
   public:
-    Tmpfs();
-    Tmpfs(Aws::Utils::Json::JsonView jsonValue);
-    Tmpfs& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ECS_API Tmpfs();
+    AWS_ECS_API Tmpfs(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECS_API Tmpfs& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

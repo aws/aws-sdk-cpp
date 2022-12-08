@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/FileSystemInUse">AWS
    * API Reference</a></p>
    */
-  class AWS_EFS_API FileSystemInUse
+  class FileSystemInUse
   {
   public:
-    FileSystemInUse();
-    FileSystemInUse(Aws::Utils::Json::JsonView jsonValue);
-    FileSystemInUse& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EFS_API FileSystemInUse();
+    AWS_EFS_API FileSystemInUse(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EFS_API FileSystemInUse& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EFS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

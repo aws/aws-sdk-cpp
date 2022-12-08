@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-public-2020-10-30/ReferencedImageDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_ECRPUBLIC_API ReferencedImageDetail
+  class ReferencedImageDetail
   {
   public:
-    ReferencedImageDetail();
-    ReferencedImageDetail(Aws::Utils::Json::JsonView jsonValue);
-    ReferencedImageDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ECRPUBLIC_API ReferencedImageDetail();
+    AWS_ECRPUBLIC_API ReferencedImageDetail(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECRPUBLIC_API ReferencedImageDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECRPUBLIC_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

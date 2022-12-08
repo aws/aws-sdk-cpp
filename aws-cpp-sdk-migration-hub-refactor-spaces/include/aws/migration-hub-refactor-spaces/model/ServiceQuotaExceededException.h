@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/migration-hub-refactor-spaces-2021-10-26/ServiceQuotaExceededException">AWS
    * API Reference</a></p>
    */
-  class AWS_MIGRATIONHUBREFACTORSPACES_API ServiceQuotaExceededException
+  class ServiceQuotaExceededException
   {
   public:
-    ServiceQuotaExceededException();
-    ServiceQuotaExceededException(Aws::Utils::Json::JsonView jsonValue);
-    ServiceQuotaExceededException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MIGRATIONHUBREFACTORSPACES_API ServiceQuotaExceededException();
+    AWS_MIGRATIONHUBREFACTORSPACES_API ServiceQuotaExceededException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MIGRATIONHUBREFACTORSPACES_API ServiceQuotaExceededException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MIGRATIONHUBREFACTORSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

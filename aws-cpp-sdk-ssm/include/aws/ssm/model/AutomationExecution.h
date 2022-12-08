@@ -43,13 +43,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/AutomationExecution">AWS
    * API Reference</a></p>
    */
-  class AWS_SSM_API AutomationExecution
+  class AutomationExecution
   {
   public:
-    AutomationExecution();
-    AutomationExecution(Aws::Utils::Json::JsonView jsonValue);
-    AutomationExecution& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSM_API AutomationExecution();
+    AWS_SSM_API AutomationExecution(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API AutomationExecution& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

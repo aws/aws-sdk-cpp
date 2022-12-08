@@ -24,12 +24,12 @@ namespace LookoutforVision
 {
 namespace Model
 {
-  class AWS_LOOKOUTFORVISION_API CreateModelResult
+  class CreateModelResult
   {
   public:
-    CreateModelResult();
-    CreateModelResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateModelResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LOOKOUTFORVISION_API CreateModelResult();
+    AWS_LOOKOUTFORVISION_API CreateModelResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LOOKOUTFORVISION_API CreateModelResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

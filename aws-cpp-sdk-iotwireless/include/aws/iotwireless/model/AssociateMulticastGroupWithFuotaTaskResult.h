@@ -22,12 +22,12 @@ namespace IoTWireless
 {
 namespace Model
 {
-  class AWS_IOTWIRELESS_API AssociateMulticastGroupWithFuotaTaskResult
+  class AssociateMulticastGroupWithFuotaTaskResult
   {
   public:
-    AssociateMulticastGroupWithFuotaTaskResult();
-    AssociateMulticastGroupWithFuotaTaskResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AssociateMulticastGroupWithFuotaTaskResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOTWIRELESS_API AssociateMulticastGroupWithFuotaTaskResult();
+    AWS_IOTWIRELESS_API AssociateMulticastGroupWithFuotaTaskResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOTWIRELESS_API AssociateMulticastGroupWithFuotaTaskResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

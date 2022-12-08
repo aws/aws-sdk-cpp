@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/QueueReference">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECT_API QueueReference
+  class QueueReference
   {
   public:
-    QueueReference();
-    QueueReference(Aws::Utils::Json::JsonView jsonValue);
-    QueueReference& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECT_API QueueReference();
+    AWS_CONNECT_API QueueReference(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API QueueReference& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

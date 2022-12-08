@@ -26,12 +26,12 @@ namespace Route53RecoveryReadiness
 {
 namespace Model
 {
-  class AWS_ROUTE53RECOVERYREADINESS_API ListCellsResult
+  class ListCellsResult
   {
   public:
-    ListCellsResult();
-    ListCellsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListCellsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ROUTE53RECOVERYREADINESS_API ListCellsResult();
+    AWS_ROUTE53RECOVERYREADINESS_API ListCellsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ROUTE53RECOVERYREADINESS_API ListCellsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

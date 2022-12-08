@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/RuleAction">AWS
    * API Reference</a></p>
    */
-  class AWS_WAFV2_API RuleAction
+  class RuleAction
   {
   public:
-    RuleAction();
-    RuleAction(Aws::Utils::Json::JsonView jsonValue);
-    RuleAction& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WAFV2_API RuleAction();
+    AWS_WAFV2_API RuleAction(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API RuleAction& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

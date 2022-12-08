@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/Version">AWS
    * API Reference</a></p>
    */
-  class AWS_SERVERLESSAPPLICATIONREPOSITORY_API Version
+  class Version
   {
   public:
-    Version();
-    Version(Aws::Utils::Json::JsonView jsonValue);
-    Version& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SERVERLESSAPPLICATIONREPOSITORY_API Version();
+    AWS_SERVERLESSAPPLICATIONREPOSITORY_API Version(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVERLESSAPPLICATIONREPOSITORY_API Version& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVERLESSAPPLICATIONREPOSITORY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/runtime.lex.v2-2020-08-07/ElicitSubSlot">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXRUNTIMEV2_API ElicitSubSlot
+  class ElicitSubSlot
   {
   public:
-    ElicitSubSlot();
-    ElicitSubSlot(Aws::Utils::Json::JsonView jsonValue);
-    ElicitSubSlot& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXRUNTIMEV2_API ElicitSubSlot();
+    AWS_LEXRUNTIMEV2_API ElicitSubSlot(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXRUNTIMEV2_API ElicitSubSlot& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXRUNTIMEV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -82,32 +82,32 @@ namespace Model
     /**
      * <p>The field is not supported.</p>
      */
-    const ElicitSubSlot& GetSubSlotToElicit() const;
+    AWS_LEXRUNTIMEV2_API const ElicitSubSlot& GetSubSlotToElicit() const;
 
     /**
      * <p>The field is not supported.</p>
      */
-    bool SubSlotToElicitHasBeenSet() const;
+    AWS_LEXRUNTIMEV2_API bool SubSlotToElicitHasBeenSet() const;
 
     /**
      * <p>The field is not supported.</p>
      */
-    void SetSubSlotToElicit(const ElicitSubSlot& value);
+    AWS_LEXRUNTIMEV2_API void SetSubSlotToElicit(const ElicitSubSlot& value);
 
     /**
      * <p>The field is not supported.</p>
      */
-    void SetSubSlotToElicit(ElicitSubSlot&& value);
+    AWS_LEXRUNTIMEV2_API void SetSubSlotToElicit(ElicitSubSlot&& value);
 
     /**
      * <p>The field is not supported.</p>
      */
-    ElicitSubSlot& WithSubSlotToElicit(const ElicitSubSlot& value);
+    AWS_LEXRUNTIMEV2_API ElicitSubSlot& WithSubSlotToElicit(const ElicitSubSlot& value);
 
     /**
      * <p>The field is not supported.</p>
      */
-    ElicitSubSlot& WithSubSlotToElicit(ElicitSubSlot&& value);
+    AWS_LEXRUNTIMEV2_API ElicitSubSlot& WithSubSlotToElicit(ElicitSubSlot&& value);
 
   private:
 

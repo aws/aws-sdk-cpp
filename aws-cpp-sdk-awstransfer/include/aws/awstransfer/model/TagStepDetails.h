@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/TagStepDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_TRANSFER_API TagStepDetails
+  class TagStepDetails
   {
   public:
-    TagStepDetails();
-    TagStepDetails(Aws::Utils::Json::JsonView jsonValue);
-    TagStepDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TRANSFER_API TagStepDetails();
+    AWS_TRANSFER_API TagStepDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSFER_API TagStepDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSFER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

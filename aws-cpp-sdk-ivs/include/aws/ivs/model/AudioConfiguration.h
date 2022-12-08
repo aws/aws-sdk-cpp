@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/AudioConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_IVS_API AudioConfiguration
+  class AudioConfiguration
   {
   public:
-    AudioConfiguration();
-    AudioConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    AudioConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IVS_API AudioConfiguration();
+    AWS_IVS_API AudioConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IVS_API AudioConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IVS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

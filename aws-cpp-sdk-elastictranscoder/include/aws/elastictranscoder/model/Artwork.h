@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/Artwork">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICTRANSCODER_API Artwork
+  class Artwork
   {
   public:
-    Artwork();
-    Artwork(Aws::Utils::Json::JsonView jsonValue);
-    Artwork& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ELASTICTRANSCODER_API Artwork();
+    AWS_ELASTICTRANSCODER_API Artwork(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICTRANSCODER_API Artwork& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICTRANSCODER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

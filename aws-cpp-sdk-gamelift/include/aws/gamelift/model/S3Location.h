@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/S3Location">AWS
    * API Reference</a></p>
    */
-  class AWS_GAMELIFT_API S3Location
+  class S3Location
   {
   public:
-    S3Location();
-    S3Location(Aws::Utils::Json::JsonView jsonValue);
-    S3Location& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GAMELIFT_API S3Location();
+    AWS_GAMELIFT_API S3Location(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMELIFT_API S3Location& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

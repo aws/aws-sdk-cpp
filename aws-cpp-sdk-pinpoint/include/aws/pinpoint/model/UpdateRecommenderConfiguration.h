@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateRecommenderConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API UpdateRecommenderConfiguration
+  class UpdateRecommenderConfiguration
   {
   public:
-    UpdateRecommenderConfiguration();
-    UpdateRecommenderConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    UpdateRecommenderConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API UpdateRecommenderConfiguration();
+    AWS_PINPOINT_API UpdateRecommenderConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API UpdateRecommenderConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

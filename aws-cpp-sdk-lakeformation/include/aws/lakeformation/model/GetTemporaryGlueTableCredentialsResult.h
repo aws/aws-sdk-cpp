@@ -25,12 +25,12 @@ namespace LakeFormation
 {
 namespace Model
 {
-  class AWS_LAKEFORMATION_API GetTemporaryGlueTableCredentialsResult
+  class GetTemporaryGlueTableCredentialsResult
   {
   public:
-    GetTemporaryGlueTableCredentialsResult();
-    GetTemporaryGlueTableCredentialsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetTemporaryGlueTableCredentialsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LAKEFORMATION_API GetTemporaryGlueTableCredentialsResult();
+    AWS_LAKEFORMATION_API GetTemporaryGlueTableCredentialsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LAKEFORMATION_API GetTemporaryGlueTableCredentialsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

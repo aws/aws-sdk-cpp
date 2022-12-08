@@ -34,12 +34,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/GetDomainDetailResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53DOMAINS_API GetDomainDetailResult
+  class GetDomainDetailResult
   {
   public:
-    GetDomainDetailResult();
-    GetDomainDetailResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetDomainDetailResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ROUTE53DOMAINS_API GetDomainDetailResult();
+    AWS_ROUTE53DOMAINS_API GetDomainDetailResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ROUTE53DOMAINS_API GetDomainDetailResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

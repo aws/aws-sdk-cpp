@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot1click-projects-2018-05-14/PlacementTemplate">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT1CLICKPROJECTS_API PlacementTemplate
+  class PlacementTemplate
   {
   public:
-    PlacementTemplate();
-    PlacementTemplate(Aws::Utils::Json::JsonView jsonValue);
-    PlacementTemplate& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT1CLICKPROJECTS_API PlacementTemplate();
+    AWS_IOT1CLICKPROJECTS_API PlacementTemplate(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT1CLICKPROJECTS_API PlacementTemplate& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT1CLICKPROJECTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

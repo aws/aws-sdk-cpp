@@ -30,12 +30,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/AcceptDomainTransferFromAnotherAwsAccountResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53DOMAINS_API AcceptDomainTransferFromAnotherAwsAccountResult
+  class AcceptDomainTransferFromAnotherAwsAccountResult
   {
   public:
-    AcceptDomainTransferFromAnotherAwsAccountResult();
-    AcceptDomainTransferFromAnotherAwsAccountResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AcceptDomainTransferFromAnotherAwsAccountResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ROUTE53DOMAINS_API AcceptDomainTransferFromAnotherAwsAccountResult();
+    AWS_ROUTE53DOMAINS_API AcceptDomainTransferFromAnotherAwsAccountResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ROUTE53DOMAINS_API AcceptDomainTransferFromAnotherAwsAccountResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

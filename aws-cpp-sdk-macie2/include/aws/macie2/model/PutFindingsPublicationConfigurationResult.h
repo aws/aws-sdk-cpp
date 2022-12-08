@@ -22,12 +22,12 @@ namespace Macie2
 {
 namespace Model
 {
-  class AWS_MACIE2_API PutFindingsPublicationConfigurationResult
+  class PutFindingsPublicationConfigurationResult
   {
   public:
-    PutFindingsPublicationConfigurationResult();
-    PutFindingsPublicationConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PutFindingsPublicationConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MACIE2_API PutFindingsPublicationConfigurationResult();
+    AWS_MACIE2_API PutFindingsPublicationConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MACIE2_API PutFindingsPublicationConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

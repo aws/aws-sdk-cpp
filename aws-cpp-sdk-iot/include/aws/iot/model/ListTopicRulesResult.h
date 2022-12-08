@@ -31,12 +31,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListTopicRulesResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API ListTopicRulesResult
+  class ListTopicRulesResult
   {
   public:
-    ListTopicRulesResult();
-    ListTopicRulesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListTopicRulesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOT_API ListTopicRulesResult();
+    AWS_IOT_API ListTopicRulesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOT_API ListTopicRulesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

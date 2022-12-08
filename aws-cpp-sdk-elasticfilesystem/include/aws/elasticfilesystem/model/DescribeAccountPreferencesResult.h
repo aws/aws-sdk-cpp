@@ -25,12 +25,12 @@ namespace EFS
 {
 namespace Model
 {
-  class AWS_EFS_API DescribeAccountPreferencesResult
+  class DescribeAccountPreferencesResult
   {
   public:
-    DescribeAccountPreferencesResult();
-    DescribeAccountPreferencesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeAccountPreferencesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_EFS_API DescribeAccountPreferencesResult();
+    AWS_EFS_API DescribeAccountPreferencesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_EFS_API DescribeAccountPreferencesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

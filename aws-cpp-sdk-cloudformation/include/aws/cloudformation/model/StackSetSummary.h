@@ -35,15 +35,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/StackSetSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFORMATION_API StackSetSummary
+  class StackSetSummary
   {
   public:
-    StackSetSummary();
-    StackSetSummary(const Aws::Utils::Xml::XmlNode& xmlNode);
-    StackSetSummary& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFORMATION_API StackSetSummary();
+    AWS_CLOUDFORMATION_API StackSetSummary(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFORMATION_API StackSetSummary& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_CLOUDFORMATION_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_CLOUDFORMATION_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**

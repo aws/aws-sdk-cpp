@@ -25,12 +25,12 @@ namespace Backup
 {
 namespace Model
 {
-  class AWS_BACKUP_API GetSupportedResourceTypesResult
+  class GetSupportedResourceTypesResult
   {
   public:
-    GetSupportedResourceTypesResult();
-    GetSupportedResourceTypesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetSupportedResourceTypesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_BACKUP_API GetSupportedResourceTypesResult();
+    AWS_BACKUP_API GetSupportedResourceTypesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_BACKUP_API GetSupportedResourceTypesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

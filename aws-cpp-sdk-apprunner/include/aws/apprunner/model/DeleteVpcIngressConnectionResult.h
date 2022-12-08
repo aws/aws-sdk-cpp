@@ -24,12 +24,12 @@ namespace AppRunner
 {
 namespace Model
 {
-  class AWS_APPRUNNER_API DeleteVpcIngressConnectionResult
+  class DeleteVpcIngressConnectionResult
   {
   public:
-    DeleteVpcIngressConnectionResult();
-    DeleteVpcIngressConnectionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteVpcIngressConnectionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPRUNNER_API DeleteVpcIngressConnectionResult();
+    AWS_APPRUNNER_API DeleteVpcIngressConnectionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPRUNNER_API DeleteVpcIngressConnectionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

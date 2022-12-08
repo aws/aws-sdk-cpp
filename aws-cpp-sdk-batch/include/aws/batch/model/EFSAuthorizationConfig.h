@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/EFSAuthorizationConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_BATCH_API EFSAuthorizationConfig
+  class EFSAuthorizationConfig
   {
   public:
-    EFSAuthorizationConfig();
-    EFSAuthorizationConfig(Aws::Utils::Json::JsonView jsonValue);
-    EFSAuthorizationConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BATCH_API EFSAuthorizationConfig();
+    AWS_BATCH_API EFSAuthorizationConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BATCH_API EFSAuthorizationConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BATCH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

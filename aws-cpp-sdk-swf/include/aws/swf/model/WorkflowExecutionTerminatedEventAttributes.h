@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/WorkflowExecutionTerminatedEventAttributes">AWS
    * API Reference</a></p>
    */
-  class AWS_SWF_API WorkflowExecutionTerminatedEventAttributes
+  class WorkflowExecutionTerminatedEventAttributes
   {
   public:
-    WorkflowExecutionTerminatedEventAttributes();
-    WorkflowExecutionTerminatedEventAttributes(Aws::Utils::Json::JsonView jsonValue);
-    WorkflowExecutionTerminatedEventAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SWF_API WorkflowExecutionTerminatedEventAttributes();
+    AWS_SWF_API WorkflowExecutionTerminatedEventAttributes(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SWF_API WorkflowExecutionTerminatedEventAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SWF_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

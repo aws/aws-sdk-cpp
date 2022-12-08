@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/EventSubscription">AWS
    * API Reference</a></p>
    */
-  class AWS_INSPECTOR_API EventSubscription
+  class EventSubscription
   {
   public:
-    EventSubscription();
-    EventSubscription(Aws::Utils::Json::JsonView jsonValue);
-    EventSubscription& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_INSPECTOR_API EventSubscription();
+    AWS_INSPECTOR_API EventSubscription(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR_API EventSubscription& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

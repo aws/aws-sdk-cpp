@@ -24,12 +24,12 @@ namespace OpsWorksCM
 {
 namespace Model
 {
-  class AWS_OPSWORKSCM_API UpdateServerEngineAttributesResult
+  class UpdateServerEngineAttributesResult
   {
   public:
-    UpdateServerEngineAttributesResult();
-    UpdateServerEngineAttributesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateServerEngineAttributesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OPSWORKSCM_API UpdateServerEngineAttributesResult();
+    AWS_OPSWORKSCM_API UpdateServerEngineAttributesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OPSWORKSCM_API UpdateServerEngineAttributesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

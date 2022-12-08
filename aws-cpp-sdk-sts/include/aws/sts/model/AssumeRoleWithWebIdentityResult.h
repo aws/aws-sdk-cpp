@@ -34,12 +34,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/AssumeRoleWithWebIdentityResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_STS_API AssumeRoleWithWebIdentityResult
+  class AssumeRoleWithWebIdentityResult
   {
   public:
-    AssumeRoleWithWebIdentityResult();
-    AssumeRoleWithWebIdentityResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    AssumeRoleWithWebIdentityResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_STS_API AssumeRoleWithWebIdentityResult();
+    AWS_STS_API AssumeRoleWithWebIdentityResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_STS_API AssumeRoleWithWebIdentityResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

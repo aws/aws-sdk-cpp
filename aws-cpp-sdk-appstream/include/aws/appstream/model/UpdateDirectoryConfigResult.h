@@ -24,12 +24,12 @@ namespace AppStream
 {
 namespace Model
 {
-  class AWS_APPSTREAM_API UpdateDirectoryConfigResult
+  class UpdateDirectoryConfigResult
   {
   public:
-    UpdateDirectoryConfigResult();
-    UpdateDirectoryConfigResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateDirectoryConfigResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPSTREAM_API UpdateDirectoryConfigResult();
+    AWS_APPSTREAM_API UpdateDirectoryConfigResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPSTREAM_API UpdateDirectoryConfigResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

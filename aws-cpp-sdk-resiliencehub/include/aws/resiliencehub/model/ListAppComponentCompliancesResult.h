@@ -26,12 +26,12 @@ namespace ResilienceHub
 {
 namespace Model
 {
-  class AWS_RESILIENCEHUB_API ListAppComponentCompliancesResult
+  class ListAppComponentCompliancesResult
   {
   public:
-    ListAppComponentCompliancesResult();
-    ListAppComponentCompliancesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListAppComponentCompliancesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_RESILIENCEHUB_API ListAppComponentCompliancesResult();
+    AWS_RESILIENCEHUB_API ListAppComponentCompliancesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_RESILIENCEHUB_API ListAppComponentCompliancesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

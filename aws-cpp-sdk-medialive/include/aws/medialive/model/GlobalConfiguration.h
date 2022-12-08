@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/GlobalConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API GlobalConfiguration
+  class GlobalConfiguration
   {
   public:
-    GlobalConfiguration();
-    GlobalConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    GlobalConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API GlobalConfiguration();
+    AWS_MEDIALIVE_API GlobalConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API GlobalConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

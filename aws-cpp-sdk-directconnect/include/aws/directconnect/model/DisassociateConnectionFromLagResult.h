@@ -35,12 +35,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/Connection">AWS
    * API Reference</a></p>
    */
-  class AWS_DIRECTCONNECT_API DisassociateConnectionFromLagResult
+  class DisassociateConnectionFromLagResult
   {
   public:
-    DisassociateConnectionFromLagResult();
-    DisassociateConnectionFromLagResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DisassociateConnectionFromLagResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DIRECTCONNECT_API DisassociateConnectionFromLagResult();
+    AWS_DIRECTCONNECT_API DisassociateConnectionFromLagResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DIRECTCONNECT_API DisassociateConnectionFromLagResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

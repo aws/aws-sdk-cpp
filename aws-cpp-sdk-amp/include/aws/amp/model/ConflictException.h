@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/ConflictException">AWS
    * API Reference</a></p>
    */
-  class AWS_PROMETHEUSSERVICE_API ConflictException
+  class ConflictException
   {
   public:
-    ConflictException();
-    ConflictException(Aws::Utils::Json::JsonView jsonValue);
-    ConflictException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PROMETHEUSSERVICE_API ConflictException();
+    AWS_PROMETHEUSSERVICE_API ConflictException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PROMETHEUSSERVICE_API ConflictException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PROMETHEUSSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

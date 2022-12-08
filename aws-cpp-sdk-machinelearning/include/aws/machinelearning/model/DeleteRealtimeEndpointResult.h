@@ -33,12 +33,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/DeleteRealtimeEndpointOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_MACHINELEARNING_API DeleteRealtimeEndpointResult
+  class DeleteRealtimeEndpointResult
   {
   public:
-    DeleteRealtimeEndpointResult();
-    DeleteRealtimeEndpointResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteRealtimeEndpointResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MACHINELEARNING_API DeleteRealtimeEndpointResult();
+    AWS_MACHINELEARNING_API DeleteRealtimeEndpointResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MACHINELEARNING_API DeleteRealtimeEndpointResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -24,12 +24,12 @@ namespace IoTAnalytics
 {
 namespace Model
 {
-  class AWS_IOTANALYTICS_API CreatePipelineResult
+  class CreatePipelineResult
   {
   public:
-    CreatePipelineResult();
-    CreatePipelineResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreatePipelineResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOTANALYTICS_API CreatePipelineResult();
+    AWS_IOTANALYTICS_API CreatePipelineResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOTANALYTICS_API CreatePipelineResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

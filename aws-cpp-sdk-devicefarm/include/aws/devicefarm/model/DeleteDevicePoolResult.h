@@ -28,12 +28,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteDevicePoolResult">AWS
    * API Reference</a></p>
    */
-  class AWS_DEVICEFARM_API DeleteDevicePoolResult
+  class DeleteDevicePoolResult
   {
   public:
-    DeleteDevicePoolResult();
-    DeleteDevicePoolResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteDevicePoolResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DEVICEFARM_API DeleteDevicePoolResult();
+    AWS_DEVICEFARM_API DeleteDevicePoolResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DEVICEFARM_API DeleteDevicePoolResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

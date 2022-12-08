@@ -30,12 +30,12 @@ namespace SecretsManager
 {
 namespace Model
 {
-  class AWS_SECRETSMANAGER_API DescribeSecretResult
+  class DescribeSecretResult
   {
   public:
-    DescribeSecretResult();
-    DescribeSecretResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeSecretResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SECRETSMANAGER_API DescribeSecretResult();
+    AWS_SECRETSMANAGER_API DescribeSecretResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SECRETSMANAGER_API DescribeSecretResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

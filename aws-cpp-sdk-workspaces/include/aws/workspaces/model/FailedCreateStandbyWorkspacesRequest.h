@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/FailedCreateStandbyWorkspacesRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_WORKSPACES_API FailedCreateStandbyWorkspacesRequest
+  class FailedCreateStandbyWorkspacesRequest
   {
   public:
-    FailedCreateStandbyWorkspacesRequest();
-    FailedCreateStandbyWorkspacesRequest(Aws::Utils::Json::JsonView jsonValue);
-    FailedCreateStandbyWorkspacesRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WORKSPACES_API FailedCreateStandbyWorkspacesRequest();
+    AWS_WORKSPACES_API FailedCreateStandbyWorkspacesRequest(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKSPACES_API FailedCreateStandbyWorkspacesRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

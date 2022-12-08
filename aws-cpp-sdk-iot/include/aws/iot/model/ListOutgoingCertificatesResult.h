@@ -32,12 +32,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListOutgoingCertificatesResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API ListOutgoingCertificatesResult
+  class ListOutgoingCertificatesResult
   {
   public:
-    ListOutgoingCertificatesResult();
-    ListOutgoingCertificatesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListOutgoingCertificatesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOT_API ListOutgoingCertificatesResult();
+    AWS_IOT_API ListOutgoingCertificatesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOT_API ListOutgoingCertificatesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

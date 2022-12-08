@@ -22,12 +22,12 @@ namespace WorkMail
 {
 namespace Model
 {
-  class AWS_WORKMAIL_API PutMailboxPermissionsResult
+  class PutMailboxPermissionsResult
   {
   public:
-    PutMailboxPermissionsResult();
-    PutMailboxPermissionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PutMailboxPermissionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WORKMAIL_API PutMailboxPermissionsResult();
+    AWS_WORKMAIL_API PutMailboxPermissionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WORKMAIL_API PutMailboxPermissionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

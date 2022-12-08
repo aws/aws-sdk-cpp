@@ -34,12 +34,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DeleteMultiplexProgramResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API DeleteMultiplexProgramResult
+  class DeleteMultiplexProgramResult
   {
   public:
-    DeleteMultiplexProgramResult();
-    DeleteMultiplexProgramResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteMultiplexProgramResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MEDIALIVE_API DeleteMultiplexProgramResult();
+    AWS_MEDIALIVE_API DeleteMultiplexProgramResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MEDIALIVE_API DeleteMultiplexProgramResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -26,13 +26,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/VpcOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_NETWORKMANAGER_API VpcOptions
+  class VpcOptions
   {
   public:
-    VpcOptions();
-    VpcOptions(Aws::Utils::Json::JsonView jsonValue);
-    VpcOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_NETWORKMANAGER_API VpcOptions();
+    AWS_NETWORKMANAGER_API VpcOptions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKMANAGER_API VpcOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

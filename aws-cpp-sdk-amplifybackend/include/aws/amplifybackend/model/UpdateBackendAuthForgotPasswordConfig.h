@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/UpdateBackendAuthForgotPasswordConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_AMPLIFYBACKEND_API UpdateBackendAuthForgotPasswordConfig
+  class UpdateBackendAuthForgotPasswordConfig
   {
   public:
-    UpdateBackendAuthForgotPasswordConfig();
-    UpdateBackendAuthForgotPasswordConfig(Aws::Utils::Json::JsonView jsonValue);
-    UpdateBackendAuthForgotPasswordConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_AMPLIFYBACKEND_API UpdateBackendAuthForgotPasswordConfig();
+    AWS_AMPLIFYBACKEND_API UpdateBackendAuthForgotPasswordConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFYBACKEND_API UpdateBackendAuthForgotPasswordConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFYBACKEND_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

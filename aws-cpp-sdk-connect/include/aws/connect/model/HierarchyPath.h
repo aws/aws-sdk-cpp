@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/HierarchyPath">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECT_API HierarchyPath
+  class HierarchyPath
   {
   public:
-    HierarchyPath();
-    HierarchyPath(Aws::Utils::Json::JsonView jsonValue);
-    HierarchyPath& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECT_API HierarchyPath();
+    AWS_CONNECT_API HierarchyPath(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API HierarchyPath& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

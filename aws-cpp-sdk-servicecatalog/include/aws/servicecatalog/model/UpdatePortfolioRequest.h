@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_SERVICECATALOG_API UpdatePortfolioRequest : public ServiceCatalogRequest
+  class UpdatePortfolioRequest : public ServiceCatalogRequest
   {
   public:
-    UpdatePortfolioRequest();
+    AWS_SERVICECATALOG_API UpdatePortfolioRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,9 +31,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdatePortfolio"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SERVICECATALOG_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_SERVICECATALOG_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**

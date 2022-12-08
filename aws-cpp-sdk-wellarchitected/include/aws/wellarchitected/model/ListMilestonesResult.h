@@ -31,12 +31,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/ListMilestonesOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_WELLARCHITECTED_API ListMilestonesResult
+  class ListMilestonesResult
   {
   public:
-    ListMilestonesResult();
-    ListMilestonesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListMilestonesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WELLARCHITECTED_API ListMilestonesResult();
+    AWS_WELLARCHITECTED_API ListMilestonesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WELLARCHITECTED_API ListMilestonesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     

@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/ScheduledAutoTuneDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_OPENSEARCHSERVICE_API ScheduledAutoTuneDetails
+  class ScheduledAutoTuneDetails
   {
   public:
-    ScheduledAutoTuneDetails();
-    ScheduledAutoTuneDetails(Aws::Utils::Json::JsonView jsonValue);
-    ScheduledAutoTuneDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OPENSEARCHSERVICE_API ScheduledAutoTuneDetails();
+    AWS_OPENSEARCHSERVICE_API ScheduledAutoTuneDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPENSEARCHSERVICE_API ScheduledAutoTuneDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPENSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

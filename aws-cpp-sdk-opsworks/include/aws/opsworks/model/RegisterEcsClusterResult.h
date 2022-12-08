@@ -30,12 +30,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/RegisterEcsClusterResult">AWS
    * API Reference</a></p>
    */
-  class AWS_OPSWORKS_API RegisterEcsClusterResult
+  class RegisterEcsClusterResult
   {
   public:
-    RegisterEcsClusterResult();
-    RegisterEcsClusterResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    RegisterEcsClusterResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OPSWORKS_API RegisterEcsClusterResult();
+    AWS_OPSWORKS_API RegisterEcsClusterResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OPSWORKS_API RegisterEcsClusterResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

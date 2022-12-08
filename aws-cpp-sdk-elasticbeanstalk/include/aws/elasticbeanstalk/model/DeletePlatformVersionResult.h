@@ -25,12 +25,12 @@ namespace ElasticBeanstalk
 {
 namespace Model
 {
-  class AWS_ELASTICBEANSTALK_API DeletePlatformVersionResult
+  class DeletePlatformVersionResult
   {
   public:
-    DeletePlatformVersionResult();
-    DeletePlatformVersionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DeletePlatformVersionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ELASTICBEANSTALK_API DeletePlatformVersionResult();
+    AWS_ELASTICBEANSTALK_API DeletePlatformVersionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ELASTICBEANSTALK_API DeletePlatformVersionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

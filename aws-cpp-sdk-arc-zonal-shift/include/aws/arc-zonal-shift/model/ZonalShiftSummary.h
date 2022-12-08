@@ -42,13 +42,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/arc-zonal-shift-2022-10-30/ZonalShiftSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_ARCZONALSHIFT_API ZonalShiftSummary
+  class ZonalShiftSummary
   {
   public:
-    ZonalShiftSummary();
-    ZonalShiftSummary(Aws::Utils::Json::JsonView jsonValue);
-    ZonalShiftSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ARCZONALSHIFT_API ZonalShiftSummary();
+    AWS_ARCZONALSHIFT_API ZonalShiftSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ARCZONALSHIFT_API ZonalShiftSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ARCZONALSHIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

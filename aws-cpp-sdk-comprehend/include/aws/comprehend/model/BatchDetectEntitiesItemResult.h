@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/BatchDetectEntitiesItemResult">AWS
    * API Reference</a></p>
    */
-  class AWS_COMPREHEND_API BatchDetectEntitiesItemResult
+  class BatchDetectEntitiesItemResult
   {
   public:
-    BatchDetectEntitiesItemResult();
-    BatchDetectEntitiesItemResult(Aws::Utils::Json::JsonView jsonValue);
-    BatchDetectEntitiesItemResult& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COMPREHEND_API BatchDetectEntitiesItemResult();
+    AWS_COMPREHEND_API BatchDetectEntitiesItemResult(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHEND_API BatchDetectEntitiesItemResult& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHEND_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

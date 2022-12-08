@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/GeospatialWindowOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API GeospatialWindowOptions
+  class GeospatialWindowOptions
   {
   public:
-    GeospatialWindowOptions();
-    GeospatialWindowOptions(Aws::Utils::Json::JsonView jsonValue);
-    GeospatialWindowOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API GeospatialWindowOptions();
+    AWS_QUICKSIGHT_API GeospatialWindowOptions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API GeospatialWindowOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

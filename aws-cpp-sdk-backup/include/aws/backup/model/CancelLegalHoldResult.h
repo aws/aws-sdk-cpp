@@ -22,12 +22,12 @@ namespace Backup
 {
 namespace Model
 {
-  class AWS_BACKUP_API CancelLegalHoldResult
+  class CancelLegalHoldResult
   {
   public:
-    CancelLegalHoldResult();
-    CancelLegalHoldResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CancelLegalHoldResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_BACKUP_API CancelLegalHoldResult();
+    AWS_BACKUP_API CancelLegalHoldResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_BACKUP_API CancelLegalHoldResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

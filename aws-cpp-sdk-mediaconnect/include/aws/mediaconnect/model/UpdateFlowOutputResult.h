@@ -25,12 +25,12 @@ namespace MediaConnect
 {
 namespace Model
 {
-  class AWS_MEDIACONNECT_API UpdateFlowOutputResult
+  class UpdateFlowOutputResult
   {
   public:
-    UpdateFlowOutputResult();
-    UpdateFlowOutputResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateFlowOutputResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MEDIACONNECT_API UpdateFlowOutputResult();
+    AWS_MEDIACONNECT_API UpdateFlowOutputResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MEDIACONNECT_API UpdateFlowOutputResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

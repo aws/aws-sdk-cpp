@@ -25,12 +25,12 @@ namespace CodeCommit
 {
 namespace Model
 {
-  class AWS_CODECOMMIT_API ListAssociatedApprovalRuleTemplatesForRepositoryResult
+  class ListAssociatedApprovalRuleTemplatesForRepositoryResult
   {
   public:
-    ListAssociatedApprovalRuleTemplatesForRepositoryResult();
-    ListAssociatedApprovalRuleTemplatesForRepositoryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListAssociatedApprovalRuleTemplatesForRepositoryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODECOMMIT_API ListAssociatedApprovalRuleTemplatesForRepositoryResult();
+    AWS_CODECOMMIT_API ListAssociatedApprovalRuleTemplatesForRepositoryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODECOMMIT_API ListAssociatedApprovalRuleTemplatesForRepositoryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

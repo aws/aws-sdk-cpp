@@ -22,12 +22,12 @@ namespace DataSync
 {
 namespace Model
 {
-  class AWS_DATASYNC_API DeleteLocationResult
+  class DeleteLocationResult
   {
   public:
-    DeleteLocationResult();
-    DeleteLocationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteLocationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DATASYNC_API DeleteLocationResult();
+    AWS_DATASYNC_API DeleteLocationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DATASYNC_API DeleteLocationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

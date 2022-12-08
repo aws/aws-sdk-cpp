@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/SourceAccessConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_LAMBDA_API SourceAccessConfiguration
+  class SourceAccessConfiguration
   {
   public:
-    SourceAccessConfiguration();
-    SourceAccessConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    SourceAccessConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LAMBDA_API SourceAccessConfiguration();
+    AWS_LAMBDA_API SourceAccessConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAMBDA_API SourceAccessConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAMBDA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

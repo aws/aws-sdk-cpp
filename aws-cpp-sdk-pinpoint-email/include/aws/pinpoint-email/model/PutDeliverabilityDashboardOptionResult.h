@@ -28,12 +28,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/PutDeliverabilityDashboardOptionResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINTEMAIL_API PutDeliverabilityDashboardOptionResult
+  class PutDeliverabilityDashboardOptionResult
   {
   public:
-    PutDeliverabilityDashboardOptionResult();
-    PutDeliverabilityDashboardOptionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PutDeliverabilityDashboardOptionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PINPOINTEMAIL_API PutDeliverabilityDashboardOptionResult();
+    AWS_PINPOINTEMAIL_API PutDeliverabilityDashboardOptionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PINPOINTEMAIL_API PutDeliverabilityDashboardOptionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

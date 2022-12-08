@@ -24,12 +24,12 @@ namespace Personalize
 {
 namespace Model
 {
-  class AWS_PERSONALIZE_API CreateRecommenderResult
+  class CreateRecommenderResult
   {
   public:
-    CreateRecommenderResult();
-    CreateRecommenderResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateRecommenderResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PERSONALIZE_API CreateRecommenderResult();
+    AWS_PERSONALIZE_API CreateRecommenderResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PERSONALIZE_API CreateRecommenderResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

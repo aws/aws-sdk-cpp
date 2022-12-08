@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/Order">AWS API
    * Reference</a></p>
    */
-  class AWS_OUTPOSTS_API Order
+  class Order
   {
   public:
-    Order();
-    Order(Aws::Utils::Json::JsonView jsonValue);
-    Order& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OUTPOSTS_API Order();
+    AWS_OUTPOSTS_API Order(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OUTPOSTS_API Order& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OUTPOSTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -22,12 +22,12 @@ namespace SSMIncidents
 {
 namespace Model
 {
-  class AWS_SSMINCIDENTS_API DeleteReplicationSetResult
+  class DeleteReplicationSetResult
   {
   public:
-    DeleteReplicationSetResult();
-    DeleteReplicationSetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteReplicationSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSMINCIDENTS_API DeleteReplicationSetResult();
+    AWS_SSMINCIDENTS_API DeleteReplicationSetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSMINCIDENTS_API DeleteReplicationSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

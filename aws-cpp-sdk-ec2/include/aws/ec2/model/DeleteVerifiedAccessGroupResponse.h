@@ -25,12 +25,12 @@ namespace EC2
 {
 namespace Model
 {
-  class AWS_EC2_API DeleteVerifiedAccessGroupResponse
+  class DeleteVerifiedAccessGroupResponse
   {
   public:
-    DeleteVerifiedAccessGroupResponse();
-    DeleteVerifiedAccessGroupResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DeleteVerifiedAccessGroupResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API DeleteVerifiedAccessGroupResponse();
+    AWS_EC2_API DeleteVerifiedAccessGroupResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API DeleteVerifiedAccessGroupResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

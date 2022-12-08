@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/CoreNetworkPolicy">AWS
    * API Reference</a></p>
    */
-  class AWS_NETWORKMANAGER_API CoreNetworkPolicy
+  class CoreNetworkPolicy
   {
   public:
-    CoreNetworkPolicy();
-    CoreNetworkPolicy(Aws::Utils::Json::JsonView jsonValue);
-    CoreNetworkPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_NETWORKMANAGER_API CoreNetworkPolicy();
+    AWS_NETWORKMANAGER_API CoreNetworkPolicy(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKMANAGER_API CoreNetworkPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

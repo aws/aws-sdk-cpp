@@ -30,12 +30,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ChangeResourceRecordSetsResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53_API ChangeResourceRecordSetsResult
+  class ChangeResourceRecordSetsResult
   {
   public:
-    ChangeResourceRecordSetsResult();
-    ChangeResourceRecordSetsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ChangeResourceRecordSetsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ROUTE53_API ChangeResourceRecordSetsResult();
+    AWS_ROUTE53_API ChangeResourceRecordSetsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ROUTE53_API ChangeResourceRecordSetsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

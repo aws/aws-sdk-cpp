@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CandidateArtifactLocations">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API CandidateArtifactLocations
+  class CandidateArtifactLocations
   {
   public:
-    CandidateArtifactLocations();
-    CandidateArtifactLocations(Aws::Utils::Json::JsonView jsonValue);
-    CandidateArtifactLocations& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API CandidateArtifactLocations();
+    AWS_SAGEMAKER_API CandidateArtifactLocations(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API CandidateArtifactLocations& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

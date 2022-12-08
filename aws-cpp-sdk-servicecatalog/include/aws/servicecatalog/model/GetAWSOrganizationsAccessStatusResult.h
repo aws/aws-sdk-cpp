@@ -24,12 +24,12 @@ namespace ServiceCatalog
 {
 namespace Model
 {
-  class AWS_SERVICECATALOG_API GetAWSOrganizationsAccessStatusResult
+  class GetAWSOrganizationsAccessStatusResult
   {
   public:
-    GetAWSOrganizationsAccessStatusResult();
-    GetAWSOrganizationsAccessStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetAWSOrganizationsAccessStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SERVICECATALOG_API GetAWSOrganizationsAccessStatusResult();
+    AWS_SERVICECATALOG_API GetAWSOrganizationsAccessStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SERVICECATALOG_API GetAWSOrganizationsAccessStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

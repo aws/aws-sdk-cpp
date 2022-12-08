@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/AccessDeniedException">AWS
    * API Reference</a></p>
    */
-  class AWS_BACKUPGATEWAY_API AccessDeniedException
+  class AccessDeniedException
   {
   public:
-    AccessDeniedException();
-    AccessDeniedException(Aws::Utils::Json::JsonView jsonValue);
-    AccessDeniedException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BACKUPGATEWAY_API AccessDeniedException();
+    AWS_BACKUPGATEWAY_API AccessDeniedException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BACKUPGATEWAY_API AccessDeniedException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BACKUPGATEWAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -28,12 +28,12 @@ namespace IoTWireless
 {
 namespace Model
 {
-  class AWS_IOTWIRELESS_API GetEventConfigurationByResourceTypesResult
+  class GetEventConfigurationByResourceTypesResult
   {
   public:
-    GetEventConfigurationByResourceTypesResult();
-    GetEventConfigurationByResourceTypesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetEventConfigurationByResourceTypesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOTWIRELESS_API GetEventConfigurationByResourceTypesResult();
+    AWS_IOTWIRELESS_API GetEventConfigurationByResourceTypesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOTWIRELESS_API GetEventConfigurationByResourceTypesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -22,12 +22,12 @@ namespace Glue
 {
 namespace Model
 {
-  class AWS_GLUE_API ImportCatalogToGlueResult
+  class ImportCatalogToGlueResult
   {
   public:
-    ImportCatalogToGlueResult();
-    ImportCatalogToGlueResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ImportCatalogToGlueResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GLUE_API ImportCatalogToGlueResult();
+    AWS_GLUE_API ImportCatalogToGlueResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GLUE_API ImportCatalogToGlueResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

@@ -26,12 +26,12 @@ namespace LexModelsV2
 {
 namespace Model
 {
-  class AWS_LEXMODELSV2_API ListRecommendedIntentsResult
+  class ListRecommendedIntentsResult
   {
   public:
-    ListRecommendedIntentsResult();
-    ListRecommendedIntentsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListRecommendedIntentsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LEXMODELSV2_API ListRecommendedIntentsResult();
+    AWS_LEXMODELSV2_API ListRecommendedIntentsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LEXMODELSV2_API ListRecommendedIntentsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

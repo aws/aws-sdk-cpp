@@ -46,13 +46,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/PerformanceInsightsMetricsDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_DEVOPSGURU_API PerformanceInsightsMetricsDetail
+  class PerformanceInsightsMetricsDetail
   {
   public:
-    PerformanceInsightsMetricsDetail();
-    PerformanceInsightsMetricsDetail(Aws::Utils::Json::JsonView jsonValue);
-    PerformanceInsightsMetricsDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DEVOPSGURU_API PerformanceInsightsMetricsDetail();
+    AWS_DEVOPSGURU_API PerformanceInsightsMetricsDetail(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVOPSGURU_API PerformanceInsightsMetricsDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVOPSGURU_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

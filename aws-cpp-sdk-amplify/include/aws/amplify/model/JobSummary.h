@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/JobSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_AMPLIFY_API JobSummary
+  class JobSummary
   {
   public:
-    JobSummary();
-    JobSummary(Aws::Utils::Json::JsonView jsonValue);
-    JobSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_AMPLIFY_API JobSummary();
+    AWS_AMPLIFY_API JobSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFY_API JobSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

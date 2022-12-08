@@ -25,12 +25,12 @@ namespace ElasticInference
 {
 namespace Model
 {
-  class AWS_ELASTICINFERENCE_API DescribeAcceleratorTypesResult
+  class DescribeAcceleratorTypesResult
   {
   public:
-    DescribeAcceleratorTypesResult();
-    DescribeAcceleratorTypesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeAcceleratorTypesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ELASTICINFERENCE_API DescribeAcceleratorTypesResult();
+    AWS_ELASTICINFERENCE_API DescribeAcceleratorTypesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ELASTICINFERENCE_API DescribeAcceleratorTypesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

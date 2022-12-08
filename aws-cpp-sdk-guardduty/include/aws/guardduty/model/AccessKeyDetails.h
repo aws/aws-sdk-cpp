@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/AccessKeyDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_GUARDDUTY_API AccessKeyDetails
+  class AccessKeyDetails
   {
   public:
-    AccessKeyDetails();
-    AccessKeyDetails(Aws::Utils::Json::JsonView jsonValue);
-    AccessKeyDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GUARDDUTY_API AccessKeyDetails();
+    AWS_GUARDDUTY_API AccessKeyDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API AccessKeyDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

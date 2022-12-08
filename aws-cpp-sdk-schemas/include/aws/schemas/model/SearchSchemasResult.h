@@ -26,12 +26,12 @@ namespace Schemas
 {
 namespace Model
 {
-  class AWS_SCHEMAS_API SearchSchemasResult
+  class SearchSchemasResult
   {
   public:
-    SearchSchemasResult();
-    SearchSchemasResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    SearchSchemasResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SCHEMAS_API SearchSchemasResult();
+    AWS_SCHEMAS_API SearchSchemasResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SCHEMAS_API SearchSchemasResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

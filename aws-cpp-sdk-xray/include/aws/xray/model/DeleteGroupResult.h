@@ -22,12 +22,12 @@ namespace XRay
 {
 namespace Model
 {
-  class AWS_XRAY_API DeleteGroupResult
+  class DeleteGroupResult
   {
   public:
-    DeleteGroupResult();
-    DeleteGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_XRAY_API DeleteGroupResult();
+    AWS_XRAY_API DeleteGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_XRAY_API DeleteGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

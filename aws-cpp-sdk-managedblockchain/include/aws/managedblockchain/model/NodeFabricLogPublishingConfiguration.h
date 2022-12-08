@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/NodeFabricLogPublishingConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_MANAGEDBLOCKCHAIN_API NodeFabricLogPublishingConfiguration
+  class NodeFabricLogPublishingConfiguration
   {
   public:
-    NodeFabricLogPublishingConfiguration();
-    NodeFabricLogPublishingConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    NodeFabricLogPublishingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MANAGEDBLOCKCHAIN_API NodeFabricLogPublishingConfiguration();
+    AWS_MANAGEDBLOCKCHAIN_API NodeFabricLogPublishingConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MANAGEDBLOCKCHAIN_API NodeFabricLogPublishingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MANAGEDBLOCKCHAIN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

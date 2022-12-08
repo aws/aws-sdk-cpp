@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/FieldTypeDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_APPFLOW_API FieldTypeDetails
+  class FieldTypeDetails
   {
   public:
-    FieldTypeDetails();
-    FieldTypeDetails(Aws::Utils::Json::JsonView jsonValue);
-    FieldTypeDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPFLOW_API FieldTypeDetails();
+    AWS_APPFLOW_API FieldTypeDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API FieldTypeDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -27,12 +27,12 @@ namespace drs
 {
 namespace Model
 {
-  class AWS_DRS_API UpdateLaunchConfigurationResult
+  class UpdateLaunchConfigurationResult
   {
   public:
-    UpdateLaunchConfigurationResult();
-    UpdateLaunchConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateLaunchConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DRS_API UpdateLaunchConfigurationResult();
+    AWS_DRS_API UpdateLaunchConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DRS_API UpdateLaunchConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

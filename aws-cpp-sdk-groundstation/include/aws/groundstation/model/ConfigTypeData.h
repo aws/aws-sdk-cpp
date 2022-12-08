@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/ConfigTypeData">AWS
    * API Reference</a></p>
    */
-  class AWS_GROUNDSTATION_API ConfigTypeData
+  class ConfigTypeData
   {
   public:
-    ConfigTypeData();
-    ConfigTypeData(Aws::Utils::Json::JsonView jsonValue);
-    ConfigTypeData& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GROUNDSTATION_API ConfigTypeData();
+    AWS_GROUNDSTATION_API ConfigTypeData(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GROUNDSTATION_API ConfigTypeData& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GROUNDSTATION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

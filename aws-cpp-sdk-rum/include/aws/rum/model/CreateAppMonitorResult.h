@@ -24,12 +24,12 @@ namespace CloudWatchRUM
 {
 namespace Model
 {
-  class AWS_CLOUDWATCHRUM_API CreateAppMonitorResult
+  class CreateAppMonitorResult
   {
   public:
-    CreateAppMonitorResult();
-    CreateAppMonitorResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateAppMonitorResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CLOUDWATCHRUM_API CreateAppMonitorResult();
+    AWS_CLOUDWATCHRUM_API CreateAppMonitorResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CLOUDWATCHRUM_API CreateAppMonitorResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

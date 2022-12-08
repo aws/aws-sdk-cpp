@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/SubSlotTypeComposition">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELSV2_API SubSlotTypeComposition
+  class SubSlotTypeComposition
   {
   public:
-    SubSlotTypeComposition();
-    SubSlotTypeComposition(Aws::Utils::Json::JsonView jsonValue);
-    SubSlotTypeComposition& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELSV2_API SubSlotTypeComposition();
+    AWS_LEXMODELSV2_API SubSlotTypeComposition(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API SubSlotTypeComposition& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

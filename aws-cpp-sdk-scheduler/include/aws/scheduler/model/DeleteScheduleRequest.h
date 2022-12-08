@@ -23,10 +23,10 @@ namespace Model
 
   /**
    */
-  class AWS_SCHEDULER_API DeleteScheduleRequest : public SchedulerRequest
+  class DeleteScheduleRequest : public SchedulerRequest
   {
   public:
-    DeleteScheduleRequest();
+    AWS_SCHEDULER_API DeleteScheduleRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,9 +34,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DeleteSchedule"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SCHEDULER_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_SCHEDULER_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**

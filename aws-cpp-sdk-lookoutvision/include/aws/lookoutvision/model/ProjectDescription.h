@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutvision-2020-11-20/ProjectDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_LOOKOUTFORVISION_API ProjectDescription
+  class ProjectDescription
   {
   public:
-    ProjectDescription();
-    ProjectDescription(Aws::Utils::Json::JsonView jsonValue);
-    ProjectDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LOOKOUTFORVISION_API ProjectDescription();
+    AWS_LOOKOUTFORVISION_API ProjectDescription(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTFORVISION_API ProjectDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTFORVISION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

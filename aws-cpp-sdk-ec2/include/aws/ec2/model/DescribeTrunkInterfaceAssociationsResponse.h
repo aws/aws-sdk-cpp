@@ -27,12 +27,12 @@ namespace EC2
 {
 namespace Model
 {
-  class AWS_EC2_API DescribeTrunkInterfaceAssociationsResponse
+  class DescribeTrunkInterfaceAssociationsResponse
   {
   public:
-    DescribeTrunkInterfaceAssociationsResponse();
-    DescribeTrunkInterfaceAssociationsResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeTrunkInterfaceAssociationsResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API DescribeTrunkInterfaceAssociationsResponse();
+    AWS_EC2_API DescribeTrunkInterfaceAssociationsResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API DescribeTrunkInterfaceAssociationsResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

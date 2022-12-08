@@ -26,12 +26,12 @@ namespace IoT
 {
 namespace Model
 {
-  class AWS_IOT_API ListRelatedResourcesForAuditFindingResult
+  class ListRelatedResourcesForAuditFindingResult
   {
   public:
-    ListRelatedResourcesForAuditFindingResult();
-    ListRelatedResourcesForAuditFindingResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListRelatedResourcesForAuditFindingResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOT_API ListRelatedResourcesForAuditFindingResult();
+    AWS_IOT_API ListRelatedResourcesForAuditFindingResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOT_API ListRelatedResourcesForAuditFindingResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -26,12 +26,12 @@ namespace ServiceCatalog
 {
 namespace Model
 {
-  class AWS_SERVICECATALOG_API DescribePortfolioShareStatusResult
+  class DescribePortfolioShareStatusResult
   {
   public:
-    DescribePortfolioShareStatusResult();
-    DescribePortfolioShareStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribePortfolioShareStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SERVICECATALOG_API DescribePortfolioShareStatusResult();
+    AWS_SERVICECATALOG_API DescribePortfolioShareStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SERVICECATALOG_API DescribePortfolioShareStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

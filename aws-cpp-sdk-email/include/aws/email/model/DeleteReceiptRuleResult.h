@@ -30,12 +30,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DeleteReceiptRuleResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_SES_API DeleteReceiptRuleResult
+  class DeleteReceiptRuleResult
   {
   public:
-    DeleteReceiptRuleResult();
-    DeleteReceiptRuleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DeleteReceiptRuleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_SES_API DeleteReceiptRuleResult();
+    AWS_SES_API DeleteReceiptRuleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_SES_API DeleteReceiptRuleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     

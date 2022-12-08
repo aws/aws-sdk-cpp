@@ -24,12 +24,12 @@ namespace CodeCommit
 {
 namespace Model
 {
-  class AWS_CODECOMMIT_API MergeBranchesBySquashResult
+  class MergeBranchesBySquashResult
   {
   public:
-    MergeBranchesBySquashResult();
-    MergeBranchesBySquashResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    MergeBranchesBySquashResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODECOMMIT_API MergeBranchesBySquashResult();
+    AWS_CODECOMMIT_API MergeBranchesBySquashResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODECOMMIT_API MergeBranchesBySquashResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

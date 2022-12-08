@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListProfileObjectsItem">AWS
    * API Reference</a></p>
    */
-  class AWS_CUSTOMERPROFILES_API ListProfileObjectsItem
+  class ListProfileObjectsItem
   {
   public:
-    ListProfileObjectsItem();
-    ListProfileObjectsItem(Aws::Utils::Json::JsonView jsonValue);
-    ListProfileObjectsItem& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CUSTOMERPROFILES_API ListProfileObjectsItem();
+    AWS_CUSTOMERPROFILES_API ListProfileObjectsItem(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CUSTOMERPROFILES_API ListProfileObjectsItem& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CUSTOMERPROFILES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

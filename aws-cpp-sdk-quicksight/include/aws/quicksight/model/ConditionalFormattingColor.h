@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ConditionalFormattingColor">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API ConditionalFormattingColor
+  class ConditionalFormattingColor
   {
   public:
-    ConditionalFormattingColor();
-    ConditionalFormattingColor(Aws::Utils::Json::JsonView jsonValue);
-    ConditionalFormattingColor& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API ConditionalFormattingColor();
+    AWS_QUICKSIGHT_API ConditionalFormattingColor(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API ConditionalFormattingColor& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

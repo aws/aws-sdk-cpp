@@ -28,12 +28,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/DeleteConfigurationSetEventDestinationResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINTEMAIL_API DeleteConfigurationSetEventDestinationResult
+  class DeleteConfigurationSetEventDestinationResult
   {
   public:
-    DeleteConfigurationSetEventDestinationResult();
-    DeleteConfigurationSetEventDestinationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteConfigurationSetEventDestinationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PINPOINTEMAIL_API DeleteConfigurationSetEventDestinationResult();
+    AWS_PINPOINTEMAIL_API DeleteConfigurationSetEventDestinationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PINPOINTEMAIL_API DeleteConfigurationSetEventDestinationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

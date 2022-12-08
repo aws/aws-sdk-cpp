@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/ScheduledTriggerProperties">AWS
    * API Reference</a></p>
    */
-  class AWS_APPFLOW_API ScheduledTriggerProperties
+  class ScheduledTriggerProperties
   {
   public:
-    ScheduledTriggerProperties();
-    ScheduledTriggerProperties(Aws::Utils::Json::JsonView jsonValue);
-    ScheduledTriggerProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPFLOW_API ScheduledTriggerProperties();
+    AWS_APPFLOW_API ScheduledTriggerProperties(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API ScheduledTriggerProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -32,12 +32,12 @@ namespace SSM
 {
 namespace Model
 {
-  class AWS_SSM_API GetDocumentResult
+  class GetDocumentResult
   {
   public:
-    GetDocumentResult();
-    GetDocumentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetDocumentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSM_API GetDocumentResult();
+    AWS_SSM_API GetDocumentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSM_API GetDocumentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

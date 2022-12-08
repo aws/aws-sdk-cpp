@@ -22,12 +22,12 @@ namespace CostandUsageReportService
 {
 namespace Model
 {
-  class AWS_COSTANDUSAGEREPORTSERVICE_API ModifyReportDefinitionResult
+  class ModifyReportDefinitionResult
   {
   public:
-    ModifyReportDefinitionResult();
-    ModifyReportDefinitionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ModifyReportDefinitionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_COSTANDUSAGEREPORTSERVICE_API ModifyReportDefinitionResult();
+    AWS_COSTANDUSAGEREPORTSERVICE_API ModifyReportDefinitionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_COSTANDUSAGEREPORTSERVICE_API ModifyReportDefinitionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

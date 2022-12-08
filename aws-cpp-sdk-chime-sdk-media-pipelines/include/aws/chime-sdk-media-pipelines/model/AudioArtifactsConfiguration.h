@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/AudioArtifactsConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_CHIMESDKMEDIAPIPELINES_API AudioArtifactsConfiguration
+  class AudioArtifactsConfiguration
   {
   public:
-    AudioArtifactsConfiguration();
-    AudioArtifactsConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    AudioArtifactsConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIMESDKMEDIAPIPELINES_API AudioArtifactsConfiguration();
+    AWS_CHIMESDKMEDIAPIPELINES_API AudioArtifactsConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKMEDIAPIPELINES_API AudioArtifactsConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKMEDIAPIPELINES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

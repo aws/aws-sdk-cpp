@@ -41,13 +41,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/ContainerProperties">AWS
    * API Reference</a></p>
    */
-  class AWS_BATCH_API ContainerProperties
+  class ContainerProperties
   {
   public:
-    ContainerProperties();
-    ContainerProperties(Aws::Utils::Json::JsonView jsonValue);
-    ContainerProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BATCH_API ContainerProperties();
+    AWS_BATCH_API ContainerProperties(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BATCH_API ContainerProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BATCH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

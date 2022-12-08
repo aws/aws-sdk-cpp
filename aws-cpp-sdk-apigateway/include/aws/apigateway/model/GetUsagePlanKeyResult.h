@@ -30,12 +30,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UsagePlanKey">AWS
    * API Reference</a></p>
    */
-  class AWS_APIGATEWAY_API GetUsagePlanKeyResult
+  class GetUsagePlanKeyResult
   {
   public:
-    GetUsagePlanKeyResult();
-    GetUsagePlanKeyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetUsagePlanKeyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APIGATEWAY_API GetUsagePlanKeyResult();
+    AWS_APIGATEWAY_API GetUsagePlanKeyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APIGATEWAY_API GetUsagePlanKeyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

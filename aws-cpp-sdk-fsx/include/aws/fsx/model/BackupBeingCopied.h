@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/BackupBeingCopied">AWS
    * API Reference</a></p>
    */
-  class AWS_FSX_API BackupBeingCopied
+  class BackupBeingCopied
   {
   public:
-    BackupBeingCopied();
-    BackupBeingCopied(Aws::Utils::Json::JsonView jsonValue);
-    BackupBeingCopied& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FSX_API BackupBeingCopied();
+    AWS_FSX_API BackupBeingCopied(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API BackupBeingCopied& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

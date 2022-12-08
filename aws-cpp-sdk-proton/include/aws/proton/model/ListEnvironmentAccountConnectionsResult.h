@@ -26,12 +26,12 @@ namespace Proton
 {
 namespace Model
 {
-  class AWS_PROTON_API ListEnvironmentAccountConnectionsResult
+  class ListEnvironmentAccountConnectionsResult
   {
   public:
-    ListEnvironmentAccountConnectionsResult();
-    ListEnvironmentAccountConnectionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListEnvironmentAccountConnectionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PROTON_API ListEnvironmentAccountConnectionsResult();
+    AWS_PROTON_API ListEnvironmentAccountConnectionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PROTON_API ListEnvironmentAccountConnectionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

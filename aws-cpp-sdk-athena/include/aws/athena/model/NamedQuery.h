@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/NamedQuery">AWS
    * API Reference</a></p>
    */
-  class AWS_ATHENA_API NamedQuery
+  class NamedQuery
   {
   public:
-    NamedQuery();
-    NamedQuery(Aws::Utils::Json::JsonView jsonValue);
-    NamedQuery& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ATHENA_API NamedQuery();
+    AWS_ATHENA_API NamedQuery(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ATHENA_API NamedQuery& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ATHENA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

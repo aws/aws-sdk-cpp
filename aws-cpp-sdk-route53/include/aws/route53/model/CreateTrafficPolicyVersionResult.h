@@ -31,12 +31,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateTrafficPolicyVersionResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53_API CreateTrafficPolicyVersionResult
+  class CreateTrafficPolicyVersionResult
   {
   public:
-    CreateTrafficPolicyVersionResult();
-    CreateTrafficPolicyVersionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    CreateTrafficPolicyVersionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ROUTE53_API CreateTrafficPolicyVersionResult();
+    AWS_ROUTE53_API CreateTrafficPolicyVersionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ROUTE53_API CreateTrafficPolicyVersionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

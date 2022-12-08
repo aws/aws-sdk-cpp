@@ -22,12 +22,12 @@ namespace Shield
 {
 namespace Model
 {
-  class AWS_SHIELD_API UpdateEmergencyContactSettingsResult
+  class UpdateEmergencyContactSettingsResult
   {
   public:
-    UpdateEmergencyContactSettingsResult();
-    UpdateEmergencyContactSettingsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateEmergencyContactSettingsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SHIELD_API UpdateEmergencyContactSettingsResult();
+    AWS_SHIELD_API UpdateEmergencyContactSettingsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SHIELD_API UpdateEmergencyContactSettingsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

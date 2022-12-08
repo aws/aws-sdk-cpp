@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AssociatedGateway">AWS
    * API Reference</a></p>
    */
-  class AWS_DIRECTCONNECT_API AssociatedGateway
+  class AssociatedGateway
   {
   public:
-    AssociatedGateway();
-    AssociatedGateway(Aws::Utils::Json::JsonView jsonValue);
-    AssociatedGateway& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DIRECTCONNECT_API AssociatedGateway();
+    AWS_DIRECTCONNECT_API AssociatedGateway(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTCONNECT_API AssociatedGateway& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTCONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

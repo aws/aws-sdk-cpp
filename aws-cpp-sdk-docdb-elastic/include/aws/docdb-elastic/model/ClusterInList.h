@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-elastic-2022-11-28/ClusterInList">AWS
    * API Reference</a></p>
    */
-  class AWS_DOCDBELASTIC_API ClusterInList
+  class ClusterInList
   {
   public:
-    ClusterInList();
-    ClusterInList(Aws::Utils::Json::JsonView jsonValue);
-    ClusterInList& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DOCDBELASTIC_API ClusterInList();
+    AWS_DOCDBELASTIC_API ClusterInList(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DOCDBELASTIC_API ClusterInList& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DOCDBELASTIC_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

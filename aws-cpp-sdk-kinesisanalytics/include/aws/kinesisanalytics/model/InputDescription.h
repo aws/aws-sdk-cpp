@@ -37,13 +37,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/InputDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_KINESISANALYTICS_API InputDescription
+  class InputDescription
   {
   public:
-    InputDescription();
-    InputDescription(Aws::Utils::Json::JsonView jsonValue);
-    InputDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KINESISANALYTICS_API InputDescription();
+    AWS_KINESISANALYTICS_API InputDescription(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICS_API InputDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

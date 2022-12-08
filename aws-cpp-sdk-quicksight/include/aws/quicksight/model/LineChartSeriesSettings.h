@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/LineChartSeriesSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API LineChartSeriesSettings
+  class LineChartSeriesSettings
   {
   public:
-    LineChartSeriesSettings();
-    LineChartSeriesSettings(Aws::Utils::Json::JsonView jsonValue);
-    LineChartSeriesSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API LineChartSeriesSettings();
+    AWS_QUICKSIGHT_API LineChartSeriesSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API LineChartSeriesSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -24,12 +24,12 @@ namespace Appflow
 {
 namespace Model
 {
-  class AWS_APPFLOW_API UpdateFlowResult
+  class UpdateFlowResult
   {
   public:
-    UpdateFlowResult();
-    UpdateFlowResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateFlowResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPFLOW_API UpdateFlowResult();
+    AWS_APPFLOW_API UpdateFlowResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPFLOW_API UpdateFlowResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -24,12 +24,12 @@ namespace Lightsail
 {
 namespace Model
 {
-  class AWS_LIGHTSAIL_API AttachCertificateToDistributionResult
+  class AttachCertificateToDistributionResult
   {
   public:
-    AttachCertificateToDistributionResult();
-    AttachCertificateToDistributionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AttachCertificateToDistributionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LIGHTSAIL_API AttachCertificateToDistributionResult();
+    AWS_LIGHTSAIL_API AttachCertificateToDistributionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LIGHTSAIL_API AttachCertificateToDistributionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

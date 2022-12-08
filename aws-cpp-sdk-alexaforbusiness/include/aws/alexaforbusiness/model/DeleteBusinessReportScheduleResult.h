@@ -22,12 +22,12 @@ namespace AlexaForBusiness
 {
 namespace Model
 {
-  class AWS_ALEXAFORBUSINESS_API DeleteBusinessReportScheduleResult
+  class DeleteBusinessReportScheduleResult
   {
   public:
-    DeleteBusinessReportScheduleResult();
-    DeleteBusinessReportScheduleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteBusinessReportScheduleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ALEXAFORBUSINESS_API DeleteBusinessReportScheduleResult();
+    AWS_ALEXAFORBUSINESS_API DeleteBusinessReportScheduleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ALEXAFORBUSINESS_API DeleteBusinessReportScheduleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

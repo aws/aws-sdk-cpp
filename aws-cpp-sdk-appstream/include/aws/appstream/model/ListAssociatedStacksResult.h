@@ -25,12 +25,12 @@ namespace AppStream
 {
 namespace Model
 {
-  class AWS_APPSTREAM_API ListAssociatedStacksResult
+  class ListAssociatedStacksResult
   {
   public:
-    ListAssociatedStacksResult();
-    ListAssociatedStacksResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListAssociatedStacksResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPSTREAM_API ListAssociatedStacksResult();
+    AWS_APPSTREAM_API ListAssociatedStacksResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPSTREAM_API ListAssociatedStacksResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

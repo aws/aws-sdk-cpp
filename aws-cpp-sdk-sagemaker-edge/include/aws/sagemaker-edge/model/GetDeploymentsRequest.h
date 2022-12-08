@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_SAGEMAKEREDGEMANAGER_API GetDeploymentsRequest : public SagemakerEdgeManagerRequest
+  class GetDeploymentsRequest : public SagemakerEdgeManagerRequest
   {
   public:
-    GetDeploymentsRequest();
+    AWS_SAGEMAKEREDGEMANAGER_API GetDeploymentsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,7 +29,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "GetDeployments"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SAGEMAKEREDGEMANAGER_API Aws::String SerializePayload() const override;
 
 
     /**

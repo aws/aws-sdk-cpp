@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/S3ReferenceDataSource">AWS
    * API Reference</a></p>
    */
-  class AWS_KINESISANALYTICS_API S3ReferenceDataSource
+  class S3ReferenceDataSource
   {
   public:
-    S3ReferenceDataSource();
-    S3ReferenceDataSource(Aws::Utils::Json::JsonView jsonValue);
-    S3ReferenceDataSource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KINESISANALYTICS_API S3ReferenceDataSource();
+    AWS_KINESISANALYTICS_API S3ReferenceDataSource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICS_API S3ReferenceDataSource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

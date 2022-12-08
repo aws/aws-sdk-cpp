@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-geospatial-2020-05-27/OutputBand">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKERGEOSPATIAL_API OutputBand
+  class OutputBand
   {
   public:
-    OutputBand();
-    OutputBand(Aws::Utils::Json::JsonView jsonValue);
-    OutputBand& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKERGEOSPATIAL_API OutputBand();
+    AWS_SAGEMAKERGEOSPATIAL_API OutputBand(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKERGEOSPATIAL_API OutputBand& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKERGEOSPATIAL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

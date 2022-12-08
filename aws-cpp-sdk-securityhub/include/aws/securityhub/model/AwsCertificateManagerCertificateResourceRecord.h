@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsCertificateManagerCertificateResourceRecord">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsCertificateManagerCertificateResourceRecord
+  class AwsCertificateManagerCertificateResourceRecord
   {
   public:
-    AwsCertificateManagerCertificateResourceRecord();
-    AwsCertificateManagerCertificateResourceRecord(Aws::Utils::Json::JsonView jsonValue);
-    AwsCertificateManagerCertificateResourceRecord& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsCertificateManagerCertificateResourceRecord();
+    AWS_SECURITYHUB_API AwsCertificateManagerCertificateResourceRecord(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsCertificateManagerCertificateResourceRecord& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

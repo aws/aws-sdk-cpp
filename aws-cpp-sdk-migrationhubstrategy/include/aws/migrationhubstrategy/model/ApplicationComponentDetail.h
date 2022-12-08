@@ -41,13 +41,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/migrationhubstrategy-2020-02-19/ApplicationComponentDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API ApplicationComponentDetail
+  class ApplicationComponentDetail
   {
   public:
-    ApplicationComponentDetail();
-    ApplicationComponentDetail(Aws::Utils::Json::JsonView jsonValue);
-    ApplicationComponentDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API ApplicationComponentDetail();
+    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API ApplicationComponentDetail(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API ApplicationComponentDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

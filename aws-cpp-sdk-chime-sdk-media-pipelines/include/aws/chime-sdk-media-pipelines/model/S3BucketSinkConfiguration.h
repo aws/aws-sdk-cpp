@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/S3BucketSinkConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_CHIMESDKMEDIAPIPELINES_API S3BucketSinkConfiguration
+  class S3BucketSinkConfiguration
   {
   public:
-    S3BucketSinkConfiguration();
-    S3BucketSinkConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    S3BucketSinkConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIMESDKMEDIAPIPELINES_API S3BucketSinkConfiguration();
+    AWS_CHIMESDKMEDIAPIPELINES_API S3BucketSinkConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKMEDIAPIPELINES_API S3BucketSinkConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKMEDIAPIPELINES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/Circle">AWS API
    * Reference</a></p>
    */
-  class AWS_LOCATIONSERVICE_API Circle
+  class Circle
   {
   public:
-    Circle();
-    Circle(Aws::Utils::Json::JsonView jsonValue);
-    Circle& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LOCATIONSERVICE_API Circle();
+    AWS_LOCATIONSERVICE_API Circle(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOCATIONSERVICE_API Circle& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOCATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

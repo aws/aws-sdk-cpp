@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/LaunchTemplateDiskConf">AWS
    * API Reference</a></p>
    */
-  class AWS_MGN_API LaunchTemplateDiskConf
+  class LaunchTemplateDiskConf
   {
   public:
-    LaunchTemplateDiskConf();
-    LaunchTemplateDiskConf(Aws::Utils::Json::JsonView jsonValue);
-    LaunchTemplateDiskConf& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MGN_API LaunchTemplateDiskConf();
+    AWS_MGN_API LaunchTemplateDiskConf(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MGN_API LaunchTemplateDiskConf& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MGN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

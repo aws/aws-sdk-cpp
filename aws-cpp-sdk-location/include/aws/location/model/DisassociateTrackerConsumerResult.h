@@ -22,12 +22,12 @@ namespace LocationService
 {
 namespace Model
 {
-  class AWS_LOCATIONSERVICE_API DisassociateTrackerConsumerResult
+  class DisassociateTrackerConsumerResult
   {
   public:
-    DisassociateTrackerConsumerResult();
-    DisassociateTrackerConsumerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DisassociateTrackerConsumerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LOCATIONSERVICE_API DisassociateTrackerConsumerResult();
+    AWS_LOCATIONSERVICE_API DisassociateTrackerConsumerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LOCATIONSERVICE_API DisassociateTrackerConsumerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

@@ -28,12 +28,12 @@ namespace EC2
 {
 namespace Model
 {
-  class AWS_EC2_API DescribeFleetHistoryResponse
+  class DescribeFleetHistoryResponse
   {
   public:
-    DescribeFleetHistoryResponse();
-    DescribeFleetHistoryResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeFleetHistoryResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API DescribeFleetHistoryResponse();
+    AWS_EC2_API DescribeFleetHistoryResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API DescribeFleetHistoryResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

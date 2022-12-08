@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/Invitation">AWS
    * API Reference</a></p>
    */
-  class AWS_MACIE2_API Invitation
+  class Invitation
   {
   public:
-    Invitation();
-    Invitation(Aws::Utils::Json::JsonView jsonValue);
-    Invitation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MACIE2_API Invitation();
+    AWS_MACIE2_API Invitation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API Invitation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

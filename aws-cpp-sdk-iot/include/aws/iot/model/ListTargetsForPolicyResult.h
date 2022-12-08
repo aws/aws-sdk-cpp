@@ -25,12 +25,12 @@ namespace IoT
 {
 namespace Model
 {
-  class AWS_IOT_API ListTargetsForPolicyResult
+  class ListTargetsForPolicyResult
   {
   public:
-    ListTargetsForPolicyResult();
-    ListTargetsForPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListTargetsForPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOT_API ListTargetsForPolicyResult();
+    AWS_IOT_API ListTargetsForPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOT_API ListTargetsForPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

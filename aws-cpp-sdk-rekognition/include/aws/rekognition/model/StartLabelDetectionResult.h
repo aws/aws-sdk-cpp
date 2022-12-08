@@ -24,12 +24,12 @@ namespace Rekognition
 {
 namespace Model
 {
-  class AWS_REKOGNITION_API StartLabelDetectionResult
+  class StartLabelDetectionResult
   {
   public:
-    StartLabelDetectionResult();
-    StartLabelDetectionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    StartLabelDetectionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_REKOGNITION_API StartLabelDetectionResult();
+    AWS_REKOGNITION_API StartLabelDetectionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_REKOGNITION_API StartLabelDetectionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

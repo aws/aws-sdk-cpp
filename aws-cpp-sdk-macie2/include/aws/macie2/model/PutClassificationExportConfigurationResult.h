@@ -24,12 +24,12 @@ namespace Macie2
 {
 namespace Model
 {
-  class AWS_MACIE2_API PutClassificationExportConfigurationResult
+  class PutClassificationExportConfigurationResult
   {
   public:
-    PutClassificationExportConfigurationResult();
-    PutClassificationExportConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PutClassificationExportConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MACIE2_API PutClassificationExportConfigurationResult();
+    AWS_MACIE2_API PutClassificationExportConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MACIE2_API PutClassificationExportConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

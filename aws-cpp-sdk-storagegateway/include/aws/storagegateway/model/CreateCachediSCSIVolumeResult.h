@@ -24,12 +24,12 @@ namespace StorageGateway
 {
 namespace Model
 {
-  class AWS_STORAGEGATEWAY_API CreateCachediSCSIVolumeResult
+  class CreateCachediSCSIVolumeResult
   {
   public:
-    CreateCachediSCSIVolumeResult();
-    CreateCachediSCSIVolumeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateCachediSCSIVolumeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_STORAGEGATEWAY_API CreateCachediSCSIVolumeResult();
+    AWS_STORAGEGATEWAY_API CreateCachediSCSIVolumeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_STORAGEGATEWAY_API CreateCachediSCSIVolumeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

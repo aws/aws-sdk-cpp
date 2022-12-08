@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/OFIMetricDataPoint">AWS
    * API Reference</a></p>
    */
-  class AWS_FRAUDDETECTOR_API OFIMetricDataPoint
+  class OFIMetricDataPoint
   {
   public:
-    OFIMetricDataPoint();
-    OFIMetricDataPoint(Aws::Utils::Json::JsonView jsonValue);
-    OFIMetricDataPoint& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FRAUDDETECTOR_API OFIMetricDataPoint();
+    AWS_FRAUDDETECTOR_API OFIMetricDataPoint(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FRAUDDETECTOR_API OFIMetricDataPoint& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FRAUDDETECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

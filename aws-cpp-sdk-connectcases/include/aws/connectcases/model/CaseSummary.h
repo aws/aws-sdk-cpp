@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/CaseSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECTCASES_API CaseSummary
+  class CaseSummary
   {
   public:
-    CaseSummary();
-    CaseSummary(Aws::Utils::Json::JsonView jsonValue);
-    CaseSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECTCASES_API CaseSummary();
+    AWS_CONNECTCASES_API CaseSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTCASES_API CaseSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTCASES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

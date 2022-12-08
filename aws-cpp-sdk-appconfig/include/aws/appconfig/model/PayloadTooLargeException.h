@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/PayloadTooLargeException">AWS
    * API Reference</a></p>
    */
-  class AWS_APPCONFIG_API PayloadTooLargeException
+  class PayloadTooLargeException
   {
   public:
-    PayloadTooLargeException();
-    PayloadTooLargeException(Aws::Utils::Json::JsonView jsonValue);
-    PayloadTooLargeException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPCONFIG_API PayloadTooLargeException();
+    AWS_APPCONFIG_API PayloadTooLargeException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPCONFIG_API PayloadTooLargeException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPCONFIG_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

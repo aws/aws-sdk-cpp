@@ -35,15 +35,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/NetworkBandwidthGbpsRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_AUTOSCALING_API NetworkBandwidthGbpsRequest
+  class NetworkBandwidthGbpsRequest
   {
   public:
-    NetworkBandwidthGbpsRequest();
-    NetworkBandwidthGbpsRequest(const Aws::Utils::Xml::XmlNode& xmlNode);
-    NetworkBandwidthGbpsRequest& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_AUTOSCALING_API NetworkBandwidthGbpsRequest();
+    AWS_AUTOSCALING_API NetworkBandwidthGbpsRequest(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_AUTOSCALING_API NetworkBandwidthGbpsRequest& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_AUTOSCALING_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_AUTOSCALING_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**

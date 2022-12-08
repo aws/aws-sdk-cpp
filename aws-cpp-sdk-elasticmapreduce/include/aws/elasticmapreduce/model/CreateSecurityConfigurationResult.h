@@ -25,12 +25,12 @@ namespace EMR
 {
 namespace Model
 {
-  class AWS_EMR_API CreateSecurityConfigurationResult
+  class CreateSecurityConfigurationResult
   {
   public:
-    CreateSecurityConfigurationResult();
-    CreateSecurityConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateSecurityConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_EMR_API CreateSecurityConfigurationResult();
+    AWS_EMR_API CreateSecurityConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_EMR_API CreateSecurityConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

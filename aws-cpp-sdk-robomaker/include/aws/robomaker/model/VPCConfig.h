@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/VPCConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_ROBOMAKER_API VPCConfig
+  class VPCConfig
   {
   public:
-    VPCConfig();
-    VPCConfig(Aws::Utils::Json::JsonView jsonValue);
-    VPCConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ROBOMAKER_API VPCConfig();
+    AWS_ROBOMAKER_API VPCConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROBOMAKER_API VPCConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROBOMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

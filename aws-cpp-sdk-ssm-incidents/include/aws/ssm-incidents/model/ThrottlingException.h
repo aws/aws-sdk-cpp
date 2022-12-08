@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/ThrottlingException">AWS
    * API Reference</a></p>
    */
-  class AWS_SSMINCIDENTS_API ThrottlingException
+  class ThrottlingException
   {
   public:
-    ThrottlingException();
-    ThrottlingException(Aws::Utils::Json::JsonView jsonValue);
-    ThrottlingException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSMINCIDENTS_API ThrottlingException();
+    AWS_SSMINCIDENTS_API ThrottlingException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSMINCIDENTS_API ThrottlingException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSMINCIDENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

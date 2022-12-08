@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/ResourceGroup">AWS
    * API Reference</a></p>
    */
-  class AWS_INSPECTOR_API ResourceGroup
+  class ResourceGroup
   {
   public:
-    ResourceGroup();
-    ResourceGroup(Aws::Utils::Json::JsonView jsonValue);
-    ResourceGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_INSPECTOR_API ResourceGroup();
+    AWS_INSPECTOR_API ResourceGroup(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR_API ResourceGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

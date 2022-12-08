@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/BillingRecord">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53DOMAINS_API BillingRecord
+  class BillingRecord
   {
   public:
-    BillingRecord();
-    BillingRecord(Aws::Utils::Json::JsonView jsonValue);
-    BillingRecord& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ROUTE53DOMAINS_API BillingRecord();
+    AWS_ROUTE53DOMAINS_API BillingRecord(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROUTE53DOMAINS_API BillingRecord& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROUTE53DOMAINS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

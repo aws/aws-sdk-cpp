@@ -33,44 +33,44 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/ComponentConditionProperty">AWS
    * API Reference</a></p>
    */
-  class AWS_AMPLIFYUIBUILDER_API ComponentConditionProperty
+  class ComponentConditionProperty
   {
   public:
-    ComponentConditionProperty();
-    ComponentConditionProperty(Aws::Utils::Json::JsonView jsonValue);
-    ComponentConditionProperty& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_AMPLIFYUIBUILDER_API ComponentConditionProperty();
+    AWS_AMPLIFYUIBUILDER_API ComponentConditionProperty(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFYUIBUILDER_API ComponentConditionProperty& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFYUIBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
      * <p>The value to assign to the property if the condition is not met.</p>
      */
-    const ComponentProperty& GetElse() const;
+    AWS_AMPLIFYUIBUILDER_API const ComponentProperty& GetElse() const;
 
     /**
      * <p>The value to assign to the property if the condition is not met.</p>
      */
-    bool ElseHasBeenSet() const;
+    AWS_AMPLIFYUIBUILDER_API bool ElseHasBeenSet() const;
 
     /**
      * <p>The value to assign to the property if the condition is not met.</p>
      */
-    void SetElse(const ComponentProperty& value);
+    AWS_AMPLIFYUIBUILDER_API void SetElse(const ComponentProperty& value);
 
     /**
      * <p>The value to assign to the property if the condition is not met.</p>
      */
-    void SetElse(ComponentProperty&& value);
+    AWS_AMPLIFYUIBUILDER_API void SetElse(ComponentProperty&& value);
 
     /**
      * <p>The value to assign to the property if the condition is not met.</p>
      */
-    ComponentConditionProperty& WithElse(const ComponentProperty& value);
+    AWS_AMPLIFYUIBUILDER_API ComponentConditionProperty& WithElse(const ComponentProperty& value);
 
     /**
      * <p>The value to assign to the property if the condition is not met.</p>
      */
-    ComponentConditionProperty& WithElse(ComponentProperty&& value);
+    AWS_AMPLIFYUIBUILDER_API ComponentConditionProperty& WithElse(ComponentProperty&& value);
 
 
     /**
@@ -289,32 +289,32 @@ namespace Model
     /**
      * <p>The value to assign to the property if the condition is met.</p>
      */
-    const ComponentProperty& GetThen() const;
+    AWS_AMPLIFYUIBUILDER_API const ComponentProperty& GetThen() const;
 
     /**
      * <p>The value to assign to the property if the condition is met.</p>
      */
-    bool ThenHasBeenSet() const;
+    AWS_AMPLIFYUIBUILDER_API bool ThenHasBeenSet() const;
 
     /**
      * <p>The value to assign to the property if the condition is met.</p>
      */
-    void SetThen(const ComponentProperty& value);
+    AWS_AMPLIFYUIBUILDER_API void SetThen(const ComponentProperty& value);
 
     /**
      * <p>The value to assign to the property if the condition is met.</p>
      */
-    void SetThen(ComponentProperty&& value);
+    AWS_AMPLIFYUIBUILDER_API void SetThen(ComponentProperty&& value);
 
     /**
      * <p>The value to assign to the property if the condition is met.</p>
      */
-    ComponentConditionProperty& WithThen(const ComponentProperty& value);
+    AWS_AMPLIFYUIBUILDER_API ComponentConditionProperty& WithThen(const ComponentProperty& value);
 
     /**
      * <p>The value to assign to the property if the condition is met.</p>
      */
-    ComponentConditionProperty& WithThen(ComponentProperty&& value);
+    AWS_AMPLIFYUIBUILDER_API ComponentConditionProperty& WithThen(ComponentProperty&& value);
 
   private:
 

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ivschat-2020-07-14/FirehoseDestinationConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_IVSCHAT_API FirehoseDestinationConfiguration
+  class FirehoseDestinationConfiguration
   {
   public:
-    FirehoseDestinationConfiguration();
-    FirehoseDestinationConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    FirehoseDestinationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IVSCHAT_API FirehoseDestinationConfiguration();
+    AWS_IVSCHAT_API FirehoseDestinationConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IVSCHAT_API FirehoseDestinationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IVSCHAT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

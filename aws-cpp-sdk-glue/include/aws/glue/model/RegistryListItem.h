@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/RegistryListItem">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API RegistryListItem
+  class RegistryListItem
   {
   public:
-    RegistryListItem();
-    RegistryListItem(Aws::Utils::Json::JsonView jsonValue);
-    RegistryListItem& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API RegistryListItem();
+    AWS_GLUE_API RegistryListItem(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API RegistryListItem& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -26,12 +26,12 @@ namespace SSM
 {
 namespace Model
 {
-  class AWS_SSM_API DescribeInventoryDeletionsResult
+  class DescribeInventoryDeletionsResult
   {
   public:
-    DescribeInventoryDeletionsResult();
-    DescribeInventoryDeletionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeInventoryDeletionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSM_API DescribeInventoryDeletionsResult();
+    AWS_SSM_API DescribeInventoryDeletionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSM_API DescribeInventoryDeletionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

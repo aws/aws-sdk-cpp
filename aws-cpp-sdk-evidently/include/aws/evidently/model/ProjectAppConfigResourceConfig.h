@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/ProjectAppConfigResourceConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDWATCHEVIDENTLY_API ProjectAppConfigResourceConfig
+  class ProjectAppConfigResourceConfig
   {
   public:
-    ProjectAppConfigResourceConfig();
-    ProjectAppConfigResourceConfig(Aws::Utils::Json::JsonView jsonValue);
-    ProjectAppConfigResourceConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDWATCHEVIDENTLY_API ProjectAppConfigResourceConfig();
+    AWS_CLOUDWATCHEVIDENTLY_API ProjectAppConfigResourceConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHEVIDENTLY_API ProjectAppConfigResourceConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHEVIDENTLY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

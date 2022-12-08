@@ -22,12 +22,12 @@ namespace MTurk
 {
 namespace Model
 {
-  class AWS_MTURK_API ApproveAssignmentResult
+  class ApproveAssignmentResult
   {
   public:
-    ApproveAssignmentResult();
-    ApproveAssignmentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ApproveAssignmentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MTURK_API ApproveAssignmentResult();
+    AWS_MTURK_API ApproveAssignmentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MTURK_API ApproveAssignmentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

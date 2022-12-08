@@ -30,12 +30,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeAttachmentResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_SUPPORT_API DescribeAttachmentResult
+  class DescribeAttachmentResult
   {
   public:
-    DescribeAttachmentResult();
-    DescribeAttachmentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeAttachmentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SUPPORT_API DescribeAttachmentResult();
+    AWS_SUPPORT_API DescribeAttachmentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SUPPORT_API DescribeAttachmentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

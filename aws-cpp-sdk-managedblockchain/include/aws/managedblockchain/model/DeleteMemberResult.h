@@ -22,12 +22,12 @@ namespace ManagedBlockchain
 {
 namespace Model
 {
-  class AWS_MANAGEDBLOCKCHAIN_API DeleteMemberResult
+  class DeleteMemberResult
   {
   public:
-    DeleteMemberResult();
-    DeleteMemberResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteMemberResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MANAGEDBLOCKCHAIN_API DeleteMemberResult();
+    AWS_MANAGEDBLOCKCHAIN_API DeleteMemberResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MANAGEDBLOCKCHAIN_API DeleteMemberResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

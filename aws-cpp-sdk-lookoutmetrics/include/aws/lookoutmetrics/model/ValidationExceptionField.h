@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/ValidationExceptionField">AWS
    * API Reference</a></p>
    */
-  class AWS_LOOKOUTMETRICS_API ValidationExceptionField
+  class ValidationExceptionField
   {
   public:
-    ValidationExceptionField();
-    ValidationExceptionField(Aws::Utils::Json::JsonView jsonValue);
-    ValidationExceptionField& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LOOKOUTMETRICS_API ValidationExceptionField();
+    AWS_LOOKOUTMETRICS_API ValidationExceptionField(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTMETRICS_API ValidationExceptionField& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTMETRICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

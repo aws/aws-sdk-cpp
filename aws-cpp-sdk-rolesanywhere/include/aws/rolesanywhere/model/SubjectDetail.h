@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rolesanywhere-2018-05-10/SubjectDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_ROLESANYWHERE_API SubjectDetail
+  class SubjectDetail
   {
   public:
-    SubjectDetail();
-    SubjectDetail(Aws::Utils::Json::JsonView jsonValue);
-    SubjectDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ROLESANYWHERE_API SubjectDetail();
+    AWS_ROLESANYWHERE_API SubjectDetail(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROLESANYWHERE_API SubjectDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROLESANYWHERE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

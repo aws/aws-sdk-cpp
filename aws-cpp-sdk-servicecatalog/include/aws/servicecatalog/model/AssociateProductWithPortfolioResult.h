@@ -22,12 +22,12 @@ namespace ServiceCatalog
 {
 namespace Model
 {
-  class AWS_SERVICECATALOG_API AssociateProductWithPortfolioResult
+  class AssociateProductWithPortfolioResult
   {
   public:
-    AssociateProductWithPortfolioResult();
-    AssociateProductWithPortfolioResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AssociateProductWithPortfolioResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SERVICECATALOG_API AssociateProductWithPortfolioResult();
+    AWS_SERVICECATALOG_API AssociateProductWithPortfolioResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SERVICECATALOG_API AssociateProductWithPortfolioResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

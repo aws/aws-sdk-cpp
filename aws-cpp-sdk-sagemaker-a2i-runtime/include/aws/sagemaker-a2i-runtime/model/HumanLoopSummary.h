@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-a2i-runtime-2019-11-07/HumanLoopSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_AUGMENTEDAIRUNTIME_API HumanLoopSummary
+  class HumanLoopSummary
   {
   public:
-    HumanLoopSummary();
-    HumanLoopSummary(Aws::Utils::Json::JsonView jsonValue);
-    HumanLoopSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_AUGMENTEDAIRUNTIME_API HumanLoopSummary();
+    AWS_AUGMENTEDAIRUNTIME_API HumanLoopSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AUGMENTEDAIRUNTIME_API HumanLoopSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AUGMENTEDAIRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

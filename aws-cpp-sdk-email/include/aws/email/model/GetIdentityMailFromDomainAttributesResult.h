@@ -33,12 +33,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetIdentityMailFromDomainAttributesResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_SES_API GetIdentityMailFromDomainAttributesResult
+  class GetIdentityMailFromDomainAttributesResult
   {
   public:
-    GetIdentityMailFromDomainAttributesResult();
-    GetIdentityMailFromDomainAttributesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    GetIdentityMailFromDomainAttributesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_SES_API GetIdentityMailFromDomainAttributesResult();
+    AWS_SES_API GetIdentityMailFromDomainAttributesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_SES_API GetIdentityMailFromDomainAttributesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

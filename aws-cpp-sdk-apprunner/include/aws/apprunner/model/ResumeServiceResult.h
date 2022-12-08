@@ -25,12 +25,12 @@ namespace AppRunner
 {
 namespace Model
 {
-  class AWS_APPRUNNER_API ResumeServiceResult
+  class ResumeServiceResult
   {
   public:
-    ResumeServiceResult();
-    ResumeServiceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ResumeServiceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPRUNNER_API ResumeServiceResult();
+    AWS_APPRUNNER_API ResumeServiceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPRUNNER_API ResumeServiceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

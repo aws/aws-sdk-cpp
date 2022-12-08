@@ -27,12 +27,12 @@ namespace EC2
 {
 namespace Model
 {
-  class AWS_EC2_API DescribeClientVpnAuthorizationRulesResponse
+  class DescribeClientVpnAuthorizationRulesResponse
   {
   public:
-    DescribeClientVpnAuthorizationRulesResponse();
-    DescribeClientVpnAuthorizationRulesResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeClientVpnAuthorizationRulesResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API DescribeClientVpnAuthorizationRulesResponse();
+    AWS_EC2_API DescribeClientVpnAuthorizationRulesResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API DescribeClientVpnAuthorizationRulesResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

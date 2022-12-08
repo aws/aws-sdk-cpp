@@ -25,12 +25,12 @@ namespace DevOpsGuru
 {
 namespace Model
 {
-  class AWS_DEVOPSGURU_API DescribeAnomalyResult
+  class DescribeAnomalyResult
   {
   public:
-    DescribeAnomalyResult();
-    DescribeAnomalyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeAnomalyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DEVOPSGURU_API DescribeAnomalyResult();
+    AWS_DEVOPSGURU_API DescribeAnomalyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DEVOPSGURU_API DescribeAnomalyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

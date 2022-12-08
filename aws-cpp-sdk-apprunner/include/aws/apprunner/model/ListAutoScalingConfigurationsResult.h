@@ -26,12 +26,12 @@ namespace AppRunner
 {
 namespace Model
 {
-  class AWS_APPRUNNER_API ListAutoScalingConfigurationsResult
+  class ListAutoScalingConfigurationsResult
   {
   public:
-    ListAutoScalingConfigurationsResult();
-    ListAutoScalingConfigurationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListAutoScalingConfigurationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPRUNNER_API ListAutoScalingConfigurationsResult();
+    AWS_APPRUNNER_API ListAutoScalingConfigurationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPRUNNER_API ListAutoScalingConfigurationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

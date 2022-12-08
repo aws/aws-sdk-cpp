@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/AWSApplicationCostProfiler-2020-09-10/S3Location">AWS
    * API Reference</a></p>
    */
-  class AWS_APPLICATIONCOSTPROFILER_API S3Location
+  class S3Location
   {
   public:
-    S3Location();
-    S3Location(Aws::Utils::Json::JsonView jsonValue);
-    S3Location& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPLICATIONCOSTPROFILER_API S3Location();
+    AWS_APPLICATIONCOSTPROFILER_API S3Location(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPLICATIONCOSTPROFILER_API S3Location& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPLICATIONCOSTPROFILER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

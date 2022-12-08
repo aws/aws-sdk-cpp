@@ -28,12 +28,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/DeleteSuppressedDestinationResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_SESV2_API DeleteSuppressedDestinationResult
+  class DeleteSuppressedDestinationResult
   {
   public:
-    DeleteSuppressedDestinationResult();
-    DeleteSuppressedDestinationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteSuppressedDestinationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SESV2_API DeleteSuppressedDestinationResult();
+    AWS_SESV2_API DeleteSuppressedDestinationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SESV2_API DeleteSuppressedDestinationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/LineageGroupSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API LineageGroupSummary
+  class LineageGroupSummary
   {
   public:
-    LineageGroupSummary();
-    LineageGroupSummary(Aws::Utils::Json::JsonView jsonValue);
-    LineageGroupSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API LineageGroupSummary();
+    AWS_SAGEMAKER_API LineageGroupSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API LineageGroupSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

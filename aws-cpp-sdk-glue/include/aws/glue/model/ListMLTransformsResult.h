@@ -25,12 +25,12 @@ namespace Glue
 {
 namespace Model
 {
-  class AWS_GLUE_API ListMLTransformsResult
+  class ListMLTransformsResult
   {
   public:
-    ListMLTransformsResult();
-    ListMLTransformsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListMLTransformsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GLUE_API ListMLTransformsResult();
+    AWS_GLUE_API ListMLTransformsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GLUE_API ListMLTransformsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

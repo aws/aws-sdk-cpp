@@ -33,12 +33,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/CreateMLModelOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_MACHINELEARNING_API CreateMLModelResult
+  class CreateMLModelResult
   {
   public:
-    CreateMLModelResult();
-    CreateMLModelResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateMLModelResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MACHINELEARNING_API CreateMLModelResult();
+    AWS_MACHINELEARNING_API CreateMLModelResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MACHINELEARNING_API CreateMLModelResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloud9-2017-09-23/Environment">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUD9_API Environment
+  class Environment
   {
   public:
-    Environment();
-    Environment(Aws::Utils::Json::JsonView jsonValue);
-    Environment& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUD9_API Environment();
+    AWS_CLOUD9_API Environment(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUD9_API Environment& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUD9_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

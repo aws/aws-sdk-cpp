@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/Trail">AWS
    * API Reference</a></p>
    */
-  class AWS_ACCESSANALYZER_API Trail
+  class Trail
   {
   public:
-    Trail();
-    Trail(Aws::Utils::Json::JsonView jsonValue);
-    Trail& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ACCESSANALYZER_API Trail();
+    AWS_ACCESSANALYZER_API Trail(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACCESSANALYZER_API Trail& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACCESSANALYZER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

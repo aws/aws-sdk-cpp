@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/GitHubConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_KENDRA_API GitHubConfiguration
+  class GitHubConfiguration
   {
   public:
-    GitHubConfiguration();
-    GitHubConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    GitHubConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KENDRA_API GitHubConfiguration();
+    AWS_KENDRA_API GitHubConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API GitHubConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

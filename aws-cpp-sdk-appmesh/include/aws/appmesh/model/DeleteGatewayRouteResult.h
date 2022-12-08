@@ -24,12 +24,12 @@ namespace AppMesh
 {
 namespace Model
 {
-  class AWS_APPMESH_API DeleteGatewayRouteResult
+  class DeleteGatewayRouteResult
   {
   public:
-    DeleteGatewayRouteResult();
-    DeleteGatewayRouteResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteGatewayRouteResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPMESH_API DeleteGatewayRouteResult();
+    AWS_APPMESH_API DeleteGatewayRouteResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPMESH_API DeleteGatewayRouteResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

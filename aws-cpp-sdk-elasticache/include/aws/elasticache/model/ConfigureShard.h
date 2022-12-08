@@ -31,15 +31,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ConfigureShard">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICACHE_API ConfigureShard
+  class ConfigureShard
   {
   public:
-    ConfigureShard();
-    ConfigureShard(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ConfigureShard& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICACHE_API ConfigureShard();
+    AWS_ELASTICACHE_API ConfigureShard(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICACHE_API ConfigureShard& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_ELASTICACHE_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_ELASTICACHE_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**

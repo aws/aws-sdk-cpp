@@ -26,12 +26,12 @@ namespace Schemas
 {
 namespace Model
 {
-  class AWS_SCHEMAS_API DescribeCodeBindingResult
+  class DescribeCodeBindingResult
   {
   public:
-    DescribeCodeBindingResult();
-    DescribeCodeBindingResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeCodeBindingResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SCHEMAS_API DescribeCodeBindingResult();
+    AWS_SCHEMAS_API DescribeCodeBindingResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SCHEMAS_API DescribeCodeBindingResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

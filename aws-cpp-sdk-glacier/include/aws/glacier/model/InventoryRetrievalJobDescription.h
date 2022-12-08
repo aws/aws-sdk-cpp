@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/InventoryRetrievalJobDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_GLACIER_API InventoryRetrievalJobDescription
+  class InventoryRetrievalJobDescription
   {
   public:
-    InventoryRetrievalJobDescription();
-    InventoryRetrievalJobDescription(Aws::Utils::Json::JsonView jsonValue);
-    InventoryRetrievalJobDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLACIER_API InventoryRetrievalJobDescription();
+    AWS_GLACIER_API InventoryRetrievalJobDescription(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLACIER_API InventoryRetrievalJobDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLACIER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

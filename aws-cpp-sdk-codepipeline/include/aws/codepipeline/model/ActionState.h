@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ActionState">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEPIPELINE_API ActionState
+  class ActionState
   {
   public:
-    ActionState();
-    ActionState(Aws::Utils::Json::JsonView jsonValue);
-    ActionState& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEPIPELINE_API ActionState();
+    AWS_CODEPIPELINE_API ActionState(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEPIPELINE_API ActionState& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

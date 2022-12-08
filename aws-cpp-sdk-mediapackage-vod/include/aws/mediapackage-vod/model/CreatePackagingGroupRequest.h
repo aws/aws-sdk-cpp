@@ -25,10 +25,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-vod-2018-11-07/CreatePackagingGroupRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIAPACKAGEVOD_API CreatePackagingGroupRequest : public MediaPackageVodRequest
+  class CreatePackagingGroupRequest : public MediaPackageVodRequest
   {
   public:
-    CreatePackagingGroupRequest();
+    AWS_MEDIAPACKAGEVOD_API CreatePackagingGroupRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,7 +36,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreatePackagingGroup"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_MEDIAPACKAGEVOD_API Aws::String SerializePayload() const override;
 
 
     

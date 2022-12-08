@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/SuppressDataIdentifier">AWS
    * API Reference</a></p>
    */
-  class AWS_MACIE2_API SuppressDataIdentifier
+  class SuppressDataIdentifier
   {
   public:
-    SuppressDataIdentifier();
-    SuppressDataIdentifier(Aws::Utils::Json::JsonView jsonValue);
-    SuppressDataIdentifier& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MACIE2_API SuppressDataIdentifier();
+    AWS_MACIE2_API SuppressDataIdentifier(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API SuppressDataIdentifier& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

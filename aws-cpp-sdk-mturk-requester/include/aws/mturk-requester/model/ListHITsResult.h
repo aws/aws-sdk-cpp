@@ -26,12 +26,12 @@ namespace MTurk
 {
 namespace Model
 {
-  class AWS_MTURK_API ListHITsResult
+  class ListHITsResult
   {
   public:
-    ListHITsResult();
-    ListHITsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListHITsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MTURK_API ListHITsResult();
+    AWS_MTURK_API ListHITsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MTURK_API ListHITsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     

@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListedServer">AWS
    * API Reference</a></p>
    */
-  class AWS_TRANSFER_API ListedServer
+  class ListedServer
   {
   public:
-    ListedServer();
-    ListedServer(Aws::Utils::Json::JsonView jsonValue);
-    ListedServer& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TRANSFER_API ListedServer();
+    AWS_TRANSFER_API ListedServer(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSFER_API ListedServer& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSFER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

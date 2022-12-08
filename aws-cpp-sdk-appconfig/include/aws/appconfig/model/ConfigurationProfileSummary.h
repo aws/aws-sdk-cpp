@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/ConfigurationProfileSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_APPCONFIG_API ConfigurationProfileSummary
+  class ConfigurationProfileSummary
   {
   public:
-    ConfigurationProfileSummary();
-    ConfigurationProfileSummary(Aws::Utils::Json::JsonView jsonValue);
-    ConfigurationProfileSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPCONFIG_API ConfigurationProfileSummary();
+    AWS_APPCONFIG_API ConfigurationProfileSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPCONFIG_API ConfigurationProfileSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPCONFIG_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

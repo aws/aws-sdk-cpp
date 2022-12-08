@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ServerSideEncryption">AWS
    * API Reference</a></p>
    */
-  class AWS_MACIE2_API ServerSideEncryption
+  class ServerSideEncryption
   {
   public:
-    ServerSideEncryption();
-    ServerSideEncryption(Aws::Utils::Json::JsonView jsonValue);
-    ServerSideEncryption& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MACIE2_API ServerSideEncryption();
+    AWS_MACIE2_API ServerSideEncryption(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API ServerSideEncryption& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

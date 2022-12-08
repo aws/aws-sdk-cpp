@@ -41,13 +41,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/Method">AWS
    * API Reference</a></p>
    */
-  class AWS_APIGATEWAY_API Method
+  class Method
   {
   public:
-    Method();
-    Method(Aws::Utils::Json::JsonView jsonValue);
-    Method& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APIGATEWAY_API Method();
+    AWS_APIGATEWAY_API Method(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APIGATEWAY_API Method& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APIGATEWAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

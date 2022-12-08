@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeviceSelectionResult">AWS
    * API Reference</a></p>
    */
-  class AWS_DEVICEFARM_API DeviceSelectionResult
+  class DeviceSelectionResult
   {
   public:
-    DeviceSelectionResult();
-    DeviceSelectionResult(Aws::Utils::Json::JsonView jsonValue);
-    DeviceSelectionResult& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DEVICEFARM_API DeviceSelectionResult();
+    AWS_DEVICEFARM_API DeviceSelectionResult(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVICEFARM_API DeviceSelectionResult& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVICEFARM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

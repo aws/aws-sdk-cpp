@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/ServiceManagedDatastoreS3StorageSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTANALYTICS_API ServiceManagedDatastoreS3StorageSummary
+  class ServiceManagedDatastoreS3StorageSummary
   {
   public:
-    ServiceManagedDatastoreS3StorageSummary();
-    ServiceManagedDatastoreS3StorageSummary(Aws::Utils::Json::JsonView jsonValue);
-    ServiceManagedDatastoreS3StorageSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTANALYTICS_API ServiceManagedDatastoreS3StorageSummary();
+    AWS_IOTANALYTICS_API ServiceManagedDatastoreS3StorageSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTANALYTICS_API ServiceManagedDatastoreS3StorageSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
   };
 

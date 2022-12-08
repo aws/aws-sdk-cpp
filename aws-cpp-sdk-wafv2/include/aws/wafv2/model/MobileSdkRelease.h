@@ -37,13 +37,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/MobileSdkRelease">AWS
    * API Reference</a></p>
    */
-  class AWS_WAFV2_API MobileSdkRelease
+  class MobileSdkRelease
   {
   public:
-    MobileSdkRelease();
-    MobileSdkRelease(Aws::Utils::Json::JsonView jsonValue);
-    MobileSdkRelease& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WAFV2_API MobileSdkRelease();
+    AWS_WAFV2_API MobileSdkRelease(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API MobileSdkRelease& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -26,12 +26,12 @@ namespace GameLift
 {
 namespace Model
 {
-  class AWS_GAMELIFT_API DescribeGameServerInstancesResult
+  class DescribeGameServerInstancesResult
   {
   public:
-    DescribeGameServerInstancesResult();
-    DescribeGameServerInstancesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeGameServerInstancesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GAMELIFT_API DescribeGameServerInstancesResult();
+    AWS_GAMELIFT_API DescribeGameServerInstancesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GAMELIFT_API DescribeGameServerInstancesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

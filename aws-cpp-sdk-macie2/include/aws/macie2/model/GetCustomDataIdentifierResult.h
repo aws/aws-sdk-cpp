@@ -28,12 +28,12 @@ namespace Macie2
 {
 namespace Model
 {
-  class AWS_MACIE2_API GetCustomDataIdentifierResult
+  class GetCustomDataIdentifierResult
   {
   public:
-    GetCustomDataIdentifierResult();
-    GetCustomDataIdentifierResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetCustomDataIdentifierResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MACIE2_API GetCustomDataIdentifierResult();
+    AWS_MACIE2_API GetCustomDataIdentifierResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MACIE2_API GetCustomDataIdentifierResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

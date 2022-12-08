@@ -25,12 +25,12 @@ namespace Chime
 {
 namespace Model
 {
-  class AWS_CHIME_API BatchDeletePhoneNumberResult
+  class BatchDeletePhoneNumberResult
   {
   public:
-    BatchDeletePhoneNumberResult();
-    BatchDeletePhoneNumberResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    BatchDeletePhoneNumberResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CHIME_API BatchDeletePhoneNumberResult();
+    AWS_CHIME_API BatchDeletePhoneNumberResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CHIME_API BatchDeletePhoneNumberResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

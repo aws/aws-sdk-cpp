@@ -26,12 +26,12 @@ namespace IoTRoboRunner
 {
 namespace Model
 {
-  class AWS_IOTROBORUNNER_API ListWorkersResult
+  class ListWorkersResult
   {
   public:
-    ListWorkersResult();
-    ListWorkersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListWorkersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOTROBORUNNER_API ListWorkersResult();
+    AWS_IOTROBORUNNER_API ListWorkersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOTROBORUNNER_API ListWorkersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     

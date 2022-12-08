@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/RequestedServiceQuotaChange">AWS
    * API Reference</a></p>
    */
-  class AWS_SERVICEQUOTAS_API RequestedServiceQuotaChange
+  class RequestedServiceQuotaChange
   {
   public:
-    RequestedServiceQuotaChange();
-    RequestedServiceQuotaChange(Aws::Utils::Json::JsonView jsonValue);
-    RequestedServiceQuotaChange& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SERVICEQUOTAS_API RequestedServiceQuotaChange();
+    AWS_SERVICEQUOTAS_API RequestedServiceQuotaChange(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICEQUOTAS_API RequestedServiceQuotaChange& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICEQUOTAS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -31,12 +31,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/CreateQueueResult">AWS
    * API Reference</a></p>
    */
-  class AWS_SQS_API CreateQueueResult
+  class CreateQueueResult
   {
   public:
-    CreateQueueResult();
-    CreateQueueResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    CreateQueueResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_SQS_API CreateQueueResult();
+    AWS_SQS_API CreateQueueResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_SQS_API CreateQueueResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

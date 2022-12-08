@@ -24,12 +24,12 @@ namespace AppSync
 {
 namespace Model
 {
-  class AWS_APPSYNC_API UpdateFunctionResult
+  class UpdateFunctionResult
   {
   public:
-    UpdateFunctionResult();
-    UpdateFunctionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateFunctionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPSYNC_API UpdateFunctionResult();
+    AWS_APPSYNC_API UpdateFunctionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPSYNC_API UpdateFunctionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

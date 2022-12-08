@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/OutputLogEvent">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDWATCHLOGS_API OutputLogEvent
+  class OutputLogEvent
   {
   public:
-    OutputLogEvent();
-    OutputLogEvent(Aws::Utils::Json::JsonView jsonValue);
-    OutputLogEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDWATCHLOGS_API OutputLogEvent();
+    AWS_CLOUDWATCHLOGS_API OutputLogEvent(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHLOGS_API OutputLogEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHLOGS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

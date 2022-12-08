@@ -27,12 +27,12 @@ namespace EC2
 {
 namespace Model
 {
-  class AWS_EC2_API CancelCapacityReservationFleetsResponse
+  class CancelCapacityReservationFleetsResponse
   {
   public:
-    CancelCapacityReservationFleetsResponse();
-    CancelCapacityReservationFleetsResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    CancelCapacityReservationFleetsResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API CancelCapacityReservationFleetsResponse();
+    AWS_EC2_API CancelCapacityReservationFleetsResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API CancelCapacityReservationFleetsResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

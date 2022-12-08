@@ -32,12 +32,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/BasePathMappings">AWS
    * API Reference</a></p>
    */
-  class AWS_APIGATEWAY_API GetBasePathMappingsResult
+  class GetBasePathMappingsResult
   {
   public:
-    GetBasePathMappingsResult();
-    GetBasePathMappingsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetBasePathMappingsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APIGATEWAY_API GetBasePathMappingsResult();
+    AWS_APIGATEWAY_API GetBasePathMappingsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APIGATEWAY_API GetBasePathMappingsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     

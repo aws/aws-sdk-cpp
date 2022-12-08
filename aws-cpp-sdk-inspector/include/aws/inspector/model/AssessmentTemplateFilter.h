@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/AssessmentTemplateFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_INSPECTOR_API AssessmentTemplateFilter
+  class AssessmentTemplateFilter
   {
   public:
-    AssessmentTemplateFilter();
-    AssessmentTemplateFilter(Aws::Utils::Json::JsonView jsonValue);
-    AssessmentTemplateFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_INSPECTOR_API AssessmentTemplateFilter();
+    AWS_INSPECTOR_API AssessmentTemplateFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR_API AssessmentTemplateFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

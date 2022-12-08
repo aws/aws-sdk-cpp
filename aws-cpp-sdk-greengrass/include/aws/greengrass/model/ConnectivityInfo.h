@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ConnectivityInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_GREENGRASS_API ConnectivityInfo
+  class ConnectivityInfo
   {
   public:
-    ConnectivityInfo();
-    ConnectivityInfo(Aws::Utils::Json::JsonView jsonValue);
-    ConnectivityInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GREENGRASS_API ConnectivityInfo();
+    AWS_GREENGRASS_API ConnectivityInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASS_API ConnectivityInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

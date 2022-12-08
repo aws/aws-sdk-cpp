@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/FirehoseAction">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTEVENTS_API FirehoseAction
+  class FirehoseAction
   {
   public:
-    FirehoseAction();
-    FirehoseAction(Aws::Utils::Json::JsonView jsonValue);
-    FirehoseAction& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTEVENTS_API FirehoseAction();
+    AWS_IOTEVENTS_API FirehoseAction(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTEVENTS_API FirehoseAction& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTEVENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

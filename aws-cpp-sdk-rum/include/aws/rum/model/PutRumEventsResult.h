@@ -22,12 +22,12 @@ namespace CloudWatchRUM
 {
 namespace Model
 {
-  class AWS_CLOUDWATCHRUM_API PutRumEventsResult
+  class PutRumEventsResult
   {
   public:
-    PutRumEventsResult();
-    PutRumEventsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PutRumEventsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CLOUDWATCHRUM_API PutRumEventsResult();
+    AWS_CLOUDWATCHRUM_API PutRumEventsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CLOUDWATCHRUM_API PutRumEventsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

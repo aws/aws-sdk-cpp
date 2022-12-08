@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/ChangeProgressDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_OPENSEARCHSERVICE_API ChangeProgressDetails
+  class ChangeProgressDetails
   {
   public:
-    ChangeProgressDetails();
-    ChangeProgressDetails(Aws::Utils::Json::JsonView jsonValue);
-    ChangeProgressDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OPENSEARCHSERVICE_API ChangeProgressDetails();
+    AWS_OPENSEARCHSERVICE_API ChangeProgressDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPENSEARCHSERVICE_API ChangeProgressDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPENSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SkillDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_ALEXAFORBUSINESS_API SkillDetails
+  class SkillDetails
   {
   public:
-    SkillDetails();
-    SkillDetails(Aws::Utils::Json::JsonView jsonValue);
-    SkillDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ALEXAFORBUSINESS_API SkillDetails();
+    AWS_ALEXAFORBUSINESS_API SkillDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ALEXAFORBUSINESS_API SkillDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ALEXAFORBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

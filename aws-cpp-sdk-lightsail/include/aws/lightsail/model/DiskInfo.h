@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DiskInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_LIGHTSAIL_API DiskInfo
+  class DiskInfo
   {
   public:
-    DiskInfo();
-    DiskInfo(Aws::Utils::Json::JsonView jsonValue);
-    DiskInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LIGHTSAIL_API DiskInfo();
+    AWS_LIGHTSAIL_API DiskInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API DiskInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

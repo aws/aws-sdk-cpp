@@ -26,12 +26,12 @@ namespace kendra
 {
 namespace Model
 {
-  class AWS_KENDRA_API GetSnapshotsResult
+  class GetSnapshotsResult
   {
   public:
-    GetSnapshotsResult();
-    GetSnapshotsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetSnapshotsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KENDRA_API GetSnapshotsResult();
+    AWS_KENDRA_API GetSnapshotsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KENDRA_API GetSnapshotsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

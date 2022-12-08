@@ -38,13 +38,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/AlfrescoConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_KENDRA_API AlfrescoConfiguration
+  class AlfrescoConfiguration
   {
   public:
-    AlfrescoConfiguration();
-    AlfrescoConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    AlfrescoConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KENDRA_API AlfrescoConfiguration();
+    AWS_KENDRA_API AlfrescoConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API AlfrescoConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

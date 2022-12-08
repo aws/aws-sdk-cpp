@@ -22,12 +22,12 @@ namespace SSOAdmin
 {
 namespace Model
 {
-  class AWS_SSOADMIN_API AttachManagedPolicyToPermissionSetResult
+  class AttachManagedPolicyToPermissionSetResult
   {
   public:
-    AttachManagedPolicyToPermissionSetResult();
-    AttachManagedPolicyToPermissionSetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AttachManagedPolicyToPermissionSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSOADMIN_API AttachManagedPolicyToPermissionSetResult();
+    AWS_SSOADMIN_API AttachManagedPolicyToPermissionSetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSOADMIN_API AttachManagedPolicyToPermissionSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/RecoveryPointByBackupVault">AWS
    * API Reference</a></p>
    */
-  class AWS_BACKUP_API RecoveryPointByBackupVault
+  class RecoveryPointByBackupVault
   {
   public:
-    RecoveryPointByBackupVault();
-    RecoveryPointByBackupVault(Aws::Utils::Json::JsonView jsonValue);
-    RecoveryPointByBackupVault& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BACKUP_API RecoveryPointByBackupVault();
+    AWS_BACKUP_API RecoveryPointByBackupVault(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BACKUP_API RecoveryPointByBackupVault& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BACKUP_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -24,12 +24,12 @@ namespace WAF
 {
 namespace Model
 {
-  class AWS_WAF_API GetByteMatchSetResult
+  class GetByteMatchSetResult
   {
   public:
-    GetByteMatchSetResult();
-    GetByteMatchSetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetByteMatchSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WAF_API GetByteMatchSetResult();
+    AWS_WAF_API GetByteMatchSetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WAF_API GetByteMatchSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

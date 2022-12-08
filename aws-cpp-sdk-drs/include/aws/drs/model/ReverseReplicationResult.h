@@ -24,12 +24,12 @@ namespace drs
 {
 namespace Model
 {
-  class AWS_DRS_API ReverseReplicationResult
+  class ReverseReplicationResult
   {
   public:
-    ReverseReplicationResult();
-    ReverseReplicationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ReverseReplicationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DRS_API ReverseReplicationResult();
+    AWS_DRS_API ReverseReplicationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DRS_API ReverseReplicationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

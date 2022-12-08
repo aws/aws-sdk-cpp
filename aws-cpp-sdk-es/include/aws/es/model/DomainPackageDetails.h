@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DomainPackageDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICSEARCHSERVICE_API DomainPackageDetails
+  class DomainPackageDetails
   {
   public:
-    DomainPackageDetails();
-    DomainPackageDetails(Aws::Utils::Json::JsonView jsonValue);
-    DomainPackageDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ELASTICSEARCHSERVICE_API DomainPackageDetails();
+    AWS_ELASTICSEARCHSERVICE_API DomainPackageDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICSEARCHSERVICE_API DomainPackageDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

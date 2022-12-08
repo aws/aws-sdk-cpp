@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/TemplateActionsRequestFilters">AWS
    * API Reference</a></p>
    */
-  class AWS_MGN_API TemplateActionsRequestFilters
+  class TemplateActionsRequestFilters
   {
   public:
-    TemplateActionsRequestFilters();
-    TemplateActionsRequestFilters(Aws::Utils::Json::JsonView jsonValue);
-    TemplateActionsRequestFilters& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MGN_API TemplateActionsRequestFilters();
+    AWS_MGN_API TemplateActionsRequestFilters(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MGN_API TemplateActionsRequestFilters& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MGN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

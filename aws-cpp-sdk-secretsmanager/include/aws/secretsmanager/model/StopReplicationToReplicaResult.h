@@ -24,12 +24,12 @@ namespace SecretsManager
 {
 namespace Model
 {
-  class AWS_SECRETSMANAGER_API StopReplicationToReplicaResult
+  class StopReplicationToReplicaResult
   {
   public:
-    StopReplicationToReplicaResult();
-    StopReplicationToReplicaResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    StopReplicationToReplicaResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SECRETSMANAGER_API StopReplicationToReplicaResult();
+    AWS_SECRETSMANAGER_API StopReplicationToReplicaResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SECRETSMANAGER_API StopReplicationToReplicaResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

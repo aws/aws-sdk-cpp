@@ -30,12 +30,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/GetDedicatedIpPoolResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_SESV2_API GetDedicatedIpPoolResult
+  class GetDedicatedIpPoolResult
   {
   public:
-    GetDedicatedIpPoolResult();
-    GetDedicatedIpPoolResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetDedicatedIpPoolResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SESV2_API GetDedicatedIpPoolResult();
+    AWS_SESV2_API GetDedicatedIpPoolResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SESV2_API GetDedicatedIpPoolResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

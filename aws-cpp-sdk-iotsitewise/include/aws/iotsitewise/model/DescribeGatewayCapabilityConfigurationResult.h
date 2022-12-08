@@ -25,12 +25,12 @@ namespace IoTSiteWise
 {
 namespace Model
 {
-  class AWS_IOTSITEWISE_API DescribeGatewayCapabilityConfigurationResult
+  class DescribeGatewayCapabilityConfigurationResult
   {
   public:
-    DescribeGatewayCapabilityConfigurationResult();
-    DescribeGatewayCapabilityConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeGatewayCapabilityConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOTSITEWISE_API DescribeGatewayCapabilityConfigurationResult();
+    AWS_IOTSITEWISE_API DescribeGatewayCapabilityConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOTSITEWISE_API DescribeGatewayCapabilityConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

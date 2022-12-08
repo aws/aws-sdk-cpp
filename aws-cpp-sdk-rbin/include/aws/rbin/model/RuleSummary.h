@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rbin-2021-06-15/RuleSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_RECYCLEBIN_API RuleSummary
+  class RuleSummary
   {
   public:
-    RuleSummary();
-    RuleSummary(Aws::Utils::Json::JsonView jsonValue);
-    RuleSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_RECYCLEBIN_API RuleSummary();
+    AWS_RECYCLEBIN_API RuleSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RECYCLEBIN_API RuleSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RECYCLEBIN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

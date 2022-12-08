@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/ApplicationSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_SSMSAP_API ApplicationSummary
+  class ApplicationSummary
   {
   public:
-    ApplicationSummary();
-    ApplicationSummary(Aws::Utils::Json::JsonView jsonValue);
-    ApplicationSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSMSAP_API ApplicationSummary();
+    AWS_SSMSAP_API ApplicationSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSMSAP_API ApplicationSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSMSAP_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

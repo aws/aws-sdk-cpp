@@ -32,12 +32,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateReservedInstancesListingResult">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API CreateReservedInstancesListingResponse
+  class CreateReservedInstancesListingResponse
   {
   public:
-    CreateReservedInstancesListingResponse();
-    CreateReservedInstancesListingResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    CreateReservedInstancesListingResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API CreateReservedInstancesListingResponse();
+    AWS_EC2_API CreateReservedInstancesListingResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API CreateReservedInstancesListingResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

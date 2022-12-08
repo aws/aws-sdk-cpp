@@ -24,12 +24,12 @@ namespace SSOOIDC
 {
 namespace Model
 {
-  class AWS_SSOOIDC_API RegisterClientResult
+  class RegisterClientResult
   {
   public:
-    RegisterClientResult();
-    RegisterClientResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    RegisterClientResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSOOIDC_API RegisterClientResult();
+    AWS_SSOOIDC_API RegisterClientResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSOOIDC_API RegisterClientResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -37,13 +37,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/App">AWS API
    * Reference</a></p>
    */
-  class AWS_AMPLIFY_API App
+  class App
   {
   public:
-    App();
-    App(Aws::Utils::Json::JsonView jsonValue);
-    App& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_AMPLIFY_API App();
+    AWS_AMPLIFY_API App(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFY_API App& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

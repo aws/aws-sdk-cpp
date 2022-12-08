@@ -26,12 +26,12 @@ namespace SSMContacts
 {
 namespace Model
 {
-  class AWS_SSMCONTACTS_API ListPageReceiptsResult
+  class ListPageReceiptsResult
   {
   public:
-    ListPageReceiptsResult();
-    ListPageReceiptsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListPageReceiptsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSMCONTACTS_API ListPageReceiptsResult();
+    AWS_SSMCONTACTS_API ListPageReceiptsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSMCONTACTS_API ListPageReceiptsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

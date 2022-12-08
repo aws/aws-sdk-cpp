@@ -26,12 +26,12 @@ namespace MediaPackage
 {
 namespace Model
 {
-  class AWS_MEDIAPACKAGE_API ListHarvestJobsResult
+  class ListHarvestJobsResult
   {
   public:
-    ListHarvestJobsResult();
-    ListHarvestJobsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListHarvestJobsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MEDIAPACKAGE_API ListHarvestJobsResult();
+    AWS_MEDIAPACKAGE_API ListHarvestJobsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MEDIAPACKAGE_API ListHarvestJobsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -39,13 +39,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/Prediction">AWS
    * API Reference</a></p>
    */
-  class AWS_MACHINELEARNING_API Prediction
+  class Prediction
   {
   public:
-    Prediction();
-    Prediction(Aws::Utils::Json::JsonView jsonValue);
-    Prediction& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MACHINELEARNING_API Prediction();
+    AWS_MACHINELEARNING_API Prediction(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACHINELEARNING_API Prediction& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACHINELEARNING_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

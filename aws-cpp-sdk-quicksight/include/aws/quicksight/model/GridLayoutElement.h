@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/GridLayoutElement">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API GridLayoutElement
+  class GridLayoutElement
   {
   public:
-    GridLayoutElement();
-    GridLayoutElement(Aws::Utils::Json::JsonView jsonValue);
-    GridLayoutElement& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API GridLayoutElement();
+    AWS_QUICKSIGHT_API GridLayoutElement(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API GridLayoutElement& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

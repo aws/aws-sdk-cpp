@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsS3BucketBucketVersioningConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsS3BucketBucketVersioningConfiguration
+  class AwsS3BucketBucketVersioningConfiguration
   {
   public:
-    AwsS3BucketBucketVersioningConfiguration();
-    AwsS3BucketBucketVersioningConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    AwsS3BucketBucketVersioningConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsS3BucketBucketVersioningConfiguration();
+    AWS_SECURITYHUB_API AwsS3BucketBucketVersioningConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsS3BucketBucketVersioningConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/UserIdentity">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTSITEWISE_API UserIdentity
+  class UserIdentity
   {
   public:
-    UserIdentity();
-    UserIdentity(Aws::Utils::Json::JsonView jsonValue);
-    UserIdentity& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTSITEWISE_API UserIdentity();
+    AWS_IOTSITEWISE_API UserIdentity(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API UserIdentity& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

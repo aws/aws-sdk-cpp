@@ -24,12 +24,12 @@ namespace CloudControlApi
 {
 namespace Model
 {
-  class AWS_CLOUDCONTROLAPI_API CreateResourceResult
+  class CreateResourceResult
   {
   public:
-    CreateResourceResult();
-    CreateResourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateResourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CLOUDCONTROLAPI_API CreateResourceResult();
+    AWS_CLOUDCONTROLAPI_API CreateResourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CLOUDCONTROLAPI_API CreateResourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

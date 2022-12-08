@@ -24,12 +24,12 @@ namespace Rekognition
 {
 namespace Model
 {
-  class AWS_REKOGNITION_API DeleteProjectVersionResult
+  class DeleteProjectVersionResult
   {
   public:
-    DeleteProjectVersionResult();
-    DeleteProjectVersionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteProjectVersionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_REKOGNITION_API DeleteProjectVersionResult();
+    AWS_REKOGNITION_API DeleteProjectVersionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_REKOGNITION_API DeleteProjectVersionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

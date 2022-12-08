@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/ResponseTimeRootCauseEntity">AWS
    * API Reference</a></p>
    */
-  class AWS_XRAY_API ResponseTimeRootCauseEntity
+  class ResponseTimeRootCauseEntity
   {
   public:
-    ResponseTimeRootCauseEntity();
-    ResponseTimeRootCauseEntity(Aws::Utils::Json::JsonView jsonValue);
-    ResponseTimeRootCauseEntity& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_XRAY_API ResponseTimeRootCauseEntity();
+    AWS_XRAY_API ResponseTimeRootCauseEntity(Aws::Utils::Json::JsonView jsonValue);
+    AWS_XRAY_API ResponseTimeRootCauseEntity& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_XRAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

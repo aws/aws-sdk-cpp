@@ -22,12 +22,12 @@ namespace KMS
 {
 namespace Model
 {
-  class AWS_KMS_API ConnectCustomKeyStoreResult
+  class ConnectCustomKeyStoreResult
   {
   public:
-    ConnectCustomKeyStoreResult();
-    ConnectCustomKeyStoreResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ConnectCustomKeyStoreResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KMS_API ConnectCustomKeyStoreResult();
+    AWS_KMS_API ConnectCustomKeyStoreResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KMS_API ConnectCustomKeyStoreResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

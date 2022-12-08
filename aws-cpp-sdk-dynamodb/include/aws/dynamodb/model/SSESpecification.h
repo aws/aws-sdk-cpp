@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/SSESpecification">AWS
    * API Reference</a></p>
    */
-  class AWS_DYNAMODB_API SSESpecification
+  class SSESpecification
   {
   public:
-    SSESpecification();
-    SSESpecification(Aws::Utils::Json::JsonView jsonValue);
-    SSESpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DYNAMODB_API SSESpecification();
+    AWS_DYNAMODB_API SSESpecification(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API SSESpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

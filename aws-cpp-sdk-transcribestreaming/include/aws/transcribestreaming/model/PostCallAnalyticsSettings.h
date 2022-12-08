@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-streaming-2017-10-26/PostCallAnalyticsSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_TRANSCRIBESTREAMINGSERVICE_API PostCallAnalyticsSettings
+  class PostCallAnalyticsSettings
   {
   public:
-    PostCallAnalyticsSettings();
-    PostCallAnalyticsSettings(Aws::Utils::Json::JsonView jsonValue);
-    PostCallAnalyticsSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TRANSCRIBESTREAMINGSERVICE_API PostCallAnalyticsSettings();
+    AWS_TRANSCRIBESTREAMINGSERVICE_API PostCallAnalyticsSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSCRIBESTREAMINGSERVICE_API PostCallAnalyticsSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSCRIBESTREAMINGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

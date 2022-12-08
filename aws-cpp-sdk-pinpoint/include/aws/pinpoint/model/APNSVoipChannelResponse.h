@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/APNSVoipChannelResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API APNSVoipChannelResponse
+  class APNSVoipChannelResponse
   {
   public:
-    APNSVoipChannelResponse();
-    APNSVoipChannelResponse(Aws::Utils::Json::JsonView jsonValue);
-    APNSVoipChannelResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API APNSVoipChannelResponse();
+    AWS_PINPOINT_API APNSVoipChannelResponse(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API APNSVoipChannelResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

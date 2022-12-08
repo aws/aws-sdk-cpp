@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/braket-2019-09-01/DeviceSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_BRAKET_API DeviceSummary
+  class DeviceSummary
   {
   public:
-    DeviceSummary();
-    DeviceSummary(Aws::Utils::Json::JsonView jsonValue);
-    DeviceSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BRAKET_API DeviceSummary();
+    AWS_BRAKET_API DeviceSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BRAKET_API DeviceSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BRAKET_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

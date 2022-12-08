@@ -24,12 +24,12 @@ namespace ECR
 {
 namespace Model
 {
-  class AWS_ECR_API DeleteRepositoryPolicyResult
+  class DeleteRepositoryPolicyResult
   {
   public:
-    DeleteRepositoryPolicyResult();
-    DeleteRepositoryPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteRepositoryPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ECR_API DeleteRepositoryPolicyResult();
+    AWS_ECR_API DeleteRepositoryPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ECR_API DeleteRepositoryPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

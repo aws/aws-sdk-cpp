@@ -19,21 +19,21 @@ namespace CloudFront
 {
 namespace Model
 {
-  class AWS_CLOUDFRONT_API GetFunction2020_05_31Result
+  class GetFunction2020_05_31Result
   {
   public:
-    GetFunction2020_05_31Result();
+    AWS_CLOUDFRONT_API GetFunction2020_05_31Result();
     //We have to define these because Microsoft doesn't auto generate them
-    GetFunction2020_05_31Result(GetFunction2020_05_31Result&&);
-    GetFunction2020_05_31Result& operator=(GetFunction2020_05_31Result&&);
+    AWS_CLOUDFRONT_API GetFunction2020_05_31Result(GetFunction2020_05_31Result&&);
+    AWS_CLOUDFRONT_API GetFunction2020_05_31Result& operator=(GetFunction2020_05_31Result&&);
     //we delete these because Microsoft doesn't handle move generation correctly
     //and we therefore don't trust them to get it right here either.
     GetFunction2020_05_31Result(const GetFunction2020_05_31Result&) = delete;
     GetFunction2020_05_31Result& operator=(const GetFunction2020_05_31Result&) = delete;
 
 
-    GetFunction2020_05_31Result(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
-    GetFunction2020_05_31Result& operator=(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
+    AWS_CLOUDFRONT_API GetFunction2020_05_31Result(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
+    AWS_CLOUDFRONT_API GetFunction2020_05_31Result& operator=(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
 
 
 

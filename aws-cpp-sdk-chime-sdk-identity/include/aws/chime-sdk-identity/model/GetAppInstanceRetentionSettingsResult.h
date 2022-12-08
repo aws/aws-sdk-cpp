@@ -25,12 +25,12 @@ namespace ChimeSDKIdentity
 {
 namespace Model
 {
-  class AWS_CHIMESDKIDENTITY_API GetAppInstanceRetentionSettingsResult
+  class GetAppInstanceRetentionSettingsResult
   {
   public:
-    GetAppInstanceRetentionSettingsResult();
-    GetAppInstanceRetentionSettingsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetAppInstanceRetentionSettingsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CHIMESDKIDENTITY_API GetAppInstanceRetentionSettingsResult();
+    AWS_CHIMESDKIDENTITY_API GetAppInstanceRetentionSettingsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CHIMESDKIDENTITY_API GetAppInstanceRetentionSettingsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

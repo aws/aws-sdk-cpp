@@ -24,12 +24,12 @@ namespace SSOOIDC
 {
 namespace Model
 {
-  class AWS_SSOOIDC_API StartDeviceAuthorizationResult
+  class StartDeviceAuthorizationResult
   {
   public:
-    StartDeviceAuthorizationResult();
-    StartDeviceAuthorizationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    StartDeviceAuthorizationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSOOIDC_API StartDeviceAuthorizationResult();
+    AWS_SSOOIDC_API StartDeviceAuthorizationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSOOIDC_API StartDeviceAuthorizationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

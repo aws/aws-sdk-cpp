@@ -28,15 +28,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ClusterParameterStatus">AWS
    * API Reference</a></p>
    */
-  class AWS_REDSHIFT_API ClusterParameterStatus
+  class ClusterParameterStatus
   {
   public:
-    ClusterParameterStatus();
-    ClusterParameterStatus(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ClusterParameterStatus& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_REDSHIFT_API ClusterParameterStatus();
+    AWS_REDSHIFT_API ClusterParameterStatus(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_REDSHIFT_API ClusterParameterStatus& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_REDSHIFT_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_REDSHIFT_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**

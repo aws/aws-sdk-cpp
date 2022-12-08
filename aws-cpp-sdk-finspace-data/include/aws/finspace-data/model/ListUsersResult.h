@@ -26,12 +26,12 @@ namespace FinSpaceData
 {
 namespace Model
 {
-  class AWS_FINSPACEDATA_API ListUsersResult
+  class ListUsersResult
   {
   public:
-    ListUsersResult();
-    ListUsersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListUsersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_FINSPACEDATA_API ListUsersResult();
+    AWS_FINSPACEDATA_API ListUsersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_FINSPACEDATA_API ListUsersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

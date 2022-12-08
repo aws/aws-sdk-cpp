@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/ValidationWarning">AWS
    * API Reference</a></p>
    */
-  class AWS_DATAPIPELINE_API ValidationWarning
+  class ValidationWarning
   {
   public:
-    ValidationWarning();
-    ValidationWarning(Aws::Utils::Json::JsonView jsonValue);
-    ValidationWarning& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DATAPIPELINE_API ValidationWarning();
+    AWS_DATAPIPELINE_API ValidationWarning(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATAPIPELINE_API ValidationWarning& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATAPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

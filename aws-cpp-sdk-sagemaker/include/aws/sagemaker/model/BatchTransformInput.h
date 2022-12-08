@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/BatchTransformInput">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API BatchTransformInput
+  class BatchTransformInput
   {
   public:
-    BatchTransformInput();
-    BatchTransformInput(Aws::Utils::Json::JsonView jsonValue);
-    BatchTransformInput& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API BatchTransformInput();
+    AWS_SAGEMAKER_API BatchTransformInput(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API BatchTransformInput& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

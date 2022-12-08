@@ -24,12 +24,12 @@ namespace CloudWatch
 {
 namespace Model
 {
-  class AWS_CLOUDWATCH_API StartMetricStreamsResult
+  class StartMetricStreamsResult
   {
   public:
-    StartMetricStreamsResult();
-    StartMetricStreamsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    StartMetricStreamsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_CLOUDWATCH_API StartMetricStreamsResult();
+    AWS_CLOUDWATCH_API StartMetricStreamsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_CLOUDWATCH_API StartMetricStreamsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     

@@ -26,12 +26,12 @@ namespace IVS
 {
 namespace Model
 {
-  class AWS_IVS_API BatchGetStreamKeyResult
+  class BatchGetStreamKeyResult
   {
   public:
-    BatchGetStreamKeyResult();
-    BatchGetStreamKeyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    BatchGetStreamKeyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IVS_API BatchGetStreamKeyResult();
+    AWS_IVS_API BatchGetStreamKeyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IVS_API BatchGetStreamKeyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

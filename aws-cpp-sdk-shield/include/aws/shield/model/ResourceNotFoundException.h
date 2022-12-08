@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/ResourceNotFoundException">AWS
    * API Reference</a></p>
    */
-  class AWS_SHIELD_API ResourceNotFoundException
+  class ResourceNotFoundException
   {
   public:
-    ResourceNotFoundException();
-    ResourceNotFoundException(Aws::Utils::Json::JsonView jsonValue);
-    ResourceNotFoundException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SHIELD_API ResourceNotFoundException();
+    AWS_SHIELD_API ResourceNotFoundException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SHIELD_API ResourceNotFoundException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SHIELD_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

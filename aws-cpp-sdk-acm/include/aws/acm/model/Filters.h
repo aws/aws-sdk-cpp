@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/Filters">AWS API
    * Reference</a></p>
    */
-  class AWS_ACM_API Filters
+  class Filters
   {
   public:
-    Filters();
-    Filters(Aws::Utils::Json::JsonView jsonValue);
-    Filters& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ACM_API Filters();
+    AWS_ACM_API Filters(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACM_API Filters& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

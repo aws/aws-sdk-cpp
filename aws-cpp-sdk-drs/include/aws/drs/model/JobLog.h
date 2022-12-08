@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/JobLog">AWS API
    * Reference</a></p>
    */
-  class AWS_DRS_API JobLog
+  class JobLog
   {
   public:
-    JobLog();
-    JobLog(Aws::Utils::Json::JsonView jsonValue);
-    JobLog& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DRS_API JobLog();
+    AWS_DRS_API JobLog(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DRS_API JobLog& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DRS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

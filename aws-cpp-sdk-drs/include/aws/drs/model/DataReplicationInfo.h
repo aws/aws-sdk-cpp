@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/DataReplicationInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_DRS_API DataReplicationInfo
+  class DataReplicationInfo
   {
   public:
-    DataReplicationInfo();
-    DataReplicationInfo(Aws::Utils::Json::JsonView jsonValue);
-    DataReplicationInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DRS_API DataReplicationInfo();
+    AWS_DRS_API DataReplicationInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DRS_API DataReplicationInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DRS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

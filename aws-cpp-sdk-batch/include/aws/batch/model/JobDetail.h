@@ -42,13 +42,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/JobDetail">AWS API
    * Reference</a></p>
    */
-  class AWS_BATCH_API JobDetail
+  class JobDetail
   {
   public:
-    JobDetail();
-    JobDetail(Aws::Utils::Json::JsonView jsonValue);
-    JobDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BATCH_API JobDetail();
+    AWS_BATCH_API JobDetail(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BATCH_API JobDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BATCH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/JobTimeout">AWS
    * API Reference</a></p>
    */
-  class AWS_BATCH_API JobTimeout
+  class JobTimeout
   {
   public:
-    JobTimeout();
-    JobTimeout(Aws::Utils::Json::JsonView jsonValue);
-    JobTimeout& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BATCH_API JobTimeout();
+    AWS_BATCH_API JobTimeout(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BATCH_API JobTimeout& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BATCH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

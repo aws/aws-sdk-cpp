@@ -24,12 +24,12 @@ namespace OpenSearchServerless
 {
 namespace Model
 {
-  class AWS_OPENSEARCHSERVERLESS_API UpdateCollectionResult
+  class UpdateCollectionResult
   {
   public:
-    UpdateCollectionResult();
-    UpdateCollectionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateCollectionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OPENSEARCHSERVERLESS_API UpdateCollectionResult();
+    AWS_OPENSEARCHSERVERLESS_API UpdateCollectionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OPENSEARCHSERVERLESS_API UpdateCollectionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

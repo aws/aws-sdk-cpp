@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/MappingParameters">AWS
    * API Reference</a></p>
    */
-  class AWS_KINESISANALYTICS_API MappingParameters
+  class MappingParameters
   {
   public:
-    MappingParameters();
-    MappingParameters(Aws::Utils::Json::JsonView jsonValue);
-    MappingParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KINESISANALYTICS_API MappingParameters();
+    AWS_KINESISANALYTICS_API MappingParameters(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICS_API MappingParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

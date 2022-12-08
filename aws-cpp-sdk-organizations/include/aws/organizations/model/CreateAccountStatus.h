@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/CreateAccountStatus">AWS
    * API Reference</a></p>
    */
-  class AWS_ORGANIZATIONS_API CreateAccountStatus
+  class CreateAccountStatus
   {
   public:
-    CreateAccountStatus();
-    CreateAccountStatus(Aws::Utils::Json::JsonView jsonValue);
-    CreateAccountStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ORGANIZATIONS_API CreateAccountStatus();
+    AWS_ORGANIZATIONS_API CreateAccountStatus(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ORGANIZATIONS_API CreateAccountStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ORGANIZATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

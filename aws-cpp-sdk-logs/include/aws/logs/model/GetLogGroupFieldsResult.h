@@ -25,12 +25,12 @@ namespace CloudWatchLogs
 {
 namespace Model
 {
-  class AWS_CLOUDWATCHLOGS_API GetLogGroupFieldsResult
+  class GetLogGroupFieldsResult
   {
   public:
-    GetLogGroupFieldsResult();
-    GetLogGroupFieldsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetLogGroupFieldsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CLOUDWATCHLOGS_API GetLogGroupFieldsResult();
+    AWS_CLOUDWATCHLOGS_API GetLogGroupFieldsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CLOUDWATCHLOGS_API GetLogGroupFieldsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

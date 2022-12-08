@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/MetricValue">AWS API
    * Reference</a></p>
    */
-  class AWS_COSTEXPLORER_API MetricValue
+  class MetricValue
   {
   public:
-    MetricValue();
-    MetricValue(Aws::Utils::Json::JsonView jsonValue);
-    MetricValue& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COSTEXPLORER_API MetricValue();
+    AWS_COSTEXPLORER_API MetricValue(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API MetricValue& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

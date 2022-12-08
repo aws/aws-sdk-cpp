@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ParameterTextAreaControl">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API ParameterTextAreaControl
+  class ParameterTextAreaControl
   {
   public:
-    ParameterTextAreaControl();
-    ParameterTextAreaControl(Aws::Utils::Json::JsonView jsonValue);
-    ParameterTextAreaControl& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API ParameterTextAreaControl();
+    AWS_QUICKSIGHT_API ParameterTextAreaControl(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API ParameterTextAreaControl& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

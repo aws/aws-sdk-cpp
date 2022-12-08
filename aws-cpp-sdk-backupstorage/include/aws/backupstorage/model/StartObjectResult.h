@@ -24,12 +24,12 @@ namespace BackupStorage
 {
 namespace Model
 {
-  class AWS_BACKUPSTORAGE_API StartObjectResult
+  class StartObjectResult
   {
   public:
-    StartObjectResult();
-    StartObjectResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    StartObjectResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_BACKUPSTORAGE_API StartObjectResult();
+    AWS_BACKUPSTORAGE_API StartObjectResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_BACKUPSTORAGE_API StartObjectResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -29,12 +29,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/ContactIdResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_GROUNDSTATION_API ReserveContactResult
+  class ReserveContactResult
   {
   public:
-    ReserveContactResult();
-    ReserveContactResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ReserveContactResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GROUNDSTATION_API ReserveContactResult();
+    AWS_GROUNDSTATION_API ReserveContactResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GROUNDSTATION_API ReserveContactResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

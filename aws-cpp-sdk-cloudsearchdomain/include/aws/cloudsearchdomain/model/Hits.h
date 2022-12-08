@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearchdomain-2013-01-01/Hits">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDSEARCHDOMAIN_API Hits
+  class Hits
   {
   public:
-    Hits();
-    Hits(Aws::Utils::Json::JsonView jsonValue);
-    Hits& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDSEARCHDOMAIN_API Hits();
+    AWS_CLOUDSEARCHDOMAIN_API Hits(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDSEARCHDOMAIN_API Hits& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDSEARCHDOMAIN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

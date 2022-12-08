@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UsageRecord">AWS
    * API Reference</a></p>
    */
-  class AWS_MACIE2_API UsageRecord
+  class UsageRecord
   {
   public:
-    UsageRecord();
-    UsageRecord(Aws::Utils::Json::JsonView jsonValue);
-    UsageRecord& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MACIE2_API UsageRecord();
+    AWS_MACIE2_API UsageRecord(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API UsageRecord& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

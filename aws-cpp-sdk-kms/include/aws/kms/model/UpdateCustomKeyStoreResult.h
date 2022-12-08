@@ -22,12 +22,12 @@ namespace KMS
 {
 namespace Model
 {
-  class AWS_KMS_API UpdateCustomKeyStoreResult
+  class UpdateCustomKeyStoreResult
   {
   public:
-    UpdateCustomKeyStoreResult();
-    UpdateCustomKeyStoreResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateCustomKeyStoreResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KMS_API UpdateCustomKeyStoreResult();
+    AWS_KMS_API UpdateCustomKeyStoreResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KMS_API UpdateCustomKeyStoreResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

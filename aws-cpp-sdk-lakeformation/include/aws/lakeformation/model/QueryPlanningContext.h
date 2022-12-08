@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/QueryPlanningContext">AWS
    * API Reference</a></p>
    */
-  class AWS_LAKEFORMATION_API QueryPlanningContext
+  class QueryPlanningContext
   {
   public:
-    QueryPlanningContext();
-    QueryPlanningContext(Aws::Utils::Json::JsonView jsonValue);
-    QueryPlanningContext& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LAKEFORMATION_API QueryPlanningContext();
+    AWS_LAKEFORMATION_API QueryPlanningContext(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAKEFORMATION_API QueryPlanningContext& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAKEFORMATION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

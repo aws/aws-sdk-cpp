@@ -22,12 +22,12 @@ namespace MigrationHubRefactorSpaces
 {
 namespace Model
 {
-  class AWS_MIGRATIONHUBREFACTORSPACES_API PutResourcePolicyResult
+  class PutResourcePolicyResult
   {
   public:
-    PutResourcePolicyResult();
-    PutResourcePolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PutResourcePolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MIGRATIONHUBREFACTORSPACES_API PutResourcePolicyResult();
+    AWS_MIGRATIONHUBREFACTORSPACES_API PutResourcePolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MIGRATIONHUBREFACTORSPACES_API PutResourcePolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

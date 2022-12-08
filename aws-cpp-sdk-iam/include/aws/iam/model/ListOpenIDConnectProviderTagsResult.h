@@ -27,12 +27,12 @@ namespace IAM
 {
 namespace Model
 {
-  class AWS_IAM_API ListOpenIDConnectProviderTagsResult
+  class ListOpenIDConnectProviderTagsResult
   {
   public:
-    ListOpenIDConnectProviderTagsResult();
-    ListOpenIDConnectProviderTagsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ListOpenIDConnectProviderTagsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_IAM_API ListOpenIDConnectProviderTagsResult();
+    AWS_IAM_API ListOpenIDConnectProviderTagsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_IAM_API ListOpenIDConnectProviderTagsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

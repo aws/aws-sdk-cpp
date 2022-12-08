@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/LabelAlias">AWS
    * API Reference</a></p>
    */
-  class AWS_REKOGNITION_API LabelAlias
+  class LabelAlias
   {
   public:
-    LabelAlias();
-    LabelAlias(Aws::Utils::Json::JsonView jsonValue);
-    LabelAlias& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_REKOGNITION_API LabelAlias();
+    AWS_REKOGNITION_API LabelAlias(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API LabelAlias& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codecatalyst-2022-09-28/UserIdentity">AWS
    * API Reference</a></p>
    */
-  class AWS_CODECATALYST_API UserIdentity
+  class UserIdentity
   {
   public:
-    UserIdentity();
-    UserIdentity(Aws::Utils::Json::JsonView jsonValue);
-    UserIdentity& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODECATALYST_API UserIdentity();
+    AWS_CODECATALYST_API UserIdentity(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODECATALYST_API UserIdentity& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODECATALYST_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

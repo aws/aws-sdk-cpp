@@ -24,12 +24,12 @@ namespace drs
 {
 namespace Model
 {
-  class AWS_DRS_API StartFailbackLaunchResult
+  class StartFailbackLaunchResult
   {
   public:
-    StartFailbackLaunchResult();
-    StartFailbackLaunchResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    StartFailbackLaunchResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DRS_API StartFailbackLaunchResult();
+    AWS_DRS_API StartFailbackLaunchResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DRS_API StartFailbackLaunchResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

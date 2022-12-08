@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/AxisScale">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API AxisScale
+  class AxisScale
   {
   public:
-    AxisScale();
-    AxisScale(Aws::Utils::Json::JsonView jsonValue);
-    AxisScale& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API AxisScale();
+    AWS_QUICKSIGHT_API AxisScale(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API AxisScale& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

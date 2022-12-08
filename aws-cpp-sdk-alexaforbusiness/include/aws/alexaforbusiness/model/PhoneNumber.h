@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/PhoneNumber">AWS
    * API Reference</a></p>
    */
-  class AWS_ALEXAFORBUSINESS_API PhoneNumber
+  class PhoneNumber
   {
   public:
-    PhoneNumber();
-    PhoneNumber(Aws::Utils::Json::JsonView jsonValue);
-    PhoneNumber& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ALEXAFORBUSINESS_API PhoneNumber();
+    AWS_ALEXAFORBUSINESS_API PhoneNumber(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ALEXAFORBUSINESS_API PhoneNumber& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ALEXAFORBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ResultSet">AWS
    * API Reference</a></p>
    */
-  class AWS_ATHENA_API ResultSet
+  class ResultSet
   {
   public:
-    ResultSet();
-    ResultSet(Aws::Utils::Json::JsonView jsonValue);
-    ResultSet& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ATHENA_API ResultSet();
+    AWS_ATHENA_API ResultSet(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ATHENA_API ResultSet& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ATHENA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

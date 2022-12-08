@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ResourceInventory">AWS
    * API Reference</a></p>
    */
-  class AWS_LICENSEMANAGER_API ResourceInventory
+  class ResourceInventory
   {
   public:
-    ResourceInventory();
-    ResourceInventory(Aws::Utils::Json::JsonView jsonValue);
-    ResourceInventory& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LICENSEMANAGER_API ResourceInventory();
+    AWS_LICENSEMANAGER_API ResourceInventory(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LICENSEMANAGER_API ResourceInventory& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LICENSEMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

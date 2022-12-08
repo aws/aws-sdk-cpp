@@ -41,13 +41,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/ContainerDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_BATCH_API ContainerDetail
+  class ContainerDetail
   {
   public:
-    ContainerDetail();
-    ContainerDetail(Aws::Utils::Json::JsonView jsonValue);
-    ContainerDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BATCH_API ContainerDetail();
+    AWS_BATCH_API ContainerDetail(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BATCH_API ContainerDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BATCH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

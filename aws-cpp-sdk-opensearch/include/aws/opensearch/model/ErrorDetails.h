@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/ErrorDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_OPENSEARCHSERVICE_API ErrorDetails
+  class ErrorDetails
   {
   public:
-    ErrorDetails();
-    ErrorDetails(Aws::Utils::Json::JsonView jsonValue);
-    ErrorDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OPENSEARCHSERVICE_API ErrorDetails();
+    AWS_OPENSEARCHSERVICE_API ErrorDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPENSEARCHSERVICE_API ErrorDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPENSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

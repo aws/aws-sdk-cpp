@@ -30,12 +30,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/CreateTopicResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_SNS_API CreateTopicResult
+  class CreateTopicResult
   {
   public:
-    CreateTopicResult();
-    CreateTopicResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    CreateTopicResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_SNS_API CreateTopicResult();
+    AWS_SNS_API CreateTopicResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_SNS_API CreateTopicResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

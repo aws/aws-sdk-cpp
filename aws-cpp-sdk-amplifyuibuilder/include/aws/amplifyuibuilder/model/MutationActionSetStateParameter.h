@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/MutationActionSetStateParameter">AWS
    * API Reference</a></p>
    */
-  class AWS_AMPLIFYUIBUILDER_API MutationActionSetStateParameter
+  class MutationActionSetStateParameter
   {
   public:
-    MutationActionSetStateParameter();
-    MutationActionSetStateParameter(Aws::Utils::Json::JsonView jsonValue);
-    MutationActionSetStateParameter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_AMPLIFYUIBUILDER_API MutationActionSetStateParameter();
+    AWS_AMPLIFYUIBUILDER_API MutationActionSetStateParameter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFYUIBUILDER_API MutationActionSetStateParameter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFYUIBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

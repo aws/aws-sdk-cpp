@@ -22,12 +22,12 @@ namespace Firehose
 {
 namespace Model
 {
-  class AWS_FIREHOSE_API DeleteDeliveryStreamResult
+  class DeleteDeliveryStreamResult
   {
   public:
-    DeleteDeliveryStreamResult();
-    DeleteDeliveryStreamResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteDeliveryStreamResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_FIREHOSE_API DeleteDeliveryStreamResult();
+    AWS_FIREHOSE_API DeleteDeliveryStreamResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_FIREHOSE_API DeleteDeliveryStreamResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

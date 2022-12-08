@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/CreateExperimentTemplateTargetInput">AWS
    * API Reference</a></p>
    */
-  class AWS_FIS_API CreateExperimentTemplateTargetInput
+  class CreateExperimentTemplateTargetInput
   {
   public:
-    CreateExperimentTemplateTargetInput();
-    CreateExperimentTemplateTargetInput(Aws::Utils::Json::JsonView jsonValue);
-    CreateExperimentTemplateTargetInput& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FIS_API CreateExperimentTemplateTargetInput();
+    AWS_FIS_API CreateExperimentTemplateTargetInput(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FIS_API CreateExperimentTemplateTargetInput& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FIS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

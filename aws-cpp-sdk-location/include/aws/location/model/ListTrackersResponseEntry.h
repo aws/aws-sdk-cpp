@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/ListTrackersResponseEntry">AWS
    * API Reference</a></p>
    */
-  class AWS_LOCATIONSERVICE_API ListTrackersResponseEntry
+  class ListTrackersResponseEntry
   {
   public:
-    ListTrackersResponseEntry();
-    ListTrackersResponseEntry(Aws::Utils::Json::JsonView jsonValue);
-    ListTrackersResponseEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LOCATIONSERVICE_API ListTrackersResponseEntry();
+    AWS_LOCATIONSERVICE_API ListTrackersResponseEntry(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOCATIONSERVICE_API ListTrackersResponseEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOCATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

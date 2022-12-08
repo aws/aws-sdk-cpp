@@ -24,12 +24,12 @@ namespace CloudFront
 {
 namespace Model
 {
-  class AWS_CLOUDFRONT_API ListResponseHeadersPolicies2020_05_31Result
+  class ListResponseHeadersPolicies2020_05_31Result
   {
   public:
-    ListResponseHeadersPolicies2020_05_31Result();
-    ListResponseHeadersPolicies2020_05_31Result(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ListResponseHeadersPolicies2020_05_31Result& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_CLOUDFRONT_API ListResponseHeadersPolicies2020_05_31Result();
+    AWS_CLOUDFRONT_API ListResponseHeadersPolicies2020_05_31Result(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_CLOUDFRONT_API ListResponseHeadersPolicies2020_05_31Result& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

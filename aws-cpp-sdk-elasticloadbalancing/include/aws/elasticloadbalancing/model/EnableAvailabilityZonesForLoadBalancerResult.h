@@ -32,12 +32,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/AddAvailabilityZonesOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICLOADBALANCING_API EnableAvailabilityZonesForLoadBalancerResult
+  class EnableAvailabilityZonesForLoadBalancerResult
   {
   public:
-    EnableAvailabilityZonesForLoadBalancerResult();
-    EnableAvailabilityZonesForLoadBalancerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    EnableAvailabilityZonesForLoadBalancerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ELASTICLOADBALANCING_API EnableAvailabilityZonesForLoadBalancerResult();
+    AWS_ELASTICLOADBALANCING_API EnableAvailabilityZonesForLoadBalancerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ELASTICLOADBALANCING_API EnableAvailabilityZonesForLoadBalancerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

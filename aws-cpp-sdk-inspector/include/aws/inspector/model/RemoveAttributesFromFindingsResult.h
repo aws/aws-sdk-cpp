@@ -26,12 +26,12 @@ namespace Inspector
 {
 namespace Model
 {
-  class AWS_INSPECTOR_API RemoveAttributesFromFindingsResult
+  class RemoveAttributesFromFindingsResult
   {
   public:
-    RemoveAttributesFromFindingsResult();
-    RemoveAttributesFromFindingsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    RemoveAttributesFromFindingsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_INSPECTOR_API RemoveAttributesFromFindingsResult();
+    AWS_INSPECTOR_API RemoveAttributesFromFindingsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_INSPECTOR_API RemoveAttributesFromFindingsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

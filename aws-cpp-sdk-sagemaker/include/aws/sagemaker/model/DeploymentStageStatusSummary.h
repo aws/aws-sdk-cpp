@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeploymentStageStatusSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API DeploymentStageStatusSummary
+  class DeploymentStageStatusSummary
   {
   public:
-    DeploymentStageStatusSummary();
-    DeploymentStageStatusSummary(Aws::Utils::Json::JsonView jsonValue);
-    DeploymentStageStatusSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API DeploymentStageStatusSummary();
+    AWS_SAGEMAKER_API DeploymentStageStatusSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API DeploymentStageStatusSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

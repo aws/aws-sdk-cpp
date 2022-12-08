@@ -24,12 +24,12 @@ namespace MWAA
 {
 namespace Model
 {
-  class AWS_MWAA_API UpdateEnvironmentResult
+  class UpdateEnvironmentResult
   {
   public:
-    UpdateEnvironmentResult();
-    UpdateEnvironmentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateEnvironmentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MWAA_API UpdateEnvironmentResult();
+    AWS_MWAA_API UpdateEnvironmentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MWAA_API UpdateEnvironmentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

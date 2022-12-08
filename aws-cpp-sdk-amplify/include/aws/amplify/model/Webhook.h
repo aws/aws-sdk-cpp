@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/Webhook">AWS API
    * Reference</a></p>
    */
-  class AWS_AMPLIFY_API Webhook
+  class Webhook
   {
   public:
-    Webhook();
-    Webhook(Aws::Utils::Json::JsonView jsonValue);
-    Webhook& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_AMPLIFY_API Webhook();
+    AWS_AMPLIFY_API Webhook(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFY_API Webhook& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

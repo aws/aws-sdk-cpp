@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/SnowflakeConnectorProfileProperties">AWS
    * API Reference</a></p>
    */
-  class AWS_APPFLOW_API SnowflakeConnectorProfileProperties
+  class SnowflakeConnectorProfileProperties
   {
   public:
-    SnowflakeConnectorProfileProperties();
-    SnowflakeConnectorProfileProperties(Aws::Utils::Json::JsonView jsonValue);
-    SnowflakeConnectorProfileProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPFLOW_API SnowflakeConnectorProfileProperties();
+    AWS_APPFLOW_API SnowflakeConnectorProfileProperties(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API SnowflakeConnectorProfileProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -26,12 +26,12 @@ namespace AppConfig
 {
 namespace Model
 {
-  class AWS_APPCONFIG_API CreateConfigurationProfileResult
+  class CreateConfigurationProfileResult
   {
   public:
-    CreateConfigurationProfileResult();
-    CreateConfigurationProfileResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateConfigurationProfileResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPCONFIG_API CreateConfigurationProfileResult();
+    AWS_APPCONFIG_API CreateConfigurationProfileResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPCONFIG_API CreateConfigurationProfileResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

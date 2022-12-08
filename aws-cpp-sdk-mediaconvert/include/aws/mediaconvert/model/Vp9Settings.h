@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/Vp9Settings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API Vp9Settings
+  class Vp9Settings
   {
   public:
-    Vp9Settings();
-    Vp9Settings(Aws::Utils::Json::JsonView jsonValue);
-    Vp9Settings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API Vp9Settings();
+    AWS_MEDIACONVERT_API Vp9Settings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Vp9Settings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

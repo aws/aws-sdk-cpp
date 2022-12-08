@@ -24,12 +24,12 @@ namespace Kafka
 {
 namespace Model
 {
-  class AWS_KAFKA_API UpdateClusterKafkaVersionResult
+  class UpdateClusterKafkaVersionResult
   {
   public:
-    UpdateClusterKafkaVersionResult();
-    UpdateClusterKafkaVersionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateClusterKafkaVersionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KAFKA_API UpdateClusterKafkaVersionResult();
+    AWS_KAFKA_API UpdateClusterKafkaVersionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KAFKA_API UpdateClusterKafkaVersionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -25,12 +25,12 @@ namespace IAM
 {
 namespace Model
 {
-  class AWS_IAM_API CreateServiceLinkedRoleResult
+  class CreateServiceLinkedRoleResult
   {
   public:
-    CreateServiceLinkedRoleResult();
-    CreateServiceLinkedRoleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    CreateServiceLinkedRoleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_IAM_API CreateServiceLinkedRoleResult();
+    AWS_IAM_API CreateServiceLinkedRoleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_IAM_API CreateServiceLinkedRoleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

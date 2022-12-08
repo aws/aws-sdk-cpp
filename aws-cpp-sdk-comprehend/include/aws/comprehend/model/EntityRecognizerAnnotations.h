@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/EntityRecognizerAnnotations">AWS
    * API Reference</a></p>
    */
-  class AWS_COMPREHEND_API EntityRecognizerAnnotations
+  class EntityRecognizerAnnotations
   {
   public:
-    EntityRecognizerAnnotations();
-    EntityRecognizerAnnotations(Aws::Utils::Json::JsonView jsonValue);
-    EntityRecognizerAnnotations& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COMPREHEND_API EntityRecognizerAnnotations();
+    AWS_COMPREHEND_API EntityRecognizerAnnotations(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHEND_API EntityRecognizerAnnotations& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHEND_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

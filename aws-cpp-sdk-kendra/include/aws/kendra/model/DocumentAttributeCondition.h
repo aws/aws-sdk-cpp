@@ -42,13 +42,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DocumentAttributeCondition">AWS
    * API Reference</a></p>
    */
-  class AWS_KENDRA_API DocumentAttributeCondition
+  class DocumentAttributeCondition
   {
   public:
-    DocumentAttributeCondition();
-    DocumentAttributeCondition(Aws::Utils::Json::JsonView jsonValue);
-    DocumentAttributeCondition& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KENDRA_API DocumentAttributeCondition();
+    AWS_KENDRA_API DocumentAttributeCondition(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API DocumentAttributeCondition& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

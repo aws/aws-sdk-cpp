@@ -27,12 +27,12 @@ namespace WorkMail
 {
 namespace Model
 {
-  class AWS_WORKMAIL_API GetImpersonationRoleEffectResult
+  class GetImpersonationRoleEffectResult
   {
   public:
-    GetImpersonationRoleEffectResult();
-    GetImpersonationRoleEffectResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetImpersonationRoleEffectResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WORKMAIL_API GetImpersonationRoleEffectResult();
+    AWS_WORKMAIL_API GetImpersonationRoleEffectResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WORKMAIL_API GetImpersonationRoleEffectResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

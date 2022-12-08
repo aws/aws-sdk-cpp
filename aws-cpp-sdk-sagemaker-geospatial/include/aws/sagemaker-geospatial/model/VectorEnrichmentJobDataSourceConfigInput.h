@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-geospatial-2020-05-27/VectorEnrichmentJobDataSourceConfigInput">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKERGEOSPATIAL_API VectorEnrichmentJobDataSourceConfigInput
+  class VectorEnrichmentJobDataSourceConfigInput
   {
   public:
-    VectorEnrichmentJobDataSourceConfigInput();
-    VectorEnrichmentJobDataSourceConfigInput(Aws::Utils::Json::JsonView jsonValue);
-    VectorEnrichmentJobDataSourceConfigInput& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKERGEOSPATIAL_API VectorEnrichmentJobDataSourceConfigInput();
+    AWS_SAGEMAKERGEOSPATIAL_API VectorEnrichmentJobDataSourceConfigInput(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKERGEOSPATIAL_API VectorEnrichmentJobDataSourceConfigInput& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKERGEOSPATIAL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

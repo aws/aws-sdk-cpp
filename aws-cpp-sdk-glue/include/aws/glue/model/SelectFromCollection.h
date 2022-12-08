@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/SelectFromCollection">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API SelectFromCollection
+  class SelectFromCollection
   {
   public:
-    SelectFromCollection();
-    SelectFromCollection(Aws::Utils::Json::JsonView jsonValue);
-    SelectFromCollection& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API SelectFromCollection();
+    AWS_GLUE_API SelectFromCollection(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API SelectFromCollection& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

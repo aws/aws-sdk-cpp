@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/NumericFormatConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API NumericFormatConfiguration
+  class NumericFormatConfiguration
   {
   public:
-    NumericFormatConfiguration();
-    NumericFormatConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    NumericFormatConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API NumericFormatConfiguration();
+    AWS_QUICKSIGHT_API NumericFormatConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API NumericFormatConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

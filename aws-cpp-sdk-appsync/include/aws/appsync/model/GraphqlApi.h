@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/GraphqlApi">AWS
    * API Reference</a></p>
    */
-  class AWS_APPSYNC_API GraphqlApi
+  class GraphqlApi
   {
   public:
-    GraphqlApi();
-    GraphqlApi(Aws::Utils::Json::JsonView jsonValue);
-    GraphqlApi& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPSYNC_API GraphqlApi();
+    AWS_APPSYNC_API GraphqlApi(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPSYNC_API GraphqlApi& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPSYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

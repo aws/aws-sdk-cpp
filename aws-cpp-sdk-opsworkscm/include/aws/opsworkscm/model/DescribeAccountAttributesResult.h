@@ -25,12 +25,12 @@ namespace OpsWorksCM
 {
 namespace Model
 {
-  class AWS_OPSWORKSCM_API DescribeAccountAttributesResult
+  class DescribeAccountAttributesResult
   {
   public:
-    DescribeAccountAttributesResult();
-    DescribeAccountAttributesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeAccountAttributesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OPSWORKSCM_API DescribeAccountAttributesResult();
+    AWS_OPSWORKSCM_API DescribeAccountAttributesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OPSWORKSCM_API DescribeAccountAttributesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

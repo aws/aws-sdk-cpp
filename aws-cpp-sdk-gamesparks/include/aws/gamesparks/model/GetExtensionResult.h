@@ -24,12 +24,12 @@ namespace GameSparks
 {
 namespace Model
 {
-  class AWS_GAMESPARKS_API GetExtensionResult
+  class GetExtensionResult
   {
   public:
-    GetExtensionResult();
-    GetExtensionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetExtensionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GAMESPARKS_API GetExtensionResult();
+    AWS_GAMESPARKS_API GetExtensionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GAMESPARKS_API GetExtensionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

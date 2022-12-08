@@ -31,12 +31,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/ListArchiveRulesResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_ACCESSANALYZER_API ListArchiveRulesResult
+  class ListArchiveRulesResult
   {
   public:
-    ListArchiveRulesResult();
-    ListArchiveRulesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListArchiveRulesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ACCESSANALYZER_API ListArchiveRulesResult();
+    AWS_ACCESSANALYZER_API ListArchiveRulesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ACCESSANALYZER_API ListArchiveRulesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

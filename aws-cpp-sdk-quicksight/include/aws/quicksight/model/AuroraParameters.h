@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/AuroraParameters">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API AuroraParameters
+  class AuroraParameters
   {
   public:
-    AuroraParameters();
-    AuroraParameters(Aws::Utils::Json::JsonView jsonValue);
-    AuroraParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API AuroraParameters();
+    AWS_QUICKSIGHT_API AuroraParameters(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API AuroraParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

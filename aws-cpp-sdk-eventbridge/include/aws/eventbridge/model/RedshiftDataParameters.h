@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/RedshiftDataParameters">AWS
    * API Reference</a></p>
    */
-  class AWS_EVENTBRIDGE_API RedshiftDataParameters
+  class RedshiftDataParameters
   {
   public:
-    RedshiftDataParameters();
-    RedshiftDataParameters(Aws::Utils::Json::JsonView jsonValue);
-    RedshiftDataParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EVENTBRIDGE_API RedshiftDataParameters();
+    AWS_EVENTBRIDGE_API RedshiftDataParameters(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EVENTBRIDGE_API RedshiftDataParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EVENTBRIDGE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

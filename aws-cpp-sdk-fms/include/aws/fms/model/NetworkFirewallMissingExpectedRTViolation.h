@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/NetworkFirewallMissingExpectedRTViolation">AWS
    * API Reference</a></p>
    */
-  class AWS_FMS_API NetworkFirewallMissingExpectedRTViolation
+  class NetworkFirewallMissingExpectedRTViolation
   {
   public:
-    NetworkFirewallMissingExpectedRTViolation();
-    NetworkFirewallMissingExpectedRTViolation(Aws::Utils::Json::JsonView jsonValue);
-    NetworkFirewallMissingExpectedRTViolation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FMS_API NetworkFirewallMissingExpectedRTViolation();
+    AWS_FMS_API NetworkFirewallMissingExpectedRTViolation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FMS_API NetworkFirewallMissingExpectedRTViolation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

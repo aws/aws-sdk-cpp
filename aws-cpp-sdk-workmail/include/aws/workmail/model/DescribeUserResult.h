@@ -27,12 +27,12 @@ namespace WorkMail
 {
 namespace Model
 {
-  class AWS_WORKMAIL_API DescribeUserResult
+  class DescribeUserResult
   {
   public:
-    DescribeUserResult();
-    DescribeUserResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeUserResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WORKMAIL_API DescribeUserResult();
+    AWS_WORKMAIL_API DescribeUserResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WORKMAIL_API DescribeUserResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

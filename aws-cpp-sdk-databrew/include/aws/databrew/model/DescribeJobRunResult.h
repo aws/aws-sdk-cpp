@@ -35,12 +35,12 @@ namespace GlueDataBrew
 {
 namespace Model
 {
-  class AWS_GLUEDATABREW_API DescribeJobRunResult
+  class DescribeJobRunResult
   {
   public:
-    DescribeJobRunResult();
-    DescribeJobRunResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeJobRunResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GLUEDATABREW_API DescribeJobRunResult();
+    AWS_GLUEDATABREW_API DescribeJobRunResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GLUEDATABREW_API DescribeJobRunResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

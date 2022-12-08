@@ -24,12 +24,12 @@ namespace CodeCatalyst
 {
 namespace Model
 {
-  class AWS_CODECATALYST_API GetSpaceResult
+  class GetSpaceResult
   {
   public:
-    GetSpaceResult();
-    GetSpaceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetSpaceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODECATALYST_API GetSpaceResult();
+    AWS_CODECATALYST_API GetSpaceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODECATALYST_API GetSpaceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

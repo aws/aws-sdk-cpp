@@ -24,12 +24,12 @@ namespace Outposts
 {
 namespace Model
 {
-  class AWS_OUTPOSTS_API CreateOutpostResult
+  class CreateOutpostResult
   {
   public:
-    CreateOutpostResult();
-    CreateOutpostResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateOutpostResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OUTPOSTS_API CreateOutpostResult();
+    AWS_OUTPOSTS_API CreateOutpostResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OUTPOSTS_API CreateOutpostResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     

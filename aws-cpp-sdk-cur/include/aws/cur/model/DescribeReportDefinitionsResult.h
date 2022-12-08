@@ -32,12 +32,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cur-2017-01-06/DescribeReportDefinitionsResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_COSTANDUSAGEREPORTSERVICE_API DescribeReportDefinitionsResult
+  class DescribeReportDefinitionsResult
   {
   public:
-    DescribeReportDefinitionsResult();
-    DescribeReportDefinitionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeReportDefinitionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_COSTANDUSAGEREPORTSERVICE_API DescribeReportDefinitionsResult();
+    AWS_COSTANDUSAGEREPORTSERVICE_API DescribeReportDefinitionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_COSTANDUSAGEREPORTSERVICE_API DescribeReportDefinitionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

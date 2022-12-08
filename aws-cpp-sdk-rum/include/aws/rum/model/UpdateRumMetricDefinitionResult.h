@@ -22,12 +22,12 @@ namespace CloudWatchRUM
 {
 namespace Model
 {
-  class AWS_CLOUDWATCHRUM_API UpdateRumMetricDefinitionResult
+  class UpdateRumMetricDefinitionResult
   {
   public:
-    UpdateRumMetricDefinitionResult();
-    UpdateRumMetricDefinitionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateRumMetricDefinitionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CLOUDWATCHRUM_API UpdateRumMetricDefinitionResult();
+    AWS_CLOUDWATCHRUM_API UpdateRumMetricDefinitionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CLOUDWATCHRUM_API UpdateRumMetricDefinitionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

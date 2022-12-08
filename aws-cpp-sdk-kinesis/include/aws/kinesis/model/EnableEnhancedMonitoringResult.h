@@ -32,12 +32,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/EnhancedMonitoringOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_KINESIS_API EnableEnhancedMonitoringResult
+  class EnableEnhancedMonitoringResult
   {
   public:
-    EnableEnhancedMonitoringResult();
-    EnableEnhancedMonitoringResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    EnableEnhancedMonitoringResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KINESIS_API EnableEnhancedMonitoringResult();
+    AWS_KINESIS_API EnableEnhancedMonitoringResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KINESIS_API EnableEnhancedMonitoringResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

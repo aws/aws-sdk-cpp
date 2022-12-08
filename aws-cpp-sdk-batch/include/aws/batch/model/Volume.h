@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/Volume">AWS API
    * Reference</a></p>
    */
-  class AWS_BATCH_API Volume
+  class Volume
   {
   public:
-    Volume();
-    Volume(Aws::Utils::Json::JsonView jsonValue);
-    Volume& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BATCH_API Volume();
+    AWS_BATCH_API Volume(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BATCH_API Volume& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BATCH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

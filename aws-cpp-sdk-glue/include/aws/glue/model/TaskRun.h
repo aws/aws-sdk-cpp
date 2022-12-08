@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/TaskRun">AWS API
    * Reference</a></p>
    */
-  class AWS_GLUE_API TaskRun
+  class TaskRun
   {
   public:
-    TaskRun();
-    TaskRun(Aws::Utils::Json::JsonView jsonValue);
-    TaskRun& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API TaskRun();
+    AWS_GLUE_API TaskRun(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API TaskRun& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

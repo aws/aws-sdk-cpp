@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ECSTaskSet">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEDEPLOY_API ECSTaskSet
+  class ECSTaskSet
   {
   public:
-    ECSTaskSet();
-    ECSTaskSet(Aws::Utils::Json::JsonView jsonValue);
-    ECSTaskSet& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEDEPLOY_API ECSTaskSet();
+    AWS_CODEDEPLOY_API ECSTaskSet(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEDEPLOY_API ECSTaskSet& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEDEPLOY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

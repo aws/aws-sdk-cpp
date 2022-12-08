@@ -26,12 +26,12 @@ namespace ApplicationAutoScaling
 {
 namespace Model
 {
-  class AWS_APPLICATIONAUTOSCALING_API DescribeScheduledActionsResult
+  class DescribeScheduledActionsResult
   {
   public:
-    DescribeScheduledActionsResult();
-    DescribeScheduledActionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeScheduledActionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPLICATIONAUTOSCALING_API DescribeScheduledActionsResult();
+    AWS_APPLICATIONAUTOSCALING_API DescribeScheduledActionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPLICATIONAUTOSCALING_API DescribeScheduledActionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

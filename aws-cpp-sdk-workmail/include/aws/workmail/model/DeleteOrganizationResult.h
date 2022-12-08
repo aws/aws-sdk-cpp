@@ -24,12 +24,12 @@ namespace WorkMail
 {
 namespace Model
 {
-  class AWS_WORKMAIL_API DeleteOrganizationResult
+  class DeleteOrganizationResult
   {
   public:
-    DeleteOrganizationResult();
-    DeleteOrganizationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteOrganizationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WORKMAIL_API DeleteOrganizationResult();
+    AWS_WORKMAIL_API DeleteOrganizationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WORKMAIL_API DeleteOrganizationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

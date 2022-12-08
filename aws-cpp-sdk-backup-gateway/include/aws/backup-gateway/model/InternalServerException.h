@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/InternalServerException">AWS
    * API Reference</a></p>
    */
-  class AWS_BACKUPGATEWAY_API InternalServerException
+  class InternalServerException
   {
   public:
-    InternalServerException();
-    InternalServerException(Aws::Utils::Json::JsonView jsonValue);
-    InternalServerException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BACKUPGATEWAY_API InternalServerException();
+    AWS_BACKUPGATEWAY_API InternalServerException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BACKUPGATEWAY_API InternalServerException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BACKUPGATEWAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

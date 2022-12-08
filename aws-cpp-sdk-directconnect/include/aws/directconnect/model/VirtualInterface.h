@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/VirtualInterface">AWS
    * API Reference</a></p>
    */
-  class AWS_DIRECTCONNECT_API VirtualInterface
+  class VirtualInterface
   {
   public:
-    VirtualInterface();
-    VirtualInterface(Aws::Utils::Json::JsonView jsonValue);
-    VirtualInterface& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DIRECTCONNECT_API VirtualInterface();
+    AWS_DIRECTCONNECT_API VirtualInterface(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTCONNECT_API VirtualInterface& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTCONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

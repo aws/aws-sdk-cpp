@@ -40,12 +40,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/EventSourceMappingConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_LAMBDA_API CreateEventSourceMappingResult
+  class CreateEventSourceMappingResult
   {
   public:
-    CreateEventSourceMappingResult();
-    CreateEventSourceMappingResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateEventSourceMappingResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LAMBDA_API CreateEventSourceMappingResult();
+    AWS_LAMBDA_API CreateEventSourceMappingResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LAMBDA_API CreateEventSourceMappingResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

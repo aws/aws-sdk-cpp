@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/LoRaWANSendDataToDevice">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTWIRELESS_API LoRaWANSendDataToDevice
+  class LoRaWANSendDataToDevice
   {
   public:
-    LoRaWANSendDataToDevice();
-    LoRaWANSendDataToDevice(Aws::Utils::Json::JsonView jsonValue);
-    LoRaWANSendDataToDevice& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTWIRELESS_API LoRaWANSendDataToDevice();
+    AWS_IOTWIRELESS_API LoRaWANSendDataToDevice(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API LoRaWANSendDataToDevice& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

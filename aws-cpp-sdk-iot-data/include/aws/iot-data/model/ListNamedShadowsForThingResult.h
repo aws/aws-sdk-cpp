@@ -25,12 +25,12 @@ namespace IoTDataPlane
 {
 namespace Model
 {
-  class AWS_IOTDATAPLANE_API ListNamedShadowsForThingResult
+  class ListNamedShadowsForThingResult
   {
   public:
-    ListNamedShadowsForThingResult();
-    ListNamedShadowsForThingResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListNamedShadowsForThingResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOTDATAPLANE_API ListNamedShadowsForThingResult();
+    AWS_IOTDATAPLANE_API ListNamedShadowsForThingResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOTDATAPLANE_API ListNamedShadowsForThingResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

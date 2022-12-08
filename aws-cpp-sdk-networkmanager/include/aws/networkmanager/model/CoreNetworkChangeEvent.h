@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/CoreNetworkChangeEvent">AWS
    * API Reference</a></p>
    */
-  class AWS_NETWORKMANAGER_API CoreNetworkChangeEvent
+  class CoreNetworkChangeEvent
   {
   public:
-    CoreNetworkChangeEvent();
-    CoreNetworkChangeEvent(Aws::Utils::Json::JsonView jsonValue);
-    CoreNetworkChangeEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_NETWORKMANAGER_API CoreNetworkChangeEvent();
+    AWS_NETWORKMANAGER_API CoreNetworkChangeEvent(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKMANAGER_API CoreNetworkChangeEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

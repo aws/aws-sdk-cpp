@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/PromptSpecification">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELSV2_API PromptSpecification
+  class PromptSpecification
   {
   public:
-    PromptSpecification();
-    PromptSpecification(Aws::Utils::Json::JsonView jsonValue);
-    PromptSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELSV2_API PromptSpecification();
+    AWS_LEXMODELSV2_API PromptSpecification(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API PromptSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

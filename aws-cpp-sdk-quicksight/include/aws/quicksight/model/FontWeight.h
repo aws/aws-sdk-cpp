@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/FontWeight">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API FontWeight
+  class FontWeight
   {
   public:
-    FontWeight();
-    FontWeight(Aws::Utils::Json::JsonView jsonValue);
-    FontWeight& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API FontWeight();
+    AWS_QUICKSIGHT_API FontWeight(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API FontWeight& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

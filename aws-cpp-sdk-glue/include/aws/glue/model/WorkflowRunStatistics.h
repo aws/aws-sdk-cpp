@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/WorkflowRunStatistics">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API WorkflowRunStatistics
+  class WorkflowRunStatistics
   {
   public:
-    WorkflowRunStatistics();
-    WorkflowRunStatistics(Aws::Utils::Json::JsonView jsonValue);
-    WorkflowRunStatistics& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API WorkflowRunStatistics();
+    AWS_GLUE_API WorkflowRunStatistics(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API WorkflowRunStatistics& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

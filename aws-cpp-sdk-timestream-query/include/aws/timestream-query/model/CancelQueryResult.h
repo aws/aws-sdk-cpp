@@ -24,12 +24,12 @@ namespace TimestreamQuery
 {
 namespace Model
 {
-  class AWS_TIMESTREAMQUERY_API CancelQueryResult
+  class CancelQueryResult
   {
   public:
-    CancelQueryResult();
-    CancelQueryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CancelQueryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_TIMESTREAMQUERY_API CancelQueryResult();
+    AWS_TIMESTREAMQUERY_API CancelQueryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_TIMESTREAMQUERY_API CancelQueryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -25,12 +25,12 @@ namespace WAF
 {
 namespace Model
 {
-  class AWS_WAF_API CreateSizeConstraintSetResult
+  class CreateSizeConstraintSetResult
   {
   public:
-    CreateSizeConstraintSetResult();
-    CreateSizeConstraintSetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateSizeConstraintSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WAF_API CreateSizeConstraintSetResult();
+    AWS_WAF_API CreateSizeConstraintSetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WAF_API CreateSizeConstraintSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

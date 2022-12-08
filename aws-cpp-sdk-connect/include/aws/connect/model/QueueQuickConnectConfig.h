@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/QueueQuickConnectConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECT_API QueueQuickConnectConfig
+  class QueueQuickConnectConfig
   {
   public:
-    QueueQuickConnectConfig();
-    QueueQuickConnectConfig(Aws::Utils::Json::JsonView jsonValue);
-    QueueQuickConnectConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECT_API QueueQuickConnectConfig();
+    AWS_CONNECT_API QueueQuickConnectConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API QueueQuickConnectConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

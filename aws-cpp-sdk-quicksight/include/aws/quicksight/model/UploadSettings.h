@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UploadSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API UploadSettings
+  class UploadSettings
   {
   public:
-    UploadSettings();
-    UploadSettings(Aws::Utils::Json::JsonView jsonValue);
-    UploadSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API UploadSettings();
+    AWS_QUICKSIGHT_API UploadSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API UploadSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

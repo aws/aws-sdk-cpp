@@ -23,13 +23,13 @@ namespace AppConfig
 namespace Model
 {
 
-  class AWS_APPCONFIG_API Application
+  class Application
   {
   public:
-    Application();
-    Application(Aws::Utils::Json::JsonView jsonValue);
-    Application& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPCONFIG_API Application();
+    AWS_APPCONFIG_API Application(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPCONFIG_API Application& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPCONFIG_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -25,12 +25,12 @@ namespace EC2
 {
 namespace Model
 {
-  class AWS_EC2_API GetNetworkInsightsAccessScopeContentResponse
+  class GetNetworkInsightsAccessScopeContentResponse
   {
   public:
-    GetNetworkInsightsAccessScopeContentResponse();
-    GetNetworkInsightsAccessScopeContentResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    GetNetworkInsightsAccessScopeContentResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API GetNetworkInsightsAccessScopeContentResponse();
+    AWS_EC2_API GetNetworkInsightsAccessScopeContentResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API GetNetworkInsightsAccessScopeContentResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

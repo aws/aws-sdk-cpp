@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/BackupSelection">AWS
    * API Reference</a></p>
    */
-  class AWS_BACKUP_API BackupSelection
+  class BackupSelection
   {
   public:
-    BackupSelection();
-    BackupSelection(Aws::Utils::Json::JsonView jsonValue);
-    BackupSelection& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BACKUP_API BackupSelection();
+    AWS_BACKUP_API BackupSelection(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BACKUP_API BackupSelection& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BACKUP_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -26,12 +26,12 @@ namespace SimpleDB
 {
 namespace Model
 {
-  class AWS_SIMPLEDB_API GetAttributesResult
+  class GetAttributesResult
   {
   public:
-    GetAttributesResult();
-    GetAttributesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    GetAttributesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_SIMPLEDB_API GetAttributesResult();
+    AWS_SIMPLEDB_API GetAttributesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_SIMPLEDB_API GetAttributesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

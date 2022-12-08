@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/ItemValue">AWS
    * API Reference</a></p>
    */
-  class AWS_SSMINCIDENTS_API ItemValue
+  class ItemValue
   {
   public:
-    ItemValue();
-    ItemValue(Aws::Utils::Json::JsonView jsonValue);
-    ItemValue& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSMINCIDENTS_API ItemValue();
+    AWS_SSMINCIDENTS_API ItemValue(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSMINCIDENTS_API ItemValue& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSMINCIDENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/SchemaExtensionInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_DIRECTORYSERVICE_API SchemaExtensionInfo
+  class SchemaExtensionInfo
   {
   public:
-    SchemaExtensionInfo();
-    SchemaExtensionInfo(Aws::Utils::Json::JsonView jsonValue);
-    SchemaExtensionInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DIRECTORYSERVICE_API SchemaExtensionInfo();
+    AWS_DIRECTORYSERVICE_API SchemaExtensionInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTORYSERVICE_API SchemaExtensionInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTORYSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

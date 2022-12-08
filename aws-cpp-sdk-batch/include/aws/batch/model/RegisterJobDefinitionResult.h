@@ -24,12 +24,12 @@ namespace Batch
 {
 namespace Model
 {
-  class AWS_BATCH_API RegisterJobDefinitionResult
+  class RegisterJobDefinitionResult
   {
   public:
-    RegisterJobDefinitionResult();
-    RegisterJobDefinitionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    RegisterJobDefinitionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_BATCH_API RegisterJobDefinitionResult();
+    AWS_BATCH_API RegisterJobDefinitionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_BATCH_API RegisterJobDefinitionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

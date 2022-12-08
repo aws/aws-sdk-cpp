@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsEcrRepositoryDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsEcrRepositoryDetails
+  class AwsEcrRepositoryDetails
   {
   public:
-    AwsEcrRepositoryDetails();
-    AwsEcrRepositoryDetails(Aws::Utils::Json::JsonView jsonValue);
-    AwsEcrRepositoryDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsEcrRepositoryDetails();
+    AWS_SECURITYHUB_API AwsEcrRepositoryDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsEcrRepositoryDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

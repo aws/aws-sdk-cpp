@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/FolderConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_WORKMAIL_API FolderConfiguration
+  class FolderConfiguration
   {
   public:
-    FolderConfiguration();
-    FolderConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    FolderConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WORKMAIL_API FolderConfiguration();
+    AWS_WORKMAIL_API FolderConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKMAIL_API FolderConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKMAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

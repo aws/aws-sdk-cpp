@@ -30,12 +30,12 @@ namespace mgn
 {
 namespace Model
 {
-  class AWS_MGN_API UpdateSourceServerReplicationTypeResult
+  class UpdateSourceServerReplicationTypeResult
   {
   public:
-    UpdateSourceServerReplicationTypeResult();
-    UpdateSourceServerReplicationTypeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateSourceServerReplicationTypeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MGN_API UpdateSourceServerReplicationTypeResult();
+    AWS_MGN_API UpdateSourceServerReplicationTypeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MGN_API UpdateSourceServerReplicationTypeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

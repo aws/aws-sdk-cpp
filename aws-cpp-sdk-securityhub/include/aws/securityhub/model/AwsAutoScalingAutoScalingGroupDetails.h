@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsAutoScalingAutoScalingGroupDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsAutoScalingAutoScalingGroupDetails
+  class AwsAutoScalingAutoScalingGroupDetails
   {
   public:
-    AwsAutoScalingAutoScalingGroupDetails();
-    AwsAutoScalingAutoScalingGroupDetails(Aws::Utils::Json::JsonView jsonValue);
-    AwsAutoScalingAutoScalingGroupDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsAutoScalingAutoScalingGroupDetails();
+    AWS_SECURITYHUB_API AwsAutoScalingAutoScalingGroupDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsAutoScalingAutoScalingGroupDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

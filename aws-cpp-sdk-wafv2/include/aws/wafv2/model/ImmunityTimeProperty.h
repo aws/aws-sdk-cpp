@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/ImmunityTimeProperty">AWS
    * API Reference</a></p>
    */
-  class AWS_WAFV2_API ImmunityTimeProperty
+  class ImmunityTimeProperty
   {
   public:
-    ImmunityTimeProperty();
-    ImmunityTimeProperty(Aws::Utils::Json::JsonView jsonValue);
-    ImmunityTimeProperty& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WAFV2_API ImmunityTimeProperty();
+    AWS_WAFV2_API ImmunityTimeProperty(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API ImmunityTimeProperty& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -22,12 +22,12 @@ namespace Connect
 {
 namespace Model
 {
-  class AWS_CONNECT_API DeleteTaskTemplateResult
+  class DeleteTaskTemplateResult
   {
   public:
-    DeleteTaskTemplateResult();
-    DeleteTaskTemplateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteTaskTemplateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CONNECT_API DeleteTaskTemplateResult();
+    AWS_CONNECT_API DeleteTaskTemplateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CONNECT_API DeleteTaskTemplateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

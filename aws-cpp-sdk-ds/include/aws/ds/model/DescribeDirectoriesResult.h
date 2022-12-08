@@ -32,12 +32,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeDirectoriesResult">AWS
    * API Reference</a></p>
    */
-  class AWS_DIRECTORYSERVICE_API DescribeDirectoriesResult
+  class DescribeDirectoriesResult
   {
   public:
-    DescribeDirectoriesResult();
-    DescribeDirectoriesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeDirectoriesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DIRECTORYSERVICE_API DescribeDirectoriesResult();
+    AWS_DIRECTORYSERVICE_API DescribeDirectoriesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DIRECTORYSERVICE_API DescribeDirectoriesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -39,13 +39,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/EventSourceMappingConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_LAMBDA_API EventSourceMappingConfiguration
+  class EventSourceMappingConfiguration
   {
   public:
-    EventSourceMappingConfiguration();
-    EventSourceMappingConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    EventSourceMappingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LAMBDA_API EventSourceMappingConfiguration();
+    AWS_LAMBDA_API EventSourceMappingConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAMBDA_API EventSourceMappingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAMBDA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

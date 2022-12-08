@@ -33,12 +33,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CacheParameterGroupsMessage">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICACHE_API DescribeCacheParameterGroupsResult
+  class DescribeCacheParameterGroupsResult
   {
   public:
-    DescribeCacheParameterGroupsResult();
-    DescribeCacheParameterGroupsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeCacheParameterGroupsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ELASTICACHE_API DescribeCacheParameterGroupsResult();
+    AWS_ELASTICACHE_API DescribeCacheParameterGroupsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ELASTICACHE_API DescribeCacheParameterGroupsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

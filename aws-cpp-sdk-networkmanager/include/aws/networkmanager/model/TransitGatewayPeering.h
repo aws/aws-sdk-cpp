@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/TransitGatewayPeering">AWS
    * API Reference</a></p>
    */
-  class AWS_NETWORKMANAGER_API TransitGatewayPeering
+  class TransitGatewayPeering
   {
   public:
-    TransitGatewayPeering();
-    TransitGatewayPeering(Aws::Utils::Json::JsonView jsonValue);
-    TransitGatewayPeering& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_NETWORKMANAGER_API TransitGatewayPeering();
+    AWS_NETWORKMANAGER_API TransitGatewayPeering(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKMANAGER_API TransitGatewayPeering& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

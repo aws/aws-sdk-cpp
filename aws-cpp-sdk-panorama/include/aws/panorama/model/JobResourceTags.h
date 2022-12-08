@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/panorama-2019-07-24/JobResourceTags">AWS
    * API Reference</a></p>
    */
-  class AWS_PANORAMA_API JobResourceTags
+  class JobResourceTags
   {
   public:
-    JobResourceTags();
-    JobResourceTags(Aws::Utils::Json::JsonView jsonValue);
-    JobResourceTags& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PANORAMA_API JobResourceTags();
+    AWS_PANORAMA_API JobResourceTags(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PANORAMA_API JobResourceTags& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PANORAMA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

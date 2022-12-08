@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/IntegerParameterRange">AWS
    * API Reference</a></p>
    */
-  class AWS_FORECASTSERVICE_API IntegerParameterRange
+  class IntegerParameterRange
   {
   public:
-    IntegerParameterRange();
-    IntegerParameterRange(Aws::Utils::Json::JsonView jsonValue);
-    IntegerParameterRange& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FORECASTSERVICE_API IntegerParameterRange();
+    AWS_FORECASTSERVICE_API IntegerParameterRange(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FORECASTSERVICE_API IntegerParameterRange& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FORECASTSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/PositionConfigurationItem">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTWIRELESS_API PositionConfigurationItem
+  class PositionConfigurationItem
   {
   public:
-    PositionConfigurationItem();
-    PositionConfigurationItem(Aws::Utils::Json::JsonView jsonValue);
-    PositionConfigurationItem& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTWIRELESS_API PositionConfigurationItem();
+    AWS_IOTWIRELESS_API PositionConfigurationItem(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API PositionConfigurationItem& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

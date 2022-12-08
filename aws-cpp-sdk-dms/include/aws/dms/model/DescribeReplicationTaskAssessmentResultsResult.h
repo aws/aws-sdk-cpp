@@ -31,12 +31,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeReplicationTaskAssessmentResultsResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_DATABASEMIGRATIONSERVICE_API DescribeReplicationTaskAssessmentResultsResult
+  class DescribeReplicationTaskAssessmentResultsResult
   {
   public:
-    DescribeReplicationTaskAssessmentResultsResult();
-    DescribeReplicationTaskAssessmentResultsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeReplicationTaskAssessmentResultsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DATABASEMIGRATIONSERVICE_API DescribeReplicationTaskAssessmentResultsResult();
+    AWS_DATABASEMIGRATIONSERVICE_API DescribeReplicationTaskAssessmentResultsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DATABASEMIGRATIONSERVICE_API DescribeReplicationTaskAssessmentResultsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

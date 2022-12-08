@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/MessageDeliveryStatusResourceTypeEventConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTWIRELESS_API MessageDeliveryStatusResourceTypeEventConfiguration
+  class MessageDeliveryStatusResourceTypeEventConfiguration
   {
   public:
-    MessageDeliveryStatusResourceTypeEventConfiguration();
-    MessageDeliveryStatusResourceTypeEventConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    MessageDeliveryStatusResourceTypeEventConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTWIRELESS_API MessageDeliveryStatusResourceTypeEventConfiguration();
+    AWS_IOTWIRELESS_API MessageDeliveryStatusResourceTypeEventConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API MessageDeliveryStatusResourceTypeEventConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

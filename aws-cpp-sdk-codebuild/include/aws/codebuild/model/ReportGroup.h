@@ -37,13 +37,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ReportGroup">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEBUILD_API ReportGroup
+  class ReportGroup
   {
   public:
-    ReportGroup();
-    ReportGroup(Aws::Utils::Json::JsonView jsonValue);
-    ReportGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEBUILD_API ReportGroup();
+    AWS_CODEBUILD_API ReportGroup(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEBUILD_API ReportGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEBUILD_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

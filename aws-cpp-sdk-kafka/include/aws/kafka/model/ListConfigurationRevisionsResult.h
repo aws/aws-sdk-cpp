@@ -26,12 +26,12 @@ namespace Kafka
 {
 namespace Model
 {
-  class AWS_KAFKA_API ListConfigurationRevisionsResult
+  class ListConfigurationRevisionsResult
   {
   public:
-    ListConfigurationRevisionsResult();
-    ListConfigurationRevisionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListConfigurationRevisionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KAFKA_API ListConfigurationRevisionsResult();
+    AWS_KAFKA_API ListConfigurationRevisionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KAFKA_API ListConfigurationRevisionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

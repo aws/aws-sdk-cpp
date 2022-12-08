@@ -30,12 +30,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/ConfigIdResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_GROUNDSTATION_API CreateConfigResult
+  class CreateConfigResult
   {
   public:
-    CreateConfigResult();
-    CreateConfigResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateConfigResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GROUNDSTATION_API CreateConfigResult();
+    AWS_GROUNDSTATION_API CreateConfigResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GROUNDSTATION_API CreateConfigResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

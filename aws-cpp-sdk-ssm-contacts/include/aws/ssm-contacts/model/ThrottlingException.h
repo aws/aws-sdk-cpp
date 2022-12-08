@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/ThrottlingException">AWS
    * API Reference</a></p>
    */
-  class AWS_SSMCONTACTS_API ThrottlingException
+  class ThrottlingException
   {
   public:
-    ThrottlingException();
-    ThrottlingException(Aws::Utils::Json::JsonView jsonValue);
-    ThrottlingException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSMCONTACTS_API ThrottlingException();
+    AWS_SSMCONTACTS_API ThrottlingException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSMCONTACTS_API ThrottlingException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSMCONTACTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

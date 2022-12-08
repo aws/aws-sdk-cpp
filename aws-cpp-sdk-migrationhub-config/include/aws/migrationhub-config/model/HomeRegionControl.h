@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/migrationhub-config-2019-06-30/HomeRegionControl">AWS
    * API Reference</a></p>
    */
-  class AWS_MIGRATIONHUBCONFIG_API HomeRegionControl
+  class HomeRegionControl
   {
   public:
-    HomeRegionControl();
-    HomeRegionControl(Aws::Utils::Json::JsonView jsonValue);
-    HomeRegionControl& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MIGRATIONHUBCONFIG_API HomeRegionControl();
+    AWS_MIGRATIONHUBCONFIG_API HomeRegionControl(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MIGRATIONHUBCONFIG_API HomeRegionControl& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MIGRATIONHUBCONFIG_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/VpcEndpointErrorDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_OPENSEARCHSERVERLESS_API VpcEndpointErrorDetail
+  class VpcEndpointErrorDetail
   {
   public:
-    VpcEndpointErrorDetail();
-    VpcEndpointErrorDetail(Aws::Utils::Json::JsonView jsonValue);
-    VpcEndpointErrorDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OPENSEARCHSERVERLESS_API VpcEndpointErrorDetail();
+    AWS_OPENSEARCHSERVERLESS_API VpcEndpointErrorDetail(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPENSEARCHSERVERLESS_API VpcEndpointErrorDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPENSEARCHSERVERLESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

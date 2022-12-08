@@ -24,12 +24,12 @@ namespace DevOpsGuru
 {
 namespace Model
 {
-  class AWS_DEVOPSGURU_API DescribeServiceIntegrationResult
+  class DescribeServiceIntegrationResult
   {
   public:
-    DescribeServiceIntegrationResult();
-    DescribeServiceIntegrationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeServiceIntegrationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DEVOPSGURU_API DescribeServiceIntegrationResult();
+    AWS_DEVOPSGURU_API DescribeServiceIntegrationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DEVOPSGURU_API DescribeServiceIntegrationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     

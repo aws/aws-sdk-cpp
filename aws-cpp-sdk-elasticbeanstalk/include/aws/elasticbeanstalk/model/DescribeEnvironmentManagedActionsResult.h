@@ -32,12 +32,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeEnvironmentManagedActionsResult">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICBEANSTALK_API DescribeEnvironmentManagedActionsResult
+  class DescribeEnvironmentManagedActionsResult
   {
   public:
-    DescribeEnvironmentManagedActionsResult();
-    DescribeEnvironmentManagedActionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeEnvironmentManagedActionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ELASTICBEANSTALK_API DescribeEnvironmentManagedActionsResult();
+    AWS_ELASTICBEANSTALK_API DescribeEnvironmentManagedActionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ELASTICBEANSTALK_API DescribeEnvironmentManagedActionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

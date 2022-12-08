@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/ErrorDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_APPSYNC_API ErrorDetail
+  class ErrorDetail
   {
   public:
-    ErrorDetail();
-    ErrorDetail(Aws::Utils::Json::JsonView jsonValue);
-    ErrorDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPSYNC_API ErrorDetail();
+    AWS_APPSYNC_API ErrorDetail(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPSYNC_API ErrorDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPSYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

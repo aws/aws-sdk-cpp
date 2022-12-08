@@ -22,12 +22,12 @@ namespace Route53Domains
 {
 namespace Model
 {
-  class AWS_ROUTE53DOMAINS_API EnableDomainAutoRenewResult
+  class EnableDomainAutoRenewResult
   {
   public:
-    EnableDomainAutoRenewResult();
-    EnableDomainAutoRenewResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    EnableDomainAutoRenewResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ROUTE53DOMAINS_API EnableDomainAutoRenewResult();
+    AWS_ROUTE53DOMAINS_API EnableDomainAutoRenewResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ROUTE53DOMAINS_API EnableDomainAutoRenewResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

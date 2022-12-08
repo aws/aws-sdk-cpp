@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CapacityProvider">AWS
    * API Reference</a></p>
    */
-  class AWS_ECS_API CapacityProvider
+  class CapacityProvider
   {
   public:
-    CapacityProvider();
-    CapacityProvider(Aws::Utils::Json::JsonView jsonValue);
-    CapacityProvider& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ECS_API CapacityProvider();
+    AWS_ECS_API CapacityProvider(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECS_API CapacityProvider& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

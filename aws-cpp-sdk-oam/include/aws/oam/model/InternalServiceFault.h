@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/oam-2022-06-10/InternalServiceFault">AWS
    * API Reference</a></p>
    */
-  class AWS_OAM_API InternalServiceFault
+  class InternalServiceFault
   {
   public:
-    InternalServiceFault();
-    InternalServiceFault(Aws::Utils::Json::JsonView jsonValue);
-    InternalServiceFault& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OAM_API InternalServiceFault();
+    AWS_OAM_API InternalServiceFault(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OAM_API InternalServiceFault& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OAM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

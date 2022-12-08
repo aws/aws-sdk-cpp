@@ -33,15 +33,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/ScalingPolicy">AWS
    * API Reference</a></p>
    */
-  class AWS_AUTOSCALING_API ScalingPolicy
+  class ScalingPolicy
   {
   public:
-    ScalingPolicy();
-    ScalingPolicy(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ScalingPolicy& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_AUTOSCALING_API ScalingPolicy();
+    AWS_AUTOSCALING_API ScalingPolicy(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_AUTOSCALING_API ScalingPolicy& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_AUTOSCALING_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_AUTOSCALING_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**

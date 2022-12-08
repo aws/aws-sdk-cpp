@@ -31,12 +31,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DescribeBudgetsResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_BUDGETS_API DescribeBudgetsResult
+  class DescribeBudgetsResult
   {
   public:
-    DescribeBudgetsResult();
-    DescribeBudgetsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeBudgetsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_BUDGETS_API DescribeBudgetsResult();
+    AWS_BUDGETS_API DescribeBudgetsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_BUDGETS_API DescribeBudgetsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

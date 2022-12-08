@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/Account">AWS API
    * Reference</a></p>
    */
-  class AWS_CHIME_API Account
+  class Account
   {
   public:
-    Account();
-    Account(Aws::Utils::Json::JsonView jsonValue);
-    Account& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIME_API Account();
+    AWS_CHIME_API Account(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API Account& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

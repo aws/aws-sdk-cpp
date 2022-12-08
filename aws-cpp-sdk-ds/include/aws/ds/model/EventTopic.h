@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/EventTopic">AWS API
    * Reference</a></p>
    */
-  class AWS_DIRECTORYSERVICE_API EventTopic
+  class EventTopic
   {
   public:
-    EventTopic();
-    EventTopic(Aws::Utils::Json::JsonView jsonValue);
-    EventTopic& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DIRECTORYSERVICE_API EventTopic();
+    AWS_DIRECTORYSERVICE_API EventTopic(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTORYSERVICE_API EventTopic& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTORYSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

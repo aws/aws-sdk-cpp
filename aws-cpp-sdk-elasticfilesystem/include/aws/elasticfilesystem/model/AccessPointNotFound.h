@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/AccessPointNotFound">AWS
    * API Reference</a></p>
    */
-  class AWS_EFS_API AccessPointNotFound
+  class AccessPointNotFound
   {
   public:
-    AccessPointNotFound();
-    AccessPointNotFound(Aws::Utils::Json::JsonView jsonValue);
-    AccessPointNotFound& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EFS_API AccessPointNotFound();
+    AWS_EFS_API AccessPointNotFound(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EFS_API AccessPointNotFound& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EFS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

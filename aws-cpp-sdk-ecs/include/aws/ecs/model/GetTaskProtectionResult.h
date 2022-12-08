@@ -26,12 +26,12 @@ namespace ECS
 {
 namespace Model
 {
-  class AWS_ECS_API GetTaskProtectionResult
+  class GetTaskProtectionResult
   {
   public:
-    GetTaskProtectionResult();
-    GetTaskProtectionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetTaskProtectionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ECS_API GetTaskProtectionResult();
+    AWS_ECS_API GetTaskProtectionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ECS_API GetTaskProtectionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

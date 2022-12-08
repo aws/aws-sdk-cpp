@@ -27,12 +27,12 @@ namespace EC2
 {
 namespace Model
 {
-  class AWS_EC2_API DescribeReplaceRootVolumeTasksResponse
+  class DescribeReplaceRootVolumeTasksResponse
   {
   public:
-    DescribeReplaceRootVolumeTasksResponse();
-    DescribeReplaceRootVolumeTasksResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeReplaceRootVolumeTasksResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API DescribeReplaceRootVolumeTasksResponse();
+    AWS_EC2_API DescribeReplaceRootVolumeTasksResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API DescribeReplaceRootVolumeTasksResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

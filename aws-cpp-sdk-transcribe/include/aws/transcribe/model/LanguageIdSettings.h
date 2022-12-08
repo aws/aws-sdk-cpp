@@ -54,13 +54,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/LanguageIdSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_TRANSCRIBESERVICE_API LanguageIdSettings
+  class LanguageIdSettings
   {
   public:
-    LanguageIdSettings();
-    LanguageIdSettings(Aws::Utils::Json::JsonView jsonValue);
-    LanguageIdSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TRANSCRIBESERVICE_API LanguageIdSettings();
+    AWS_TRANSCRIBESERVICE_API LanguageIdSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSCRIBESERVICE_API LanguageIdSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSCRIBESERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

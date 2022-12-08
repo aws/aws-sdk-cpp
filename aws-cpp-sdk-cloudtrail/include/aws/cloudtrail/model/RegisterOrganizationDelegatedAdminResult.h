@@ -28,12 +28,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/RegisterOrganizationDelegatedAdminResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDTRAIL_API RegisterOrganizationDelegatedAdminResult
+  class RegisterOrganizationDelegatedAdminResult
   {
   public:
-    RegisterOrganizationDelegatedAdminResult();
-    RegisterOrganizationDelegatedAdminResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    RegisterOrganizationDelegatedAdminResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CLOUDTRAIL_API RegisterOrganizationDelegatedAdminResult();
+    AWS_CLOUDTRAIL_API RegisterOrganizationDelegatedAdminResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CLOUDTRAIL_API RegisterOrganizationDelegatedAdminResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

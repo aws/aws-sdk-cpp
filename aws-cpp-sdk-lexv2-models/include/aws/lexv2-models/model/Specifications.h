@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/Specifications">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELSV2_API Specifications
+  class Specifications
   {
   public:
-    Specifications();
-    Specifications(Aws::Utils::Json::JsonView jsonValue);
-    Specifications& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELSV2_API Specifications();
+    AWS_LEXMODELSV2_API Specifications(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API Specifications& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -35,12 +35,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DescribeMultiplexResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API DescribeMultiplexResult
+  class DescribeMultiplexResult
   {
   public:
-    DescribeMultiplexResult();
-    DescribeMultiplexResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeMultiplexResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MEDIALIVE_API DescribeMultiplexResult();
+    AWS_MEDIALIVE_API DescribeMultiplexResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MEDIALIVE_API DescribeMultiplexResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -22,12 +22,12 @@ namespace NetworkManager
 {
 namespace Model
 {
-  class AWS_NETWORKMANAGER_API ExecuteCoreNetworkChangeSetResult
+  class ExecuteCoreNetworkChangeSetResult
   {
   public:
-    ExecuteCoreNetworkChangeSetResult();
-    ExecuteCoreNetworkChangeSetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ExecuteCoreNetworkChangeSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_NETWORKMANAGER_API ExecuteCoreNetworkChangeSetResult();
+    AWS_NETWORKMANAGER_API ExecuteCoreNetworkChangeSetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_NETWORKMANAGER_API ExecuteCoreNetworkChangeSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

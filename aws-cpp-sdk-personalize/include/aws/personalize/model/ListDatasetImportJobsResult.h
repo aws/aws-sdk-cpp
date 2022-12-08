@@ -26,12 +26,12 @@ namespace Personalize
 {
 namespace Model
 {
-  class AWS_PERSONALIZE_API ListDatasetImportJobsResult
+  class ListDatasetImportJobsResult
   {
   public:
-    ListDatasetImportJobsResult();
-    ListDatasetImportJobsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListDatasetImportJobsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PERSONALIZE_API ListDatasetImportJobsResult();
+    AWS_PERSONALIZE_API ListDatasetImportJobsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PERSONALIZE_API ListDatasetImportJobsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/backupstorage-2018-04-10/BackupObject">AWS
    * API Reference</a></p>
    */
-  class AWS_BACKUPSTORAGE_API BackupObject
+  class BackupObject
   {
   public:
-    BackupObject();
-    BackupObject(Aws::Utils::Json::JsonView jsonValue);
-    BackupObject& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BACKUPSTORAGE_API BackupObject();
+    AWS_BACKUPSTORAGE_API BackupObject(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BACKUPSTORAGE_API BackupObject& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BACKUPSTORAGE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

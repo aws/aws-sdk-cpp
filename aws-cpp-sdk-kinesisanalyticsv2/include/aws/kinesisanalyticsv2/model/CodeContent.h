@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/CodeContent">AWS
    * API Reference</a></p>
    */
-  class AWS_KINESISANALYTICSV2_API CodeContent
+  class CodeContent
   {
   public:
-    CodeContent();
-    CodeContent(Aws::Utils::Json::JsonView jsonValue);
-    CodeContent& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KINESISANALYTICSV2_API CodeContent();
+    AWS_KINESISANALYTICSV2_API CodeContent(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICSV2_API CodeContent& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

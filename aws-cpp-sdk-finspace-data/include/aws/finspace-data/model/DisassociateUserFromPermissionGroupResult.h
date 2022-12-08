@@ -22,12 +22,12 @@ namespace FinSpaceData
 {
 namespace Model
 {
-  class AWS_FINSPACEDATA_API DisassociateUserFromPermissionGroupResult
+  class DisassociateUserFromPermissionGroupResult
   {
   public:
-    DisassociateUserFromPermissionGroupResult();
-    DisassociateUserFromPermissionGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DisassociateUserFromPermissionGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_FINSPACEDATA_API DisassociateUserFromPermissionGroupResult();
+    AWS_FINSPACEDATA_API DisassociateUserFromPermissionGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_FINSPACEDATA_API DisassociateUserFromPermissionGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

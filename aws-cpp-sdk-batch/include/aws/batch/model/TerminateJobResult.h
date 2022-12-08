@@ -22,12 +22,12 @@ namespace Batch
 {
 namespace Model
 {
-  class AWS_BATCH_API TerminateJobResult
+  class TerminateJobResult
   {
   public:
-    TerminateJobResult();
-    TerminateJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    TerminateJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_BATCH_API TerminateJobResult();
+    AWS_BATCH_API TerminateJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_BATCH_API TerminateJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

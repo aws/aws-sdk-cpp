@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/MarketoConnectorProfileCredentials">AWS
    * API Reference</a></p>
    */
-  class AWS_APPFLOW_API MarketoConnectorProfileCredentials
+  class MarketoConnectorProfileCredentials
   {
   public:
-    MarketoConnectorProfileCredentials();
-    MarketoConnectorProfileCredentials(Aws::Utils::Json::JsonView jsonValue);
-    MarketoConnectorProfileCredentials& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPFLOW_API MarketoConnectorProfileCredentials();
+    AWS_APPFLOW_API MarketoConnectorProfileCredentials(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API MarketoConnectorProfileCredentials& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

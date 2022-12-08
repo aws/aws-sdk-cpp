@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/Filter">AWS API
    * Reference</a></p>
    */
-  class AWS_WAFV2_API Filter
+  class Filter
   {
   public:
-    Filter();
-    Filter(Aws::Utils::Json::JsonView jsonValue);
-    Filter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WAFV2_API Filter();
+    AWS_WAFV2_API Filter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API Filter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

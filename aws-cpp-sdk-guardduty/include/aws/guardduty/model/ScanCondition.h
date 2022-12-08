@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ScanCondition">AWS
    * API Reference</a></p>
    */
-  class AWS_GUARDDUTY_API ScanCondition
+  class ScanCondition
   {
   public:
-    ScanCondition();
-    ScanCondition(Aws::Utils::Json::JsonView jsonValue);
-    ScanCondition& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GUARDDUTY_API ScanCondition();
+    AWS_GUARDDUTY_API ScanCondition(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API ScanCondition& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

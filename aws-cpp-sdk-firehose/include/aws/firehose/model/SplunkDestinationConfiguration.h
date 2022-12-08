@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/SplunkDestinationConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_FIREHOSE_API SplunkDestinationConfiguration
+  class SplunkDestinationConfiguration
   {
   public:
-    SplunkDestinationConfiguration();
-    SplunkDestinationConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    SplunkDestinationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FIREHOSE_API SplunkDestinationConfiguration();
+    AWS_FIREHOSE_API SplunkDestinationConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FIREHOSE_API SplunkDestinationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FIREHOSE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

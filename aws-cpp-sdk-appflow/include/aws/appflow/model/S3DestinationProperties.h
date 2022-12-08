@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/S3DestinationProperties">AWS
    * API Reference</a></p>
    */
-  class AWS_APPFLOW_API S3DestinationProperties
+  class S3DestinationProperties
   {
   public:
-    S3DestinationProperties();
-    S3DestinationProperties(Aws::Utils::Json::JsonView jsonValue);
-    S3DestinationProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPFLOW_API S3DestinationProperties();
+    AWS_APPFLOW_API S3DestinationProperties(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API S3DestinationProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

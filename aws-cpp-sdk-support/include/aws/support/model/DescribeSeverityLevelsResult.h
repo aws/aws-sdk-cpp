@@ -31,12 +31,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeSeverityLevelsResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_SUPPORT_API DescribeSeverityLevelsResult
+  class DescribeSeverityLevelsResult
   {
   public:
-    DescribeSeverityLevelsResult();
-    DescribeSeverityLevelsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeSeverityLevelsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SUPPORT_API DescribeSeverityLevelsResult();
+    AWS_SUPPORT_API DescribeSeverityLevelsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SUPPORT_API DescribeSeverityLevelsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

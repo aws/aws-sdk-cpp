@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/ApplicationDependencySummary">AWS
    * API Reference</a></p>
    */
-  class AWS_SERVERLESSAPPLICATIONREPOSITORY_API ApplicationDependencySummary
+  class ApplicationDependencySummary
   {
   public:
-    ApplicationDependencySummary();
-    ApplicationDependencySummary(Aws::Utils::Json::JsonView jsonValue);
-    ApplicationDependencySummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SERVERLESSAPPLICATIONREPOSITORY_API ApplicationDependencySummary();
+    AWS_SERVERLESSAPPLICATIONREPOSITORY_API ApplicationDependencySummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVERLESSAPPLICATIONREPOSITORY_API ApplicationDependencySummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVERLESSAPPLICATIONREPOSITORY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

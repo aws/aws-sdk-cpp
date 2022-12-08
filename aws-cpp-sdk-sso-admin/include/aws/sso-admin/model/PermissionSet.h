@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/PermissionSet">AWS
    * API Reference</a></p>
    */
-  class AWS_SSOADMIN_API PermissionSet
+  class PermissionSet
   {
   public:
-    PermissionSet();
-    PermissionSet(Aws::Utils::Json::JsonView jsonValue);
-    PermissionSet& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSOADMIN_API PermissionSet();
+    AWS_SSOADMIN_API PermissionSet(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSOADMIN_API PermissionSet& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSOADMIN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

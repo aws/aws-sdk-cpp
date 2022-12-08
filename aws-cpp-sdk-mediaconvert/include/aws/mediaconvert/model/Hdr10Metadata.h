@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/Hdr10Metadata">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API Hdr10Metadata
+  class Hdr10Metadata
   {
   public:
-    Hdr10Metadata();
-    Hdr10Metadata(Aws::Utils::Json::JsonView jsonValue);
-    Hdr10Metadata& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API Hdr10Metadata();
+    AWS_MEDIACONVERT_API Hdr10Metadata(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Hdr10Metadata& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

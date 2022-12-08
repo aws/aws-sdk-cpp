@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/WordCloudChartConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API WordCloudChartConfiguration
+  class WordCloudChartConfiguration
   {
   public:
-    WordCloudChartConfiguration();
-    WordCloudChartConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    WordCloudChartConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API WordCloudChartConfiguration();
+    AWS_QUICKSIGHT_API WordCloudChartConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API WordCloudChartConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -22,12 +22,12 @@ namespace KinesisVideo
 {
 namespace Model
 {
-  class AWS_KINESISVIDEO_API DeleteStreamResult
+  class DeleteStreamResult
   {
   public:
-    DeleteStreamResult();
-    DeleteStreamResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteStreamResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KINESISVIDEO_API DeleteStreamResult();
+    AWS_KINESISVIDEO_API DeleteStreamResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KINESISVIDEO_API DeleteStreamResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

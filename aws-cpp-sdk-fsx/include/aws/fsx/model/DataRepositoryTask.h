@@ -39,13 +39,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DataRepositoryTask">AWS
    * API Reference</a></p>
    */
-  class AWS_FSX_API DataRepositoryTask
+  class DataRepositoryTask
   {
   public:
-    DataRepositoryTask();
-    DataRepositoryTask(Aws::Utils::Json::JsonView jsonValue);
-    DataRepositoryTask& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FSX_API DataRepositoryTask();
+    AWS_FSX_API DataRepositoryTask(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API DataRepositoryTask& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

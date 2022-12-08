@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/LogsLocation">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEBUILD_API LogsLocation
+  class LogsLocation
   {
   public:
-    LogsLocation();
-    LogsLocation(Aws::Utils::Json::JsonView jsonValue);
-    LogsLocation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEBUILD_API LogsLocation();
+    AWS_CODEBUILD_API LogsLocation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEBUILD_API LogsLocation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEBUILD_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

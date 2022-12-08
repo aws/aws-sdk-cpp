@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/ReservationPlan">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API ReservationPlan
+  class ReservationPlan
   {
   public:
-    ReservationPlan();
-    ReservationPlan(Aws::Utils::Json::JsonView jsonValue);
-    ReservationPlan& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API ReservationPlan();
+    AWS_MEDIACONVERT_API ReservationPlan(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API ReservationPlan& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/WaitTime">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API WaitTime
+  class WaitTime
   {
   public:
-    WaitTime();
-    WaitTime(Aws::Utils::Json::JsonView jsonValue);
-    WaitTime& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API WaitTime();
+    AWS_PINPOINT_API WaitTime(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API WaitTime& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

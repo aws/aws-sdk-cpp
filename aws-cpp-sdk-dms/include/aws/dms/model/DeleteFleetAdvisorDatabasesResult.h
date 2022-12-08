@@ -25,12 +25,12 @@ namespace DatabaseMigrationService
 {
 namespace Model
 {
-  class AWS_DATABASEMIGRATIONSERVICE_API DeleteFleetAdvisorDatabasesResult
+  class DeleteFleetAdvisorDatabasesResult
   {
   public:
-    DeleteFleetAdvisorDatabasesResult();
-    DeleteFleetAdvisorDatabasesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteFleetAdvisorDatabasesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DATABASEMIGRATIONSERVICE_API DeleteFleetAdvisorDatabasesResult();
+    AWS_DATABASEMIGRATIONSERVICE_API DeleteFleetAdvisorDatabasesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DATABASEMIGRATIONSERVICE_API DeleteFleetAdvisorDatabasesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

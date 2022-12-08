@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/Subnet">AWS API
    * Reference</a></p>
    */
-  class AWS_MEMORYDB_API Subnet
+  class Subnet
   {
   public:
-    Subnet();
-    Subnet(Aws::Utils::Json::JsonView jsonValue);
-    Subnet& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEMORYDB_API Subnet();
+    AWS_MEMORYDB_API Subnet(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEMORYDB_API Subnet& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEMORYDB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

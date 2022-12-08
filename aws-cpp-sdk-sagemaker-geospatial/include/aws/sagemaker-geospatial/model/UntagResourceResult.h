@@ -22,12 +22,12 @@ namespace SageMakerGeospatial
 {
 namespace Model
 {
-  class AWS_SAGEMAKERGEOSPATIAL_API UntagResourceResult
+  class UntagResourceResult
   {
   public:
-    UntagResourceResult();
-    UntagResourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UntagResourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SAGEMAKERGEOSPATIAL_API UntagResourceResult();
+    AWS_SAGEMAKERGEOSPATIAL_API UntagResourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SAGEMAKERGEOSPATIAL_API UntagResourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

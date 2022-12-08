@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GenericRevisionInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEDEPLOY_API GenericRevisionInfo
+  class GenericRevisionInfo
   {
   public:
-    GenericRevisionInfo();
-    GenericRevisionInfo(Aws::Utils::Json::JsonView jsonValue);
-    GenericRevisionInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEDEPLOY_API GenericRevisionInfo();
+    AWS_CODEDEPLOY_API GenericRevisionInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEDEPLOY_API GenericRevisionInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEDEPLOY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

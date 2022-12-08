@@ -31,12 +31,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigRuleEvaluationStatusResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_CONFIGSERVICE_API DescribeConfigRuleEvaluationStatusResult
+  class DescribeConfigRuleEvaluationStatusResult
   {
   public:
-    DescribeConfigRuleEvaluationStatusResult();
-    DescribeConfigRuleEvaluationStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeConfigRuleEvaluationStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CONFIGSERVICE_API DescribeConfigRuleEvaluationStatusResult();
+    AWS_CONFIGSERVICE_API DescribeConfigRuleEvaluationStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CONFIGSERVICE_API DescribeConfigRuleEvaluationStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/UpdateConnectionOAuthRequestParameters">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDWATCHEVENTS_API UpdateConnectionOAuthRequestParameters
+  class UpdateConnectionOAuthRequestParameters
   {
   public:
-    UpdateConnectionOAuthRequestParameters();
-    UpdateConnectionOAuthRequestParameters(Aws::Utils::Json::JsonView jsonValue);
-    UpdateConnectionOAuthRequestParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDWATCHEVENTS_API UpdateConnectionOAuthRequestParameters();
+    AWS_CLOUDWATCHEVENTS_API UpdateConnectionOAuthRequestParameters(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHEVENTS_API UpdateConnectionOAuthRequestParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHEVENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

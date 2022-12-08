@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/S3RecordingConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_GROUNDSTATION_API S3RecordingConfig
+  class S3RecordingConfig
   {
   public:
-    S3RecordingConfig();
-    S3RecordingConfig(Aws::Utils::Json::JsonView jsonValue);
-    S3RecordingConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GROUNDSTATION_API S3RecordingConfig();
+    AWS_GROUNDSTATION_API S3RecordingConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GROUNDSTATION_API S3RecordingConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GROUNDSTATION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/FieldItem">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECTCASES_API FieldItem
+  class FieldItem
   {
   public:
-    FieldItem();
-    FieldItem(Aws::Utils::Json::JsonView jsonValue);
-    FieldItem& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECTCASES_API FieldItem();
+    AWS_CONNECTCASES_API FieldItem(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTCASES_API FieldItem& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTCASES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

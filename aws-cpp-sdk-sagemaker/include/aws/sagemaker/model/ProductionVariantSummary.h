@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ProductionVariantSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API ProductionVariantSummary
+  class ProductionVariantSummary
   {
   public:
-    ProductionVariantSummary();
-    ProductionVariantSummary(Aws::Utils::Json::JsonView jsonValue);
-    ProductionVariantSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API ProductionVariantSummary();
+    AWS_SAGEMAKER_API ProductionVariantSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API ProductionVariantSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

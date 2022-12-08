@@ -37,13 +37,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/TranscriptionJobSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_TRANSCRIBESERVICE_API TranscriptionJobSummary
+  class TranscriptionJobSummary
   {
   public:
-    TranscriptionJobSummary();
-    TranscriptionJobSummary(Aws::Utils::Json::JsonView jsonValue);
-    TranscriptionJobSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TRANSCRIBESERVICE_API TranscriptionJobSummary();
+    AWS_TRANSCRIBESERVICE_API TranscriptionJobSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSCRIBESERVICE_API TranscriptionJobSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSCRIBESERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

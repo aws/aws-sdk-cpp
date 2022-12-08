@@ -38,13 +38,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/Launch">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDWATCHEVIDENTLY_API Launch
+  class Launch
   {
   public:
-    Launch();
-    Launch(Aws::Utils::Json::JsonView jsonValue);
-    Launch& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDWATCHEVIDENTLY_API Launch();
+    AWS_CLOUDWATCHEVIDENTLY_API Launch(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHEVIDENTLY_API Launch& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHEVIDENTLY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

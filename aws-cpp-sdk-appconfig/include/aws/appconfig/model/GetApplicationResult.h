@@ -24,12 +24,12 @@ namespace AppConfig
 {
 namespace Model
 {
-  class AWS_APPCONFIG_API GetApplicationResult
+  class GetApplicationResult
   {
   public:
-    GetApplicationResult();
-    GetApplicationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetApplicationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPCONFIG_API GetApplicationResult();
+    AWS_APPCONFIG_API GetApplicationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPCONFIG_API GetApplicationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

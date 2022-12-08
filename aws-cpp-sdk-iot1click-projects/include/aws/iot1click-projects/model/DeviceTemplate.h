@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot1click-projects-2018-05-14/DeviceTemplate">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT1CLICKPROJECTS_API DeviceTemplate
+  class DeviceTemplate
   {
   public:
-    DeviceTemplate();
-    DeviceTemplate(Aws::Utils::Json::JsonView jsonValue);
-    DeviceTemplate& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT1CLICKPROJECTS_API DeviceTemplate();
+    AWS_IOT1CLICKPROJECTS_API DeviceTemplate(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT1CLICKPROJECTS_API DeviceTemplate& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT1CLICKPROJECTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

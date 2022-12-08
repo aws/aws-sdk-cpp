@@ -26,12 +26,12 @@ namespace kendra
 {
 namespace Model
 {
-  class AWS_KENDRA_API BatchGetDocumentStatusResult
+  class BatchGetDocumentStatusResult
   {
   public:
-    BatchGetDocumentStatusResult();
-    BatchGetDocumentStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    BatchGetDocumentStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KENDRA_API BatchGetDocumentStatusResult();
+    AWS_KENDRA_API BatchGetDocumentStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KENDRA_API BatchGetDocumentStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

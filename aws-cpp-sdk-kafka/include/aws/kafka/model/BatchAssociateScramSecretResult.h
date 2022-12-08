@@ -26,12 +26,12 @@ namespace Kafka
 {
 namespace Model
 {
-  class AWS_KAFKA_API BatchAssociateScramSecretResult
+  class BatchAssociateScramSecretResult
   {
   public:
-    BatchAssociateScramSecretResult();
-    BatchAssociateScramSecretResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    BatchAssociateScramSecretResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KAFKA_API BatchAssociateScramSecretResult();
+    AWS_KAFKA_API BatchAssociateScramSecretResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KAFKA_API BatchAssociateScramSecretResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

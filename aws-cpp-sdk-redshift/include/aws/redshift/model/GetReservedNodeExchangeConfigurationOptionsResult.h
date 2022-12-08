@@ -27,12 +27,12 @@ namespace Redshift
 {
 namespace Model
 {
-  class AWS_REDSHIFT_API GetReservedNodeExchangeConfigurationOptionsResult
+  class GetReservedNodeExchangeConfigurationOptionsResult
   {
   public:
-    GetReservedNodeExchangeConfigurationOptionsResult();
-    GetReservedNodeExchangeConfigurationOptionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    GetReservedNodeExchangeConfigurationOptionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_REDSHIFT_API GetReservedNodeExchangeConfigurationOptionsResult();
+    AWS_REDSHIFT_API GetReservedNodeExchangeConfigurationOptionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_REDSHIFT_API GetReservedNodeExchangeConfigurationOptionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

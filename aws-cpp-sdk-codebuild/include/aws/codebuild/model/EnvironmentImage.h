@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/EnvironmentImage">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEBUILD_API EnvironmentImage
+  class EnvironmentImage
   {
   public:
-    EnvironmentImage();
-    EnvironmentImage(Aws::Utils::Json::JsonView jsonValue);
-    EnvironmentImage& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEBUILD_API EnvironmentImage();
+    AWS_CODEBUILD_API EnvironmentImage(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEBUILD_API EnvironmentImage& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEBUILD_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

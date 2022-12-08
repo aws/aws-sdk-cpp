@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/PackageDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEARTIFACT_API PackageDescription
+  class PackageDescription
   {
   public:
-    PackageDescription();
-    PackageDescription(Aws::Utils::Json::JsonView jsonValue);
-    PackageDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEARTIFACT_API PackageDescription();
+    AWS_CODEARTIFACT_API PackageDescription(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEARTIFACT_API PackageDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEARTIFACT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

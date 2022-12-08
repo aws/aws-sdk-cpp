@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/Logging">AWS API
    * Reference</a></p>
    */
-  class AWS_EKS_API Logging
+  class Logging
   {
   public:
-    Logging();
-    Logging(Aws::Utils::Json::JsonView jsonValue);
-    Logging& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EKS_API Logging();
+    AWS_EKS_API Logging(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EKS_API Logging& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EKS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

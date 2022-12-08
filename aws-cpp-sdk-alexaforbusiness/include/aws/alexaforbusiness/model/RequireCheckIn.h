@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/RequireCheckIn">AWS
    * API Reference</a></p>
    */
-  class AWS_ALEXAFORBUSINESS_API RequireCheckIn
+  class RequireCheckIn
   {
   public:
-    RequireCheckIn();
-    RequireCheckIn(Aws::Utils::Json::JsonView jsonValue);
-    RequireCheckIn& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ALEXAFORBUSINESS_API RequireCheckIn();
+    AWS_ALEXAFORBUSINESS_API RequireCheckIn(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ALEXAFORBUSINESS_API RequireCheckIn& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ALEXAFORBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

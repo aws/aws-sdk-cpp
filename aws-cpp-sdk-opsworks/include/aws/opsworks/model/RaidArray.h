@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/RaidArray">AWS
    * API Reference</a></p>
    */
-  class AWS_OPSWORKS_API RaidArray
+  class RaidArray
   {
   public:
-    RaidArray();
-    RaidArray(Aws::Utils::Json::JsonView jsonValue);
-    RaidArray& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OPSWORKS_API RaidArray();
+    AWS_OPSWORKS_API RaidArray(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPSWORKS_API RaidArray& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPSWORKS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -27,12 +27,12 @@ namespace EC2
 {
 namespace Model
 {
-  class AWS_EC2_API DescribeClientVpnTargetNetworksResponse
+  class DescribeClientVpnTargetNetworksResponse
   {
   public:
-    DescribeClientVpnTargetNetworksResponse();
-    DescribeClientVpnTargetNetworksResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeClientVpnTargetNetworksResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API DescribeClientVpnTargetNetworksResponse();
+    AWS_EC2_API DescribeClientVpnTargetNetworksResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API DescribeClientVpnTargetNetworksResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

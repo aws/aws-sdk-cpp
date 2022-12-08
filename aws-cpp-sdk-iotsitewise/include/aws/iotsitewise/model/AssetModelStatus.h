@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/AssetModelStatus">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTSITEWISE_API AssetModelStatus
+  class AssetModelStatus
   {
   public:
-    AssetModelStatus();
-    AssetModelStatus(Aws::Utils::Json::JsonView jsonValue);
-    AssetModelStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTSITEWISE_API AssetModelStatus();
+    AWS_IOTSITEWISE_API AssetModelStatus(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API AssetModelStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

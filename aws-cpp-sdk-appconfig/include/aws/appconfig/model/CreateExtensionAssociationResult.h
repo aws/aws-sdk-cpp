@@ -25,12 +25,12 @@ namespace AppConfig
 {
 namespace Model
 {
-  class AWS_APPCONFIG_API CreateExtensionAssociationResult
+  class CreateExtensionAssociationResult
   {
   public:
-    CreateExtensionAssociationResult();
-    CreateExtensionAssociationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateExtensionAssociationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPCONFIG_API CreateExtensionAssociationResult();
+    AWS_APPCONFIG_API CreateExtensionAssociationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPCONFIG_API CreateExtensionAssociationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamesparks-2021-08-17/Generator">AWS
    * API Reference</a></p>
    */
-  class AWS_GAMESPARKS_API Generator
+  class Generator
   {
   public:
-    Generator();
-    Generator(Aws::Utils::Json::JsonView jsonValue);
-    Generator& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GAMESPARKS_API Generator();
+    AWS_GAMESPARKS_API Generator(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMESPARKS_API Generator& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMESPARKS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

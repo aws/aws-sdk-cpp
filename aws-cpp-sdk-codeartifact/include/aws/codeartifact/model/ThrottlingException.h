@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/ThrottlingException">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEARTIFACT_API ThrottlingException
+  class ThrottlingException
   {
   public:
-    ThrottlingException();
-    ThrottlingException(Aws::Utils::Json::JsonView jsonValue);
-    ThrottlingException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEARTIFACT_API ThrottlingException();
+    AWS_CODEARTIFACT_API ThrottlingException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEARTIFACT_API ThrottlingException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEARTIFACT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

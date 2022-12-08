@@ -31,12 +31,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpnGatewaysResult">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API DescribeVpnGatewaysResponse
+  class DescribeVpnGatewaysResponse
   {
   public:
-    DescribeVpnGatewaysResponse();
-    DescribeVpnGatewaysResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeVpnGatewaysResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API DescribeVpnGatewaysResponse();
+    AWS_EC2_API DescribeVpnGatewaysResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API DescribeVpnGatewaysResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListWorkflowsItem">AWS
    * API Reference</a></p>
    */
-  class AWS_CUSTOMERPROFILES_API ListWorkflowsItem
+  class ListWorkflowsItem
   {
   public:
-    ListWorkflowsItem();
-    ListWorkflowsItem(Aws::Utils::Json::JsonView jsonValue);
-    ListWorkflowsItem& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CUSTOMERPROFILES_API ListWorkflowsItem();
+    AWS_CUSTOMERPROFILES_API ListWorkflowsItem(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CUSTOMERPROFILES_API ListWorkflowsItem& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CUSTOMERPROFILES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

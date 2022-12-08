@@ -27,12 +27,12 @@ namespace Redshift
 {
 namespace Model
 {
-  class AWS_REDSHIFT_API RejectDataShareResult
+  class RejectDataShareResult
   {
   public:
-    RejectDataShareResult();
-    RejectDataShareResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    RejectDataShareResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_REDSHIFT_API RejectDataShareResult();
+    AWS_REDSHIFT_API RejectDataShareResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_REDSHIFT_API RejectDataShareResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

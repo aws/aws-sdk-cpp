@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/WebsiteCaSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_WORKLINK_API WebsiteCaSummary
+  class WebsiteCaSummary
   {
   public:
-    WebsiteCaSummary();
-    WebsiteCaSummary(Aws::Utils::Json::JsonView jsonValue);
-    WebsiteCaSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WORKLINK_API WebsiteCaSummary();
+    AWS_WORKLINK_API WebsiteCaSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKLINK_API WebsiteCaSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKLINK_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

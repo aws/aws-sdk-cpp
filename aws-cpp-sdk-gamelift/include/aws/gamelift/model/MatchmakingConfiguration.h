@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/MatchmakingConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_GAMELIFT_API MatchmakingConfiguration
+  class MatchmakingConfiguration
   {
   public:
-    MatchmakingConfiguration();
-    MatchmakingConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    MatchmakingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GAMELIFT_API MatchmakingConfiguration();
+    AWS_GAMELIFT_API MatchmakingConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMELIFT_API MatchmakingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

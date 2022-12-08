@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/FileCacheLustreMetadataConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_FSX_API FileCacheLustreMetadataConfiguration
+  class FileCacheLustreMetadataConfiguration
   {
   public:
-    FileCacheLustreMetadataConfiguration();
-    FileCacheLustreMetadataConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    FileCacheLustreMetadataConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FSX_API FileCacheLustreMetadataConfiguration();
+    AWS_FSX_API FileCacheLustreMetadataConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API FileCacheLustreMetadataConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DateTimeFormatConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API DateTimeFormatConfiguration
+  class DateTimeFormatConfiguration
   {
   public:
-    DateTimeFormatConfiguration();
-    DateTimeFormatConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    DateTimeFormatConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API DateTimeFormatConfiguration();
+    AWS_QUICKSIGHT_API DateTimeFormatConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API DateTimeFormatConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

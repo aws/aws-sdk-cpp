@@ -32,12 +32,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/RequestValidators">AWS
    * API Reference</a></p>
    */
-  class AWS_APIGATEWAY_API GetRequestValidatorsResult
+  class GetRequestValidatorsResult
   {
   public:
-    GetRequestValidatorsResult();
-    GetRequestValidatorsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetRequestValidatorsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APIGATEWAY_API GetRequestValidatorsResult();
+    AWS_APIGATEWAY_API GetRequestValidatorsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APIGATEWAY_API GetRequestValidatorsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     

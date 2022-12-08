@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/scheduler-2021-06-30/KinesisParameters">AWS
    * API Reference</a></p>
    */
-  class AWS_SCHEDULER_API KinesisParameters
+  class KinesisParameters
   {
   public:
-    KinesisParameters();
-    KinesisParameters(Aws::Utils::Json::JsonView jsonValue);
-    KinesisParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SCHEDULER_API KinesisParameters();
+    AWS_SCHEDULER_API KinesisParameters(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SCHEDULER_API KinesisParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SCHEDULER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

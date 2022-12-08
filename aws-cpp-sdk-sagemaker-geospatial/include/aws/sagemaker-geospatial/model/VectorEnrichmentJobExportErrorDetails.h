@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-geospatial-2020-05-27/VectorEnrichmentJobExportErrorDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKERGEOSPATIAL_API VectorEnrichmentJobExportErrorDetails
+  class VectorEnrichmentJobExportErrorDetails
   {
   public:
-    VectorEnrichmentJobExportErrorDetails();
-    VectorEnrichmentJobExportErrorDetails(Aws::Utils::Json::JsonView jsonValue);
-    VectorEnrichmentJobExportErrorDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKERGEOSPATIAL_API VectorEnrichmentJobExportErrorDetails();
+    AWS_SAGEMAKERGEOSPATIAL_API VectorEnrichmentJobExportErrorDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKERGEOSPATIAL_API VectorEnrichmentJobExportErrorDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKERGEOSPATIAL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

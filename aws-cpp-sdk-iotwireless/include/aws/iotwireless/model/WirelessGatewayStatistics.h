@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/WirelessGatewayStatistics">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTWIRELESS_API WirelessGatewayStatistics
+  class WirelessGatewayStatistics
   {
   public:
-    WirelessGatewayStatistics();
-    WirelessGatewayStatistics(Aws::Utils::Json::JsonView jsonValue);
-    WirelessGatewayStatistics& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTWIRELESS_API WirelessGatewayStatistics();
+    AWS_IOTWIRELESS_API WirelessGatewayStatistics(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API WirelessGatewayStatistics& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

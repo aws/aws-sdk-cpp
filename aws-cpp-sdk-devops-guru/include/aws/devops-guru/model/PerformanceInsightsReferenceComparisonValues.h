@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/PerformanceInsightsReferenceComparisonValues">AWS
    * API Reference</a></p>
    */
-  class AWS_DEVOPSGURU_API PerformanceInsightsReferenceComparisonValues
+  class PerformanceInsightsReferenceComparisonValues
   {
   public:
-    PerformanceInsightsReferenceComparisonValues();
-    PerformanceInsightsReferenceComparisonValues(Aws::Utils::Json::JsonView jsonValue);
-    PerformanceInsightsReferenceComparisonValues& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DEVOPSGURU_API PerformanceInsightsReferenceComparisonValues();
+    AWS_DEVOPSGURU_API PerformanceInsightsReferenceComparisonValues(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVOPSGURU_API PerformanceInsightsReferenceComparisonValues& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVOPSGURU_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

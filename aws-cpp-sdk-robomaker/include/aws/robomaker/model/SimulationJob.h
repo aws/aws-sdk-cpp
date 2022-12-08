@@ -42,13 +42,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/SimulationJob">AWS
    * API Reference</a></p>
    */
-  class AWS_ROBOMAKER_API SimulationJob
+  class SimulationJob
   {
   public:
-    SimulationJob();
-    SimulationJob(Aws::Utils::Json::JsonView jsonValue);
-    SimulationJob& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ROBOMAKER_API SimulationJob();
+    AWS_ROBOMAKER_API SimulationJob(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROBOMAKER_API SimulationJob& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROBOMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

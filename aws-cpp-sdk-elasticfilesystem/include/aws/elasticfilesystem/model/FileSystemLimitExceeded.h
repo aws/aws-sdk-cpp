@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/FileSystemLimitExceeded">AWS
    * API Reference</a></p>
    */
-  class AWS_EFS_API FileSystemLimitExceeded
+  class FileSystemLimitExceeded
   {
   public:
-    FileSystemLimitExceeded();
-    FileSystemLimitExceeded(Aws::Utils::Json::JsonView jsonValue);
-    FileSystemLimitExceeded& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EFS_API FileSystemLimitExceeded();
+    AWS_EFS_API FileSystemLimitExceeded(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EFS_API FileSystemLimitExceeded& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EFS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

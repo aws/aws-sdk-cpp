@@ -33,12 +33,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/meteringmarketplace-2016-01-14/BatchMeterUsageResult">AWS
    * API Reference</a></p>
    */
-  class AWS_MARKETPLACEMETERING_API BatchMeterUsageResult
+  class BatchMeterUsageResult
   {
   public:
-    BatchMeterUsageResult();
-    BatchMeterUsageResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    BatchMeterUsageResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MARKETPLACEMETERING_API BatchMeterUsageResult();
+    AWS_MARKETPLACEMETERING_API BatchMeterUsageResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MARKETPLACEMETERING_API BatchMeterUsageResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

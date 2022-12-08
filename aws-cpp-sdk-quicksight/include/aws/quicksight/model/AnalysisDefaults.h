@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/AnalysisDefaults">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API AnalysisDefaults
+  class AnalysisDefaults
   {
   public:
-    AnalysisDefaults();
-    AnalysisDefaults(Aws::Utils::Json::JsonView jsonValue);
-    AnalysisDefaults& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API AnalysisDefaults();
+    AWS_QUICKSIGHT_API AnalysisDefaults(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API AnalysisDefaults& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

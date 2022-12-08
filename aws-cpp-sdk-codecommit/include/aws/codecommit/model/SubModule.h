@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/SubModule">AWS
    * API Reference</a></p>
    */
-  class AWS_CODECOMMIT_API SubModule
+  class SubModule
   {
   public:
-    SubModule();
-    SubModule(Aws::Utils::Json::JsonView jsonValue);
-    SubModule& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODECOMMIT_API SubModule();
+    AWS_CODECOMMIT_API SubModule(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODECOMMIT_API SubModule& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODECOMMIT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

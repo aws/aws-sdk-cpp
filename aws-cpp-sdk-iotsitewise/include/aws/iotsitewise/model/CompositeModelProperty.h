@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/CompositeModelProperty">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTSITEWISE_API CompositeModelProperty
+  class CompositeModelProperty
   {
   public:
-    CompositeModelProperty();
-    CompositeModelProperty(Aws::Utils::Json::JsonView jsonValue);
-    CompositeModelProperty& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTSITEWISE_API CompositeModelProperty();
+    AWS_IOTSITEWISE_API CompositeModelProperty(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API CompositeModelProperty& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

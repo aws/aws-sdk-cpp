@@ -26,12 +26,12 @@ namespace CodeBuild
 {
 namespace Model
 {
-  class AWS_CODEBUILD_API BatchDeleteBuildsResult
+  class BatchDeleteBuildsResult
   {
   public:
-    BatchDeleteBuildsResult();
-    BatchDeleteBuildsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    BatchDeleteBuildsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODEBUILD_API BatchDeleteBuildsResult();
+    AWS_CODEBUILD_API BatchDeleteBuildsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODEBUILD_API BatchDeleteBuildsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

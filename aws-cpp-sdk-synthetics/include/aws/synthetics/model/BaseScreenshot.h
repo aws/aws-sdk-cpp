@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/synthetics-2017-10-11/BaseScreenshot">AWS
    * API Reference</a></p>
    */
-  class AWS_SYNTHETICS_API BaseScreenshot
+  class BaseScreenshot
   {
   public:
-    BaseScreenshot();
-    BaseScreenshot(Aws::Utils::Json::JsonView jsonValue);
-    BaseScreenshot& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SYNTHETICS_API BaseScreenshot();
+    AWS_SYNTHETICS_API BaseScreenshot(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SYNTHETICS_API BaseScreenshot& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SYNTHETICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

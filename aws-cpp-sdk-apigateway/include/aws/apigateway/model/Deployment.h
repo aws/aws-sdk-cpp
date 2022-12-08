@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/Deployment">AWS
    * API Reference</a></p>
    */
-  class AWS_APIGATEWAY_API Deployment
+  class Deployment
   {
   public:
-    Deployment();
-    Deployment(Aws::Utils::Json::JsonView jsonValue);
-    Deployment& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APIGATEWAY_API Deployment();
+    AWS_APIGATEWAY_API Deployment(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APIGATEWAY_API Deployment& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APIGATEWAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

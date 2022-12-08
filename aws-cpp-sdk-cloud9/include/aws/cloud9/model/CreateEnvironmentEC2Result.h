@@ -24,12 +24,12 @@ namespace Cloud9
 {
 namespace Model
 {
-  class AWS_CLOUD9_API CreateEnvironmentEC2Result
+  class CreateEnvironmentEC2Result
   {
   public:
-    CreateEnvironmentEC2Result();
-    CreateEnvironmentEC2Result(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateEnvironmentEC2Result& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CLOUD9_API CreateEnvironmentEC2Result();
+    AWS_CLOUD9_API CreateEnvironmentEC2Result(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CLOUD9_API CreateEnvironmentEC2Result& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

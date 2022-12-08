@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/CellTowers">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTWIRELESS_API CellTowers
+  class CellTowers
   {
   public:
-    CellTowers();
-    CellTowers(Aws::Utils::Json::JsonView jsonValue);
-    CellTowers& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTWIRELESS_API CellTowers();
+    AWS_IOTWIRELESS_API CellTowers(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API CellTowers& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

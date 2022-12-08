@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/RealtimeEndpointInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_MACHINELEARNING_API RealtimeEndpointInfo
+  class RealtimeEndpointInfo
   {
   public:
-    RealtimeEndpointInfo();
-    RealtimeEndpointInfo(Aws::Utils::Json::JsonView jsonValue);
-    RealtimeEndpointInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MACHINELEARNING_API RealtimeEndpointInfo();
+    AWS_MACHINELEARNING_API RealtimeEndpointInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACHINELEARNING_API RealtimeEndpointInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACHINELEARNING_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

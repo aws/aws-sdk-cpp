@@ -27,12 +27,12 @@ namespace Glue
 {
 namespace Model
 {
-  class AWS_GLUE_API GetMLTaskRunResult
+  class GetMLTaskRunResult
   {
   public:
-    GetMLTaskRunResult();
-    GetMLTaskRunResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetMLTaskRunResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GLUE_API GetMLTaskRunResult();
+    AWS_GLUE_API GetMLTaskRunResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GLUE_API GetMLTaskRunResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

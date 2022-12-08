@@ -32,12 +32,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/VerifyDomainDkimResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_SES_API VerifyDomainDkimResult
+  class VerifyDomainDkimResult
   {
   public:
-    VerifyDomainDkimResult();
-    VerifyDomainDkimResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    VerifyDomainDkimResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_SES_API VerifyDomainDkimResult();
+    AWS_SES_API VerifyDomainDkimResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_SES_API VerifyDomainDkimResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

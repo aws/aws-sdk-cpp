@@ -24,12 +24,12 @@ namespace XRay
 {
 namespace Model
 {
-  class AWS_XRAY_API UpdateGroupResult
+  class UpdateGroupResult
   {
   public:
-    UpdateGroupResult();
-    UpdateGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_XRAY_API UpdateGroupResult();
+    AWS_XRAY_API UpdateGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_XRAY_API UpdateGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

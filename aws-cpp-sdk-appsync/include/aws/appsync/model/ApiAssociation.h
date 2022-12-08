@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/ApiAssociation">AWS
    * API Reference</a></p>
    */
-  class AWS_APPSYNC_API ApiAssociation
+  class ApiAssociation
   {
   public:
-    ApiAssociation();
-    ApiAssociation(Aws::Utils::Json::JsonView jsonValue);
-    ApiAssociation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPSYNC_API ApiAssociation();
+    AWS_APPSYNC_API ApiAssociation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPSYNC_API ApiAssociation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPSYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -24,12 +24,12 @@ namespace Macie2
 {
 namespace Model
 {
-  class AWS_MACIE2_API GetAdministratorAccountResult
+  class GetAdministratorAccountResult
   {
   public:
-    GetAdministratorAccountResult();
-    GetAdministratorAccountResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetAdministratorAccountResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MACIE2_API GetAdministratorAccountResult();
+    AWS_MACIE2_API GetAdministratorAccountResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MACIE2_API GetAdministratorAccountResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

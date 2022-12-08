@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DataQualityTargetTable">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API DataQualityTargetTable
+  class DataQualityTargetTable
   {
   public:
-    DataQualityTargetTable();
-    DataQualityTargetTable(Aws::Utils::Json::JsonView jsonValue);
-    DataQualityTargetTable& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API DataQualityTargetTable();
+    AWS_GLUE_API DataQualityTargetTable(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API DataQualityTargetTable& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -26,12 +26,12 @@ namespace AlexaForBusiness
 {
 namespace Model
 {
-  class AWS_ALEXAFORBUSINESS_API ListSkillsStoreCategoriesResult
+  class ListSkillsStoreCategoriesResult
   {
   public:
-    ListSkillsStoreCategoriesResult();
-    ListSkillsStoreCategoriesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListSkillsStoreCategoriesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ALEXAFORBUSINESS_API ListSkillsStoreCategoriesResult();
+    AWS_ALEXAFORBUSINESS_API ListSkillsStoreCategoriesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ALEXAFORBUSINESS_API ListSkillsStoreCategoriesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

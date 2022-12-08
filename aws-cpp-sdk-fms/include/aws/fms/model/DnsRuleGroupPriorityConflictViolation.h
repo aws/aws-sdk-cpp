@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/DnsRuleGroupPriorityConflictViolation">AWS
    * API Reference</a></p>
    */
-  class AWS_FMS_API DnsRuleGroupPriorityConflictViolation
+  class DnsRuleGroupPriorityConflictViolation
   {
   public:
-    DnsRuleGroupPriorityConflictViolation();
-    DnsRuleGroupPriorityConflictViolation(Aws::Utils::Json::JsonView jsonValue);
-    DnsRuleGroupPriorityConflictViolation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FMS_API DnsRuleGroupPriorityConflictViolation();
+    AWS_FMS_API DnsRuleGroupPriorityConflictViolation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FMS_API DnsRuleGroupPriorityConflictViolation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

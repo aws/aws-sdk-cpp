@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/migrationhuborchestrator-2021-08-28/StepOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_MIGRATIONHUBORCHESTRATOR_API StepOutput
+  class StepOutput
   {
   public:
-    StepOutput();
-    StepOutput(Aws::Utils::Json::JsonView jsonValue);
-    StepOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MIGRATIONHUBORCHESTRATOR_API StepOutput();
+    AWS_MIGRATIONHUBORCHESTRATOR_API StepOutput(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MIGRATIONHUBORCHESTRATOR_API StepOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MIGRATIONHUBORCHESTRATOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

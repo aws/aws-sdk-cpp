@@ -37,13 +37,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/ExtendedS3DestinationDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_FIREHOSE_API ExtendedS3DestinationDescription
+  class ExtendedS3DestinationDescription
   {
   public:
-    ExtendedS3DestinationDescription();
-    ExtendedS3DestinationDescription(Aws::Utils::Json::JsonView jsonValue);
-    ExtendedS3DestinationDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FIREHOSE_API ExtendedS3DestinationDescription();
+    AWS_FIREHOSE_API ExtendedS3DestinationDescription(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FIREHOSE_API ExtendedS3DestinationDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FIREHOSE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ConfigRuleComplianceSummaryFilters">AWS
    * API Reference</a></p>
    */
-  class AWS_CONFIGSERVICE_API ConfigRuleComplianceSummaryFilters
+  class ConfigRuleComplianceSummaryFilters
   {
   public:
-    ConfigRuleComplianceSummaryFilters();
-    ConfigRuleComplianceSummaryFilters(Aws::Utils::Json::JsonView jsonValue);
-    ConfigRuleComplianceSummaryFilters& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONFIGSERVICE_API ConfigRuleComplianceSummaryFilters();
+    AWS_CONFIGSERVICE_API ConfigRuleComplianceSummaryFilters(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API ConfigRuleComplianceSummaryFilters& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

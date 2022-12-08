@@ -24,12 +24,12 @@ namespace AppConfigData
 {
 namespace Model
 {
-  class AWS_APPCONFIGDATA_API StartConfigurationSessionResult
+  class StartConfigurationSessionResult
   {
   public:
-    StartConfigurationSessionResult();
-    StartConfigurationSessionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    StartConfigurationSessionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPCONFIGDATA_API StartConfigurationSessionResult();
+    AWS_APPCONFIGDATA_API StartConfigurationSessionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPCONFIGDATA_API StartConfigurationSessionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

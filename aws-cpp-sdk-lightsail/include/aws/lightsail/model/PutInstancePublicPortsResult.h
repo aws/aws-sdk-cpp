@@ -24,12 +24,12 @@ namespace Lightsail
 {
 namespace Model
 {
-  class AWS_LIGHTSAIL_API PutInstancePublicPortsResult
+  class PutInstancePublicPortsResult
   {
   public:
-    PutInstancePublicPortsResult();
-    PutInstancePublicPortsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PutInstancePublicPortsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LIGHTSAIL_API PutInstancePublicPortsResult();
+    AWS_LIGHTSAIL_API PutInstancePublicPortsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LIGHTSAIL_API PutInstancePublicPortsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

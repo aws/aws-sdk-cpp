@@ -22,10 +22,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DissociatePackageRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_OPENSEARCHSERVICE_API DissociatePackageRequest : public OpenSearchServiceRequest
+  class DissociatePackageRequest : public OpenSearchServiceRequest
   {
   public:
-    DissociatePackageRequest();
+    AWS_OPENSEARCHSERVICE_API DissociatePackageRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,7 +33,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DissociatePackage"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_OPENSEARCHSERVICE_API Aws::String SerializePayload() const override;
 
 
     /**

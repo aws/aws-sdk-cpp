@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/EvaluationContext">AWS
    * API Reference</a></p>
    */
-  class AWS_CONFIGSERVICE_API EvaluationContext
+  class EvaluationContext
   {
   public:
-    EvaluationContext();
-    EvaluationContext(Aws::Utils::Json::JsonView jsonValue);
-    EvaluationContext& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONFIGSERVICE_API EvaluationContext();
+    AWS_CONFIGSERVICE_API EvaluationContext(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API EvaluationContext& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

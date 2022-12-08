@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/ExpenseField">AWS
    * API Reference</a></p>
    */
-  class AWS_TEXTRACT_API ExpenseField
+  class ExpenseField
   {
   public:
-    ExpenseField();
-    ExpenseField(Aws::Utils::Json::JsonView jsonValue);
-    ExpenseField& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TEXTRACT_API ExpenseField();
+    AWS_TEXTRACT_API ExpenseField(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TEXTRACT_API ExpenseField& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TEXTRACT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

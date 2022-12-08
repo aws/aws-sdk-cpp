@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/CalculationStatistics">AWS
    * API Reference</a></p>
    */
-  class AWS_ATHENA_API CalculationStatistics
+  class CalculationStatistics
   {
   public:
-    CalculationStatistics();
-    CalculationStatistics(Aws::Utils::Json::JsonView jsonValue);
-    CalculationStatistics& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ATHENA_API CalculationStatistics();
+    AWS_ATHENA_API CalculationStatistics(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ATHENA_API CalculationStatistics& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ATHENA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/PlaybackKeyPairSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_IVS_API PlaybackKeyPairSummary
+  class PlaybackKeyPairSummary
   {
   public:
-    PlaybackKeyPairSummary();
-    PlaybackKeyPairSummary(Aws::Utils::Json::JsonView jsonValue);
-    PlaybackKeyPairSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IVS_API PlaybackKeyPairSummary();
+    AWS_IVS_API PlaybackKeyPairSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IVS_API PlaybackKeyPairSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IVS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

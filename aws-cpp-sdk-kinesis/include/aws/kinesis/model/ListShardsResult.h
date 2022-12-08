@@ -26,12 +26,12 @@ namespace Kinesis
 {
 namespace Model
 {
-  class AWS_KINESIS_API ListShardsResult
+  class ListShardsResult
   {
   public:
-    ListShardsResult();
-    ListShardsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListShardsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KINESIS_API ListShardsResult();
+    AWS_KINESIS_API ListShardsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KINESIS_API ListShardsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

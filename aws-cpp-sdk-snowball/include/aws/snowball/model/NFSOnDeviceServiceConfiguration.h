@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/NFSOnDeviceServiceConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_SNOWBALL_API NFSOnDeviceServiceConfiguration
+  class NFSOnDeviceServiceConfiguration
   {
   public:
-    NFSOnDeviceServiceConfiguration();
-    NFSOnDeviceServiceConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    NFSOnDeviceServiceConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SNOWBALL_API NFSOnDeviceServiceConfiguration();
+    AWS_SNOWBALL_API NFSOnDeviceServiceConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SNOWBALL_API NFSOnDeviceServiceConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SNOWBALL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

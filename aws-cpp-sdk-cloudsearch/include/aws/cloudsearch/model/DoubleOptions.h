@@ -30,15 +30,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DoubleOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDSEARCH_API DoubleOptions
+  class DoubleOptions
   {
   public:
-    DoubleOptions();
-    DoubleOptions(const Aws::Utils::Xml::XmlNode& xmlNode);
-    DoubleOptions& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDSEARCH_API DoubleOptions();
+    AWS_CLOUDSEARCH_API DoubleOptions(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDSEARCH_API DoubleOptions& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_CLOUDSEARCH_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_CLOUDSEARCH_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**

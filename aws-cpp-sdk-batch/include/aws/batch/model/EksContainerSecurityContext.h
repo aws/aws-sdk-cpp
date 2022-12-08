@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/EksContainerSecurityContext">AWS
    * API Reference</a></p>
    */
-  class AWS_BATCH_API EksContainerSecurityContext
+  class EksContainerSecurityContext
   {
   public:
-    EksContainerSecurityContext();
-    EksContainerSecurityContext(Aws::Utils::Json::JsonView jsonValue);
-    EksContainerSecurityContext& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BATCH_API EksContainerSecurityContext();
+    AWS_BATCH_API EksContainerSecurityContext(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BATCH_API EksContainerSecurityContext& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BATCH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

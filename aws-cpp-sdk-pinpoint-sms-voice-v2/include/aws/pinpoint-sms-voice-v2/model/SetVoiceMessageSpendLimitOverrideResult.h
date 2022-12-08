@@ -22,12 +22,12 @@ namespace PinpointSMSVoiceV2
 {
 namespace Model
 {
-  class AWS_PINPOINTSMSVOICEV2_API SetVoiceMessageSpendLimitOverrideResult
+  class SetVoiceMessageSpendLimitOverrideResult
   {
   public:
-    SetVoiceMessageSpendLimitOverrideResult();
-    SetVoiceMessageSpendLimitOverrideResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    SetVoiceMessageSpendLimitOverrideResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PINPOINTSMSVOICEV2_API SetVoiceMessageSpendLimitOverrideResult();
+    AWS_PINPOINTSMSVOICEV2_API SetVoiceMessageSpendLimitOverrideResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PINPOINTSMSVOICEV2_API SetVoiceMessageSpendLimitOverrideResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

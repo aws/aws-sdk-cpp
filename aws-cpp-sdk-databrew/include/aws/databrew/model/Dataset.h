@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/Dataset">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUEDATABREW_API Dataset
+  class Dataset
   {
   public:
-    Dataset();
-    Dataset(Aws::Utils::Json::JsonView jsonValue);
-    Dataset& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUEDATABREW_API Dataset();
+    AWS_GLUEDATABREW_API Dataset(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUEDATABREW_API Dataset& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUEDATABREW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

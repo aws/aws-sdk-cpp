@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/RedshiftDestinationUpdate">AWS
    * API Reference</a></p>
    */
-  class AWS_FIREHOSE_API RedshiftDestinationUpdate
+  class RedshiftDestinationUpdate
   {
   public:
-    RedshiftDestinationUpdate();
-    RedshiftDestinationUpdate(Aws::Utils::Json::JsonView jsonValue);
-    RedshiftDestinationUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FIREHOSE_API RedshiftDestinationUpdate();
+    AWS_FIREHOSE_API RedshiftDestinationUpdate(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FIREHOSE_API RedshiftDestinationUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FIREHOSE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

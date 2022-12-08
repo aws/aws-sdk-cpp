@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DocumentClass">AWS
    * API Reference</a></p>
    */
-  class AWS_COMPREHEND_API DocumentClass
+  class DocumentClass
   {
   public:
-    DocumentClass();
-    DocumentClass(Aws::Utils::Json::JsonView jsonValue);
-    DocumentClass& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COMPREHEND_API DocumentClass();
+    AWS_COMPREHEND_API DocumentClass(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHEND_API DocumentClass& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHEND_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

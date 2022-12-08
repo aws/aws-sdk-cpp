@@ -26,12 +26,12 @@ namespace ServiceQuotas
 {
 namespace Model
 {
-  class AWS_SERVICEQUOTAS_API ListRequestedServiceQuotaChangeHistoryResult
+  class ListRequestedServiceQuotaChangeHistoryResult
   {
   public:
-    ListRequestedServiceQuotaChangeHistoryResult();
-    ListRequestedServiceQuotaChangeHistoryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListRequestedServiceQuotaChangeHistoryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SERVICEQUOTAS_API ListRequestedServiceQuotaChangeHistoryResult();
+    AWS_SERVICEQUOTAS_API ListRequestedServiceQuotaChangeHistoryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SERVICEQUOTAS_API ListRequestedServiceQuotaChangeHistoryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

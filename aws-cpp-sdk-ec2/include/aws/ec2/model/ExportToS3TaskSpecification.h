@@ -30,15 +30,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ExportToS3TaskSpecification">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API ExportToS3TaskSpecification
+  class ExportToS3TaskSpecification
   {
   public:
-    ExportToS3TaskSpecification();
-    ExportToS3TaskSpecification(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ExportToS3TaskSpecification& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API ExportToS3TaskSpecification();
+    AWS_EC2_API ExportToS3TaskSpecification(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API ExportToS3TaskSpecification& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**

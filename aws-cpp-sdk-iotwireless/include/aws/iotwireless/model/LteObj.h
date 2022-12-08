@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/LteObj">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTWIRELESS_API LteObj
+  class LteObj
   {
   public:
-    LteObj();
-    LteObj(Aws::Utils::Json::JsonView jsonValue);
-    LteObj& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTWIRELESS_API LteObj();
+    AWS_IOTWIRELESS_API LteObj(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API LteObj& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

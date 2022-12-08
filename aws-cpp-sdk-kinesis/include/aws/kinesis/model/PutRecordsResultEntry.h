@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/PutRecordsResultEntry">AWS
    * API Reference</a></p>
    */
-  class AWS_KINESIS_API PutRecordsResultEntry
+  class PutRecordsResultEntry
   {
   public:
-    PutRecordsResultEntry();
-    PutRecordsResultEntry(Aws::Utils::Json::JsonView jsonValue);
-    PutRecordsResultEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KINESIS_API PutRecordsResultEntry();
+    AWS_KINESIS_API PutRecordsResultEntry(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESIS_API PutRecordsResultEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESIS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

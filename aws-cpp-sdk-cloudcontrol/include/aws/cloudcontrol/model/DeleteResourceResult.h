@@ -24,12 +24,12 @@ namespace CloudControlApi
 {
 namespace Model
 {
-  class AWS_CLOUDCONTROLAPI_API DeleteResourceResult
+  class DeleteResourceResult
   {
   public:
-    DeleteResourceResult();
-    DeleteResourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteResourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CLOUDCONTROLAPI_API DeleteResourceResult();
+    AWS_CLOUDCONTROLAPI_API DeleteResourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CLOUDCONTROLAPI_API DeleteResourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

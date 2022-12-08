@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-geospatial-2020-05-27/TimeRangeFilterInput">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKERGEOSPATIAL_API TimeRangeFilterInput
+  class TimeRangeFilterInput
   {
   public:
-    TimeRangeFilterInput();
-    TimeRangeFilterInput(Aws::Utils::Json::JsonView jsonValue);
-    TimeRangeFilterInput& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKERGEOSPATIAL_API TimeRangeFilterInput();
+    AWS_SAGEMAKERGEOSPATIAL_API TimeRangeFilterInput(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKERGEOSPATIAL_API TimeRangeFilterInput& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKERGEOSPATIAL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

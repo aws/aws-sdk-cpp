@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/InsightVisual">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API InsightVisual
+  class InsightVisual
   {
   public:
-    InsightVisual();
-    InsightVisual(Aws::Utils::Json::JsonView jsonValue);
-    InsightVisual& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API InsightVisual();
+    AWS_QUICKSIGHT_API InsightVisual(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API InsightVisual& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -26,12 +26,12 @@ namespace WorkMail
 {
 namespace Model
 {
-  class AWS_WORKMAIL_API GetAccessControlEffectResult
+  class GetAccessControlEffectResult
   {
   public:
-    GetAccessControlEffectResult();
-    GetAccessControlEffectResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetAccessControlEffectResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WORKMAIL_API GetAccessControlEffectResult();
+    AWS_WORKMAIL_API GetAccessControlEffectResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WORKMAIL_API GetAccessControlEffectResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

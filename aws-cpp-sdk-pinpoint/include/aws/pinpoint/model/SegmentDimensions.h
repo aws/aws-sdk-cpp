@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/SegmentDimensions">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API SegmentDimensions
+  class SegmentDimensions
   {
   public:
-    SegmentDimensions();
-    SegmentDimensions(Aws::Utils::Json::JsonView jsonValue);
-    SegmentDimensions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API SegmentDimensions();
+    AWS_PINPOINT_API SegmentDimensions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API SegmentDimensions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/ProtectiveEquipmentPerson">AWS
    * API Reference</a></p>
    */
-  class AWS_REKOGNITION_API ProtectiveEquipmentPerson
+  class ProtectiveEquipmentPerson
   {
   public:
-    ProtectiveEquipmentPerson();
-    ProtectiveEquipmentPerson(Aws::Utils::Json::JsonView jsonValue);
-    ProtectiveEquipmentPerson& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_REKOGNITION_API ProtectiveEquipmentPerson();
+    AWS_REKOGNITION_API ProtectiveEquipmentPerson(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API ProtectiveEquipmentPerson& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/ApplicationVersionSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_MAINFRAMEMODERNIZATION_API ApplicationVersionSummary
+  class ApplicationVersionSummary
   {
   public:
-    ApplicationVersionSummary();
-    ApplicationVersionSummary(Aws::Utils::Json::JsonView jsonValue);
-    ApplicationVersionSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MAINFRAMEMODERNIZATION_API ApplicationVersionSummary();
+    AWS_MAINFRAMEMODERNIZATION_API ApplicationVersionSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MAINFRAMEMODERNIZATION_API ApplicationVersionSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MAINFRAMEMODERNIZATION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

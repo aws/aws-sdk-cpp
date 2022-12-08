@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/SourceConnectorProperties">AWS
    * API Reference</a></p>
    */
-  class AWS_CUSTOMERPROFILES_API SourceConnectorProperties
+  class SourceConnectorProperties
   {
   public:
-    SourceConnectorProperties();
-    SourceConnectorProperties(Aws::Utils::Json::JsonView jsonValue);
-    SourceConnectorProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CUSTOMERPROFILES_API SourceConnectorProperties();
+    AWS_CUSTOMERPROFILES_API SourceConnectorProperties(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CUSTOMERPROFILES_API SourceConnectorProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CUSTOMERPROFILES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

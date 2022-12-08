@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/MetricDatum">AWS API
    * Reference</a></p>
    */
-  class AWS_IOT_API MetricDatum
+  class MetricDatum
   {
   public:
-    MetricDatum();
-    MetricDatum(Aws::Utils::Json::JsonView jsonValue);
-    MetricDatum& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API MetricDatum();
+    AWS_IOT_API MetricDatum(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API MetricDatum& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

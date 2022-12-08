@@ -24,12 +24,12 @@ namespace FMS
 {
 namespace Model
 {
-  class AWS_FMS_API GetNotificationChannelResult
+  class GetNotificationChannelResult
   {
   public:
-    GetNotificationChannelResult();
-    GetNotificationChannelResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetNotificationChannelResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_FMS_API GetNotificationChannelResult();
+    AWS_FMS_API GetNotificationChannelResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_FMS_API GetNotificationChannelResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

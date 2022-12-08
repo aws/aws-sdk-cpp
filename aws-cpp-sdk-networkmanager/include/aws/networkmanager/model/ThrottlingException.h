@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ThrottlingException">AWS
    * API Reference</a></p>
    */
-  class AWS_NETWORKMANAGER_API ThrottlingException
+  class ThrottlingException
   {
   public:
-    ThrottlingException();
-    ThrottlingException(Aws::Utils::Json::JsonView jsonValue);
-    ThrottlingException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_NETWORKMANAGER_API ThrottlingException();
+    AWS_NETWORKMANAGER_API ThrottlingException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKMANAGER_API ThrottlingException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

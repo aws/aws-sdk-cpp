@@ -26,12 +26,12 @@ namespace IVS
 {
 namespace Model
 {
-  class AWS_IVS_API ListStreamsResult
+  class ListStreamsResult
   {
   public:
-    ListStreamsResult();
-    ListStreamsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListStreamsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IVS_API ListStreamsResult();
+    AWS_IVS_API ListStreamsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IVS_API ListStreamsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -21,13 +21,13 @@ namespace ApplicationDiscoveryService
 namespace Model
 {
 
-  class AWS_APPLICATIONDISCOVERYSERVICE_API CustomerAgentlessCollectorInfo
+  class CustomerAgentlessCollectorInfo
   {
   public:
-    CustomerAgentlessCollectorInfo();
-    CustomerAgentlessCollectorInfo(Aws::Utils::Json::JsonView jsonValue);
-    CustomerAgentlessCollectorInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPLICATIONDISCOVERYSERVICE_API CustomerAgentlessCollectorInfo();
+    AWS_APPLICATIONDISCOVERYSERVICE_API CustomerAgentlessCollectorInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPLICATIONDISCOVERYSERVICE_API CustomerAgentlessCollectorInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPLICATIONDISCOVERYSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

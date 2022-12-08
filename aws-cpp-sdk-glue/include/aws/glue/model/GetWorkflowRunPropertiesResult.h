@@ -25,12 +25,12 @@ namespace Glue
 {
 namespace Model
 {
-  class AWS_GLUE_API GetWorkflowRunPropertiesResult
+  class GetWorkflowRunPropertiesResult
   {
   public:
-    GetWorkflowRunPropertiesResult();
-    GetWorkflowRunPropertiesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetWorkflowRunPropertiesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GLUE_API GetWorkflowRunPropertiesResult();
+    AWS_GLUE_API GetWorkflowRunPropertiesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GLUE_API GetWorkflowRunPropertiesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/AdditionalAuthenticationProvider">AWS
    * API Reference</a></p>
    */
-  class AWS_APPSYNC_API AdditionalAuthenticationProvider
+  class AdditionalAuthenticationProvider
   {
   public:
-    AdditionalAuthenticationProvider();
-    AdditionalAuthenticationProvider(Aws::Utils::Json::JsonView jsonValue);
-    AdditionalAuthenticationProvider& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPSYNC_API AdditionalAuthenticationProvider();
+    AWS_APPSYNC_API AdditionalAuthenticationProvider(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPSYNC_API AdditionalAuthenticationProvider& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPSYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

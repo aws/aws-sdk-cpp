@@ -23,13 +23,13 @@ namespace ChimeSDKVoice
 namespace Model
 {
 
-  class AWS_CHIMESDKVOICE_API Credential
+  class Credential
   {
   public:
-    Credential();
-    Credential(Aws::Utils::Json::JsonView jsonValue);
-    Credential& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIMESDKVOICE_API Credential();
+    AWS_CHIMESDKVOICE_API Credential(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKVOICE_API Credential& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKVOICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

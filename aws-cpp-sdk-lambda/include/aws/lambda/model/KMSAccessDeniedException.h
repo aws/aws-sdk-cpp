@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/KMSAccessDeniedException">AWS
    * API Reference</a></p>
    */
-  class AWS_LAMBDA_API KMSAccessDeniedException
+  class KMSAccessDeniedException
   {
   public:
-    KMSAccessDeniedException();
-    KMSAccessDeniedException(Aws::Utils::Json::JsonView jsonValue);
-    KMSAccessDeniedException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LAMBDA_API KMSAccessDeniedException();
+    AWS_LAMBDA_API KMSAccessDeniedException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAMBDA_API KMSAccessDeniedException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAMBDA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

@@ -24,12 +24,12 @@ namespace ManagedBlockchain
 {
 namespace Model
 {
-  class AWS_MANAGEDBLOCKCHAIN_API GetAccessorResult
+  class GetAccessorResult
   {
   public:
-    GetAccessorResult();
-    GetAccessorResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetAccessorResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MANAGEDBLOCKCHAIN_API GetAccessorResult();
+    AWS_MANAGEDBLOCKCHAIN_API GetAccessorResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MANAGEDBLOCKCHAIN_API GetAccessorResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

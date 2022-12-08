@@ -26,12 +26,12 @@ namespace ForecastService
 {
 namespace Model
 {
-  class AWS_FORECASTSERVICE_API ListMonitorEvaluationsResult
+  class ListMonitorEvaluationsResult
   {
   public:
-    ListMonitorEvaluationsResult();
-    ListMonitorEvaluationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListMonitorEvaluationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_FORECASTSERVICE_API ListMonitorEvaluationsResult();
+    AWS_FORECASTSERVICE_API ListMonitorEvaluationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_FORECASTSERVICE_API ListMonitorEvaluationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/SlotValueSelectionSetting">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELSV2_API SlotValueSelectionSetting
+  class SlotValueSelectionSetting
   {
   public:
-    SlotValueSelectionSetting();
-    SlotValueSelectionSetting(Aws::Utils::Json::JsonView jsonValue);
-    SlotValueSelectionSetting& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELSV2_API SlotValueSelectionSetting();
+    AWS_LEXMODELSV2_API SlotValueSelectionSetting(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API SlotValueSelectionSetting& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

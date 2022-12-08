@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/RegisteredUserEmbeddingExperienceConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API RegisteredUserEmbeddingExperienceConfiguration
+  class RegisteredUserEmbeddingExperienceConfiguration
   {
   public:
-    RegisteredUserEmbeddingExperienceConfiguration();
-    RegisteredUserEmbeddingExperienceConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    RegisteredUserEmbeddingExperienceConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API RegisteredUserEmbeddingExperienceConfiguration();
+    AWS_QUICKSIGHT_API RegisteredUserEmbeddingExperienceConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API RegisteredUserEmbeddingExperienceConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

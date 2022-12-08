@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/ContainerImage">AWS
    * API Reference</a></p>
    */
-  class AWS_LIGHTSAIL_API ContainerImage
+  class ContainerImage
   {
   public:
-    ContainerImage();
-    ContainerImage(Aws::Utils::Json::JsonView jsonValue);
-    ContainerImage& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LIGHTSAIL_API ContainerImage();
+    AWS_LIGHTSAIL_API ContainerImage(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API ContainerImage& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

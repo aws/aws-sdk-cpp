@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/MicrosoftSQLServerSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_DATABASEMIGRATIONSERVICE_API MicrosoftSQLServerSettings
+  class MicrosoftSQLServerSettings
   {
   public:
-    MicrosoftSQLServerSettings();
-    MicrosoftSQLServerSettings(Aws::Utils::Json::JsonView jsonValue);
-    MicrosoftSQLServerSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DATABASEMIGRATIONSERVICE_API MicrosoftSQLServerSettings();
+    AWS_DATABASEMIGRATIONSERVICE_API MicrosoftSQLServerSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATABASEMIGRATIONSERVICE_API MicrosoftSQLServerSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATABASEMIGRATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

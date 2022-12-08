@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/resource-explorer-2-2022-07-28/SearchFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_RESOURCEEXPLORER2_API SearchFilter
+  class SearchFilter
   {
   public:
-    SearchFilter();
-    SearchFilter(Aws::Utils::Json::JsonView jsonValue);
-    SearchFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_RESOURCEEXPLORER2_API SearchFilter();
+    AWS_RESOURCEEXPLORER2_API SearchFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RESOURCEEXPLORER2_API SearchFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RESOURCEEXPLORER2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

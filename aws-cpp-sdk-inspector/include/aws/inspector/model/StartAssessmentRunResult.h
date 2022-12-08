@@ -24,12 +24,12 @@ namespace Inspector
 {
 namespace Model
 {
-  class AWS_INSPECTOR_API StartAssessmentRunResult
+  class StartAssessmentRunResult
   {
   public:
-    StartAssessmentRunResult();
-    StartAssessmentRunResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    StartAssessmentRunResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_INSPECTOR_API StartAssessmentRunResult();
+    AWS_INSPECTOR_API StartAssessmentRunResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_INSPECTOR_API StartAssessmentRunResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

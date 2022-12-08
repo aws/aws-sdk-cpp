@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/InventoryDeletionSummaryItem">AWS
    * API Reference</a></p>
    */
-  class AWS_SSM_API InventoryDeletionSummaryItem
+  class InventoryDeletionSummaryItem
   {
   public:
-    InventoryDeletionSummaryItem();
-    InventoryDeletionSummaryItem(Aws::Utils::Json::JsonView jsonValue);
-    InventoryDeletionSummaryItem& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSM_API InventoryDeletionSummaryItem();
+    AWS_SSM_API InventoryDeletionSummaryItem(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API InventoryDeletionSummaryItem& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -35,12 +35,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetIdentityDkimAttributesResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_SES_API GetIdentityDkimAttributesResult
+  class GetIdentityDkimAttributesResult
   {
   public:
-    GetIdentityDkimAttributesResult();
-    GetIdentityDkimAttributesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    GetIdentityDkimAttributesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_SES_API GetIdentityDkimAttributesResult();
+    AWS_SES_API GetIdentityDkimAttributesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_SES_API GetIdentityDkimAttributesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

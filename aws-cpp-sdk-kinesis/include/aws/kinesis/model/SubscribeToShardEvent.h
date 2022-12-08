@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/SubscribeToShardEvent">AWS
    * API Reference</a></p>
    */
-  class AWS_KINESIS_API SubscribeToShardEvent
+  class SubscribeToShardEvent
   {
   public:
-    SubscribeToShardEvent();
-    SubscribeToShardEvent(Aws::Utils::Json::JsonView jsonValue);
-    SubscribeToShardEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KINESIS_API SubscribeToShardEvent();
+    AWS_KINESIS_API SubscribeToShardEvent(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESIS_API SubscribeToShardEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESIS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

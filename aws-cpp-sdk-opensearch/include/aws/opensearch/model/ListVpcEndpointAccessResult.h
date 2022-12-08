@@ -26,12 +26,12 @@ namespace OpenSearchService
 {
 namespace Model
 {
-  class AWS_OPENSEARCHSERVICE_API ListVpcEndpointAccessResult
+  class ListVpcEndpointAccessResult
   {
   public:
-    ListVpcEndpointAccessResult();
-    ListVpcEndpointAccessResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListVpcEndpointAccessResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OPENSEARCHSERVICE_API ListVpcEndpointAccessResult();
+    AWS_OPENSEARCHSERVICE_API ListVpcEndpointAccessResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OPENSEARCHSERVICE_API ListVpcEndpointAccessResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

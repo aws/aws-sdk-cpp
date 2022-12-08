@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/OpenZFSVolumeConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_FSX_API OpenZFSVolumeConfiguration
+  class OpenZFSVolumeConfiguration
   {
   public:
-    OpenZFSVolumeConfiguration();
-    OpenZFSVolumeConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    OpenZFSVolumeConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FSX_API OpenZFSVolumeConfiguration();
+    AWS_FSX_API OpenZFSVolumeConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API OpenZFSVolumeConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

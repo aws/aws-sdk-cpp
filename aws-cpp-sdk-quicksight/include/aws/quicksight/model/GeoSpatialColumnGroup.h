@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/GeoSpatialColumnGroup">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API GeoSpatialColumnGroup
+  class GeoSpatialColumnGroup
   {
   public:
-    GeoSpatialColumnGroup();
-    GeoSpatialColumnGroup(Aws::Utils::Json::JsonView jsonValue);
-    GeoSpatialColumnGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API GeoSpatialColumnGroup();
+    AWS_QUICKSIGHT_API GeoSpatialColumnGroup(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API GeoSpatialColumnGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

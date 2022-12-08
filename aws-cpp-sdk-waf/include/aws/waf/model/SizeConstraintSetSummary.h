@@ -37,13 +37,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/SizeConstraintSetSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_WAF_API SizeConstraintSetSummary
+  class SizeConstraintSetSummary
   {
   public:
-    SizeConstraintSetSummary();
-    SizeConstraintSetSummary(Aws::Utils::Json::JsonView jsonValue);
-    SizeConstraintSetSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WAF_API SizeConstraintSetSummary();
+    AWS_WAF_API SizeConstraintSetSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAF_API SizeConstraintSetSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAF_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

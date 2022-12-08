@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/NetworkTelemetry">AWS
    * API Reference</a></p>
    */
-  class AWS_NETWORKMANAGER_API NetworkTelemetry
+  class NetworkTelemetry
   {
   public:
-    NetworkTelemetry();
-    NetworkTelemetry(Aws::Utils::Json::JsonView jsonValue);
-    NetworkTelemetry& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_NETWORKMANAGER_API NetworkTelemetry();
+    AWS_NETWORKMANAGER_API NetworkTelemetry(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKMANAGER_API NetworkTelemetry& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -24,12 +24,12 @@ namespace WAFV2
 {
 namespace Model
 {
-  class AWS_WAFV2_API GetRateBasedStatementManagedKeysResult
+  class GetRateBasedStatementManagedKeysResult
   {
   public:
-    GetRateBasedStatementManagedKeysResult();
-    GetRateBasedStatementManagedKeysResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetRateBasedStatementManagedKeysResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WAFV2_API GetRateBasedStatementManagedKeysResult();
+    AWS_WAFV2_API GetRateBasedStatementManagedKeysResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WAFV2_API GetRateBasedStatementManagedKeysResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/Thing">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTTHINGSGRAPH_API Thing
+  class Thing
   {
   public:
-    Thing();
-    Thing(Aws::Utils::Json::JsonView jsonValue);
-    Thing& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTTHINGSGRAPH_API Thing();
+    AWS_IOTTHINGSGRAPH_API Thing(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTTHINGSGRAPH_API Thing& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTTHINGSGRAPH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

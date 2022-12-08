@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/Relationship">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTTWINMAKER_API Relationship
+  class Relationship
   {
   public:
-    Relationship();
-    Relationship(Aws::Utils::Json::JsonView jsonValue);
-    Relationship& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTTWINMAKER_API Relationship();
+    AWS_IOTTWINMAKER_API Relationship(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTTWINMAKER_API Relationship& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTTWINMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

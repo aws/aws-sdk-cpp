@@ -47,13 +47,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/AttendeeCapabilities">AWS
    * API Reference</a></p>
    */
-  class AWS_CHIMESDKMEETINGS_API AttendeeCapabilities
+  class AttendeeCapabilities
   {
   public:
-    AttendeeCapabilities();
-    AttendeeCapabilities(Aws::Utils::Json::JsonView jsonValue);
-    AttendeeCapabilities& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIMESDKMEETINGS_API AttendeeCapabilities();
+    AWS_CHIMESDKMEETINGS_API AttendeeCapabilities(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKMEETINGS_API AttendeeCapabilities& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKMEETINGS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

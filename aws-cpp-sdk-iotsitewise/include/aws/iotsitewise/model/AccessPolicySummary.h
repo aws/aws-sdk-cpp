@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/AccessPolicySummary">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTSITEWISE_API AccessPolicySummary
+  class AccessPolicySummary
   {
   public:
-    AccessPolicySummary();
-    AccessPolicySummary(Aws::Utils::Json::JsonView jsonValue);
-    AccessPolicySummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTSITEWISE_API AccessPolicySummary();
+    AWS_IOTSITEWISE_API AccessPolicySummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API AccessPolicySummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/VulnerablePackage">AWS
    * API Reference</a></p>
    */
-  class AWS_ECR_API VulnerablePackage
+  class VulnerablePackage
   {
   public:
-    VulnerablePackage();
-    VulnerablePackage(Aws::Utils::Json::JsonView jsonValue);
-    VulnerablePackage& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ECR_API VulnerablePackage();
+    AWS_ECR_API VulnerablePackage(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECR_API VulnerablePackage& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

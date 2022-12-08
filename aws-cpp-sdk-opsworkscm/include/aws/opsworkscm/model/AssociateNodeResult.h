@@ -24,12 +24,12 @@ namespace OpsWorksCM
 {
 namespace Model
 {
-  class AWS_OPSWORKSCM_API AssociateNodeResult
+  class AssociateNodeResult
   {
   public:
-    AssociateNodeResult();
-    AssociateNodeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AssociateNodeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OPSWORKSCM_API AssociateNodeResult();
+    AWS_OPSWORKSCM_API AssociateNodeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OPSWORKSCM_API AssociateNodeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

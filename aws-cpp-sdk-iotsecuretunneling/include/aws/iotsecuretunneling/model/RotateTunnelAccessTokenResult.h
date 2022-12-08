@@ -24,12 +24,12 @@ namespace IoTSecureTunneling
 {
 namespace Model
 {
-  class AWS_IOTSECURETUNNELING_API RotateTunnelAccessTokenResult
+  class RotateTunnelAccessTokenResult
   {
   public:
-    RotateTunnelAccessTokenResult();
-    RotateTunnelAccessTokenResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    RotateTunnelAccessTokenResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOTSECURETUNNELING_API RotateTunnelAccessTokenResult();
+    AWS_IOTSECURETUNNELING_API RotateTunnelAccessTokenResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOTSECURETUNNELING_API RotateTunnelAccessTokenResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

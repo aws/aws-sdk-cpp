@@ -25,12 +25,12 @@ namespace kendra
 {
 namespace Model
 {
-  class AWS_KENDRA_API BatchDeleteDocumentResult
+  class BatchDeleteDocumentResult
   {
   public:
-    BatchDeleteDocumentResult();
-    BatchDeleteDocumentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    BatchDeleteDocumentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KENDRA_API BatchDeleteDocumentResult();
+    AWS_KENDRA_API BatchDeleteDocumentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KENDRA_API BatchDeleteDocumentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

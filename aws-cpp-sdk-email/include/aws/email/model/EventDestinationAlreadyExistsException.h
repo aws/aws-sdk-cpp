@@ -29,15 +29,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/EventDestinationAlreadyExistsException">AWS
    * API Reference</a></p>
    */
-  class AWS_SES_API EventDestinationAlreadyExistsException
+  class EventDestinationAlreadyExistsException
   {
   public:
-    EventDestinationAlreadyExistsException();
-    EventDestinationAlreadyExistsException(const Aws::Utils::Xml::XmlNode& xmlNode);
-    EventDestinationAlreadyExistsException& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_SES_API EventDestinationAlreadyExistsException();
+    AWS_SES_API EventDestinationAlreadyExistsException(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_SES_API EventDestinationAlreadyExistsException& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_SES_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_SES_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**

@@ -25,12 +25,12 @@ namespace LookoutEquipment
 {
 namespace Model
 {
-  class AWS_LOOKOUTEQUIPMENT_API CreateInferenceSchedulerResult
+  class CreateInferenceSchedulerResult
   {
   public:
-    CreateInferenceSchedulerResult();
-    CreateInferenceSchedulerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateInferenceSchedulerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LOOKOUTEQUIPMENT_API CreateInferenceSchedulerResult();
+    AWS_LOOKOUTEQUIPMENT_API CreateInferenceSchedulerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LOOKOUTEQUIPMENT_API CreateInferenceSchedulerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

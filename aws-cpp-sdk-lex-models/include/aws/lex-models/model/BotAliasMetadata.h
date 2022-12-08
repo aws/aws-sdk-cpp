@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/BotAliasMetadata">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELBUILDINGSERVICE_API BotAliasMetadata
+  class BotAliasMetadata
   {
   public:
-    BotAliasMetadata();
-    BotAliasMetadata(Aws::Utils::Json::JsonView jsonValue);
-    BotAliasMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELBUILDINGSERVICE_API BotAliasMetadata();
+    AWS_LEXMODELBUILDINGSERVICE_API BotAliasMetadata(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELBUILDINGSERVICE_API BotAliasMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELBUILDINGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

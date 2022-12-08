@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-streaming-2017-10-26/CallAnalyticsEntity">AWS
    * API Reference</a></p>
    */
-  class AWS_TRANSCRIBESTREAMINGSERVICE_API CallAnalyticsEntity
+  class CallAnalyticsEntity
   {
   public:
-    CallAnalyticsEntity();
-    CallAnalyticsEntity(Aws::Utils::Json::JsonView jsonValue);
-    CallAnalyticsEntity& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TRANSCRIBESTREAMINGSERVICE_API CallAnalyticsEntity();
+    AWS_TRANSCRIBESTREAMINGSERVICE_API CallAnalyticsEntity(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSCRIBESTREAMINGSERVICE_API CallAnalyticsEntity& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSCRIBESTREAMINGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

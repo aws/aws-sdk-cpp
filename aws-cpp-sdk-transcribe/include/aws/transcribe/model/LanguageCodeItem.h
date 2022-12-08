@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/LanguageCodeItem">AWS
    * API Reference</a></p>
    */
-  class AWS_TRANSCRIBESERVICE_API LanguageCodeItem
+  class LanguageCodeItem
   {
   public:
-    LanguageCodeItem();
-    LanguageCodeItem(Aws::Utils::Json::JsonView jsonValue);
-    LanguageCodeItem& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TRANSCRIBESERVICE_API LanguageCodeItem();
+    AWS_TRANSCRIBESERVICE_API LanguageCodeItem(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSCRIBESERVICE_API LanguageCodeItem& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSCRIBESERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -38,15 +38,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ReceiptRule">AWS
    * API Reference</a></p>
    */
-  class AWS_SES_API ReceiptRule
+  class ReceiptRule
   {
   public:
-    ReceiptRule();
-    ReceiptRule(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ReceiptRule& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_SES_API ReceiptRule();
+    AWS_SES_API ReceiptRule(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_SES_API ReceiptRule& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_SES_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_SES_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**

@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/SecurityPolicyDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_OPENSEARCHSERVERLESS_API SecurityPolicyDetail
+  class SecurityPolicyDetail
   {
   public:
-    SecurityPolicyDetail();
-    SecurityPolicyDetail(Aws::Utils::Json::JsonView jsonValue);
-    SecurityPolicyDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OPENSEARCHSERVERLESS_API SecurityPolicyDetail();
+    AWS_OPENSEARCHSERVERLESS_API SecurityPolicyDetail(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPENSEARCHSERVERLESS_API SecurityPolicyDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPENSEARCHSERVERLESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

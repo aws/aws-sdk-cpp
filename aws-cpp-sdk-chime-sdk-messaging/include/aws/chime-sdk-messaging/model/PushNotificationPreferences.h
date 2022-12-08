@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/PushNotificationPreferences">AWS
    * API Reference</a></p>
    */
-  class AWS_CHIMESDKMESSAGING_API PushNotificationPreferences
+  class PushNotificationPreferences
   {
   public:
-    PushNotificationPreferences();
-    PushNotificationPreferences(Aws::Utils::Json::JsonView jsonValue);
-    PushNotificationPreferences& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIMESDKMESSAGING_API PushNotificationPreferences();
+    AWS_CHIMESDKMESSAGING_API PushNotificationPreferences(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKMESSAGING_API PushNotificationPreferences& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKMESSAGING_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

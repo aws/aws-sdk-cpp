@@ -24,12 +24,12 @@ namespace StorageGateway
 {
 namespace Model
 {
-  class AWS_STORAGEGATEWAY_API SetSMBGuestPasswordResult
+  class SetSMBGuestPasswordResult
   {
   public:
-    SetSMBGuestPasswordResult();
-    SetSMBGuestPasswordResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    SetSMBGuestPasswordResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_STORAGEGATEWAY_API SetSMBGuestPasswordResult();
+    AWS_STORAGEGATEWAY_API SetSMBGuestPasswordResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_STORAGEGATEWAY_API SetSMBGuestPasswordResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     

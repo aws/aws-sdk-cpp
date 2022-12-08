@@ -22,12 +22,12 @@ namespace SsmSap
 {
 namespace Model
 {
-  class AWS_SSMSAP_API DeregisterApplicationResult
+  class DeregisterApplicationResult
   {
   public:
-    DeregisterApplicationResult();
-    DeregisterApplicationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeregisterApplicationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSMSAP_API DeregisterApplicationResult();
+    AWS_SSMSAP_API DeregisterApplicationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSMSAP_API DeregisterApplicationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

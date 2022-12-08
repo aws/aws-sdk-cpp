@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CustomActionNavigationOperation">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API CustomActionNavigationOperation
+  class CustomActionNavigationOperation
   {
   public:
-    CustomActionNavigationOperation();
-    CustomActionNavigationOperation(Aws::Utils::Json::JsonView jsonValue);
-    CustomActionNavigationOperation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API CustomActionNavigationOperation();
+    AWS_QUICKSIGHT_API CustomActionNavigationOperation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API CustomActionNavigationOperation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

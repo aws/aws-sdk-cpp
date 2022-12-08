@@ -30,12 +30,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DescribeWorkspaceResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_PROMETHEUSSERVICE_API DescribeWorkspaceResult
+  class DescribeWorkspaceResult
   {
   public:
-    DescribeWorkspaceResult();
-    DescribeWorkspaceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeWorkspaceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PROMETHEUSSERVICE_API DescribeWorkspaceResult();
+    AWS_PROMETHEUSSERVICE_API DescribeWorkspaceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PROMETHEUSSERVICE_API DescribeWorkspaceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

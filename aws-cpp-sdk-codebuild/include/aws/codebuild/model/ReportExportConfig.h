@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ReportExportConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEBUILD_API ReportExportConfig
+  class ReportExportConfig
   {
   public:
-    ReportExportConfig();
-    ReportExportConfig(Aws::Utils::Json::JsonView jsonValue);
-    ReportExportConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEBUILD_API ReportExportConfig();
+    AWS_CODEBUILD_API ReportExportConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEBUILD_API ReportExportConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEBUILD_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

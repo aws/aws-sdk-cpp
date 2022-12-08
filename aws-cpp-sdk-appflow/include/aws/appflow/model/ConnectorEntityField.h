@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/ConnectorEntityField">AWS
    * API Reference</a></p>
    */
-  class AWS_APPFLOW_API ConnectorEntityField
+  class ConnectorEntityField
   {
   public:
-    ConnectorEntityField();
-    ConnectorEntityField(Aws::Utils::Json::JsonView jsonValue);
-    ConnectorEntityField& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPFLOW_API ConnectorEntityField();
+    AWS_APPFLOW_API ConnectorEntityField(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API ConnectorEntityField& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

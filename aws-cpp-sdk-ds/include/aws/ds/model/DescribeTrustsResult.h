@@ -31,12 +31,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeTrustsResult">AWS
    * API Reference</a></p>
    */
-  class AWS_DIRECTORYSERVICE_API DescribeTrustsResult
+  class DescribeTrustsResult
   {
   public:
-    DescribeTrustsResult();
-    DescribeTrustsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeTrustsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DIRECTORYSERVICE_API DescribeTrustsResult();
+    AWS_DIRECTORYSERVICE_API DescribeTrustsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DIRECTORYSERVICE_API DescribeTrustsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

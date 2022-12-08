@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ClientProperties">AWS
    * API Reference</a></p>
    */
-  class AWS_WORKSPACES_API ClientProperties
+  class ClientProperties
   {
   public:
-    ClientProperties();
-    ClientProperties(Aws::Utils::Json::JsonView jsonValue);
-    ClientProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WORKSPACES_API ClientProperties();
+    AWS_WORKSPACES_API ClientProperties(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKSPACES_API ClientProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

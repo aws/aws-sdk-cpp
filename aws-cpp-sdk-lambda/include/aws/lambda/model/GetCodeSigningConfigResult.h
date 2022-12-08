@@ -24,12 +24,12 @@ namespace Lambda
 {
 namespace Model
 {
-  class AWS_LAMBDA_API GetCodeSigningConfigResult
+  class GetCodeSigningConfigResult
   {
   public:
-    GetCodeSigningConfigResult();
-    GetCodeSigningConfigResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetCodeSigningConfigResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LAMBDA_API GetCodeSigningConfigResult();
+    AWS_LAMBDA_API GetCodeSigningConfigResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LAMBDA_API GetCodeSigningConfigResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

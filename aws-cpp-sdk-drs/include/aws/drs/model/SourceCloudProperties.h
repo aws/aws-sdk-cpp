@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/SourceCloudProperties">AWS
    * API Reference</a></p>
    */
-  class AWS_DRS_API SourceCloudProperties
+  class SourceCloudProperties
   {
   public:
-    SourceCloudProperties();
-    SourceCloudProperties(Aws::Utils::Json::JsonView jsonValue);
-    SourceCloudProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DRS_API SourceCloudProperties();
+    AWS_DRS_API SourceCloudProperties(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DRS_API SourceCloudProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DRS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

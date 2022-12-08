@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/SchedulingConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API SchedulingConfig
+  class SchedulingConfig
   {
   public:
-    SchedulingConfig();
-    SchedulingConfig(Aws::Utils::Json::JsonView jsonValue);
-    SchedulingConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API SchedulingConfig();
+    AWS_IOT_API SchedulingConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API SchedulingConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/TimeSeriesCondition">AWS
    * API Reference</a></p>
    */
-  class AWS_FORECASTSERVICE_API TimeSeriesCondition
+  class TimeSeriesCondition
   {
   public:
-    TimeSeriesCondition();
-    TimeSeriesCondition(Aws::Utils::Json::JsonView jsonValue);
-    TimeSeriesCondition& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FORECASTSERVICE_API TimeSeriesCondition();
+    AWS_FORECASTSERVICE_API TimeSeriesCondition(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FORECASTSERVICE_API TimeSeriesCondition& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FORECASTSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

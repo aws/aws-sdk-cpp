@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pipes-2015-10-07/UpdatePipeSourceSqsQueueParameters">AWS
    * API Reference</a></p>
    */
-  class AWS_PIPES_API UpdatePipeSourceSqsQueueParameters
+  class UpdatePipeSourceSqsQueueParameters
   {
   public:
-    UpdatePipeSourceSqsQueueParameters();
-    UpdatePipeSourceSqsQueueParameters(Aws::Utils::Json::JsonView jsonValue);
-    UpdatePipeSourceSqsQueueParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PIPES_API UpdatePipeSourceSqsQueueParameters();
+    AWS_PIPES_API UpdatePipeSourceSqsQueueParameters(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PIPES_API UpdatePipeSourceSqsQueueParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PIPES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/KubernetesDataSourceFreeTrial">AWS
    * API Reference</a></p>
    */
-  class AWS_GUARDDUTY_API KubernetesDataSourceFreeTrial
+  class KubernetesDataSourceFreeTrial
   {
   public:
-    KubernetesDataSourceFreeTrial();
-    KubernetesDataSourceFreeTrial(Aws::Utils::Json::JsonView jsonValue);
-    KubernetesDataSourceFreeTrial& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GUARDDUTY_API KubernetesDataSourceFreeTrial();
+    AWS_GUARDDUTY_API KubernetesDataSourceFreeTrial(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API KubernetesDataSourceFreeTrial& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

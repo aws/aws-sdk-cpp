@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/IdpMetadata">AWS
    * API Reference</a></p>
    */
-  class AWS_MANAGEDGRAFANA_API IdpMetadata
+  class IdpMetadata
   {
   public:
-    IdpMetadata();
-    IdpMetadata(Aws::Utils::Json::JsonView jsonValue);
-    IdpMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MANAGEDGRAFANA_API IdpMetadata();
+    AWS_MANAGEDGRAFANA_API IdpMetadata(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MANAGEDGRAFANA_API IdpMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MANAGEDGRAFANA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

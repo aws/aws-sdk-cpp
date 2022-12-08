@@ -28,12 +28,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-2018-09-05/DeleteConfigurationSetEventDestinationResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINTSMSVOICE_API DeleteConfigurationSetEventDestinationResult
+  class DeleteConfigurationSetEventDestinationResult
   {
   public:
-    DeleteConfigurationSetEventDestinationResult();
-    DeleteConfigurationSetEventDestinationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteConfigurationSetEventDestinationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PINPOINTSMSVOICE_API DeleteConfigurationSetEventDestinationResult();
+    AWS_PINPOINTSMSVOICE_API DeleteConfigurationSetEventDestinationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PINPOINTSMSVOICE_API DeleteConfigurationSetEventDestinationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

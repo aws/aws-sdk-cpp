@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/RecoveryInstanceProperties">AWS
    * API Reference</a></p>
    */
-  class AWS_DRS_API RecoveryInstanceProperties
+  class RecoveryInstanceProperties
   {
   public:
-    RecoveryInstanceProperties();
-    RecoveryInstanceProperties(Aws::Utils::Json::JsonView jsonValue);
-    RecoveryInstanceProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DRS_API RecoveryInstanceProperties();
+    AWS_DRS_API RecoveryInstanceProperties(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DRS_API RecoveryInstanceProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DRS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

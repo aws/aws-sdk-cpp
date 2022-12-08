@@ -30,12 +30,12 @@ namespace AppConfig
 {
 namespace Model
 {
-  class AWS_APPCONFIG_API StartDeploymentResult
+  class StartDeploymentResult
   {
   public:
-    StartDeploymentResult();
-    StartDeploymentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    StartDeploymentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPCONFIG_API StartDeploymentResult();
+    AWS_APPCONFIG_API StartDeploymentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPCONFIG_API StartDeploymentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

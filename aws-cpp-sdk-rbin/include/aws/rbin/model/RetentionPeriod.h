@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rbin-2021-06-15/RetentionPeriod">AWS
    * API Reference</a></p>
    */
-  class AWS_RECYCLEBIN_API RetentionPeriod
+  class RetentionPeriod
   {
   public:
-    RetentionPeriod();
-    RetentionPeriod(Aws::Utils::Json::JsonView jsonValue);
-    RetentionPeriod& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_RECYCLEBIN_API RetentionPeriod();
+    AWS_RECYCLEBIN_API RetentionPeriod(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RECYCLEBIN_API RetentionPeriod& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RECYCLEBIN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

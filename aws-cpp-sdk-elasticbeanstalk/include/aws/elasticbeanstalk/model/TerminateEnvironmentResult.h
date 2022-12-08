@@ -38,12 +38,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/EnvironmentDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICBEANSTALK_API TerminateEnvironmentResult
+  class TerminateEnvironmentResult
   {
   public:
-    TerminateEnvironmentResult();
-    TerminateEnvironmentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    TerminateEnvironmentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ELASTICBEANSTALK_API TerminateEnvironmentResult();
+    AWS_ELASTICBEANSTALK_API TerminateEnvironmentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ELASTICBEANSTALK_API TerminateEnvironmentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

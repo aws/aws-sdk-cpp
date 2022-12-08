@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ComplianceContributorCount">AWS
    * API Reference</a></p>
    */
-  class AWS_CONFIGSERVICE_API ComplianceContributorCount
+  class ComplianceContributorCount
   {
   public:
-    ComplianceContributorCount();
-    ComplianceContributorCount(Aws::Utils::Json::JsonView jsonValue);
-    ComplianceContributorCount& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONFIGSERVICE_API ComplianceContributorCount();
+    AWS_CONFIGSERVICE_API ComplianceContributorCount(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API ComplianceContributorCount& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -24,12 +24,12 @@ namespace Macie2
 {
 namespace Model
 {
-  class AWS_MACIE2_API GetRevealConfigurationResult
+  class GetRevealConfigurationResult
   {
   public:
-    GetRevealConfigurationResult();
-    GetRevealConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetRevealConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MACIE2_API GetRevealConfigurationResult();
+    AWS_MACIE2_API GetRevealConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MACIE2_API GetRevealConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

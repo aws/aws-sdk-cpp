@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/ReviewResultDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_MTURK_API ReviewResultDetail
+  class ReviewResultDetail
   {
   public:
-    ReviewResultDetail();
-    ReviewResultDetail(Aws::Utils::Json::JsonView jsonValue);
-    ReviewResultDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MTURK_API ReviewResultDetail();
+    AWS_MTURK_API ReviewResultDetail(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MTURK_API ReviewResultDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MTURK_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

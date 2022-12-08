@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsDynamoDbTableGlobalSecondaryIndex">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsDynamoDbTableGlobalSecondaryIndex
+  class AwsDynamoDbTableGlobalSecondaryIndex
   {
   public:
-    AwsDynamoDbTableGlobalSecondaryIndex();
-    AwsDynamoDbTableGlobalSecondaryIndex(Aws::Utils::Json::JsonView jsonValue);
-    AwsDynamoDbTableGlobalSecondaryIndex& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsDynamoDbTableGlobalSecondaryIndex();
+    AWS_SECURITYHUB_API AwsDynamoDbTableGlobalSecondaryIndex(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsDynamoDbTableGlobalSecondaryIndex& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

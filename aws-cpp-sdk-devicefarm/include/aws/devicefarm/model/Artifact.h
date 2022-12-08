@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/Artifact">AWS
    * API Reference</a></p>
    */
-  class AWS_DEVICEFARM_API Artifact
+  class Artifact
   {
   public:
-    Artifact();
-    Artifact(Aws::Utils::Json::JsonView jsonValue);
-    Artifact& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DEVICEFARM_API Artifact();
+    AWS_DEVICEFARM_API Artifact(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVICEFARM_API Artifact& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVICEFARM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DatabaseInstanceSoftwareDetailsResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_DATABASEMIGRATIONSERVICE_API DatabaseInstanceSoftwareDetailsResponse
+  class DatabaseInstanceSoftwareDetailsResponse
   {
   public:
-    DatabaseInstanceSoftwareDetailsResponse();
-    DatabaseInstanceSoftwareDetailsResponse(Aws::Utils::Json::JsonView jsonValue);
-    DatabaseInstanceSoftwareDetailsResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DATABASEMIGRATIONSERVICE_API DatabaseInstanceSoftwareDetailsResponse();
+    AWS_DATABASEMIGRATIONSERVICE_API DatabaseInstanceSoftwareDetailsResponse(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATABASEMIGRATIONSERVICE_API DatabaseInstanceSoftwareDetailsResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATABASEMIGRATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

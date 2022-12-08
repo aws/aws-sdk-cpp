@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ThreatIntelligenceDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_GUARDDUTY_API ThreatIntelligenceDetail
+  class ThreatIntelligenceDetail
   {
   public:
-    ThreatIntelligenceDetail();
-    ThreatIntelligenceDetail(Aws::Utils::Json::JsonView jsonValue);
-    ThreatIntelligenceDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GUARDDUTY_API ThreatIntelligenceDetail();
+    AWS_GUARDDUTY_API ThreatIntelligenceDetail(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API ThreatIntelligenceDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -22,12 +22,12 @@ namespace AlexaForBusiness
 {
 namespace Model
 {
-  class AWS_ALEXAFORBUSINESS_API ForgetSmartHomeAppliancesResult
+  class ForgetSmartHomeAppliancesResult
   {
   public:
-    ForgetSmartHomeAppliancesResult();
-    ForgetSmartHomeAppliancesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ForgetSmartHomeAppliancesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ALEXAFORBUSINESS_API ForgetSmartHomeAppliancesResult();
+    AWS_ALEXAFORBUSINESS_API ForgetSmartHomeAppliancesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ALEXAFORBUSINESS_API ForgetSmartHomeAppliancesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/SdkConfigurationProperty">AWS
    * API Reference</a></p>
    */
-  class AWS_APIGATEWAY_API SdkConfigurationProperty
+  class SdkConfigurationProperty
   {
   public:
-    SdkConfigurationProperty();
-    SdkConfigurationProperty(Aws::Utils::Json::JsonView jsonValue);
-    SdkConfigurationProperty& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APIGATEWAY_API SdkConfigurationProperty();
+    AWS_APIGATEWAY_API SdkConfigurationProperty(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APIGATEWAY_API SdkConfigurationProperty& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APIGATEWAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

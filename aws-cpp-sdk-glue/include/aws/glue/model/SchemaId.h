@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/SchemaId">AWS API
    * Reference</a></p>
    */
-  class AWS_GLUE_API SchemaId
+  class SchemaId
   {
   public:
-    SchemaId();
-    SchemaId(Aws::Utils::Json::JsonView jsonValue);
-    SchemaId& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API SchemaId();
+    AWS_GLUE_API SchemaId(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API SchemaId& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

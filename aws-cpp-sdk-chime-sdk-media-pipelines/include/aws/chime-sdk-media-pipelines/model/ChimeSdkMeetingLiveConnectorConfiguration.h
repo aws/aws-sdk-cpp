@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/ChimeSdkMeetingLiveConnectorConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_CHIMESDKMEDIAPIPELINES_API ChimeSdkMeetingLiveConnectorConfiguration
+  class ChimeSdkMeetingLiveConnectorConfiguration
   {
   public:
-    ChimeSdkMeetingLiveConnectorConfiguration();
-    ChimeSdkMeetingLiveConnectorConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    ChimeSdkMeetingLiveConnectorConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIMESDKMEDIAPIPELINES_API ChimeSdkMeetingLiveConnectorConfiguration();
+    AWS_CHIMESDKMEDIAPIPELINES_API ChimeSdkMeetingLiveConnectorConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKMEDIAPIPELINES_API ChimeSdkMeetingLiveConnectorConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKMEDIAPIPELINES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

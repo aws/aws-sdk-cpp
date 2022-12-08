@@ -31,12 +31,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/PutPipelineDefinitionOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_DATAPIPELINE_API PutPipelineDefinitionResult
+  class PutPipelineDefinitionResult
   {
   public:
-    PutPipelineDefinitionResult();
-    PutPipelineDefinitionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PutPipelineDefinitionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DATAPIPELINE_API PutPipelineDefinitionResult();
+    AWS_DATAPIPELINE_API PutPipelineDefinitionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DATAPIPELINE_API PutPipelineDefinitionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

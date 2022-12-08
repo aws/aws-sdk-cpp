@@ -26,12 +26,12 @@ namespace IoTRoboRunner
 {
 namespace Model
 {
-  class AWS_IOTROBORUNNER_API CreateDestinationResult
+  class CreateDestinationResult
   {
   public:
-    CreateDestinationResult();
-    CreateDestinationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateDestinationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOTROBORUNNER_API CreateDestinationResult();
+    AWS_IOTROBORUNNER_API CreateDestinationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOTROBORUNNER_API CreateDestinationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     

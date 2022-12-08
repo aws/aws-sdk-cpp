@@ -27,12 +27,12 @@ namespace EC2
 {
 namespace Model
 {
-  class AWS_EC2_API DescribeVpcClassicLinkDnsSupportResponse
+  class DescribeVpcClassicLinkDnsSupportResponse
   {
   public:
-    DescribeVpcClassicLinkDnsSupportResponse();
-    DescribeVpcClassicLinkDnsSupportResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeVpcClassicLinkDnsSupportResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API DescribeVpcClassicLinkDnsSupportResponse();
+    AWS_EC2_API DescribeVpcClassicLinkDnsSupportResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API DescribeVpcClassicLinkDnsSupportResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

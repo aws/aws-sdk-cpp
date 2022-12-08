@@ -27,12 +27,12 @@ namespace AugmentedAIRuntime
 {
 namespace Model
 {
-  class AWS_AUGMENTEDAIRUNTIME_API DescribeHumanLoopResult
+  class DescribeHumanLoopResult
   {
   public:
-    DescribeHumanLoopResult();
-    DescribeHumanLoopResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeHumanLoopResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_AUGMENTEDAIRUNTIME_API DescribeHumanLoopResult();
+    AWS_AUGMENTEDAIRUNTIME_API DescribeHumanLoopResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_AUGMENTEDAIRUNTIME_API DescribeHumanLoopResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/ContentReference">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECTWISDOMSERVICE_API ContentReference
+  class ContentReference
   {
   public:
-    ContentReference();
-    ContentReference(Aws::Utils::Json::JsonView jsonValue);
-    ContentReference& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECTWISDOMSERVICE_API ContentReference();
+    AWS_CONNECTWISDOMSERVICE_API ContentReference(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTWISDOMSERVICE_API ContentReference& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTWISDOMSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

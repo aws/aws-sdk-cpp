@@ -22,10 +22,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/UpdateWorkloadShareInput">AWS
    * API Reference</a></p>
    */
-  class AWS_WELLARCHITECTED_API UpdateWorkloadShareRequest : public WellArchitectedRequest
+  class UpdateWorkloadShareRequest : public WellArchitectedRequest
   {
   public:
-    UpdateWorkloadShareRequest();
+    AWS_WELLARCHITECTED_API UpdateWorkloadShareRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,7 +33,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateWorkloadShare"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_WELLARCHITECTED_API Aws::String SerializePayload() const override;
 
 
     

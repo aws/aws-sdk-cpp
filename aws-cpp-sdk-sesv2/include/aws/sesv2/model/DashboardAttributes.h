@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/DashboardAttributes">AWS
    * API Reference</a></p>
    */
-  class AWS_SESV2_API DashboardAttributes
+  class DashboardAttributes
   {
   public:
-    DashboardAttributes();
-    DashboardAttributes(Aws::Utils::Json::JsonView jsonValue);
-    DashboardAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SESV2_API DashboardAttributes();
+    AWS_SESV2_API DashboardAttributes(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SESV2_API DashboardAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SESV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -26,12 +26,12 @@ namespace SecretsManager
 {
 namespace Model
 {
-  class AWS_SECRETSMANAGER_API RemoveRegionsFromReplicationResult
+  class RemoveRegionsFromReplicationResult
   {
   public:
-    RemoveRegionsFromReplicationResult();
-    RemoveRegionsFromReplicationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    RemoveRegionsFromReplicationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SECRETSMANAGER_API RemoveRegionsFromReplicationResult();
+    AWS_SECRETSMANAGER_API RemoveRegionsFromReplicationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SECRETSMANAGER_API RemoveRegionsFromReplicationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

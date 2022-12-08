@@ -33,15 +33,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/VolumeStatusItem">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API VolumeStatusItem
+  class VolumeStatusItem
   {
   public:
-    VolumeStatusItem();
-    VolumeStatusItem(const Aws::Utils::Xml::XmlNode& xmlNode);
-    VolumeStatusItem& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API VolumeStatusItem();
+    AWS_EC2_API VolumeStatusItem(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API VolumeStatusItem& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**

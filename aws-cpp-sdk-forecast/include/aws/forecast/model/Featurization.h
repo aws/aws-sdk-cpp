@@ -39,13 +39,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/Featurization">AWS
    * API Reference</a></p>
    */
-  class AWS_FORECASTSERVICE_API Featurization
+  class Featurization
   {
   public:
-    Featurization();
-    Featurization(Aws::Utils::Json::JsonView jsonValue);
-    Featurization& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FORECASTSERVICE_API Featurization();
+    AWS_FORECASTSERVICE_API Featurization(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FORECASTSERVICE_API Featurization& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FORECASTSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

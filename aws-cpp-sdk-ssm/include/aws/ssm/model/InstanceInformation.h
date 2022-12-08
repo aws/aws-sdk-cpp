@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/InstanceInformation">AWS
    * API Reference</a></p>
    */
-  class AWS_SSM_API InstanceInformation
+  class InstanceInformation
   {
   public:
-    InstanceInformation();
-    InstanceInformation(Aws::Utils::Json::JsonView jsonValue);
-    InstanceInformation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSM_API InstanceInformation();
+    AWS_SSM_API InstanceInformation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API InstanceInformation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

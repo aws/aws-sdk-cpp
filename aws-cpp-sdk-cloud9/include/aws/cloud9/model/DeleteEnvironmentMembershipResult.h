@@ -22,12 +22,12 @@ namespace Cloud9
 {
 namespace Model
 {
-  class AWS_CLOUD9_API DeleteEnvironmentMembershipResult
+  class DeleteEnvironmentMembershipResult
   {
   public:
-    DeleteEnvironmentMembershipResult();
-    DeleteEnvironmentMembershipResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteEnvironmentMembershipResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CLOUD9_API DeleteEnvironmentMembershipResult();
+    AWS_CLOUD9_API DeleteEnvironmentMembershipResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CLOUD9_API DeleteEnvironmentMembershipResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

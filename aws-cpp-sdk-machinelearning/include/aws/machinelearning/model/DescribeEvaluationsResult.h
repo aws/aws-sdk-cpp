@@ -33,12 +33,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/DescribeEvaluationsOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_MACHINELEARNING_API DescribeEvaluationsResult
+  class DescribeEvaluationsResult
   {
   public:
-    DescribeEvaluationsResult();
-    DescribeEvaluationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeEvaluationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MACHINELEARNING_API DescribeEvaluationsResult();
+    AWS_MACHINELEARNING_API DescribeEvaluationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MACHINELEARNING_API DescribeEvaluationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

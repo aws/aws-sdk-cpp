@@ -22,12 +22,12 @@ namespace Snowball
 {
 namespace Model
 {
-  class AWS_SNOWBALL_API CancelClusterResult
+  class CancelClusterResult
   {
   public:
-    CancelClusterResult();
-    CancelClusterResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CancelClusterResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SNOWBALL_API CancelClusterResult();
+    AWS_SNOWBALL_API CancelClusterResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SNOWBALL_API CancelClusterResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

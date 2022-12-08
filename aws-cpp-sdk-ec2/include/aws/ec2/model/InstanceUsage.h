@@ -29,15 +29,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/InstanceUsage">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API InstanceUsage
+  class InstanceUsage
   {
   public:
-    InstanceUsage();
-    InstanceUsage(const Aws::Utils::Xml::XmlNode& xmlNode);
-    InstanceUsage& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API InstanceUsage();
+    AWS_EC2_API InstanceUsage(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API InstanceUsage& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**

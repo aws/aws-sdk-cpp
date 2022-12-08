@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/RDSMetadata">AWS
    * API Reference</a></p>
    */
-  class AWS_MACHINELEARNING_API RDSMetadata
+  class RDSMetadata
   {
   public:
-    RDSMetadata();
-    RDSMetadata(Aws::Utils::Json::JsonView jsonValue);
-    RDSMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MACHINELEARNING_API RDSMetadata();
+    AWS_MACHINELEARNING_API RDSMetadata(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACHINELEARNING_API RDSMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACHINELEARNING_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

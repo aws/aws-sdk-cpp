@@ -26,12 +26,12 @@ namespace Lambda
 {
 namespace Model
 {
-  class AWS_LAMBDA_API PutFunctionEventInvokeConfigResult
+  class PutFunctionEventInvokeConfigResult
   {
   public:
-    PutFunctionEventInvokeConfigResult();
-    PutFunctionEventInvokeConfigResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PutFunctionEventInvokeConfigResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LAMBDA_API PutFunctionEventInvokeConfigResult();
+    AWS_LAMBDA_API PutFunctionEventInvokeConfigResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LAMBDA_API PutFunctionEventInvokeConfigResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

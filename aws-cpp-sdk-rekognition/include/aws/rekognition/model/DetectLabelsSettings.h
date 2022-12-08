@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DetectLabelsSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_REKOGNITION_API DetectLabelsSettings
+  class DetectLabelsSettings
   {
   public:
-    DetectLabelsSettings();
-    DetectLabelsSettings(Aws::Utils::Json::JsonView jsonValue);
-    DetectLabelsSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_REKOGNITION_API DetectLabelsSettings();
+    AWS_REKOGNITION_API DetectLabelsSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API DetectLabelsSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

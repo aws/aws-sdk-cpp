@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/SheetTextBox">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API SheetTextBox
+  class SheetTextBox
   {
   public:
-    SheetTextBox();
-    SheetTextBox(Aws::Utils::Json::JsonView jsonValue);
-    SheetTextBox& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API SheetTextBox();
+    AWS_QUICKSIGHT_API SheetTextBox(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API SheetTextBox& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

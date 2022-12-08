@@ -32,12 +32,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GatewayResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_APIGATEWAY_API PutGatewayResponseResult
+  class PutGatewayResponseResult
   {
   public:
-    PutGatewayResponseResult();
-    PutGatewayResponseResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PutGatewayResponseResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APIGATEWAY_API PutGatewayResponseResult();
+    AWS_APIGATEWAY_API PutGatewayResponseResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APIGATEWAY_API PutGatewayResponseResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

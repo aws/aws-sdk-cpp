@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/Replica">AWS
    * API Reference</a></p>
    */
-  class AWS_DYNAMODB_API Replica
+  class Replica
   {
   public:
-    Replica();
-    Replica(Aws::Utils::Json::JsonView jsonValue);
-    Replica& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DYNAMODB_API Replica();
+    AWS_DYNAMODB_API Replica(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API Replica& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

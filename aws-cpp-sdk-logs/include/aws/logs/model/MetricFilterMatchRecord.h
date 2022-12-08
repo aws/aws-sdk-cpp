@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/MetricFilterMatchRecord">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDWATCHLOGS_API MetricFilterMatchRecord
+  class MetricFilterMatchRecord
   {
   public:
-    MetricFilterMatchRecord();
-    MetricFilterMatchRecord(Aws::Utils::Json::JsonView jsonValue);
-    MetricFilterMatchRecord& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDWATCHLOGS_API MetricFilterMatchRecord();
+    AWS_CLOUDWATCHLOGS_API MetricFilterMatchRecord(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHLOGS_API MetricFilterMatchRecord& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHLOGS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

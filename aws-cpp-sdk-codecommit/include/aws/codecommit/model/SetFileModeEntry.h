@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/SetFileModeEntry">AWS
    * API Reference</a></p>
    */
-  class AWS_CODECOMMIT_API SetFileModeEntry
+  class SetFileModeEntry
   {
   public:
-    SetFileModeEntry();
-    SetFileModeEntry(Aws::Utils::Json::JsonView jsonValue);
-    SetFileModeEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODECOMMIT_API SetFileModeEntry();
+    AWS_CODECOMMIT_API SetFileModeEntry(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODECOMMIT_API SetFileModeEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODECOMMIT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

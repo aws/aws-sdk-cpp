@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/ModelVersionDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_FRAUDDETECTOR_API ModelVersionDetail
+  class ModelVersionDetail
   {
   public:
-    ModelVersionDetail();
-    ModelVersionDetail(Aws::Utils::Json::JsonView jsonValue);
-    ModelVersionDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FRAUDDETECTOR_API ModelVersionDetail();
+    AWS_FRAUDDETECTOR_API ModelVersionDetail(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FRAUDDETECTOR_API ModelVersionDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FRAUDDETECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

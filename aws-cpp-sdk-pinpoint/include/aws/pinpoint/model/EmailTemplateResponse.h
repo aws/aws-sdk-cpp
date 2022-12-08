@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/EmailTemplateResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API EmailTemplateResponse
+  class EmailTemplateResponse
   {
   public:
-    EmailTemplateResponse();
-    EmailTemplateResponse(Aws::Utils::Json::JsonView jsonValue);
-    EmailTemplateResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API EmailTemplateResponse();
+    AWS_PINPOINT_API EmailTemplateResponse(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API EmailTemplateResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -22,12 +22,12 @@ namespace Chime
 {
 namespace Model
 {
-  class AWS_CHIME_API StopMeetingTranscriptionResult
+  class StopMeetingTranscriptionResult
   {
   public:
-    StopMeetingTranscriptionResult();
-    StopMeetingTranscriptionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    StopMeetingTranscriptionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CHIME_API StopMeetingTranscriptionResult();
+    AWS_CHIME_API StopMeetingTranscriptionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CHIME_API StopMeetingTranscriptionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

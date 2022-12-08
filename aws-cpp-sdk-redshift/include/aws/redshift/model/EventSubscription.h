@@ -31,15 +31,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/EventSubscription">AWS
    * API Reference</a></p>
    */
-  class AWS_REDSHIFT_API EventSubscription
+  class EventSubscription
   {
   public:
-    EventSubscription();
-    EventSubscription(const Aws::Utils::Xml::XmlNode& xmlNode);
-    EventSubscription& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_REDSHIFT_API EventSubscription();
+    AWS_REDSHIFT_API EventSubscription(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_REDSHIFT_API EventSubscription& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_REDSHIFT_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_REDSHIFT_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**

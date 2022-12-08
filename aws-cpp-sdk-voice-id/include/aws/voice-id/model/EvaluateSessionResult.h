@@ -27,12 +27,12 @@ namespace VoiceID
 {
 namespace Model
 {
-  class AWS_VOICEID_API EvaluateSessionResult
+  class EvaluateSessionResult
   {
   public:
-    EvaluateSessionResult();
-    EvaluateSessionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    EvaluateSessionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_VOICEID_API EvaluateSessionResult();
+    AWS_VOICEID_API EvaluateSessionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_VOICEID_API EvaluateSessionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

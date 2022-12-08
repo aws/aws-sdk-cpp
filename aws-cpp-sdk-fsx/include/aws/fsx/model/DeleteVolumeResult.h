@@ -26,12 +26,12 @@ namespace FSx
 {
 namespace Model
 {
-  class AWS_FSX_API DeleteVolumeResult
+  class DeleteVolumeResult
   {
   public:
-    DeleteVolumeResult();
-    DeleteVolumeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteVolumeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_FSX_API DeleteVolumeResult();
+    AWS_FSX_API DeleteVolumeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_FSX_API DeleteVolumeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

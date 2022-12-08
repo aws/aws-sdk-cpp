@@ -38,13 +38,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/SheetDefinition">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API SheetDefinition
+  class SheetDefinition
   {
   public:
-    SheetDefinition();
-    SheetDefinition(Aws::Utils::Json::JsonView jsonValue);
-    SheetDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API SheetDefinition();
+    AWS_QUICKSIGHT_API SheetDefinition(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API SheetDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

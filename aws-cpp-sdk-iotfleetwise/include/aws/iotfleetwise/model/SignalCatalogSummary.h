@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/SignalCatalogSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTFLEETWISE_API SignalCatalogSummary
+  class SignalCatalogSummary
   {
   public:
-    SignalCatalogSummary();
-    SignalCatalogSummary(Aws::Utils::Json::JsonView jsonValue);
-    SignalCatalogSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTFLEETWISE_API SignalCatalogSummary();
+    AWS_IOTFLEETWISE_API SignalCatalogSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTFLEETWISE_API SignalCatalogSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTFLEETWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

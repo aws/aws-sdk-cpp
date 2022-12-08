@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsEc2EipDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsEc2EipDetails
+  class AwsEc2EipDetails
   {
   public:
-    AwsEc2EipDetails();
-    AwsEc2EipDetails(Aws::Utils::Json::JsonView jsonValue);
-    AwsEc2EipDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsEc2EipDetails();
+    AWS_SECURITYHUB_API AwsEc2EipDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsEc2EipDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

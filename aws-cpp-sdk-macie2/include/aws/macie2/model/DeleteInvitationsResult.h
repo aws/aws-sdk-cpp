@@ -25,12 +25,12 @@ namespace Macie2
 {
 namespace Model
 {
-  class AWS_MACIE2_API DeleteInvitationsResult
+  class DeleteInvitationsResult
   {
   public:
-    DeleteInvitationsResult();
-    DeleteInvitationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteInvitationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MACIE2_API DeleteInvitationsResult();
+    AWS_MACIE2_API DeleteInvitationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MACIE2_API DeleteInvitationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

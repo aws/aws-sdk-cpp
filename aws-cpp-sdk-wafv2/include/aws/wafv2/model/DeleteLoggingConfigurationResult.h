@@ -22,12 +22,12 @@ namespace WAFV2
 {
 namespace Model
 {
-  class AWS_WAFV2_API DeleteLoggingConfigurationResult
+  class DeleteLoggingConfigurationResult
   {
   public:
-    DeleteLoggingConfigurationResult();
-    DeleteLoggingConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteLoggingConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WAFV2_API DeleteLoggingConfigurationResult();
+    AWS_WAFV2_API DeleteLoggingConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WAFV2_API DeleteLoggingConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

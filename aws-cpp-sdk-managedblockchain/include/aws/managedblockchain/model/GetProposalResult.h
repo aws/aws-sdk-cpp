@@ -24,12 +24,12 @@ namespace ManagedBlockchain
 {
 namespace Model
 {
-  class AWS_MANAGEDBLOCKCHAIN_API GetProposalResult
+  class GetProposalResult
   {
   public:
-    GetProposalResult();
-    GetProposalResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetProposalResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MANAGEDBLOCKCHAIN_API GetProposalResult();
+    AWS_MANAGEDBLOCKCHAIN_API GetProposalResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MANAGEDBLOCKCHAIN_API GetProposalResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

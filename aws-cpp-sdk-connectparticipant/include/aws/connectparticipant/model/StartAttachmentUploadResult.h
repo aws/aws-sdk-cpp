@@ -25,12 +25,12 @@ namespace ConnectParticipant
 {
 namespace Model
 {
-  class AWS_CONNECTPARTICIPANT_API StartAttachmentUploadResult
+  class StartAttachmentUploadResult
   {
   public:
-    StartAttachmentUploadResult();
-    StartAttachmentUploadResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    StartAttachmentUploadResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CONNECTPARTICIPANT_API StartAttachmentUploadResult();
+    AWS_CONNECTPARTICIPANT_API StartAttachmentUploadResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CONNECTPARTICIPANT_API StartAttachmentUploadResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

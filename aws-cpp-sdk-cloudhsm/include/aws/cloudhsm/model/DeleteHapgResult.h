@@ -30,12 +30,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DeleteHapgResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDHSM_API DeleteHapgResult
+  class DeleteHapgResult
   {
   public:
-    DeleteHapgResult();
-    DeleteHapgResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteHapgResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CLOUDHSM_API DeleteHapgResult();
+    AWS_CLOUDHSM_API DeleteHapgResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CLOUDHSM_API DeleteHapgResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/EffectiveRecommendationPreferences">AWS
    * API Reference</a></p>
    */
-  class AWS_COMPUTEOPTIMIZER_API EffectiveRecommendationPreferences
+  class EffectiveRecommendationPreferences
   {
   public:
-    EffectiveRecommendationPreferences();
-    EffectiveRecommendationPreferences(Aws::Utils::Json::JsonView jsonValue);
-    EffectiveRecommendationPreferences& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COMPUTEOPTIMIZER_API EffectiveRecommendationPreferences();
+    AWS_COMPUTEOPTIMIZER_API EffectiveRecommendationPreferences(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPUTEOPTIMIZER_API EffectiveRecommendationPreferences& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPUTEOPTIMIZER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

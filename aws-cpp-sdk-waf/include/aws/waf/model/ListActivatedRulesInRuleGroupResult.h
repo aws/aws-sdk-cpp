@@ -26,12 +26,12 @@ namespace WAF
 {
 namespace Model
 {
-  class AWS_WAF_API ListActivatedRulesInRuleGroupResult
+  class ListActivatedRulesInRuleGroupResult
   {
   public:
-    ListActivatedRulesInRuleGroupResult();
-    ListActivatedRulesInRuleGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListActivatedRulesInRuleGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WAF_API ListActivatedRulesInRuleGroupResult();
+    AWS_WAF_API ListActivatedRulesInRuleGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WAF_API ListActivatedRulesInRuleGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

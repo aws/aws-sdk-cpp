@@ -33,12 +33,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeReservedInstancesModificationsResult">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API DescribeReservedInstancesModificationsResponse
+  class DescribeReservedInstancesModificationsResponse
   {
   public:
-    DescribeReservedInstancesModificationsResponse();
-    DescribeReservedInstancesModificationsResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeReservedInstancesModificationsResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API DescribeReservedInstancesModificationsResponse();
+    AWS_EC2_API DescribeReservedInstancesModificationsResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API DescribeReservedInstancesModificationsResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

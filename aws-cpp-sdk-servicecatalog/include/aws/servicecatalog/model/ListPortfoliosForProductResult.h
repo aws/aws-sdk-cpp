@@ -26,12 +26,12 @@ namespace ServiceCatalog
 {
 namespace Model
 {
-  class AWS_SERVICECATALOG_API ListPortfoliosForProductResult
+  class ListPortfoliosForProductResult
   {
   public:
-    ListPortfoliosForProductResult();
-    ListPortfoliosForProductResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListPortfoliosForProductResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SERVICECATALOG_API ListPortfoliosForProductResult();
+    AWS_SERVICECATALOG_API ListPortfoliosForProductResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SERVICECATALOG_API ListPortfoliosForProductResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

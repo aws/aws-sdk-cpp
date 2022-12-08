@@ -22,12 +22,12 @@ namespace IoT1ClickProjects
 {
 namespace Model
 {
-  class AWS_IOT1CLICKPROJECTS_API DeletePlacementResult
+  class DeletePlacementResult
   {
   public:
-    DeletePlacementResult();
-    DeletePlacementResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeletePlacementResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOT1CLICKPROJECTS_API DeletePlacementResult();
+    AWS_IOT1CLICKPROJECTS_API DeletePlacementResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOT1CLICKPROJECTS_API DeletePlacementResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

@@ -31,12 +31,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeRdsDbInstancesResult">AWS
    * API Reference</a></p>
    */
-  class AWS_OPSWORKS_API DescribeRdsDbInstancesResult
+  class DescribeRdsDbInstancesResult
   {
   public:
-    DescribeRdsDbInstancesResult();
-    DescribeRdsDbInstancesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeRdsDbInstancesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OPSWORKS_API DescribeRdsDbInstancesResult();
+    AWS_OPSWORKS_API DescribeRdsDbInstancesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OPSWORKS_API DescribeRdsDbInstancesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

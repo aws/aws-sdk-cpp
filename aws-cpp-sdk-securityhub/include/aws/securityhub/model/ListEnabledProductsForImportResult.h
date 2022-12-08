@@ -25,12 +25,12 @@ namespace SecurityHub
 {
 namespace Model
 {
-  class AWS_SECURITYHUB_API ListEnabledProductsForImportResult
+  class ListEnabledProductsForImportResult
   {
   public:
-    ListEnabledProductsForImportResult();
-    ListEnabledProductsForImportResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListEnabledProductsForImportResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SECURITYHUB_API ListEnabledProductsForImportResult();
+    AWS_SECURITYHUB_API ListEnabledProductsForImportResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SECURITYHUB_API ListEnabledProductsForImportResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

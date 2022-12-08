@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/RuleGroupSource">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API RuleGroupSource
+  class RuleGroupSource
   {
   public:
-    RuleGroupSource();
-    RuleGroupSource(Aws::Utils::Json::JsonView jsonValue);
-    RuleGroupSource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API RuleGroupSource();
+    AWS_SECURITYHUB_API RuleGroupSource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API RuleGroupSource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/Address">AWS
    * API Reference</a></p>
    */
-  class AWS_OUTPOSTS_API Address
+  class Address
   {
   public:
-    Address();
-    Address(Aws::Utils::Json::JsonView jsonValue);
-    Address& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OUTPOSTS_API Address();
+    AWS_OUTPOSTS_API Address(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OUTPOSTS_API Address& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OUTPOSTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -22,12 +22,12 @@ namespace CodePipeline
 {
 namespace Model
 {
-  class AWS_CODEPIPELINE_API DeregisterWebhookWithThirdPartyResult
+  class DeregisterWebhookWithThirdPartyResult
   {
   public:
-    DeregisterWebhookWithThirdPartyResult();
-    DeregisterWebhookWithThirdPartyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeregisterWebhookWithThirdPartyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODEPIPELINE_API DeregisterWebhookWithThirdPartyResult();
+    AWS_CODEPIPELINE_API DeregisterWebhookWithThirdPartyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODEPIPELINE_API DeregisterWebhookWithThirdPartyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

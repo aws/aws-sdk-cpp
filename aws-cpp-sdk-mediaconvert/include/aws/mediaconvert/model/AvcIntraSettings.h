@@ -41,13 +41,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/AvcIntraSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API AvcIntraSettings
+  class AvcIntraSettings
   {
   public:
-    AvcIntraSettings();
-    AvcIntraSettings(Aws::Utils::Json::JsonView jsonValue);
-    AvcIntraSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API AvcIntraSettings();
+    AWS_MEDIACONVERT_API AvcIntraSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API AvcIntraSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

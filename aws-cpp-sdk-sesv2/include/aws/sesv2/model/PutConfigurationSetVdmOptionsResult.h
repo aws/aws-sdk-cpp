@@ -28,12 +28,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutConfigurationSetVdmOptionsResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_SESV2_API PutConfigurationSetVdmOptionsResult
+  class PutConfigurationSetVdmOptionsResult
   {
   public:
-    PutConfigurationSetVdmOptionsResult();
-    PutConfigurationSetVdmOptionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PutConfigurationSetVdmOptionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SESV2_API PutConfigurationSetVdmOptionsResult();
+    AWS_SESV2_API PutConfigurationSetVdmOptionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SESV2_API PutConfigurationSetVdmOptionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

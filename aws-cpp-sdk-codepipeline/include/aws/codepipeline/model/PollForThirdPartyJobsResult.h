@@ -31,12 +31,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PollForThirdPartyJobsOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEPIPELINE_API PollForThirdPartyJobsResult
+  class PollForThirdPartyJobsResult
   {
   public:
-    PollForThirdPartyJobsResult();
-    PollForThirdPartyJobsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PollForThirdPartyJobsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODEPIPELINE_API PollForThirdPartyJobsResult();
+    AWS_CODEPIPELINE_API PollForThirdPartyJobsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODEPIPELINE_API PollForThirdPartyJobsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

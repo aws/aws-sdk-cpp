@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/CustomKeyStoresListEntry">AWS
    * API Reference</a></p>
    */
-  class AWS_KMS_API CustomKeyStoresListEntry
+  class CustomKeyStoresListEntry
   {
   public:
-    CustomKeyStoresListEntry();
-    CustomKeyStoresListEntry(Aws::Utils::Json::JsonView jsonValue);
-    CustomKeyStoresListEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KMS_API CustomKeyStoresListEntry();
+    AWS_KMS_API CustomKeyStoresListEntry(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KMS_API CustomKeyStoresListEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

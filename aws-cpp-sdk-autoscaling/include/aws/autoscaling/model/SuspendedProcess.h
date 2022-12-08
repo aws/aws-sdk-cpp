@@ -32,15 +32,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/SuspendedProcess">AWS
    * API Reference</a></p>
    */
-  class AWS_AUTOSCALING_API SuspendedProcess
+  class SuspendedProcess
   {
   public:
-    SuspendedProcess();
-    SuspendedProcess(const Aws::Utils::Xml::XmlNode& xmlNode);
-    SuspendedProcess& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_AUTOSCALING_API SuspendedProcess();
+    AWS_AUTOSCALING_API SuspendedProcess(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_AUTOSCALING_API SuspendedProcess& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_AUTOSCALING_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_AUTOSCALING_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**

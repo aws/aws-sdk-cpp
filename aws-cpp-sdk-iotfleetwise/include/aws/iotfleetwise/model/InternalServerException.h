@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/InternalServerException">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTFLEETWISE_API InternalServerException
+  class InternalServerException
   {
   public:
-    InternalServerException();
-    InternalServerException(Aws::Utils::Json::JsonView jsonValue);
-    InternalServerException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTFLEETWISE_API InternalServerException();
+    AWS_IOTFLEETWISE_API InternalServerException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTFLEETWISE_API InternalServerException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTFLEETWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

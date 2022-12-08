@@ -24,12 +24,12 @@ namespace PinpointSMSVoiceV2
 {
 namespace Model
 {
-  class AWS_PINPOINTSMSVOICEV2_API AssociateOriginationIdentityResult
+  class AssociateOriginationIdentityResult
   {
   public:
-    AssociateOriginationIdentityResult();
-    AssociateOriginationIdentityResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AssociateOriginationIdentityResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PINPOINTSMSVOICEV2_API AssociateOriginationIdentityResult();
+    AWS_PINPOINTSMSVOICEV2_API AssociateOriginationIdentityResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PINPOINTSMSVOICEV2_API AssociateOriginationIdentityResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

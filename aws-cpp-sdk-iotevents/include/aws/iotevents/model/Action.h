@@ -41,13 +41,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/Action">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTEVENTS_API Action
+  class Action
   {
   public:
-    Action();
-    Action(Aws::Utils::Json::JsonView jsonValue);
-    Action& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTEVENTS_API Action();
+    AWS_IOTEVENTS_API Action(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTEVENTS_API Action& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTEVENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

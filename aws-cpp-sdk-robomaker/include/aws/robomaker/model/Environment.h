@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/Environment">AWS
    * API Reference</a></p>
    */
-  class AWS_ROBOMAKER_API Environment
+  class Environment
   {
   public:
-    Environment();
-    Environment(Aws::Utils::Json::JsonView jsonValue);
-    Environment& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ROBOMAKER_API Environment();
+    AWS_ROBOMAKER_API Environment(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROBOMAKER_API Environment& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROBOMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

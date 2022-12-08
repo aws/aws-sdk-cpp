@@ -28,12 +28,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/StartConfigRulesEvaluationResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_CONFIGSERVICE_API StartConfigRulesEvaluationResult
+  class StartConfigRulesEvaluationResult
   {
   public:
-    StartConfigRulesEvaluationResult();
-    StartConfigRulesEvaluationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    StartConfigRulesEvaluationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CONFIGSERVICE_API StartConfigRulesEvaluationResult();
+    AWS_CONFIGSERVICE_API StartConfigRulesEvaluationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CONFIGSERVICE_API StartConfigRulesEvaluationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

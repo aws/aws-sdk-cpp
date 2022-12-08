@@ -24,12 +24,12 @@ namespace CloudWatch
 {
 namespace Model
 {
-  class AWS_CLOUDWATCH_API StopMetricStreamsResult
+  class StopMetricStreamsResult
   {
   public:
-    StopMetricStreamsResult();
-    StopMetricStreamsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    StopMetricStreamsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_CLOUDWATCH_API StopMetricStreamsResult();
+    AWS_CLOUDWATCH_API StopMetricStreamsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_CLOUDWATCH_API StopMetricStreamsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     

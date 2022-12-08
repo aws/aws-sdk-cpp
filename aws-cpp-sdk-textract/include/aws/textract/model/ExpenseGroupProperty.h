@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/ExpenseGroupProperty">AWS
    * API Reference</a></p>
    */
-  class AWS_TEXTRACT_API ExpenseGroupProperty
+  class ExpenseGroupProperty
   {
   public:
-    ExpenseGroupProperty();
-    ExpenseGroupProperty(Aws::Utils::Json::JsonView jsonValue);
-    ExpenseGroupProperty& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TEXTRACT_API ExpenseGroupProperty();
+    AWS_TEXTRACT_API ExpenseGroupProperty(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TEXTRACT_API ExpenseGroupProperty& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TEXTRACT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

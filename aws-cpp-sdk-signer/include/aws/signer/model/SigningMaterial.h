@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/SigningMaterial">AWS
    * API Reference</a></p>
    */
-  class AWS_SIGNER_API SigningMaterial
+  class SigningMaterial
   {
   public:
-    SigningMaterial();
-    SigningMaterial(Aws::Utils::Json::JsonView jsonValue);
-    SigningMaterial& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SIGNER_API SigningMaterial();
+    AWS_SIGNER_API SigningMaterial(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SIGNER_API SigningMaterial& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SIGNER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

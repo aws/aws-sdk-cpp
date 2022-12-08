@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ExportFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELSV2_API ExportFilter
+  class ExportFilter
   {
   public:
-    ExportFilter();
-    ExportFilter(Aws::Utils::Json::JsonView jsonValue);
-    ExportFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELSV2_API ExportFilter();
+    AWS_LEXMODELSV2_API ExportFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API ExportFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

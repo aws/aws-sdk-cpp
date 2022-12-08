@@ -30,12 +30,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/GetQueryStateResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_LAKEFORMATION_API GetQueryStateResult
+  class GetQueryStateResult
   {
   public:
-    GetQueryStateResult();
-    GetQueryStateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetQueryStateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LAKEFORMATION_API GetQueryStateResult();
+    AWS_LAKEFORMATION_API GetQueryStateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LAKEFORMATION_API GetQueryStateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DockerVolumeConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_ECS_API DockerVolumeConfiguration
+  class DockerVolumeConfiguration
   {
   public:
-    DockerVolumeConfiguration();
-    DockerVolumeConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    DockerVolumeConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ECS_API DockerVolumeConfiguration();
+    AWS_ECS_API DockerVolumeConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECS_API DockerVolumeConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

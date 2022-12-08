@@ -24,12 +24,12 @@ namespace Kafka
 {
 namespace Model
 {
-  class AWS_KAFKA_API UpdateMonitoringResult
+  class UpdateMonitoringResult
   {
   public:
-    UpdateMonitoringResult();
-    UpdateMonitoringResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateMonitoringResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KAFKA_API UpdateMonitoringResult();
+    AWS_KAFKA_API UpdateMonitoringResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KAFKA_API UpdateMonitoringResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/ResourceUtilization">AWS
    * API Reference</a></p>
    */
-  class AWS_COSTEXPLORER_API ResourceUtilization
+  class ResourceUtilization
   {
   public:
-    ResourceUtilization();
-    ResourceUtilization(Aws::Utils::Json::JsonView jsonValue);
-    ResourceUtilization& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COSTEXPLORER_API ResourceUtilization();
+    AWS_COSTEXPLORER_API ResourceUtilization(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API ResourceUtilization& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

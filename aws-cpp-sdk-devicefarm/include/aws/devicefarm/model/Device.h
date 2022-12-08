@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/Device">AWS
    * API Reference</a></p>
    */
-  class AWS_DEVICEFARM_API Device
+  class Device
   {
   public:
-    Device();
-    Device(Aws::Utils::Json::JsonView jsonValue);
-    Device& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DEVICEFARM_API Device();
+    AWS_DEVICEFARM_API Device(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVICEFARM_API Device& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVICEFARM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

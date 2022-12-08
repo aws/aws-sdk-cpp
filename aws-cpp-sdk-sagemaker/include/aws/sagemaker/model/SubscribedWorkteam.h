@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/SubscribedWorkteam">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API SubscribedWorkteam
+  class SubscribedWorkteam
   {
   public:
-    SubscribedWorkteam();
-    SubscribedWorkteam(Aws::Utils::Json::JsonView jsonValue);
-    SubscribedWorkteam& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API SubscribedWorkteam();
+    AWS_SAGEMAKER_API SubscribedWorkteam(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API SubscribedWorkteam& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

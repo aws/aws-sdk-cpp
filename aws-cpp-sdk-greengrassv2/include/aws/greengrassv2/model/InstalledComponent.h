@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/InstalledComponent">AWS
    * API Reference</a></p>
    */
-  class AWS_GREENGRASSV2_API InstalledComponent
+  class InstalledComponent
   {
   public:
-    InstalledComponent();
-    InstalledComponent(Aws::Utils::Json::JsonView jsonValue);
-    InstalledComponent& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GREENGRASSV2_API InstalledComponent();
+    AWS_GREENGRASSV2_API InstalledComponent(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASSV2_API InstalledComponent& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

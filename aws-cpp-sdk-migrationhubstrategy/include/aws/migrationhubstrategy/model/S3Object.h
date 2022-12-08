@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/migrationhubstrategy-2020-02-19/S3Object">AWS
    * API Reference</a></p>
    */
-  class AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API S3Object
+  class S3Object
   {
   public:
-    S3Object();
-    S3Object(Aws::Utils::Json::JsonView jsonValue);
-    S3Object& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API S3Object();
+    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API S3Object(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API S3Object& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

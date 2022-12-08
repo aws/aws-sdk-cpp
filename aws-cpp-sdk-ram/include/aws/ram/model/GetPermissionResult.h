@@ -24,12 +24,12 @@ namespace RAM
 {
 namespace Model
 {
-  class AWS_RAM_API GetPermissionResult
+  class GetPermissionResult
   {
   public:
-    GetPermissionResult();
-    GetPermissionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetPermissionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_RAM_API GetPermissionResult();
+    AWS_RAM_API GetPermissionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_RAM_API GetPermissionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

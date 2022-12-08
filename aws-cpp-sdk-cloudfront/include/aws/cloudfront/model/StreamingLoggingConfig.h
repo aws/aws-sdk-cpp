@@ -28,14 +28,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/StreamingLoggingConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFRONT_API StreamingLoggingConfig
+  class StreamingLoggingConfig
   {
   public:
-    StreamingLoggingConfig();
-    StreamingLoggingConfig(const Aws::Utils::Xml::XmlNode& xmlNode);
-    StreamingLoggingConfig& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API StreamingLoggingConfig();
+    AWS_CLOUDFRONT_API StreamingLoggingConfig(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API StreamingLoggingConfig& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**

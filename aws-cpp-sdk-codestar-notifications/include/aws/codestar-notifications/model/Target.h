@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codestar-notifications-2019-10-15/Target">AWS
    * API Reference</a></p>
    */
-  class AWS_CODESTARNOTIFICATIONS_API Target
+  class Target
   {
   public:
-    Target();
-    Target(Aws::Utils::Json::JsonView jsonValue);
-    Target& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODESTARNOTIFICATIONS_API Target();
+    AWS_CODESTARNOTIFICATIONS_API Target(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODESTARNOTIFICATIONS_API Target& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODESTARNOTIFICATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

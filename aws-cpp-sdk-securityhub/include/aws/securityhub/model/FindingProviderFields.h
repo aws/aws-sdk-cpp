@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/FindingProviderFields">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API FindingProviderFields
+  class FindingProviderFields
   {
   public:
-    FindingProviderFields();
-    FindingProviderFields(Aws::Utils::Json::JsonView jsonValue);
-    FindingProviderFields& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API FindingProviderFields();
+    AWS_SECURITYHUB_API FindingProviderFields(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API FindingProviderFields& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

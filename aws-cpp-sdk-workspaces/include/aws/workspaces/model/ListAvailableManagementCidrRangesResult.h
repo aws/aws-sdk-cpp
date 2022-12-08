@@ -25,12 +25,12 @@ namespace WorkSpaces
 {
 namespace Model
 {
-  class AWS_WORKSPACES_API ListAvailableManagementCidrRangesResult
+  class ListAvailableManagementCidrRangesResult
   {
   public:
-    ListAvailableManagementCidrRangesResult();
-    ListAvailableManagementCidrRangesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListAvailableManagementCidrRangesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WORKSPACES_API ListAvailableManagementCidrRangesResult();
+    AWS_WORKSPACES_API ListAvailableManagementCidrRangesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WORKSPACES_API ListAvailableManagementCidrRangesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

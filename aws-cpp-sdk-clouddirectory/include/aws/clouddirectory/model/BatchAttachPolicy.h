@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/BatchAttachPolicy">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDDIRECTORY_API BatchAttachPolicy
+  class BatchAttachPolicy
   {
   public:
-    BatchAttachPolicy();
-    BatchAttachPolicy(Aws::Utils::Json::JsonView jsonValue);
-    BatchAttachPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDDIRECTORY_API BatchAttachPolicy();
+    AWS_CLOUDDIRECTORY_API BatchAttachPolicy(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDDIRECTORY_API BatchAttachPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDDIRECTORY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

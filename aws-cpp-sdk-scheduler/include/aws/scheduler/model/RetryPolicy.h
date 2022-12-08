@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/scheduler-2021-06-30/RetryPolicy">AWS
    * API Reference</a></p>
    */
-  class AWS_SCHEDULER_API RetryPolicy
+  class RetryPolicy
   {
   public:
-    RetryPolicy();
-    RetryPolicy(Aws::Utils::Json::JsonView jsonValue);
-    RetryPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SCHEDULER_API RetryPolicy();
+    AWS_SCHEDULER_API RetryPolicy(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SCHEDULER_API RetryPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SCHEDULER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

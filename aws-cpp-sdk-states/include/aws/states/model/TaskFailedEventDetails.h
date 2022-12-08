@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/TaskFailedEventDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SFN_API TaskFailedEventDetails
+  class TaskFailedEventDetails
   {
   public:
-    TaskFailedEventDetails();
-    TaskFailedEventDetails(Aws::Utils::Json::JsonView jsonValue);
-    TaskFailedEventDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SFN_API TaskFailedEventDetails();
+    AWS_SFN_API TaskFailedEventDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SFN_API TaskFailedEventDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SFN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

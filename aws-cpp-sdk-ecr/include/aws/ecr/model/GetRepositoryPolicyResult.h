@@ -24,12 +24,12 @@ namespace ECR
 {
 namespace Model
 {
-  class AWS_ECR_API GetRepositoryPolicyResult
+  class GetRepositoryPolicyResult
   {
   public:
-    GetRepositoryPolicyResult();
-    GetRepositoryPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetRepositoryPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ECR_API GetRepositoryPolicyResult();
+    AWS_ECR_API GetRepositoryPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ECR_API GetRepositoryPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

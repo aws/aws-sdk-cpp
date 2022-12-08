@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/PercentageDisplayFormatConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API PercentageDisplayFormatConfiguration
+  class PercentageDisplayFormatConfiguration
   {
   public:
-    PercentageDisplayFormatConfiguration();
-    PercentageDisplayFormatConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    PercentageDisplayFormatConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API PercentageDisplayFormatConfiguration();
+    AWS_QUICKSIGHT_API PercentageDisplayFormatConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API PercentageDisplayFormatConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

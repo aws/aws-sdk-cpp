@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/WarmPoolStatus">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API WarmPoolStatus
+  class WarmPoolStatus
   {
   public:
-    WarmPoolStatus();
-    WarmPoolStatus(Aws::Utils::Json::JsonView jsonValue);
-    WarmPoolStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API WarmPoolStatus();
+    AWS_SAGEMAKER_API WarmPoolStatus(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API WarmPoolStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

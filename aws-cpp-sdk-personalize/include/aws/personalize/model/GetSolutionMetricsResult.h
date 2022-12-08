@@ -25,12 +25,12 @@ namespace Personalize
 {
 namespace Model
 {
-  class AWS_PERSONALIZE_API GetSolutionMetricsResult
+  class GetSolutionMetricsResult
   {
   public:
-    GetSolutionMetricsResult();
-    GetSolutionMetricsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetSolutionMetricsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PERSONALIZE_API GetSolutionMetricsResult();
+    AWS_PERSONALIZE_API GetSolutionMetricsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PERSONALIZE_API GetSolutionMetricsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

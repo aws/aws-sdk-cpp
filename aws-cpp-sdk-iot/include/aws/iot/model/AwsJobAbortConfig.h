@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/AwsJobAbortConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API AwsJobAbortConfig
+  class AwsJobAbortConfig
   {
   public:
-    AwsJobAbortConfig();
-    AwsJobAbortConfig(Aws::Utils::Json::JsonView jsonValue);
-    AwsJobAbortConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API AwsJobAbortConfig();
+    AWS_IOT_API AwsJobAbortConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API AwsJobAbortConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-streaming-2017-10-26/CallAnalyticsTranscriptResultStream">AWS
    * API Reference</a></p>
    */
-  class AWS_TRANSCRIBESTREAMINGSERVICE_API CallAnalyticsTranscriptResultStream
+  class CallAnalyticsTranscriptResultStream
   {
   public:
-    CallAnalyticsTranscriptResultStream();
-    CallAnalyticsTranscriptResultStream(Aws::Utils::Json::JsonView jsonValue);
-    CallAnalyticsTranscriptResultStream& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TRANSCRIBESTREAMINGSERVICE_API CallAnalyticsTranscriptResultStream();
+    AWS_TRANSCRIBESTREAMINGSERVICE_API CallAnalyticsTranscriptResultStream(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSCRIBESTREAMINGSERVICE_API CallAnalyticsTranscriptResultStream& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSCRIBESTREAMINGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

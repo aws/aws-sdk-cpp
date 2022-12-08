@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/JDBCConnectorTarget">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API JDBCConnectorTarget
+  class JDBCConnectorTarget
   {
   public:
-    JDBCConnectorTarget();
-    JDBCConnectorTarget(Aws::Utils::Json::JsonView jsonValue);
-    JDBCConnectorTarget& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API JDBCConnectorTarget();
+    AWS_GLUE_API JDBCConnectorTarget(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API JDBCConnectorTarget& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

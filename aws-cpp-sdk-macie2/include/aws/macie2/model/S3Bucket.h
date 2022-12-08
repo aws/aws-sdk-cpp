@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/S3Bucket">AWS API
    * Reference</a></p>
    */
-  class AWS_MACIE2_API S3Bucket
+  class S3Bucket
   {
   public:
-    S3Bucket();
-    S3Bucket(Aws::Utils::Json::JsonView jsonValue);
-    S3Bucket& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MACIE2_API S3Bucket();
+    AWS_MACIE2_API S3Bucket(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API S3Bucket& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

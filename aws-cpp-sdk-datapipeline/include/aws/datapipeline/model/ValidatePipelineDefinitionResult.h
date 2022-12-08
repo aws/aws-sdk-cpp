@@ -32,12 +32,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/ValidatePipelineDefinitionOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_DATAPIPELINE_API ValidatePipelineDefinitionResult
+  class ValidatePipelineDefinitionResult
   {
   public:
-    ValidatePipelineDefinitionResult();
-    ValidatePipelineDefinitionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ValidatePipelineDefinitionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DATAPIPELINE_API ValidatePipelineDefinitionResult();
+    AWS_DATAPIPELINE_API ValidatePipelineDefinitionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DATAPIPELINE_API ValidatePipelineDefinitionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

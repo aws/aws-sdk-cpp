@@ -25,12 +25,12 @@ namespace CloudHSM
 {
 namespace Model
 {
-  class AWS_CLOUDHSM_API ListLunaClientsResult
+  class ListLunaClientsResult
   {
   public:
-    ListLunaClientsResult();
-    ListLunaClientsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListLunaClientsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CLOUDHSM_API ListLunaClientsResult();
+    AWS_CLOUDHSM_API ListLunaClientsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CLOUDHSM_API ListLunaClientsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

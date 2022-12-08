@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/EffectivePolicy">AWS
    * API Reference</a></p>
    */
-  class AWS_ORGANIZATIONS_API EffectivePolicy
+  class EffectivePolicy
   {
   public:
-    EffectivePolicy();
-    EffectivePolicy(Aws::Utils::Json::JsonView jsonValue);
-    EffectivePolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ORGANIZATIONS_API EffectivePolicy();
+    AWS_ORGANIZATIONS_API EffectivePolicy(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ORGANIZATIONS_API EffectivePolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ORGANIZATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

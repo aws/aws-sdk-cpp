@@ -24,12 +24,12 @@ namespace HealthLake
 {
 namespace Model
 {
-  class AWS_HEALTHLAKE_API DescribeFHIRDatastoreResult
+  class DescribeFHIRDatastoreResult
   {
   public:
-    DescribeFHIRDatastoreResult();
-    DescribeFHIRDatastoreResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeFHIRDatastoreResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_HEALTHLAKE_API DescribeFHIRDatastoreResult();
+    AWS_HEALTHLAKE_API DescribeFHIRDatastoreResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_HEALTHLAKE_API DescribeFHIRDatastoreResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

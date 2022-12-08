@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/Country">AWS
    * API Reference</a></p>
    */
-  class AWS_GUARDDUTY_API Country
+  class Country
   {
   public:
-    Country();
-    Country(Aws::Utils::Json::JsonView jsonValue);
-    Country& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GUARDDUTY_API Country();
+    AWS_GUARDDUTY_API Country(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API Country& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

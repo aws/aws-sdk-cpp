@@ -32,12 +32,12 @@ namespace SageMaker
 {
 namespace Model
 {
-  class AWS_SAGEMAKER_API DescribeModelBiasJobDefinitionResult
+  class DescribeModelBiasJobDefinitionResult
   {
   public:
-    DescribeModelBiasJobDefinitionResult();
-    DescribeModelBiasJobDefinitionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeModelBiasJobDefinitionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SAGEMAKER_API DescribeModelBiasJobDefinitionResult();
+    AWS_SAGEMAKER_API DescribeModelBiasJobDefinitionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SAGEMAKER_API DescribeModelBiasJobDefinitionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -25,12 +25,12 @@ namespace ElastiCache
 {
 namespace Model
 {
-  class AWS_ELASTICACHE_API RevokeCacheSecurityGroupIngressResult
+  class RevokeCacheSecurityGroupIngressResult
   {
   public:
-    RevokeCacheSecurityGroupIngressResult();
-    RevokeCacheSecurityGroupIngressResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    RevokeCacheSecurityGroupIngressResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ELASTICACHE_API RevokeCacheSecurityGroupIngressResult();
+    AWS_ELASTICACHE_API RevokeCacheSecurityGroupIngressResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ELASTICACHE_API RevokeCacheSecurityGroupIngressResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     

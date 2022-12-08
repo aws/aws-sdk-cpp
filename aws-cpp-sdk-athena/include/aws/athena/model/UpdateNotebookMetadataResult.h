@@ -22,12 +22,12 @@ namespace Athena
 {
 namespace Model
 {
-  class AWS_ATHENA_API UpdateNotebookMetadataResult
+  class UpdateNotebookMetadataResult
   {
   public:
-    UpdateNotebookMetadataResult();
-    UpdateNotebookMetadataResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateNotebookMetadataResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ATHENA_API UpdateNotebookMetadataResult();
+    AWS_ATHENA_API UpdateNotebookMetadataResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ATHENA_API UpdateNotebookMetadataResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

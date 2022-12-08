@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/KnowledgeBaseSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECTWISDOMSERVICE_API KnowledgeBaseSummary
+  class KnowledgeBaseSummary
   {
   public:
-    KnowledgeBaseSummary();
-    KnowledgeBaseSummary(Aws::Utils::Json::JsonView jsonValue);
-    KnowledgeBaseSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECTWISDOMSERVICE_API KnowledgeBaseSummary();
+    AWS_CONNECTWISDOMSERVICE_API KnowledgeBaseSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTWISDOMSERVICE_API KnowledgeBaseSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTWISDOMSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

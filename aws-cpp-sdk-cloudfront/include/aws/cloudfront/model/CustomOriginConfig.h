@@ -32,14 +32,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CustomOriginConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFRONT_API CustomOriginConfig
+  class CustomOriginConfig
   {
   public:
-    CustomOriginConfig();
-    CustomOriginConfig(const Aws::Utils::Xml::XmlNode& xmlNode);
-    CustomOriginConfig& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API CustomOriginConfig();
+    AWS_CLOUDFRONT_API CustomOriginConfig(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API CustomOriginConfig& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**

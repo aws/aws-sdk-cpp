@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/BulkDeployment">AWS
    * API Reference</a></p>
    */
-  class AWS_GREENGRASS_API BulkDeployment
+  class BulkDeployment
   {
   public:
-    BulkDeployment();
-    BulkDeployment(Aws::Utils::Json::JsonView jsonValue);
-    BulkDeployment& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GREENGRASS_API BulkDeployment();
+    AWS_GREENGRASS_API BulkDeployment(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASS_API BulkDeployment& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/ExperimentLogConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_FIS_API ExperimentLogConfiguration
+  class ExperimentLogConfiguration
   {
   public:
-    ExperimentLogConfiguration();
-    ExperimentLogConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    ExperimentLogConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FIS_API ExperimentLogConfiguration();
+    AWS_FIS_API ExperimentLogConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FIS_API ExperimentLogConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FIS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

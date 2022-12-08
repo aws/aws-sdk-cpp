@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/LambdaFunctionScheduleFailedEventDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SFN_API LambdaFunctionScheduleFailedEventDetails
+  class LambdaFunctionScheduleFailedEventDetails
   {
   public:
-    LambdaFunctionScheduleFailedEventDetails();
-    LambdaFunctionScheduleFailedEventDetails(Aws::Utils::Json::JsonView jsonValue);
-    LambdaFunctionScheduleFailedEventDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SFN_API LambdaFunctionScheduleFailedEventDetails();
+    AWS_SFN_API LambdaFunctionScheduleFailedEventDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SFN_API LambdaFunctionScheduleFailedEventDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SFN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

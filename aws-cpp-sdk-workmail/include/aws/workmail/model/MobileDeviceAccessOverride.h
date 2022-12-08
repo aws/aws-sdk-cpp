@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/MobileDeviceAccessOverride">AWS
    * API Reference</a></p>
    */
-  class AWS_WORKMAIL_API MobileDeviceAccessOverride
+  class MobileDeviceAccessOverride
   {
   public:
-    MobileDeviceAccessOverride();
-    MobileDeviceAccessOverride(Aws::Utils::Json::JsonView jsonValue);
-    MobileDeviceAccessOverride& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WORKMAIL_API MobileDeviceAccessOverride();
+    AWS_WORKMAIL_API MobileDeviceAccessOverride(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKMAIL_API MobileDeviceAccessOverride& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKMAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

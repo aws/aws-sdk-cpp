@@ -35,12 +35,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/BatchWriteItemOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_DYNAMODB_API BatchWriteItemResult
+  class BatchWriteItemResult
   {
   public:
-    BatchWriteItemResult();
-    BatchWriteItemResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    BatchWriteItemResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DYNAMODB_API BatchWriteItemResult();
+    AWS_DYNAMODB_API BatchWriteItemResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DYNAMODB_API BatchWriteItemResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

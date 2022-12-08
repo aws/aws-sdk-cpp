@@ -22,10 +22,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/ListBranchesInput">AWS
    * API Reference</a></p>
    */
-  class AWS_CODECOMMIT_API ListBranchesRequest : public CodeCommitRequest
+  class ListBranchesRequest : public CodeCommitRequest
   {
   public:
-    ListBranchesRequest();
+    AWS_CODECOMMIT_API ListBranchesRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,9 +33,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ListBranches"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CODECOMMIT_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_CODECOMMIT_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**

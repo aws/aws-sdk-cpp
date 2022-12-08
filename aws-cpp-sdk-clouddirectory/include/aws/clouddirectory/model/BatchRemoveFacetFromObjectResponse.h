@@ -26,13 +26,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/BatchRemoveFacetFromObjectResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDDIRECTORY_API BatchRemoveFacetFromObjectResponse
+  class BatchRemoveFacetFromObjectResponse
   {
   public:
-    BatchRemoveFacetFromObjectResponse();
-    BatchRemoveFacetFromObjectResponse(Aws::Utils::Json::JsonView jsonValue);
-    BatchRemoveFacetFromObjectResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDDIRECTORY_API BatchRemoveFacetFromObjectResponse();
+    AWS_CLOUDDIRECTORY_API BatchRemoveFacetFromObjectResponse(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDDIRECTORY_API BatchRemoveFacetFromObjectResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDDIRECTORY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
   };
 

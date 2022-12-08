@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ClusterTimeline">AWS
    * API Reference</a></p>
    */
-  class AWS_EMR_API ClusterTimeline
+  class ClusterTimeline
   {
   public:
-    ClusterTimeline();
-    ClusterTimeline(Aws::Utils::Json::JsonView jsonValue);
-    ClusterTimeline& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EMR_API ClusterTimeline();
+    AWS_EMR_API ClusterTimeline(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMR_API ClusterTimeline& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

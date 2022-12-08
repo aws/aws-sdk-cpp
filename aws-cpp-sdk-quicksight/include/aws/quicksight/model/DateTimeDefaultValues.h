@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DateTimeDefaultValues">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API DateTimeDefaultValues
+  class DateTimeDefaultValues
   {
   public:
-    DateTimeDefaultValues();
-    DateTimeDefaultValues(Aws::Utils::Json::JsonView jsonValue);
-    DateTimeDefaultValues& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API DateTimeDefaultValues();
+    AWS_QUICKSIGHT_API DateTimeDefaultValues(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API DateTimeDefaultValues& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

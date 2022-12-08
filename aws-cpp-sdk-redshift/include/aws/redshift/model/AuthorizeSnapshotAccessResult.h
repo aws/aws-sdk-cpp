@@ -25,12 +25,12 @@ namespace Redshift
 {
 namespace Model
 {
-  class AWS_REDSHIFT_API AuthorizeSnapshotAccessResult
+  class AuthorizeSnapshotAccessResult
   {
   public:
-    AuthorizeSnapshotAccessResult();
-    AuthorizeSnapshotAccessResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    AuthorizeSnapshotAccessResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_REDSHIFT_API AuthorizeSnapshotAccessResult();
+    AWS_REDSHIFT_API AuthorizeSnapshotAccessResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_REDSHIFT_API AuthorizeSnapshotAccessResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     

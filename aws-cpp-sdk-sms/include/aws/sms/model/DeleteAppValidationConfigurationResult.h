@@ -22,12 +22,12 @@ namespace SMS
 {
 namespace Model
 {
-  class AWS_SMS_API DeleteAppValidationConfigurationResult
+  class DeleteAppValidationConfigurationResult
   {
   public:
-    DeleteAppValidationConfigurationResult();
-    DeleteAppValidationConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteAppValidationConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SMS_API DeleteAppValidationConfigurationResult();
+    AWS_SMS_API DeleteAppValidationConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SMS_API DeleteAppValidationConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

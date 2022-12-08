@@ -25,12 +25,12 @@ namespace Pricing
 {
 namespace Model
 {
-  class AWS_PRICING_API GetProductsResult
+  class GetProductsResult
   {
   public:
-    GetProductsResult();
-    GetProductsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetProductsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PRICING_API GetProductsResult();
+    AWS_PRICING_API GetProductsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PRICING_API GetProductsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

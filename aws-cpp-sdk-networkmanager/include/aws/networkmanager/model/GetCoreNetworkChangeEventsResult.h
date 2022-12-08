@@ -26,12 +26,12 @@ namespace NetworkManager
 {
 namespace Model
 {
-  class AWS_NETWORKMANAGER_API GetCoreNetworkChangeEventsResult
+  class GetCoreNetworkChangeEventsResult
   {
   public:
-    GetCoreNetworkChangeEventsResult();
-    GetCoreNetworkChangeEventsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetCoreNetworkChangeEventsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_NETWORKMANAGER_API GetCoreNetworkChangeEventsResult();
+    AWS_NETWORKMANAGER_API GetCoreNetworkChangeEventsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_NETWORKMANAGER_API GetCoreNetworkChangeEventsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

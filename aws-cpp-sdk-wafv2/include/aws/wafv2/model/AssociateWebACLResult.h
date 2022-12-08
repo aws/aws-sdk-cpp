@@ -22,12 +22,12 @@ namespace WAFV2
 {
 namespace Model
 {
-  class AWS_WAFV2_API AssociateWebACLResult
+  class AssociateWebACLResult
   {
   public:
-    AssociateWebACLResult();
-    AssociateWebACLResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AssociateWebACLResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WAFV2_API AssociateWebACLResult();
+    AWS_WAFV2_API AssociateWebACLResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WAFV2_API AssociateWebACLResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

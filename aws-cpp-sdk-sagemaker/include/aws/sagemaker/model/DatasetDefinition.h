@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DatasetDefinition">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API DatasetDefinition
+  class DatasetDefinition
   {
   public:
-    DatasetDefinition();
-    DatasetDefinition(Aws::Utils::Json::JsonView jsonValue);
-    DatasetDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API DatasetDefinition();
+    AWS_SAGEMAKER_API DatasetDefinition(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API DatasetDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dlm-2018-01-12/InvalidRequestException">AWS
    * API Reference</a></p>
    */
-  class AWS_DLM_API InvalidRequestException
+  class InvalidRequestException
   {
   public:
-    InvalidRequestException();
-    InvalidRequestException(Aws::Utils::Json::JsonView jsonValue);
-    InvalidRequestException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DLM_API InvalidRequestException();
+    AWS_DLM_API InvalidRequestException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DLM_API InvalidRequestException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DLM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

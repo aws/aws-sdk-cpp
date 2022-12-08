@@ -25,12 +25,12 @@ namespace Lightsail
 {
 namespace Model
 {
-  class AWS_LIGHTSAIL_API AttachLoadBalancerTlsCertificateResult
+  class AttachLoadBalancerTlsCertificateResult
   {
   public:
-    AttachLoadBalancerTlsCertificateResult();
-    AttachLoadBalancerTlsCertificateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AttachLoadBalancerTlsCertificateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LIGHTSAIL_API AttachLoadBalancerTlsCertificateResult();
+    AWS_LIGHTSAIL_API AttachLoadBalancerTlsCertificateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LIGHTSAIL_API AttachLoadBalancerTlsCertificateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

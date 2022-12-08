@@ -22,12 +22,12 @@ namespace SFN
 {
 namespace Model
 {
-  class AWS_SFN_API SendTaskSuccessResult
+  class SendTaskSuccessResult
   {
   public:
-    SendTaskSuccessResult();
-    SendTaskSuccessResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    SendTaskSuccessResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SFN_API SendTaskSuccessResult();
+    AWS_SFN_API SendTaskSuccessResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SFN_API SendTaskSuccessResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

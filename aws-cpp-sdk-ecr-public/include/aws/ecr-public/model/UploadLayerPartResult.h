@@ -24,12 +24,12 @@ namespace ECRPublic
 {
 namespace Model
 {
-  class AWS_ECRPUBLIC_API UploadLayerPartResult
+  class UploadLayerPartResult
   {
   public:
-    UploadLayerPartResult();
-    UploadLayerPartResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UploadLayerPartResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ECRPUBLIC_API UploadLayerPartResult();
+    AWS_ECRPUBLIC_API UploadLayerPartResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ECRPUBLIC_API UploadLayerPartResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

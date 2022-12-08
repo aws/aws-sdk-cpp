@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/oam-2022-06-10/ListAttachedLinksItem">AWS
    * API Reference</a></p>
    */
-  class AWS_OAM_API ListAttachedLinksItem
+  class ListAttachedLinksItem
   {
   public:
-    ListAttachedLinksItem();
-    ListAttachedLinksItem(Aws::Utils::Json::JsonView jsonValue);
-    ListAttachedLinksItem& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OAM_API ListAttachedLinksItem();
+    AWS_OAM_API ListAttachedLinksItem(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OAM_API ListAttachedLinksItem& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OAM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

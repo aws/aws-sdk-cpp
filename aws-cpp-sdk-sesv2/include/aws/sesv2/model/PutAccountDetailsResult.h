@@ -28,12 +28,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutAccountDetailsResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_SESV2_API PutAccountDetailsResult
+  class PutAccountDetailsResult
   {
   public:
-    PutAccountDetailsResult();
-    PutAccountDetailsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PutAccountDetailsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SESV2_API PutAccountDetailsResult();
+    AWS_SESV2_API PutAccountDetailsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SESV2_API PutAccountDetailsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

@@ -46,13 +46,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/SupplementaryFeature">AWS
    * API Reference</a></p>
    */
-  class AWS_FORECASTSERVICE_API SupplementaryFeature
+  class SupplementaryFeature
   {
   public:
-    SupplementaryFeature();
-    SupplementaryFeature(Aws::Utils::Json::JsonView jsonValue);
-    SupplementaryFeature& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FORECASTSERVICE_API SupplementaryFeature();
+    AWS_FORECASTSERVICE_API SupplementaryFeature(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FORECASTSERVICE_API SupplementaryFeature& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FORECASTSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

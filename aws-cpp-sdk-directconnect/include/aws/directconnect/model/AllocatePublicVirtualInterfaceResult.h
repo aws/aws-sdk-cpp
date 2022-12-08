@@ -35,12 +35,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/VirtualInterface">AWS
    * API Reference</a></p>
    */
-  class AWS_DIRECTCONNECT_API AllocatePublicVirtualInterfaceResult
+  class AllocatePublicVirtualInterfaceResult
   {
   public:
-    AllocatePublicVirtualInterfaceResult();
-    AllocatePublicVirtualInterfaceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AllocatePublicVirtualInterfaceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DIRECTCONNECT_API AllocatePublicVirtualInterfaceResult();
+    AWS_DIRECTCONNECT_API AllocatePublicVirtualInterfaceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DIRECTCONNECT_API AllocatePublicVirtualInterfaceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

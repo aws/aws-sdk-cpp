@@ -25,12 +25,12 @@ namespace KMS
 {
 namespace Model
 {
-  class AWS_KMS_API ListKeyPoliciesResult
+  class ListKeyPoliciesResult
   {
   public:
-    ListKeyPoliciesResult();
-    ListKeyPoliciesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListKeyPoliciesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KMS_API ListKeyPoliciesResult();
+    AWS_KMS_API ListKeyPoliciesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KMS_API ListKeyPoliciesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

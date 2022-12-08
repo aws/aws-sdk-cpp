@@ -25,12 +25,12 @@ namespace ApiGatewayManagementApi
 {
 namespace Model
 {
-  class AWS_APIGATEWAYMANAGEMENTAPI_API GetConnectionResult
+  class GetConnectionResult
   {
   public:
-    GetConnectionResult();
-    GetConnectionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetConnectionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APIGATEWAYMANAGEMENTAPI_API GetConnectionResult();
+    AWS_APIGATEWAYMANAGEMENTAPI_API GetConnectionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APIGATEWAYMANAGEMENTAPI_API GetConnectionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

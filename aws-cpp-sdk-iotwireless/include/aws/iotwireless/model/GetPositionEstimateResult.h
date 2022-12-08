@@ -18,21 +18,21 @@ namespace IoTWireless
 {
 namespace Model
 {
-  class AWS_IOTWIRELESS_API GetPositionEstimateResult
+  class GetPositionEstimateResult
   {
   public:
-    GetPositionEstimateResult();
+    AWS_IOTWIRELESS_API GetPositionEstimateResult();
     //We have to define these because Microsoft doesn't auto generate them
-    GetPositionEstimateResult(GetPositionEstimateResult&&);
-    GetPositionEstimateResult& operator=(GetPositionEstimateResult&&);
+    AWS_IOTWIRELESS_API GetPositionEstimateResult(GetPositionEstimateResult&&);
+    AWS_IOTWIRELESS_API GetPositionEstimateResult& operator=(GetPositionEstimateResult&&);
     //we delete these because Microsoft doesn't handle move generation correctly
     //and we therefore don't trust them to get it right here either.
     GetPositionEstimateResult(const GetPositionEstimateResult&) = delete;
     GetPositionEstimateResult& operator=(const GetPositionEstimateResult&) = delete;
 
 
-    GetPositionEstimateResult(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
-    GetPositionEstimateResult& operator=(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
+    AWS_IOTWIRELESS_API GetPositionEstimateResult(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
+    AWS_IOTWIRELESS_API GetPositionEstimateResult& operator=(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
 
 
 

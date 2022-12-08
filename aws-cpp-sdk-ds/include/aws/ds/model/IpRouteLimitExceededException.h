@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/IpRouteLimitExceededException">AWS
    * API Reference</a></p>
    */
-  class AWS_DIRECTORYSERVICE_API IpRouteLimitExceededException
+  class IpRouteLimitExceededException
   {
   public:
-    IpRouteLimitExceededException();
-    IpRouteLimitExceededException(Aws::Utils::Json::JsonView jsonValue);
-    IpRouteLimitExceededException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DIRECTORYSERVICE_API IpRouteLimitExceededException();
+    AWS_DIRECTORYSERVICE_API IpRouteLimitExceededException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTORYSERVICE_API IpRouteLimitExceededException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTORYSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

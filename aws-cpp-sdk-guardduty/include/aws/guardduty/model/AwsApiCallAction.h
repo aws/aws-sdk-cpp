@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/AwsApiCallAction">AWS
    * API Reference</a></p>
    */
-  class AWS_GUARDDUTY_API AwsApiCallAction
+  class AwsApiCallAction
   {
   public:
-    AwsApiCallAction();
-    AwsApiCallAction(Aws::Utils::Json::JsonView jsonValue);
-    AwsApiCallAction& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GUARDDUTY_API AwsApiCallAction();
+    AWS_GUARDDUTY_API AwsApiCallAction(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API AwsApiCallAction& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

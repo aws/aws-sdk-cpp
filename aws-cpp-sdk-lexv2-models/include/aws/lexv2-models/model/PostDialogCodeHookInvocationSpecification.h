@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/PostDialogCodeHookInvocationSpecification">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELSV2_API PostDialogCodeHookInvocationSpecification
+  class PostDialogCodeHookInvocationSpecification
   {
   public:
-    PostDialogCodeHookInvocationSpecification();
-    PostDialogCodeHookInvocationSpecification(Aws::Utils::Json::JsonView jsonValue);
-    PostDialogCodeHookInvocationSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELSV2_API PostDialogCodeHookInvocationSpecification();
+    AWS_LEXMODELSV2_API PostDialogCodeHookInvocationSpecification(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API PostDialogCodeHookInvocationSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

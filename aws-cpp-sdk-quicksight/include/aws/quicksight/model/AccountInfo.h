@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/AccountInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API AccountInfo
+  class AccountInfo
   {
   public:
-    AccountInfo();
-    AccountInfo(Aws::Utils::Json::JsonView jsonValue);
-    AccountInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API AccountInfo();
+    AWS_QUICKSIGHT_API AccountInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API AccountInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

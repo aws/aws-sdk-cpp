@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/AddObjectInput">AWS
    * API Reference</a></p>
    */
-  class AWS_LAKEFORMATION_API AddObjectInput
+  class AddObjectInput
   {
   public:
-    AddObjectInput();
-    AddObjectInput(Aws::Utils::Json::JsonView jsonValue);
-    AddObjectInput& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LAKEFORMATION_API AddObjectInput();
+    AWS_LAKEFORMATION_API AddObjectInput(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAKEFORMATION_API AddObjectInput& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAKEFORMATION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

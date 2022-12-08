@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/CsvFormatDescriptor">AWS
    * API Reference</a></p>
    */
-  class AWS_LOOKOUTMETRICS_API CsvFormatDescriptor
+  class CsvFormatDescriptor
   {
   public:
-    CsvFormatDescriptor();
-    CsvFormatDescriptor(Aws::Utils::Json::JsonView jsonValue);
-    CsvFormatDescriptor& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LOOKOUTMETRICS_API CsvFormatDescriptor();
+    AWS_LOOKOUTMETRICS_API CsvFormatDescriptor(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTMETRICS_API CsvFormatDescriptor& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTMETRICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

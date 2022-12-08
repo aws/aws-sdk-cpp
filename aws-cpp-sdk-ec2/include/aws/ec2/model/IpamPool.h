@@ -39,15 +39,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/IpamPool">AWS API
    * Reference</a></p>
    */
-  class AWS_EC2_API IpamPool
+  class IpamPool
   {
   public:
-    IpamPool();
-    IpamPool(const Aws::Utils::Xml::XmlNode& xmlNode);
-    IpamPool& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API IpamPool();
+    AWS_EC2_API IpamPool(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API IpamPool& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**

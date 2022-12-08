@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/EvaluationResult">AWS
    * API Reference</a></p>
    */
-  class AWS_REKOGNITION_API EvaluationResult
+  class EvaluationResult
   {
   public:
-    EvaluationResult();
-    EvaluationResult(Aws::Utils::Json::JsonView jsonValue);
-    EvaluationResult& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_REKOGNITION_API EvaluationResult();
+    AWS_REKOGNITION_API EvaluationResult(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API EvaluationResult& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

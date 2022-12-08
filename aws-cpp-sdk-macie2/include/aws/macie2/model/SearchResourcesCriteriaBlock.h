@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/SearchResourcesCriteriaBlock">AWS
    * API Reference</a></p>
    */
-  class AWS_MACIE2_API SearchResourcesCriteriaBlock
+  class SearchResourcesCriteriaBlock
   {
   public:
-    SearchResourcesCriteriaBlock();
-    SearchResourcesCriteriaBlock(Aws::Utils::Json::JsonView jsonValue);
-    SearchResourcesCriteriaBlock& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MACIE2_API SearchResourcesCriteriaBlock();
+    AWS_MACIE2_API SearchResourcesCriteriaBlock(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API SearchResourcesCriteriaBlock& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

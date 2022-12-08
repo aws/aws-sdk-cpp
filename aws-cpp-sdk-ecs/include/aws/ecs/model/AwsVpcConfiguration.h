@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/AwsVpcConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_ECS_API AwsVpcConfiguration
+  class AwsVpcConfiguration
   {
   public:
-    AwsVpcConfiguration();
-    AwsVpcConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    AwsVpcConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ECS_API AwsVpcConfiguration();
+    AWS_ECS_API AwsVpcConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECS_API AwsVpcConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -24,12 +24,12 @@ namespace TimestreamQuery
 {
 namespace Model
 {
-  class AWS_TIMESTREAMQUERY_API DescribeScheduledQueryResult
+  class DescribeScheduledQueryResult
   {
   public:
-    DescribeScheduledQueryResult();
-    DescribeScheduledQueryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeScheduledQueryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_TIMESTREAMQUERY_API DescribeScheduledQueryResult();
+    AWS_TIMESTREAMQUERY_API DescribeScheduledQueryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_TIMESTREAMQUERY_API DescribeScheduledQueryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

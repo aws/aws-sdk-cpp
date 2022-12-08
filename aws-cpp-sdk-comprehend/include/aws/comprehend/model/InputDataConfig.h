@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/InputDataConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_COMPREHEND_API InputDataConfig
+  class InputDataConfig
   {
   public:
-    InputDataConfig();
-    InputDataConfig(Aws::Utils::Json::JsonView jsonValue);
-    InputDataConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COMPREHEND_API InputDataConfig();
+    AWS_COMPREHEND_API InputDataConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHEND_API InputDataConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHEND_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

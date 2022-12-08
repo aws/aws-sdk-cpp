@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/Job">AWS API
    * Reference</a></p>
    */
-  class AWS_DEVICEFARM_API Job
+  class Job
   {
   public:
-    Job();
-    Job(Aws::Utils::Json::JsonView jsonValue);
-    Job& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DEVICEFARM_API Job();
+    AWS_DEVICEFARM_API Job(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVICEFARM_API Job& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVICEFARM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

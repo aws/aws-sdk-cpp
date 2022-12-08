@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/JobError">AWS
    * API Reference</a></p>
    */
-  class AWS_DATAEXCHANGE_API JobError
+  class JobError
   {
   public:
-    JobError();
-    JobError(Aws::Utils::Json::JsonView jsonValue);
-    JobError& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DATAEXCHANGE_API JobError();
+    AWS_DATAEXCHANGE_API JobError(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATAEXCHANGE_API JobError& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATAEXCHANGE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

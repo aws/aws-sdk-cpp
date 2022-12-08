@@ -25,12 +25,12 @@ namespace GuardDuty
 {
 namespace Model
 {
-  class AWS_GUARDDUTY_API StartMonitoringMembersResult
+  class StartMonitoringMembersResult
   {
   public:
-    StartMonitoringMembersResult();
-    StartMonitoringMembersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    StartMonitoringMembersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GUARDDUTY_API StartMonitoringMembersResult();
+    AWS_GUARDDUTY_API StartMonitoringMembersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GUARDDUTY_API StartMonitoringMembersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/AddonVersionInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_EKS_API AddonVersionInfo
+  class AddonVersionInfo
   {
   public:
-    AddonVersionInfo();
-    AddonVersionInfo(Aws::Utils::Json::JsonView jsonValue);
-    AddonVersionInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EKS_API AddonVersionInfo();
+    AWS_EKS_API AddonVersionInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EKS_API AddonVersionInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EKS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

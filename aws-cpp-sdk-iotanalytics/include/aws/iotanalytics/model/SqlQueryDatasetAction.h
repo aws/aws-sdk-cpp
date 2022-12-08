@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/SqlQueryDatasetAction">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTANALYTICS_API SqlQueryDatasetAction
+  class SqlQueryDatasetAction
   {
   public:
-    SqlQueryDatasetAction();
-    SqlQueryDatasetAction(Aws::Utils::Json::JsonView jsonValue);
-    SqlQueryDatasetAction& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTANALYTICS_API SqlQueryDatasetAction();
+    AWS_IOTANALYTICS_API SqlQueryDatasetAction(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTANALYTICS_API SqlQueryDatasetAction& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

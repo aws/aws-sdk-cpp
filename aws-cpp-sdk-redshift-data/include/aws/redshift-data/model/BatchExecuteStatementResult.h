@@ -25,12 +25,12 @@ namespace RedshiftDataAPIService
 {
 namespace Model
 {
-  class AWS_REDSHIFTDATAAPISERVICE_API BatchExecuteStatementResult
+  class BatchExecuteStatementResult
   {
   public:
-    BatchExecuteStatementResult();
-    BatchExecuteStatementResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    BatchExecuteStatementResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_REDSHIFTDATAAPISERVICE_API BatchExecuteStatementResult();
+    AWS_REDSHIFTDATAAPISERVICE_API BatchExecuteStatementResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_REDSHIFTDATAAPISERVICE_API BatchExecuteStatementResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

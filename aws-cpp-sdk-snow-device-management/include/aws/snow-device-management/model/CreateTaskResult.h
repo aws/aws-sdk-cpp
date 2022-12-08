@@ -24,12 +24,12 @@ namespace SnowDeviceManagement
 {
 namespace Model
 {
-  class AWS_SNOWDEVICEMANAGEMENT_API CreateTaskResult
+  class CreateTaskResult
   {
   public:
-    CreateTaskResult();
-    CreateTaskResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateTaskResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SNOWDEVICEMANAGEMENT_API CreateTaskResult();
+    AWS_SNOWDEVICEMANAGEMENT_API CreateTaskResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SNOWDEVICEMANAGEMENT_API CreateTaskResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

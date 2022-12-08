@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/S3Object">AWS
    * API Reference</a></p>
    */
-  class AWS_TEXTRACT_API S3Object
+  class S3Object
   {
   public:
-    S3Object();
-    S3Object(Aws::Utils::Json::JsonView jsonValue);
-    S3Object& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TEXTRACT_API S3Object();
+    AWS_TEXTRACT_API S3Object(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TEXTRACT_API S3Object& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TEXTRACT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

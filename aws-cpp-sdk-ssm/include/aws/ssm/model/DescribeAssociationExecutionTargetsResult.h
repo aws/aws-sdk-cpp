@@ -26,12 +26,12 @@ namespace SSM
 {
 namespace Model
 {
-  class AWS_SSM_API DescribeAssociationExecutionTargetsResult
+  class DescribeAssociationExecutionTargetsResult
   {
   public:
-    DescribeAssociationExecutionTargetsResult();
-    DescribeAssociationExecutionTargetsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeAssociationExecutionTargetsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSM_API DescribeAssociationExecutionTargetsResult();
+    AWS_SSM_API DescribeAssociationExecutionTargetsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSM_API DescribeAssociationExecutionTargetsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

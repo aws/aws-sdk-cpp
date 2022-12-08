@@ -27,12 +27,12 @@ namespace DevOpsGuru
 {
 namespace Model
 {
-  class AWS_DEVOPSGURU_API ListAnomaliesForInsightResult
+  class ListAnomaliesForInsightResult
   {
   public:
-    ListAnomaliesForInsightResult();
-    ListAnomaliesForInsightResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListAnomaliesForInsightResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DEVOPSGURU_API ListAnomaliesForInsightResult();
+    AWS_DEVOPSGURU_API ListAnomaliesForInsightResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DEVOPSGURU_API ListAnomaliesForInsightResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

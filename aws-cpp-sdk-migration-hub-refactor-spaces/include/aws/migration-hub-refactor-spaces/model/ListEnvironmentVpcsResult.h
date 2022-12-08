@@ -26,12 +26,12 @@ namespace MigrationHubRefactorSpaces
 {
 namespace Model
 {
-  class AWS_MIGRATIONHUBREFACTORSPACES_API ListEnvironmentVpcsResult
+  class ListEnvironmentVpcsResult
   {
   public:
-    ListEnvironmentVpcsResult();
-    ListEnvironmentVpcsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListEnvironmentVpcsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MIGRATIONHUBREFACTORSPACES_API ListEnvironmentVpcsResult();
+    AWS_MIGRATIONHUBREFACTORSPACES_API ListEnvironmentVpcsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MIGRATIONHUBREFACTORSPACES_API ListEnvironmentVpcsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

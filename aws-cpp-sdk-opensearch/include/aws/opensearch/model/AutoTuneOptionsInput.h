@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/AutoTuneOptionsInput">AWS
    * API Reference</a></p>
    */
-  class AWS_OPENSEARCHSERVICE_API AutoTuneOptionsInput
+  class AutoTuneOptionsInput
   {
   public:
-    AutoTuneOptionsInput();
-    AutoTuneOptionsInput(Aws::Utils::Json::JsonView jsonValue);
-    AutoTuneOptionsInput& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OPENSEARCHSERVICE_API AutoTuneOptionsInput();
+    AWS_OPENSEARCHSERVICE_API AutoTuneOptionsInput(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPENSEARCHSERVICE_API AutoTuneOptionsInput& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPENSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

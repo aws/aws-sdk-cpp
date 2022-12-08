@@ -22,12 +22,12 @@ namespace WorkMail
 {
 namespace Model
 {
-  class AWS_WORKMAIL_API DeregisterFromWorkMailResult
+  class DeregisterFromWorkMailResult
   {
   public:
-    DeregisterFromWorkMailResult();
-    DeregisterFromWorkMailResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeregisterFromWorkMailResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WORKMAIL_API DeregisterFromWorkMailResult();
+    AWS_WORKMAIL_API DeregisterFromWorkMailResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WORKMAIL_API DeregisterFromWorkMailResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

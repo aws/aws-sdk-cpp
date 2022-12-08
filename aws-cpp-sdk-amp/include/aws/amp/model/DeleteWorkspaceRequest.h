@@ -27,10 +27,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DeleteWorkspaceRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_PROMETHEUSSERVICE_API DeleteWorkspaceRequest : public PrometheusServiceRequest
+  class DeleteWorkspaceRequest : public PrometheusServiceRequest
   {
   public:
-    DeleteWorkspaceRequest();
+    AWS_PROMETHEUSSERVICE_API DeleteWorkspaceRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,9 +38,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DeleteWorkspace"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_PROMETHEUSSERVICE_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_PROMETHEUSSERVICE_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**

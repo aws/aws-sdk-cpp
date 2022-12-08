@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/UpdateExperimentTemplateLogConfigurationInput">AWS
    * API Reference</a></p>
    */
-  class AWS_FIS_API UpdateExperimentTemplateLogConfigurationInput
+  class UpdateExperimentTemplateLogConfigurationInput
   {
   public:
-    UpdateExperimentTemplateLogConfigurationInput();
-    UpdateExperimentTemplateLogConfigurationInput(Aws::Utils::Json::JsonView jsonValue);
-    UpdateExperimentTemplateLogConfigurationInput& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FIS_API UpdateExperimentTemplateLogConfigurationInput();
+    AWS_FIS_API UpdateExperimentTemplateLogConfigurationInput(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FIS_API UpdateExperimentTemplateLogConfigurationInput& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FIS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

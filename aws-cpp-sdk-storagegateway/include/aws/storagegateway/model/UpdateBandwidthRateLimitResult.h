@@ -30,12 +30,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateBandwidthRateLimitOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_STORAGEGATEWAY_API UpdateBandwidthRateLimitResult
+  class UpdateBandwidthRateLimitResult
   {
   public:
-    UpdateBandwidthRateLimitResult();
-    UpdateBandwidthRateLimitResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateBandwidthRateLimitResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_STORAGEGATEWAY_API UpdateBandwidthRateLimitResult();
+    AWS_STORAGEGATEWAY_API UpdateBandwidthRateLimitResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_STORAGEGATEWAY_API UpdateBandwidthRateLimitResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     

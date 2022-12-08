@@ -31,15 +31,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/EngineDefaults">AWS
    * API Reference</a></p>
    */
-  class AWS_NEPTUNE_API EngineDefaults
+  class EngineDefaults
   {
   public:
-    EngineDefaults();
-    EngineDefaults(const Aws::Utils::Xml::XmlNode& xmlNode);
-    EngineDefaults& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_NEPTUNE_API EngineDefaults();
+    AWS_NEPTUNE_API EngineDefaults(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_NEPTUNE_API EngineDefaults& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_NEPTUNE_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_NEPTUNE_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**

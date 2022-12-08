@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/AppInstance">AWS
    * API Reference</a></p>
    */
-  class AWS_CHIMESDKIDENTITY_API AppInstance
+  class AppInstance
   {
   public:
-    AppInstance();
-    AppInstance(Aws::Utils::Json::JsonView jsonValue);
-    AppInstance& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIMESDKIDENTITY_API AppInstance();
+    AWS_CHIMESDKIDENTITY_API AppInstance(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKIDENTITY_API AppInstance& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKIDENTITY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

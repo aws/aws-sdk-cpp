@@ -26,12 +26,12 @@ namespace ECS
 {
 namespace Model
 {
-  class AWS_ECS_API RegisterTaskDefinitionResult
+  class RegisterTaskDefinitionResult
   {
   public:
-    RegisterTaskDefinitionResult();
-    RegisterTaskDefinitionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    RegisterTaskDefinitionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ECS_API RegisterTaskDefinitionResult();
+    AWS_ECS_API RegisterTaskDefinitionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ECS_API RegisterTaskDefinitionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

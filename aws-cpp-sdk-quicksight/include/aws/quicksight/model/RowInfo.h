@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/RowInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API RowInfo
+  class RowInfo
   {
   public:
-    RowInfo();
-    RowInfo(Aws::Utils::Json::JsonView jsonValue);
-    RowInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API RowInfo();
+    AWS_QUICKSIGHT_API RowInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API RowInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

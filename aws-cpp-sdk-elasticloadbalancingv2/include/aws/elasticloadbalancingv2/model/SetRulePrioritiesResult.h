@@ -26,12 +26,12 @@ namespace ElasticLoadBalancingv2
 {
 namespace Model
 {
-  class AWS_ELASTICLOADBALANCINGV2_API SetRulePrioritiesResult
+  class SetRulePrioritiesResult
   {
   public:
-    SetRulePrioritiesResult();
-    SetRulePrioritiesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    SetRulePrioritiesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ELASTICLOADBALANCINGV2_API SetRulePrioritiesResult();
+    AWS_ELASTICLOADBALANCINGV2_API SetRulePrioritiesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ELASTICLOADBALANCINGV2_API SetRulePrioritiesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

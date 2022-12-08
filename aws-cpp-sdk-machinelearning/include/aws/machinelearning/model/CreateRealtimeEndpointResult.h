@@ -35,12 +35,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/CreateRealtimeEndpointOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_MACHINELEARNING_API CreateRealtimeEndpointResult
+  class CreateRealtimeEndpointResult
   {
   public:
-    CreateRealtimeEndpointResult();
-    CreateRealtimeEndpointResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateRealtimeEndpointResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MACHINELEARNING_API CreateRealtimeEndpointResult();
+    AWS_MACHINELEARNING_API CreateRealtimeEndpointResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MACHINELEARNING_API CreateRealtimeEndpointResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -25,13 +25,13 @@ namespace AppConfig
 namespace Model
 {
 
-  class AWS_APPCONFIG_API DeploymentStrategy
+  class DeploymentStrategy
   {
   public:
-    DeploymentStrategy();
-    DeploymentStrategy(Aws::Utils::Json::JsonView jsonValue);
-    DeploymentStrategy& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPCONFIG_API DeploymentStrategy();
+    AWS_APPCONFIG_API DeploymentStrategy(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPCONFIG_API DeploymentStrategy& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPCONFIG_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

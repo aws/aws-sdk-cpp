@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/TreeMapConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API TreeMapConfiguration
+  class TreeMapConfiguration
   {
   public:
-    TreeMapConfiguration();
-    TreeMapConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    TreeMapConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API TreeMapConfiguration();
+    AWS_QUICKSIGHT_API TreeMapConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API TreeMapConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

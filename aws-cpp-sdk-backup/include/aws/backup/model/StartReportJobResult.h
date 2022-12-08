@@ -24,12 +24,12 @@ namespace Backup
 {
 namespace Model
 {
-  class AWS_BACKUP_API StartReportJobResult
+  class StartReportJobResult
   {
   public:
-    StartReportJobResult();
-    StartReportJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    StartReportJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_BACKUP_API StartReportJobResult();
+    AWS_BACKUP_API StartReportJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_BACKUP_API StartReportJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

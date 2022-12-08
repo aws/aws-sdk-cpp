@@ -33,14 +33,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ResponseHeadersPolicyAccessControlExposeHeaders">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFRONT_API ResponseHeadersPolicyAccessControlExposeHeaders
+  class ResponseHeadersPolicyAccessControlExposeHeaders
   {
   public:
-    ResponseHeadersPolicyAccessControlExposeHeaders();
-    ResponseHeadersPolicyAccessControlExposeHeaders(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ResponseHeadersPolicyAccessControlExposeHeaders& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API ResponseHeadersPolicyAccessControlExposeHeaders();
+    AWS_CLOUDFRONT_API ResponseHeadersPolicyAccessControlExposeHeaders(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API ResponseHeadersPolicyAccessControlExposeHeaders& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**

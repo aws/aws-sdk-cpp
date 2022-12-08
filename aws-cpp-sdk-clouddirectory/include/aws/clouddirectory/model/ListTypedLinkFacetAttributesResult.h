@@ -26,12 +26,12 @@ namespace CloudDirectory
 {
 namespace Model
 {
-  class AWS_CLOUDDIRECTORY_API ListTypedLinkFacetAttributesResult
+  class ListTypedLinkFacetAttributesResult
   {
   public:
-    ListTypedLinkFacetAttributesResult();
-    ListTypedLinkFacetAttributesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListTypedLinkFacetAttributesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CLOUDDIRECTORY_API ListTypedLinkFacetAttributesResult();
+    AWS_CLOUDDIRECTORY_API ListTypedLinkFacetAttributesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CLOUDDIRECTORY_API ListTypedLinkFacetAttributesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

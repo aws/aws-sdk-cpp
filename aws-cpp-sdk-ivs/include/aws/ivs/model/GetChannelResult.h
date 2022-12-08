@@ -24,12 +24,12 @@ namespace IVS
 {
 namespace Model
 {
-  class AWS_IVS_API GetChannelResult
+  class GetChannelResult
   {
   public:
-    GetChannelResult();
-    GetChannelResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetChannelResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IVS_API GetChannelResult();
+    AWS_IVS_API GetChannelResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IVS_API GetChannelResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

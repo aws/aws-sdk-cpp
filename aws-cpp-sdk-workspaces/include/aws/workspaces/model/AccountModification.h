@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/AccountModification">AWS
    * API Reference</a></p>
    */
-  class AWS_WORKSPACES_API AccountModification
+  class AccountModification
   {
   public:
-    AccountModification();
-    AccountModification(Aws::Utils::Json::JsonView jsonValue);
-    AccountModification& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WORKSPACES_API AccountModification();
+    AWS_WORKSPACES_API AccountModification(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKSPACES_API AccountModification& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

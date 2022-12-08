@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/WorkflowRun">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API WorkflowRun
+  class WorkflowRun
   {
   public:
-    WorkflowRun();
-    WorkflowRun(Aws::Utils::Json::JsonView jsonValue);
-    WorkflowRun& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API WorkflowRun();
+    AWS_GLUE_API WorkflowRun(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API WorkflowRun& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

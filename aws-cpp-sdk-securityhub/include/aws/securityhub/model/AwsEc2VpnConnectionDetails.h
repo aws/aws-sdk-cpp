@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsEc2VpnConnectionDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsEc2VpnConnectionDetails
+  class AwsEc2VpnConnectionDetails
   {
   public:
-    AwsEc2VpnConnectionDetails();
-    AwsEc2VpnConnectionDetails(Aws::Utils::Json::JsonView jsonValue);
-    AwsEc2VpnConnectionDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsEc2VpnConnectionDetails();
+    AWS_SECURITYHUB_API AwsEc2VpnConnectionDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsEc2VpnConnectionDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

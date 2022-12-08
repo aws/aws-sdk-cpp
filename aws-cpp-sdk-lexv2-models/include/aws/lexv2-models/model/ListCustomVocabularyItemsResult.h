@@ -26,12 +26,12 @@ namespace LexModelsV2
 {
 namespace Model
 {
-  class AWS_LEXMODELSV2_API ListCustomVocabularyItemsResult
+  class ListCustomVocabularyItemsResult
   {
   public:
-    ListCustomVocabularyItemsResult();
-    ListCustomVocabularyItemsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListCustomVocabularyItemsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LEXMODELSV2_API ListCustomVocabularyItemsResult();
+    AWS_LEXMODELSV2_API ListCustomVocabularyItemsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LEXMODELSV2_API ListCustomVocabularyItemsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/Service">AWS API
    * Reference</a></p>
    */
-  class AWS_XRAY_API Service
+  class Service
   {
   public:
-    Service();
-    Service(Aws::Utils::Json::JsonView jsonValue);
-    Service& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_XRAY_API Service();
+    AWS_XRAY_API Service(Aws::Utils::Json::JsonView jsonValue);
+    AWS_XRAY_API Service& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_XRAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/panorama-2019-07-24/NodeInterface">AWS
    * API Reference</a></p>
    */
-  class AWS_PANORAMA_API NodeInterface
+  class NodeInterface
   {
   public:
-    NodeInterface();
-    NodeInterface(Aws::Utils::Json::JsonView jsonValue);
-    NodeInterface& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PANORAMA_API NodeInterface();
+    AWS_PANORAMA_API NodeInterface(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PANORAMA_API NodeInterface& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PANORAMA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

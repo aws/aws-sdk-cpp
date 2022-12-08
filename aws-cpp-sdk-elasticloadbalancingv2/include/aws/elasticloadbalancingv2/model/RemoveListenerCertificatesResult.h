@@ -24,12 +24,12 @@ namespace ElasticLoadBalancingv2
 {
 namespace Model
 {
-  class AWS_ELASTICLOADBALANCINGV2_API RemoveListenerCertificatesResult
+  class RemoveListenerCertificatesResult
   {
   public:
-    RemoveListenerCertificatesResult();
-    RemoveListenerCertificatesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    RemoveListenerCertificatesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ELASTICLOADBALANCINGV2_API RemoveListenerCertificatesResult();
+    AWS_ELASTICLOADBALANCINGV2_API RemoveListenerCertificatesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ELASTICLOADBALANCINGV2_API RemoveListenerCertificatesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     

@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/Host">AWS API
    * Reference</a></p>
    */
-  class AWS_BATCH_API Host
+  class Host
   {
   public:
-    Host();
-    Host(Aws::Utils::Json::JsonView jsonValue);
-    Host& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BATCH_API Host();
+    AWS_BATCH_API Host(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BATCH_API Host& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BATCH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -30,12 +30,12 @@ namespace mgn
 {
 namespace Model
 {
-  class AWS_MGN_API MarkAsArchivedResult
+  class MarkAsArchivedResult
   {
   public:
-    MarkAsArchivedResult();
-    MarkAsArchivedResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    MarkAsArchivedResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MGN_API MarkAsArchivedResult();
+    AWS_MGN_API MarkAsArchivedResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MGN_API MarkAsArchivedResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

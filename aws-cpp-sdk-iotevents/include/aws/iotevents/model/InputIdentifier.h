@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/InputIdentifier">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTEVENTS_API InputIdentifier
+  class InputIdentifier
   {
   public:
-    InputIdentifier();
-    InputIdentifier(Aws::Utils::Json::JsonView jsonValue);
-    InputIdentifier& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTEVENTS_API InputIdentifier();
+    AWS_IOTEVENTS_API InputIdentifier(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTEVENTS_API InputIdentifier& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTEVENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -40,13 +40,13 @@ namespace Model
    * <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/Crawler">AWS API
    * Reference</a></p>
    */
-  class AWS_GLUE_API Crawler
+  class Crawler
   {
   public:
-    Crawler();
-    Crawler(Aws::Utils::Json::JsonView jsonValue);
-    Crawler& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API Crawler();
+    AWS_GLUE_API Crawler(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Crawler& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

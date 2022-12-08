@@ -24,12 +24,12 @@ namespace AccessAnalyzer
 {
 namespace Model
 {
-  class AWS_ACCESSANALYZER_API GetAccessPreviewResult
+  class GetAccessPreviewResult
   {
   public:
-    GetAccessPreviewResult();
-    GetAccessPreviewResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetAccessPreviewResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ACCESSANALYZER_API GetAccessPreviewResult();
+    AWS_ACCESSANALYZER_API GetAccessPreviewResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ACCESSANALYZER_API GetAccessPreviewResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

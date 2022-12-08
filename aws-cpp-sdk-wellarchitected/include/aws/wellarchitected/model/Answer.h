@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/Answer">AWS
    * API Reference</a></p>
    */
-  class AWS_WELLARCHITECTED_API Answer
+  class Answer
   {
   public:
-    Answer();
-    Answer(Aws::Utils::Json::JsonView jsonValue);
-    Answer& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WELLARCHITECTED_API Answer();
+    AWS_WELLARCHITECTED_API Answer(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WELLARCHITECTED_API Answer& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WELLARCHITECTED_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

@@ -25,12 +25,12 @@ namespace Proton
 {
 namespace Model
 {
-  class AWS_PROTON_API GetTemplateSyncStatusResult
+  class GetTemplateSyncStatusResult
   {
   public:
-    GetTemplateSyncStatusResult();
-    GetTemplateSyncStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetTemplateSyncStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PROTON_API GetTemplateSyncStatusResult();
+    AWS_PROTON_API GetTemplateSyncStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PROTON_API GetTemplateSyncStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

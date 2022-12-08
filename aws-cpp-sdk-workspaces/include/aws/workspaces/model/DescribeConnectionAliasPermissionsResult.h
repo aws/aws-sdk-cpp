@@ -26,12 +26,12 @@ namespace WorkSpaces
 {
 namespace Model
 {
-  class AWS_WORKSPACES_API DescribeConnectionAliasPermissionsResult
+  class DescribeConnectionAliasPermissionsResult
   {
   public:
-    DescribeConnectionAliasPermissionsResult();
-    DescribeConnectionAliasPermissionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeConnectionAliasPermissionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WORKSPACES_API DescribeConnectionAliasPermissionsResult();
+    AWS_WORKSPACES_API DescribeConnectionAliasPermissionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WORKSPACES_API DescribeConnectionAliasPermissionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

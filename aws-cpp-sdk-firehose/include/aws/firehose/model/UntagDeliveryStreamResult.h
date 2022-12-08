@@ -22,12 +22,12 @@ namespace Firehose
 {
 namespace Model
 {
-  class AWS_FIREHOSE_API UntagDeliveryStreamResult
+  class UntagDeliveryStreamResult
   {
   public:
-    UntagDeliveryStreamResult();
-    UntagDeliveryStreamResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UntagDeliveryStreamResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_FIREHOSE_API UntagDeliveryStreamResult();
+    AWS_FIREHOSE_API UntagDeliveryStreamResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_FIREHOSE_API UntagDeliveryStreamResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

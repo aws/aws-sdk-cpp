@@ -22,12 +22,12 @@ namespace ServiceCatalog
 {
 namespace Model
 {
-  class AWS_SERVICECATALOG_API AssociateBudgetWithResourceResult
+  class AssociateBudgetWithResourceResult
   {
   public:
-    AssociateBudgetWithResourceResult();
-    AssociateBudgetWithResourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AssociateBudgetWithResourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SERVICECATALOG_API AssociateBudgetWithResourceResult();
+    AWS_SERVICECATALOG_API AssociateBudgetWithResourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SERVICECATALOG_API AssociateBudgetWithResourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

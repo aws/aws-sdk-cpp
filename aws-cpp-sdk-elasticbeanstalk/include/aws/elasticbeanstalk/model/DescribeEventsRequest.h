@@ -24,10 +24,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeEventsMessage">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICBEANSTALK_API DescribeEventsRequest : public ElasticBeanstalkRequest
+  class DescribeEventsRequest : public ElasticBeanstalkRequest
   {
   public:
-    DescribeEventsRequest();
+    AWS_ELASTICBEANSTALK_API DescribeEventsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -35,10 +35,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DescribeEvents"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_ELASTICBEANSTALK_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_ELASTICBEANSTALK_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 

@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/Predicate">AWS
    * API Reference</a></p>
    */
-  class AWS_AMPLIFYUIBUILDER_API Predicate
+  class Predicate
   {
   public:
-    Predicate();
-    Predicate(Aws::Utils::Json::JsonView jsonValue);
-    Predicate& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_AMPLIFYUIBUILDER_API Predicate();
+    AWS_AMPLIFYUIBUILDER_API Predicate(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFYUIBUILDER_API Predicate& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFYUIBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

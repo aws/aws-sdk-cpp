@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/UserProfileSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_CODESTAR_API UserProfileSummary
+  class UserProfileSummary
   {
   public:
-    UserProfileSummary();
-    UserProfileSummary(Aws::Utils::Json::JsonView jsonValue);
-    UserProfileSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODESTAR_API UserProfileSummary();
+    AWS_CODESTAR_API UserProfileSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODESTAR_API UserProfileSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODESTAR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

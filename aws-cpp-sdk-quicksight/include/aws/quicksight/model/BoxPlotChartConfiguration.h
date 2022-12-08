@@ -38,13 +38,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/BoxPlotChartConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API BoxPlotChartConfiguration
+  class BoxPlotChartConfiguration
   {
   public:
-    BoxPlotChartConfiguration();
-    BoxPlotChartConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    BoxPlotChartConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API BoxPlotChartConfiguration();
+    AWS_QUICKSIGHT_API BoxPlotChartConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API BoxPlotChartConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

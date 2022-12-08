@@ -24,12 +24,12 @@ namespace SsmSap
 {
 namespace Model
 {
-  class AWS_SSMSAP_API GetResourcePermissionResult
+  class GetResourcePermissionResult
   {
   public:
-    GetResourcePermissionResult();
-    GetResourcePermissionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetResourcePermissionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSMSAP_API GetResourcePermissionResult();
+    AWS_SSMSAP_API GetResourcePermissionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSMSAP_API GetResourcePermissionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

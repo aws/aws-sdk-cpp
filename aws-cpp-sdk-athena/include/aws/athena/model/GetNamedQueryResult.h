@@ -24,12 +24,12 @@ namespace Athena
 {
 namespace Model
 {
-  class AWS_ATHENA_API GetNamedQueryResult
+  class GetNamedQueryResult
   {
   public:
-    GetNamedQueryResult();
-    GetNamedQueryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetNamedQueryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ATHENA_API GetNamedQueryResult();
+    AWS_ATHENA_API GetNamedQueryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ATHENA_API GetNamedQueryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/VpcLink">AWS
    * API Reference</a></p>
    */
-  class AWS_APIGATEWAYV2_API VpcLink
+  class VpcLink
   {
   public:
-    VpcLink();
-    VpcLink(Aws::Utils::Json::JsonView jsonValue);
-    VpcLink& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APIGATEWAYV2_API VpcLink();
+    AWS_APIGATEWAYV2_API VpcLink(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APIGATEWAYV2_API VpcLink& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APIGATEWAYV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

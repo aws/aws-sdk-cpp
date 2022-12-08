@@ -24,12 +24,12 @@ namespace QLDB
 {
 namespace Model
 {
-  class AWS_QLDB_API CancelJournalKinesisStreamResult
+  class CancelJournalKinesisStreamResult
   {
   public:
-    CancelJournalKinesisStreamResult();
-    CancelJournalKinesisStreamResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CancelJournalKinesisStreamResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_QLDB_API CancelJournalKinesisStreamResult();
+    AWS_QLDB_API CancelJournalKinesisStreamResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_QLDB_API CancelJournalKinesisStreamResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

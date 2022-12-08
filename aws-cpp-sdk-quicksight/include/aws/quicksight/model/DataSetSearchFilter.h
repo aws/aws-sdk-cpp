@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DataSetSearchFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API DataSetSearchFilter
+  class DataSetSearchFilter
   {
   public:
-    DataSetSearchFilter();
-    DataSetSearchFilter(Aws::Utils::Json::JsonView jsonValue);
-    DataSetSearchFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API DataSetSearchFilter();
+    AWS_QUICKSIGHT_API DataSetSearchFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API DataSetSearchFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

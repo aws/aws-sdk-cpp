@@ -26,12 +26,12 @@ namespace IoT
 {
 namespace Model
 {
-  class AWS_IOT_API GetBehaviorModelTrainingSummariesResult
+  class GetBehaviorModelTrainingSummariesResult
   {
   public:
-    GetBehaviorModelTrainingSummariesResult();
-    GetBehaviorModelTrainingSummariesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetBehaviorModelTrainingSummariesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOT_API GetBehaviorModelTrainingSummariesResult();
+    AWS_IOT_API GetBehaviorModelTrainingSummariesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOT_API GetBehaviorModelTrainingSummariesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

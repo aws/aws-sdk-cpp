@@ -25,12 +25,12 @@ namespace Chime
 {
 namespace Model
 {
-  class AWS_CHIME_API ListSupportedPhoneNumberCountriesResult
+  class ListSupportedPhoneNumberCountriesResult
   {
   public:
-    ListSupportedPhoneNumberCountriesResult();
-    ListSupportedPhoneNumberCountriesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListSupportedPhoneNumberCountriesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CHIME_API ListSupportedPhoneNumberCountriesResult();
+    AWS_CHIME_API ListSupportedPhoneNumberCountriesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CHIME_API ListSupportedPhoneNumberCountriesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

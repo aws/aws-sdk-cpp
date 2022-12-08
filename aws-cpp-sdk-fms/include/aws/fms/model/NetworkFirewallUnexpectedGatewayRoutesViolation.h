@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/NetworkFirewallUnexpectedGatewayRoutesViolation">AWS
    * API Reference</a></p>
    */
-  class AWS_FMS_API NetworkFirewallUnexpectedGatewayRoutesViolation
+  class NetworkFirewallUnexpectedGatewayRoutesViolation
   {
   public:
-    NetworkFirewallUnexpectedGatewayRoutesViolation();
-    NetworkFirewallUnexpectedGatewayRoutesViolation(Aws::Utils::Json::JsonView jsonValue);
-    NetworkFirewallUnexpectedGatewayRoutesViolation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FMS_API NetworkFirewallUnexpectedGatewayRoutesViolation();
+    AWS_FMS_API NetworkFirewallUnexpectedGatewayRoutesViolation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FMS_API NetworkFirewallUnexpectedGatewayRoutesViolation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

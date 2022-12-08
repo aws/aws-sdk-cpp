@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/TestWindowSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_FORECASTSERVICE_API TestWindowSummary
+  class TestWindowSummary
   {
   public:
-    TestWindowSummary();
-    TestWindowSummary(Aws::Utils::Json::JsonView jsonValue);
-    TestWindowSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FORECASTSERVICE_API TestWindowSummary();
+    AWS_FORECASTSERVICE_API TestWindowSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FORECASTSERVICE_API TestWindowSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FORECASTSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

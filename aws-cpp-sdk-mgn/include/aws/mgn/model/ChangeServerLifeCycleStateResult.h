@@ -30,12 +30,12 @@ namespace mgn
 {
 namespace Model
 {
-  class AWS_MGN_API ChangeServerLifeCycleStateResult
+  class ChangeServerLifeCycleStateResult
   {
   public:
-    ChangeServerLifeCycleStateResult();
-    ChangeServerLifeCycleStateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ChangeServerLifeCycleStateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MGN_API ChangeServerLifeCycleStateResult();
+    AWS_MGN_API ChangeServerLifeCycleStateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MGN_API ChangeServerLifeCycleStateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

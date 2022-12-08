@@ -33,12 +33,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/GetOperationDetailResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53DOMAINS_API GetOperationDetailResult
+  class GetOperationDetailResult
   {
   public:
-    GetOperationDetailResult();
-    GetOperationDetailResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetOperationDetailResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ROUTE53DOMAINS_API GetOperationDetailResult();
+    AWS_ROUTE53DOMAINS_API GetOperationDetailResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ROUTE53DOMAINS_API GetOperationDetailResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

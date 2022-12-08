@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/InstanceHardware">AWS
    * API Reference</a></p>
    */
-  class AWS_LIGHTSAIL_API InstanceHardware
+  class InstanceHardware
   {
   public:
-    InstanceHardware();
-    InstanceHardware(Aws::Utils::Json::JsonView jsonValue);
-    InstanceHardware& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LIGHTSAIL_API InstanceHardware();
+    AWS_LIGHTSAIL_API InstanceHardware(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API InstanceHardware& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -24,12 +24,12 @@ namespace ManagedGrafana
 {
 namespace Model
 {
-  class AWS_MANAGEDGRAFANA_API AssociateLicenseResult
+  class AssociateLicenseResult
   {
   public:
-    AssociateLicenseResult();
-    AssociateLicenseResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AssociateLicenseResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MANAGEDGRAFANA_API AssociateLicenseResult();
+    AWS_MANAGEDGRAFANA_API AssociateLicenseResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MANAGEDGRAFANA_API AssociateLicenseResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

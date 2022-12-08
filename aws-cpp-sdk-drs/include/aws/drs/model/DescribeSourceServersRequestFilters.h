@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/DescribeSourceServersRequestFilters">AWS
    * API Reference</a></p>
    */
-  class AWS_DRS_API DescribeSourceServersRequestFilters
+  class DescribeSourceServersRequestFilters
   {
   public:
-    DescribeSourceServersRequestFilters();
-    DescribeSourceServersRequestFilters(Aws::Utils::Json::JsonView jsonValue);
-    DescribeSourceServersRequestFilters& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DRS_API DescribeSourceServersRequestFilters();
+    AWS_DRS_API DescribeSourceServersRequestFilters(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DRS_API DescribeSourceServersRequestFilters& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DRS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -26,12 +26,12 @@ namespace GreengrassV2
 {
 namespace Model
 {
-  class AWS_GREENGRASSV2_API ListClientDevicesAssociatedWithCoreDeviceResult
+  class ListClientDevicesAssociatedWithCoreDeviceResult
   {
   public:
-    ListClientDevicesAssociatedWithCoreDeviceResult();
-    ListClientDevicesAssociatedWithCoreDeviceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListClientDevicesAssociatedWithCoreDeviceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GREENGRASSV2_API ListClientDevicesAssociatedWithCoreDeviceResult();
+    AWS_GREENGRASSV2_API ListClientDevicesAssociatedWithCoreDeviceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GREENGRASSV2_API ListClientDevicesAssociatedWithCoreDeviceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

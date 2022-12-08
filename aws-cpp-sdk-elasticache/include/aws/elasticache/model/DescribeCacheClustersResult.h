@@ -33,12 +33,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CacheClusterMessage">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICACHE_API DescribeCacheClustersResult
+  class DescribeCacheClustersResult
   {
   public:
-    DescribeCacheClustersResult();
-    DescribeCacheClustersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeCacheClustersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ELASTICACHE_API DescribeCacheClustersResult();
+    AWS_ELASTICACHE_API DescribeCacheClustersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ELASTICACHE_API DescribeCacheClustersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

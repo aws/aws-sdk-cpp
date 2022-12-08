@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/EventsDetectionJobProperties">AWS
    * API Reference</a></p>
    */
-  class AWS_COMPREHEND_API EventsDetectionJobProperties
+  class EventsDetectionJobProperties
   {
   public:
-    EventsDetectionJobProperties();
-    EventsDetectionJobProperties(Aws::Utils::Json::JsonView jsonValue);
-    EventsDetectionJobProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COMPREHEND_API EventsDetectionJobProperties();
+    AWS_COMPREHEND_API EventsDetectionJobProperties(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHEND_API EventsDetectionJobProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHEND_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

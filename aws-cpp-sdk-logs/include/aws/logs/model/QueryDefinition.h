@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/QueryDefinition">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDWATCHLOGS_API QueryDefinition
+  class QueryDefinition
   {
   public:
-    QueryDefinition();
-    QueryDefinition(Aws::Utils::Json::JsonView jsonValue);
-    QueryDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDWATCHLOGS_API QueryDefinition();
+    AWS_CLOUDWATCHLOGS_API QueryDefinition(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHLOGS_API QueryDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHLOGS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -24,12 +24,12 @@ namespace EC2
 {
 namespace Model
 {
-  class AWS_EC2_API StartVpcEndpointServicePrivateDnsVerificationResponse
+  class StartVpcEndpointServicePrivateDnsVerificationResponse
   {
   public:
-    StartVpcEndpointServicePrivateDnsVerificationResponse();
-    StartVpcEndpointServicePrivateDnsVerificationResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    StartVpcEndpointServicePrivateDnsVerificationResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API StartVpcEndpointServicePrivateDnsVerificationResponse();
+    AWS_EC2_API StartVpcEndpointServicePrivateDnsVerificationResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API StartVpcEndpointServicePrivateDnsVerificationResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

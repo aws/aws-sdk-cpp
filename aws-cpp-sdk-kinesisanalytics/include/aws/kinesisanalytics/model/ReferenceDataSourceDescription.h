@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/ReferenceDataSourceDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_KINESISANALYTICS_API ReferenceDataSourceDescription
+  class ReferenceDataSourceDescription
   {
   public:
-    ReferenceDataSourceDescription();
-    ReferenceDataSourceDescription(Aws::Utils::Json::JsonView jsonValue);
-    ReferenceDataSourceDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KINESISANALYTICS_API ReferenceDataSourceDescription();
+    AWS_KINESISANALYTICS_API ReferenceDataSourceDescription(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICS_API ReferenceDataSourceDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

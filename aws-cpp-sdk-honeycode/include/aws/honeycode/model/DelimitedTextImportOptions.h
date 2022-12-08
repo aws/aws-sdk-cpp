@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/honeycode-2020-03-01/DelimitedTextImportOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_HONEYCODE_API DelimitedTextImportOptions
+  class DelimitedTextImportOptions
   {
   public:
-    DelimitedTextImportOptions();
-    DelimitedTextImportOptions(Aws::Utils::Json::JsonView jsonValue);
-    DelimitedTextImportOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_HONEYCODE_API DelimitedTextImportOptions();
+    AWS_HONEYCODE_API DelimitedTextImportOptions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_HONEYCODE_API DelimitedTextImportOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_HONEYCODE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

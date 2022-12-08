@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/IncompatibleSettingsException">AWS
    * API Reference</a></p>
    */
-  class AWS_DIRECTORYSERVICE_API IncompatibleSettingsException
+  class IncompatibleSettingsException
   {
   public:
-    IncompatibleSettingsException();
-    IncompatibleSettingsException(Aws::Utils::Json::JsonView jsonValue);
-    IncompatibleSettingsException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DIRECTORYSERVICE_API IncompatibleSettingsException();
+    AWS_DIRECTORYSERVICE_API IncompatibleSettingsException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTORYSERVICE_API IncompatibleSettingsException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTORYSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

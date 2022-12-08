@@ -26,12 +26,12 @@ namespace AppSync
 {
 namespace Model
 {
-  class AWS_APPSYNC_API EvaluateMappingTemplateResult
+  class EvaluateMappingTemplateResult
   {
   public:
-    EvaluateMappingTemplateResult();
-    EvaluateMappingTemplateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    EvaluateMappingTemplateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPSYNC_API EvaluateMappingTemplateResult();
+    AWS_APPSYNC_API EvaluateMappingTemplateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPSYNC_API EvaluateMappingTemplateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

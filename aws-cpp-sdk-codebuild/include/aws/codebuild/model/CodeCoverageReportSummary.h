@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/CodeCoverageReportSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEBUILD_API CodeCoverageReportSummary
+  class CodeCoverageReportSummary
   {
   public:
-    CodeCoverageReportSummary();
-    CodeCoverageReportSummary(Aws::Utils::Json::JsonView jsonValue);
-    CodeCoverageReportSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEBUILD_API CodeCoverageReportSummary();
+    AWS_CODEBUILD_API CodeCoverageReportSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEBUILD_API CodeCoverageReportSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEBUILD_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

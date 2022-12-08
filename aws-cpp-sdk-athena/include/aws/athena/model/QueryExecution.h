@@ -37,13 +37,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/QueryExecution">AWS
    * API Reference</a></p>
    */
-  class AWS_ATHENA_API QueryExecution
+  class QueryExecution
   {
   public:
-    QueryExecution();
-    QueryExecution(Aws::Utils::Json::JsonView jsonValue);
-    QueryExecution& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ATHENA_API QueryExecution();
+    AWS_ATHENA_API QueryExecution(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ATHENA_API QueryExecution& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ATHENA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

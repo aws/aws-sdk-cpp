@@ -25,12 +25,12 @@ namespace Inspector
 {
 namespace Model
 {
-  class AWS_INSPECTOR_API ListRulesPackagesResult
+  class ListRulesPackagesResult
   {
   public:
-    ListRulesPackagesResult();
-    ListRulesPackagesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListRulesPackagesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_INSPECTOR_API ListRulesPackagesResult();
+    AWS_INSPECTOR_API ListRulesPackagesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_INSPECTOR_API ListRulesPackagesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

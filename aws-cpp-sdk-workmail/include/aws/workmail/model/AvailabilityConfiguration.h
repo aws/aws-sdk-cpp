@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/AvailabilityConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_WORKMAIL_API AvailabilityConfiguration
+  class AvailabilityConfiguration
   {
   public:
-    AvailabilityConfiguration();
-    AvailabilityConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    AvailabilityConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WORKMAIL_API AvailabilityConfiguration();
+    AWS_WORKMAIL_API AvailabilityConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKMAIL_API AvailabilityConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKMAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

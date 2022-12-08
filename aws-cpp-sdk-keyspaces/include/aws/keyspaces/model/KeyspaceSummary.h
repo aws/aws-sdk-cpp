@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/keyspaces-2022-02-10/KeyspaceSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_KEYSPACES_API KeyspaceSummary
+  class KeyspaceSummary
   {
   public:
-    KeyspaceSummary();
-    KeyspaceSummary(Aws::Utils::Json::JsonView jsonValue);
-    KeyspaceSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KEYSPACES_API KeyspaceSummary();
+    AWS_KEYSPACES_API KeyspaceSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KEYSPACES_API KeyspaceSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KEYSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

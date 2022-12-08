@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-2017-10-12/IngestEndpoint">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIAPACKAGE_API IngestEndpoint
+  class IngestEndpoint
   {
   public:
-    IngestEndpoint();
-    IngestEndpoint(Aws::Utils::Json::JsonView jsonValue);
-    IngestEndpoint& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIAPACKAGE_API IngestEndpoint();
+    AWS_MEDIAPACKAGE_API IngestEndpoint(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIAPACKAGE_API IngestEndpoint& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIAPACKAGE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

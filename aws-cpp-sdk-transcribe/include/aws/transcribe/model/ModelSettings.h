@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/ModelSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_TRANSCRIBESERVICE_API ModelSettings
+  class ModelSettings
   {
   public:
-    ModelSettings();
-    ModelSettings(Aws::Utils::Json::JsonView jsonValue);
-    ModelSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TRANSCRIBESERVICE_API ModelSettings();
+    AWS_TRANSCRIBESERVICE_API ModelSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSCRIBESERVICE_API ModelSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSCRIBESERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

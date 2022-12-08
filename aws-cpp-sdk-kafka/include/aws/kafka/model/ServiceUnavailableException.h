@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/ServiceUnavailableException">AWS
    * API Reference</a></p>
    */
-  class AWS_KAFKA_API ServiceUnavailableException
+  class ServiceUnavailableException
   {
   public:
-    ServiceUnavailableException();
-    ServiceUnavailableException(Aws::Utils::Json::JsonView jsonValue);
-    ServiceUnavailableException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KAFKA_API ServiceUnavailableException();
+    AWS_KAFKA_API ServiceUnavailableException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKA_API ServiceUnavailableException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

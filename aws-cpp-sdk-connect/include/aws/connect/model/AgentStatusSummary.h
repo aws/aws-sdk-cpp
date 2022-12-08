@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AgentStatusSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECT_API AgentStatusSummary
+  class AgentStatusSummary
   {
   public:
-    AgentStatusSummary();
-    AgentStatusSummary(Aws::Utils::Json::JsonView jsonValue);
-    AgentStatusSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECT_API AgentStatusSummary();
+    AWS_CONNECT_API AgentStatusSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API AgentStatusSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

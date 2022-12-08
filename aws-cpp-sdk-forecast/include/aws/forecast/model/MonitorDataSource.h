@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/MonitorDataSource">AWS
    * API Reference</a></p>
    */
-  class AWS_FORECASTSERVICE_API MonitorDataSource
+  class MonitorDataSource
   {
   public:
-    MonitorDataSource();
-    MonitorDataSource(Aws::Utils::Json::JsonView jsonValue);
-    MonitorDataSource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FORECASTSERVICE_API MonitorDataSource();
+    AWS_FORECASTSERVICE_API MonitorDataSource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FORECASTSERVICE_API MonitorDataSource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FORECASTSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

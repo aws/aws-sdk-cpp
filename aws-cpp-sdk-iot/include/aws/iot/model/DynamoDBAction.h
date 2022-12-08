@@ -39,13 +39,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DynamoDBAction">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API DynamoDBAction
+  class DynamoDBAction
   {
   public:
-    DynamoDBAction();
-    DynamoDBAction(Aws::Utils::Json::JsonView jsonValue);
-    DynamoDBAction& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API DynamoDBAction();
+    AWS_IOT_API DynamoDBAction(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API DynamoDBAction& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

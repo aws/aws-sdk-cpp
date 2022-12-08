@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/Limits">AWS
    * API Reference</a></p>
    */
-  class AWS_OPENSEARCHSERVICE_API Limits
+  class Limits
   {
   public:
-    Limits();
-    Limits(Aws::Utils::Json::JsonView jsonValue);
-    Limits& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OPENSEARCHSERVICE_API Limits();
+    AWS_OPENSEARCHSERVICE_API Limits(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPENSEARCHSERVICE_API Limits& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPENSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/PrefixConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_APPFLOW_API PrefixConfig
+  class PrefixConfig
   {
   public:
-    PrefixConfig();
-    PrefixConfig(Aws::Utils::Json::JsonView jsonValue);
-    PrefixConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPFLOW_API PrefixConfig();
+    AWS_APPFLOW_API PrefixConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API PrefixConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

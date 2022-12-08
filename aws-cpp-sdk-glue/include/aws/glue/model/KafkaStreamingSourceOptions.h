@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/KafkaStreamingSourceOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API KafkaStreamingSourceOptions
+  class KafkaStreamingSourceOptions
   {
   public:
-    KafkaStreamingSourceOptions();
-    KafkaStreamingSourceOptions(Aws::Utils::Json::JsonView jsonValue);
-    KafkaStreamingSourceOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API KafkaStreamingSourceOptions();
+    AWS_GLUE_API KafkaStreamingSourceOptions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API KafkaStreamingSourceOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

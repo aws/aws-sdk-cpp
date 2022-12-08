@@ -22,12 +22,12 @@ namespace Rekognition
 {
 namespace Model
 {
-  class AWS_REKOGNITION_API UpdateDatasetEntriesResult
+  class UpdateDatasetEntriesResult
   {
   public:
-    UpdateDatasetEntriesResult();
-    UpdateDatasetEntriesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateDatasetEntriesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_REKOGNITION_API UpdateDatasetEntriesResult();
+    AWS_REKOGNITION_API UpdateDatasetEntriesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_REKOGNITION_API UpdateDatasetEntriesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

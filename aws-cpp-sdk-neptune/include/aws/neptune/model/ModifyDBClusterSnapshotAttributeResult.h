@@ -25,12 +25,12 @@ namespace Neptune
 {
 namespace Model
 {
-  class AWS_NEPTUNE_API ModifyDBClusterSnapshotAttributeResult
+  class ModifyDBClusterSnapshotAttributeResult
   {
   public:
-    ModifyDBClusterSnapshotAttributeResult();
-    ModifyDBClusterSnapshotAttributeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ModifyDBClusterSnapshotAttributeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_NEPTUNE_API ModifyDBClusterSnapshotAttributeResult();
+    AWS_NEPTUNE_API ModifyDBClusterSnapshotAttributeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_NEPTUNE_API ModifyDBClusterSnapshotAttributeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/CatalogConfigurationUpdate">AWS
    * API Reference</a></p>
    */
-  class AWS_KINESISANALYTICSV2_API CatalogConfigurationUpdate
+  class CatalogConfigurationUpdate
   {
   public:
-    CatalogConfigurationUpdate();
-    CatalogConfigurationUpdate(Aws::Utils::Json::JsonView jsonValue);
-    CatalogConfigurationUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KINESISANALYTICSV2_API CatalogConfigurationUpdate();
+    AWS_KINESISANALYTICSV2_API CatalogConfigurationUpdate(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICSV2_API CatalogConfigurationUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

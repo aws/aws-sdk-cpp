@@ -22,12 +22,12 @@ namespace SESV2
 {
 namespace Model
 {
-  class AWS_SESV2_API DeleteContactResult
+  class DeleteContactResult
   {
   public:
-    DeleteContactResult();
-    DeleteContactResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteContactResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SESV2_API DeleteContactResult();
+    AWS_SESV2_API DeleteContactResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SESV2_API DeleteContactResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

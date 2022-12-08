@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/LogsAnomalyDetectionIntegration">AWS
    * API Reference</a></p>
    */
-  class AWS_DEVOPSGURU_API LogsAnomalyDetectionIntegration
+  class LogsAnomalyDetectionIntegration
   {
   public:
-    LogsAnomalyDetectionIntegration();
-    LogsAnomalyDetectionIntegration(Aws::Utils::Json::JsonView jsonValue);
-    LogsAnomalyDetectionIntegration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DEVOPSGURU_API LogsAnomalyDetectionIntegration();
+    AWS_DEVOPSGURU_API LogsAnomalyDetectionIntegration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVOPSGURU_API LogsAnomalyDetectionIntegration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVOPSGURU_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

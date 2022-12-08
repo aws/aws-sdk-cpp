@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ebs-2019-11-02/ServiceQuotaExceededException">AWS
    * API Reference</a></p>
    */
-  class AWS_EBS_API ServiceQuotaExceededException
+  class ServiceQuotaExceededException
   {
   public:
-    ServiceQuotaExceededException();
-    ServiceQuotaExceededException(Aws::Utils::Json::JsonView jsonValue);
-    ServiceQuotaExceededException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EBS_API ServiceQuotaExceededException();
+    AWS_EBS_API ServiceQuotaExceededException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EBS_API ServiceQuotaExceededException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EBS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

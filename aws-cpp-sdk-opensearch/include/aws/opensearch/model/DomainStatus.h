@@ -44,13 +44,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DomainStatus">AWS
    * API Reference</a></p>
    */
-  class AWS_OPENSEARCHSERVICE_API DomainStatus
+  class DomainStatus
   {
   public:
-    DomainStatus();
-    DomainStatus(Aws::Utils::Json::JsonView jsonValue);
-    DomainStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OPENSEARCHSERVICE_API DomainStatus();
+    AWS_OPENSEARCHSERVICE_API DomainStatus(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPENSEARCHSERVICE_API DomainStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPENSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

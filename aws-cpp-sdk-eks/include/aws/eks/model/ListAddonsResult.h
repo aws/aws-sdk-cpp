@@ -25,12 +25,12 @@ namespace EKS
 {
 namespace Model
 {
-  class AWS_EKS_API ListAddonsResult
+  class ListAddonsResult
   {
   public:
-    ListAddonsResult();
-    ListAddonsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListAddonsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_EKS_API ListAddonsResult();
+    AWS_EKS_API ListAddonsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_EKS_API ListAddonsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

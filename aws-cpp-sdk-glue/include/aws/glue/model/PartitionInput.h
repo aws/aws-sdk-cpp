@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/PartitionInput">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API PartitionInput
+  class PartitionInput
   {
   public:
-    PartitionInput();
-    PartitionInput(Aws::Utils::Json::JsonView jsonValue);
-    PartitionInput& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API PartitionInput();
+    AWS_GLUE_API PartitionInput(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API PartitionInput& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

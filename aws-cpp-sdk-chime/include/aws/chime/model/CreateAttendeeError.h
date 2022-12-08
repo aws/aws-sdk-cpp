@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateAttendeeError">AWS
    * API Reference</a></p>
    */
-  class AWS_CHIME_API CreateAttendeeError
+  class CreateAttendeeError
   {
   public:
-    CreateAttendeeError();
-    CreateAttendeeError(Aws::Utils::Json::JsonView jsonValue);
-    CreateAttendeeError& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIME_API CreateAttendeeError();
+    AWS_CHIME_API CreateAttendeeError(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API CreateAttendeeError& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

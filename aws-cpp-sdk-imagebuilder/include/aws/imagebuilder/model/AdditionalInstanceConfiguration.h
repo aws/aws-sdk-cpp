@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/AdditionalInstanceConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_IMAGEBUILDER_API AdditionalInstanceConfiguration
+  class AdditionalInstanceConfiguration
   {
   public:
-    AdditionalInstanceConfiguration();
-    AdditionalInstanceConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    AdditionalInstanceConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IMAGEBUILDER_API AdditionalInstanceConfiguration();
+    AWS_IMAGEBUILDER_API AdditionalInstanceConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IMAGEBUILDER_API AdditionalInstanceConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IMAGEBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

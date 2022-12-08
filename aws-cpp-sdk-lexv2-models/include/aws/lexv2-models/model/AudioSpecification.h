@@ -26,13 +26,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/AudioSpecification">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELSV2_API AudioSpecification
+  class AudioSpecification
   {
   public:
-    AudioSpecification();
-    AudioSpecification(Aws::Utils::Json::JsonView jsonValue);
-    AudioSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELSV2_API AudioSpecification();
+    AWS_LEXMODELSV2_API AudioSpecification(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API AudioSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

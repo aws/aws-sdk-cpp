@@ -26,13 +26,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/AxisLogarithmicScale">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API AxisLogarithmicScale
+  class AxisLogarithmicScale
   {
   public:
-    AxisLogarithmicScale();
-    AxisLogarithmicScale(Aws::Utils::Json::JsonView jsonValue);
-    AxisLogarithmicScale& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API AxisLogarithmicScale();
+    AWS_QUICKSIGHT_API AxisLogarithmicScale(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API AxisLogarithmicScale& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

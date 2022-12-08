@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CampaignLimits">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API CampaignLimits
+  class CampaignLimits
   {
   public:
-    CampaignLimits();
-    CampaignLimits(Aws::Utils::Json::JsonView jsonValue);
-    CampaignLimits& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API CampaignLimits();
+    AWS_PINPOINT_API CampaignLimits(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API CampaignLimits& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

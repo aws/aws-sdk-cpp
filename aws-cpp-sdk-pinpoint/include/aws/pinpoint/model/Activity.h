@@ -39,13 +39,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/Activity">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API Activity
+  class Activity
   {
   public:
-    Activity();
-    Activity(Aws::Utils::Json::JsonView jsonValue);
-    Activity& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API Activity();
+    AWS_PINPOINT_API Activity(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Activity& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

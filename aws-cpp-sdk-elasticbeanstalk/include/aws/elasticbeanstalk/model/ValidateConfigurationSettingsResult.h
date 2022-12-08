@@ -31,12 +31,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ConfigurationSettingsValidationMessages">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICBEANSTALK_API ValidateConfigurationSettingsResult
+  class ValidateConfigurationSettingsResult
   {
   public:
-    ValidateConfigurationSettingsResult();
-    ValidateConfigurationSettingsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ValidateConfigurationSettingsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ELASTICBEANSTALK_API ValidateConfigurationSettingsResult();
+    AWS_ELASTICBEANSTALK_API ValidateConfigurationSettingsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ELASTICBEANSTALK_API ValidateConfigurationSettingsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

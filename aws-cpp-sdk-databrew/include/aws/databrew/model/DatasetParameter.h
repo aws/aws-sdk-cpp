@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/DatasetParameter">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUEDATABREW_API DatasetParameter
+  class DatasetParameter
   {
   public:
-    DatasetParameter();
-    DatasetParameter(Aws::Utils::Json::JsonView jsonValue);
-    DatasetParameter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUEDATABREW_API DatasetParameter();
+    AWS_GLUEDATABREW_API DatasetParameter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUEDATABREW_API DatasetParameter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUEDATABREW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/S3Location">AWS
    * API Reference</a></p>
    */
-  class AWS_RESILIENCEHUB_API S3Location
+  class S3Location
   {
   public:
-    S3Location();
-    S3Location(Aws::Utils::Json::JsonView jsonValue);
-    S3Location& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_RESILIENCEHUB_API S3Location();
+    AWS_RESILIENCEHUB_API S3Location(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RESILIENCEHUB_API S3Location& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RESILIENCEHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

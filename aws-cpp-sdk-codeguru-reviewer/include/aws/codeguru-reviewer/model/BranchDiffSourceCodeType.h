@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/BranchDiffSourceCodeType">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEGURUREVIEWER_API BranchDiffSourceCodeType
+  class BranchDiffSourceCodeType
   {
   public:
-    BranchDiffSourceCodeType();
-    BranchDiffSourceCodeType(Aws::Utils::Json::JsonView jsonValue);
-    BranchDiffSourceCodeType& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEGURUREVIEWER_API BranchDiffSourceCodeType();
+    AWS_CODEGURUREVIEWER_API BranchDiffSourceCodeType(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEGURUREVIEWER_API BranchDiffSourceCodeType& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEGURUREVIEWER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

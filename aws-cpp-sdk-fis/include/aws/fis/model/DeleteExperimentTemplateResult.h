@@ -24,12 +24,12 @@ namespace FIS
 {
 namespace Model
 {
-  class AWS_FIS_API DeleteExperimentTemplateResult
+  class DeleteExperimentTemplateResult
   {
   public:
-    DeleteExperimentTemplateResult();
-    DeleteExperimentTemplateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteExperimentTemplateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_FIS_API DeleteExperimentTemplateResult();
+    AWS_FIS_API DeleteExperimentTemplateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_FIS_API DeleteExperimentTemplateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

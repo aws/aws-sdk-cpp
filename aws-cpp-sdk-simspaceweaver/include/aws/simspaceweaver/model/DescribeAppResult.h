@@ -28,12 +28,12 @@ namespace SimSpaceWeaver
 {
 namespace Model
 {
-  class AWS_SIMSPACEWEAVER_API DescribeAppResult
+  class DescribeAppResult
   {
   public:
-    DescribeAppResult();
-    DescribeAppResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeAppResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SIMSPACEWEAVER_API DescribeAppResult();
+    AWS_SIMSPACEWEAVER_API DescribeAppResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SIMSPACEWEAVER_API DescribeAppResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

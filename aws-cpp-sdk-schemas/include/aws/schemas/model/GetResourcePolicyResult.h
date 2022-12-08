@@ -24,12 +24,12 @@ namespace Schemas
 {
 namespace Model
 {
-  class AWS_SCHEMAS_API GetResourcePolicyResult
+  class GetResourcePolicyResult
   {
   public:
-    GetResourcePolicyResult();
-    GetResourcePolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetResourcePolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SCHEMAS_API GetResourcePolicyResult();
+    AWS_SCHEMAS_API GetResourcePolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SCHEMAS_API GetResourcePolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

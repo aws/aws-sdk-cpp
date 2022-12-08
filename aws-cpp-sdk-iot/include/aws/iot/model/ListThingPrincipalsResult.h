@@ -31,12 +31,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListThingPrincipalsResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API ListThingPrincipalsResult
+  class ListThingPrincipalsResult
   {
   public:
-    ListThingPrincipalsResult();
-    ListThingPrincipalsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListThingPrincipalsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOT_API ListThingPrincipalsResult();
+    AWS_IOT_API ListThingPrincipalsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOT_API ListThingPrincipalsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

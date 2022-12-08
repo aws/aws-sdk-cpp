@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CategoryDrillDownFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API CategoryDrillDownFilter
+  class CategoryDrillDownFilter
   {
   public:
-    CategoryDrillDownFilter();
-    CategoryDrillDownFilter(Aws::Utils::Json::JsonView jsonValue);
-    CategoryDrillDownFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API CategoryDrillDownFilter();
+    AWS_QUICKSIGHT_API CategoryDrillDownFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API CategoryDrillDownFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

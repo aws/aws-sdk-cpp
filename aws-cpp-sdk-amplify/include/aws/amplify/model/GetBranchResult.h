@@ -24,12 +24,12 @@ namespace Amplify
 {
 namespace Model
 {
-  class AWS_AMPLIFY_API GetBranchResult
+  class GetBranchResult
   {
   public:
-    GetBranchResult();
-    GetBranchResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetBranchResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_AMPLIFY_API GetBranchResult();
+    AWS_AMPLIFY_API GetBranchResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_AMPLIFY_API GetBranchResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     

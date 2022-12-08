@@ -27,12 +27,12 @@ namespace KMS
 {
 namespace Model
 {
-  class AWS_KMS_API ReplicateKeyResult
+  class ReplicateKeyResult
   {
   public:
-    ReplicateKeyResult();
-    ReplicateKeyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ReplicateKeyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KMS_API ReplicateKeyResult();
+    AWS_KMS_API ReplicateKeyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KMS_API ReplicateKeyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

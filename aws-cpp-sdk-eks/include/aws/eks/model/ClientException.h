@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ClientException">AWS
    * API Reference</a></p>
    */
-  class AWS_EKS_API ClientException
+  class ClientException
   {
   public:
-    ClientException();
-    ClientException(Aws::Utils::Json::JsonView jsonValue);
-    ClientException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EKS_API ClientException();
+    AWS_EKS_API ClientException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EKS_API ClientException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EKS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

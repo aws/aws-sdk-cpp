@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/SensitiveDataItem">AWS
    * API Reference</a></p>
    */
-  class AWS_MACIE2_API SensitiveDataItem
+  class SensitiveDataItem
   {
   public:
-    SensitiveDataItem();
-    SensitiveDataItem(Aws::Utils::Json::JsonView jsonValue);
-    SensitiveDataItem& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MACIE2_API SensitiveDataItem();
+    AWS_MACIE2_API SensitiveDataItem(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API SensitiveDataItem& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

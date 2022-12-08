@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/Condition">AWS
    * API Reference</a></p>
    */
-  class AWS_SSMINCIDENTS_API Condition
+  class Condition
   {
   public:
-    Condition();
-    Condition(Aws::Utils::Json::JsonView jsonValue);
-    Condition& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSMINCIDENTS_API Condition();
+    AWS_SSMINCIDENTS_API Condition(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSMINCIDENTS_API Condition& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSMINCIDENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

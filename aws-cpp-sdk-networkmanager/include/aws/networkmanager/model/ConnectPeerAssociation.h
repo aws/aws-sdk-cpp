@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ConnectPeerAssociation">AWS
    * API Reference</a></p>
    */
-  class AWS_NETWORKMANAGER_API ConnectPeerAssociation
+  class ConnectPeerAssociation
   {
   public:
-    ConnectPeerAssociation();
-    ConnectPeerAssociation(Aws::Utils::Json::JsonView jsonValue);
-    ConnectPeerAssociation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_NETWORKMANAGER_API ConnectPeerAssociation();
+    AWS_NETWORKMANAGER_API ConnectPeerAssociation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKMANAGER_API ConnectPeerAssociation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

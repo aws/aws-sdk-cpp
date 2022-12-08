@@ -27,12 +27,12 @@ namespace mgn
 {
 namespace Model
 {
-  class AWS_MGN_API PutSourceServerActionResult
+  class PutSourceServerActionResult
   {
   public:
-    PutSourceServerActionResult();
-    PutSourceServerActionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PutSourceServerActionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MGN_API PutSourceServerActionResult();
+    AWS_MGN_API PutSourceServerActionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MGN_API PutSourceServerActionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/ThrottlingException">AWS
    * API Reference</a></p>
    */
-  class AWS_GREENGRASSV2_API ThrottlingException
+  class ThrottlingException
   {
   public:
-    ThrottlingException();
-    ThrottlingException(Aws::Utils::Json::JsonView jsonValue);
-    ThrottlingException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GREENGRASSV2_API ThrottlingException();
+    AWS_GREENGRASSV2_API ThrottlingException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASSV2_API ThrottlingException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

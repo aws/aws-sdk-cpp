@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/BaiduMessage">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API BaiduMessage
+  class BaiduMessage
   {
   public:
-    BaiduMessage();
-    BaiduMessage(Aws::Utils::Json::JsonView jsonValue);
-    BaiduMessage& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API BaiduMessage();
+    AWS_PINPOINT_API BaiduMessage(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API BaiduMessage& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

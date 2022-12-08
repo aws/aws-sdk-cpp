@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/EC2ResourceDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_COSTEXPLORER_API EC2ResourceDetails
+  class EC2ResourceDetails
   {
   public:
-    EC2ResourceDetails();
-    EC2ResourceDetails(Aws::Utils::Json::JsonView jsonValue);
-    EC2ResourceDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COSTEXPLORER_API EC2ResourceDetails();
+    AWS_COSTEXPLORER_API EC2ResourceDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API EC2ResourceDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

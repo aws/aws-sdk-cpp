@@ -26,12 +26,12 @@ namespace XRay
 {
 namespace Model
 {
-  class AWS_XRAY_API GetInsightEventsResult
+  class GetInsightEventsResult
   {
   public:
-    GetInsightEventsResult();
-    GetInsightEventsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetInsightEventsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_XRAY_API GetInsightEventsResult();
+    AWS_XRAY_API GetInsightEventsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_XRAY_API GetInsightEventsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

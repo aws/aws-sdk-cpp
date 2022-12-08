@@ -31,12 +31,12 @@ namespace RoboMaker
 {
 namespace Model
 {
-  class AWS_ROBOMAKER_API CreateSimulationApplicationVersionResult
+  class CreateSimulationApplicationVersionResult
   {
   public:
-    CreateSimulationApplicationVersionResult();
-    CreateSimulationApplicationVersionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateSimulationApplicationVersionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ROBOMAKER_API CreateSimulationApplicationVersionResult();
+    AWS_ROBOMAKER_API CreateSimulationApplicationVersionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ROBOMAKER_API CreateSimulationApplicationVersionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

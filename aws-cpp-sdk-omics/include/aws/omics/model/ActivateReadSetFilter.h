@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ActivateReadSetFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_OMICS_API ActivateReadSetFilter
+  class ActivateReadSetFilter
   {
   public:
-    ActivateReadSetFilter();
-    ActivateReadSetFilter(Aws::Utils::Json::JsonView jsonValue);
-    ActivateReadSetFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OMICS_API ActivateReadSetFilter();
+    AWS_OMICS_API ActivateReadSetFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OMICS_API ActivateReadSetFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OMICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

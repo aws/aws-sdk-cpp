@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/StepScalingPolicyConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_APPLICATIONAUTOSCALING_API StepScalingPolicyConfiguration
+  class StepScalingPolicyConfiguration
   {
   public:
-    StepScalingPolicyConfiguration();
-    StepScalingPolicyConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    StepScalingPolicyConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPLICATIONAUTOSCALING_API StepScalingPolicyConfiguration();
+    AWS_APPLICATIONAUTOSCALING_API StepScalingPolicyConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPLICATIONAUTOSCALING_API StepScalingPolicyConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPLICATIONAUTOSCALING_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

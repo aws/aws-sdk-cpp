@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/CapacityUnitsConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_KENDRA_API CapacityUnitsConfiguration
+  class CapacityUnitsConfiguration
   {
   public:
-    CapacityUnitsConfiguration();
-    CapacityUnitsConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    CapacityUnitsConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KENDRA_API CapacityUnitsConfiguration();
+    AWS_KENDRA_API CapacityUnitsConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API CapacityUnitsConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

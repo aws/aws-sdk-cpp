@@ -26,12 +26,12 @@ namespace CodeStarNotifications
 {
 namespace Model
 {
-  class AWS_CODESTARNOTIFICATIONS_API ListNotificationRulesResult
+  class ListNotificationRulesResult
   {
   public:
-    ListNotificationRulesResult();
-    ListNotificationRulesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListNotificationRulesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODESTARNOTIFICATIONS_API ListNotificationRulesResult();
+    AWS_CODESTARNOTIFICATIONS_API ListNotificationRulesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODESTARNOTIFICATIONS_API ListNotificationRulesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/StreamInfo">AWS API
    * Reference</a></p>
    */
-  class AWS_IOT_API StreamInfo
+  class StreamInfo
   {
   public:
-    StreamInfo();
-    StreamInfo(Aws::Utils::Json::JsonView jsonValue);
-    StreamInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API StreamInfo();
+    AWS_IOT_API StreamInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API StreamInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

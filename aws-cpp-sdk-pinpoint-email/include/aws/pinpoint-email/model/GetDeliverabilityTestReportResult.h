@@ -35,12 +35,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/GetDeliverabilityTestReportResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINTEMAIL_API GetDeliverabilityTestReportResult
+  class GetDeliverabilityTestReportResult
   {
   public:
-    GetDeliverabilityTestReportResult();
-    GetDeliverabilityTestReportResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetDeliverabilityTestReportResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PINPOINTEMAIL_API GetDeliverabilityTestReportResult();
+    AWS_PINPOINTEMAIL_API GetDeliverabilityTestReportResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PINPOINTEMAIL_API GetDeliverabilityTestReportResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/AccountLimit">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINTSMSVOICEV2_API AccountLimit
+  class AccountLimit
   {
   public:
-    AccountLimit();
-    AccountLimit(Aws::Utils::Json::JsonView jsonValue);
-    AccountLimit& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINTSMSVOICEV2_API AccountLimit();
+    AWS_PINPOINTSMSVOICEV2_API AccountLimit(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINTSMSVOICEV2_API AccountLimit& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINTSMSVOICEV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

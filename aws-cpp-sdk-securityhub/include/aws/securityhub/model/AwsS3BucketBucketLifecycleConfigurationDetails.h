@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsS3BucketBucketLifecycleConfigurationDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsS3BucketBucketLifecycleConfigurationDetails
+  class AwsS3BucketBucketLifecycleConfigurationDetails
   {
   public:
-    AwsS3BucketBucketLifecycleConfigurationDetails();
-    AwsS3BucketBucketLifecycleConfigurationDetails(Aws::Utils::Json::JsonView jsonValue);
-    AwsS3BucketBucketLifecycleConfigurationDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsS3BucketBucketLifecycleConfigurationDetails();
+    AWS_SECURITYHUB_API AwsS3BucketBucketLifecycleConfigurationDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsS3BucketBucketLifecycleConfigurationDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

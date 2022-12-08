@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/VpcOutputSettingsDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API VpcOutputSettingsDescription
+  class VpcOutputSettingsDescription
   {
   public:
-    VpcOutputSettingsDescription();
-    VpcOutputSettingsDescription(Aws::Utils::Json::JsonView jsonValue);
-    VpcOutputSettingsDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API VpcOutputSettingsDescription();
+    AWS_MEDIALIVE_API VpcOutputSettingsDescription(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API VpcOutputSettingsDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

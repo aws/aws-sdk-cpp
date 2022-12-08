@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/CountPercent">AWS
    * API Reference</a></p>
    */
-  class AWS_LOOKOUTEQUIPMENT_API CountPercent
+  class CountPercent
   {
   public:
-    CountPercent();
-    CountPercent(Aws::Utils::Json::JsonView jsonValue);
-    CountPercent& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LOOKOUTEQUIPMENT_API CountPercent();
+    AWS_LOOKOUTEQUIPMENT_API CountPercent(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTEQUIPMENT_API CountPercent& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTEQUIPMENT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

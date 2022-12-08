@@ -30,12 +30,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetComplianceSummaryByResourceTypeResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_CONFIGSERVICE_API GetComplianceSummaryByResourceTypeResult
+  class GetComplianceSummaryByResourceTypeResult
   {
   public:
-    GetComplianceSummaryByResourceTypeResult();
-    GetComplianceSummaryByResourceTypeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetComplianceSummaryByResourceTypeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CONFIGSERVICE_API GetComplianceSummaryByResourceTypeResult();
+    AWS_CONFIGSERVICE_API GetComplianceSummaryByResourceTypeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CONFIGSERVICE_API GetComplianceSummaryByResourceTypeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

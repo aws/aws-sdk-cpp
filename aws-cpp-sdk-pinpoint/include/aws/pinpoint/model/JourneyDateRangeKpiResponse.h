@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/JourneyDateRangeKpiResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API JourneyDateRangeKpiResponse
+  class JourneyDateRangeKpiResponse
   {
   public:
-    JourneyDateRangeKpiResponse();
-    JourneyDateRangeKpiResponse(Aws::Utils::Json::JsonView jsonValue);
-    JourneyDateRangeKpiResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API JourneyDateRangeKpiResponse();
+    AWS_PINPOINT_API JourneyDateRangeKpiResponse(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API JourneyDateRangeKpiResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

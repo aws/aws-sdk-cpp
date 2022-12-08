@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/EmailChannelRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API EmailChannelRequest
+  class EmailChannelRequest
   {
   public:
-    EmailChannelRequest();
-    EmailChannelRequest(Aws::Utils::Json::JsonView jsonValue);
-    EmailChannelRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API EmailChannelRequest();
+    AWS_PINPOINT_API EmailChannelRequest(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API EmailChannelRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

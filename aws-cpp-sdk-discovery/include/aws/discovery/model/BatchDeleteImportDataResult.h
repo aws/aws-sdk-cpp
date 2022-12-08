@@ -25,12 +25,12 @@ namespace ApplicationDiscoveryService
 {
 namespace Model
 {
-  class AWS_APPLICATIONDISCOVERYSERVICE_API BatchDeleteImportDataResult
+  class BatchDeleteImportDataResult
   {
   public:
-    BatchDeleteImportDataResult();
-    BatchDeleteImportDataResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    BatchDeleteImportDataResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPLICATIONDISCOVERYSERVICE_API BatchDeleteImportDataResult();
+    AWS_APPLICATIONDISCOVERYSERVICE_API BatchDeleteImportDataResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPLICATIONDISCOVERYSERVICE_API BatchDeleteImportDataResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

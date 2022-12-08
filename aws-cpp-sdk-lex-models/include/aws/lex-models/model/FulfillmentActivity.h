@@ -42,13 +42,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/FulfillmentActivity">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELBUILDINGSERVICE_API FulfillmentActivity
+  class FulfillmentActivity
   {
   public:
-    FulfillmentActivity();
-    FulfillmentActivity(Aws::Utils::Json::JsonView jsonValue);
-    FulfillmentActivity& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELBUILDINGSERVICE_API FulfillmentActivity();
+    AWS_LEXMODELBUILDINGSERVICE_API FulfillmentActivity(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELBUILDINGSERVICE_API FulfillmentActivity& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELBUILDINGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

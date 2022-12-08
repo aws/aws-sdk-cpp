@@ -34,15 +34,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/SingleInstanceHealth">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICBEANSTALK_API SingleInstanceHealth
+  class SingleInstanceHealth
   {
   public:
-    SingleInstanceHealth();
-    SingleInstanceHealth(const Aws::Utils::Xml::XmlNode& xmlNode);
-    SingleInstanceHealth& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICBEANSTALK_API SingleInstanceHealth();
+    AWS_ELASTICBEANSTALK_API SingleInstanceHealth(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICBEANSTALK_API SingleInstanceHealth& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_ELASTICBEANSTALK_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_ELASTICBEANSTALK_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**

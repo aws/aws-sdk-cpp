@@ -39,13 +39,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DateTimeRange">AWS
    * API Reference</a></p>
    */
-  class AWS_HEALTH_API DateTimeRange
+  class DateTimeRange
   {
   public:
-    DateTimeRange();
-    DateTimeRange(Aws::Utils::Json::JsonView jsonValue);
-    DateTimeRange& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_HEALTH_API DateTimeRange();
+    AWS_HEALTH_API DateTimeRange(Aws::Utils::Json::JsonView jsonValue);
+    AWS_HEALTH_API DateTimeRange& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_HEALTH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

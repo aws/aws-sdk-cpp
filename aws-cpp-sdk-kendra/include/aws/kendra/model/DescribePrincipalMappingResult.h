@@ -26,12 +26,12 @@ namespace kendra
 {
 namespace Model
 {
-  class AWS_KENDRA_API DescribePrincipalMappingResult
+  class DescribePrincipalMappingResult
   {
   public:
-    DescribePrincipalMappingResult();
-    DescribePrincipalMappingResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribePrincipalMappingResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KENDRA_API DescribePrincipalMappingResult();
+    AWS_KENDRA_API DescribePrincipalMappingResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KENDRA_API DescribePrincipalMappingResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

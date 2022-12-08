@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/AgentConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEGURUPROFILER_API AgentConfiguration
+  class AgentConfiguration
   {
   public:
-    AgentConfiguration();
-    AgentConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    AgentConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEGURUPROFILER_API AgentConfiguration();
+    AWS_CODEGURUPROFILER_API AgentConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEGURUPROFILER_API AgentConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEGURUPROFILER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

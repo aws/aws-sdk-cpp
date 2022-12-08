@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/Cluster">AWS
    * API Reference</a></p>
    */
-  class AWS_MEMORYDB_API Cluster
+  class Cluster
   {
   public:
-    Cluster();
-    Cluster(Aws::Utils::Json::JsonView jsonValue);
-    Cluster& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEMORYDB_API Cluster();
+    AWS_MEMORYDB_API Cluster(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEMORYDB_API Cluster& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEMORYDB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

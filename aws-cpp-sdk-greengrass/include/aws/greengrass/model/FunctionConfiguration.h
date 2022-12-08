@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/FunctionConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_GREENGRASS_API FunctionConfiguration
+  class FunctionConfiguration
   {
   public:
-    FunctionConfiguration();
-    FunctionConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    FunctionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GREENGRASS_API FunctionConfiguration();
+    AWS_GREENGRASS_API FunctionConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASS_API FunctionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

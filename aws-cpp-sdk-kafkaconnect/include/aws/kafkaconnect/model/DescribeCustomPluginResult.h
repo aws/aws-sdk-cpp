@@ -28,12 +28,12 @@ namespace KafkaConnect
 {
 namespace Model
 {
-  class AWS_KAFKACONNECT_API DescribeCustomPluginResult
+  class DescribeCustomPluginResult
   {
   public:
-    DescribeCustomPluginResult();
-    DescribeCustomPluginResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeCustomPluginResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KAFKACONNECT_API DescribeCustomPluginResult();
+    AWS_KAFKACONNECT_API DescribeCustomPluginResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KAFKACONNECT_API DescribeCustomPluginResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

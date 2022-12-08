@@ -26,12 +26,12 @@ namespace Athena
 {
 namespace Model
 {
-  class AWS_ATHENA_API BatchGetQueryExecutionResult
+  class BatchGetQueryExecutionResult
   {
   public:
-    BatchGetQueryExecutionResult();
-    BatchGetQueryExecutionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    BatchGetQueryExecutionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ATHENA_API BatchGetQueryExecutionResult();
+    AWS_ATHENA_API BatchGetQueryExecutionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ATHENA_API BatchGetQueryExecutionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/Update">AWS API
    * Reference</a></p>
    */
-  class AWS_EKS_API Update
+  class Update
   {
   public:
-    Update();
-    Update(Aws::Utils::Json::JsonView jsonValue);
-    Update& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EKS_API Update();
+    AWS_EKS_API Update(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EKS_API Update& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EKS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

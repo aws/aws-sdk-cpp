@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/CPU">AWS API
    * Reference</a></p>
    */
-  class AWS_DRS_API CPU
+  class CPU
   {
   public:
-    CPU();
-    CPU(Aws::Utils::Json::JsonView jsonValue);
-    CPU& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DRS_API CPU();
+    AWS_DRS_API CPU(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DRS_API CPU& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DRS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

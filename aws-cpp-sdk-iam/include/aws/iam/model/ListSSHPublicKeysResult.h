@@ -33,12 +33,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListSSHPublicKeysResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_IAM_API ListSSHPublicKeysResult
+  class ListSSHPublicKeysResult
   {
   public:
-    ListSSHPublicKeysResult();
-    ListSSHPublicKeysResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ListSSHPublicKeysResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_IAM_API ListSSHPublicKeysResult();
+    AWS_IAM_API ListSSHPublicKeysResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_IAM_API ListSSHPublicKeysResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

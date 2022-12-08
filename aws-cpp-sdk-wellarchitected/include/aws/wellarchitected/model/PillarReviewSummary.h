@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/PillarReviewSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_WELLARCHITECTED_API PillarReviewSummary
+  class PillarReviewSummary
   {
   public:
-    PillarReviewSummary();
-    PillarReviewSummary(Aws::Utils::Json::JsonView jsonValue);
-    PillarReviewSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WELLARCHITECTED_API PillarReviewSummary();
+    AWS_WELLARCHITECTED_API PillarReviewSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WELLARCHITECTED_API PillarReviewSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WELLARCHITECTED_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

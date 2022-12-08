@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/Configuration">AWS
    * API Reference</a></p>
    */
-  class AWS_KAFKA_API Configuration
+  class Configuration
   {
   public:
-    Configuration();
-    Configuration(Aws::Utils::Json::JsonView jsonValue);
-    Configuration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KAFKA_API Configuration();
+    AWS_KAFKA_API Configuration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKA_API Configuration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

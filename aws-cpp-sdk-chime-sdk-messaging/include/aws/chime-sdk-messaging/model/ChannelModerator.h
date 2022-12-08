@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/ChannelModerator">AWS
    * API Reference</a></p>
    */
-  class AWS_CHIMESDKMESSAGING_API ChannelModerator
+  class ChannelModerator
   {
   public:
-    ChannelModerator();
-    ChannelModerator(Aws::Utils::Json::JsonView jsonValue);
-    ChannelModerator& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIMESDKMESSAGING_API ChannelModerator();
+    AWS_CHIMESDKMESSAGING_API ChannelModerator(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKMESSAGING_API ChannelModerator& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKMESSAGING_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

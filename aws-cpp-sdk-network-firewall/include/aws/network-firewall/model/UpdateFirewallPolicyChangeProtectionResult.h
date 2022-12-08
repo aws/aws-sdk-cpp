@@ -24,12 +24,12 @@ namespace NetworkFirewall
 {
 namespace Model
 {
-  class AWS_NETWORKFIREWALL_API UpdateFirewallPolicyChangeProtectionResult
+  class UpdateFirewallPolicyChangeProtectionResult
   {
   public:
-    UpdateFirewallPolicyChangeProtectionResult();
-    UpdateFirewallPolicyChangeProtectionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateFirewallPolicyChangeProtectionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_NETWORKFIREWALL_API UpdateFirewallPolicyChangeProtectionResult();
+    AWS_NETWORKFIREWALL_API UpdateFirewallPolicyChangeProtectionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_NETWORKFIREWALL_API UpdateFirewallPolicyChangeProtectionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

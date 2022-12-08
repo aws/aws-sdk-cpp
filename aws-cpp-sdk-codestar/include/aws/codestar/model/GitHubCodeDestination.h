@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/GitHubCodeDestination">AWS
    * API Reference</a></p>
    */
-  class AWS_CODESTAR_API GitHubCodeDestination
+  class GitHubCodeDestination
   {
   public:
-    GitHubCodeDestination();
-    GitHubCodeDestination(Aws::Utils::Json::JsonView jsonValue);
-    GitHubCodeDestination& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODESTAR_API GitHubCodeDestination();
+    AWS_CODESTAR_API GitHubCodeDestination(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODESTAR_API GitHubCodeDestination& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODESTAR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

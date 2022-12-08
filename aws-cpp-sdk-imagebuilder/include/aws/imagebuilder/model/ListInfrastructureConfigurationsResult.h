@@ -26,12 +26,12 @@ namespace imagebuilder
 {
 namespace Model
 {
-  class AWS_IMAGEBUILDER_API ListInfrastructureConfigurationsResult
+  class ListInfrastructureConfigurationsResult
   {
   public:
-    ListInfrastructureConfigurationsResult();
-    ListInfrastructureConfigurationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListInfrastructureConfigurationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IMAGEBUILDER_API ListInfrastructureConfigurationsResult();
+    AWS_IMAGEBUILDER_API ListInfrastructureConfigurationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IMAGEBUILDER_API ListInfrastructureConfigurationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -24,12 +24,12 @@ namespace AmplifyBackend
 {
 namespace Model
 {
-  class AWS_AMPLIFYBACKEND_API GetBackendJobResult
+  class GetBackendJobResult
   {
   public:
-    GetBackendJobResult();
-    GetBackendJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetBackendJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_AMPLIFYBACKEND_API GetBackendJobResult();
+    AWS_AMPLIFYBACKEND_API GetBackendJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_AMPLIFYBACKEND_API GetBackendJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

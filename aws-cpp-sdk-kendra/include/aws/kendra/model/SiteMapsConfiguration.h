@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/SiteMapsConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_KENDRA_API SiteMapsConfiguration
+  class SiteMapsConfiguration
   {
   public:
-    SiteMapsConfiguration();
-    SiteMapsConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    SiteMapsConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KENDRA_API SiteMapsConfiguration();
+    AWS_KENDRA_API SiteMapsConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API SiteMapsConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

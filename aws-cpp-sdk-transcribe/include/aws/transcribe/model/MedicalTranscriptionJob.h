@@ -46,13 +46,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/MedicalTranscriptionJob">AWS
    * API Reference</a></p>
    */
-  class AWS_TRANSCRIBESERVICE_API MedicalTranscriptionJob
+  class MedicalTranscriptionJob
   {
   public:
-    MedicalTranscriptionJob();
-    MedicalTranscriptionJob(Aws::Utils::Json::JsonView jsonValue);
-    MedicalTranscriptionJob& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TRANSCRIBESERVICE_API MedicalTranscriptionJob();
+    AWS_TRANSCRIBESERVICE_API MedicalTranscriptionJob(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSCRIBESERVICE_API MedicalTranscriptionJob& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSCRIBESERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

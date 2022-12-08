@@ -26,13 +26,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/AribDestinationSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API AribDestinationSettings
+  class AribDestinationSettings
   {
   public:
-    AribDestinationSettings();
-    AribDestinationSettings(Aws::Utils::Json::JsonView jsonValue);
-    AribDestinationSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API AribDestinationSettings();
+    AWS_MEDIALIVE_API AribDestinationSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API AribDestinationSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
   };
 

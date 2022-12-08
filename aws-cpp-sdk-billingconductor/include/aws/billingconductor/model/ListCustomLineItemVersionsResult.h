@@ -26,12 +26,12 @@ namespace BillingConductor
 {
 namespace Model
 {
-  class AWS_BILLINGCONDUCTOR_API ListCustomLineItemVersionsResult
+  class ListCustomLineItemVersionsResult
   {
   public:
-    ListCustomLineItemVersionsResult();
-    ListCustomLineItemVersionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListCustomLineItemVersionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_BILLINGCONDUCTOR_API ListCustomLineItemVersionsResult();
+    AWS_BILLINGCONDUCTOR_API ListCustomLineItemVersionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_BILLINGCONDUCTOR_API ListCustomLineItemVersionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

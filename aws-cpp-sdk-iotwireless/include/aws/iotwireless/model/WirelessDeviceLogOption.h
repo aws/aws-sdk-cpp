@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/WirelessDeviceLogOption">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTWIRELESS_API WirelessDeviceLogOption
+  class WirelessDeviceLogOption
   {
   public:
-    WirelessDeviceLogOption();
-    WirelessDeviceLogOption(Aws::Utils::Json::JsonView jsonValue);
-    WirelessDeviceLogOption& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTWIRELESS_API WirelessDeviceLogOption();
+    AWS_IOTWIRELESS_API WirelessDeviceLogOption(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API WirelessDeviceLogOption& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

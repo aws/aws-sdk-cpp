@@ -48,13 +48,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/TimeWindow">AWS
    * API Reference</a></p>
    */
-  class AWS_WAFREGIONAL_API TimeWindow
+  class TimeWindow
   {
   public:
-    TimeWindow();
-    TimeWindow(Aws::Utils::Json::JsonView jsonValue);
-    TimeWindow& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WAFREGIONAL_API TimeWindow();
+    AWS_WAFREGIONAL_API TimeWindow(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFREGIONAL_API TimeWindow& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFREGIONAL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

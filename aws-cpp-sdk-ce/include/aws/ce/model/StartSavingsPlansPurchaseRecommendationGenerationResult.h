@@ -24,12 +24,12 @@ namespace CostExplorer
 {
 namespace Model
 {
-  class AWS_COSTEXPLORER_API StartSavingsPlansPurchaseRecommendationGenerationResult
+  class StartSavingsPlansPurchaseRecommendationGenerationResult
   {
   public:
-    StartSavingsPlansPurchaseRecommendationGenerationResult();
-    StartSavingsPlansPurchaseRecommendationGenerationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    StartSavingsPlansPurchaseRecommendationGenerationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_COSTEXPLORER_API StartSavingsPlansPurchaseRecommendationGenerationResult();
+    AWS_COSTEXPLORER_API StartSavingsPlansPurchaseRecommendationGenerationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_COSTEXPLORER_API StartSavingsPlansPurchaseRecommendationGenerationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

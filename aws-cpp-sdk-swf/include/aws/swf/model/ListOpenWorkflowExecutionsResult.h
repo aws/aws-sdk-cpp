@@ -32,12 +32,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/WorkflowExecutionInfos">AWS
    * API Reference</a></p>
    */
-  class AWS_SWF_API ListOpenWorkflowExecutionsResult
+  class ListOpenWorkflowExecutionsResult
   {
   public:
-    ListOpenWorkflowExecutionsResult();
-    ListOpenWorkflowExecutionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListOpenWorkflowExecutionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SWF_API ListOpenWorkflowExecutionsResult();
+    AWS_SWF_API ListOpenWorkflowExecutionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SWF_API ListOpenWorkflowExecutionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

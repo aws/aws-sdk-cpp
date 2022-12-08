@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/WorkerConfigurationSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_KAFKACONNECT_API WorkerConfigurationSummary
+  class WorkerConfigurationSummary
   {
   public:
-    WorkerConfigurationSummary();
-    WorkerConfigurationSummary(Aws::Utils::Json::JsonView jsonValue);
-    WorkerConfigurationSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KAFKACONNECT_API WorkerConfigurationSummary();
+    AWS_KAFKACONNECT_API WorkerConfigurationSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKACONNECT_API WorkerConfigurationSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKACONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

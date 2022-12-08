@@ -26,12 +26,12 @@ namespace IoTWireless
 {
 namespace Model
 {
-  class AWS_IOTWIRELESS_API ListWirelessGatewayTaskDefinitionsResult
+  class ListWirelessGatewayTaskDefinitionsResult
   {
   public:
-    ListWirelessGatewayTaskDefinitionsResult();
-    ListWirelessGatewayTaskDefinitionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListWirelessGatewayTaskDefinitionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOTWIRELESS_API ListWirelessGatewayTaskDefinitionsResult();
+    AWS_IOTWIRELESS_API ListWirelessGatewayTaskDefinitionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOTWIRELESS_API ListWirelessGatewayTaskDefinitionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

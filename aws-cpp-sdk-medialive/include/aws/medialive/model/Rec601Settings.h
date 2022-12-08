@@ -26,13 +26,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/Rec601Settings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API Rec601Settings
+  class Rec601Settings
   {
   public:
-    Rec601Settings();
-    Rec601Settings(Aws::Utils::Json::JsonView jsonValue);
-    Rec601Settings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API Rec601Settings();
+    AWS_MEDIALIVE_API Rec601Settings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Rec601Settings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
   };
 

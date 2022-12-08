@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/AssetDestinationEntry">AWS
    * API Reference</a></p>
    */
-  class AWS_DATAEXCHANGE_API AssetDestinationEntry
+  class AssetDestinationEntry
   {
   public:
-    AssetDestinationEntry();
-    AssetDestinationEntry(Aws::Utils::Json::JsonView jsonValue);
-    AssetDestinationEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DATAEXCHANGE_API AssetDestinationEntry();
+    AWS_DATAEXCHANGE_API AssetDestinationEntry(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATAEXCHANGE_API AssetDestinationEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATAEXCHANGE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

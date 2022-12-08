@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/NFSFileShareInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_STORAGEGATEWAY_API NFSFileShareInfo
+  class NFSFileShareInfo
   {
   public:
-    NFSFileShareInfo();
-    NFSFileShareInfo(Aws::Utils::Json::JsonView jsonValue);
-    NFSFileShareInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_STORAGEGATEWAY_API NFSFileShareInfo();
+    AWS_STORAGEGATEWAY_API NFSFileShareInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_STORAGEGATEWAY_API NFSFileShareInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_STORAGEGATEWAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

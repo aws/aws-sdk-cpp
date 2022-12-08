@@ -22,12 +22,12 @@ namespace OAM
 {
 namespace Model
 {
-  class AWS_OAM_API DeleteLinkResult
+  class DeleteLinkResult
   {
   public:
-    DeleteLinkResult();
-    DeleteLinkResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteLinkResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OAM_API DeleteLinkResult();
+    AWS_OAM_API DeleteLinkResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OAM_API DeleteLinkResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

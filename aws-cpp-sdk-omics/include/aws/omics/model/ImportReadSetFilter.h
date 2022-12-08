@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ImportReadSetFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_OMICS_API ImportReadSetFilter
+  class ImportReadSetFilter
   {
   public:
-    ImportReadSetFilter();
-    ImportReadSetFilter(Aws::Utils::Json::JsonView jsonValue);
-    ImportReadSetFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OMICS_API ImportReadSetFilter();
+    AWS_OMICS_API ImportReadSetFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OMICS_API ImportReadSetFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OMICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

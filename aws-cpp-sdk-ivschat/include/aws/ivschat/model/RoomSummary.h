@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ivschat-2020-07-14/RoomSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_IVSCHAT_API RoomSummary
+  class RoomSummary
   {
   public:
-    RoomSummary();
-    RoomSummary(Aws::Utils::Json::JsonView jsonValue);
-    RoomSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IVSCHAT_API RoomSummary();
+    AWS_IVSCHAT_API RoomSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IVSCHAT_API RoomSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IVSCHAT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

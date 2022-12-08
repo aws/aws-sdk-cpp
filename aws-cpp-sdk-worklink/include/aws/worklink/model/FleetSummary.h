@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/FleetSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_WORKLINK_API FleetSummary
+  class FleetSummary
   {
   public:
-    FleetSummary();
-    FleetSummary(Aws::Utils::Json::JsonView jsonValue);
-    FleetSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WORKLINK_API FleetSummary();
+    AWS_WORKLINK_API FleetSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKLINK_API FleetSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKLINK_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

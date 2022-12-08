@@ -22,12 +22,12 @@ namespace drs
 {
 namespace Model
 {
-  class AWS_DRS_API DeleteSourceServerResult
+  class DeleteSourceServerResult
   {
   public:
-    DeleteSourceServerResult();
-    DeleteSourceServerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteSourceServerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DRS_API DeleteSourceServerResult();
+    AWS_DRS_API DeleteSourceServerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DRS_API DeleteSourceServerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

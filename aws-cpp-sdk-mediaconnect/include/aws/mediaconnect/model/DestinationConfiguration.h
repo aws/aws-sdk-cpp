@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/DestinationConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONNECT_API DestinationConfiguration
+  class DestinationConfiguration
   {
   public:
-    DestinationConfiguration();
-    DestinationConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    DestinationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONNECT_API DestinationConfiguration();
+    AWS_MEDIACONNECT_API DestinationConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONNECT_API DestinationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

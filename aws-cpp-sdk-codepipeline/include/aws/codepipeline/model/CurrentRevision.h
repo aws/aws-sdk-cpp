@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/CurrentRevision">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEPIPELINE_API CurrentRevision
+  class CurrentRevision
   {
   public:
-    CurrentRevision();
-    CurrentRevision(Aws::Utils::Json::JsonView jsonValue);
-    CurrentRevision& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEPIPELINE_API CurrentRevision();
+    AWS_CODEPIPELINE_API CurrentRevision(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEPIPELINE_API CurrentRevision& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

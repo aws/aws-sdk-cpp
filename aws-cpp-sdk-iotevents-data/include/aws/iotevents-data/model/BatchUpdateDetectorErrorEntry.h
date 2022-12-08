@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-data-2018-10-23/BatchUpdateDetectorErrorEntry">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTEVENTSDATA_API BatchUpdateDetectorErrorEntry
+  class BatchUpdateDetectorErrorEntry
   {
   public:
-    BatchUpdateDetectorErrorEntry();
-    BatchUpdateDetectorErrorEntry(Aws::Utils::Json::JsonView jsonValue);
-    BatchUpdateDetectorErrorEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTEVENTSDATA_API BatchUpdateDetectorErrorEntry();
+    AWS_IOTEVENTSDATA_API BatchUpdateDetectorErrorEntry(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTEVENTSDATA_API BatchUpdateDetectorErrorEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTEVENTSDATA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

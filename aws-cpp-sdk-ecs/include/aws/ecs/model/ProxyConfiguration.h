@@ -39,13 +39,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ProxyConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_ECS_API ProxyConfiguration
+  class ProxyConfiguration
   {
   public:
-    ProxyConfiguration();
-    ProxyConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    ProxyConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ECS_API ProxyConfiguration();
+    AWS_ECS_API ProxyConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECS_API ProxyConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

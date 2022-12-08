@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/TimelineEvent">AWS
    * API Reference</a></p>
    */
-  class AWS_SSMINCIDENTS_API TimelineEvent
+  class TimelineEvent
   {
   public:
-    TimelineEvent();
-    TimelineEvent(Aws::Utils::Json::JsonView jsonValue);
-    TimelineEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSMINCIDENTS_API TimelineEvent();
+    AWS_SSMINCIDENTS_API TimelineEvent(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSMINCIDENTS_API TimelineEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSMINCIDENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

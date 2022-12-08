@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/PercentileAggregation">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API PercentileAggregation
+  class PercentileAggregation
   {
   public:
-    PercentileAggregation();
-    PercentileAggregation(Aws::Utils::Json::JsonView jsonValue);
-    PercentileAggregation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API PercentileAggregation();
+    AWS_QUICKSIGHT_API PercentileAggregation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API PercentileAggregation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

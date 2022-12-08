@@ -26,12 +26,12 @@ namespace Lambda
 {
 namespace Model
 {
-  class AWS_LAMBDA_API UpdateFunctionEventInvokeConfigResult
+  class UpdateFunctionEventInvokeConfigResult
   {
   public:
-    UpdateFunctionEventInvokeConfigResult();
-    UpdateFunctionEventInvokeConfigResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateFunctionEventInvokeConfigResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LAMBDA_API UpdateFunctionEventInvokeConfigResult();
+    AWS_LAMBDA_API UpdateFunctionEventInvokeConfigResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LAMBDA_API UpdateFunctionEventInvokeConfigResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

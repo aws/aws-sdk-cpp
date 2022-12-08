@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ThemeVersion">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API ThemeVersion
+  class ThemeVersion
   {
   public:
-    ThemeVersion();
-    ThemeVersion(Aws::Utils::Json::JsonView jsonValue);
-    ThemeVersion& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API ThemeVersion();
+    AWS_QUICKSIGHT_API ThemeVersion(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API ThemeVersion& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

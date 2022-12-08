@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/SegmentReference">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API SegmentReference
+  class SegmentReference
   {
   public:
-    SegmentReference();
-    SegmentReference(Aws::Utils::Json::JsonView jsonValue);
-    SegmentReference& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API SegmentReference();
+    AWS_PINPOINT_API SegmentReference(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API SegmentReference& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

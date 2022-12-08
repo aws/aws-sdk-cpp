@@ -24,12 +24,12 @@ namespace SecurityLake
 {
 namespace Model
 {
-  class AWS_SECURITYLAKE_API GetSubscriberResult
+  class GetSubscriberResult
   {
   public:
-    GetSubscriberResult();
-    GetSubscriberResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetSubscriberResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SECURITYLAKE_API GetSubscriberResult();
+    AWS_SECURITYLAKE_API GetSubscriberResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SECURITYLAKE_API GetSubscriberResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

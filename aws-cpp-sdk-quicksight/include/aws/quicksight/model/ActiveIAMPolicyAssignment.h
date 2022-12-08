@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ActiveIAMPolicyAssignment">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API ActiveIAMPolicyAssignment
+  class ActiveIAMPolicyAssignment
   {
   public:
-    ActiveIAMPolicyAssignment();
-    ActiveIAMPolicyAssignment(Aws::Utils::Json::JsonView jsonValue);
-    ActiveIAMPolicyAssignment& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API ActiveIAMPolicyAssignment();
+    AWS_QUICKSIGHT_API ActiveIAMPolicyAssignment(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API ActiveIAMPolicyAssignment& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

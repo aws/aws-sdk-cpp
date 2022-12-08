@@ -31,13 +31,13 @@ namespace ChimeSDKVoice
 namespace Model
 {
 
-  class AWS_CHIMESDKVOICE_API ProxySession
+  class ProxySession
   {
   public:
-    ProxySession();
-    ProxySession(Aws::Utils::Json::JsonView jsonValue);
-    ProxySession& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIMESDKVOICE_API ProxySession();
+    AWS_CHIMESDKVOICE_API ProxySession(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKVOICE_API ProxySession& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKVOICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

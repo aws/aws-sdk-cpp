@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/PivotTableTotalOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API PivotTableTotalOptions
+  class PivotTableTotalOptions
   {
   public:
-    PivotTableTotalOptions();
-    PivotTableTotalOptions(Aws::Utils::Json::JsonView jsonValue);
-    PivotTableTotalOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API PivotTableTotalOptions();
+    AWS_QUICKSIGHT_API PivotTableTotalOptions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API PivotTableTotalOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

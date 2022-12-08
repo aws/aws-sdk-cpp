@@ -27,12 +27,12 @@ namespace LexModelsV2
 {
 namespace Model
 {
-  class AWS_LEXMODELSV2_API BatchCreateCustomVocabularyItemResult
+  class BatchCreateCustomVocabularyItemResult
   {
   public:
-    BatchCreateCustomVocabularyItemResult();
-    BatchCreateCustomVocabularyItemResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    BatchCreateCustomVocabularyItemResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LEXMODELSV2_API BatchCreateCustomVocabularyItemResult();
+    AWS_LEXMODELSV2_API BatchCreateCustomVocabularyItemResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LEXMODELSV2_API BatchCreateCustomVocabularyItemResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

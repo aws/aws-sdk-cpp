@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mwaa-2020-07-01/StatisticSet">AWS
    * API Reference</a></p>
    */
-  class AWS_MWAA_API StatisticSet
+  class StatisticSet
   {
   public:
-    StatisticSet();
-    StatisticSet(Aws::Utils::Json::JsonView jsonValue);
-    StatisticSet& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MWAA_API StatisticSet();
+    AWS_MWAA_API StatisticSet(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MWAA_API StatisticSet& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MWAA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

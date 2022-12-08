@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ClarifyTextConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API ClarifyTextConfig
+  class ClarifyTextConfig
   {
   public:
-    ClarifyTextConfig();
-    ClarifyTextConfig(Aws::Utils::Json::JsonView jsonValue);
-    ClarifyTextConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API ClarifyTextConfig();
+    AWS_SAGEMAKER_API ClarifyTextConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API ClarifyTextConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

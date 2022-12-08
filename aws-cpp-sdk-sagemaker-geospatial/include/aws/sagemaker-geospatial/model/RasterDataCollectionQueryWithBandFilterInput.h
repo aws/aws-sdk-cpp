@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-geospatial-2020-05-27/RasterDataCollectionQueryWithBandFilterInput">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKERGEOSPATIAL_API RasterDataCollectionQueryWithBandFilterInput
+  class RasterDataCollectionQueryWithBandFilterInput
   {
   public:
-    RasterDataCollectionQueryWithBandFilterInput();
-    RasterDataCollectionQueryWithBandFilterInput(Aws::Utils::Json::JsonView jsonValue);
-    RasterDataCollectionQueryWithBandFilterInput& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKERGEOSPATIAL_API RasterDataCollectionQueryWithBandFilterInput();
+    AWS_SAGEMAKERGEOSPATIAL_API RasterDataCollectionQueryWithBandFilterInput(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKERGEOSPATIAL_API RasterDataCollectionQueryWithBandFilterInput& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKERGEOSPATIAL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

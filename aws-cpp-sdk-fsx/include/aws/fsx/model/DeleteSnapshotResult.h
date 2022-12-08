@@ -25,12 +25,12 @@ namespace FSx
 {
 namespace Model
 {
-  class AWS_FSX_API DeleteSnapshotResult
+  class DeleteSnapshotResult
   {
   public:
-    DeleteSnapshotResult();
-    DeleteSnapshotResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteSnapshotResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_FSX_API DeleteSnapshotResult();
+    AWS_FSX_API DeleteSnapshotResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_FSX_API DeleteSnapshotResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

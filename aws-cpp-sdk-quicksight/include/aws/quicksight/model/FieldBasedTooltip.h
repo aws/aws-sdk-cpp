@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/FieldBasedTooltip">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API FieldBasedTooltip
+  class FieldBasedTooltip
   {
   public:
-    FieldBasedTooltip();
-    FieldBasedTooltip(Aws::Utils::Json::JsonView jsonValue);
-    FieldBasedTooltip& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API FieldBasedTooltip();
+    AWS_QUICKSIGHT_API FieldBasedTooltip(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API FieldBasedTooltip& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

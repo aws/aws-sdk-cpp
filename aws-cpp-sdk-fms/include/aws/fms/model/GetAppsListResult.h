@@ -25,12 +25,12 @@ namespace FMS
 {
 namespace Model
 {
-  class AWS_FMS_API GetAppsListResult
+  class GetAppsListResult
   {
   public:
-    GetAppsListResult();
-    GetAppsListResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetAppsListResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_FMS_API GetAppsListResult();
+    AWS_FMS_API GetAppsListResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_FMS_API GetAppsListResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

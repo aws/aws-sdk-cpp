@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/WorkflowExecutionCompletedEventAttributes">AWS
    * API Reference</a></p>
    */
-  class AWS_SWF_API WorkflowExecutionCompletedEventAttributes
+  class WorkflowExecutionCompletedEventAttributes
   {
   public:
-    WorkflowExecutionCompletedEventAttributes();
-    WorkflowExecutionCompletedEventAttributes(Aws::Utils::Json::JsonView jsonValue);
-    WorkflowExecutionCompletedEventAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SWF_API WorkflowExecutionCompletedEventAttributes();
+    AWS_SWF_API WorkflowExecutionCompletedEventAttributes(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SWF_API WorkflowExecutionCompletedEventAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SWF_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

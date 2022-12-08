@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/Environment">AWS
    * API Reference</a></p>
    */
-  class AWS_LAMBDA_API Environment
+  class Environment
   {
   public:
-    Environment();
-    Environment(Aws::Utils::Json::JsonView jsonValue);
-    Environment& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LAMBDA_API Environment();
+    AWS_LAMBDA_API Environment(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAMBDA_API Environment& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAMBDA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

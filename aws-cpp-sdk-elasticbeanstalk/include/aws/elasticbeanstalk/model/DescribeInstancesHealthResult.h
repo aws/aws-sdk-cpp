@@ -34,12 +34,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeInstancesHealthResult">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICBEANSTALK_API DescribeInstancesHealthResult
+  class DescribeInstancesHealthResult
   {
   public:
-    DescribeInstancesHealthResult();
-    DescribeInstancesHealthResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeInstancesHealthResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ELASTICBEANSTALK_API DescribeInstancesHealthResult();
+    AWS_ELASTICBEANSTALK_API DescribeInstancesHealthResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ELASTICBEANSTALK_API DescribeInstancesHealthResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

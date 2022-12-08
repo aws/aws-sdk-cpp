@@ -26,13 +26,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/IPSetMetadata">AWS
    * API Reference</a></p>
    */
-  class AWS_NETWORKFIREWALL_API IPSetMetadata
+  class IPSetMetadata
   {
   public:
-    IPSetMetadata();
-    IPSetMetadata(Aws::Utils::Json::JsonView jsonValue);
-    IPSetMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_NETWORKFIREWALL_API IPSetMetadata();
+    AWS_NETWORKFIREWALL_API IPSetMetadata(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKFIREWALL_API IPSetMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKFIREWALL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

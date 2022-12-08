@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-data-2019-12-20/SqlParameter">AWS
    * API Reference</a></p>
    */
-  class AWS_REDSHIFTDATAAPISERVICE_API SqlParameter
+  class SqlParameter
   {
   public:
-    SqlParameter();
-    SqlParameter(Aws::Utils::Json::JsonView jsonValue);
-    SqlParameter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_REDSHIFTDATAAPISERVICE_API SqlParameter();
+    AWS_REDSHIFTDATAAPISERVICE_API SqlParameter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REDSHIFTDATAAPISERVICE_API SqlParameter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REDSHIFTDATAAPISERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

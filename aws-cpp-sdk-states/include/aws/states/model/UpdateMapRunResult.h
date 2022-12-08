@@ -22,12 +22,12 @@ namespace SFN
 {
 namespace Model
 {
-  class AWS_SFN_API UpdateMapRunResult
+  class UpdateMapRunResult
   {
   public:
-    UpdateMapRunResult();
-    UpdateMapRunResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateMapRunResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SFN_API UpdateMapRunResult();
+    AWS_SFN_API UpdateMapRunResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SFN_API UpdateMapRunResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

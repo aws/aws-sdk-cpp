@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/SparkSqlJobDriver">AWS
    * API Reference</a></p>
    */
-  class AWS_EMRCONTAINERS_API SparkSqlJobDriver
+  class SparkSqlJobDriver
   {
   public:
-    SparkSqlJobDriver();
-    SparkSqlJobDriver(Aws::Utils::Json::JsonView jsonValue);
-    SparkSqlJobDriver& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EMRCONTAINERS_API SparkSqlJobDriver();
+    AWS_EMRCONTAINERS_API SparkSqlJobDriver(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMRCONTAINERS_API SparkSqlJobDriver& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMRCONTAINERS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

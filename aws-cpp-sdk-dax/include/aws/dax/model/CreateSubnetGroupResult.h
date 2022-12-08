@@ -24,12 +24,12 @@ namespace DAX
 {
 namespace Model
 {
-  class AWS_DAX_API CreateSubnetGroupResult
+  class CreateSubnetGroupResult
   {
   public:
-    CreateSubnetGroupResult();
-    CreateSubnetGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateSubnetGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DAX_API CreateSubnetGroupResult();
+    AWS_DAX_API CreateSubnetGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DAX_API CreateSubnetGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -24,12 +24,12 @@ namespace SES
 {
 namespace Model
 {
-  class AWS_SES_API DeleteTemplateResult
+  class DeleteTemplateResult
   {
   public:
-    DeleteTemplateResult();
-    DeleteTemplateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DeleteTemplateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_SES_API DeleteTemplateResult();
+    AWS_SES_API DeleteTemplateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_SES_API DeleteTemplateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     

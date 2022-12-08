@@ -27,12 +27,12 @@ namespace Panorama
 {
 namespace Model
 {
-  class AWS_PANORAMA_API DescribeNodeResult
+  class DescribeNodeResult
   {
   public:
-    DescribeNodeResult();
-    DescribeNodeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeNodeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PANORAMA_API DescribeNodeResult();
+    AWS_PANORAMA_API DescribeNodeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PANORAMA_API DescribeNodeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

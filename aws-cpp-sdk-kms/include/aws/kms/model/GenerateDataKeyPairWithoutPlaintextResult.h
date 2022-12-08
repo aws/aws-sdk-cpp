@@ -26,12 +26,12 @@ namespace KMS
 {
 namespace Model
 {
-  class AWS_KMS_API GenerateDataKeyPairWithoutPlaintextResult
+  class GenerateDataKeyPairWithoutPlaintextResult
   {
   public:
-    GenerateDataKeyPairWithoutPlaintextResult();
-    GenerateDataKeyPairWithoutPlaintextResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GenerateDataKeyPairWithoutPlaintextResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KMS_API GenerateDataKeyPairWithoutPlaintextResult();
+    AWS_KMS_API GenerateDataKeyPairWithoutPlaintextResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KMS_API GenerateDataKeyPairWithoutPlaintextResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

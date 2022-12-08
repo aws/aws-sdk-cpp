@@ -26,12 +26,12 @@ namespace ChimeSDKIdentity
 {
 namespace Model
 {
-  class AWS_CHIMESDKIDENTITY_API ListAppInstanceUsersResult
+  class ListAppInstanceUsersResult
   {
   public:
-    ListAppInstanceUsersResult();
-    ListAppInstanceUsersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListAppInstanceUsersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CHIMESDKIDENTITY_API ListAppInstanceUsersResult();
+    AWS_CHIMESDKIDENTITY_API ListAppInstanceUsersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CHIMESDKIDENTITY_API ListAppInstanceUsersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

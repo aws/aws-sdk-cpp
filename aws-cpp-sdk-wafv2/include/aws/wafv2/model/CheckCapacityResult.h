@@ -22,12 +22,12 @@ namespace WAFV2
 {
 namespace Model
 {
-  class AWS_WAFV2_API CheckCapacityResult
+  class CheckCapacityResult
   {
   public:
-    CheckCapacityResult();
-    CheckCapacityResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CheckCapacityResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WAFV2_API CheckCapacityResult();
+    AWS_WAFV2_API CheckCapacityResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WAFV2_API CheckCapacityResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

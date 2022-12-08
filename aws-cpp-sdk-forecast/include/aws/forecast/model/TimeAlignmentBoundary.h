@@ -38,13 +38,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/TimeAlignmentBoundary">AWS
    * API Reference</a></p>
    */
-  class AWS_FORECASTSERVICE_API TimeAlignmentBoundary
+  class TimeAlignmentBoundary
   {
   public:
-    TimeAlignmentBoundary();
-    TimeAlignmentBoundary(Aws::Utils::Json::JsonView jsonValue);
-    TimeAlignmentBoundary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FORECASTSERVICE_API TimeAlignmentBoundary();
+    AWS_FORECASTSERVICE_API TimeAlignmentBoundary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FORECASTSERVICE_API TimeAlignmentBoundary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FORECASTSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

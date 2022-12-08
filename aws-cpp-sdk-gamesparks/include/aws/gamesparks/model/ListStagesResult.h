@@ -26,12 +26,12 @@ namespace GameSparks
 {
 namespace Model
 {
-  class AWS_GAMESPARKS_API ListStagesResult
+  class ListStagesResult
   {
   public:
-    ListStagesResult();
-    ListStagesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListStagesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GAMESPARKS_API ListStagesResult();
+    AWS_GAMESPARKS_API ListStagesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GAMESPARKS_API ListStagesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

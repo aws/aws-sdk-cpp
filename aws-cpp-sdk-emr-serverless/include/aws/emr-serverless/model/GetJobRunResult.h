@@ -24,12 +24,12 @@ namespace EMRServerless
 {
 namespace Model
 {
-  class AWS_EMRSERVERLESS_API GetJobRunResult
+  class GetJobRunResult
   {
   public:
-    GetJobRunResult();
-    GetJobRunResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetJobRunResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_EMRSERVERLESS_API GetJobRunResult();
+    AWS_EMRSERVERLESS_API GetJobRunResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_EMRSERVERLESS_API GetJobRunResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -32,12 +32,12 @@ namespace drs
 {
 namespace Model
 {
-  class AWS_DRS_API DisconnectSourceServerResult
+  class DisconnectSourceServerResult
   {
   public:
-    DisconnectSourceServerResult();
-    DisconnectSourceServerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DisconnectSourceServerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DRS_API DisconnectSourceServerResult();
+    AWS_DRS_API DisconnectSourceServerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DRS_API DisconnectSourceServerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

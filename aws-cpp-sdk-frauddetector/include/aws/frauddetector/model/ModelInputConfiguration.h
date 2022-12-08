@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/ModelInputConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_FRAUDDETECTOR_API ModelInputConfiguration
+  class ModelInputConfiguration
   {
   public:
-    ModelInputConfiguration();
-    ModelInputConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    ModelInputConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FRAUDDETECTOR_API ModelInputConfiguration();
+    AWS_FRAUDDETECTOR_API ModelInputConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FRAUDDETECTOR_API ModelInputConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FRAUDDETECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

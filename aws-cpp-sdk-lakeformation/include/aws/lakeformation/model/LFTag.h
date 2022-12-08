@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/LFTag">AWS
    * API Reference</a></p>
    */
-  class AWS_LAKEFORMATION_API LFTag
+  class LFTag
   {
   public:
-    LFTag();
-    LFTag(Aws::Utils::Json::JsonView jsonValue);
-    LFTag& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LAKEFORMATION_API LFTag();
+    AWS_LAKEFORMATION_API LFTag(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAKEFORMATION_API LFTag& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAKEFORMATION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -40,13 +40,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/Configuration">AWS
    * API Reference</a></p>
    */
-  class AWS_ACCESSANALYZER_API Configuration
+  class Configuration
   {
   public:
-    Configuration();
-    Configuration(Aws::Utils::Json::JsonView jsonValue);
-    Configuration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ACCESSANALYZER_API Configuration();
+    AWS_ACCESSANALYZER_API Configuration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACCESSANALYZER_API Configuration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACCESSANALYZER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

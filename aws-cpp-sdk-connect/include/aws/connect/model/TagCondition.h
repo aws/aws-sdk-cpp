@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/TagCondition">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECT_API TagCondition
+  class TagCondition
   {
   public:
-    TagCondition();
-    TagCondition(Aws::Utils::Json::JsonView jsonValue);
-    TagCondition& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECT_API TagCondition();
+    AWS_CONNECT_API TagCondition(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API TagCondition& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

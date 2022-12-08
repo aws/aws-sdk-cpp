@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/BuildNotDeleted">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEBUILD_API BuildNotDeleted
+  class BuildNotDeleted
   {
   public:
-    BuildNotDeleted();
-    BuildNotDeleted(Aws::Utils::Json::JsonView jsonValue);
-    BuildNotDeleted& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEBUILD_API BuildNotDeleted();
+    AWS_CODEBUILD_API BuildNotDeleted(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEBUILD_API BuildNotDeleted& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEBUILD_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

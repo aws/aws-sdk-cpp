@@ -24,12 +24,12 @@ namespace Proton
 {
 namespace Model
 {
-  class AWS_PROTON_API CancelEnvironmentDeploymentResult
+  class CancelEnvironmentDeploymentResult
   {
   public:
-    CancelEnvironmentDeploymentResult();
-    CancelEnvironmentDeploymentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CancelEnvironmentDeploymentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PROTON_API CancelEnvironmentDeploymentResult();
+    AWS_PROTON_API CancelEnvironmentDeploymentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PROTON_API CancelEnvironmentDeploymentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

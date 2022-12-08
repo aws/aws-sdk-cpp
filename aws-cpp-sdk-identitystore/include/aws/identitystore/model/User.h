@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/User">AWS
    * API Reference</a></p>
    */
-  class AWS_IDENTITYSTORE_API User
+  class User
   {
   public:
-    User();
-    User(Aws::Utils::Json::JsonView jsonValue);
-    User& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IDENTITYSTORE_API User();
+    AWS_IDENTITYSTORE_API User(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IDENTITYSTORE_API User& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IDENTITYSTORE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

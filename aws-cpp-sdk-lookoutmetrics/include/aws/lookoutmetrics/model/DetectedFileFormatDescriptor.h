@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/DetectedFileFormatDescriptor">AWS
    * API Reference</a></p>
    */
-  class AWS_LOOKOUTMETRICS_API DetectedFileFormatDescriptor
+  class DetectedFileFormatDescriptor
   {
   public:
-    DetectedFileFormatDescriptor();
-    DetectedFileFormatDescriptor(Aws::Utils::Json::JsonView jsonValue);
-    DetectedFileFormatDescriptor& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LOOKOUTMETRICS_API DetectedFileFormatDescriptor();
+    AWS_LOOKOUTMETRICS_API DetectedFileFormatDescriptor(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTMETRICS_API DetectedFileFormatDescriptor& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTMETRICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -22,12 +22,12 @@ namespace CloudWatchRUM
 {
 namespace Model
 {
-  class AWS_CLOUDWATCHRUM_API PutRumMetricsDestinationResult
+  class PutRumMetricsDestinationResult
   {
   public:
-    PutRumMetricsDestinationResult();
-    PutRumMetricsDestinationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PutRumMetricsDestinationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CLOUDWATCHRUM_API PutRumMetricsDestinationResult();
+    AWS_CLOUDWATCHRUM_API PutRumMetricsDestinationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CLOUDWATCHRUM_API PutRumMetricsDestinationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

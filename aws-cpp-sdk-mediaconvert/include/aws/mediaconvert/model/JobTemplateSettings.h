@@ -40,13 +40,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/JobTemplateSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API JobTemplateSettings
+  class JobTemplateSettings
   {
   public:
-    JobTemplateSettings();
-    JobTemplateSettings(Aws::Utils::Json::JsonView jsonValue);
-    JobTemplateSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API JobTemplateSettings();
+    AWS_MEDIACONVERT_API JobTemplateSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API JobTemplateSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

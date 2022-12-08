@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pipes-2015-10-07/PipeTargetEventBridgeEventBusParameters">AWS
    * API Reference</a></p>
    */
-  class AWS_PIPES_API PipeTargetEventBridgeEventBusParameters
+  class PipeTargetEventBridgeEventBusParameters
   {
   public:
-    PipeTargetEventBridgeEventBusParameters();
-    PipeTargetEventBridgeEventBusParameters(Aws::Utils::Json::JsonView jsonValue);
-    PipeTargetEventBridgeEventBusParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PIPES_API PipeTargetEventBridgeEventBusParameters();
+    AWS_PIPES_API PipeTargetEventBridgeEventBusParameters(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PIPES_API PipeTargetEventBridgeEventBusParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PIPES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

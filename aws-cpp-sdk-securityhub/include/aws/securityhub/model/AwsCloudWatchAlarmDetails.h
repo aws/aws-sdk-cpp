@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsCloudWatchAlarmDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsCloudWatchAlarmDetails
+  class AwsCloudWatchAlarmDetails
   {
   public:
-    AwsCloudWatchAlarmDetails();
-    AwsCloudWatchAlarmDetails(Aws::Utils::Json::JsonView jsonValue);
-    AwsCloudWatchAlarmDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsCloudWatchAlarmDetails();
+    AWS_SECURITYHUB_API AwsCloudWatchAlarmDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsCloudWatchAlarmDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

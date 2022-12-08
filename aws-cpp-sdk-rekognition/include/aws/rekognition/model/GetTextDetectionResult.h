@@ -28,12 +28,12 @@ namespace Rekognition
 {
 namespace Model
 {
-  class AWS_REKOGNITION_API GetTextDetectionResult
+  class GetTextDetectionResult
   {
   public:
-    GetTextDetectionResult();
-    GetTextDetectionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetTextDetectionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_REKOGNITION_API GetTextDetectionResult();
+    AWS_REKOGNITION_API GetTextDetectionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_REKOGNITION_API GetTextDetectionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

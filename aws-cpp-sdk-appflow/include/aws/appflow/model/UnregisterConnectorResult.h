@@ -22,12 +22,12 @@ namespace Appflow
 {
 namespace Model
 {
-  class AWS_APPFLOW_API UnregisterConnectorResult
+  class UnregisterConnectorResult
   {
   public:
-    UnregisterConnectorResult();
-    UnregisterConnectorResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UnregisterConnectorResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPFLOW_API UnregisterConnectorResult();
+    AWS_APPFLOW_API UnregisterConnectorResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPFLOW_API UnregisterConnectorResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

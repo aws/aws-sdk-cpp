@@ -33,12 +33,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DescribeHsmResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDHSM_API DescribeHsmResult
+  class DescribeHsmResult
   {
   public:
-    DescribeHsmResult();
-    DescribeHsmResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeHsmResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CLOUDHSM_API DescribeHsmResult();
+    AWS_CLOUDHSM_API DescribeHsmResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CLOUDHSM_API DescribeHsmResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

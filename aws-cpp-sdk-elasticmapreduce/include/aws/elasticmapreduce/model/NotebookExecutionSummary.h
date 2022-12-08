@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/NotebookExecutionSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_EMR_API NotebookExecutionSummary
+  class NotebookExecutionSummary
   {
   public:
-    NotebookExecutionSummary();
-    NotebookExecutionSummary(Aws::Utils::Json::JsonView jsonValue);
-    NotebookExecutionSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EMR_API NotebookExecutionSummary();
+    AWS_EMR_API NotebookExecutionSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMR_API NotebookExecutionSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

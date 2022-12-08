@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/AgentNetworkInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_APPLICATIONDISCOVERYSERVICE_API AgentNetworkInfo
+  class AgentNetworkInfo
   {
   public:
-    AgentNetworkInfo();
-    AgentNetworkInfo(Aws::Utils::Json::JsonView jsonValue);
-    AgentNetworkInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPLICATIONDISCOVERYSERVICE_API AgentNetworkInfo();
+    AWS_APPLICATIONDISCOVERYSERVICE_API AgentNetworkInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPLICATIONDISCOVERYSERVICE_API AgentNetworkInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPLICATIONDISCOVERYSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

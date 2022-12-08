@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/ListMonitoredResourcesFilters">AWS
    * API Reference</a></p>
    */
-  class AWS_DEVOPSGURU_API ListMonitoredResourcesFilters
+  class ListMonitoredResourcesFilters
   {
   public:
-    ListMonitoredResourcesFilters();
-    ListMonitoredResourcesFilters(Aws::Utils::Json::JsonView jsonValue);
-    ListMonitoredResourcesFilters& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DEVOPSGURU_API ListMonitoredResourcesFilters();
+    AWS_DEVOPSGURU_API ListMonitoredResourcesFilters(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVOPSGURU_API ListMonitoredResourcesFilters& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVOPSGURU_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

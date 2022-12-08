@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CastColumnTypeOperation">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API CastColumnTypeOperation
+  class CastColumnTypeOperation
   {
   public:
-    CastColumnTypeOperation();
-    CastColumnTypeOperation(Aws::Utils::Json::JsonView jsonValue);
-    CastColumnTypeOperation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API CastColumnTypeOperation();
+    AWS_QUICKSIGHT_API CastColumnTypeOperation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API CastColumnTypeOperation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

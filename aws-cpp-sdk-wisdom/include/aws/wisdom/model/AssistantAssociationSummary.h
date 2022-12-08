@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/AssistantAssociationSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECTWISDOMSERVICE_API AssistantAssociationSummary
+  class AssistantAssociationSummary
   {
   public:
-    AssistantAssociationSummary();
-    AssistantAssociationSummary(Aws::Utils::Json::JsonView jsonValue);
-    AssistantAssociationSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECTWISDOMSERVICE_API AssistantAssociationSummary();
+    AWS_CONNECTWISDOMSERVICE_API AssistantAssociationSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTWISDOMSERVICE_API AssistantAssociationSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTWISDOMSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

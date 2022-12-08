@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/UnprocessedPreparedStatementName">AWS
    * API Reference</a></p>
    */
-  class AWS_ATHENA_API UnprocessedPreparedStatementName
+  class UnprocessedPreparedStatementName
   {
   public:
-    UnprocessedPreparedStatementName();
-    UnprocessedPreparedStatementName(Aws::Utils::Json::JsonView jsonValue);
-    UnprocessedPreparedStatementName& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ATHENA_API UnprocessedPreparedStatementName();
+    AWS_ATHENA_API UnprocessedPreparedStatementName(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ATHENA_API UnprocessedPreparedStatementName& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ATHENA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

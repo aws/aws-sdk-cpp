@@ -29,12 +29,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/connectcampaigns-2021-01-30/GetCampaignStateResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECTCAMPAIGNS_API GetCampaignStateResult
+  class GetCampaignStateResult
   {
   public:
-    GetCampaignStateResult();
-    GetCampaignStateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetCampaignStateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CONNECTCAMPAIGNS_API GetCampaignStateResult();
+    AWS_CONNECTCAMPAIGNS_API GetCampaignStateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CONNECTCAMPAIGNS_API GetCampaignStateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     

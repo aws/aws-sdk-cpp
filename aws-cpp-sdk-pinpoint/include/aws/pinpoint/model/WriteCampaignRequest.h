@@ -38,13 +38,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/WriteCampaignRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API WriteCampaignRequest
+  class WriteCampaignRequest
   {
   public:
-    WriteCampaignRequest();
-    WriteCampaignRequest(Aws::Utils::Json::JsonView jsonValue);
-    WriteCampaignRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API WriteCampaignRequest();
+    AWS_PINPOINT_API WriteCampaignRequest(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API WriteCampaignRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

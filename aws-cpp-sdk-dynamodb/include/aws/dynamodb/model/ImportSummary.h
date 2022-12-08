@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ImportSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_DYNAMODB_API ImportSummary
+  class ImportSummary
   {
   public:
-    ImportSummary();
-    ImportSummary(Aws::Utils::Json::JsonView jsonValue);
-    ImportSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DYNAMODB_API ImportSummary();
+    AWS_DYNAMODB_API ImportSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API ImportSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

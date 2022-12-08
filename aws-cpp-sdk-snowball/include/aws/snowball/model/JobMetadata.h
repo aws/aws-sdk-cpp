@@ -45,13 +45,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/JobMetadata">AWS
    * API Reference</a></p>
    */
-  class AWS_SNOWBALL_API JobMetadata
+  class JobMetadata
   {
   public:
-    JobMetadata();
-    JobMetadata(Aws::Utils::Json::JsonView jsonValue);
-    JobMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SNOWBALL_API JobMetadata();
+    AWS_SNOWBALL_API JobMetadata(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SNOWBALL_API JobMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SNOWBALL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/ApplicationVersionSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_KINESISANALYTICSV2_API ApplicationVersionSummary
+  class ApplicationVersionSummary
   {
   public:
-    ApplicationVersionSummary();
-    ApplicationVersionSummary(Aws::Utils::Json::JsonView jsonValue);
-    ApplicationVersionSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KINESISANALYTICSV2_API ApplicationVersionSummary();
+    AWS_KINESISANALYTICSV2_API ApplicationVersionSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICSV2_API ApplicationVersionSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

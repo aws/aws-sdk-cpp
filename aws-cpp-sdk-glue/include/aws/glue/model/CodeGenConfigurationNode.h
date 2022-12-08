@@ -81,13 +81,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CodeGenConfigurationNode">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API CodeGenConfigurationNode
+  class CodeGenConfigurationNode
   {
   public:
-    CodeGenConfigurationNode();
-    CodeGenConfigurationNode(Aws::Utils::Json::JsonView jsonValue);
-    CodeGenConfigurationNode& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API CodeGenConfigurationNode();
+    AWS_GLUE_API CodeGenConfigurationNode(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API CodeGenConfigurationNode& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

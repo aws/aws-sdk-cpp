@@ -39,13 +39,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CampaignResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API CampaignResponse
+  class CampaignResponse
   {
   public:
-    CampaignResponse();
-    CampaignResponse(Aws::Utils::Json::JsonView jsonValue);
-    CampaignResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API CampaignResponse();
+    AWS_PINPOINT_API CampaignResponse(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API CampaignResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -32,12 +32,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DescribeHapgResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDHSM_API DescribeHapgResult
+  class DescribeHapgResult
   {
   public:
-    DescribeHapgResult();
-    DescribeHapgResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeHapgResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CLOUDHSM_API DescribeHapgResult();
+    AWS_CLOUDHSM_API DescribeHapgResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CLOUDHSM_API DescribeHapgResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

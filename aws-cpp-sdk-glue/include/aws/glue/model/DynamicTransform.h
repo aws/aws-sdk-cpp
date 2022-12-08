@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DynamicTransform">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API DynamicTransform
+  class DynamicTransform
   {
   public:
-    DynamicTransform();
-    DynamicTransform(Aws::Utils::Json::JsonView jsonValue);
-    DynamicTransform& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API DynamicTransform();
+    AWS_GLUE_API DynamicTransform(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API DynamicTransform& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

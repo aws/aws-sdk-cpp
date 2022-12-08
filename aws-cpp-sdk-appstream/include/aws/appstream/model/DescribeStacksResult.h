@@ -26,12 +26,12 @@ namespace AppStream
 {
 namespace Model
 {
-  class AWS_APPSTREAM_API DescribeStacksResult
+  class DescribeStacksResult
   {
   public:
-    DescribeStacksResult();
-    DescribeStacksResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeStacksResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPSTREAM_API DescribeStacksResult();
+    AWS_APPSTREAM_API DescribeStacksResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPSTREAM_API DescribeStacksResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

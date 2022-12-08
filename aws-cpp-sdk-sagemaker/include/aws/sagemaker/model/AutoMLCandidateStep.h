@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/AutoMLCandidateStep">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API AutoMLCandidateStep
+  class AutoMLCandidateStep
   {
   public:
-    AutoMLCandidateStep();
-    AutoMLCandidateStep(Aws::Utils::Json::JsonView jsonValue);
-    AutoMLCandidateStep& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API AutoMLCandidateStep();
+    AWS_SAGEMAKER_API AutoMLCandidateStep(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API AutoMLCandidateStep& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

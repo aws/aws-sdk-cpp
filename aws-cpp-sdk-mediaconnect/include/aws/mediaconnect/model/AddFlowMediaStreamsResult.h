@@ -26,12 +26,12 @@ namespace MediaConnect
 {
 namespace Model
 {
-  class AWS_MEDIACONNECT_API AddFlowMediaStreamsResult
+  class AddFlowMediaStreamsResult
   {
   public:
-    AddFlowMediaStreamsResult();
-    AddFlowMediaStreamsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AddFlowMediaStreamsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MEDIACONNECT_API AddFlowMediaStreamsResult();
+    AWS_MEDIACONNECT_API AddFlowMediaStreamsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MEDIACONNECT_API AddFlowMediaStreamsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

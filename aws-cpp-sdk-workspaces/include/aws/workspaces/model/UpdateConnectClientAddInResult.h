@@ -22,12 +22,12 @@ namespace WorkSpaces
 {
 namespace Model
 {
-  class AWS_WORKSPACES_API UpdateConnectClientAddInResult
+  class UpdateConnectClientAddInResult
   {
   public:
-    UpdateConnectClientAddInResult();
-    UpdateConnectClientAddInResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateConnectClientAddInResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WORKSPACES_API UpdateConnectClientAddInResult();
+    AWS_WORKSPACES_API UpdateConnectClientAddInResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WORKSPACES_API UpdateConnectClientAddInResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

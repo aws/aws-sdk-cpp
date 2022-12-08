@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/OverrideButtonConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API OverrideButtonConfiguration
+  class OverrideButtonConfiguration
   {
   public:
-    OverrideButtonConfiguration();
-    OverrideButtonConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    OverrideButtonConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API OverrideButtonConfiguration();
+    AWS_PINPOINT_API OverrideButtonConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API OverrideButtonConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

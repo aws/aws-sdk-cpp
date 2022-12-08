@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/ElasticsearchDestinationDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_FIREHOSE_API ElasticsearchDestinationDescription
+  class ElasticsearchDestinationDescription
   {
   public:
-    ElasticsearchDestinationDescription();
-    ElasticsearchDestinationDescription(Aws::Utils::Json::JsonView jsonValue);
-    ElasticsearchDestinationDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FIREHOSE_API ElasticsearchDestinationDescription();
+    AWS_FIREHOSE_API ElasticsearchDestinationDescription(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FIREHOSE_API ElasticsearchDestinationDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FIREHOSE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

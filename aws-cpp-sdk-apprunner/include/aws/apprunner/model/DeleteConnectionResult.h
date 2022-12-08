@@ -24,12 +24,12 @@ namespace AppRunner
 {
 namespace Model
 {
-  class AWS_APPRUNNER_API DeleteConnectionResult
+  class DeleteConnectionResult
   {
   public:
-    DeleteConnectionResult();
-    DeleteConnectionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteConnectionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPRUNNER_API DeleteConnectionResult();
+    AWS_APPRUNNER_API DeleteConnectionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPRUNNER_API DeleteConnectionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -30,12 +30,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ConnectDirectoryResult">AWS
    * API Reference</a></p>
    */
-  class AWS_DIRECTORYSERVICE_API ConnectDirectoryResult
+  class ConnectDirectoryResult
   {
   public:
-    ConnectDirectoryResult();
-    ConnectDirectoryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ConnectDirectoryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DIRECTORYSERVICE_API ConnectDirectoryResult();
+    AWS_DIRECTORYSERVICE_API ConnectDirectoryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DIRECTORYSERVICE_API ConnectDirectoryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

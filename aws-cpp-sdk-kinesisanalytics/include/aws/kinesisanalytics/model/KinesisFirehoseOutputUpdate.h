@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/KinesisFirehoseOutputUpdate">AWS
    * API Reference</a></p>
    */
-  class AWS_KINESISANALYTICS_API KinesisFirehoseOutputUpdate
+  class KinesisFirehoseOutputUpdate
   {
   public:
-    KinesisFirehoseOutputUpdate();
-    KinesisFirehoseOutputUpdate(Aws::Utils::Json::JsonView jsonValue);
-    KinesisFirehoseOutputUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KINESISANALYTICS_API KinesisFirehoseOutputUpdate();
+    AWS_KINESISANALYTICS_API KinesisFirehoseOutputUpdate(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICS_API KinesisFirehoseOutputUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

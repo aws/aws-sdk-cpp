@@ -22,12 +22,12 @@ namespace SupportApp
 {
 namespace Model
 {
-  class AWS_SUPPORTAPP_API DeleteAccountAliasResult
+  class DeleteAccountAliasResult
   {
   public:
-    DeleteAccountAliasResult();
-    DeleteAccountAliasResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteAccountAliasResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SUPPORTAPP_API DeleteAccountAliasResult();
+    AWS_SUPPORTAPP_API DeleteAccountAliasResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SUPPORTAPP_API DeleteAccountAliasResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

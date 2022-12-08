@@ -32,12 +32,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/ListPartsOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_GLACIER_API ListPartsResult
+  class ListPartsResult
   {
   public:
-    ListPartsResult();
-    ListPartsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListPartsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GLACIER_API ListPartsResult();
+    AWS_GLACIER_API ListPartsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GLACIER_API ListPartsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

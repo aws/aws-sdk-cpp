@@ -28,12 +28,12 @@ namespace EC2
 {
 namespace Model
 {
-  class AWS_EC2_API GetHostReservationPurchasePreviewResponse
+  class GetHostReservationPurchasePreviewResponse
   {
   public:
-    GetHostReservationPurchasePreviewResponse();
-    GetHostReservationPurchasePreviewResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    GetHostReservationPurchasePreviewResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API GetHostReservationPurchasePreviewResponse();
+    AWS_EC2_API GetHostReservationPurchasePreviewResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API GetHostReservationPurchasePreviewResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

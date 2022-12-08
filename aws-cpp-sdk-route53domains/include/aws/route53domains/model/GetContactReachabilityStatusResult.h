@@ -25,12 +25,12 @@ namespace Route53Domains
 {
 namespace Model
 {
-  class AWS_ROUTE53DOMAINS_API GetContactReachabilityStatusResult
+  class GetContactReachabilityStatusResult
   {
   public:
-    GetContactReachabilityStatusResult();
-    GetContactReachabilityStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetContactReachabilityStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ROUTE53DOMAINS_API GetContactReachabilityStatusResult();
+    AWS_ROUTE53DOMAINS_API GetContactReachabilityStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ROUTE53DOMAINS_API GetContactReachabilityStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

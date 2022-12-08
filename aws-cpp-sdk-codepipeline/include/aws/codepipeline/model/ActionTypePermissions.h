@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ActionTypePermissions">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEPIPELINE_API ActionTypePermissions
+  class ActionTypePermissions
   {
   public:
-    ActionTypePermissions();
-    ActionTypePermissions(Aws::Utils::Json::JsonView jsonValue);
-    ActionTypePermissions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEPIPELINE_API ActionTypePermissions();
+    AWS_CODEPIPELINE_API ActionTypePermissions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEPIPELINE_API ActionTypePermissions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

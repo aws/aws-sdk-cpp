@@ -26,12 +26,12 @@ namespace LexModelsV2
 {
 namespace Model
 {
-  class AWS_LEXMODELSV2_API SearchAssociatedTranscriptsResult
+  class SearchAssociatedTranscriptsResult
   {
   public:
-    SearchAssociatedTranscriptsResult();
-    SearchAssociatedTranscriptsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    SearchAssociatedTranscriptsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LEXMODELSV2_API SearchAssociatedTranscriptsResult();
+    AWS_LEXMODELSV2_API SearchAssociatedTranscriptsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LEXMODELSV2_API SearchAssociatedTranscriptsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -30,12 +30,12 @@ namespace IAM
 {
 namespace Model
 {
-  class AWS_IAM_API GetServiceLastAccessedDetailsWithEntitiesResult
+  class GetServiceLastAccessedDetailsWithEntitiesResult
   {
   public:
-    GetServiceLastAccessedDetailsWithEntitiesResult();
-    GetServiceLastAccessedDetailsWithEntitiesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    GetServiceLastAccessedDetailsWithEntitiesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_IAM_API GetServiceLastAccessedDetailsWithEntitiesResult();
+    AWS_IAM_API GetServiceLastAccessedDetailsWithEntitiesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_IAM_API GetServiceLastAccessedDetailsWithEntitiesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

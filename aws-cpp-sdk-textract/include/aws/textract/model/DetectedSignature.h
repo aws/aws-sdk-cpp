@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/DetectedSignature">AWS
    * API Reference</a></p>
    */
-  class AWS_TEXTRACT_API DetectedSignature
+  class DetectedSignature
   {
   public:
-    DetectedSignature();
-    DetectedSignature(Aws::Utils::Json::JsonView jsonValue);
-    DetectedSignature& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TEXTRACT_API DetectedSignature();
+    AWS_TEXTRACT_API DetectedSignature(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TEXTRACT_API DetectedSignature& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TEXTRACT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

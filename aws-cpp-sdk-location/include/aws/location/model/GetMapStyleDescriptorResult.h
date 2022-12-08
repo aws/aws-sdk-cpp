@@ -19,21 +19,21 @@ namespace LocationService
 {
 namespace Model
 {
-  class AWS_LOCATIONSERVICE_API GetMapStyleDescriptorResult
+  class GetMapStyleDescriptorResult
   {
   public:
-    GetMapStyleDescriptorResult();
+    AWS_LOCATIONSERVICE_API GetMapStyleDescriptorResult();
     //We have to define these because Microsoft doesn't auto generate them
-    GetMapStyleDescriptorResult(GetMapStyleDescriptorResult&&);
-    GetMapStyleDescriptorResult& operator=(GetMapStyleDescriptorResult&&);
+    AWS_LOCATIONSERVICE_API GetMapStyleDescriptorResult(GetMapStyleDescriptorResult&&);
+    AWS_LOCATIONSERVICE_API GetMapStyleDescriptorResult& operator=(GetMapStyleDescriptorResult&&);
     //we delete these because Microsoft doesn't handle move generation correctly
     //and we therefore don't trust them to get it right here either.
     GetMapStyleDescriptorResult(const GetMapStyleDescriptorResult&) = delete;
     GetMapStyleDescriptorResult& operator=(const GetMapStyleDescriptorResult&) = delete;
 
 
-    GetMapStyleDescriptorResult(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
-    GetMapStyleDescriptorResult& operator=(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
+    AWS_LOCATIONSERVICE_API GetMapStyleDescriptorResult(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
+    AWS_LOCATIONSERVICE_API GetMapStyleDescriptorResult& operator=(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
 
 
 

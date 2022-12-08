@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/StandbyWorkspace">AWS
    * API Reference</a></p>
    */
-  class AWS_WORKSPACES_API StandbyWorkspace
+  class StandbyWorkspace
   {
   public:
-    StandbyWorkspace();
-    StandbyWorkspace(Aws::Utils::Json::JsonView jsonValue);
-    StandbyWorkspace& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WORKSPACES_API StandbyWorkspace();
+    AWS_WORKSPACES_API StandbyWorkspace(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKSPACES_API StandbyWorkspace& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

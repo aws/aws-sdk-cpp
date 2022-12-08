@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/TrainingMetrics">AWS
    * API Reference</a></p>
    */
-  class AWS_FRAUDDETECTOR_API TrainingMetrics
+  class TrainingMetrics
   {
   public:
-    TrainingMetrics();
-    TrainingMetrics(Aws::Utils::Json::JsonView jsonValue);
-    TrainingMetrics& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FRAUDDETECTOR_API TrainingMetrics();
+    AWS_FRAUDDETECTOR_API TrainingMetrics(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FRAUDDETECTOR_API TrainingMetrics& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FRAUDDETECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

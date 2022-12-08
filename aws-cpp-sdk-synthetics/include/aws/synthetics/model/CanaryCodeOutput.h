@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/synthetics-2017-10-11/CanaryCodeOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_SYNTHETICS_API CanaryCodeOutput
+  class CanaryCodeOutput
   {
   public:
-    CanaryCodeOutput();
-    CanaryCodeOutput(Aws::Utils::Json::JsonView jsonValue);
-    CanaryCodeOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SYNTHETICS_API CanaryCodeOutput();
+    AWS_SYNTHETICS_API CanaryCodeOutput(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SYNTHETICS_API CanaryCodeOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SYNTHETICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

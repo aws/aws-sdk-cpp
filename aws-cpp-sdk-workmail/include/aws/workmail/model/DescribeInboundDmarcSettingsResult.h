@@ -22,12 +22,12 @@ namespace WorkMail
 {
 namespace Model
 {
-  class AWS_WORKMAIL_API DescribeInboundDmarcSettingsResult
+  class DescribeInboundDmarcSettingsResult
   {
   public:
-    DescribeInboundDmarcSettingsResult();
-    DescribeInboundDmarcSettingsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeInboundDmarcSettingsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WORKMAIL_API DescribeInboundDmarcSettingsResult();
+    AWS_WORKMAIL_API DescribeInboundDmarcSettingsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WORKMAIL_API DescribeInboundDmarcSettingsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

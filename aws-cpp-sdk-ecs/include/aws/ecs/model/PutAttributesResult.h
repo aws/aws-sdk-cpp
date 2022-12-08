@@ -25,12 +25,12 @@ namespace ECS
 {
 namespace Model
 {
-  class AWS_ECS_API PutAttributesResult
+  class PutAttributesResult
   {
   public:
-    PutAttributesResult();
-    PutAttributesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PutAttributesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ECS_API PutAttributesResult();
+    AWS_ECS_API PutAttributesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ECS_API PutAttributesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

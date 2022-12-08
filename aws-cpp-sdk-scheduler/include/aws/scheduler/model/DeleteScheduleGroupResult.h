@@ -22,12 +22,12 @@ namespace Scheduler
 {
 namespace Model
 {
-  class AWS_SCHEDULER_API DeleteScheduleGroupResult
+  class DeleteScheduleGroupResult
   {
   public:
-    DeleteScheduleGroupResult();
-    DeleteScheduleGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteScheduleGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SCHEDULER_API DeleteScheduleGroupResult();
+    AWS_SCHEDULER_API DeleteScheduleGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SCHEDULER_API DeleteScheduleGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

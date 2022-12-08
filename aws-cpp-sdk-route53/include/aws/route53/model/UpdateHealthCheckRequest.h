@@ -27,10 +27,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/UpdateHealthCheckRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53_API UpdateHealthCheckRequest : public Route53Request
+  class UpdateHealthCheckRequest : public Route53Request
   {
   public:
-    UpdateHealthCheckRequest();
+    AWS_ROUTE53_API UpdateHealthCheckRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,7 +38,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateHealthCheck"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_ROUTE53_API Aws::String SerializePayload() const override;
 
 
     /**

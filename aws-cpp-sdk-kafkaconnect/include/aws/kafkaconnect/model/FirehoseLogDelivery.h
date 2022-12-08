@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/FirehoseLogDelivery">AWS
    * API Reference</a></p>
    */
-  class AWS_KAFKACONNECT_API FirehoseLogDelivery
+  class FirehoseLogDelivery
   {
   public:
-    FirehoseLogDelivery();
-    FirehoseLogDelivery(Aws::Utils::Json::JsonView jsonValue);
-    FirehoseLogDelivery& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KAFKACONNECT_API FirehoseLogDelivery();
+    AWS_KAFKACONNECT_API FirehoseLogDelivery(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKACONNECT_API FirehoseLogDelivery& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKACONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

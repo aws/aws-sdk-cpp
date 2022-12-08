@@ -24,12 +24,12 @@ namespace Athena
 {
 namespace Model
 {
-  class AWS_ATHENA_API GetDataCatalogResult
+  class GetDataCatalogResult
   {
   public:
-    GetDataCatalogResult();
-    GetDataCatalogResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetDataCatalogResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ATHENA_API GetDataCatalogResult();
+    AWS_ATHENA_API GetDataCatalogResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ATHENA_API GetDataCatalogResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

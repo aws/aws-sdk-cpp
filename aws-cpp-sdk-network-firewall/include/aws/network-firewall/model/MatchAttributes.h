@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/MatchAttributes">AWS
    * API Reference</a></p>
    */
-  class AWS_NETWORKFIREWALL_API MatchAttributes
+  class MatchAttributes
   {
   public:
-    MatchAttributes();
-    MatchAttributes(Aws::Utils::Json::JsonView jsonValue);
-    MatchAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_NETWORKFIREWALL_API MatchAttributes();
+    AWS_NETWORKFIREWALL_API MatchAttributes(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKFIREWALL_API MatchAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKFIREWALL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

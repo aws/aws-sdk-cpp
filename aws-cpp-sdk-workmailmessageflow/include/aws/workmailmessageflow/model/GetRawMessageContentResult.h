@@ -18,21 +18,21 @@ namespace WorkMailMessageFlow
 {
 namespace Model
 {
-  class AWS_WORKMAILMESSAGEFLOW_API GetRawMessageContentResult
+  class GetRawMessageContentResult
   {
   public:
-    GetRawMessageContentResult();
+    AWS_WORKMAILMESSAGEFLOW_API GetRawMessageContentResult();
     //We have to define these because Microsoft doesn't auto generate them
-    GetRawMessageContentResult(GetRawMessageContentResult&&);
-    GetRawMessageContentResult& operator=(GetRawMessageContentResult&&);
+    AWS_WORKMAILMESSAGEFLOW_API GetRawMessageContentResult(GetRawMessageContentResult&&);
+    AWS_WORKMAILMESSAGEFLOW_API GetRawMessageContentResult& operator=(GetRawMessageContentResult&&);
     //we delete these because Microsoft doesn't handle move generation correctly
     //and we therefore don't trust them to get it right here either.
     GetRawMessageContentResult(const GetRawMessageContentResult&) = delete;
     GetRawMessageContentResult& operator=(const GetRawMessageContentResult&) = delete;
 
 
-    GetRawMessageContentResult(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
-    GetRawMessageContentResult& operator=(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
+    AWS_WORKMAILMESSAGEFLOW_API GetRawMessageContentResult(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
+    AWS_WORKMAILMESSAGEFLOW_API GetRawMessageContentResult& operator=(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
 
 
 

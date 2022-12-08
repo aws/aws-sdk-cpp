@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/MemberFabricAttributes">AWS
    * API Reference</a></p>
    */
-  class AWS_MANAGEDBLOCKCHAIN_API MemberFabricAttributes
+  class MemberFabricAttributes
   {
   public:
-    MemberFabricAttributes();
-    MemberFabricAttributes(Aws::Utils::Json::JsonView jsonValue);
-    MemberFabricAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MANAGEDBLOCKCHAIN_API MemberFabricAttributes();
+    AWS_MANAGEDBLOCKCHAIN_API MemberFabricAttributes(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MANAGEDBLOCKCHAIN_API MemberFabricAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MANAGEDBLOCKCHAIN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

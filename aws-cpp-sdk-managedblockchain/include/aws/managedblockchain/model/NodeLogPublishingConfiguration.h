@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/NodeLogPublishingConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_MANAGEDBLOCKCHAIN_API NodeLogPublishingConfiguration
+  class NodeLogPublishingConfiguration
   {
   public:
-    NodeLogPublishingConfiguration();
-    NodeLogPublishingConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    NodeLogPublishingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MANAGEDBLOCKCHAIN_API NodeLogPublishingConfiguration();
+    AWS_MANAGEDBLOCKCHAIN_API NodeLogPublishingConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MANAGEDBLOCKCHAIN_API NodeLogPublishingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MANAGEDBLOCKCHAIN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

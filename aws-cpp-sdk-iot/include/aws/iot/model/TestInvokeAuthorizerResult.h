@@ -25,12 +25,12 @@ namespace IoT
 {
 namespace Model
 {
-  class AWS_IOT_API TestInvokeAuthorizerResult
+  class TestInvokeAuthorizerResult
   {
   public:
-    TestInvokeAuthorizerResult();
-    TestInvokeAuthorizerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    TestInvokeAuthorizerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOT_API TestInvokeAuthorizerResult();
+    AWS_IOT_API TestInvokeAuthorizerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOT_API TestInvokeAuthorizerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

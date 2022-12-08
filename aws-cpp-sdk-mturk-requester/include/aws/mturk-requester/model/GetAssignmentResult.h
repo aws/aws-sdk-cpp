@@ -25,12 +25,12 @@ namespace MTurk
 {
 namespace Model
 {
-  class AWS_MTURK_API GetAssignmentResult
+  class GetAssignmentResult
   {
   public:
-    GetAssignmentResult();
-    GetAssignmentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetAssignmentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MTURK_API GetAssignmentResult();
+    AWS_MTURK_API GetAssignmentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MTURK_API GetAssignmentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

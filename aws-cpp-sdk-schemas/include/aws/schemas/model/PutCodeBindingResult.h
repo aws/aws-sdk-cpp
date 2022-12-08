@@ -26,12 +26,12 @@ namespace Schemas
 {
 namespace Model
 {
-  class AWS_SCHEMAS_API PutCodeBindingResult
+  class PutCodeBindingResult
   {
   public:
-    PutCodeBindingResult();
-    PutCodeBindingResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PutCodeBindingResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SCHEMAS_API PutCodeBindingResult();
+    AWS_SCHEMAS_API PutCodeBindingResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SCHEMAS_API PutCodeBindingResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

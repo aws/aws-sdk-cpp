@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/RepositoryFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_ECR_API RepositoryFilter
+  class RepositoryFilter
   {
   public:
-    RepositoryFilter();
-    RepositoryFilter(Aws::Utils::Json::JsonView jsonValue);
-    RepositoryFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ECR_API RepositoryFilter();
+    AWS_ECR_API RepositoryFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECR_API RepositoryFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

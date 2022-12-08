@@ -22,12 +22,12 @@ namespace Omics
 {
 namespace Model
 {
-  class AWS_OMICS_API CancelVariantImportJobResult
+  class CancelVariantImportJobResult
   {
   public:
-    CancelVariantImportJobResult();
-    CancelVariantImportJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CancelVariantImportJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OMICS_API CancelVariantImportJobResult();
+    AWS_OMICS_API CancelVariantImportJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OMICS_API CancelVariantImportJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

@@ -26,12 +26,12 @@ namespace CodePipeline
 {
 namespace Model
 {
-  class AWS_CODEPIPELINE_API ListWebhooksResult
+  class ListWebhooksResult
   {
   public:
-    ListWebhooksResult();
-    ListWebhooksResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListWebhooksResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODEPIPELINE_API ListWebhooksResult();
+    AWS_CODEPIPELINE_API ListWebhooksResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODEPIPELINE_API ListWebhooksResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -25,12 +25,12 @@ namespace CloudFront
 {
 namespace Model
 {
-  class AWS_CLOUDFRONT_API UpdateOriginRequestPolicy2020_05_31Result
+  class UpdateOriginRequestPolicy2020_05_31Result
   {
   public:
-    UpdateOriginRequestPolicy2020_05_31Result();
-    UpdateOriginRequestPolicy2020_05_31Result(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    UpdateOriginRequestPolicy2020_05_31Result& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_CLOUDFRONT_API UpdateOriginRequestPolicy2020_05_31Result();
+    AWS_CLOUDFRONT_API UpdateOriginRequestPolicy2020_05_31Result(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_CLOUDFRONT_API UpdateOriginRequestPolicy2020_05_31Result& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

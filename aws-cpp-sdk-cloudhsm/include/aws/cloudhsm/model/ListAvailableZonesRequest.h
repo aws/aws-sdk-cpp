@@ -20,10 +20,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListAvailableZonesRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDHSM_API ListAvailableZonesRequest : public CloudHSMRequest
+  class ListAvailableZonesRequest : public CloudHSMRequest
   {
   public:
-    ListAvailableZonesRequest();
+    AWS_CLOUDHSM_API ListAvailableZonesRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,9 +31,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ListAvailableZones"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CLOUDHSM_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_CLOUDHSM_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
   };
 

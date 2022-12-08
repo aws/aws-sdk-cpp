@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/UpdateWirelessGatewayTaskEntry">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTWIRELESS_API UpdateWirelessGatewayTaskEntry
+  class UpdateWirelessGatewayTaskEntry
   {
   public:
-    UpdateWirelessGatewayTaskEntry();
-    UpdateWirelessGatewayTaskEntry(Aws::Utils::Json::JsonView jsonValue);
-    UpdateWirelessGatewayTaskEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTWIRELESS_API UpdateWirelessGatewayTaskEntry();
+    AWS_IOTWIRELESS_API UpdateWirelessGatewayTaskEntry(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API UpdateWirelessGatewayTaskEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

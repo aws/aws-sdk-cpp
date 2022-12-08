@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/VisibilityConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_WAFV2_API VisibilityConfig
+  class VisibilityConfig
   {
   public:
-    VisibilityConfig();
-    VisibilityConfig(Aws::Utils::Json::JsonView jsonValue);
-    VisibilityConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WAFV2_API VisibilityConfig();
+    AWS_WAFV2_API VisibilityConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API VisibilityConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

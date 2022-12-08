@@ -24,12 +24,12 @@ namespace AmplifyBackend
 {
 namespace Model
 {
-  class AWS_AMPLIFYBACKEND_API CreateBackendConfigResult
+  class CreateBackendConfigResult
   {
   public:
-    CreateBackendConfigResult();
-    CreateBackendConfigResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateBackendConfigResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_AMPLIFYBACKEND_API CreateBackendConfigResult();
+    AWS_AMPLIFYBACKEND_API CreateBackendConfigResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_AMPLIFYBACKEND_API CreateBackendConfigResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

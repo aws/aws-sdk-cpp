@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/entitlement.marketplace-2017-01-11/Entitlement">AWS
    * API Reference</a></p>
    */
-  class AWS_MARKETPLACEENTITLEMENTSERVICE_API Entitlement
+  class Entitlement
   {
   public:
-    Entitlement();
-    Entitlement(Aws::Utils::Json::JsonView jsonValue);
-    Entitlement& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MARKETPLACEENTITLEMENTSERVICE_API Entitlement();
+    AWS_MARKETPLACEENTITLEMENTSERVICE_API Entitlement(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MARKETPLACEENTITLEMENTSERVICE_API Entitlement& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MARKETPLACEENTITLEMENTSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

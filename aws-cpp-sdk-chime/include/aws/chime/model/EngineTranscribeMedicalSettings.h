@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/EngineTranscribeMedicalSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_CHIME_API EngineTranscribeMedicalSettings
+  class EngineTranscribeMedicalSettings
   {
   public:
-    EngineTranscribeMedicalSettings();
-    EngineTranscribeMedicalSettings(Aws::Utils::Json::JsonView jsonValue);
-    EngineTranscribeMedicalSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIME_API EngineTranscribeMedicalSettings();
+    AWS_CHIME_API EngineTranscribeMedicalSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API EngineTranscribeMedicalSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

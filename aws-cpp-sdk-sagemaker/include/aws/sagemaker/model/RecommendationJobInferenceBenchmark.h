@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/RecommendationJobInferenceBenchmark">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API RecommendationJobInferenceBenchmark
+  class RecommendationJobInferenceBenchmark
   {
   public:
-    RecommendationJobInferenceBenchmark();
-    RecommendationJobInferenceBenchmark(Aws::Utils::Json::JsonView jsonValue);
-    RecommendationJobInferenceBenchmark& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API RecommendationJobInferenceBenchmark();
+    AWS_SAGEMAKER_API RecommendationJobInferenceBenchmark(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API RecommendationJobInferenceBenchmark& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

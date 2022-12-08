@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/BillingDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SFN_API BillingDetails
+  class BillingDetails
   {
   public:
-    BillingDetails();
-    BillingDetails(Aws::Utils::Json::JsonView jsonValue);
-    BillingDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SFN_API BillingDetails();
+    AWS_SFN_API BillingDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SFN_API BillingDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SFN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

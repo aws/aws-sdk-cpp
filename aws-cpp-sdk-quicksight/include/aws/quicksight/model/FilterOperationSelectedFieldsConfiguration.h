@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/FilterOperationSelectedFieldsConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API FilterOperationSelectedFieldsConfiguration
+  class FilterOperationSelectedFieldsConfiguration
   {
   public:
-    FilterOperationSelectedFieldsConfiguration();
-    FilterOperationSelectedFieldsConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    FilterOperationSelectedFieldsConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API FilterOperationSelectedFieldsConfiguration();
+    AWS_QUICKSIGHT_API FilterOperationSelectedFieldsConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API FilterOperationSelectedFieldsConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

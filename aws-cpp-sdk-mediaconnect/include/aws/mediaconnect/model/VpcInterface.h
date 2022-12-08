@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/VpcInterface">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONNECT_API VpcInterface
+  class VpcInterface
   {
   public:
-    VpcInterface();
-    VpcInterface(Aws::Utils::Json::JsonView jsonValue);
-    VpcInterface& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONNECT_API VpcInterface();
+    AWS_MEDIACONNECT_API VpcInterface(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONNECT_API VpcInterface& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/connectcampaigns-2021-01-30/InvalidStateException">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECTCAMPAIGNS_API InvalidStateException
+  class InvalidStateException
   {
   public:
-    InvalidStateException();
-    InvalidStateException(Aws::Utils::Json::JsonView jsonValue);
-    InvalidStateException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECTCAMPAIGNS_API InvalidStateException();
+    AWS_CONNECTCAMPAIGNS_API InvalidStateException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTCAMPAIGNS_API InvalidStateException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTCAMPAIGNS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

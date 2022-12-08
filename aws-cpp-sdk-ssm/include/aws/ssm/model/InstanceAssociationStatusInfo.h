@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/InstanceAssociationStatusInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_SSM_API InstanceAssociationStatusInfo
+  class InstanceAssociationStatusInfo
   {
   public:
-    InstanceAssociationStatusInfo();
-    InstanceAssociationStatusInfo(Aws::Utils::Json::JsonView jsonValue);
-    InstanceAssociationStatusInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSM_API InstanceAssociationStatusInfo();
+    AWS_SSM_API InstanceAssociationStatusInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API InstanceAssociationStatusInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

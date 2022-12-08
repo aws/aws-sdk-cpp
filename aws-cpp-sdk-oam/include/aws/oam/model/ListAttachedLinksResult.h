@@ -26,12 +26,12 @@ namespace OAM
 {
 namespace Model
 {
-  class AWS_OAM_API ListAttachedLinksResult
+  class ListAttachedLinksResult
   {
   public:
-    ListAttachedLinksResult();
-    ListAttachedLinksResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListAttachedLinksResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OAM_API ListAttachedLinksResult();
+    AWS_OAM_API ListAttachedLinksResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OAM_API ListAttachedLinksResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

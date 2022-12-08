@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/Proxy">AWS API
    * Reference</a></p>
    */
-  class AWS_CHIME_API Proxy
+  class Proxy
   {
   public:
-    Proxy();
-    Proxy(Aws::Utils::Json::JsonView jsonValue);
-    Proxy& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIME_API Proxy();
+    AWS_CHIME_API Proxy(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API Proxy& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

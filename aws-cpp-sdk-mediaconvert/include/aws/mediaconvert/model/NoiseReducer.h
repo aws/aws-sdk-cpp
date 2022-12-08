@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/NoiseReducer">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API NoiseReducer
+  class NoiseReducer
   {
   public:
-    NoiseReducer();
-    NoiseReducer(Aws::Utils::Json::JsonView jsonValue);
-    NoiseReducer& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API NoiseReducer();
+    AWS_MEDIACONVERT_API NoiseReducer(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API NoiseReducer& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

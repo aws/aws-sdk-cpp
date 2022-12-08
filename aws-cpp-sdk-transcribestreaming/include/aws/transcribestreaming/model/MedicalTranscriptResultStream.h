@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-streaming-2017-10-26/MedicalTranscriptResultStream">AWS
    * API Reference</a></p>
    */
-  class AWS_TRANSCRIBESTREAMINGSERVICE_API MedicalTranscriptResultStream
+  class MedicalTranscriptResultStream
   {
   public:
-    MedicalTranscriptResultStream();
-    MedicalTranscriptResultStream(Aws::Utils::Json::JsonView jsonValue);
-    MedicalTranscriptResultStream& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TRANSCRIBESTREAMINGSERVICE_API MedicalTranscriptResultStream();
+    AWS_TRANSCRIBESTREAMINGSERVICE_API MedicalTranscriptResultStream(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSCRIBESTREAMINGSERVICE_API MedicalTranscriptResultStream& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSCRIBESTREAMINGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

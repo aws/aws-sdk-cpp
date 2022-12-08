@@ -25,10 +25,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/marketplacecommerceanalytics-2015-07-01/GenerateDataSetRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_MARKETPLACECOMMERCEANALYTICS_API GenerateDataSetRequest : public MarketplaceCommerceAnalyticsRequest
+  class GenerateDataSetRequest : public MarketplaceCommerceAnalyticsRequest
   {
   public:
-    GenerateDataSetRequest();
+    AWS_MARKETPLACECOMMERCEANALYTICS_API GenerateDataSetRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,9 +36,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "GenerateDataSet"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_MARKETPLACECOMMERCEANALYTICS_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_MARKETPLACECOMMERCEANALYTICS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**

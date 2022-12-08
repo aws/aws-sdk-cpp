@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/Metrics">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEGURUREVIEWER_API Metrics
+  class Metrics
   {
   public:
-    Metrics();
-    Metrics(Aws::Utils::Json::JsonView jsonValue);
-    Metrics& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEGURUREVIEWER_API Metrics();
+    AWS_CODEGURUREVIEWER_API Metrics(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEGURUREVIEWER_API Metrics& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEGURUREVIEWER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

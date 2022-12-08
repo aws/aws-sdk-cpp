@@ -24,12 +24,12 @@ namespace DLM
 {
 namespace Model
 {
-  class AWS_DLM_API CreateLifecyclePolicyResult
+  class CreateLifecyclePolicyResult
   {
   public:
-    CreateLifecyclePolicyResult();
-    CreateLifecyclePolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateLifecyclePolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DLM_API CreateLifecyclePolicyResult();
+    AWS_DLM_API CreateLifecyclePolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DLM_API CreateLifecyclePolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

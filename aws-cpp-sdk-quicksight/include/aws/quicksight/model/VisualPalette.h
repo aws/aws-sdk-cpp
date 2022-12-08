@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/VisualPalette">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API VisualPalette
+  class VisualPalette
   {
   public:
-    VisualPalette();
-    VisualPalette(Aws::Utils::Json::JsonView jsonValue);
-    VisualPalette& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API VisualPalette();
+    AWS_QUICKSIGHT_API VisualPalette(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API VisualPalette& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

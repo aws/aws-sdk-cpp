@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/PivotFieldSortOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API PivotFieldSortOptions
+  class PivotFieldSortOptions
   {
   public:
-    PivotFieldSortOptions();
-    PivotFieldSortOptions(Aws::Utils::Json::JsonView jsonValue);
-    PivotFieldSortOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API PivotFieldSortOptions();
+    AWS_QUICKSIGHT_API PivotFieldSortOptions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API PivotFieldSortOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

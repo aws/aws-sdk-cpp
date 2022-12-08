@@ -22,12 +22,12 @@ namespace KinesisVideo
 {
 namespace Model
 {
-  class AWS_KINESISVIDEO_API UpdateDataRetentionResult
+  class UpdateDataRetentionResult
   {
   public:
-    UpdateDataRetentionResult();
-    UpdateDataRetentionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateDataRetentionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KINESISVIDEO_API UpdateDataRetentionResult();
+    AWS_KINESISVIDEO_API UpdateDataRetentionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KINESISVIDEO_API UpdateDataRetentionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

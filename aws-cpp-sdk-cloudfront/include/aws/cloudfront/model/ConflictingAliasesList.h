@@ -33,14 +33,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ConflictingAliasesList">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFRONT_API ConflictingAliasesList
+  class ConflictingAliasesList
   {
   public:
-    ConflictingAliasesList();
-    ConflictingAliasesList(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ConflictingAliasesList& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API ConflictingAliasesList();
+    AWS_CLOUDFRONT_API ConflictingAliasesList(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API ConflictingAliasesList& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/InvalidNetworkInterface">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTFLEETWISE_API InvalidNetworkInterface
+  class InvalidNetworkInterface
   {
   public:
-    InvalidNetworkInterface();
-    InvalidNetworkInterface(Aws::Utils::Json::JsonView jsonValue);
-    InvalidNetworkInterface& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTFLEETWISE_API InvalidNetworkInterface();
+    AWS_IOTFLEETWISE_API InvalidNetworkInterface(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTFLEETWISE_API InvalidNetworkInterface& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTFLEETWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

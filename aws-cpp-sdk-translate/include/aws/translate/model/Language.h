@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/Language">AWS
    * API Reference</a></p>
    */
-  class AWS_TRANSLATE_API Language
+  class Language
   {
   public:
-    Language();
-    Language(Aws::Utils::Json::JsonView jsonValue);
-    Language& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TRANSLATE_API Language();
+    AWS_TRANSLATE_API Language(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSLATE_API Language& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSLATE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

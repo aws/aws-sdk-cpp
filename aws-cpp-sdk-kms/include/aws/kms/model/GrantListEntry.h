@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/GrantListEntry">AWS
    * API Reference</a></p>
    */
-  class AWS_KMS_API GrantListEntry
+  class GrantListEntry
   {
   public:
-    GrantListEntry();
-    GrantListEntry(Aws::Utils::Json::JsonView jsonValue);
-    GrantListEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KMS_API GrantListEntry();
+    AWS_KMS_API GrantListEntry(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KMS_API GrantListEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

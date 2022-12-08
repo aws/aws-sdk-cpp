@@ -24,12 +24,12 @@ namespace CodeCatalyst
 {
 namespace Model
 {
-  class AWS_CODECATALYST_API VerifySessionResult
+  class VerifySessionResult
   {
   public:
-    VerifySessionResult();
-    VerifySessionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    VerifySessionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODECATALYST_API VerifySessionResult();
+    AWS_CODECATALYST_API VerifySessionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODECATALYST_API VerifySessionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

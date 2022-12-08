@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/SalesforceChatterFeedConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_KENDRA_API SalesforceChatterFeedConfiguration
+  class SalesforceChatterFeedConfiguration
   {
   public:
-    SalesforceChatterFeedConfiguration();
-    SalesforceChatterFeedConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    SalesforceChatterFeedConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KENDRA_API SalesforceChatterFeedConfiguration();
+    AWS_KENDRA_API SalesforceChatterFeedConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API SalesforceChatterFeedConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

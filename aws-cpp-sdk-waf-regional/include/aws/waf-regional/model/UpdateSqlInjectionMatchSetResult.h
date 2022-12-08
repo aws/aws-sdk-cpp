@@ -30,12 +30,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/UpdateSqlInjectionMatchSetResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_WAFREGIONAL_API UpdateSqlInjectionMatchSetResult
+  class UpdateSqlInjectionMatchSetResult
   {
   public:
-    UpdateSqlInjectionMatchSetResult();
-    UpdateSqlInjectionMatchSetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateSqlInjectionMatchSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WAFREGIONAL_API UpdateSqlInjectionMatchSetResult();
+    AWS_WAFREGIONAL_API UpdateSqlInjectionMatchSetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WAFREGIONAL_API UpdateSqlInjectionMatchSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

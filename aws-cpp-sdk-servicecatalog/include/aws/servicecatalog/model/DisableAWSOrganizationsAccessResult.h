@@ -22,12 +22,12 @@ namespace ServiceCatalog
 {
 namespace Model
 {
-  class AWS_SERVICECATALOG_API DisableAWSOrganizationsAccessResult
+  class DisableAWSOrganizationsAccessResult
   {
   public:
-    DisableAWSOrganizationsAccessResult();
-    DisableAWSOrganizationsAccessResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DisableAWSOrganizationsAccessResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SERVICECATALOG_API DisableAWSOrganizationsAccessResult();
+    AWS_SERVICECATALOG_API DisableAWSOrganizationsAccessResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SERVICECATALOG_API DisableAWSOrganizationsAccessResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

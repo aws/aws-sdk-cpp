@@ -26,12 +26,12 @@ namespace GlobalAccelerator
 {
 namespace Model
 {
-  class AWS_GLOBALACCELERATOR_API AddCustomRoutingEndpointsResult
+  class AddCustomRoutingEndpointsResult
   {
   public:
-    AddCustomRoutingEndpointsResult();
-    AddCustomRoutingEndpointsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AddCustomRoutingEndpointsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GLOBALACCELERATOR_API AddCustomRoutingEndpointsResult();
+    AWS_GLOBALACCELERATOR_API AddCustomRoutingEndpointsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GLOBALACCELERATOR_API AddCustomRoutingEndpointsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

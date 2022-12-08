@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/UpdateInstruction">AWS
    * API Reference</a></p>
    */
-  class AWS_MANAGEDGRAFANA_API UpdateInstruction
+  class UpdateInstruction
   {
   public:
-    UpdateInstruction();
-    UpdateInstruction(Aws::Utils::Json::JsonView jsonValue);
-    UpdateInstruction& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MANAGEDGRAFANA_API UpdateInstruction();
+    AWS_MANAGEDGRAFANA_API UpdateInstruction(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MANAGEDGRAFANA_API UpdateInstruction& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MANAGEDGRAFANA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

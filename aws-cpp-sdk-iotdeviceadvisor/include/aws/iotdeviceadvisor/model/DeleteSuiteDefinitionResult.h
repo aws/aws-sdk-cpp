@@ -22,12 +22,12 @@ namespace IoTDeviceAdvisor
 {
 namespace Model
 {
-  class AWS_IOTDEVICEADVISOR_API DeleteSuiteDefinitionResult
+  class DeleteSuiteDefinitionResult
   {
   public:
-    DeleteSuiteDefinitionResult();
-    DeleteSuiteDefinitionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteSuiteDefinitionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOTDEVICEADVISOR_API DeleteSuiteDefinitionResult();
+    AWS_IOTDEVICEADVISOR_API DeleteSuiteDefinitionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOTDEVICEADVISOR_API DeleteSuiteDefinitionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

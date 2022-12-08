@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/Schedule">AWS
    * API Reference</a></p>
    */
-  class AWS_IMAGEBUILDER_API Schedule
+  class Schedule
   {
   public:
-    Schedule();
-    Schedule(Aws::Utils::Json::JsonView jsonValue);
-    Schedule& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IMAGEBUILDER_API Schedule();
+    AWS_IMAGEBUILDER_API Schedule(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IMAGEBUILDER_API Schedule& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IMAGEBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

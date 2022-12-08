@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/AuthenticationSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_MANAGEDGRAFANA_API AuthenticationSummary
+  class AuthenticationSummary
   {
   public:
-    AuthenticationSummary();
-    AuthenticationSummary(Aws::Utils::Json::JsonView jsonValue);
-    AuthenticationSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MANAGEDGRAFANA_API AuthenticationSummary();
+    AWS_MANAGEDGRAFANA_API AuthenticationSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MANAGEDGRAFANA_API AuthenticationSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MANAGEDGRAFANA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

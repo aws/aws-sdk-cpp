@@ -24,12 +24,12 @@ namespace ServiceCatalog
 {
 namespace Model
 {
-  class AWS_SERVICECATALOG_API CopyProductResult
+  class CopyProductResult
   {
   public:
-    CopyProductResult();
-    CopyProductResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CopyProductResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SERVICECATALOG_API CopyProductResult();
+    AWS_SERVICECATALOG_API CopyProductResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SERVICECATALOG_API CopyProductResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

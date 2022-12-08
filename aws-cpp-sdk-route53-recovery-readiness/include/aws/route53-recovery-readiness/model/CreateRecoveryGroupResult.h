@@ -26,12 +26,12 @@ namespace Route53RecoveryReadiness
 {
 namespace Model
 {
-  class AWS_ROUTE53RECOVERYREADINESS_API CreateRecoveryGroupResult
+  class CreateRecoveryGroupResult
   {
   public:
-    CreateRecoveryGroupResult();
-    CreateRecoveryGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateRecoveryGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ROUTE53RECOVERYREADINESS_API CreateRecoveryGroupResult();
+    AWS_ROUTE53RECOVERYREADINESS_API CreateRecoveryGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ROUTE53RECOVERYREADINESS_API CreateRecoveryGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

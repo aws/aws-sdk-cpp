@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ResourceError">AWS
    * API Reference</a></p>
    */
-  class AWS_APPSTREAM_API ResourceError
+  class ResourceError
   {
   public:
-    ResourceError();
-    ResourceError(Aws::Utils::Json::JsonView jsonValue);
-    ResourceError& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPSTREAM_API ResourceError();
+    AWS_APPSTREAM_API ResourceError(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPSTREAM_API ResourceError& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPSTREAM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

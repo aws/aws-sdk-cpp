@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/CollectionScheme">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTFLEETWISE_API CollectionScheme
+  class CollectionScheme
   {
   public:
-    CollectionScheme();
-    CollectionScheme(Aws::Utils::Json::JsonView jsonValue);
-    CollectionScheme& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTFLEETWISE_API CollectionScheme();
+    AWS_IOTFLEETWISE_API CollectionScheme(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTFLEETWISE_API CollectionScheme& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTFLEETWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -29,12 +29,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/StartQueryPlanningResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_LAKEFORMATION_API StartQueryPlanningResult
+  class StartQueryPlanningResult
   {
   public:
-    StartQueryPlanningResult();
-    StartQueryPlanningResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    StartQueryPlanningResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LAKEFORMATION_API StartQueryPlanningResult();
+    AWS_LAKEFORMATION_API StartQueryPlanningResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LAKEFORMATION_API StartQueryPlanningResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

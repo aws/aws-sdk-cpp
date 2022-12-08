@@ -53,13 +53,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/LoggingConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_WAFV2_API LoggingConfiguration
+  class LoggingConfiguration
   {
   public:
-    LoggingConfiguration();
-    LoggingConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    LoggingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WAFV2_API LoggingConfiguration();
+    AWS_WAFV2_API LoggingConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API LoggingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

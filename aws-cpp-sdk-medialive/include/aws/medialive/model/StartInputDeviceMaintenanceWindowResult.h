@@ -28,12 +28,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/StartInputDeviceMaintenanceWindowResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API StartInputDeviceMaintenanceWindowResult
+  class StartInputDeviceMaintenanceWindowResult
   {
   public:
-    StartInputDeviceMaintenanceWindowResult();
-    StartInputDeviceMaintenanceWindowResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    StartInputDeviceMaintenanceWindowResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MEDIALIVE_API StartInputDeviceMaintenanceWindowResult();
+    AWS_MEDIALIVE_API StartInputDeviceMaintenanceWindowResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MEDIALIVE_API StartInputDeviceMaintenanceWindowResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

@@ -22,12 +22,12 @@ namespace WorkSpaces
 {
 namespace Model
 {
-  class AWS_WORKSPACES_API UpdateRulesOfIpGroupResult
+  class UpdateRulesOfIpGroupResult
   {
   public:
-    UpdateRulesOfIpGroupResult();
-    UpdateRulesOfIpGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateRulesOfIpGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WORKSPACES_API UpdateRulesOfIpGroupResult();
+    AWS_WORKSPACES_API UpdateRulesOfIpGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WORKSPACES_API UpdateRulesOfIpGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

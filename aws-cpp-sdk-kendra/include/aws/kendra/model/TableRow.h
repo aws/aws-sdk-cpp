@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/TableRow">AWS API
    * Reference</a></p>
    */
-  class AWS_KENDRA_API TableRow
+  class TableRow
   {
   public:
-    TableRow();
-    TableRow(Aws::Utils::Json::JsonView jsonValue);
-    TableRow& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KENDRA_API TableRow();
+    AWS_KENDRA_API TableRow(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API TableRow& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

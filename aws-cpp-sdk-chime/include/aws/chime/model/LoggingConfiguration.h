@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/LoggingConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_CHIME_API LoggingConfiguration
+  class LoggingConfiguration
   {
   public:
-    LoggingConfiguration();
-    LoggingConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    LoggingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIME_API LoggingConfiguration();
+    AWS_CHIME_API LoggingConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API LoggingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

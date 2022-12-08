@@ -24,12 +24,12 @@ namespace ChimeSDKMeetings
 {
 namespace Model
 {
-  class AWS_CHIMESDKMEETINGS_API GetMeetingResult
+  class GetMeetingResult
   {
   public:
-    GetMeetingResult();
-    GetMeetingResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetMeetingResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CHIMESDKMEETINGS_API GetMeetingResult();
+    AWS_CHIMESDKMEETINGS_API GetMeetingResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CHIMESDKMEETINGS_API GetMeetingResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

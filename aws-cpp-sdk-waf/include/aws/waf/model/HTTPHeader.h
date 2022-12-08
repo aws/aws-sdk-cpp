@@ -40,13 +40,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/HTTPHeader">AWS API
    * Reference</a></p>
    */
-  class AWS_WAF_API HTTPHeader
+  class HTTPHeader
   {
   public:
-    HTTPHeader();
-    HTTPHeader(Aws::Utils::Json::JsonView jsonValue);
-    HTTPHeader& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WAF_API HTTPHeader();
+    AWS_WAF_API HTTPHeader(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAF_API HTTPHeader& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAF_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

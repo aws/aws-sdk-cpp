@@ -31,12 +31,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/importexport-2010-06-01/ListJobsOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_IMPORTEXPORT_API ListJobsResult
+  class ListJobsResult
   {
   public:
-    ListJobsResult();
-    ListJobsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ListJobsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_IMPORTEXPORT_API ListJobsResult();
+    AWS_IMPORTEXPORT_API ListJobsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_IMPORTEXPORT_API ListJobsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     

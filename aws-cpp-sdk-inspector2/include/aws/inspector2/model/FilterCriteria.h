@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/FilterCriteria">AWS
    * API Reference</a></p>
    */
-  class AWS_INSPECTOR2_API FilterCriteria
+  class FilterCriteria
   {
   public:
-    FilterCriteria();
-    FilterCriteria(Aws::Utils::Json::JsonView jsonValue);
-    FilterCriteria& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_INSPECTOR2_API FilterCriteria();
+    AWS_INSPECTOR2_API FilterCriteria(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR2_API FilterCriteria& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

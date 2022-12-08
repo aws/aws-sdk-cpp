@@ -24,12 +24,12 @@ namespace Amplify
 {
 namespace Model
 {
-  class AWS_AMPLIFY_API DeleteDomainAssociationResult
+  class DeleteDomainAssociationResult
   {
   public:
-    DeleteDomainAssociationResult();
-    DeleteDomainAssociationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteDomainAssociationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_AMPLIFY_API DeleteDomainAssociationResult();
+    AWS_AMPLIFY_API DeleteDomainAssociationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_AMPLIFY_API DeleteDomainAssociationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     

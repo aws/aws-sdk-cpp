@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearchdomain-2013-01-01/FieldStats">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDSEARCHDOMAIN_API FieldStats
+  class FieldStats
   {
   public:
-    FieldStats();
-    FieldStats(Aws::Utils::Json::JsonView jsonValue);
-    FieldStats& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDSEARCHDOMAIN_API FieldStats();
+    AWS_CLOUDSEARCHDOMAIN_API FieldStats(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDSEARCHDOMAIN_API FieldStats& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDSEARCHDOMAIN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

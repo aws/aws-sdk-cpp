@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/StringParameterDeclaration">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API StringParameterDeclaration
+  class StringParameterDeclaration
   {
   public:
-    StringParameterDeclaration();
-    StringParameterDeclaration(Aws::Utils::Json::JsonView jsonValue);
-    StringParameterDeclaration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API StringParameterDeclaration();
+    AWS_QUICKSIGHT_API StringParameterDeclaration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API StringParameterDeclaration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

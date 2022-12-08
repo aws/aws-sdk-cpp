@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/NielsenConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API NielsenConfiguration
+  class NielsenConfiguration
   {
   public:
-    NielsenConfiguration();
-    NielsenConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    NielsenConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API NielsenConfiguration();
+    AWS_MEDIALIVE_API NielsenConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API NielsenConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

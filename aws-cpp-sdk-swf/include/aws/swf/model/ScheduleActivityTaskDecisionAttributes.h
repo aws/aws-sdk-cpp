@@ -49,13 +49,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ScheduleActivityTaskDecisionAttributes">AWS
    * API Reference</a></p>
    */
-  class AWS_SWF_API ScheduleActivityTaskDecisionAttributes
+  class ScheduleActivityTaskDecisionAttributes
   {
   public:
-    ScheduleActivityTaskDecisionAttributes();
-    ScheduleActivityTaskDecisionAttributes(Aws::Utils::Json::JsonView jsonValue);
-    ScheduleActivityTaskDecisionAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SWF_API ScheduleActivityTaskDecisionAttributes();
+    AWS_SWF_API ScheduleActivityTaskDecisionAttributes(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SWF_API ScheduleActivityTaskDecisionAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SWF_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

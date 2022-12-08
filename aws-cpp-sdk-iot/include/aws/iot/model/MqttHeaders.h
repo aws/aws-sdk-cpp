@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/MqttHeaders">AWS API
    * Reference</a></p>
    */
-  class AWS_IOT_API MqttHeaders
+  class MqttHeaders
   {
   public:
-    MqttHeaders();
-    MqttHeaders(Aws::Utils::Json::JsonView jsonValue);
-    MqttHeaders& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API MqttHeaders();
+    AWS_IOT_API MqttHeaders(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API MqttHeaders& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/SequenceStoreFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_OMICS_API SequenceStoreFilter
+  class SequenceStoreFilter
   {
   public:
-    SequenceStoreFilter();
-    SequenceStoreFilter(Aws::Utils::Json::JsonView jsonValue);
-    SequenceStoreFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OMICS_API SequenceStoreFilter();
+    AWS_OMICS_API SequenceStoreFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OMICS_API SequenceStoreFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OMICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

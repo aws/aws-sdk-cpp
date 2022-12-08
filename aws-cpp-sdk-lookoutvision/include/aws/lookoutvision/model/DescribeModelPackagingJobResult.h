@@ -24,12 +24,12 @@ namespace LookoutforVision
 {
 namespace Model
 {
-  class AWS_LOOKOUTFORVISION_API DescribeModelPackagingJobResult
+  class DescribeModelPackagingJobResult
   {
   public:
-    DescribeModelPackagingJobResult();
-    DescribeModelPackagingJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeModelPackagingJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LOOKOUTFORVISION_API DescribeModelPackagingJobResult();
+    AWS_LOOKOUTFORVISION_API DescribeModelPackagingJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LOOKOUTFORVISION_API DescribeModelPackagingJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

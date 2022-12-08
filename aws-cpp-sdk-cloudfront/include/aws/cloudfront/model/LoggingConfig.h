@@ -28,14 +28,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/LoggingConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFRONT_API LoggingConfig
+  class LoggingConfig
   {
   public:
-    LoggingConfig();
-    LoggingConfig(const Aws::Utils::Xml::XmlNode& xmlNode);
-    LoggingConfig& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API LoggingConfig();
+    AWS_CLOUDFRONT_API LoggingConfig(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API LoggingConfig& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**

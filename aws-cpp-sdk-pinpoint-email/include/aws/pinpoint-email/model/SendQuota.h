@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/SendQuota">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINTEMAIL_API SendQuota
+  class SendQuota
   {
   public:
-    SendQuota();
-    SendQuota(Aws::Utils::Json::JsonView jsonValue);
-    SendQuota& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINTEMAIL_API SendQuota();
+    AWS_PINPOINTEMAIL_API SendQuota(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINTEMAIL_API SendQuota& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINTEMAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

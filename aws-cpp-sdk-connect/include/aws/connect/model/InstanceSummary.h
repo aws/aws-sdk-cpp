@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/InstanceSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECT_API InstanceSummary
+  class InstanceSummary
   {
   public:
-    InstanceSummary();
-    InstanceSummary(Aws::Utils::Json::JsonView jsonValue);
-    InstanceSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECT_API InstanceSummary();
+    AWS_CONNECT_API InstanceSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API InstanceSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

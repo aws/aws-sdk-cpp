@@ -24,12 +24,12 @@ namespace Glacier
 {
 namespace Model
 {
-  class AWS_GLACIER_API PurchaseProvisionedCapacityResult
+  class PurchaseProvisionedCapacityResult
   {
   public:
-    PurchaseProvisionedCapacityResult();
-    PurchaseProvisionedCapacityResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PurchaseProvisionedCapacityResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GLACIER_API PurchaseProvisionedCapacityResult();
+    AWS_GLACIER_API PurchaseProvisionedCapacityResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GLACIER_API PurchaseProvisionedCapacityResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

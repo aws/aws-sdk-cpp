@@ -32,12 +32,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/ListJobsByStatusResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICTRANSCODER_API ListJobsByStatusResult
+  class ListJobsByStatusResult
   {
   public:
-    ListJobsByStatusResult();
-    ListJobsByStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListJobsByStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ELASTICTRANSCODER_API ListJobsByStatusResult();
+    AWS_ELASTICTRANSCODER_API ListJobsByStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ELASTICTRANSCODER_API ListJobsByStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

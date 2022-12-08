@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/AwsJobExponentialRolloutRate">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API AwsJobExponentialRolloutRate
+  class AwsJobExponentialRolloutRate
   {
   public:
-    AwsJobExponentialRolloutRate();
-    AwsJobExponentialRolloutRate(Aws::Utils::Json::JsonView jsonValue);
-    AwsJobExponentialRolloutRate& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API AwsJobExponentialRolloutRate();
+    AWS_IOT_API AwsJobExponentialRolloutRate(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API AwsJobExponentialRolloutRate& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -28,12 +28,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/PutEmailIdentityFeedbackAttributesResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINTEMAIL_API PutEmailIdentityFeedbackAttributesResult
+  class PutEmailIdentityFeedbackAttributesResult
   {
   public:
-    PutEmailIdentityFeedbackAttributesResult();
-    PutEmailIdentityFeedbackAttributesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PutEmailIdentityFeedbackAttributesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PINPOINTEMAIL_API PutEmailIdentityFeedbackAttributesResult();
+    AWS_PINPOINTEMAIL_API PutEmailIdentityFeedbackAttributesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PINPOINTEMAIL_API PutEmailIdentityFeedbackAttributesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

@@ -24,12 +24,12 @@ namespace AppStream
 {
 namespace Model
 {
-  class AWS_APPSTREAM_API UpdateEntitlementResult
+  class UpdateEntitlementResult
   {
   public:
-    UpdateEntitlementResult();
-    UpdateEntitlementResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateEntitlementResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPSTREAM_API UpdateEntitlementResult();
+    AWS_APPSTREAM_API UpdateEntitlementResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPSTREAM_API UpdateEntitlementResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/PutTargetsResultEntry">AWS
    * API Reference</a></p>
    */
-  class AWS_EVENTBRIDGE_API PutTargetsResultEntry
+  class PutTargetsResultEntry
   {
   public:
-    PutTargetsResultEntry();
-    PutTargetsResultEntry(Aws::Utils::Json::JsonView jsonValue);
-    PutTargetsResultEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EVENTBRIDGE_API PutTargetsResultEntry();
+    AWS_EVENTBRIDGE_API PutTargetsResultEntry(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EVENTBRIDGE_API PutTargetsResultEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EVENTBRIDGE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

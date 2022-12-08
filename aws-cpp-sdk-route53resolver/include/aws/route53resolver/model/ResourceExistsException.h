@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ResourceExistsException">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53RESOLVER_API ResourceExistsException
+  class ResourceExistsException
   {
   public:
-    ResourceExistsException();
-    ResourceExistsException(Aws::Utils::Json::JsonView jsonValue);
-    ResourceExistsException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ROUTE53RESOLVER_API ResourceExistsException();
+    AWS_ROUTE53RESOLVER_API ResourceExistsException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROUTE53RESOLVER_API ResourceExistsException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROUTE53RESOLVER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

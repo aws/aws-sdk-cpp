@@ -22,10 +22,10 @@ namespace Model
 
   /**
    */
-  class AWS_MIGRATIONHUBORCHESTRATOR_API GetWorkflowStepRequest : public MigrationHubOrchestratorRequest
+  class GetWorkflowStepRequest : public MigrationHubOrchestratorRequest
   {
   public:
-    GetWorkflowStepRequest();
+    AWS_MIGRATIONHUBORCHESTRATOR_API GetWorkflowStepRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,9 +33,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "GetWorkflowStep"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_MIGRATIONHUBORCHESTRATOR_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_MIGRATIONHUBORCHESTRATOR_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**

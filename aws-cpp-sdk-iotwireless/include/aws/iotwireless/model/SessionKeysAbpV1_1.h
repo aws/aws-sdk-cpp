@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/SessionKeysAbpV1_1">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTWIRELESS_API SessionKeysAbpV1_1
+  class SessionKeysAbpV1_1
   {
   public:
-    SessionKeysAbpV1_1();
-    SessionKeysAbpV1_1(Aws::Utils::Json::JsonView jsonValue);
-    SessionKeysAbpV1_1& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTWIRELESS_API SessionKeysAbpV1_1();
+    AWS_IOTWIRELESS_API SessionKeysAbpV1_1(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API SessionKeysAbpV1_1& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

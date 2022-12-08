@@ -22,12 +22,12 @@ namespace Appflow
 {
 namespace Model
 {
-  class AWS_APPFLOW_API DeleteConnectorProfileResult
+  class DeleteConnectorProfileResult
   {
   public:
-    DeleteConnectorProfileResult();
-    DeleteConnectorProfileResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteConnectorProfileResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPFLOW_API DeleteConnectorProfileResult();
+    AWS_APPFLOW_API DeleteConnectorProfileResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPFLOW_API DeleteConnectorProfileResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

@@ -37,13 +37,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ScalingPolicy">AWS
    * API Reference</a></p>
    */
-  class AWS_GAMELIFT_API ScalingPolicy
+  class ScalingPolicy
   {
   public:
-    ScalingPolicy();
-    ScalingPolicy(Aws::Utils::Json::JsonView jsonValue);
-    ScalingPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GAMELIFT_API ScalingPolicy();
+    AWS_GAMELIFT_API ScalingPolicy(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMELIFT_API ScalingPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

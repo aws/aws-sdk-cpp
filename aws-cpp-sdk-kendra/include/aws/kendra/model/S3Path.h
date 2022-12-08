@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/S3Path">AWS API
    * Reference</a></p>
    */
-  class AWS_KENDRA_API S3Path
+  class S3Path
   {
   public:
-    S3Path();
-    S3Path(Aws::Utils::Json::JsonView jsonValue);
-    S3Path& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KENDRA_API S3Path();
+    AWS_KENDRA_API S3Path(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API S3Path& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

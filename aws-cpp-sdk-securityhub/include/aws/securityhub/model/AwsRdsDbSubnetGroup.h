@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsRdsDbSubnetGroup">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsRdsDbSubnetGroup
+  class AwsRdsDbSubnetGroup
   {
   public:
-    AwsRdsDbSubnetGroup();
-    AwsRdsDbSubnetGroup(Aws::Utils::Json::JsonView jsonValue);
-    AwsRdsDbSubnetGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsRdsDbSubnetGroup();
+    AWS_SECURITYHUB_API AwsRdsDbSubnetGroup(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsRdsDbSubnetGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

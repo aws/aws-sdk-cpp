@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/SingularConnectorProfileProperties">AWS
    * API Reference</a></p>
    */
-  class AWS_APPFLOW_API SingularConnectorProfileProperties
+  class SingularConnectorProfileProperties
   {
   public:
-    SingularConnectorProfileProperties();
-    SingularConnectorProfileProperties(Aws::Utils::Json::JsonView jsonValue);
-    SingularConnectorProfileProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPFLOW_API SingularConnectorProfileProperties();
+    AWS_APPFLOW_API SingularConnectorProfileProperties(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API SingularConnectorProfileProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
   };
 

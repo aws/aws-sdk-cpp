@@ -32,12 +32,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/GetPipelineDefinitionOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_DATAPIPELINE_API GetPipelineDefinitionResult
+  class GetPipelineDefinitionResult
   {
   public:
-    GetPipelineDefinitionResult();
-    GetPipelineDefinitionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetPipelineDefinitionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DATAPIPELINE_API GetPipelineDefinitionResult();
+    AWS_DATAPIPELINE_API GetPipelineDefinitionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DATAPIPELINE_API GetPipelineDefinitionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

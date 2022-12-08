@@ -26,12 +26,12 @@ namespace FraudDetector
 {
 namespace Model
 {
-  class AWS_FRAUDDETECTOR_API GetBatchPredictionJobsResult
+  class GetBatchPredictionJobsResult
   {
   public:
-    GetBatchPredictionJobsResult();
-    GetBatchPredictionJobsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetBatchPredictionJobsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_FRAUDDETECTOR_API GetBatchPredictionJobsResult();
+    AWS_FRAUDDETECTOR_API GetBatchPredictionJobsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_FRAUDDETECTOR_API GetBatchPredictionJobsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

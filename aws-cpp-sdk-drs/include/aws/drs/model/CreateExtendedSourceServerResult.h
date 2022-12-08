@@ -24,12 +24,12 @@ namespace drs
 {
 namespace Model
 {
-  class AWS_DRS_API CreateExtendedSourceServerResult
+  class CreateExtendedSourceServerResult
   {
   public:
-    CreateExtendedSourceServerResult();
-    CreateExtendedSourceServerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateExtendedSourceServerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DRS_API CreateExtendedSourceServerResult();
+    AWS_DRS_API CreateExtendedSourceServerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DRS_API CreateExtendedSourceServerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

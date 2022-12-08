@@ -29,12 +29,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/UpdateSubscriptionsToEventBridgeResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_DATABASEMIGRATIONSERVICE_API UpdateSubscriptionsToEventBridgeResult
+  class UpdateSubscriptionsToEventBridgeResult
   {
   public:
-    UpdateSubscriptionsToEventBridgeResult();
-    UpdateSubscriptionsToEventBridgeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateSubscriptionsToEventBridgeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DATABASEMIGRATIONSERVICE_API UpdateSubscriptionsToEventBridgeResult();
+    AWS_DATABASEMIGRATIONSERVICE_API UpdateSubscriptionsToEventBridgeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DATABASEMIGRATIONSERVICE_API UpdateSubscriptionsToEventBridgeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

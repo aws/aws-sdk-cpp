@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ResourceUri">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API ResourceUri
+  class ResourceUri
   {
   public:
-    ResourceUri();
-    ResourceUri(Aws::Utils::Json::JsonView jsonValue);
-    ResourceUri& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API ResourceUri();
+    AWS_GLUE_API ResourceUri(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API ResourceUri& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

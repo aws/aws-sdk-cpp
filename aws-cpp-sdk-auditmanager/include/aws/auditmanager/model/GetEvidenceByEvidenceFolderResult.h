@@ -26,12 +26,12 @@ namespace AuditManager
 {
 namespace Model
 {
-  class AWS_AUDITMANAGER_API GetEvidenceByEvidenceFolderResult
+  class GetEvidenceByEvidenceFolderResult
   {
   public:
-    GetEvidenceByEvidenceFolderResult();
-    GetEvidenceByEvidenceFolderResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetEvidenceByEvidenceFolderResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_AUDITMANAGER_API GetEvidenceByEvidenceFolderResult();
+    AWS_AUDITMANAGER_API GetEvidenceByEvidenceFolderResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_AUDITMANAGER_API GetEvidenceByEvidenceFolderResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

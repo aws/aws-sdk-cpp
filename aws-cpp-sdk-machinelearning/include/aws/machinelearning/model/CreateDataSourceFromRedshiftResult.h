@@ -33,12 +33,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/CreateDataSourceFromRedshiftOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_MACHINELEARNING_API CreateDataSourceFromRedshiftResult
+  class CreateDataSourceFromRedshiftResult
   {
   public:
-    CreateDataSourceFromRedshiftResult();
-    CreateDataSourceFromRedshiftResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateDataSourceFromRedshiftResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MACHINELEARNING_API CreateDataSourceFromRedshiftResult();
+    AWS_MACHINELEARNING_API CreateDataSourceFromRedshiftResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MACHINELEARNING_API CreateDataSourceFromRedshiftResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

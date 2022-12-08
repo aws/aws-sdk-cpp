@@ -24,12 +24,12 @@ namespace CloudHSMV2
 {
 namespace Model
 {
-  class AWS_CLOUDHSMV2_API RestoreBackupResult
+  class RestoreBackupResult
   {
   public:
-    RestoreBackupResult();
-    RestoreBackupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    RestoreBackupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CLOUDHSMV2_API RestoreBackupResult();
+    AWS_CLOUDHSMV2_API RestoreBackupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CLOUDHSMV2_API RestoreBackupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

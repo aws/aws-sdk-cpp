@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/App">AWS API
    * Reference</a></p>
    */
-  class AWS_FMS_API App
+  class App
   {
   public:
-    App();
-    App(Aws::Utils::Json::JsonView jsonValue);
-    App& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FMS_API App();
+    AWS_FMS_API App(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FMS_API App& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

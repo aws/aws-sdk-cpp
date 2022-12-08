@@ -26,12 +26,12 @@ namespace AlexaForBusiness
 {
 namespace Model
 {
-  class AWS_ALEXAFORBUSINESS_API ListBusinessReportSchedulesResult
+  class ListBusinessReportSchedulesResult
   {
   public:
-    ListBusinessReportSchedulesResult();
-    ListBusinessReportSchedulesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListBusinessReportSchedulesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ALEXAFORBUSINESS_API ListBusinessReportSchedulesResult();
+    AWS_ALEXAFORBUSINESS_API ListBusinessReportSchedulesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ALEXAFORBUSINESS_API ListBusinessReportSchedulesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

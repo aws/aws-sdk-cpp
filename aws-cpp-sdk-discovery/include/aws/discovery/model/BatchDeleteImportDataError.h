@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/BatchDeleteImportDataError">AWS
    * API Reference</a></p>
    */
-  class AWS_APPLICATIONDISCOVERYSERVICE_API BatchDeleteImportDataError
+  class BatchDeleteImportDataError
   {
   public:
-    BatchDeleteImportDataError();
-    BatchDeleteImportDataError(Aws::Utils::Json::JsonView jsonValue);
-    BatchDeleteImportDataError& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPLICATIONDISCOVERYSERVICE_API BatchDeleteImportDataError();
+    AWS_APPLICATIONDISCOVERYSERVICE_API BatchDeleteImportDataError(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPLICATIONDISCOVERYSERVICE_API BatchDeleteImportDataError& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPLICATIONDISCOVERYSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

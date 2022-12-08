@@ -26,12 +26,12 @@ namespace AppIntegrationsService
 {
 namespace Model
 {
-  class AWS_APPINTEGRATIONSSERVICE_API ListDataIntegrationAssociationsResult
+  class ListDataIntegrationAssociationsResult
   {
   public:
-    ListDataIntegrationAssociationsResult();
-    ListDataIntegrationAssociationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListDataIntegrationAssociationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPINTEGRATIONSSERVICE_API ListDataIntegrationAssociationsResult();
+    AWS_APPINTEGRATIONSSERVICE_API ListDataIntegrationAssociationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPINTEGRATIONSSERVICE_API ListDataIntegrationAssociationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

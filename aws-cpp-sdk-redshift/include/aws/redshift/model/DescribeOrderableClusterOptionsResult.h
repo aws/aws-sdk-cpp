@@ -33,12 +33,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/OrderableClusterOptionsMessage">AWS
    * API Reference</a></p>
    */
-  class AWS_REDSHIFT_API DescribeOrderableClusterOptionsResult
+  class DescribeOrderableClusterOptionsResult
   {
   public:
-    DescribeOrderableClusterOptionsResult();
-    DescribeOrderableClusterOptionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeOrderableClusterOptionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_REDSHIFT_API DescribeOrderableClusterOptionsResult();
+    AWS_REDSHIFT_API DescribeOrderableClusterOptionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_REDSHIFT_API DescribeOrderableClusterOptionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

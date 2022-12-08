@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DependencyFailureException">AWS
    * API Reference</a></p>
    */
-  class AWS_BACKUP_API DependencyFailureException
+  class DependencyFailureException
   {
   public:
-    DependencyFailureException();
-    DependencyFailureException(Aws::Utils::Json::JsonView jsonValue);
-    DependencyFailureException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BACKUP_API DependencyFailureException();
+    AWS_BACKUP_API DependencyFailureException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BACKUP_API DependencyFailureException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BACKUP_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

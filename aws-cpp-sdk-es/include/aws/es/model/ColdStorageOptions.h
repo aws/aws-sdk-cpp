@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/ColdStorageOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICSEARCHSERVICE_API ColdStorageOptions
+  class ColdStorageOptions
   {
   public:
-    ColdStorageOptions();
-    ColdStorageOptions(Aws::Utils::Json::JsonView jsonValue);
-    ColdStorageOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ELASTICSEARCHSERVICE_API ColdStorageOptions();
+    AWS_ELASTICSEARCHSERVICE_API ColdStorageOptions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICSEARCHSERVICE_API ColdStorageOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -30,15 +30,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DomainStatus">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDSEARCH_API DomainStatus
+  class DomainStatus
   {
   public:
-    DomainStatus();
-    DomainStatus(const Aws::Utils::Xml::XmlNode& xmlNode);
-    DomainStatus& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDSEARCH_API DomainStatus();
+    AWS_CLOUDSEARCH_API DomainStatus(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDSEARCH_API DomainStatus& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_CLOUDSEARCH_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_CLOUDSEARCH_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     

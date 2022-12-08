@@ -22,12 +22,12 @@ namespace Detective
 {
 namespace Model
 {
-  class AWS_DETECTIVE_API DescribeOrganizationConfigurationResult
+  class DescribeOrganizationConfigurationResult
   {
   public:
-    DescribeOrganizationConfigurationResult();
-    DescribeOrganizationConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeOrganizationConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DETECTIVE_API DescribeOrganizationConfigurationResult();
+    AWS_DETECTIVE_API DescribeOrganizationConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DETECTIVE_API DescribeOrganizationConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

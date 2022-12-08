@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ClassifierMetadata">AWS
    * API Reference</a></p>
    */
-  class AWS_COMPREHEND_API ClassifierMetadata
+  class ClassifierMetadata
   {
   public:
-    ClassifierMetadata();
-    ClassifierMetadata(Aws::Utils::Json::JsonView jsonValue);
-    ClassifierMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COMPREHEND_API ClassifierMetadata();
+    AWS_COMPREHEND_API ClassifierMetadata(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHEND_API ClassifierMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHEND_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

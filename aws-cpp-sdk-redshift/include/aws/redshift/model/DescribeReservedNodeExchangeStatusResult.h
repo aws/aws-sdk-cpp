@@ -27,12 +27,12 @@ namespace Redshift
 {
 namespace Model
 {
-  class AWS_REDSHIFT_API DescribeReservedNodeExchangeStatusResult
+  class DescribeReservedNodeExchangeStatusResult
   {
   public:
-    DescribeReservedNodeExchangeStatusResult();
-    DescribeReservedNodeExchangeStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeReservedNodeExchangeStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_REDSHIFT_API DescribeReservedNodeExchangeStatusResult();
+    AWS_REDSHIFT_API DescribeReservedNodeExchangeStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_REDSHIFT_API DescribeReservedNodeExchangeStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

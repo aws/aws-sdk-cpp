@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/CustomLineItemPercentageChargeDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_BILLINGCONDUCTOR_API CustomLineItemPercentageChargeDetails
+  class CustomLineItemPercentageChargeDetails
   {
   public:
-    CustomLineItemPercentageChargeDetails();
-    CustomLineItemPercentageChargeDetails(Aws::Utils::Json::JsonView jsonValue);
-    CustomLineItemPercentageChargeDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BILLINGCONDUCTOR_API CustomLineItemPercentageChargeDetails();
+    AWS_BILLINGCONDUCTOR_API CustomLineItemPercentageChargeDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BILLINGCONDUCTOR_API CustomLineItemPercentageChargeDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BILLINGCONDUCTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

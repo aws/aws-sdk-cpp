@@ -39,13 +39,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/RegexPatternSet">AWS
    * API Reference</a></p>
    */
-  class AWS_WAF_API RegexPatternSet
+  class RegexPatternSet
   {
   public:
-    RegexPatternSet();
-    RegexPatternSet(Aws::Utils::Json::JsonView jsonValue);
-    RegexPatternSet& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WAF_API RegexPatternSet();
+    AWS_WAF_API RegexPatternSet(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAF_API RegexPatternSet& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAF_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

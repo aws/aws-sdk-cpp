@@ -30,12 +30,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateMaintenanceStartTimeOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_STORAGEGATEWAY_API UpdateMaintenanceStartTimeResult
+  class UpdateMaintenanceStartTimeResult
   {
   public:
-    UpdateMaintenanceStartTimeResult();
-    UpdateMaintenanceStartTimeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateMaintenanceStartTimeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_STORAGEGATEWAY_API UpdateMaintenanceStartTimeResult();
+    AWS_STORAGEGATEWAY_API UpdateMaintenanceStartTimeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_STORAGEGATEWAY_API UpdateMaintenanceStartTimeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     

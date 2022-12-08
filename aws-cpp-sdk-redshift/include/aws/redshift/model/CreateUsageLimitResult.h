@@ -36,12 +36,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/UsageLimit">AWS
    * API Reference</a></p>
    */
-  class AWS_REDSHIFT_API CreateUsageLimitResult
+  class CreateUsageLimitResult
   {
   public:
-    CreateUsageLimitResult();
-    CreateUsageLimitResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    CreateUsageLimitResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_REDSHIFT_API CreateUsageLimitResult();
+    AWS_REDSHIFT_API CreateUsageLimitResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_REDSHIFT_API CreateUsageLimitResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

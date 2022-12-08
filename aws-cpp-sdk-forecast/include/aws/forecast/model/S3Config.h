@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/S3Config">AWS
    * API Reference</a></p>
    */
-  class AWS_FORECASTSERVICE_API S3Config
+  class S3Config
   {
   public:
-    S3Config();
-    S3Config(Aws::Utils::Json::JsonView jsonValue);
-    S3Config& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FORECASTSERVICE_API S3Config();
+    AWS_FORECASTSERVICE_API S3Config(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FORECASTSERVICE_API S3Config& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FORECASTSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

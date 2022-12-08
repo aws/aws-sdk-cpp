@@ -26,12 +26,12 @@ namespace SSM
 {
 namespace Model
 {
-  class AWS_SSM_API UpdateMaintenanceWindowTargetResult
+  class UpdateMaintenanceWindowTargetResult
   {
   public:
-    UpdateMaintenanceWindowTargetResult();
-    UpdateMaintenanceWindowTargetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateMaintenanceWindowTargetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSM_API UpdateMaintenanceWindowTargetResult();
+    AWS_SSM_API UpdateMaintenanceWindowTargetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSM_API UpdateMaintenanceWindowTargetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

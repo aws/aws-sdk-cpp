@@ -30,14 +30,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ActiveTrustedSigners">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFRONT_API ActiveTrustedSigners
+  class ActiveTrustedSigners
   {
   public:
-    ActiveTrustedSigners();
-    ActiveTrustedSigners(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ActiveTrustedSigners& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API ActiveTrustedSigners();
+    AWS_CLOUDFRONT_API ActiveTrustedSigners(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API ActiveTrustedSigners& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**

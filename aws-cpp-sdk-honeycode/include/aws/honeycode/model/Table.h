@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/honeycode-2020-03-01/Table">AWS API
    * Reference</a></p>
    */
-  class AWS_HONEYCODE_API Table
+  class Table
   {
   public:
-    Table();
-    Table(Aws::Utils::Json::JsonView jsonValue);
-    Table& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_HONEYCODE_API Table();
+    AWS_HONEYCODE_API Table(Aws::Utils::Json::JsonView jsonValue);
+    AWS_HONEYCODE_API Table& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_HONEYCODE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

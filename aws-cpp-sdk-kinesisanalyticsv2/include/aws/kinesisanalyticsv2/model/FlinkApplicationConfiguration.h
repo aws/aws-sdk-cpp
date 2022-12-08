@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/FlinkApplicationConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_KINESISANALYTICSV2_API FlinkApplicationConfiguration
+  class FlinkApplicationConfiguration
   {
   public:
-    FlinkApplicationConfiguration();
-    FlinkApplicationConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    FlinkApplicationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KINESISANALYTICSV2_API FlinkApplicationConfiguration();
+    AWS_KINESISANALYTICSV2_API FlinkApplicationConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICSV2_API FlinkApplicationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

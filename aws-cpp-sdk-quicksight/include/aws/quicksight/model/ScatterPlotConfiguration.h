@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ScatterPlotConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API ScatterPlotConfiguration
+  class ScatterPlotConfiguration
   {
   public:
-    ScatterPlotConfiguration();
-    ScatterPlotConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    ScatterPlotConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API ScatterPlotConfiguration();
+    AWS_QUICKSIGHT_API ScatterPlotConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API ScatterPlotConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

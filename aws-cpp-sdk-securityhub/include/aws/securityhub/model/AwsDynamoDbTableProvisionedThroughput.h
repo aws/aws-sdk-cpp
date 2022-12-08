@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsDynamoDbTableProvisionedThroughput">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsDynamoDbTableProvisionedThroughput
+  class AwsDynamoDbTableProvisionedThroughput
   {
   public:
-    AwsDynamoDbTableProvisionedThroughput();
-    AwsDynamoDbTableProvisionedThroughput(Aws::Utils::Json::JsonView jsonValue);
-    AwsDynamoDbTableProvisionedThroughput& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsDynamoDbTableProvisionedThroughput();
+    AWS_SECURITYHUB_API AwsDynamoDbTableProvisionedThroughput(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsDynamoDbTableProvisionedThroughput& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

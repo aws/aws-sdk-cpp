@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/MonitoringAppSpecification">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API MonitoringAppSpecification
+  class MonitoringAppSpecification
   {
   public:
-    MonitoringAppSpecification();
-    MonitoringAppSpecification(Aws::Utils::Json::JsonView jsonValue);
-    MonitoringAppSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API MonitoringAppSpecification();
+    AWS_SAGEMAKER_API MonitoringAppSpecification(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API MonitoringAppSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

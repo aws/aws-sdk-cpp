@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/UserAccessLoggingSettingsSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_WORKSPACESWEB_API UserAccessLoggingSettingsSummary
+  class UserAccessLoggingSettingsSummary
   {
   public:
-    UserAccessLoggingSettingsSummary();
-    UserAccessLoggingSettingsSummary(Aws::Utils::Json::JsonView jsonValue);
-    UserAccessLoggingSettingsSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WORKSPACESWEB_API UserAccessLoggingSettingsSummary();
+    AWS_WORKSPACESWEB_API UserAccessLoggingSettingsSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKSPACESWEB_API UserAccessLoggingSettingsSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKSPACESWEB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

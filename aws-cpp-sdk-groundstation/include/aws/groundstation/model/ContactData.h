@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/ContactData">AWS
    * API Reference</a></p>
    */
-  class AWS_GROUNDSTATION_API ContactData
+  class ContactData
   {
   public:
-    ContactData();
-    ContactData(Aws::Utils::Json::JsonView jsonValue);
-    ContactData& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GROUNDSTATION_API ContactData();
+    AWS_GROUNDSTATION_API ContactData(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GROUNDSTATION_API ContactData& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GROUNDSTATION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

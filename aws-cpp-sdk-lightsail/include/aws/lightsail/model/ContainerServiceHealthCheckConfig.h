@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/ContainerServiceHealthCheckConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_LIGHTSAIL_API ContainerServiceHealthCheckConfig
+  class ContainerServiceHealthCheckConfig
   {
   public:
-    ContainerServiceHealthCheckConfig();
-    ContainerServiceHealthCheckConfig(Aws::Utils::Json::JsonView jsonValue);
-    ContainerServiceHealthCheckConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LIGHTSAIL_API ContainerServiceHealthCheckConfig();
+    AWS_LIGHTSAIL_API ContainerServiceHealthCheckConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API ContainerServiceHealthCheckConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

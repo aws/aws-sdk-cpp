@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/ImportJobSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_SESV2_API ImportJobSummary
+  class ImportJobSummary
   {
   public:
-    ImportJobSummary();
-    ImportJobSummary(Aws::Utils::Json::JsonView jsonValue);
-    ImportJobSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SESV2_API ImportJobSummary();
+    AWS_SESV2_API ImportJobSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SESV2_API ImportJobSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SESV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

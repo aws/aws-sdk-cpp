@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/synthetics-2017-10-11/RuntimeVersion">AWS
    * API Reference</a></p>
    */
-  class AWS_SYNTHETICS_API RuntimeVersion
+  class RuntimeVersion
   {
   public:
-    RuntimeVersion();
-    RuntimeVersion(Aws::Utils::Json::JsonView jsonValue);
-    RuntimeVersion& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SYNTHETICS_API RuntimeVersion();
+    AWS_SYNTHETICS_API RuntimeVersion(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SYNTHETICS_API RuntimeVersion& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SYNTHETICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

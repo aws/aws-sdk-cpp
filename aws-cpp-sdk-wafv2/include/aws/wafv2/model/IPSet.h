@@ -37,13 +37,13 @@ namespace Model
    * <a href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/IPSet">AWS API
    * Reference</a></p>
    */
-  class AWS_WAFV2_API IPSet
+  class IPSet
   {
   public:
-    IPSet();
-    IPSet(Aws::Utils::Json::JsonView jsonValue);
-    IPSet& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WAFV2_API IPSet();
+    AWS_WAFV2_API IPSet(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API IPSet& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

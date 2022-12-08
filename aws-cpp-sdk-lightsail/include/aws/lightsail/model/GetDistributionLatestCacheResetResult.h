@@ -25,12 +25,12 @@ namespace Lightsail
 {
 namespace Model
 {
-  class AWS_LIGHTSAIL_API GetDistributionLatestCacheResetResult
+  class GetDistributionLatestCacheResetResult
   {
   public:
-    GetDistributionLatestCacheResetResult();
-    GetDistributionLatestCacheResetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetDistributionLatestCacheResetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LIGHTSAIL_API GetDistributionLatestCacheResetResult();
+    AWS_LIGHTSAIL_API GetDistributionLatestCacheResetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LIGHTSAIL_API GetDistributionLatestCacheResetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-roborunner-2018-05-10/Orientation">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTROBORUNNER_API Orientation
+  class Orientation
   {
   public:
-    Orientation();
-    Orientation(Aws::Utils::Json::JsonView jsonValue);
-    Orientation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTROBORUNNER_API Orientation();
+    AWS_IOTROBORUNNER_API Orientation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTROBORUNNER_API Orientation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTROBORUNNER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

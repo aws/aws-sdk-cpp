@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeviceNetworkProfileInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_ALEXAFORBUSINESS_API DeviceNetworkProfileInfo
+  class DeviceNetworkProfileInfo
   {
   public:
-    DeviceNetworkProfileInfo();
-    DeviceNetworkProfileInfo(Aws::Utils::Json::JsonView jsonValue);
-    DeviceNetworkProfileInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ALEXAFORBUSINESS_API DeviceNetworkProfileInfo();
+    AWS_ALEXAFORBUSINESS_API DeviceNetworkProfileInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ALEXAFORBUSINESS_API DeviceNetworkProfileInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ALEXAFORBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

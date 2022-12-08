@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ServiceQuotaExceededException">AWS
    * API Reference</a></p>
    */
-  class AWS_NETWORKMANAGER_API ServiceQuotaExceededException
+  class ServiceQuotaExceededException
   {
   public:
-    ServiceQuotaExceededException();
-    ServiceQuotaExceededException(Aws::Utils::Json::JsonView jsonValue);
-    ServiceQuotaExceededException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_NETWORKMANAGER_API ServiceQuotaExceededException();
+    AWS_NETWORKMANAGER_API ServiceQuotaExceededException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKMANAGER_API ServiceQuotaExceededException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

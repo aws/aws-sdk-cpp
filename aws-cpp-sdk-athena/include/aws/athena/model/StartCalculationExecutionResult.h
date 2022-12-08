@@ -25,12 +25,12 @@ namespace Athena
 {
 namespace Model
 {
-  class AWS_ATHENA_API StartCalculationExecutionResult
+  class StartCalculationExecutionResult
   {
   public:
-    StartCalculationExecutionResult();
-    StartCalculationExecutionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    StartCalculationExecutionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ATHENA_API StartCalculationExecutionResult();
+    AWS_ATHENA_API StartCalculationExecutionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ATHENA_API StartCalculationExecutionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

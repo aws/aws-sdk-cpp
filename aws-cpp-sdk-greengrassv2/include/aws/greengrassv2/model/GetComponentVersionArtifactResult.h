@@ -24,12 +24,12 @@ namespace GreengrassV2
 {
 namespace Model
 {
-  class AWS_GREENGRASSV2_API GetComponentVersionArtifactResult
+  class GetComponentVersionArtifactResult
   {
   public:
-    GetComponentVersionArtifactResult();
-    GetComponentVersionArtifactResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetComponentVersionArtifactResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GREENGRASSV2_API GetComponentVersionArtifactResult();
+    AWS_GREENGRASSV2_API GetComponentVersionArtifactResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GREENGRASSV2_API GetComponentVersionArtifactResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

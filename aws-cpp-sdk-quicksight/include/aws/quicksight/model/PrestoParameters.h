@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/PrestoParameters">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API PrestoParameters
+  class PrestoParameters
   {
   public:
-    PrestoParameters();
-    PrestoParameters(Aws::Utils::Json::JsonView jsonValue);
-    PrestoParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API PrestoParameters();
+    AWS_QUICKSIGHT_API PrestoParameters(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API PrestoParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -28,12 +28,12 @@ namespace Rekognition
 {
 namespace Model
 {
-  class AWS_REKOGNITION_API GetLabelDetectionResult
+  class GetLabelDetectionResult
   {
   public:
-    GetLabelDetectionResult();
-    GetLabelDetectionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetLabelDetectionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_REKOGNITION_API GetLabelDetectionResult();
+    AWS_REKOGNITION_API GetLabelDetectionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_REKOGNITION_API GetLabelDetectionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

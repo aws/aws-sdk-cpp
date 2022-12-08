@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/SalesforceStandardObjectConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_KENDRA_API SalesforceStandardObjectConfiguration
+  class SalesforceStandardObjectConfiguration
   {
   public:
-    SalesforceStandardObjectConfiguration();
-    SalesforceStandardObjectConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    SalesforceStandardObjectConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KENDRA_API SalesforceStandardObjectConfiguration();
+    AWS_KENDRA_API SalesforceStandardObjectConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API SalesforceStandardObjectConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

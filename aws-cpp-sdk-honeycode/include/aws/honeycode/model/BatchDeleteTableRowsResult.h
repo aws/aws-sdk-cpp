@@ -25,12 +25,12 @@ namespace Honeycode
 {
 namespace Model
 {
-  class AWS_HONEYCODE_API BatchDeleteTableRowsResult
+  class BatchDeleteTableRowsResult
   {
   public:
-    BatchDeleteTableRowsResult();
-    BatchDeleteTableRowsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    BatchDeleteTableRowsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_HONEYCODE_API BatchDeleteTableRowsResult();
+    AWS_HONEYCODE_API BatchDeleteTableRowsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_HONEYCODE_API BatchDeleteTableRowsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

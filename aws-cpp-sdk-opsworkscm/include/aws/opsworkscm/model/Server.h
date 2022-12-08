@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/Server">AWS
    * API Reference</a></p>
    */
-  class AWS_OPSWORKSCM_API Server
+  class Server
   {
   public:
-    Server();
-    Server(Aws::Utils::Json::JsonView jsonValue);
-    Server& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OPSWORKSCM_API Server();
+    AWS_OPSWORKSCM_API Server(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPSWORKSCM_API Server& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPSWORKSCM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -24,12 +24,12 @@ namespace BackupGateway
 {
 namespace Model
 {
-  class AWS_BACKUPGATEWAY_API AssociateGatewayToServerResult
+  class AssociateGatewayToServerResult
   {
   public:
-    AssociateGatewayToServerResult();
-    AssociateGatewayToServerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AssociateGatewayToServerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_BACKUPGATEWAY_API AssociateGatewayToServerResult();
+    AWS_BACKUPGATEWAY_API AssociateGatewayToServerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_BACKUPGATEWAY_API AssociateGatewayToServerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

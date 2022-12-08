@@ -40,13 +40,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/RackPhysicalProperties">AWS
    * API Reference</a></p>
    */
-  class AWS_OUTPOSTS_API RackPhysicalProperties
+  class RackPhysicalProperties
   {
   public:
-    RackPhysicalProperties();
-    RackPhysicalProperties(Aws::Utils::Json::JsonView jsonValue);
-    RackPhysicalProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OUTPOSTS_API RackPhysicalProperties();
+    AWS_OUTPOSTS_API RackPhysicalProperties(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OUTPOSTS_API RackPhysicalProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OUTPOSTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

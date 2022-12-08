@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/LogDestination">AWS
    * API Reference</a></p>
    */
-  class AWS_SFN_API LogDestination
+  class LogDestination
   {
   public:
-    LogDestination();
-    LogDestination(Aws::Utils::Json::JsonView jsonValue);
-    LogDestination& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SFN_API LogDestination();
+    AWS_SFN_API LogDestination(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SFN_API LogDestination& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SFN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

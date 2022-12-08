@@ -37,12 +37,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DescribeInputDeviceResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API DescribeInputDeviceResult
+  class DescribeInputDeviceResult
   {
   public:
-    DescribeInputDeviceResult();
-    DescribeInputDeviceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeInputDeviceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MEDIALIVE_API DescribeInputDeviceResult();
+    AWS_MEDIALIVE_API DescribeInputDeviceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MEDIALIVE_API DescribeInputDeviceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -27,12 +27,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DeleteBudgetResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_BUDGETS_API DeleteBudgetResult
+  class DeleteBudgetResult
   {
   public:
-    DeleteBudgetResult();
-    DeleteBudgetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteBudgetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_BUDGETS_API DeleteBudgetResult();
+    AWS_BUDGETS_API DeleteBudgetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_BUDGETS_API DeleteBudgetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

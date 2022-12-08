@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/Lens">AWS
    * API Reference</a></p>
    */
-  class AWS_WELLARCHITECTED_API Lens
+  class Lens
   {
   public:
-    Lens();
-    Lens(Aws::Utils::Json::JsonView jsonValue);
-    Lens& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WELLARCHITECTED_API Lens();
+    AWS_WELLARCHITECTED_API Lens(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WELLARCHITECTED_API Lens& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WELLARCHITECTED_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

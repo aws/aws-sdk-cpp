@@ -55,13 +55,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/MatchmakingRuleSet">AWS
    * API Reference</a></p>
    */
-  class AWS_GAMELIFT_API MatchmakingRuleSet
+  class MatchmakingRuleSet
   {
   public:
-    MatchmakingRuleSet();
-    MatchmakingRuleSet(Aws::Utils::Json::JsonView jsonValue);
-    MatchmakingRuleSet& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GAMELIFT_API MatchmakingRuleSet();
+    AWS_GAMELIFT_API MatchmakingRuleSet(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMELIFT_API MatchmakingRuleSet& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

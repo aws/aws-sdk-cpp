@@ -43,13 +43,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/keyspaces-2022-02-10/EncryptionSpecification">AWS
    * API Reference</a></p>
    */
-  class AWS_KEYSPACES_API EncryptionSpecification
+  class EncryptionSpecification
   {
   public:
-    EncryptionSpecification();
-    EncryptionSpecification(Aws::Utils::Json::JsonView jsonValue);
-    EncryptionSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KEYSPACES_API EncryptionSpecification();
+    AWS_KEYSPACES_API EncryptionSpecification(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KEYSPACES_API EncryptionSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KEYSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

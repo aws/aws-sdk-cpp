@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/InboundCrossClusterSearchConnection">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICSEARCHSERVICE_API InboundCrossClusterSearchConnection
+  class InboundCrossClusterSearchConnection
   {
   public:
-    InboundCrossClusterSearchConnection();
-    InboundCrossClusterSearchConnection(Aws::Utils::Json::JsonView jsonValue);
-    InboundCrossClusterSearchConnection& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ELASTICSEARCHSERVICE_API InboundCrossClusterSearchConnection();
+    AWS_ELASTICSEARCHSERVICE_API InboundCrossClusterSearchConnection(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICSEARCHSERVICE_API InboundCrossClusterSearchConnection& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

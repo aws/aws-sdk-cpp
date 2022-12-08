@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot1click-projects-2018-05-14/ProjectSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT1CLICKPROJECTS_API ProjectSummary
+  class ProjectSummary
   {
   public:
-    ProjectSummary();
-    ProjectSummary(Aws::Utils::Json::JsonView jsonValue);
-    ProjectSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT1CLICKPROJECTS_API ProjectSummary();
+    AWS_IOT1CLICKPROJECTS_API ProjectSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT1CLICKPROJECTS_API ProjectSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT1CLICKPROJECTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -27,12 +27,12 @@ namespace EC2
 {
 namespace Model
 {
-  class AWS_EC2_API DescribeInstanceCreditSpecificationsResponse
+  class DescribeInstanceCreditSpecificationsResponse
   {
   public:
-    DescribeInstanceCreditSpecificationsResponse();
-    DescribeInstanceCreditSpecificationsResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeInstanceCreditSpecificationsResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API DescribeInstanceCreditSpecificationsResponse();
+    AWS_EC2_API DescribeInstanceCreditSpecificationsResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API DescribeInstanceCreditSpecificationsResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

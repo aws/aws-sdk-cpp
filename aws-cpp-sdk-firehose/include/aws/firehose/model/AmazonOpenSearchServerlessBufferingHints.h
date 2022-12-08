@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/AmazonOpenSearchServerlessBufferingHints">AWS
    * API Reference</a></p>
    */
-  class AWS_FIREHOSE_API AmazonOpenSearchServerlessBufferingHints
+  class AmazonOpenSearchServerlessBufferingHints
   {
   public:
-    AmazonOpenSearchServerlessBufferingHints();
-    AmazonOpenSearchServerlessBufferingHints(Aws::Utils::Json::JsonView jsonValue);
-    AmazonOpenSearchServerlessBufferingHints& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FIREHOSE_API AmazonOpenSearchServerlessBufferingHints();
+    AWS_FIREHOSE_API AmazonOpenSearchServerlessBufferingHints(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FIREHOSE_API AmazonOpenSearchServerlessBufferingHints& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FIREHOSE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

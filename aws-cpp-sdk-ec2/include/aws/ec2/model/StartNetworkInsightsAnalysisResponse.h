@@ -25,12 +25,12 @@ namespace EC2
 {
 namespace Model
 {
-  class AWS_EC2_API StartNetworkInsightsAnalysisResponse
+  class StartNetworkInsightsAnalysisResponse
   {
   public:
-    StartNetworkInsightsAnalysisResponse();
-    StartNetworkInsightsAnalysisResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    StartNetworkInsightsAnalysisResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API StartNetworkInsightsAnalysisResponse();
+    AWS_EC2_API StartNetworkInsightsAnalysisResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API StartNetworkInsightsAnalysisResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

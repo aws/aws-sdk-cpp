@@ -26,13 +26,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/Rec709Settings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API Rec709Settings
+  class Rec709Settings
   {
   public:
-    Rec709Settings();
-    Rec709Settings(Aws::Utils::Json::JsonView jsonValue);
-    Rec709Settings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API Rec709Settings();
+    AWS_MEDIALIVE_API Rec709Settings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Rec709Settings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
   };
 

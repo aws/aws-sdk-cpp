@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/MaintenanceCreateSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API MaintenanceCreateSettings
+  class MaintenanceCreateSettings
   {
   public:
-    MaintenanceCreateSettings();
-    MaintenanceCreateSettings(Aws::Utils::Json::JsonView jsonValue);
-    MaintenanceCreateSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API MaintenanceCreateSettings();
+    AWS_MEDIALIVE_API MaintenanceCreateSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API MaintenanceCreateSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

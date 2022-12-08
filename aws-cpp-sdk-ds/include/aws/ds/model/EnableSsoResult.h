@@ -28,12 +28,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/EnableSsoResult">AWS
    * API Reference</a></p>
    */
-  class AWS_DIRECTORYSERVICE_API EnableSsoResult
+  class EnableSsoResult
   {
   public:
-    EnableSsoResult();
-    EnableSsoResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    EnableSsoResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DIRECTORYSERVICE_API EnableSsoResult();
+    AWS_DIRECTORYSERVICE_API EnableSsoResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DIRECTORYSERVICE_API EnableSsoResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

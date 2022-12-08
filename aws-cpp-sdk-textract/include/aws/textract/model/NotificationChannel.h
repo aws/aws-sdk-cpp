@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/NotificationChannel">AWS
    * API Reference</a></p>
    */
-  class AWS_TEXTRACT_API NotificationChannel
+  class NotificationChannel
   {
   public:
-    NotificationChannel();
-    NotificationChannel(Aws::Utils::Json::JsonView jsonValue);
-    NotificationChannel& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TEXTRACT_API NotificationChannel();
+    AWS_TEXTRACT_API NotificationChannel(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TEXTRACT_API NotificationChannel& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TEXTRACT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

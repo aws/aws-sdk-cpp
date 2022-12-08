@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/ChoiceUpdate">AWS
    * API Reference</a></p>
    */
-  class AWS_WELLARCHITECTED_API ChoiceUpdate
+  class ChoiceUpdate
   {
   public:
-    ChoiceUpdate();
-    ChoiceUpdate(Aws::Utils::Json::JsonView jsonValue);
-    ChoiceUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WELLARCHITECTED_API ChoiceUpdate();
+    AWS_WELLARCHITECTED_API ChoiceUpdate(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WELLARCHITECTED_API ChoiceUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WELLARCHITECTED_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/BucketLevelPermissions">AWS
    * API Reference</a></p>
    */
-  class AWS_MACIE2_API BucketLevelPermissions
+  class BucketLevelPermissions
   {
   public:
-    BucketLevelPermissions();
-    BucketLevelPermissions(Aws::Utils::Json::JsonView jsonValue);
-    BucketLevelPermissions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MACIE2_API BucketLevelPermissions();
+    AWS_MACIE2_API BucketLevelPermissions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API BucketLevelPermissions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/FindMatchesMetrics">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API FindMatchesMetrics
+  class FindMatchesMetrics
   {
   public:
-    FindMatchesMetrics();
-    FindMatchesMetrics(Aws::Utils::Json::JsonView jsonValue);
-    FindMatchesMetrics& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API FindMatchesMetrics();
+    AWS_GLUE_API FindMatchesMetrics(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API FindMatchesMetrics& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

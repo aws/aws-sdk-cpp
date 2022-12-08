@@ -49,13 +49,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/Target">AWS API
    * Reference</a></p>
    */
-  class AWS_CLOUDWATCHEVENTS_API Target
+  class Target
   {
   public:
-    Target();
-    Target(Aws::Utils::Json::JsonView jsonValue);
-    Target& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDWATCHEVENTS_API Target();
+    AWS_CLOUDWATCHEVENTS_API Target(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHEVENTS_API Target& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHEVENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

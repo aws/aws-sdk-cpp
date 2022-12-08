@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/ControlOperation">AWS
    * API Reference</a></p>
    */
-  class AWS_CONTROLTOWER_API ControlOperation
+  class ControlOperation
   {
   public:
-    ControlOperation();
-    ControlOperation(Aws::Utils::Json::JsonView jsonValue);
-    ControlOperation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONTROLTOWER_API ControlOperation();
+    AWS_CONTROLTOWER_API ControlOperation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONTROLTOWER_API ControlOperation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONTROLTOWER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

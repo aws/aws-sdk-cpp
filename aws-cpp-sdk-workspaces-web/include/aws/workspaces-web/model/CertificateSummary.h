@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/CertificateSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_WORKSPACESWEB_API CertificateSummary
+  class CertificateSummary
   {
   public:
-    CertificateSummary();
-    CertificateSummary(Aws::Utils::Json::JsonView jsonValue);
-    CertificateSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WORKSPACESWEB_API CertificateSummary();
+    AWS_WORKSPACESWEB_API CertificateSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKSPACESWEB_API CertificateSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKSPACESWEB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

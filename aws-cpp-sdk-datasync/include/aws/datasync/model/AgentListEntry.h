@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/AgentListEntry">AWS
    * API Reference</a></p>
    */
-  class AWS_DATASYNC_API AgentListEntry
+  class AgentListEntry
   {
   public:
-    AgentListEntry();
-    AgentListEntry(Aws::Utils::Json::JsonView jsonValue);
-    AgentListEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DATASYNC_API AgentListEntry();
+    AWS_DATASYNC_API AgentListEntry(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATASYNC_API AgentListEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATASYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

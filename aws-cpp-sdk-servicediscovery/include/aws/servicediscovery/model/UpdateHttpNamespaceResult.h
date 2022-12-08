@@ -24,12 +24,12 @@ namespace ServiceDiscovery
 {
 namespace Model
 {
-  class AWS_SERVICEDISCOVERY_API UpdateHttpNamespaceResult
+  class UpdateHttpNamespaceResult
   {
   public:
-    UpdateHttpNamespaceResult();
-    UpdateHttpNamespaceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateHttpNamespaceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SERVICEDISCOVERY_API UpdateHttpNamespaceResult();
+    AWS_SERVICEDISCOVERY_API UpdateHttpNamespaceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SERVICEDISCOVERY_API UpdateHttpNamespaceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ResourceDefinitionVersion">AWS
    * API Reference</a></p>
    */
-  class AWS_GREENGRASS_API ResourceDefinitionVersion
+  class ResourceDefinitionVersion
   {
   public:
-    ResourceDefinitionVersion();
-    ResourceDefinitionVersion(Aws::Utils::Json::JsonView jsonValue);
-    ResourceDefinitionVersion& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GREENGRASS_API ResourceDefinitionVersion();
+    AWS_GREENGRASS_API ResourceDefinitionVersion(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASS_API ResourceDefinitionVersion& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

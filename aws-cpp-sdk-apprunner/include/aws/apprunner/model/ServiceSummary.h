@@ -42,13 +42,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/ServiceSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_APPRUNNER_API ServiceSummary
+  class ServiceSummary
   {
   public:
-    ServiceSummary();
-    ServiceSummary(Aws::Utils::Json::JsonView jsonValue);
-    ServiceSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPRUNNER_API ServiceSummary();
+    AWS_APPRUNNER_API ServiceSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPRUNNER_API ServiceSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPRUNNER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

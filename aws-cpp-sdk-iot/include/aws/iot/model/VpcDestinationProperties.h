@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/VpcDestinationProperties">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API VpcDestinationProperties
+  class VpcDestinationProperties
   {
   public:
-    VpcDestinationProperties();
-    VpcDestinationProperties(Aws::Utils::Json::JsonView jsonValue);
-    VpcDestinationProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API VpcDestinationProperties();
+    AWS_IOT_API VpcDestinationProperties(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API VpcDestinationProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

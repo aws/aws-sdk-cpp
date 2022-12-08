@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/PortfolioShareDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_SERVICECATALOG_API PortfolioShareDetail
+  class PortfolioShareDetail
   {
   public:
-    PortfolioShareDetail();
-    PortfolioShareDetail(Aws::Utils::Json::JsonView jsonValue);
-    PortfolioShareDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SERVICECATALOG_API PortfolioShareDetail();
+    AWS_SERVICECATALOG_API PortfolioShareDetail(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICECATALOG_API PortfolioShareDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICECATALOG_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

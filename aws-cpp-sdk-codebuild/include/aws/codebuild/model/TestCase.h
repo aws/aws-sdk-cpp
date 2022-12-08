@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/TestCase">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEBUILD_API TestCase
+  class TestCase
   {
   public:
-    TestCase();
-    TestCase(Aws::Utils::Json::JsonView jsonValue);
-    TestCase& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEBUILD_API TestCase();
+    AWS_CODEBUILD_API TestCase(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEBUILD_API TestCase& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEBUILD_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

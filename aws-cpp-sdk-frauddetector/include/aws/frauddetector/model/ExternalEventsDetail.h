@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/ExternalEventsDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_FRAUDDETECTOR_API ExternalEventsDetail
+  class ExternalEventsDetail
   {
   public:
-    ExternalEventsDetail();
-    ExternalEventsDetail(Aws::Utils::Json::JsonView jsonValue);
-    ExternalEventsDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FRAUDDETECTOR_API ExternalEventsDetail();
+    AWS_FRAUDDETECTOR_API ExternalEventsDetail(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FRAUDDETECTOR_API ExternalEventsDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FRAUDDETECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

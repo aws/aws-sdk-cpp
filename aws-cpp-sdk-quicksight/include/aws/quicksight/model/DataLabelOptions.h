@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DataLabelOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API DataLabelOptions
+  class DataLabelOptions
   {
   public:
-    DataLabelOptions();
-    DataLabelOptions(Aws::Utils::Json::JsonView jsonValue);
-    DataLabelOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API DataLabelOptions();
+    AWS_QUICKSIGHT_API DataLabelOptions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API DataLabelOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

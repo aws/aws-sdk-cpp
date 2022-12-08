@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/GuardianAttributes">AWS
    * API Reference</a></p>
    */
-  class AWS_SESV2_API GuardianAttributes
+  class GuardianAttributes
   {
   public:
-    GuardianAttributes();
-    GuardianAttributes(Aws::Utils::Json::JsonView jsonValue);
-    GuardianAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SESV2_API GuardianAttributes();
+    AWS_SESV2_API GuardianAttributes(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SESV2_API GuardianAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SESV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

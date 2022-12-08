@@ -25,12 +25,12 @@ namespace ElastiCache
 {
 namespace Model
 {
-  class AWS_ELASTICACHE_API IncreaseReplicaCountResult
+  class IncreaseReplicaCountResult
   {
   public:
-    IncreaseReplicaCountResult();
-    IncreaseReplicaCountResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    IncreaseReplicaCountResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ELASTICACHE_API IncreaseReplicaCountResult();
+    AWS_ELASTICACHE_API IncreaseReplicaCountResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ELASTICACHE_API IncreaseReplicaCountResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     

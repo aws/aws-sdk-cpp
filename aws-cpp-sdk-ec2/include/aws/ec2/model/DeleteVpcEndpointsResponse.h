@@ -31,12 +31,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVpcEndpointsResult">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API DeleteVpcEndpointsResponse
+  class DeleteVpcEndpointsResponse
   {
   public:
-    DeleteVpcEndpointsResponse();
-    DeleteVpcEndpointsResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DeleteVpcEndpointsResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API DeleteVpcEndpointsResponse();
+    AWS_EC2_API DeleteVpcEndpointsResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API DeleteVpcEndpointsResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

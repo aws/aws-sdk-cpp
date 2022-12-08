@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mwaa-2020-07-01/NetworkConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_MWAA_API NetworkConfiguration
+  class NetworkConfiguration
   {
   public:
-    NetworkConfiguration();
-    NetworkConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    NetworkConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MWAA_API NetworkConfiguration();
+    AWS_MWAA_API NetworkConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MWAA_API NetworkConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MWAA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

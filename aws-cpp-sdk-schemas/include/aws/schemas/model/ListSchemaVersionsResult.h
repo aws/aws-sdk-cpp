@@ -26,12 +26,12 @@ namespace Schemas
 {
 namespace Model
 {
-  class AWS_SCHEMAS_API ListSchemaVersionsResult
+  class ListSchemaVersionsResult
   {
   public:
-    ListSchemaVersionsResult();
-    ListSchemaVersionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListSchemaVersionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SCHEMAS_API ListSchemaVersionsResult();
+    AWS_SCHEMAS_API ListSchemaVersionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SCHEMAS_API ListSchemaVersionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -43,13 +43,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ClusterServiceConnectDefaultsRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_ECS_API ClusterServiceConnectDefaultsRequest
+  class ClusterServiceConnectDefaultsRequest
   {
   public:
-    ClusterServiceConnectDefaultsRequest();
-    ClusterServiceConnectDefaultsRequest(Aws::Utils::Json::JsonView jsonValue);
-    ClusterServiceConnectDefaultsRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ECS_API ClusterServiceConnectDefaultsRequest();
+    AWS_ECS_API ClusterServiceConnectDefaultsRequest(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECS_API ClusterServiceConnectDefaultsRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/ApiKey">AWS
    * API Reference</a></p>
    */
-  class AWS_APIGATEWAY_API ApiKey
+  class ApiKey
   {
   public:
-    ApiKey();
-    ApiKey(Aws::Utils::Json::JsonView jsonValue);
-    ApiKey& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APIGATEWAY_API ApiKey();
+    AWS_APIGATEWAY_API ApiKey(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APIGATEWAY_API ApiKey& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APIGATEWAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

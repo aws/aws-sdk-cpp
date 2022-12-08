@@ -27,12 +27,12 @@ namespace Neptune
 {
 namespace Model
 {
-  class AWS_NEPTUNE_API DescribeDBClusterParameterGroupsResult
+  class DescribeDBClusterParameterGroupsResult
   {
   public:
-    DescribeDBClusterParameterGroupsResult();
-    DescribeDBClusterParameterGroupsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeDBClusterParameterGroupsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_NEPTUNE_API DescribeDBClusterParameterGroupsResult();
+    AWS_NEPTUNE_API DescribeDBClusterParameterGroupsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_NEPTUNE_API DescribeDBClusterParameterGroupsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

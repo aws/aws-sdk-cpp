@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/resource-explorer-2-2022-07-28/BatchGetViewError">AWS
    * API Reference</a></p>
    */
-  class AWS_RESOURCEEXPLORER2_API BatchGetViewError
+  class BatchGetViewError
   {
   public:
-    BatchGetViewError();
-    BatchGetViewError(Aws::Utils::Json::JsonView jsonValue);
-    BatchGetViewError& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_RESOURCEEXPLORER2_API BatchGetViewError();
+    AWS_RESOURCEEXPLORER2_API BatchGetViewError(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RESOURCEEXPLORER2_API BatchGetViewError& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RESOURCEEXPLORER2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

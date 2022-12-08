@@ -30,12 +30,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/ListDedicatedIpPoolsResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINTEMAIL_API ListDedicatedIpPoolsResult
+  class ListDedicatedIpPoolsResult
   {
   public:
-    ListDedicatedIpPoolsResult();
-    ListDedicatedIpPoolsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListDedicatedIpPoolsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PINPOINTEMAIL_API ListDedicatedIpPoolsResult();
+    AWS_PINPOINTEMAIL_API ListDedicatedIpPoolsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PINPOINTEMAIL_API ListDedicatedIpPoolsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

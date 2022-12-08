@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/IosClientBrandingAttributes">AWS
    * API Reference</a></p>
    */
-  class AWS_WORKSPACES_API IosClientBrandingAttributes
+  class IosClientBrandingAttributes
   {
   public:
-    IosClientBrandingAttributes();
-    IosClientBrandingAttributes(Aws::Utils::Json::JsonView jsonValue);
-    IosClientBrandingAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WORKSPACES_API IosClientBrandingAttributes();
+    AWS_WORKSPACES_API IosClientBrandingAttributes(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKSPACES_API IosClientBrandingAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

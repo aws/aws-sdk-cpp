@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ChildWorkflowExecutionTimedOutEventAttributes">AWS
    * API Reference</a></p>
    */
-  class AWS_SWF_API ChildWorkflowExecutionTimedOutEventAttributes
+  class ChildWorkflowExecutionTimedOutEventAttributes
   {
   public:
-    ChildWorkflowExecutionTimedOutEventAttributes();
-    ChildWorkflowExecutionTimedOutEventAttributes(Aws::Utils::Json::JsonView jsonValue);
-    ChildWorkflowExecutionTimedOutEventAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SWF_API ChildWorkflowExecutionTimedOutEventAttributes();
+    AWS_SWF_API ChildWorkflowExecutionTimedOutEventAttributes(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SWF_API ChildWorkflowExecutionTimedOutEventAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SWF_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

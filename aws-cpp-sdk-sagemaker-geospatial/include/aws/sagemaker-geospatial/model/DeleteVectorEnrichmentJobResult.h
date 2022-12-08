@@ -22,12 +22,12 @@ namespace SageMakerGeospatial
 {
 namespace Model
 {
-  class AWS_SAGEMAKERGEOSPATIAL_API DeleteVectorEnrichmentJobResult
+  class DeleteVectorEnrichmentJobResult
   {
   public:
-    DeleteVectorEnrichmentJobResult();
-    DeleteVectorEnrichmentJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteVectorEnrichmentJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SAGEMAKERGEOSPATIAL_API DeleteVectorEnrichmentJobResult();
+    AWS_SAGEMAKERGEOSPATIAL_API DeleteVectorEnrichmentJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SAGEMAKERGEOSPATIAL_API DeleteVectorEnrichmentJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

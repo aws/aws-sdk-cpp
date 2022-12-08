@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/Compatibility">AWS
    * API Reference</a></p>
    */
-  class AWS_EKS_API Compatibility
+  class Compatibility
   {
   public:
-    Compatibility();
-    Compatibility(Aws::Utils::Json::JsonView jsonValue);
-    Compatibility& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EKS_API Compatibility();
+    AWS_EKS_API Compatibility(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EKS_API Compatibility& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EKS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

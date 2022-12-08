@@ -29,12 +29,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CancelArchivalOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_STORAGEGATEWAY_API CancelArchivalResult
+  class CancelArchivalResult
   {
   public:
-    CancelArchivalResult();
-    CancelArchivalResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CancelArchivalResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_STORAGEGATEWAY_API CancelArchivalResult();
+    AWS_STORAGEGATEWAY_API CancelArchivalResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_STORAGEGATEWAY_API CancelArchivalResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

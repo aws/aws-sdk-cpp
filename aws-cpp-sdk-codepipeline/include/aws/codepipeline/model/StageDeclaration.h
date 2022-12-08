@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/StageDeclaration">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEPIPELINE_API StageDeclaration
+  class StageDeclaration
   {
   public:
-    StageDeclaration();
-    StageDeclaration(Aws::Utils::Json::JsonView jsonValue);
-    StageDeclaration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEPIPELINE_API StageDeclaration();
+    AWS_CODEPIPELINE_API StageDeclaration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEPIPELINE_API StageDeclaration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -26,12 +26,12 @@ namespace AuditManager
 {
 namespace Model
 {
-  class AWS_AUDITMANAGER_API BatchAssociateAssessmentReportEvidenceResult
+  class BatchAssociateAssessmentReportEvidenceResult
   {
   public:
-    BatchAssociateAssessmentReportEvidenceResult();
-    BatchAssociateAssessmentReportEvidenceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    BatchAssociateAssessmentReportEvidenceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_AUDITMANAGER_API BatchAssociateAssessmentReportEvidenceResult();
+    AWS_AUDITMANAGER_API BatchAssociateAssessmentReportEvidenceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_AUDITMANAGER_API BatchAssociateAssessmentReportEvidenceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

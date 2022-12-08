@@ -26,12 +26,12 @@ namespace SavingsPlans
 {
 namespace Model
 {
-  class AWS_SAVINGSPLANS_API DescribeSavingsPlansResult
+  class DescribeSavingsPlansResult
   {
   public:
-    DescribeSavingsPlansResult();
-    DescribeSavingsPlansResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeSavingsPlansResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SAVINGSPLANS_API DescribeSavingsPlansResult();
+    AWS_SAVINGSPLANS_API DescribeSavingsPlansResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SAVINGSPLANS_API DescribeSavingsPlansResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/IdentityProviderDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_TRANSFER_API IdentityProviderDetails
+  class IdentityProviderDetails
   {
   public:
-    IdentityProviderDetails();
-    IdentityProviderDetails(Aws::Utils::Json::JsonView jsonValue);
-    IdentityProviderDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TRANSFER_API IdentityProviderDetails();
+    AWS_TRANSFER_API IdentityProviderDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSFER_API IdentityProviderDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSFER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

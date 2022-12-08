@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/FreeTrialInfoError">AWS
    * API Reference</a></p>
    */
-  class AWS_INSPECTOR2_API FreeTrialInfoError
+  class FreeTrialInfoError
   {
   public:
-    FreeTrialInfoError();
-    FreeTrialInfoError(Aws::Utils::Json::JsonView jsonValue);
-    FreeTrialInfoError& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_INSPECTOR2_API FreeTrialInfoError();
+    AWS_INSPECTOR2_API FreeTrialInfoError(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR2_API FreeTrialInfoError& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

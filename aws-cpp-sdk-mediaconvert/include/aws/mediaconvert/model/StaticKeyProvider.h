@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/StaticKeyProvider">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API StaticKeyProvider
+  class StaticKeyProvider
   {
   public:
-    StaticKeyProvider();
-    StaticKeyProvider(Aws::Utils::Json::JsonView jsonValue);
-    StaticKeyProvider& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API StaticKeyProvider();
+    AWS_MEDIACONVERT_API StaticKeyProvider(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API StaticKeyProvider& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

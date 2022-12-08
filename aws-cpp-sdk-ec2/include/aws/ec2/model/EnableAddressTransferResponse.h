@@ -25,12 +25,12 @@ namespace EC2
 {
 namespace Model
 {
-  class AWS_EC2_API EnableAddressTransferResponse
+  class EnableAddressTransferResponse
   {
   public:
-    EnableAddressTransferResponse();
-    EnableAddressTransferResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    EnableAddressTransferResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API EnableAddressTransferResponse();
+    AWS_EC2_API EnableAddressTransferResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API EnableAddressTransferResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

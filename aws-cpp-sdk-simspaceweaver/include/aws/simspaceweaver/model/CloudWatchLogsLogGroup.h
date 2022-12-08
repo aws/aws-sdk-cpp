@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/simspaceweaver-2022-10-28/CloudWatchLogsLogGroup">AWS
    * API Reference</a></p>
    */
-  class AWS_SIMSPACEWEAVER_API CloudWatchLogsLogGroup
+  class CloudWatchLogsLogGroup
   {
   public:
-    CloudWatchLogsLogGroup();
-    CloudWatchLogsLogGroup(Aws::Utils::Json::JsonView jsonValue);
-    CloudWatchLogsLogGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SIMSPACEWEAVER_API CloudWatchLogsLogGroup();
+    AWS_SIMSPACEWEAVER_API CloudWatchLogsLogGroup(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SIMSPACEWEAVER_API CloudWatchLogsLogGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SIMSPACEWEAVER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

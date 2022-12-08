@@ -39,13 +39,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/RegexMatchSetUpdate">AWS
    * API Reference</a></p>
    */
-  class AWS_WAF_API RegexMatchSetUpdate
+  class RegexMatchSetUpdate
   {
   public:
-    RegexMatchSetUpdate();
-    RegexMatchSetUpdate(Aws::Utils::Json::JsonView jsonValue);
-    RegexMatchSetUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WAF_API RegexMatchSetUpdate();
+    AWS_WAF_API RegexMatchSetUpdate(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAF_API RegexMatchSetUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAF_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

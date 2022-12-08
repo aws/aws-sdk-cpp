@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/MeshServiceDiscovery">AWS
    * API Reference</a></p>
    */
-  class AWS_APPMESH_API MeshServiceDiscovery
+  class MeshServiceDiscovery
   {
   public:
-    MeshServiceDiscovery();
-    MeshServiceDiscovery(Aws::Utils::Json::JsonView jsonValue);
-    MeshServiceDiscovery& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPMESH_API MeshServiceDiscovery();
+    AWS_APPMESH_API MeshServiceDiscovery(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API MeshServiceDiscovery& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

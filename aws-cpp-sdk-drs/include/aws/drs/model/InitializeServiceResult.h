@@ -22,12 +22,12 @@ namespace drs
 {
 namespace Model
 {
-  class AWS_DRS_API InitializeServiceResult
+  class InitializeServiceResult
   {
   public:
-    InitializeServiceResult();
-    InitializeServiceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    InitializeServiceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DRS_API InitializeServiceResult();
+    AWS_DRS_API InitializeServiceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DRS_API InitializeServiceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

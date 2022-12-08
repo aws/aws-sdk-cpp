@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/XavcHdProfileSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API XavcHdProfileSettings
+  class XavcHdProfileSettings
   {
   public:
-    XavcHdProfileSettings();
-    XavcHdProfileSettings(Aws::Utils::Json::JsonView jsonValue);
-    XavcHdProfileSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API XavcHdProfileSettings();
+    AWS_MEDIACONVERT_API XavcHdProfileSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API XavcHdProfileSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

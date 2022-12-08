@@ -36,15 +36,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ServiceConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API ServiceConfiguration
+  class ServiceConfiguration
   {
   public:
-    ServiceConfiguration();
-    ServiceConfiguration(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ServiceConfiguration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API ServiceConfiguration();
+    AWS_EC2_API ServiceConfiguration(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API ServiceConfiguration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**

@@ -37,13 +37,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/Notification">AWS
    * API Reference</a></p>
    */
-  class AWS_SNOWBALL_API Notification
+  class Notification
   {
   public:
-    Notification();
-    Notification(Aws::Utils::Json::JsonView jsonValue);
-    Notification& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SNOWBALL_API Notification();
+    AWS_SNOWBALL_API Notification(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SNOWBALL_API Notification& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SNOWBALL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

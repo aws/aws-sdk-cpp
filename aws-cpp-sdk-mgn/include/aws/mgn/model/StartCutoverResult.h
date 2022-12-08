@@ -24,12 +24,12 @@ namespace mgn
 {
 namespace Model
 {
-  class AWS_MGN_API StartCutoverResult
+  class StartCutoverResult
   {
   public:
-    StartCutoverResult();
-    StartCutoverResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    StartCutoverResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MGN_API StartCutoverResult();
+    AWS_MGN_API StartCutoverResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MGN_API StartCutoverResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

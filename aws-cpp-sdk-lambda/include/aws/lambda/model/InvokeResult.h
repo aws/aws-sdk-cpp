@@ -19,21 +19,21 @@ namespace Lambda
 {
 namespace Model
 {
-  class AWS_LAMBDA_API InvokeResult
+  class InvokeResult
   {
   public:
-    InvokeResult();
+    AWS_LAMBDA_API InvokeResult();
     //We have to define these because Microsoft doesn't auto generate them
-    InvokeResult(InvokeResult&&);
-    InvokeResult& operator=(InvokeResult&&);
+    AWS_LAMBDA_API InvokeResult(InvokeResult&&);
+    AWS_LAMBDA_API InvokeResult& operator=(InvokeResult&&);
     //we delete these because Microsoft doesn't handle move generation correctly
     //and we therefore don't trust them to get it right here either.
     InvokeResult(const InvokeResult&) = delete;
     InvokeResult& operator=(const InvokeResult&) = delete;
 
 
-    InvokeResult(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
-    InvokeResult& operator=(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
+    AWS_LAMBDA_API InvokeResult(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
+    AWS_LAMBDA_API InvokeResult& operator=(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
 
 
 

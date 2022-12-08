@@ -26,12 +26,12 @@ namespace SnowDeviceManagement
 {
 namespace Model
 {
-  class AWS_SNOWDEVICEMANAGEMENT_API ListExecutionsResult
+  class ListExecutionsResult
   {
   public:
-    ListExecutionsResult();
-    ListExecutionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListExecutionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SNOWDEVICEMANAGEMENT_API ListExecutionsResult();
+    AWS_SNOWDEVICEMANAGEMENT_API ListExecutionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SNOWDEVICEMANAGEMENT_API ListExecutionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -26,12 +26,12 @@ namespace RAM
 {
 namespace Model
 {
-  class AWS_RAM_API ListResourceTypesResult
+  class ListResourceTypesResult
   {
   public:
-    ListResourceTypesResult();
-    ListResourceTypesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListResourceTypesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_RAM_API ListResourceTypesResult();
+    AWS_RAM_API ListResourceTypesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_RAM_API ListResourceTypesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

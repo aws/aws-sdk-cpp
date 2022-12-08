@@ -41,15 +41,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/S3Action">AWS API
    * Reference</a></p>
    */
-  class AWS_SES_API S3Action
+  class S3Action
   {
   public:
-    S3Action();
-    S3Action(const Aws::Utils::Xml::XmlNode& xmlNode);
-    S3Action& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_SES_API S3Action();
+    AWS_SES_API S3Action(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_SES_API S3Action& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_SES_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_SES_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**

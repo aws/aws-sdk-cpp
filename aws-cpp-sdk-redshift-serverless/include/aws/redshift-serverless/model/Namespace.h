@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/Namespace">AWS
    * API Reference</a></p>
    */
-  class AWS_REDSHIFTSERVERLESS_API Namespace
+  class Namespace
   {
   public:
-    Namespace();
-    Namespace(Aws::Utils::Json::JsonView jsonValue);
-    Namespace& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_REDSHIFTSERVERLESS_API Namespace();
+    AWS_REDSHIFTSERVERLESS_API Namespace(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REDSHIFTSERVERLESS_API Namespace& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REDSHIFTSERVERLESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

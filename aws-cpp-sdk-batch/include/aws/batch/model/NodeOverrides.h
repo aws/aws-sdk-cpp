@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/NodeOverrides">AWS
    * API Reference</a></p>
    */
-  class AWS_BATCH_API NodeOverrides
+  class NodeOverrides
   {
   public:
-    NodeOverrides();
-    NodeOverrides(Aws::Utils::Json::JsonView jsonValue);
-    NodeOverrides& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BATCH_API NodeOverrides();
+    AWS_BATCH_API NodeOverrides(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BATCH_API NodeOverrides& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BATCH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

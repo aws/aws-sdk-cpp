@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/OAuthCredentials">AWS
    * API Reference</a></p>
    */
-  class AWS_APPFLOW_API OAuthCredentials
+  class OAuthCredentials
   {
   public:
-    OAuthCredentials();
-    OAuthCredentials(Aws::Utils::Json::JsonView jsonValue);
-    OAuthCredentials& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPFLOW_API OAuthCredentials();
+    AWS_APPFLOW_API OAuthCredentials(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API OAuthCredentials& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

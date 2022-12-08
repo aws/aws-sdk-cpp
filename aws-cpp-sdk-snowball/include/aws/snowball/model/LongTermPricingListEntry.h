@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/LongTermPricingListEntry">AWS
    * API Reference</a></p>
    */
-  class AWS_SNOWBALL_API LongTermPricingListEntry
+  class LongTermPricingListEntry
   {
   public:
-    LongTermPricingListEntry();
-    LongTermPricingListEntry(Aws::Utils::Json::JsonView jsonValue);
-    LongTermPricingListEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SNOWBALL_API LongTermPricingListEntry();
+    AWS_SNOWBALL_API LongTermPricingListEntry(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SNOWBALL_API LongTermPricingListEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SNOWBALL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

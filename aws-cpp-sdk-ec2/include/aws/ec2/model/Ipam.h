@@ -37,15 +37,15 @@ namespace Model
    * <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/Ipam">AWS API
    * Reference</a></p>
    */
-  class AWS_EC2_API Ipam
+  class Ipam
   {
   public:
-    Ipam();
-    Ipam(const Aws::Utils::Xml::XmlNode& xmlNode);
-    Ipam& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API Ipam();
+    AWS_EC2_API Ipam(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API Ipam& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**

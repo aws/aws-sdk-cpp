@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/EncryptionOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_MQ_API EncryptionOptions
+  class EncryptionOptions
   {
   public:
-    EncryptionOptions();
-    EncryptionOptions(Aws::Utils::Json::JsonView jsonValue);
-    EncryptionOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MQ_API EncryptionOptions();
+    AWS_MQ_API EncryptionOptions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MQ_API EncryptionOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MQ_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

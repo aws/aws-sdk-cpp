@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/TableFieldWells">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API TableFieldWells
+  class TableFieldWells
   {
   public:
-    TableFieldWells();
-    TableFieldWells(Aws::Utils::Json::JsonView jsonValue);
-    TableFieldWells& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API TableFieldWells();
+    AWS_QUICKSIGHT_API TableFieldWells(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API TableFieldWells& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

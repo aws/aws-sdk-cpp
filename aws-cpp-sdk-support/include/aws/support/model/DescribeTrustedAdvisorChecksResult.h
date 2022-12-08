@@ -31,12 +31,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeTrustedAdvisorChecksResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_SUPPORT_API DescribeTrustedAdvisorChecksResult
+  class DescribeTrustedAdvisorChecksResult
   {
   public:
-    DescribeTrustedAdvisorChecksResult();
-    DescribeTrustedAdvisorChecksResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeTrustedAdvisorChecksResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SUPPORT_API DescribeTrustedAdvisorChecksResult();
+    AWS_SUPPORT_API DescribeTrustedAdvisorChecksResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SUPPORT_API DescribeTrustedAdvisorChecksResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

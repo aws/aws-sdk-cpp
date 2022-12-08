@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CloudwatchMetricAction">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API CloudwatchMetricAction
+  class CloudwatchMetricAction
   {
   public:
-    CloudwatchMetricAction();
-    CloudwatchMetricAction(Aws::Utils::Json::JsonView jsonValue);
-    CloudwatchMetricAction& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API CloudwatchMetricAction();
+    AWS_IOT_API CloudwatchMetricAction(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API CloudwatchMetricAction& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

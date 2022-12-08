@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/panorama-2019-07-24/NetworkPayload">AWS
    * API Reference</a></p>
    */
-  class AWS_PANORAMA_API NetworkPayload
+  class NetworkPayload
   {
   public:
-    NetworkPayload();
-    NetworkPayload(Aws::Utils::Json::JsonView jsonValue);
-    NetworkPayload& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PANORAMA_API NetworkPayload();
+    AWS_PANORAMA_API NetworkPayload(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PANORAMA_API NetworkPayload& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PANORAMA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

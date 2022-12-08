@@ -22,12 +22,12 @@ namespace SageMakerGeospatial
 {
 namespace Model
 {
-  class AWS_SAGEMAKERGEOSPATIAL_API StopVectorEnrichmentJobResult
+  class StopVectorEnrichmentJobResult
   {
   public:
-    StopVectorEnrichmentJobResult();
-    StopVectorEnrichmentJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    StopVectorEnrichmentJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SAGEMAKERGEOSPATIAL_API StopVectorEnrichmentJobResult();
+    AWS_SAGEMAKERGEOSPATIAL_API StopVectorEnrichmentJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SAGEMAKERGEOSPATIAL_API StopVectorEnrichmentJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

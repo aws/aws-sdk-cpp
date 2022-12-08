@@ -28,12 +28,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutConfigurationSetTrackingOptionsResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_SESV2_API PutConfigurationSetTrackingOptionsResult
+  class PutConfigurationSetTrackingOptionsResult
   {
   public:
-    PutConfigurationSetTrackingOptionsResult();
-    PutConfigurationSetTrackingOptionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PutConfigurationSetTrackingOptionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SESV2_API PutConfigurationSetTrackingOptionsResult();
+    AWS_SESV2_API PutConfigurationSetTrackingOptionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SESV2_API PutConfigurationSetTrackingOptionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

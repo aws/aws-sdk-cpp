@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/EntityLabel">AWS
    * API Reference</a></p>
    */
-  class AWS_COMPREHEND_API EntityLabel
+  class EntityLabel
   {
   public:
-    EntityLabel();
-    EntityLabel(Aws::Utils::Json::JsonView jsonValue);
-    EntityLabel& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COMPREHEND_API EntityLabel();
+    AWS_COMPREHEND_API EntityLabel(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHEND_API EntityLabel& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHEND_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/BrokerSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_MQ_API BrokerSummary
+  class BrokerSummary
   {
   public:
-    BrokerSummary();
-    BrokerSummary(Aws::Utils::Json::JsonView jsonValue);
-    BrokerSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MQ_API BrokerSummary();
+    AWS_MQ_API BrokerSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MQ_API BrokerSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MQ_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

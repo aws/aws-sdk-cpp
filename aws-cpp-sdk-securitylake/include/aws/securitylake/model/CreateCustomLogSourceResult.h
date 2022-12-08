@@ -24,12 +24,12 @@ namespace SecurityLake
 {
 namespace Model
 {
-  class AWS_SECURITYLAKE_API CreateCustomLogSourceResult
+  class CreateCustomLogSourceResult
   {
   public:
-    CreateCustomLogSourceResult();
-    CreateCustomLogSourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateCustomLogSourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SECURITYLAKE_API CreateCustomLogSourceResult();
+    AWS_SECURITYLAKE_API CreateCustomLogSourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SECURITYLAKE_API CreateCustomLogSourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

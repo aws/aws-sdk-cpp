@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/HyperParameterTrainingJobSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API HyperParameterTrainingJobSummary
+  class HyperParameterTrainingJobSummary
   {
   public:
-    HyperParameterTrainingJobSummary();
-    HyperParameterTrainingJobSummary(Aws::Utils::Json::JsonView jsonValue);
-    HyperParameterTrainingJobSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API HyperParameterTrainingJobSummary();
+    AWS_SAGEMAKER_API HyperParameterTrainingJobSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API HyperParameterTrainingJobSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

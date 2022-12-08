@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ProductInformationFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_LICENSEMANAGER_API ProductInformationFilter
+  class ProductInformationFilter
   {
   public:
-    ProductInformationFilter();
-    ProductInformationFilter(Aws::Utils::Json::JsonView jsonValue);
-    ProductInformationFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LICENSEMANAGER_API ProductInformationFilter();
+    AWS_LICENSEMANAGER_API ProductInformationFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LICENSEMANAGER_API ProductInformationFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LICENSEMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/SuperuserParameters">AWS
    * API Reference</a></p>
    */
-  class AWS_FINSPACE_API SuperuserParameters
+  class SuperuserParameters
   {
   public:
-    SuperuserParameters();
-    SuperuserParameters(Aws::Utils::Json::JsonView jsonValue);
-    SuperuserParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FINSPACE_API SuperuserParameters();
+    AWS_FINSPACE_API SuperuserParameters(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FINSPACE_API SuperuserParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FINSPACE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

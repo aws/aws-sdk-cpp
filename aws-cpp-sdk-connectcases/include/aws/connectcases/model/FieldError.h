@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/FieldError">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECTCASES_API FieldError
+  class FieldError
   {
   public:
-    FieldError();
-    FieldError(Aws::Utils::Json::JsonView jsonValue);
-    FieldError& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECTCASES_API FieldError();
+    AWS_CONNECTCASES_API FieldError(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTCASES_API FieldError& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTCASES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

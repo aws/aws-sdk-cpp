@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsDynamoDbTableProjection">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsDynamoDbTableProjection
+  class AwsDynamoDbTableProjection
   {
   public:
-    AwsDynamoDbTableProjection();
-    AwsDynamoDbTableProjection(Aws::Utils::Json::JsonView jsonValue);
-    AwsDynamoDbTableProjection& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsDynamoDbTableProjection();
+    AWS_SECURITYHUB_API AwsDynamoDbTableProjection(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsDynamoDbTableProjection& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

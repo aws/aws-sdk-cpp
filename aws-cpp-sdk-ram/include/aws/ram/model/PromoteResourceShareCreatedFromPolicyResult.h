@@ -22,12 +22,12 @@ namespace RAM
 {
 namespace Model
 {
-  class AWS_RAM_API PromoteResourceShareCreatedFromPolicyResult
+  class PromoteResourceShareCreatedFromPolicyResult
   {
   public:
-    PromoteResourceShareCreatedFromPolicyResult();
-    PromoteResourceShareCreatedFromPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PromoteResourceShareCreatedFromPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_RAM_API PromoteResourceShareCreatedFromPolicyResult();
+    AWS_RAM_API PromoteResourceShareCreatedFromPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_RAM_API PromoteResourceShareCreatedFromPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

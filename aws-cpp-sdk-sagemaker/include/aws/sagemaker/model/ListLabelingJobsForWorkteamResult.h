@@ -26,12 +26,12 @@ namespace SageMaker
 {
 namespace Model
 {
-  class AWS_SAGEMAKER_API ListLabelingJobsForWorkteamResult
+  class ListLabelingJobsForWorkteamResult
   {
   public:
-    ListLabelingJobsForWorkteamResult();
-    ListLabelingJobsForWorkteamResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListLabelingJobsForWorkteamResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SAGEMAKER_API ListLabelingJobsForWorkteamResult();
+    AWS_SAGEMAKER_API ListLabelingJobsForWorkteamResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SAGEMAKER_API ListLabelingJobsForWorkteamResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -22,12 +22,12 @@ namespace AutoScalingPlans
 {
 namespace Model
 {
-  class AWS_AUTOSCALINGPLANS_API DeleteScalingPlanResult
+  class DeleteScalingPlanResult
   {
   public:
-    DeleteScalingPlanResult();
-    DeleteScalingPlanResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteScalingPlanResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_AUTOSCALINGPLANS_API DeleteScalingPlanResult();
+    AWS_AUTOSCALINGPLANS_API DeleteScalingPlanResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_AUTOSCALINGPLANS_API DeleteScalingPlanResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

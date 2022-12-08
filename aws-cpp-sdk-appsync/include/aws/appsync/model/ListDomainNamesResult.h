@@ -26,12 +26,12 @@ namespace AppSync
 {
 namespace Model
 {
-  class AWS_APPSYNC_API ListDomainNamesResult
+  class ListDomainNamesResult
   {
   public:
-    ListDomainNamesResult();
-    ListDomainNamesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListDomainNamesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPSYNC_API ListDomainNamesResult();
+    AWS_APPSYNC_API ListDomainNamesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPSYNC_API ListDomainNamesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

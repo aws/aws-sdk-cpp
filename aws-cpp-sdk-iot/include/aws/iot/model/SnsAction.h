@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/SnsAction">AWS API
    * Reference</a></p>
    */
-  class AWS_IOT_API SnsAction
+  class SnsAction
   {
   public:
-    SnsAction();
-    SnsAction(Aws::Utils::Json::JsonView jsonValue);
-    SnsAction& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API SnsAction();
+    AWS_IOT_API SnsAction(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API SnsAction& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

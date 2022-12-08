@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_IOTROBORUNNER_API UpdateSiteRequest : public IoTRoboRunnerRequest
+  class UpdateSiteRequest : public IoTRoboRunnerRequest
   {
   public:
-    UpdateSiteRequest();
+    AWS_IOTROBORUNNER_API UpdateSiteRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,7 +29,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateSite"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_IOTROBORUNNER_API Aws::String SerializePayload() const override;
 
 
     

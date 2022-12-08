@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/LineChartLineStyleSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API LineChartLineStyleSettings
+  class LineChartLineStyleSettings
   {
   public:
-    LineChartLineStyleSettings();
-    LineChartLineStyleSettings(Aws::Utils::Json::JsonView jsonValue);
-    LineChartLineStyleSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API LineChartLineStyleSettings();
+    AWS_QUICKSIGHT_API LineChartLineStyleSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API LineChartLineStyleSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

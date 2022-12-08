@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsWafRegionalWebAclDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsWafRegionalWebAclDetails
+  class AwsWafRegionalWebAclDetails
   {
   public:
-    AwsWafRegionalWebAclDetails();
-    AwsWafRegionalWebAclDetails(Aws::Utils::Json::JsonView jsonValue);
-    AwsWafRegionalWebAclDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsWafRegionalWebAclDetails();
+    AWS_SECURITYHUB_API AwsWafRegionalWebAclDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsWafRegionalWebAclDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

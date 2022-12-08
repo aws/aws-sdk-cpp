@@ -24,21 +24,21 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-data-2015-05-28/UpdateThingShadowResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTDATAPLANE_API UpdateThingShadowResult
+  class UpdateThingShadowResult
   {
   public:
-    UpdateThingShadowResult();
+    AWS_IOTDATAPLANE_API UpdateThingShadowResult();
     //We have to define these because Microsoft doesn't auto generate them
-    UpdateThingShadowResult(UpdateThingShadowResult&&);
-    UpdateThingShadowResult& operator=(UpdateThingShadowResult&&);
+    AWS_IOTDATAPLANE_API UpdateThingShadowResult(UpdateThingShadowResult&&);
+    AWS_IOTDATAPLANE_API UpdateThingShadowResult& operator=(UpdateThingShadowResult&&);
     //we delete these because Microsoft doesn't handle move generation correctly
     //and we therefore don't trust them to get it right here either.
     UpdateThingShadowResult(const UpdateThingShadowResult&) = delete;
     UpdateThingShadowResult& operator=(const UpdateThingShadowResult&) = delete;
 
 
-    UpdateThingShadowResult(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
-    UpdateThingShadowResult& operator=(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
+    AWS_IOTDATAPLANE_API UpdateThingShadowResult(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
+    AWS_IOTDATAPLANE_API UpdateThingShadowResult& operator=(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
 
 
 

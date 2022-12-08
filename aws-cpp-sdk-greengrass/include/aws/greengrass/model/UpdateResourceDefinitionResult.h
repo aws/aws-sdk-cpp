@@ -22,12 +22,12 @@ namespace Greengrass
 {
 namespace Model
 {
-  class AWS_GREENGRASS_API UpdateResourceDefinitionResult
+  class UpdateResourceDefinitionResult
   {
   public:
-    UpdateResourceDefinitionResult();
-    UpdateResourceDefinitionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateResourceDefinitionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GREENGRASS_API UpdateResourceDefinitionResult();
+    AWS_GREENGRASS_API UpdateResourceDefinitionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GREENGRASS_API UpdateResourceDefinitionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

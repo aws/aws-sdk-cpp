@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/ValueMapping">AWS
    * API Reference</a></p>
    */
-  class AWS_AMPLIFYUIBUILDER_API ValueMapping
+  class ValueMapping
   {
   public:
-    ValueMapping();
-    ValueMapping(Aws::Utils::Json::JsonView jsonValue);
-    ValueMapping& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_AMPLIFYUIBUILDER_API ValueMapping();
+    AWS_AMPLIFYUIBUILDER_API ValueMapping(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFYUIBUILDER_API ValueMapping& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFYUIBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

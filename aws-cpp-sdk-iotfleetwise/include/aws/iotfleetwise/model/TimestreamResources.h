@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/TimestreamResources">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTFLEETWISE_API TimestreamResources
+  class TimestreamResources
   {
   public:
-    TimestreamResources();
-    TimestreamResources(Aws::Utils::Json::JsonView jsonValue);
-    TimestreamResources& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTFLEETWISE_API TimestreamResources();
+    AWS_IOTFLEETWISE_API TimestreamResources(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTFLEETWISE_API TimestreamResources& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTFLEETWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

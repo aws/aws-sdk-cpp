@@ -24,12 +24,12 @@ namespace WorkMail
 {
 namespace Model
 {
-  class AWS_WORKMAIL_API CreateMobileDeviceAccessRuleResult
+  class CreateMobileDeviceAccessRuleResult
   {
   public:
-    CreateMobileDeviceAccessRuleResult();
-    CreateMobileDeviceAccessRuleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateMobileDeviceAccessRuleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WORKMAIL_API CreateMobileDeviceAccessRuleResult();
+    AWS_WORKMAIL_API CreateMobileDeviceAccessRuleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WORKMAIL_API CreateMobileDeviceAccessRuleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

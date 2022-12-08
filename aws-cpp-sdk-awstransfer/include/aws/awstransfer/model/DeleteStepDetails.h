@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DeleteStepDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_TRANSFER_API DeleteStepDetails
+  class DeleteStepDetails
   {
   public:
-    DeleteStepDetails();
-    DeleteStepDetails(Aws::Utils::Json::JsonView jsonValue);
-    DeleteStepDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TRANSFER_API DeleteStepDetails();
+    AWS_TRANSFER_API DeleteStepDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSFER_API DeleteStepDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSFER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

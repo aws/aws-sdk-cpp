@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/PredictorEvent">AWS
    * API Reference</a></p>
    */
-  class AWS_FORECASTSERVICE_API PredictorEvent
+  class PredictorEvent
   {
   public:
-    PredictorEvent();
-    PredictorEvent(Aws::Utils::Json::JsonView jsonValue);
-    PredictorEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FORECASTSERVICE_API PredictorEvent();
+    AWS_FORECASTSERVICE_API PredictorEvent(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FORECASTSERVICE_API PredictorEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FORECASTSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

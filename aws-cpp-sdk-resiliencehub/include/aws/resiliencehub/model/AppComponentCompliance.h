@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/AppComponentCompliance">AWS
    * API Reference</a></p>
    */
-  class AWS_RESILIENCEHUB_API AppComponentCompliance
+  class AppComponentCompliance
   {
   public:
-    AppComponentCompliance();
-    AppComponentCompliance(Aws::Utils::Json::JsonView jsonValue);
-    AppComponentCompliance& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_RESILIENCEHUB_API AppComponentCompliance();
+    AWS_RESILIENCEHUB_API AppComponentCompliance(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RESILIENCEHUB_API AppComponentCompliance& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RESILIENCEHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

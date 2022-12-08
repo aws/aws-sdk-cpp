@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotfleethub-2020-11-03/ApplicationSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTFLEETHUB_API ApplicationSummary
+  class ApplicationSummary
   {
   public:
-    ApplicationSummary();
-    ApplicationSummary(Aws::Utils::Json::JsonView jsonValue);
-    ApplicationSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTFLEETHUB_API ApplicationSummary();
+    AWS_IOTFLEETHUB_API ApplicationSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTFLEETHUB_API ApplicationSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTFLEETHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

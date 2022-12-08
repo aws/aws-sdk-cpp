@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/BackendAuthSocialProviderConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_AMPLIFYBACKEND_API BackendAuthSocialProviderConfig
+  class BackendAuthSocialProviderConfig
   {
   public:
-    BackendAuthSocialProviderConfig();
-    BackendAuthSocialProviderConfig(Aws::Utils::Json::JsonView jsonValue);
-    BackendAuthSocialProviderConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_AMPLIFYBACKEND_API BackendAuthSocialProviderConfig();
+    AWS_AMPLIFYBACKEND_API BackendAuthSocialProviderConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFYBACKEND_API BackendAuthSocialProviderConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFYBACKEND_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

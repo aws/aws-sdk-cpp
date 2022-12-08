@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotdeviceadvisor-2020-09-18/GroupResult">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTDEVICEADVISOR_API GroupResult
+  class GroupResult
   {
   public:
-    GroupResult();
-    GroupResult(Aws::Utils::Json::JsonView jsonValue);
-    GroupResult& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTDEVICEADVISOR_API GroupResult();
+    AWS_IOTDEVICEADVISOR_API GroupResult(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTDEVICEADVISOR_API GroupResult& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTDEVICEADVISOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

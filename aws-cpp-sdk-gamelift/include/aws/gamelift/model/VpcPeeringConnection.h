@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/VpcPeeringConnection">AWS
    * API Reference</a></p>
    */
-  class AWS_GAMELIFT_API VpcPeeringConnection
+  class VpcPeeringConnection
   {
   public:
-    VpcPeeringConnection();
-    VpcPeeringConnection(Aws::Utils::Json::JsonView jsonValue);
-    VpcPeeringConnection& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GAMELIFT_API VpcPeeringConnection();
+    AWS_GAMELIFT_API VpcPeeringConnection(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMELIFT_API VpcPeeringConnection& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

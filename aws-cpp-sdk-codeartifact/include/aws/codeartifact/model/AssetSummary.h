@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/AssetSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEARTIFACT_API AssetSummary
+  class AssetSummary
   {
   public:
-    AssetSummary();
-    AssetSummary(Aws::Utils::Json::JsonView jsonValue);
-    AssetSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEARTIFACT_API AssetSummary();
+    AWS_CODEARTIFACT_API AssetSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEARTIFACT_API AssetSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEARTIFACT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pipes-2015-10-07/PipeTargetStateMachineParameters">AWS
    * API Reference</a></p>
    */
-  class AWS_PIPES_API PipeTargetStateMachineParameters
+  class PipeTargetStateMachineParameters
   {
   public:
-    PipeTargetStateMachineParameters();
-    PipeTargetStateMachineParameters(Aws::Utils::Json::JsonView jsonValue);
-    PipeTargetStateMachineParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PIPES_API PipeTargetStateMachineParameters();
+    AWS_PIPES_API PipeTargetStateMachineParameters(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PIPES_API PipeTargetStateMachineParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PIPES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

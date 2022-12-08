@@ -30,12 +30,12 @@ namespace AppConfig
 {
 namespace Model
 {
-  class AWS_APPCONFIG_API StopDeploymentResult
+  class StopDeploymentResult
   {
   public:
-    StopDeploymentResult();
-    StopDeploymentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    StopDeploymentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPCONFIG_API StopDeploymentResult();
+    AWS_APPCONFIG_API StopDeploymentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPCONFIG_API StopDeploymentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/AuroraPostgreSqlParameters">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API AuroraPostgreSqlParameters
+  class AuroraPostgreSqlParameters
   {
   public:
-    AuroraPostgreSqlParameters();
-    AuroraPostgreSqlParameters(Aws::Utils::Json::JsonView jsonValue);
-    AuroraPostgreSqlParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API AuroraPostgreSqlParameters();
+    AWS_QUICKSIGHT_API AuroraPostgreSqlParameters(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API AuroraPostgreSqlParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

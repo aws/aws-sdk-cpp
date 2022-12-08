@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/PendingDeploymentSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API PendingDeploymentSummary
+  class PendingDeploymentSummary
   {
   public:
-    PendingDeploymentSummary();
-    PendingDeploymentSummary(Aws::Utils::Json::JsonView jsonValue);
-    PendingDeploymentSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API PendingDeploymentSummary();
+    AWS_SAGEMAKER_API PendingDeploymentSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API PendingDeploymentSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

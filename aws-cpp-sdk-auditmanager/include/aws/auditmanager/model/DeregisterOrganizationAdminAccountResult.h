@@ -22,12 +22,12 @@ namespace AuditManager
 {
 namespace Model
 {
-  class AWS_AUDITMANAGER_API DeregisterOrganizationAdminAccountResult
+  class DeregisterOrganizationAdminAccountResult
   {
   public:
-    DeregisterOrganizationAdminAccountResult();
-    DeregisterOrganizationAdminAccountResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeregisterOrganizationAdminAccountResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_AUDITMANAGER_API DeregisterOrganizationAdminAccountResult();
+    AWS_AUDITMANAGER_API DeregisterOrganizationAdminAccountResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_AUDITMANAGER_API DeregisterOrganizationAdminAccountResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

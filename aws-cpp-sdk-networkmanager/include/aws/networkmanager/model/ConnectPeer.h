@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ConnectPeer">AWS
    * API Reference</a></p>
    */
-  class AWS_NETWORKMANAGER_API ConnectPeer
+  class ConnectPeer
   {
   public:
-    ConnectPeer();
-    ConnectPeer(Aws::Utils::Json::JsonView jsonValue);
-    ConnectPeer& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_NETWORKMANAGER_API ConnectPeer();
+    AWS_NETWORKMANAGER_API ConnectPeer(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKMANAGER_API ConnectPeer& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

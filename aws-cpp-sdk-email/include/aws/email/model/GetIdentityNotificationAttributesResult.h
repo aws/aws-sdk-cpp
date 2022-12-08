@@ -33,12 +33,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetIdentityNotificationAttributesResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_SES_API GetIdentityNotificationAttributesResult
+  class GetIdentityNotificationAttributesResult
   {
   public:
-    GetIdentityNotificationAttributesResult();
-    GetIdentityNotificationAttributesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    GetIdentityNotificationAttributesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_SES_API GetIdentityNotificationAttributesResult();
+    AWS_SES_API GetIdentityNotificationAttributesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_SES_API GetIdentityNotificationAttributesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

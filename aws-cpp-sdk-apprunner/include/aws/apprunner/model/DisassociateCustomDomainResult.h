@@ -27,12 +27,12 @@ namespace AppRunner
 {
 namespace Model
 {
-  class AWS_APPRUNNER_API DisassociateCustomDomainResult
+  class DisassociateCustomDomainResult
   {
   public:
-    DisassociateCustomDomainResult();
-    DisassociateCustomDomainResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DisassociateCustomDomainResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPRUNNER_API DisassociateCustomDomainResult();
+    AWS_APPRUNNER_API DisassociateCustomDomainResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPRUNNER_API DisassociateCustomDomainResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

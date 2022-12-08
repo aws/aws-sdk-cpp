@@ -44,13 +44,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/SqlInjectionMatchSet">AWS
    * API Reference</a></p>
    */
-  class AWS_WAF_API SqlInjectionMatchSet
+  class SqlInjectionMatchSet
   {
   public:
-    SqlInjectionMatchSet();
-    SqlInjectionMatchSet(Aws::Utils::Json::JsonView jsonValue);
-    SqlInjectionMatchSet& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WAF_API SqlInjectionMatchSet();
+    AWS_WAF_API SqlInjectionMatchSet(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAF_API SqlInjectionMatchSet& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAF_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

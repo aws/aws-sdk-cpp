@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/migrationhuborchestrator-2021-08-28/Tool">AWS
    * API Reference</a></p>
    */
-  class AWS_MIGRATIONHUBORCHESTRATOR_API Tool
+  class Tool
   {
   public:
-    Tool();
-    Tool(Aws::Utils::Json::JsonView jsonValue);
-    Tool& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MIGRATIONHUBORCHESTRATOR_API Tool();
+    AWS_MIGRATIONHUBORCHESTRATOR_API Tool(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MIGRATIONHUBORCHESTRATOR_API Tool& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MIGRATIONHUBORCHESTRATOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

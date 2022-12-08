@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/AssetCompositeModel">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTSITEWISE_API AssetCompositeModel
+  class AssetCompositeModel
   {
   public:
-    AssetCompositeModel();
-    AssetCompositeModel(Aws::Utils::Json::JsonView jsonValue);
-    AssetCompositeModel& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTSITEWISE_API AssetCompositeModel();
+    AWS_IOTSITEWISE_API AssetCompositeModel(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API AssetCompositeModel& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

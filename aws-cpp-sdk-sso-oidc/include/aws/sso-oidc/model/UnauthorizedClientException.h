@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sso-oidc-2019-06-10/UnauthorizedClientException">AWS
    * API Reference</a></p>
    */
-  class AWS_SSOOIDC_API UnauthorizedClientException
+  class UnauthorizedClientException
   {
   public:
-    UnauthorizedClientException();
-    UnauthorizedClientException(Aws::Utils::Json::JsonView jsonValue);
-    UnauthorizedClientException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSOOIDC_API UnauthorizedClientException();
+    AWS_SSOOIDC_API UnauthorizedClientException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSOOIDC_API UnauthorizedClientException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSOOIDC_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

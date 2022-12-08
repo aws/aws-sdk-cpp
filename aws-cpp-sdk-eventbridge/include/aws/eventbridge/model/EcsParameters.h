@@ -37,13 +37,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/EcsParameters">AWS
    * API Reference</a></p>
    */
-  class AWS_EVENTBRIDGE_API EcsParameters
+  class EcsParameters
   {
   public:
-    EcsParameters();
-    EcsParameters(Aws::Utils::Json::JsonView jsonValue);
-    EcsParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EVENTBRIDGE_API EcsParameters();
+    AWS_EVENTBRIDGE_API EcsParameters(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EVENTBRIDGE_API EcsParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EVENTBRIDGE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

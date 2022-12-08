@@ -21,21 +21,21 @@ namespace LexRuntimeService
 {
 namespace Model
 {
-  class AWS_LEXRUNTIMESERVICE_API PostContentResult
+  class PostContentResult
   {
   public:
-    PostContentResult();
+    AWS_LEXRUNTIMESERVICE_API PostContentResult();
     //We have to define these because Microsoft doesn't auto generate them
-    PostContentResult(PostContentResult&&);
-    PostContentResult& operator=(PostContentResult&&);
+    AWS_LEXRUNTIMESERVICE_API PostContentResult(PostContentResult&&);
+    AWS_LEXRUNTIMESERVICE_API PostContentResult& operator=(PostContentResult&&);
     //we delete these because Microsoft doesn't handle move generation correctly
     //and we therefore don't trust them to get it right here either.
     PostContentResult(const PostContentResult&) = delete;
     PostContentResult& operator=(const PostContentResult&) = delete;
 
 
-    PostContentResult(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
-    PostContentResult& operator=(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
+    AWS_LEXRUNTIMESERVICE_API PostContentResult(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
+    AWS_LEXRUNTIMESERVICE_API PostContentResult& operator=(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
 
 
 

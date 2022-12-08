@@ -53,13 +53,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/ChallengeAction">AWS
    * API Reference</a></p>
    */
-  class AWS_WAFV2_API ChallengeAction
+  class ChallengeAction
   {
   public:
-    ChallengeAction();
-    ChallengeAction(Aws::Utils::Json::JsonView jsonValue);
-    ChallengeAction& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WAFV2_API ChallengeAction();
+    AWS_WAFV2_API ChallengeAction(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API ChallengeAction& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

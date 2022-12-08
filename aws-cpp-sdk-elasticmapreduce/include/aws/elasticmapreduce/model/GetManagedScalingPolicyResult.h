@@ -24,12 +24,12 @@ namespace EMR
 {
 namespace Model
 {
-  class AWS_EMR_API GetManagedScalingPolicyResult
+  class GetManagedScalingPolicyResult
   {
   public:
-    GetManagedScalingPolicyResult();
-    GetManagedScalingPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetManagedScalingPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_EMR_API GetManagedScalingPolicyResult();
+    AWS_EMR_API GetManagedScalingPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_EMR_API GetManagedScalingPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

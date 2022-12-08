@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ActionExecutionOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEPIPELINE_API ActionExecutionOutput
+  class ActionExecutionOutput
   {
   public:
-    ActionExecutionOutput();
-    ActionExecutionOutput(Aws::Utils::Json::JsonView jsonValue);
-    ActionExecutionOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEPIPELINE_API ActionExecutionOutput();
+    AWS_CODEPIPELINE_API ActionExecutionOutput(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEPIPELINE_API ActionExecutionOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

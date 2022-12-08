@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ReferenceLine">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API ReferenceLine
+  class ReferenceLine
   {
   public:
-    ReferenceLine();
-    ReferenceLine(Aws::Utils::Json::JsonView jsonValue);
-    ReferenceLine& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API ReferenceLine();
+    AWS_QUICKSIGHT_API ReferenceLine(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API ReferenceLine& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

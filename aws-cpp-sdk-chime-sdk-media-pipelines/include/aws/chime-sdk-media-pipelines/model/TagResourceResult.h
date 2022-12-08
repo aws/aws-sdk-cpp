@@ -22,12 +22,12 @@ namespace ChimeSDKMediaPipelines
 {
 namespace Model
 {
-  class AWS_CHIMESDKMEDIAPIPELINES_API TagResourceResult
+  class TagResourceResult
   {
   public:
-    TagResourceResult();
-    TagResourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    TagResourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CHIMESDKMEDIAPIPELINES_API TagResourceResult();
+    AWS_CHIMESDKMEDIAPIPELINES_API TagResourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CHIMESDKMEDIAPIPELINES_API TagResourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/Category">AWS
    * API Reference</a></p>
    */
-  class AWS_SUPPORT_API Category
+  class Category
   {
   public:
-    Category();
-    Category(Aws::Utils::Json::JsonView jsonValue);
-    Category& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SUPPORT_API Category();
+    AWS_SUPPORT_API Category(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SUPPORT_API Category& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SUPPORT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

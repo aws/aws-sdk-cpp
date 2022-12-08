@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/GroupIdentity">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTSITEWISE_API GroupIdentity
+  class GroupIdentity
   {
   public:
-    GroupIdentity();
-    GroupIdentity(Aws::Utils::Json::JsonView jsonValue);
-    GroupIdentity& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTSITEWISE_API GroupIdentity();
+    AWS_IOTSITEWISE_API GroupIdentity(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API GroupIdentity& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

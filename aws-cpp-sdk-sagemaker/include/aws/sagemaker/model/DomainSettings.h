@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DomainSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API DomainSettings
+  class DomainSettings
   {
   public:
-    DomainSettings();
-    DomainSettings(Aws::Utils::Json::JsonView jsonValue);
-    DomainSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API DomainSettings();
+    AWS_SAGEMAKER_API DomainSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API DomainSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -24,12 +24,12 @@ namespace Transfer
 {
 namespace Model
 {
-  class AWS_TRANSFER_API UpdateAccessResult
+  class UpdateAccessResult
   {
   public:
-    UpdateAccessResult();
-    UpdateAccessResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateAccessResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_TRANSFER_API UpdateAccessResult();
+    AWS_TRANSFER_API UpdateAccessResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_TRANSFER_API UpdateAccessResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

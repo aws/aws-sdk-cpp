@@ -22,12 +22,12 @@ namespace Connect
 {
 namespace Model
 {
-  class AWS_CONNECT_API AssociateDefaultVocabularyResult
+  class AssociateDefaultVocabularyResult
   {
   public:
-    AssociateDefaultVocabularyResult();
-    AssociateDefaultVocabularyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AssociateDefaultVocabularyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CONNECT_API AssociateDefaultVocabularyResult();
+    AWS_CONNECT_API AssociateDefaultVocabularyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CONNECT_API AssociateDefaultVocabularyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/OrganizationSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_WORKMAIL_API OrganizationSummary
+  class OrganizationSummary
   {
   public:
-    OrganizationSummary();
-    OrganizationSummary(Aws::Utils::Json::JsonView jsonValue);
-    OrganizationSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WORKMAIL_API OrganizationSummary();
+    AWS_WORKMAIL_API OrganizationSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKMAIL_API OrganizationSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKMAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

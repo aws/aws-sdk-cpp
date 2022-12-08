@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DataSourceSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_KENDRA_API DataSourceSummary
+  class DataSourceSummary
   {
   public:
-    DataSourceSummary();
-    DataSourceSummary(Aws::Utils::Json::JsonView jsonValue);
-    DataSourceSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KENDRA_API DataSourceSummary();
+    AWS_KENDRA_API DataSourceSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API DataSourceSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

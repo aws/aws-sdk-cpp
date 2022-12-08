@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/privatenetworks-2021-12-03/SitePlan">AWS
    * API Reference</a></p>
    */
-  class AWS_PRIVATENETWORKS_API SitePlan
+  class SitePlan
   {
   public:
-    SitePlan();
-    SitePlan(Aws::Utils::Json::JsonView jsonValue);
-    SitePlan& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PRIVATENETWORKS_API SitePlan();
+    AWS_PRIVATENETWORKS_API SitePlan(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PRIVATENETWORKS_API SitePlan& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PRIVATENETWORKS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

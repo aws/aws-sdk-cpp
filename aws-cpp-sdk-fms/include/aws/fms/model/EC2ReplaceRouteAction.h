@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/EC2ReplaceRouteAction">AWS
    * API Reference</a></p>
    */
-  class AWS_FMS_API EC2ReplaceRouteAction
+  class EC2ReplaceRouteAction
   {
   public:
-    EC2ReplaceRouteAction();
-    EC2ReplaceRouteAction(Aws::Utils::Json::JsonView jsonValue);
-    EC2ReplaceRouteAction& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FMS_API EC2ReplaceRouteAction();
+    AWS_FMS_API EC2ReplaceRouteAction(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FMS_API EC2ReplaceRouteAction& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

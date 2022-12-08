@@ -24,12 +24,12 @@ namespace CodeCommit
 {
 namespace Model
 {
-  class AWS_CODECOMMIT_API MergeBranchesByFastForwardResult
+  class MergeBranchesByFastForwardResult
   {
   public:
-    MergeBranchesByFastForwardResult();
-    MergeBranchesByFastForwardResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    MergeBranchesByFastForwardResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODECOMMIT_API MergeBranchesByFastForwardResult();
+    AWS_CODECOMMIT_API MergeBranchesByFastForwardResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODECOMMIT_API MergeBranchesByFastForwardResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

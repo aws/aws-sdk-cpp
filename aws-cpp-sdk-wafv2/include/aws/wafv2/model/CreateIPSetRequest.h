@@ -22,10 +22,10 @@ namespace Model
 
   /**
    */
-  class AWS_WAFV2_API CreateIPSetRequest : public WAFV2Request
+  class CreateIPSetRequest : public WAFV2Request
   {
   public:
-    CreateIPSetRequest();
+    AWS_WAFV2_API CreateIPSetRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,9 +33,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateIPSet"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_WAFV2_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_WAFV2_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**

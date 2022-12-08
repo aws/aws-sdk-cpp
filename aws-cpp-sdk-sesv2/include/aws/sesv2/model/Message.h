@@ -30,13 +30,13 @@ namespace Model
    * <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/Message">AWS
    * API Reference</a></p>
    */
-  class AWS_SESV2_API Message
+  class Message
   {
   public:
-    Message();
-    Message(Aws::Utils::Json::JsonView jsonValue);
-    Message& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SESV2_API Message();
+    AWS_SESV2_API Message(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SESV2_API Message& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SESV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

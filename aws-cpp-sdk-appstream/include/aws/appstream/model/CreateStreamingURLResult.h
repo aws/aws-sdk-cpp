@@ -25,12 +25,12 @@ namespace AppStream
 {
 namespace Model
 {
-  class AWS_APPSTREAM_API CreateStreamingURLResult
+  class CreateStreamingURLResult
   {
   public:
-    CreateStreamingURLResult();
-    CreateStreamingURLResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateStreamingURLResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPSTREAM_API CreateStreamingURLResult();
+    AWS_APPSTREAM_API CreateStreamingURLResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPSTREAM_API CreateStreamingURLResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

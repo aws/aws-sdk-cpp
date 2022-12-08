@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/ResourceNotFoundException">AWS
    * API Reference</a></p>
    */
-  class AWS_AMPLIFY_API ResourceNotFoundException
+  class ResourceNotFoundException
   {
   public:
-    ResourceNotFoundException();
-    ResourceNotFoundException(Aws::Utils::Json::JsonView jsonValue);
-    ResourceNotFoundException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_AMPLIFY_API ResourceNotFoundException();
+    AWS_AMPLIFY_API ResourceNotFoundException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFY_API ResourceNotFoundException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

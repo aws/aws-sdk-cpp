@@ -25,12 +25,12 @@ namespace EC2
 {
 namespace Model
 {
-  class AWS_EC2_API CreateTransitGatewayConnectResponse
+  class CreateTransitGatewayConnectResponse
   {
   public:
-    CreateTransitGatewayConnectResponse();
-    CreateTransitGatewayConnectResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    CreateTransitGatewayConnectResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API CreateTransitGatewayConnectResponse();
+    AWS_EC2_API CreateTransitGatewayConnectResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API CreateTransitGatewayConnectResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/PagerDutyIncidentDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_SSMINCIDENTS_API PagerDutyIncidentDetail
+  class PagerDutyIncidentDetail
   {
   public:
-    PagerDutyIncidentDetail();
-    PagerDutyIncidentDetail(Aws::Utils::Json::JsonView jsonValue);
-    PagerDutyIncidentDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSMINCIDENTS_API PagerDutyIncidentDetail();
+    AWS_SSMINCIDENTS_API PagerDutyIncidentDetail(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSMINCIDENTS_API PagerDutyIncidentDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSMINCIDENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -26,15 +26,15 @@ namespace Redshift
 namespace Model
 {
 
-  class AWS_REDSHIFT_API DataShare
+  class DataShare
   {
   public:
-    DataShare();
-    DataShare(const Aws::Utils::Xml::XmlNode& xmlNode);
-    DataShare& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_REDSHIFT_API DataShare();
+    AWS_REDSHIFT_API DataShare(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_REDSHIFT_API DataShare& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_REDSHIFT_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_REDSHIFT_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**

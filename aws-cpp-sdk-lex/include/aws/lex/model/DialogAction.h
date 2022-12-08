@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/runtime.lex-2016-11-28/DialogAction">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXRUNTIMESERVICE_API DialogAction
+  class DialogAction
   {
   public:
-    DialogAction();
-    DialogAction(Aws::Utils::Json::JsonView jsonValue);
-    DialogAction& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXRUNTIMESERVICE_API DialogAction();
+    AWS_LEXRUNTIMESERVICE_API DialogAction(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXRUNTIMESERVICE_API DialogAction& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXRUNTIMESERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

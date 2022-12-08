@@ -24,12 +24,12 @@ namespace IoT
 {
 namespace Model
 {
-  class AWS_IOT_API AssociateTargetsWithJobResult
+  class AssociateTargetsWithJobResult
   {
   public:
-    AssociateTargetsWithJobResult();
-    AssociateTargetsWithJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AssociateTargetsWithJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOT_API AssociateTargetsWithJobResult();
+    AWS_IOT_API AssociateTargetsWithJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOT_API AssociateTargetsWithJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

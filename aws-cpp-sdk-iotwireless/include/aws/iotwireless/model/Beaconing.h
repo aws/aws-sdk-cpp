@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/Beaconing">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTWIRELESS_API Beaconing
+  class Beaconing
   {
   public:
-    Beaconing();
-    Beaconing(Aws::Utils::Json::JsonView jsonValue);
-    Beaconing& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTWIRELESS_API Beaconing();
+    AWS_IOTWIRELESS_API Beaconing(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API Beaconing& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

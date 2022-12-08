@@ -31,12 +31,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/ListSatellitesResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_GROUNDSTATION_API ListSatellitesResult
+  class ListSatellitesResult
   {
   public:
-    ListSatellitesResult();
-    ListSatellitesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListSatellitesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GROUNDSTATION_API ListSatellitesResult();
+    AWS_GROUNDSTATION_API ListSatellitesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GROUNDSTATION_API ListSatellitesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/Csv">AWS API
    * Reference</a></p>
    */
-  class AWS_IOTSITEWISE_API Csv
+  class Csv
   {
   public:
-    Csv();
-    Csv(Aws::Utils::Json::JsonView jsonValue);
-    Csv& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTSITEWISE_API Csv();
+    AWS_IOTSITEWISE_API Csv(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API Csv& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -32,12 +32,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/HsmConfigurationMessage">AWS
    * API Reference</a></p>
    */
-  class AWS_REDSHIFT_API DescribeHsmConfigurationsResult
+  class DescribeHsmConfigurationsResult
   {
   public:
-    DescribeHsmConfigurationsResult();
-    DescribeHsmConfigurationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeHsmConfigurationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_REDSHIFT_API DescribeHsmConfigurationsResult();
+    AWS_REDSHIFT_API DescribeHsmConfigurationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_REDSHIFT_API DescribeHsmConfigurationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

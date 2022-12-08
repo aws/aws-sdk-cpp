@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/Preset">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API Preset
+  class Preset
   {
   public:
-    Preset();
-    Preset(Aws::Utils::Json::JsonView jsonValue);
-    Preset& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API Preset();
+    AWS_MEDIACONVERT_API Preset(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Preset& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

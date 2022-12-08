@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/StorageOptimizer">AWS
    * API Reference</a></p>
    */
-  class AWS_LAKEFORMATION_API StorageOptimizer
+  class StorageOptimizer
   {
   public:
-    StorageOptimizer();
-    StorageOptimizer(Aws::Utils::Json::JsonView jsonValue);
-    StorageOptimizer& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LAKEFORMATION_API StorageOptimizer();
+    AWS_LAKEFORMATION_API StorageOptimizer(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAKEFORMATION_API StorageOptimizer& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAKEFORMATION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

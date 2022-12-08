@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/MultiplexOutputDestination">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API MultiplexOutputDestination
+  class MultiplexOutputDestination
   {
   public:
-    MultiplexOutputDestination();
-    MultiplexOutputDestination(Aws::Utils::Json::JsonView jsonValue);
-    MultiplexOutputDestination& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API MultiplexOutputDestination();
+    AWS_MEDIALIVE_API MultiplexOutputDestination(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API MultiplexOutputDestination& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

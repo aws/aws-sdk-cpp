@@ -25,12 +25,12 @@ namespace WAFV2
 {
 namespace Model
 {
-  class AWS_WAFV2_API UpdateManagedRuleSetVersionExpiryDateResult
+  class UpdateManagedRuleSetVersionExpiryDateResult
   {
   public:
-    UpdateManagedRuleSetVersionExpiryDateResult();
-    UpdateManagedRuleSetVersionExpiryDateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateManagedRuleSetVersionExpiryDateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WAFV2_API UpdateManagedRuleSetVersionExpiryDateResult();
+    AWS_WAFV2_API UpdateManagedRuleSetVersionExpiryDateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WAFV2_API UpdateManagedRuleSetVersionExpiryDateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

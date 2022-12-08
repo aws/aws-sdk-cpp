@@ -24,12 +24,12 @@ namespace SageMaker
 {
 namespace Model
 {
-  class AWS_SAGEMAKER_API SendPipelineExecutionStepSuccessResult
+  class SendPipelineExecutionStepSuccessResult
   {
   public:
-    SendPipelineExecutionStepSuccessResult();
-    SendPipelineExecutionStepSuccessResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    SendPipelineExecutionStepSuccessResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SAGEMAKER_API SendPipelineExecutionStepSuccessResult();
+    AWS_SAGEMAKER_API SendPipelineExecutionStepSuccessResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SAGEMAKER_API SendPipelineExecutionStepSuccessResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

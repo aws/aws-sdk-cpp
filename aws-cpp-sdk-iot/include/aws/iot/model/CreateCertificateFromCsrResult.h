@@ -30,12 +30,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateCertificateFromCsrResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API CreateCertificateFromCsrResult
+  class CreateCertificateFromCsrResult
   {
   public:
-    CreateCertificateFromCsrResult();
-    CreateCertificateFromCsrResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateCertificateFromCsrResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOT_API CreateCertificateFromCsrResult();
+    AWS_IOT_API CreateCertificateFromCsrResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOT_API CreateCertificateFromCsrResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/SourceCodeType">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEGURUREVIEWER_API SourceCodeType
+  class SourceCodeType
   {
   public:
-    SourceCodeType();
-    SourceCodeType(Aws::Utils::Json::JsonView jsonValue);
-    SourceCodeType& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEGURUREVIEWER_API SourceCodeType();
+    AWS_CODEGURUREVIEWER_API SourceCodeType(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEGURUREVIEWER_API SourceCodeType& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEGURUREVIEWER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

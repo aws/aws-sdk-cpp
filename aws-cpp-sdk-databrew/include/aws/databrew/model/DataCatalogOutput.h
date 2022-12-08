@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/DataCatalogOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUEDATABREW_API DataCatalogOutput
+  class DataCatalogOutput
   {
   public:
-    DataCatalogOutput();
-    DataCatalogOutput(Aws::Utils::Json::JsonView jsonValue);
-    DataCatalogOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUEDATABREW_API DataCatalogOutput();
+    AWS_GLUEDATABREW_API DataCatalogOutput(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUEDATABREW_API DataCatalogOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUEDATABREW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

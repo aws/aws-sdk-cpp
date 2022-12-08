@@ -24,12 +24,12 @@ namespace Braket
 {
 namespace Model
 {
-  class AWS_BRAKET_API CreateJobResult
+  class CreateJobResult
   {
   public:
-    CreateJobResult();
-    CreateJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_BRAKET_API CreateJobResult();
+    AWS_BRAKET_API CreateJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_BRAKET_API CreateJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

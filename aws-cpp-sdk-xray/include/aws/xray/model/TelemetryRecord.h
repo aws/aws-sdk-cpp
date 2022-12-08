@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/TelemetryRecord">AWS
    * API Reference</a></p>
    */
-  class AWS_XRAY_API TelemetryRecord
+  class TelemetryRecord
   {
   public:
-    TelemetryRecord();
-    TelemetryRecord(Aws::Utils::Json::JsonView jsonValue);
-    TelemetryRecord& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_XRAY_API TelemetryRecord();
+    AWS_XRAY_API TelemetryRecord(Aws::Utils::Json::JsonView jsonValue);
+    AWS_XRAY_API TelemetryRecord& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_XRAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

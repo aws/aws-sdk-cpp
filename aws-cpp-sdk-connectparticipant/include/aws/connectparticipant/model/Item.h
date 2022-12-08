@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/connectparticipant-2018-09-07/Item">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECTPARTICIPANT_API Item
+  class Item
   {
   public:
-    Item();
-    Item(Aws::Utils::Json::JsonView jsonValue);
-    Item& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECTPARTICIPANT_API Item();
+    AWS_CONNECTPARTICIPANT_API Item(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTPARTICIPANT_API Item& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTPARTICIPANT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

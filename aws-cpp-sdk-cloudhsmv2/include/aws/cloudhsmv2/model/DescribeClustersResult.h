@@ -26,12 +26,12 @@ namespace CloudHSMV2
 {
 namespace Model
 {
-  class AWS_CLOUDHSMV2_API DescribeClustersResult
+  class DescribeClustersResult
   {
   public:
-    DescribeClustersResult();
-    DescribeClustersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeClustersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CLOUDHSMV2_API DescribeClustersResult();
+    AWS_CLOUDHSMV2_API DescribeClustersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CLOUDHSMV2_API DescribeClustersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

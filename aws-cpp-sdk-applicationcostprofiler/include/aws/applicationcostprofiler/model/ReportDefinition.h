@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/AWSApplicationCostProfiler-2020-09-10/ReportDefinition">AWS
    * API Reference</a></p>
    */
-  class AWS_APPLICATIONCOSTPROFILER_API ReportDefinition
+  class ReportDefinition
   {
   public:
-    ReportDefinition();
-    ReportDefinition(Aws::Utils::Json::JsonView jsonValue);
-    ReportDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPLICATIONCOSTPROFILER_API ReportDefinition();
+    AWS_APPLICATIONCOSTPROFILER_API ReportDefinition(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPLICATIONCOSTPROFILER_API ReportDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPLICATIONCOSTPROFILER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

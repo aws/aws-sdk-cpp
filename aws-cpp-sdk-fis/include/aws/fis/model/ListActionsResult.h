@@ -26,12 +26,12 @@ namespace FIS
 {
 namespace Model
 {
-  class AWS_FIS_API ListActionsResult
+  class ListActionsResult
   {
   public:
-    ListActionsResult();
-    ListActionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListActionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_FIS_API ListActionsResult();
+    AWS_FIS_API ListActionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_FIS_API ListActionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -31,15 +31,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/TransitGatewayMulticastGroup">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API TransitGatewayMulticastGroup
+  class TransitGatewayMulticastGroup
   {
   public:
-    TransitGatewayMulticastGroup();
-    TransitGatewayMulticastGroup(const Aws::Utils::Xml::XmlNode& xmlNode);
-    TransitGatewayMulticastGroup& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API TransitGatewayMulticastGroup();
+    AWS_EC2_API TransitGatewayMulticastGroup(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API TransitGatewayMulticastGroup& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**

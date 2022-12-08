@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/HostedConfigurationVersionSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_APPCONFIG_API HostedConfigurationVersionSummary
+  class HostedConfigurationVersionSummary
   {
   public:
-    HostedConfigurationVersionSummary();
-    HostedConfigurationVersionSummary(Aws::Utils::Json::JsonView jsonValue);
-    HostedConfigurationVersionSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPCONFIG_API HostedConfigurationVersionSummary();
+    AWS_APPCONFIG_API HostedConfigurationVersionSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPCONFIG_API HostedConfigurationVersionSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPCONFIG_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

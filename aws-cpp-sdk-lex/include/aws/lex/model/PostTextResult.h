@@ -33,12 +33,12 @@ namespace LexRuntimeService
 {
 namespace Model
 {
-  class AWS_LEXRUNTIMESERVICE_API PostTextResult
+  class PostTextResult
   {
   public:
-    PostTextResult();
-    PostTextResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PostTextResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LEXRUNTIMESERVICE_API PostTextResult();
+    AWS_LEXRUNTIMESERVICE_API PostTextResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LEXRUNTIMESERVICE_API PostTextResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

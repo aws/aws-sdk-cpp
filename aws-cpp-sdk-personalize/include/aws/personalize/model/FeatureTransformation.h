@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/FeatureTransformation">AWS
    * API Reference</a></p>
    */
-  class AWS_PERSONALIZE_API FeatureTransformation
+  class FeatureTransformation
   {
   public:
-    FeatureTransformation();
-    FeatureTransformation(Aws::Utils::Json::JsonView jsonValue);
-    FeatureTransformation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PERSONALIZE_API FeatureTransformation();
+    AWS_PERSONALIZE_API FeatureTransformation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PERSONALIZE_API FeatureTransformation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PERSONALIZE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

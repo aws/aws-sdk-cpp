@@ -24,12 +24,12 @@ namespace SMS
 {
 namespace Model
 {
-  class AWS_SMS_API GenerateChangeSetResult
+  class GenerateChangeSetResult
   {
   public:
-    GenerateChangeSetResult();
-    GenerateChangeSetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GenerateChangeSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SMS_API GenerateChangeSetResult();
+    AWS_SMS_API GenerateChangeSetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SMS_API GenerateChangeSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

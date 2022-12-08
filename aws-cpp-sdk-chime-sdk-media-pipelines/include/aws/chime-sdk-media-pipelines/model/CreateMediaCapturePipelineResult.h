@@ -24,12 +24,12 @@ namespace ChimeSDKMediaPipelines
 {
 namespace Model
 {
-  class AWS_CHIMESDKMEDIAPIPELINES_API CreateMediaCapturePipelineResult
+  class CreateMediaCapturePipelineResult
   {
   public:
-    CreateMediaCapturePipelineResult();
-    CreateMediaCapturePipelineResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateMediaCapturePipelineResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CHIMESDKMEDIAPIPELINES_API CreateMediaCapturePipelineResult();
+    AWS_CHIMESDKMEDIAPIPELINES_API CreateMediaCapturePipelineResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CHIMESDKMEDIAPIPELINES_API CreateMediaCapturePipelineResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

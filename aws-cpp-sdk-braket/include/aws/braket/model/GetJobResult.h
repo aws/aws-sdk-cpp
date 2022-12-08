@@ -36,12 +36,12 @@ namespace Braket
 {
 namespace Model
 {
-  class AWS_BRAKET_API GetJobResult
+  class GetJobResult
   {
   public:
-    GetJobResult();
-    GetJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_BRAKET_API GetJobResult();
+    AWS_BRAKET_API GetJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_BRAKET_API GetJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

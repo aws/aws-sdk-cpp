@@ -25,12 +25,12 @@ namespace Appflow
 {
 namespace Model
 {
-  class AWS_APPFLOW_API DescribeConnectorEntityResult
+  class DescribeConnectorEntityResult
   {
   public:
-    DescribeConnectorEntityResult();
-    DescribeConnectorEntityResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeConnectorEntityResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPFLOW_API DescribeConnectorEntityResult();
+    AWS_APPFLOW_API DescribeConnectorEntityResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPFLOW_API DescribeConnectorEntityResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

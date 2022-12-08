@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/InvalidConfigurationDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_APPCONFIG_API InvalidConfigurationDetail
+  class InvalidConfigurationDetail
   {
   public:
-    InvalidConfigurationDetail();
-    InvalidConfigurationDetail(Aws::Utils::Json::JsonView jsonValue);
-    InvalidConfigurationDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPCONFIG_API InvalidConfigurationDetail();
+    AWS_APPCONFIG_API InvalidConfigurationDetail(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPCONFIG_API InvalidConfigurationDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPCONFIG_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

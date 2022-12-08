@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/SankeyDiagramVisual">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API SankeyDiagramVisual
+  class SankeyDiagramVisual
   {
   public:
-    SankeyDiagramVisual();
-    SankeyDiagramVisual(Aws::Utils::Json::JsonView jsonValue);
-    SankeyDiagramVisual& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API SankeyDiagramVisual();
+    AWS_QUICKSIGHT_API SankeyDiagramVisual(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API SankeyDiagramVisual& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

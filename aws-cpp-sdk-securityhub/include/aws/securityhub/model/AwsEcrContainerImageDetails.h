@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsEcrContainerImageDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsEcrContainerImageDetails
+  class AwsEcrContainerImageDetails
   {
   public:
-    AwsEcrContainerImageDetails();
-    AwsEcrContainerImageDetails(Aws::Utils::Json::JsonView jsonValue);
-    AwsEcrContainerImageDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsEcrContainerImageDetails();
+    AWS_SECURITYHUB_API AwsEcrContainerImageDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsEcrContainerImageDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

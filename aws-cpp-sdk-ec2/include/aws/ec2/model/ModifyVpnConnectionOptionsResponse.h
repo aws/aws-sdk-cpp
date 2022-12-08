@@ -25,12 +25,12 @@ namespace EC2
 {
 namespace Model
 {
-  class AWS_EC2_API ModifyVpnConnectionOptionsResponse
+  class ModifyVpnConnectionOptionsResponse
   {
   public:
-    ModifyVpnConnectionOptionsResponse();
-    ModifyVpnConnectionOptionsResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ModifyVpnConnectionOptionsResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API ModifyVpnConnectionOptionsResponse();
+    AWS_EC2_API ModifyVpnConnectionOptionsResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API ModifyVpnConnectionOptionsResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

@@ -24,12 +24,12 @@ namespace ACMPCA
 {
 namespace Model
 {
-  class AWS_ACMPCA_API GetPolicyResult
+  class GetPolicyResult
   {
   public:
-    GetPolicyResult();
-    GetPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ACMPCA_API GetPolicyResult();
+    AWS_ACMPCA_API GetPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ACMPCA_API GetPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

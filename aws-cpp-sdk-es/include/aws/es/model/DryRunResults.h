@@ -23,13 +23,13 @@ namespace ElasticsearchService
 namespace Model
 {
 
-  class AWS_ELASTICSEARCHSERVICE_API DryRunResults
+  class DryRunResults
   {
   public:
-    DryRunResults();
-    DryRunResults(Aws::Utils::Json::JsonView jsonValue);
-    DryRunResults& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ELASTICSEARCHSERVICE_API DryRunResults();
+    AWS_ELASTICSEARCHSERVICE_API DryRunResults(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICSEARCHSERVICE_API DryRunResults& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

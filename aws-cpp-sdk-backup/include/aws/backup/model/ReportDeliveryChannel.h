@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ReportDeliveryChannel">AWS
    * API Reference</a></p>
    */
-  class AWS_BACKUP_API ReportDeliveryChannel
+  class ReportDeliveryChannel
   {
   public:
-    ReportDeliveryChannel();
-    ReportDeliveryChannel(Aws::Utils::Json::JsonView jsonValue);
-    ReportDeliveryChannel& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BACKUP_API ReportDeliveryChannel();
+    AWS_BACKUP_API ReportDeliveryChannel(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BACKUP_API ReportDeliveryChannel& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BACKUP_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

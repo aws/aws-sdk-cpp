@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/CloudWatchLogsConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEBUILD_API CloudWatchLogsConfig
+  class CloudWatchLogsConfig
   {
   public:
-    CloudWatchLogsConfig();
-    CloudWatchLogsConfig(Aws::Utils::Json::JsonView jsonValue);
-    CloudWatchLogsConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEBUILD_API CloudWatchLogsConfig();
+    AWS_CODEBUILD_API CloudWatchLogsConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEBUILD_API CloudWatchLogsConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEBUILD_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

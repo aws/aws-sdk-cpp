@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/InstanceState">AWS
    * API Reference</a></p>
    */
-  class AWS_LIGHTSAIL_API InstanceState
+  class InstanceState
   {
   public:
-    InstanceState();
-    InstanceState(Aws::Utils::Json::JsonView jsonValue);
-    InstanceState& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LIGHTSAIL_API InstanceState();
+    AWS_LIGHTSAIL_API InstanceState(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API InstanceState& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-elastic-2022-11-28/ConflictException">AWS
    * API Reference</a></p>
    */
-  class AWS_DOCDBELASTIC_API ConflictException
+  class ConflictException
   {
   public:
-    ConflictException();
-    ConflictException(Aws::Utils::Json::JsonView jsonValue);
-    ConflictException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DOCDBELASTIC_API ConflictException();
+    AWS_DOCDBELASTIC_API ConflictException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DOCDBELASTIC_API ConflictException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DOCDBELASTIC_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

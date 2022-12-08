@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/ReplaceContentEntry">AWS
    * API Reference</a></p>
    */
-  class AWS_CODECOMMIT_API ReplaceContentEntry
+  class ReplaceContentEntry
   {
   public:
-    ReplaceContentEntry();
-    ReplaceContentEntry(Aws::Utils::Json::JsonView jsonValue);
-    ReplaceContentEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODECOMMIT_API ReplaceContentEntry();
+    AWS_CODECOMMIT_API ReplaceContentEntry(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODECOMMIT_API ReplaceContentEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODECOMMIT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

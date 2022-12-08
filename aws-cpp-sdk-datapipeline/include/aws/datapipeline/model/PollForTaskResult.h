@@ -29,12 +29,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/PollForTaskOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_DATAPIPELINE_API PollForTaskResult
+  class PollForTaskResult
   {
   public:
-    PollForTaskResult();
-    PollForTaskResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PollForTaskResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DATAPIPELINE_API PollForTaskResult();
+    AWS_DATAPIPELINE_API PollForTaskResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DATAPIPELINE_API PollForTaskResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

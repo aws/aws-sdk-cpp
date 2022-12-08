@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/CoveredResource">AWS
    * API Reference</a></p>
    */
-  class AWS_INSPECTOR2_API CoveredResource
+  class CoveredResource
   {
   public:
-    CoveredResource();
-    CoveredResource(Aws::Utils::Json::JsonView jsonValue);
-    CoveredResource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_INSPECTOR2_API CoveredResource();
+    AWS_INSPECTOR2_API CoveredResource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR2_API CoveredResource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

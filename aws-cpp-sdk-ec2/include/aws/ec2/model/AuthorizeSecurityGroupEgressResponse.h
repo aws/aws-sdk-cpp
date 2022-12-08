@@ -26,12 +26,12 @@ namespace EC2
 {
 namespace Model
 {
-  class AWS_EC2_API AuthorizeSecurityGroupEgressResponse
+  class AuthorizeSecurityGroupEgressResponse
   {
   public:
-    AuthorizeSecurityGroupEgressResponse();
-    AuthorizeSecurityGroupEgressResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    AuthorizeSecurityGroupEgressResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API AuthorizeSecurityGroupEgressResponse();
+    AWS_EC2_API AuthorizeSecurityGroupEgressResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API AuthorizeSecurityGroupEgressResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

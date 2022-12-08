@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/NodegroupScalingConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_EKS_API NodegroupScalingConfig
+  class NodegroupScalingConfig
   {
   public:
-    NodegroupScalingConfig();
-    NodegroupScalingConfig(Aws::Utils::Json::JsonView jsonValue);
-    NodegroupScalingConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EKS_API NodegroupScalingConfig();
+    AWS_EKS_API NodegroupScalingConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EKS_API NodegroupScalingConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EKS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

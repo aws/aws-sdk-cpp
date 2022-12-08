@@ -26,12 +26,12 @@ namespace DAX
 {
 namespace Model
 {
-  class AWS_DAX_API DescribeDefaultParametersResult
+  class DescribeDefaultParametersResult
   {
   public:
-    DescribeDefaultParametersResult();
-    DescribeDefaultParametersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeDefaultParametersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DAX_API DescribeDefaultParametersResult();
+    AWS_DAX_API DescribeDefaultParametersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DAX_API DescribeDefaultParametersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/Cookies">AWS API
    * Reference</a></p>
    */
-  class AWS_WAFV2_API Cookies
+  class Cookies
   {
   public:
-    Cookies();
-    Cookies(Aws::Utils::Json::JsonView jsonValue);
-    Cookies& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WAFV2_API Cookies();
+    AWS_WAFV2_API Cookies(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API Cookies& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

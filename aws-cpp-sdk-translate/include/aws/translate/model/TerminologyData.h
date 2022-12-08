@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/TerminologyData">AWS
    * API Reference</a></p>
    */
-  class AWS_TRANSLATE_API TerminologyData
+  class TerminologyData
   {
   public:
-    TerminologyData();
-    TerminologyData(Aws::Utils::Json::JsonView jsonValue);
-    TerminologyData& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TRANSLATE_API TerminologyData();
+    AWS_TRANSLATE_API TerminologyData(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSLATE_API TerminologyData& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSLATE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

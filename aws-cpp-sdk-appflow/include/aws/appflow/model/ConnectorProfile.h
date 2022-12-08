@@ -38,13 +38,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/ConnectorProfile">AWS
    * API Reference</a></p>
    */
-  class AWS_APPFLOW_API ConnectorProfile
+  class ConnectorProfile
   {
   public:
-    ConnectorProfile();
-    ConnectorProfile(Aws::Utils::Json::JsonView jsonValue);
-    ConnectorProfile& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPFLOW_API ConnectorProfile();
+    AWS_APPFLOW_API ConnectorProfile(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API ConnectorProfile& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

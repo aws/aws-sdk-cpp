@@ -30,12 +30,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/CreateConfigurationSetEventDestinationResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_SES_API CreateConfigurationSetEventDestinationResult
+  class CreateConfigurationSetEventDestinationResult
   {
   public:
-    CreateConfigurationSetEventDestinationResult();
-    CreateConfigurationSetEventDestinationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    CreateConfigurationSetEventDestinationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_SES_API CreateConfigurationSetEventDestinationResult();
+    AWS_SES_API CreateConfigurationSetEventDestinationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_SES_API CreateConfigurationSetEventDestinationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     

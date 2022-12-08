@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/QueryRuntimeStatisticsTimeline">AWS
    * API Reference</a></p>
    */
-  class AWS_ATHENA_API QueryRuntimeStatisticsTimeline
+  class QueryRuntimeStatisticsTimeline
   {
   public:
-    QueryRuntimeStatisticsTimeline();
-    QueryRuntimeStatisticsTimeline(Aws::Utils::Json::JsonView jsonValue);
-    QueryRuntimeStatisticsTimeline& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ATHENA_API QueryRuntimeStatisticsTimeline();
+    AWS_ATHENA_API QueryRuntimeStatisticsTimeline(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ATHENA_API QueryRuntimeStatisticsTimeline& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ATHENA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

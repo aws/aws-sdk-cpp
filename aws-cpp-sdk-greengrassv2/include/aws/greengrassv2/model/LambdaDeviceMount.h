@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/LambdaDeviceMount">AWS
    * API Reference</a></p>
    */
-  class AWS_GREENGRASSV2_API LambdaDeviceMount
+  class LambdaDeviceMount
   {
   public:
-    LambdaDeviceMount();
-    LambdaDeviceMount(Aws::Utils::Json::JsonView jsonValue);
-    LambdaDeviceMount& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GREENGRASSV2_API LambdaDeviceMount();
+    AWS_GREENGRASSV2_API LambdaDeviceMount(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASSV2_API LambdaDeviceMount& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

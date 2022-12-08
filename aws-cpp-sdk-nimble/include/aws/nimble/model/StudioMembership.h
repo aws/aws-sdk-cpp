@@ -38,13 +38,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/StudioMembership">AWS
    * API Reference</a></p>
    */
-  class AWS_NIMBLESTUDIO_API StudioMembership
+  class StudioMembership
   {
   public:
-    StudioMembership();
-    StudioMembership(Aws::Utils::Json::JsonView jsonValue);
-    StudioMembership& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_NIMBLESTUDIO_API StudioMembership();
+    AWS_NIMBLESTUDIO_API StudioMembership(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NIMBLESTUDIO_API StudioMembership& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NIMBLESTUDIO_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

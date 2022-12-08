@@ -26,12 +26,12 @@ namespace Panorama
 {
 namespace Model
 {
-  class AWS_PANORAMA_API ListApplicationInstanceDependenciesResult
+  class ListApplicationInstanceDependenciesResult
   {
   public:
-    ListApplicationInstanceDependenciesResult();
-    ListApplicationInstanceDependenciesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListApplicationInstanceDependenciesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PANORAMA_API ListApplicationInstanceDependenciesResult();
+    AWS_PANORAMA_API ListApplicationInstanceDependenciesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PANORAMA_API ListApplicationInstanceDependenciesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mwaa-2020-07-01/ModuleLoggingConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_MWAA_API ModuleLoggingConfiguration
+  class ModuleLoggingConfiguration
   {
   public:
-    ModuleLoggingConfiguration();
-    ModuleLoggingConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    ModuleLoggingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MWAA_API ModuleLoggingConfiguration();
+    AWS_MWAA_API ModuleLoggingConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MWAA_API ModuleLoggingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MWAA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

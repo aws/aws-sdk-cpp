@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/TreeMapSortConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API TreeMapSortConfiguration
+  class TreeMapSortConfiguration
   {
   public:
-    TreeMapSortConfiguration();
-    TreeMapSortConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    TreeMapSortConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API TreeMapSortConfiguration();
+    AWS_QUICKSIGHT_API TreeMapSortConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API TreeMapSortConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

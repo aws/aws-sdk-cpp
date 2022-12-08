@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ProductCode">AWS
    * API Reference</a></p>
    */
-  class AWS_GUARDDUTY_API ProductCode
+  class ProductCode
   {
   public:
-    ProductCode();
-    ProductCode(Aws::Utils::Json::JsonView jsonValue);
-    ProductCode& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GUARDDUTY_API ProductCode();
+    AWS_GUARDDUTY_API ProductCode(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API ProductCode& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/CloudWatchLoggingOption">AWS
    * API Reference</a></p>
    */
-  class AWS_KINESISANALYTICSV2_API CloudWatchLoggingOption
+  class CloudWatchLoggingOption
   {
   public:
-    CloudWatchLoggingOption();
-    CloudWatchLoggingOption(Aws::Utils::Json::JsonView jsonValue);
-    CloudWatchLoggingOption& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KINESISANALYTICSV2_API CloudWatchLoggingOption();
+    AWS_KINESISANALYTICSV2_API CloudWatchLoggingOption(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICSV2_API CloudWatchLoggingOption& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

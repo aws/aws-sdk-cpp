@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/Analysis">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API Analysis
+  class Analysis
   {
   public:
-    Analysis();
-    Analysis(Aws::Utils::Json::JsonView jsonValue);
-    Analysis& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API Analysis();
+    AWS_QUICKSIGHT_API Analysis(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Analysis& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

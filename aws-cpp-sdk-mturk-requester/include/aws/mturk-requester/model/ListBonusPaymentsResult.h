@@ -26,12 +26,12 @@ namespace MTurk
 {
 namespace Model
 {
-  class AWS_MTURK_API ListBonusPaymentsResult
+  class ListBonusPaymentsResult
   {
   public:
-    ListBonusPaymentsResult();
-    ListBonusPaymentsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListBonusPaymentsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MTURK_API ListBonusPaymentsResult();
+    AWS_MTURK_API ListBonusPaymentsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MTURK_API ListBonusPaymentsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

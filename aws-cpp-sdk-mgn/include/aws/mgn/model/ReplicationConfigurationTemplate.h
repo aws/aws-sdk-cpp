@@ -28,13 +28,13 @@ namespace mgn
 namespace Model
 {
 
-  class AWS_MGN_API ReplicationConfigurationTemplate
+  class ReplicationConfigurationTemplate
   {
   public:
-    ReplicationConfigurationTemplate();
-    ReplicationConfigurationTemplate(Aws::Utils::Json::JsonView jsonValue);
-    ReplicationConfigurationTemplate& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MGN_API ReplicationConfigurationTemplate();
+    AWS_MGN_API ReplicationConfigurationTemplate(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MGN_API ReplicationConfigurationTemplate& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MGN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

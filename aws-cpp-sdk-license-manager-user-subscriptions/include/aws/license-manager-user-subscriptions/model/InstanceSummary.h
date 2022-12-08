@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-user-subscriptions-2018-05-10/InstanceSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API InstanceSummary
+  class InstanceSummary
   {
   public:
-    InstanceSummary();
-    InstanceSummary(Aws::Utils::Json::JsonView jsonValue);
-    InstanceSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API InstanceSummary();
+    AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API InstanceSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API InstanceSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

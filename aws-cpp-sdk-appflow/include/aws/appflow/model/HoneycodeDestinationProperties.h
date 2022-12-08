@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/HoneycodeDestinationProperties">AWS
    * API Reference</a></p>
    */
-  class AWS_APPFLOW_API HoneycodeDestinationProperties
+  class HoneycodeDestinationProperties
   {
   public:
-    HoneycodeDestinationProperties();
-    HoneycodeDestinationProperties(Aws::Utils::Json::JsonView jsonValue);
-    HoneycodeDestinationProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPFLOW_API HoneycodeDestinationProperties();
+    AWS_APPFLOW_API HoneycodeDestinationProperties(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API HoneycodeDestinationProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

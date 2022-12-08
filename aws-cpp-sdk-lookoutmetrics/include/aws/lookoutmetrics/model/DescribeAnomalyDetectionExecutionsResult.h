@@ -26,12 +26,12 @@ namespace LookoutMetrics
 {
 namespace Model
 {
-  class AWS_LOOKOUTMETRICS_API DescribeAnomalyDetectionExecutionsResult
+  class DescribeAnomalyDetectionExecutionsResult
   {
   public:
-    DescribeAnomalyDetectionExecutionsResult();
-    DescribeAnomalyDetectionExecutionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeAnomalyDetectionExecutionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LOOKOUTMETRICS_API DescribeAnomalyDetectionExecutionsResult();
+    AWS_LOOKOUTMETRICS_API DescribeAnomalyDetectionExecutionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LOOKOUTMETRICS_API DescribeAnomalyDetectionExecutionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

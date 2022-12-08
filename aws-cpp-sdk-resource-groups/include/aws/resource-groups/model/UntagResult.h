@@ -25,12 +25,12 @@ namespace ResourceGroups
 {
 namespace Model
 {
-  class AWS_RESOURCEGROUPS_API UntagResult
+  class UntagResult
   {
   public:
-    UntagResult();
-    UntagResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UntagResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_RESOURCEGROUPS_API UntagResult();
+    AWS_RESOURCEGROUPS_API UntagResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_RESOURCEGROUPS_API UntagResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

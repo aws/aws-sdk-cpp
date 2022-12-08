@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/StateMachineListItem">AWS
    * API Reference</a></p>
    */
-  class AWS_SFN_API StateMachineListItem
+  class StateMachineListItem
   {
   public:
-    StateMachineListItem();
-    StateMachineListItem(Aws::Utils::Json::JsonView jsonValue);
-    StateMachineListItem& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SFN_API StateMachineListItem();
+    AWS_SFN_API StateMachineListItem(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SFN_API StateMachineListItem& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SFN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

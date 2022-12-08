@@ -26,13 +26,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/FrameCaptureHlsSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API FrameCaptureHlsSettings
+  class FrameCaptureHlsSettings
   {
   public:
-    FrameCaptureHlsSettings();
-    FrameCaptureHlsSettings(Aws::Utils::Json::JsonView jsonValue);
-    FrameCaptureHlsSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API FrameCaptureHlsSettings();
+    AWS_MEDIALIVE_API FrameCaptureHlsSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API FrameCaptureHlsSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
   };
 

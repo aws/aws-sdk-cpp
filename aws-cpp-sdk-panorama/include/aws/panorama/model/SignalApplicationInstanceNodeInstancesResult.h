@@ -24,12 +24,12 @@ namespace Panorama
 {
 namespace Model
 {
-  class AWS_PANORAMA_API SignalApplicationInstanceNodeInstancesResult
+  class SignalApplicationInstanceNodeInstancesResult
   {
   public:
-    SignalApplicationInstanceNodeInstancesResult();
-    SignalApplicationInstanceNodeInstancesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    SignalApplicationInstanceNodeInstancesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PANORAMA_API SignalApplicationInstanceNodeInstancesResult();
+    AWS_PANORAMA_API SignalApplicationInstanceNodeInstancesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PANORAMA_API SignalApplicationInstanceNodeInstancesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

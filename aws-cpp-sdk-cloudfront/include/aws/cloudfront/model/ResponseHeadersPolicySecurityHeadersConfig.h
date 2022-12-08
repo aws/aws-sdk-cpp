@@ -35,14 +35,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ResponseHeadersPolicySecurityHeadersConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFRONT_API ResponseHeadersPolicySecurityHeadersConfig
+  class ResponseHeadersPolicySecurityHeadersConfig
   {
   public:
-    ResponseHeadersPolicySecurityHeadersConfig();
-    ResponseHeadersPolicySecurityHeadersConfig(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ResponseHeadersPolicySecurityHeadersConfig& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API ResponseHeadersPolicySecurityHeadersConfig();
+    AWS_CLOUDFRONT_API ResponseHeadersPolicySecurityHeadersConfig(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API ResponseHeadersPolicySecurityHeadersConfig& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**

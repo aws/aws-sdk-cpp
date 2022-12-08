@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/ValidationOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_SMS_API ValidationOutput
+  class ValidationOutput
   {
   public:
-    ValidationOutput();
-    ValidationOutput(Aws::Utils::Json::JsonView jsonValue);
-    ValidationOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SMS_API ValidationOutput();
+    AWS_SMS_API ValidationOutput(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SMS_API ValidationOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

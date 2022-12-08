@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/JobDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_TRANSLATE_API JobDetails
+  class JobDetails
   {
   public:
-    JobDetails();
-    JobDetails(Aws::Utils::Json::JsonView jsonValue);
-    JobDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TRANSLATE_API JobDetails();
+    AWS_TRANSLATE_API JobDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSLATE_API JobDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSLATE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

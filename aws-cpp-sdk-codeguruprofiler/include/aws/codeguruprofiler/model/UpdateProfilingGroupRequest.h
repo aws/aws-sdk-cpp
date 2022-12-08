@@ -23,10 +23,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/UpdateProfilingGroupRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEGURUPROFILER_API UpdateProfilingGroupRequest : public CodeGuruProfilerRequest
+  class UpdateProfilingGroupRequest : public CodeGuruProfilerRequest
   {
   public:
-    UpdateProfilingGroupRequest();
+    AWS_CODEGURUPROFILER_API UpdateProfilingGroupRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,7 +34,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateProfilingGroup"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CODEGURUPROFILER_API Aws::String SerializePayload() const override;
 
 
     /**

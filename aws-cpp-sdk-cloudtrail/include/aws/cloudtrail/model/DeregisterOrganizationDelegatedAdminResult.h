@@ -28,12 +28,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/DeregisterOrganizationDelegatedAdminResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDTRAIL_API DeregisterOrganizationDelegatedAdminResult
+  class DeregisterOrganizationDelegatedAdminResult
   {
   public:
-    DeregisterOrganizationDelegatedAdminResult();
-    DeregisterOrganizationDelegatedAdminResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeregisterOrganizationDelegatedAdminResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CLOUDTRAIL_API DeregisterOrganizationDelegatedAdminResult();
+    AWS_CLOUDTRAIL_API DeregisterOrganizationDelegatedAdminResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CLOUDTRAIL_API DeregisterOrganizationDelegatedAdminResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-featurestore-runtime-2020-07-01/FeatureValue">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKERFEATURESTORERUNTIME_API FeatureValue
+  class FeatureValue
   {
   public:
-    FeatureValue();
-    FeatureValue(Aws::Utils::Json::JsonView jsonValue);
-    FeatureValue& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKERFEATURESTORERUNTIME_API FeatureValue();
+    AWS_SAGEMAKERFEATURESTORERUNTIME_API FeatureValue(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKERFEATURESTORERUNTIME_API FeatureValue& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKERFEATURESTORERUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

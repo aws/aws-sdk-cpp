@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/SalesforceAction">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API SalesforceAction
+  class SalesforceAction
   {
   public:
-    SalesforceAction();
-    SalesforceAction(Aws::Utils::Json::JsonView jsonValue);
-    SalesforceAction& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API SalesforceAction();
+    AWS_IOT_API SalesforceAction(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API SalesforceAction& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

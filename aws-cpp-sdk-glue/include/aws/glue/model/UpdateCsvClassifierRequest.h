@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateCsvClassifierRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API UpdateCsvClassifierRequest
+  class UpdateCsvClassifierRequest
   {
   public:
-    UpdateCsvClassifierRequest();
-    UpdateCsvClassifierRequest(Aws::Utils::Json::JsonView jsonValue);
-    UpdateCsvClassifierRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API UpdateCsvClassifierRequest();
+    AWS_GLUE_API UpdateCsvClassifierRequest(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API UpdateCsvClassifierRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -38,13 +38,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/IPSetUpdate">AWS
    * API Reference</a></p>
    */
-  class AWS_WAFREGIONAL_API IPSetUpdate
+  class IPSetUpdate
   {
   public:
-    IPSetUpdate();
-    IPSetUpdate(Aws::Utils::Json::JsonView jsonValue);
-    IPSetUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WAFREGIONAL_API IPSetUpdate();
+    AWS_WAFREGIONAL_API IPSetUpdate(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFREGIONAL_API IPSetUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFREGIONAL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ManagedResourceSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_LICENSEMANAGER_API ManagedResourceSummary
+  class ManagedResourceSummary
   {
   public:
-    ManagedResourceSummary();
-    ManagedResourceSummary(Aws::Utils::Json::JsonView jsonValue);
-    ManagedResourceSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LICENSEMANAGER_API ManagedResourceSummary();
+    AWS_LICENSEMANAGER_API ManagedResourceSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LICENSEMANAGER_API ManagedResourceSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LICENSEMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

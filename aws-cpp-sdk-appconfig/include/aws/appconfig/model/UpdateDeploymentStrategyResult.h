@@ -26,12 +26,12 @@ namespace AppConfig
 {
 namespace Model
 {
-  class AWS_APPCONFIG_API UpdateDeploymentStrategyResult
+  class UpdateDeploymentStrategyResult
   {
   public:
-    UpdateDeploymentStrategyResult();
-    UpdateDeploymentStrategyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateDeploymentStrategyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPCONFIG_API UpdateDeploymentStrategyResult();
+    AWS_APPCONFIG_API UpdateDeploymentStrategyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPCONFIG_API UpdateDeploymentStrategyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -27,12 +27,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeregisterEventTopicResult">AWS
    * API Reference</a></p>
    */
-  class AWS_DIRECTORYSERVICE_API DeregisterEventTopicResult
+  class DeregisterEventTopicResult
   {
   public:
-    DeregisterEventTopicResult();
-    DeregisterEventTopicResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeregisterEventTopicResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DIRECTORYSERVICE_API DeregisterEventTopicResult();
+    AWS_DIRECTORYSERVICE_API DeregisterEventTopicResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DIRECTORYSERVICE_API DeregisterEventTopicResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

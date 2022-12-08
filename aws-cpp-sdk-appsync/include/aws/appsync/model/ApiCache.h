@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/ApiCache">AWS
    * API Reference</a></p>
    */
-  class AWS_APPSYNC_API ApiCache
+  class ApiCache
   {
   public:
-    ApiCache();
-    ApiCache(Aws::Utils::Json::JsonView jsonValue);
-    ApiCache& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPSYNC_API ApiCache();
+    AWS_APPSYNC_API ApiCache(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPSYNC_API ApiCache& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPSYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribedCertificate">AWS
    * API Reference</a></p>
    */
-  class AWS_TRANSFER_API DescribedCertificate
+  class DescribedCertificate
   {
   public:
-    DescribedCertificate();
-    DescribedCertificate(Aws::Utils::Json::JsonView jsonValue);
-    DescribedCertificate& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TRANSFER_API DescribedCertificate();
+    AWS_TRANSFER_API DescribedCertificate(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSFER_API DescribedCertificate& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSFER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

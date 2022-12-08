@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/AddressConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API AddressConfiguration
+  class AddressConfiguration
   {
   public:
-    AddressConfiguration();
-    AddressConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    AddressConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API AddressConfiguration();
+    AWS_PINPOINT_API AddressConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API AddressConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

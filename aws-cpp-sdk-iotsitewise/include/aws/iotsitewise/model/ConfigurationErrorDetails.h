@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ConfigurationErrorDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTSITEWISE_API ConfigurationErrorDetails
+  class ConfigurationErrorDetails
   {
   public:
-    ConfigurationErrorDetails();
-    ConfigurationErrorDetails(Aws::Utils::Json::JsonView jsonValue);
-    ConfigurationErrorDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTSITEWISE_API ConfigurationErrorDetails();
+    AWS_IOTSITEWISE_API ConfigurationErrorDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API ConfigurationErrorDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/DynamicPartitioningConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_FIREHOSE_API DynamicPartitioningConfiguration
+  class DynamicPartitioningConfiguration
   {
   public:
-    DynamicPartitioningConfiguration();
-    DynamicPartitioningConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    DynamicPartitioningConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FIREHOSE_API DynamicPartitioningConfiguration();
+    AWS_FIREHOSE_API DynamicPartitioningConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FIREHOSE_API DynamicPartitioningConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FIREHOSE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

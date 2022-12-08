@@ -24,12 +24,12 @@ namespace Kafka
 {
 namespace Model
 {
-  class AWS_KAFKA_API RebootBrokerResult
+  class RebootBrokerResult
   {
   public:
-    RebootBrokerResult();
-    RebootBrokerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    RebootBrokerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KAFKA_API RebootBrokerResult();
+    AWS_KAFKA_API RebootBrokerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KAFKA_API RebootBrokerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -24,12 +24,12 @@ namespace Lambda
 {
 namespace Model
 {
-  class AWS_LAMBDA_API AddLayerVersionPermissionResult
+  class AddLayerVersionPermissionResult
   {
   public:
-    AddLayerVersionPermissionResult();
-    AddLayerVersionPermissionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AddLayerVersionPermissionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LAMBDA_API AddLayerVersionPermissionResult();
+    AWS_LAMBDA_API AddLayerVersionPermissionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LAMBDA_API AddLayerVersionPermissionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

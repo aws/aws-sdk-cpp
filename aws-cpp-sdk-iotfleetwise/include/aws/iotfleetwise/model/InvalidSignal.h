@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/InvalidSignal">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTFLEETWISE_API InvalidSignal
+  class InvalidSignal
   {
   public:
-    InvalidSignal();
-    InvalidSignal(Aws::Utils::Json::JsonView jsonValue);
-    InvalidSignal& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTFLEETWISE_API InvalidSignal();
+    AWS_IOTFLEETWISE_API InvalidSignal(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTFLEETWISE_API InvalidSignal& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTFLEETWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

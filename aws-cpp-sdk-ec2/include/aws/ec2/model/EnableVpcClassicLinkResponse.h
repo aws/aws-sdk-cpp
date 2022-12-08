@@ -24,12 +24,12 @@ namespace EC2
 {
 namespace Model
 {
-  class AWS_EC2_API EnableVpcClassicLinkResponse
+  class EnableVpcClassicLinkResponse
   {
   public:
-    EnableVpcClassicLinkResponse();
-    EnableVpcClassicLinkResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    EnableVpcClassicLinkResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API EnableVpcClassicLinkResponse();
+    AWS_EC2_API EnableVpcClassicLinkResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API EnableVpcClassicLinkResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

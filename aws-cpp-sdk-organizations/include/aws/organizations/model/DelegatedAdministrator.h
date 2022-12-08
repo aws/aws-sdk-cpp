@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DelegatedAdministrator">AWS
    * API Reference</a></p>
    */
-  class AWS_ORGANIZATIONS_API DelegatedAdministrator
+  class DelegatedAdministrator
   {
   public:
-    DelegatedAdministrator();
-    DelegatedAdministrator(Aws::Utils::Json::JsonView jsonValue);
-    DelegatedAdministrator& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ORGANIZATIONS_API DelegatedAdministrator();
+    AWS_ORGANIZATIONS_API DelegatedAdministrator(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ORGANIZATIONS_API DelegatedAdministrator& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ORGANIZATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

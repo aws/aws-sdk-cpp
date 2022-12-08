@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/Type">AWS API
    * Reference</a></p>
    */
-  class AWS_APPSYNC_API Type
+  class Type
   {
   public:
-    Type();
-    Type(Aws::Utils::Json::JsonView jsonValue);
-    Type& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPSYNC_API Type();
+    AWS_APPSYNC_API Type(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPSYNC_API Type& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPSYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

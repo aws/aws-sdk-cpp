@@ -24,12 +24,12 @@ namespace ControlTower
 {
 namespace Model
 {
-  class AWS_CONTROLTOWER_API GetControlOperationResult
+  class GetControlOperationResult
   {
   public:
-    GetControlOperationResult();
-    GetControlOperationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetControlOperationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CONTROLTOWER_API GetControlOperationResult();
+    AWS_CONTROLTOWER_API GetControlOperationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CONTROLTOWER_API GetControlOperationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

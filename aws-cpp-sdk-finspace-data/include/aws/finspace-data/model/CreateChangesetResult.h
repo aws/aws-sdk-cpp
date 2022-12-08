@@ -29,12 +29,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/CreateChangesetResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_FINSPACEDATA_API CreateChangesetResult
+  class CreateChangesetResult
   {
   public:
-    CreateChangesetResult();
-    CreateChangesetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateChangesetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_FINSPACEDATA_API CreateChangesetResult();
+    AWS_FINSPACEDATA_API CreateChangesetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_FINSPACEDATA_API CreateChangesetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

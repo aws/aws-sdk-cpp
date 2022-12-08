@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/OwnerDirectoryDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_DIRECTORYSERVICE_API OwnerDirectoryDescription
+  class OwnerDirectoryDescription
   {
   public:
-    OwnerDirectoryDescription();
-    OwnerDirectoryDescription(Aws::Utils::Json::JsonView jsonValue);
-    OwnerDirectoryDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DIRECTORYSERVICE_API OwnerDirectoryDescription();
+    AWS_DIRECTORYSERVICE_API OwnerDirectoryDescription(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTORYSERVICE_API OwnerDirectoryDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTORYSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -32,12 +32,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/RetrieveEnvironmentInfoResultMessage">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICBEANSTALK_API RetrieveEnvironmentInfoResult
+  class RetrieveEnvironmentInfoResult
   {
   public:
-    RetrieveEnvironmentInfoResult();
-    RetrieveEnvironmentInfoResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    RetrieveEnvironmentInfoResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ELASTICBEANSTALK_API RetrieveEnvironmentInfoResult();
+    AWS_ELASTICBEANSTALK_API RetrieveEnvironmentInfoResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ELASTICBEANSTALK_API RetrieveEnvironmentInfoResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

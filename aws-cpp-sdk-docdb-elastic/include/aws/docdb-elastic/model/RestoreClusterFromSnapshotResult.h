@@ -24,12 +24,12 @@ namespace DocDBElastic
 {
 namespace Model
 {
-  class AWS_DOCDBELASTIC_API RestoreClusterFromSnapshotResult
+  class RestoreClusterFromSnapshotResult
   {
   public:
-    RestoreClusterFromSnapshotResult();
-    RestoreClusterFromSnapshotResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    RestoreClusterFromSnapshotResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DOCDBELASTIC_API RestoreClusterFromSnapshotResult();
+    AWS_DOCDBELASTIC_API RestoreClusterFromSnapshotResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DOCDBELASTIC_API RestoreClusterFromSnapshotResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

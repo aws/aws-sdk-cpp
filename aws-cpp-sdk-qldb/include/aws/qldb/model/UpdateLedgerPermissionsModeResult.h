@@ -25,12 +25,12 @@ namespace QLDB
 {
 namespace Model
 {
-  class AWS_QLDB_API UpdateLedgerPermissionsModeResult
+  class UpdateLedgerPermissionsModeResult
   {
   public:
-    UpdateLedgerPermissionsModeResult();
-    UpdateLedgerPermissionsModeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateLedgerPermissionsModeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_QLDB_API UpdateLedgerPermissionsModeResult();
+    AWS_QLDB_API UpdateLedgerPermissionsModeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_QLDB_API UpdateLedgerPermissionsModeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

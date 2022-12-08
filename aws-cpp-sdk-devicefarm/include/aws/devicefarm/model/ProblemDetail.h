@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ProblemDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_DEVICEFARM_API ProblemDetail
+  class ProblemDetail
   {
   public:
-    ProblemDetail();
-    ProblemDetail(Aws::Utils::Json::JsonView jsonValue);
-    ProblemDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DEVICEFARM_API ProblemDetail();
+    AWS_DEVICEFARM_API ProblemDetail(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVICEFARM_API ProblemDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVICEFARM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -22,12 +22,12 @@ namespace DirectoryService
 {
 namespace Model
 {
-  class AWS_DIRECTORYSERVICE_API UpdateDirectorySetupResult
+  class UpdateDirectorySetupResult
   {
   public:
-    UpdateDirectorySetupResult();
-    UpdateDirectorySetupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateDirectorySetupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DIRECTORYSERVICE_API UpdateDirectorySetupResult();
+    AWS_DIRECTORYSERVICE_API UpdateDirectorySetupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DIRECTORYSERVICE_API UpdateDirectorySetupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

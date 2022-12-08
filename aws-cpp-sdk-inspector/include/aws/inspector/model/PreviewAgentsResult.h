@@ -26,12 +26,12 @@ namespace Inspector
 {
 namespace Model
 {
-  class AWS_INSPECTOR_API PreviewAgentsResult
+  class PreviewAgentsResult
   {
   public:
-    PreviewAgentsResult();
-    PreviewAgentsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PreviewAgentsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_INSPECTOR_API PreviewAgentsResult();
+    AWS_INSPECTOR_API PreviewAgentsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_INSPECTOR_API PreviewAgentsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

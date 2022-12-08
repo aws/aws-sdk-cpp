@@ -25,12 +25,12 @@ namespace FSx
 {
 namespace Model
 {
-  class AWS_FSX_API DeleteFileCacheResult
+  class DeleteFileCacheResult
   {
   public:
-    DeleteFileCacheResult();
-    DeleteFileCacheResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteFileCacheResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_FSX_API DeleteFileCacheResult();
+    AWS_FSX_API DeleteFileCacheResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_FSX_API DeleteFileCacheResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

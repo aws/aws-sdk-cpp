@@ -24,12 +24,12 @@ namespace KinesisVideoArchivedMedia
 {
 namespace Model
 {
-  class AWS_KINESISVIDEOARCHIVEDMEDIA_API GetDASHStreamingSessionURLResult
+  class GetDASHStreamingSessionURLResult
   {
   public:
-    GetDASHStreamingSessionURLResult();
-    GetDASHStreamingSessionURLResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetDASHStreamingSessionURLResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KINESISVIDEOARCHIVEDMEDIA_API GetDASHStreamingSessionURLResult();
+    AWS_KINESISVIDEOARCHIVEDMEDIA_API GetDASHStreamingSessionURLResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KINESISVIDEOARCHIVEDMEDIA_API GetDASHStreamingSessionURLResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

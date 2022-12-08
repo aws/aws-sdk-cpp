@@ -24,12 +24,12 @@ namespace DAX
 {
 namespace Model
 {
-  class AWS_DAX_API DeleteSubnetGroupResult
+  class DeleteSubnetGroupResult
   {
   public:
-    DeleteSubnetGroupResult();
-    DeleteSubnetGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteSubnetGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DAX_API DeleteSubnetGroupResult();
+    AWS_DAX_API DeleteSubnetGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DAX_API DeleteSubnetGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

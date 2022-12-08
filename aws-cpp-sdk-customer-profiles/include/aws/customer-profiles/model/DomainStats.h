@@ -26,13 +26,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/DomainStats">AWS
    * API Reference</a></p>
    */
-  class AWS_CUSTOMERPROFILES_API DomainStats
+  class DomainStats
   {
   public:
-    DomainStats();
-    DomainStats(Aws::Utils::Json::JsonView jsonValue);
-    DomainStats& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CUSTOMERPROFILES_API DomainStats();
+    AWS_CUSTOMERPROFILES_API DomainStats(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CUSTOMERPROFILES_API DomainStats& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CUSTOMERPROFILES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

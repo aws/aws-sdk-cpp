@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/ContentModerationDetection">AWS
    * API Reference</a></p>
    */
-  class AWS_REKOGNITION_API ContentModerationDetection
+  class ContentModerationDetection
   {
   public:
-    ContentModerationDetection();
-    ContentModerationDetection(Aws::Utils::Json::JsonView jsonValue);
-    ContentModerationDetection& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_REKOGNITION_API ContentModerationDetection();
+    AWS_REKOGNITION_API ContentModerationDetection(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API ContentModerationDetection& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

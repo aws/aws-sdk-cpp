@@ -26,12 +26,12 @@ namespace Inspector
 {
 namespace Model
 {
-  class AWS_INSPECTOR_API ListEventSubscriptionsResult
+  class ListEventSubscriptionsResult
   {
   public:
-    ListEventSubscriptionsResult();
-    ListEventSubscriptionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListEventSubscriptionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_INSPECTOR_API ListEventSubscriptionsResult();
+    AWS_INSPECTOR_API ListEventSubscriptionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_INSPECTOR_API ListEventSubscriptionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

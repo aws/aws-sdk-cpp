@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/PutRecordBatchResponseEntry">AWS
    * API Reference</a></p>
    */
-  class AWS_FIREHOSE_API PutRecordBatchResponseEntry
+  class PutRecordBatchResponseEntry
   {
   public:
-    PutRecordBatchResponseEntry();
-    PutRecordBatchResponseEntry(Aws::Utils::Json::JsonView jsonValue);
-    PutRecordBatchResponseEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FIREHOSE_API PutRecordBatchResponseEntry();
+    AWS_FIREHOSE_API PutRecordBatchResponseEntry(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FIREHOSE_API PutRecordBatchResponseEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FIREHOSE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

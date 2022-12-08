@@ -31,12 +31,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/ListDataflowEndpointGroupsResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_GROUNDSTATION_API ListDataflowEndpointGroupsResult
+  class ListDataflowEndpointGroupsResult
   {
   public:
-    ListDataflowEndpointGroupsResult();
-    ListDataflowEndpointGroupsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListDataflowEndpointGroupsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GROUNDSTATION_API ListDataflowEndpointGroupsResult();
+    AWS_GROUNDSTATION_API ListDataflowEndpointGroupsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GROUNDSTATION_API ListDataflowEndpointGroupsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

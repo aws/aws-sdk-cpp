@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/S3ParquetSource">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API S3ParquetSource
+  class S3ParquetSource
   {
   public:
-    S3ParquetSource();
-    S3ParquetSource(Aws::Utils::Json::JsonView jsonValue);
-    S3ParquetSource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API S3ParquetSource();
+    AWS_GLUE_API S3ParquetSource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API S3ParquetSource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

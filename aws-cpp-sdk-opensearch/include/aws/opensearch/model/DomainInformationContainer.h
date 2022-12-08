@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DomainInformationContainer">AWS
    * API Reference</a></p>
    */
-  class AWS_OPENSEARCHSERVICE_API DomainInformationContainer
+  class DomainInformationContainer
   {
   public:
-    DomainInformationContainer();
-    DomainInformationContainer(Aws::Utils::Json::JsonView jsonValue);
-    DomainInformationContainer& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OPENSEARCHSERVICE_API DomainInformationContainer();
+    AWS_OPENSEARCHSERVICE_API DomainInformationContainer(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPENSEARCHSERVICE_API DomainInformationContainer& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPENSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

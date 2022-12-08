@@ -26,12 +26,12 @@ namespace SSM
 {
 namespace Model
 {
-  class AWS_SSM_API DescribeInstancePatchStatesForPatchGroupResult
+  class DescribeInstancePatchStatesForPatchGroupResult
   {
   public:
-    DescribeInstancePatchStatesForPatchGroupResult();
-    DescribeInstancePatchStatesForPatchGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeInstancePatchStatesForPatchGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSM_API DescribeInstancePatchStatesForPatchGroupResult();
+    AWS_SSM_API DescribeInstancePatchStatesForPatchGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSM_API DescribeInstancePatchStatesForPatchGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

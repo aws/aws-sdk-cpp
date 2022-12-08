@@ -26,12 +26,12 @@ namespace Backup
 {
 namespace Model
 {
-  class AWS_BACKUP_API ListRecoveryPointsByLegalHoldResult
+  class ListRecoveryPointsByLegalHoldResult
   {
   public:
-    ListRecoveryPointsByLegalHoldResult();
-    ListRecoveryPointsByLegalHoldResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListRecoveryPointsByLegalHoldResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_BACKUP_API ListRecoveryPointsByLegalHoldResult();
+    AWS_BACKUP_API ListRecoveryPointsByLegalHoldResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_BACKUP_API ListRecoveryPointsByLegalHoldResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

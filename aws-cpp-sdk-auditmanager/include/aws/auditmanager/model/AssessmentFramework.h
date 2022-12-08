@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/AssessmentFramework">AWS
    * API Reference</a></p>
    */
-  class AWS_AUDITMANAGER_API AssessmentFramework
+  class AssessmentFramework
   {
   public:
-    AssessmentFramework();
-    AssessmentFramework(Aws::Utils::Json::JsonView jsonValue);
-    AssessmentFramework& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_AUDITMANAGER_API AssessmentFramework();
+    AWS_AUDITMANAGER_API AssessmentFramework(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AUDITMANAGER_API AssessmentFramework& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AUDITMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

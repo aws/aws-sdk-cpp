@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/StringDefaultValues">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API StringDefaultValues
+  class StringDefaultValues
   {
   public:
-    StringDefaultValues();
-    StringDefaultValues(Aws::Utils::Json::JsonView jsonValue);
-    StringDefaultValues& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API StringDefaultValues();
+    AWS_QUICKSIGHT_API StringDefaultValues(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API StringDefaultValues& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

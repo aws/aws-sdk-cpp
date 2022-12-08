@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/SystemTemplateDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTTHINGSGRAPH_API SystemTemplateDescription
+  class SystemTemplateDescription
   {
   public:
-    SystemTemplateDescription();
-    SystemTemplateDescription(Aws::Utils::Json::JsonView jsonValue);
-    SystemTemplateDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTTHINGSGRAPH_API SystemTemplateDescription();
+    AWS_IOTTHINGSGRAPH_API SystemTemplateDescription(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTTHINGSGRAPH_API SystemTemplateDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTTHINGSGRAPH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

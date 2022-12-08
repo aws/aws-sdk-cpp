@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/AudioConcatenationConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_CHIMESDKMEDIAPIPELINES_API AudioConcatenationConfiguration
+  class AudioConcatenationConfiguration
   {
   public:
-    AudioConcatenationConfiguration();
-    AudioConcatenationConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    AudioConcatenationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIMESDKMEDIAPIPELINES_API AudioConcatenationConfiguration();
+    AWS_CHIMESDKMEDIAPIPELINES_API AudioConcatenationConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKMEDIAPIPELINES_API AudioConcatenationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKMEDIAPIPELINES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

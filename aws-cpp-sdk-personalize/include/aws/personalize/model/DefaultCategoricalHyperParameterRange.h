@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DefaultCategoricalHyperParameterRange">AWS
    * API Reference</a></p>
    */
-  class AWS_PERSONALIZE_API DefaultCategoricalHyperParameterRange
+  class DefaultCategoricalHyperParameterRange
   {
   public:
-    DefaultCategoricalHyperParameterRange();
-    DefaultCategoricalHyperParameterRange(Aws::Utils::Json::JsonView jsonValue);
-    DefaultCategoricalHyperParameterRange& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PERSONALIZE_API DefaultCategoricalHyperParameterRange();
+    AWS_PERSONALIZE_API DefaultCategoricalHyperParameterRange(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PERSONALIZE_API DefaultCategoricalHyperParameterRange& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PERSONALIZE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

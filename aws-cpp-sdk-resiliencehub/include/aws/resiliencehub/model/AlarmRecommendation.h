@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/AlarmRecommendation">AWS
    * API Reference</a></p>
    */
-  class AWS_RESILIENCEHUB_API AlarmRecommendation
+  class AlarmRecommendation
   {
   public:
-    AlarmRecommendation();
-    AlarmRecommendation(Aws::Utils::Json::JsonView jsonValue);
-    AlarmRecommendation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_RESILIENCEHUB_API AlarmRecommendation();
+    AWS_RESILIENCEHUB_API AlarmRecommendation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RESILIENCEHUB_API AlarmRecommendation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RESILIENCEHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

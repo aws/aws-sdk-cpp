@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/VpcConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_CODESTARCONNECTIONS_API VpcConfiguration
+  class VpcConfiguration
   {
   public:
-    VpcConfiguration();
-    VpcConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    VpcConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODESTARCONNECTIONS_API VpcConfiguration();
+    AWS_CODESTARCONNECTIONS_API VpcConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODESTARCONNECTIONS_API VpcConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODESTARCONNECTIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

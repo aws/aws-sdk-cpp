@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/Scte35SegmentationDescriptor">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API Scte35SegmentationDescriptor
+  class Scte35SegmentationDescriptor
   {
   public:
-    Scte35SegmentationDescriptor();
-    Scte35SegmentationDescriptor(Aws::Utils::Json::JsonView jsonValue);
-    Scte35SegmentationDescriptor& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API Scte35SegmentationDescriptor();
+    AWS_MEDIALIVE_API Scte35SegmentationDescriptor(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Scte35SegmentationDescriptor& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/AggregatedValue">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTSITEWISE_API AggregatedValue
+  class AggregatedValue
   {
   public:
-    AggregatedValue();
-    AggregatedValue(Aws::Utils::Json::JsonView jsonValue);
-    AggregatedValue& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTSITEWISE_API AggregatedValue();
+    AWS_IOTSITEWISE_API AggregatedValue(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API AggregatedValue& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

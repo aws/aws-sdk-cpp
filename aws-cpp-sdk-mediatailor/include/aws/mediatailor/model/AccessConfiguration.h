@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/AccessConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIATAILOR_API AccessConfiguration
+  class AccessConfiguration
   {
   public:
-    AccessConfiguration();
-    AccessConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    AccessConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIATAILOR_API AccessConfiguration();
+    AWS_MEDIATAILOR_API AccessConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIATAILOR_API AccessConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIATAILOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

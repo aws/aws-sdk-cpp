@@ -30,12 +30,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/CheckIfPhoneNumberIsOptedOutResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_SNS_API CheckIfPhoneNumberIsOptedOutResult
+  class CheckIfPhoneNumberIsOptedOutResult
   {
   public:
-    CheckIfPhoneNumberIsOptedOutResult();
-    CheckIfPhoneNumberIsOptedOutResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    CheckIfPhoneNumberIsOptedOutResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_SNS_API CheckIfPhoneNumberIsOptedOutResult();
+    AWS_SNS_API CheckIfPhoneNumberIsOptedOutResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_SNS_API CheckIfPhoneNumberIsOptedOutResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

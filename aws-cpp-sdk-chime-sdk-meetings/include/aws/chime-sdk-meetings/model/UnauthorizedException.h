@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/UnauthorizedException">AWS
    * API Reference</a></p>
    */
-  class AWS_CHIMESDKMEETINGS_API UnauthorizedException
+  class UnauthorizedException
   {
   public:
-    UnauthorizedException();
-    UnauthorizedException(Aws::Utils::Json::JsonView jsonValue);
-    UnauthorizedException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIMESDKMEETINGS_API UnauthorizedException();
+    AWS_CHIMESDKMEETINGS_API UnauthorizedException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKMEETINGS_API UnauthorizedException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKMEETINGS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/BatchGetAssetPropertyValueHistorySkippedEntry">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTSITEWISE_API BatchGetAssetPropertyValueHistorySkippedEntry
+  class BatchGetAssetPropertyValueHistorySkippedEntry
   {
   public:
-    BatchGetAssetPropertyValueHistorySkippedEntry();
-    BatchGetAssetPropertyValueHistorySkippedEntry(Aws::Utils::Json::JsonView jsonValue);
-    BatchGetAssetPropertyValueHistorySkippedEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTSITEWISE_API BatchGetAssetPropertyValueHistorySkippedEntry();
+    AWS_IOTSITEWISE_API BatchGetAssetPropertyValueHistorySkippedEntry(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API BatchGetAssetPropertyValueHistorySkippedEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -31,12 +31,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetSubscriptionAttributesResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_SNS_API GetSubscriptionAttributesResult
+  class GetSubscriptionAttributesResult
   {
   public:
-    GetSubscriptionAttributesResult();
-    GetSubscriptionAttributesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    GetSubscriptionAttributesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_SNS_API GetSubscriptionAttributesResult();
+    AWS_SNS_API GetSubscriptionAttributesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_SNS_API GetSubscriptionAttributesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

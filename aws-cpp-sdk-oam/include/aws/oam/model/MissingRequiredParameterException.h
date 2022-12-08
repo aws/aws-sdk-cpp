@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/oam-2022-06-10/MissingRequiredParameterException">AWS
    * API Reference</a></p>
    */
-  class AWS_OAM_API MissingRequiredParameterException
+  class MissingRequiredParameterException
   {
   public:
-    MissingRequiredParameterException();
-    MissingRequiredParameterException(Aws::Utils::Json::JsonView jsonValue);
-    MissingRequiredParameterException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OAM_API MissingRequiredParameterException();
+    AWS_OAM_API MissingRequiredParameterException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OAM_API MissingRequiredParameterException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OAM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

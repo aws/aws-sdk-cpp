@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-data-2019-12-20/TableMember">AWS
    * API Reference</a></p>
    */
-  class AWS_REDSHIFTDATAAPISERVICE_API TableMember
+  class TableMember
   {
   public:
-    TableMember();
-    TableMember(Aws::Utils::Json::JsonView jsonValue);
-    TableMember& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_REDSHIFTDATAAPISERVICE_API TableMember();
+    AWS_REDSHIFTDATAAPISERVICE_API TableMember(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REDSHIFTDATAAPISERVICE_API TableMember& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REDSHIFTDATAAPISERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

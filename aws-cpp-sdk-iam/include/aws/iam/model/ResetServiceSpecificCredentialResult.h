@@ -25,12 +25,12 @@ namespace IAM
 {
 namespace Model
 {
-  class AWS_IAM_API ResetServiceSpecificCredentialResult
+  class ResetServiceSpecificCredentialResult
   {
   public:
-    ResetServiceSpecificCredentialResult();
-    ResetServiceSpecificCredentialResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ResetServiceSpecificCredentialResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_IAM_API ResetServiceSpecificCredentialResult();
+    AWS_IAM_API ResetServiceSpecificCredentialResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_IAM_API ResetServiceSpecificCredentialResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

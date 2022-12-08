@@ -27,12 +27,12 @@ namespace Glue
 {
 namespace Model
 {
-  class AWS_GLUE_API GetUnfilteredTableMetadataResult
+  class GetUnfilteredTableMetadataResult
   {
   public:
-    GetUnfilteredTableMetadataResult();
-    GetUnfilteredTableMetadataResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetUnfilteredTableMetadataResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GLUE_API GetUnfilteredTableMetadataResult();
+    AWS_GLUE_API GetUnfilteredTableMetadataResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GLUE_API GetUnfilteredTableMetadataResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     

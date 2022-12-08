@@ -25,12 +25,12 @@ namespace Redshift
 {
 namespace Model
 {
-  class AWS_REDSHIFT_API CreateSnapshotCopyGrantResult
+  class CreateSnapshotCopyGrantResult
   {
   public:
-    CreateSnapshotCopyGrantResult();
-    CreateSnapshotCopyGrantResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    CreateSnapshotCopyGrantResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_REDSHIFT_API CreateSnapshotCopyGrantResult();
+    AWS_REDSHIFT_API CreateSnapshotCopyGrantResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_REDSHIFT_API CreateSnapshotCopyGrantResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     

@@ -35,15 +35,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/VpcClassicLink">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API VpcClassicLink
+  class VpcClassicLink
   {
   public:
-    VpcClassicLink();
-    VpcClassicLink(const Aws::Utils::Xml::XmlNode& xmlNode);
-    VpcClassicLink& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API VpcClassicLink();
+    AWS_EC2_API VpcClassicLink(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API VpcClassicLink& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**

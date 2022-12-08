@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/PosixProfile">AWS
    * API Reference</a></p>
    */
-  class AWS_TRANSFER_API PosixProfile
+  class PosixProfile
   {
   public:
-    PosixProfile();
-    PosixProfile(Aws::Utils::Json::JsonView jsonValue);
-    PosixProfile& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TRANSFER_API PosixProfile();
+    AWS_TRANSFER_API PosixProfile(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSFER_API PosixProfile& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSFER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -26,12 +26,12 @@ namespace PersonalizeRuntime
 {
 namespace Model
 {
-  class AWS_PERSONALIZERUNTIME_API GetPersonalizedRankingResult
+  class GetPersonalizedRankingResult
   {
   public:
-    GetPersonalizedRankingResult();
-    GetPersonalizedRankingResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetPersonalizedRankingResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PERSONALIZERUNTIME_API GetPersonalizedRankingResult();
+    AWS_PERSONALIZERUNTIME_API GetPersonalizedRankingResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PERSONALIZERUNTIME_API GetPersonalizedRankingResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

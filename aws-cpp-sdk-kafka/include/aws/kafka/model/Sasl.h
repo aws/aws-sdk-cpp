@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/Sasl">AWS API
    * Reference</a></p>
    */
-  class AWS_KAFKA_API Sasl
+  class Sasl
   {
   public:
-    Sasl();
-    Sasl(Aws::Utils::Json::JsonView jsonValue);
-    Sasl& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KAFKA_API Sasl();
+    AWS_KAFKA_API Sasl(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKA_API Sasl& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -22,12 +22,12 @@ namespace Greengrass
 {
 namespace Model
 {
-  class AWS_GREENGRASS_API DeleteCoreDefinitionResult
+  class DeleteCoreDefinitionResult
   {
   public:
-    DeleteCoreDefinitionResult();
-    DeleteCoreDefinitionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteCoreDefinitionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GREENGRASS_API DeleteCoreDefinitionResult();
+    AWS_GREENGRASS_API DeleteCoreDefinitionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GREENGRASS_API DeleteCoreDefinitionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

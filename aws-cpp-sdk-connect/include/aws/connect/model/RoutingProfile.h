@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/RoutingProfile">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECT_API RoutingProfile
+  class RoutingProfile
   {
   public:
-    RoutingProfile();
-    RoutingProfile(Aws::Utils::Json::JsonView jsonValue);
-    RoutingProfile& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECT_API RoutingProfile();
+    AWS_CONNECT_API RoutingProfile(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API RoutingProfile& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

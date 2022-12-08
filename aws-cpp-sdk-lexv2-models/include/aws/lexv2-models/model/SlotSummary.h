@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/SlotSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELSV2_API SlotSummary
+  class SlotSummary
   {
   public:
-    SlotSummary();
-    SlotSummary(Aws::Utils::Json::JsonView jsonValue);
-    SlotSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELSV2_API SlotSummary();
+    AWS_LEXMODELSV2_API SlotSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API SlotSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

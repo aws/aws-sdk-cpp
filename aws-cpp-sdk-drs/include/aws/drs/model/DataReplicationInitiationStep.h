@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/DataReplicationInitiationStep">AWS
    * API Reference</a></p>
    */
-  class AWS_DRS_API DataReplicationInitiationStep
+  class DataReplicationInitiationStep
   {
   public:
-    DataReplicationInitiationStep();
-    DataReplicationInitiationStep(Aws::Utils::Json::JsonView jsonValue);
-    DataReplicationInitiationStep& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DRS_API DataReplicationInitiationStep();
+    AWS_DRS_API DataReplicationInitiationStep(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DRS_API DataReplicationInitiationStep& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DRS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

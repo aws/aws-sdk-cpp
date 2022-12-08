@@ -26,12 +26,12 @@ namespace CodeCommit
 {
 namespace Model
 {
-  class AWS_CODECOMMIT_API PostCommentForComparedCommitResult
+  class PostCommentForComparedCommitResult
   {
   public:
-    PostCommentForComparedCommitResult();
-    PostCommentForComparedCommitResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PostCommentForComparedCommitResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODECOMMIT_API PostCommentForComparedCommitResult();
+    AWS_CODECOMMIT_API PostCommentForComparedCommitResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODECOMMIT_API PostCommentForComparedCommitResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -26,12 +26,12 @@ namespace MTurk
 {
 namespace Model
 {
-  class AWS_MTURK_API ListWorkerBlocksResult
+  class ListWorkerBlocksResult
   {
   public:
-    ListWorkerBlocksResult();
-    ListWorkerBlocksResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListWorkerBlocksResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MTURK_API ListWorkerBlocksResult();
+    AWS_MTURK_API ListWorkerBlocksResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MTURK_API ListWorkerBlocksResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     

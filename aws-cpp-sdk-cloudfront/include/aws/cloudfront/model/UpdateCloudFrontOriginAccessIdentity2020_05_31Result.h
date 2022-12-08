@@ -31,12 +31,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateCloudFrontOriginAccessIdentityResult">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFRONT_API UpdateCloudFrontOriginAccessIdentity2020_05_31Result
+  class UpdateCloudFrontOriginAccessIdentity2020_05_31Result
   {
   public:
-    UpdateCloudFrontOriginAccessIdentity2020_05_31Result();
-    UpdateCloudFrontOriginAccessIdentity2020_05_31Result(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    UpdateCloudFrontOriginAccessIdentity2020_05_31Result& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_CLOUDFRONT_API UpdateCloudFrontOriginAccessIdentity2020_05_31Result();
+    AWS_CLOUDFRONT_API UpdateCloudFrontOriginAccessIdentity2020_05_31Result(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_CLOUDFRONT_API UpdateCloudFrontOriginAccessIdentity2020_05_31Result& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

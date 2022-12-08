@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/S3Source">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API S3Source
+  class S3Source
   {
   public:
-    S3Source();
-    S3Source(Aws::Utils::Json::JsonView jsonValue);
-    S3Source& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API S3Source();
+    AWS_QUICKSIGHT_API S3Source(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API S3Source& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

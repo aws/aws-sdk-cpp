@@ -38,13 +38,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/SnsTopicConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_ACCESSANALYZER_API SnsTopicConfiguration
+  class SnsTopicConfiguration
   {
   public:
-    SnsTopicConfiguration();
-    SnsTopicConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    SnsTopicConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ACCESSANALYZER_API SnsTopicConfiguration();
+    AWS_ACCESSANALYZER_API SnsTopicConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACCESSANALYZER_API SnsTopicConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACCESSANALYZER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

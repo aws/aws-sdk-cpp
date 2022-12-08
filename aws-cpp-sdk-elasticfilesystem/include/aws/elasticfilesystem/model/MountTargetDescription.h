@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/MountTargetDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_EFS_API MountTargetDescription
+  class MountTargetDescription
   {
   public:
-    MountTargetDescription();
-    MountTargetDescription(Aws::Utils::Json::JsonView jsonValue);
-    MountTargetDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EFS_API MountTargetDescription();
+    AWS_EFS_API MountTargetDescription(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EFS_API MountTargetDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EFS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

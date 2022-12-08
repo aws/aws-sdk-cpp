@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/CSVOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_GLACIER_API CSVOutput
+  class CSVOutput
   {
   public:
-    CSVOutput();
-    CSVOutput(Aws::Utils::Json::JsonView jsonValue);
-    CSVOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLACIER_API CSVOutput();
+    AWS_GLACIER_API CSVOutput(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLACIER_API CSVOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLACIER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

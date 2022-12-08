@@ -31,12 +31,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateStreamingDistributionResult">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFRONT_API UpdateStreamingDistribution2020_05_31Result
+  class UpdateStreamingDistribution2020_05_31Result
   {
   public:
-    UpdateStreamingDistribution2020_05_31Result();
-    UpdateStreamingDistribution2020_05_31Result(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    UpdateStreamingDistribution2020_05_31Result& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_CLOUDFRONT_API UpdateStreamingDistribution2020_05_31Result();
+    AWS_CLOUDFRONT_API UpdateStreamingDistribution2020_05_31Result(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_CLOUDFRONT_API UpdateStreamingDistribution2020_05_31Result& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

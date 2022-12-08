@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/CustomRoutingAcceleratorAttributes">AWS
    * API Reference</a></p>
    */
-  class AWS_GLOBALACCELERATOR_API CustomRoutingAcceleratorAttributes
+  class CustomRoutingAcceleratorAttributes
   {
   public:
-    CustomRoutingAcceleratorAttributes();
-    CustomRoutingAcceleratorAttributes(Aws::Utils::Json::JsonView jsonValue);
-    CustomRoutingAcceleratorAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLOBALACCELERATOR_API CustomRoutingAcceleratorAttributes();
+    AWS_GLOBALACCELERATOR_API CustomRoutingAcceleratorAttributes(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLOBALACCELERATOR_API CustomRoutingAcceleratorAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLOBALACCELERATOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/LogPattern">AWS
    * API Reference</a></p>
    */
-  class AWS_APPLICATIONINSIGHTS_API LogPattern
+  class LogPattern
   {
   public:
-    LogPattern();
-    LogPattern(Aws::Utils::Json::JsonView jsonValue);
-    LogPattern& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPLICATIONINSIGHTS_API LogPattern();
+    AWS_APPLICATIONINSIGHTS_API LogPattern(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPLICATIONINSIGHTS_API LogPattern& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPLICATIONINSIGHTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

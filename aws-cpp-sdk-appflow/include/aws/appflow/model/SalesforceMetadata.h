@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/SalesforceMetadata">AWS
    * API Reference</a></p>
    */
-  class AWS_APPFLOW_API SalesforceMetadata
+  class SalesforceMetadata
   {
   public:
-    SalesforceMetadata();
-    SalesforceMetadata(Aws::Utils::Json::JsonView jsonValue);
-    SalesforceMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPFLOW_API SalesforceMetadata();
+    AWS_APPFLOW_API SalesforceMetadata(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API SalesforceMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

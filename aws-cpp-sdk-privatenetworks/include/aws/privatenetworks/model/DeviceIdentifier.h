@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/privatenetworks-2021-12-03/DeviceIdentifier">AWS
    * API Reference</a></p>
    */
-  class AWS_PRIVATENETWORKS_API DeviceIdentifier
+  class DeviceIdentifier
   {
   public:
-    DeviceIdentifier();
-    DeviceIdentifier(Aws::Utils::Json::JsonView jsonValue);
-    DeviceIdentifier& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PRIVATENETWORKS_API DeviceIdentifier();
+    AWS_PRIVATENETWORKS_API DeviceIdentifier(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PRIVATENETWORKS_API DeviceIdentifier& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PRIVATENETWORKS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

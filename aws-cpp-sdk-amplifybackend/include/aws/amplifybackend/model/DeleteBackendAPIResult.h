@@ -24,12 +24,12 @@ namespace AmplifyBackend
 {
 namespace Model
 {
-  class AWS_AMPLIFYBACKEND_API DeleteBackendAPIResult
+  class DeleteBackendAPIResult
   {
   public:
-    DeleteBackendAPIResult();
-    DeleteBackendAPIResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteBackendAPIResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_AMPLIFYBACKEND_API DeleteBackendAPIResult();
+    AWS_AMPLIFYBACKEND_API DeleteBackendAPIResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_AMPLIFYBACKEND_API DeleteBackendAPIResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ActionContext">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEPIPELINE_API ActionContext
+  class ActionContext
   {
   public:
-    ActionContext();
-    ActionContext(Aws::Utils::Json::JsonView jsonValue);
-    ActionContext& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEPIPELINE_API ActionContext();
+    AWS_CODEPIPELINE_API ActionContext(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEPIPELINE_API ActionContext& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

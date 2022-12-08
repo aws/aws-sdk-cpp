@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-edge-2020-09-23/EdgeMetric">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKEREDGEMANAGER_API EdgeMetric
+  class EdgeMetric
   {
   public:
-    EdgeMetric();
-    EdgeMetric(Aws::Utils::Json::JsonView jsonValue);
-    EdgeMetric& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKEREDGEMANAGER_API EdgeMetric();
+    AWS_SAGEMAKEREDGEMANAGER_API EdgeMetric(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKEREDGEMANAGER_API EdgeMetric& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKEREDGEMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -22,12 +22,12 @@ namespace SESV2
 {
 namespace Model
 {
-  class AWS_SESV2_API PutAccountVdmAttributesResult
+  class PutAccountVdmAttributesResult
   {
   public:
-    PutAccountVdmAttributesResult();
-    PutAccountVdmAttributesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PutAccountVdmAttributesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SESV2_API PutAccountVdmAttributesResult();
+    AWS_SESV2_API PutAccountVdmAttributesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SESV2_API PutAccountVdmAttributesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

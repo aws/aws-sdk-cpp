@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/StartRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_WORKSPACES_API StartRequest
+  class StartRequest
   {
   public:
-    StartRequest();
-    StartRequest(Aws::Utils::Json::JsonView jsonValue);
-    StartRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WORKSPACES_API StartRequest();
+    AWS_WORKSPACES_API StartRequest(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKSPACES_API StartRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

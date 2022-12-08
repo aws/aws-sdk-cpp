@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/SsmAutomation">AWS
    * API Reference</a></p>
    */
-  class AWS_SSMINCIDENTS_API SsmAutomation
+  class SsmAutomation
   {
   public:
-    SsmAutomation();
-    SsmAutomation(Aws::Utils::Json::JsonView jsonValue);
-    SsmAutomation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSMINCIDENTS_API SsmAutomation();
+    AWS_SSMINCIDENTS_API SsmAutomation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSMINCIDENTS_API SsmAutomation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSMINCIDENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/FilterScopeConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API FilterScopeConfiguration
+  class FilterScopeConfiguration
   {
   public:
-    FilterScopeConfiguration();
-    FilterScopeConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    FilterScopeConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API FilterScopeConfiguration();
+    AWS_QUICKSIGHT_API FilterScopeConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API FilterScopeConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

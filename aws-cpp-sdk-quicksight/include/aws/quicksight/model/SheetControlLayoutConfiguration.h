@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/SheetControlLayoutConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API SheetControlLayoutConfiguration
+  class SheetControlLayoutConfiguration
   {
   public:
-    SheetControlLayoutConfiguration();
-    SheetControlLayoutConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    SheetControlLayoutConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API SheetControlLayoutConfiguration();
+    AWS_QUICKSIGHT_API SheetControlLayoutConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API SheetControlLayoutConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

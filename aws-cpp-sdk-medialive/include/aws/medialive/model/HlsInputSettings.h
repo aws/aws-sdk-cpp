@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/HlsInputSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API HlsInputSettings
+  class HlsInputSettings
   {
   public:
-    HlsInputSettings();
-    HlsInputSettings(Aws::Utils::Json::JsonView jsonValue);
-    HlsInputSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API HlsInputSettings();
+    AWS_MEDIALIVE_API HlsInputSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API HlsInputSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

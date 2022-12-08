@@ -28,12 +28,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/RejectInputDeviceTransferResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API RejectInputDeviceTransferResult
+  class RejectInputDeviceTransferResult
   {
   public:
-    RejectInputDeviceTransferResult();
-    RejectInputDeviceTransferResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    RejectInputDeviceTransferResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MEDIALIVE_API RejectInputDeviceTransferResult();
+    AWS_MEDIALIVE_API RejectInputDeviceTransferResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MEDIALIVE_API RejectInputDeviceTransferResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/WeeklyStartTime">AWS
    * API Reference</a></p>
    */
-  class AWS_MQ_API WeeklyStartTime
+  class WeeklyStartTime
   {
   public:
-    WeeklyStartTime();
-    WeeklyStartTime(Aws::Utils::Json::JsonView jsonValue);
-    WeeklyStartTime& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MQ_API WeeklyStartTime();
+    AWS_MQ_API WeeklyStartTime(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MQ_API WeeklyStartTime& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MQ_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

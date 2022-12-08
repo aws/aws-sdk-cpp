@@ -30,15 +30,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ClientLoginBannerResponseOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API ClientLoginBannerResponseOptions
+  class ClientLoginBannerResponseOptions
   {
   public:
-    ClientLoginBannerResponseOptions();
-    ClientLoginBannerResponseOptions(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ClientLoginBannerResponseOptions& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API ClientLoginBannerResponseOptions();
+    AWS_EC2_API ClientLoginBannerResponseOptions(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API ClientLoginBannerResponseOptions& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**

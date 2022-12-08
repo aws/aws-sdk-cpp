@@ -27,12 +27,12 @@ namespace EC2
 {
 namespace Model
 {
-  class AWS_EC2_API GetManagedPrefixListAssociationsResponse
+  class GetManagedPrefixListAssociationsResponse
   {
   public:
-    GetManagedPrefixListAssociationsResponse();
-    GetManagedPrefixListAssociationsResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    GetManagedPrefixListAssociationsResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API GetManagedPrefixListAssociationsResponse();
+    AWS_EC2_API GetManagedPrefixListAssociationsResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API GetManagedPrefixListAssociationsResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

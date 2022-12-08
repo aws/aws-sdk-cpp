@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/InternalServerErrorException">AWS
    * API Reference</a></p>
    */
-  class AWS_MQ_API InternalServerErrorException
+  class InternalServerErrorException
   {
   public:
-    InternalServerErrorException();
-    InternalServerErrorException(Aws::Utils::Json::JsonView jsonValue);
-    InternalServerErrorException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MQ_API InternalServerErrorException();
+    AWS_MQ_API InternalServerErrorException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MQ_API InternalServerErrorException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MQ_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/Command">AWS
    * API Reference</a></p>
    */
-  class AWS_OPSWORKS_API Command
+  class Command
   {
   public:
-    Command();
-    Command(Aws::Utils::Json::JsonView jsonValue);
-    Command& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OPSWORKS_API Command();
+    AWS_OPSWORKS_API Command(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPSWORKS_API Command& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPSWORKS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

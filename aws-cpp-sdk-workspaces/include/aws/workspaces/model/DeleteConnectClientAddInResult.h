@@ -22,12 +22,12 @@ namespace WorkSpaces
 {
 namespace Model
 {
-  class AWS_WORKSPACES_API DeleteConnectClientAddInResult
+  class DeleteConnectClientAddInResult
   {
   public:
-    DeleteConnectClientAddInResult();
-    DeleteConnectClientAddInResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteConnectClientAddInResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WORKSPACES_API DeleteConnectClientAddInResult();
+    AWS_WORKSPACES_API DeleteConnectClientAddInResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WORKSPACES_API DeleteConnectClientAddInResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

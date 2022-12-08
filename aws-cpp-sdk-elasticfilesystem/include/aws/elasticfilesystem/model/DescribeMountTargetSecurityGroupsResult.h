@@ -25,12 +25,12 @@ namespace EFS
 {
 namespace Model
 {
-  class AWS_EFS_API DescribeMountTargetSecurityGroupsResult
+  class DescribeMountTargetSecurityGroupsResult
   {
   public:
-    DescribeMountTargetSecurityGroupsResult();
-    DescribeMountTargetSecurityGroupsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeMountTargetSecurityGroupsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_EFS_API DescribeMountTargetSecurityGroupsResult();
+    AWS_EFS_API DescribeMountTargetSecurityGroupsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_EFS_API DescribeMountTargetSecurityGroupsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -38,13 +38,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/PieChartConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API PieChartConfiguration
+  class PieChartConfiguration
   {
   public:
-    PieChartConfiguration();
-    PieChartConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    PieChartConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API PieChartConfiguration();
+    AWS_QUICKSIGHT_API PieChartConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API PieChartConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -42,12 +42,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/Method">AWS
    * API Reference</a></p>
    */
-  class AWS_APIGATEWAY_API UpdateMethodResult
+  class UpdateMethodResult
   {
   public:
-    UpdateMethodResult();
-    UpdateMethodResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateMethodResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APIGATEWAY_API UpdateMethodResult();
+    AWS_APIGATEWAY_API UpdateMethodResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APIGATEWAY_API UpdateMethodResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

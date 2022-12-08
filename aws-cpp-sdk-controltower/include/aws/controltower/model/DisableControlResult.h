@@ -24,12 +24,12 @@ namespace ControlTower
 {
 namespace Model
 {
-  class AWS_CONTROLTOWER_API DisableControlResult
+  class DisableControlResult
   {
   public:
-    DisableControlResult();
-    DisableControlResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DisableControlResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CONTROLTOWER_API DisableControlResult();
+    AWS_CONTROLTOWER_API DisableControlResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CONTROLTOWER_API DisableControlResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

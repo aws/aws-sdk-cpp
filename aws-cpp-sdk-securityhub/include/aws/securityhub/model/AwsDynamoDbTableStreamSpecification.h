@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsDynamoDbTableStreamSpecification">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsDynamoDbTableStreamSpecification
+  class AwsDynamoDbTableStreamSpecification
   {
   public:
-    AwsDynamoDbTableStreamSpecification();
-    AwsDynamoDbTableStreamSpecification(Aws::Utils::Json::JsonView jsonValue);
-    AwsDynamoDbTableStreamSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsDynamoDbTableStreamSpecification();
+    AWS_SECURITYHUB_API AwsDynamoDbTableStreamSpecification(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsDynamoDbTableStreamSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

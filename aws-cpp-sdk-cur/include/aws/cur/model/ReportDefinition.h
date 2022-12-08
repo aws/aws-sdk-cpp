@@ -38,13 +38,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cur-2017-01-06/ReportDefinition">AWS
    * API Reference</a></p>
    */
-  class AWS_COSTANDUSAGEREPORTSERVICE_API ReportDefinition
+  class ReportDefinition
   {
   public:
-    ReportDefinition();
-    ReportDefinition(Aws::Utils::Json::JsonView jsonValue);
-    ReportDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COSTANDUSAGEREPORTSERVICE_API ReportDefinition();
+    AWS_COSTANDUSAGEREPORTSERVICE_API ReportDefinition(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTANDUSAGEREPORTSERVICE_API ReportDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTANDUSAGEREPORTSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

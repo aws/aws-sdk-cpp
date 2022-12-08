@@ -24,12 +24,12 @@ namespace Macie2
 {
 namespace Model
 {
-  class AWS_MACIE2_API CreateAllowListResult
+  class CreateAllowListResult
   {
   public:
-    CreateAllowListResult();
-    CreateAllowListResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateAllowListResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MACIE2_API CreateAllowListResult();
+    AWS_MACIE2_API CreateAllowListResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MACIE2_API CreateAllowListResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/Group">AWS API
    * Reference</a></p>
    */
-  class AWS_WORKMAIL_API Group
+  class Group
   {
   public:
-    Group();
-    Group(Aws::Utils::Json::JsonView jsonValue);
-    Group& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WORKMAIL_API Group();
+    AWS_WORKMAIL_API Group(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKMAIL_API Group& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKMAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

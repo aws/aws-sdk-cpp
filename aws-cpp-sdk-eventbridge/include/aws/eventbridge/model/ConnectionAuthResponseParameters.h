@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/ConnectionAuthResponseParameters">AWS
    * API Reference</a></p>
    */
-  class AWS_EVENTBRIDGE_API ConnectionAuthResponseParameters
+  class ConnectionAuthResponseParameters
   {
   public:
-    ConnectionAuthResponseParameters();
-    ConnectionAuthResponseParameters(Aws::Utils::Json::JsonView jsonValue);
-    ConnectionAuthResponseParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EVENTBRIDGE_API ConnectionAuthResponseParameters();
+    AWS_EVENTBRIDGE_API ConnectionAuthResponseParameters(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EVENTBRIDGE_API ConnectionAuthResponseParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EVENTBRIDGE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

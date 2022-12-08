@@ -26,12 +26,12 @@ namespace NetworkManager
 {
 namespace Model
 {
-  class AWS_NETWORKMANAGER_API ListCoreNetworkPolicyVersionsResult
+  class ListCoreNetworkPolicyVersionsResult
   {
   public:
-    ListCoreNetworkPolicyVersionsResult();
-    ListCoreNetworkPolicyVersionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListCoreNetworkPolicyVersionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_NETWORKMANAGER_API ListCoreNetworkPolicyVersionsResult();
+    AWS_NETWORKMANAGER_API ListCoreNetworkPolicyVersionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_NETWORKMANAGER_API ListCoreNetworkPolicyVersionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

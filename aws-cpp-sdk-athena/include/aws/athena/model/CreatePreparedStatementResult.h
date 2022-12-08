@@ -22,12 +22,12 @@ namespace Athena
 {
 namespace Model
 {
-  class AWS_ATHENA_API CreatePreparedStatementResult
+  class CreatePreparedStatementResult
   {
   public:
-    CreatePreparedStatementResult();
-    CreatePreparedStatementResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreatePreparedStatementResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ATHENA_API CreatePreparedStatementResult();
+    AWS_ATHENA_API CreatePreparedStatementResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ATHENA_API CreatePreparedStatementResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

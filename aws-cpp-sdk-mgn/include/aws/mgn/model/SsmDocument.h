@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/SsmDocument">AWS API
    * Reference</a></p>
    */
-  class AWS_MGN_API SsmDocument
+  class SsmDocument
   {
   public:
-    SsmDocument();
-    SsmDocument(Aws::Utils::Json::JsonView jsonValue);
-    SsmDocument& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MGN_API SsmDocument();
+    AWS_MGN_API SsmDocument(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MGN_API SsmDocument& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MGN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

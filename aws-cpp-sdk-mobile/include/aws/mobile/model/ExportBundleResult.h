@@ -31,12 +31,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mobile-2017-07-01/ExportBundleResult">AWS
    * API Reference</a></p>
    */
-  class AWS_MOBILE_API ExportBundleResult
+  class ExportBundleResult
   {
   public:
-    ExportBundleResult();
-    ExportBundleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ExportBundleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MOBILE_API ExportBundleResult();
+    AWS_MOBILE_API ExportBundleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MOBILE_API ExportBundleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -26,12 +26,12 @@ namespace AutoScaling
 {
 namespace Model
 {
-  class AWS_AUTOSCALING_API BatchDeleteScheduledActionResult
+  class BatchDeleteScheduledActionResult
   {
   public:
-    BatchDeleteScheduledActionResult();
-    BatchDeleteScheduledActionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    BatchDeleteScheduledActionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_AUTOSCALING_API BatchDeleteScheduledActionResult();
+    AWS_AUTOSCALING_API BatchDeleteScheduledActionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_AUTOSCALING_API BatchDeleteScheduledActionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

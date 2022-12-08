@@ -27,12 +27,12 @@ namespace EC2
 {
 namespace Model
 {
-  class AWS_EC2_API GetAssociatedIpv6PoolCidrsResponse
+  class GetAssociatedIpv6PoolCidrsResponse
   {
   public:
-    GetAssociatedIpv6PoolCidrsResponse();
-    GetAssociatedIpv6PoolCidrsResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    GetAssociatedIpv6PoolCidrsResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API GetAssociatedIpv6PoolCidrsResponse();
+    AWS_EC2_API GetAssociatedIpv6PoolCidrsResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API GetAssociatedIpv6PoolCidrsResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

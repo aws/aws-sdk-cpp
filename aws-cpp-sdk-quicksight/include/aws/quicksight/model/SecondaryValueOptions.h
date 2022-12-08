@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/SecondaryValueOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API SecondaryValueOptions
+  class SecondaryValueOptions
   {
   public:
-    SecondaryValueOptions();
-    SecondaryValueOptions(Aws::Utils::Json::JsonView jsonValue);
-    SecondaryValueOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API SecondaryValueOptions();
+    AWS_QUICKSIGHT_API SecondaryValueOptions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API SecondaryValueOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

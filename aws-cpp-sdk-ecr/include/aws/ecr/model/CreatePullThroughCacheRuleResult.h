@@ -25,12 +25,12 @@ namespace ECR
 {
 namespace Model
 {
-  class AWS_ECR_API CreatePullThroughCacheRuleResult
+  class CreatePullThroughCacheRuleResult
   {
   public:
-    CreatePullThroughCacheRuleResult();
-    CreatePullThroughCacheRuleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreatePullThroughCacheRuleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ECR_API CreatePullThroughCacheRuleResult();
+    AWS_ECR_API CreatePullThroughCacheRuleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ECR_API CreatePullThroughCacheRuleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

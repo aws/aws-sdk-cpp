@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/Ec2Configuration">AWS
    * API Reference</a></p>
    */
-  class AWS_BATCH_API Ec2Configuration
+  class Ec2Configuration
   {
   public:
-    Ec2Configuration();
-    Ec2Configuration(Aws::Utils::Json::JsonView jsonValue);
-    Ec2Configuration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BATCH_API Ec2Configuration();
+    AWS_BATCH_API Ec2Configuration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BATCH_API Ec2Configuration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BATCH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

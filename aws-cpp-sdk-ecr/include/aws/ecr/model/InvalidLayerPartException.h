@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/InvalidLayerPartException">AWS
    * API Reference</a></p>
    */
-  class AWS_ECR_API InvalidLayerPartException
+  class InvalidLayerPartException
   {
   public:
-    InvalidLayerPartException();
-    InvalidLayerPartException(Aws::Utils::Json::JsonView jsonValue);
-    InvalidLayerPartException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ECR_API InvalidLayerPartException();
+    AWS_ECR_API InvalidLayerPartException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECR_API InvalidLayerPartException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

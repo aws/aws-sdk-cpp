@@ -30,15 +30,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DashboardInvalidInputError">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDWATCH_API DashboardInvalidInputError
+  class DashboardInvalidInputError
   {
   public:
-    DashboardInvalidInputError();
-    DashboardInvalidInputError(const Aws::Utils::Xml::XmlNode& xmlNode);
-    DashboardInvalidInputError& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDWATCH_API DashboardInvalidInputError();
+    AWS_CLOUDWATCH_API DashboardInvalidInputError(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDWATCH_API DashboardInvalidInputError& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_CLOUDWATCH_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_CLOUDWATCH_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     

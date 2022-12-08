@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/BlobMetadata">AWS
    * API Reference</a></p>
    */
-  class AWS_CODECOMMIT_API BlobMetadata
+  class BlobMetadata
   {
   public:
-    BlobMetadata();
-    BlobMetadata(Aws::Utils::Json::JsonView jsonValue);
-    BlobMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODECOMMIT_API BlobMetadata();
+    AWS_CODECOMMIT_API BlobMetadata(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODECOMMIT_API BlobMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODECOMMIT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

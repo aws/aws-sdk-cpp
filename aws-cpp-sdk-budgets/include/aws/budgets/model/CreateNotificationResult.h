@@ -27,12 +27,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/CreateNotificationResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_BUDGETS_API CreateNotificationResult
+  class CreateNotificationResult
   {
   public:
-    CreateNotificationResult();
-    CreateNotificationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateNotificationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_BUDGETS_API CreateNotificationResult();
+    AWS_BUDGETS_API CreateNotificationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_BUDGETS_API CreateNotificationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

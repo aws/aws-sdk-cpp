@@ -24,12 +24,12 @@ namespace CustomerProfiles
 {
 namespace Model
 {
-  class AWS_CUSTOMERPROFILES_API GetAutoMergingPreviewResult
+  class GetAutoMergingPreviewResult
   {
   public:
-    GetAutoMergingPreviewResult();
-    GetAutoMergingPreviewResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetAutoMergingPreviewResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CUSTOMERPROFILES_API GetAutoMergingPreviewResult();
+    AWS_CUSTOMERPROFILES_API GetAutoMergingPreviewResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CUSTOMERPROFILES_API GetAutoMergingPreviewResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

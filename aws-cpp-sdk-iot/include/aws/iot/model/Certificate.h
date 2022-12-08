@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/Certificate">AWS API
    * Reference</a></p>
    */
-  class AWS_IOT_API Certificate
+  class Certificate
   {
   public:
-    Certificate();
-    Certificate(Aws::Utils::Json::JsonView jsonValue);
-    Certificate& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API Certificate();
+    AWS_IOT_API Certificate(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Certificate& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -33,12 +33,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CacheSubnetGroupMessage">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICACHE_API DescribeCacheSubnetGroupsResult
+  class DescribeCacheSubnetGroupsResult
   {
   public:
-    DescribeCacheSubnetGroupsResult();
-    DescribeCacheSubnetGroupsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeCacheSubnetGroupsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ELASTICACHE_API DescribeCacheSubnetGroupsResult();
+    AWS_ELASTICACHE_API DescribeCacheSubnetGroupsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ELASTICACHE_API DescribeCacheSubnetGroupsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

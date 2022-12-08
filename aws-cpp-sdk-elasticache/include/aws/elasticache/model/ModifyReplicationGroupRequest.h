@@ -26,10 +26,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ModifyReplicationGroupMessage">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICACHE_API ModifyReplicationGroupRequest : public ElastiCacheRequest
+  class ModifyReplicationGroupRequest : public ElastiCacheRequest
   {
   public:
-    ModifyReplicationGroupRequest();
+    AWS_ELASTICACHE_API ModifyReplicationGroupRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,10 +37,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ModifyReplicationGroup"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_ELASTICACHE_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_ELASTICACHE_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 

@@ -26,12 +26,12 @@ namespace signer
 {
 namespace Model
 {
-  class AWS_SIGNER_API ListProfilePermissionsResult
+  class ListProfilePermissionsResult
   {
   public:
-    ListProfilePermissionsResult();
-    ListProfilePermissionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListProfilePermissionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SIGNER_API ListProfilePermissionsResult();
+    AWS_SIGNER_API ListProfilePermissionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SIGNER_API ListProfilePermissionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

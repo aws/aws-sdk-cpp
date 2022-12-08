@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/GlobalSecondaryIndex">AWS
    * API Reference</a></p>
    */
-  class AWS_DYNAMODB_API GlobalSecondaryIndex
+  class GlobalSecondaryIndex
   {
   public:
-    GlobalSecondaryIndex();
-    GlobalSecondaryIndex(Aws::Utils::Json::JsonView jsonValue);
-    GlobalSecondaryIndex& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DYNAMODB_API GlobalSecondaryIndex();
+    AWS_DYNAMODB_API GlobalSecondaryIndex(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API GlobalSecondaryIndex& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

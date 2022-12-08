@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pipes-2015-10-07/PipeSourceRabbitMQBrokerParameters">AWS
    * API Reference</a></p>
    */
-  class AWS_PIPES_API PipeSourceRabbitMQBrokerParameters
+  class PipeSourceRabbitMQBrokerParameters
   {
   public:
-    PipeSourceRabbitMQBrokerParameters();
-    PipeSourceRabbitMQBrokerParameters(Aws::Utils::Json::JsonView jsonValue);
-    PipeSourceRabbitMQBrokerParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PIPES_API PipeSourceRabbitMQBrokerParameters();
+    AWS_PIPES_API PipeSourceRabbitMQBrokerParameters(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PIPES_API PipeSourceRabbitMQBrokerParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PIPES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

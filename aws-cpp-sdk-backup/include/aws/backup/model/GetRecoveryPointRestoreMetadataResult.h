@@ -25,12 +25,12 @@ namespace Backup
 {
 namespace Model
 {
-  class AWS_BACKUP_API GetRecoveryPointRestoreMetadataResult
+  class GetRecoveryPointRestoreMetadataResult
   {
   public:
-    GetRecoveryPointRestoreMetadataResult();
-    GetRecoveryPointRestoreMetadataResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetRecoveryPointRestoreMetadataResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_BACKUP_API GetRecoveryPointRestoreMetadataResult();
+    AWS_BACKUP_API GetRecoveryPointRestoreMetadataResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_BACKUP_API GetRecoveryPointRestoreMetadataResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/PredictorBacktestExportJobSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_FORECASTSERVICE_API PredictorBacktestExportJobSummary
+  class PredictorBacktestExportJobSummary
   {
   public:
-    PredictorBacktestExportJobSummary();
-    PredictorBacktestExportJobSummary(Aws::Utils::Json::JsonView jsonValue);
-    PredictorBacktestExportJobSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FORECASTSERVICE_API PredictorBacktestExportJobSummary();
+    AWS_FORECASTSERVICE_API PredictorBacktestExportJobSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FORECASTSERVICE_API PredictorBacktestExportJobSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FORECASTSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

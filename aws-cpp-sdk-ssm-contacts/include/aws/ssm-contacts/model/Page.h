@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/Page">AWS
    * API Reference</a></p>
    */
-  class AWS_SSMCONTACTS_API Page
+  class Page
   {
   public:
-    Page();
-    Page(Aws::Utils::Json::JsonView jsonValue);
-    Page& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSMCONTACTS_API Page();
+    AWS_SSMCONTACTS_API Page(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSMCONTACTS_API Page& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSMCONTACTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

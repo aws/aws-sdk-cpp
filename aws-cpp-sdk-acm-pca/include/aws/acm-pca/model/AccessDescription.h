@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/AccessDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_ACMPCA_API AccessDescription
+  class AccessDescription
   {
   public:
-    AccessDescription();
-    AccessDescription(Aws::Utils::Json::JsonView jsonValue);
-    AccessDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ACMPCA_API AccessDescription();
+    AWS_ACMPCA_API AccessDescription(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACMPCA_API AccessDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACMPCA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

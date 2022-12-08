@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/Mp4Settings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API Mp4Settings
+  class Mp4Settings
   {
   public:
-    Mp4Settings();
-    Mp4Settings(Aws::Utils::Json::JsonView jsonValue);
-    Mp4Settings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API Mp4Settings();
+    AWS_MEDIACONVERT_API Mp4Settings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Mp4Settings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

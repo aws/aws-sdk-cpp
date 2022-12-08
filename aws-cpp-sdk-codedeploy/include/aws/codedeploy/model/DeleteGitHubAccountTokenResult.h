@@ -30,12 +30,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/DeleteGitHubAccountTokenOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEDEPLOY_API DeleteGitHubAccountTokenResult
+  class DeleteGitHubAccountTokenResult
   {
   public:
-    DeleteGitHubAccountTokenResult();
-    DeleteGitHubAccountTokenResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteGitHubAccountTokenResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODEDEPLOY_API DeleteGitHubAccountTokenResult();
+    AWS_CODEDEPLOY_API DeleteGitHubAccountTokenResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODEDEPLOY_API DeleteGitHubAccountTokenResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

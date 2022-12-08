@@ -26,12 +26,12 @@ namespace Snowball
 {
 namespace Model
 {
-  class AWS_SNOWBALL_API ListLongTermPricingResult
+  class ListLongTermPricingResult
   {
   public:
-    ListLongTermPricingResult();
-    ListLongTermPricingResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListLongTermPricingResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SNOWBALL_API ListLongTermPricingResult();
+    AWS_SNOWBALL_API ListLongTermPricingResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SNOWBALL_API ListLongTermPricingResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

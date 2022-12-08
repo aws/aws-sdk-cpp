@@ -33,12 +33,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListTapesOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_STORAGEGATEWAY_API ListTapesResult
+  class ListTapesResult
   {
   public:
-    ListTapesResult();
-    ListTapesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListTapesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_STORAGEGATEWAY_API ListTapesResult();
+    AWS_STORAGEGATEWAY_API ListTapesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_STORAGEGATEWAY_API ListTapesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     

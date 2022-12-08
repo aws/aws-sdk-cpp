@@ -25,12 +25,12 @@ namespace MTurk
 {
 namespace Model
 {
-  class AWS_MTURK_API NotifyWorkersResult
+  class NotifyWorkersResult
   {
   public:
-    NotifyWorkersResult();
-    NotifyWorkersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    NotifyWorkersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MTURK_API NotifyWorkersResult();
+    AWS_MTURK_API NotifyWorkersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MTURK_API NotifyWorkersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

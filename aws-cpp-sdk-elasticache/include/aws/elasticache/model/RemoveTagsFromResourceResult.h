@@ -33,12 +33,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/TagListMessage">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICACHE_API RemoveTagsFromResourceResult
+  class RemoveTagsFromResourceResult
   {
   public:
-    RemoveTagsFromResourceResult();
-    RemoveTagsFromResourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    RemoveTagsFromResourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ELASTICACHE_API RemoveTagsFromResourceResult();
+    AWS_ELASTICACHE_API RemoveTagsFromResourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ELASTICACHE_API RemoveTagsFromResourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

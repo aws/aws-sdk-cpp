@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/CompositedVideoConcatenationConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_CHIMESDKMEDIAPIPELINES_API CompositedVideoConcatenationConfiguration
+  class CompositedVideoConcatenationConfiguration
   {
   public:
-    CompositedVideoConcatenationConfiguration();
-    CompositedVideoConcatenationConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    CompositedVideoConcatenationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIMESDKMEDIAPIPELINES_API CompositedVideoConcatenationConfiguration();
+    AWS_CHIMESDKMEDIAPIPELINES_API CompositedVideoConcatenationConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKMEDIAPIPELINES_API CompositedVideoConcatenationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKMEDIAPIPELINES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

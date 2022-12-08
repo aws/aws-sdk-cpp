@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/TaskStatistics">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API TaskStatistics
+  class TaskStatistics
   {
   public:
-    TaskStatistics();
-    TaskStatistics(Aws::Utils::Json::JsonView jsonValue);
-    TaskStatistics& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API TaskStatistics();
+    AWS_IOT_API TaskStatistics(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API TaskStatistics& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

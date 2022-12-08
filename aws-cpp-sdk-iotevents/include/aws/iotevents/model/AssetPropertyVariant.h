@@ -52,13 +52,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/AssetPropertyVariant">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTEVENTS_API AssetPropertyVariant
+  class AssetPropertyVariant
   {
   public:
-    AssetPropertyVariant();
-    AssetPropertyVariant(Aws::Utils::Json::JsonView jsonValue);
-    AssetPropertyVariant& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTEVENTS_API AssetPropertyVariant();
+    AWS_IOTEVENTS_API AssetPropertyVariant(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTEVENTS_API AssetPropertyVariant& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTEVENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

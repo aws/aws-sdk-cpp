@@ -26,12 +26,12 @@ namespace DirectConnect
 {
 namespace Model
 {
-  class AWS_DIRECTCONNECT_API DescribeDirectConnectGatewaysResult
+  class DescribeDirectConnectGatewaysResult
   {
   public:
-    DescribeDirectConnectGatewaysResult();
-    DescribeDirectConnectGatewaysResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeDirectConnectGatewaysResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DIRECTCONNECT_API DescribeDirectConnectGatewaysResult();
+    AWS_DIRECTCONNECT_API DescribeDirectConnectGatewaysResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DIRECTCONNECT_API DescribeDirectConnectGatewaysResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/UplinkEchoConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_GROUNDSTATION_API UplinkEchoConfig
+  class UplinkEchoConfig
   {
   public:
-    UplinkEchoConfig();
-    UplinkEchoConfig(Aws::Utils::Json::JsonView jsonValue);
-    UplinkEchoConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GROUNDSTATION_API UplinkEchoConfig();
+    AWS_GROUNDSTATION_API UplinkEchoConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GROUNDSTATION_API UplinkEchoConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GROUNDSTATION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

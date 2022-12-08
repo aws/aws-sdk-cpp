@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/EncryptionKey">AWS
    * API Reference</a></p>
    */
-  class AWS_TRANSLATE_API EncryptionKey
+  class EncryptionKey
   {
   public:
-    EncryptionKey();
-    EncryptionKey(Aws::Utils::Json::JsonView jsonValue);
-    EncryptionKey& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TRANSLATE_API EncryptionKey();
+    AWS_TRANSLATE_API EncryptionKey(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSLATE_API EncryptionKey& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSLATE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

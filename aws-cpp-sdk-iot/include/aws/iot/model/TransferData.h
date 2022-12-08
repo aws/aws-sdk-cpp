@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/TransferData">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API TransferData
+  class TransferData
   {
   public:
-    TransferData();
-    TransferData(Aws::Utils::Json::JsonView jsonValue);
-    TransferData& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API TransferData();
+    AWS_IOT_API TransferData(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API TransferData& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

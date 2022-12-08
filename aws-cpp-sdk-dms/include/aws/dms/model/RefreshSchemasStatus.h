@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/RefreshSchemasStatus">AWS
    * API Reference</a></p>
    */
-  class AWS_DATABASEMIGRATIONSERVICE_API RefreshSchemasStatus
+  class RefreshSchemasStatus
   {
   public:
-    RefreshSchemasStatus();
-    RefreshSchemasStatus(Aws::Utils::Json::JsonView jsonValue);
-    RefreshSchemasStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DATABASEMIGRATIONSERVICE_API RefreshSchemasStatus();
+    AWS_DATABASEMIGRATIONSERVICE_API RefreshSchemasStatus(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATABASEMIGRATIONSERVICE_API RefreshSchemasStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATABASEMIGRATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

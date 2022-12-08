@@ -25,12 +25,12 @@ namespace StorageGateway
 {
 namespace Model
 {
-  class AWS_STORAGEGATEWAY_API ListAutomaticTapeCreationPoliciesResult
+  class ListAutomaticTapeCreationPoliciesResult
   {
   public:
-    ListAutomaticTapeCreationPoliciesResult();
-    ListAutomaticTapeCreationPoliciesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListAutomaticTapeCreationPoliciesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_STORAGEGATEWAY_API ListAutomaticTapeCreationPoliciesResult();
+    AWS_STORAGEGATEWAY_API ListAutomaticTapeCreationPoliciesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_STORAGEGATEWAY_API ListAutomaticTapeCreationPoliciesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

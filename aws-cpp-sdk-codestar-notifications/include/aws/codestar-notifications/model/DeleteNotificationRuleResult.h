@@ -24,12 +24,12 @@ namespace CodeStarNotifications
 {
 namespace Model
 {
-  class AWS_CODESTARNOTIFICATIONS_API DeleteNotificationRuleResult
+  class DeleteNotificationRuleResult
   {
   public:
-    DeleteNotificationRuleResult();
-    DeleteNotificationRuleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteNotificationRuleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODESTARNOTIFICATIONS_API DeleteNotificationRuleResult();
+    AWS_CODESTARNOTIFICATIONS_API DeleteNotificationRuleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODESTARNOTIFICATIONS_API DeleteNotificationRuleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

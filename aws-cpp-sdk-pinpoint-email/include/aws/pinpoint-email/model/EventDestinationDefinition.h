@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/EventDestinationDefinition">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINTEMAIL_API EventDestinationDefinition
+  class EventDestinationDefinition
   {
   public:
-    EventDestinationDefinition();
-    EventDestinationDefinition(Aws::Utils::Json::JsonView jsonValue);
-    EventDestinationDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINTEMAIL_API EventDestinationDefinition();
+    AWS_PINPOINTEMAIL_API EventDestinationDefinition(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINTEMAIL_API EventDestinationDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINTEMAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

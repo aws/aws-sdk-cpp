@@ -28,12 +28,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/PostAgentProfileResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEGURUPROFILER_API PostAgentProfileResult
+  class PostAgentProfileResult
   {
   public:
-    PostAgentProfileResult();
-    PostAgentProfileResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PostAgentProfileResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODEGURUPROFILER_API PostAgentProfileResult();
+    AWS_CODEGURUPROFILER_API PostAgentProfileResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODEGURUPROFILER_API PostAgentProfileResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/DomainAssociation">AWS
    * API Reference</a></p>
    */
-  class AWS_AMPLIFY_API DomainAssociation
+  class DomainAssociation
   {
   public:
-    DomainAssociation();
-    DomainAssociation(Aws::Utils::Json::JsonView jsonValue);
-    DomainAssociation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_AMPLIFY_API DomainAssociation();
+    AWS_AMPLIFY_API DomainAssociation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFY_API DomainAssociation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

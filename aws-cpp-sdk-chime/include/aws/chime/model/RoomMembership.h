@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/RoomMembership">AWS
    * API Reference</a></p>
    */
-  class AWS_CHIME_API RoomMembership
+  class RoomMembership
   {
   public:
-    RoomMembership();
-    RoomMembership(Aws::Utils::Json::JsonView jsonValue);
-    RoomMembership& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIME_API RoomMembership();
+    AWS_CHIME_API RoomMembership(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API RoomMembership& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

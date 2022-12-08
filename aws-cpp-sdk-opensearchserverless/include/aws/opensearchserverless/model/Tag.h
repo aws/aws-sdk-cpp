@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/Tag">AWS
    * API Reference</a></p>
    */
-  class AWS_OPENSEARCHSERVERLESS_API Tag
+  class Tag
   {
   public:
-    Tag();
-    Tag(Aws::Utils::Json::JsonView jsonValue);
-    Tag& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OPENSEARCHSERVERLESS_API Tag();
+    AWS_OPENSEARCHSERVERLESS_API Tag(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPENSEARCHSERVERLESS_API Tag& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPENSEARCHSERVERLESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

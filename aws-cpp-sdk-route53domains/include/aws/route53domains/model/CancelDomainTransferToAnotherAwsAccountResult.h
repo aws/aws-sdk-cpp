@@ -30,12 +30,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/CancelDomainTransferToAnotherAwsAccountResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53DOMAINS_API CancelDomainTransferToAnotherAwsAccountResult
+  class CancelDomainTransferToAnotherAwsAccountResult
   {
   public:
-    CancelDomainTransferToAnotherAwsAccountResult();
-    CancelDomainTransferToAnotherAwsAccountResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CancelDomainTransferToAnotherAwsAccountResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ROUTE53DOMAINS_API CancelDomainTransferToAnotherAwsAccountResult();
+    AWS_ROUTE53DOMAINS_API CancelDomainTransferToAnotherAwsAccountResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ROUTE53DOMAINS_API CancelDomainTransferToAnotherAwsAccountResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

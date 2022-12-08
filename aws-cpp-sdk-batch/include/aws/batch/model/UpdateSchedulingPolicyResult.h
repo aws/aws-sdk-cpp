@@ -22,12 +22,12 @@ namespace Batch
 {
 namespace Model
 {
-  class AWS_BATCH_API UpdateSchedulingPolicyResult
+  class UpdateSchedulingPolicyResult
   {
   public:
-    UpdateSchedulingPolicyResult();
-    UpdateSchedulingPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateSchedulingPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_BATCH_API UpdateSchedulingPolicyResult();
+    AWS_BATCH_API UpdateSchedulingPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_BATCH_API UpdateSchedulingPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

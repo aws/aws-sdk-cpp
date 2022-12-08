@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/FastLaunchConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_IMAGEBUILDER_API FastLaunchConfiguration
+  class FastLaunchConfiguration
   {
   public:
-    FastLaunchConfiguration();
-    FastLaunchConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    FastLaunchConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IMAGEBUILDER_API FastLaunchConfiguration();
+    AWS_IMAGEBUILDER_API FastLaunchConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IMAGEBUILDER_API FastLaunchConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IMAGEBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

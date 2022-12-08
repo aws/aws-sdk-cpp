@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/ConflictResolution">AWS
    * API Reference</a></p>
    */
-  class AWS_CODECOMMIT_API ConflictResolution
+  class ConflictResolution
   {
   public:
-    ConflictResolution();
-    ConflictResolution(Aws::Utils::Json::JsonView jsonValue);
-    ConflictResolution& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODECOMMIT_API ConflictResolution();
+    AWS_CODECOMMIT_API ConflictResolution(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODECOMMIT_API ConflictResolution& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODECOMMIT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-plans-2018-01-06/ScalingPlanResource">AWS
    * API Reference</a></p>
    */
-  class AWS_AUTOSCALINGPLANS_API ScalingPlanResource
+  class ScalingPlanResource
   {
   public:
-    ScalingPlanResource();
-    ScalingPlanResource(Aws::Utils::Json::JsonView jsonValue);
-    ScalingPlanResource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_AUTOSCALINGPLANS_API ScalingPlanResource();
+    AWS_AUTOSCALINGPLANS_API ScalingPlanResource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AUTOSCALINGPLANS_API ScalingPlanResource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AUTOSCALINGPLANS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

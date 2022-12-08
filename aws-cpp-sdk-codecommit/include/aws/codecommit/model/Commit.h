@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/Commit">AWS
    * API Reference</a></p>
    */
-  class AWS_CODECOMMIT_API Commit
+  class Commit
   {
   public:
-    Commit();
-    Commit(Aws::Utils::Json::JsonView jsonValue);
-    Commit& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODECOMMIT_API Commit();
+    AWS_CODECOMMIT_API Commit(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODECOMMIT_API Commit& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODECOMMIT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/LoggingConfigurationStatus">AWS
    * API Reference</a></p>
    */
-  class AWS_PROMETHEUSSERVICE_API LoggingConfigurationStatus
+  class LoggingConfigurationStatus
   {
   public:
-    LoggingConfigurationStatus();
-    LoggingConfigurationStatus(Aws::Utils::Json::JsonView jsonValue);
-    LoggingConfigurationStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PROMETHEUSSERVICE_API LoggingConfigurationStatus();
+    AWS_PROMETHEUSSERVICE_API LoggingConfigurationStatus(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PROMETHEUSSERVICE_API LoggingConfigurationStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PROMETHEUSSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

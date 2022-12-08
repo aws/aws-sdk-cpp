@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/MonitoringJsonDatasetFormat">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API MonitoringJsonDatasetFormat
+  class MonitoringJsonDatasetFormat
   {
   public:
-    MonitoringJsonDatasetFormat();
-    MonitoringJsonDatasetFormat(Aws::Utils::Json::JsonView jsonValue);
-    MonitoringJsonDatasetFormat& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API MonitoringJsonDatasetFormat();
+    AWS_SAGEMAKER_API MonitoringJsonDatasetFormat(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API MonitoringJsonDatasetFormat& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

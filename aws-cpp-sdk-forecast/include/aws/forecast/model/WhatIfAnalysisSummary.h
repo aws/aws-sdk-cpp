@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/WhatIfAnalysisSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_FORECASTSERVICE_API WhatIfAnalysisSummary
+  class WhatIfAnalysisSummary
   {
   public:
-    WhatIfAnalysisSummary();
-    WhatIfAnalysisSummary(Aws::Utils::Json::JsonView jsonValue);
-    WhatIfAnalysisSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FORECASTSERVICE_API WhatIfAnalysisSummary();
+    AWS_FORECASTSERVICE_API WhatIfAnalysisSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FORECASTSERVICE_API WhatIfAnalysisSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FORECASTSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

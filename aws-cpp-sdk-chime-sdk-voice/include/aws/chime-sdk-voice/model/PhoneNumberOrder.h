@@ -29,13 +29,13 @@ namespace ChimeSDKVoice
 namespace Model
 {
 
-  class AWS_CHIMESDKVOICE_API PhoneNumberOrder
+  class PhoneNumberOrder
   {
   public:
-    PhoneNumberOrder();
-    PhoneNumberOrder(Aws::Utils::Json::JsonView jsonValue);
-    PhoneNumberOrder& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIMESDKVOICE_API PhoneNumberOrder();
+    AWS_CHIMESDKVOICE_API PhoneNumberOrder(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKVOICE_API PhoneNumberOrder& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKVOICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

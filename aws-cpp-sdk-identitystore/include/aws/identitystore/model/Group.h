@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/Group">AWS
    * API Reference</a></p>
    */
-  class AWS_IDENTITYSTORE_API Group
+  class Group
   {
   public:
-    Group();
-    Group(Aws::Utils::Json::JsonView jsonValue);
-    Group& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IDENTITYSTORE_API Group();
+    AWS_IDENTITYSTORE_API Group(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IDENTITYSTORE_API Group& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IDENTITYSTORE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

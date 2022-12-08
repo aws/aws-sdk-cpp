@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CrawlerMetrics">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API CrawlerMetrics
+  class CrawlerMetrics
   {
   public:
-    CrawlerMetrics();
-    CrawlerMetrics(Aws::Utils::Json::JsonView jsonValue);
-    CrawlerMetrics& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API CrawlerMetrics();
+    AWS_GLUE_API CrawlerMetrics(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API CrawlerMetrics& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

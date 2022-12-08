@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/scheduler-2021-06-30/PlacementStrategy">AWS
    * API Reference</a></p>
    */
-  class AWS_SCHEDULER_API PlacementStrategy
+  class PlacementStrategy
   {
   public:
-    PlacementStrategy();
-    PlacementStrategy(Aws::Utils::Json::JsonView jsonValue);
-    PlacementStrategy& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SCHEDULER_API PlacementStrategy();
+    AWS_SCHEDULER_API PlacementStrategy(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SCHEDULER_API PlacementStrategy& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SCHEDULER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -26,12 +26,12 @@ namespace Athena
 {
 namespace Model
 {
-  class AWS_ATHENA_API ListApplicationDPUSizesResult
+  class ListApplicationDPUSizesResult
   {
   public:
-    ListApplicationDPUSizesResult();
-    ListApplicationDPUSizesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListApplicationDPUSizesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ATHENA_API ListApplicationDPUSizesResult();
+    AWS_ATHENA_API ListApplicationDPUSizesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ATHENA_API ListApplicationDPUSizesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

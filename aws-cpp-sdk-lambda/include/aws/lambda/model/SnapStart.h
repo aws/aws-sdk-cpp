@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/SnapStart">AWS
    * API Reference</a></p>
    */
-  class AWS_LAMBDA_API SnapStart
+  class SnapStart
   {
   public:
-    SnapStart();
-    SnapStart(Aws::Utils::Json::JsonView jsonValue);
-    SnapStart& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LAMBDA_API SnapStart();
+    AWS_LAMBDA_API SnapStart(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAMBDA_API SnapStart& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAMBDA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

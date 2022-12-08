@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/InvalidNetworkSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_FSX_API InvalidNetworkSettings
+  class InvalidNetworkSettings
   {
   public:
-    InvalidNetworkSettings();
-    InvalidNetworkSettings(Aws::Utils::Json::JsonView jsonValue);
-    InvalidNetworkSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FSX_API InvalidNetworkSettings();
+    AWS_FSX_API InvalidNetworkSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API InvalidNetworkSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

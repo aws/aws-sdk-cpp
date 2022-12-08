@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/BackendEnvironment">AWS
    * API Reference</a></p>
    */
-  class AWS_AMPLIFY_API BackendEnvironment
+  class BackendEnvironment
   {
   public:
-    BackendEnvironment();
-    BackendEnvironment(Aws::Utils::Json::JsonView jsonValue);
-    BackendEnvironment& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_AMPLIFY_API BackendEnvironment();
+    AWS_AMPLIFY_API BackendEnvironment(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFY_API BackendEnvironment& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

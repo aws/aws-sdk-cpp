@@ -37,13 +37,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/IPSetForwardedIPConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_WAFV2_API IPSetForwardedIPConfig
+  class IPSetForwardedIPConfig
   {
   public:
-    IPSetForwardedIPConfig();
-    IPSetForwardedIPConfig(Aws::Utils::Json::JsonView jsonValue);
-    IPSetForwardedIPConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WAFV2_API IPSetForwardedIPConfig();
+    AWS_WAFV2_API IPSetForwardedIPConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API IPSetForwardedIPConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

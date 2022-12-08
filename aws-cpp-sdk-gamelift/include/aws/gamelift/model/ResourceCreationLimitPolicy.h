@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ResourceCreationLimitPolicy">AWS
    * API Reference</a></p>
    */
-  class AWS_GAMELIFT_API ResourceCreationLimitPolicy
+  class ResourceCreationLimitPolicy
   {
   public:
-    ResourceCreationLimitPolicy();
-    ResourceCreationLimitPolicy(Aws::Utils::Json::JsonView jsonValue);
-    ResourceCreationLimitPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GAMELIFT_API ResourceCreationLimitPolicy();
+    AWS_GAMELIFT_API ResourceCreationLimitPolicy(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMELIFT_API ResourceCreationLimitPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -24,12 +24,12 @@ namespace EC2
 {
 namespace Model
 {
-  class AWS_EC2_API DisassociateEnclaveCertificateIamRoleResponse
+  class DisassociateEnclaveCertificateIamRoleResponse
   {
   public:
-    DisassociateEnclaveCertificateIamRoleResponse();
-    DisassociateEnclaveCertificateIamRoleResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DisassociateEnclaveCertificateIamRoleResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API DisassociateEnclaveCertificateIamRoleResponse();
+    AWS_EC2_API DisassociateEnclaveCertificateIamRoleResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API DisassociateEnclaveCertificateIamRoleResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

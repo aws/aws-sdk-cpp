@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ThesaurusSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_KENDRA_API ThesaurusSummary
+  class ThesaurusSummary
   {
   public:
-    ThesaurusSummary();
-    ThesaurusSummary(Aws::Utils::Json::JsonView jsonValue);
-    ThesaurusSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KENDRA_API ThesaurusSummary();
+    AWS_KENDRA_API ThesaurusSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API ThesaurusSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -32,12 +32,12 @@ namespace SageMaker
 {
 namespace Model
 {
-  class AWS_SAGEMAKER_API DescribeInferenceRecommendationsJobResult
+  class DescribeInferenceRecommendationsJobResult
   {
   public:
-    DescribeInferenceRecommendationsJobResult();
-    DescribeInferenceRecommendationsJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeInferenceRecommendationsJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SAGEMAKER_API DescribeInferenceRecommendationsJobResult();
+    AWS_SAGEMAKER_API DescribeInferenceRecommendationsJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SAGEMAKER_API DescribeInferenceRecommendationsJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

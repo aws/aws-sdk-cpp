@@ -29,14 +29,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/StatusReport">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53_API StatusReport
+  class StatusReport
   {
   public:
-    StatusReport();
-    StatusReport(const Aws::Utils::Xml::XmlNode& xmlNode);
-    StatusReport& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ROUTE53_API StatusReport();
+    AWS_ROUTE53_API StatusReport(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ROUTE53_API StatusReport& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_ROUTE53_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**

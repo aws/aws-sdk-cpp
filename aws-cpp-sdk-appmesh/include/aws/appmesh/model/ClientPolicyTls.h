@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/ClientPolicyTls">AWS
    * API Reference</a></p>
    */
-  class AWS_APPMESH_API ClientPolicyTls
+  class ClientPolicyTls
   {
   public:
-    ClientPolicyTls();
-    ClientPolicyTls(Aws::Utils::Json::JsonView jsonValue);
-    ClientPolicyTls& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPMESH_API ClientPolicyTls();
+    AWS_APPMESH_API ClientPolicyTls(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API ClientPolicyTls& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

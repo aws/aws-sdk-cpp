@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/SqlRunConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_KINESISANALYTICSV2_API SqlRunConfiguration
+  class SqlRunConfiguration
   {
   public:
-    SqlRunConfiguration();
-    SqlRunConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    SqlRunConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KINESISANALYTICSV2_API SqlRunConfiguration();
+    AWS_KINESISANALYTICSV2_API SqlRunConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICSV2_API SqlRunConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

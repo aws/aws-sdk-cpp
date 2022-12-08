@@ -30,12 +30,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/PutIdentityPolicyResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_SES_API PutIdentityPolicyResult
+  class PutIdentityPolicyResult
   {
   public:
-    PutIdentityPolicyResult();
-    PutIdentityPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    PutIdentityPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_SES_API PutIdentityPolicyResult();
+    AWS_SES_API PutIdentityPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_SES_API PutIdentityPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     

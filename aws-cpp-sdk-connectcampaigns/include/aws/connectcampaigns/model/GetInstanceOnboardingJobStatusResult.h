@@ -29,12 +29,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/connectcampaigns-2021-01-30/GetInstanceOnboardingJobStatusResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECTCAMPAIGNS_API GetInstanceOnboardingJobStatusResult
+  class GetInstanceOnboardingJobStatusResult
   {
   public:
-    GetInstanceOnboardingJobStatusResult();
-    GetInstanceOnboardingJobStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetInstanceOnboardingJobStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CONNECTCAMPAIGNS_API GetInstanceOnboardingJobStatusResult();
+    AWS_CONNECTCAMPAIGNS_API GetInstanceOnboardingJobStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CONNECTCAMPAIGNS_API GetInstanceOnboardingJobStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     

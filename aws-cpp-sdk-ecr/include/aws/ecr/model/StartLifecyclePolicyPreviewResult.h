@@ -25,12 +25,12 @@ namespace ECR
 {
 namespace Model
 {
-  class AWS_ECR_API StartLifecyclePolicyPreviewResult
+  class StartLifecyclePolicyPreviewResult
   {
   public:
-    StartLifecyclePolicyPreviewResult();
-    StartLifecyclePolicyPreviewResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    StartLifecyclePolicyPreviewResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ECR_API StartLifecyclePolicyPreviewResult();
+    AWS_ECR_API StartLifecyclePolicyPreviewResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ECR_API StartLifecyclePolicyPreviewResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

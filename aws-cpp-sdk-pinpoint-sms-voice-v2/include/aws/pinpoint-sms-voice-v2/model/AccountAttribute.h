@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/AccountAttribute">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINTSMSVOICEV2_API AccountAttribute
+  class AccountAttribute
   {
   public:
-    AccountAttribute();
-    AccountAttribute(Aws::Utils::Json::JsonView jsonValue);
-    AccountAttribute& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINTSMSVOICEV2_API AccountAttribute();
+    AWS_PINPOINTSMSVOICEV2_API AccountAttribute(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINTSMSVOICEV2_API AccountAttribute& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINTSMSVOICEV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

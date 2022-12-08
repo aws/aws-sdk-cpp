@@ -25,12 +25,12 @@ namespace Translate
 {
 namespace Model
 {
-  class AWS_TRANSLATE_API DeleteParallelDataResult
+  class DeleteParallelDataResult
   {
   public:
-    DeleteParallelDataResult();
-    DeleteParallelDataResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteParallelDataResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_TRANSLATE_API DeleteParallelDataResult();
+    AWS_TRANSLATE_API DeleteParallelDataResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_TRANSLATE_API DeleteParallelDataResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

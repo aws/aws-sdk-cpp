@@ -26,12 +26,12 @@ namespace ForecastService
 {
 namespace Model
 {
-  class AWS_FORECASTSERVICE_API ListWhatIfForecastExportsResult
+  class ListWhatIfForecastExportsResult
   {
   public:
-    ListWhatIfForecastExportsResult();
-    ListWhatIfForecastExportsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListWhatIfForecastExportsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_FORECASTSERVICE_API ListWhatIfForecastExportsResult();
+    AWS_FORECASTSERVICE_API ListWhatIfForecastExportsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_FORECASTSERVICE_API ListWhatIfForecastExportsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

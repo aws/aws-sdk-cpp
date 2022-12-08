@@ -25,12 +25,12 @@ namespace ComputeOptimizer
 {
 namespace Model
 {
-  class AWS_COMPUTEOPTIMIZER_API ExportEBSVolumeRecommendationsResult
+  class ExportEBSVolumeRecommendationsResult
   {
   public:
-    ExportEBSVolumeRecommendationsResult();
-    ExportEBSVolumeRecommendationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ExportEBSVolumeRecommendationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_COMPUTEOPTIMIZER_API ExportEBSVolumeRecommendationsResult();
+    AWS_COMPUTEOPTIMIZER_API ExportEBSVolumeRecommendationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_COMPUTEOPTIMIZER_API ExportEBSVolumeRecommendationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

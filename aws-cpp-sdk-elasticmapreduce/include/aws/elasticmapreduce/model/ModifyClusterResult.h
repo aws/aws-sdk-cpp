@@ -22,12 +22,12 @@ namespace EMR
 {
 namespace Model
 {
-  class AWS_EMR_API ModifyClusterResult
+  class ModifyClusterResult
   {
   public:
-    ModifyClusterResult();
-    ModifyClusterResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ModifyClusterResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_EMR_API ModifyClusterResult();
+    AWS_EMR_API ModifyClusterResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_EMR_API ModifyClusterResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

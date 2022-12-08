@@ -22,12 +22,12 @@ namespace WorkSpaces
 {
 namespace Model
 {
-  class AWS_WORKSPACES_API DeregisterWorkspaceDirectoryResult
+  class DeregisterWorkspaceDirectoryResult
   {
   public:
-    DeregisterWorkspaceDirectoryResult();
-    DeregisterWorkspaceDirectoryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeregisterWorkspaceDirectoryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WORKSPACES_API DeregisterWorkspaceDirectoryResult();
+    AWS_WORKSPACES_API DeregisterWorkspaceDirectoryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WORKSPACES_API DeregisterWorkspaceDirectoryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

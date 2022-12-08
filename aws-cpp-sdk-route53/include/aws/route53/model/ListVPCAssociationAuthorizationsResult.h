@@ -32,12 +32,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListVPCAssociationAuthorizationsResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53_API ListVPCAssociationAuthorizationsResult
+  class ListVPCAssociationAuthorizationsResult
   {
   public:
-    ListVPCAssociationAuthorizationsResult();
-    ListVPCAssociationAuthorizationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ListVPCAssociationAuthorizationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ROUTE53_API ListVPCAssociationAuthorizationsResult();
+    AWS_ROUTE53_API ListVPCAssociationAuthorizationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ROUTE53_API ListVPCAssociationAuthorizationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

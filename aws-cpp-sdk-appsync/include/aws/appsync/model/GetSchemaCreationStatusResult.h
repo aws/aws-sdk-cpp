@@ -25,12 +25,12 @@ namespace AppSync
 {
 namespace Model
 {
-  class AWS_APPSYNC_API GetSchemaCreationStatusResult
+  class GetSchemaCreationStatusResult
   {
   public:
-    GetSchemaCreationStatusResult();
-    GetSchemaCreationStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetSchemaCreationStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPSYNC_API GetSchemaCreationStatusResult();
+    AWS_APPSYNC_API GetSchemaCreationStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPSYNC_API GetSchemaCreationStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

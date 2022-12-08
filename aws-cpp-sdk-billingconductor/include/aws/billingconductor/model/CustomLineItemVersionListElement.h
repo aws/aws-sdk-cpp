@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/CustomLineItemVersionListElement">AWS
    * API Reference</a></p>
    */
-  class AWS_BILLINGCONDUCTOR_API CustomLineItemVersionListElement
+  class CustomLineItemVersionListElement
   {
   public:
-    CustomLineItemVersionListElement();
-    CustomLineItemVersionListElement(Aws::Utils::Json::JsonView jsonValue);
-    CustomLineItemVersionListElement& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BILLINGCONDUCTOR_API CustomLineItemVersionListElement();
+    AWS_BILLINGCONDUCTOR_API CustomLineItemVersionListElement(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BILLINGCONDUCTOR_API CustomLineItemVersionListElement& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BILLINGCONDUCTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

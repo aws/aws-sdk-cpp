@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/BackupRetentionPolicy">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDHSMV2_API BackupRetentionPolicy
+  class BackupRetentionPolicy
   {
   public:
-    BackupRetentionPolicy();
-    BackupRetentionPolicy(Aws::Utils::Json::JsonView jsonValue);
-    BackupRetentionPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDHSMV2_API BackupRetentionPolicy();
+    AWS_CLOUDHSMV2_API BackupRetentionPolicy(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDHSMV2_API BackupRetentionPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDHSMV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

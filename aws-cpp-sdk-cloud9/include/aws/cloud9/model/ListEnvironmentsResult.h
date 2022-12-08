@@ -25,12 +25,12 @@ namespace Cloud9
 {
 namespace Model
 {
-  class AWS_CLOUD9_API ListEnvironmentsResult
+  class ListEnvironmentsResult
   {
   public:
-    ListEnvironmentsResult();
-    ListEnvironmentsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListEnvironmentsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CLOUD9_API ListEnvironmentsResult();
+    AWS_CLOUD9_API ListEnvironmentsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CLOUD9_API ListEnvironmentsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

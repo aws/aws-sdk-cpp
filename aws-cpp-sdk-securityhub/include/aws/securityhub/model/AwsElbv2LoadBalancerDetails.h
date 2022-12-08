@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsElbv2LoadBalancerDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsElbv2LoadBalancerDetails
+  class AwsElbv2LoadBalancerDetails
   {
   public:
-    AwsElbv2LoadBalancerDetails();
-    AwsElbv2LoadBalancerDetails(Aws::Utils::Json::JsonView jsonValue);
-    AwsElbv2LoadBalancerDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsElbv2LoadBalancerDetails();
+    AWS_SECURITYHUB_API AwsElbv2LoadBalancerDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsElbv2LoadBalancerDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

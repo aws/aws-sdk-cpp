@@ -24,12 +24,12 @@ namespace EMRContainers
 {
 namespace Model
 {
-  class AWS_EMRCONTAINERS_API DeleteVirtualClusterResult
+  class DeleteVirtualClusterResult
   {
   public:
-    DeleteVirtualClusterResult();
-    DeleteVirtualClusterResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteVirtualClusterResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_EMRCONTAINERS_API DeleteVirtualClusterResult();
+    AWS_EMRCONTAINERS_API DeleteVirtualClusterResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_EMRCONTAINERS_API DeleteVirtualClusterResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

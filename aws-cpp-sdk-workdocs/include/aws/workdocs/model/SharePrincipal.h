@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/SharePrincipal">AWS
    * API Reference</a></p>
    */
-  class AWS_WORKDOCS_API SharePrincipal
+  class SharePrincipal
   {
   public:
-    SharePrincipal();
-    SharePrincipal(Aws::Utils::Json::JsonView jsonValue);
-    SharePrincipal& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WORKDOCS_API SharePrincipal();
+    AWS_WORKDOCS_API SharePrincipal(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKDOCS_API SharePrincipal& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKDOCS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

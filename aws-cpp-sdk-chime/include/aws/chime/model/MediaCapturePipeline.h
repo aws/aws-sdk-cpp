@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/MediaCapturePipeline">AWS
    * API Reference</a></p>
    */
-  class AWS_CHIME_API MediaCapturePipeline
+  class MediaCapturePipeline
   {
   public:
-    MediaCapturePipeline();
-    MediaCapturePipeline(Aws::Utils::Json::JsonView jsonValue);
-    MediaCapturePipeline& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIME_API MediaCapturePipeline();
+    AWS_CHIME_API MediaCapturePipeline(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API MediaCapturePipeline& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

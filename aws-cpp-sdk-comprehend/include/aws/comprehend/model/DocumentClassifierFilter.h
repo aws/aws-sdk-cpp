@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DocumentClassifierFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_COMPREHEND_API DocumentClassifierFilter
+  class DocumentClassifierFilter
   {
   public:
-    DocumentClassifierFilter();
-    DocumentClassifierFilter(Aws::Utils::Json::JsonView jsonValue);
-    DocumentClassifierFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COMPREHEND_API DocumentClassifierFilter();
+    AWS_COMPREHEND_API DocumentClassifierFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHEND_API DocumentClassifierFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHEND_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

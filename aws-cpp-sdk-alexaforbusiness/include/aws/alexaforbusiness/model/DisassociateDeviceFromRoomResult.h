@@ -22,12 +22,12 @@ namespace AlexaForBusiness
 {
 namespace Model
 {
-  class AWS_ALEXAFORBUSINESS_API DisassociateDeviceFromRoomResult
+  class DisassociateDeviceFromRoomResult
   {
   public:
-    DisassociateDeviceFromRoomResult();
-    DisassociateDeviceFromRoomResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DisassociateDeviceFromRoomResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ALEXAFORBUSINESS_API DisassociateDeviceFromRoomResult();
+    AWS_ALEXAFORBUSINESS_API DisassociateDeviceFromRoomResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ALEXAFORBUSINESS_API DisassociateDeviceFromRoomResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

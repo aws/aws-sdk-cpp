@@ -24,10 +24,10 @@ namespace Model
 
   /**
    */
-  class AWS_BACKUPSTORAGE_API PutObjectRequest : public StreamingBackupStorageRequest
+  class PutObjectRequest : public StreamingBackupStorageRequest
   {
   public:
-    PutObjectRequest();
+    AWS_BACKUPSTORAGE_API PutObjectRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -35,9 +35,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "PutObject"; }
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_BACKUPSTORAGE_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
-    bool SignBody() const override { return false; }
+    AWS_BACKUPSTORAGE_API bool SignBody() const override { return false; }
 
 
     /**

@@ -24,12 +24,12 @@ namespace GroundStation
 {
 namespace Model
 {
-  class AWS_GROUNDSTATION_API DeleteEphemerisResult
+  class DeleteEphemerisResult
   {
   public:
-    DeleteEphemerisResult();
-    DeleteEphemerisResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteEphemerisResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GROUNDSTATION_API DeleteEphemerisResult();
+    AWS_GROUNDSTATION_API DeleteEphemerisResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GROUNDSTATION_API DeleteEphemerisResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

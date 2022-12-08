@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/TemplateVersionSourceInput">AWS
    * API Reference</a></p>
    */
-  class AWS_PROTON_API TemplateVersionSourceInput
+  class TemplateVersionSourceInput
   {
   public:
-    TemplateVersionSourceInput();
-    TemplateVersionSourceInput(Aws::Utils::Json::JsonView jsonValue);
-    TemplateVersionSourceInput& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PROTON_API TemplateVersionSourceInput();
+    AWS_PROTON_API TemplateVersionSourceInput(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PROTON_API TemplateVersionSourceInput& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PROTON_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

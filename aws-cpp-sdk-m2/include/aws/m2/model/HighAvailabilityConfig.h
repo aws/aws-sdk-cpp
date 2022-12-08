@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/HighAvailabilityConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_MAINFRAMEMODERNIZATION_API HighAvailabilityConfig
+  class HighAvailabilityConfig
   {
   public:
-    HighAvailabilityConfig();
-    HighAvailabilityConfig(Aws::Utils::Json::JsonView jsonValue);
-    HighAvailabilityConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MAINFRAMEMODERNIZATION_API HighAvailabilityConfig();
+    AWS_MAINFRAMEMODERNIZATION_API HighAvailabilityConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MAINFRAMEMODERNIZATION_API HighAvailabilityConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MAINFRAMEMODERNIZATION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

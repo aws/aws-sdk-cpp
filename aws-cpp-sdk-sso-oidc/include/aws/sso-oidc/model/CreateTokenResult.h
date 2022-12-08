@@ -24,12 +24,12 @@ namespace SSOOIDC
 {
 namespace Model
 {
-  class AWS_SSOOIDC_API CreateTokenResult
+  class CreateTokenResult
   {
   public:
-    CreateTokenResult();
-    CreateTokenResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateTokenResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSOOIDC_API CreateTokenResult();
+    AWS_SSOOIDC_API CreateTokenResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSOOIDC_API CreateTokenResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

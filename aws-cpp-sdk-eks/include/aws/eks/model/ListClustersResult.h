@@ -25,12 +25,12 @@ namespace EKS
 {
 namespace Model
 {
-  class AWS_EKS_API ListClustersResult
+  class ListClustersResult
   {
   public:
-    ListClustersResult();
-    ListClustersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListClustersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_EKS_API ListClustersResult();
+    AWS_EKS_API ListClustersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_EKS_API ListClustersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

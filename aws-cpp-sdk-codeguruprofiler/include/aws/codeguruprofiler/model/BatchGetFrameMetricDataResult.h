@@ -36,12 +36,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/BatchGetFrameMetricDataResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEGURUPROFILER_API BatchGetFrameMetricDataResult
+  class BatchGetFrameMetricDataResult
   {
   public:
-    BatchGetFrameMetricDataResult();
-    BatchGetFrameMetricDataResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    BatchGetFrameMetricDataResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODEGURUPROFILER_API BatchGetFrameMetricDataResult();
+    AWS_CODEGURUPROFILER_API BatchGetFrameMetricDataResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODEGURUPROFILER_API BatchGetFrameMetricDataResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

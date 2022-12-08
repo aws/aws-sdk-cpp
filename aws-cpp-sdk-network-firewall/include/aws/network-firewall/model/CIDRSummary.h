@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/CIDRSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_NETWORKFIREWALL_API CIDRSummary
+  class CIDRSummary
   {
   public:
-    CIDRSummary();
-    CIDRSummary(Aws::Utils::Json::JsonView jsonValue);
-    CIDRSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_NETWORKFIREWALL_API CIDRSummary();
+    AWS_NETWORKFIREWALL_API CIDRSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKFIREWALL_API CIDRSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKFIREWALL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

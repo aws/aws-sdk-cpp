@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CategoricalDimensionField">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API CategoricalDimensionField
+  class CategoricalDimensionField
   {
   public:
-    CategoricalDimensionField();
-    CategoricalDimensionField(Aws::Utils::Json::JsonView jsonValue);
-    CategoricalDimensionField& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API CategoricalDimensionField();
+    AWS_QUICKSIGHT_API CategoricalDimensionField(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API CategoricalDimensionField& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

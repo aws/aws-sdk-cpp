@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/ValidationException">AWS
    * API Reference</a></p>
    */
-  class AWS_NIMBLESTUDIO_API ValidationException
+  class ValidationException
   {
   public:
-    ValidationException();
-    ValidationException(Aws::Utils::Json::JsonView jsonValue);
-    ValidationException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_NIMBLESTUDIO_API ValidationException();
+    AWS_NIMBLESTUDIO_API ValidationException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NIMBLESTUDIO_API ValidationException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NIMBLESTUDIO_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pi-2018-02-27/DimensionDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_PI_API DimensionDetail
+  class DimensionDetail
   {
   public:
-    DimensionDetail();
-    DimensionDetail(Aws::Utils::Json::JsonView jsonValue);
-    DimensionDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PI_API DimensionDetail();
+    AWS_PI_API DimensionDetail(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PI_API DimensionDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PI_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

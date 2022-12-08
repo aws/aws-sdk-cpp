@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/AccountStatus">AWS
    * API Reference</a></p>
    */
-  class AWS_NETWORKMANAGER_API AccountStatus
+  class AccountStatus
   {
   public:
-    AccountStatus();
-    AccountStatus(Aws::Utils::Json::JsonView jsonValue);
-    AccountStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_NETWORKMANAGER_API AccountStatus();
+    AWS_NETWORKMANAGER_API AccountStatus(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKMANAGER_API AccountStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

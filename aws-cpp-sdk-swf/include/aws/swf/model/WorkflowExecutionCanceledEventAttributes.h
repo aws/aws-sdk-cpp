@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/WorkflowExecutionCanceledEventAttributes">AWS
    * API Reference</a></p>
    */
-  class AWS_SWF_API WorkflowExecutionCanceledEventAttributes
+  class WorkflowExecutionCanceledEventAttributes
   {
   public:
-    WorkflowExecutionCanceledEventAttributes();
-    WorkflowExecutionCanceledEventAttributes(Aws::Utils::Json::JsonView jsonValue);
-    WorkflowExecutionCanceledEventAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SWF_API WorkflowExecutionCanceledEventAttributes();
+    AWS_SWF_API WorkflowExecutionCanceledEventAttributes(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SWF_API WorkflowExecutionCanceledEventAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SWF_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

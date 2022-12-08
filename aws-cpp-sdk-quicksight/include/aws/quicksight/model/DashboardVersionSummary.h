@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DashboardVersionSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API DashboardVersionSummary
+  class DashboardVersionSummary
   {
   public:
-    DashboardVersionSummary();
-    DashboardVersionSummary(Aws::Utils::Json::JsonView jsonValue);
-    DashboardVersionSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API DashboardVersionSummary();
+    AWS_QUICKSIGHT_API DashboardVersionSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API DashboardVersionSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

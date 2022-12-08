@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/BatchChannelMemberships">AWS
    * API Reference</a></p>
    */
-  class AWS_CHIMESDKMESSAGING_API BatchChannelMemberships
+  class BatchChannelMemberships
   {
   public:
-    BatchChannelMemberships();
-    BatchChannelMemberships(Aws::Utils::Json::JsonView jsonValue);
-    BatchChannelMemberships& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIMESDKMESSAGING_API BatchChannelMemberships();
+    AWS_CHIMESDKMESSAGING_API BatchChannelMemberships(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKMESSAGING_API BatchChannelMemberships& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKMESSAGING_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

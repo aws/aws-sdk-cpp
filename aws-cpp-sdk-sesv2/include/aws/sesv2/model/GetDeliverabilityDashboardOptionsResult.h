@@ -33,12 +33,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/GetDeliverabilityDashboardOptionsResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_SESV2_API GetDeliverabilityDashboardOptionsResult
+  class GetDeliverabilityDashboardOptionsResult
   {
   public:
-    GetDeliverabilityDashboardOptionsResult();
-    GetDeliverabilityDashboardOptionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetDeliverabilityDashboardOptionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SESV2_API GetDeliverabilityDashboardOptionsResult();
+    AWS_SESV2_API GetDeliverabilityDashboardOptionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SESV2_API GetDeliverabilityDashboardOptionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

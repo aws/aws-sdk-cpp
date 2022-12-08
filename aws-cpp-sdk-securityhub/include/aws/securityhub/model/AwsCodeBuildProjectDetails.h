@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsCodeBuildProjectDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsCodeBuildProjectDetails
+  class AwsCodeBuildProjectDetails
   {
   public:
-    AwsCodeBuildProjectDetails();
-    AwsCodeBuildProjectDetails(Aws::Utils::Json::JsonView jsonValue);
-    AwsCodeBuildProjectDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsCodeBuildProjectDetails();
+    AWS_SECURITYHUB_API AwsCodeBuildProjectDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsCodeBuildProjectDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

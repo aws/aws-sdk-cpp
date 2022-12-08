@@ -22,12 +22,12 @@ namespace SSM
 {
 namespace Model
 {
-  class AWS_SSM_API DisassociateOpsItemRelatedItemResult
+  class DisassociateOpsItemRelatedItemResult
   {
   public:
-    DisassociateOpsItemRelatedItemResult();
-    DisassociateOpsItemRelatedItemResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DisassociateOpsItemRelatedItemResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSM_API DisassociateOpsItemRelatedItemResult();
+    AWS_SSM_API DisassociateOpsItemRelatedItemResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSM_API DisassociateOpsItemRelatedItemResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

@@ -24,12 +24,12 @@ namespace CodeCommit
 {
 namespace Model
 {
-  class AWS_CODECOMMIT_API CreateUnreferencedMergeCommitResult
+  class CreateUnreferencedMergeCommitResult
   {
   public:
-    CreateUnreferencedMergeCommitResult();
-    CreateUnreferencedMergeCommitResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateUnreferencedMergeCommitResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODECOMMIT_API CreateUnreferencedMergeCommitResult();
+    AWS_CODECOMMIT_API CreateUnreferencedMergeCommitResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODECOMMIT_API CreateUnreferencedMergeCommitResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

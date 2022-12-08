@@ -28,14 +28,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/QueryArgProfile">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFRONT_API QueryArgProfile
+  class QueryArgProfile
   {
   public:
-    QueryArgProfile();
-    QueryArgProfile(const Aws::Utils::Xml::XmlNode& xmlNode);
-    QueryArgProfile& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API QueryArgProfile();
+    AWS_CLOUDFRONT_API QueryArgProfile(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API QueryArgProfile& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**

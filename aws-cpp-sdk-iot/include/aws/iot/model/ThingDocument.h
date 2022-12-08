@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ThingDocument">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API ThingDocument
+  class ThingDocument
   {
   public:
-    ThingDocument();
-    ThingDocument(Aws::Utils::Json::JsonView jsonValue);
-    ThingDocument& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API ThingDocument();
+    AWS_IOT_API ThingDocument(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API ThingDocument& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

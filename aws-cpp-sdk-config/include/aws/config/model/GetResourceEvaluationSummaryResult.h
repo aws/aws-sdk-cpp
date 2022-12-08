@@ -30,12 +30,12 @@ namespace ConfigService
 {
 namespace Model
 {
-  class AWS_CONFIGSERVICE_API GetResourceEvaluationSummaryResult
+  class GetResourceEvaluationSummaryResult
   {
   public:
-    GetResourceEvaluationSummaryResult();
-    GetResourceEvaluationSummaryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetResourceEvaluationSummaryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CONFIGSERVICE_API GetResourceEvaluationSummaryResult();
+    AWS_CONFIGSERVICE_API GetResourceEvaluationSummaryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CONFIGSERVICE_API GetResourceEvaluationSummaryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

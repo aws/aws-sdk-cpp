@@ -24,12 +24,12 @@ namespace EMRContainers
 {
 namespace Model
 {
-  class AWS_EMRCONTAINERS_API StartJobRunResult
+  class StartJobRunResult
   {
   public:
-    StartJobRunResult();
-    StartJobRunResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    StartJobRunResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_EMRCONTAINERS_API StartJobRunResult();
+    AWS_EMRCONTAINERS_API StartJobRunResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_EMRCONTAINERS_API StartJobRunResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ProvisionedProductDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_SERVICECATALOG_API ProvisionedProductDetail
+  class ProvisionedProductDetail
   {
   public:
-    ProvisionedProductDetail();
-    ProvisionedProductDetail(Aws::Utils::Json::JsonView jsonValue);
-    ProvisionedProductDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SERVICECATALOG_API ProvisionedProductDetail();
+    AWS_SERVICECATALOG_API ProvisionedProductDetail(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICECATALOG_API ProvisionedProductDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICECATALOG_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

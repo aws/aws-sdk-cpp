@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DataColor">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API DataColor
+  class DataColor
   {
   public:
-    DataColor();
-    DataColor(Aws::Utils::Json::JsonView jsonValue);
-    DataColor& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API DataColor();
+    AWS_QUICKSIGHT_API DataColor(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API DataColor& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

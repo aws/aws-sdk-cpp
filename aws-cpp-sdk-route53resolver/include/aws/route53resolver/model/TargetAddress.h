@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/TargetAddress">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53RESOLVER_API TargetAddress
+  class TargetAddress
   {
   public:
-    TargetAddress();
-    TargetAddress(Aws::Utils::Json::JsonView jsonValue);
-    TargetAddress& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ROUTE53RESOLVER_API TargetAddress();
+    AWS_ROUTE53RESOLVER_API TargetAddress(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROUTE53RESOLVER_API TargetAddress& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROUTE53RESOLVER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

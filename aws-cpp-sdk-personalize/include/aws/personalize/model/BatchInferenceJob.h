@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/BatchInferenceJob">AWS
    * API Reference</a></p>
    */
-  class AWS_PERSONALIZE_API BatchInferenceJob
+  class BatchInferenceJob
   {
   public:
-    BatchInferenceJob();
-    BatchInferenceJob(Aws::Utils::Json::JsonView jsonValue);
-    BatchInferenceJob& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PERSONALIZE_API BatchInferenceJob();
+    AWS_PERSONALIZE_API BatchInferenceJob(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PERSONALIZE_API BatchInferenceJob& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PERSONALIZE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

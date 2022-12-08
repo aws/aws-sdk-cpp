@@ -24,12 +24,12 @@ namespace MigrationHubConfig
 {
 namespace Model
 {
-  class AWS_MIGRATIONHUBCONFIG_API GetHomeRegionResult
+  class GetHomeRegionResult
   {
   public:
-    GetHomeRegionResult();
-    GetHomeRegionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetHomeRegionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MIGRATIONHUBCONFIG_API GetHomeRegionResult();
+    AWS_MIGRATIONHUBCONFIG_API GetHomeRegionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MIGRATIONHUBCONFIG_API GetHomeRegionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

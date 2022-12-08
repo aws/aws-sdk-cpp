@@ -30,12 +30,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteBandwidthRateLimitOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_STORAGEGATEWAY_API DeleteBandwidthRateLimitResult
+  class DeleteBandwidthRateLimitResult
   {
   public:
-    DeleteBandwidthRateLimitResult();
-    DeleteBandwidthRateLimitResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteBandwidthRateLimitResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_STORAGEGATEWAY_API DeleteBandwidthRateLimitResult();
+    AWS_STORAGEGATEWAY_API DeleteBandwidthRateLimitResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_STORAGEGATEWAY_API DeleteBandwidthRateLimitResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     

@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/EksClusterDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_GUARDDUTY_API EksClusterDetails
+  class EksClusterDetails
   {
   public:
-    EksClusterDetails();
-    EksClusterDetails(Aws::Utils::Json::JsonView jsonValue);
-    EksClusterDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GUARDDUTY_API EksClusterDetails();
+    AWS_GUARDDUTY_API EksClusterDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API EksClusterDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

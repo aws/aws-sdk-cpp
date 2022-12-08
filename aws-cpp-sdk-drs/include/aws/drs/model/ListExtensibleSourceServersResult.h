@@ -26,12 +26,12 @@ namespace drs
 {
 namespace Model
 {
-  class AWS_DRS_API ListExtensibleSourceServersResult
+  class ListExtensibleSourceServersResult
   {
   public:
-    ListExtensibleSourceServersResult();
-    ListExtensibleSourceServersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListExtensibleSourceServersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DRS_API ListExtensibleSourceServersResult();
+    AWS_DRS_API ListExtensibleSourceServersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DRS_API ListExtensibleSourceServersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

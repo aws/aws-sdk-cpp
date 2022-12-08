@@ -26,12 +26,12 @@ namespace SageMakerGeospatial
 {
 namespace Model
 {
-  class AWS_SAGEMAKERGEOSPATIAL_API ListVectorEnrichmentJobsResult
+  class ListVectorEnrichmentJobsResult
   {
   public:
-    ListVectorEnrichmentJobsResult();
-    ListVectorEnrichmentJobsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListVectorEnrichmentJobsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SAGEMAKERGEOSPATIAL_API ListVectorEnrichmentJobsResult();
+    AWS_SAGEMAKERGEOSPATIAL_API ListVectorEnrichmentJobsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SAGEMAKERGEOSPATIAL_API ListVectorEnrichmentJobsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

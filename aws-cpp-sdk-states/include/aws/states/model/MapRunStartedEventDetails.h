@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/MapRunStartedEventDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SFN_API MapRunStartedEventDetails
+  class MapRunStartedEventDetails
   {
   public:
-    MapRunStartedEventDetails();
-    MapRunStartedEventDetails(Aws::Utils::Json::JsonView jsonValue);
-    MapRunStartedEventDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SFN_API MapRunStartedEventDetails();
+    AWS_SFN_API MapRunStartedEventDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SFN_API MapRunStartedEventDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SFN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

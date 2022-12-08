@@ -24,12 +24,12 @@ namespace DAX
 {
 namespace Model
 {
-  class AWS_DAX_API DecreaseReplicationFactorResult
+  class DecreaseReplicationFactorResult
   {
   public:
-    DecreaseReplicationFactorResult();
-    DecreaseReplicationFactorResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DecreaseReplicationFactorResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DAX_API DecreaseReplicationFactorResult();
+    AWS_DAX_API DecreaseReplicationFactorResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DAX_API DecreaseReplicationFactorResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

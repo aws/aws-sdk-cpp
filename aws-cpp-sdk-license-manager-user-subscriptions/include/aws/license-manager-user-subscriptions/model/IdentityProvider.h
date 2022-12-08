@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-user-subscriptions-2018-05-10/IdentityProvider">AWS
    * API Reference</a></p>
    */
-  class AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API IdentityProvider
+  class IdentityProvider
   {
   public:
-    IdentityProvider();
-    IdentityProvider(Aws::Utils::Json::JsonView jsonValue);
-    IdentityProvider& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API IdentityProvider();
+    AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API IdentityProvider(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API IdentityProvider& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

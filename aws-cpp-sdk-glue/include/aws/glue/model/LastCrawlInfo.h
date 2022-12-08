@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/LastCrawlInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API LastCrawlInfo
+  class LastCrawlInfo
   {
   public:
-    LastCrawlInfo();
-    LastCrawlInfo(Aws::Utils::Json::JsonView jsonValue);
-    LastCrawlInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API LastCrawlInfo();
+    AWS_GLUE_API LastCrawlInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API LastCrawlInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

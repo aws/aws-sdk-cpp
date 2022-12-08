@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GroupInformation">AWS
    * API Reference</a></p>
    */
-  class AWS_GREENGRASS_API GroupInformation
+  class GroupInformation
   {
   public:
-    GroupInformation();
-    GroupInformation(Aws::Utils::Json::JsonView jsonValue);
-    GroupInformation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GREENGRASS_API GroupInformation();
+    AWS_GREENGRASS_API GroupInformation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASS_API GroupInformation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

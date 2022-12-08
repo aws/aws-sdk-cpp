@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-geospatial-2020-05-27/RasterDataCollectionQueryInput">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKERGEOSPATIAL_API RasterDataCollectionQueryInput
+  class RasterDataCollectionQueryInput
   {
   public:
-    RasterDataCollectionQueryInput();
-    RasterDataCollectionQueryInput(Aws::Utils::Json::JsonView jsonValue);
-    RasterDataCollectionQueryInput& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKERGEOSPATIAL_API RasterDataCollectionQueryInput();
+    AWS_SAGEMAKERGEOSPATIAL_API RasterDataCollectionQueryInput(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKERGEOSPATIAL_API RasterDataCollectionQueryInput& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKERGEOSPATIAL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

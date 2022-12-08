@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/LiveConnectorRTMPConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_CHIMESDKMEDIAPIPELINES_API LiveConnectorRTMPConfiguration
+  class LiveConnectorRTMPConfiguration
   {
   public:
-    LiveConnectorRTMPConfiguration();
-    LiveConnectorRTMPConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    LiveConnectorRTMPConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIMESDKMEDIAPIPELINES_API LiveConnectorRTMPConfiguration();
+    AWS_CHIMESDKMEDIAPIPELINES_API LiveConnectorRTMPConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKMEDIAPIPELINES_API LiveConnectorRTMPConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKMEDIAPIPELINES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

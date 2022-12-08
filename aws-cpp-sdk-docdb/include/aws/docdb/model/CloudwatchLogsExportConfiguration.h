@@ -34,15 +34,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/CloudwatchLogsExportConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_DOCDB_API CloudwatchLogsExportConfiguration
+  class CloudwatchLogsExportConfiguration
   {
   public:
-    CloudwatchLogsExportConfiguration();
-    CloudwatchLogsExportConfiguration(const Aws::Utils::Xml::XmlNode& xmlNode);
-    CloudwatchLogsExportConfiguration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_DOCDB_API CloudwatchLogsExportConfiguration();
+    AWS_DOCDB_API CloudwatchLogsExportConfiguration(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_DOCDB_API CloudwatchLogsExportConfiguration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_DOCDB_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_DOCDB_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**

@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/KerberosAttributes">AWS
    * API Reference</a></p>
    */
-  class AWS_EMR_API KerberosAttributes
+  class KerberosAttributes
   {
   public:
-    KerberosAttributes();
-    KerberosAttributes(Aws::Utils::Json::JsonView jsonValue);
-    KerberosAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EMR_API KerberosAttributes();
+    AWS_EMR_API KerberosAttributes(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMR_API KerberosAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

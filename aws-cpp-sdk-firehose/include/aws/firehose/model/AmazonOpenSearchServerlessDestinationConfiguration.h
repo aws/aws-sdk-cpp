@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/AmazonOpenSearchServerlessDestinationConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_FIREHOSE_API AmazonOpenSearchServerlessDestinationConfiguration
+  class AmazonOpenSearchServerlessDestinationConfiguration
   {
   public:
-    AmazonOpenSearchServerlessDestinationConfiguration();
-    AmazonOpenSearchServerlessDestinationConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    AmazonOpenSearchServerlessDestinationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FIREHOSE_API AmazonOpenSearchServerlessDestinationConfiguration();
+    AWS_FIREHOSE_API AmazonOpenSearchServerlessDestinationConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FIREHOSE_API AmazonOpenSearchServerlessDestinationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FIREHOSE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

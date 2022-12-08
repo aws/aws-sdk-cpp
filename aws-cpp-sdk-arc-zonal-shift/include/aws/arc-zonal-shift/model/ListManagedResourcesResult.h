@@ -26,12 +26,12 @@ namespace ARCZonalShift
 {
 namespace Model
 {
-  class AWS_ARCZONALSHIFT_API ListManagedResourcesResult
+  class ListManagedResourcesResult
   {
   public:
-    ListManagedResourcesResult();
-    ListManagedResourcesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListManagedResourcesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ARCZONALSHIFT_API ListManagedResourcesResult();
+    AWS_ARCZONALSHIFT_API ListManagedResourcesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ARCZONALSHIFT_API ListManagedResourcesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/ReplicationJob">AWS
    * API Reference</a></p>
    */
-  class AWS_SMS_API ReplicationJob
+  class ReplicationJob
   {
   public:
-    ReplicationJob();
-    ReplicationJob(Aws::Utils::Json::JsonView jsonValue);
-    ReplicationJob& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SMS_API ReplicationJob();
+    AWS_SMS_API ReplicationJob(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SMS_API ReplicationJob& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -25,12 +25,12 @@ namespace SupportApp
 {
 namespace Model
 {
-  class AWS_SUPPORTAPP_API RegisterSlackWorkspaceForOrganizationResult
+  class RegisterSlackWorkspaceForOrganizationResult
   {
   public:
-    RegisterSlackWorkspaceForOrganizationResult();
-    RegisterSlackWorkspaceForOrganizationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    RegisterSlackWorkspaceForOrganizationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SUPPORTAPP_API RegisterSlackWorkspaceForOrganizationResult();
+    AWS_SUPPORTAPP_API RegisterSlackWorkspaceForOrganizationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SUPPORTAPP_API RegisterSlackWorkspaceForOrganizationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

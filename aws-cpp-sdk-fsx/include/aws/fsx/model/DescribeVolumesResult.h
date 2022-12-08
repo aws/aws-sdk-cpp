@@ -26,12 +26,12 @@ namespace FSx
 {
 namespace Model
 {
-  class AWS_FSX_API DescribeVolumesResult
+  class DescribeVolumesResult
   {
   public:
-    DescribeVolumesResult();
-    DescribeVolumesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeVolumesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_FSX_API DescribeVolumesResult();
+    AWS_FSX_API DescribeVolumesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_FSX_API DescribeVolumesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -46,13 +46,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DataSourceConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_KENDRA_API DataSourceConfiguration
+  class DataSourceConfiguration
   {
   public:
-    DataSourceConfiguration();
-    DataSourceConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    DataSourceConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KENDRA_API DataSourceConfiguration();
+    AWS_KENDRA_API DataSourceConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API DataSourceConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

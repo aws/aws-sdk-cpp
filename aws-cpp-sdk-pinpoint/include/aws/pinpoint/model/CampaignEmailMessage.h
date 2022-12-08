@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CampaignEmailMessage">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API CampaignEmailMessage
+  class CampaignEmailMessage
   {
   public:
-    CampaignEmailMessage();
-    CampaignEmailMessage(Aws::Utils::Json::JsonView jsonValue);
-    CampaignEmailMessage& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API CampaignEmailMessage();
+    AWS_PINPOINT_API CampaignEmailMessage(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API CampaignEmailMessage& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

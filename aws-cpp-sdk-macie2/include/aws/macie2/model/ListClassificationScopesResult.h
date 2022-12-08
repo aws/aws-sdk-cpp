@@ -26,12 +26,12 @@ namespace Macie2
 {
 namespace Model
 {
-  class AWS_MACIE2_API ListClassificationScopesResult
+  class ListClassificationScopesResult
   {
   public:
-    ListClassificationScopesResult();
-    ListClassificationScopesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListClassificationScopesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MACIE2_API ListClassificationScopesResult();
+    AWS_MACIE2_API ListClassificationScopesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MACIE2_API ListClassificationScopesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

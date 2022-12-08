@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ProtectedResource">AWS
    * API Reference</a></p>
    */
-  class AWS_BACKUP_API ProtectedResource
+  class ProtectedResource
   {
   public:
-    ProtectedResource();
-    ProtectedResource(Aws::Utils::Json::JsonView jsonValue);
-    ProtectedResource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BACKUP_API ProtectedResource();
+    AWS_BACKUP_API ProtectedResource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BACKUP_API ProtectedResource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BACKUP_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/UpdateValue">AWS API
    * Reference</a></p>
    */
-  class AWS_DIRECTORYSERVICE_API UpdateValue
+  class UpdateValue
   {
   public:
-    UpdateValue();
-    UpdateValue(Aws::Utils::Json::JsonView jsonValue);
-    UpdateValue& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DIRECTORYSERVICE_API UpdateValue();
+    AWS_DIRECTORYSERVICE_API UpdateValue(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTORYSERVICE_API UpdateValue& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTORYSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

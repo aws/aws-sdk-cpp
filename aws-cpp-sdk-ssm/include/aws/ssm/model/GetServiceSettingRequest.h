@@ -22,10 +22,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetServiceSettingRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_SSM_API GetServiceSettingRequest : public SSMRequest
+  class GetServiceSettingRequest : public SSMRequest
   {
   public:
-    GetServiceSettingRequest();
+    AWS_SSM_API GetServiceSettingRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,9 +33,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "GetServiceSetting"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SSM_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_SSM_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**

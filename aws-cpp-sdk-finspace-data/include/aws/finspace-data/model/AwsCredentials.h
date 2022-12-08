@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/AwsCredentials">AWS
    * API Reference</a></p>
    */
-  class AWS_FINSPACEDATA_API AwsCredentials
+  class AwsCredentials
   {
   public:
-    AwsCredentials();
-    AwsCredentials(Aws::Utils::Json::JsonView jsonValue);
-    AwsCredentials& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FINSPACEDATA_API AwsCredentials();
+    AWS_FINSPACEDATA_API AwsCredentials(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FINSPACEDATA_API AwsCredentials& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FINSPACEDATA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

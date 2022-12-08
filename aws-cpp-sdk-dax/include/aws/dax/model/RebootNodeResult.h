@@ -24,12 +24,12 @@ namespace DAX
 {
 namespace Model
 {
-  class AWS_DAX_API RebootNodeResult
+  class RebootNodeResult
   {
   public:
-    RebootNodeResult();
-    RebootNodeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    RebootNodeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DAX_API RebootNodeResult();
+    AWS_DAX_API RebootNodeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DAX_API RebootNodeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

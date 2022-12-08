@@ -27,12 +27,12 @@ namespace Macie2
 {
 namespace Model
 {
-  class AWS_MACIE2_API GetFindingsFilterResult
+  class GetFindingsFilterResult
   {
   public:
-    GetFindingsFilterResult();
-    GetFindingsFilterResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetFindingsFilterResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MACIE2_API GetFindingsFilterResult();
+    AWS_MACIE2_API GetFindingsFilterResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MACIE2_API GetFindingsFilterResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -31,12 +31,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetLoginProfileResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_IAM_API GetLoginProfileResult
+  class GetLoginProfileResult
   {
   public:
-    GetLoginProfileResult();
-    GetLoginProfileResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    GetLoginProfileResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_IAM_API GetLoginProfileResult();
+    AWS_IAM_API GetLoginProfileResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_IAM_API GetLoginProfileResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

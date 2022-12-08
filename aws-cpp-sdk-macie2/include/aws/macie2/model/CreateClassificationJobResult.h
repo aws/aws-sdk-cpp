@@ -24,12 +24,12 @@ namespace Macie2
 {
 namespace Model
 {
-  class AWS_MACIE2_API CreateClassificationJobResult
+  class CreateClassificationJobResult
   {
   public:
-    CreateClassificationJobResult();
-    CreateClassificationJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateClassificationJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MACIE2_API CreateClassificationJobResult();
+    AWS_MACIE2_API CreateClassificationJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MACIE2_API CreateClassificationJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

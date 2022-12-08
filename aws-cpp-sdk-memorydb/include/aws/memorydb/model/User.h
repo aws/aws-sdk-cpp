@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/User">AWS API
    * Reference</a></p>
    */
-  class AWS_MEMORYDB_API User
+  class User
   {
   public:
-    User();
-    User(Aws::Utils::Json::JsonView jsonValue);
-    User& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEMORYDB_API User();
+    AWS_MEMORYDB_API User(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEMORYDB_API User& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEMORYDB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

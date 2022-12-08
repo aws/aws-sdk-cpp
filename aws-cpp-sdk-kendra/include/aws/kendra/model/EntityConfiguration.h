@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/EntityConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_KENDRA_API EntityConfiguration
+  class EntityConfiguration
   {
   public:
-    EntityConfiguration();
-    EntityConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    EntityConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KENDRA_API EntityConfiguration();
+    AWS_KENDRA_API EntityConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API EntityConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -31,13 +31,13 @@ namespace drs
 namespace Model
 {
 
-  class AWS_DRS_API SourceServer
+  class SourceServer
   {
   public:
-    SourceServer();
-    SourceServer(Aws::Utils::Json::JsonView jsonValue);
-    SourceServer& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DRS_API SourceServer();
+    AWS_DRS_API SourceServer(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DRS_API SourceServer& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DRS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

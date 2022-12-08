@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/ReplicationSet">AWS
    * API Reference</a></p>
    */
-  class AWS_SSMINCIDENTS_API ReplicationSet
+  class ReplicationSet
   {
   public:
-    ReplicationSet();
-    ReplicationSet(Aws::Utils::Json::JsonView jsonValue);
-    ReplicationSet& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSMINCIDENTS_API ReplicationSet();
+    AWS_SSMINCIDENTS_API ReplicationSet(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSMINCIDENTS_API ReplicationSet& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSMINCIDENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

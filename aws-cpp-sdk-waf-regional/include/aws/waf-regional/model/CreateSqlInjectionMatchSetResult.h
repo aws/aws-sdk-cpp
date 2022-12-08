@@ -31,12 +31,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/CreateSqlInjectionMatchSetResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_WAFREGIONAL_API CreateSqlInjectionMatchSetResult
+  class CreateSqlInjectionMatchSetResult
   {
   public:
-    CreateSqlInjectionMatchSetResult();
-    CreateSqlInjectionMatchSetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateSqlInjectionMatchSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WAFREGIONAL_API CreateSqlInjectionMatchSetResult();
+    AWS_WAFREGIONAL_API CreateSqlInjectionMatchSetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WAFREGIONAL_API CreateSqlInjectionMatchSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

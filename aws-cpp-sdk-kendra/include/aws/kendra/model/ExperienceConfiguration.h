@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ExperienceConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_KENDRA_API ExperienceConfiguration
+  class ExperienceConfiguration
   {
   public:
-    ExperienceConfiguration();
-    ExperienceConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    ExperienceConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KENDRA_API ExperienceConfiguration();
+    AWS_KENDRA_API ExperienceConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API ExperienceConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

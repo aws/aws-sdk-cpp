@@ -25,12 +25,12 @@ namespace ivschat
 {
 namespace Model
 {
-  class AWS_IVSCHAT_API CreateChatTokenResult
+  class CreateChatTokenResult
   {
   public:
-    CreateChatTokenResult();
-    CreateChatTokenResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateChatTokenResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IVSCHAT_API CreateChatTokenResult();
+    AWS_IVSCHAT_API CreateChatTokenResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IVSCHAT_API CreateChatTokenResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

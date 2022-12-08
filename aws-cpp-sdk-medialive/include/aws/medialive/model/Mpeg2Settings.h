@@ -38,13 +38,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/Mpeg2Settings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API Mpeg2Settings
+  class Mpeg2Settings
   {
   public:
-    Mpeg2Settings();
-    Mpeg2Settings(Aws::Utils::Json::JsonView jsonValue);
-    Mpeg2Settings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API Mpeg2Settings();
+    AWS_MEDIALIVE_API Mpeg2Settings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Mpeg2Settings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

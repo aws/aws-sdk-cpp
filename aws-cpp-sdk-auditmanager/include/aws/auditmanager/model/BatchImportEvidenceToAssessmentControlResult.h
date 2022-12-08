@@ -25,12 +25,12 @@ namespace AuditManager
 {
 namespace Model
 {
-  class AWS_AUDITMANAGER_API BatchImportEvidenceToAssessmentControlResult
+  class BatchImportEvidenceToAssessmentControlResult
   {
   public:
-    BatchImportEvidenceToAssessmentControlResult();
-    BatchImportEvidenceToAssessmentControlResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    BatchImportEvidenceToAssessmentControlResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_AUDITMANAGER_API BatchImportEvidenceToAssessmentControlResult();
+    AWS_AUDITMANAGER_API BatchImportEvidenceToAssessmentControlResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_AUDITMANAGER_API BatchImportEvidenceToAssessmentControlResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

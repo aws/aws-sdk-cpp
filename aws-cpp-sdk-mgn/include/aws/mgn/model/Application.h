@@ -25,13 +25,13 @@ namespace mgn
 namespace Model
 {
 
-  class AWS_MGN_API Application
+  class Application
   {
   public:
-    Application();
-    Application(Aws::Utils::Json::JsonView jsonValue);
-    Application& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MGN_API Application();
+    AWS_MGN_API Application(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MGN_API Application& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MGN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

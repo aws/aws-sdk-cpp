@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/Record">AWS API
    * Reference</a></p>
    */
-  class AWS_KINESIS_API Record
+  class Record
   {
   public:
-    Record();
-    Record(Aws::Utils::Json::JsonView jsonValue);
-    Record& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KINESIS_API Record();
+    AWS_KINESIS_API Record(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESIS_API Record& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESIS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/NFSDataRepositoryConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_FSX_API NFSDataRepositoryConfiguration
+  class NFSDataRepositoryConfiguration
   {
   public:
-    NFSDataRepositoryConfiguration();
-    NFSDataRepositoryConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    NFSDataRepositoryConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FSX_API NFSDataRepositoryConfiguration();
+    AWS_FSX_API NFSDataRepositoryConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API NFSDataRepositoryConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

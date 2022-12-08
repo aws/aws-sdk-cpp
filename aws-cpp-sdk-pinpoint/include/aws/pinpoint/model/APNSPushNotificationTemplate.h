@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/APNSPushNotificationTemplate">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API APNSPushNotificationTemplate
+  class APNSPushNotificationTemplate
   {
   public:
-    APNSPushNotificationTemplate();
-    APNSPushNotificationTemplate(Aws::Utils::Json::JsonView jsonValue);
-    APNSPushNotificationTemplate& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API APNSPushNotificationTemplate();
+    AWS_PINPOINT_API APNSPushNotificationTemplate(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API APNSPushNotificationTemplate& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/CoverageByTime">AWS
    * API Reference</a></p>
    */
-  class AWS_COSTEXPLORER_API CoverageByTime
+  class CoverageByTime
   {
   public:
-    CoverageByTime();
-    CoverageByTime(Aws::Utils::Json::JsonView jsonValue);
-    CoverageByTime& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COSTEXPLORER_API CoverageByTime();
+    AWS_COSTEXPLORER_API CoverageByTime(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API CoverageByTime& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

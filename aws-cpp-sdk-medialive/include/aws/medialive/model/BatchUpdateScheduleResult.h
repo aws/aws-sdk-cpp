@@ -31,12 +31,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/BatchUpdateScheduleResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API BatchUpdateScheduleResult
+  class BatchUpdateScheduleResult
   {
   public:
-    BatchUpdateScheduleResult();
-    BatchUpdateScheduleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    BatchUpdateScheduleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MEDIALIVE_API BatchUpdateScheduleResult();
+    AWS_MEDIALIVE_API BatchUpdateScheduleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MEDIALIVE_API BatchUpdateScheduleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

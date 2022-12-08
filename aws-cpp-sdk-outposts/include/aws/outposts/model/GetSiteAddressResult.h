@@ -26,12 +26,12 @@ namespace Outposts
 {
 namespace Model
 {
-  class AWS_OUTPOSTS_API GetSiteAddressResult
+  class GetSiteAddressResult
   {
   public:
-    GetSiteAddressResult();
-    GetSiteAddressResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetSiteAddressResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OUTPOSTS_API GetSiteAddressResult();
+    AWS_OUTPOSTS_API GetSiteAddressResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OUTPOSTS_API GetSiteAddressResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     

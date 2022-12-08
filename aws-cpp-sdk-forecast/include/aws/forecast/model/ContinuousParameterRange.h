@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/ContinuousParameterRange">AWS
    * API Reference</a></p>
    */
-  class AWS_FORECASTSERVICE_API ContinuousParameterRange
+  class ContinuousParameterRange
   {
   public:
-    ContinuousParameterRange();
-    ContinuousParameterRange(Aws::Utils::Json::JsonView jsonValue);
-    ContinuousParameterRange& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FORECASTSERVICE_API ContinuousParameterRange();
+    AWS_FORECASTSERVICE_API ContinuousParameterRange(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FORECASTSERVICE_API ContinuousParameterRange& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FORECASTSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

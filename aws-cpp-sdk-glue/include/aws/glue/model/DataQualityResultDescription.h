@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DataQualityResultDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API DataQualityResultDescription
+  class DataQualityResultDescription
   {
   public:
-    DataQualityResultDescription();
-    DataQualityResultDescription(Aws::Utils::Json::JsonView jsonValue);
-    DataQualityResultDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API DataQualityResultDescription();
+    AWS_GLUE_API DataQualityResultDescription(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API DataQualityResultDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

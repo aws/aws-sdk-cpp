@@ -33,12 +33,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetAccessKeyLastUsedResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_IAM_API GetAccessKeyLastUsedResult
+  class GetAccessKeyLastUsedResult
   {
   public:
-    GetAccessKeyLastUsedResult();
-    GetAccessKeyLastUsedResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    GetAccessKeyLastUsedResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_IAM_API GetAccessKeyLastUsedResult();
+    AWS_IAM_API GetAccessKeyLastUsedResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_IAM_API GetAccessKeyLastUsedResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

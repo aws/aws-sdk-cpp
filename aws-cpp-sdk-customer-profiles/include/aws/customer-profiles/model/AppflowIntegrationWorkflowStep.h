@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/AppflowIntegrationWorkflowStep">AWS
    * API Reference</a></p>
    */
-  class AWS_CUSTOMERPROFILES_API AppflowIntegrationWorkflowStep
+  class AppflowIntegrationWorkflowStep
   {
   public:
-    AppflowIntegrationWorkflowStep();
-    AppflowIntegrationWorkflowStep(Aws::Utils::Json::JsonView jsonValue);
-    AppflowIntegrationWorkflowStep& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CUSTOMERPROFILES_API AppflowIntegrationWorkflowStep();
+    AWS_CUSTOMERPROFILES_API AppflowIntegrationWorkflowStep(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CUSTOMERPROFILES_API AppflowIntegrationWorkflowStep& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CUSTOMERPROFILES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

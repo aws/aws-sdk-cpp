@@ -31,12 +31,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetDevicePoolCompatibilityResult">AWS
    * API Reference</a></p>
    */
-  class AWS_DEVICEFARM_API GetDevicePoolCompatibilityResult
+  class GetDevicePoolCompatibilityResult
   {
   public:
-    GetDevicePoolCompatibilityResult();
-    GetDevicePoolCompatibilityResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetDevicePoolCompatibilityResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DEVICEFARM_API GetDevicePoolCompatibilityResult();
+    AWS_DEVICEFARM_API GetDevicePoolCompatibilityResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DEVICEFARM_API GetDevicePoolCompatibilityResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

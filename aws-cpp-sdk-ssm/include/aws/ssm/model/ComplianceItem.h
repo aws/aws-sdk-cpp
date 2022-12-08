@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ComplianceItem">AWS
    * API Reference</a></p>
    */
-  class AWS_SSM_API ComplianceItem
+  class ComplianceItem
   {
   public:
-    ComplianceItem();
-    ComplianceItem(Aws::Utils::Json::JsonView jsonValue);
-    ComplianceItem& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSM_API ComplianceItem();
+    AWS_SSM_API ComplianceItem(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API ComplianceItem& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

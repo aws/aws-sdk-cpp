@@ -40,13 +40,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/Instance">AWS
    * API Reference</a></p>
    */
-  class AWS_LIGHTSAIL_API Instance
+  class Instance
   {
   public:
-    Instance();
-    Instance(Aws::Utils::Json::JsonView jsonValue);
-    Instance& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LIGHTSAIL_API Instance();
+    AWS_LIGHTSAIL_API Instance(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API Instance& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

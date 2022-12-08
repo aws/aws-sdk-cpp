@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/NetworkInterface">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTFLEETWISE_API NetworkInterface
+  class NetworkInterface
   {
   public:
-    NetworkInterface();
-    NetworkInterface(Aws::Utils::Json::JsonView jsonValue);
-    NetworkInterface& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTFLEETWISE_API NetworkInterface();
+    AWS_IOTFLEETWISE_API NetworkInterface(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTFLEETWISE_API NetworkInterface& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTFLEETWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

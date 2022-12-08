@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/Extraction">AWS
    * API Reference</a></p>
    */
-  class AWS_TEXTRACT_API Extraction
+  class Extraction
   {
   public:
-    Extraction();
-    Extraction(Aws::Utils::Json::JsonView jsonValue);
-    Extraction& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TEXTRACT_API Extraction();
+    AWS_TEXTRACT_API Extraction(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TEXTRACT_API Extraction& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TEXTRACT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

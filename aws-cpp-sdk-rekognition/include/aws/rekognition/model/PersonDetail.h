@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/PersonDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_REKOGNITION_API PersonDetail
+  class PersonDetail
   {
   public:
-    PersonDetail();
-    PersonDetail(Aws::Utils::Json::JsonView jsonValue);
-    PersonDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_REKOGNITION_API PersonDetail();
+    AWS_REKOGNITION_API PersonDetail(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API PersonDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

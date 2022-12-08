@@ -25,12 +25,12 @@ namespace EC2
 {
 namespace Model
 {
-  class AWS_EC2_API CreateVpcPeeringConnectionResponse
+  class CreateVpcPeeringConnectionResponse
   {
   public:
-    CreateVpcPeeringConnectionResponse();
-    CreateVpcPeeringConnectionResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    CreateVpcPeeringConnectionResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API CreateVpcPeeringConnectionResponse();
+    AWS_EC2_API CreateVpcPeeringConnectionResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API CreateVpcPeeringConnectionResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

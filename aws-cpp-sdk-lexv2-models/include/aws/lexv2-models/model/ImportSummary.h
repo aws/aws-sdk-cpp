@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ImportSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELSV2_API ImportSummary
+  class ImportSummary
   {
   public:
-    ImportSummary();
-    ImportSummary(Aws::Utils::Json::JsonView jsonValue);
-    ImportSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELSV2_API ImportSummary();
+    AWS_LEXMODELSV2_API ImportSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API ImportSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

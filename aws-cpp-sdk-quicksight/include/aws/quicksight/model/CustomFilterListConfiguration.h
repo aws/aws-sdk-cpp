@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CustomFilterListConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API CustomFilterListConfiguration
+  class CustomFilterListConfiguration
   {
   public:
-    CustomFilterListConfiguration();
-    CustomFilterListConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    CustomFilterListConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API CustomFilterListConfiguration();
+    AWS_QUICKSIGHT_API CustomFilterListConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API CustomFilterListConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

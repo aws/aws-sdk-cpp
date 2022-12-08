@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/OriginDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_DATAEXCHANGE_API OriginDetails
+  class OriginDetails
   {
   public:
-    OriginDetails();
-    OriginDetails(Aws::Utils::Json::JsonView jsonValue);
-    OriginDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DATAEXCHANGE_API OriginDetails();
+    AWS_DATAEXCHANGE_API OriginDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATAEXCHANGE_API OriginDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATAEXCHANGE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/Spacing">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API Spacing
+  class Spacing
   {
   public:
-    Spacing();
-    Spacing(Aws::Utils::Json::JsonView jsonValue);
-    Spacing& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API Spacing();
+    AWS_QUICKSIGHT_API Spacing(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Spacing& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

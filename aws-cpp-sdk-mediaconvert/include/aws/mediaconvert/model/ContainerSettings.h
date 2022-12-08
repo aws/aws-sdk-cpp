@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/ContainerSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API ContainerSettings
+  class ContainerSettings
   {
   public:
-    ContainerSettings();
-    ContainerSettings(Aws::Utils::Json::JsonView jsonValue);
-    ContainerSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API ContainerSettings();
+    AWS_MEDIACONVERT_API ContainerSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API ContainerSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

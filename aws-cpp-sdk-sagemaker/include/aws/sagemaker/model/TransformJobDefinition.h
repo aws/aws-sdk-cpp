@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/TransformJobDefinition">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API TransformJobDefinition
+  class TransformJobDefinition
   {
   public:
-    TransformJobDefinition();
-    TransformJobDefinition(Aws::Utils::Json::JsonView jsonValue);
-    TransformJobDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API TransformJobDefinition();
+    AWS_SAGEMAKER_API TransformJobDefinition(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API TransformJobDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

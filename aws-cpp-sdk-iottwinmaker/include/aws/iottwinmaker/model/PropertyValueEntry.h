@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/PropertyValueEntry">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTTWINMAKER_API PropertyValueEntry
+  class PropertyValueEntry
   {
   public:
-    PropertyValueEntry();
-    PropertyValueEntry(Aws::Utils::Json::JsonView jsonValue);
-    PropertyValueEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTTWINMAKER_API PropertyValueEntry();
+    AWS_IOTTWINMAKER_API PropertyValueEntry(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTTWINMAKER_API PropertyValueEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTTWINMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

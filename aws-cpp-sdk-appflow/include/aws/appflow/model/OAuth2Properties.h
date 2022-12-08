@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/OAuth2Properties">AWS
    * API Reference</a></p>
    */
-  class AWS_APPFLOW_API OAuth2Properties
+  class OAuth2Properties
   {
   public:
-    OAuth2Properties();
-    OAuth2Properties(Aws::Utils::Json::JsonView jsonValue);
-    OAuth2Properties& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPFLOW_API OAuth2Properties();
+    AWS_APPFLOW_API OAuth2Properties(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API OAuth2Properties& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

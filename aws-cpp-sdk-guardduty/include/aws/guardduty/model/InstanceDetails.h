@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/InstanceDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_GUARDDUTY_API InstanceDetails
+  class InstanceDetails
   {
   public:
-    InstanceDetails();
-    InstanceDetails(Aws::Utils::Json::JsonView jsonValue);
-    InstanceDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GUARDDUTY_API InstanceDetails();
+    AWS_GUARDDUTY_API InstanceDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API InstanceDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

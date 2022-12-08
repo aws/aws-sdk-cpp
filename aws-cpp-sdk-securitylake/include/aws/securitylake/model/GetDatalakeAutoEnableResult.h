@@ -25,12 +25,12 @@ namespace SecurityLake
 {
 namespace Model
 {
-  class AWS_SECURITYLAKE_API GetDatalakeAutoEnableResult
+  class GetDatalakeAutoEnableResult
   {
   public:
-    GetDatalakeAutoEnableResult();
-    GetDatalakeAutoEnableResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetDatalakeAutoEnableResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SECURITYLAKE_API GetDatalakeAutoEnableResult();
+    AWS_SECURITYLAKE_API GetDatalakeAutoEnableResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SECURITYLAKE_API GetDatalakeAutoEnableResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

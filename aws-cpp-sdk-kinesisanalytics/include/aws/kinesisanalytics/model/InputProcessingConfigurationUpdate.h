@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/InputProcessingConfigurationUpdate">AWS
    * API Reference</a></p>
    */
-  class AWS_KINESISANALYTICS_API InputProcessingConfigurationUpdate
+  class InputProcessingConfigurationUpdate
   {
   public:
-    InputProcessingConfigurationUpdate();
-    InputProcessingConfigurationUpdate(Aws::Utils::Json::JsonView jsonValue);
-    InputProcessingConfigurationUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KINESISANALYTICS_API InputProcessingConfigurationUpdate();
+    AWS_KINESISANALYTICS_API InputProcessingConfigurationUpdate(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICS_API InputProcessingConfigurationUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/Parent">AWS
    * API Reference</a></p>
    */
-  class AWS_ORGANIZATIONS_API Parent
+  class Parent
   {
   public:
-    Parent();
-    Parent(Aws::Utils::Json::JsonView jsonValue);
-    Parent& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ORGANIZATIONS_API Parent();
+    AWS_ORGANIZATIONS_API Parent(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ORGANIZATIONS_API Parent& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ORGANIZATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

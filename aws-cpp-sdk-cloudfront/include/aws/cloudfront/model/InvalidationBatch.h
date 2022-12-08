@@ -28,14 +28,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/InvalidationBatch">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFRONT_API InvalidationBatch
+  class InvalidationBatch
   {
   public:
-    InvalidationBatch();
-    InvalidationBatch(const Aws::Utils::Xml::XmlNode& xmlNode);
-    InvalidationBatch& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API InvalidationBatch();
+    AWS_CLOUDFRONT_API InvalidationBatch(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API InvalidationBatch& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**

@@ -25,12 +25,12 @@ namespace ServerlessApplicationRepository
 {
 namespace Model
 {
-  class AWS_SERVERLESSAPPLICATIONREPOSITORY_API GetCloudFormationTemplateResult
+  class GetCloudFormationTemplateResult
   {
   public:
-    GetCloudFormationTemplateResult();
-    GetCloudFormationTemplateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetCloudFormationTemplateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SERVERLESSAPPLICATIONREPOSITORY_API GetCloudFormationTemplateResult();
+    AWS_SERVERLESSAPPLICATIONREPOSITORY_API GetCloudFormationTemplateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SERVERLESSAPPLICATIONREPOSITORY_API GetCloudFormationTemplateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

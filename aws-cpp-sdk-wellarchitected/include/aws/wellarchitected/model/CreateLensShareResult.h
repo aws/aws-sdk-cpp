@@ -24,12 +24,12 @@ namespace WellArchitected
 {
 namespace Model
 {
-  class AWS_WELLARCHITECTED_API CreateLensShareResult
+  class CreateLensShareResult
   {
   public:
-    CreateLensShareResult();
-    CreateLensShareResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateLensShareResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WELLARCHITECTED_API CreateLensShareResult();
+    AWS_WELLARCHITECTED_API CreateLensShareResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WELLARCHITECTED_API CreateLensShareResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     

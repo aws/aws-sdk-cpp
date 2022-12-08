@@ -27,12 +27,12 @@ namespace Glue
 {
 namespace Model
 {
-  class AWS_GLUE_API BatchDeleteConnectionResult
+  class BatchDeleteConnectionResult
   {
   public:
-    BatchDeleteConnectionResult();
-    BatchDeleteConnectionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    BatchDeleteConnectionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GLUE_API BatchDeleteConnectionResult();
+    AWS_GLUE_API BatchDeleteConnectionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GLUE_API BatchDeleteConnectionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

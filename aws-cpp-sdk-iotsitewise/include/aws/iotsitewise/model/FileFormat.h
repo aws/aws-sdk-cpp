@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/FileFormat">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTSITEWISE_API FileFormat
+  class FileFormat
   {
   public:
-    FileFormat();
-    FileFormat(Aws::Utils::Json::JsonView jsonValue);
-    FileFormat& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTSITEWISE_API FileFormat();
+    AWS_IOTSITEWISE_API FileFormat(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API FileFormat& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -36,12 +36,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/SnapshotSchedule">AWS
    * API Reference</a></p>
    */
-  class AWS_REDSHIFT_API CreateSnapshotScheduleResult
+  class CreateSnapshotScheduleResult
   {
   public:
-    CreateSnapshotScheduleResult();
-    CreateSnapshotScheduleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    CreateSnapshotScheduleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_REDSHIFT_API CreateSnapshotScheduleResult();
+    AWS_REDSHIFT_API CreateSnapshotScheduleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_REDSHIFT_API CreateSnapshotScheduleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

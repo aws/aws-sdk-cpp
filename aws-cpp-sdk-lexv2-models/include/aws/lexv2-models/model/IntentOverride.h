@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/IntentOverride">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELSV2_API IntentOverride
+  class IntentOverride
   {
   public:
-    IntentOverride();
-    IntentOverride(Aws::Utils::Json::JsonView jsonValue);
-    IntentOverride& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELSV2_API IntentOverride();
+    AWS_LEXMODELSV2_API IntentOverride(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API IntentOverride& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

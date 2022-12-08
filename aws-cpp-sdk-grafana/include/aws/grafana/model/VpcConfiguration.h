@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/VpcConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_MANAGEDGRAFANA_API VpcConfiguration
+  class VpcConfiguration
   {
   public:
-    VpcConfiguration();
-    VpcConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    VpcConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MANAGEDGRAFANA_API VpcConfiguration();
+    AWS_MANAGEDGRAFANA_API VpcConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MANAGEDGRAFANA_API VpcConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MANAGEDGRAFANA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

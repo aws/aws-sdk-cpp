@@ -25,13 +25,13 @@ namespace mgn
 namespace Model
 {
 
-  class AWS_MGN_API Wave
+  class Wave
   {
   public:
-    Wave();
-    Wave(Aws::Utils::Json::JsonView jsonValue);
-    Wave& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MGN_API Wave();
+    AWS_MGN_API Wave(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MGN_API Wave& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MGN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

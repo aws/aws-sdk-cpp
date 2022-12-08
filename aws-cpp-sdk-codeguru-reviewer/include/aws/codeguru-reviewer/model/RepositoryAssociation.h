@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/RepositoryAssociation">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEGURUREVIEWER_API RepositoryAssociation
+  class RepositoryAssociation
   {
   public:
-    RepositoryAssociation();
-    RepositoryAssociation(Aws::Utils::Json::JsonView jsonValue);
-    RepositoryAssociation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEGURUREVIEWER_API RepositoryAssociation();
+    AWS_CODEGURUREVIEWER_API RepositoryAssociation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEGURUREVIEWER_API RepositoryAssociation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEGURUREVIEWER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

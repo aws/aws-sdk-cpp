@@ -30,12 +30,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/RejectDomainTransferFromAnotherAwsAccountResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53DOMAINS_API RejectDomainTransferFromAnotherAwsAccountResult
+  class RejectDomainTransferFromAnotherAwsAccountResult
   {
   public:
-    RejectDomainTransferFromAnotherAwsAccountResult();
-    RejectDomainTransferFromAnotherAwsAccountResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    RejectDomainTransferFromAnotherAwsAccountResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ROUTE53DOMAINS_API RejectDomainTransferFromAnotherAwsAccountResult();
+    AWS_ROUTE53DOMAINS_API RejectDomainTransferFromAnotherAwsAccountResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ROUTE53DOMAINS_API RejectDomainTransferFromAnotherAwsAccountResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

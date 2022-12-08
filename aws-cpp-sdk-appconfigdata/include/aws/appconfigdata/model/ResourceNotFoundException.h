@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appconfigdata-2021-11-11/ResourceNotFoundException">AWS
    * API Reference</a></p>
    */
-  class AWS_APPCONFIGDATA_API ResourceNotFoundException
+  class ResourceNotFoundException
   {
   public:
-    ResourceNotFoundException();
-    ResourceNotFoundException(Aws::Utils::Json::JsonView jsonValue);
-    ResourceNotFoundException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPCONFIGDATA_API ResourceNotFoundException();
+    AWS_APPCONFIGDATA_API ResourceNotFoundException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPCONFIGDATA_API ResourceNotFoundException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPCONFIGDATA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

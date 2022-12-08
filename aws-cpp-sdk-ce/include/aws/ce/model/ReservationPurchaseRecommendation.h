@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/ReservationPurchaseRecommendation">AWS
    * API Reference</a></p>
    */
-  class AWS_COSTEXPLORER_API ReservationPurchaseRecommendation
+  class ReservationPurchaseRecommendation
   {
   public:
-    ReservationPurchaseRecommendation();
-    ReservationPurchaseRecommendation(Aws::Utils::Json::JsonView jsonValue);
-    ReservationPurchaseRecommendation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COSTEXPLORER_API ReservationPurchaseRecommendation();
+    AWS_COSTEXPLORER_API ReservationPurchaseRecommendation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API ReservationPurchaseRecommendation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

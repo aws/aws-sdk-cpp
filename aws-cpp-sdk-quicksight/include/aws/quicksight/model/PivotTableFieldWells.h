@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/PivotTableFieldWells">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API PivotTableFieldWells
+  class PivotTableFieldWells
   {
   public:
-    PivotTableFieldWells();
-    PivotTableFieldWells(Aws::Utils::Json::JsonView jsonValue);
-    PivotTableFieldWells& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API PivotTableFieldWells();
+    AWS_QUICKSIGHT_API PivotTableFieldWells(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API PivotTableFieldWells& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsCertificateManagerCertificateDomainValidationOption">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsCertificateManagerCertificateDomainValidationOption
+  class AwsCertificateManagerCertificateDomainValidationOption
   {
   public:
-    AwsCertificateManagerCertificateDomainValidationOption();
-    AwsCertificateManagerCertificateDomainValidationOption(Aws::Utils::Json::JsonView jsonValue);
-    AwsCertificateManagerCertificateDomainValidationOption& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsCertificateManagerCertificateDomainValidationOption();
+    AWS_SECURITYHUB_API AwsCertificateManagerCertificateDomainValidationOption(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsCertificateManagerCertificateDomainValidationOption& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

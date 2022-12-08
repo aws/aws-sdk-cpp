@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/ResponseAction">AWS
    * API Reference</a></p>
    */
-  class AWS_SHIELD_API ResponseAction
+  class ResponseAction
   {
   public:
-    ResponseAction();
-    ResponseAction(Aws::Utils::Json::JsonView jsonValue);
-    ResponseAction& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SHIELD_API ResponseAction();
+    AWS_SHIELD_API ResponseAction(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SHIELD_API ResponseAction& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SHIELD_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

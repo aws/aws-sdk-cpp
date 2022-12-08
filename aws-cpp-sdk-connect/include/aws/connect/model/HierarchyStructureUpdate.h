@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/HierarchyStructureUpdate">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECT_API HierarchyStructureUpdate
+  class HierarchyStructureUpdate
   {
   public:
-    HierarchyStructureUpdate();
-    HierarchyStructureUpdate(Aws::Utils::Json::JsonView jsonValue);
-    HierarchyStructureUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECT_API HierarchyStructureUpdate();
+    AWS_CONNECT_API HierarchyStructureUpdate(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API HierarchyStructureUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

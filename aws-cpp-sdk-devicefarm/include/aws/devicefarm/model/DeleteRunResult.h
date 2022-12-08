@@ -27,12 +27,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteRunResult">AWS
    * API Reference</a></p>
    */
-  class AWS_DEVICEFARM_API DeleteRunResult
+  class DeleteRunResult
   {
   public:
-    DeleteRunResult();
-    DeleteRunResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteRunResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DEVICEFARM_API DeleteRunResult();
+    AWS_DEVICEFARM_API DeleteRunResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DEVICEFARM_API DeleteRunResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/AddressBookData">AWS
    * API Reference</a></p>
    */
-  class AWS_ALEXAFORBUSINESS_API AddressBookData
+  class AddressBookData
   {
   public:
-    AddressBookData();
-    AddressBookData(Aws::Utils::Json::JsonView jsonValue);
-    AddressBookData& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ALEXAFORBUSINESS_API AddressBookData();
+    AWS_ALEXAFORBUSINESS_API AddressBookData(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ALEXAFORBUSINESS_API AddressBookData& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ALEXAFORBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

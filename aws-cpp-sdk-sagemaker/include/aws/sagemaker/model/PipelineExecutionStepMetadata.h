@@ -41,13 +41,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/PipelineExecutionStepMetadata">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API PipelineExecutionStepMetadata
+  class PipelineExecutionStepMetadata
   {
   public:
-    PipelineExecutionStepMetadata();
-    PipelineExecutionStepMetadata(Aws::Utils::Json::JsonView jsonValue);
-    PipelineExecutionStepMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API PipelineExecutionStepMetadata();
+    AWS_SAGEMAKER_API PipelineExecutionStepMetadata(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API PipelineExecutionStepMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

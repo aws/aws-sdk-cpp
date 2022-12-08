@@ -33,12 +33,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UsagePlanKeys">AWS
    * API Reference</a></p>
    */
-  class AWS_APIGATEWAY_API GetUsagePlanKeysResult
+  class GetUsagePlanKeysResult
   {
   public:
-    GetUsagePlanKeysResult();
-    GetUsagePlanKeysResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetUsagePlanKeysResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APIGATEWAY_API GetUsagePlanKeysResult();
+    AWS_APIGATEWAY_API GetUsagePlanKeysResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APIGATEWAY_API GetUsagePlanKeysResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     

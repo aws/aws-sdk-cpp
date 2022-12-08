@@ -29,15 +29,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EbsBlockDevice">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API EbsBlockDevice
+  class EbsBlockDevice
   {
   public:
-    EbsBlockDevice();
-    EbsBlockDevice(const Aws::Utils::Xml::XmlNode& xmlNode);
-    EbsBlockDevice& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API EbsBlockDevice();
+    AWS_EC2_API EbsBlockDevice(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API EbsBlockDevice& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**

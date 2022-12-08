@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/SAMLIdp">AWS
    * API Reference</a></p>
    */
-  class AWS_OPENSEARCHSERVICE_API SAMLIdp
+  class SAMLIdp
   {
   public:
-    SAMLIdp();
-    SAMLIdp(Aws::Utils::Json::JsonView jsonValue);
-    SAMLIdp& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OPENSEARCHSERVICE_API SAMLIdp();
+    AWS_OPENSEARCHSERVICE_API SAMLIdp(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPENSEARCHSERVICE_API SAMLIdp& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPENSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

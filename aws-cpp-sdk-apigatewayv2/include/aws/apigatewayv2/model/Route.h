@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/Route">AWS
    * API Reference</a></p>
    */
-  class AWS_APIGATEWAYV2_API Route
+  class Route
   {
   public:
-    Route();
-    Route(Aws::Utils::Json::JsonView jsonValue);
-    Route& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APIGATEWAYV2_API Route();
+    AWS_APIGATEWAYV2_API Route(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APIGATEWAYV2_API Route& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APIGATEWAYV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

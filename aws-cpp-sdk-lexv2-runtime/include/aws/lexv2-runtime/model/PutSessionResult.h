@@ -19,21 +19,21 @@ namespace LexRuntimeV2
 {
 namespace Model
 {
-  class AWS_LEXRUNTIMEV2_API PutSessionResult
+  class PutSessionResult
   {
   public:
-    PutSessionResult();
+    AWS_LEXRUNTIMEV2_API PutSessionResult();
     //We have to define these because Microsoft doesn't auto generate them
-    PutSessionResult(PutSessionResult&&);
-    PutSessionResult& operator=(PutSessionResult&&);
+    AWS_LEXRUNTIMEV2_API PutSessionResult(PutSessionResult&&);
+    AWS_LEXRUNTIMEV2_API PutSessionResult& operator=(PutSessionResult&&);
     //we delete these because Microsoft doesn't handle move generation correctly
     //and we therefore don't trust them to get it right here either.
     PutSessionResult(const PutSessionResult&) = delete;
     PutSessionResult& operator=(const PutSessionResult&) = delete;
 
 
-    PutSessionResult(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
-    PutSessionResult& operator=(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
+    AWS_LEXRUNTIMEV2_API PutSessionResult(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
+    AWS_LEXRUNTIMEV2_API PutSessionResult& operator=(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
 
 
 

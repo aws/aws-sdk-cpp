@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ChildWorkflowExecutionFailedEventAttributes">AWS
    * API Reference</a></p>
    */
-  class AWS_SWF_API ChildWorkflowExecutionFailedEventAttributes
+  class ChildWorkflowExecutionFailedEventAttributes
   {
   public:
-    ChildWorkflowExecutionFailedEventAttributes();
-    ChildWorkflowExecutionFailedEventAttributes(Aws::Utils::Json::JsonView jsonValue);
-    ChildWorkflowExecutionFailedEventAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SWF_API ChildWorkflowExecutionFailedEventAttributes();
+    AWS_SWF_API ChildWorkflowExecutionFailedEventAttributes(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SWF_API ChildWorkflowExecutionFailedEventAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SWF_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

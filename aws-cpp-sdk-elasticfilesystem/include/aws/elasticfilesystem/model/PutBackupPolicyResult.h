@@ -24,12 +24,12 @@ namespace EFS
 {
 namespace Model
 {
-  class AWS_EFS_API PutBackupPolicyResult
+  class PutBackupPolicyResult
   {
   public:
-    PutBackupPolicyResult();
-    PutBackupPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PutBackupPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_EFS_API PutBackupPolicyResult();
+    AWS_EFS_API PutBackupPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_EFS_API PutBackupPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

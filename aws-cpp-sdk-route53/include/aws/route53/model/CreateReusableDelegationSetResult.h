@@ -25,12 +25,12 @@ namespace Route53
 {
 namespace Model
 {
-  class AWS_ROUTE53_API CreateReusableDelegationSetResult
+  class CreateReusableDelegationSetResult
   {
   public:
-    CreateReusableDelegationSetResult();
-    CreateReusableDelegationSetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    CreateReusableDelegationSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ROUTE53_API CreateReusableDelegationSetResult();
+    AWS_ROUTE53_API CreateReusableDelegationSetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ROUTE53_API CreateReusableDelegationSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

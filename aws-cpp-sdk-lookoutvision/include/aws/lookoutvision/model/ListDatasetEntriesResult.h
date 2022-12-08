@@ -25,12 +25,12 @@ namespace LookoutforVision
 {
 namespace Model
 {
-  class AWS_LOOKOUTFORVISION_API ListDatasetEntriesResult
+  class ListDatasetEntriesResult
   {
   public:
-    ListDatasetEntriesResult();
-    ListDatasetEntriesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListDatasetEntriesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LOOKOUTFORVISION_API ListDatasetEntriesResult();
+    AWS_LOOKOUTFORVISION_API ListDatasetEntriesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LOOKOUTFORVISION_API ListDatasetEntriesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -25,12 +25,12 @@ namespace ResourceGroups
 {
 namespace Model
 {
-  class AWS_RESOURCEGROUPS_API GetTagsResult
+  class GetTagsResult
   {
   public:
-    GetTagsResult();
-    GetTagsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetTagsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_RESOURCEGROUPS_API GetTagsResult();
+    AWS_RESOURCEGROUPS_API GetTagsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_RESOURCEGROUPS_API GetTagsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

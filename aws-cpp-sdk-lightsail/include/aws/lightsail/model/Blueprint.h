@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/Blueprint">AWS
    * API Reference</a></p>
    */
-  class AWS_LIGHTSAIL_API Blueprint
+  class Blueprint
   {
   public:
-    Blueprint();
-    Blueprint(Aws::Utils::Json::JsonView jsonValue);
-    Blueprint& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LIGHTSAIL_API Blueprint();
+    AWS_LIGHTSAIL_API Blueprint(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API Blueprint& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

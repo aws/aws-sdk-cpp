@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ProjectBuildBatchConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEBUILD_API ProjectBuildBatchConfig
+  class ProjectBuildBatchConfig
   {
   public:
-    ProjectBuildBatchConfig();
-    ProjectBuildBatchConfig(Aws::Utils::Json::JsonView jsonValue);
-    ProjectBuildBatchConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEBUILD_API ProjectBuildBatchConfig();
+    AWS_CODEBUILD_API ProjectBuildBatchConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEBUILD_API ProjectBuildBatchConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEBUILD_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -24,12 +24,12 @@ namespace SsmSap
 {
 namespace Model
 {
-  class AWS_SSMSAP_API DeleteResourcePermissionResult
+  class DeleteResourcePermissionResult
   {
   public:
-    DeleteResourcePermissionResult();
-    DeleteResourcePermissionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteResourcePermissionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSMSAP_API DeleteResourcePermissionResult();
+    AWS_SSMSAP_API DeleteResourcePermissionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSMSAP_API DeleteResourcePermissionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

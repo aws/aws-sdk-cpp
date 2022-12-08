@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/TopBottomFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API TopBottomFilter
+  class TopBottomFilter
   {
   public:
-    TopBottomFilter();
-    TopBottomFilter(Aws::Utils::Json::JsonView jsonValue);
-    TopBottomFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API TopBottomFilter();
+    AWS_QUICKSIGHT_API TopBottomFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API TopBottomFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

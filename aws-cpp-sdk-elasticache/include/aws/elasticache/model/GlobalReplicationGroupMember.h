@@ -31,15 +31,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/GlobalReplicationGroupMember">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICACHE_API GlobalReplicationGroupMember
+  class GlobalReplicationGroupMember
   {
   public:
-    GlobalReplicationGroupMember();
-    GlobalReplicationGroupMember(const Aws::Utils::Xml::XmlNode& xmlNode);
-    GlobalReplicationGroupMember& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICACHE_API GlobalReplicationGroupMember();
+    AWS_ELASTICACHE_API GlobalReplicationGroupMember(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICACHE_API GlobalReplicationGroupMember& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_ELASTICACHE_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_ELASTICACHE_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**

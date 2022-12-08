@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsLambdaFunctionVpcConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsLambdaFunctionVpcConfig
+  class AwsLambdaFunctionVpcConfig
   {
   public:
-    AwsLambdaFunctionVpcConfig();
-    AwsLambdaFunctionVpcConfig(Aws::Utils::Json::JsonView jsonValue);
-    AwsLambdaFunctionVpcConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsLambdaFunctionVpcConfig();
+    AWS_SECURITYHUB_API AwsLambdaFunctionVpcConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsLambdaFunctionVpcConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

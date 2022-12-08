@@ -22,10 +22,10 @@ namespace Model
 
   /**
    */
-  class AWS_NETWORKMANAGER_API CreateVpcAttachmentRequest : public NetworkManagerRequest
+  class CreateVpcAttachmentRequest : public NetworkManagerRequest
   {
   public:
-    CreateVpcAttachmentRequest();
+    AWS_NETWORKMANAGER_API CreateVpcAttachmentRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,7 +33,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateVpcAttachment"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_NETWORKMANAGER_API Aws::String SerializePayload() const override;
 
 
     /**

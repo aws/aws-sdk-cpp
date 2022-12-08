@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/OutputDestinationSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API OutputDestinationSettings
+  class OutputDestinationSettings
   {
   public:
-    OutputDestinationSettings();
-    OutputDestinationSettings(Aws::Utils::Json::JsonView jsonValue);
-    OutputDestinationSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API OutputDestinationSettings();
+    AWS_MEDIALIVE_API OutputDestinationSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API OutputDestinationSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

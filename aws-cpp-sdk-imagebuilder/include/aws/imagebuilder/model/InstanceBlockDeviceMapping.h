@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/InstanceBlockDeviceMapping">AWS
    * API Reference</a></p>
    */
-  class AWS_IMAGEBUILDER_API InstanceBlockDeviceMapping
+  class InstanceBlockDeviceMapping
   {
   public:
-    InstanceBlockDeviceMapping();
-    InstanceBlockDeviceMapping(Aws::Utils::Json::JsonView jsonValue);
-    InstanceBlockDeviceMapping& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IMAGEBUILDER_API InstanceBlockDeviceMapping();
+    AWS_IMAGEBUILDER_API InstanceBlockDeviceMapping(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IMAGEBUILDER_API InstanceBlockDeviceMapping& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IMAGEBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

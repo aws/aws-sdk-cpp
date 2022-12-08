@@ -24,12 +24,12 @@ namespace CloudHSMV2
 {
 namespace Model
 {
-  class AWS_CLOUDHSMV2_API DeleteHsmResult
+  class DeleteHsmResult
   {
   public:
-    DeleteHsmResult();
-    DeleteHsmResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteHsmResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CLOUDHSMV2_API DeleteHsmResult();
+    AWS_CLOUDHSMV2_API DeleteHsmResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CLOUDHSMV2_API DeleteHsmResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -32,12 +32,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/UpdatePipelineResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICTRANSCODER_API UpdatePipelineResult
+  class UpdatePipelineResult
   {
   public:
-    UpdatePipelineResult();
-    UpdatePipelineResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdatePipelineResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ELASTICTRANSCODER_API UpdatePipelineResult();
+    AWS_ELASTICTRANSCODER_API UpdatePipelineResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ELASTICTRANSCODER_API UpdatePipelineResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

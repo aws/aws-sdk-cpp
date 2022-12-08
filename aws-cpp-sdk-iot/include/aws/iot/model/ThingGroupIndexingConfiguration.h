@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ThingGroupIndexingConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API ThingGroupIndexingConfiguration
+  class ThingGroupIndexingConfiguration
   {
   public:
-    ThingGroupIndexingConfiguration();
-    ThingGroupIndexingConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    ThingGroupIndexingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API ThingGroupIndexingConfiguration();
+    AWS_IOT_API ThingGroupIndexingConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API ThingGroupIndexingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

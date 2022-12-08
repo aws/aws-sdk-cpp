@@ -24,12 +24,12 @@ namespace BackupGateway
 {
 namespace Model
 {
-  class AWS_BACKUPGATEWAY_API UpdateGatewayInformationResult
+  class UpdateGatewayInformationResult
   {
   public:
-    UpdateGatewayInformationResult();
-    UpdateGatewayInformationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateGatewayInformationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_BACKUPGATEWAY_API UpdateGatewayInformationResult();
+    AWS_BACKUPGATEWAY_API UpdateGatewayInformationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_BACKUPGATEWAY_API UpdateGatewayInformationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/LaunchTemplateSpecification">AWS
    * API Reference</a></p>
    */
-  class AWS_GAMELIFT_API LaunchTemplateSpecification
+  class LaunchTemplateSpecification
   {
   public:
-    LaunchTemplateSpecification();
-    LaunchTemplateSpecification(Aws::Utils::Json::JsonView jsonValue);
-    LaunchTemplateSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GAMELIFT_API LaunchTemplateSpecification();
+    AWS_GAMELIFT_API LaunchTemplateSpecification(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMELIFT_API LaunchTemplateSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

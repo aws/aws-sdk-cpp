@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/CustomRoutingEndpointGroup">AWS
    * API Reference</a></p>
    */
-  class AWS_GLOBALACCELERATOR_API CustomRoutingEndpointGroup
+  class CustomRoutingEndpointGroup
   {
   public:
-    CustomRoutingEndpointGroup();
-    CustomRoutingEndpointGroup(Aws::Utils::Json::JsonView jsonValue);
-    CustomRoutingEndpointGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLOBALACCELERATOR_API CustomRoutingEndpointGroup();
+    AWS_GLOBALACCELERATOR_API CustomRoutingEndpointGroup(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLOBALACCELERATOR_API CustomRoutingEndpointGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLOBALACCELERATOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

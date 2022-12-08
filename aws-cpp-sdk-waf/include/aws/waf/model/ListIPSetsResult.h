@@ -26,12 +26,12 @@ namespace WAF
 {
 namespace Model
 {
-  class AWS_WAF_API ListIPSetsResult
+  class ListIPSetsResult
   {
   public:
-    ListIPSetsResult();
-    ListIPSetsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListIPSetsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WAF_API ListIPSetsResult();
+    AWS_WAF_API ListIPSetsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WAF_API ListIPSetsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

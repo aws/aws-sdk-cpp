@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/Fmtp">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONNECT_API Fmtp
+  class Fmtp
   {
   public:
-    Fmtp();
-    Fmtp(Aws::Utils::Json::JsonView jsonValue);
-    Fmtp& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONNECT_API Fmtp();
+    AWS_MEDIACONNECT_API Fmtp(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONNECT_API Fmtp& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

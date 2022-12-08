@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UsageResourceResult">AWS
    * API Reference</a></p>
    */
-  class AWS_GUARDDUTY_API UsageResourceResult
+  class UsageResourceResult
   {
   public:
-    UsageResourceResult();
-    UsageResourceResult(Aws::Utils::Json::JsonView jsonValue);
-    UsageResourceResult& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GUARDDUTY_API UsageResourceResult();
+    AWS_GUARDDUTY_API UsageResourceResult(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API UsageResourceResult& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

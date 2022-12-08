@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/DataflowEndpointListItem">AWS
    * API Reference</a></p>
    */
-  class AWS_GROUNDSTATION_API DataflowEndpointListItem
+  class DataflowEndpointListItem
   {
   public:
-    DataflowEndpointListItem();
-    DataflowEndpointListItem(Aws::Utils::Json::JsonView jsonValue);
-    DataflowEndpointListItem& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GROUNDSTATION_API DataflowEndpointListItem();
+    AWS_GROUNDSTATION_API DataflowEndpointListItem(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GROUNDSTATION_API DataflowEndpointListItem& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GROUNDSTATION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

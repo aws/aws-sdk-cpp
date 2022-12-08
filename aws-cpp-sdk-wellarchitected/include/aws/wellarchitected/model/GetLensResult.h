@@ -24,12 +24,12 @@ namespace WellArchitected
 {
 namespace Model
 {
-  class AWS_WELLARCHITECTED_API GetLensResult
+  class GetLensResult
   {
   public:
-    GetLensResult();
-    GetLensResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetLensResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WELLARCHITECTED_API GetLensResult();
+    AWS_WELLARCHITECTED_API GetLensResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WELLARCHITECTED_API GetLensResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

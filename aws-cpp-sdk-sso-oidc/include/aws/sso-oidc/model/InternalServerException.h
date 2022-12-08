@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sso-oidc-2019-06-10/InternalServerException">AWS
    * API Reference</a></p>
    */
-  class AWS_SSOOIDC_API InternalServerException
+  class InternalServerException
   {
   public:
-    InternalServerException();
-    InternalServerException(Aws::Utils::Json::JsonView jsonValue);
-    InternalServerException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSOOIDC_API InternalServerException();
+    AWS_SSOOIDC_API InternalServerException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSOOIDC_API InternalServerException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSOOIDC_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

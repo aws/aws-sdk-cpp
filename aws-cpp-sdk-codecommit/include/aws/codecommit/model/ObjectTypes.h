@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/ObjectTypes">AWS
    * API Reference</a></p>
    */
-  class AWS_CODECOMMIT_API ObjectTypes
+  class ObjectTypes
   {
   public:
-    ObjectTypes();
-    ObjectTypes(Aws::Utils::Json::JsonView jsonValue);
-    ObjectTypes& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODECOMMIT_API ObjectTypes();
+    AWS_CODECOMMIT_API ObjectTypes(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODECOMMIT_API ObjectTypes& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODECOMMIT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

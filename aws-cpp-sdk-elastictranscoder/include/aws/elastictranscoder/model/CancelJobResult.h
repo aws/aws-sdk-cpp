@@ -29,12 +29,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/CancelJobResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICTRANSCODER_API CancelJobResult
+  class CancelJobResult
   {
   public:
-    CancelJobResult();
-    CancelJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CancelJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ELASTICTRANSCODER_API CancelJobResult();
+    AWS_ELASTICTRANSCODER_API CancelJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ELASTICTRANSCODER_API CancelJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

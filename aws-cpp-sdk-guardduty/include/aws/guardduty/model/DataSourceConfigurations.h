@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DataSourceConfigurations">AWS
    * API Reference</a></p>
    */
-  class AWS_GUARDDUTY_API DataSourceConfigurations
+  class DataSourceConfigurations
   {
   public:
-    DataSourceConfigurations();
-    DataSourceConfigurations(Aws::Utils::Json::JsonView jsonValue);
-    DataSourceConfigurations& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GUARDDUTY_API DataSourceConfigurations();
+    AWS_GUARDDUTY_API DataSourceConfigurations(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API DataSourceConfigurations& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

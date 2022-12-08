@@ -37,13 +37,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/NetworkOriginConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_ACCESSANALYZER_API NetworkOriginConfiguration
+  class NetworkOriginConfiguration
   {
   public:
-    NetworkOriginConfiguration();
-    NetworkOriginConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    NetworkOriginConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ACCESSANALYZER_API NetworkOriginConfiguration();
+    AWS_ACCESSANALYZER_API NetworkOriginConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACCESSANALYZER_API NetworkOriginConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACCESSANALYZER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

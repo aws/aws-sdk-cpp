@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/InstancePortState">AWS
    * API Reference</a></p>
    */
-  class AWS_LIGHTSAIL_API InstancePortState
+  class InstancePortState
   {
   public:
-    InstancePortState();
-    InstancePortState(Aws::Utils::Json::JsonView jsonValue);
-    InstancePortState& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LIGHTSAIL_API InstancePortState();
+    AWS_LIGHTSAIL_API InstancePortState(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API InstancePortState& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

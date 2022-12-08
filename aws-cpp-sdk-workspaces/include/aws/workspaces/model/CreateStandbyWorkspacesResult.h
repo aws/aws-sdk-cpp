@@ -26,12 +26,12 @@ namespace WorkSpaces
 {
 namespace Model
 {
-  class AWS_WORKSPACES_API CreateStandbyWorkspacesResult
+  class CreateStandbyWorkspacesResult
   {
   public:
-    CreateStandbyWorkspacesResult();
-    CreateStandbyWorkspacesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateStandbyWorkspacesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WORKSPACES_API CreateStandbyWorkspacesResult();
+    AWS_WORKSPACES_API CreateStandbyWorkspacesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WORKSPACES_API CreateStandbyWorkspacesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -28,12 +28,12 @@ namespace Lambda
 {
 namespace Model
 {
-  class AWS_LAMBDA_API PublishLayerVersionResult
+  class PublishLayerVersionResult
   {
   public:
-    PublishLayerVersionResult();
-    PublishLayerVersionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PublishLayerVersionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LAMBDA_API PublishLayerVersionResult();
+    AWS_LAMBDA_API PublishLayerVersionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LAMBDA_API PublishLayerVersionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

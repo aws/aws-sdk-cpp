@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/TopBottomMoversComputation">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API TopBottomMoversComputation
+  class TopBottomMoversComputation
   {
   public:
-    TopBottomMoversComputation();
-    TopBottomMoversComputation(Aws::Utils::Json::JsonView jsonValue);
-    TopBottomMoversComputation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API TopBottomMoversComputation();
+    AWS_QUICKSIGHT_API TopBottomMoversComputation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API TopBottomMoversComputation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

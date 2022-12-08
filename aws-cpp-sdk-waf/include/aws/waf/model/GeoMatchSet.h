@@ -38,13 +38,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GeoMatchSet">AWS API
    * Reference</a></p>
    */
-  class AWS_WAF_API GeoMatchSet
+  class GeoMatchSet
   {
   public:
-    GeoMatchSet();
-    GeoMatchSet(Aws::Utils::Json::JsonView jsonValue);
-    GeoMatchSet& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WAF_API GeoMatchSet();
+    AWS_WAF_API GeoMatchSet(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAF_API GeoMatchSet& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAF_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

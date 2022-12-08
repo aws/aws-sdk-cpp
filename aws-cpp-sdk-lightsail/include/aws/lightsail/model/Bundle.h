@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/Bundle">AWS
    * API Reference</a></p>
    */
-  class AWS_LIGHTSAIL_API Bundle
+  class Bundle
   {
   public:
-    Bundle();
-    Bundle(Aws::Utils::Json::JsonView jsonValue);
-    Bundle& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LIGHTSAIL_API Bundle();
+    AWS_LIGHTSAIL_API Bundle(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API Bundle& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -25,12 +25,12 @@ namespace SSM
 {
 namespace Model
 {
-  class AWS_SSM_API UnlabelParameterVersionResult
+  class UnlabelParameterVersionResult
   {
   public:
-    UnlabelParameterVersionResult();
-    UnlabelParameterVersionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UnlabelParameterVersionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSM_API UnlabelParameterVersionResult();
+    AWS_SSM_API UnlabelParameterVersionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSM_API UnlabelParameterVersionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

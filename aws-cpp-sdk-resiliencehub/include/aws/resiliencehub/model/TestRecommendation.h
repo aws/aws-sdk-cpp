@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/TestRecommendation">AWS
    * API Reference</a></p>
    */
-  class AWS_RESILIENCEHUB_API TestRecommendation
+  class TestRecommendation
   {
   public:
-    TestRecommendation();
-    TestRecommendation(Aws::Utils::Json::JsonView jsonValue);
-    TestRecommendation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_RESILIENCEHUB_API TestRecommendation();
+    AWS_RESILIENCEHUB_API TestRecommendation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RESILIENCEHUB_API TestRecommendation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RESILIENCEHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

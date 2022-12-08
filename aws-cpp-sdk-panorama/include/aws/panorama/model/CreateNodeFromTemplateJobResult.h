@@ -24,12 +24,12 @@ namespace Panorama
 {
 namespace Model
 {
-  class AWS_PANORAMA_API CreateNodeFromTemplateJobResult
+  class CreateNodeFromTemplateJobResult
   {
   public:
-    CreateNodeFromTemplateJobResult();
-    CreateNodeFromTemplateJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateNodeFromTemplateJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PANORAMA_API CreateNodeFromTemplateJobResult();
+    AWS_PANORAMA_API CreateNodeFromTemplateJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PANORAMA_API CreateNodeFromTemplateJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

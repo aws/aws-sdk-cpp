@@ -26,12 +26,12 @@ namespace ivschat
 {
 namespace Model
 {
-  class AWS_IVSCHAT_API ListLoggingConfigurationsResult
+  class ListLoggingConfigurationsResult
   {
   public:
-    ListLoggingConfigurationsResult();
-    ListLoggingConfigurationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListLoggingConfigurationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IVSCHAT_API ListLoggingConfigurationsResult();
+    AWS_IVSCHAT_API ListLoggingConfigurationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IVSCHAT_API ListLoggingConfigurationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

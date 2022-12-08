@@ -23,13 +23,13 @@ namespace ChimeSDKVoice
 namespace Model
 {
 
-  class AWS_CHIMESDKVOICE_API GeoMatchParams
+  class GeoMatchParams
   {
   public:
-    GeoMatchParams();
-    GeoMatchParams(Aws::Utils::Json::JsonView jsonValue);
-    GeoMatchParams& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIMESDKVOICE_API GeoMatchParams();
+    AWS_CHIMESDKVOICE_API GeoMatchParams(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKVOICE_API GeoMatchParams& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKVOICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

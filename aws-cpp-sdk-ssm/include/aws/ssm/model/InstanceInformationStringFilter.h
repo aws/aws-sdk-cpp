@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/InstanceInformationStringFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_SSM_API InstanceInformationStringFilter
+  class InstanceInformationStringFilter
   {
   public:
-    InstanceInformationStringFilter();
-    InstanceInformationStringFilter(Aws::Utils::Json::JsonView jsonValue);
-    InstanceInformationStringFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSM_API InstanceInformationStringFilter();
+    AWS_SSM_API InstanceInformationStringFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API InstanceInformationStringFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

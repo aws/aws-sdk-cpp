@@ -28,12 +28,12 @@ namespace ComprehendMedical
 {
 namespace Model
 {
-  class AWS_COMPREHENDMEDICAL_API InferSNOMEDCTResult
+  class InferSNOMEDCTResult
   {
   public:
-    InferSNOMEDCTResult();
-    InferSNOMEDCTResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    InferSNOMEDCTResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_COMPREHENDMEDICAL_API InferSNOMEDCTResult();
+    AWS_COMPREHENDMEDICAL_API InferSNOMEDCTResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_COMPREHENDMEDICAL_API InferSNOMEDCTResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

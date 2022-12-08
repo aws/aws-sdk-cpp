@@ -28,12 +28,12 @@ namespace LexModelsV2
 {
 namespace Model
 {
-  class AWS_LEXMODELSV2_API ListAggregatedUtterancesResult
+  class ListAggregatedUtterancesResult
   {
   public:
-    ListAggregatedUtterancesResult();
-    ListAggregatedUtterancesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListAggregatedUtterancesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LEXMODELSV2_API ListAggregatedUtterancesResult();
+    AWS_LEXMODELSV2_API ListAggregatedUtterancesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LEXMODELSV2_API ListAggregatedUtterancesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

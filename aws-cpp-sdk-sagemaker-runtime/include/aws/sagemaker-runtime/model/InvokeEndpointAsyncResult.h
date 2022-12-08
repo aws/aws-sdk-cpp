@@ -24,12 +24,12 @@ namespace SageMakerRuntime
 {
 namespace Model
 {
-  class AWS_SAGEMAKERRUNTIME_API InvokeEndpointAsyncResult
+  class InvokeEndpointAsyncResult
   {
   public:
-    InvokeEndpointAsyncResult();
-    InvokeEndpointAsyncResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    InvokeEndpointAsyncResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SAGEMAKERRUNTIME_API InvokeEndpointAsyncResult();
+    AWS_SAGEMAKERRUNTIME_API InvokeEndpointAsyncResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SAGEMAKERRUNTIME_API InvokeEndpointAsyncResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

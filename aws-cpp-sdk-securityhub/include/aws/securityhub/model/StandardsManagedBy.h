@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/StandardsManagedBy">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API StandardsManagedBy
+  class StandardsManagedBy
   {
   public:
-    StandardsManagedBy();
-    StandardsManagedBy(Aws::Utils::Json::JsonView jsonValue);
-    StandardsManagedBy& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API StandardsManagedBy();
+    AWS_SECURITYHUB_API StandardsManagedBy(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API StandardsManagedBy& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

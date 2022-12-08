@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/NotebookSessionSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_ATHENA_API NotebookSessionSummary
+  class NotebookSessionSummary
   {
   public:
-    NotebookSessionSummary();
-    NotebookSessionSummary(Aws::Utils::Json::JsonView jsonValue);
-    NotebookSessionSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ATHENA_API NotebookSessionSummary();
+    AWS_ATHENA_API NotebookSessionSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ATHENA_API NotebookSessionSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ATHENA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

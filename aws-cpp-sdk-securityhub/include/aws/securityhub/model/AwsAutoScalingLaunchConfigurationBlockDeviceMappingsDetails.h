@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails
+  class AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails
   {
   public:
-    AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails();
-    AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails(Aws::Utils::Json::JsonView jsonValue);
-    AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails();
+    AWS_SECURITYHUB_API AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

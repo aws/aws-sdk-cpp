@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ParameterStringFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_SSM_API ParameterStringFilter
+  class ParameterStringFilter
   {
   public:
-    ParameterStringFilter();
-    ParameterStringFilter(Aws::Utils::Json::JsonView jsonValue);
-    ParameterStringFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSM_API ParameterStringFilter();
+    AWS_SSM_API ParameterStringFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API ParameterStringFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

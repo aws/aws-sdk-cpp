@@ -24,12 +24,12 @@ namespace OAM
 {
 namespace Model
 {
-  class AWS_OAM_API PutSinkPolicyResult
+  class PutSinkPolicyResult
   {
   public:
-    PutSinkPolicyResult();
-    PutSinkPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PutSinkPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OAM_API PutSinkPolicyResult();
+    AWS_OAM_API PutSinkPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OAM_API PutSinkPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

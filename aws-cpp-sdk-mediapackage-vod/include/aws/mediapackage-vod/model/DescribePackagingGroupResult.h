@@ -27,12 +27,12 @@ namespace MediaPackageVod
 {
 namespace Model
 {
-  class AWS_MEDIAPACKAGEVOD_API DescribePackagingGroupResult
+  class DescribePackagingGroupResult
   {
   public:
-    DescribePackagingGroupResult();
-    DescribePackagingGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribePackagingGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MEDIAPACKAGEVOD_API DescribePackagingGroupResult();
+    AWS_MEDIAPACKAGEVOD_API DescribePackagingGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MEDIAPACKAGEVOD_API DescribePackagingGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

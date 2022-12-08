@@ -28,12 +28,12 @@ namespace Route53RecoveryReadiness
 {
 namespace Model
 {
-  class AWS_ROUTE53RECOVERYREADINESS_API GetReadinessCheckStatusResult
+  class GetReadinessCheckStatusResult
   {
   public:
-    GetReadinessCheckStatusResult();
-    GetReadinessCheckStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetReadinessCheckStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ROUTE53RECOVERYREADINESS_API GetReadinessCheckStatusResult();
+    AWS_ROUTE53RECOVERYREADINESS_API GetReadinessCheckStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ROUTE53RECOVERYREADINESS_API GetReadinessCheckStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

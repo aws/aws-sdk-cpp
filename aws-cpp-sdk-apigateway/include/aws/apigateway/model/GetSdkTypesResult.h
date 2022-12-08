@@ -31,12 +31,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/SdkTypes">AWS
    * API Reference</a></p>
    */
-  class AWS_APIGATEWAY_API GetSdkTypesResult
+  class GetSdkTypesResult
   {
   public:
-    GetSdkTypesResult();
-    GetSdkTypesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetSdkTypesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APIGATEWAY_API GetSdkTypesResult();
+    AWS_APIGATEWAY_API GetSdkTypesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APIGATEWAY_API GetSdkTypesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     

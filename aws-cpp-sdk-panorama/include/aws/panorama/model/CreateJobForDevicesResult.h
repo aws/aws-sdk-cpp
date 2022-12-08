@@ -25,12 +25,12 @@ namespace Panorama
 {
 namespace Model
 {
-  class AWS_PANORAMA_API CreateJobForDevicesResult
+  class CreateJobForDevicesResult
   {
   public:
-    CreateJobForDevicesResult();
-    CreateJobForDevicesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateJobForDevicesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PANORAMA_API CreateJobForDevicesResult();
+    AWS_PANORAMA_API CreateJobForDevicesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PANORAMA_API CreateJobForDevicesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

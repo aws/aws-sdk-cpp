@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UserStackAssociation">AWS
    * API Reference</a></p>
    */
-  class AWS_APPSTREAM_API UserStackAssociation
+  class UserStackAssociation
   {
   public:
-    UserStackAssociation();
-    UserStackAssociation(Aws::Utils::Json::JsonView jsonValue);
-    UserStackAssociation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPSTREAM_API UserStackAssociation();
+    AWS_APPSTREAM_API UserStackAssociation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPSTREAM_API UserStackAssociation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPSTREAM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

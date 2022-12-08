@@ -26,12 +26,12 @@ namespace Kinesis
 {
 namespace Model
 {
-  class AWS_KINESIS_API ListStreamConsumersResult
+  class ListStreamConsumersResult
   {
   public:
-    ListStreamConsumersResult();
-    ListStreamConsumersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListStreamConsumersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KINESIS_API ListStreamConsumersResult();
+    AWS_KINESIS_API ListStreamConsumersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KINESIS_API ListStreamConsumersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

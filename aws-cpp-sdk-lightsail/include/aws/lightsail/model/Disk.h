@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/Disk">AWS API
    * Reference</a></p>
    */
-  class AWS_LIGHTSAIL_API Disk
+  class Disk
   {
   public:
-    Disk();
-    Disk(Aws::Utils::Json::JsonView jsonValue);
-    Disk& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LIGHTSAIL_API Disk();
+    AWS_LIGHTSAIL_API Disk(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API Disk& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

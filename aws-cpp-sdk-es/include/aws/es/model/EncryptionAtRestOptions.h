@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/EncryptionAtRestOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICSEARCHSERVICE_API EncryptionAtRestOptions
+  class EncryptionAtRestOptions
   {
   public:
-    EncryptionAtRestOptions();
-    EncryptionAtRestOptions(Aws::Utils::Json::JsonView jsonValue);
-    EncryptionAtRestOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ELASTICSEARCHSERVICE_API EncryptionAtRestOptions();
+    AWS_ELASTICSEARCHSERVICE_API EncryptionAtRestOptions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICSEARCHSERVICE_API EncryptionAtRestOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

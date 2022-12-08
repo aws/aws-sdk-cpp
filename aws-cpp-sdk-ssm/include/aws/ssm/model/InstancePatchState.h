@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/InstancePatchState">AWS
    * API Reference</a></p>
    */
-  class AWS_SSM_API InstancePatchState
+  class InstancePatchState
   {
   public:
-    InstancePatchState();
-    InstancePatchState(Aws::Utils::Json::JsonView jsonValue);
-    InstancePatchState& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSM_API InstancePatchState();
+    AWS_SSM_API InstancePatchState(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API InstancePatchState& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

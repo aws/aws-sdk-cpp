@@ -45,13 +45,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/Statement">AWS API
    * Reference</a></p>
    */
-  class AWS_WAFV2_API Statement
+  class Statement
   {
   public:
-    Statement();
-    Statement(Aws::Utils::Json::JsonView jsonValue);
-    Statement& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WAFV2_API Statement();
+    AWS_WAFV2_API Statement(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API Statement& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -705,7 +705,7 @@ namespace Model
      * <code>NotStatement</code> or <code>OrStatement</code>. You can define a
      * <code>RateBasedStatement</code> inside a web ACL and inside a rule group. </p>
      */
-    const RateBasedStatement& GetRateBasedStatement() const;
+    AWS_WAFV2_API const RateBasedStatement& GetRateBasedStatement() const;
 
     /**
      * <p>A rate-based rule tracks the rate of requests for each originating IP
@@ -738,7 +738,7 @@ namespace Model
      * <code>NotStatement</code> or <code>OrStatement</code>. You can define a
      * <code>RateBasedStatement</code> inside a web ACL and inside a rule group. </p>
      */
-    bool RateBasedStatementHasBeenSet() const;
+    AWS_WAFV2_API bool RateBasedStatementHasBeenSet() const;
 
     /**
      * <p>A rate-based rule tracks the rate of requests for each originating IP
@@ -771,7 +771,7 @@ namespace Model
      * <code>NotStatement</code> or <code>OrStatement</code>. You can define a
      * <code>RateBasedStatement</code> inside a web ACL and inside a rule group. </p>
      */
-    void SetRateBasedStatement(const RateBasedStatement& value);
+    AWS_WAFV2_API void SetRateBasedStatement(const RateBasedStatement& value);
 
     /**
      * <p>A rate-based rule tracks the rate of requests for each originating IP
@@ -804,7 +804,7 @@ namespace Model
      * <code>NotStatement</code> or <code>OrStatement</code>. You can define a
      * <code>RateBasedStatement</code> inside a web ACL and inside a rule group. </p>
      */
-    void SetRateBasedStatement(RateBasedStatement&& value);
+    AWS_WAFV2_API void SetRateBasedStatement(RateBasedStatement&& value);
 
     /**
      * <p>A rate-based rule tracks the rate of requests for each originating IP
@@ -837,7 +837,7 @@ namespace Model
      * <code>NotStatement</code> or <code>OrStatement</code>. You can define a
      * <code>RateBasedStatement</code> inside a web ACL and inside a rule group. </p>
      */
-    Statement& WithRateBasedStatement(const RateBasedStatement& value);
+    AWS_WAFV2_API Statement& WithRateBasedStatement(const RateBasedStatement& value);
 
     /**
      * <p>A rate-based rule tracks the rate of requests for each originating IP
@@ -870,7 +870,7 @@ namespace Model
      * <code>NotStatement</code> or <code>OrStatement</code>. You can define a
      * <code>RateBasedStatement</code> inside a web ACL and inside a rule group. </p>
      */
-    Statement& WithRateBasedStatement(RateBasedStatement&& value);
+    AWS_WAFV2_API Statement& WithRateBasedStatement(RateBasedStatement&& value);
 
 
     /**
@@ -878,42 +878,42 @@ namespace Model
      * logic. You provide more than one <a>Statement</a> within the
      * <code>AndStatement</code>. </p>
      */
-    const AndStatement& GetAndStatement() const;
+    AWS_WAFV2_API const AndStatement& GetAndStatement() const;
 
     /**
      * <p>A logical rule statement used to combine other rule statements with AND
      * logic. You provide more than one <a>Statement</a> within the
      * <code>AndStatement</code>. </p>
      */
-    bool AndStatementHasBeenSet() const;
+    AWS_WAFV2_API bool AndStatementHasBeenSet() const;
 
     /**
      * <p>A logical rule statement used to combine other rule statements with AND
      * logic. You provide more than one <a>Statement</a> within the
      * <code>AndStatement</code>. </p>
      */
-    void SetAndStatement(const AndStatement& value);
+    AWS_WAFV2_API void SetAndStatement(const AndStatement& value);
 
     /**
      * <p>A logical rule statement used to combine other rule statements with AND
      * logic. You provide more than one <a>Statement</a> within the
      * <code>AndStatement</code>. </p>
      */
-    void SetAndStatement(AndStatement&& value);
+    AWS_WAFV2_API void SetAndStatement(AndStatement&& value);
 
     /**
      * <p>A logical rule statement used to combine other rule statements with AND
      * logic. You provide more than one <a>Statement</a> within the
      * <code>AndStatement</code>. </p>
      */
-    Statement& WithAndStatement(const AndStatement& value);
+    AWS_WAFV2_API Statement& WithAndStatement(const AndStatement& value);
 
     /**
      * <p>A logical rule statement used to combine other rule statements with AND
      * logic. You provide more than one <a>Statement</a> within the
      * <code>AndStatement</code>. </p>
      */
-    Statement& WithAndStatement(AndStatement&& value);
+    AWS_WAFV2_API Statement& WithAndStatement(AndStatement&& value);
 
 
     /**
@@ -921,42 +921,42 @@ namespace Model
      * You provide more than one <a>Statement</a> within the <code>OrStatement</code>.
      * </p>
      */
-    const OrStatement& GetOrStatement() const;
+    AWS_WAFV2_API const OrStatement& GetOrStatement() const;
 
     /**
      * <p>A logical rule statement used to combine other rule statements with OR logic.
      * You provide more than one <a>Statement</a> within the <code>OrStatement</code>.
      * </p>
      */
-    bool OrStatementHasBeenSet() const;
+    AWS_WAFV2_API bool OrStatementHasBeenSet() const;
 
     /**
      * <p>A logical rule statement used to combine other rule statements with OR logic.
      * You provide more than one <a>Statement</a> within the <code>OrStatement</code>.
      * </p>
      */
-    void SetOrStatement(const OrStatement& value);
+    AWS_WAFV2_API void SetOrStatement(const OrStatement& value);
 
     /**
      * <p>A logical rule statement used to combine other rule statements with OR logic.
      * You provide more than one <a>Statement</a> within the <code>OrStatement</code>.
      * </p>
      */
-    void SetOrStatement(OrStatement&& value);
+    AWS_WAFV2_API void SetOrStatement(OrStatement&& value);
 
     /**
      * <p>A logical rule statement used to combine other rule statements with OR logic.
      * You provide more than one <a>Statement</a> within the <code>OrStatement</code>.
      * </p>
      */
-    Statement& WithOrStatement(const OrStatement& value);
+    AWS_WAFV2_API Statement& WithOrStatement(const OrStatement& value);
 
     /**
      * <p>A logical rule statement used to combine other rule statements with OR logic.
      * You provide more than one <a>Statement</a> within the <code>OrStatement</code>.
      * </p>
      */
-    Statement& WithOrStatement(OrStatement&& value);
+    AWS_WAFV2_API Statement& WithOrStatement(OrStatement&& value);
 
 
     /**
@@ -964,42 +964,42 @@ namespace Model
      * statement. You provide one <a>Statement</a> within the
      * <code>NotStatement</code>.</p>
      */
-    const NotStatement& GetNotStatement() const;
+    AWS_WAFV2_API const NotStatement& GetNotStatement() const;
 
     /**
      * <p>A logical rule statement used to negate the results of another rule
      * statement. You provide one <a>Statement</a> within the
      * <code>NotStatement</code>.</p>
      */
-    bool NotStatementHasBeenSet() const;
+    AWS_WAFV2_API bool NotStatementHasBeenSet() const;
 
     /**
      * <p>A logical rule statement used to negate the results of another rule
      * statement. You provide one <a>Statement</a> within the
      * <code>NotStatement</code>.</p>
      */
-    void SetNotStatement(const NotStatement& value);
+    AWS_WAFV2_API void SetNotStatement(const NotStatement& value);
 
     /**
      * <p>A logical rule statement used to negate the results of another rule
      * statement. You provide one <a>Statement</a> within the
      * <code>NotStatement</code>.</p>
      */
-    void SetNotStatement(NotStatement&& value);
+    AWS_WAFV2_API void SetNotStatement(NotStatement&& value);
 
     /**
      * <p>A logical rule statement used to negate the results of another rule
      * statement. You provide one <a>Statement</a> within the
      * <code>NotStatement</code>.</p>
      */
-    Statement& WithNotStatement(const NotStatement& value);
+    AWS_WAFV2_API Statement& WithNotStatement(const NotStatement& value);
 
     /**
      * <p>A logical rule statement used to negate the results of another rule
      * statement. You provide one <a>Statement</a> within the
      * <code>NotStatement</code>.</p>
      */
-    Statement& WithNotStatement(NotStatement&& value);
+    AWS_WAFV2_API Statement& WithNotStatement(NotStatement&& value);
 
 
     /**
@@ -1016,7 +1016,7 @@ namespace Model
      * <code>AWSManagedRulesATPRuleSet</code>. For more information, see <a
      * href="http://aws.amazon.com/waf/pricing/">WAF Pricing</a>.</p> 
      */
-    const ManagedRuleGroupStatement& GetManagedRuleGroupStatement() const;
+    AWS_WAFV2_API const ManagedRuleGroupStatement& GetManagedRuleGroupStatement() const;
 
     /**
      * <p>A rule statement used to run the rules that are defined in a managed rule
@@ -1032,7 +1032,7 @@ namespace Model
      * <code>AWSManagedRulesATPRuleSet</code>. For more information, see <a
      * href="http://aws.amazon.com/waf/pricing/">WAF Pricing</a>.</p> 
      */
-    bool ManagedRuleGroupStatementHasBeenSet() const;
+    AWS_WAFV2_API bool ManagedRuleGroupStatementHasBeenSet() const;
 
     /**
      * <p>A rule statement used to run the rules that are defined in a managed rule
@@ -1048,7 +1048,7 @@ namespace Model
      * <code>AWSManagedRulesATPRuleSet</code>. For more information, see <a
      * href="http://aws.amazon.com/waf/pricing/">WAF Pricing</a>.</p> 
      */
-    void SetManagedRuleGroupStatement(const ManagedRuleGroupStatement& value);
+    AWS_WAFV2_API void SetManagedRuleGroupStatement(const ManagedRuleGroupStatement& value);
 
     /**
      * <p>A rule statement used to run the rules that are defined in a managed rule
@@ -1064,7 +1064,7 @@ namespace Model
      * <code>AWSManagedRulesATPRuleSet</code>. For more information, see <a
      * href="http://aws.amazon.com/waf/pricing/">WAF Pricing</a>.</p> 
      */
-    void SetManagedRuleGroupStatement(ManagedRuleGroupStatement&& value);
+    AWS_WAFV2_API void SetManagedRuleGroupStatement(ManagedRuleGroupStatement&& value);
 
     /**
      * <p>A rule statement used to run the rules that are defined in a managed rule
@@ -1080,7 +1080,7 @@ namespace Model
      * <code>AWSManagedRulesATPRuleSet</code>. For more information, see <a
      * href="http://aws.amazon.com/waf/pricing/">WAF Pricing</a>.</p> 
      */
-    Statement& WithManagedRuleGroupStatement(const ManagedRuleGroupStatement& value);
+    AWS_WAFV2_API Statement& WithManagedRuleGroupStatement(const ManagedRuleGroupStatement& value);
 
     /**
      * <p>A rule statement used to run the rules that are defined in a managed rule
@@ -1096,7 +1096,7 @@ namespace Model
      * <code>AWSManagedRulesATPRuleSet</code>. For more information, see <a
      * href="http://aws.amazon.com/waf/pricing/">WAF Pricing</a>.</p> 
      */
-    Statement& WithManagedRuleGroupStatement(ManagedRuleGroupStatement&& value);
+    AWS_WAFV2_API Statement& WithManagedRuleGroupStatement(ManagedRuleGroupStatement&& value);
 
 
     /**

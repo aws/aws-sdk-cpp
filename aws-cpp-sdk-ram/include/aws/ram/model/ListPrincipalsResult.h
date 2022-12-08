@@ -26,12 +26,12 @@ namespace RAM
 {
 namespace Model
 {
-  class AWS_RAM_API ListPrincipalsResult
+  class ListPrincipalsResult
   {
   public:
-    ListPrincipalsResult();
-    ListPrincipalsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListPrincipalsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_RAM_API ListPrincipalsResult();
+    AWS_RAM_API ListPrincipalsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_RAM_API ListPrincipalsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

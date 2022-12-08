@@ -28,12 +28,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/ReportTaskRunnerHeartbeatOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_DATAPIPELINE_API ReportTaskRunnerHeartbeatResult
+  class ReportTaskRunnerHeartbeatResult
   {
   public:
-    ReportTaskRunnerHeartbeatResult();
-    ReportTaskRunnerHeartbeatResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ReportTaskRunnerHeartbeatResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DATAPIPELINE_API ReportTaskRunnerHeartbeatResult();
+    AWS_DATAPIPELINE_API ReportTaskRunnerHeartbeatResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DATAPIPELINE_API ReportTaskRunnerHeartbeatResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

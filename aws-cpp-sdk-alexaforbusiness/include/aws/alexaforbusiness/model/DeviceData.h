@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeviceData">AWS
    * API Reference</a></p>
    */
-  class AWS_ALEXAFORBUSINESS_API DeviceData
+  class DeviceData
   {
   public:
-    DeviceData();
-    DeviceData(Aws::Utils::Json::JsonView jsonValue);
-    DeviceData& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ALEXAFORBUSINESS_API DeviceData();
+    AWS_ALEXAFORBUSINESS_API DeviceData(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ALEXAFORBUSINESS_API DeviceData& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ALEXAFORBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/SelectFields">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API SelectFields
+  class SelectFields
   {
   public:
-    SelectFields();
-    SelectFields(Aws::Utils::Json::JsonView jsonValue);
-    SelectFields& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API SelectFields();
+    AWS_GLUE_API SelectFields(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API SelectFields& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

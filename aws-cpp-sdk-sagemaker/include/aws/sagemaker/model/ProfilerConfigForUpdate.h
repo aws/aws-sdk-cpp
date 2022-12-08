@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ProfilerConfigForUpdate">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API ProfilerConfigForUpdate
+  class ProfilerConfigForUpdate
   {
   public:
-    ProfilerConfigForUpdate();
-    ProfilerConfigForUpdate(Aws::Utils::Json::JsonView jsonValue);
-    ProfilerConfigForUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API ProfilerConfigForUpdate();
+    AWS_SAGEMAKER_API ProfilerConfigForUpdate(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API ProfilerConfigForUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

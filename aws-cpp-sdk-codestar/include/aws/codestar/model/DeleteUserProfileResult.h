@@ -24,12 +24,12 @@ namespace CodeStar
 {
 namespace Model
 {
-  class AWS_CODESTAR_API DeleteUserProfileResult
+  class DeleteUserProfileResult
   {
   public:
-    DeleteUserProfileResult();
-    DeleteUserProfileResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteUserProfileResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODESTAR_API DeleteUserProfileResult();
+    AWS_CODESTAR_API DeleteUserProfileResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODESTAR_API DeleteUserProfileResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

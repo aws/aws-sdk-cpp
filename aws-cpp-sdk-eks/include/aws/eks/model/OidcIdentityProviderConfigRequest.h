@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/OidcIdentityProviderConfigRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_EKS_API OidcIdentityProviderConfigRequest
+  class OidcIdentityProviderConfigRequest
   {
   public:
-    OidcIdentityProviderConfigRequest();
-    OidcIdentityProviderConfigRequest(Aws::Utils::Json::JsonView jsonValue);
-    OidcIdentityProviderConfigRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EKS_API OidcIdentityProviderConfigRequest();
+    AWS_EKS_API OidcIdentityProviderConfigRequest(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EKS_API OidcIdentityProviderConfigRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EKS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -45,15 +45,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/TargetCapacitySpecificationRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API TargetCapacitySpecificationRequest
+  class TargetCapacitySpecificationRequest
   {
   public:
-    TargetCapacitySpecificationRequest();
-    TargetCapacitySpecificationRequest(const Aws::Utils::Xml::XmlNode& xmlNode);
-    TargetCapacitySpecificationRequest& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API TargetCapacitySpecificationRequest();
+    AWS_EC2_API TargetCapacitySpecificationRequest(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API TargetCapacitySpecificationRequest& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**

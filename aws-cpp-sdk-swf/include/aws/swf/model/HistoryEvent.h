@@ -177,13 +177,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/HistoryEvent">AWS
    * API Reference</a></p>
    */
-  class AWS_SWF_API HistoryEvent
+  class HistoryEvent
   {
   public:
-    HistoryEvent();
-    HistoryEvent(Aws::Utils::Json::JsonView jsonValue);
-    HistoryEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SWF_API HistoryEvent();
+    AWS_SWF_API HistoryEvent(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SWF_API HistoryEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SWF_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

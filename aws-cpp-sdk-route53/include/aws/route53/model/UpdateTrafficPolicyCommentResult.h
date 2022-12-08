@@ -30,12 +30,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/UpdateTrafficPolicyCommentResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53_API UpdateTrafficPolicyCommentResult
+  class UpdateTrafficPolicyCommentResult
   {
   public:
-    UpdateTrafficPolicyCommentResult();
-    UpdateTrafficPolicyCommentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    UpdateTrafficPolicyCommentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ROUTE53_API UpdateTrafficPolicyCommentResult();
+    AWS_ROUTE53_API UpdateTrafficPolicyCommentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ROUTE53_API UpdateTrafficPolicyCommentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

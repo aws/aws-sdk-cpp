@@ -25,12 +25,12 @@ namespace Redshift
 {
 namespace Model
 {
-  class AWS_REDSHIFT_API AuthorizeClusterSecurityGroupIngressResult
+  class AuthorizeClusterSecurityGroupIngressResult
   {
   public:
-    AuthorizeClusterSecurityGroupIngressResult();
-    AuthorizeClusterSecurityGroupIngressResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    AuthorizeClusterSecurityGroupIngressResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_REDSHIFT_API AuthorizeClusterSecurityGroupIngressResult();
+    AWS_REDSHIFT_API AuthorizeClusterSecurityGroupIngressResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_REDSHIFT_API AuthorizeClusterSecurityGroupIngressResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     

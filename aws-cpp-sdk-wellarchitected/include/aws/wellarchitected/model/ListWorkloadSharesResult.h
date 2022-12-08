@@ -31,12 +31,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/ListWorkloadSharesOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_WELLARCHITECTED_API ListWorkloadSharesResult
+  class ListWorkloadSharesResult
   {
   public:
-    ListWorkloadSharesResult();
-    ListWorkloadSharesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListWorkloadSharesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WELLARCHITECTED_API ListWorkloadSharesResult();
+    AWS_WELLARCHITECTED_API ListWorkloadSharesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WELLARCHITECTED_API ListWorkloadSharesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     

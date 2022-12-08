@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/Parent">AWS
    * API Reference</a></p>
    */
-  class AWS_REKOGNITION_API Parent
+  class Parent
   {
   public:
-    Parent();
-    Parent(Aws::Utils::Json::JsonView jsonValue);
-    Parent& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_REKOGNITION_API Parent();
+    AWS_REKOGNITION_API Parent(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API Parent& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

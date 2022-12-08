@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/ComputationPreference">AWS
    * API Reference</a></p>
    */
-  class AWS_BILLINGCONDUCTOR_API ComputationPreference
+  class ComputationPreference
   {
   public:
-    ComputationPreference();
-    ComputationPreference(Aws::Utils::Json::JsonView jsonValue);
-    ComputationPreference& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BILLINGCONDUCTOR_API ComputationPreference();
+    AWS_BILLINGCONDUCTOR_API ComputationPreference(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BILLINGCONDUCTOR_API ComputationPreference& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BILLINGCONDUCTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/BatchGetAssetPropertyValueErrorEntry">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTSITEWISE_API BatchGetAssetPropertyValueErrorEntry
+  class BatchGetAssetPropertyValueErrorEntry
   {
   public:
-    BatchGetAssetPropertyValueErrorEntry();
-    BatchGetAssetPropertyValueErrorEntry(Aws::Utils::Json::JsonView jsonValue);
-    BatchGetAssetPropertyValueErrorEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTSITEWISE_API BatchGetAssetPropertyValueErrorEntry();
+    AWS_IOTSITEWISE_API BatchGetAssetPropertyValueErrorEntry(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API BatchGetAssetPropertyValueErrorEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

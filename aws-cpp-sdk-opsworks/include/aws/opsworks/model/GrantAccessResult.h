@@ -30,12 +30,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/GrantAccessResult">AWS
    * API Reference</a></p>
    */
-  class AWS_OPSWORKS_API GrantAccessResult
+  class GrantAccessResult
   {
   public:
-    GrantAccessResult();
-    GrantAccessResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GrantAccessResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OPSWORKS_API GrantAccessResult();
+    AWS_OPSWORKS_API GrantAccessResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OPSWORKS_API GrantAccessResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

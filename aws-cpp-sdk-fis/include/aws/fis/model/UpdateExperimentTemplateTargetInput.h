@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/UpdateExperimentTemplateTargetInput">AWS
    * API Reference</a></p>
    */
-  class AWS_FIS_API UpdateExperimentTemplateTargetInput
+  class UpdateExperimentTemplateTargetInput
   {
   public:
-    UpdateExperimentTemplateTargetInput();
-    UpdateExperimentTemplateTargetInput(Aws::Utils::Json::JsonView jsonValue);
-    UpdateExperimentTemplateTargetInput& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FIS_API UpdateExperimentTemplateTargetInput();
+    AWS_FIS_API UpdateExperimentTemplateTargetInput(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FIS_API UpdateExperimentTemplateTargetInput& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FIS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

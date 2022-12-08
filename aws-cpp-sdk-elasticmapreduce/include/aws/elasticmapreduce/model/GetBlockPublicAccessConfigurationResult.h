@@ -25,12 +25,12 @@ namespace EMR
 {
 namespace Model
 {
-  class AWS_EMR_API GetBlockPublicAccessConfigurationResult
+  class GetBlockPublicAccessConfigurationResult
   {
   public:
-    GetBlockPublicAccessConfigurationResult();
-    GetBlockPublicAccessConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetBlockPublicAccessConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_EMR_API GetBlockPublicAccessConfigurationResult();
+    AWS_EMR_API GetBlockPublicAccessConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_EMR_API GetBlockPublicAccessConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

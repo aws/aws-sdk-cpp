@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/TargetOnDeviceService">AWS
    * API Reference</a></p>
    */
-  class AWS_SNOWBALL_API TargetOnDeviceService
+  class TargetOnDeviceService
   {
   public:
-    TargetOnDeviceService();
-    TargetOnDeviceService(Aws::Utils::Json::JsonView jsonValue);
-    TargetOnDeviceService& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SNOWBALL_API TargetOnDeviceService();
+    AWS_SNOWBALL_API TargetOnDeviceService(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SNOWBALL_API TargetOnDeviceService& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SNOWBALL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

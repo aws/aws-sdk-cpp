@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/NoneAction">AWS
    * API Reference</a></p>
    */
-  class AWS_WAFV2_API NoneAction
+  class NoneAction
   {
   public:
-    NoneAction();
-    NoneAction(Aws::Utils::Json::JsonView jsonValue);
-    NoneAction& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WAFV2_API NoneAction();
+    AWS_WAFV2_API NoneAction(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API NoneAction& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
   };
 

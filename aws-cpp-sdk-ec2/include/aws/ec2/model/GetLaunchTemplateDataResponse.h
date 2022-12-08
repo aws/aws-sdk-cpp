@@ -25,12 +25,12 @@ namespace EC2
 {
 namespace Model
 {
-  class AWS_EC2_API GetLaunchTemplateDataResponse
+  class GetLaunchTemplateDataResponse
   {
   public:
-    GetLaunchTemplateDataResponse();
-    GetLaunchTemplateDataResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    GetLaunchTemplateDataResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API GetLaunchTemplateDataResponse();
+    AWS_EC2_API GetLaunchTemplateDataResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API GetLaunchTemplateDataResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

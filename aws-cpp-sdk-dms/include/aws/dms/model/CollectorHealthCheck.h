@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CollectorHealthCheck">AWS
    * API Reference</a></p>
    */
-  class AWS_DATABASEMIGRATIONSERVICE_API CollectorHealthCheck
+  class CollectorHealthCheck
   {
   public:
-    CollectorHealthCheck();
-    CollectorHealthCheck(Aws::Utils::Json::JsonView jsonValue);
-    CollectorHealthCheck& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DATABASEMIGRATIONSERVICE_API CollectorHealthCheck();
+    AWS_DATABASEMIGRATIONSERVICE_API CollectorHealthCheck(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATABASEMIGRATIONSERVICE_API CollectorHealthCheck& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATABASEMIGRATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

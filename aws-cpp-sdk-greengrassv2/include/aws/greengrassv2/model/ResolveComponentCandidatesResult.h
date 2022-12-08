@@ -25,12 +25,12 @@ namespace GreengrassV2
 {
 namespace Model
 {
-  class AWS_GREENGRASSV2_API ResolveComponentCandidatesResult
+  class ResolveComponentCandidatesResult
   {
   public:
-    ResolveComponentCandidatesResult();
-    ResolveComponentCandidatesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ResolveComponentCandidatesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GREENGRASSV2_API ResolveComponentCandidatesResult();
+    AWS_GREENGRASSV2_API ResolveComponentCandidatesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GREENGRASSV2_API ResolveComponentCandidatesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

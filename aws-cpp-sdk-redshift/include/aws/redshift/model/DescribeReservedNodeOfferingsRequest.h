@@ -21,10 +21,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeReservedNodeOfferingsMessage">AWS
    * API Reference</a></p>
    */
-  class AWS_REDSHIFT_API DescribeReservedNodeOfferingsRequest : public RedshiftRequest
+  class DescribeReservedNodeOfferingsRequest : public RedshiftRequest
   {
   public:
-    DescribeReservedNodeOfferingsRequest();
+    AWS_REDSHIFT_API DescribeReservedNodeOfferingsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,10 +32,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DescribeReservedNodeOfferings"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_REDSHIFT_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_REDSHIFT_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 

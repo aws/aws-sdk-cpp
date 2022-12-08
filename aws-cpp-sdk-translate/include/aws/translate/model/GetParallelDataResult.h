@@ -25,12 +25,12 @@ namespace Translate
 {
 namespace Model
 {
-  class AWS_TRANSLATE_API GetParallelDataResult
+  class GetParallelDataResult
   {
   public:
-    GetParallelDataResult();
-    GetParallelDataResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetParallelDataResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_TRANSLATE_API GetParallelDataResult();
+    AWS_TRANSLATE_API GetParallelDataResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_TRANSLATE_API GetParallelDataResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

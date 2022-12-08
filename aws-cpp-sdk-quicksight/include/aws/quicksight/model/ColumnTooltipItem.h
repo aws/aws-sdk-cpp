@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ColumnTooltipItem">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API ColumnTooltipItem
+  class ColumnTooltipItem
   {
   public:
-    ColumnTooltipItem();
-    ColumnTooltipItem(Aws::Utils::Json::JsonView jsonValue);
-    ColumnTooltipItem& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API ColumnTooltipItem();
+    AWS_QUICKSIGHT_API ColumnTooltipItem(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API ColumnTooltipItem& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

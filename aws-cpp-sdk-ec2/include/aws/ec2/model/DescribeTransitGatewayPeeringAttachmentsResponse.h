@@ -27,12 +27,12 @@ namespace EC2
 {
 namespace Model
 {
-  class AWS_EC2_API DescribeTransitGatewayPeeringAttachmentsResponse
+  class DescribeTransitGatewayPeeringAttachmentsResponse
   {
   public:
-    DescribeTransitGatewayPeeringAttachmentsResponse();
-    DescribeTransitGatewayPeeringAttachmentsResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeTransitGatewayPeeringAttachmentsResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API DescribeTransitGatewayPeeringAttachmentsResponse();
+    AWS_EC2_API DescribeTransitGatewayPeeringAttachmentsResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API DescribeTransitGatewayPeeringAttachmentsResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/ForbiddenException">AWS
    * API Reference</a></p>
    */
-  class AWS_CHIMESDKIDENTITY_API ForbiddenException
+  class ForbiddenException
   {
   public:
-    ForbiddenException();
-    ForbiddenException(Aws::Utils::Json::JsonView jsonValue);
-    ForbiddenException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIMESDKIDENTITY_API ForbiddenException();
+    AWS_CHIMESDKIDENTITY_API ForbiddenException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKIDENTITY_API ForbiddenException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKIDENTITY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ConditionCheck">AWS
    * API Reference</a></p>
    */
-  class AWS_DYNAMODB_API ConditionCheck
+  class ConditionCheck
   {
   public:
-    ConditionCheck();
-    ConditionCheck(Aws::Utils::Json::JsonView jsonValue);
-    ConditionCheck& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DYNAMODB_API ConditionCheck();
+    AWS_DYNAMODB_API ConditionCheck(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API ConditionCheck& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

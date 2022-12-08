@@ -29,12 +29,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/UpdateDatasetResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_FINSPACEDATA_API UpdateDatasetResult
+  class UpdateDatasetResult
   {
   public:
-    UpdateDatasetResult();
-    UpdateDatasetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateDatasetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_FINSPACEDATA_API UpdateDatasetResult();
+    AWS_FINSPACEDATA_API UpdateDatasetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_FINSPACEDATA_API UpdateDatasetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

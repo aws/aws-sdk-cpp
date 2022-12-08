@@ -30,12 +30,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/GetThirdPartyJobDetailsOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEPIPELINE_API GetThirdPartyJobDetailsResult
+  class GetThirdPartyJobDetailsResult
   {
   public:
-    GetThirdPartyJobDetailsResult();
-    GetThirdPartyJobDetailsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetThirdPartyJobDetailsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODEPIPELINE_API GetThirdPartyJobDetailsResult();
+    AWS_CODEPIPELINE_API GetThirdPartyJobDetailsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODEPIPELINE_API GetThirdPartyJobDetailsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

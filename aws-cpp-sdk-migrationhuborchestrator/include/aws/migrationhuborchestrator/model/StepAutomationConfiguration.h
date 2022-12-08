@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/migrationhuborchestrator-2021-08-28/StepAutomationConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_MIGRATIONHUBORCHESTRATOR_API StepAutomationConfiguration
+  class StepAutomationConfiguration
   {
   public:
-    StepAutomationConfiguration();
-    StepAutomationConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    StepAutomationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MIGRATIONHUBORCHESTRATOR_API StepAutomationConfiguration();
+    AWS_MIGRATIONHUBORCHESTRATOR_API StepAutomationConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MIGRATIONHUBORCHESTRATOR_API StepAutomationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MIGRATIONHUBORCHESTRATOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -26,12 +26,12 @@ namespace Snowball
 {
 namespace Model
 {
-  class AWS_SNOWBALL_API ListCompatibleImagesResult
+  class ListCompatibleImagesResult
   {
   public:
-    ListCompatibleImagesResult();
-    ListCompatibleImagesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListCompatibleImagesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SNOWBALL_API ListCompatibleImagesResult();
+    AWS_SNOWBALL_API ListCompatibleImagesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SNOWBALL_API ListCompatibleImagesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

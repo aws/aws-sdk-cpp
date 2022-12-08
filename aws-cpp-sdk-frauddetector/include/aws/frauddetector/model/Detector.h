@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/Detector">AWS
    * API Reference</a></p>
    */
-  class AWS_FRAUDDETECTOR_API Detector
+  class Detector
   {
   public:
-    Detector();
-    Detector(Aws::Utils::Json::JsonView jsonValue);
-    Detector& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FRAUDDETECTOR_API Detector();
+    AWS_FRAUDDETECTOR_API Detector(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FRAUDDETECTOR_API Detector& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FRAUDDETECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

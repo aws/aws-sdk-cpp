@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/EC2CopyRouteTableAction">AWS
    * API Reference</a></p>
    */
-  class AWS_FMS_API EC2CopyRouteTableAction
+  class EC2CopyRouteTableAction
   {
   public:
-    EC2CopyRouteTableAction();
-    EC2CopyRouteTableAction(Aws::Utils::Json::JsonView jsonValue);
-    EC2CopyRouteTableAction& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FMS_API EC2CopyRouteTableAction();
+    AWS_FMS_API EC2CopyRouteTableAction(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FMS_API EC2CopyRouteTableAction& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

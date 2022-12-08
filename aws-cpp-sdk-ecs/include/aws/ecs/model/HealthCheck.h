@@ -74,13 +74,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/HealthCheck">AWS API
    * Reference</a></p>
    */
-  class AWS_ECS_API HealthCheck
+  class HealthCheck
   {
   public:
-    HealthCheck();
-    HealthCheck(Aws::Utils::Json::JsonView jsonValue);
-    HealthCheck& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ECS_API HealthCheck();
+    AWS_ECS_API HealthCheck(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECS_API HealthCheck& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

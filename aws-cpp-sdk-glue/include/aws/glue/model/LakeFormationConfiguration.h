@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/LakeFormationConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API LakeFormationConfiguration
+  class LakeFormationConfiguration
   {
   public:
-    LakeFormationConfiguration();
-    LakeFormationConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    LakeFormationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API LakeFormationConfiguration();
+    AWS_GLUE_API LakeFormationConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API LakeFormationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

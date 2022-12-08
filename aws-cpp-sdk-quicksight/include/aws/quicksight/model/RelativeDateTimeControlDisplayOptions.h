@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/RelativeDateTimeControlDisplayOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API RelativeDateTimeControlDisplayOptions
+  class RelativeDateTimeControlDisplayOptions
   {
   public:
-    RelativeDateTimeControlDisplayOptions();
-    RelativeDateTimeControlDisplayOptions(Aws::Utils::Json::JsonView jsonValue);
-    RelativeDateTimeControlDisplayOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API RelativeDateTimeControlDisplayOptions();
+    AWS_QUICKSIGHT_API RelativeDateTimeControlDisplayOptions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API RelativeDateTimeControlDisplayOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

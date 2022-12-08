@@ -22,12 +22,12 @@ namespace Route53
 {
 namespace Model
 {
-  class AWS_ROUTE53_API DeleteQueryLoggingConfigResult
+  class DeleteQueryLoggingConfigResult
   {
   public:
-    DeleteQueryLoggingConfigResult();
-    DeleteQueryLoggingConfigResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DeleteQueryLoggingConfigResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ROUTE53_API DeleteQueryLoggingConfigResult();
+    AWS_ROUTE53_API DeleteQueryLoggingConfigResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ROUTE53_API DeleteQueryLoggingConfigResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
   };
 

@@ -22,12 +22,12 @@ namespace AlexaForBusiness
 {
 namespace Model
 {
-  class AWS_ALEXAFORBUSINESS_API DisassociateSkillGroupFromRoomResult
+  class DisassociateSkillGroupFromRoomResult
   {
   public:
-    DisassociateSkillGroupFromRoomResult();
-    DisassociateSkillGroupFromRoomResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DisassociateSkillGroupFromRoomResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ALEXAFORBUSINESS_API DisassociateSkillGroupFromRoomResult();
+    AWS_ALEXAFORBUSINESS_API DisassociateSkillGroupFromRoomResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ALEXAFORBUSINESS_API DisassociateSkillGroupFromRoomResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

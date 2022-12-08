@@ -40,13 +40,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/InstanceTypeConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_EMR_API InstanceTypeConfig
+  class InstanceTypeConfig
   {
   public:
-    InstanceTypeConfig();
-    InstanceTypeConfig(Aws::Utils::Json::JsonView jsonValue);
-    InstanceTypeConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EMR_API InstanceTypeConfig();
+    AWS_EMR_API InstanceTypeConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMR_API InstanceTypeConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

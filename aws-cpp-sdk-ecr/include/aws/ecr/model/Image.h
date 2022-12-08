@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/Image">AWS API
    * Reference</a></p>
    */
-  class AWS_ECR_API Image
+  class Image
   {
   public:
-    Image();
-    Image(Aws::Utils::Json::JsonView jsonValue);
-    Image& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ECR_API Image();
+    AWS_ECR_API Image(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECR_API Image& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

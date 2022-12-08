@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/InstanceInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEDEPLOY_API InstanceInfo
+  class InstanceInfo
   {
   public:
-    InstanceInfo();
-    InstanceInfo(Aws::Utils::Json::JsonView jsonValue);
-    InstanceInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEDEPLOY_API InstanceInfo();
+    AWS_CODEDEPLOY_API InstanceInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEDEPLOY_API InstanceInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEDEPLOY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/RecommendationItem">AWS
    * API Reference</a></p>
    */
-  class AWS_RESILIENCEHUB_API RecommendationItem
+  class RecommendationItem
   {
   public:
-    RecommendationItem();
-    RecommendationItem(Aws::Utils::Json::JsonView jsonValue);
-    RecommendationItem& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_RESILIENCEHUB_API RecommendationItem();
+    AWS_RESILIENCEHUB_API RecommendationItem(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RESILIENCEHUB_API RecommendationItem& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RESILIENCEHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

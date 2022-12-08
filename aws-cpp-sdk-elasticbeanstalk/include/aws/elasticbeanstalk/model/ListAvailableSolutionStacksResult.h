@@ -33,12 +33,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ListAvailableSolutionStacksResultMessage">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICBEANSTALK_API ListAvailableSolutionStacksResult
+  class ListAvailableSolutionStacksResult
   {
   public:
-    ListAvailableSolutionStacksResult();
-    ListAvailableSolutionStacksResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ListAvailableSolutionStacksResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ELASTICBEANSTALK_API ListAvailableSolutionStacksResult();
+    AWS_ELASTICBEANSTALK_API ListAvailableSolutionStacksResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ELASTICBEANSTALK_API ListAvailableSolutionStacksResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

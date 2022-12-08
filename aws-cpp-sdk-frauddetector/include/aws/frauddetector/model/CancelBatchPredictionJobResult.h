@@ -22,12 +22,12 @@ namespace FraudDetector
 {
 namespace Model
 {
-  class AWS_FRAUDDETECTOR_API CancelBatchPredictionJobResult
+  class CancelBatchPredictionJobResult
   {
   public:
-    CancelBatchPredictionJobResult();
-    CancelBatchPredictionJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CancelBatchPredictionJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_FRAUDDETECTOR_API CancelBatchPredictionJobResult();
+    AWS_FRAUDDETECTOR_API CancelBatchPredictionJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_FRAUDDETECTOR_API CancelBatchPredictionJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

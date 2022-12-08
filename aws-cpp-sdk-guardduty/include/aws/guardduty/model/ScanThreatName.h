@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ScanThreatName">AWS
    * API Reference</a></p>
    */
-  class AWS_GUARDDUTY_API ScanThreatName
+  class ScanThreatName
   {
   public:
-    ScanThreatName();
-    ScanThreatName(Aws::Utils::Json::JsonView jsonValue);
-    ScanThreatName& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GUARDDUTY_API ScanThreatName();
+    AWS_GUARDDUTY_API ScanThreatName(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API ScanThreatName& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

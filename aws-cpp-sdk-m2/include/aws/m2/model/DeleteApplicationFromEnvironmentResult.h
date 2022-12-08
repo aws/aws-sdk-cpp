@@ -22,12 +22,12 @@ namespace MainframeModernization
 {
 namespace Model
 {
-  class AWS_MAINFRAMEMODERNIZATION_API DeleteApplicationFromEnvironmentResult
+  class DeleteApplicationFromEnvironmentResult
   {
   public:
-    DeleteApplicationFromEnvironmentResult();
-    DeleteApplicationFromEnvironmentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteApplicationFromEnvironmentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MAINFRAMEMODERNIZATION_API DeleteApplicationFromEnvironmentResult();
+    AWS_MAINFRAMEMODERNIZATION_API DeleteApplicationFromEnvironmentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MAINFRAMEMODERNIZATION_API DeleteApplicationFromEnvironmentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

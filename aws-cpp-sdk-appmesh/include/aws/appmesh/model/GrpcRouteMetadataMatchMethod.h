@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/GrpcRouteMetadataMatchMethod">AWS
    * API Reference</a></p>
    */
-  class AWS_APPMESH_API GrpcRouteMetadataMatchMethod
+  class GrpcRouteMetadataMatchMethod
   {
   public:
-    GrpcRouteMetadataMatchMethod();
-    GrpcRouteMetadataMatchMethod(Aws::Utils::Json::JsonView jsonValue);
-    GrpcRouteMetadataMatchMethod& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPMESH_API GrpcRouteMetadataMatchMethod();
+    AWS_APPMESH_API GrpcRouteMetadataMatchMethod(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API GrpcRouteMetadataMatchMethod& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

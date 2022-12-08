@@ -37,13 +37,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/EcsParameters">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDWATCHEVENTS_API EcsParameters
+  class EcsParameters
   {
   public:
-    EcsParameters();
-    EcsParameters(Aws::Utils::Json::JsonView jsonValue);
-    EcsParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDWATCHEVENTS_API EcsParameters();
+    AWS_CLOUDWATCHEVENTS_API EcsParameters(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHEVENTS_API EcsParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHEVENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

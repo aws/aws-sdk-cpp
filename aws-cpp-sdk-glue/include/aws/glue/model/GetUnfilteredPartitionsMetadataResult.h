@@ -26,12 +26,12 @@ namespace Glue
 {
 namespace Model
 {
-  class AWS_GLUE_API GetUnfilteredPartitionsMetadataResult
+  class GetUnfilteredPartitionsMetadataResult
   {
   public:
-    GetUnfilteredPartitionsMetadataResult();
-    GetUnfilteredPartitionsMetadataResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetUnfilteredPartitionsMetadataResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GLUE_API GetUnfilteredPartitionsMetadataResult();
+    AWS_GLUE_API GetUnfilteredPartitionsMetadataResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GLUE_API GetUnfilteredPartitionsMetadataResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     

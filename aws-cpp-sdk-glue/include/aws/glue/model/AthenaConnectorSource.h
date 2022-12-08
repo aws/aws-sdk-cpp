@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/AthenaConnectorSource">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API AthenaConnectorSource
+  class AthenaConnectorSource
   {
   public:
-    AthenaConnectorSource();
-    AthenaConnectorSource(Aws::Utils::Json::JsonView jsonValue);
-    AthenaConnectorSource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API AthenaConnectorSource();
+    AWS_GLUE_API AthenaConnectorSource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API AthenaConnectorSource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

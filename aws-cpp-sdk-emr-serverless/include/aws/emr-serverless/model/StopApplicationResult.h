@@ -22,12 +22,12 @@ namespace EMRServerless
 {
 namespace Model
 {
-  class AWS_EMRSERVERLESS_API StopApplicationResult
+  class StopApplicationResult
   {
   public:
-    StopApplicationResult();
-    StopApplicationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    StopApplicationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_EMRSERVERLESS_API StopApplicationResult();
+    AWS_EMRSERVERLESS_API StopApplicationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_EMRSERVERLESS_API StopApplicationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

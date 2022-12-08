@@ -19,21 +19,21 @@ namespace SageMakerRuntime
 {
 namespace Model
 {
-  class AWS_SAGEMAKERRUNTIME_API InvokeEndpointResult
+  class InvokeEndpointResult
   {
   public:
-    InvokeEndpointResult();
+    AWS_SAGEMAKERRUNTIME_API InvokeEndpointResult();
     //We have to define these because Microsoft doesn't auto generate them
-    InvokeEndpointResult(InvokeEndpointResult&&);
-    InvokeEndpointResult& operator=(InvokeEndpointResult&&);
+    AWS_SAGEMAKERRUNTIME_API InvokeEndpointResult(InvokeEndpointResult&&);
+    AWS_SAGEMAKERRUNTIME_API InvokeEndpointResult& operator=(InvokeEndpointResult&&);
     //we delete these because Microsoft doesn't handle move generation correctly
     //and we therefore don't trust them to get it right here either.
     InvokeEndpointResult(const InvokeEndpointResult&) = delete;
     InvokeEndpointResult& operator=(const InvokeEndpointResult&) = delete;
 
 
-    InvokeEndpointResult(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
-    InvokeEndpointResult& operator=(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
+    AWS_SAGEMAKERRUNTIME_API InvokeEndpointResult(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
+    AWS_SAGEMAKERRUNTIME_API InvokeEndpointResult& operator=(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
 
 
 

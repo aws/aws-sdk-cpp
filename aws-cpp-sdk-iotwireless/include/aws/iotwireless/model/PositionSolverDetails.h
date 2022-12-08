@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/PositionSolverDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTWIRELESS_API PositionSolverDetails
+  class PositionSolverDetails
   {
   public:
-    PositionSolverDetails();
-    PositionSolverDetails(Aws::Utils::Json::JsonView jsonValue);
-    PositionSolverDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTWIRELESS_API PositionSolverDetails();
+    AWS_IOTWIRELESS_API PositionSolverDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API PositionSolverDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

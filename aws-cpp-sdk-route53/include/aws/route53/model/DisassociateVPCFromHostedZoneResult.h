@@ -30,12 +30,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DisassociateVPCFromHostedZoneResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53_API DisassociateVPCFromHostedZoneResult
+  class DisassociateVPCFromHostedZoneResult
   {
   public:
-    DisassociateVPCFromHostedZoneResult();
-    DisassociateVPCFromHostedZoneResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DisassociateVPCFromHostedZoneResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ROUTE53_API DisassociateVPCFromHostedZoneResult();
+    AWS_ROUTE53_API DisassociateVPCFromHostedZoneResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ROUTE53_API DisassociateVPCFromHostedZoneResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

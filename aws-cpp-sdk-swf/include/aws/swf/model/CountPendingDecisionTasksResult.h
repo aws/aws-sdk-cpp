@@ -27,12 +27,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/PendingTaskCount">AWS
    * API Reference</a></p>
    */
-  class AWS_SWF_API CountPendingDecisionTasksResult
+  class CountPendingDecisionTasksResult
   {
   public:
-    CountPendingDecisionTasksResult();
-    CountPendingDecisionTasksResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CountPendingDecisionTasksResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SWF_API CountPendingDecisionTasksResult();
+    AWS_SWF_API CountPendingDecisionTasksResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SWF_API CountPendingDecisionTasksResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

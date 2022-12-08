@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/Spigot">AWS API
    * Reference</a></p>
    */
-  class AWS_GLUE_API Spigot
+  class Spigot
   {
   public:
-    Spigot();
-    Spigot(Aws::Utils::Json::JsonView jsonValue);
-    Spigot& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API Spigot();
+    AWS_GLUE_API Spigot(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Spigot& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

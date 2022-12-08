@@ -31,15 +31,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/LaunchTemplateSpotMarketOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API LaunchTemplateSpotMarketOptions
+  class LaunchTemplateSpotMarketOptions
   {
   public:
-    LaunchTemplateSpotMarketOptions();
-    LaunchTemplateSpotMarketOptions(const Aws::Utils::Xml::XmlNode& xmlNode);
-    LaunchTemplateSpotMarketOptions& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API LaunchTemplateSpotMarketOptions();
+    AWS_EC2_API LaunchTemplateSpotMarketOptions(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API LaunchTemplateSpotMarketOptions& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**

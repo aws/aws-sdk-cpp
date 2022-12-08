@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/DataSetEntry">AWS
    * API Reference</a></p>
    */
-  class AWS_DATAEXCHANGE_API DataSetEntry
+  class DataSetEntry
   {
   public:
-    DataSetEntry();
-    DataSetEntry(Aws::Utils::Json::JsonView jsonValue);
-    DataSetEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DATAEXCHANGE_API DataSetEntry();
+    AWS_DATAEXCHANGE_API DataSetEntry(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATAEXCHANGE_API DataSetEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATAEXCHANGE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

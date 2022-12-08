@@ -24,12 +24,12 @@ namespace Detective
 {
 namespace Model
 {
-  class AWS_DETECTIVE_API CreateGraphResult
+  class CreateGraphResult
   {
   public:
-    CreateGraphResult();
-    CreateGraphResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateGraphResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DETECTIVE_API CreateGraphResult();
+    AWS_DETECTIVE_API CreateGraphResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DETECTIVE_API CreateGraphResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

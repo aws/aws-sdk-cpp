@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/CelebrityDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_REKOGNITION_API CelebrityDetail
+  class CelebrityDetail
   {
   public:
-    CelebrityDetail();
-    CelebrityDetail(Aws::Utils::Json::JsonView jsonValue);
-    CelebrityDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_REKOGNITION_API CelebrityDetail();
+    AWS_REKOGNITION_API CelebrityDetail(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API CelebrityDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

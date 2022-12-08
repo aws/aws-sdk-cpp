@@ -24,12 +24,12 @@ namespace ECS
 {
 namespace Model
 {
-  class AWS_ECS_API SubmitAttachmentStateChangesResult
+  class SubmitAttachmentStateChangesResult
   {
   public:
-    SubmitAttachmentStateChangesResult();
-    SubmitAttachmentStateChangesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    SubmitAttachmentStateChangesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ECS_API SubmitAttachmentStateChangesResult();
+    AWS_ECS_API SubmitAttachmentStateChangesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ECS_API SubmitAttachmentStateChangesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

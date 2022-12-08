@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/AuditMitigationActionsTaskTarget">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API AuditMitigationActionsTaskTarget
+  class AuditMitigationActionsTaskTarget
   {
   public:
-    AuditMitigationActionsTaskTarget();
-    AuditMitigationActionsTaskTarget(Aws::Utils::Json::JsonView jsonValue);
-    AuditMitigationActionsTaskTarget& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API AuditMitigationActionsTaskTarget();
+    AWS_IOT_API AuditMitigationActionsTaskTarget(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API AuditMitigationActionsTaskTarget& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

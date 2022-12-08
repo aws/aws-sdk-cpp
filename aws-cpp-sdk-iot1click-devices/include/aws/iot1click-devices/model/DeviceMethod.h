@@ -23,13 +23,13 @@ namespace IoT1ClickDevicesService
 namespace Model
 {
 
-  class AWS_IOT1CLICKDEVICESSERVICE_API DeviceMethod
+  class DeviceMethod
   {
   public:
-    DeviceMethod();
-    DeviceMethod(Aws::Utils::Json::JsonView jsonValue);
-    DeviceMethod& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT1CLICKDEVICESSERVICE_API DeviceMethod();
+    AWS_IOT1CLICKDEVICESSERVICE_API DeviceMethod(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT1CLICKDEVICESSERVICE_API DeviceMethod& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT1CLICKDEVICESSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

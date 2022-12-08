@@ -24,12 +24,12 @@ namespace KinesisVideoSignalingChannels
 {
 namespace Model
 {
-  class AWS_KINESISVIDEOSIGNALINGCHANNELS_API SendAlexaOfferToMasterResult
+  class SendAlexaOfferToMasterResult
   {
   public:
-    SendAlexaOfferToMasterResult();
-    SendAlexaOfferToMasterResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    SendAlexaOfferToMasterResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KINESISVIDEOSIGNALINGCHANNELS_API SendAlexaOfferToMasterResult();
+    AWS_KINESISVIDEOSIGNALINGCHANNELS_API SendAlexaOfferToMasterResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KINESISVIDEOSIGNALINGCHANNELS_API SendAlexaOfferToMasterResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

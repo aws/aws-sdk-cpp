@@ -25,12 +25,12 @@ namespace Translate
 {
 namespace Model
 {
-  class AWS_TRANSLATE_API ImportTerminologyResult
+  class ImportTerminologyResult
   {
   public:
-    ImportTerminologyResult();
-    ImportTerminologyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ImportTerminologyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_TRANSLATE_API ImportTerminologyResult();
+    AWS_TRANSLATE_API ImportTerminologyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_TRANSLATE_API ImportTerminologyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

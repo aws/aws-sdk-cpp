@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/RecommendationJobStoppingConditions">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API RecommendationJobStoppingConditions
+  class RecommendationJobStoppingConditions
   {
   public:
-    RecommendationJobStoppingConditions();
-    RecommendationJobStoppingConditions(Aws::Utils::Json::JsonView jsonValue);
-    RecommendationJobStoppingConditions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API RecommendationJobStoppingConditions();
+    AWS_SAGEMAKER_API RecommendationJobStoppingConditions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API RecommendationJobStoppingConditions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

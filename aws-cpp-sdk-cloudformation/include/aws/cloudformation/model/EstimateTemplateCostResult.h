@@ -31,12 +31,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/EstimateTemplateCostOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFORMATION_API EstimateTemplateCostResult
+  class EstimateTemplateCostResult
   {
   public:
-    EstimateTemplateCostResult();
-    EstimateTemplateCostResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    EstimateTemplateCostResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_CLOUDFORMATION_API EstimateTemplateCostResult();
+    AWS_CLOUDFORMATION_API EstimateTemplateCostResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_CLOUDFORMATION_API EstimateTemplateCostResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/TableLFTagPolicyAndPermissions">AWS
    * API Reference</a></p>
    */
-  class AWS_DATAEXCHANGE_API TableLFTagPolicyAndPermissions
+  class TableLFTagPolicyAndPermissions
   {
   public:
-    TableLFTagPolicyAndPermissions();
-    TableLFTagPolicyAndPermissions(Aws::Utils::Json::JsonView jsonValue);
-    TableLFTagPolicyAndPermissions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DATAEXCHANGE_API TableLFTagPolicyAndPermissions();
+    AWS_DATAEXCHANGE_API TableLFTagPolicyAndPermissions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATAEXCHANGE_API TableLFTagPolicyAndPermissions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATAEXCHANGE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

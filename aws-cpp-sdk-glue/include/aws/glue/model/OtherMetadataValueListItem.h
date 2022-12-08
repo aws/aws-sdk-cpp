@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/OtherMetadataValueListItem">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API OtherMetadataValueListItem
+  class OtherMetadataValueListItem
   {
   public:
-    OtherMetadataValueListItem();
-    OtherMetadataValueListItem(Aws::Utils::Json::JsonView jsonValue);
-    OtherMetadataValueListItem& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API OtherMetadataValueListItem();
+    AWS_GLUE_API OtherMetadataValueListItem(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API OtherMetadataValueListItem& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

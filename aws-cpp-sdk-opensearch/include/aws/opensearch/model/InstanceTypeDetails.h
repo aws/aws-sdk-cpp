@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/InstanceTypeDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_OPENSEARCHSERVICE_API InstanceTypeDetails
+  class InstanceTypeDetails
   {
   public:
-    InstanceTypeDetails();
-    InstanceTypeDetails(Aws::Utils::Json::JsonView jsonValue);
-    InstanceTypeDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OPENSEARCHSERVICE_API InstanceTypeDetails();
+    AWS_OPENSEARCHSERVICE_API InstanceTypeDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPENSEARCHSERVICE_API InstanceTypeDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPENSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

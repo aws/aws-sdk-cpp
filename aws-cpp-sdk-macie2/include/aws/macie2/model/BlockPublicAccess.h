@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/BlockPublicAccess">AWS
    * API Reference</a></p>
    */
-  class AWS_MACIE2_API BlockPublicAccess
+  class BlockPublicAccess
   {
   public:
-    BlockPublicAccess();
-    BlockPublicAccess(Aws::Utils::Json::JsonView jsonValue);
-    BlockPublicAccess& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MACIE2_API BlockPublicAccess();
+    AWS_MACIE2_API BlockPublicAccess(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API BlockPublicAccess& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

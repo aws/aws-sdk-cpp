@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/Source">AWS API
    * Reference</a></p>
    */
-  class AWS_CONFIGSERVICE_API Source
+  class Source
   {
   public:
-    Source();
-    Source(Aws::Utils::Json::JsonView jsonValue);
-    Source& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONFIGSERVICE_API Source();
+    AWS_CONFIGSERVICE_API Source(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API Source& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

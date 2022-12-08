@@ -51,13 +51,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/IotSiteWiseAction">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTEVENTS_API IotSiteWiseAction
+  class IotSiteWiseAction
   {
   public:
-    IotSiteWiseAction();
-    IotSiteWiseAction(Aws::Utils::Json::JsonView jsonValue);
-    IotSiteWiseAction& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTEVENTS_API IotSiteWiseAction();
+    AWS_IOTEVENTS_API IotSiteWiseAction(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTEVENTS_API IotSiteWiseAction& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTEVENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

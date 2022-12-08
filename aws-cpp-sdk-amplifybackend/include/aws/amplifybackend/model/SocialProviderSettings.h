@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/SocialProviderSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_AMPLIFYBACKEND_API SocialProviderSettings
+  class SocialProviderSettings
   {
   public:
-    SocialProviderSettings();
-    SocialProviderSettings(Aws::Utils::Json::JsonView jsonValue);
-    SocialProviderSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_AMPLIFYBACKEND_API SocialProviderSettings();
+    AWS_AMPLIFYBACKEND_API SocialProviderSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFYBACKEND_API SocialProviderSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFYBACKEND_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

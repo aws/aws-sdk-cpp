@@ -24,12 +24,12 @@ namespace CloudFront
 {
 namespace Model
 {
-  class AWS_CLOUDFRONT_API ListDistributionsByOriginRequestPolicyId2020_05_31Result
+  class ListDistributionsByOriginRequestPolicyId2020_05_31Result
   {
   public:
-    ListDistributionsByOriginRequestPolicyId2020_05_31Result();
-    ListDistributionsByOriginRequestPolicyId2020_05_31Result(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ListDistributionsByOriginRequestPolicyId2020_05_31Result& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_CLOUDFRONT_API ListDistributionsByOriginRequestPolicyId2020_05_31Result();
+    AWS_CLOUDFRONT_API ListDistributionsByOriginRequestPolicyId2020_05_31Result(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_CLOUDFRONT_API ListDistributionsByOriginRequestPolicyId2020_05_31Result& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

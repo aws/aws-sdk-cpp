@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/ComponentUpdateRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTTWINMAKER_API ComponentUpdateRequest
+  class ComponentUpdateRequest
   {
   public:
-    ComponentUpdateRequest();
-    ComponentUpdateRequest(Aws::Utils::Json::JsonView jsonValue);
-    ComponentUpdateRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTTWINMAKER_API ComponentUpdateRequest();
+    AWS_IOTTWINMAKER_API ComponentUpdateRequest(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTTWINMAKER_API ComponentUpdateRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTTWINMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

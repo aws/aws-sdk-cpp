@@ -39,13 +39,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/RxNormEntity">AWS
    * API Reference</a></p>
    */
-  class AWS_COMPREHENDMEDICAL_API RxNormEntity
+  class RxNormEntity
   {
   public:
-    RxNormEntity();
-    RxNormEntity(Aws::Utils::Json::JsonView jsonValue);
-    RxNormEntity& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COMPREHENDMEDICAL_API RxNormEntity();
+    AWS_COMPREHENDMEDICAL_API RxNormEntity(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHENDMEDICAL_API RxNormEntity& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHENDMEDICAL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

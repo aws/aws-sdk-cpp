@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/ListComponentTypesFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTTWINMAKER_API ListComponentTypesFilter
+  class ListComponentTypesFilter
   {
   public:
-    ListComponentTypesFilter();
-    ListComponentTypesFilter(Aws::Utils::Json::JsonView jsonValue);
-    ListComponentTypesFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTTWINMAKER_API ListComponentTypesFilter();
+    AWS_IOTTWINMAKER_API ListComponentTypesFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTTWINMAKER_API ListComponentTypesFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTTWINMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

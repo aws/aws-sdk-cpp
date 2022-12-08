@@ -34,12 +34,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/AssumeRoleResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_STS_API AssumeRoleResult
+  class AssumeRoleResult
   {
   public:
-    AssumeRoleResult();
-    AssumeRoleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    AssumeRoleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_STS_API AssumeRoleResult();
+    AWS_STS_API AssumeRoleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_STS_API AssumeRoleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

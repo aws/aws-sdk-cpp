@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/BatchPutDocumentResponseFailedDocument">AWS
    * API Reference</a></p>
    */
-  class AWS_KENDRA_API BatchPutDocumentResponseFailedDocument
+  class BatchPutDocumentResponseFailedDocument
   {
   public:
-    BatchPutDocumentResponseFailedDocument();
-    BatchPutDocumentResponseFailedDocument(Aws::Utils::Json::JsonView jsonValue);
-    BatchPutDocumentResponseFailedDocument& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KENDRA_API BatchPutDocumentResponseFailedDocument();
+    AWS_KENDRA_API BatchPutDocumentResponseFailedDocument(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API BatchPutDocumentResponseFailedDocument& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

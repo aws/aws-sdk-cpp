@@ -22,12 +22,12 @@ namespace CodeGuruReviewer
 {
 namespace Model
 {
-  class AWS_CODEGURUREVIEWER_API PutRecommendationFeedbackResult
+  class PutRecommendationFeedbackResult
   {
   public:
-    PutRecommendationFeedbackResult();
-    PutRecommendationFeedbackResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PutRecommendationFeedbackResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODEGURUREVIEWER_API PutRecommendationFeedbackResult();
+    AWS_CODEGURUREVIEWER_API PutRecommendationFeedbackResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODEGURUREVIEWER_API PutRecommendationFeedbackResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

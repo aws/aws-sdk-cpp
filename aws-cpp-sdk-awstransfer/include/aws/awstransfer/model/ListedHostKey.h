@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListedHostKey">AWS
    * API Reference</a></p>
    */
-  class AWS_TRANSFER_API ListedHostKey
+  class ListedHostKey
   {
   public:
-    ListedHostKey();
-    ListedHostKey(Aws::Utils::Json::JsonView jsonValue);
-    ListedHostKey& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TRANSFER_API ListedHostKey();
+    AWS_TRANSFER_API ListedHostKey(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSFER_API ListedHostKey& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSFER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

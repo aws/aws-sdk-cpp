@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/NullValueField">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API NullValueField
+  class NullValueField
   {
   public:
-    NullValueField();
-    NullValueField(Aws::Utils::Json::JsonView jsonValue);
-    NullValueField& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API NullValueField();
+    AWS_GLUE_API NullValueField(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API NullValueField& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

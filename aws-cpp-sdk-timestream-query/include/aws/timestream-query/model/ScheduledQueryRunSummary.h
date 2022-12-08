@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/timestream-query-2018-11-01/ScheduledQueryRunSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_TIMESTREAMQUERY_API ScheduledQueryRunSummary
+  class ScheduledQueryRunSummary
   {
   public:
-    ScheduledQueryRunSummary();
-    ScheduledQueryRunSummary(Aws::Utils::Json::JsonView jsonValue);
-    ScheduledQueryRunSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TIMESTREAMQUERY_API ScheduledQueryRunSummary();
+    AWS_TIMESTREAMQUERY_API ScheduledQueryRunSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TIMESTREAMQUERY_API ScheduledQueryRunSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TIMESTREAMQUERY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

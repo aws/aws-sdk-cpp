@@ -25,12 +25,12 @@ namespace WAF
 {
 namespace Model
 {
-  class AWS_WAF_API CreateWebACLResult
+  class CreateWebACLResult
   {
   public:
-    CreateWebACLResult();
-    CreateWebACLResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateWebACLResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WAF_API CreateWebACLResult();
+    AWS_WAF_API CreateWebACLResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WAF_API CreateWebACLResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

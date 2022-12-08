@@ -28,12 +28,12 @@ namespace LexRuntimeV2
 {
 namespace Model
 {
-  class AWS_LEXRUNTIMEV2_API GetSessionResult
+  class GetSessionResult
   {
   public:
-    GetSessionResult();
-    GetSessionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetSessionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LEXRUNTIMEV2_API GetSessionResult();
+    AWS_LEXRUNTIMEV2_API GetSessionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LEXRUNTIMEV2_API GetSessionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

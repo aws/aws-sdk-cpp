@@ -32,12 +32,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/entitlement.marketplace-2017-01-11/GetEntitlementsResult">AWS
    * API Reference</a></p>
    */
-  class AWS_MARKETPLACEENTITLEMENTSERVICE_API GetEntitlementsResult
+  class GetEntitlementsResult
   {
   public:
-    GetEntitlementsResult();
-    GetEntitlementsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetEntitlementsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MARKETPLACEENTITLEMENTSERVICE_API GetEntitlementsResult();
+    AWS_MARKETPLACEENTITLEMENTSERVICE_API GetEntitlementsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MARKETPLACEENTITLEMENTSERVICE_API GetEntitlementsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

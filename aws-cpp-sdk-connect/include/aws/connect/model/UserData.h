@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UserData">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECT_API UserData
+  class UserData
   {
   public:
-    UserData();
-    UserData(Aws::Utils::Json::JsonView jsonValue);
-    UserData& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECT_API UserData();
+    AWS_CONNECT_API UserData(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API UserData& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

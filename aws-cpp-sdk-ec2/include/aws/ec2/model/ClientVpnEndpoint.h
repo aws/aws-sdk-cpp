@@ -37,15 +37,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ClientVpnEndpoint">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API ClientVpnEndpoint
+  class ClientVpnEndpoint
   {
   public:
-    ClientVpnEndpoint();
-    ClientVpnEndpoint(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ClientVpnEndpoint& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API ClientVpnEndpoint();
+    AWS_EC2_API ClientVpnEndpoint(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API ClientVpnEndpoint& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**

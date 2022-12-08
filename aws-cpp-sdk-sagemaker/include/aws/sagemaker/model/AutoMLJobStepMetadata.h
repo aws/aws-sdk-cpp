@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/AutoMLJobStepMetadata">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API AutoMLJobStepMetadata
+  class AutoMLJobStepMetadata
   {
   public:
-    AutoMLJobStepMetadata();
-    AutoMLJobStepMetadata(Aws::Utils::Json::JsonView jsonValue);
-    AutoMLJobStepMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API AutoMLJobStepMetadata();
+    AWS_SAGEMAKER_API AutoMLJobStepMetadata(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API AutoMLJobStepMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

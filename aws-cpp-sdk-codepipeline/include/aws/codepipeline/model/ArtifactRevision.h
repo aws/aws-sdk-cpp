@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ArtifactRevision">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEPIPELINE_API ArtifactRevision
+  class ArtifactRevision
   {
   public:
-    ArtifactRevision();
-    ArtifactRevision(Aws::Utils::Json::JsonView jsonValue);
-    ArtifactRevision& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEPIPELINE_API ArtifactRevision();
+    AWS_CODEPIPELINE_API ArtifactRevision(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEPIPELINE_API ArtifactRevision& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

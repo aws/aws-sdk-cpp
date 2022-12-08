@@ -26,12 +26,12 @@ namespace WAFV2
 {
 namespace Model
 {
-  class AWS_WAFV2_API ListLoggingConfigurationsResult
+  class ListLoggingConfigurationsResult
   {
   public:
-    ListLoggingConfigurationsResult();
-    ListLoggingConfigurationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListLoggingConfigurationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WAFV2_API ListLoggingConfigurationsResult();
+    AWS_WAFV2_API ListLoggingConfigurationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WAFV2_API ListLoggingConfigurationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

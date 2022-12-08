@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/S3BucketInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_AMPLIFYBACKEND_API S3BucketInfo
+  class S3BucketInfo
   {
   public:
-    S3BucketInfo();
-    S3BucketInfo(Aws::Utils::Json::JsonView jsonValue);
-    S3BucketInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_AMPLIFYBACKEND_API S3BucketInfo();
+    AWS_AMPLIFYBACKEND_API S3BucketInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFYBACKEND_API S3BucketInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFYBACKEND_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

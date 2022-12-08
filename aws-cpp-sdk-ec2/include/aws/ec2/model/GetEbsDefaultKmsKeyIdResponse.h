@@ -25,12 +25,12 @@ namespace EC2
 {
 namespace Model
 {
-  class AWS_EC2_API GetEbsDefaultKmsKeyIdResponse
+  class GetEbsDefaultKmsKeyIdResponse
   {
   public:
-    GetEbsDefaultKmsKeyIdResponse();
-    GetEbsDefaultKmsKeyIdResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    GetEbsDefaultKmsKeyIdResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API GetEbsDefaultKmsKeyIdResponse();
+    AWS_EC2_API GetEbsDefaultKmsKeyIdResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API GetEbsDefaultKmsKeyIdResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

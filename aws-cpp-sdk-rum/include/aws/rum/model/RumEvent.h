@@ -30,13 +30,13 @@ namespace Model
    * <a href="http://docs.aws.amazon.com/goto/WebAPI/rum-2018-05-10/RumEvent">AWS API
    * Reference</a></p>
    */
-  class AWS_CLOUDWATCHRUM_API RumEvent
+  class RumEvent
   {
   public:
-    RumEvent();
-    RumEvent(Aws::Utils::Json::JsonView jsonValue);
-    RumEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDWATCHRUM_API RumEvent();
+    AWS_CLOUDWATCHRUM_API RumEvent(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHRUM_API RumEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHRUM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

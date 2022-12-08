@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ThingTypeDefinition">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API ThingTypeDefinition
+  class ThingTypeDefinition
   {
   public:
-    ThingTypeDefinition();
-    ThingTypeDefinition(Aws::Utils::Json::JsonView jsonValue);
-    ThingTypeDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API ThingTypeDefinition();
+    AWS_IOT_API ThingTypeDefinition(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API ThingTypeDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

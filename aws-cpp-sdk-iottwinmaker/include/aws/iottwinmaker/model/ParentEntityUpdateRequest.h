@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/ParentEntityUpdateRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTTWINMAKER_API ParentEntityUpdateRequest
+  class ParentEntityUpdateRequest
   {
   public:
-    ParentEntityUpdateRequest();
-    ParentEntityUpdateRequest(Aws::Utils::Json::JsonView jsonValue);
-    ParentEntityUpdateRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTTWINMAKER_API ParentEntityUpdateRequest();
+    AWS_IOTTWINMAKER_API ParentEntityUpdateRequest(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTTWINMAKER_API ParentEntityUpdateRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTTWINMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

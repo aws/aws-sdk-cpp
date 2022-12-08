@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DetectedDataDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_MACIE2_API DetectedDataDetails
+  class DetectedDataDetails
   {
   public:
-    DetectedDataDetails();
-    DetectedDataDetails(Aws::Utils::Json::JsonView jsonValue);
-    DetectedDataDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MACIE2_API DetectedDataDetails();
+    AWS_MACIE2_API DetectedDataDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API DetectedDataDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

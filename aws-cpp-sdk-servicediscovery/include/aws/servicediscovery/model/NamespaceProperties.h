@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/NamespaceProperties">AWS
    * API Reference</a></p>
    */
-  class AWS_SERVICEDISCOVERY_API NamespaceProperties
+  class NamespaceProperties
   {
   public:
-    NamespaceProperties();
-    NamespaceProperties(Aws::Utils::Json::JsonView jsonValue);
-    NamespaceProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SERVICEDISCOVERY_API NamespaceProperties();
+    AWS_SERVICEDISCOVERY_API NamespaceProperties(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICEDISCOVERY_API NamespaceProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICEDISCOVERY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

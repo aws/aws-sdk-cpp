@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/SendUsersMessageRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API SendUsersMessageRequest
+  class SendUsersMessageRequest
   {
   public:
-    SendUsersMessageRequest();
-    SendUsersMessageRequest(Aws::Utils::Json::JsonView jsonValue);
-    SendUsersMessageRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API SendUsersMessageRequest();
+    AWS_PINPOINT_API SendUsersMessageRequest(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API SendUsersMessageRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

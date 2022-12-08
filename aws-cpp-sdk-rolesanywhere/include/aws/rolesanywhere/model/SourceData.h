@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rolesanywhere-2018-05-10/SourceData">AWS
    * API Reference</a></p>
    */
-  class AWS_ROLESANYWHERE_API SourceData
+  class SourceData
   {
   public:
-    SourceData();
-    SourceData(Aws::Utils::Json::JsonView jsonValue);
-    SourceData& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ROLESANYWHERE_API SourceData();
+    AWS_ROLESANYWHERE_API SourceData(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROLESANYWHERE_API SourceData& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROLESANYWHERE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

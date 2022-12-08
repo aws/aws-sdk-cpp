@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DebugRuleEvaluationStatus">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API DebugRuleEvaluationStatus
+  class DebugRuleEvaluationStatus
   {
   public:
-    DebugRuleEvaluationStatus();
-    DebugRuleEvaluationStatus(Aws::Utils::Json::JsonView jsonValue);
-    DebugRuleEvaluationStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API DebugRuleEvaluationStatus();
+    AWS_SAGEMAKER_API DebugRuleEvaluationStatus(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API DebugRuleEvaluationStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

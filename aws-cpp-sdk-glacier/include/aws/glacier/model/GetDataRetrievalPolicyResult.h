@@ -30,12 +30,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/GetDataRetrievalPolicyOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_GLACIER_API GetDataRetrievalPolicyResult
+  class GetDataRetrievalPolicyResult
   {
   public:
-    GetDataRetrievalPolicyResult();
-    GetDataRetrievalPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetDataRetrievalPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GLACIER_API GetDataRetrievalPolicyResult();
+    AWS_GLACIER_API GetDataRetrievalPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GLACIER_API GetDataRetrievalPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

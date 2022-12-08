@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/IpAddressResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53RESOLVER_API IpAddressResponse
+  class IpAddressResponse
   {
   public:
-    IpAddressResponse();
-    IpAddressResponse(Aws::Utils::Json::JsonView jsonValue);
-    IpAddressResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ROUTE53RESOLVER_API IpAddressResponse();
+    AWS_ROUTE53RESOLVER_API IpAddressResponse(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROUTE53RESOLVER_API IpAddressResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROUTE53RESOLVER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -18,21 +18,21 @@ namespace Omics
 {
 namespace Model
 {
-  class AWS_OMICS_API GetReferenceResult
+  class GetReferenceResult
   {
   public:
-    GetReferenceResult();
+    AWS_OMICS_API GetReferenceResult();
     //We have to define these because Microsoft doesn't auto generate them
-    GetReferenceResult(GetReferenceResult&&);
-    GetReferenceResult& operator=(GetReferenceResult&&);
+    AWS_OMICS_API GetReferenceResult(GetReferenceResult&&);
+    AWS_OMICS_API GetReferenceResult& operator=(GetReferenceResult&&);
     //we delete these because Microsoft doesn't handle move generation correctly
     //and we therefore don't trust them to get it right here either.
     GetReferenceResult(const GetReferenceResult&) = delete;
     GetReferenceResult& operator=(const GetReferenceResult&) = delete;
 
 
-    GetReferenceResult(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
-    GetReferenceResult& operator=(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
+    AWS_OMICS_API GetReferenceResult(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
+    AWS_OMICS_API GetReferenceResult& operator=(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
 
 
 

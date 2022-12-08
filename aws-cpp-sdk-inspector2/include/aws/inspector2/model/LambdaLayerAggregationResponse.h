@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/LambdaLayerAggregationResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_INSPECTOR2_API LambdaLayerAggregationResponse
+  class LambdaLayerAggregationResponse
   {
   public:
-    LambdaLayerAggregationResponse();
-    LambdaLayerAggregationResponse(Aws::Utils::Json::JsonView jsonValue);
-    LambdaLayerAggregationResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_INSPECTOR2_API LambdaLayerAggregationResponse();
+    AWS_INSPECTOR2_API LambdaLayerAggregationResponse(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR2_API LambdaLayerAggregationResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-data-2018-10-23/DeleteDetectorRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTEVENTSDATA_API DeleteDetectorRequest
+  class DeleteDetectorRequest
   {
   public:
-    DeleteDetectorRequest();
-    DeleteDetectorRequest(Aws::Utils::Json::JsonView jsonValue);
-    DeleteDetectorRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTEVENTSDATA_API DeleteDetectorRequest();
+    AWS_IOTEVENTSDATA_API DeleteDetectorRequest(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTEVENTSDATA_API DeleteDetectorRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTEVENTSDATA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

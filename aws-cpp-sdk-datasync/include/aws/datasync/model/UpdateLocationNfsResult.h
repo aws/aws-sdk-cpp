@@ -22,12 +22,12 @@ namespace DataSync
 {
 namespace Model
 {
-  class AWS_DATASYNC_API UpdateLocationNfsResult
+  class UpdateLocationNfsResult
   {
   public:
-    UpdateLocationNfsResult();
-    UpdateLocationNfsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateLocationNfsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DATASYNC_API UpdateLocationNfsResult();
+    AWS_DATASYNC_API UpdateLocationNfsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DATASYNC_API UpdateLocationNfsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

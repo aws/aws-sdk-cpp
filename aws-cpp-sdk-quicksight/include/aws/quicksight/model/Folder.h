@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/Folder">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API Folder
+  class Folder
   {
   public:
-    Folder();
-    Folder(Aws::Utils::Json::JsonView jsonValue);
-    Folder& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API Folder();
+    AWS_QUICKSIGHT_API Folder(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Folder& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

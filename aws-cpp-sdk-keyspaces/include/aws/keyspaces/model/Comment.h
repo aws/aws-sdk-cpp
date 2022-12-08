@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/keyspaces-2022-02-10/Comment">AWS
    * API Reference</a></p>
    */
-  class AWS_KEYSPACES_API Comment
+  class Comment
   {
   public:
-    Comment();
-    Comment(Aws::Utils::Json::JsonView jsonValue);
-    Comment& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KEYSPACES_API Comment();
+    AWS_KEYSPACES_API Comment(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KEYSPACES_API Comment& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KEYSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

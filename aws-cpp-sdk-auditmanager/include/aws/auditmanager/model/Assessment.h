@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/Assessment">AWS
    * API Reference</a></p>
    */
-  class AWS_AUDITMANAGER_API Assessment
+  class Assessment
   {
   public:
-    Assessment();
-    Assessment(Aws::Utils::Json::JsonView jsonValue);
-    Assessment& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_AUDITMANAGER_API Assessment();
+    AWS_AUDITMANAGER_API Assessment(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AUDITMANAGER_API Assessment& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AUDITMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -30,12 +30,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/CreateConfigurationSetResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_SES_API CreateConfigurationSetResult
+  class CreateConfigurationSetResult
   {
   public:
-    CreateConfigurationSetResult();
-    CreateConfigurationSetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    CreateConfigurationSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_SES_API CreateConfigurationSetResult();
+    AWS_SES_API CreateConfigurationSetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_SES_API CreateConfigurationSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     

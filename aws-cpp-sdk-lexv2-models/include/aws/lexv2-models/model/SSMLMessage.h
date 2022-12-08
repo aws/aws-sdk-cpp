@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/SSMLMessage">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELSV2_API SSMLMessage
+  class SSMLMessage
   {
   public:
-    SSMLMessage();
-    SSMLMessage(Aws::Utils::Json::JsonView jsonValue);
-    SSMLMessage& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELSV2_API SSMLMessage();
+    AWS_LEXMODELSV2_API SSMLMessage(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API SSMLMessage& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

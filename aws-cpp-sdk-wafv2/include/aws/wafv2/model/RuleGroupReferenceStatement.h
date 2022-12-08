@@ -37,13 +37,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/RuleGroupReferenceStatement">AWS
    * API Reference</a></p>
    */
-  class AWS_WAFV2_API RuleGroupReferenceStatement
+  class RuleGroupReferenceStatement
   {
   public:
-    RuleGroupReferenceStatement();
-    RuleGroupReferenceStatement(Aws::Utils::Json::JsonView jsonValue);
-    RuleGroupReferenceStatement& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WAFV2_API RuleGroupReferenceStatement();
+    AWS_WAFV2_API RuleGroupReferenceStatement(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API RuleGroupReferenceStatement& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

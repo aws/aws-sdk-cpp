@@ -22,12 +22,12 @@ namespace WAFV2
 {
 namespace Model
 {
-  class AWS_WAFV2_API DisassociateWebACLResult
+  class DisassociateWebACLResult
   {
   public:
-    DisassociateWebACLResult();
-    DisassociateWebACLResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DisassociateWebACLResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WAFV2_API DisassociateWebACLResult();
+    AWS_WAFV2_API DisassociateWebACLResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WAFV2_API DisassociateWebACLResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

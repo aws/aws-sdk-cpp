@@ -26,12 +26,12 @@ namespace OpenSearchServerless
 {
 namespace Model
 {
-  class AWS_OPENSEARCHSERVERLESS_API GetPoliciesStatsResult
+  class GetPoliciesStatsResult
   {
   public:
-    GetPoliciesStatsResult();
-    GetPoliciesStatsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetPoliciesStatsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OPENSEARCHSERVERLESS_API GetPoliciesStatsResult();
+    AWS_OPENSEARCHSERVERLESS_API GetPoliciesStatsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OPENSEARCHSERVERLESS_API GetPoliciesStatsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

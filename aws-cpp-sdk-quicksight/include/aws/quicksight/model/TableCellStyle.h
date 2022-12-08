@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/TableCellStyle">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API TableCellStyle
+  class TableCellStyle
   {
   public:
-    TableCellStyle();
-    TableCellStyle(Aws::Utils::Json::JsonView jsonValue);
-    TableCellStyle& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API TableCellStyle();
+    AWS_QUICKSIGHT_API TableCellStyle(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API TableCellStyle& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

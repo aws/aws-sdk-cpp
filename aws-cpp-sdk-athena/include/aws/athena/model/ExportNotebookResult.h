@@ -25,12 +25,12 @@ namespace Athena
 {
 namespace Model
 {
-  class AWS_ATHENA_API ExportNotebookResult
+  class ExportNotebookResult
   {
   public:
-    ExportNotebookResult();
-    ExportNotebookResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ExportNotebookResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ATHENA_API ExportNotebookResult();
+    AWS_ATHENA_API ExportNotebookResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ATHENA_API ExportNotebookResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

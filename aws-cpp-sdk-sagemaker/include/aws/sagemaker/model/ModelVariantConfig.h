@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ModelVariantConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API ModelVariantConfig
+  class ModelVariantConfig
   {
   public:
-    ModelVariantConfig();
-    ModelVariantConfig(Aws::Utils::Json::JsonView jsonValue);
-    ModelVariantConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API ModelVariantConfig();
+    AWS_SAGEMAKER_API ModelVariantConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API ModelVariantConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

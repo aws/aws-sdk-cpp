@@ -22,12 +22,12 @@ namespace WAFV2
 {
 namespace Model
 {
-  class AWS_WAFV2_API DeleteWebACLResult
+  class DeleteWebACLResult
   {
   public:
-    DeleteWebACLResult();
-    DeleteWebACLResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteWebACLResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WAFV2_API DeleteWebACLResult();
+    AWS_WAFV2_API DeleteWebACLResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WAFV2_API DeleteWebACLResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_MEMORYDB_API DescribeEngineVersionsRequest : public MemoryDBRequest
+  class DescribeEngineVersionsRequest : public MemoryDBRequest
   {
   public:
-    DescribeEngineVersionsRequest();
+    AWS_MEMORYDB_API DescribeEngineVersionsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,9 +29,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DescribeEngineVersions"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_MEMORYDB_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_MEMORYDB_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**

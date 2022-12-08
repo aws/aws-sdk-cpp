@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/UpdateVehicleResponseItem">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTFLEETWISE_API UpdateVehicleResponseItem
+  class UpdateVehicleResponseItem
   {
   public:
-    UpdateVehicleResponseItem();
-    UpdateVehicleResponseItem(Aws::Utils::Json::JsonView jsonValue);
-    UpdateVehicleResponseItem& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTFLEETWISE_API UpdateVehicleResponseItem();
+    AWS_IOTFLEETWISE_API UpdateVehicleResponseItem(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTFLEETWISE_API UpdateVehicleResponseItem& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTFLEETWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

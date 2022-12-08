@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/SourceSchema">AWS
    * API Reference</a></p>
    */
-  class AWS_KINESISANALYTICS_API SourceSchema
+  class SourceSchema
   {
   public:
-    SourceSchema();
-    SourceSchema(Aws::Utils::Json::JsonView jsonValue);
-    SourceSchema& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KINESISANALYTICS_API SourceSchema();
+    AWS_KINESISANALYTICS_API SourceSchema(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICS_API SourceSchema& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

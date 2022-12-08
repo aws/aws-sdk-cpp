@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/Tag">AWS API
    * Reference</a></p>
    */
-  class AWS_FSX_API Tag
+  class Tag
   {
   public:
-    Tag();
-    Tag(Aws::Utils::Json::JsonView jsonValue);
-    Tag& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FSX_API Tag();
+    AWS_FSX_API Tag(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API Tag& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

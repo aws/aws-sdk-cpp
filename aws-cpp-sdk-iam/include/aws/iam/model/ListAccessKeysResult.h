@@ -33,12 +33,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListAccessKeysResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_IAM_API ListAccessKeysResult
+  class ListAccessKeysResult
   {
   public:
-    ListAccessKeysResult();
-    ListAccessKeysResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ListAccessKeysResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_IAM_API ListAccessKeysResult();
+    AWS_IAM_API ListAccessKeysResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_IAM_API ListAccessKeysResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/SettingEntry">AWS API
    * Reference</a></p>
    */
-  class AWS_DIRECTORYSERVICE_API SettingEntry
+  class SettingEntry
   {
   public:
-    SettingEntry();
-    SettingEntry(Aws::Utils::Json::JsonView jsonValue);
-    SettingEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DIRECTORYSERVICE_API SettingEntry();
+    AWS_DIRECTORYSERVICE_API SettingEntry(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTORYSERVICE_API SettingEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTORYSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/SdkType">AWS
    * API Reference</a></p>
    */
-  class AWS_APIGATEWAY_API SdkType
+  class SdkType
   {
   public:
-    SdkType();
-    SdkType(Aws::Utils::Json::JsonView jsonValue);
-    SdkType& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APIGATEWAY_API SdkType();
+    AWS_APIGATEWAY_API SdkType(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APIGATEWAY_API SdkType& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APIGATEWAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/GeospatialPointStyleOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API GeospatialPointStyleOptions
+  class GeospatialPointStyleOptions
   {
   public:
-    GeospatialPointStyleOptions();
-    GeospatialPointStyleOptions(Aws::Utils::Json::JsonView jsonValue);
-    GeospatialPointStyleOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API GeospatialPointStyleOptions();
+    AWS_QUICKSIGHT_API GeospatialPointStyleOptions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API GeospatialPointStyleOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

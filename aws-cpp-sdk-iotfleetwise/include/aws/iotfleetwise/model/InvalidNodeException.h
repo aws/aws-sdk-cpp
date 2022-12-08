@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/InvalidNodeException">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTFLEETWISE_API InvalidNodeException
+  class InvalidNodeException
   {
   public:
-    InvalidNodeException();
-    InvalidNodeException(Aws::Utils::Json::JsonView jsonValue);
-    InvalidNodeException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTFLEETWISE_API InvalidNodeException();
+    AWS_IOTFLEETWISE_API InvalidNodeException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTFLEETWISE_API InvalidNodeException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTFLEETWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -29,10 +29,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/PutItemInput">AWS
    * API Reference</a></p>
    */
-  class AWS_DYNAMODB_API PutItemRequest : public DynamoDBRequest
+  class PutItemRequest : public DynamoDBRequest
   {
   public:
-    PutItemRequest();
+    AWS_DYNAMODB_API PutItemRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,9 +40,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "PutItem"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_DYNAMODB_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_DYNAMODB_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**

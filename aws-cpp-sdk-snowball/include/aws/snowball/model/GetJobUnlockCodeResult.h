@@ -24,12 +24,12 @@ namespace Snowball
 {
 namespace Model
 {
-  class AWS_SNOWBALL_API GetJobUnlockCodeResult
+  class GetJobUnlockCodeResult
   {
   public:
-    GetJobUnlockCodeResult();
-    GetJobUnlockCodeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetJobUnlockCodeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SNOWBALL_API GetJobUnlockCodeResult();
+    AWS_SNOWBALL_API GetJobUnlockCodeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SNOWBALL_API GetJobUnlockCodeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateXMLClassifierRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API CreateXMLClassifierRequest
+  class CreateXMLClassifierRequest
   {
   public:
-    CreateXMLClassifierRequest();
-    CreateXMLClassifierRequest(Aws::Utils::Json::JsonView jsonValue);
-    CreateXMLClassifierRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API CreateXMLClassifierRequest();
+    AWS_GLUE_API CreateXMLClassifierRequest(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API CreateXMLClassifierRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

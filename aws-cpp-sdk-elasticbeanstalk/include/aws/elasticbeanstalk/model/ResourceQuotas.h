@@ -30,15 +30,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ResourceQuotas">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICBEANSTALK_API ResourceQuotas
+  class ResourceQuotas
   {
   public:
-    ResourceQuotas();
-    ResourceQuotas(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ResourceQuotas& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICBEANSTALK_API ResourceQuotas();
+    AWS_ELASTICBEANSTALK_API ResourceQuotas(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICBEANSTALK_API ResourceQuotas& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_ELASTICBEANSTALK_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_ELASTICBEANSTALK_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**

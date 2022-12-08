@@ -25,12 +25,12 @@ namespace EC2
 {
 namespace Model
 {
-  class AWS_EC2_API RevokeClientVpnIngressResponse
+  class RevokeClientVpnIngressResponse
   {
   public:
-    RevokeClientVpnIngressResponse();
-    RevokeClientVpnIngressResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    RevokeClientVpnIngressResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API RevokeClientVpnIngressResponse();
+    AWS_EC2_API RevokeClientVpnIngressResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API RevokeClientVpnIngressResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

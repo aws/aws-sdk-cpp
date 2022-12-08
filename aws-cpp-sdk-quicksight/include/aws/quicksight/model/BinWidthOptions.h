@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/BinWidthOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API BinWidthOptions
+  class BinWidthOptions
   {
   public:
-    BinWidthOptions();
-    BinWidthOptions(Aws::Utils::Json::JsonView jsonValue);
-    BinWidthOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API BinWidthOptions();
+    AWS_QUICKSIGHT_API BinWidthOptions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API BinWidthOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

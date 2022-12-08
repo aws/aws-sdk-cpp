@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/TemplateLocation">AWS
    * API Reference</a></p>
    */
-  class AWS_ROBOMAKER_API TemplateLocation
+  class TemplateLocation
   {
   public:
-    TemplateLocation();
-    TemplateLocation(Aws::Utils::Json::JsonView jsonValue);
-    TemplateLocation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ROBOMAKER_API TemplateLocation();
+    AWS_ROBOMAKER_API TemplateLocation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROBOMAKER_API TemplateLocation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROBOMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

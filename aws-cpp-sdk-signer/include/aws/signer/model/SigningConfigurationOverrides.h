@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/SigningConfigurationOverrides">AWS
    * API Reference</a></p>
    */
-  class AWS_SIGNER_API SigningConfigurationOverrides
+  class SigningConfigurationOverrides
   {
   public:
-    SigningConfigurationOverrides();
-    SigningConfigurationOverrides(Aws::Utils::Json::JsonView jsonValue);
-    SigningConfigurationOverrides& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SIGNER_API SigningConfigurationOverrides();
+    AWS_SIGNER_API SigningConfigurationOverrides(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SIGNER_API SigningConfigurationOverrides& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SIGNER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

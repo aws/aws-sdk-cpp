@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/S3SourceProperties">AWS
    * API Reference</a></p>
    */
-  class AWS_APPFLOW_API S3SourceProperties
+  class S3SourceProperties
   {
   public:
-    S3SourceProperties();
-    S3SourceProperties(Aws::Utils::Json::JsonView jsonValue);
-    S3SourceProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPFLOW_API S3SourceProperties();
+    AWS_APPFLOW_API S3SourceProperties(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API S3SourceProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

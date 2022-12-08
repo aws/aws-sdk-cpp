@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pipes-2015-10-07/BatchJobDependency">AWS
    * API Reference</a></p>
    */
-  class AWS_PIPES_API BatchJobDependency
+  class BatchJobDependency
   {
   public:
-    BatchJobDependency();
-    BatchJobDependency(Aws::Utils::Json::JsonView jsonValue);
-    BatchJobDependency& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PIPES_API BatchJobDependency();
+    AWS_PIPES_API BatchJobDependency(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PIPES_API BatchJobDependency& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PIPES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

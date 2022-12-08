@@ -32,12 +32,12 @@ namespace drs
 {
 namespace Model
 {
-  class AWS_DRS_API RetryDataReplicationResult
+  class RetryDataReplicationResult
   {
   public:
-    RetryDataReplicationResult();
-    RetryDataReplicationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    RetryDataReplicationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DRS_API RetryDataReplicationResult();
+    AWS_DRS_API RetryDataReplicationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DRS_API RetryDataReplicationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

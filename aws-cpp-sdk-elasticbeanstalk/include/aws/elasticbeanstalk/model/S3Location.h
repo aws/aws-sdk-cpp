@@ -29,15 +29,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/S3Location">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICBEANSTALK_API S3Location
+  class S3Location
   {
   public:
-    S3Location();
-    S3Location(const Aws::Utils::Xml::XmlNode& xmlNode);
-    S3Location& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICBEANSTALK_API S3Location();
+    AWS_ELASTICBEANSTALK_API S3Location(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICBEANSTALK_API S3Location& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_ELASTICBEANSTALK_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_ELASTICBEANSTALK_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**

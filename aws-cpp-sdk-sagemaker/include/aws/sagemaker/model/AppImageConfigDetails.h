@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/AppImageConfigDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API AppImageConfigDetails
+  class AppImageConfigDetails
   {
   public:
-    AppImageConfigDetails();
-    AppImageConfigDetails(Aws::Utils::Json::JsonView jsonValue);
-    AppImageConfigDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API AppImageConfigDetails();
+    AWS_SAGEMAKER_API AppImageConfigDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API AppImageConfigDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

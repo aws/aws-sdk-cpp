@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutvision-2020-11-20/TargetPlatform">AWS
    * API Reference</a></p>
    */
-  class AWS_LOOKOUTFORVISION_API TargetPlatform
+  class TargetPlatform
   {
   public:
-    TargetPlatform();
-    TargetPlatform(Aws::Utils::Json::JsonView jsonValue);
-    TargetPlatform& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LOOKOUTFORVISION_API TargetPlatform();
+    AWS_LOOKOUTFORVISION_API TargetPlatform(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTFORVISION_API TargetPlatform& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTFORVISION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

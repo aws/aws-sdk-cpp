@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/TagListEntry">AWS
    * API Reference</a></p>
    */
-  class AWS_DATASYNC_API TagListEntry
+  class TagListEntry
   {
   public:
-    TagListEntry();
-    TagListEntry(Aws::Utils::Json::JsonView jsonValue);
-    TagListEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DATASYNC_API TagListEntry();
+    AWS_DATASYNC_API TagListEntry(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATASYNC_API TagListEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATASYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

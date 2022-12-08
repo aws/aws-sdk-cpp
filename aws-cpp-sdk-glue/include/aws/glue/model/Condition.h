@@ -31,13 +31,13 @@ namespace Model
    * <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/Condition">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API Condition
+  class Condition
   {
   public:
-    Condition();
-    Condition(Aws::Utils::Json::JsonView jsonValue);
-    Condition& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API Condition();
+    AWS_GLUE_API Condition(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Condition& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

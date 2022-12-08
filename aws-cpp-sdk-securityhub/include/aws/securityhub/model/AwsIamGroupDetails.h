@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsIamGroupDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsIamGroupDetails
+  class AwsIamGroupDetails
   {
   public:
-    AwsIamGroupDetails();
-    AwsIamGroupDetails(Aws::Utils::Json::JsonView jsonValue);
-    AwsIamGroupDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsIamGroupDetails();
+    AWS_SECURITYHUB_API AwsIamGroupDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsIamGroupDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

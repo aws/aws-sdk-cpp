@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/StreamKey">AWS API
    * Reference</a></p>
    */
-  class AWS_IVS_API StreamKey
+  class StreamKey
   {
   public:
-    StreamKey();
-    StreamKey(Aws::Utils::Json::JsonView jsonValue);
-    StreamKey& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IVS_API StreamKey();
+    AWS_IVS_API StreamKey(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IVS_API StreamKey& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IVS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

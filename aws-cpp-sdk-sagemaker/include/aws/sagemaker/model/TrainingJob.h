@@ -50,13 +50,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/TrainingJob">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API TrainingJob
+  class TrainingJob
   {
   public:
-    TrainingJob();
-    TrainingJob(Aws::Utils::Json::JsonView jsonValue);
-    TrainingJob& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API TrainingJob();
+    AWS_SAGEMAKER_API TrainingJob(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API TrainingJob& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

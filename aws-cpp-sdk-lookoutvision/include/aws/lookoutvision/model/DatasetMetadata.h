@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutvision-2020-11-20/DatasetMetadata">AWS
    * API Reference</a></p>
    */
-  class AWS_LOOKOUTFORVISION_API DatasetMetadata
+  class DatasetMetadata
   {
   public:
-    DatasetMetadata();
-    DatasetMetadata(Aws::Utils::Json::JsonView jsonValue);
-    DatasetMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LOOKOUTFORVISION_API DatasetMetadata();
+    AWS_LOOKOUTFORVISION_API DatasetMetadata(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTFORVISION_API DatasetMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTFORVISION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

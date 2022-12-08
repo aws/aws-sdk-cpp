@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-public-2020-10-30/RepositoryCatalogDataInput">AWS
    * API Reference</a></p>
    */
-  class AWS_ECRPUBLIC_API RepositoryCatalogDataInput
+  class RepositoryCatalogDataInput
   {
   public:
-    RepositoryCatalogDataInput();
-    RepositoryCatalogDataInput(Aws::Utils::Json::JsonView jsonValue);
-    RepositoryCatalogDataInput& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ECRPUBLIC_API RepositoryCatalogDataInput();
+    AWS_ECRPUBLIC_API RepositoryCatalogDataInput(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECRPUBLIC_API RepositoryCatalogDataInput& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECRPUBLIC_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -24,12 +24,12 @@ namespace CloudHSMV2
 {
 namespace Model
 {
-  class AWS_CLOUDHSMV2_API CreateClusterResult
+  class CreateClusterResult
   {
   public:
-    CreateClusterResult();
-    CreateClusterResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateClusterResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CLOUDHSMV2_API CreateClusterResult();
+    AWS_CLOUDHSMV2_API CreateClusterResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CLOUDHSMV2_API CreateClusterResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

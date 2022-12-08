@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ResourceEvaluationFilters">AWS
    * API Reference</a></p>
    */
-  class AWS_CONFIGSERVICE_API ResourceEvaluationFilters
+  class ResourceEvaluationFilters
   {
   public:
-    ResourceEvaluationFilters();
-    ResourceEvaluationFilters(Aws::Utils::Json::JsonView jsonValue);
-    ResourceEvaluationFilters& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONFIGSERVICE_API ResourceEvaluationFilters();
+    AWS_CONFIGSERVICE_API ResourceEvaluationFilters(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API ResourceEvaluationFilters& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

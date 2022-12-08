@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/ContainerServiceLogEvent">AWS
    * API Reference</a></p>
    */
-  class AWS_LIGHTSAIL_API ContainerServiceLogEvent
+  class ContainerServiceLogEvent
   {
   public:
-    ContainerServiceLogEvent();
-    ContainerServiceLogEvent(Aws::Utils::Json::JsonView jsonValue);
-    ContainerServiceLogEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LIGHTSAIL_API ContainerServiceLogEvent();
+    AWS_LIGHTSAIL_API ContainerServiceLogEvent(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API ContainerServiceLogEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

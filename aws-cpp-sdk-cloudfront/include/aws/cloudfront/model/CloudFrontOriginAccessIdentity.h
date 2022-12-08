@@ -28,14 +28,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CloudFrontOriginAccessIdentity">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFRONT_API CloudFrontOriginAccessIdentity
+  class CloudFrontOriginAccessIdentity
   {
   public:
-    CloudFrontOriginAccessIdentity();
-    CloudFrontOriginAccessIdentity(const Aws::Utils::Xml::XmlNode& xmlNode);
-    CloudFrontOriginAccessIdentity& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API CloudFrontOriginAccessIdentity();
+    AWS_CLOUDFRONT_API CloudFrontOriginAccessIdentity(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API CloudFrontOriginAccessIdentity& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**

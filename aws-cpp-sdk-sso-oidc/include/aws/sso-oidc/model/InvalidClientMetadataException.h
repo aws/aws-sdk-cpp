@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sso-oidc-2019-06-10/InvalidClientMetadataException">AWS
    * API Reference</a></p>
    */
-  class AWS_SSOOIDC_API InvalidClientMetadataException
+  class InvalidClientMetadataException
   {
   public:
-    InvalidClientMetadataException();
-    InvalidClientMetadataException(Aws::Utils::Json::JsonView jsonValue);
-    InvalidClientMetadataException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSOOIDC_API InvalidClientMetadataException();
+    AWS_SSOOIDC_API InvalidClientMetadataException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSOOIDC_API InvalidClientMetadataException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSOOIDC_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

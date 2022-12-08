@@ -28,12 +28,12 @@ namespace AutoScaling
 {
 namespace Model
 {
-  class AWS_AUTOSCALING_API GetPredictiveScalingForecastResult
+  class GetPredictiveScalingForecastResult
   {
   public:
-    GetPredictiveScalingForecastResult();
-    GetPredictiveScalingForecastResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    GetPredictiveScalingForecastResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_AUTOSCALING_API GetPredictiveScalingForecastResult();
+    AWS_AUTOSCALING_API GetPredictiveScalingForecastResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_AUTOSCALING_API GetPredictiveScalingForecastResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

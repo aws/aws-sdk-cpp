@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/BotLocaleSortBy">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELSV2_API BotLocaleSortBy
+  class BotLocaleSortBy
   {
   public:
-    BotLocaleSortBy();
-    BotLocaleSortBy(Aws::Utils::Json::JsonView jsonValue);
-    BotLocaleSortBy& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELSV2_API BotLocaleSortBy();
+    AWS_LEXMODELSV2_API BotLocaleSortBy(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API BotLocaleSortBy& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

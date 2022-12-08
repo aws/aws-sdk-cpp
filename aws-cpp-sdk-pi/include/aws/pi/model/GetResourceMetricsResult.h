@@ -27,12 +27,12 @@ namespace PI
 {
 namespace Model
 {
-  class AWS_PI_API GetResourceMetricsResult
+  class GetResourceMetricsResult
   {
   public:
-    GetResourceMetricsResult();
-    GetResourceMetricsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetResourceMetricsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PI_API GetResourceMetricsResult();
+    AWS_PI_API GetResourceMetricsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PI_API GetResourceMetricsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

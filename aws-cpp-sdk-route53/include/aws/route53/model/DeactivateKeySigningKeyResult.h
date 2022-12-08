@@ -24,12 +24,12 @@ namespace Route53
 {
 namespace Model
 {
-  class AWS_ROUTE53_API DeactivateKeySigningKeyResult
+  class DeactivateKeySigningKeyResult
   {
   public:
-    DeactivateKeySigningKeyResult();
-    DeactivateKeySigningKeyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DeactivateKeySigningKeyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ROUTE53_API DeactivateKeySigningKeyResult();
+    AWS_ROUTE53_API DeactivateKeySigningKeyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ROUTE53_API DeactivateKeySigningKeyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     

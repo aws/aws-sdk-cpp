@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotdeviceadvisor-2020-09-18/TestCaseScenario">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTDEVICEADVISOR_API TestCaseScenario
+  class TestCaseScenario
   {
   public:
-    TestCaseScenario();
-    TestCaseScenario(Aws::Utils::Json::JsonView jsonValue);
-    TestCaseScenario& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTDEVICEADVISOR_API TestCaseScenario();
+    AWS_IOTDEVICEADVISOR_API TestCaseScenario(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTDEVICEADVISOR_API TestCaseScenario& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTDEVICEADVISOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

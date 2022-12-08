@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/Project">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API Project
+  class Project
   {
   public:
-    Project();
-    Project(Aws::Utils::Json::JsonView jsonValue);
-    Project& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API Project();
+    AWS_SAGEMAKER_API Project(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Project& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

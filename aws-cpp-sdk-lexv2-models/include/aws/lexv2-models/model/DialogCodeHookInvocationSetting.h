@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DialogCodeHookInvocationSetting">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELSV2_API DialogCodeHookInvocationSetting
+  class DialogCodeHookInvocationSetting
   {
   public:
-    DialogCodeHookInvocationSetting();
-    DialogCodeHookInvocationSetting(Aws::Utils::Json::JsonView jsonValue);
-    DialogCodeHookInvocationSetting& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELSV2_API DialogCodeHookInvocationSetting();
+    AWS_LEXMODELSV2_API DialogCodeHookInvocationSetting(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API DialogCodeHookInvocationSetting& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

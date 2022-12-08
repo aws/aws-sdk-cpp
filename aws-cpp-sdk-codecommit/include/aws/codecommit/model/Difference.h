@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/Difference">AWS
    * API Reference</a></p>
    */
-  class AWS_CODECOMMIT_API Difference
+  class Difference
   {
   public:
-    Difference();
-    Difference(Aws::Utils::Json::JsonView jsonValue);
-    Difference& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODECOMMIT_API Difference();
+    AWS_CODECOMMIT_API Difference(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODECOMMIT_API Difference& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODECOMMIT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

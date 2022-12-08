@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/SshPublicKey">AWS
    * API Reference</a></p>
    */
-  class AWS_TRANSFER_API SshPublicKey
+  class SshPublicKey
   {
   public:
-    SshPublicKey();
-    SshPublicKey(Aws::Utils::Json::JsonView jsonValue);
-    SshPublicKey& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TRANSFER_API SshPublicKey();
+    AWS_TRANSFER_API SshPublicKey(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSFER_API SshPublicKey& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSFER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/SMSMessage">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API SMSMessage
+  class SMSMessage
   {
   public:
-    SMSMessage();
-    SMSMessage(Aws::Utils::Json::JsonView jsonValue);
-    SMSMessage& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API SMSMessage();
+    AWS_PINPOINT_API SMSMessage(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API SMSMessage& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

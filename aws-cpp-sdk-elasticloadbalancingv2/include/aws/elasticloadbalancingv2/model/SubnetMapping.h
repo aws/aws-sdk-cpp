@@ -28,15 +28,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/SubnetMapping">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICLOADBALANCINGV2_API SubnetMapping
+  class SubnetMapping
   {
   public:
-    SubnetMapping();
-    SubnetMapping(const Aws::Utils::Xml::XmlNode& xmlNode);
-    SubnetMapping& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICLOADBALANCINGV2_API SubnetMapping();
+    AWS_ELASTICLOADBALANCINGV2_API SubnetMapping(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICLOADBALANCINGV2_API SubnetMapping& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_ELASTICLOADBALANCINGV2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_ELASTICLOADBALANCINGV2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**

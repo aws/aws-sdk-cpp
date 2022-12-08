@@ -22,12 +22,12 @@ namespace Chime
 {
 namespace Model
 {
-  class AWS_CHIME_API LogoutUserResult
+  class LogoutUserResult
   {
   public:
-    LogoutUserResult();
-    LogoutUserResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    LogoutUserResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CHIME_API LogoutUserResult();
+    AWS_CHIME_API LogoutUserResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CHIME_API LogoutUserResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

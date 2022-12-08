@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/FeatureParameter">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API FeatureParameter
+  class FeatureParameter
   {
   public:
-    FeatureParameter();
-    FeatureParameter(Aws::Utils::Json::JsonView jsonValue);
-    FeatureParameter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API FeatureParameter();
+    AWS_SAGEMAKER_API FeatureParameter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API FeatureParameter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

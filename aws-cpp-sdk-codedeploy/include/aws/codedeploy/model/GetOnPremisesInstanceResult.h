@@ -30,12 +30,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetOnPremisesInstanceOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEDEPLOY_API GetOnPremisesInstanceResult
+  class GetOnPremisesInstanceResult
   {
   public:
-    GetOnPremisesInstanceResult();
-    GetOnPremisesInstanceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetOnPremisesInstanceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODEDEPLOY_API GetOnPremisesInstanceResult();
+    AWS_CODEDEPLOY_API GetOnPremisesInstanceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODEDEPLOY_API GetOnPremisesInstanceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -24,12 +24,12 @@ namespace SSM
 {
 namespace Model
 {
-  class AWS_SSM_API RegisterTaskWithMaintenanceWindowResult
+  class RegisterTaskWithMaintenanceWindowResult
   {
   public:
-    RegisterTaskWithMaintenanceWindowResult();
-    RegisterTaskWithMaintenanceWindowResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    RegisterTaskWithMaintenanceWindowResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSM_API RegisterTaskWithMaintenanceWindowResult();
+    AWS_SSM_API RegisterTaskWithMaintenanceWindowResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSM_API RegisterTaskWithMaintenanceWindowResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

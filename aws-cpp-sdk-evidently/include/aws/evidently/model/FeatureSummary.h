@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/FeatureSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDWATCHEVIDENTLY_API FeatureSummary
+  class FeatureSummary
   {
   public:
-    FeatureSummary();
-    FeatureSummary(Aws::Utils::Json::JsonView jsonValue);
-    FeatureSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDWATCHEVIDENTLY_API FeatureSummary();
+    AWS_CLOUDWATCHEVIDENTLY_API FeatureSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHEVIDENTLY_API FeatureSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHEVIDENTLY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

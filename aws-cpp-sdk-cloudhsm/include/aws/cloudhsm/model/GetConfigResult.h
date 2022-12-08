@@ -24,12 +24,12 @@ namespace CloudHSM
 {
 namespace Model
 {
-  class AWS_CLOUDHSM_API GetConfigResult
+  class GetConfigResult
   {
   public:
-    GetConfigResult();
-    GetConfigResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetConfigResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CLOUDHSM_API GetConfigResult();
+    AWS_CLOUDHSM_API GetConfigResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CLOUDHSM_API GetConfigResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

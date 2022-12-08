@@ -29,12 +29,12 @@ namespace DataSync
 {
 namespace Model
 {
-  class AWS_DATASYNC_API DescribeLocationHdfsResult
+  class DescribeLocationHdfsResult
   {
   public:
-    DescribeLocationHdfsResult();
-    DescribeLocationHdfsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeLocationHdfsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DATASYNC_API DescribeLocationHdfsResult();
+    AWS_DATASYNC_API DescribeLocationHdfsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DATASYNC_API DescribeLocationHdfsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

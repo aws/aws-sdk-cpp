@@ -30,14 +30,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/OriginSslProtocols">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFRONT_API OriginSslProtocols
+  class OriginSslProtocols
   {
   public:
-    OriginSslProtocols();
-    OriginSslProtocols(const Aws::Utils::Xml::XmlNode& xmlNode);
-    OriginSslProtocols& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API OriginSslProtocols();
+    AWS_CLOUDFRONT_API OriginSslProtocols(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API OriginSslProtocols& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**

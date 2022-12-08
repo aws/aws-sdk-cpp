@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsEcsClusterClusterSettingsDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsEcsClusterClusterSettingsDetails
+  class AwsEcsClusterClusterSettingsDetails
   {
   public:
-    AwsEcsClusterClusterSettingsDetails();
-    AwsEcsClusterClusterSettingsDetails(Aws::Utils::Json::JsonView jsonValue);
-    AwsEcsClusterClusterSettingsDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsEcsClusterClusterSettingsDetails();
+    AWS_SECURITYHUB_API AwsEcsClusterClusterSettingsDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsEcsClusterClusterSettingsDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

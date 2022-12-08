@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DocumentationPart">AWS
    * API Reference</a></p>
    */
-  class AWS_APIGATEWAY_API DocumentationPart
+  class DocumentationPart
   {
   public:
-    DocumentationPart();
-    DocumentationPart(Aws::Utils::Json::JsonView jsonValue);
-    DocumentationPart& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APIGATEWAY_API DocumentationPart();
+    AWS_APIGATEWAY_API DocumentationPart(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APIGATEWAY_API DocumentationPart& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APIGATEWAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

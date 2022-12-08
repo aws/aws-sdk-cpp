@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/BrokerNodeGroupInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_KAFKA_API BrokerNodeGroupInfo
+  class BrokerNodeGroupInfo
   {
   public:
-    BrokerNodeGroupInfo();
-    BrokerNodeGroupInfo(Aws::Utils::Json::JsonView jsonValue);
-    BrokerNodeGroupInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KAFKA_API BrokerNodeGroupInfo();
+    AWS_KAFKA_API BrokerNodeGroupInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKA_API BrokerNodeGroupInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

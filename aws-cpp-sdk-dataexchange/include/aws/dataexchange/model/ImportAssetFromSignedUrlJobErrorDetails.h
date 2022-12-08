@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/ImportAssetFromSignedUrlJobErrorDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_DATAEXCHANGE_API ImportAssetFromSignedUrlJobErrorDetails
+  class ImportAssetFromSignedUrlJobErrorDetails
   {
   public:
-    ImportAssetFromSignedUrlJobErrorDetails();
-    ImportAssetFromSignedUrlJobErrorDetails(Aws::Utils::Json::JsonView jsonValue);
-    ImportAssetFromSignedUrlJobErrorDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DATAEXCHANGE_API ImportAssetFromSignedUrlJobErrorDetails();
+    AWS_DATAEXCHANGE_API ImportAssetFromSignedUrlJobErrorDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATAEXCHANGE_API ImportAssetFromSignedUrlJobErrorDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATAEXCHANGE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/UpdateReplicationSetAction">AWS
    * API Reference</a></p>
    */
-  class AWS_SSMINCIDENTS_API UpdateReplicationSetAction
+  class UpdateReplicationSetAction
   {
   public:
-    UpdateReplicationSetAction();
-    UpdateReplicationSetAction(Aws::Utils::Json::JsonView jsonValue);
-    UpdateReplicationSetAction& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSMINCIDENTS_API UpdateReplicationSetAction();
+    AWS_SSMINCIDENTS_API UpdateReplicationSetAction(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSMINCIDENTS_API UpdateReplicationSetAction& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSMINCIDENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

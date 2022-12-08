@@ -29,15 +29,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/UpgradeTarget">AWS
    * API Reference</a></p>
    */
-  class AWS_DOCDB_API UpgradeTarget
+  class UpgradeTarget
   {
   public:
-    UpgradeTarget();
-    UpgradeTarget(const Aws::Utils::Xml::XmlNode& xmlNode);
-    UpgradeTarget& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_DOCDB_API UpgradeTarget();
+    AWS_DOCDB_API UpgradeTarget(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_DOCDB_API UpgradeTarget& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_DOCDB_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_DOCDB_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**

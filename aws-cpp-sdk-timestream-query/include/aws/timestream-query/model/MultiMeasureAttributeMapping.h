@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/timestream-query-2018-11-01/MultiMeasureAttributeMapping">AWS
    * API Reference</a></p>
    */
-  class AWS_TIMESTREAMQUERY_API MultiMeasureAttributeMapping
+  class MultiMeasureAttributeMapping
   {
   public:
-    MultiMeasureAttributeMapping();
-    MultiMeasureAttributeMapping(Aws::Utils::Json::JsonView jsonValue);
-    MultiMeasureAttributeMapping& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TIMESTREAMQUERY_API MultiMeasureAttributeMapping();
+    AWS_TIMESTREAMQUERY_API MultiMeasureAttributeMapping(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TIMESTREAMQUERY_API MultiMeasureAttributeMapping& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TIMESTREAMQUERY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

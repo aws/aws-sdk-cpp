@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/ResourceIntegrations">AWS
    * API Reference</a></p>
    */
-  class AWS_APPREGISTRY_API ResourceIntegrations
+  class ResourceIntegrations
   {
   public:
-    ResourceIntegrations();
-    ResourceIntegrations(Aws::Utils::Json::JsonView jsonValue);
-    ResourceIntegrations& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPREGISTRY_API ResourceIntegrations();
+    AWS_APPREGISTRY_API ResourceIntegrations(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPREGISTRY_API ResourceIntegrations& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPREGISTRY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

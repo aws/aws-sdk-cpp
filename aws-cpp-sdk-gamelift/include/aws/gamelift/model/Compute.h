@@ -33,13 +33,13 @@ namespace Model
    * <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/Compute">AWS
    * API Reference</a></p>
    */
-  class AWS_GAMELIFT_API Compute
+  class Compute
   {
   public:
-    Compute();
-    Compute(Aws::Utils::Json::JsonView jsonValue);
-    Compute& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GAMELIFT_API Compute();
+    AWS_GAMELIFT_API Compute(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMELIFT_API Compute& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

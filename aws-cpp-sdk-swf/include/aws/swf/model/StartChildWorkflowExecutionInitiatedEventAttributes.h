@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/StartChildWorkflowExecutionInitiatedEventAttributes">AWS
    * API Reference</a></p>
    */
-  class AWS_SWF_API StartChildWorkflowExecutionInitiatedEventAttributes
+  class StartChildWorkflowExecutionInitiatedEventAttributes
   {
   public:
-    StartChildWorkflowExecutionInitiatedEventAttributes();
-    StartChildWorkflowExecutionInitiatedEventAttributes(Aws::Utils::Json::JsonView jsonValue);
-    StartChildWorkflowExecutionInitiatedEventAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SWF_API StartChildWorkflowExecutionInitiatedEventAttributes();
+    AWS_SWF_API StartChildWorkflowExecutionInitiatedEventAttributes(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SWF_API StartChildWorkflowExecutionInitiatedEventAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SWF_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

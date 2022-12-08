@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/ResourceStatus">AWS
    * API Reference</a></p>
    */
-  class AWS_INSPECTOR2_API ResourceStatus
+  class ResourceStatus
   {
   public:
-    ResourceStatus();
-    ResourceStatus(Aws::Utils::Json::JsonView jsonValue);
-    ResourceStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_INSPECTOR2_API ResourceStatus();
+    AWS_INSPECTOR2_API ResourceStatus(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR2_API ResourceStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

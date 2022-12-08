@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CodeVerificationFailedException">AWS
    * API Reference</a></p>
    */
-  class AWS_LAMBDA_API CodeVerificationFailedException
+  class CodeVerificationFailedException
   {
   public:
-    CodeVerificationFailedException();
-    CodeVerificationFailedException(Aws::Utils::Json::JsonView jsonValue);
-    CodeVerificationFailedException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LAMBDA_API CodeVerificationFailedException();
+    AWS_LAMBDA_API CodeVerificationFailedException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAMBDA_API CodeVerificationFailedException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAMBDA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

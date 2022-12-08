@@ -26,12 +26,12 @@ namespace OAM
 {
 namespace Model
 {
-  class AWS_OAM_API CreateLinkResult
+  class CreateLinkResult
   {
   public:
-    CreateLinkResult();
-    CreateLinkResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateLinkResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OAM_API CreateLinkResult();
+    AWS_OAM_API CreateLinkResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OAM_API CreateLinkResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

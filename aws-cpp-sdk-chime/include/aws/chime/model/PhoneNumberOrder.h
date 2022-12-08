@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/PhoneNumberOrder">AWS
    * API Reference</a></p>
    */
-  class AWS_CHIME_API PhoneNumberOrder
+  class PhoneNumberOrder
   {
   public:
-    PhoneNumberOrder();
-    PhoneNumberOrder(Aws::Utils::Json::JsonView jsonValue);
-    PhoneNumberOrder& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIME_API PhoneNumberOrder();
+    AWS_CHIME_API PhoneNumberOrder(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API PhoneNumberOrder& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

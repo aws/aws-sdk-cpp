@@ -24,12 +24,12 @@ namespace RAM
 {
 namespace Model
 {
-  class AWS_RAM_API DeleteResourceShareResult
+  class DeleteResourceShareResult
   {
   public:
-    DeleteResourceShareResult();
-    DeleteResourceShareResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteResourceShareResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_RAM_API DeleteResourceShareResult();
+    AWS_RAM_API DeleteResourceShareResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_RAM_API DeleteResourceShareResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

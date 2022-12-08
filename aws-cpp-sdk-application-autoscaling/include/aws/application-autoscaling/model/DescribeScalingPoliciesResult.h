@@ -26,12 +26,12 @@ namespace ApplicationAutoScaling
 {
 namespace Model
 {
-  class AWS_APPLICATIONAUTOSCALING_API DescribeScalingPoliciesResult
+  class DescribeScalingPoliciesResult
   {
   public:
-    DescribeScalingPoliciesResult();
-    DescribeScalingPoliciesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeScalingPoliciesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPLICATIONAUTOSCALING_API DescribeScalingPoliciesResult();
+    AWS_APPLICATIONAUTOSCALING_API DescribeScalingPoliciesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPLICATIONAUTOSCALING_API DescribeScalingPoliciesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

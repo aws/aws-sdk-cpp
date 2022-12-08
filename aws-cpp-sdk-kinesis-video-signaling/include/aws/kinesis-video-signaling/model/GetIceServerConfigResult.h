@@ -25,12 +25,12 @@ namespace KinesisVideoSignalingChannels
 {
 namespace Model
 {
-  class AWS_KINESISVIDEOSIGNALINGCHANNELS_API GetIceServerConfigResult
+  class GetIceServerConfigResult
   {
   public:
-    GetIceServerConfigResult();
-    GetIceServerConfigResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetIceServerConfigResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KINESISVIDEOSIGNALINGCHANNELS_API GetIceServerConfigResult();
+    AWS_KINESISVIDEOSIGNALINGCHANNELS_API GetIceServerConfigResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KINESISVIDEOSIGNALINGCHANNELS_API GetIceServerConfigResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

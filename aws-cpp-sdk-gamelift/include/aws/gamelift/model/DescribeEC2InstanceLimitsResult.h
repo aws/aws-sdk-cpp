@@ -25,12 +25,12 @@ namespace GameLift
 {
 namespace Model
 {
-  class AWS_GAMELIFT_API DescribeEC2InstanceLimitsResult
+  class DescribeEC2InstanceLimitsResult
   {
   public:
-    DescribeEC2InstanceLimitsResult();
-    DescribeEC2InstanceLimitsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeEC2InstanceLimitsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GAMELIFT_API DescribeEC2InstanceLimitsResult();
+    AWS_GAMELIFT_API DescribeEC2InstanceLimitsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GAMELIFT_API DescribeEC2InstanceLimitsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

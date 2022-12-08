@@ -31,12 +31,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/GetSatelliteResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_GROUNDSTATION_API GetSatelliteResult
+  class GetSatelliteResult
   {
   public:
-    GetSatelliteResult();
-    GetSatelliteResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetSatelliteResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GROUNDSTATION_API GetSatelliteResult();
+    AWS_GROUNDSTATION_API GetSatelliteResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GROUNDSTATION_API GetSatelliteResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/VirtualNodeSpec">AWS
    * API Reference</a></p>
    */
-  class AWS_APPMESH_API VirtualNodeSpec
+  class VirtualNodeSpec
   {
   public:
-    VirtualNodeSpec();
-    VirtualNodeSpec(Aws::Utils::Json::JsonView jsonValue);
-    VirtualNodeSpec& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPMESH_API VirtualNodeSpec();
+    AWS_APPMESH_API VirtualNodeSpec(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API VirtualNodeSpec& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

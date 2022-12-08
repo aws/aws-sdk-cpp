@@ -25,12 +25,12 @@ namespace Macie2
 {
 namespace Model
 {
-  class AWS_MACIE2_API DeclineInvitationsResult
+  class DeclineInvitationsResult
   {
   public:
-    DeclineInvitationsResult();
-    DeclineInvitationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeclineInvitationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MACIE2_API DeclineInvitationsResult();
+    AWS_MACIE2_API DeclineInvitationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MACIE2_API DeclineInvitationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

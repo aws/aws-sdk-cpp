@@ -26,13 +26,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/MetricDataPoint">AWS
    * API Reference</a></p>
    */
-  class AWS_FRAUDDETECTOR_API MetricDataPoint
+  class MetricDataPoint
   {
   public:
-    MetricDataPoint();
-    MetricDataPoint(Aws::Utils::Json::JsonView jsonValue);
-    MetricDataPoint& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FRAUDDETECTOR_API MetricDataPoint();
+    AWS_FRAUDDETECTOR_API MetricDataPoint(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FRAUDDETECTOR_API MetricDataPoint& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FRAUDDETECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

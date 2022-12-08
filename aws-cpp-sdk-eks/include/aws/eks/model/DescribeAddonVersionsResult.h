@@ -26,12 +26,12 @@ namespace EKS
 {
 namespace Model
 {
-  class AWS_EKS_API DescribeAddonVersionsResult
+  class DescribeAddonVersionsResult
   {
   public:
-    DescribeAddonVersionsResult();
-    DescribeAddonVersionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeAddonVersionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_EKS_API DescribeAddonVersionsResult();
+    AWS_EKS_API DescribeAddonVersionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_EKS_API DescribeAddonVersionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -24,12 +24,12 @@ namespace AppMesh
 {
 namespace Model
 {
-  class AWS_APPMESH_API CreateGatewayRouteResult
+  class CreateGatewayRouteResult
   {
   public:
-    CreateGatewayRouteResult();
-    CreateGatewayRouteResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateGatewayRouteResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPMESH_API CreateGatewayRouteResult();
+    AWS_APPMESH_API CreateGatewayRouteResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPMESH_API CreateGatewayRouteResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ReplicationDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_MACIE2_API ReplicationDetails
+  class ReplicationDetails
   {
   public:
-    ReplicationDetails();
-    ReplicationDetails(Aws::Utils::Json::JsonView jsonValue);
-    ReplicationDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MACIE2_API ReplicationDetails();
+    AWS_MACIE2_API ReplicationDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API ReplicationDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

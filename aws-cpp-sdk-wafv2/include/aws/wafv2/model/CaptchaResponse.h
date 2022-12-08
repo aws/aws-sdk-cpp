@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/CaptchaResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_WAFV2_API CaptchaResponse
+  class CaptchaResponse
   {
   public:
-    CaptchaResponse();
-    CaptchaResponse(Aws::Utils::Json::JsonView jsonValue);
-    CaptchaResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WAFV2_API CaptchaResponse();
+    AWS_WAFV2_API CaptchaResponse(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API CaptchaResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

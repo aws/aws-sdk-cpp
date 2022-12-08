@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ReferenceStoreDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_OMICS_API ReferenceStoreDetail
+  class ReferenceStoreDetail
   {
   public:
-    ReferenceStoreDetail();
-    ReferenceStoreDetail(Aws::Utils::Json::JsonView jsonValue);
-    ReferenceStoreDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OMICS_API ReferenceStoreDetail();
+    AWS_OMICS_API ReferenceStoreDetail(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OMICS_API ReferenceStoreDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OMICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

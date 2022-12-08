@@ -27,12 +27,12 @@ namespace EC2
 {
 namespace Model
 {
-  class AWS_EC2_API DescribeVpcEndpointServiceConfigurationsResponse
+  class DescribeVpcEndpointServiceConfigurationsResponse
   {
   public:
-    DescribeVpcEndpointServiceConfigurationsResponse();
-    DescribeVpcEndpointServiceConfigurationsResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeVpcEndpointServiceConfigurationsResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API DescribeVpcEndpointServiceConfigurationsResponse();
+    AWS_EC2_API DescribeVpcEndpointServiceConfigurationsResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API DescribeVpcEndpointServiceConfigurationsResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

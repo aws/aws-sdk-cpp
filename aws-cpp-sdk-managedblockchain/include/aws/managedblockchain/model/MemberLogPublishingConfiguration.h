@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/MemberLogPublishingConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_MANAGEDBLOCKCHAIN_API MemberLogPublishingConfiguration
+  class MemberLogPublishingConfiguration
   {
   public:
-    MemberLogPublishingConfiguration();
-    MemberLogPublishingConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    MemberLogPublishingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MANAGEDBLOCKCHAIN_API MemberLogPublishingConfiguration();
+    AWS_MANAGEDBLOCKCHAIN_API MemberLogPublishingConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MANAGEDBLOCKCHAIN_API MemberLogPublishingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MANAGEDBLOCKCHAIN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

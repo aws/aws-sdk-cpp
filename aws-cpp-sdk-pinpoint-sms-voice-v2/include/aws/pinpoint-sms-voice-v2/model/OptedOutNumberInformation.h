@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/OptedOutNumberInformation">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINTSMSVOICEV2_API OptedOutNumberInformation
+  class OptedOutNumberInformation
   {
   public:
-    OptedOutNumberInformation();
-    OptedOutNumberInformation(Aws::Utils::Json::JsonView jsonValue);
-    OptedOutNumberInformation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINTSMSVOICEV2_API OptedOutNumberInformation();
+    AWS_PINPOINTSMSVOICEV2_API OptedOutNumberInformation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINTSMSVOICEV2_API OptedOutNumberInformation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINTSMSVOICEV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

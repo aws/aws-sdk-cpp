@@ -46,13 +46,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/CaptchaAction">AWS
    * API Reference</a></p>
    */
-  class AWS_WAFV2_API CaptchaAction
+  class CaptchaAction
   {
   public:
-    CaptchaAction();
-    CaptchaAction(Aws::Utils::Json::JsonView jsonValue);
-    CaptchaAction& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WAFV2_API CaptchaAction();
+    AWS_WAFV2_API CaptchaAction(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API CaptchaAction& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

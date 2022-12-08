@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/FailedDependencyException">AWS
    * API Reference</a></p>
    */
-  class AWS_LICENSEMANAGER_API FailedDependencyException
+  class FailedDependencyException
   {
   public:
-    FailedDependencyException();
-    FailedDependencyException(Aws::Utils::Json::JsonView jsonValue);
-    FailedDependencyException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LICENSEMANAGER_API FailedDependencyException();
+    AWS_LICENSEMANAGER_API FailedDependencyException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LICENSEMANAGER_API FailedDependencyException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LICENSEMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

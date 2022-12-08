@@ -24,12 +24,12 @@ namespace StorageGateway
 {
 namespace Model
 {
-  class AWS_STORAGEGATEWAY_API SetLocalConsolePasswordResult
+  class SetLocalConsolePasswordResult
   {
   public:
-    SetLocalConsolePasswordResult();
-    SetLocalConsolePasswordResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    SetLocalConsolePasswordResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_STORAGEGATEWAY_API SetLocalConsolePasswordResult();
+    AWS_STORAGEGATEWAY_API SetLocalConsolePasswordResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_STORAGEGATEWAY_API SetLocalConsolePasswordResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     

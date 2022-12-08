@@ -28,12 +28,12 @@ namespace Omics
 {
 namespace Model
 {
-  class AWS_OMICS_API GetReadSetActivationJobResult
+  class GetReadSetActivationJobResult
   {
   public:
-    GetReadSetActivationJobResult();
-    GetReadSetActivationJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetReadSetActivationJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OMICS_API GetReadSetActivationJobResult();
+    AWS_OMICS_API GetReadSetActivationJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OMICS_API GetReadSetActivationJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

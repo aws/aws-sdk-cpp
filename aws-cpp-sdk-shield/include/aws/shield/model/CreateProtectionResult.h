@@ -24,12 +24,12 @@ namespace Shield
 {
 namespace Model
 {
-  class AWS_SHIELD_API CreateProtectionResult
+  class CreateProtectionResult
   {
   public:
-    CreateProtectionResult();
-    CreateProtectionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateProtectionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SHIELD_API CreateProtectionResult();
+    AWS_SHIELD_API CreateProtectionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SHIELD_API CreateProtectionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

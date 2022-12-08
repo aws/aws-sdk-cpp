@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/SparkSQL">AWS API
    * Reference</a></p>
    */
-  class AWS_GLUE_API SparkSQL
+  class SparkSQL
   {
   public:
-    SparkSQL();
-    SparkSQL(Aws::Utils::Json::JsonView jsonValue);
-    SparkSQL& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API SparkSQL();
+    AWS_GLUE_API SparkSQL(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API SparkSQL& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

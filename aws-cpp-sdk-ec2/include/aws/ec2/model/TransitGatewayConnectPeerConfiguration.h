@@ -31,15 +31,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/TransitGatewayConnectPeerConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API TransitGatewayConnectPeerConfiguration
+  class TransitGatewayConnectPeerConfiguration
   {
   public:
-    TransitGatewayConnectPeerConfiguration();
-    TransitGatewayConnectPeerConfiguration(const Aws::Utils::Xml::XmlNode& xmlNode);
-    TransitGatewayConnectPeerConfiguration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API TransitGatewayConnectPeerConfiguration();
+    AWS_EC2_API TransitGatewayConnectPeerConfiguration(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API TransitGatewayConnectPeerConfiguration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**

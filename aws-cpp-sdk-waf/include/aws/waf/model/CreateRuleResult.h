@@ -25,12 +25,12 @@ namespace WAF
 {
 namespace Model
 {
-  class AWS_WAF_API CreateRuleResult
+  class CreateRuleResult
   {
   public:
-    CreateRuleResult();
-    CreateRuleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateRuleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WAF_API CreateRuleResult();
+    AWS_WAF_API CreateRuleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WAF_API CreateRuleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

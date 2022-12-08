@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/Resource">AWS
    * API Reference</a></p>
    */
-  class AWS_WORKMAIL_API Resource
+  class Resource
   {
   public:
-    Resource();
-    Resource(Aws::Utils::Json::JsonView jsonValue);
-    Resource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WORKMAIL_API Resource();
+    AWS_WORKMAIL_API Resource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKMAIL_API Resource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKMAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

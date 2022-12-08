@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/synthetics-2017-10-11/CanaryRunConfigOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_SYNTHETICS_API CanaryRunConfigOutput
+  class CanaryRunConfigOutput
   {
   public:
-    CanaryRunConfigOutput();
-    CanaryRunConfigOutput(Aws::Utils::Json::JsonView jsonValue);
-    CanaryRunConfigOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SYNTHETICS_API CanaryRunConfigOutput();
+    AWS_SYNTHETICS_API CanaryRunConfigOutput(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SYNTHETICS_API CanaryRunConfigOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SYNTHETICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

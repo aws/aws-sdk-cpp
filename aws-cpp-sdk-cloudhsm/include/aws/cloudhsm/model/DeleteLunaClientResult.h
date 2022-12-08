@@ -24,12 +24,12 @@ namespace CloudHSM
 {
 namespace Model
 {
-  class AWS_CLOUDHSM_API DeleteLunaClientResult
+  class DeleteLunaClientResult
   {
   public:
-    DeleteLunaClientResult();
-    DeleteLunaClientResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteLunaClientResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CLOUDHSM_API DeleteLunaClientResult();
+    AWS_CLOUDHSM_API DeleteLunaClientResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CLOUDHSM_API DeleteLunaClientResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

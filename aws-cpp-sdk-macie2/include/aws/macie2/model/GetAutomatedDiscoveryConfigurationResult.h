@@ -26,12 +26,12 @@ namespace Macie2
 {
 namespace Model
 {
-  class AWS_MACIE2_API GetAutomatedDiscoveryConfigurationResult
+  class GetAutomatedDiscoveryConfigurationResult
   {
   public:
-    GetAutomatedDiscoveryConfigurationResult();
-    GetAutomatedDiscoveryConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetAutomatedDiscoveryConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MACIE2_API GetAutomatedDiscoveryConfigurationResult();
+    AWS_MACIE2_API GetAutomatedDiscoveryConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MACIE2_API GetAutomatedDiscoveryConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/OutboundCallerConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECT_API OutboundCallerConfig
+  class OutboundCallerConfig
   {
   public:
-    OutboundCallerConfig();
-    OutboundCallerConfig(Aws::Utils::Json::JsonView jsonValue);
-    OutboundCallerConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECT_API OutboundCallerConfig();
+    AWS_CONNECT_API OutboundCallerConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API OutboundCallerConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/FieldSort">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API FieldSort
+  class FieldSort
   {
   public:
-    FieldSort();
-    FieldSort(Aws::Utils::Json::JsonView jsonValue);
-    FieldSort& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API FieldSort();
+    AWS_QUICKSIGHT_API FieldSort(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API FieldSort& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

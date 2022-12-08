@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-readiness-2019-12-02/Resource">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53RECOVERYREADINESS_API Resource
+  class Resource
   {
   public:
-    Resource();
-    Resource(Aws::Utils::Json::JsonView jsonValue);
-    Resource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ROUTE53RECOVERYREADINESS_API Resource();
+    AWS_ROUTE53RECOVERYREADINESS_API Resource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROUTE53RECOVERYREADINESS_API Resource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROUTE53RECOVERYREADINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

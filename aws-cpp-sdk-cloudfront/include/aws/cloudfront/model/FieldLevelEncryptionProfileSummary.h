@@ -29,14 +29,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/FieldLevelEncryptionProfileSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFRONT_API FieldLevelEncryptionProfileSummary
+  class FieldLevelEncryptionProfileSummary
   {
   public:
-    FieldLevelEncryptionProfileSummary();
-    FieldLevelEncryptionProfileSummary(const Aws::Utils::Xml::XmlNode& xmlNode);
-    FieldLevelEncryptionProfileSummary& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API FieldLevelEncryptionProfileSummary();
+    AWS_CLOUDFRONT_API FieldLevelEncryptionProfileSummary(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API FieldLevelEncryptionProfileSummary& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**

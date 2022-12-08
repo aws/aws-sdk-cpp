@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-data-2018-10-23/SnoozeActionConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTEVENTSDATA_API SnoozeActionConfiguration
+  class SnoozeActionConfiguration
   {
   public:
-    SnoozeActionConfiguration();
-    SnoozeActionConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    SnoozeActionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTEVENTSDATA_API SnoozeActionConfiguration();
+    AWS_IOTEVENTSDATA_API SnoozeActionConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTEVENTSDATA_API SnoozeActionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTEVENTSDATA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

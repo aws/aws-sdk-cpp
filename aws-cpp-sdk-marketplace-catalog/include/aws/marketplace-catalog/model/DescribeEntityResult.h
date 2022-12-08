@@ -24,12 +24,12 @@ namespace MarketplaceCatalog
 {
 namespace Model
 {
-  class AWS_MARKETPLACECATALOG_API DescribeEntityResult
+  class DescribeEntityResult
   {
   public:
-    DescribeEntityResult();
-    DescribeEntityResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeEntityResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MARKETPLACECATALOG_API DescribeEntityResult();
+    AWS_MARKETPLACECATALOG_API DescribeEntityResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MARKETPLACECATALOG_API DescribeEntityResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ResourceError">AWS
    * API Reference</a></p>
    */
-  class AWS_RESILIENCEHUB_API ResourceError
+  class ResourceError
   {
   public:
-    ResourceError();
-    ResourceError(Aws::Utils::Json::JsonView jsonValue);
-    ResourceError& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_RESILIENCEHUB_API ResourceError();
+    AWS_RESILIENCEHUB_API ResourceError(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RESILIENCEHUB_API ResourceError& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RESILIENCEHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

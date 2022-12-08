@@ -43,13 +43,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UserSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API UserSettings
+  class UserSettings
   {
   public:
-    UserSettings();
-    UserSettings(Aws::Utils::Json::JsonView jsonValue);
-    UserSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API UserSettings();
+    AWS_SAGEMAKER_API UserSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API UserSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

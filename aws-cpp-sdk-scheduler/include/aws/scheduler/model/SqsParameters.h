@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/scheduler-2021-06-30/SqsParameters">AWS
    * API Reference</a></p>
    */
-  class AWS_SCHEDULER_API SqsParameters
+  class SqsParameters
   {
   public:
-    SqsParameters();
-    SqsParameters(Aws::Utils::Json::JsonView jsonValue);
-    SqsParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SCHEDULER_API SqsParameters();
+    AWS_SCHEDULER_API SqsParameters(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SCHEDULER_API SqsParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SCHEDULER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

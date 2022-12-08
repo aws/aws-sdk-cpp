@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ScrollBarOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API ScrollBarOptions
+  class ScrollBarOptions
   {
   public:
-    ScrollBarOptions();
-    ScrollBarOptions(Aws::Utils::Json::JsonView jsonValue);
-    ScrollBarOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API ScrollBarOptions();
+    AWS_QUICKSIGHT_API ScrollBarOptions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API ScrollBarOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

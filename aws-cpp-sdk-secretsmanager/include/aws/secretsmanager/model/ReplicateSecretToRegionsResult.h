@@ -26,12 +26,12 @@ namespace SecretsManager
 {
 namespace Model
 {
-  class AWS_SECRETSMANAGER_API ReplicateSecretToRegionsResult
+  class ReplicateSecretToRegionsResult
   {
   public:
-    ReplicateSecretToRegionsResult();
-    ReplicateSecretToRegionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ReplicateSecretToRegionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SECRETSMANAGER_API ReplicateSecretToRegionsResult();
+    AWS_SECRETSMANAGER_API ReplicateSecretToRegionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SECRETSMANAGER_API ReplicateSecretToRegionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

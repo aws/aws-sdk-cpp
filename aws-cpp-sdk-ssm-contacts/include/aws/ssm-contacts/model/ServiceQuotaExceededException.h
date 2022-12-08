@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/ServiceQuotaExceededException">AWS
    * API Reference</a></p>
    */
-  class AWS_SSMCONTACTS_API ServiceQuotaExceededException
+  class ServiceQuotaExceededException
   {
   public:
-    ServiceQuotaExceededException();
-    ServiceQuotaExceededException(Aws::Utils::Json::JsonView jsonValue);
-    ServiceQuotaExceededException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSMCONTACTS_API ServiceQuotaExceededException();
+    AWS_SSMCONTACTS_API ServiceQuotaExceededException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSMCONTACTS_API ServiceQuotaExceededException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSMCONTACTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

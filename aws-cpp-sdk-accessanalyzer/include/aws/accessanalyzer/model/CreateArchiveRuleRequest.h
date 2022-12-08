@@ -24,10 +24,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/CreateArchiveRuleRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_ACCESSANALYZER_API CreateArchiveRuleRequest : public AccessAnalyzerRequest
+  class CreateArchiveRuleRequest : public AccessAnalyzerRequest
   {
   public:
-    CreateArchiveRuleRequest();
+    AWS_ACCESSANALYZER_API CreateArchiveRuleRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -35,7 +35,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateArchiveRule"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_ACCESSANALYZER_API Aws::String SerializePayload() const override;
 
 
     /**

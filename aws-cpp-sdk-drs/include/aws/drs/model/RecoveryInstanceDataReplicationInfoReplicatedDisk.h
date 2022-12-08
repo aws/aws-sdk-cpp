@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/RecoveryInstanceDataReplicationInfoReplicatedDisk">AWS
    * API Reference</a></p>
    */
-  class AWS_DRS_API RecoveryInstanceDataReplicationInfoReplicatedDisk
+  class RecoveryInstanceDataReplicationInfoReplicatedDisk
   {
   public:
-    RecoveryInstanceDataReplicationInfoReplicatedDisk();
-    RecoveryInstanceDataReplicationInfoReplicatedDisk(Aws::Utils::Json::JsonView jsonValue);
-    RecoveryInstanceDataReplicationInfoReplicatedDisk& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DRS_API RecoveryInstanceDataReplicationInfoReplicatedDisk();
+    AWS_DRS_API RecoveryInstanceDataReplicationInfoReplicatedDisk(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DRS_API RecoveryInstanceDataReplicationInfoReplicatedDisk& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DRS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

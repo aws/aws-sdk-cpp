@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/CostEstimationTimeRange">AWS
    * API Reference</a></p>
    */
-  class AWS_DEVOPSGURU_API CostEstimationTimeRange
+  class CostEstimationTimeRange
   {
   public:
-    CostEstimationTimeRange();
-    CostEstimationTimeRange(Aws::Utils::Json::JsonView jsonValue);
-    CostEstimationTimeRange& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DEVOPSGURU_API CostEstimationTimeRange();
+    AWS_DEVOPSGURU_API CostEstimationTimeRange(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVOPSGURU_API CostEstimationTimeRange& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVOPSGURU_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pipes-2015-10-07/MSKAccessCredentials">AWS
    * API Reference</a></p>
    */
-  class AWS_PIPES_API MSKAccessCredentials
+  class MSKAccessCredentials
   {
   public:
-    MSKAccessCredentials();
-    MSKAccessCredentials(Aws::Utils::Json::JsonView jsonValue);
-    MSKAccessCredentials& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PIPES_API MSKAccessCredentials();
+    AWS_PIPES_API MSKAccessCredentials(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PIPES_API MSKAccessCredentials& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PIPES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

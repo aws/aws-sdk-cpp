@@ -27,12 +27,12 @@ namespace Honeycode
 {
 namespace Model
 {
-  class AWS_HONEYCODE_API DescribeTableDataImportJobResult
+  class DescribeTableDataImportJobResult
   {
   public:
-    DescribeTableDataImportJobResult();
-    DescribeTableDataImportJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeTableDataImportJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_HONEYCODE_API DescribeTableDataImportJobResult();
+    AWS_HONEYCODE_API DescribeTableDataImportJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_HONEYCODE_API DescribeTableDataImportJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

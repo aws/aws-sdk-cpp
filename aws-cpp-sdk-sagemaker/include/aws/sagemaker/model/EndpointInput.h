@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/EndpointInput">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API EndpointInput
+  class EndpointInput
   {
   public:
-    EndpointInput();
-    EndpointInput(Aws::Utils::Json::JsonView jsonValue);
-    EndpointInput& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API EndpointInput();
+    AWS_SAGEMAKER_API EndpointInput(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API EndpointInput& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

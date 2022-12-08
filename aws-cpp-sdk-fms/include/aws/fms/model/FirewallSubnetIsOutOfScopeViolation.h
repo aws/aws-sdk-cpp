@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/FirewallSubnetIsOutOfScopeViolation">AWS
    * API Reference</a></p>
    */
-  class AWS_FMS_API FirewallSubnetIsOutOfScopeViolation
+  class FirewallSubnetIsOutOfScopeViolation
   {
   public:
-    FirewallSubnetIsOutOfScopeViolation();
-    FirewallSubnetIsOutOfScopeViolation(Aws::Utils::Json::JsonView jsonValue);
-    FirewallSubnetIsOutOfScopeViolation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FMS_API FirewallSubnetIsOutOfScopeViolation();
+    AWS_FMS_API FirewallSubnetIsOutOfScopeViolation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FMS_API FirewallSubnetIsOutOfScopeViolation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

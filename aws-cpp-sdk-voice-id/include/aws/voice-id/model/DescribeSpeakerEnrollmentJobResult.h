@@ -24,12 +24,12 @@ namespace VoiceID
 {
 namespace Model
 {
-  class AWS_VOICEID_API DescribeSpeakerEnrollmentJobResult
+  class DescribeSpeakerEnrollmentJobResult
   {
   public:
-    DescribeSpeakerEnrollmentJobResult();
-    DescribeSpeakerEnrollmentJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeSpeakerEnrollmentJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_VOICEID_API DescribeSpeakerEnrollmentJobResult();
+    AWS_VOICEID_API DescribeSpeakerEnrollmentJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_VOICEID_API DescribeSpeakerEnrollmentJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

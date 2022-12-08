@@ -26,12 +26,12 @@ namespace Greengrass
 {
 namespace Model
 {
-  class AWS_GREENGRASS_API ListSubscriptionDefinitionVersionsResult
+  class ListSubscriptionDefinitionVersionsResult
   {
   public:
-    ListSubscriptionDefinitionVersionsResult();
-    ListSubscriptionDefinitionVersionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListSubscriptionDefinitionVersionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GREENGRASS_API ListSubscriptionDefinitionVersionsResult();
+    AWS_GREENGRASS_API ListSubscriptionDefinitionVersionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GREENGRASS_API ListSubscriptionDefinitionVersionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

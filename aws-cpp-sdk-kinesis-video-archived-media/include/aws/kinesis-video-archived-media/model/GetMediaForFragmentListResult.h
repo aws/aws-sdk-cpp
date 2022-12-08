@@ -19,21 +19,21 @@ namespace KinesisVideoArchivedMedia
 {
 namespace Model
 {
-  class AWS_KINESISVIDEOARCHIVEDMEDIA_API GetMediaForFragmentListResult
+  class GetMediaForFragmentListResult
   {
   public:
-    GetMediaForFragmentListResult();
+    AWS_KINESISVIDEOARCHIVEDMEDIA_API GetMediaForFragmentListResult();
     //We have to define these because Microsoft doesn't auto generate them
-    GetMediaForFragmentListResult(GetMediaForFragmentListResult&&);
-    GetMediaForFragmentListResult& operator=(GetMediaForFragmentListResult&&);
+    AWS_KINESISVIDEOARCHIVEDMEDIA_API GetMediaForFragmentListResult(GetMediaForFragmentListResult&&);
+    AWS_KINESISVIDEOARCHIVEDMEDIA_API GetMediaForFragmentListResult& operator=(GetMediaForFragmentListResult&&);
     //we delete these because Microsoft doesn't handle move generation correctly
     //and we therefore don't trust them to get it right here either.
     GetMediaForFragmentListResult(const GetMediaForFragmentListResult&) = delete;
     GetMediaForFragmentListResult& operator=(const GetMediaForFragmentListResult&) = delete;
 
 
-    GetMediaForFragmentListResult(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
-    GetMediaForFragmentListResult& operator=(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
+    AWS_KINESISVIDEOARCHIVEDMEDIA_API GetMediaForFragmentListResult(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
+    AWS_KINESISVIDEOARCHIVEDMEDIA_API GetMediaForFragmentListResult& operator=(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
 
 
 

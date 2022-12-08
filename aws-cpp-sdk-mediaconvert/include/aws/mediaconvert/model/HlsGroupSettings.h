@@ -55,13 +55,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/HlsGroupSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API HlsGroupSettings
+  class HlsGroupSettings
   {
   public:
-    HlsGroupSettings();
-    HlsGroupSettings(Aws::Utils::Json::JsonView jsonValue);
-    HlsGroupSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API HlsGroupSettings();
+    AWS_MEDIACONVERT_API HlsGroupSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API HlsGroupSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

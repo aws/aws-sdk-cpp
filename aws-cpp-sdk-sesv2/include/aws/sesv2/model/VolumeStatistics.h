@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/VolumeStatistics">AWS
    * API Reference</a></p>
    */
-  class AWS_SESV2_API VolumeStatistics
+  class VolumeStatistics
   {
   public:
-    VolumeStatistics();
-    VolumeStatistics(Aws::Utils::Json::JsonView jsonValue);
-    VolumeStatistics& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SESV2_API VolumeStatistics();
+    AWS_SESV2_API VolumeStatistics(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SESV2_API VolumeStatistics& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SESV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

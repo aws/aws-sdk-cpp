@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/StorageTypeLimit">AWS
    * API Reference</a></p>
    */
-  class AWS_OPENSEARCHSERVICE_API StorageTypeLimit
+  class StorageTypeLimit
   {
   public:
-    StorageTypeLimit();
-    StorageTypeLimit(Aws::Utils::Json::JsonView jsonValue);
-    StorageTypeLimit& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OPENSEARCHSERVICE_API StorageTypeLimit();
+    AWS_OPENSEARCHSERVICE_API StorageTypeLimit(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPENSEARCHSERVICE_API StorageTypeLimit& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPENSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

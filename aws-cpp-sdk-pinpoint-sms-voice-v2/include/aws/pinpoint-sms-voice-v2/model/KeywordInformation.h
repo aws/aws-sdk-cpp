@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/KeywordInformation">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINTSMSVOICEV2_API KeywordInformation
+  class KeywordInformation
   {
   public:
-    KeywordInformation();
-    KeywordInformation(Aws::Utils::Json::JsonView jsonValue);
-    KeywordInformation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINTSMSVOICEV2_API KeywordInformation();
+    AWS_PINPOINTSMSVOICEV2_API KeywordInformation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINTSMSVOICEV2_API KeywordInformation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINTSMSVOICEV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

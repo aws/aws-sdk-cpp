@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/RecoveryInstanceDataReplicationInitiationStep">AWS
    * API Reference</a></p>
    */
-  class AWS_DRS_API RecoveryInstanceDataReplicationInitiationStep
+  class RecoveryInstanceDataReplicationInitiationStep
   {
   public:
-    RecoveryInstanceDataReplicationInitiationStep();
-    RecoveryInstanceDataReplicationInitiationStep(Aws::Utils::Json::JsonView jsonValue);
-    RecoveryInstanceDataReplicationInitiationStep& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DRS_API RecoveryInstanceDataReplicationInitiationStep();
+    AWS_DRS_API RecoveryInstanceDataReplicationInitiationStep(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DRS_API RecoveryInstanceDataReplicationInitiationStep& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DRS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

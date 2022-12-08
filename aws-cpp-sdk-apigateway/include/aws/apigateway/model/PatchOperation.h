@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/PatchOperation">AWS
    * API Reference</a></p>
    */
-  class AWS_APIGATEWAY_API PatchOperation
+  class PatchOperation
   {
   public:
-    PatchOperation();
-    PatchOperation(Aws::Utils::Json::JsonView jsonValue);
-    PatchOperation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APIGATEWAY_API PatchOperation();
+    AWS_APIGATEWAY_API PatchOperation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APIGATEWAY_API PatchOperation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APIGATEWAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

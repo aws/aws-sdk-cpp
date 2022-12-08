@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/InternalServerErrorException">AWS
    * API Reference</a></p>
    */
-  class AWS_NIMBLESTUDIO_API InternalServerErrorException
+  class InternalServerErrorException
   {
   public:
-    InternalServerErrorException();
-    InternalServerErrorException(Aws::Utils::Json::JsonView jsonValue);
-    InternalServerErrorException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_NIMBLESTUDIO_API InternalServerErrorException();
+    AWS_NIMBLESTUDIO_API InternalServerErrorException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NIMBLESTUDIO_API InternalServerErrorException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NIMBLESTUDIO_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

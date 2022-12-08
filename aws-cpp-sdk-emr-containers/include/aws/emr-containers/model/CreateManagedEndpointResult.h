@@ -24,12 +24,12 @@ namespace EMRContainers
 {
 namespace Model
 {
-  class AWS_EMRCONTAINERS_API CreateManagedEndpointResult
+  class CreateManagedEndpointResult
   {
   public:
-    CreateManagedEndpointResult();
-    CreateManagedEndpointResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateManagedEndpointResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_EMRCONTAINERS_API CreateManagedEndpointResult();
+    AWS_EMRCONTAINERS_API CreateManagedEndpointResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_EMRCONTAINERS_API CreateManagedEndpointResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

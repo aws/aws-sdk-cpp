@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/connectcampaigns-2021-01-30/ThrottlingException">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECTCAMPAIGNS_API ThrottlingException
+  class ThrottlingException
   {
   public:
-    ThrottlingException();
-    ThrottlingException(Aws::Utils::Json::JsonView jsonValue);
-    ThrottlingException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECTCAMPAIGNS_API ThrottlingException();
+    AWS_CONNECTCAMPAIGNS_API ThrottlingException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTCAMPAIGNS_API ThrottlingException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTCAMPAIGNS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

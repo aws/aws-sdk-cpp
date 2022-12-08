@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/GameServerGroupAutoScalingPolicy">AWS
    * API Reference</a></p>
    */
-  class AWS_GAMELIFT_API GameServerGroupAutoScalingPolicy
+  class GameServerGroupAutoScalingPolicy
   {
   public:
-    GameServerGroupAutoScalingPolicy();
-    GameServerGroupAutoScalingPolicy(Aws::Utils::Json::JsonView jsonValue);
-    GameServerGroupAutoScalingPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GAMELIFT_API GameServerGroupAutoScalingPolicy();
+    AWS_GAMELIFT_API GameServerGroupAutoScalingPolicy(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMELIFT_API GameServerGroupAutoScalingPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

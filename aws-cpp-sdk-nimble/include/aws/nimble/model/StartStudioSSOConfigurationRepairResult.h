@@ -24,12 +24,12 @@ namespace NimbleStudio
 {
 namespace Model
 {
-  class AWS_NIMBLESTUDIO_API StartStudioSSOConfigurationRepairResult
+  class StartStudioSSOConfigurationRepairResult
   {
   public:
-    StartStudioSSOConfigurationRepairResult();
-    StartStudioSSOConfigurationRepairResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    StartStudioSSOConfigurationRepairResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_NIMBLESTUDIO_API StartStudioSSOConfigurationRepairResult();
+    AWS_NIMBLESTUDIO_API StartStudioSSOConfigurationRepairResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_NIMBLESTUDIO_API StartStudioSSOConfigurationRepairResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

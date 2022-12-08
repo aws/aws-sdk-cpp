@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-vod-2018-11-07/PackagingConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIAPACKAGEVOD_API PackagingConfiguration
+  class PackagingConfiguration
   {
   public:
-    PackagingConfiguration();
-    PackagingConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    PackagingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIAPACKAGEVOD_API PackagingConfiguration();
+    AWS_MEDIAPACKAGEVOD_API PackagingConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIAPACKAGEVOD_API PackagingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIAPACKAGEVOD_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/Workgroup">AWS
    * API Reference</a></p>
    */
-  class AWS_REDSHIFTSERVERLESS_API Workgroup
+  class Workgroup
   {
   public:
-    Workgroup();
-    Workgroup(Aws::Utils::Json::JsonView jsonValue);
-    Workgroup& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_REDSHIFTSERVERLESS_API Workgroup();
+    AWS_REDSHIFTSERVERLESS_API Workgroup(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REDSHIFTSERVERLESS_API Workgroup& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REDSHIFTSERVERLESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

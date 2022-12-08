@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ebs-2019-11-02/ResourceNotFoundException">AWS
    * API Reference</a></p>
    */
-  class AWS_EBS_API ResourceNotFoundException
+  class ResourceNotFoundException
   {
   public:
-    ResourceNotFoundException();
-    ResourceNotFoundException(Aws::Utils::Json::JsonView jsonValue);
-    ResourceNotFoundException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EBS_API ResourceNotFoundException();
+    AWS_EBS_API ResourceNotFoundException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EBS_API ResourceNotFoundException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EBS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

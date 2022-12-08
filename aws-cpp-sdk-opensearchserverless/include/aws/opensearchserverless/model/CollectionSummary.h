@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/CollectionSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_OPENSEARCHSERVERLESS_API CollectionSummary
+  class CollectionSummary
   {
   public:
-    CollectionSummary();
-    CollectionSummary(Aws::Utils::Json::JsonView jsonValue);
-    CollectionSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OPENSEARCHSERVERLESS_API CollectionSummary();
+    AWS_OPENSEARCHSERVERLESS_API CollectionSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPENSEARCHSERVERLESS_API CollectionSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPENSEARCHSERVERLESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

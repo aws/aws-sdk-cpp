@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/RdsDbClusterSnapshotAttributeValue">AWS
    * API Reference</a></p>
    */
-  class AWS_ACCESSANALYZER_API RdsDbClusterSnapshotAttributeValue
+  class RdsDbClusterSnapshotAttributeValue
   {
   public:
-    RdsDbClusterSnapshotAttributeValue();
-    RdsDbClusterSnapshotAttributeValue(Aws::Utils::Json::JsonView jsonValue);
-    RdsDbClusterSnapshotAttributeValue& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ACCESSANALYZER_API RdsDbClusterSnapshotAttributeValue();
+    AWS_ACCESSANALYZER_API RdsDbClusterSnapshotAttributeValue(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACCESSANALYZER_API RdsDbClusterSnapshotAttributeValue& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACCESSANALYZER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

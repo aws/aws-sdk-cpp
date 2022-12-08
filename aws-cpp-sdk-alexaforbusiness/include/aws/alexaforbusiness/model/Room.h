@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/Room">AWS
    * API Reference</a></p>
    */
-  class AWS_ALEXAFORBUSINESS_API Room
+  class Room
   {
   public:
-    Room();
-    Room(Aws::Utils::Json::JsonView jsonValue);
-    Room& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ALEXAFORBUSINESS_API Room();
+    AWS_ALEXAFORBUSINESS_API Room(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ALEXAFORBUSINESS_API Room& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ALEXAFORBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

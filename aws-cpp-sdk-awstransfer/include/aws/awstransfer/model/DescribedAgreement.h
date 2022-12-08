@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribedAgreement">AWS
    * API Reference</a></p>
    */
-  class AWS_TRANSFER_API DescribedAgreement
+  class DescribedAgreement
   {
   public:
-    DescribedAgreement();
-    DescribedAgreement(Aws::Utils::Json::JsonView jsonValue);
-    DescribedAgreement& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TRANSFER_API DescribedAgreement();
+    AWS_TRANSFER_API DescribedAgreement(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSFER_API DescribedAgreement& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSFER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

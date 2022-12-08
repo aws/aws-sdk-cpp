@@ -25,12 +25,12 @@ namespace AutoScaling
 {
 namespace Model
 {
-  class AWS_AUTOSCALING_API TerminateInstanceInAutoScalingGroupResult
+  class TerminateInstanceInAutoScalingGroupResult
   {
   public:
-    TerminateInstanceInAutoScalingGroupResult();
-    TerminateInstanceInAutoScalingGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    TerminateInstanceInAutoScalingGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_AUTOSCALING_API TerminateInstanceInAutoScalingGroupResult();
+    AWS_AUTOSCALING_API TerminateInstanceInAutoScalingGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_AUTOSCALING_API TerminateInstanceInAutoScalingGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

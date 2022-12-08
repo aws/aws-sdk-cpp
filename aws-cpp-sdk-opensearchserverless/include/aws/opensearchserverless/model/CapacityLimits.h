@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/CapacityLimits">AWS
    * API Reference</a></p>
    */
-  class AWS_OPENSEARCHSERVERLESS_API CapacityLimits
+  class CapacityLimits
   {
   public:
-    CapacityLimits();
-    CapacityLimits(Aws::Utils::Json::JsonView jsonValue);
-    CapacityLimits& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OPENSEARCHSERVERLESS_API CapacityLimits();
+    AWS_OPENSEARCHSERVERLESS_API CapacityLimits(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPENSEARCHSERVERLESS_API CapacityLimits& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPENSEARCHSERVERLESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

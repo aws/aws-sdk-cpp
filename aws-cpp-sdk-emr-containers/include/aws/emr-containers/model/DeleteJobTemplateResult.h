@@ -24,12 +24,12 @@ namespace EMRContainers
 {
 namespace Model
 {
-  class AWS_EMRCONTAINERS_API DeleteJobTemplateResult
+  class DeleteJobTemplateResult
   {
   public:
-    DeleteJobTemplateResult();
-    DeleteJobTemplateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteJobTemplateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_EMRCONTAINERS_API DeleteJobTemplateResult();
+    AWS_EMRCONTAINERS_API DeleteJobTemplateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_EMRCONTAINERS_API DeleteJobTemplateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

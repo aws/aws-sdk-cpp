@@ -29,12 +29,12 @@ namespace Textract
 {
 namespace Model
 {
-  class AWS_TEXTRACT_API GetExpenseAnalysisResult
+  class GetExpenseAnalysisResult
   {
   public:
-    GetExpenseAnalysisResult();
-    GetExpenseAnalysisResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetExpenseAnalysisResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_TEXTRACT_API GetExpenseAnalysisResult();
+    AWS_TEXTRACT_API GetExpenseAnalysisResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_TEXTRACT_API GetExpenseAnalysisResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

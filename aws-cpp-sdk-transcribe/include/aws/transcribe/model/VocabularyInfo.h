@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/VocabularyInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_TRANSCRIBESERVICE_API VocabularyInfo
+  class VocabularyInfo
   {
   public:
-    VocabularyInfo();
-    VocabularyInfo(Aws::Utils::Json::JsonView jsonValue);
-    VocabularyInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TRANSCRIBESERVICE_API VocabularyInfo();
+    AWS_TRANSCRIBESERVICE_API VocabularyInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSCRIBESERVICE_API VocabularyInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSCRIBESERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

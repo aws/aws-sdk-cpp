@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/AggregatedUtterancesFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELSV2_API AggregatedUtterancesFilter
+  class AggregatedUtterancesFilter
   {
   public:
-    AggregatedUtterancesFilter();
-    AggregatedUtterancesFilter(Aws::Utils::Json::JsonView jsonValue);
-    AggregatedUtterancesFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELSV2_API AggregatedUtterancesFilter();
+    AWS_LEXMODELSV2_API AggregatedUtterancesFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API AggregatedUtterancesFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

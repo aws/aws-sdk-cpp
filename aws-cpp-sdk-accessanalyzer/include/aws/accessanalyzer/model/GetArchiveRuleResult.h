@@ -29,12 +29,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/GetArchiveRuleResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_ACCESSANALYZER_API GetArchiveRuleResult
+  class GetArchiveRuleResult
   {
   public:
-    GetArchiveRuleResult();
-    GetArchiveRuleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetArchiveRuleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ACCESSANALYZER_API GetArchiveRuleResult();
+    AWS_ACCESSANALYZER_API GetArchiveRuleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ACCESSANALYZER_API GetArchiveRuleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     

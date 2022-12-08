@@ -26,13 +26,13 @@ namespace AppConfig
 namespace Model
 {
 
-  class AWS_APPCONFIG_API Environment
+  class Environment
   {
   public:
-    Environment();
-    Environment(Aws::Utils::Json::JsonView jsonValue);
-    Environment& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPCONFIG_API Environment();
+    AWS_APPCONFIG_API Environment(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPCONFIG_API Environment& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPCONFIG_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

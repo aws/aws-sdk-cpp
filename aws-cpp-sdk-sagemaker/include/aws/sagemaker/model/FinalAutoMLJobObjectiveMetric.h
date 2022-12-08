@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/FinalAutoMLJobObjectiveMetric">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API FinalAutoMLJobObjectiveMetric
+  class FinalAutoMLJobObjectiveMetric
   {
   public:
-    FinalAutoMLJobObjectiveMetric();
-    FinalAutoMLJobObjectiveMetric(Aws::Utils::Json::JsonView jsonValue);
-    FinalAutoMLJobObjectiveMetric& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API FinalAutoMLJobObjectiveMetric();
+    AWS_SAGEMAKER_API FinalAutoMLJobObjectiveMetric(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API FinalAutoMLJobObjectiveMetric& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

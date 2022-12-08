@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/ManifestProcessingRules">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIATAILOR_API ManifestProcessingRules
+  class ManifestProcessingRules
   {
   public:
-    ManifestProcessingRules();
-    ManifestProcessingRules(Aws::Utils::Json::JsonView jsonValue);
-    ManifestProcessingRules& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIATAILOR_API ManifestProcessingRules();
+    AWS_MEDIATAILOR_API ManifestProcessingRules(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIATAILOR_API ManifestProcessingRules& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIATAILOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

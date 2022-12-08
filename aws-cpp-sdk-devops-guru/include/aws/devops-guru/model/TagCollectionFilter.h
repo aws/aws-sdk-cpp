@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/TagCollectionFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_DEVOPSGURU_API TagCollectionFilter
+  class TagCollectionFilter
   {
   public:
-    TagCollectionFilter();
-    TagCollectionFilter(Aws::Utils::Json::JsonView jsonValue);
-    TagCollectionFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DEVOPSGURU_API TagCollectionFilter();
+    AWS_DEVOPSGURU_API TagCollectionFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVOPSGURU_API TagCollectionFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVOPSGURU_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

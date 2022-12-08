@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/OpsItemEventFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_SSM_API OpsItemEventFilter
+  class OpsItemEventFilter
   {
   public:
-    OpsItemEventFilter();
-    OpsItemEventFilter(Aws::Utils::Json::JsonView jsonValue);
-    OpsItemEventFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSM_API OpsItemEventFilter();
+    AWS_SSM_API OpsItemEventFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API OpsItemEventFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

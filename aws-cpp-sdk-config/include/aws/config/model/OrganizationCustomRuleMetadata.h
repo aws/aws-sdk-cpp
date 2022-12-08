@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/OrganizationCustomRuleMetadata">AWS
    * API Reference</a></p>
    */
-  class AWS_CONFIGSERVICE_API OrganizationCustomRuleMetadata
+  class OrganizationCustomRuleMetadata
   {
   public:
-    OrganizationCustomRuleMetadata();
-    OrganizationCustomRuleMetadata(Aws::Utils::Json::JsonView jsonValue);
-    OrganizationCustomRuleMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONFIGSERVICE_API OrganizationCustomRuleMetadata();
+    AWS_CONFIGSERVICE_API OrganizationCustomRuleMetadata(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API OrganizationCustomRuleMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

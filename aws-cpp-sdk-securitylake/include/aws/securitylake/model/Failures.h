@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/Failures">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYLAKE_API Failures
+  class Failures
   {
   public:
-    Failures();
-    Failures(Aws::Utils::Json::JsonView jsonValue);
-    Failures& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYLAKE_API Failures();
+    AWS_SECURITYLAKE_API Failures(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYLAKE_API Failures& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYLAKE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

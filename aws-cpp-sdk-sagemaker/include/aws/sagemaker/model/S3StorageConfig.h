@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/S3StorageConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API S3StorageConfig
+  class S3StorageConfig
   {
   public:
-    S3StorageConfig();
-    S3StorageConfig(Aws::Utils::Json::JsonView jsonValue);
-    S3StorageConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API S3StorageConfig();
+    AWS_SAGEMAKER_API S3StorageConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API S3StorageConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

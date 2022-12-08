@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/PresenterOnlyConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_CHIMESDKMEDIAPIPELINES_API PresenterOnlyConfiguration
+  class PresenterOnlyConfiguration
   {
   public:
-    PresenterOnlyConfiguration();
-    PresenterOnlyConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    PresenterOnlyConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIMESDKMEDIAPIPELINES_API PresenterOnlyConfiguration();
+    AWS_CHIMESDKMEDIAPIPELINES_API PresenterOnlyConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKMEDIAPIPELINES_API PresenterOnlyConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKMEDIAPIPELINES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

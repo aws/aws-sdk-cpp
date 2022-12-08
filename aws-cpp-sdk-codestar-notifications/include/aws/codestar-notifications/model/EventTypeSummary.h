@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codestar-notifications-2019-10-15/EventTypeSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_CODESTARNOTIFICATIONS_API EventTypeSummary
+  class EventTypeSummary
   {
   public:
-    EventTypeSummary();
-    EventTypeSummary(Aws::Utils::Json::JsonView jsonValue);
-    EventTypeSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODESTARNOTIFICATIONS_API EventTypeSummary();
+    AWS_CODESTARNOTIFICATIONS_API EventTypeSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODESTARNOTIFICATIONS_API EventTypeSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODESTARNOTIFICATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

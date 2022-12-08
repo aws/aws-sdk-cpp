@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-vod-2018-11-07/HlsManifest">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIAPACKAGEVOD_API HlsManifest
+  class HlsManifest
   {
   public:
-    HlsManifest();
-    HlsManifest(Aws::Utils::Json::JsonView jsonValue);
-    HlsManifest& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIAPACKAGEVOD_API HlsManifest();
+    AWS_MEDIAPACKAGEVOD_API HlsManifest(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIAPACKAGEVOD_API HlsManifest& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIAPACKAGEVOD_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

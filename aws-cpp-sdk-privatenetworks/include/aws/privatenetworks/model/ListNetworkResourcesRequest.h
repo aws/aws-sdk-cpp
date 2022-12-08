@@ -21,10 +21,10 @@ namespace Model
 
   /**
    */
-  class AWS_PRIVATENETWORKS_API ListNetworkResourcesRequest : public PrivateNetworksRequest
+  class ListNetworkResourcesRequest : public PrivateNetworksRequest
   {
   public:
-    ListNetworkResourcesRequest();
+    AWS_PRIVATENETWORKS_API ListNetworkResourcesRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,7 +32,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ListNetworkResources"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_PRIVATENETWORKS_API Aws::String SerializePayload() const override;
 
 
     /**

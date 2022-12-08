@@ -34,12 +34,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeGatewayInformationOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_STORAGEGATEWAY_API DescribeGatewayInformationResult
+  class DescribeGatewayInformationResult
   {
   public:
-    DescribeGatewayInformationResult();
-    DescribeGatewayInformationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeGatewayInformationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_STORAGEGATEWAY_API DescribeGatewayInformationResult();
+    AWS_STORAGEGATEWAY_API DescribeGatewayInformationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_STORAGEGATEWAY_API DescribeGatewayInformationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     

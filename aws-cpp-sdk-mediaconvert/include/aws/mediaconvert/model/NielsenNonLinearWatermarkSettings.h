@@ -38,13 +38,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/NielsenNonLinearWatermarkSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API NielsenNonLinearWatermarkSettings
+  class NielsenNonLinearWatermarkSettings
   {
   public:
-    NielsenNonLinearWatermarkSettings();
-    NielsenNonLinearWatermarkSettings(Aws::Utils::Json::JsonView jsonValue);
-    NielsenNonLinearWatermarkSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API NielsenNonLinearWatermarkSettings();
+    AWS_MEDIACONVERT_API NielsenNonLinearWatermarkSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API NielsenNonLinearWatermarkSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

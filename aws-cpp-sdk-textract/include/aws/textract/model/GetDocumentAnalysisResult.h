@@ -29,12 +29,12 @@ namespace Textract
 {
 namespace Model
 {
-  class AWS_TEXTRACT_API GetDocumentAnalysisResult
+  class GetDocumentAnalysisResult
   {
   public:
-    GetDocumentAnalysisResult();
-    GetDocumentAnalysisResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetDocumentAnalysisResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_TEXTRACT_API GetDocumentAnalysisResult();
+    AWS_TEXTRACT_API GetDocumentAnalysisResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_TEXTRACT_API GetDocumentAnalysisResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/TargetGroupPairInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEDEPLOY_API TargetGroupPairInfo
+  class TargetGroupPairInfo
   {
   public:
-    TargetGroupPairInfo();
-    TargetGroupPairInfo(Aws::Utils::Json::JsonView jsonValue);
-    TargetGroupPairInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEDEPLOY_API TargetGroupPairInfo();
+    AWS_CODEDEPLOY_API TargetGroupPairInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEDEPLOY_API TargetGroupPairInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEDEPLOY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

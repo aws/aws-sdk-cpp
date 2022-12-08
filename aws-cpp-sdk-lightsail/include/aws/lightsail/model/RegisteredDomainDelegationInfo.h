@@ -49,13 +49,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/RegisteredDomainDelegationInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_LIGHTSAIL_API RegisteredDomainDelegationInfo
+  class RegisteredDomainDelegationInfo
   {
   public:
-    RegisteredDomainDelegationInfo();
-    RegisteredDomainDelegationInfo(Aws::Utils::Json::JsonView jsonValue);
-    RegisteredDomainDelegationInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LIGHTSAIL_API RegisteredDomainDelegationInfo();
+    AWS_LIGHTSAIL_API RegisteredDomainDelegationInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API RegisteredDomainDelegationInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

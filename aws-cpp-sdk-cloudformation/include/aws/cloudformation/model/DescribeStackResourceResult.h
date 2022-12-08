@@ -31,12 +31,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStackResourceOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFORMATION_API DescribeStackResourceResult
+  class DescribeStackResourceResult
   {
   public:
-    DescribeStackResourceResult();
-    DescribeStackResourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeStackResourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_CLOUDFORMATION_API DescribeStackResourceResult();
+    AWS_CLOUDFORMATION_API DescribeStackResourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_CLOUDFORMATION_API DescribeStackResourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

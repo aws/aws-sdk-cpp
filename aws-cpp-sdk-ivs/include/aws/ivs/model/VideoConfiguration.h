@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/VideoConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_IVS_API VideoConfiguration
+  class VideoConfiguration
   {
   public:
-    VideoConfiguration();
-    VideoConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    VideoConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IVS_API VideoConfiguration();
+    AWS_IVS_API VideoConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IVS_API VideoConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IVS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

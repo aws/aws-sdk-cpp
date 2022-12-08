@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/CaseFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECTCASES_API CaseFilter
+  class CaseFilter
   {
   public:
-    CaseFilter();
-    CaseFilter(Aws::Utils::Json::JsonView jsonValue);
-    CaseFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECTCASES_API CaseFilter();
+    AWS_CONNECTCASES_API CaseFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTCASES_API CaseFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTCASES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -112,22 +112,22 @@ namespace Model
 
 
     
-    const CaseFilter& GetNot() const;
+    AWS_CONNECTCASES_API const CaseFilter& GetNot() const;
 
     
-    bool NotHasBeenSet() const;
+    AWS_CONNECTCASES_API bool NotHasBeenSet() const;
 
     
-    void SetNot(const CaseFilter& value);
+    AWS_CONNECTCASES_API void SetNot(const CaseFilter& value);
 
     
-    void SetNot(CaseFilter&& value);
+    AWS_CONNECTCASES_API void SetNot(CaseFilter&& value);
 
     
-    CaseFilter& WithNot(const CaseFilter& value);
+    AWS_CONNECTCASES_API CaseFilter& WithNot(const CaseFilter& value);
 
     
-    CaseFilter& WithNot(CaseFilter&& value);
+    AWS_CONNECTCASES_API CaseFilter& WithNot(CaseFilter&& value);
 
   private:
 

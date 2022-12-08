@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GlobalNetwork">AWS
    * API Reference</a></p>
    */
-  class AWS_NETWORKMANAGER_API GlobalNetwork
+  class GlobalNetwork
   {
   public:
-    GlobalNetwork();
-    GlobalNetwork(Aws::Utils::Json::JsonView jsonValue);
-    GlobalNetwork& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_NETWORKMANAGER_API GlobalNetwork();
+    AWS_NETWORKMANAGER_API GlobalNetwork(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKMANAGER_API GlobalNetwork& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/HoursOfOperationTimeSlice">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECT_API HoursOfOperationTimeSlice
+  class HoursOfOperationTimeSlice
   {
   public:
-    HoursOfOperationTimeSlice();
-    HoursOfOperationTimeSlice(Aws::Utils::Json::JsonView jsonValue);
-    HoursOfOperationTimeSlice& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECT_API HoursOfOperationTimeSlice();
+    AWS_CONNECT_API HoursOfOperationTimeSlice(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API HoursOfOperationTimeSlice& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

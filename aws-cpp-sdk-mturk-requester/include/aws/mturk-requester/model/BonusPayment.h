@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/BonusPayment">AWS
    * API Reference</a></p>
    */
-  class AWS_MTURK_API BonusPayment
+  class BonusPayment
   {
   public:
-    BonusPayment();
-    BonusPayment(Aws::Utils::Json::JsonView jsonValue);
-    BonusPayment& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MTURK_API BonusPayment();
+    AWS_MTURK_API BonusPayment(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MTURK_API BonusPayment& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MTURK_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -22,12 +22,12 @@ namespace SSOAdmin
 {
 namespace Model
 {
-  class AWS_SSOADMIN_API DeleteInlinePolicyFromPermissionSetResult
+  class DeleteInlinePolicyFromPermissionSetResult
   {
   public:
-    DeleteInlinePolicyFromPermissionSetResult();
-    DeleteInlinePolicyFromPermissionSetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteInlinePolicyFromPermissionSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSOADMIN_API DeleteInlinePolicyFromPermissionSetResult();
+    AWS_SSOADMIN_API DeleteInlinePolicyFromPermissionSetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSOADMIN_API DeleteInlinePolicyFromPermissionSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

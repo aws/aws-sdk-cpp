@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/ChannelActivity">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTANALYTICS_API ChannelActivity
+  class ChannelActivity
   {
   public:
-    ChannelActivity();
-    ChannelActivity(Aws::Utils::Json::JsonView jsonValue);
-    ChannelActivity& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTANALYTICS_API ChannelActivity();
+    AWS_IOTANALYTICS_API ChannelActivity(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTANALYTICS_API ChannelActivity& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

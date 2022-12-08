@@ -25,12 +25,12 @@ namespace Schemas
 {
 namespace Model
 {
-  class AWS_SCHEMAS_API StopDiscovererResult
+  class StopDiscovererResult
   {
   public:
-    StopDiscovererResult();
-    StopDiscovererResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    StopDiscovererResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SCHEMAS_API StopDiscovererResult();
+    AWS_SCHEMAS_API StopDiscovererResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SCHEMAS_API StopDiscovererResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

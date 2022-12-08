@@ -24,12 +24,12 @@ namespace StorageGateway
 {
 namespace Model
 {
-  class AWS_STORAGEGATEWAY_API UpdateSMBFileShareVisibilityResult
+  class UpdateSMBFileShareVisibilityResult
   {
   public:
-    UpdateSMBFileShareVisibilityResult();
-    UpdateSMBFileShareVisibilityResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateSMBFileShareVisibilityResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_STORAGEGATEWAY_API UpdateSMBFileShareVisibilityResult();
+    AWS_STORAGEGATEWAY_API UpdateSMBFileShareVisibilityResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_STORAGEGATEWAY_API UpdateSMBFileShareVisibilityResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     

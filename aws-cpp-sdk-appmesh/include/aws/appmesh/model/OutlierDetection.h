@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/OutlierDetection">AWS
    * API Reference</a></p>
    */
-  class AWS_APPMESH_API OutlierDetection
+  class OutlierDetection
   {
   public:
-    OutlierDetection();
-    OutlierDetection(Aws::Utils::Json::JsonView jsonValue);
-    OutlierDetection& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPMESH_API OutlierDetection();
+    AWS_APPMESH_API OutlierDetection(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API OutlierDetection& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

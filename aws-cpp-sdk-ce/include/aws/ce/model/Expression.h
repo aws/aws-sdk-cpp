@@ -64,13 +64,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/Expression">AWS API
    * Reference</a></p>
    */
-  class AWS_COSTEXPLORER_API Expression
+  class Expression
   {
   public:
-    Expression();
-    Expression(Aws::Utils::Json::JsonView jsonValue);
-    Expression& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COSTEXPLORER_API Expression();
+    AWS_COSTEXPLORER_API Expression(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API Expression& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -158,32 +158,32 @@ namespace Model
     /**
      * <p>Return results that don't match a <code>Dimension</code> object.</p>
      */
-    const Expression& GetNot() const;
+    AWS_COSTEXPLORER_API const Expression& GetNot() const;
 
     /**
      * <p>Return results that don't match a <code>Dimension</code> object.</p>
      */
-    bool NotHasBeenSet() const;
+    AWS_COSTEXPLORER_API bool NotHasBeenSet() const;
 
     /**
      * <p>Return results that don't match a <code>Dimension</code> object.</p>
      */
-    void SetNot(const Expression& value);
+    AWS_COSTEXPLORER_API void SetNot(const Expression& value);
 
     /**
      * <p>Return results that don't match a <code>Dimension</code> object.</p>
      */
-    void SetNot(Expression&& value);
+    AWS_COSTEXPLORER_API void SetNot(Expression&& value);
 
     /**
      * <p>Return results that don't match a <code>Dimension</code> object.</p>
      */
-    Expression& WithNot(const Expression& value);
+    AWS_COSTEXPLORER_API Expression& WithNot(const Expression& value);
 
     /**
      * <p>Return results that don't match a <code>Dimension</code> object.</p>
      */
-    Expression& WithNot(Expression&& value);
+    AWS_COSTEXPLORER_API Expression& WithNot(Expression&& value);
 
 
     /**

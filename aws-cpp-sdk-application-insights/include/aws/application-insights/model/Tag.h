@@ -43,13 +43,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/Tag">AWS
    * API Reference</a></p>
    */
-  class AWS_APPLICATIONINSIGHTS_API Tag
+  class Tag
   {
   public:
-    Tag();
-    Tag(Aws::Utils::Json::JsonView jsonValue);
-    Tag& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPLICATIONINSIGHTS_API Tag();
+    AWS_APPLICATIONINSIGHTS_API Tag(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPLICATIONINSIGHTS_API Tag& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPLICATIONINSIGHTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

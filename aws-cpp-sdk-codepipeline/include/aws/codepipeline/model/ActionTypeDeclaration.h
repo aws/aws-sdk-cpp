@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ActionTypeDeclaration">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEPIPELINE_API ActionTypeDeclaration
+  class ActionTypeDeclaration
   {
   public:
-    ActionTypeDeclaration();
-    ActionTypeDeclaration(Aws::Utils::Json::JsonView jsonValue);
-    ActionTypeDeclaration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEPIPELINE_API ActionTypeDeclaration();
+    AWS_CODEPIPELINE_API ActionTypeDeclaration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEPIPELINE_API ActionTypeDeclaration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

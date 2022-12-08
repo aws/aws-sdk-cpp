@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/ActionCondition">AWS
    * API Reference</a></p>
    */
-  class AWS_WAFV2_API ActionCondition
+  class ActionCondition
   {
   public:
-    ActionCondition();
-    ActionCondition(Aws::Utils::Json::JsonView jsonValue);
-    ActionCondition& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WAFV2_API ActionCondition();
+    AWS_WAFV2_API ActionCondition(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API ActionCondition& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -42,13 +42,13 @@ namespace Model
    * <a href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/Action">AWS
    * API Reference</a></p>
    */
-  class AWS_APPCONFIG_API Action
+  class Action
   {
   public:
-    Action();
-    Action(Aws::Utils::Json::JsonView jsonValue);
-    Action& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPCONFIG_API Action();
+    AWS_APPCONFIG_API Action(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPCONFIG_API Action& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPCONFIG_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/StringValueWhenUnsetConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API StringValueWhenUnsetConfiguration
+  class StringValueWhenUnsetConfiguration
   {
   public:
-    StringValueWhenUnsetConfiguration();
-    StringValueWhenUnsetConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    StringValueWhenUnsetConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API StringValueWhenUnsetConfiguration();
+    AWS_QUICKSIGHT_API StringValueWhenUnsetConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API StringValueWhenUnsetConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

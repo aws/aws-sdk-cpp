@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/SentimentDetectionJobProperties">AWS
    * API Reference</a></p>
    */
-  class AWS_COMPREHEND_API SentimentDetectionJobProperties
+  class SentimentDetectionJobProperties
   {
   public:
-    SentimentDetectionJobProperties();
-    SentimentDetectionJobProperties(Aws::Utils::Json::JsonView jsonValue);
-    SentimentDetectionJobProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COMPREHEND_API SentimentDetectionJobProperties();
+    AWS_COMPREHEND_API SentimentDetectionJobProperties(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHEND_API SentimentDetectionJobProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHEND_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

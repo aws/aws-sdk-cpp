@@ -30,12 +30,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/GetSnapshotLimitsResult">AWS
    * API Reference</a></p>
    */
-  class AWS_DIRECTORYSERVICE_API GetSnapshotLimitsResult
+  class GetSnapshotLimitsResult
   {
   public:
-    GetSnapshotLimitsResult();
-    GetSnapshotLimitsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetSnapshotLimitsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DIRECTORYSERVICE_API GetSnapshotLimitsResult();
+    AWS_DIRECTORYSERVICE_API GetSnapshotLimitsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DIRECTORYSERVICE_API GetSnapshotLimitsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/ResourceGroup">AWS
    * API Reference</a></p>
    */
-  class AWS_APPREGISTRY_API ResourceGroup
+  class ResourceGroup
   {
   public:
-    ResourceGroup();
-    ResourceGroup(Aws::Utils::Json::JsonView jsonValue);
-    ResourceGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPREGISTRY_API ResourceGroup();
+    AWS_APPREGISTRY_API ResourceGroup(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPREGISTRY_API ResourceGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPREGISTRY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

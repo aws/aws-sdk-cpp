@@ -29,15 +29,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVerifiedAccessTrustProviderOidcOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API CreateVerifiedAccessTrustProviderOidcOptions
+  class CreateVerifiedAccessTrustProviderOidcOptions
   {
   public:
-    CreateVerifiedAccessTrustProviderOidcOptions();
-    CreateVerifiedAccessTrustProviderOidcOptions(const Aws::Utils::Xml::XmlNode& xmlNode);
-    CreateVerifiedAccessTrustProviderOidcOptions& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API CreateVerifiedAccessTrustProviderOidcOptions();
+    AWS_EC2_API CreateVerifiedAccessTrustProviderOidcOptions(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API CreateVerifiedAccessTrustProviderOidcOptions& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**

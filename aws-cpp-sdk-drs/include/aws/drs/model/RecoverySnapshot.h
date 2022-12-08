@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/RecoverySnapshot">AWS
    * API Reference</a></p>
    */
-  class AWS_DRS_API RecoverySnapshot
+  class RecoverySnapshot
   {
   public:
-    RecoverySnapshot();
-    RecoverySnapshot(Aws::Utils::Json::JsonView jsonValue);
-    RecoverySnapshot& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DRS_API RecoverySnapshot();
+    AWS_DRS_API RecoverySnapshot(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DRS_API RecoverySnapshot& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DRS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

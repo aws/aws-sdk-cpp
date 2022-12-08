@@ -29,12 +29,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteTapeArchiveOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_STORAGEGATEWAY_API DeleteTapeArchiveResult
+  class DeleteTapeArchiveResult
   {
   public:
-    DeleteTapeArchiveResult();
-    DeleteTapeArchiveResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteTapeArchiveResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_STORAGEGATEWAY_API DeleteTapeArchiveResult();
+    AWS_STORAGEGATEWAY_API DeleteTapeArchiveResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_STORAGEGATEWAY_API DeleteTapeArchiveResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-public-2020-10-30/AuthorizationData">AWS
    * API Reference</a></p>
    */
-  class AWS_ECRPUBLIC_API AuthorizationData
+  class AuthorizationData
   {
   public:
-    AuthorizationData();
-    AuthorizationData(Aws::Utils::Json::JsonView jsonValue);
-    AuthorizationData& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ECRPUBLIC_API AuthorizationData();
+    AWS_ECRPUBLIC_API AuthorizationData(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECRPUBLIC_API AuthorizationData& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECRPUBLIC_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

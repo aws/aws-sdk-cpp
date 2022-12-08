@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_KMS_API PutKeyPolicyRequest : public KMSRequest
+  class PutKeyPolicyRequest : public KMSRequest
   {
   public:
-    PutKeyPolicyRequest();
+    AWS_KMS_API PutKeyPolicyRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,9 +29,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "PutKeyPolicy"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_KMS_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_KMS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**

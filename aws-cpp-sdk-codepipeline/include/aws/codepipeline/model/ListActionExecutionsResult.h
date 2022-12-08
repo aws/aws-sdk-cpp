@@ -26,12 +26,12 @@ namespace CodePipeline
 {
 namespace Model
 {
-  class AWS_CODEPIPELINE_API ListActionExecutionsResult
+  class ListActionExecutionsResult
   {
   public:
-    ListActionExecutionsResult();
-    ListActionExecutionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListActionExecutionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODEPIPELINE_API ListActionExecutionsResult();
+    AWS_CODEPIPELINE_API ListActionExecutionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODEPIPELINE_API ListActionExecutionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

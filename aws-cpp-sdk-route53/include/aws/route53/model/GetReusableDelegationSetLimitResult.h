@@ -30,12 +30,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetReusableDelegationSetLimitResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53_API GetReusableDelegationSetLimitResult
+  class GetReusableDelegationSetLimitResult
   {
   public:
-    GetReusableDelegationSetLimitResult();
-    GetReusableDelegationSetLimitResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    GetReusableDelegationSetLimitResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ROUTE53_API GetReusableDelegationSetLimitResult();
+    AWS_ROUTE53_API GetReusableDelegationSetLimitResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ROUTE53_API GetReusableDelegationSetLimitResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

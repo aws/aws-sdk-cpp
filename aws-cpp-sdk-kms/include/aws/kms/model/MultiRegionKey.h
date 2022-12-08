@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/MultiRegionKey">AWS
    * API Reference</a></p>
    */
-  class AWS_KMS_API MultiRegionKey
+  class MultiRegionKey
   {
   public:
-    MultiRegionKey();
-    MultiRegionKey(Aws::Utils::Json::JsonView jsonValue);
-    MultiRegionKey& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KMS_API MultiRegionKey();
+    AWS_KMS_API MultiRegionKey(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KMS_API MultiRegionKey& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/TableInput">AWS API
    * Reference</a></p>
    */
-  class AWS_GLUE_API TableInput
+  class TableInput
   {
   public:
-    TableInput();
-    TableInput(Aws::Utils::Json::JsonView jsonValue);
-    TableInput& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API TableInput();
+    AWS_GLUE_API TableInput(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API TableInput& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -28,12 +28,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/UpdateRadiusResult">AWS
    * API Reference</a></p>
    */
-  class AWS_DIRECTORYSERVICE_API UpdateRadiusResult
+  class UpdateRadiusResult
   {
   public:
-    UpdateRadiusResult();
-    UpdateRadiusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateRadiusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DIRECTORYSERVICE_API UpdateRadiusResult();
+    AWS_DIRECTORYSERVICE_API UpdateRadiusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DIRECTORYSERVICE_API UpdateRadiusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

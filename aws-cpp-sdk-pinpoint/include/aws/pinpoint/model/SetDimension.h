@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/SetDimension">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API SetDimension
+  class SetDimension
   {
   public:
-    SetDimension();
-    SetDimension(Aws::Utils::Json::JsonView jsonValue);
-    SetDimension& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API SetDimension();
+    AWS_PINPOINT_API SetDimension(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API SetDimension& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

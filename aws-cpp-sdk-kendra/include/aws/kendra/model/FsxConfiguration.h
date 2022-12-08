@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/FsxConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_KENDRA_API FsxConfiguration
+  class FsxConfiguration
   {
   public:
-    FsxConfiguration();
-    FsxConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    FsxConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KENDRA_API FsxConfiguration();
+    AWS_KENDRA_API FsxConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API FsxConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

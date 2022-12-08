@@ -33,12 +33,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSpotPriceHistoryResult">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API DescribeSpotPriceHistoryResponse
+  class DescribeSpotPriceHistoryResponse
   {
   public:
-    DescribeSpotPriceHistoryResponse();
-    DescribeSpotPriceHistoryResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeSpotPriceHistoryResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API DescribeSpotPriceHistoryResponse();
+    AWS_EC2_API DescribeSpotPriceHistoryResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API DescribeSpotPriceHistoryResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

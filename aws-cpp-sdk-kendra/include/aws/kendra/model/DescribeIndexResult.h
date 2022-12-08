@@ -35,12 +35,12 @@ namespace kendra
 {
 namespace Model
 {
-  class AWS_KENDRA_API DescribeIndexResult
+  class DescribeIndexResult
   {
   public:
-    DescribeIndexResult();
-    DescribeIndexResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeIndexResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KENDRA_API DescribeIndexResult();
+    AWS_KENDRA_API DescribeIndexResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KENDRA_API DescribeIndexResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -26,12 +26,12 @@ namespace ComputeOptimizer
 {
 namespace Model
 {
-  class AWS_COMPUTEOPTIMIZER_API DescribeRecommendationExportJobsResult
+  class DescribeRecommendationExportJobsResult
   {
   public:
-    DescribeRecommendationExportJobsResult();
-    DescribeRecommendationExportJobsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeRecommendationExportJobsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_COMPUTEOPTIMIZER_API DescribeRecommendationExportJobsResult();
+    AWS_COMPUTEOPTIMIZER_API DescribeRecommendationExportJobsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_COMPUTEOPTIMIZER_API DescribeRecommendationExportJobsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

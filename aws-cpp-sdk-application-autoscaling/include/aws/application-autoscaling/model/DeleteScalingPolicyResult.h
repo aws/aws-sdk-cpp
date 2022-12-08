@@ -22,12 +22,12 @@ namespace ApplicationAutoScaling
 {
 namespace Model
 {
-  class AWS_APPLICATIONAUTOSCALING_API DeleteScalingPolicyResult
+  class DeleteScalingPolicyResult
   {
   public:
-    DeleteScalingPolicyResult();
-    DeleteScalingPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteScalingPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPLICATIONAUTOSCALING_API DeleteScalingPolicyResult();
+    AWS_APPLICATIONAUTOSCALING_API DeleteScalingPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPLICATIONAUTOSCALING_API DeleteScalingPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

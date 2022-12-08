@@ -25,12 +25,12 @@ namespace ConnectParticipant
 {
 namespace Model
 {
-  class AWS_CONNECTPARTICIPANT_API CreateParticipantConnectionResult
+  class CreateParticipantConnectionResult
   {
   public:
-    CreateParticipantConnectionResult();
-    CreateParticipantConnectionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateParticipantConnectionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CONNECTPARTICIPANT_API CreateParticipantConnectionResult();
+    AWS_CONNECTPARTICIPANT_API CreateParticipantConnectionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CONNECTPARTICIPANT_API CreateParticipantConnectionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

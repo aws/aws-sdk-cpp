@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/LegalHold">AWS
    * API Reference</a></p>
    */
-  class AWS_BACKUP_API LegalHold
+  class LegalHold
   {
   public:
-    LegalHold();
-    LegalHold(Aws::Utils::Json::JsonView jsonValue);
-    LegalHold& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BACKUP_API LegalHold();
+    AWS_BACKUP_API LegalHold(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BACKUP_API LegalHold& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BACKUP_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/InputSchemaUpdate">AWS
    * API Reference</a></p>
    */
-  class AWS_KINESISANALYTICS_API InputSchemaUpdate
+  class InputSchemaUpdate
   {
   public:
-    InputSchemaUpdate();
-    InputSchemaUpdate(Aws::Utils::Json::JsonView jsonValue);
-    InputSchemaUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KINESISANALYTICS_API InputSchemaUpdate();
+    AWS_KINESISANALYTICS_API InputSchemaUpdate(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICS_API InputSchemaUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DominantLanguageDetectionJobProperties">AWS
    * API Reference</a></p>
    */
-  class AWS_COMPREHEND_API DominantLanguageDetectionJobProperties
+  class DominantLanguageDetectionJobProperties
   {
   public:
-    DominantLanguageDetectionJobProperties();
-    DominantLanguageDetectionJobProperties(Aws::Utils::Json::JsonView jsonValue);
-    DominantLanguageDetectionJobProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COMPREHEND_API DominantLanguageDetectionJobProperties();
+    AWS_COMPREHEND_API DominantLanguageDetectionJobProperties(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHEND_API DominantLanguageDetectionJobProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHEND_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

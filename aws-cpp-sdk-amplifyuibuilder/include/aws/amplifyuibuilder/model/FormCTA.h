@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/FormCTA">AWS
    * API Reference</a></p>
    */
-  class AWS_AMPLIFYUIBUILDER_API FormCTA
+  class FormCTA
   {
   public:
-    FormCTA();
-    FormCTA(Aws::Utils::Json::JsonView jsonValue);
-    FormCTA& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_AMPLIFYUIBUILDER_API FormCTA();
+    AWS_AMPLIFYUIBUILDER_API FormCTA(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFYUIBUILDER_API FormCTA& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFYUIBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

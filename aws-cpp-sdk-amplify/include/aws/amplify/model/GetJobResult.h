@@ -24,12 +24,12 @@ namespace Amplify
 {
 namespace Model
 {
-  class AWS_AMPLIFY_API GetJobResult
+  class GetJobResult
   {
   public:
-    GetJobResult();
-    GetJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_AMPLIFY_API GetJobResult();
+    AWS_AMPLIFY_API GetJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_AMPLIFY_API GetJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     

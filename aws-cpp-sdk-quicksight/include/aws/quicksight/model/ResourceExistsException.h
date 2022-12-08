@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ResourceExistsException">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API ResourceExistsException
+  class ResourceExistsException
   {
   public:
-    ResourceExistsException();
-    ResourceExistsException(Aws::Utils::Json::JsonView jsonValue);
-    ResourceExistsException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API ResourceExistsException();
+    AWS_QUICKSIGHT_API ResourceExistsException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API ResourceExistsException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

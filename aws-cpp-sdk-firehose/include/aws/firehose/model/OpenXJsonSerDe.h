@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/OpenXJsonSerDe">AWS
    * API Reference</a></p>
    */
-  class AWS_FIREHOSE_API OpenXJsonSerDe
+  class OpenXJsonSerDe
   {
   public:
-    OpenXJsonSerDe();
-    OpenXJsonSerDe(Aws::Utils::Json::JsonView jsonValue);
-    OpenXJsonSerDe& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FIREHOSE_API OpenXJsonSerDe();
+    AWS_FIREHOSE_API OpenXJsonSerDe(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FIREHOSE_API OpenXJsonSerDe& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FIREHOSE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

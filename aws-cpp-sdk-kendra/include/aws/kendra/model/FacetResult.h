@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/FacetResult">AWS
    * API Reference</a></p>
    */
-  class AWS_KENDRA_API FacetResult
+  class FacetResult
   {
   public:
-    FacetResult();
-    FacetResult(Aws::Utils::Json::JsonView jsonValue);
-    FacetResult& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KENDRA_API FacetResult();
+    AWS_KENDRA_API FacetResult(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API FacetResult& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

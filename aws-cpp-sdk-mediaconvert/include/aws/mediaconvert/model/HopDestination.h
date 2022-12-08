@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/HopDestination">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API HopDestination
+  class HopDestination
   {
   public:
-    HopDestination();
-    HopDestination(Aws::Utils::Json::JsonView jsonValue);
-    HopDestination& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API HopDestination();
+    AWS_MEDIACONVERT_API HopDestination(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API HopDestination& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

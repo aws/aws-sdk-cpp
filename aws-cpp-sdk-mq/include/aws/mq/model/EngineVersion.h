@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/EngineVersion">AWS
    * API Reference</a></p>
    */
-  class AWS_MQ_API EngineVersion
+  class EngineVersion
   {
   public:
-    EngineVersion();
-    EngineVersion(Aws::Utils::Json::JsonView jsonValue);
-    EngineVersion& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MQ_API EngineVersion();
+    AWS_MQ_API EngineVersion(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MQ_API EngineVersion& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MQ_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

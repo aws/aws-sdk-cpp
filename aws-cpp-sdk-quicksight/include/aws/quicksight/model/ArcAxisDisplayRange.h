@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ArcAxisDisplayRange">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API ArcAxisDisplayRange
+  class ArcAxisDisplayRange
   {
   public:
-    ArcAxisDisplayRange();
-    ArcAxisDisplayRange(Aws::Utils::Json::JsonView jsonValue);
-    ArcAxisDisplayRange& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API ArcAxisDisplayRange();
+    AWS_QUICKSIGHT_API ArcAxisDisplayRange(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API ArcAxisDisplayRange& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

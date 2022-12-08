@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CatalogTarget">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API CatalogTarget
+  class CatalogTarget
   {
   public:
-    CatalogTarget();
-    CatalogTarget(Aws::Utils::Json::JsonView jsonValue);
-    CatalogTarget& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API CatalogTarget();
+    AWS_GLUE_API CatalogTarget(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API CatalogTarget& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

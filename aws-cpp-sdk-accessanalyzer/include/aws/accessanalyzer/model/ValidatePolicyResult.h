@@ -26,12 +26,12 @@ namespace AccessAnalyzer
 {
 namespace Model
 {
-  class AWS_ACCESSANALYZER_API ValidatePolicyResult
+  class ValidatePolicyResult
   {
   public:
-    ValidatePolicyResult();
-    ValidatePolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ValidatePolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ACCESSANALYZER_API ValidatePolicyResult();
+    AWS_ACCESSANALYZER_API ValidatePolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ACCESSANALYZER_API ValidatePolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

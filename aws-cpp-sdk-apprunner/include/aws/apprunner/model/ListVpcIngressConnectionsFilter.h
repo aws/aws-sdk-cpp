@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/ListVpcIngressConnectionsFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_APPRUNNER_API ListVpcIngressConnectionsFilter
+  class ListVpcIngressConnectionsFilter
   {
   public:
-    ListVpcIngressConnectionsFilter();
-    ListVpcIngressConnectionsFilter(Aws::Utils::Json::JsonView jsonValue);
-    ListVpcIngressConnectionsFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPRUNNER_API ListVpcIngressConnectionsFilter();
+    AWS_APPRUNNER_API ListVpcIngressConnectionsFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPRUNNER_API ListVpcIngressConnectionsFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPRUNNER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

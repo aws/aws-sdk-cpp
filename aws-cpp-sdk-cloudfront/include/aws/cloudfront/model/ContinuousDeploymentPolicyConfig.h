@@ -29,14 +29,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ContinuousDeploymentPolicyConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFRONT_API ContinuousDeploymentPolicyConfig
+  class ContinuousDeploymentPolicyConfig
   {
   public:
-    ContinuousDeploymentPolicyConfig();
-    ContinuousDeploymentPolicyConfig(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ContinuousDeploymentPolicyConfig& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API ContinuousDeploymentPolicyConfig();
+    AWS_CLOUDFRONT_API ContinuousDeploymentPolicyConfig(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API ContinuousDeploymentPolicyConfig& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**

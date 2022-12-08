@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-contact-lens-2020-08-21/RealtimeContactAnalysisSegment">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECTCONTACTLENS_API RealtimeContactAnalysisSegment
+  class RealtimeContactAnalysisSegment
   {
   public:
-    RealtimeContactAnalysisSegment();
-    RealtimeContactAnalysisSegment(Aws::Utils::Json::JsonView jsonValue);
-    RealtimeContactAnalysisSegment& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECTCONTACTLENS_API RealtimeContactAnalysisSegment();
+    AWS_CONNECTCONTACTLENS_API RealtimeContactAnalysisSegment(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTCONTACTLENS_API RealtimeContactAnalysisSegment& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTCONTACTLENS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

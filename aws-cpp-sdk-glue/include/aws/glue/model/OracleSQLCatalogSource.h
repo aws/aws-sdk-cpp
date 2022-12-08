@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/OracleSQLCatalogSource">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API OracleSQLCatalogSource
+  class OracleSQLCatalogSource
   {
   public:
-    OracleSQLCatalogSource();
-    OracleSQLCatalogSource(Aws::Utils::Json::JsonView jsonValue);
-    OracleSQLCatalogSource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API OracleSQLCatalogSource();
+    AWS_GLUE_API OracleSQLCatalogSource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API OracleSQLCatalogSource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

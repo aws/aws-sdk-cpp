@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/ApplicationSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_APPREGISTRY_API ApplicationSummary
+  class ApplicationSummary
   {
   public:
-    ApplicationSummary();
-    ApplicationSummary(Aws::Utils::Json::JsonView jsonValue);
-    ApplicationSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPREGISTRY_API ApplicationSummary();
+    AWS_APPREGISTRY_API ApplicationSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPREGISTRY_API ApplicationSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPREGISTRY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

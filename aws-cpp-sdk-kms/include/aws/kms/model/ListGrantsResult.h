@@ -26,12 +26,12 @@ namespace KMS
 {
 namespace Model
 {
-  class AWS_KMS_API ListGrantsResult
+  class ListGrantsResult
   {
   public:
-    ListGrantsResult();
-    ListGrantsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListGrantsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KMS_API ListGrantsResult();
+    AWS_KMS_API ListGrantsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KMS_API ListGrantsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

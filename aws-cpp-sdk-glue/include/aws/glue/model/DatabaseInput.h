@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DatabaseInput">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API DatabaseInput
+  class DatabaseInput
   {
   public:
-    DatabaseInput();
-    DatabaseInput(Aws::Utils::Json::JsonView jsonValue);
-    DatabaseInput& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API DatabaseInput();
+    AWS_GLUE_API DatabaseInput(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API DatabaseInput& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

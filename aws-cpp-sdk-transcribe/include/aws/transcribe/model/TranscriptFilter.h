@@ -44,13 +44,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/TranscriptFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_TRANSCRIBESERVICE_API TranscriptFilter
+  class TranscriptFilter
   {
   public:
-    TranscriptFilter();
-    TranscriptFilter(Aws::Utils::Json::JsonView jsonValue);
-    TranscriptFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TRANSCRIBESERVICE_API TranscriptFilter();
+    AWS_TRANSCRIBESERVICE_API TranscriptFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSCRIBESERVICE_API TranscriptFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSCRIBESERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

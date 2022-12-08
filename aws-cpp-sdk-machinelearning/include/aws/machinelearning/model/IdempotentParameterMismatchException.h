@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/IdempotentParameterMismatchException">AWS
    * API Reference</a></p>
    */
-  class AWS_MACHINELEARNING_API IdempotentParameterMismatchException
+  class IdempotentParameterMismatchException
   {
   public:
-    IdempotentParameterMismatchException();
-    IdempotentParameterMismatchException(Aws::Utils::Json::JsonView jsonValue);
-    IdempotentParameterMismatchException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MACHINELEARNING_API IdempotentParameterMismatchException();
+    AWS_MACHINELEARNING_API IdempotentParameterMismatchException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACHINELEARNING_API IdempotentParameterMismatchException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACHINELEARNING_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

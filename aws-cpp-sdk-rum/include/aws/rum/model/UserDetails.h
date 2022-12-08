@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rum-2018-05-10/UserDetails">AWS API
    * Reference</a></p>
    */
-  class AWS_CLOUDWATCHRUM_API UserDetails
+  class UserDetails
   {
   public:
-    UserDetails();
-    UserDetails(Aws::Utils::Json::JsonView jsonValue);
-    UserDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDWATCHRUM_API UserDetails();
+    AWS_CLOUDWATCHRUM_API UserDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHRUM_API UserDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHRUM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

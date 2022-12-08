@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsS3BucketWebsiteConfigurationRoutingRuleRedirect">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsS3BucketWebsiteConfigurationRoutingRuleRedirect
+  class AwsS3BucketWebsiteConfigurationRoutingRuleRedirect
   {
   public:
-    AwsS3BucketWebsiteConfigurationRoutingRuleRedirect();
-    AwsS3BucketWebsiteConfigurationRoutingRuleRedirect(Aws::Utils::Json::JsonView jsonValue);
-    AwsS3BucketWebsiteConfigurationRoutingRuleRedirect& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsS3BucketWebsiteConfigurationRoutingRuleRedirect();
+    AWS_SECURITYHUB_API AwsS3BucketWebsiteConfigurationRoutingRuleRedirect(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsS3BucketWebsiteConfigurationRoutingRuleRedirect& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

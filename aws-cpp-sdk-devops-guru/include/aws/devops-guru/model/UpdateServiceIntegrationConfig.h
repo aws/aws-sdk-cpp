@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/UpdateServiceIntegrationConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_DEVOPSGURU_API UpdateServiceIntegrationConfig
+  class UpdateServiceIntegrationConfig
   {
   public:
-    UpdateServiceIntegrationConfig();
-    UpdateServiceIntegrationConfig(Aws::Utils::Json::JsonView jsonValue);
-    UpdateServiceIntegrationConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DEVOPSGURU_API UpdateServiceIntegrationConfig();
+    AWS_DEVOPSGURU_API UpdateServiceIntegrationConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVOPSGURU_API UpdateServiceIntegrationConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVOPSGURU_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

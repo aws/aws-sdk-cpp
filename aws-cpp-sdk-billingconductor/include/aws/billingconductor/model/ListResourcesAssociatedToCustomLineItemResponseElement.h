@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/ListResourcesAssociatedToCustomLineItemResponseElement">AWS
    * API Reference</a></p>
    */
-  class AWS_BILLINGCONDUCTOR_API ListResourcesAssociatedToCustomLineItemResponseElement
+  class ListResourcesAssociatedToCustomLineItemResponseElement
   {
   public:
-    ListResourcesAssociatedToCustomLineItemResponseElement();
-    ListResourcesAssociatedToCustomLineItemResponseElement(Aws::Utils::Json::JsonView jsonValue);
-    ListResourcesAssociatedToCustomLineItemResponseElement& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BILLINGCONDUCTOR_API ListResourcesAssociatedToCustomLineItemResponseElement();
+    AWS_BILLINGCONDUCTOR_API ListResourcesAssociatedToCustomLineItemResponseElement(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BILLINGCONDUCTOR_API ListResourcesAssociatedToCustomLineItemResponseElement& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BILLINGCONDUCTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

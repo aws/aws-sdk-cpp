@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UserProfile">AWS
    * API Reference</a></p>
    */
-  class AWS_OPSWORKS_API UserProfile
+  class UserProfile
   {
   public:
-    UserProfile();
-    UserProfile(Aws::Utils::Json::JsonView jsonValue);
-    UserProfile& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OPSWORKS_API UserProfile();
+    AWS_OPSWORKS_API UserProfile(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPSWORKS_API UserProfile& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPSWORKS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

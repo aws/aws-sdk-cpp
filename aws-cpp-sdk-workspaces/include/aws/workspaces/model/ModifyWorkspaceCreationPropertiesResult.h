@@ -22,12 +22,12 @@ namespace WorkSpaces
 {
 namespace Model
 {
-  class AWS_WORKSPACES_API ModifyWorkspaceCreationPropertiesResult
+  class ModifyWorkspaceCreationPropertiesResult
   {
   public:
-    ModifyWorkspaceCreationPropertiesResult();
-    ModifyWorkspaceCreationPropertiesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ModifyWorkspaceCreationPropertiesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WORKSPACES_API ModifyWorkspaceCreationPropertiesResult();
+    AWS_WORKSPACES_API ModifyWorkspaceCreationPropertiesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WORKSPACES_API ModifyWorkspaceCreationPropertiesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

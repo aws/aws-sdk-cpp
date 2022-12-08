@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/InternalServerError">AWS
    * API Reference</a></p>
    */
-  class AWS_EFS_API InternalServerError
+  class InternalServerError
   {
   public:
-    InternalServerError();
-    InternalServerError(Aws::Utils::Json::JsonView jsonValue);
-    InternalServerError& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EFS_API InternalServerError();
+    AWS_EFS_API InternalServerError(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EFS_API InternalServerError& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EFS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

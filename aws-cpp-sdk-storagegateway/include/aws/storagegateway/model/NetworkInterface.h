@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/NetworkInterface">AWS
    * API Reference</a></p>
    */
-  class AWS_STORAGEGATEWAY_API NetworkInterface
+  class NetworkInterface
   {
   public:
-    NetworkInterface();
-    NetworkInterface(Aws::Utils::Json::JsonView jsonValue);
-    NetworkInterface& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_STORAGEGATEWAY_API NetworkInterface();
+    AWS_STORAGEGATEWAY_API NetworkInterface(Aws::Utils::Json::JsonView jsonValue);
+    AWS_STORAGEGATEWAY_API NetworkInterface& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_STORAGEGATEWAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

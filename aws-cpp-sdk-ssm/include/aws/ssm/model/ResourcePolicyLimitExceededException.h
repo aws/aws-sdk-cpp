@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ResourcePolicyLimitExceededException">AWS
    * API Reference</a></p>
    */
-  class AWS_SSM_API ResourcePolicyLimitExceededException
+  class ResourcePolicyLimitExceededException
   {
   public:
-    ResourcePolicyLimitExceededException();
-    ResourcePolicyLimitExceededException(Aws::Utils::Json::JsonView jsonValue);
-    ResourcePolicyLimitExceededException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSM_API ResourcePolicyLimitExceededException();
+    AWS_SSM_API ResourcePolicyLimitExceededException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API ResourcePolicyLimitExceededException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

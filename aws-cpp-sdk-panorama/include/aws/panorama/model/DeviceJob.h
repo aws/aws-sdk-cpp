@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/panorama-2019-07-24/DeviceJob">AWS
    * API Reference</a></p>
    */
-  class AWS_PANORAMA_API DeviceJob
+  class DeviceJob
   {
   public:
-    DeviceJob();
-    DeviceJob(Aws::Utils::Json::JsonView jsonValue);
-    DeviceJob& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PANORAMA_API DeviceJob();
+    AWS_PANORAMA_API DeviceJob(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PANORAMA_API DeviceJob& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PANORAMA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

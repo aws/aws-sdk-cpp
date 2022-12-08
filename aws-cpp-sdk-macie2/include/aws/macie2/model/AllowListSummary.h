@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/AllowListSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_MACIE2_API AllowListSummary
+  class AllowListSummary
   {
   public:
-    AllowListSummary();
-    AllowListSummary(Aws::Utils::Json::JsonView jsonValue);
-    AllowListSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MACIE2_API AllowListSummary();
+    AWS_MACIE2_API AllowListSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API AllowListSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

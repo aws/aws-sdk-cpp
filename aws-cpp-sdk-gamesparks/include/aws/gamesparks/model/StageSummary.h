@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamesparks-2021-08-17/StageSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_GAMESPARKS_API StageSummary
+  class StageSummary
   {
   public:
-    StageSummary();
-    StageSummary(Aws::Utils::Json::JsonView jsonValue);
-    StageSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GAMESPARKS_API StageSummary();
+    AWS_GAMESPARKS_API StageSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMESPARKS_API StageSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMESPARKS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

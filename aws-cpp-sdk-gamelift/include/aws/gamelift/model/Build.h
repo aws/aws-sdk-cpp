@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/Build">AWS API
    * Reference</a></p>
    */
-  class AWS_GAMELIFT_API Build
+  class Build
   {
   public:
-    Build();
-    Build(Aws::Utils::Json::JsonView jsonValue);
-    Build& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GAMELIFT_API Build();
+    AWS_GAMELIFT_API Build(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMELIFT_API Build& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -26,12 +26,12 @@ namespace CodeGuruReviewer
 {
 namespace Model
 {
-  class AWS_CODEGURUREVIEWER_API ListRecommendationFeedbackResult
+  class ListRecommendationFeedbackResult
   {
   public:
-    ListRecommendationFeedbackResult();
-    ListRecommendationFeedbackResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListRecommendationFeedbackResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODEGURUREVIEWER_API ListRecommendationFeedbackResult();
+    AWS_CODEGURUREVIEWER_API ListRecommendationFeedbackResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODEGURUREVIEWER_API ListRecommendationFeedbackResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

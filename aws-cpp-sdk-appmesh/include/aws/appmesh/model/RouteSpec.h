@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/RouteSpec">AWS
    * API Reference</a></p>
    */
-  class AWS_APPMESH_API RouteSpec
+  class RouteSpec
   {
   public:
-    RouteSpec();
-    RouteSpec(Aws::Utils::Json::JsonView jsonValue);
-    RouteSpec& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPMESH_API RouteSpec();
+    AWS_APPMESH_API RouteSpec(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API RouteSpec& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

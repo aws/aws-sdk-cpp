@@ -26,12 +26,12 @@ namespace KinesisAnalyticsV2
 {
 namespace Model
 {
-  class AWS_KINESISANALYTICSV2_API DiscoverInputSchemaResult
+  class DiscoverInputSchemaResult
   {
   public:
-    DiscoverInputSchemaResult();
-    DiscoverInputSchemaResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DiscoverInputSchemaResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KINESISANALYTICSV2_API DiscoverInputSchemaResult();
+    AWS_KINESISANALYTICSV2_API DiscoverInputSchemaResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KINESISANALYTICSV2_API DiscoverInputSchemaResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

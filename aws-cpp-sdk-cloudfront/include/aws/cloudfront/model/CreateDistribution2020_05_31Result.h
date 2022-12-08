@@ -31,12 +31,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateDistributionResult">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFRONT_API CreateDistribution2020_05_31Result
+  class CreateDistribution2020_05_31Result
   {
   public:
-    CreateDistribution2020_05_31Result();
-    CreateDistribution2020_05_31Result(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    CreateDistribution2020_05_31Result& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_CLOUDFRONT_API CreateDistribution2020_05_31Result();
+    AWS_CLOUDFRONT_API CreateDistribution2020_05_31Result(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_CLOUDFRONT_API CreateDistribution2020_05_31Result& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

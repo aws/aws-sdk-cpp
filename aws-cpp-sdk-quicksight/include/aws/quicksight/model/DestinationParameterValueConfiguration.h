@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DestinationParameterValueConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API DestinationParameterValueConfiguration
+  class DestinationParameterValueConfiguration
   {
   public:
-    DestinationParameterValueConfiguration();
-    DestinationParameterValueConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    DestinationParameterValueConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API DestinationParameterValueConfiguration();
+    AWS_QUICKSIGHT_API DestinationParameterValueConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API DestinationParameterValueConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/EksPropertiesDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_BATCH_API EksPropertiesDetail
+  class EksPropertiesDetail
   {
   public:
-    EksPropertiesDetail();
-    EksPropertiesDetail(Aws::Utils::Json::JsonView jsonValue);
-    EksPropertiesDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BATCH_API EksPropertiesDetail();
+    AWS_BATCH_API EksPropertiesDetail(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BATCH_API EksPropertiesDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BATCH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

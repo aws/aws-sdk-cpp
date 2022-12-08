@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DataQualityRulesetFilterCriteria">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API DataQualityRulesetFilterCriteria
+  class DataQualityRulesetFilterCriteria
   {
   public:
-    DataQualityRulesetFilterCriteria();
-    DataQualityRulesetFilterCriteria(Aws::Utils::Json::JsonView jsonValue);
-    DataQualityRulesetFilterCriteria& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API DataQualityRulesetFilterCriteria();
+    AWS_GLUE_API DataQualityRulesetFilterCriteria(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API DataQualityRulesetFilterCriteria& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

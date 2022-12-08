@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/ContentData">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECTWISDOMSERVICE_API ContentData
+  class ContentData
   {
   public:
-    ContentData();
-    ContentData(Aws::Utils::Json::JsonView jsonValue);
-    ContentData& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECTWISDOMSERVICE_API ContentData();
+    AWS_CONNECTWISDOMSERVICE_API ContentData(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTWISDOMSERVICE_API ContentData& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTWISDOMSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

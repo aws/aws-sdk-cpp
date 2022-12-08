@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/keyspaces-2022-02-10/TableSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_KEYSPACES_API TableSummary
+  class TableSummary
   {
   public:
-    TableSummary();
-    TableSummary(Aws::Utils::Json::JsonView jsonValue);
-    TableSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KEYSPACES_API TableSummary();
+    AWS_KEYSPACES_API TableSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KEYSPACES_API TableSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KEYSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

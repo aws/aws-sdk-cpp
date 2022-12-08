@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/CookieMatchPattern">AWS
    * API Reference</a></p>
    */
-  class AWS_WAFV2_API CookieMatchPattern
+  class CookieMatchPattern
   {
   public:
-    CookieMatchPattern();
-    CookieMatchPattern(Aws::Utils::Json::JsonView jsonValue);
-    CookieMatchPattern& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WAFV2_API CookieMatchPattern();
+    AWS_WAFV2_API CookieMatchPattern(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API CookieMatchPattern& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

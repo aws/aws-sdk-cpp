@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/AutoAdjustData">AWS
    * API Reference</a></p>
    */
-  class AWS_BUDGETS_API AutoAdjustData
+  class AutoAdjustData
   {
   public:
-    AutoAdjustData();
-    AutoAdjustData(Aws::Utils::Json::JsonView jsonValue);
-    AutoAdjustData& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BUDGETS_API AutoAdjustData();
+    AWS_BUDGETS_API AutoAdjustData(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BUDGETS_API AutoAdjustData& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BUDGETS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

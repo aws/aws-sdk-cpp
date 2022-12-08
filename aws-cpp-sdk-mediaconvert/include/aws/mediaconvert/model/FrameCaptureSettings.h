@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/FrameCaptureSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API FrameCaptureSettings
+  class FrameCaptureSettings
   {
   public:
-    FrameCaptureSettings();
-    FrameCaptureSettings(Aws::Utils::Json::JsonView jsonValue);
-    FrameCaptureSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API FrameCaptureSettings();
+    AWS_MEDIACONVERT_API FrameCaptureSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API FrameCaptureSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

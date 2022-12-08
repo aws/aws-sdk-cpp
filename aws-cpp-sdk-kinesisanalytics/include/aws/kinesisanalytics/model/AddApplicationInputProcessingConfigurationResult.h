@@ -22,12 +22,12 @@ namespace KinesisAnalytics
 {
 namespace Model
 {
-  class AWS_KINESISANALYTICS_API AddApplicationInputProcessingConfigurationResult
+  class AddApplicationInputProcessingConfigurationResult
   {
   public:
-    AddApplicationInputProcessingConfigurationResult();
-    AddApplicationInputProcessingConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AddApplicationInputProcessingConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KINESISANALYTICS_API AddApplicationInputProcessingConfigurationResult();
+    AWS_KINESISANALYTICS_API AddApplicationInputProcessingConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KINESISANALYTICS_API AddApplicationInputProcessingConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

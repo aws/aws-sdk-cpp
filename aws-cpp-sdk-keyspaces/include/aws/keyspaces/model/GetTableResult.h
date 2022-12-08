@@ -32,12 +32,12 @@ namespace Keyspaces
 {
 namespace Model
 {
-  class AWS_KEYSPACES_API GetTableResult
+  class GetTableResult
   {
   public:
-    GetTableResult();
-    GetTableResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetTableResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KEYSPACES_API GetTableResult();
+    AWS_KEYSPACES_API GetTableResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KEYSPACES_API GetTableResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

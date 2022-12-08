@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/EventActionEntry">AWS
    * API Reference</a></p>
    */
-  class AWS_DATAEXCHANGE_API EventActionEntry
+  class EventActionEntry
   {
   public:
-    EventActionEntry();
-    EventActionEntry(Aws::Utils::Json::JsonView jsonValue);
-    EventActionEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DATAEXCHANGE_API EventActionEntry();
+    AWS_DATAEXCHANGE_API EventActionEntry(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATAEXCHANGE_API EventActionEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATAEXCHANGE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

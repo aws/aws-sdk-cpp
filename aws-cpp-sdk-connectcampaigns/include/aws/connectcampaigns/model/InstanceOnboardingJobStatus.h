@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/connectcampaigns-2021-01-30/InstanceOnboardingJobStatus">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECTCAMPAIGNS_API InstanceOnboardingJobStatus
+  class InstanceOnboardingJobStatus
   {
   public:
-    InstanceOnboardingJobStatus();
-    InstanceOnboardingJobStatus(Aws::Utils::Json::JsonView jsonValue);
-    InstanceOnboardingJobStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECTCAMPAIGNS_API InstanceOnboardingJobStatus();
+    AWS_CONNECTCAMPAIGNS_API InstanceOnboardingJobStatus(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTCAMPAIGNS_API InstanceOnboardingJobStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTCAMPAIGNS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

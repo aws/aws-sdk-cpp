@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/TableRestoreStatus">AWS
    * API Reference</a></p>
    */
-  class AWS_REDSHIFTSERVERLESS_API TableRestoreStatus
+  class TableRestoreStatus
   {
   public:
-    TableRestoreStatus();
-    TableRestoreStatus(Aws::Utils::Json::JsonView jsonValue);
-    TableRestoreStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_REDSHIFTSERVERLESS_API TableRestoreStatus();
+    AWS_REDSHIFTSERVERLESS_API TableRestoreStatus(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REDSHIFTSERVERLESS_API TableRestoreStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REDSHIFTSERVERLESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

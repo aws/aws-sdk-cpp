@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ClassificationScopeSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_MACIE2_API ClassificationScopeSummary
+  class ClassificationScopeSummary
   {
   public:
-    ClassificationScopeSummary();
-    ClassificationScopeSummary(Aws::Utils::Json::JsonView jsonValue);
-    ClassificationScopeSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MACIE2_API ClassificationScopeSummary();
+    AWS_MACIE2_API ClassificationScopeSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API ClassificationScopeSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/SlotValueElicitationSetting">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELSV2_API SlotValueElicitationSetting
+  class SlotValueElicitationSetting
   {
   public:
-    SlotValueElicitationSetting();
-    SlotValueElicitationSetting(Aws::Utils::Json::JsonView jsonValue);
-    SlotValueElicitationSetting& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELSV2_API SlotValueElicitationSetting();
+    AWS_LEXMODELSV2_API SlotValueElicitationSetting(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API SlotValueElicitationSetting& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -37,13 +37,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/MemberDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_DETECTIVE_API MemberDetail
+  class MemberDetail
   {
   public:
-    MemberDetail();
-    MemberDetail(Aws::Utils::Json::JsonView jsonValue);
-    MemberDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DETECTIVE_API MemberDetail();
+    AWS_DETECTIVE_API MemberDetail(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DETECTIVE_API MemberDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DETECTIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

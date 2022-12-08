@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/FunctionResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTTWINMAKER_API FunctionResponse
+  class FunctionResponse
   {
   public:
-    FunctionResponse();
-    FunctionResponse(Aws::Utils::Json::JsonView jsonValue);
-    FunctionResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTTWINMAKER_API FunctionResponse();
+    AWS_IOTTWINMAKER_API FunctionResponse(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTTWINMAKER_API FunctionResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTTWINMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

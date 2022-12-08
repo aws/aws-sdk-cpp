@@ -24,12 +24,12 @@ namespace WorkMail
 {
 namespace Model
 {
-  class AWS_WORKMAIL_API CreateGroupResult
+  class CreateGroupResult
   {
   public:
-    CreateGroupResult();
-    CreateGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WORKMAIL_API CreateGroupResult();
+    AWS_WORKMAIL_API CreateGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WORKMAIL_API CreateGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

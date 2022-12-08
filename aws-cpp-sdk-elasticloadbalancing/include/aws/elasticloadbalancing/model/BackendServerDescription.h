@@ -30,15 +30,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/BackendServerDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICLOADBALANCING_API BackendServerDescription
+  class BackendServerDescription
   {
   public:
-    BackendServerDescription();
-    BackendServerDescription(const Aws::Utils::Xml::XmlNode& xmlNode);
-    BackendServerDescription& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICLOADBALANCING_API BackendServerDescription();
+    AWS_ELASTICLOADBALANCING_API BackendServerDescription(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICLOADBALANCING_API BackendServerDescription& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_ELASTICLOADBALANCING_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_ELASTICLOADBALANCING_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**

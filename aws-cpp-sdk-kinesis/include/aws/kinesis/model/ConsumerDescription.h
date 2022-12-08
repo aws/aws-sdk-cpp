@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/ConsumerDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_KINESIS_API ConsumerDescription
+  class ConsumerDescription
   {
   public:
-    ConsumerDescription();
-    ConsumerDescription(Aws::Utils::Json::JsonView jsonValue);
-    ConsumerDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KINESIS_API ConsumerDescription();
+    AWS_KINESIS_API ConsumerDescription(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESIS_API ConsumerDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESIS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

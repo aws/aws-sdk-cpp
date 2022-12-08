@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/NumericRangeFilterValue">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API NumericRangeFilterValue
+  class NumericRangeFilterValue
   {
   public:
-    NumericRangeFilterValue();
-    NumericRangeFilterValue(Aws::Utils::Json::JsonView jsonValue);
-    NumericRangeFilterValue& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API NumericRangeFilterValue();
+    AWS_QUICKSIGHT_API NumericRangeFilterValue(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API NumericRangeFilterValue& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

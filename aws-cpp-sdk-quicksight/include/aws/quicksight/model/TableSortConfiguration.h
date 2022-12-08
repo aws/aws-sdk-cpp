@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/TableSortConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API TableSortConfiguration
+  class TableSortConfiguration
   {
   public:
-    TableSortConfiguration();
-    TableSortConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    TableSortConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API TableSortConfiguration();
+    AWS_QUICKSIGHT_API TableSortConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API TableSortConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

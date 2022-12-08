@@ -22,12 +22,12 @@ namespace Connect
 {
 namespace Model
 {
-  class AWS_CONNECT_API UpdateContactFlowModuleMetadataResult
+  class UpdateContactFlowModuleMetadataResult
   {
   public:
-    UpdateContactFlowModuleMetadataResult();
-    UpdateContactFlowModuleMetadataResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateContactFlowModuleMetadataResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CONNECT_API UpdateContactFlowModuleMetadataResult();
+    AWS_CONNECT_API UpdateContactFlowModuleMetadataResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CONNECT_API UpdateContactFlowModuleMetadataResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

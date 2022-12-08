@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DocumentReviewerResponseSource">AWS
    * API Reference</a></p>
    */
-  class AWS_SSM_API DocumentReviewerResponseSource
+  class DocumentReviewerResponseSource
   {
   public:
-    DocumentReviewerResponseSource();
-    DocumentReviewerResponseSource(Aws::Utils::Json::JsonView jsonValue);
-    DocumentReviewerResponseSource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSM_API DocumentReviewerResponseSource();
+    AWS_SSM_API DocumentReviewerResponseSource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API DocumentReviewerResponseSource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

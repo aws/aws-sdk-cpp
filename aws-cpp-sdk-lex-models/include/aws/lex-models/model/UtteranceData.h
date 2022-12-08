@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/UtteranceData">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELBUILDINGSERVICE_API UtteranceData
+  class UtteranceData
   {
   public:
-    UtteranceData();
-    UtteranceData(Aws::Utils::Json::JsonView jsonValue);
-    UtteranceData& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELBUILDINGSERVICE_API UtteranceData();
+    AWS_LEXMODELBUILDINGSERVICE_API UtteranceData(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELBUILDINGSERVICE_API UtteranceData& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELBUILDINGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

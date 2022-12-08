@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/BatchDeleteDocumentResponseFailedDocument">AWS
    * API Reference</a></p>
    */
-  class AWS_KENDRA_API BatchDeleteDocumentResponseFailedDocument
+  class BatchDeleteDocumentResponseFailedDocument
   {
   public:
-    BatchDeleteDocumentResponseFailedDocument();
-    BatchDeleteDocumentResponseFailedDocument(Aws::Utils::Json::JsonView jsonValue);
-    BatchDeleteDocumentResponseFailedDocument& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KENDRA_API BatchDeleteDocumentResponseFailedDocument();
+    AWS_KENDRA_API BatchDeleteDocumentResponseFailedDocument(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API BatchDeleteDocumentResponseFailedDocument& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

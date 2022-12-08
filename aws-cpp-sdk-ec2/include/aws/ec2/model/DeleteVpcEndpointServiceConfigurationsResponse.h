@@ -26,12 +26,12 @@ namespace EC2
 {
 namespace Model
 {
-  class AWS_EC2_API DeleteVpcEndpointServiceConfigurationsResponse
+  class DeleteVpcEndpointServiceConfigurationsResponse
   {
   public:
-    DeleteVpcEndpointServiceConfigurationsResponse();
-    DeleteVpcEndpointServiceConfigurationsResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DeleteVpcEndpointServiceConfigurationsResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API DeleteVpcEndpointServiceConfigurationsResponse();
+    AWS_EC2_API DeleteVpcEndpointServiceConfigurationsResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API DeleteVpcEndpointServiceConfigurationsResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

@@ -24,12 +24,12 @@ namespace DataSync
 {
 namespace Model
 {
-  class AWS_DATASYNC_API CreateLocationFsxWindowsResult
+  class CreateLocationFsxWindowsResult
   {
   public:
-    CreateLocationFsxWindowsResult();
-    CreateLocationFsxWindowsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateLocationFsxWindowsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DATASYNC_API CreateLocationFsxWindowsResult();
+    AWS_DATASYNC_API CreateLocationFsxWindowsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DATASYNC_API CreateLocationFsxWindowsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

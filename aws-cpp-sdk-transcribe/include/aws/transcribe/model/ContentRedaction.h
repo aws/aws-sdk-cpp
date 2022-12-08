@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/ContentRedaction">AWS
    * API Reference</a></p>
    */
-  class AWS_TRANSCRIBESERVICE_API ContentRedaction
+  class ContentRedaction
   {
   public:
-    ContentRedaction();
-    ContentRedaction(Aws::Utils::Json::JsonView jsonValue);
-    ContentRedaction& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TRANSCRIBESERVICE_API ContentRedaction();
+    AWS_TRANSCRIBESERVICE_API ContentRedaction(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSCRIBESERVICE_API ContentRedaction& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSCRIBESERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/OverallVolume">AWS
    * API Reference</a></p>
    */
-  class AWS_SESV2_API OverallVolume
+  class OverallVolume
   {
   public:
-    OverallVolume();
-    OverallVolume(Aws::Utils::Json::JsonView jsonValue);
-    OverallVolume& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SESV2_API OverallVolume();
+    AWS_SESV2_API OverallVolume(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SESV2_API OverallVolume& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SESV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/APNSChannelRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API APNSChannelRequest
+  class APNSChannelRequest
   {
   public:
-    APNSChannelRequest();
-    APNSChannelRequest(Aws::Utils::Json::JsonView jsonValue);
-    APNSChannelRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API APNSChannelRequest();
+    AWS_PINPOINT_API APNSChannelRequest(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API APNSChannelRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

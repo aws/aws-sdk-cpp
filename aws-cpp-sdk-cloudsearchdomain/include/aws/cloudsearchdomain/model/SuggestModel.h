@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearchdomain-2013-01-01/SuggestModel">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDSEARCHDOMAIN_API SuggestModel
+  class SuggestModel
   {
   public:
-    SuggestModel();
-    SuggestModel(Aws::Utils::Json::JsonView jsonValue);
-    SuggestModel& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDSEARCHDOMAIN_API SuggestModel();
+    AWS_CLOUDSEARCHDOMAIN_API SuggestModel(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDSEARCHDOMAIN_API SuggestModel& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDSEARCHDOMAIN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

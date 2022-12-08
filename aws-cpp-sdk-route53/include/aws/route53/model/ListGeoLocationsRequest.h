@@ -26,10 +26,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListGeoLocationsRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53_API ListGeoLocationsRequest : public Route53Request
+  class ListGeoLocationsRequest : public Route53Request
   {
   public:
-    ListGeoLocationsRequest();
+    AWS_ROUTE53_API ListGeoLocationsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,9 +37,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ListGeoLocations"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_ROUTE53_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_ROUTE53_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**

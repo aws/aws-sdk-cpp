@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/RoutingProfileQueueReference">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECT_API RoutingProfileQueueReference
+  class RoutingProfileQueueReference
   {
   public:
-    RoutingProfileQueueReference();
-    RoutingProfileQueueReference(Aws::Utils::Json::JsonView jsonValue);
-    RoutingProfileQueueReference& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECT_API RoutingProfileQueueReference();
+    AWS_CONNECT_API RoutingProfileQueueReference(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API RoutingProfileQueueReference& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

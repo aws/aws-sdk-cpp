@@ -37,13 +37,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/AudioSelector">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API AudioSelector
+  class AudioSelector
   {
   public:
-    AudioSelector();
-    AudioSelector(Aws::Utils::Json::JsonView jsonValue);
-    AudioSelector& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API AudioSelector();
+    AWS_MEDIACONVERT_API AudioSelector(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API AudioSelector& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

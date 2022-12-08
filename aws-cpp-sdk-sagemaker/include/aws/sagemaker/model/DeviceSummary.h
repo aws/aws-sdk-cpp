@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeviceSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API DeviceSummary
+  class DeviceSummary
   {
   public:
-    DeviceSummary();
-    DeviceSummary(Aws::Utils::Json::JsonView jsonValue);
-    DeviceSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API DeviceSummary();
+    AWS_SAGEMAKER_API DeviceSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API DeviceSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

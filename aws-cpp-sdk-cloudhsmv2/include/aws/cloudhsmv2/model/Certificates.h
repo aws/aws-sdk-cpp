@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/Certificates">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDHSMV2_API Certificates
+  class Certificates
   {
   public:
-    Certificates();
-    Certificates(Aws::Utils::Json::JsonView jsonValue);
-    Certificates& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDHSMV2_API Certificates();
+    AWS_CLOUDHSMV2_API Certificates(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDHSMV2_API Certificates& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDHSMV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

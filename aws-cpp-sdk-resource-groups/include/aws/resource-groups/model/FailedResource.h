@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/FailedResource">AWS
    * API Reference</a></p>
    */
-  class AWS_RESOURCEGROUPS_API FailedResource
+  class FailedResource
   {
   public:
-    FailedResource();
-    FailedResource(Aws::Utils::Json::JsonView jsonValue);
-    FailedResource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_RESOURCEGROUPS_API FailedResource();
+    AWS_RESOURCEGROUPS_API FailedResource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RESOURCEGROUPS_API FailedResource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RESOURCEGROUPS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ivschat-2020-07-14/ValidationException">AWS
    * API Reference</a></p>
    */
-  class AWS_IVSCHAT_API ValidationException
+  class ValidationException
   {
   public:
-    ValidationException();
-    ValidationException(Aws::Utils::Json::JsonView jsonValue);
-    ValidationException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IVSCHAT_API ValidationException();
+    AWS_IVSCHAT_API ValidationException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IVSCHAT_API ValidationException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IVSCHAT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

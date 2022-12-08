@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/EcsCluster">AWS
    * API Reference</a></p>
    */
-  class AWS_OPSWORKS_API EcsCluster
+  class EcsCluster
   {
   public:
-    EcsCluster();
-    EcsCluster(Aws::Utils::Json::JsonView jsonValue);
-    EcsCluster& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OPSWORKS_API EcsCluster();
+    AWS_OPSWORKS_API EcsCluster(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPSWORKS_API EcsCluster& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPSWORKS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

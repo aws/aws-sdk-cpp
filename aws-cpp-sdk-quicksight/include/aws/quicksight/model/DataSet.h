@@ -41,13 +41,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DataSet">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API DataSet
+  class DataSet
   {
   public:
-    DataSet();
-    DataSet(Aws::Utils::Json::JsonView jsonValue);
-    DataSet& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API DataSet();
+    AWS_QUICKSIGHT_API DataSet(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API DataSet& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

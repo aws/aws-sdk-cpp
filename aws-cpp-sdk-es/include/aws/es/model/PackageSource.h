@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/PackageSource">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICSEARCHSERVICE_API PackageSource
+  class PackageSource
   {
   public:
-    PackageSource();
-    PackageSource(Aws::Utils::Json::JsonView jsonValue);
-    PackageSource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ELASTICSEARCHSERVICE_API PackageSource();
+    AWS_ELASTICSEARCHSERVICE_API PackageSource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICSEARCHSERVICE_API PackageSource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

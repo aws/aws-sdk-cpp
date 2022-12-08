@@ -35,15 +35,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/LaunchTemplateInstanceMetadataOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API LaunchTemplateInstanceMetadataOptions
+  class LaunchTemplateInstanceMetadataOptions
   {
   public:
-    LaunchTemplateInstanceMetadataOptions();
-    LaunchTemplateInstanceMetadataOptions(const Aws::Utils::Xml::XmlNode& xmlNode);
-    LaunchTemplateInstanceMetadataOptions& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API LaunchTemplateInstanceMetadataOptions();
+    AWS_EC2_API LaunchTemplateInstanceMetadataOptions(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API LaunchTemplateInstanceMetadataOptions& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**

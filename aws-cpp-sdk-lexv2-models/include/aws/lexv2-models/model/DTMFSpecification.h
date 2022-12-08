@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DTMFSpecification">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELSV2_API DTMFSpecification
+  class DTMFSpecification
   {
   public:
-    DTMFSpecification();
-    DTMFSpecification(Aws::Utils::Json::JsonView jsonValue);
-    DTMFSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELSV2_API DTMFSpecification();
+    AWS_LEXMODELSV2_API DTMFSpecification(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API DTMFSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

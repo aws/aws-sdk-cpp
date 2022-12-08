@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/LayoutSections">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECTCASES_API LayoutSections
+  class LayoutSections
   {
   public:
-    LayoutSections();
-    LayoutSections(Aws::Utils::Json::JsonView jsonValue);
-    LayoutSections& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECTCASES_API LayoutSections();
+    AWS_CONNECTCASES_API LayoutSections(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTCASES_API LayoutSections& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTCASES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

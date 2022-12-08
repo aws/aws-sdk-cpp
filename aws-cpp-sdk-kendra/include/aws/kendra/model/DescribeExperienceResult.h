@@ -29,12 +29,12 @@ namespace kendra
 {
 namespace Model
 {
-  class AWS_KENDRA_API DescribeExperienceResult
+  class DescribeExperienceResult
   {
   public:
-    DescribeExperienceResult();
-    DescribeExperienceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeExperienceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KENDRA_API DescribeExperienceResult();
+    AWS_KENDRA_API DescribeExperienceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KENDRA_API DescribeExperienceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

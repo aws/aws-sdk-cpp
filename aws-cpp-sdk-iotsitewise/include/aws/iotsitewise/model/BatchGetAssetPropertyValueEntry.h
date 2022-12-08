@@ -38,13 +38,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/BatchGetAssetPropertyValueEntry">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTSITEWISE_API BatchGetAssetPropertyValueEntry
+  class BatchGetAssetPropertyValueEntry
   {
   public:
-    BatchGetAssetPropertyValueEntry();
-    BatchGetAssetPropertyValueEntry(Aws::Utils::Json::JsonView jsonValue);
-    BatchGetAssetPropertyValueEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTSITEWISE_API BatchGetAssetPropertyValueEntry();
+    AWS_IOTSITEWISE_API BatchGetAssetPropertyValueEntry(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API BatchGetAssetPropertyValueEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

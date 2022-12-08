@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/BatchGetCustomDataIdentifierSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_MACIE2_API BatchGetCustomDataIdentifierSummary
+  class BatchGetCustomDataIdentifierSummary
   {
   public:
-    BatchGetCustomDataIdentifierSummary();
-    BatchGetCustomDataIdentifierSummary(Aws::Utils::Json::JsonView jsonValue);
-    BatchGetCustomDataIdentifierSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MACIE2_API BatchGetCustomDataIdentifierSummary();
+    AWS_MACIE2_API BatchGetCustomDataIdentifierSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API BatchGetCustomDataIdentifierSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -26,13 +26,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/connectcampaigns-2021-01-30/PredictiveDialerConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECTCAMPAIGNS_API PredictiveDialerConfig
+  class PredictiveDialerConfig
   {
   public:
-    PredictiveDialerConfig();
-    PredictiveDialerConfig(Aws::Utils::Json::JsonView jsonValue);
-    PredictiveDialerConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECTCAMPAIGNS_API PredictiveDialerConfig();
+    AWS_CONNECTCAMPAIGNS_API PredictiveDialerConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTCAMPAIGNS_API PredictiveDialerConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTCAMPAIGNS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

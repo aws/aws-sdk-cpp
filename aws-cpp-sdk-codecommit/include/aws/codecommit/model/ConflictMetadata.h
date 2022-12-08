@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/ConflictMetadata">AWS
    * API Reference</a></p>
    */
-  class AWS_CODECOMMIT_API ConflictMetadata
+  class ConflictMetadata
   {
   public:
-    ConflictMetadata();
-    ConflictMetadata(Aws::Utils::Json::JsonView jsonValue);
-    ConflictMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODECOMMIT_API ConflictMetadata();
+    AWS_CODECOMMIT_API ConflictMetadata(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODECOMMIT_API ConflictMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODECOMMIT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

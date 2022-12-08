@@ -24,12 +24,12 @@ namespace LexModelsV2
 {
 namespace Model
 {
-  class AWS_LEXMODELSV2_API DeleteResourcePolicyStatementResult
+  class DeleteResourcePolicyStatementResult
   {
   public:
-    DeleteResourcePolicyStatementResult();
-    DeleteResourcePolicyStatementResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteResourcePolicyStatementResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LEXMODELSV2_API DeleteResourcePolicyStatementResult();
+    AWS_LEXMODELSV2_API DeleteResourcePolicyStatementResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LEXMODELSV2_API DeleteResourcePolicyStatementResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

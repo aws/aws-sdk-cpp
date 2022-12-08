@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/VpcEndpointSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICSEARCHSERVICE_API VpcEndpointSummary
+  class VpcEndpointSummary
   {
   public:
-    VpcEndpointSummary();
-    VpcEndpointSummary(Aws::Utils::Json::JsonView jsonValue);
-    VpcEndpointSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ELASTICSEARCHSERVICE_API VpcEndpointSummary();
+    AWS_ELASTICSEARCHSERVICE_API VpcEndpointSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICSEARCHSERVICE_API VpcEndpointSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

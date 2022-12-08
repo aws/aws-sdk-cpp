@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/AutoTune">AWS API
    * Reference</a></p>
    */
-  class AWS_ELASTICSEARCHSERVICE_API AutoTune
+  class AutoTune
   {
   public:
-    AutoTune();
-    AutoTune(Aws::Utils::Json::JsonView jsonValue);
-    AutoTune& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ELASTICSEARCHSERVICE_API AutoTune();
+    AWS_ELASTICSEARCHSERVICE_API AutoTune(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICSEARCHSERVICE_API AutoTune& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

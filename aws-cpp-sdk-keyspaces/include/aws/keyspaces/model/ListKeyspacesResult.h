@@ -26,12 +26,12 @@ namespace Keyspaces
 {
 namespace Model
 {
-  class AWS_KEYSPACES_API ListKeyspacesResult
+  class ListKeyspacesResult
   {
   public:
-    ListKeyspacesResult();
-    ListKeyspacesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListKeyspacesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KEYSPACES_API ListKeyspacesResult();
+    AWS_KEYSPACES_API ListKeyspacesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KEYSPACES_API ListKeyspacesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

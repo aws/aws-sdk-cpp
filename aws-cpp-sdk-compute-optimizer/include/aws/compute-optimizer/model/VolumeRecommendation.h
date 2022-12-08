@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/VolumeRecommendation">AWS
    * API Reference</a></p>
    */
-  class AWS_COMPUTEOPTIMIZER_API VolumeRecommendation
+  class VolumeRecommendation
   {
   public:
-    VolumeRecommendation();
-    VolumeRecommendation(Aws::Utils::Json::JsonView jsonValue);
-    VolumeRecommendation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COMPUTEOPTIMIZER_API VolumeRecommendation();
+    AWS_COMPUTEOPTIMIZER_API VolumeRecommendation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPUTEOPTIMIZER_API VolumeRecommendation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPUTEOPTIMIZER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

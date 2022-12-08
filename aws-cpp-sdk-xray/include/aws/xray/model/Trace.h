@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/Trace">AWS API
    * Reference</a></p>
    */
-  class AWS_XRAY_API Trace
+  class Trace
   {
   public:
-    Trace();
-    Trace(Aws::Utils::Json::JsonView jsonValue);
-    Trace& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_XRAY_API Trace();
+    AWS_XRAY_API Trace(Aws::Utils::Json::JsonView jsonValue);
+    AWS_XRAY_API Trace& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_XRAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

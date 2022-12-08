@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/ResourceInUseException">AWS
    * API Reference</a></p>
    */
-  class AWS_QLDB_API ResourceInUseException
+  class ResourceInUseException
   {
   public:
-    ResourceInUseException();
-    ResourceInUseException(Aws::Utils::Json::JsonView jsonValue);
-    ResourceInUseException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QLDB_API ResourceInUseException();
+    AWS_QLDB_API ResourceInUseException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QLDB_API ResourceInUseException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QLDB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

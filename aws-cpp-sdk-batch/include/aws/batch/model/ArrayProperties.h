@@ -26,13 +26,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/ArrayProperties">AWS
    * API Reference</a></p>
    */
-  class AWS_BATCH_API ArrayProperties
+  class ArrayProperties
   {
   public:
-    ArrayProperties();
-    ArrayProperties(Aws::Utils::Json::JsonView jsonValue);
-    ArrayProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BATCH_API ArrayProperties();
+    AWS_BATCH_API ArrayProperties(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BATCH_API ArrayProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BATCH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

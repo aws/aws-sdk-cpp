@@ -25,15 +25,15 @@ namespace SimpleDB
 namespace Model
 {
 
-  class AWS_SIMPLEDB_API DeletableItem
+  class DeletableItem
   {
   public:
-    DeletableItem();
-    DeletableItem(const Aws::Utils::Xml::XmlNode& xmlNode);
-    DeletableItem& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_SIMPLEDB_API DeletableItem();
+    AWS_SIMPLEDB_API DeletableItem(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_SIMPLEDB_API DeletableItem& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_SIMPLEDB_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_SIMPLEDB_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     

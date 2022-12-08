@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/InvalidRequestException">AWS
    * API Reference</a></p>
    */
-  class AWS_ATHENA_API InvalidRequestException
+  class InvalidRequestException
   {
   public:
-    InvalidRequestException();
-    InvalidRequestException(Aws::Utils::Json::JsonView jsonValue);
-    InvalidRequestException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ATHENA_API InvalidRequestException();
+    AWS_ATHENA_API InvalidRequestException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ATHENA_API InvalidRequestException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ATHENA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/TimeSeriesReplacementsDataSource">AWS
    * API Reference</a></p>
    */
-  class AWS_FORECASTSERVICE_API TimeSeriesReplacementsDataSource
+  class TimeSeriesReplacementsDataSource
   {
   public:
-    TimeSeriesReplacementsDataSource();
-    TimeSeriesReplacementsDataSource(Aws::Utils::Json::JsonView jsonValue);
-    TimeSeriesReplacementsDataSource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FORECASTSERVICE_API TimeSeriesReplacementsDataSource();
+    AWS_FORECASTSERVICE_API TimeSeriesReplacementsDataSource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FORECASTSERVICE_API TimeSeriesReplacementsDataSource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FORECASTSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

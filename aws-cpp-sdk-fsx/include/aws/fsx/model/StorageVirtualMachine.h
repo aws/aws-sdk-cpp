@@ -37,13 +37,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/StorageVirtualMachine">AWS
    * API Reference</a></p>
    */
-  class AWS_FSX_API StorageVirtualMachine
+  class StorageVirtualMachine
   {
   public:
-    StorageVirtualMachine();
-    StorageVirtualMachine(Aws::Utils::Json::JsonView jsonValue);
-    StorageVirtualMachine& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FSX_API StorageVirtualMachine();
+    AWS_FSX_API StorageVirtualMachine(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API StorageVirtualMachine& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pipes-2015-10-07/UpdatePipeSourceKinesisStreamParameters">AWS
    * API Reference</a></p>
    */
-  class AWS_PIPES_API UpdatePipeSourceKinesisStreamParameters
+  class UpdatePipeSourceKinesisStreamParameters
   {
   public:
-    UpdatePipeSourceKinesisStreamParameters();
-    UpdatePipeSourceKinesisStreamParameters(Aws::Utils::Json::JsonView jsonValue);
-    UpdatePipeSourceKinesisStreamParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PIPES_API UpdatePipeSourceKinesisStreamParameters();
+    AWS_PIPES_API UpdatePipeSourceKinesisStreamParameters(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PIPES_API UpdatePipeSourceKinesisStreamParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PIPES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

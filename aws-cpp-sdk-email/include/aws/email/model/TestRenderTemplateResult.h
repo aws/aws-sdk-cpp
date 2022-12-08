@@ -25,12 +25,12 @@ namespace SES
 {
 namespace Model
 {
-  class AWS_SES_API TestRenderTemplateResult
+  class TestRenderTemplateResult
   {
   public:
-    TestRenderTemplateResult();
-    TestRenderTemplateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    TestRenderTemplateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_SES_API TestRenderTemplateResult();
+    AWS_SES_API TestRenderTemplateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_SES_API TestRenderTemplateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

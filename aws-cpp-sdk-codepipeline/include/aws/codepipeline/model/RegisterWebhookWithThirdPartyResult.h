@@ -22,12 +22,12 @@ namespace CodePipeline
 {
 namespace Model
 {
-  class AWS_CODEPIPELINE_API RegisterWebhookWithThirdPartyResult
+  class RegisterWebhookWithThirdPartyResult
   {
   public:
-    RegisterWebhookWithThirdPartyResult();
-    RegisterWebhookWithThirdPartyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    RegisterWebhookWithThirdPartyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODEPIPELINE_API RegisterWebhookWithThirdPartyResult();
+    AWS_CODEPIPELINE_API RegisterWebhookWithThirdPartyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODEPIPELINE_API RegisterWebhookWithThirdPartyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/CaptionSource">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICTRANSCODER_API CaptionSource
+  class CaptionSource
   {
   public:
-    CaptionSource();
-    CaptionSource(Aws::Utils::Json::JsonView jsonValue);
-    CaptionSource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ELASTICTRANSCODER_API CaptionSource();
+    AWS_ELASTICTRANSCODER_API CaptionSource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICTRANSCODER_API CaptionSource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICTRANSCODER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

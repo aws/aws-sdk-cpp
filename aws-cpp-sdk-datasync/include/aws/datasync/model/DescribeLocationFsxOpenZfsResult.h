@@ -27,12 +27,12 @@ namespace DataSync
 {
 namespace Model
 {
-  class AWS_DATASYNC_API DescribeLocationFsxOpenZfsResult
+  class DescribeLocationFsxOpenZfsResult
   {
   public:
-    DescribeLocationFsxOpenZfsResult();
-    DescribeLocationFsxOpenZfsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeLocationFsxOpenZfsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DATASYNC_API DescribeLocationFsxOpenZfsResult();
+    AWS_DATASYNC_API DescribeLocationFsxOpenZfsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DATASYNC_API DescribeLocationFsxOpenZfsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

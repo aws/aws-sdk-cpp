@@ -24,12 +24,12 @@ namespace EC2
 {
 namespace Model
 {
-  class AWS_EC2_API AttachClassicLinkVpcResponse
+  class AttachClassicLinkVpcResponse
   {
   public:
-    AttachClassicLinkVpcResponse();
-    AttachClassicLinkVpcResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    AttachClassicLinkVpcResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API AttachClassicLinkVpcResponse();
+    AWS_EC2_API AttachClassicLinkVpcResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API AttachClassicLinkVpcResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

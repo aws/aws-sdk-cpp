@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/CompositeSlotTypeSetting">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELSV2_API CompositeSlotTypeSetting
+  class CompositeSlotTypeSetting
   {
   public:
-    CompositeSlotTypeSetting();
-    CompositeSlotTypeSetting(Aws::Utils::Json::JsonView jsonValue);
-    CompositeSlotTypeSetting& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELSV2_API CompositeSlotTypeSetting();
+    AWS_LEXMODELSV2_API CompositeSlotTypeSetting(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API CompositeSlotTypeSetting& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

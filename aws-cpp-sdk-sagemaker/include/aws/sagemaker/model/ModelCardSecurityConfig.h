@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ModelCardSecurityConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API ModelCardSecurityConfig
+  class ModelCardSecurityConfig
   {
   public:
-    ModelCardSecurityConfig();
-    ModelCardSecurityConfig(Aws::Utils::Json::JsonView jsonValue);
-    ModelCardSecurityConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API ModelCardSecurityConfig();
+    AWS_SAGEMAKER_API ModelCardSecurityConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API ModelCardSecurityConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

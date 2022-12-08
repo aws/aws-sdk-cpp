@@ -22,12 +22,12 @@ namespace mgn
 {
 namespace Model
 {
-  class AWS_MGN_API RemoveTemplateActionResult
+  class RemoveTemplateActionResult
   {
   public:
-    RemoveTemplateActionResult();
-    RemoveTemplateActionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    RemoveTemplateActionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MGN_API RemoveTemplateActionResult();
+    AWS_MGN_API RemoveTemplateActionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MGN_API RemoveTemplateActionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

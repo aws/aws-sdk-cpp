@@ -25,12 +25,12 @@ namespace EC2
 {
 namespace Model
 {
-  class AWS_EC2_API AssociateIamInstanceProfileResponse
+  class AssociateIamInstanceProfileResponse
   {
   public:
-    AssociateIamInstanceProfileResponse();
-    AssociateIamInstanceProfileResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    AssociateIamInstanceProfileResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API AssociateIamInstanceProfileResponse();
+    AWS_EC2_API AssociateIamInstanceProfileResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API AssociateIamInstanceProfileResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

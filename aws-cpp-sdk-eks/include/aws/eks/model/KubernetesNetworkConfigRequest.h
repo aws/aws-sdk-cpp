@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/KubernetesNetworkConfigRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_EKS_API KubernetesNetworkConfigRequest
+  class KubernetesNetworkConfigRequest
   {
   public:
-    KubernetesNetworkConfigRequest();
-    KubernetesNetworkConfigRequest(Aws::Utils::Json::JsonView jsonValue);
-    KubernetesNetworkConfigRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EKS_API KubernetesNetworkConfigRequest();
+    AWS_EKS_API KubernetesNetworkConfigRequest(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EKS_API KubernetesNetworkConfigRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EKS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

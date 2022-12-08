@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/CloudFormationTarget">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEDEPLOY_API CloudFormationTarget
+  class CloudFormationTarget
   {
   public:
-    CloudFormationTarget();
-    CloudFormationTarget(Aws::Utils::Json::JsonView jsonValue);
-    CloudFormationTarget& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEDEPLOY_API CloudFormationTarget();
+    AWS_CODEDEPLOY_API CloudFormationTarget(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEDEPLOY_API CloudFormationTarget& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEDEPLOY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

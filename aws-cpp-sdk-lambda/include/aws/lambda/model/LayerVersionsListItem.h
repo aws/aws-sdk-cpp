@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/LayerVersionsListItem">AWS
    * API Reference</a></p>
    */
-  class AWS_LAMBDA_API LayerVersionsListItem
+  class LayerVersionsListItem
   {
   public:
-    LayerVersionsListItem();
-    LayerVersionsListItem(Aws::Utils::Json::JsonView jsonValue);
-    LayerVersionsListItem& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LAMBDA_API LayerVersionsListItem();
+    AWS_LAMBDA_API LayerVersionsListItem(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAMBDA_API LayerVersionsListItem& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAMBDA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

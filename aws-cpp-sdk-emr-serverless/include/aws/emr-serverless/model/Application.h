@@ -38,13 +38,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/emr-serverless-2021-07-13/Application">AWS
    * API Reference</a></p>
    */
-  class AWS_EMRSERVERLESS_API Application
+  class Application
   {
   public:
-    Application();
-    Application(Aws::Utils::Json::JsonView jsonValue);
-    Application& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EMRSERVERLESS_API Application();
+    AWS_EMRSERVERLESS_API Application(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMRSERVERLESS_API Application& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMRSERVERLESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

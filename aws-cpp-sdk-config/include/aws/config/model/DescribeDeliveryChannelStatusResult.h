@@ -31,12 +31,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeDeliveryChannelStatusResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_CONFIGSERVICE_API DescribeDeliveryChannelStatusResult
+  class DescribeDeliveryChannelStatusResult
   {
   public:
-    DescribeDeliveryChannelStatusResult();
-    DescribeDeliveryChannelStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeDeliveryChannelStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CONFIGSERVICE_API DescribeDeliveryChannelStatusResult();
+    AWS_CONFIGSERVICE_API DescribeDeliveryChannelStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CONFIGSERVICE_API DescribeDeliveryChannelStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

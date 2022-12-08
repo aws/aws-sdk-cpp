@@ -53,13 +53,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/OpsItem">AWS API
    * Reference</a></p>
    */
-  class AWS_SSM_API OpsItem
+  class OpsItem
   {
   public:
-    OpsItem();
-    OpsItem(Aws::Utils::Json::JsonView jsonValue);
-    OpsItem& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSM_API OpsItem();
+    AWS_SSM_API OpsItem(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API OpsItem& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

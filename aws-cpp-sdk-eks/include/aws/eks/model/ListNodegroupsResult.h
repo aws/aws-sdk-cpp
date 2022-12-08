@@ -25,12 +25,12 @@ namespace EKS
 {
 namespace Model
 {
-  class AWS_EKS_API ListNodegroupsResult
+  class ListNodegroupsResult
   {
   public:
-    ListNodegroupsResult();
-    ListNodegroupsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListNodegroupsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_EKS_API ListNodegroupsResult();
+    AWS_EKS_API ListNodegroupsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_EKS_API ListNodegroupsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

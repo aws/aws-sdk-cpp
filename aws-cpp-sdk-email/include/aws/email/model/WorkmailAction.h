@@ -34,15 +34,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/WorkmailAction">AWS
    * API Reference</a></p>
    */
-  class AWS_SES_API WorkmailAction
+  class WorkmailAction
   {
   public:
-    WorkmailAction();
-    WorkmailAction(const Aws::Utils::Xml::XmlNode& xmlNode);
-    WorkmailAction& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_SES_API WorkmailAction();
+    AWS_SES_API WorkmailAction(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_SES_API WorkmailAction& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_SES_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_SES_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**

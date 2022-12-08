@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/AttackStatisticsDataItem">AWS
    * API Reference</a></p>
    */
-  class AWS_SHIELD_API AttackStatisticsDataItem
+  class AttackStatisticsDataItem
   {
   public:
-    AttackStatisticsDataItem();
-    AttackStatisticsDataItem(Aws::Utils::Json::JsonView jsonValue);
-    AttackStatisticsDataItem& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SHIELD_API AttackStatisticsDataItem();
+    AWS_SHIELD_API AttackStatisticsDataItem(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SHIELD_API AttackStatisticsDataItem& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SHIELD_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

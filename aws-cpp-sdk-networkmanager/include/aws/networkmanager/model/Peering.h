@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/Peering">AWS
    * API Reference</a></p>
    */
-  class AWS_NETWORKMANAGER_API Peering
+  class Peering
   {
   public:
-    Peering();
-    Peering(Aws::Utils::Json::JsonView jsonValue);
-    Peering& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_NETWORKMANAGER_API Peering();
+    AWS_NETWORKMANAGER_API Peering(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKMANAGER_API Peering& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

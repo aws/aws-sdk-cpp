@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ResourceDataSyncItem">AWS
    * API Reference</a></p>
    */
-  class AWS_SSM_API ResourceDataSyncItem
+  class ResourceDataSyncItem
   {
   public:
-    ResourceDataSyncItem();
-    ResourceDataSyncItem(Aws::Utils::Json::JsonView jsonValue);
-    ResourceDataSyncItem& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSM_API ResourceDataSyncItem();
+    AWS_SSM_API ResourceDataSyncItem(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API ResourceDataSyncItem& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

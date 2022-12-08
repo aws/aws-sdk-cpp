@@ -31,15 +31,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/StackResourceDriftInformation">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFORMATION_API StackResourceDriftInformation
+  class StackResourceDriftInformation
   {
   public:
-    StackResourceDriftInformation();
-    StackResourceDriftInformation(const Aws::Utils::Xml::XmlNode& xmlNode);
-    StackResourceDriftInformation& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFORMATION_API StackResourceDriftInformation();
+    AWS_CLOUDFORMATION_API StackResourceDriftInformation(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFORMATION_API StackResourceDriftInformation& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_CLOUDFORMATION_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_CLOUDFORMATION_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**

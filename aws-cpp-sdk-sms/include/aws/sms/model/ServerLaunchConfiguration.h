@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/ServerLaunchConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_SMS_API ServerLaunchConfiguration
+  class ServerLaunchConfiguration
   {
   public:
-    ServerLaunchConfiguration();
-    ServerLaunchConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    ServerLaunchConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SMS_API ServerLaunchConfiguration();
+    AWS_SMS_API ServerLaunchConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SMS_API ServerLaunchConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/TransformOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API TransformOutput
+  class TransformOutput
   {
   public:
-    TransformOutput();
-    TransformOutput(Aws::Utils::Json::JsonView jsonValue);
-    TransformOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API TransformOutput();
+    AWS_SAGEMAKER_API TransformOutput(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API TransformOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

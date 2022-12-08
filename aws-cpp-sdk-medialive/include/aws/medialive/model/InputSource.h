@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/InputSource">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API InputSource
+  class InputSource
   {
   public:
-    InputSource();
-    InputSource(Aws::Utils::Json::JsonView jsonValue);
-    InputSource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API InputSource();
+    AWS_MEDIALIVE_API InputSource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API InputSource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

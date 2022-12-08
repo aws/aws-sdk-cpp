@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ConfluenceBlogToIndexFieldMapping">AWS
    * API Reference</a></p>
    */
-  class AWS_KENDRA_API ConfluenceBlogToIndexFieldMapping
+  class ConfluenceBlogToIndexFieldMapping
   {
   public:
-    ConfluenceBlogToIndexFieldMapping();
-    ConfluenceBlogToIndexFieldMapping(Aws::Utils::Json::JsonView jsonValue);
-    ConfluenceBlogToIndexFieldMapping& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KENDRA_API ConfluenceBlogToIndexFieldMapping();
+    AWS_KENDRA_API ConfluenceBlogToIndexFieldMapping(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API ConfluenceBlogToIndexFieldMapping& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

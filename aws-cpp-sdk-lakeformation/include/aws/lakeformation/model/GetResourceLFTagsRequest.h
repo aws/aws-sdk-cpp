@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_LAKEFORMATION_API GetResourceLFTagsRequest : public LakeFormationRequest
+  class GetResourceLFTagsRequest : public LakeFormationRequest
   {
   public:
-    GetResourceLFTagsRequest();
+    AWS_LAKEFORMATION_API GetResourceLFTagsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,7 +30,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "GetResourceLFTags"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_LAKEFORMATION_API Aws::String SerializePayload() const override;
 
 
     /**

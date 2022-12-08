@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/Content">AWS API
    * Reference</a></p>
    */
-  class AWS_SESV2_API Content
+  class Content
   {
   public:
-    Content();
-    Content(Aws::Utils::Json::JsonView jsonValue);
-    Content& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SESV2_API Content();
+    AWS_SESV2_API Content(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SESV2_API Content& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SESV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

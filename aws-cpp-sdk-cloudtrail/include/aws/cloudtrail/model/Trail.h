@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/Trail">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDTRAIL_API Trail
+  class Trail
   {
   public:
-    Trail();
-    Trail(Aws::Utils::Json::JsonView jsonValue);
-    Trail& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDTRAIL_API Trail();
+    AWS_CLOUDTRAIL_API Trail(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDTRAIL_API Trail& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDTRAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

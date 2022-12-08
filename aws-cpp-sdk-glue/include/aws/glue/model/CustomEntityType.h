@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CustomEntityType">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API CustomEntityType
+  class CustomEntityType
   {
   public:
-    CustomEntityType();
-    CustomEntityType(Aws::Utils::Json::JsonView jsonValue);
-    CustomEntityType& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API CustomEntityType();
+    AWS_GLUE_API CustomEntityType(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API CustomEntityType& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

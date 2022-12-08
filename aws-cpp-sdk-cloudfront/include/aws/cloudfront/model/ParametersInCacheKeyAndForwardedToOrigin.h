@@ -37,14 +37,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ParametersInCacheKeyAndForwardedToOrigin">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFRONT_API ParametersInCacheKeyAndForwardedToOrigin
+  class ParametersInCacheKeyAndForwardedToOrigin
   {
   public:
-    ParametersInCacheKeyAndForwardedToOrigin();
-    ParametersInCacheKeyAndForwardedToOrigin(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ParametersInCacheKeyAndForwardedToOrigin& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API ParametersInCacheKeyAndForwardedToOrigin();
+    AWS_CLOUDFRONT_API ParametersInCacheKeyAndForwardedToOrigin(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API ParametersInCacheKeyAndForwardedToOrigin& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**

@@ -37,13 +37,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/ByteMatchStatement">AWS
    * API Reference</a></p>
    */
-  class AWS_WAFV2_API ByteMatchStatement
+  class ByteMatchStatement
   {
   public:
-    ByteMatchStatement();
-    ByteMatchStatement(Aws::Utils::Json::JsonView jsonValue);
-    ByteMatchStatement& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WAFV2_API ByteMatchStatement();
+    AWS_WAFV2_API ByteMatchStatement(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API ByteMatchStatement& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -27,12 +27,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/AddApplicationInputResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_KINESISANALYTICS_API AddApplicationInputResult
+  class AddApplicationInputResult
   {
   public:
-    AddApplicationInputResult();
-    AddApplicationInputResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AddApplicationInputResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KINESISANALYTICS_API AddApplicationInputResult();
+    AWS_KINESISANALYTICS_API AddApplicationInputResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KINESISANALYTICS_API AddApplicationInputResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

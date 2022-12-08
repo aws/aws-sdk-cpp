@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/WeightedQuantileLoss">AWS
    * API Reference</a></p>
    */
-  class AWS_FORECASTSERVICE_API WeightedQuantileLoss
+  class WeightedQuantileLoss
   {
   public:
-    WeightedQuantileLoss();
-    WeightedQuantileLoss(Aws::Utils::Json::JsonView jsonValue);
-    WeightedQuantileLoss& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FORECASTSERVICE_API WeightedQuantileLoss();
+    AWS_FORECASTSERVICE_API WeightedQuantileLoss(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FORECASTSERVICE_API WeightedQuantileLoss& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FORECASTSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

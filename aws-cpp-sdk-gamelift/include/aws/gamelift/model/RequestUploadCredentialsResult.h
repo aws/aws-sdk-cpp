@@ -25,12 +25,12 @@ namespace GameLift
 {
 namespace Model
 {
-  class AWS_GAMELIFT_API RequestUploadCredentialsResult
+  class RequestUploadCredentialsResult
   {
   public:
-    RequestUploadCredentialsResult();
-    RequestUploadCredentialsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    RequestUploadCredentialsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GAMELIFT_API RequestUploadCredentialsResult();
+    AWS_GAMELIFT_API RequestUploadCredentialsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GAMELIFT_API RequestUploadCredentialsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

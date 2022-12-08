@@ -34,12 +34,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GatewayResponses">AWS
    * API Reference</a></p>
    */
-  class AWS_APIGATEWAY_API GetGatewayResponsesResult
+  class GetGatewayResponsesResult
   {
   public:
-    GetGatewayResponsesResult();
-    GetGatewayResponsesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetGatewayResponsesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APIGATEWAY_API GetGatewayResponsesResult();
+    AWS_APIGATEWAY_API GetGatewayResponsesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APIGATEWAY_API GetGatewayResponsesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     

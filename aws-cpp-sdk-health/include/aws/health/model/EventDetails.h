@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/EventDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_HEALTH_API EventDetails
+  class EventDetails
   {
   public:
-    EventDetails();
-    EventDetails(Aws::Utils::Json::JsonView jsonValue);
-    EventDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_HEALTH_API EventDetails();
+    AWS_HEALTH_API EventDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_HEALTH_API EventDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_HEALTH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

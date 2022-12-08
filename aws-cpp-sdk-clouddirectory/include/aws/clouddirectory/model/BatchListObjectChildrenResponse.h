@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/BatchListObjectChildrenResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDDIRECTORY_API BatchListObjectChildrenResponse
+  class BatchListObjectChildrenResponse
   {
   public:
-    BatchListObjectChildrenResponse();
-    BatchListObjectChildrenResponse(Aws::Utils::Json::JsonView jsonValue);
-    BatchListObjectChildrenResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDDIRECTORY_API BatchListObjectChildrenResponse();
+    AWS_CLOUDDIRECTORY_API BatchListObjectChildrenResponse(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDDIRECTORY_API BatchListObjectChildrenResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDDIRECTORY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

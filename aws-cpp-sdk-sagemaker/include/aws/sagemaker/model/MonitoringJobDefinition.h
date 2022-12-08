@@ -37,13 +37,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/MonitoringJobDefinition">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API MonitoringJobDefinition
+  class MonitoringJobDefinition
   {
   public:
-    MonitoringJobDefinition();
-    MonitoringJobDefinition(Aws::Utils::Json::JsonView jsonValue);
-    MonitoringJobDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API MonitoringJobDefinition();
+    AWS_SAGEMAKER_API MonitoringJobDefinition(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API MonitoringJobDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

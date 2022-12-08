@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/VirtualRouterRef">AWS
    * API Reference</a></p>
    */
-  class AWS_APPMESH_API VirtualRouterRef
+  class VirtualRouterRef
   {
   public:
-    VirtualRouterRef();
-    VirtualRouterRef(Aws::Utils::Json::JsonView jsonValue);
-    VirtualRouterRef& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPMESH_API VirtualRouterRef();
+    AWS_APPMESH_API VirtualRouterRef(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API VirtualRouterRef& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

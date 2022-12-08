@@ -31,12 +31,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/BatchStopResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API BatchStopResult
+  class BatchStopResult
   {
   public:
-    BatchStopResult();
-    BatchStopResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    BatchStopResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MEDIALIVE_API BatchStopResult();
+    AWS_MEDIALIVE_API BatchStopResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MEDIALIVE_API BatchStopResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -30,12 +30,12 @@ namespace signer
 {
 namespace Model
 {
-  class AWS_SIGNER_API GetSigningProfileResult
+  class GetSigningProfileResult
   {
   public:
-    GetSigningProfileResult();
-    GetSigningProfileResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetSigningProfileResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SIGNER_API GetSigningProfileResult();
+    AWS_SIGNER_API GetSigningProfileResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SIGNER_API GetSigningProfileResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

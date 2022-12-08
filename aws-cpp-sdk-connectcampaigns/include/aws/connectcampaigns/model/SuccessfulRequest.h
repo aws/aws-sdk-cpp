@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/connectcampaigns-2021-01-30/SuccessfulRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECTCAMPAIGNS_API SuccessfulRequest
+  class SuccessfulRequest
   {
   public:
-    SuccessfulRequest();
-    SuccessfulRequest(Aws::Utils::Json::JsonView jsonValue);
-    SuccessfulRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECTCAMPAIGNS_API SuccessfulRequest();
+    AWS_CONNECTCAMPAIGNS_API SuccessfulRequest(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTCAMPAIGNS_API SuccessfulRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTCAMPAIGNS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

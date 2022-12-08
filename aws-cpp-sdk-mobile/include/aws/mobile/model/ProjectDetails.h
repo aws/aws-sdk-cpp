@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mobile-2017-07-01/ProjectDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_MOBILE_API ProjectDetails
+  class ProjectDetails
   {
   public:
-    ProjectDetails();
-    ProjectDetails(Aws::Utils::Json::JsonView jsonValue);
-    ProjectDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MOBILE_API ProjectDetails();
+    AWS_MOBILE_API ProjectDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MOBILE_API ProjectDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MOBILE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

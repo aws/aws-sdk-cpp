@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/NetworkFileDefinition">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTFLEETWISE_API NetworkFileDefinition
+  class NetworkFileDefinition
   {
   public:
-    NetworkFileDefinition();
-    NetworkFileDefinition(Aws::Utils::Json::JsonView jsonValue);
-    NetworkFileDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTFLEETWISE_API NetworkFileDefinition();
+    AWS_IOTFLEETWISE_API NetworkFileDefinition(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTFLEETWISE_API NetworkFileDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTFLEETWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

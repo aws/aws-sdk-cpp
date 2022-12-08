@@ -22,12 +22,12 @@ namespace Greengrass
 {
 namespace Model
 {
-  class AWS_GREENGRASS_API DeleteSubscriptionDefinitionResult
+  class DeleteSubscriptionDefinitionResult
   {
   public:
-    DeleteSubscriptionDefinitionResult();
-    DeleteSubscriptionDefinitionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteSubscriptionDefinitionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GREENGRASS_API DeleteSubscriptionDefinitionResult();
+    AWS_GREENGRASS_API DeleteSubscriptionDefinitionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GREENGRASS_API DeleteSubscriptionDefinitionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/ScalingActivity">AWS
    * API Reference</a></p>
    */
-  class AWS_APPLICATIONAUTOSCALING_API ScalingActivity
+  class ScalingActivity
   {
   public:
-    ScalingActivity();
-    ScalingActivity(Aws::Utils::Json::JsonView jsonValue);
-    ScalingActivity& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPLICATIONAUTOSCALING_API ScalingActivity();
+    AWS_APPLICATIONAUTOSCALING_API ScalingActivity(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPLICATIONAUTOSCALING_API ScalingActivity& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPLICATIONAUTOSCALING_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

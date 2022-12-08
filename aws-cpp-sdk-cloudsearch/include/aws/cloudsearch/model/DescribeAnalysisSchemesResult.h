@@ -33,12 +33,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DescribeAnalysisSchemesResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDSEARCH_API DescribeAnalysisSchemesResult
+  class DescribeAnalysisSchemesResult
   {
   public:
-    DescribeAnalysisSchemesResult();
-    DescribeAnalysisSchemesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeAnalysisSchemesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_CLOUDSEARCH_API DescribeAnalysisSchemesResult();
+    AWS_CLOUDSEARCH_API DescribeAnalysisSchemesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_CLOUDSEARCH_API DescribeAnalysisSchemesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

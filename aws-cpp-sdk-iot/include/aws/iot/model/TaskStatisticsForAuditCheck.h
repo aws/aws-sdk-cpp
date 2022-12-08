@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/TaskStatisticsForAuditCheck">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API TaskStatisticsForAuditCheck
+  class TaskStatisticsForAuditCheck
   {
   public:
-    TaskStatisticsForAuditCheck();
-    TaskStatisticsForAuditCheck(Aws::Utils::Json::JsonView jsonValue);
-    TaskStatisticsForAuditCheck& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API TaskStatisticsForAuditCheck();
+    AWS_IOT_API TaskStatisticsForAuditCheck(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API TaskStatisticsForAuditCheck& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

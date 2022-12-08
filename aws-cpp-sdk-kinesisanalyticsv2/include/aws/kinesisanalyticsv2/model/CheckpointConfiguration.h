@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/CheckpointConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_KINESISANALYTICSV2_API CheckpointConfiguration
+  class CheckpointConfiguration
   {
   public:
-    CheckpointConfiguration();
-    CheckpointConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    CheckpointConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KINESISANALYTICSV2_API CheckpointConfiguration();
+    AWS_KINESISANALYTICSV2_API CheckpointConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICSV2_API CheckpointConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

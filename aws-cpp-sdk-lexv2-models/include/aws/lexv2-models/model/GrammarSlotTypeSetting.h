@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/GrammarSlotTypeSetting">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELSV2_API GrammarSlotTypeSetting
+  class GrammarSlotTypeSetting
   {
   public:
-    GrammarSlotTypeSetting();
-    GrammarSlotTypeSetting(Aws::Utils::Json::JsonView jsonValue);
-    GrammarSlotTypeSetting& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELSV2_API GrammarSlotTypeSetting();
+    AWS_LEXMODELSV2_API GrammarSlotTypeSetting(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API GrammarSlotTypeSetting& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/PivotTableFieldSubtotalOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API PivotTableFieldSubtotalOptions
+  class PivotTableFieldSubtotalOptions
   {
   public:
-    PivotTableFieldSubtotalOptions();
-    PivotTableFieldSubtotalOptions(Aws::Utils::Json::JsonView jsonValue);
-    PivotTableFieldSubtotalOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API PivotTableFieldSubtotalOptions();
+    AWS_QUICKSIGHT_API PivotTableFieldSubtotalOptions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API PivotTableFieldSubtotalOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

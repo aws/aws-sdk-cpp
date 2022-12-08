@@ -30,12 +30,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListInvalidationsResult">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFRONT_API ListInvalidations2020_05_31Result
+  class ListInvalidations2020_05_31Result
   {
   public:
-    ListInvalidations2020_05_31Result();
-    ListInvalidations2020_05_31Result(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ListInvalidations2020_05_31Result& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_CLOUDFRONT_API ListInvalidations2020_05_31Result();
+    AWS_CLOUDFRONT_API ListInvalidations2020_05_31Result(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_CLOUDFRONT_API ListInvalidations2020_05_31Result& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

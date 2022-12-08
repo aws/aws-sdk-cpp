@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/VolumeDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_GUARDDUTY_API VolumeDetail
+  class VolumeDetail
   {
   public:
-    VolumeDetail();
-    VolumeDetail(Aws::Utils::Json::JsonView jsonValue);
-    VolumeDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GUARDDUTY_API VolumeDetail();
+    AWS_GUARDDUTY_API VolumeDetail(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API VolumeDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

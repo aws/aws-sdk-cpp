@@ -25,12 +25,12 @@ namespace SimSpaceWeaver
 {
 namespace Model
 {
-  class AWS_SIMSPACEWEAVER_API StartSimulationResult
+  class StartSimulationResult
   {
   public:
-    StartSimulationResult();
-    StartSimulationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    StartSimulationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SIMSPACEWEAVER_API StartSimulationResult();
+    AWS_SIMSPACEWEAVER_API StartSimulationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SIMSPACEWEAVER_API StartSimulationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -47,13 +47,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/EnvironmentFile">AWS
    * API Reference</a></p>
    */
-  class AWS_ECS_API EnvironmentFile
+  class EnvironmentFile
   {
   public:
-    EnvironmentFile();
-    EnvironmentFile(Aws::Utils::Json::JsonView jsonValue);
-    EnvironmentFile& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ECS_API EnvironmentFile();
+    AWS_ECS_API EnvironmentFile(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECS_API EnvironmentFile& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

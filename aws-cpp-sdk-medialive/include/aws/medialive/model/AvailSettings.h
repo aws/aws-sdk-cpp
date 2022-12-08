@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/AvailSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API AvailSettings
+  class AvailSettings
   {
   public:
-    AvailSettings();
-    AvailSettings(Aws::Utils::Json::JsonView jsonValue);
-    AvailSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API AvailSettings();
+    AWS_MEDIALIVE_API AvailSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API AvailSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

@@ -27,12 +27,12 @@ namespace SES
 {
 namespace Model
 {
-  class AWS_SES_API ListTemplatesResult
+  class ListTemplatesResult
   {
   public:
-    ListTemplatesResult();
-    ListTemplatesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ListTemplatesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_SES_API ListTemplatesResult();
+    AWS_SES_API ListTemplatesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_SES_API ListTemplatesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

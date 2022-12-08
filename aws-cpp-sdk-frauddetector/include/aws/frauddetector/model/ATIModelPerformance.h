@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/ATIModelPerformance">AWS
    * API Reference</a></p>
    */
-  class AWS_FRAUDDETECTOR_API ATIModelPerformance
+  class ATIModelPerformance
   {
   public:
-    ATIModelPerformance();
-    ATIModelPerformance(Aws::Utils::Json::JsonView jsonValue);
-    ATIModelPerformance& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FRAUDDETECTOR_API ATIModelPerformance();
+    AWS_FRAUDDETECTOR_API ATIModelPerformance(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FRAUDDETECTOR_API ATIModelPerformance& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FRAUDDETECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

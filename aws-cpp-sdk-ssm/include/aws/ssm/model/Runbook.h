@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/Runbook">AWS API
    * Reference</a></p>
    */
-  class AWS_SSM_API Runbook
+  class Runbook
   {
   public:
-    Runbook();
-    Runbook(Aws::Utils::Json::JsonView jsonValue);
-    Runbook& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSM_API Runbook();
+    AWS_SSM_API Runbook(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API Runbook& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

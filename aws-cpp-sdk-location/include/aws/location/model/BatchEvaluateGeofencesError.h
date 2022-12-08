@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/BatchEvaluateGeofencesError">AWS
    * API Reference</a></p>
    */
-  class AWS_LOCATIONSERVICE_API BatchEvaluateGeofencesError
+  class BatchEvaluateGeofencesError
   {
   public:
-    BatchEvaluateGeofencesError();
-    BatchEvaluateGeofencesError(Aws::Utils::Json::JsonView jsonValue);
-    BatchEvaluateGeofencesError& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LOCATIONSERVICE_API BatchEvaluateGeofencesError();
+    AWS_LOCATIONSERVICE_API BatchEvaluateGeofencesError(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOCATIONSERVICE_API BatchEvaluateGeofencesError& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOCATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

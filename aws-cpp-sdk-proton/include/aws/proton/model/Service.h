@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/Service">AWS API
    * Reference</a></p>
    */
-  class AWS_PROTON_API Service
+  class Service
   {
   public:
-    Service();
-    Service(Aws::Utils::Json::JsonView jsonValue);
-    Service& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PROTON_API Service();
+    AWS_PROTON_API Service(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PROTON_API Service& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PROTON_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

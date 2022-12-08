@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/UpdateCostAllocationTagsStatusError">AWS
    * API Reference</a></p>
    */
-  class AWS_COSTEXPLORER_API UpdateCostAllocationTagsStatusError
+  class UpdateCostAllocationTagsStatusError
   {
   public:
-    UpdateCostAllocationTagsStatusError();
-    UpdateCostAllocationTagsStatusError(Aws::Utils::Json::JsonView jsonValue);
-    UpdateCostAllocationTagsStatusError& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COSTEXPLORER_API UpdateCostAllocationTagsStatusError();
+    AWS_COSTEXPLORER_API UpdateCostAllocationTagsStatusError(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API UpdateCostAllocationTagsStatusError& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

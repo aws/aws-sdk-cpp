@@ -25,12 +25,12 @@ namespace ServiceCatalog
 {
 namespace Model
 {
-  class AWS_SERVICECATALOG_API BatchDisassociateServiceActionFromProvisioningArtifactResult
+  class BatchDisassociateServiceActionFromProvisioningArtifactResult
   {
   public:
-    BatchDisassociateServiceActionFromProvisioningArtifactResult();
-    BatchDisassociateServiceActionFromProvisioningArtifactResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    BatchDisassociateServiceActionFromProvisioningArtifactResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SERVICECATALOG_API BatchDisassociateServiceActionFromProvisioningArtifactResult();
+    AWS_SERVICECATALOG_API BatchDisassociateServiceActionFromProvisioningArtifactResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SERVICECATALOG_API BatchDisassociateServiceActionFromProvisioningArtifactResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

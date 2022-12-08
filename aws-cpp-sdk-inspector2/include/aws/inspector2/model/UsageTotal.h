@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/UsageTotal">AWS
    * API Reference</a></p>
    */
-  class AWS_INSPECTOR2_API UsageTotal
+  class UsageTotal
   {
   public:
-    UsageTotal();
-    UsageTotal(Aws::Utils::Json::JsonView jsonValue);
-    UsageTotal& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_INSPECTOR2_API UsageTotal();
+    AWS_INSPECTOR2_API UsageTotal(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR2_API UsageTotal& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/EmailTemplateMetadata">AWS
    * API Reference</a></p>
    */
-  class AWS_SESV2_API EmailTemplateMetadata
+  class EmailTemplateMetadata
   {
   public:
-    EmailTemplateMetadata();
-    EmailTemplateMetadata(Aws::Utils::Json::JsonView jsonValue);
-    EmailTemplateMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SESV2_API EmailTemplateMetadata();
+    AWS_SESV2_API EmailTemplateMetadata(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SESV2_API EmailTemplateMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SESV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

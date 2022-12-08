@@ -25,12 +25,12 @@ namespace ElastiCache
 {
 namespace Model
 {
-  class AWS_ELASTICACHE_API PurchaseReservedCacheNodesOfferingResult
+  class PurchaseReservedCacheNodesOfferingResult
   {
   public:
-    PurchaseReservedCacheNodesOfferingResult();
-    PurchaseReservedCacheNodesOfferingResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    PurchaseReservedCacheNodesOfferingResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ELASTICACHE_API PurchaseReservedCacheNodesOfferingResult();
+    AWS_ELASTICACHE_API PurchaseReservedCacheNodesOfferingResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ELASTICACHE_API PurchaseReservedCacheNodesOfferingResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     

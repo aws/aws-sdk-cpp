@@ -27,12 +27,12 @@ namespace EBS
 {
 namespace Model
 {
-  class AWS_EBS_API ListSnapshotBlocksResult
+  class ListSnapshotBlocksResult
   {
   public:
-    ListSnapshotBlocksResult();
-    ListSnapshotBlocksResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListSnapshotBlocksResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_EBS_API ListSnapshotBlocksResult();
+    AWS_EBS_API ListSnapshotBlocksResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_EBS_API ListSnapshotBlocksResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

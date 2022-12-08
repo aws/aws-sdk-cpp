@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/ListInsightsStatusFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_DEVOPSGURU_API ListInsightsStatusFilter
+  class ListInsightsStatusFilter
   {
   public:
-    ListInsightsStatusFilter();
-    ListInsightsStatusFilter(Aws::Utils::Json::JsonView jsonValue);
-    ListInsightsStatusFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DEVOPSGURU_API ListInsightsStatusFilter();
+    AWS_DEVOPSGURU_API ListInsightsStatusFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVOPSGURU_API ListInsightsStatusFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVOPSGURU_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

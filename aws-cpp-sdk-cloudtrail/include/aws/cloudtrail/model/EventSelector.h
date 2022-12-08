@@ -39,13 +39,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/EventSelector">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDTRAIL_API EventSelector
+  class EventSelector
   {
   public:
-    EventSelector();
-    EventSelector(Aws::Utils::Json::JsonView jsonValue);
-    EventSelector& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDTRAIL_API EventSelector();
+    AWS_CLOUDTRAIL_API EventSelector(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDTRAIL_API EventSelector& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDTRAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

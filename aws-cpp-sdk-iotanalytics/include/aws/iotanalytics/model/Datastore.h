@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/Datastore">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTANALYTICS_API Datastore
+  class Datastore
   {
   public:
-    Datastore();
-    Datastore(Aws::Utils::Json::JsonView jsonValue);
-    Datastore& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTANALYTICS_API Datastore();
+    AWS_IOTANALYTICS_API Datastore(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTANALYTICS_API Datastore& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

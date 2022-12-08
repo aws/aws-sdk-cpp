@@ -41,15 +41,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ReplicationGroup">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICACHE_API ReplicationGroup
+  class ReplicationGroup
   {
   public:
-    ReplicationGroup();
-    ReplicationGroup(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ReplicationGroup& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICACHE_API ReplicationGroup();
+    AWS_ELASTICACHE_API ReplicationGroup(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICACHE_API ReplicationGroup& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_ELASTICACHE_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_ELASTICACHE_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**

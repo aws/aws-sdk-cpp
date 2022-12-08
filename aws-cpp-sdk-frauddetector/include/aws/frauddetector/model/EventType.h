@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/EventType">AWS
    * API Reference</a></p>
    */
-  class AWS_FRAUDDETECTOR_API EventType
+  class EventType
   {
   public:
-    EventType();
-    EventType(Aws::Utils::Json::JsonView jsonValue);
-    EventType& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FRAUDDETECTOR_API EventType();
+    AWS_FRAUDDETECTOR_API EventType(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FRAUDDETECTOR_API EventType& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FRAUDDETECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

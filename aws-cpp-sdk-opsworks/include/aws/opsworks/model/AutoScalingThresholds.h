@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/AutoScalingThresholds">AWS
    * API Reference</a></p>
    */
-  class AWS_OPSWORKS_API AutoScalingThresholds
+  class AutoScalingThresholds
   {
   public:
-    AutoScalingThresholds();
-    AutoScalingThresholds(Aws::Utils::Json::JsonView jsonValue);
-    AutoScalingThresholds& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OPSWORKS_API AutoScalingThresholds();
+    AWS_OPSWORKS_API AutoScalingThresholds(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPSWORKS_API AutoScalingThresholds& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPSWORKS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

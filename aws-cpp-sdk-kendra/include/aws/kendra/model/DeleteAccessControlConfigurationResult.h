@@ -22,12 +22,12 @@ namespace kendra
 {
 namespace Model
 {
-  class AWS_KENDRA_API DeleteAccessControlConfigurationResult
+  class DeleteAccessControlConfigurationResult
   {
   public:
-    DeleteAccessControlConfigurationResult();
-    DeleteAccessControlConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteAccessControlConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KENDRA_API DeleteAccessControlConfigurationResult();
+    AWS_KENDRA_API DeleteAccessControlConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KENDRA_API DeleteAccessControlConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

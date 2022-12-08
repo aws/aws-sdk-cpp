@@ -24,12 +24,12 @@ namespace EC2
 {
 namespace Model
 {
-  class AWS_EC2_API ModifyInstanceCapacityReservationAttributesResponse
+  class ModifyInstanceCapacityReservationAttributesResponse
   {
   public:
-    ModifyInstanceCapacityReservationAttributesResponse();
-    ModifyInstanceCapacityReservationAttributesResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ModifyInstanceCapacityReservationAttributesResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API ModifyInstanceCapacityReservationAttributesResponse();
+    AWS_EC2_API ModifyInstanceCapacityReservationAttributesResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API ModifyInstanceCapacityReservationAttributesResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

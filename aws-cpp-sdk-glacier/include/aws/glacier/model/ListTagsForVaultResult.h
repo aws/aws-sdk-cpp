@@ -31,12 +31,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/ListTagsForVaultOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_GLACIER_API ListTagsForVaultResult
+  class ListTagsForVaultResult
   {
   public:
-    ListTagsForVaultResult();
-    ListTagsForVaultResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListTagsForVaultResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GLACIER_API ListTagsForVaultResult();
+    AWS_GLACIER_API ListTagsForVaultResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GLACIER_API ListTagsForVaultResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

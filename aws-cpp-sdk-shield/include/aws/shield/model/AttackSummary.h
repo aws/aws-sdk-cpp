@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/AttackSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_SHIELD_API AttackSummary
+  class AttackSummary
   {
   public:
-    AttackSummary();
-    AttackSummary(Aws::Utils::Json::JsonView jsonValue);
-    AttackSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SHIELD_API AttackSummary();
+    AWS_SHIELD_API AttackSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SHIELD_API AttackSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SHIELD_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

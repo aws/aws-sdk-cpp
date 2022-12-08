@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/EulaAcceptance">AWS
    * API Reference</a></p>
    */
-  class AWS_NIMBLESTUDIO_API EulaAcceptance
+  class EulaAcceptance
   {
   public:
-    EulaAcceptance();
-    EulaAcceptance(Aws::Utils::Json::JsonView jsonValue);
-    EulaAcceptance& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_NIMBLESTUDIO_API EulaAcceptance();
+    AWS_NIMBLESTUDIO_API EulaAcceptance(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NIMBLESTUDIO_API EulaAcceptance& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NIMBLESTUDIO_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

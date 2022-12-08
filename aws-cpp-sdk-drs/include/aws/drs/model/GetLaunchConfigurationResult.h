@@ -27,12 +27,12 @@ namespace drs
 {
 namespace Model
 {
-  class AWS_DRS_API GetLaunchConfigurationResult
+  class GetLaunchConfigurationResult
   {
   public:
-    GetLaunchConfigurationResult();
-    GetLaunchConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetLaunchConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DRS_API GetLaunchConfigurationResult();
+    AWS_DRS_API GetLaunchConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DRS_API GetLaunchConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -25,12 +25,12 @@ namespace Braket
 {
 namespace Model
 {
-  class AWS_BRAKET_API CancelQuantumTaskResult
+  class CancelQuantumTaskResult
   {
   public:
-    CancelQuantumTaskResult();
-    CancelQuantumTaskResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CancelQuantumTaskResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_BRAKET_API CancelQuantumTaskResult();
+    AWS_BRAKET_API CancelQuantumTaskResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_BRAKET_API CancelQuantumTaskResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

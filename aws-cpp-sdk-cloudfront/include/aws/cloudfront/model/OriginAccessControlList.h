@@ -29,14 +29,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/OriginAccessControlList">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFRONT_API OriginAccessControlList
+  class OriginAccessControlList
   {
   public:
-    OriginAccessControlList();
-    OriginAccessControlList(const Aws::Utils::Xml::XmlNode& xmlNode);
-    OriginAccessControlList& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API OriginAccessControlList();
+    AWS_CLOUDFRONT_API OriginAccessControlList(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API OriginAccessControlList& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**

@@ -24,12 +24,12 @@ namespace OpenSearchService
 {
 namespace Model
 {
-  class AWS_OPENSEARCHSERVICE_API UpdateVpcEndpointResult
+  class UpdateVpcEndpointResult
   {
   public:
-    UpdateVpcEndpointResult();
-    UpdateVpcEndpointResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateVpcEndpointResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OPENSEARCHSERVICE_API UpdateVpcEndpointResult();
+    AWS_OPENSEARCHSERVICE_API UpdateVpcEndpointResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OPENSEARCHSERVICE_API UpdateVpcEndpointResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

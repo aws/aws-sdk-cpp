@@ -40,13 +40,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/PlayerSession">AWS
    * API Reference</a></p>
    */
-  class AWS_GAMELIFT_API PlayerSession
+  class PlayerSession
   {
   public:
-    PlayerSession();
-    PlayerSession(Aws::Utils::Json::JsonView jsonValue);
-    PlayerSession& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GAMELIFT_API PlayerSession();
+    AWS_GAMELIFT_API PlayerSession(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMELIFT_API PlayerSession& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

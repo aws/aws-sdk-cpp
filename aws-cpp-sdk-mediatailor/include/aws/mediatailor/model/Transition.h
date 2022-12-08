@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/Transition">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIATAILOR_API Transition
+  class Transition
   {
   public:
-    Transition();
-    Transition(Aws::Utils::Json::JsonView jsonValue);
-    Transition& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIATAILOR_API Transition();
+    AWS_MEDIATAILOR_API Transition(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIATAILOR_API Transition& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIATAILOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

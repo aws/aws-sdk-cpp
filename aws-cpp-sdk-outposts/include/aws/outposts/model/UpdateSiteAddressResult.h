@@ -25,12 +25,12 @@ namespace Outposts
 {
 namespace Model
 {
-  class AWS_OUTPOSTS_API UpdateSiteAddressResult
+  class UpdateSiteAddressResult
   {
   public:
-    UpdateSiteAddressResult();
-    UpdateSiteAddressResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateSiteAddressResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OUTPOSTS_API UpdateSiteAddressResult();
+    AWS_OUTPOSTS_API UpdateSiteAddressResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OUTPOSTS_API UpdateSiteAddressResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

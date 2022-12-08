@@ -25,12 +25,12 @@ namespace AuditManager
 {
 namespace Model
 {
-  class AWS_AUDITMANAGER_API ListKeywordsForDataSourceResult
+  class ListKeywordsForDataSourceResult
   {
   public:
-    ListKeywordsForDataSourceResult();
-    ListKeywordsForDataSourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListKeywordsForDataSourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_AUDITMANAGER_API ListKeywordsForDataSourceResult();
+    AWS_AUDITMANAGER_API ListKeywordsForDataSourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_AUDITMANAGER_API ListKeywordsForDataSourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

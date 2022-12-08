@@ -30,12 +30,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cur-2017-01-06/DeleteReportDefinitionResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_COSTANDUSAGEREPORTSERVICE_API DeleteReportDefinitionResult
+  class DeleteReportDefinitionResult
   {
   public:
-    DeleteReportDefinitionResult();
-    DeleteReportDefinitionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteReportDefinitionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_COSTANDUSAGEREPORTSERVICE_API DeleteReportDefinitionResult();
+    AWS_COSTANDUSAGEREPORTSERVICE_API DeleteReportDefinitionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_COSTANDUSAGEREPORTSERVICE_API DeleteReportDefinitionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     

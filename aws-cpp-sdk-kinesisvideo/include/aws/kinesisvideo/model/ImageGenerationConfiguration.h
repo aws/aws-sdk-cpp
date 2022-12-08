@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/ImageGenerationConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_KINESISVIDEO_API ImageGenerationConfiguration
+  class ImageGenerationConfiguration
   {
   public:
-    ImageGenerationConfiguration();
-    ImageGenerationConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    ImageGenerationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KINESISVIDEO_API ImageGenerationConfiguration();
+    AWS_KINESISVIDEO_API ImageGenerationConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISVIDEO_API ImageGenerationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISVIDEO_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

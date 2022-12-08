@@ -28,14 +28,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ContinuousDeploymentSingleWeightConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFRONT_API ContinuousDeploymentSingleWeightConfig
+  class ContinuousDeploymentSingleWeightConfig
   {
   public:
-    ContinuousDeploymentSingleWeightConfig();
-    ContinuousDeploymentSingleWeightConfig(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ContinuousDeploymentSingleWeightConfig& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API ContinuousDeploymentSingleWeightConfig();
+    AWS_CLOUDFRONT_API ContinuousDeploymentSingleWeightConfig(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API ContinuousDeploymentSingleWeightConfig& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**

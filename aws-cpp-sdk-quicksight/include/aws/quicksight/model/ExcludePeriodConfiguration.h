@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ExcludePeriodConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API ExcludePeriodConfiguration
+  class ExcludePeriodConfiguration
   {
   public:
-    ExcludePeriodConfiguration();
-    ExcludePeriodConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    ExcludePeriodConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API ExcludePeriodConfiguration();
+    AWS_QUICKSIGHT_API ExcludePeriodConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API ExcludePeriodConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

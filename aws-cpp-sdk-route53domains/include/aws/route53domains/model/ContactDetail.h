@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/ContactDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53DOMAINS_API ContactDetail
+  class ContactDetail
   {
   public:
-    ContactDetail();
-    ContactDetail(Aws::Utils::Json::JsonView jsonValue);
-    ContactDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ROUTE53DOMAINS_API ContactDetail();
+    AWS_ROUTE53DOMAINS_API ContactDetail(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROUTE53DOMAINS_API ContactDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROUTE53DOMAINS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

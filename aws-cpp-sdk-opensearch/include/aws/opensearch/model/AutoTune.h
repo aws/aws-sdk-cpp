@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/AutoTune">AWS
    * API Reference</a></p>
    */
-  class AWS_OPENSEARCHSERVICE_API AutoTune
+  class AutoTune
   {
   public:
-    AutoTune();
-    AutoTune(Aws::Utils::Json::JsonView jsonValue);
-    AutoTune& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OPENSEARCHSERVICE_API AutoTune();
+    AWS_OPENSEARCHSERVICE_API AutoTune(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPENSEARCHSERVICE_API AutoTune& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPENSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

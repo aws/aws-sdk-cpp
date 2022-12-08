@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/IamUser">AWS API
    * Reference</a></p>
    */
-  class AWS_MACIE2_API IamUser
+  class IamUser
   {
   public:
-    IamUser();
-    IamUser(Aws::Utils::Json::JsonView jsonValue);
-    IamUser& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MACIE2_API IamUser();
+    AWS_MACIE2_API IamUser(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API IamUser& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

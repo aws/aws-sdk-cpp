@@ -43,12 +43,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DeleteChannelResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API DeleteChannelResult
+  class DeleteChannelResult
   {
   public:
-    DeleteChannelResult();
-    DeleteChannelResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteChannelResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MEDIALIVE_API DeleteChannelResult();
+    AWS_MEDIALIVE_API DeleteChannelResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MEDIALIVE_API DeleteChannelResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

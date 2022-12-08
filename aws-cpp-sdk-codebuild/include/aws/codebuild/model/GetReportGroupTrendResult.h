@@ -26,12 +26,12 @@ namespace CodeBuild
 {
 namespace Model
 {
-  class AWS_CODEBUILD_API GetReportGroupTrendResult
+  class GetReportGroupTrendResult
   {
   public:
-    GetReportGroupTrendResult();
-    GetReportGroupTrendResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetReportGroupTrendResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODEBUILD_API GetReportGroupTrendResult();
+    AWS_CODEBUILD_API GetReportGroupTrendResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODEBUILD_API GetReportGroupTrendResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -26,13 +26,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ScannedItemCount">AWS
    * API Reference</a></p>
    */
-  class AWS_GUARDDUTY_API ScannedItemCount
+  class ScannedItemCount
   {
   public:
-    ScannedItemCount();
-    ScannedItemCount(Aws::Utils::Json::JsonView jsonValue);
-    ScannedItemCount& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GUARDDUTY_API ScannedItemCount();
+    AWS_GUARDDUTY_API ScannedItemCount(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API ScannedItemCount& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

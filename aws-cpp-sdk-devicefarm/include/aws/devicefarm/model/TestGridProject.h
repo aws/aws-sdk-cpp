@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/TestGridProject">AWS
    * API Reference</a></p>
    */
-  class AWS_DEVICEFARM_API TestGridProject
+  class TestGridProject
   {
   public:
-    TestGridProject();
-    TestGridProject(Aws::Utils::Json::JsonView jsonValue);
-    TestGridProject& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DEVICEFARM_API TestGridProject();
+    AWS_DEVICEFARM_API TestGridProject(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVICEFARM_API TestGridProject& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVICEFARM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

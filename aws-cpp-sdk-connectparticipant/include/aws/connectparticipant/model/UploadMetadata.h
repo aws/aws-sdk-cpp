@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/connectparticipant-2018-09-07/UploadMetadata">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECTPARTICIPANT_API UploadMetadata
+  class UploadMetadata
   {
   public:
-    UploadMetadata();
-    UploadMetadata(Aws::Utils::Json::JsonView jsonValue);
-    UploadMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECTPARTICIPANT_API UploadMetadata();
+    AWS_CONNECTPARTICIPANT_API UploadMetadata(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTPARTICIPANT_API UploadMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTPARTICIPANT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

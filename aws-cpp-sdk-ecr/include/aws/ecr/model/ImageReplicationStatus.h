@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/ImageReplicationStatus">AWS
    * API Reference</a></p>
    */
-  class AWS_ECR_API ImageReplicationStatus
+  class ImageReplicationStatus
   {
   public:
-    ImageReplicationStatus();
-    ImageReplicationStatus(Aws::Utils::Json::JsonView jsonValue);
-    ImageReplicationStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ECR_API ImageReplicationStatus();
+    AWS_ECR_API ImageReplicationStatus(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECR_API ImageReplicationStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

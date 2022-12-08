@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ScalingRule">AWS
    * API Reference</a></p>
    */
-  class AWS_EMR_API ScalingRule
+  class ScalingRule
   {
   public:
-    ScalingRule();
-    ScalingRule(Aws::Utils::Json::JsonView jsonValue);
-    ScalingRule& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EMR_API ScalingRule();
+    AWS_EMR_API ScalingRule(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMR_API ScalingRule& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/SubtotalOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API SubtotalOptions
+  class SubtotalOptions
   {
   public:
-    SubtotalOptions();
-    SubtotalOptions(Aws::Utils::Json::JsonView jsonValue);
-    SubtotalOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API SubtotalOptions();
+    AWS_QUICKSIGHT_API SubtotalOptions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API SubtotalOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

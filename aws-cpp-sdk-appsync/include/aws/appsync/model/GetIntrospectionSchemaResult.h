@@ -18,21 +18,21 @@ namespace AppSync
 {
 namespace Model
 {
-  class AWS_APPSYNC_API GetIntrospectionSchemaResult
+  class GetIntrospectionSchemaResult
   {
   public:
-    GetIntrospectionSchemaResult();
+    AWS_APPSYNC_API GetIntrospectionSchemaResult();
     //We have to define these because Microsoft doesn't auto generate them
-    GetIntrospectionSchemaResult(GetIntrospectionSchemaResult&&);
-    GetIntrospectionSchemaResult& operator=(GetIntrospectionSchemaResult&&);
+    AWS_APPSYNC_API GetIntrospectionSchemaResult(GetIntrospectionSchemaResult&&);
+    AWS_APPSYNC_API GetIntrospectionSchemaResult& operator=(GetIntrospectionSchemaResult&&);
     //we delete these because Microsoft doesn't handle move generation correctly
     //and we therefore don't trust them to get it right here either.
     GetIntrospectionSchemaResult(const GetIntrospectionSchemaResult&) = delete;
     GetIntrospectionSchemaResult& operator=(const GetIntrospectionSchemaResult&) = delete;
 
 
-    GetIntrospectionSchemaResult(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
-    GetIntrospectionSchemaResult& operator=(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
+    AWS_APPSYNC_API GetIntrospectionSchemaResult(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
+    AWS_APPSYNC_API GetIntrospectionSchemaResult& operator=(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
 
 
 

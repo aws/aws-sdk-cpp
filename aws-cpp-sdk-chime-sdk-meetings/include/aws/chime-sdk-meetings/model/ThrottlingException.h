@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/ThrottlingException">AWS
    * API Reference</a></p>
    */
-  class AWS_CHIMESDKMEETINGS_API ThrottlingException
+  class ThrottlingException
   {
   public:
-    ThrottlingException();
-    ThrottlingException(Aws::Utils::Json::JsonView jsonValue);
-    ThrottlingException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIMESDKMEETINGS_API ThrottlingException();
+    AWS_CHIMESDKMEETINGS_API ThrottlingException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKMEETINGS_API ThrottlingException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKMEETINGS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

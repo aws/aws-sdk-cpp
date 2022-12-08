@@ -55,13 +55,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/ApiKey">AWS API
    * Reference</a></p>
    */
-  class AWS_APPSYNC_API ApiKey
+  class ApiKey
   {
   public:
-    ApiKey();
-    ApiKey(Aws::Utils::Json::JsonView jsonValue);
-    ApiKey& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPSYNC_API ApiKey();
+    AWS_APPSYNC_API ApiKey(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPSYNC_API ApiKey& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPSYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

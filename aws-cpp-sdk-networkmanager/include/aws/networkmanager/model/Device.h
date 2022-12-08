@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/Device">AWS
    * API Reference</a></p>
    */
-  class AWS_NETWORKMANAGER_API Device
+  class Device
   {
   public:
-    Device();
-    Device(Aws::Utils::Json::JsonView jsonValue);
-    Device& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_NETWORKMANAGER_API Device();
+    AWS_NETWORKMANAGER_API Device(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKMANAGER_API Device& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

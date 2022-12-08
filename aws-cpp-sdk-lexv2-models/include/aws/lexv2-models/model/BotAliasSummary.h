@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/BotAliasSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELSV2_API BotAliasSummary
+  class BotAliasSummary
   {
   public:
-    BotAliasSummary();
-    BotAliasSummary(Aws::Utils::Json::JsonView jsonValue);
-    BotAliasSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELSV2_API BotAliasSummary();
+    AWS_LEXMODELSV2_API BotAliasSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API BotAliasSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -42,13 +42,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/TraceSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_XRAY_API TraceSummary
+  class TraceSummary
   {
   public:
-    TraceSummary();
-    TraceSummary(Aws::Utils::Json::JsonView jsonValue);
-    TraceSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_XRAY_API TraceSummary();
+    AWS_XRAY_API TraceSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_XRAY_API TraceSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_XRAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

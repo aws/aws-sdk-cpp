@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ServiceNowParameters">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API ServiceNowParameters
+  class ServiceNowParameters
   {
   public:
-    ServiceNowParameters();
-    ServiceNowParameters(Aws::Utils::Json::JsonView jsonValue);
-    ServiceNowParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API ServiceNowParameters();
+    AWS_QUICKSIGHT_API ServiceNowParameters(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API ServiceNowParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

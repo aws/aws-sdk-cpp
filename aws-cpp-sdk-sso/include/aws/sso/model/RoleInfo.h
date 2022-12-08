@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sso-2019-06-10/RoleInfo">AWS API
    * Reference</a></p>
    */
-  class AWS_SSO_API RoleInfo
+  class RoleInfo
   {
   public:
-    RoleInfo();
-    RoleInfo(Aws::Utils::Json::JsonView jsonValue);
-    RoleInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSO_API RoleInfo();
+    AWS_SSO_API RoleInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSO_API RoleInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSO_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DQStopJobOnFailureOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API DQStopJobOnFailureOptions
+  class DQStopJobOnFailureOptions
   {
   public:
-    DQStopJobOnFailureOptions();
-    DQStopJobOnFailureOptions(Aws::Utils::Json::JsonView jsonValue);
-    DQStopJobOnFailureOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API DQStopJobOnFailureOptions();
+    AWS_GLUE_API DQStopJobOnFailureOptions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API DQStopJobOnFailureOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

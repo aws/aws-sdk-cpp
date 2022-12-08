@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/StatefulRule">AWS
    * API Reference</a></p>
    */
-  class AWS_NETWORKFIREWALL_API StatefulRule
+  class StatefulRule
   {
   public:
-    StatefulRule();
-    StatefulRule(Aws::Utils::Json::JsonView jsonValue);
-    StatefulRule& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_NETWORKFIREWALL_API StatefulRule();
+    AWS_NETWORKFIREWALL_API StatefulRule(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKFIREWALL_API StatefulRule& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKFIREWALL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

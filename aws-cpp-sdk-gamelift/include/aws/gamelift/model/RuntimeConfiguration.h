@@ -39,13 +39,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/RuntimeConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_GAMELIFT_API RuntimeConfiguration
+  class RuntimeConfiguration
   {
   public:
-    RuntimeConfiguration();
-    RuntimeConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    RuntimeConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GAMELIFT_API RuntimeConfiguration();
+    AWS_GAMELIFT_API RuntimeConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMELIFT_API RuntimeConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/SNSConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_LOOKOUTMETRICS_API SNSConfiguration
+  class SNSConfiguration
   {
   public:
-    SNSConfiguration();
-    SNSConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    SNSConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LOOKOUTMETRICS_API SNSConfiguration();
+    AWS_LOOKOUTMETRICS_API SNSConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTMETRICS_API SNSConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTMETRICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

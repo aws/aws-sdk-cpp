@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-readiness-2019-12-02/ListRulesOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53RECOVERYREADINESS_API ListRulesOutput
+  class ListRulesOutput
   {
   public:
-    ListRulesOutput();
-    ListRulesOutput(Aws::Utils::Json::JsonView jsonValue);
-    ListRulesOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ROUTE53RECOVERYREADINESS_API ListRulesOutput();
+    AWS_ROUTE53RECOVERYREADINESS_API ListRulesOutput(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROUTE53RECOVERYREADINESS_API ListRulesOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROUTE53RECOVERYREADINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

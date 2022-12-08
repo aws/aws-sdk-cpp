@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/Channel">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API Channel
+  class Channel
   {
   public:
-    Channel();
-    Channel(Aws::Utils::Json::JsonView jsonValue);
-    Channel& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API Channel();
+    AWS_SAGEMAKER_API Channel(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Channel& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

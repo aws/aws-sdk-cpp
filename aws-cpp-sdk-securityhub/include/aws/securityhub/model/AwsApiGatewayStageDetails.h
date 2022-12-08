@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsApiGatewayStageDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsApiGatewayStageDetails
+  class AwsApiGatewayStageDetails
   {
   public:
-    AwsApiGatewayStageDetails();
-    AwsApiGatewayStageDetails(Aws::Utils::Json::JsonView jsonValue);
-    AwsApiGatewayStageDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsApiGatewayStageDetails();
+    AWS_SECURITYHUB_API AwsApiGatewayStageDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsApiGatewayStageDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

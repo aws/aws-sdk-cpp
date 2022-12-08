@@ -28,12 +28,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/UpdateEmailIdentityPolicyResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_SESV2_API UpdateEmailIdentityPolicyResult
+  class UpdateEmailIdentityPolicyResult
   {
   public:
-    UpdateEmailIdentityPolicyResult();
-    UpdateEmailIdentityPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateEmailIdentityPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SESV2_API UpdateEmailIdentityPolicyResult();
+    AWS_SESV2_API UpdateEmailIdentityPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SESV2_API UpdateEmailIdentityPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

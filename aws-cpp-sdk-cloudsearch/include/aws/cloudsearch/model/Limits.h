@@ -21,15 +21,15 @@ namespace CloudSearch
 namespace Model
 {
 
-  class AWS_CLOUDSEARCH_API Limits
+  class Limits
   {
   public:
-    Limits();
-    Limits(const Aws::Utils::Xml::XmlNode& xmlNode);
-    Limits& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDSEARCH_API Limits();
+    AWS_CLOUDSEARCH_API Limits(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDSEARCH_API Limits& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_CLOUDSEARCH_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_CLOUDSEARCH_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     

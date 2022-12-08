@@ -34,15 +34,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/ValidStorageOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_NEPTUNE_API ValidStorageOptions
+  class ValidStorageOptions
   {
   public:
-    ValidStorageOptions();
-    ValidStorageOptions(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ValidStorageOptions& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_NEPTUNE_API ValidStorageOptions();
+    AWS_NEPTUNE_API ValidStorageOptions(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_NEPTUNE_API ValidStorageOptions& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_NEPTUNE_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_NEPTUNE_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**

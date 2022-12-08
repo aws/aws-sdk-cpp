@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ModelBiasJobInput">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API ModelBiasJobInput
+  class ModelBiasJobInput
   {
   public:
-    ModelBiasJobInput();
-    ModelBiasJobInput(Aws::Utils::Json::JsonView jsonValue);
-    ModelBiasJobInput& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API ModelBiasJobInput();
+    AWS_SAGEMAKER_API ModelBiasJobInput(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API ModelBiasJobInput& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

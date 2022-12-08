@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/BasePathMapping">AWS
    * API Reference</a></p>
    */
-  class AWS_APIGATEWAY_API BasePathMapping
+  class BasePathMapping
   {
   public:
-    BasePathMapping();
-    BasePathMapping(Aws::Utils::Json::JsonView jsonValue);
-    BasePathMapping& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APIGATEWAY_API BasePathMapping();
+    AWS_APIGATEWAY_API BasePathMapping(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APIGATEWAY_API BasePathMapping& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APIGATEWAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

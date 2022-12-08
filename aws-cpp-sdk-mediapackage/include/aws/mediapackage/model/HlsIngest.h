@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-2017-10-12/HlsIngest">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIAPACKAGE_API HlsIngest
+  class HlsIngest
   {
   public:
-    HlsIngest();
-    HlsIngest(Aws::Utils::Json::JsonView jsonValue);
-    HlsIngest& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIAPACKAGE_API HlsIngest();
+    AWS_MEDIAPACKAGE_API HlsIngest(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIAPACKAGE_API HlsIngest& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIAPACKAGE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

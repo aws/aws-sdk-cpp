@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/Certificate">AWS API
    * Reference</a></p>
    */
-  class AWS_DATABASEMIGRATIONSERVICE_API Certificate
+  class Certificate
   {
   public:
-    Certificate();
-    Certificate(Aws::Utils::Json::JsonView jsonValue);
-    Certificate& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DATABASEMIGRATIONSERVICE_API Certificate();
+    AWS_DATABASEMIGRATIONSERVICE_API Certificate(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATABASEMIGRATIONSERVICE_API Certificate& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATABASEMIGRATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

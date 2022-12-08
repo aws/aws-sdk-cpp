@@ -32,12 +32,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DescribeSubscribersForNotificationResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_BUDGETS_API DescribeSubscribersForNotificationResult
+  class DescribeSubscribersForNotificationResult
   {
   public:
-    DescribeSubscribersForNotificationResult();
-    DescribeSubscribersForNotificationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeSubscribersForNotificationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_BUDGETS_API DescribeSubscribersForNotificationResult();
+    AWS_BUDGETS_API DescribeSubscribersForNotificationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_BUDGETS_API DescribeSubscribersForNotificationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

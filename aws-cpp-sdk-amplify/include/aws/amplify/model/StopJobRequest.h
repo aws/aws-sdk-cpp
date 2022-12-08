@@ -22,10 +22,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/StopJobRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_AMPLIFY_API StopJobRequest : public AmplifyRequest
+  class StopJobRequest : public AmplifyRequest
   {
   public:
-    StopJobRequest();
+    AWS_AMPLIFY_API StopJobRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,7 +33,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "StopJob"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_AMPLIFY_API Aws::String SerializePayload() const override;
 
 
     /**

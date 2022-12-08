@@ -24,12 +24,12 @@ namespace ResilienceHub
 {
 namespace Model
 {
-  class AWS_RESILIENCEHUB_API PutDraftAppVersionTemplateResult
+  class PutDraftAppVersionTemplateResult
   {
   public:
-    PutDraftAppVersionTemplateResult();
-    PutDraftAppVersionTemplateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PutDraftAppVersionTemplateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_RESILIENCEHUB_API PutDraftAppVersionTemplateResult();
+    AWS_RESILIENCEHUB_API PutDraftAppVersionTemplateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_RESILIENCEHUB_API PutDraftAppVersionTemplateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

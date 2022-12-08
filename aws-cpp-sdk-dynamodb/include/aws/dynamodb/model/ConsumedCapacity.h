@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ConsumedCapacity">AWS
    * API Reference</a></p>
    */
-  class AWS_DYNAMODB_API ConsumedCapacity
+  class ConsumedCapacity
   {
   public:
-    ConsumedCapacity();
-    ConsumedCapacity(Aws::Utils::Json::JsonView jsonValue);
-    ConsumedCapacity& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DYNAMODB_API ConsumedCapacity();
+    AWS_DYNAMODB_API ConsumedCapacity(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API ConsumedCapacity& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

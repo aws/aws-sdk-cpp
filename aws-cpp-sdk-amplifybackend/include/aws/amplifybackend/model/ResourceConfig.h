@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/ResourceConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_AMPLIFYBACKEND_API ResourceConfig
+  class ResourceConfig
   {
   public:
-    ResourceConfig();
-    ResourceConfig(Aws::Utils::Json::JsonView jsonValue);
-    ResourceConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_AMPLIFYBACKEND_API ResourceConfig();
+    AWS_AMPLIFYBACKEND_API ResourceConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFYBACKEND_API ResourceConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFYBACKEND_API Aws::Utils::Json::JsonValue Jsonize() const;
 
   };
 

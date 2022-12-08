@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/RecommenderSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_PERSONALIZE_API RecommenderSummary
+  class RecommenderSummary
   {
   public:
-    RecommenderSummary();
-    RecommenderSummary(Aws::Utils::Json::JsonView jsonValue);
-    RecommenderSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PERSONALIZE_API RecommenderSummary();
+    AWS_PERSONALIZE_API RecommenderSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PERSONALIZE_API RecommenderSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PERSONALIZE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

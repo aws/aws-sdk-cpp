@@ -31,12 +31,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHealthCheckStatusResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53_API GetHealthCheckStatusResult
+  class GetHealthCheckStatusResult
   {
   public:
-    GetHealthCheckStatusResult();
-    GetHealthCheckStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    GetHealthCheckStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ROUTE53_API GetHealthCheckStatusResult();
+    AWS_ROUTE53_API GetHealthCheckStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ROUTE53_API GetHealthCheckStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

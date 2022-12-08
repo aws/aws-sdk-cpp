@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/InstanceDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_COSTEXPLORER_API InstanceDetails
+  class InstanceDetails
   {
   public:
-    InstanceDetails();
-    InstanceDetails(Aws::Utils::Json::JsonView jsonValue);
-    InstanceDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COSTEXPLORER_API InstanceDetails();
+    AWS_COSTEXPLORER_API InstanceDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API InstanceDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

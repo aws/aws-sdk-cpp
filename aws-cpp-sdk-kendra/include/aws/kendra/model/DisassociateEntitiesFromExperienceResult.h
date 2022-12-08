@@ -25,12 +25,12 @@ namespace kendra
 {
 namespace Model
 {
-  class AWS_KENDRA_API DisassociateEntitiesFromExperienceResult
+  class DisassociateEntitiesFromExperienceResult
   {
   public:
-    DisassociateEntitiesFromExperienceResult();
-    DisassociateEntitiesFromExperienceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DisassociateEntitiesFromExperienceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KENDRA_API DisassociateEntitiesFromExperienceResult();
+    AWS_KENDRA_API DisassociateEntitiesFromExperienceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KENDRA_API DisassociateEntitiesFromExperienceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

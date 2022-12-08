@@ -25,12 +25,12 @@ namespace KMS
 {
 namespace Model
 {
-  class AWS_KMS_API VerifyResult
+  class VerifyResult
   {
   public:
-    VerifyResult();
-    VerifyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    VerifyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KMS_API VerifyResult();
+    AWS_KMS_API VerifyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KMS_API VerifyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

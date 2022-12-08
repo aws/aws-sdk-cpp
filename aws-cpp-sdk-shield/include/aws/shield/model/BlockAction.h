@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/BlockAction">AWS
    * API Reference</a></p>
    */
-  class AWS_SHIELD_API BlockAction
+  class BlockAction
   {
   public:
-    BlockAction();
-    BlockAction(Aws::Utils::Json::JsonView jsonValue);
-    BlockAction& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SHIELD_API BlockAction();
+    AWS_SHIELD_API BlockAction(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SHIELD_API BlockAction& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SHIELD_API Aws::Utils::Json::JsonValue Jsonize() const;
 
   };
 

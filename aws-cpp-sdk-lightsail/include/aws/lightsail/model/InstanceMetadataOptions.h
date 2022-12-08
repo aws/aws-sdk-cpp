@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/InstanceMetadataOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_LIGHTSAIL_API InstanceMetadataOptions
+  class InstanceMetadataOptions
   {
   public:
-    InstanceMetadataOptions();
-    InstanceMetadataOptions(Aws::Utils::Json::JsonView jsonValue);
-    InstanceMetadataOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LIGHTSAIL_API InstanceMetadataOptions();
+    AWS_LIGHTSAIL_API InstanceMetadataOptions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API InstanceMetadataOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

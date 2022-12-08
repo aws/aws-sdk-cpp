@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/ElasticLoadBalancer">AWS
    * API Reference</a></p>
    */
-  class AWS_OPSWORKS_API ElasticLoadBalancer
+  class ElasticLoadBalancer
   {
   public:
-    ElasticLoadBalancer();
-    ElasticLoadBalancer(Aws::Utils::Json::JsonView jsonValue);
-    ElasticLoadBalancer& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OPSWORKS_API ElasticLoadBalancer();
+    AWS_OPSWORKS_API ElasticLoadBalancer(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPSWORKS_API ElasticLoadBalancer& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPSWORKS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

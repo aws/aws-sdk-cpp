@@ -28,12 +28,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/PutEmailIdentityDkimAttributesResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINTEMAIL_API PutEmailIdentityDkimAttributesResult
+  class PutEmailIdentityDkimAttributesResult
   {
   public:
-    PutEmailIdentityDkimAttributesResult();
-    PutEmailIdentityDkimAttributesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PutEmailIdentityDkimAttributesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PINPOINTEMAIL_API PutEmailIdentityDkimAttributesResult();
+    AWS_PINPOINTEMAIL_API PutEmailIdentityDkimAttributesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PINPOINTEMAIL_API PutEmailIdentityDkimAttributesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

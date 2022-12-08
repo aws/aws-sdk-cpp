@@ -37,13 +37,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/CodeReviewType">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEGURUREVIEWER_API CodeReviewType
+  class CodeReviewType
   {
   public:
-    CodeReviewType();
-    CodeReviewType(Aws::Utils::Json::JsonView jsonValue);
-    CodeReviewType& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEGURUREVIEWER_API CodeReviewType();
+    AWS_CODEGURUREVIEWER_API CodeReviewType(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEGURUREVIEWER_API CodeReviewType& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEGURUREVIEWER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

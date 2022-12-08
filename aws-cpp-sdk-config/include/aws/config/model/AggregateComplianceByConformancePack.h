@@ -38,13 +38,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/AggregateComplianceByConformancePack">AWS
    * API Reference</a></p>
    */
-  class AWS_CONFIGSERVICE_API AggregateComplianceByConformancePack
+  class AggregateComplianceByConformancePack
   {
   public:
-    AggregateComplianceByConformancePack();
-    AggregateComplianceByConformancePack(Aws::Utils::Json::JsonView jsonValue);
-    AggregateComplianceByConformancePack& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONFIGSERVICE_API AggregateComplianceByConformancePack();
+    AWS_CONFIGSERVICE_API AggregateComplianceByConformancePack(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API AggregateComplianceByConformancePack& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

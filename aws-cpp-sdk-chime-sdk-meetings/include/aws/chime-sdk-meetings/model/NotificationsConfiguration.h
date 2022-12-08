@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/NotificationsConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_CHIMESDKMEETINGS_API NotificationsConfiguration
+  class NotificationsConfiguration
   {
   public:
-    NotificationsConfiguration();
-    NotificationsConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    NotificationsConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIMESDKMEETINGS_API NotificationsConfiguration();
+    AWS_CHIMESDKMEETINGS_API NotificationsConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKMEETINGS_API NotificationsConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKMEETINGS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

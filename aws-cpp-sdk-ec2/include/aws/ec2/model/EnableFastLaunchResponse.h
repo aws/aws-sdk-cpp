@@ -30,12 +30,12 @@ namespace EC2
 {
 namespace Model
 {
-  class AWS_EC2_API EnableFastLaunchResponse
+  class EnableFastLaunchResponse
   {
   public:
-    EnableFastLaunchResponse();
-    EnableFastLaunchResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    EnableFastLaunchResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API EnableFastLaunchResponse();
+    AWS_EC2_API EnableFastLaunchResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API EnableFastLaunchResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

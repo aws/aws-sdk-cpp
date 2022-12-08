@@ -29,12 +29,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/CreateWorkloadShareOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_WELLARCHITECTED_API CreateWorkloadShareResult
+  class CreateWorkloadShareResult
   {
   public:
-    CreateWorkloadShareResult();
-    CreateWorkloadShareResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateWorkloadShareResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WELLARCHITECTED_API CreateWorkloadShareResult();
+    AWS_WELLARCHITECTED_API CreateWorkloadShareResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WELLARCHITECTED_API CreateWorkloadShareResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     

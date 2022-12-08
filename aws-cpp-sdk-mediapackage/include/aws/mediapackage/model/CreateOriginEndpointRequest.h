@@ -30,10 +30,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-2017-10-12/CreateOriginEndpointRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIAPACKAGE_API CreateOriginEndpointRequest : public MediaPackageRequest
+  class CreateOriginEndpointRequest : public MediaPackageRequest
   {
   public:
-    CreateOriginEndpointRequest();
+    AWS_MEDIAPACKAGE_API CreateOriginEndpointRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,7 +41,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateOriginEndpoint"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_MEDIAPACKAGE_API Aws::String SerializePayload() const override;
 
 
     

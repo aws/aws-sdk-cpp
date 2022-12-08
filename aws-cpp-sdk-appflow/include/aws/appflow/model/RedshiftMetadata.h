@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/RedshiftMetadata">AWS
    * API Reference</a></p>
    */
-  class AWS_APPFLOW_API RedshiftMetadata
+  class RedshiftMetadata
   {
   public:
-    RedshiftMetadata();
-    RedshiftMetadata(Aws::Utils::Json::JsonView jsonValue);
-    RedshiftMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPFLOW_API RedshiftMetadata();
+    AWS_APPFLOW_API RedshiftMetadata(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API RedshiftMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
   };
 

@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/RepositoryHeadSourceCodeType">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEGURUREVIEWER_API RepositoryHeadSourceCodeType
+  class RepositoryHeadSourceCodeType
   {
   public:
-    RepositoryHeadSourceCodeType();
-    RepositoryHeadSourceCodeType(Aws::Utils::Json::JsonView jsonValue);
-    RepositoryHeadSourceCodeType& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEGURUREVIEWER_API RepositoryHeadSourceCodeType();
+    AWS_CODEGURUREVIEWER_API RepositoryHeadSourceCodeType(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEGURUREVIEWER_API RepositoryHeadSourceCodeType& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEGURUREVIEWER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

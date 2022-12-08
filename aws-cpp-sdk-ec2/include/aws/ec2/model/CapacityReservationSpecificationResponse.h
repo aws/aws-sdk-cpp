@@ -36,15 +36,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CapacityReservationSpecificationResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API CapacityReservationSpecificationResponse
+  class CapacityReservationSpecificationResponse
   {
   public:
-    CapacityReservationSpecificationResponse();
-    CapacityReservationSpecificationResponse(const Aws::Utils::Xml::XmlNode& xmlNode);
-    CapacityReservationSpecificationResponse& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API CapacityReservationSpecificationResponse();
+    AWS_EC2_API CapacityReservationSpecificationResponse(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API CapacityReservationSpecificationResponse& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**

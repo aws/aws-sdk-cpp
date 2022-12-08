@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/forecastquery-2018-06-26/Forecast">AWS
    * API Reference</a></p>
    */
-  class AWS_FORECASTQUERYSERVICE_API Forecast
+  class Forecast
   {
   public:
-    Forecast();
-    Forecast(Aws::Utils::Json::JsonView jsonValue);
-    Forecast& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FORECASTQUERYSERVICE_API Forecast();
+    AWS_FORECASTQUERYSERVICE_API Forecast(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FORECASTQUERYSERVICE_API Forecast& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FORECASTQUERYSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

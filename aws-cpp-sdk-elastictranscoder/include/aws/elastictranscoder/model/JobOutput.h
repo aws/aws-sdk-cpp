@@ -37,13 +37,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/JobOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICTRANSCODER_API JobOutput
+  class JobOutput
   {
   public:
-    JobOutput();
-    JobOutput(Aws::Utils::Json::JsonView jsonValue);
-    JobOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ELASTICTRANSCODER_API JobOutput();
+    AWS_ELASTICTRANSCODER_API JobOutput(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICTRANSCODER_API JobOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICTRANSCODER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

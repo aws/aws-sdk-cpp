@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsCloudFrontDistributionViewerCertificate">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsCloudFrontDistributionViewerCertificate
+  class AwsCloudFrontDistributionViewerCertificate
   {
   public:
-    AwsCloudFrontDistributionViewerCertificate();
-    AwsCloudFrontDistributionViewerCertificate(Aws::Utils::Json::JsonView jsonValue);
-    AwsCloudFrontDistributionViewerCertificate& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsCloudFrontDistributionViewerCertificate();
+    AWS_SECURITYHUB_API AwsCloudFrontDistributionViewerCertificate(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsCloudFrontDistributionViewerCertificate& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

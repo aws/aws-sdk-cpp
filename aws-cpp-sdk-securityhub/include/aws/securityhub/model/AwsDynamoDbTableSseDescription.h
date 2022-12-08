@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsDynamoDbTableSseDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsDynamoDbTableSseDescription
+  class AwsDynamoDbTableSseDescription
   {
   public:
-    AwsDynamoDbTableSseDescription();
-    AwsDynamoDbTableSseDescription(Aws::Utils::Json::JsonView jsonValue);
-    AwsDynamoDbTableSseDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsDynamoDbTableSseDescription();
+    AWS_SECURITYHUB_API AwsDynamoDbTableSseDescription(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsDynamoDbTableSseDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DocumentMetadata">AWS
    * API Reference</a></p>
    */
-  class AWS_COMPREHEND_API DocumentMetadata
+  class DocumentMetadata
   {
   public:
-    DocumentMetadata();
-    DocumentMetadata(Aws::Utils::Json::JsonView jsonValue);
-    DocumentMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COMPREHEND_API DocumentMetadata();
+    AWS_COMPREHEND_API DocumentMetadata(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHEND_API DocumentMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHEND_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

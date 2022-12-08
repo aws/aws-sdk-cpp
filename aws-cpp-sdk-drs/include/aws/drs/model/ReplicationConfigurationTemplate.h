@@ -29,13 +29,13 @@ namespace drs
 namespace Model
 {
 
-  class AWS_DRS_API ReplicationConfigurationTemplate
+  class ReplicationConfigurationTemplate
   {
   public:
-    ReplicationConfigurationTemplate();
-    ReplicationConfigurationTemplate(Aws::Utils::Json::JsonView jsonValue);
-    ReplicationConfigurationTemplate& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DRS_API ReplicationConfigurationTemplate();
+    AWS_DRS_API ReplicationConfigurationTemplate(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DRS_API ReplicationConfigurationTemplate& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DRS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

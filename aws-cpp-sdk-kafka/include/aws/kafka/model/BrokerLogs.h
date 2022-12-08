@@ -25,13 +25,13 @@ namespace Kafka
 namespace Model
 {
 
-  class AWS_KAFKA_API BrokerLogs
+  class BrokerLogs
   {
   public:
-    BrokerLogs();
-    BrokerLogs(Aws::Utils::Json::JsonView jsonValue);
-    BrokerLogs& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KAFKA_API BrokerLogs();
+    AWS_KAFKA_API BrokerLogs(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKA_API BrokerLogs& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

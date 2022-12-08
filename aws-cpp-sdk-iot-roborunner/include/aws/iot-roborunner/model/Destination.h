@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-roborunner-2018-05-10/Destination">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTROBORUNNER_API Destination
+  class Destination
   {
   public:
-    Destination();
-    Destination(Aws::Utils::Json::JsonView jsonValue);
-    Destination& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTROBORUNNER_API Destination();
+    AWS_IOTROBORUNNER_API Destination(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTROBORUNNER_API Destination& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTROBORUNNER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

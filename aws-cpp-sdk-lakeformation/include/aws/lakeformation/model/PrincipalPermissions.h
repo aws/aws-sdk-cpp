@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/PrincipalPermissions">AWS
    * API Reference</a></p>
    */
-  class AWS_LAKEFORMATION_API PrincipalPermissions
+  class PrincipalPermissions
   {
   public:
-    PrincipalPermissions();
-    PrincipalPermissions(Aws::Utils::Json::JsonView jsonValue);
-    PrincipalPermissions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LAKEFORMATION_API PrincipalPermissions();
+    AWS_LAKEFORMATION_API PrincipalPermissions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAKEFORMATION_API PrincipalPermissions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAKEFORMATION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/ServiceQuotaIncreaseRequestInTemplate">AWS
    * API Reference</a></p>
    */
-  class AWS_SERVICEQUOTAS_API ServiceQuotaIncreaseRequestInTemplate
+  class ServiceQuotaIncreaseRequestInTemplate
   {
   public:
-    ServiceQuotaIncreaseRequestInTemplate();
-    ServiceQuotaIncreaseRequestInTemplate(Aws::Utils::Json::JsonView jsonValue);
-    ServiceQuotaIncreaseRequestInTemplate& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SERVICEQUOTAS_API ServiceQuotaIncreaseRequestInTemplate();
+    AWS_SERVICEQUOTAS_API ServiceQuotaIncreaseRequestInTemplate(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICEQUOTAS_API ServiceQuotaIncreaseRequestInTemplate& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICEQUOTAS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

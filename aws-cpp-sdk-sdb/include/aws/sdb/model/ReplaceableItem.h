@@ -30,15 +30,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sdb-2009-04-15/ReplaceableItem">AWS
    * API Reference</a></p>
    */
-  class AWS_SIMPLEDB_API ReplaceableItem
+  class ReplaceableItem
   {
   public:
-    ReplaceableItem();
-    ReplaceableItem(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ReplaceableItem& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_SIMPLEDB_API ReplaceableItem();
+    AWS_SIMPLEDB_API ReplaceableItem(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_SIMPLEDB_API ReplaceableItem& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_SIMPLEDB_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_SIMPLEDB_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**

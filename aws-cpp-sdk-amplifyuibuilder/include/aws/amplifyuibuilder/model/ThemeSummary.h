@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/ThemeSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_AMPLIFYUIBUILDER_API ThemeSummary
+  class ThemeSummary
   {
   public:
-    ThemeSummary();
-    ThemeSummary(Aws::Utils::Json::JsonView jsonValue);
-    ThemeSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_AMPLIFYUIBUILDER_API ThemeSummary();
+    AWS_AMPLIFYUIBUILDER_API ThemeSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFYUIBUILDER_API ThemeSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFYUIBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

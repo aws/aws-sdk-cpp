@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/InAppMessageCampaign">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API InAppMessageCampaign
+  class InAppMessageCampaign
   {
   public:
-    InAppMessageCampaign();
-    InAppMessageCampaign(Aws::Utils::Json::JsonView jsonValue);
-    InAppMessageCampaign& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API InAppMessageCampaign();
+    AWS_PINPOINT_API InAppMessageCampaign(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API InAppMessageCampaign& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

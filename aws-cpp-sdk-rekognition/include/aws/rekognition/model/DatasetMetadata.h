@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DatasetMetadata">AWS
    * API Reference</a></p>
    */
-  class AWS_REKOGNITION_API DatasetMetadata
+  class DatasetMetadata
   {
   public:
-    DatasetMetadata();
-    DatasetMetadata(Aws::Utils::Json::JsonView jsonValue);
-    DatasetMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_REKOGNITION_API DatasetMetadata();
+    AWS_REKOGNITION_API DatasetMetadata(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API DatasetMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutvision-2020-11-20/PixelAnomaly">AWS
    * API Reference</a></p>
    */
-  class AWS_LOOKOUTFORVISION_API PixelAnomaly
+  class PixelAnomaly
   {
   public:
-    PixelAnomaly();
-    PixelAnomaly(Aws::Utils::Json::JsonView jsonValue);
-    PixelAnomaly& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LOOKOUTFORVISION_API PixelAnomaly();
+    AWS_LOOKOUTFORVISION_API PixelAnomaly(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTFORVISION_API PixelAnomaly& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTFORVISION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

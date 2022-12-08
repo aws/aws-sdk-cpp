@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DevEndpoint">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API DevEndpoint
+  class DevEndpoint
   {
   public:
-    DevEndpoint();
-    DevEndpoint(Aws::Utils::Json::JsonView jsonValue);
-    DevEndpoint& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API DevEndpoint();
+    AWS_GLUE_API DevEndpoint(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API DevEndpoint& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

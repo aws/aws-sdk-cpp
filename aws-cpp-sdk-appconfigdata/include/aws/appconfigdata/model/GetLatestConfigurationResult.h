@@ -19,21 +19,21 @@ namespace AppConfigData
 {
 namespace Model
 {
-  class AWS_APPCONFIGDATA_API GetLatestConfigurationResult
+  class GetLatestConfigurationResult
   {
   public:
-    GetLatestConfigurationResult();
+    AWS_APPCONFIGDATA_API GetLatestConfigurationResult();
     //We have to define these because Microsoft doesn't auto generate them
-    GetLatestConfigurationResult(GetLatestConfigurationResult&&);
-    GetLatestConfigurationResult& operator=(GetLatestConfigurationResult&&);
+    AWS_APPCONFIGDATA_API GetLatestConfigurationResult(GetLatestConfigurationResult&&);
+    AWS_APPCONFIGDATA_API GetLatestConfigurationResult& operator=(GetLatestConfigurationResult&&);
     //we delete these because Microsoft doesn't handle move generation correctly
     //and we therefore don't trust them to get it right here either.
     GetLatestConfigurationResult(const GetLatestConfigurationResult&) = delete;
     GetLatestConfigurationResult& operator=(const GetLatestConfigurationResult&) = delete;
 
 
-    GetLatestConfigurationResult(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
-    GetLatestConfigurationResult& operator=(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
+    AWS_APPCONFIGDATA_API GetLatestConfigurationResult(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
+    AWS_APPCONFIGDATA_API GetLatestConfigurationResult& operator=(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
 
 
 

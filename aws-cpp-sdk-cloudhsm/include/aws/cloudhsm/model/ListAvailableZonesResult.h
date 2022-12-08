@@ -25,12 +25,12 @@ namespace CloudHSM
 {
 namespace Model
 {
-  class AWS_CLOUDHSM_API ListAvailableZonesResult
+  class ListAvailableZonesResult
   {
   public:
-    ListAvailableZonesResult();
-    ListAvailableZonesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListAvailableZonesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CLOUDHSM_API ListAvailableZonesResult();
+    AWS_CLOUDHSM_API ListAvailableZonesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CLOUDHSM_API ListAvailableZonesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

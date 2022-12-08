@@ -24,12 +24,12 @@ namespace EC2
 {
 namespace Model
 {
-  class AWS_EC2_API ModifyAvailabilityZoneGroupResponse
+  class ModifyAvailabilityZoneGroupResponse
   {
   public:
-    ModifyAvailabilityZoneGroupResponse();
-    ModifyAvailabilityZoneGroupResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ModifyAvailabilityZoneGroupResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API ModifyAvailabilityZoneGroupResponse();
+    AWS_EC2_API ModifyAvailabilityZoneGroupResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API ModifyAvailabilityZoneGroupResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

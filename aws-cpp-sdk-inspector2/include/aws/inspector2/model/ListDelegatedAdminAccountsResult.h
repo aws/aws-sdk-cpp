@@ -26,12 +26,12 @@ namespace Inspector2
 {
 namespace Model
 {
-  class AWS_INSPECTOR2_API ListDelegatedAdminAccountsResult
+  class ListDelegatedAdminAccountsResult
   {
   public:
-    ListDelegatedAdminAccountsResult();
-    ListDelegatedAdminAccountsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListDelegatedAdminAccountsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_INSPECTOR2_API ListDelegatedAdminAccountsResult();
+    AWS_INSPECTOR2_API ListDelegatedAdminAccountsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_INSPECTOR2_API ListDelegatedAdminAccountsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

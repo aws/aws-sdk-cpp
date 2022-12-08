@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/AutoTuneStatus">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICSEARCHSERVICE_API AutoTuneStatus
+  class AutoTuneStatus
   {
   public:
-    AutoTuneStatus();
-    AutoTuneStatus(Aws::Utils::Json::JsonView jsonValue);
-    AutoTuneStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ELASTICSEARCHSERVICE_API AutoTuneStatus();
+    AWS_ELASTICSEARCHSERVICE_API AutoTuneStatus(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICSEARCHSERVICE_API AutoTuneStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -26,12 +26,12 @@ namespace AppRunner
 {
 namespace Model
 {
-  class AWS_APPRUNNER_API ListObservabilityConfigurationsResult
+  class ListObservabilityConfigurationsResult
   {
   public:
-    ListObservabilityConfigurationsResult();
-    ListObservabilityConfigurationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListObservabilityConfigurationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPRUNNER_API ListObservabilityConfigurationsResult();
+    AWS_APPRUNNER_API ListObservabilityConfigurationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPRUNNER_API ListObservabilityConfigurationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

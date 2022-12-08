@@ -39,13 +39,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/LoadBalancerTlsCertificate">AWS
    * API Reference</a></p>
    */
-  class AWS_LIGHTSAIL_API LoadBalancerTlsCertificate
+  class LoadBalancerTlsCertificate
   {
   public:
-    LoadBalancerTlsCertificate();
-    LoadBalancerTlsCertificate(Aws::Utils::Json::JsonView jsonValue);
-    LoadBalancerTlsCertificate& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LIGHTSAIL_API LoadBalancerTlsCertificate();
+    AWS_LIGHTSAIL_API LoadBalancerTlsCertificate(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API LoadBalancerTlsCertificate& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

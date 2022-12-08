@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pipes-2015-10-07/PipeSourceSelfManagedKafkaParameters">AWS
    * API Reference</a></p>
    */
-  class AWS_PIPES_API PipeSourceSelfManagedKafkaParameters
+  class PipeSourceSelfManagedKafkaParameters
   {
   public:
-    PipeSourceSelfManagedKafkaParameters();
-    PipeSourceSelfManagedKafkaParameters(Aws::Utils::Json::JsonView jsonValue);
-    PipeSourceSelfManagedKafkaParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PIPES_API PipeSourceSelfManagedKafkaParameters();
+    AWS_PIPES_API PipeSourceSelfManagedKafkaParameters(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PIPES_API PipeSourceSelfManagedKafkaParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PIPES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ArchiveGroupSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API ArchiveGroupSettings
+  class ArchiveGroupSettings
   {
   public:
-    ArchiveGroupSettings();
-    ArchiveGroupSettings(Aws::Utils::Json::JsonView jsonValue);
-    ArchiveGroupSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API ArchiveGroupSettings();
+    AWS_MEDIALIVE_API ArchiveGroupSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API ArchiveGroupSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

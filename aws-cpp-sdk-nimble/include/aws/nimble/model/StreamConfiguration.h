@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/StreamConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_NIMBLESTUDIO_API StreamConfiguration
+  class StreamConfiguration
   {
   public:
-    StreamConfiguration();
-    StreamConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    StreamConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_NIMBLESTUDIO_API StreamConfiguration();
+    AWS_NIMBLESTUDIO_API StreamConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NIMBLESTUDIO_API StreamConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NIMBLESTUDIO_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

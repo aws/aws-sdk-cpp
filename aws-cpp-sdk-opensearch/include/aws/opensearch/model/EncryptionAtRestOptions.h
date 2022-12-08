@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/EncryptionAtRestOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_OPENSEARCHSERVICE_API EncryptionAtRestOptions
+  class EncryptionAtRestOptions
   {
   public:
-    EncryptionAtRestOptions();
-    EncryptionAtRestOptions(Aws::Utils::Json::JsonView jsonValue);
-    EncryptionAtRestOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OPENSEARCHSERVICE_API EncryptionAtRestOptions();
+    AWS_OPENSEARCHSERVICE_API EncryptionAtRestOptions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPENSEARCHSERVICE_API EncryptionAtRestOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPENSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

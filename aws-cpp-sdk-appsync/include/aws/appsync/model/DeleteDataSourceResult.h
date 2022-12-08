@@ -22,12 +22,12 @@ namespace AppSync
 {
 namespace Model
 {
-  class AWS_APPSYNC_API DeleteDataSourceResult
+  class DeleteDataSourceResult
   {
   public:
-    DeleteDataSourceResult();
-    DeleteDataSourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteDataSourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPSYNC_API DeleteDataSourceResult();
+    AWS_APPSYNC_API DeleteDataSourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPSYNC_API DeleteDataSourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

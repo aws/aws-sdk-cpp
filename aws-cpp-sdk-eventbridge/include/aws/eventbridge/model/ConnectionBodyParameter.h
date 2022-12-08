@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/ConnectionBodyParameter">AWS
    * API Reference</a></p>
    */
-  class AWS_EVENTBRIDGE_API ConnectionBodyParameter
+  class ConnectionBodyParameter
   {
   public:
-    ConnectionBodyParameter();
-    ConnectionBodyParameter(Aws::Utils::Json::JsonView jsonValue);
-    ConnectionBodyParameter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EVENTBRIDGE_API ConnectionBodyParameter();
+    AWS_EVENTBRIDGE_API ConnectionBodyParameter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EVENTBRIDGE_API ConnectionBodyParameter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EVENTBRIDGE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

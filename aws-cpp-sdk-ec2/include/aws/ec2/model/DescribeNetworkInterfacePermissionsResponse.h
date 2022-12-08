@@ -33,12 +33,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeNetworkInterfacePermissionsResult">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API DescribeNetworkInterfacePermissionsResponse
+  class DescribeNetworkInterfacePermissionsResponse
   {
   public:
-    DescribeNetworkInterfacePermissionsResponse();
-    DescribeNetworkInterfacePermissionsResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeNetworkInterfacePermissionsResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API DescribeNetworkInterfacePermissionsResponse();
+    AWS_EC2_API DescribeNetworkInterfacePermissionsResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API DescribeNetworkInterfacePermissionsResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

@@ -22,12 +22,12 @@ namespace Batch
 {
 namespace Model
 {
-  class AWS_BATCH_API CancelJobResult
+  class CancelJobResult
   {
   public:
-    CancelJobResult();
-    CancelJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CancelJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_BATCH_API CancelJobResult();
+    AWS_BATCH_API CancelJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_BATCH_API CancelJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

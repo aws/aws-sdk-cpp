@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/LogTargetConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API LogTargetConfiguration
+  class LogTargetConfiguration
   {
   public:
-    LogTargetConfiguration();
-    LogTargetConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    LogTargetConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API LogTargetConfiguration();
+    AWS_IOT_API LogTargetConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API LogTargetConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

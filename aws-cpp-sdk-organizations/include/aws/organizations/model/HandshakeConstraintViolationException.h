@@ -59,13 +59,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/HandshakeConstraintViolationException">AWS
    * API Reference</a></p>
    */
-  class AWS_ORGANIZATIONS_API HandshakeConstraintViolationException
+  class HandshakeConstraintViolationException
   {
   public:
-    HandshakeConstraintViolationException();
-    HandshakeConstraintViolationException(Aws::Utils::Json::JsonView jsonValue);
-    HandshakeConstraintViolationException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ORGANIZATIONS_API HandshakeConstraintViolationException();
+    AWS_ORGANIZATIONS_API HandshakeConstraintViolationException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ORGANIZATIONS_API HandshakeConstraintViolationException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ORGANIZATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

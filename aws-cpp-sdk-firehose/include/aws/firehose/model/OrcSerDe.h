@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/OrcSerDe">AWS
    * API Reference</a></p>
    */
-  class AWS_FIREHOSE_API OrcSerDe
+  class OrcSerDe
   {
   public:
-    OrcSerDe();
-    OrcSerDe(Aws::Utils::Json::JsonView jsonValue);
-    OrcSerDe& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FIREHOSE_API OrcSerDe();
+    AWS_FIREHOSE_API OrcSerDe(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FIREHOSE_API OrcSerDe& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FIREHOSE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

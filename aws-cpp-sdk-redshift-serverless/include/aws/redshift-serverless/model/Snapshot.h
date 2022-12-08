@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/Snapshot">AWS
    * API Reference</a></p>
    */
-  class AWS_REDSHIFTSERVERLESS_API Snapshot
+  class Snapshot
   {
   public:
-    Snapshot();
-    Snapshot(Aws::Utils::Json::JsonView jsonValue);
-    Snapshot& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_REDSHIFTSERVERLESS_API Snapshot();
+    AWS_REDSHIFTSERVERLESS_API Snapshot(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REDSHIFTSERVERLESS_API Snapshot& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REDSHIFTSERVERLESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

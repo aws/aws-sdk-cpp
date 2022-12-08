@@ -24,12 +24,12 @@ namespace AutoScaling
 {
 namespace Model
 {
-  class AWS_AUTOSCALING_API DeleteLifecycleHookResult
+  class DeleteLifecycleHookResult
   {
   public:
-    DeleteLifecycleHookResult();
-    DeleteLifecycleHookResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DeleteLifecycleHookResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_AUTOSCALING_API DeleteLifecycleHookResult();
+    AWS_AUTOSCALING_API DeleteLifecycleHookResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_AUTOSCALING_API DeleteLifecycleHookResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     

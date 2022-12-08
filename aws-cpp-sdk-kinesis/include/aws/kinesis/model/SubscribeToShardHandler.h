@@ -24,24 +24,24 @@ namespace Model
         UNKNOWN
     };
 
-    class AWS_KINESIS_API SubscribeToShardHandler : public Aws::Utils::Event::EventStreamHandler
+    class SubscribeToShardHandler : public Aws::Utils::Event::EventStreamHandler
     {
         typedef std::function<void(const SubscribeToShardEvent&)> SubscribeToShardEventCallback;
         typedef std::function<void(const Aws::Client::AWSError<KinesisErrors>& error)> ErrorCallback;
 
     public:
-        SubscribeToShardHandler();
-        SubscribeToShardHandler& operator=(const SubscribeToShardHandler&) = default;
+        AWS_KINESIS_API SubscribeToShardHandler();
+        AWS_KINESIS_API SubscribeToShardHandler& operator=(const SubscribeToShardHandler&) = default;
 
-        virtual void OnEvent() override;
+        AWS_KINESIS_API virtual void OnEvent() override;
 
         inline void SetSubscribeToShardEventCallback(const SubscribeToShardEventCallback& callback) { m_onSubscribeToShardEvent = callback; }
         inline void SetOnErrorCallback(const ErrorCallback& callback) { m_onError = callback; }
 
     private:
-        void HandleEventInMessage();
-        void HandleErrorInMessage();
-        void MarshallError(const Aws::String& errorCode, const Aws::String& errorMessage);
+        AWS_KINESIS_API void HandleEventInMessage();
+        AWS_KINESIS_API void HandleErrorInMessage();
+        AWS_KINESIS_API void MarshallError(const Aws::String& errorCode, const Aws::String& errorMessage);
 
         SubscribeToShardEventCallback m_onSubscribeToShardEvent;
         ErrorCallback m_onError;

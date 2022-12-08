@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/UpdateResourceCollectionFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_DEVOPSGURU_API UpdateResourceCollectionFilter
+  class UpdateResourceCollectionFilter
   {
   public:
-    UpdateResourceCollectionFilter();
-    UpdateResourceCollectionFilter(Aws::Utils::Json::JsonView jsonValue);
-    UpdateResourceCollectionFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DEVOPSGURU_API UpdateResourceCollectionFilter();
+    AWS_DEVOPSGURU_API UpdateResourceCollectionFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVOPSGURU_API UpdateResourceCollectionFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVOPSGURU_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

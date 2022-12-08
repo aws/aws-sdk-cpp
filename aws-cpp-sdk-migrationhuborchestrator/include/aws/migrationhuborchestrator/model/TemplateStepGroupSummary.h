@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/migrationhuborchestrator-2021-08-28/TemplateStepGroupSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_MIGRATIONHUBORCHESTRATOR_API TemplateStepGroupSummary
+  class TemplateStepGroupSummary
   {
   public:
-    TemplateStepGroupSummary();
-    TemplateStepGroupSummary(Aws::Utils::Json::JsonView jsonValue);
-    TemplateStepGroupSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MIGRATIONHUBORCHESTRATOR_API TemplateStepGroupSummary();
+    AWS_MIGRATIONHUBORCHESTRATOR_API TemplateStepGroupSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MIGRATIONHUBORCHESTRATOR_API TemplateStepGroupSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MIGRATIONHUBORCHESTRATOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

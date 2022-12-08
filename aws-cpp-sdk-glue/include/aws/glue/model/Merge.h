@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/Merge">AWS API
    * Reference</a></p>
    */
-  class AWS_GLUE_API Merge
+  class Merge
   {
   public:
-    Merge();
-    Merge(Aws::Utils::Json::JsonView jsonValue);
-    Merge& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API Merge();
+    AWS_GLUE_API Merge(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Merge& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/DedicatedIpPool">AWS
    * API Reference</a></p>
    */
-  class AWS_SESV2_API DedicatedIpPool
+  class DedicatedIpPool
   {
   public:
-    DedicatedIpPool();
-    DedicatedIpPool(Aws::Utils::Json::JsonView jsonValue);
-    DedicatedIpPool& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SESV2_API DedicatedIpPool();
+    AWS_SESV2_API DedicatedIpPool(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SESV2_API DedicatedIpPool& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SESV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

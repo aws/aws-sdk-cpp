@@ -25,12 +25,12 @@ namespace TimestreamWrite
 {
 namespace Model
 {
-  class AWS_TIMESTREAMWRITE_API DescribeEndpointsResult
+  class DescribeEndpointsResult
   {
   public:
-    DescribeEndpointsResult();
-    DescribeEndpointsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeEndpointsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_TIMESTREAMWRITE_API DescribeEndpointsResult();
+    AWS_TIMESTREAMWRITE_API DescribeEndpointsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_TIMESTREAMWRITE_API DescribeEndpointsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

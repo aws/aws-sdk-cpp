@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/JobDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_ACCESSANALYZER_API JobDetails
+  class JobDetails
   {
   public:
-    JobDetails();
-    JobDetails(Aws::Utils::Json::JsonView jsonValue);
-    JobDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ACCESSANALYZER_API JobDetails();
+    AWS_ACCESSANALYZER_API JobDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACCESSANALYZER_API JobDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACCESSANALYZER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

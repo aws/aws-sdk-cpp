@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/braket-2019-09-01/QuantumTaskSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_BRAKET_API QuantumTaskSummary
+  class QuantumTaskSummary
   {
   public:
-    QuantumTaskSummary();
-    QuantumTaskSummary(Aws::Utils::Json::JsonView jsonValue);
-    QuantumTaskSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BRAKET_API QuantumTaskSummary();
+    AWS_BRAKET_API QuantumTaskSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BRAKET_API QuantumTaskSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BRAKET_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

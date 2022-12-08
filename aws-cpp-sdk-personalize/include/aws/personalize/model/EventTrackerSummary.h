@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/EventTrackerSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_PERSONALIZE_API EventTrackerSummary
+  class EventTrackerSummary
   {
   public:
-    EventTrackerSummary();
-    EventTrackerSummary(Aws::Utils::Json::JsonView jsonValue);
-    EventTrackerSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PERSONALIZE_API EventTrackerSummary();
+    AWS_PERSONALIZE_API EventTrackerSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PERSONALIZE_API EventTrackerSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PERSONALIZE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

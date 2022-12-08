@@ -37,14 +37,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ResponseHeadersPolicyServerTimingHeadersConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFRONT_API ResponseHeadersPolicyServerTimingHeadersConfig
+  class ResponseHeadersPolicyServerTimingHeadersConfig
   {
   public:
-    ResponseHeadersPolicyServerTimingHeadersConfig();
-    ResponseHeadersPolicyServerTimingHeadersConfig(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ResponseHeadersPolicyServerTimingHeadersConfig& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API ResponseHeadersPolicyServerTimingHeadersConfig();
+    AWS_CLOUDFRONT_API ResponseHeadersPolicyServerTimingHeadersConfig(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API ResponseHeadersPolicyServerTimingHeadersConfig& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**

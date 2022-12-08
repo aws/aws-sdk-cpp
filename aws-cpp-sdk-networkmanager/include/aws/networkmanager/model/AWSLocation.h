@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/AWSLocation">AWS
    * API Reference</a></p>
    */
-  class AWS_NETWORKMANAGER_API AWSLocation
+  class AWSLocation
   {
   public:
-    AWSLocation();
-    AWSLocation(Aws::Utils::Json::JsonView jsonValue);
-    AWSLocation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_NETWORKMANAGER_API AWSLocation();
+    AWS_NETWORKMANAGER_API AWSLocation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKMANAGER_API AWSLocation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

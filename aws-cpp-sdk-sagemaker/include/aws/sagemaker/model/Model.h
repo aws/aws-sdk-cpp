@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/Model">AWS API
    * Reference</a></p>
    */
-  class AWS_SAGEMAKER_API Model
+  class Model
   {
   public:
-    Model();
-    Model(Aws::Utils::Json::JsonView jsonValue);
-    Model& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API Model();
+    AWS_SAGEMAKER_API Model(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Model& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

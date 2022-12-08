@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/CloudComponentStatus">AWS
    * API Reference</a></p>
    */
-  class AWS_GREENGRASSV2_API CloudComponentStatus
+  class CloudComponentStatus
   {
   public:
-    CloudComponentStatus();
-    CloudComponentStatus(Aws::Utils::Json::JsonView jsonValue);
-    CloudComponentStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GREENGRASSV2_API CloudComponentStatus();
+    AWS_GREENGRASSV2_API CloudComponentStatus(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASSV2_API CloudComponentStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

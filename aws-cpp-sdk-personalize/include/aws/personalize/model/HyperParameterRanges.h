@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/HyperParameterRanges">AWS
    * API Reference</a></p>
    */
-  class AWS_PERSONALIZE_API HyperParameterRanges
+  class HyperParameterRanges
   {
   public:
-    HyperParameterRanges();
-    HyperParameterRanges(Aws::Utils::Json::JsonView jsonValue);
-    HyperParameterRanges& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PERSONALIZE_API HyperParameterRanges();
+    AWS_PERSONALIZE_API HyperParameterRanges(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PERSONALIZE_API HyperParameterRanges& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PERSONALIZE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

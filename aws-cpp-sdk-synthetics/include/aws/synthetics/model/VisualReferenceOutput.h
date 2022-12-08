@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/synthetics-2017-10-11/VisualReferenceOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_SYNTHETICS_API VisualReferenceOutput
+  class VisualReferenceOutput
   {
   public:
-    VisualReferenceOutput();
-    VisualReferenceOutput(Aws::Utils::Json::JsonView jsonValue);
-    VisualReferenceOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SYNTHETICS_API VisualReferenceOutput();
+    AWS_SYNTHETICS_API VisualReferenceOutput(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SYNTHETICS_API VisualReferenceOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SYNTHETICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/HlsAkamaiSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API HlsAkamaiSettings
+  class HlsAkamaiSettings
   {
   public:
-    HlsAkamaiSettings();
-    HlsAkamaiSettings(Aws::Utils::Json::JsonView jsonValue);
-    HlsAkamaiSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API HlsAkamaiSettings();
+    AWS_MEDIALIVE_API HlsAkamaiSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API HlsAkamaiSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

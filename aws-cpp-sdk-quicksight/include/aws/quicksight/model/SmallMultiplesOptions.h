@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/SmallMultiplesOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API SmallMultiplesOptions
+  class SmallMultiplesOptions
   {
   public:
-    SmallMultiplesOptions();
-    SmallMultiplesOptions(Aws::Utils::Json::JsonView jsonValue);
-    SmallMultiplesOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API SmallMultiplesOptions();
+    AWS_QUICKSIGHT_API SmallMultiplesOptions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API SmallMultiplesOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UserDefinedFunction">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API UserDefinedFunction
+  class UserDefinedFunction
   {
   public:
-    UserDefinedFunction();
-    UserDefinedFunction(Aws::Utils::Json::JsonView jsonValue);
-    UserDefinedFunction& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API UserDefinedFunction();
+    AWS_GLUE_API UserDefinedFunction(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API UserDefinedFunction& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

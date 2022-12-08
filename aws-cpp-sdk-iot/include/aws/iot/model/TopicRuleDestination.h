@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/TopicRuleDestination">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API TopicRuleDestination
+  class TopicRuleDestination
   {
   public:
-    TopicRuleDestination();
-    TopicRuleDestination(Aws::Utils::Json::JsonView jsonValue);
-    TopicRuleDestination& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API TopicRuleDestination();
+    AWS_IOT_API TopicRuleDestination(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API TopicRuleDestination& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

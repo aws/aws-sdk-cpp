@@ -21,10 +21,10 @@ namespace Model
 
   /**
    */
-  class AWS_LEXMODELBUILDINGSERVICE_API PutBotAliasRequest : public LexModelBuildingServiceRequest
+  class PutBotAliasRequest : public LexModelBuildingServiceRequest
   {
   public:
-    PutBotAliasRequest();
+    AWS_LEXMODELBUILDINGSERVICE_API PutBotAliasRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,7 +32,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "PutBotAlias"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_LEXMODELBUILDINGSERVICE_API Aws::String SerializePayload() const override;
 
 
     /**

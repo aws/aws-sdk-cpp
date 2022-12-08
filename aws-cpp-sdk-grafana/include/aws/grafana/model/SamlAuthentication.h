@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/SamlAuthentication">AWS
    * API Reference</a></p>
    */
-  class AWS_MANAGEDGRAFANA_API SamlAuthentication
+  class SamlAuthentication
   {
   public:
-    SamlAuthentication();
-    SamlAuthentication(Aws::Utils::Json::JsonView jsonValue);
-    SamlAuthentication& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MANAGEDGRAFANA_API SamlAuthentication();
+    AWS_MANAGEDGRAFANA_API SamlAuthentication(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MANAGEDGRAFANA_API SamlAuthentication& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MANAGEDGRAFANA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/ExportSnapshotRecord">AWS
    * API Reference</a></p>
    */
-  class AWS_LIGHTSAIL_API ExportSnapshotRecord
+  class ExportSnapshotRecord
   {
   public:
-    ExportSnapshotRecord();
-    ExportSnapshotRecord(Aws::Utils::Json::JsonView jsonValue);
-    ExportSnapshotRecord& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LIGHTSAIL_API ExportSnapshotRecord();
+    AWS_LIGHTSAIL_API ExportSnapshotRecord(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API ExportSnapshotRecord& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

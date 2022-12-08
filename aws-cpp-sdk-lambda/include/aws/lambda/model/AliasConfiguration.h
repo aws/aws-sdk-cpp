@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/AliasConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_LAMBDA_API AliasConfiguration
+  class AliasConfiguration
   {
   public:
-    AliasConfiguration();
-    AliasConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    AliasConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LAMBDA_API AliasConfiguration();
+    AWS_LAMBDA_API AliasConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAMBDA_API AliasConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAMBDA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

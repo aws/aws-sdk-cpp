@@ -25,12 +25,12 @@ namespace Redshift
 {
 namespace Model
 {
-  class AWS_REDSHIFT_API ModifyClusterIamRolesResult
+  class ModifyClusterIamRolesResult
   {
   public:
-    ModifyClusterIamRolesResult();
-    ModifyClusterIamRolesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ModifyClusterIamRolesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_REDSHIFT_API ModifyClusterIamRolesResult();
+    AWS_REDSHIFT_API ModifyClusterIamRolesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_REDSHIFT_API ModifyClusterIamRolesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     

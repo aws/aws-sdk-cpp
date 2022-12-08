@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/TensorBoardOutputConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API TensorBoardOutputConfig
+  class TensorBoardOutputConfig
   {
   public:
-    TensorBoardOutputConfig();
-    TensorBoardOutputConfig(Aws::Utils::Json::JsonView jsonValue);
-    TensorBoardOutputConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API TensorBoardOutputConfig();
+    AWS_SAGEMAKER_API TensorBoardOutputConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API TensorBoardOutputConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

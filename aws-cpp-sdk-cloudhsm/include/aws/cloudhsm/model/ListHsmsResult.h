@@ -31,12 +31,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListHsmsResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDHSM_API ListHsmsResult
+  class ListHsmsResult
   {
   public:
-    ListHsmsResult();
-    ListHsmsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListHsmsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CLOUDHSM_API ListHsmsResult();
+    AWS_CLOUDHSM_API ListHsmsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CLOUDHSM_API ListHsmsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

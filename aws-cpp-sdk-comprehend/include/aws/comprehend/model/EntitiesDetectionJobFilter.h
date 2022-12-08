@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/EntitiesDetectionJobFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_COMPREHEND_API EntitiesDetectionJobFilter
+  class EntitiesDetectionJobFilter
   {
   public:
-    EntitiesDetectionJobFilter();
-    EntitiesDetectionJobFilter(Aws::Utils::Json::JsonView jsonValue);
-    EntitiesDetectionJobFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COMPREHEND_API EntitiesDetectionJobFilter();
+    AWS_COMPREHEND_API EntitiesDetectionJobFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHEND_API EntitiesDetectionJobFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHEND_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

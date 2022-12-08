@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/BandwidthRateLimitInterval">AWS
    * API Reference</a></p>
    */
-  class AWS_STORAGEGATEWAY_API BandwidthRateLimitInterval
+  class BandwidthRateLimitInterval
   {
   public:
-    BandwidthRateLimitInterval();
-    BandwidthRateLimitInterval(Aws::Utils::Json::JsonView jsonValue);
-    BandwidthRateLimitInterval& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_STORAGEGATEWAY_API BandwidthRateLimitInterval();
+    AWS_STORAGEGATEWAY_API BandwidthRateLimitInterval(Aws::Utils::Json::JsonView jsonValue);
+    AWS_STORAGEGATEWAY_API BandwidthRateLimitInterval& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_STORAGEGATEWAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

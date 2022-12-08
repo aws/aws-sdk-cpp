@@ -30,12 +30,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/marketplacecommerceanalytics-2015-07-01/GenerateDataSetResult">AWS
    * API Reference</a></p>
    */
-  class AWS_MARKETPLACECOMMERCEANALYTICS_API GenerateDataSetResult
+  class GenerateDataSetResult
   {
   public:
-    GenerateDataSetResult();
-    GenerateDataSetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GenerateDataSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MARKETPLACECOMMERCEANALYTICS_API GenerateDataSetResult();
+    AWS_MARKETPLACECOMMERCEANALYTICS_API GenerateDataSetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MARKETPLACECOMMERCEANALYTICS_API GenerateDataSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

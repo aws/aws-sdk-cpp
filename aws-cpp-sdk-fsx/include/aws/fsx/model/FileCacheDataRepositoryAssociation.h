@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/FileCacheDataRepositoryAssociation">AWS
    * API Reference</a></p>
    */
-  class AWS_FSX_API FileCacheDataRepositoryAssociation
+  class FileCacheDataRepositoryAssociation
   {
   public:
-    FileCacheDataRepositoryAssociation();
-    FileCacheDataRepositoryAssociation(Aws::Utils::Json::JsonView jsonValue);
-    FileCacheDataRepositoryAssociation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FSX_API FileCacheDataRepositoryAssociation();
+    AWS_FSX_API FileCacheDataRepositoryAssociation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API FileCacheDataRepositoryAssociation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -31,12 +31,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/UpdateAvailabilityOptionsResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDSEARCH_API UpdateAvailabilityOptionsResult
+  class UpdateAvailabilityOptionsResult
   {
   public:
-    UpdateAvailabilityOptionsResult();
-    UpdateAvailabilityOptionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    UpdateAvailabilityOptionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_CLOUDSEARCH_API UpdateAvailabilityOptionsResult();
+    AWS_CLOUDSEARCH_API UpdateAvailabilityOptionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_CLOUDSEARCH_API UpdateAvailabilityOptionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

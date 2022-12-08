@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/Container">AWS
    * API Reference</a></p>
    */
-  class AWS_LIGHTSAIL_API Container
+  class Container
   {
   public:
-    Container();
-    Container(Aws::Utils::Json::JsonView jsonValue);
-    Container& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LIGHTSAIL_API Container();
+    AWS_LIGHTSAIL_API Container(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API Container& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

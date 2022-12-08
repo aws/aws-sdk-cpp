@@ -26,12 +26,12 @@ namespace DAX
 {
 namespace Model
 {
-  class AWS_DAX_API DescribeEventsResult
+  class DescribeEventsResult
   {
   public:
-    DescribeEventsResult();
-    DescribeEventsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeEventsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DAX_API DescribeEventsResult();
+    AWS_DAX_API DescribeEventsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DAX_API DescribeEventsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

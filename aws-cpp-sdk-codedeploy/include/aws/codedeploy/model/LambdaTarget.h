@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/LambdaTarget">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEDEPLOY_API LambdaTarget
+  class LambdaTarget
   {
   public:
-    LambdaTarget();
-    LambdaTarget(Aws::Utils::Json::JsonView jsonValue);
-    LambdaTarget& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEDEPLOY_API LambdaTarget();
+    AWS_CODEDEPLOY_API LambdaTarget(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEDEPLOY_API LambdaTarget& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEDEPLOY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

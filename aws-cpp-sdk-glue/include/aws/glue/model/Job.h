@@ -38,13 +38,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/Job">AWS API
    * Reference</a></p>
    */
-  class AWS_GLUE_API Job
+  class Job
   {
   public:
-    Job();
-    Job(Aws::Utils::Json::JsonView jsonValue);
-    Job& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API Job();
+    AWS_GLUE_API Job(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Job& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

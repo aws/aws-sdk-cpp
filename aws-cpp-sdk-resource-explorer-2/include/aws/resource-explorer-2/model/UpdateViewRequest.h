@@ -21,10 +21,10 @@ namespace Model
 
   /**
    */
-  class AWS_RESOURCEEXPLORER2_API UpdateViewRequest : public ResourceExplorer2Request
+  class UpdateViewRequest : public ResourceExplorer2Request
   {
   public:
-    UpdateViewRequest();
+    AWS_RESOURCEEXPLORER2_API UpdateViewRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,7 +32,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateView"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_RESOURCEEXPLORER2_API Aws::String SerializePayload() const override;
 
 
     /**

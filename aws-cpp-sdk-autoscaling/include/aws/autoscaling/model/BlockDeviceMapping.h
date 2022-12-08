@@ -29,15 +29,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/BlockDeviceMapping">AWS
    * API Reference</a></p>
    */
-  class AWS_AUTOSCALING_API BlockDeviceMapping
+  class BlockDeviceMapping
   {
   public:
-    BlockDeviceMapping();
-    BlockDeviceMapping(const Aws::Utils::Xml::XmlNode& xmlNode);
-    BlockDeviceMapping& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_AUTOSCALING_API BlockDeviceMapping();
+    AWS_AUTOSCALING_API BlockDeviceMapping(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_AUTOSCALING_API BlockDeviceMapping& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_AUTOSCALING_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_AUTOSCALING_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**

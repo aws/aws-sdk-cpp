@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/InputConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTEVENTS_API InputConfiguration
+  class InputConfiguration
   {
   public:
-    InputConfiguration();
-    InputConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    InputConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTEVENTS_API InputConfiguration();
+    AWS_IOTEVENTS_API InputConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTEVENTS_API InputConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTEVENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetails
+  class AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetails
   {
   public:
-    AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetails();
-    AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetails(Aws::Utils::Json::JsonView jsonValue);
-    AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetails();
+    AWS_SECURITYHUB_API AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

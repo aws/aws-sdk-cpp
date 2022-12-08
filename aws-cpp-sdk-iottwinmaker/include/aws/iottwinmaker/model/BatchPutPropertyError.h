@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/BatchPutPropertyError">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTTWINMAKER_API BatchPutPropertyError
+  class BatchPutPropertyError
   {
   public:
-    BatchPutPropertyError();
-    BatchPutPropertyError(Aws::Utils::Json::JsonView jsonValue);
-    BatchPutPropertyError& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTTWINMAKER_API BatchPutPropertyError();
+    AWS_IOTTWINMAKER_API BatchPutPropertyError(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTTWINMAKER_API BatchPutPropertyError& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTTWINMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

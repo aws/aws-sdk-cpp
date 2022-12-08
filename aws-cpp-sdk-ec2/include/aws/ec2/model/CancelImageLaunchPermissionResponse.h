@@ -24,12 +24,12 @@ namespace EC2
 {
 namespace Model
 {
-  class AWS_EC2_API CancelImageLaunchPermissionResponse
+  class CancelImageLaunchPermissionResponse
   {
   public:
-    CancelImageLaunchPermissionResponse();
-    CancelImageLaunchPermissionResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    CancelImageLaunchPermissionResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API CancelImageLaunchPermissionResponse();
+    AWS_EC2_API CancelImageLaunchPermissionResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API CancelImageLaunchPermissionResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

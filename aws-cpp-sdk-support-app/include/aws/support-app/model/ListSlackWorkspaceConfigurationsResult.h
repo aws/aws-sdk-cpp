@@ -26,12 +26,12 @@ namespace SupportApp
 {
 namespace Model
 {
-  class AWS_SUPPORTAPP_API ListSlackWorkspaceConfigurationsResult
+  class ListSlackWorkspaceConfigurationsResult
   {
   public:
-    ListSlackWorkspaceConfigurationsResult();
-    ListSlackWorkspaceConfigurationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListSlackWorkspaceConfigurationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SUPPORTAPP_API ListSlackWorkspaceConfigurationsResult();
+    AWS_SUPPORTAPP_API ListSlackWorkspaceConfigurationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SUPPORTAPP_API ListSlackWorkspaceConfigurationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/migration-hub-refactor-spaces-2021-10-26/RouteSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_MIGRATIONHUBREFACTORSPACES_API RouteSummary
+  class RouteSummary
   {
   public:
-    RouteSummary();
-    RouteSummary(Aws::Utils::Json::JsonView jsonValue);
-    RouteSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MIGRATIONHUBREFACTORSPACES_API RouteSummary();
+    AWS_MIGRATIONHUBREFACTORSPACES_API RouteSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MIGRATIONHUBREFACTORSPACES_API RouteSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MIGRATIONHUBREFACTORSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

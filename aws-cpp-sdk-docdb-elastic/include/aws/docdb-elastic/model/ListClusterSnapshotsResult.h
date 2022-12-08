@@ -26,12 +26,12 @@ namespace DocDBElastic
 {
 namespace Model
 {
-  class AWS_DOCDBELASTIC_API ListClusterSnapshotsResult
+  class ListClusterSnapshotsResult
   {
   public:
-    ListClusterSnapshotsResult();
-    ListClusterSnapshotsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListClusterSnapshotsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DOCDBELASTIC_API ListClusterSnapshotsResult();
+    AWS_DOCDBELASTIC_API ListClusterSnapshotsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DOCDBELASTIC_API ListClusterSnapshotsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

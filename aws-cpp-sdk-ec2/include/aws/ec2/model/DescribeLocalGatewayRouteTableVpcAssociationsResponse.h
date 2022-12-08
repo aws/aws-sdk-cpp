@@ -27,12 +27,12 @@ namespace EC2
 {
 namespace Model
 {
-  class AWS_EC2_API DescribeLocalGatewayRouteTableVpcAssociationsResponse
+  class DescribeLocalGatewayRouteTableVpcAssociationsResponse
   {
   public:
-    DescribeLocalGatewayRouteTableVpcAssociationsResponse();
-    DescribeLocalGatewayRouteTableVpcAssociationsResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeLocalGatewayRouteTableVpcAssociationsResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API DescribeLocalGatewayRouteTableVpcAssociationsResponse();
+    AWS_EC2_API DescribeLocalGatewayRouteTableVpcAssociationsResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API DescribeLocalGatewayRouteTableVpcAssociationsResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

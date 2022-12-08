@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/ChangeProgressStage">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICSEARCHSERVICE_API ChangeProgressStage
+  class ChangeProgressStage
   {
   public:
-    ChangeProgressStage();
-    ChangeProgressStage(Aws::Utils::Json::JsonView jsonValue);
-    ChangeProgressStage& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ELASTICSEARCHSERVICE_API ChangeProgressStage();
+    AWS_ELASTICSEARCHSERVICE_API ChangeProgressStage(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICSEARCHSERVICE_API ChangeProgressStage& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -22,12 +22,12 @@ namespace IoTWireless
 {
 namespace Model
 {
-  class AWS_IOTWIRELESS_API AssociateWirelessDeviceWithThingResult
+  class AssociateWirelessDeviceWithThingResult
   {
   public:
-    AssociateWirelessDeviceWithThingResult();
-    AssociateWirelessDeviceWithThingResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AssociateWirelessDeviceWithThingResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOTWIRELESS_API AssociateWirelessDeviceWithThingResult();
+    AWS_IOTWIRELESS_API AssociateWirelessDeviceWithThingResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOTWIRELESS_API AssociateWirelessDeviceWithThingResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

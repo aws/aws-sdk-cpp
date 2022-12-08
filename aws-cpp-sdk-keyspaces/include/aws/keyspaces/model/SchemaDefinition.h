@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/keyspaces-2022-02-10/SchemaDefinition">AWS
    * API Reference</a></p>
    */
-  class AWS_KEYSPACES_API SchemaDefinition
+  class SchemaDefinition
   {
   public:
-    SchemaDefinition();
-    SchemaDefinition(Aws::Utils::Json::JsonView jsonValue);
-    SchemaDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KEYSPACES_API SchemaDefinition();
+    AWS_KEYSPACES_API SchemaDefinition(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KEYSPACES_API SchemaDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KEYSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

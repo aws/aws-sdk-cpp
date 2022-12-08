@@ -26,12 +26,12 @@ namespace IoT
 {
 namespace Model
 {
-  class AWS_IOT_API ListThingRegistrationTaskReportsResult
+  class ListThingRegistrationTaskReportsResult
   {
   public:
-    ListThingRegistrationTaskReportsResult();
-    ListThingRegistrationTaskReportsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListThingRegistrationTaskReportsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOT_API ListThingRegistrationTaskReportsResult();
+    AWS_IOT_API ListThingRegistrationTaskReportsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOT_API ListThingRegistrationTaskReportsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

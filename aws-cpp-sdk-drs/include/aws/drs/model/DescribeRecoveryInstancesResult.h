@@ -26,12 +26,12 @@ namespace drs
 {
 namespace Model
 {
-  class AWS_DRS_API DescribeRecoveryInstancesResult
+  class DescribeRecoveryInstancesResult
   {
   public:
-    DescribeRecoveryInstancesResult();
-    DescribeRecoveryInstancesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeRecoveryInstancesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DRS_API DescribeRecoveryInstancesResult();
+    AWS_DRS_API DescribeRecoveryInstancesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DRS_API DescribeRecoveryInstancesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

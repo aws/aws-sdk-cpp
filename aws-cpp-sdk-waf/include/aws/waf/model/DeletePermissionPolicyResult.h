@@ -22,12 +22,12 @@ namespace WAF
 {
 namespace Model
 {
-  class AWS_WAF_API DeletePermissionPolicyResult
+  class DeletePermissionPolicyResult
   {
   public:
-    DeletePermissionPolicyResult();
-    DeletePermissionPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeletePermissionPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WAF_API DeletePermissionPolicyResult();
+    AWS_WAF_API DeletePermissionPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WAF_API DeletePermissionPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

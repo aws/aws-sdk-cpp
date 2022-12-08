@@ -27,12 +27,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ActivityTaskStatus">AWS
    * API Reference</a></p>
    */
-  class AWS_SWF_API RecordActivityTaskHeartbeatResult
+  class RecordActivityTaskHeartbeatResult
   {
   public:
-    RecordActivityTaskHeartbeatResult();
-    RecordActivityTaskHeartbeatResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    RecordActivityTaskHeartbeatResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SWF_API RecordActivityTaskHeartbeatResult();
+    AWS_SWF_API RecordActivityTaskHeartbeatResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SWF_API RecordActivityTaskHeartbeatResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

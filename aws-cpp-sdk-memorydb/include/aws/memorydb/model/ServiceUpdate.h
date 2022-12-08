@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/ServiceUpdate">AWS
    * API Reference</a></p>
    */
-  class AWS_MEMORYDB_API ServiceUpdate
+  class ServiceUpdate
   {
   public:
-    ServiceUpdate();
-    ServiceUpdate(Aws::Utils::Json::JsonView jsonValue);
-    ServiceUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEMORYDB_API ServiceUpdate();
+    AWS_MEMORYDB_API ServiceUpdate(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEMORYDB_API ServiceUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEMORYDB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -18,21 +18,21 @@ namespace Schemas
 {
 namespace Model
 {
-  class AWS_SCHEMAS_API GetCodeBindingSourceResult
+  class GetCodeBindingSourceResult
   {
   public:
-    GetCodeBindingSourceResult();
+    AWS_SCHEMAS_API GetCodeBindingSourceResult();
     //We have to define these because Microsoft doesn't auto generate them
-    GetCodeBindingSourceResult(GetCodeBindingSourceResult&&);
-    GetCodeBindingSourceResult& operator=(GetCodeBindingSourceResult&&);
+    AWS_SCHEMAS_API GetCodeBindingSourceResult(GetCodeBindingSourceResult&&);
+    AWS_SCHEMAS_API GetCodeBindingSourceResult& operator=(GetCodeBindingSourceResult&&);
     //we delete these because Microsoft doesn't handle move generation correctly
     //and we therefore don't trust them to get it right here either.
     GetCodeBindingSourceResult(const GetCodeBindingSourceResult&) = delete;
     GetCodeBindingSourceResult& operator=(const GetCodeBindingSourceResult&) = delete;
 
 
-    GetCodeBindingSourceResult(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
-    GetCodeBindingSourceResult& operator=(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
+    AWS_SCHEMAS_API GetCodeBindingSourceResult(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
+    AWS_SCHEMAS_API GetCodeBindingSourceResult& operator=(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
 
 
 

@@ -21,10 +21,10 @@ namespace Model
 
   /**
    */
-  class AWS_DATASYNC_API CreateLocationFsxOpenZfsRequest : public DataSyncRequest
+  class CreateLocationFsxOpenZfsRequest : public DataSyncRequest
   {
   public:
-    CreateLocationFsxOpenZfsRequest();
+    AWS_DATASYNC_API CreateLocationFsxOpenZfsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,9 +32,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateLocationFsxOpenZfs"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_DATASYNC_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_DATASYNC_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**

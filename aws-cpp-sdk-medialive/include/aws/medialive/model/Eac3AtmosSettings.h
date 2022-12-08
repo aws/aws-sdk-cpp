@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/Eac3AtmosSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API Eac3AtmosSettings
+  class Eac3AtmosSettings
   {
   public:
-    Eac3AtmosSettings();
-    Eac3AtmosSettings(Aws::Utils::Json::JsonView jsonValue);
-    Eac3AtmosSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API Eac3AtmosSettings();
+    AWS_MEDIALIVE_API Eac3AtmosSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Eac3AtmosSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

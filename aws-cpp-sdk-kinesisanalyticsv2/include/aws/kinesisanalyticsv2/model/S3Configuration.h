@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/S3Configuration">AWS
    * API Reference</a></p>
    */
-  class AWS_KINESISANALYTICSV2_API S3Configuration
+  class S3Configuration
   {
   public:
-    S3Configuration();
-    S3Configuration(Aws::Utils::Json::JsonView jsonValue);
-    S3Configuration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KINESISANALYTICSV2_API S3Configuration();
+    AWS_KINESISANALYTICSV2_API S3Configuration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICSV2_API S3Configuration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

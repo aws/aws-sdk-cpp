@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ContinuousParameterRange">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API ContinuousParameterRange
+  class ContinuousParameterRange
   {
   public:
-    ContinuousParameterRange();
-    ContinuousParameterRange(Aws::Utils::Json::JsonView jsonValue);
-    ContinuousParameterRange& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API ContinuousParameterRange();
+    AWS_SAGEMAKER_API ContinuousParameterRange(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API ContinuousParameterRange& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

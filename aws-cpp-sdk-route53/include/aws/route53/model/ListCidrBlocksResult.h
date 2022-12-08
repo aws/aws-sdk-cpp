@@ -26,12 +26,12 @@ namespace Route53
 {
 namespace Model
 {
-  class AWS_ROUTE53_API ListCidrBlocksResult
+  class ListCidrBlocksResult
   {
   public:
-    ListCidrBlocksResult();
-    ListCidrBlocksResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ListCidrBlocksResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ROUTE53_API ListCidrBlocksResult();
+    AWS_ROUTE53_API ListCidrBlocksResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ROUTE53_API ListCidrBlocksResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

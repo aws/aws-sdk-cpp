@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DataLakePrincipal">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API DataLakePrincipal
+  class DataLakePrincipal
   {
   public:
-    DataLakePrincipal();
-    DataLakePrincipal(Aws::Utils::Json::JsonView jsonValue);
-    DataLakePrincipal& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API DataLakePrincipal();
+    AWS_GLUE_API DataLakePrincipal(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API DataLakePrincipal& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

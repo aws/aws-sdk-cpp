@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/AuthorizedPrincipal">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICSEARCHSERVICE_API AuthorizedPrincipal
+  class AuthorizedPrincipal
   {
   public:
-    AuthorizedPrincipal();
-    AuthorizedPrincipal(Aws::Utils::Json::JsonView jsonValue);
-    AuthorizedPrincipal& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ELASTICSEARCHSERVICE_API AuthorizedPrincipal();
+    AWS_ELASTICSEARCHSERVICE_API AuthorizedPrincipal(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICSEARCHSERVICE_API AuthorizedPrincipal& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

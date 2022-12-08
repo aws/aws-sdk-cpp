@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/RuleGroupSourceStatelessRuleMatchAttributesTcpFlags">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API RuleGroupSourceStatelessRuleMatchAttributesTcpFlags
+  class RuleGroupSourceStatelessRuleMatchAttributesTcpFlags
   {
   public:
-    RuleGroupSourceStatelessRuleMatchAttributesTcpFlags();
-    RuleGroupSourceStatelessRuleMatchAttributesTcpFlags(Aws::Utils::Json::JsonView jsonValue);
-    RuleGroupSourceStatelessRuleMatchAttributesTcpFlags& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API RuleGroupSourceStatelessRuleMatchAttributesTcpFlags();
+    AWS_SECURITYHUB_API RuleGroupSourceStatelessRuleMatchAttributesTcpFlags(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API RuleGroupSourceStatelessRuleMatchAttributesTcpFlags& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

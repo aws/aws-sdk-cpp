@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/Tiering">AWS
    * API Reference</a></p>
    */
-  class AWS_BILLINGCONDUCTOR_API Tiering
+  class Tiering
   {
   public:
-    Tiering();
-    Tiering(Aws::Utils::Json::JsonView jsonValue);
-    Tiering& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BILLINGCONDUCTOR_API Tiering();
+    AWS_BILLINGCONDUCTOR_API Tiering(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BILLINGCONDUCTOR_API Tiering& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BILLINGCONDUCTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

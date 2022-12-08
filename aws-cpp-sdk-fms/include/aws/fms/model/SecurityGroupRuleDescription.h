@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/SecurityGroupRuleDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_FMS_API SecurityGroupRuleDescription
+  class SecurityGroupRuleDescription
   {
   public:
-    SecurityGroupRuleDescription();
-    SecurityGroupRuleDescription(Aws::Utils::Json::JsonView jsonValue);
-    SecurityGroupRuleDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FMS_API SecurityGroupRuleDescription();
+    AWS_FMS_API SecurityGroupRuleDescription(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FMS_API SecurityGroupRuleDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

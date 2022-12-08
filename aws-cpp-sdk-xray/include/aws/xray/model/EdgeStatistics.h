@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/EdgeStatistics">AWS
    * API Reference</a></p>
    */
-  class AWS_XRAY_API EdgeStatistics
+  class EdgeStatistics
   {
   public:
-    EdgeStatistics();
-    EdgeStatistics(Aws::Utils::Json::JsonView jsonValue);
-    EdgeStatistics& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_XRAY_API EdgeStatistics();
+    AWS_XRAY_API EdgeStatistics(Aws::Utils::Json::JsonView jsonValue);
+    AWS_XRAY_API EdgeStatistics& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_XRAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

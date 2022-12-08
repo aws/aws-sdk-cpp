@@ -26,12 +26,12 @@ namespace Pricing
 {
 namespace Model
 {
-  class AWS_PRICING_API DescribeServicesResult
+  class DescribeServicesResult
   {
   public:
-    DescribeServicesResult();
-    DescribeServicesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeServicesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PRICING_API DescribeServicesResult();
+    AWS_PRICING_API DescribeServicesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PRICING_API DescribeServicesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

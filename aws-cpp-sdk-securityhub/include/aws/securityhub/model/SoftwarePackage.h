@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/SoftwarePackage">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API SoftwarePackage
+  class SoftwarePackage
   {
   public:
-    SoftwarePackage();
-    SoftwarePackage(Aws::Utils::Json::JsonView jsonValue);
-    SoftwarePackage& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API SoftwarePackage();
+    AWS_SECURITYHUB_API SoftwarePackage(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API SoftwarePackage& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

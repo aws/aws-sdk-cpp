@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-2017-10-12/Authorization">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIAPACKAGE_API Authorization
+  class Authorization
   {
   public:
-    Authorization();
-    Authorization(Aws::Utils::Json::JsonView jsonValue);
-    Authorization& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIAPACKAGE_API Authorization();
+    AWS_MEDIAPACKAGE_API Authorization(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIAPACKAGE_API Authorization& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIAPACKAGE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

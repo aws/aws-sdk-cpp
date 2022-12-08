@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/DatasetContentDeliveryRule">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTANALYTICS_API DatasetContentDeliveryRule
+  class DatasetContentDeliveryRule
   {
   public:
-    DatasetContentDeliveryRule();
-    DatasetContentDeliveryRule(Aws::Utils::Json::JsonView jsonValue);
-    DatasetContentDeliveryRule& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTANALYTICS_API DatasetContentDeliveryRule();
+    AWS_IOTANALYTICS_API DatasetContentDeliveryRule(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTANALYTICS_API DatasetContentDeliveryRule& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

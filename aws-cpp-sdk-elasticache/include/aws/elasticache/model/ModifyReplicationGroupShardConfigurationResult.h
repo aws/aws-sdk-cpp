@@ -25,12 +25,12 @@ namespace ElastiCache
 {
 namespace Model
 {
-  class AWS_ELASTICACHE_API ModifyReplicationGroupShardConfigurationResult
+  class ModifyReplicationGroupShardConfigurationResult
   {
   public:
-    ModifyReplicationGroupShardConfigurationResult();
-    ModifyReplicationGroupShardConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ModifyReplicationGroupShardConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ELASTICACHE_API ModifyReplicationGroupShardConfigurationResult();
+    AWS_ELASTICACHE_API ModifyReplicationGroupShardConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ELASTICACHE_API ModifyReplicationGroupShardConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     

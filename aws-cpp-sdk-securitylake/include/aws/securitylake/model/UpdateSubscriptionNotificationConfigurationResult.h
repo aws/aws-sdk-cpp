@@ -24,12 +24,12 @@ namespace SecurityLake
 {
 namespace Model
 {
-  class AWS_SECURITYLAKE_API UpdateSubscriptionNotificationConfigurationResult
+  class UpdateSubscriptionNotificationConfigurationResult
   {
   public:
-    UpdateSubscriptionNotificationConfigurationResult();
-    UpdateSubscriptionNotificationConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateSubscriptionNotificationConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SECURITYLAKE_API UpdateSubscriptionNotificationConfigurationResult();
+    AWS_SECURITYLAKE_API UpdateSubscriptionNotificationConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SECURITYLAKE_API UpdateSubscriptionNotificationConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

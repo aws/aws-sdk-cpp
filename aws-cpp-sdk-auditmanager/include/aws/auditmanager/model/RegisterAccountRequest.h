@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_AUDITMANAGER_API RegisterAccountRequest : public AuditManagerRequest
+  class RegisterAccountRequest : public AuditManagerRequest
   {
   public:
-    RegisterAccountRequest();
+    AWS_AUDITMANAGER_API RegisterAccountRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,7 +29,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "RegisterAccount"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_AUDITMANAGER_API Aws::String SerializePayload() const override;
 
 
     /**

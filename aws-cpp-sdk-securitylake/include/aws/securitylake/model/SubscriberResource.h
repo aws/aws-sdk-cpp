@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/SubscriberResource">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYLAKE_API SubscriberResource
+  class SubscriberResource
   {
   public:
-    SubscriberResource();
-    SubscriberResource(Aws::Utils::Json::JsonView jsonValue);
-    SubscriberResource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYLAKE_API SubscriberResource();
+    AWS_SECURITYLAKE_API SubscriberResource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYLAKE_API SubscriberResource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYLAKE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -25,12 +25,12 @@ namespace Redshift
 {
 namespace Model
 {
-  class AWS_REDSHIFT_API RevokeClusterSecurityGroupIngressResult
+  class RevokeClusterSecurityGroupIngressResult
   {
   public:
-    RevokeClusterSecurityGroupIngressResult();
-    RevokeClusterSecurityGroupIngressResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    RevokeClusterSecurityGroupIngressResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_REDSHIFT_API RevokeClusterSecurityGroupIngressResult();
+    AWS_REDSHIFT_API RevokeClusterSecurityGroupIngressResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_REDSHIFT_API RevokeClusterSecurityGroupIngressResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     

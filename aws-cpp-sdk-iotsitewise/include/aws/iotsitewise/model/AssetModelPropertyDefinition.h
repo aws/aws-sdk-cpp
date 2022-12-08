@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/AssetModelPropertyDefinition">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTSITEWISE_API AssetModelPropertyDefinition
+  class AssetModelPropertyDefinition
   {
   public:
-    AssetModelPropertyDefinition();
-    AssetModelPropertyDefinition(Aws::Utils::Json::JsonView jsonValue);
-    AssetModelPropertyDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTSITEWISE_API AssetModelPropertyDefinition();
+    AWS_IOTSITEWISE_API AssetModelPropertyDefinition(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API AssetModelPropertyDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

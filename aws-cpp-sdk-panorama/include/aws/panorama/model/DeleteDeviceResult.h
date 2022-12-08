@@ -24,12 +24,12 @@ namespace Panorama
 {
 namespace Model
 {
-  class AWS_PANORAMA_API DeleteDeviceResult
+  class DeleteDeviceResult
   {
   public:
-    DeleteDeviceResult();
-    DeleteDeviceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteDeviceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PANORAMA_API DeleteDeviceResult();
+    AWS_PANORAMA_API DeleteDeviceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PANORAMA_API DeleteDeviceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

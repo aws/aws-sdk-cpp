@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/UnsupportedDisplayLanguageCodeException">AWS
    * API Reference</a></p>
    */
-  class AWS_TRANSLATE_API UnsupportedDisplayLanguageCodeException
+  class UnsupportedDisplayLanguageCodeException
   {
   public:
-    UnsupportedDisplayLanguageCodeException();
-    UnsupportedDisplayLanguageCodeException(Aws::Utils::Json::JsonView jsonValue);
-    UnsupportedDisplayLanguageCodeException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TRANSLATE_API UnsupportedDisplayLanguageCodeException();
+    AWS_TRANSLATE_API UnsupportedDisplayLanguageCodeException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSLATE_API UnsupportedDisplayLanguageCodeException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSLATE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

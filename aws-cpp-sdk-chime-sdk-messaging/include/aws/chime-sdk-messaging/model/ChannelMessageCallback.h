@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/ChannelMessageCallback">AWS
    * API Reference</a></p>
    */
-  class AWS_CHIMESDKMESSAGING_API ChannelMessageCallback
+  class ChannelMessageCallback
   {
   public:
-    ChannelMessageCallback();
-    ChannelMessageCallback(Aws::Utils::Json::JsonView jsonValue);
-    ChannelMessageCallback& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIMESDKMESSAGING_API ChannelMessageCallback();
+    AWS_CHIMESDKMESSAGING_API ChannelMessageCallback(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKMESSAGING_API ChannelMessageCallback& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKMESSAGING_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

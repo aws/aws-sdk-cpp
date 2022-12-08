@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/LambdaVolumeMount">AWS
    * API Reference</a></p>
    */
-  class AWS_GREENGRASSV2_API LambdaVolumeMount
+  class LambdaVolumeMount
   {
   public:
-    LambdaVolumeMount();
-    LambdaVolumeMount(Aws::Utils::Json::JsonView jsonValue);
-    LambdaVolumeMount& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GREENGRASSV2_API LambdaVolumeMount();
+    AWS_GREENGRASSV2_API LambdaVolumeMount(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASSV2_API LambdaVolumeMount& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -26,12 +26,12 @@ namespace CodeStar
 {
 namespace Model
 {
-  class AWS_CODESTAR_API ListResourcesResult
+  class ListResourcesResult
   {
   public:
-    ListResourcesResult();
-    ListResourcesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListResourcesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODESTAR_API ListResourcesResult();
+    AWS_CODESTAR_API ListResourcesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODESTAR_API ListResourcesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

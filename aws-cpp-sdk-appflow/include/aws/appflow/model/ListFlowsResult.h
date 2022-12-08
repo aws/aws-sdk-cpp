@@ -26,12 +26,12 @@ namespace Appflow
 {
 namespace Model
 {
-  class AWS_APPFLOW_API ListFlowsResult
+  class ListFlowsResult
   {
   public:
-    ListFlowsResult();
-    ListFlowsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListFlowsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPFLOW_API ListFlowsResult();
+    AWS_APPFLOW_API ListFlowsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPFLOW_API ListFlowsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

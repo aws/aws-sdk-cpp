@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/Alert">AWS
    * API Reference</a></p>
    */
-  class AWS_LOOKOUTMETRICS_API Alert
+  class Alert
   {
   public:
-    Alert();
-    Alert(Aws::Utils::Json::JsonView jsonValue);
-    Alert& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LOOKOUTMETRICS_API Alert();
+    AWS_LOOKOUTMETRICS_API Alert(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTMETRICS_API Alert& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTMETRICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

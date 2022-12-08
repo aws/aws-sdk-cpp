@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/AssetLocation">AWS
    * API Reference</a></p>
    */
-  class AWS_OUTPOSTS_API AssetLocation
+  class AssetLocation
   {
   public:
-    AssetLocation();
-    AssetLocation(Aws::Utils::Json::JsonView jsonValue);
-    AssetLocation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OUTPOSTS_API AssetLocation();
+    AWS_OUTPOSTS_API AssetLocation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OUTPOSTS_API AssetLocation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OUTPOSTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

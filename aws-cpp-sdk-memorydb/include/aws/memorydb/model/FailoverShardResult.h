@@ -24,12 +24,12 @@ namespace MemoryDB
 {
 namespace Model
 {
-  class AWS_MEMORYDB_API FailoverShardResult
+  class FailoverShardResult
   {
   public:
-    FailoverShardResult();
-    FailoverShardResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    FailoverShardResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MEMORYDB_API FailoverShardResult();
+    AWS_MEMORYDB_API FailoverShardResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MEMORYDB_API FailoverShardResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

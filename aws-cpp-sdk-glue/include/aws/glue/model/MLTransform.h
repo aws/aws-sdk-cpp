@@ -37,13 +37,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/MLTransform">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API MLTransform
+  class MLTransform
   {
   public:
-    MLTransform();
-    MLTransform(Aws::Utils::Json::JsonView jsonValue);
-    MLTransform& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API MLTransform();
+    AWS_GLUE_API MLTransform(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API MLTransform& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

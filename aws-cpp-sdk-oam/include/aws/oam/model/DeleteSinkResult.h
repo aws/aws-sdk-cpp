@@ -22,12 +22,12 @@ namespace OAM
 {
 namespace Model
 {
-  class AWS_OAM_API DeleteSinkResult
+  class DeleteSinkResult
   {
   public:
-    DeleteSinkResult();
-    DeleteSinkResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteSinkResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OAM_API DeleteSinkResult();
+    AWS_OAM_API DeleteSinkResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OAM_API DeleteSinkResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

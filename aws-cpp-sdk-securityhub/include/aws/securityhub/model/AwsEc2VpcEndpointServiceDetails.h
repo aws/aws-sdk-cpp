@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsEc2VpcEndpointServiceDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsEc2VpcEndpointServiceDetails
+  class AwsEc2VpcEndpointServiceDetails
   {
   public:
-    AwsEc2VpcEndpointServiceDetails();
-    AwsEc2VpcEndpointServiceDetails(Aws::Utils::Json::JsonView jsonValue);
-    AwsEc2VpcEndpointServiceDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsEc2VpcEndpointServiceDetails();
+    AWS_SECURITYHUB_API AwsEc2VpcEndpointServiceDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsEc2VpcEndpointServiceDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

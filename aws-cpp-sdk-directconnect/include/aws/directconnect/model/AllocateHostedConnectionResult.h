@@ -35,12 +35,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/Connection">AWS
    * API Reference</a></p>
    */
-  class AWS_DIRECTCONNECT_API AllocateHostedConnectionResult
+  class AllocateHostedConnectionResult
   {
   public:
-    AllocateHostedConnectionResult();
-    AllocateHostedConnectionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AllocateHostedConnectionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DIRECTCONNECT_API AllocateHostedConnectionResult();
+    AWS_DIRECTCONNECT_API AllocateHostedConnectionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DIRECTCONNECT_API AllocateHostedConnectionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/Invite">AWS API
    * Reference</a></p>
    */
-  class AWS_CHIME_API Invite
+  class Invite
   {
   public:
-    Invite();
-    Invite(Aws::Utils::Json::JsonView jsonValue);
-    Invite& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIME_API Invite();
+    AWS_CHIME_API Invite(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API Invite& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

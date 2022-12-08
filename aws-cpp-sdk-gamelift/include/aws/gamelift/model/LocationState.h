@@ -44,13 +44,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/LocationState">AWS
    * API Reference</a></p>
    */
-  class AWS_GAMELIFT_API LocationState
+  class LocationState
   {
   public:
-    LocationState();
-    LocationState(Aws::Utils::Json::JsonView jsonValue);
-    LocationState& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GAMELIFT_API LocationState();
+    AWS_GAMELIFT_API LocationState(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMELIFT_API LocationState& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

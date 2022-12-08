@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/EbuTtDDestinationSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API EbuTtDDestinationSettings
+  class EbuTtDDestinationSettings
   {
   public:
-    EbuTtDDestinationSettings();
-    EbuTtDDestinationSettings(Aws::Utils::Json::JsonView jsonValue);
-    EbuTtDDestinationSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API EbuTtDDestinationSettings();
+    AWS_MEDIALIVE_API EbuTtDDestinationSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API EbuTtDDestinationSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

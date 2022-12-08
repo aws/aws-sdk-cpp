@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/ResourceShareAssociation">AWS
    * API Reference</a></p>
    */
-  class AWS_RAM_API ResourceShareAssociation
+  class ResourceShareAssociation
   {
   public:
-    ResourceShareAssociation();
-    ResourceShareAssociation(Aws::Utils::Json::JsonView jsonValue);
-    ResourceShareAssociation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_RAM_API ResourceShareAssociation();
+    AWS_RAM_API ResourceShareAssociation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RAM_API ResourceShareAssociation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RAM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

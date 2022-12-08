@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/EventSource">AWS
    * API Reference</a></p>
    */
-  class AWS_EVENTBRIDGE_API EventSource
+  class EventSource
   {
   public:
-    EventSource();
-    EventSource(Aws::Utils::Json::JsonView jsonValue);
-    EventSource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EVENTBRIDGE_API EventSource();
+    AWS_EVENTBRIDGE_API EventSource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EVENTBRIDGE_API EventSource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EVENTBRIDGE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

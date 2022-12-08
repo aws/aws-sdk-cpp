@@ -25,12 +25,12 @@ namespace Inspector
 {
 namespace Model
 {
-  class AWS_INSPECTOR_API DescribeCrossAccountAccessRoleResult
+  class DescribeCrossAccountAccessRoleResult
   {
   public:
-    DescribeCrossAccountAccessRoleResult();
-    DescribeCrossAccountAccessRoleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeCrossAccountAccessRoleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_INSPECTOR_API DescribeCrossAccountAccessRoleResult();
+    AWS_INSPECTOR_API DescribeCrossAccountAccessRoleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_INSPECTOR_API DescribeCrossAccountAccessRoleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

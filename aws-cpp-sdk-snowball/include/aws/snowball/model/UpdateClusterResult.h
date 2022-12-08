@@ -22,12 +22,12 @@ namespace Snowball
 {
 namespace Model
 {
-  class AWS_SNOWBALL_API UpdateClusterResult
+  class UpdateClusterResult
   {
   public:
-    UpdateClusterResult();
-    UpdateClusterResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateClusterResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SNOWBALL_API UpdateClusterResult();
+    AWS_SNOWBALL_API UpdateClusterResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SNOWBALL_API UpdateClusterResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

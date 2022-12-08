@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/BillingGroupCostReportElement">AWS
    * API Reference</a></p>
    */
-  class AWS_BILLINGCONDUCTOR_API BillingGroupCostReportElement
+  class BillingGroupCostReportElement
   {
   public:
-    BillingGroupCostReportElement();
-    BillingGroupCostReportElement(Aws::Utils::Json::JsonView jsonValue);
-    BillingGroupCostReportElement& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BILLINGCONDUCTOR_API BillingGroupCostReportElement();
+    AWS_BILLINGCONDUCTOR_API BillingGroupCostReportElement(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BILLINGCONDUCTOR_API BillingGroupCostReportElement& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BILLINGCONDUCTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

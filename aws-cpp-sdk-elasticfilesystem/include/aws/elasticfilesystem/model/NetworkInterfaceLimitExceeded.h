@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/NetworkInterfaceLimitExceeded">AWS
    * API Reference</a></p>
    */
-  class AWS_EFS_API NetworkInterfaceLimitExceeded
+  class NetworkInterfaceLimitExceeded
   {
   public:
-    NetworkInterfaceLimitExceeded();
-    NetworkInterfaceLimitExceeded(Aws::Utils::Json::JsonView jsonValue);
-    NetworkInterfaceLimitExceeded& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EFS_API NetworkInterfaceLimitExceeded();
+    AWS_EFS_API NetworkInterfaceLimitExceeded(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EFS_API NetworkInterfaceLimitExceeded& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EFS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

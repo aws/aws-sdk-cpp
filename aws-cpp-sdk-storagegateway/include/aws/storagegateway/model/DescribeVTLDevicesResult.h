@@ -31,12 +31,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeVTLDevicesOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_STORAGEGATEWAY_API DescribeVTLDevicesResult
+  class DescribeVTLDevicesResult
   {
   public:
-    DescribeVTLDevicesResult();
-    DescribeVTLDevicesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeVTLDevicesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_STORAGEGATEWAY_API DescribeVTLDevicesResult();
+    AWS_STORAGEGATEWAY_API DescribeVTLDevicesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_STORAGEGATEWAY_API DescribeVTLDevicesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     

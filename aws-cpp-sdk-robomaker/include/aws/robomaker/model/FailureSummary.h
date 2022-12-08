@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/FailureSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_ROBOMAKER_API FailureSummary
+  class FailureSummary
   {
   public:
-    FailureSummary();
-    FailureSummary(Aws::Utils::Json::JsonView jsonValue);
-    FailureSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ROBOMAKER_API FailureSummary();
+    AWS_ROBOMAKER_API FailureSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROBOMAKER_API FailureSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROBOMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

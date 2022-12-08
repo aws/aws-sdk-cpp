@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/PlacementStatistics">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINTEMAIL_API PlacementStatistics
+  class PlacementStatistics
   {
   public:
-    PlacementStatistics();
-    PlacementStatistics(Aws::Utils::Json::JsonView jsonValue);
-    PlacementStatistics& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINTEMAIL_API PlacementStatistics();
+    AWS_PINPOINTEMAIL_API PlacementStatistics(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINTEMAIL_API PlacementStatistics& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINTEMAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

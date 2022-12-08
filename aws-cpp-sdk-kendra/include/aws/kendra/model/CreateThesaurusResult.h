@@ -24,12 +24,12 @@ namespace kendra
 {
 namespace Model
 {
-  class AWS_KENDRA_API CreateThesaurusResult
+  class CreateThesaurusResult
   {
   public:
-    CreateThesaurusResult();
-    CreateThesaurusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateThesaurusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KENDRA_API CreateThesaurusResult();
+    AWS_KENDRA_API CreateThesaurusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KENDRA_API CreateThesaurusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

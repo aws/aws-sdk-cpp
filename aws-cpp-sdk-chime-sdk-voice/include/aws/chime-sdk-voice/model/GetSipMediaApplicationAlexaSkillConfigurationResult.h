@@ -24,12 +24,12 @@ namespace ChimeSDKVoice
 {
 namespace Model
 {
-  class AWS_CHIMESDKVOICE_API GetSipMediaApplicationAlexaSkillConfigurationResult
+  class GetSipMediaApplicationAlexaSkillConfigurationResult
   {
   public:
-    GetSipMediaApplicationAlexaSkillConfigurationResult();
-    GetSipMediaApplicationAlexaSkillConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetSipMediaApplicationAlexaSkillConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CHIMESDKVOICE_API GetSipMediaApplicationAlexaSkillConfigurationResult();
+    AWS_CHIMESDKVOICE_API GetSipMediaApplicationAlexaSkillConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CHIMESDKVOICE_API GetSipMediaApplicationAlexaSkillConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     

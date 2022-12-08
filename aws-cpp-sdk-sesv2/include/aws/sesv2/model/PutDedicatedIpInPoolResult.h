@@ -28,12 +28,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutDedicatedIpInPoolResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_SESV2_API PutDedicatedIpInPoolResult
+  class PutDedicatedIpInPoolResult
   {
   public:
-    PutDedicatedIpInPoolResult();
-    PutDedicatedIpInPoolResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PutDedicatedIpInPoolResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SESV2_API PutDedicatedIpInPoolResult();
+    AWS_SESV2_API PutDedicatedIpInPoolResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SESV2_API PutDedicatedIpInPoolResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

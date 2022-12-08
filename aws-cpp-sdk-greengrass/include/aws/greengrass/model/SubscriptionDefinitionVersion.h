@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/SubscriptionDefinitionVersion">AWS
    * API Reference</a></p>
    */
-  class AWS_GREENGRASS_API SubscriptionDefinitionVersion
+  class SubscriptionDefinitionVersion
   {
   public:
-    SubscriptionDefinitionVersion();
-    SubscriptionDefinitionVersion(Aws::Utils::Json::JsonView jsonValue);
-    SubscriptionDefinitionVersion& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GREENGRASS_API SubscriptionDefinitionVersion();
+    AWS_GREENGRASS_API SubscriptionDefinitionVersion(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASS_API SubscriptionDefinitionVersion& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/MetadataInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API MetadataInfo
+  class MetadataInfo
   {
   public:
-    MetadataInfo();
-    MetadataInfo(Aws::Utils::Json::JsonView jsonValue);
-    MetadataInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API MetadataInfo();
+    AWS_GLUE_API MetadataInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API MetadataInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

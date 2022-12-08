@@ -22,12 +22,12 @@ namespace WorkSpaces
 {
 namespace Model
 {
-  class AWS_WORKSPACES_API ModifyCertificateBasedAuthPropertiesResult
+  class ModifyCertificateBasedAuthPropertiesResult
   {
   public:
-    ModifyCertificateBasedAuthPropertiesResult();
-    ModifyCertificateBasedAuthPropertiesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ModifyCertificateBasedAuthPropertiesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WORKSPACES_API ModifyCertificateBasedAuthPropertiesResult();
+    AWS_WORKSPACES_API ModifyCertificateBasedAuthPropertiesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WORKSPACES_API ModifyCertificateBasedAuthPropertiesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

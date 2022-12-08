@@ -38,13 +38,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ContainerInstance">AWS
    * API Reference</a></p>
    */
-  class AWS_ECS_API ContainerInstance
+  class ContainerInstance
   {
   public:
-    ContainerInstance();
-    ContainerInstance(Aws::Utils::Json::JsonView jsonValue);
-    ContainerInstance& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ECS_API ContainerInstance();
+    AWS_ECS_API ContainerInstance(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECS_API ContainerInstance& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

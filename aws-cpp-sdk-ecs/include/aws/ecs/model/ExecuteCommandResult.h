@@ -25,12 +25,12 @@ namespace ECS
 {
 namespace Model
 {
-  class AWS_ECS_API ExecuteCommandResult
+  class ExecuteCommandResult
   {
   public:
-    ExecuteCommandResult();
-    ExecuteCommandResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ExecuteCommandResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ECS_API ExecuteCommandResult();
+    AWS_ECS_API ExecuteCommandResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ECS_API ExecuteCommandResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -27,12 +27,12 @@ namespace ElastiCache
 {
 namespace Model
 {
-  class AWS_ELASTICACHE_API BatchStopUpdateActionResult
+  class BatchStopUpdateActionResult
   {
   public:
-    BatchStopUpdateActionResult();
-    BatchStopUpdateActionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    BatchStopUpdateActionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ELASTICACHE_API BatchStopUpdateActionResult();
+    AWS_ELASTICACHE_API BatchStopUpdateActionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ELASTICACHE_API BatchStopUpdateActionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

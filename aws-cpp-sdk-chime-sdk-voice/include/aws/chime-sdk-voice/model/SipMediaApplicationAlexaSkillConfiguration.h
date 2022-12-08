@@ -25,13 +25,13 @@ namespace ChimeSDKVoice
 namespace Model
 {
 
-  class AWS_CHIMESDKVOICE_API SipMediaApplicationAlexaSkillConfiguration
+  class SipMediaApplicationAlexaSkillConfiguration
   {
   public:
-    SipMediaApplicationAlexaSkillConfiguration();
-    SipMediaApplicationAlexaSkillConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    SipMediaApplicationAlexaSkillConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIMESDKVOICE_API SipMediaApplicationAlexaSkillConfiguration();
+    AWS_CHIMESDKVOICE_API SipMediaApplicationAlexaSkillConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKVOICE_API SipMediaApplicationAlexaSkillConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKVOICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

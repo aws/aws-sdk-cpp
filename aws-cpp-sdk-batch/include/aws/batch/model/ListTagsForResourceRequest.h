@@ -22,10 +22,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/ListTagsForResourceRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_BATCH_API ListTagsForResourceRequest : public BatchRequest
+  class ListTagsForResourceRequest : public BatchRequest
   {
   public:
-    ListTagsForResourceRequest();
+    AWS_BATCH_API ListTagsForResourceRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,7 +33,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ListTagsForResource"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_BATCH_API Aws::String SerializePayload() const override;
 
 
     /**

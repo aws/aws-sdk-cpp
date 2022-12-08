@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/Filter">AWS
    * API Reference</a></p>
    */
-  class AWS_LOOKOUTMETRICS_API Filter
+  class Filter
   {
   public:
-    Filter();
-    Filter(Aws::Utils::Json::JsonView jsonValue);
-    Filter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LOOKOUTMETRICS_API Filter();
+    AWS_LOOKOUTMETRICS_API Filter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTMETRICS_API Filter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTMETRICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

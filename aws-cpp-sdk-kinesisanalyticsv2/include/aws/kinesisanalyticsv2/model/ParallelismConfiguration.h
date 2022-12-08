@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/ParallelismConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_KINESISANALYTICSV2_API ParallelismConfiguration
+  class ParallelismConfiguration
   {
   public:
-    ParallelismConfiguration();
-    ParallelismConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    ParallelismConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KINESISANALYTICSV2_API ParallelismConfiguration();
+    AWS_KINESISANALYTICSV2_API ParallelismConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICSV2_API ParallelismConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

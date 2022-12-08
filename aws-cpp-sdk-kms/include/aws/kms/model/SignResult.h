@@ -26,12 +26,12 @@ namespace KMS
 {
 namespace Model
 {
-  class AWS_KMS_API SignResult
+  class SignResult
   {
   public:
-    SignResult();
-    SignResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    SignResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KMS_API SignResult();
+    AWS_KMS_API SignResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KMS_API SignResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

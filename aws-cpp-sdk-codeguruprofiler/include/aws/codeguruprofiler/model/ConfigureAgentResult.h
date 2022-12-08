@@ -30,12 +30,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/ConfigureAgentResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEGURUPROFILER_API ConfigureAgentResult
+  class ConfigureAgentResult
   {
   public:
-    ConfigureAgentResult();
-    ConfigureAgentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ConfigureAgentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODEGURUPROFILER_API ConfigureAgentResult();
+    AWS_CODEGURUPROFILER_API ConfigureAgentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODEGURUPROFILER_API ConfigureAgentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

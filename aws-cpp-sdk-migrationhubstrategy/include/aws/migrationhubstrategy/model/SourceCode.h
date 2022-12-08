@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/migrationhubstrategy-2020-02-19/SourceCode">AWS
    * API Reference</a></p>
    */
-  class AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API SourceCode
+  class SourceCode
   {
   public:
-    SourceCode();
-    SourceCode(Aws::Utils::Json::JsonView jsonValue);
-    SourceCode& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API SourceCode();
+    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API SourceCode(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API SourceCode& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

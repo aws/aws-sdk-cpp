@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/CloudTrailProperties">AWS
    * API Reference</a></p>
    */
-  class AWS_ACCESSANALYZER_API CloudTrailProperties
+  class CloudTrailProperties
   {
   public:
-    CloudTrailProperties();
-    CloudTrailProperties(Aws::Utils::Json::JsonView jsonValue);
-    CloudTrailProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ACCESSANALYZER_API CloudTrailProperties();
+    AWS_ACCESSANALYZER_API CloudTrailProperties(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACCESSANALYZER_API CloudTrailProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACCESSANALYZER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

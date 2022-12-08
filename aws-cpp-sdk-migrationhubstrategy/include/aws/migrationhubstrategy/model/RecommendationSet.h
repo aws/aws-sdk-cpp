@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/migrationhubstrategy-2020-02-19/RecommendationSet">AWS
    * API Reference</a></p>
    */
-  class AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API RecommendationSet
+  class RecommendationSet
   {
   public:
-    RecommendationSet();
-    RecommendationSet(Aws::Utils::Json::JsonView jsonValue);
-    RecommendationSet& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API RecommendationSet();
+    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API RecommendationSet(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API RecommendationSet& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

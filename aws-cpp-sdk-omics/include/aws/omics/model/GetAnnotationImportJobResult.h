@@ -29,12 +29,12 @@ namespace Omics
 {
 namespace Model
 {
-  class AWS_OMICS_API GetAnnotationImportJobResult
+  class GetAnnotationImportJobResult
   {
   public:
-    GetAnnotationImportJobResult();
-    GetAnnotationImportJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetAnnotationImportJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OMICS_API GetAnnotationImportJobResult();
+    AWS_OMICS_API GetAnnotationImportJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OMICS_API GetAnnotationImportJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -29,12 +29,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/CreateDataViewResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_FINSPACEDATA_API CreateDataViewResult
+  class CreateDataViewResult
   {
   public:
-    CreateDataViewResult();
-    CreateDataViewResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateDataViewResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_FINSPACEDATA_API CreateDataViewResult();
+    AWS_FINSPACEDATA_API CreateDataViewResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_FINSPACEDATA_API CreateDataViewResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -29,15 +29,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/UnprocessedUpdateAction">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICACHE_API UnprocessedUpdateAction
+  class UnprocessedUpdateAction
   {
   public:
-    UnprocessedUpdateAction();
-    UnprocessedUpdateAction(const Aws::Utils::Xml::XmlNode& xmlNode);
-    UnprocessedUpdateAction& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICACHE_API UnprocessedUpdateAction();
+    AWS_ELASTICACHE_API UnprocessedUpdateAction(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICACHE_API UnprocessedUpdateAction& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_ELASTICACHE_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_ELASTICACHE_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**

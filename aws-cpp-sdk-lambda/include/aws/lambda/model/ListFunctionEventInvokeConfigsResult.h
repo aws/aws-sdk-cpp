@@ -26,12 +26,12 @@ namespace Lambda
 {
 namespace Model
 {
-  class AWS_LAMBDA_API ListFunctionEventInvokeConfigsResult
+  class ListFunctionEventInvokeConfigsResult
   {
   public:
-    ListFunctionEventInvokeConfigsResult();
-    ListFunctionEventInvokeConfigsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListFunctionEventInvokeConfigsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LAMBDA_API ListFunctionEventInvokeConfigsResult();
+    AWS_LAMBDA_API ListFunctionEventInvokeConfigsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LAMBDA_API ListFunctionEventInvokeConfigsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/migrationhuborchestrator-2021-08-28/WorkflowStepAutomationConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_MIGRATIONHUBORCHESTRATOR_API WorkflowStepAutomationConfiguration
+  class WorkflowStepAutomationConfiguration
   {
   public:
-    WorkflowStepAutomationConfiguration();
-    WorkflowStepAutomationConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    WorkflowStepAutomationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MIGRATIONHUBORCHESTRATOR_API WorkflowStepAutomationConfiguration();
+    AWS_MIGRATIONHUBORCHESTRATOR_API WorkflowStepAutomationConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MIGRATIONHUBORCHESTRATOR_API WorkflowStepAutomationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MIGRATIONHUBORCHESTRATOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

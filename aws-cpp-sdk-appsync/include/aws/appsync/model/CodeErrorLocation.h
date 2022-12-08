@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/CodeErrorLocation">AWS
    * API Reference</a></p>
    */
-  class AWS_APPSYNC_API CodeErrorLocation
+  class CodeErrorLocation
   {
   public:
-    CodeErrorLocation();
-    CodeErrorLocation(Aws::Utils::Json::JsonView jsonValue);
-    CodeErrorLocation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPSYNC_API CodeErrorLocation();
+    AWS_APPSYNC_API CodeErrorLocation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPSYNC_API CodeErrorLocation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPSYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/PutAssetPropertyValueEntry">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTSITEWISE_API PutAssetPropertyValueEntry
+  class PutAssetPropertyValueEntry
   {
   public:
-    PutAssetPropertyValueEntry();
-    PutAssetPropertyValueEntry(Aws::Utils::Json::JsonView jsonValue);
-    PutAssetPropertyValueEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTSITEWISE_API PutAssetPropertyValueEntry();
+    AWS_IOTSITEWISE_API PutAssetPropertyValueEntry(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API PutAssetPropertyValueEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

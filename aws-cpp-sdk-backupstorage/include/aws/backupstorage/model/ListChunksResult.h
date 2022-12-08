@@ -26,12 +26,12 @@ namespace BackupStorage
 {
 namespace Model
 {
-  class AWS_BACKUPSTORAGE_API ListChunksResult
+  class ListChunksResult
   {
   public:
-    ListChunksResult();
-    ListChunksResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListChunksResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_BACKUPSTORAGE_API ListChunksResult();
+    AWS_BACKUPSTORAGE_API ListChunksResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_BACKUPSTORAGE_API ListChunksResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

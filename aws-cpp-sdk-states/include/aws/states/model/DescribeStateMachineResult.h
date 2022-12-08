@@ -29,12 +29,12 @@ namespace SFN
 {
 namespace Model
 {
-  class AWS_SFN_API DescribeStateMachineResult
+  class DescribeStateMachineResult
   {
   public:
-    DescribeStateMachineResult();
-    DescribeStateMachineResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeStateMachineResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SFN_API DescribeStateMachineResult();
+    AWS_SFN_API DescribeStateMachineResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SFN_API DescribeStateMachineResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/ResourceLimitExceededException">AWS
    * API Reference</a></p>
    */
-  class AWS_CHIMESDKIDENTITY_API ResourceLimitExceededException
+  class ResourceLimitExceededException
   {
   public:
-    ResourceLimitExceededException();
-    ResourceLimitExceededException(Aws::Utils::Json::JsonView jsonValue);
-    ResourceLimitExceededException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIMESDKIDENTITY_API ResourceLimitExceededException();
+    AWS_CHIMESDKIDENTITY_API ResourceLimitExceededException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKIDENTITY_API ResourceLimitExceededException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKIDENTITY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

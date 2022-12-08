@@ -25,12 +25,12 @@ namespace DeviceFarm
 {
 namespace Model
 {
-  class AWS_DEVICEFARM_API CreateTestGridUrlResult
+  class CreateTestGridUrlResult
   {
   public:
-    CreateTestGridUrlResult();
-    CreateTestGridUrlResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateTestGridUrlResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DEVICEFARM_API CreateTestGridUrlResult();
+    AWS_DEVICEFARM_API CreateTestGridUrlResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DEVICEFARM_API CreateTestGridUrlResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

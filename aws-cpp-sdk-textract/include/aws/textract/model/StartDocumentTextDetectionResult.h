@@ -24,12 +24,12 @@ namespace Textract
 {
 namespace Model
 {
-  class AWS_TEXTRACT_API StartDocumentTextDetectionResult
+  class StartDocumentTextDetectionResult
   {
   public:
-    StartDocumentTextDetectionResult();
-    StartDocumentTextDetectionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    StartDocumentTextDetectionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_TEXTRACT_API StartDocumentTextDetectionResult();
+    AWS_TEXTRACT_API StartDocumentTextDetectionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_TEXTRACT_API StartDocumentTextDetectionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

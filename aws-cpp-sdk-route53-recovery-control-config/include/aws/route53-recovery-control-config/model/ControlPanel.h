@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/ControlPanel">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53RECOVERYCONTROLCONFIG_API ControlPanel
+  class ControlPanel
   {
   public:
-    ControlPanel();
-    ControlPanel(Aws::Utils::Json::JsonView jsonValue);
-    ControlPanel& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ROUTE53RECOVERYCONTROLCONFIG_API ControlPanel();
+    AWS_ROUTE53RECOVERYCONTROLCONFIG_API ControlPanel(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROUTE53RECOVERYCONTROLCONFIG_API ControlPanel& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROUTE53RECOVERYCONTROLCONFIG_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

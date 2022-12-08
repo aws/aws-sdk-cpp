@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/RdsDbClusterSnapshotConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_ACCESSANALYZER_API RdsDbClusterSnapshotConfiguration
+  class RdsDbClusterSnapshotConfiguration
   {
   public:
-    RdsDbClusterSnapshotConfiguration();
-    RdsDbClusterSnapshotConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    RdsDbClusterSnapshotConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ACCESSANALYZER_API RdsDbClusterSnapshotConfiguration();
+    AWS_ACCESSANALYZER_API RdsDbClusterSnapshotConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACCESSANALYZER_API RdsDbClusterSnapshotConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACCESSANALYZER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

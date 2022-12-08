@@ -28,14 +28,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CidrCollection">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53_API CidrCollection
+  class CidrCollection
   {
   public:
-    CidrCollection();
-    CidrCollection(const Aws::Utils::Xml::XmlNode& xmlNode);
-    CidrCollection& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ROUTE53_API CidrCollection();
+    AWS_ROUTE53_API CidrCollection(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ROUTE53_API CidrCollection& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_ROUTE53_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**

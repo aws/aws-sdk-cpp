@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/RightsizingRecommendationSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_COSTEXPLORER_API RightsizingRecommendationSummary
+  class RightsizingRecommendationSummary
   {
   public:
-    RightsizingRecommendationSummary();
-    RightsizingRecommendationSummary(Aws::Utils::Json::JsonView jsonValue);
-    RightsizingRecommendationSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COSTEXPLORER_API RightsizingRecommendationSummary();
+    AWS_COSTEXPLORER_API RightsizingRecommendationSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API RightsizingRecommendationSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

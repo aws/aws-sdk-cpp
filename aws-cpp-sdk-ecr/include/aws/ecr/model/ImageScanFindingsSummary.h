@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/ImageScanFindingsSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_ECR_API ImageScanFindingsSummary
+  class ImageScanFindingsSummary
   {
   public:
-    ImageScanFindingsSummary();
-    ImageScanFindingsSummary(Aws::Utils::Json::JsonView jsonValue);
-    ImageScanFindingsSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ECR_API ImageScanFindingsSummary();
+    AWS_ECR_API ImageScanFindingsSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECR_API ImageScanFindingsSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

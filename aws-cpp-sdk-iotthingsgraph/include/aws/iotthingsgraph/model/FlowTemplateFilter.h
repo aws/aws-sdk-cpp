@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/FlowTemplateFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTTHINGSGRAPH_API FlowTemplateFilter
+  class FlowTemplateFilter
   {
   public:
-    FlowTemplateFilter();
-    FlowTemplateFilter(Aws::Utils::Json::JsonView jsonValue);
-    FlowTemplateFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTTHINGSGRAPH_API FlowTemplateFilter();
+    AWS_IOTTHINGSGRAPH_API FlowTemplateFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTTHINGSGRAPH_API FlowTemplateFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTTHINGSGRAPH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

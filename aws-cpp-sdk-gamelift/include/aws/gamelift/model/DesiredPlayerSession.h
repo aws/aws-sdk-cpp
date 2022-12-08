@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DesiredPlayerSession">AWS
    * API Reference</a></p>
    */
-  class AWS_GAMELIFT_API DesiredPlayerSession
+  class DesiredPlayerSession
   {
   public:
-    DesiredPlayerSession();
-    DesiredPlayerSession(Aws::Utils::Json::JsonView jsonValue);
-    DesiredPlayerSession& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GAMELIFT_API DesiredPlayerSession();
+    AWS_GAMELIFT_API DesiredPlayerSession(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMELIFT_API DesiredPlayerSession& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

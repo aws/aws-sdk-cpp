@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/FindingsReportSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEGURUPROFILER_API FindingsReportSummary
+  class FindingsReportSummary
   {
   public:
-    FindingsReportSummary();
-    FindingsReportSummary(Aws::Utils::Json::JsonView jsonValue);
-    FindingsReportSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEGURUPROFILER_API FindingsReportSummary();
+    AWS_CODEGURUPROFILER_API FindingsReportSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEGURUPROFILER_API FindingsReportSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEGURUPROFILER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

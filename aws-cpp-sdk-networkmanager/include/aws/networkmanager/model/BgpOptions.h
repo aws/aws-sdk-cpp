@@ -26,13 +26,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/BgpOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_NETWORKMANAGER_API BgpOptions
+  class BgpOptions
   {
   public:
-    BgpOptions();
-    BgpOptions(Aws::Utils::Json::JsonView jsonValue);
-    BgpOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_NETWORKMANAGER_API BgpOptions();
+    AWS_NETWORKMANAGER_API BgpOptions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKMANAGER_API BgpOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

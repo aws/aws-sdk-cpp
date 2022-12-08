@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/Trigger">AWS API
    * Reference</a></p>
    */
-  class AWS_GLUE_API Trigger
+  class Trigger
   {
   public:
-    Trigger();
-    Trigger(Aws::Utils::Json::JsonView jsonValue);
-    Trigger& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API Trigger();
+    AWS_GLUE_API Trigger(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Trigger& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

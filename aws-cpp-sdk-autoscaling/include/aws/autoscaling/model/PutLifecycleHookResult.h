@@ -24,12 +24,12 @@ namespace AutoScaling
 {
 namespace Model
 {
-  class AWS_AUTOSCALING_API PutLifecycleHookResult
+  class PutLifecycleHookResult
   {
   public:
-    PutLifecycleHookResult();
-    PutLifecycleHookResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    PutLifecycleHookResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_AUTOSCALING_API PutLifecycleHookResult();
+    AWS_AUTOSCALING_API PutLifecycleHookResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_AUTOSCALING_API PutLifecycleHookResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     

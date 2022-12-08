@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/RegexMatchStatement">AWS
    * API Reference</a></p>
    */
-  class AWS_WAFV2_API RegexMatchStatement
+  class RegexMatchStatement
   {
   public:
-    RegexMatchStatement();
-    RegexMatchStatement(Aws::Utils::Json::JsonView jsonValue);
-    RegexMatchStatement& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WAFV2_API RegexMatchStatement();
+    AWS_WAFV2_API RegexMatchStatement(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API RegexMatchStatement& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

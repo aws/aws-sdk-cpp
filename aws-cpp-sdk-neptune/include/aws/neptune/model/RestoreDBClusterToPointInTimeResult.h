@@ -25,12 +25,12 @@ namespace Neptune
 {
 namespace Model
 {
-  class AWS_NEPTUNE_API RestoreDBClusterToPointInTimeResult
+  class RestoreDBClusterToPointInTimeResult
   {
   public:
-    RestoreDBClusterToPointInTimeResult();
-    RestoreDBClusterToPointInTimeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    RestoreDBClusterToPointInTimeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_NEPTUNE_API RestoreDBClusterToPointInTimeResult();
+    AWS_NEPTUNE_API RestoreDBClusterToPointInTimeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_NEPTUNE_API RestoreDBClusterToPointInTimeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     

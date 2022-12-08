@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/ComponentConfigurationUpdate">AWS
    * API Reference</a></p>
    */
-  class AWS_GREENGRASSV2_API ComponentConfigurationUpdate
+  class ComponentConfigurationUpdate
   {
   public:
-    ComponentConfigurationUpdate();
-    ComponentConfigurationUpdate(Aws::Utils::Json::JsonView jsonValue);
-    ComponentConfigurationUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GREENGRASSV2_API ComponentConfigurationUpdate();
+    AWS_GREENGRASSV2_API ComponentConfigurationUpdate(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASSV2_API ComponentConfigurationUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

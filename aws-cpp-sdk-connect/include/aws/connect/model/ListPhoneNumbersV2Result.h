@@ -26,12 +26,12 @@ namespace Connect
 {
 namespace Model
 {
-  class AWS_CONNECT_API ListPhoneNumbersV2Result
+  class ListPhoneNumbersV2Result
   {
   public:
-    ListPhoneNumbersV2Result();
-    ListPhoneNumbersV2Result(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListPhoneNumbersV2Result& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CONNECT_API ListPhoneNumbersV2Result();
+    AWS_CONNECT_API ListPhoneNumbersV2Result(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CONNECT_API ListPhoneNumbersV2Result& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

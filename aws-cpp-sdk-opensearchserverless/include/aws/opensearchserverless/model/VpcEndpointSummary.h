@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/VpcEndpointSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_OPENSEARCHSERVERLESS_API VpcEndpointSummary
+  class VpcEndpointSummary
   {
   public:
-    VpcEndpointSummary();
-    VpcEndpointSummary(Aws::Utils::Json::JsonView jsonValue);
-    VpcEndpointSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OPENSEARCHSERVERLESS_API VpcEndpointSummary();
+    AWS_OPENSEARCHSERVERLESS_API VpcEndpointSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPENSEARCHSERVERLESS_API VpcEndpointSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPENSEARCHSERVERLESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

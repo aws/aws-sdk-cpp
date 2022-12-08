@@ -33,12 +33,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/GetQueueUrlResult">AWS
    * API Reference</a></p>
    */
-  class AWS_SQS_API GetQueueUrlResult
+  class GetQueueUrlResult
   {
   public:
-    GetQueueUrlResult();
-    GetQueueUrlResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    GetQueueUrlResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_SQS_API GetQueueUrlResult();
+    AWS_SQS_API GetQueueUrlResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_SQS_API GetQueueUrlResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

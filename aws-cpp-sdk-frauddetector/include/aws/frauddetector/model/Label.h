@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/Label">AWS
    * API Reference</a></p>
    */
-  class AWS_FRAUDDETECTOR_API Label
+  class Label
   {
   public:
-    Label();
-    Label(Aws::Utils::Json::JsonView jsonValue);
-    Label& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FRAUDDETECTOR_API Label();
+    AWS_FRAUDDETECTOR_API Label(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FRAUDDETECTOR_API Label& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FRAUDDETECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -29,14 +29,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/LambdaFunctionAssociation">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFRONT_API LambdaFunctionAssociation
+  class LambdaFunctionAssociation
   {
   public:
-    LambdaFunctionAssociation();
-    LambdaFunctionAssociation(const Aws::Utils::Xml::XmlNode& xmlNode);
-    LambdaFunctionAssociation& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API LambdaFunctionAssociation();
+    AWS_CLOUDFRONT_API LambdaFunctionAssociation(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API LambdaFunctionAssociation& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**

@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/LakeConfigurationRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYLAKE_API LakeConfigurationRequest
+  class LakeConfigurationRequest
   {
   public:
-    LakeConfigurationRequest();
-    LakeConfigurationRequest(Aws::Utils::Json::JsonView jsonValue);
-    LakeConfigurationRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYLAKE_API LakeConfigurationRequest();
+    AWS_SECURITYLAKE_API LakeConfigurationRequest(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYLAKE_API LakeConfigurationRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYLAKE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

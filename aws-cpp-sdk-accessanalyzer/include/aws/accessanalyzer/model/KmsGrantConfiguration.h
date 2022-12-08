@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/KmsGrantConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_ACCESSANALYZER_API KmsGrantConfiguration
+  class KmsGrantConfiguration
   {
   public:
-    KmsGrantConfiguration();
-    KmsGrantConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    KmsGrantConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ACCESSANALYZER_API KmsGrantConfiguration();
+    AWS_ACCESSANALYZER_API KmsGrantConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACCESSANALYZER_API KmsGrantConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACCESSANALYZER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

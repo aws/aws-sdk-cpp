@@ -28,12 +28,12 @@ namespace ResourceGroups
 {
 namespace Model
 {
-  class AWS_RESOURCEGROUPS_API CreateGroupResult
+  class CreateGroupResult
   {
   public:
-    CreateGroupResult();
-    CreateGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_RESOURCEGROUPS_API CreateGroupResult();
+    AWS_RESOURCEGROUPS_API CreateGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_RESOURCEGROUPS_API CreateGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

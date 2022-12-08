@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DimensionField">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API DimensionField
+  class DimensionField
   {
   public:
-    DimensionField();
-    DimensionField(Aws::Utils::Json::JsonView jsonValue);
-    DimensionField& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API DimensionField();
+    AWS_QUICKSIGHT_API DimensionField(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API DimensionField& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

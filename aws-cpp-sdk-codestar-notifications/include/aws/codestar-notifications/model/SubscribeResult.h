@@ -24,12 +24,12 @@ namespace CodeStarNotifications
 {
 namespace Model
 {
-  class AWS_CODESTARNOTIFICATIONS_API SubscribeResult
+  class SubscribeResult
   {
   public:
-    SubscribeResult();
-    SubscribeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    SubscribeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODESTARNOTIFICATIONS_API SubscribeResult();
+    AWS_CODESTARNOTIFICATIONS_API SubscribeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODESTARNOTIFICATIONS_API SubscribeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

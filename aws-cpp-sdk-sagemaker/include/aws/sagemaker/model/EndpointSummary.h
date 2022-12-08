@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/EndpointSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API EndpointSummary
+  class EndpointSummary
   {
   public:
-    EndpointSummary();
-    EndpointSummary(Aws::Utils::Json::JsonView jsonValue);
-    EndpointSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API EndpointSummary();
+    AWS_SAGEMAKER_API EndpointSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API EndpointSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

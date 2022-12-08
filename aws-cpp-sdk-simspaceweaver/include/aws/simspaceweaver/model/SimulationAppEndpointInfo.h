@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/simspaceweaver-2022-10-28/SimulationAppEndpointInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_SIMSPACEWEAVER_API SimulationAppEndpointInfo
+  class SimulationAppEndpointInfo
   {
   public:
-    SimulationAppEndpointInfo();
-    SimulationAppEndpointInfo(Aws::Utils::Json::JsonView jsonValue);
-    SimulationAppEndpointInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SIMSPACEWEAVER_API SimulationAppEndpointInfo();
+    AWS_SIMSPACEWEAVER_API SimulationAppEndpointInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SIMSPACEWEAVER_API SimulationAppEndpointInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SIMSPACEWEAVER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

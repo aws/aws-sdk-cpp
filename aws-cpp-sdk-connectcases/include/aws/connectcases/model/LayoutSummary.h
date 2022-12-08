@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/LayoutSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECTCASES_API LayoutSummary
+  class LayoutSummary
   {
   public:
-    LayoutSummary();
-    LayoutSummary(Aws::Utils::Json::JsonView jsonValue);
-    LayoutSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECTCASES_API LayoutSummary();
+    AWS_CONNECTCASES_API LayoutSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTCASES_API LayoutSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTCASES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

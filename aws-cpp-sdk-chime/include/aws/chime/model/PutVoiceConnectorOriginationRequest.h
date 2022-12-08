@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_CHIME_API PutVoiceConnectorOriginationRequest : public ChimeRequest
+  class PutVoiceConnectorOriginationRequest : public ChimeRequest
   {
   public:
-    PutVoiceConnectorOriginationRequest();
+    AWS_CHIME_API PutVoiceConnectorOriginationRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,7 +30,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "PutVoiceConnectorOrigination"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CHIME_API Aws::String SerializePayload() const override;
 
 
     /**

@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codecatalyst-2022-09-28/PersistentStorage">AWS
    * API Reference</a></p>
    */
-  class AWS_CODECATALYST_API PersistentStorage
+  class PersistentStorage
   {
   public:
-    PersistentStorage();
-    PersistentStorage(Aws::Utils::Json::JsonView jsonValue);
-    PersistentStorage& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODECATALYST_API PersistentStorage();
+    AWS_CODECATALYST_API PersistentStorage(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODECATALYST_API PersistentStorage& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODECATALYST_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

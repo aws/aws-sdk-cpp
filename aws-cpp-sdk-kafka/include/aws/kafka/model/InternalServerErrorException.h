@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/InternalServerErrorException">AWS
    * API Reference</a></p>
    */
-  class AWS_KAFKA_API InternalServerErrorException
+  class InternalServerErrorException
   {
   public:
-    InternalServerErrorException();
-    InternalServerErrorException(Aws::Utils::Json::JsonView jsonValue);
-    InternalServerErrorException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KAFKA_API InternalServerErrorException();
+    AWS_KAFKA_API InternalServerErrorException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKA_API InternalServerErrorException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

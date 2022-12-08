@@ -30,15 +30,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyTransitGatewayVpcAttachmentRequestOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API ModifyTransitGatewayVpcAttachmentRequestOptions
+  class ModifyTransitGatewayVpcAttachmentRequestOptions
   {
   public:
-    ModifyTransitGatewayVpcAttachmentRequestOptions();
-    ModifyTransitGatewayVpcAttachmentRequestOptions(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ModifyTransitGatewayVpcAttachmentRequestOptions& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API ModifyTransitGatewayVpcAttachmentRequestOptions();
+    AWS_EC2_API ModifyTransitGatewayVpcAttachmentRequestOptions(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API ModifyTransitGatewayVpcAttachmentRequestOptions& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**

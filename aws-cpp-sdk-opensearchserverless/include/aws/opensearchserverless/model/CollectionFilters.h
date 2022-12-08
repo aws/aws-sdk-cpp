@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/CollectionFilters">AWS
    * API Reference</a></p>
    */
-  class AWS_OPENSEARCHSERVERLESS_API CollectionFilters
+  class CollectionFilters
   {
   public:
-    CollectionFilters();
-    CollectionFilters(Aws::Utils::Json::JsonView jsonValue);
-    CollectionFilters& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OPENSEARCHSERVERLESS_API CollectionFilters();
+    AWS_OPENSEARCHSERVERLESS_API CollectionFilters(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPENSEARCHSERVERLESS_API CollectionFilters& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPENSEARCHSERVERLESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

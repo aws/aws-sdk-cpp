@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/EffectiveDeploymentStatusDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_GREENGRASSV2_API EffectiveDeploymentStatusDetails
+  class EffectiveDeploymentStatusDetails
   {
   public:
-    EffectiveDeploymentStatusDetails();
-    EffectiveDeploymentStatusDetails(Aws::Utils::Json::JsonView jsonValue);
-    EffectiveDeploymentStatusDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GREENGRASSV2_API EffectiveDeploymentStatusDetails();
+    AWS_GREENGRASSV2_API EffectiveDeploymentStatusDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASSV2_API EffectiveDeploymentStatusDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

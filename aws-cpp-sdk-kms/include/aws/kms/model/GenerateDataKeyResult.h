@@ -25,12 +25,12 @@ namespace KMS
 {
 namespace Model
 {
-  class AWS_KMS_API GenerateDataKeyResult
+  class GenerateDataKeyResult
   {
   public:
-    GenerateDataKeyResult();
-    GenerateDataKeyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GenerateDataKeyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KMS_API GenerateDataKeyResult();
+    AWS_KMS_API GenerateDataKeyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KMS_API GenerateDataKeyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/scheduler-2021-06-30/FlexibleTimeWindow">AWS
    * API Reference</a></p>
    */
-  class AWS_SCHEDULER_API FlexibleTimeWindow
+  class FlexibleTimeWindow
   {
   public:
-    FlexibleTimeWindow();
-    FlexibleTimeWindow(Aws::Utils::Json::JsonView jsonValue);
-    FlexibleTimeWindow& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SCHEDULER_API FlexibleTimeWindow();
+    AWS_SCHEDULER_API FlexibleTimeWindow(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SCHEDULER_API FlexibleTimeWindow& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SCHEDULER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

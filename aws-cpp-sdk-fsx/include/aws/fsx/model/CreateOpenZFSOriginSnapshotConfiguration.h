@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateOpenZFSOriginSnapshotConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_FSX_API CreateOpenZFSOriginSnapshotConfiguration
+  class CreateOpenZFSOriginSnapshotConfiguration
   {
   public:
-    CreateOpenZFSOriginSnapshotConfiguration();
-    CreateOpenZFSOriginSnapshotConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    CreateOpenZFSOriginSnapshotConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FSX_API CreateOpenZFSOriginSnapshotConfiguration();
+    AWS_FSX_API CreateOpenZFSOriginSnapshotConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API CreateOpenZFSOriginSnapshotConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

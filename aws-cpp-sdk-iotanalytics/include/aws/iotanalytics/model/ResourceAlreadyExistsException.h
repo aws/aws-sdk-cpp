@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/ResourceAlreadyExistsException">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTANALYTICS_API ResourceAlreadyExistsException
+  class ResourceAlreadyExistsException
   {
   public:
-    ResourceAlreadyExistsException();
-    ResourceAlreadyExistsException(Aws::Utils::Json::JsonView jsonValue);
-    ResourceAlreadyExistsException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTANALYTICS_API ResourceAlreadyExistsException();
+    AWS_IOTANALYTICS_API ResourceAlreadyExistsException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTANALYTICS_API ResourceAlreadyExistsException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

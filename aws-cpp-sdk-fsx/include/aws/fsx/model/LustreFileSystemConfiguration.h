@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/LustreFileSystemConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_FSX_API LustreFileSystemConfiguration
+  class LustreFileSystemConfiguration
   {
   public:
-    LustreFileSystemConfiguration();
-    LustreFileSystemConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    LustreFileSystemConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FSX_API LustreFileSystemConfiguration();
+    AWS_FSX_API LustreFileSystemConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API LustreFileSystemConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

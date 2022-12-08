@@ -25,12 +25,12 @@ namespace FMS
 {
 namespace Model
 {
-  class AWS_FMS_API GetProtectionStatusResult
+  class GetProtectionStatusResult
   {
   public:
-    GetProtectionStatusResult();
-    GetProtectionStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetProtectionStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_FMS_API GetProtectionStatusResult();
+    AWS_FMS_API GetProtectionStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_FMS_API GetProtectionStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

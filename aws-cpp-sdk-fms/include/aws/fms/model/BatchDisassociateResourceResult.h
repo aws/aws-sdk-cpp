@@ -26,12 +26,12 @@ namespace FMS
 {
 namespace Model
 {
-  class AWS_FMS_API BatchDisassociateResourceResult
+  class BatchDisassociateResourceResult
   {
   public:
-    BatchDisassociateResourceResult();
-    BatchDisassociateResourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    BatchDisassociateResourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_FMS_API BatchDisassociateResourceResult();
+    AWS_FMS_API BatchDisassociateResourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_FMS_API BatchDisassociateResourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/AcceleratorEvent">AWS
    * API Reference</a></p>
    */
-  class AWS_GLOBALACCELERATOR_API AcceleratorEvent
+  class AcceleratorEvent
   {
   public:
-    AcceleratorEvent();
-    AcceleratorEvent(Aws::Utils::Json::JsonView jsonValue);
-    AcceleratorEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLOBALACCELERATOR_API AcceleratorEvent();
+    AWS_GLOBALACCELERATOR_API AcceleratorEvent(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLOBALACCELERATOR_API AcceleratorEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLOBALACCELERATOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

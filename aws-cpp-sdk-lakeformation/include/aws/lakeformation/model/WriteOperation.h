@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/WriteOperation">AWS
    * API Reference</a></p>
    */
-  class AWS_LAKEFORMATION_API WriteOperation
+  class WriteOperation
   {
   public:
-    WriteOperation();
-    WriteOperation(Aws::Utils::Json::JsonView jsonValue);
-    WriteOperation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LAKEFORMATION_API WriteOperation();
+    AWS_LAKEFORMATION_API WriteOperation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAKEFORMATION_API WriteOperation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAKEFORMATION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

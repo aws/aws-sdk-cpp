@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SecurityProfilesSearchFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECT_API SecurityProfilesSearchFilter
+  class SecurityProfilesSearchFilter
   {
   public:
-    SecurityProfilesSearchFilter();
-    SecurityProfilesSearchFilter(Aws::Utils::Json::JsonView jsonValue);
-    SecurityProfilesSearchFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECT_API SecurityProfilesSearchFilter();
+    AWS_CONNECT_API SecurityProfilesSearchFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API SecurityProfilesSearchFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

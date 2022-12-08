@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ComponentSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_PROTON_API ComponentSummary
+  class ComponentSummary
   {
   public:
-    ComponentSummary();
-    ComponentSummary(Aws::Utils::Json::JsonView jsonValue);
-    ComponentSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PROTON_API ComponentSummary();
+    AWS_PROTON_API ComponentSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PROTON_API ComponentSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PROTON_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

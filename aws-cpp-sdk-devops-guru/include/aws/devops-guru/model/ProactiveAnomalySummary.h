@@ -40,13 +40,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/ProactiveAnomalySummary">AWS
    * API Reference</a></p>
    */
-  class AWS_DEVOPSGURU_API ProactiveAnomalySummary
+  class ProactiveAnomalySummary
   {
   public:
-    ProactiveAnomalySummary();
-    ProactiveAnomalySummary(Aws::Utils::Json::JsonView jsonValue);
-    ProactiveAnomalySummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DEVOPSGURU_API ProactiveAnomalySummary();
+    AWS_DEVOPSGURU_API ProactiveAnomalySummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVOPSGURU_API ProactiveAnomalySummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVOPSGURU_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

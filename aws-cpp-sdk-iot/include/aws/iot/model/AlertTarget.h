@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/AlertTarget">AWS API
    * Reference</a></p>
    */
-  class AWS_IOT_API AlertTarget
+  class AlertTarget
   {
   public:
-    AlertTarget();
-    AlertTarget(Aws::Utils::Json::JsonView jsonValue);
-    AlertTarget& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API AlertTarget();
+    AWS_IOT_API AlertTarget(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API AlertTarget& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

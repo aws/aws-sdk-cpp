@@ -24,12 +24,12 @@ namespace SagemakerEdgeManager
 {
 namespace Model
 {
-  class AWS_SAGEMAKEREDGEMANAGER_API GetDeviceRegistrationResult
+  class GetDeviceRegistrationResult
   {
   public:
-    GetDeviceRegistrationResult();
-    GetDeviceRegistrationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetDeviceRegistrationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SAGEMAKEREDGEMANAGER_API GetDeviceRegistrationResult();
+    AWS_SAGEMAKEREDGEMANAGER_API GetDeviceRegistrationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SAGEMAKEREDGEMANAGER_API GetDeviceRegistrationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

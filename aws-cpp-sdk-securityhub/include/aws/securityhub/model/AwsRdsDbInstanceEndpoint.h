@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsRdsDbInstanceEndpoint">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsRdsDbInstanceEndpoint
+  class AwsRdsDbInstanceEndpoint
   {
   public:
-    AwsRdsDbInstanceEndpoint();
-    AwsRdsDbInstanceEndpoint(Aws::Utils::Json::JsonView jsonValue);
-    AwsRdsDbInstanceEndpoint& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsRdsDbInstanceEndpoint();
+    AWS_SECURITYHUB_API AwsRdsDbInstanceEndpoint(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsRdsDbInstanceEndpoint& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

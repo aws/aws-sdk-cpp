@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/Alert">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIATAILOR_API Alert
+  class Alert
   {
   public:
-    Alert();
-    Alert(Aws::Utils::Json::JsonView jsonValue);
-    Alert& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIATAILOR_API Alert();
+    AWS_MEDIATAILOR_API Alert(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIATAILOR_API Alert& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIATAILOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

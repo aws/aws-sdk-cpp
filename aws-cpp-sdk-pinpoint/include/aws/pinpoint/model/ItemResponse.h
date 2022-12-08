@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/ItemResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API ItemResponse
+  class ItemResponse
   {
   public:
-    ItemResponse();
-    ItemResponse(Aws::Utils::Json::JsonView jsonValue);
-    ItemResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API ItemResponse();
+    AWS_PINPOINT_API ItemResponse(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API ItemResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -27,12 +27,12 @@ namespace FSx
 {
 namespace Model
 {
-  class AWS_FSX_API RestoreVolumeFromSnapshotResult
+  class RestoreVolumeFromSnapshotResult
   {
   public:
-    RestoreVolumeFromSnapshotResult();
-    RestoreVolumeFromSnapshotResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    RestoreVolumeFromSnapshotResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_FSX_API RestoreVolumeFromSnapshotResult();
+    AWS_FSX_API RestoreVolumeFromSnapshotResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_FSX_API RestoreVolumeFromSnapshotResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

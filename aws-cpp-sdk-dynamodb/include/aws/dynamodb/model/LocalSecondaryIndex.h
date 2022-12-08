@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/LocalSecondaryIndex">AWS
    * API Reference</a></p>
    */
-  class AWS_DYNAMODB_API LocalSecondaryIndex
+  class LocalSecondaryIndex
   {
   public:
-    LocalSecondaryIndex();
-    LocalSecondaryIndex(Aws::Utils::Json::JsonView jsonValue);
-    LocalSecondaryIndex& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DYNAMODB_API LocalSecondaryIndex();
+    AWS_DYNAMODB_API LocalSecondaryIndex(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API LocalSecondaryIndex& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

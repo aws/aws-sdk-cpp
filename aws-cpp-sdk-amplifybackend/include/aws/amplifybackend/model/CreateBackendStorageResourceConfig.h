@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/CreateBackendStorageResourceConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_AMPLIFYBACKEND_API CreateBackendStorageResourceConfig
+  class CreateBackendStorageResourceConfig
   {
   public:
-    CreateBackendStorageResourceConfig();
-    CreateBackendStorageResourceConfig(Aws::Utils::Json::JsonView jsonValue);
-    CreateBackendStorageResourceConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_AMPLIFYBACKEND_API CreateBackendStorageResourceConfig();
+    AWS_AMPLIFYBACKEND_API CreateBackendStorageResourceConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFYBACKEND_API CreateBackendStorageResourceConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFYBACKEND_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

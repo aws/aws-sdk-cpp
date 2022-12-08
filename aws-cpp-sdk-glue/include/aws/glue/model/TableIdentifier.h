@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/TableIdentifier">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API TableIdentifier
+  class TableIdentifier
   {
   public:
-    TableIdentifier();
-    TableIdentifier(Aws::Utils::Json::JsonView jsonValue);
-    TableIdentifier& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API TableIdentifier();
+    AWS_GLUE_API TableIdentifier(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API TableIdentifier& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

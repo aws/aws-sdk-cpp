@@ -27,12 +27,12 @@ namespace Glue
 {
 namespace Model
 {
-  class AWS_GLUE_API GetSchemaResult
+  class GetSchemaResult
   {
   public:
-    GetSchemaResult();
-    GetSchemaResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetSchemaResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GLUE_API GetSchemaResult();
+    AWS_GLUE_API GetSchemaResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GLUE_API GetSchemaResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -33,12 +33,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutEmailIdentityDkimSigningAttributesResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_SESV2_API PutEmailIdentityDkimSigningAttributesResult
+  class PutEmailIdentityDkimSigningAttributesResult
   {
   public:
-    PutEmailIdentityDkimSigningAttributesResult();
-    PutEmailIdentityDkimSigningAttributesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PutEmailIdentityDkimSigningAttributesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SESV2_API PutEmailIdentityDkimSigningAttributesResult();
+    AWS_SESV2_API PutEmailIdentityDkimSigningAttributesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SESV2_API PutEmailIdentityDkimSigningAttributesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -33,12 +33,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/EnvironmentDescriptionsMessage">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICBEANSTALK_API DescribeEnvironmentsResult
+  class DescribeEnvironmentsResult
   {
   public:
-    DescribeEnvironmentsResult();
-    DescribeEnvironmentsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeEnvironmentsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ELASTICBEANSTALK_API DescribeEnvironmentsResult();
+    AWS_ELASTICBEANSTALK_API DescribeEnvironmentsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ELASTICBEANSTALK_API DescribeEnvironmentsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

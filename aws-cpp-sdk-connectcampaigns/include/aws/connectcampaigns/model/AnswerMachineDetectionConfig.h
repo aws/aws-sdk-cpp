@@ -26,13 +26,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/connectcampaigns-2021-01-30/AnswerMachineDetectionConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECTCAMPAIGNS_API AnswerMachineDetectionConfig
+  class AnswerMachineDetectionConfig
   {
   public:
-    AnswerMachineDetectionConfig();
-    AnswerMachineDetectionConfig(Aws::Utils::Json::JsonView jsonValue);
-    AnswerMachineDetectionConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECTCAMPAIGNS_API AnswerMachineDetectionConfig();
+    AWS_CONNECTCAMPAIGNS_API AnswerMachineDetectionConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTCAMPAIGNS_API AnswerMachineDetectionConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTCAMPAIGNS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -24,12 +24,12 @@ namespace MarketplaceCatalog
 {
 namespace Model
 {
-  class AWS_MARKETPLACECATALOG_API StartChangeSetResult
+  class StartChangeSetResult
   {
   public:
-    StartChangeSetResult();
-    StartChangeSetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    StartChangeSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MARKETPLACECATALOG_API StartChangeSetResult();
+    AWS_MARKETPLACECATALOG_API StartChangeSetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MARKETPLACECATALOG_API StartChangeSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

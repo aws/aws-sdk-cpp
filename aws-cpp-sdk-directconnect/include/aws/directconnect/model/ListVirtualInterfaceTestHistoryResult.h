@@ -26,12 +26,12 @@ namespace DirectConnect
 {
 namespace Model
 {
-  class AWS_DIRECTCONNECT_API ListVirtualInterfaceTestHistoryResult
+  class ListVirtualInterfaceTestHistoryResult
   {
   public:
-    ListVirtualInterfaceTestHistoryResult();
-    ListVirtualInterfaceTestHistoryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListVirtualInterfaceTestHistoryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DIRECTCONNECT_API ListVirtualInterfaceTestHistoryResult();
+    AWS_DIRECTCONNECT_API ListVirtualInterfaceTestHistoryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DIRECTCONNECT_API ListVirtualInterfaceTestHistoryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

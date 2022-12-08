@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListedExecution">AWS
    * API Reference</a></p>
    */
-  class AWS_TRANSFER_API ListedExecution
+  class ListedExecution
   {
   public:
-    ListedExecution();
-    ListedExecution(Aws::Utils::Json::JsonView jsonValue);
-    ListedExecution& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TRANSFER_API ListedExecution();
+    AWS_TRANSFER_API ListedExecution(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSFER_API ListedExecution& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSFER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

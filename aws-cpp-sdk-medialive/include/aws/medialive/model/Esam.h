@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/Esam">AWS API
    * Reference</a></p>
    */
-  class AWS_MEDIALIVE_API Esam
+  class Esam
   {
   public:
-    Esam();
-    Esam(Aws::Utils::Json::JsonView jsonValue);
-    Esam& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API Esam();
+    AWS_MEDIALIVE_API Esam(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Esam& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

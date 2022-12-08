@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ServerProcess">AWS
    * API Reference</a></p>
    */
-  class AWS_GAMELIFT_API ServerProcess
+  class ServerProcess
   {
   public:
-    ServerProcess();
-    ServerProcess(Aws::Utils::Json::JsonView jsonValue);
-    ServerProcess& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GAMELIFT_API ServerProcess();
+    AWS_GAMELIFT_API ServerProcess(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMELIFT_API ServerProcess& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

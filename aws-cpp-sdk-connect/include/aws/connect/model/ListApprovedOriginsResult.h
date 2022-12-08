@@ -25,12 +25,12 @@ namespace Connect
 {
 namespace Model
 {
-  class AWS_CONNECT_API ListApprovedOriginsResult
+  class ListApprovedOriginsResult
   {
   public:
-    ListApprovedOriginsResult();
-    ListApprovedOriginsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListApprovedOriginsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CONNECT_API ListApprovedOriginsResult();
+    AWS_CONNECT_API ListApprovedOriginsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CONNECT_API ListApprovedOriginsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

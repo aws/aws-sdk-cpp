@@ -44,13 +44,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DataRepositoryAssociation">AWS
    * API Reference</a></p>
    */
-  class AWS_FSX_API DataRepositoryAssociation
+  class DataRepositoryAssociation
   {
   public:
-    DataRepositoryAssociation();
-    DataRepositoryAssociation(Aws::Utils::Json::JsonView jsonValue);
-    DataRepositoryAssociation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FSX_API DataRepositoryAssociation();
+    AWS_FSX_API DataRepositoryAssociation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API DataRepositoryAssociation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

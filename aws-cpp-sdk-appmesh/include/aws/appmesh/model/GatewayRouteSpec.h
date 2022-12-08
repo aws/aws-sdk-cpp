@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/GatewayRouteSpec">AWS
    * API Reference</a></p>
    */
-  class AWS_APPMESH_API GatewayRouteSpec
+  class GatewayRouteSpec
   {
   public:
-    GatewayRouteSpec();
-    GatewayRouteSpec(Aws::Utils::Json::JsonView jsonValue);
-    GatewayRouteSpec& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPMESH_API GatewayRouteSpec();
+    AWS_APPMESH_API GatewayRouteSpec(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API GatewayRouteSpec& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

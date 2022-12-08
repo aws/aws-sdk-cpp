@@ -28,12 +28,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutAccountSuppressionAttributesResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_SESV2_API PutAccountSuppressionAttributesResult
+  class PutAccountSuppressionAttributesResult
   {
   public:
-    PutAccountSuppressionAttributesResult();
-    PutAccountSuppressionAttributesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PutAccountSuppressionAttributesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SESV2_API PutAccountSuppressionAttributesResult();
+    AWS_SESV2_API PutAccountSuppressionAttributesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SESV2_API PutAccountSuppressionAttributesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

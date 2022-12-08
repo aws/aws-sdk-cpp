@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/CloudWatchDimensionConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINTEMAIL_API CloudWatchDimensionConfiguration
+  class CloudWatchDimensionConfiguration
   {
   public:
-    CloudWatchDimensionConfiguration();
-    CloudWatchDimensionConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    CloudWatchDimensionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINTEMAIL_API CloudWatchDimensionConfiguration();
+    AWS_PINPOINTEMAIL_API CloudWatchDimensionConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINTEMAIL_API CloudWatchDimensionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINTEMAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

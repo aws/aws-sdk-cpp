@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UserQuickConnectConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECT_API UserQuickConnectConfig
+  class UserQuickConnectConfig
   {
   public:
-    UserQuickConnectConfig();
-    UserQuickConnectConfig(Aws::Utils::Json::JsonView jsonValue);
-    UserQuickConnectConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECT_API UserQuickConnectConfig();
+    AWS_CONNECT_API UserQuickConnectConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API UserQuickConnectConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

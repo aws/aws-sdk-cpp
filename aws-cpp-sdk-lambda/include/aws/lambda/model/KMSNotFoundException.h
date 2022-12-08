@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/KMSNotFoundException">AWS
    * API Reference</a></p>
    */
-  class AWS_LAMBDA_API KMSNotFoundException
+  class KMSNotFoundException
   {
   public:
-    KMSNotFoundException();
-    KMSNotFoundException(Aws::Utils::Json::JsonView jsonValue);
-    KMSNotFoundException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LAMBDA_API KMSNotFoundException();
+    AWS_LAMBDA_API KMSNotFoundException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAMBDA_API KMSNotFoundException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAMBDA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

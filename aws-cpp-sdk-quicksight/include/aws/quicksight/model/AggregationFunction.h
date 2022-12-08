@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/AggregationFunction">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API AggregationFunction
+  class AggregationFunction
   {
   public:
-    AggregationFunction();
-    AggregationFunction(Aws::Utils::Json::JsonView jsonValue);
-    AggregationFunction& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API AggregationFunction();
+    AWS_QUICKSIGHT_API AggregationFunction(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API AggregationFunction& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

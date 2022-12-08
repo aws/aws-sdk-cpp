@@ -24,12 +24,12 @@ namespace ServiceQuotas
 {
 namespace Model
 {
-  class AWS_SERVICEQUOTAS_API RequestServiceQuotaIncreaseResult
+  class RequestServiceQuotaIncreaseResult
   {
   public:
-    RequestServiceQuotaIncreaseResult();
-    RequestServiceQuotaIncreaseResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    RequestServiceQuotaIncreaseResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SERVICEQUOTAS_API RequestServiceQuotaIncreaseResult();
+    AWS_SERVICEQUOTAS_API RequestServiceQuotaIncreaseResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SERVICEQUOTAS_API RequestServiceQuotaIncreaseResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

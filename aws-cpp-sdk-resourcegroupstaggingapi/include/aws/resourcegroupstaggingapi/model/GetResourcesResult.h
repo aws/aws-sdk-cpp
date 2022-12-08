@@ -26,12 +26,12 @@ namespace ResourceGroupsTaggingAPI
 {
 namespace Model
 {
-  class AWS_RESOURCEGROUPSTAGGINGAPI_API GetResourcesResult
+  class GetResourcesResult
   {
   public:
-    GetResourcesResult();
-    GetResourcesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetResourcesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_RESOURCEGROUPSTAGGINGAPI_API GetResourcesResult();
+    AWS_RESOURCEGROUPSTAGGINGAPI_API GetResourcesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_RESOURCEGROUPSTAGGINGAPI_API GetResourcesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

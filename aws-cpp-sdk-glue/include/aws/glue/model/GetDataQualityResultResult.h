@@ -28,12 +28,12 @@ namespace Glue
 {
 namespace Model
 {
-  class AWS_GLUE_API GetDataQualityResultResult
+  class GetDataQualityResultResult
   {
   public:
-    GetDataQualityResultResult();
-    GetDataQualityResultResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetDataQualityResultResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GLUE_API GetDataQualityResultResult();
+    AWS_GLUE_API GetDataQualityResultResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GLUE_API GetDataQualityResultResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

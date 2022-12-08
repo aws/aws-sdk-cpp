@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/InternalServerException">AWS
    * API Reference</a></p>
    */
-  class AWS_SSMCONTACTS_API InternalServerException
+  class InternalServerException
   {
   public:
-    InternalServerException();
-    InternalServerException(Aws::Utils::Json::JsonView jsonValue);
-    InternalServerException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSMCONTACTS_API InternalServerException();
+    AWS_SSMCONTACTS_API InternalServerException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSMCONTACTS_API InternalServerException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSMCONTACTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

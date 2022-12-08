@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UserPausedDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_MACIE2_API UserPausedDetails
+  class UserPausedDetails
   {
   public:
-    UserPausedDetails();
-    UserPausedDetails(Aws::Utils::Json::JsonView jsonValue);
-    UserPausedDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MACIE2_API UserPausedDetails();
+    AWS_MACIE2_API UserPausedDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API UserPausedDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

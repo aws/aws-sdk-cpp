@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CloudWatchEncryption">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API CloudWatchEncryption
+  class CloudWatchEncryption
   {
   public:
-    CloudWatchEncryption();
-    CloudWatchEncryption(Aws::Utils::Json::JsonView jsonValue);
-    CloudWatchEncryption& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API CloudWatchEncryption();
+    AWS_GLUE_API CloudWatchEncryption(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API CloudWatchEncryption& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

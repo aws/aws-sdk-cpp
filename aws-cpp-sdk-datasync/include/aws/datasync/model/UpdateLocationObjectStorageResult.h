@@ -22,12 +22,12 @@ namespace DataSync
 {
 namespace Model
 {
-  class AWS_DATASYNC_API UpdateLocationObjectStorageResult
+  class UpdateLocationObjectStorageResult
   {
   public:
-    UpdateLocationObjectStorageResult();
-    UpdateLocationObjectStorageResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateLocationObjectStorageResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DATASYNC_API UpdateLocationObjectStorageResult();
+    AWS_DATASYNC_API UpdateLocationObjectStorageResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DATASYNC_API UpdateLocationObjectStorageResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

@@ -39,13 +39,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/SyncState">AWS
    * API Reference</a></p>
    */
-  class AWS_NETWORKFIREWALL_API SyncState
+  class SyncState
   {
   public:
-    SyncState();
-    SyncState(Aws::Utils::Json::JsonView jsonValue);
-    SyncState& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_NETWORKFIREWALL_API SyncState();
+    AWS_NETWORKFIREWALL_API SyncState(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKFIREWALL_API SyncState& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKFIREWALL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

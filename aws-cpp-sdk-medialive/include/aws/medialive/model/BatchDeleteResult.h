@@ -31,12 +31,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/BatchDeleteResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API BatchDeleteResult
+  class BatchDeleteResult
   {
   public:
-    BatchDeleteResult();
-    BatchDeleteResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    BatchDeleteResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MEDIALIVE_API BatchDeleteResult();
+    AWS_MEDIALIVE_API BatchDeleteResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MEDIALIVE_API BatchDeleteResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

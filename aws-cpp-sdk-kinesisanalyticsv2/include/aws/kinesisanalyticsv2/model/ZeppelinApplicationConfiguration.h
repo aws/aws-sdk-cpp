@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/ZeppelinApplicationConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_KINESISANALYTICSV2_API ZeppelinApplicationConfiguration
+  class ZeppelinApplicationConfiguration
   {
   public:
-    ZeppelinApplicationConfiguration();
-    ZeppelinApplicationConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    ZeppelinApplicationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KINESISANALYTICSV2_API ZeppelinApplicationConfiguration();
+    AWS_KINESISANALYTICSV2_API ZeppelinApplicationConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICSV2_API ZeppelinApplicationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/UpdateTieringInput">AWS
    * API Reference</a></p>
    */
-  class AWS_BILLINGCONDUCTOR_API UpdateTieringInput
+  class UpdateTieringInput
   {
   public:
-    UpdateTieringInput();
-    UpdateTieringInput(Aws::Utils::Json::JsonView jsonValue);
-    UpdateTieringInput& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BILLINGCONDUCTOR_API UpdateTieringInput();
+    AWS_BILLINGCONDUCTOR_API UpdateTieringInput(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BILLINGCONDUCTOR_API UpdateTieringInput& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BILLINGCONDUCTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

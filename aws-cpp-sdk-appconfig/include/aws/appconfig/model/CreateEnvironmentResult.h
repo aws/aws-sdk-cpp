@@ -27,12 +27,12 @@ namespace AppConfig
 {
 namespace Model
 {
-  class AWS_APPCONFIG_API CreateEnvironmentResult
+  class CreateEnvironmentResult
   {
   public:
-    CreateEnvironmentResult();
-    CreateEnvironmentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateEnvironmentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPCONFIG_API CreateEnvironmentResult();
+    AWS_APPCONFIG_API CreateEnvironmentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPCONFIG_API CreateEnvironmentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

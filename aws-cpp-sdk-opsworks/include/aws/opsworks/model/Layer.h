@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/Layer">AWS API
    * Reference</a></p>
    */
-  class AWS_OPSWORKS_API Layer
+  class Layer
   {
   public:
-    Layer();
-    Layer(Aws::Utils::Json::JsonView jsonValue);
-    Layer& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OPSWORKS_API Layer();
+    AWS_OPSWORKS_API Layer(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPSWORKS_API Layer& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPSWORKS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

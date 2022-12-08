@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/ReplayDestination">AWS
    * API Reference</a></p>
    */
-  class AWS_EVENTBRIDGE_API ReplayDestination
+  class ReplayDestination
   {
   public:
-    ReplayDestination();
-    ReplayDestination(Aws::Utils::Json::JsonView jsonValue);
-    ReplayDestination& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EVENTBRIDGE_API ReplayDestination();
+    AWS_EVENTBRIDGE_API ReplayDestination(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EVENTBRIDGE_API ReplayDestination& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EVENTBRIDGE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

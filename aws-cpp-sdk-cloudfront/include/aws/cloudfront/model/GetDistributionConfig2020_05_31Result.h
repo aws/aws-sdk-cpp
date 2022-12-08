@@ -31,12 +31,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetDistributionConfigResult">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFRONT_API GetDistributionConfig2020_05_31Result
+  class GetDistributionConfig2020_05_31Result
   {
   public:
-    GetDistributionConfig2020_05_31Result();
-    GetDistributionConfig2020_05_31Result(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    GetDistributionConfig2020_05_31Result& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_CLOUDFRONT_API GetDistributionConfig2020_05_31Result();
+    AWS_CLOUDFRONT_API GetDistributionConfig2020_05_31Result(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_CLOUDFRONT_API GetDistributionConfig2020_05_31Result& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/QuickConnect">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECT_API QuickConnect
+  class QuickConnect
   {
   public:
-    QuickConnect();
-    QuickConnect(Aws::Utils::Json::JsonView jsonValue);
-    QuickConnect& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECT_API QuickConnect();
+    AWS_CONNECT_API QuickConnect(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API QuickConnect& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/SubResourceSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_SHIELD_API SubResourceSummary
+  class SubResourceSummary
   {
   public:
-    SubResourceSummary();
-    SubResourceSummary(Aws::Utils::Json::JsonView jsonValue);
-    SubResourceSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SHIELD_API SubResourceSummary();
+    AWS_SHIELD_API SubResourceSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SHIELD_API SubResourceSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SHIELD_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

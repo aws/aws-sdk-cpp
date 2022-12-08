@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/HttpAction">AWS API
    * Reference</a></p>
    */
-  class AWS_IOT_API HttpAction
+  class HttpAction
   {
   public:
-    HttpAction();
-    HttpAction(Aws::Utils::Json::JsonView jsonValue);
-    HttpAction& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API HttpAction();
+    AWS_IOT_API HttpAction(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API HttpAction& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

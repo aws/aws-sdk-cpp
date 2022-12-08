@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DataSetSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API DataSetSummary
+  class DataSetSummary
   {
   public:
-    DataSetSummary();
-    DataSetSummary(Aws::Utils::Json::JsonView jsonValue);
-    DataSetSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API DataSetSummary();
+    AWS_QUICKSIGHT_API DataSetSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API DataSetSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

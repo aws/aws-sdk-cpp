@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/ErrorRootCauseService">AWS
    * API Reference</a></p>
    */
-  class AWS_XRAY_API ErrorRootCauseService
+  class ErrorRootCauseService
   {
   public:
-    ErrorRootCauseService();
-    ErrorRootCauseService(Aws::Utils::Json::JsonView jsonValue);
-    ErrorRootCauseService& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_XRAY_API ErrorRootCauseService();
+    AWS_XRAY_API ErrorRootCauseService(Aws::Utils::Json::JsonView jsonValue);
+    AWS_XRAY_API ErrorRootCauseService& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_XRAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

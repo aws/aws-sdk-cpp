@@ -26,12 +26,12 @@ namespace Polly
 {
 namespace Model
 {
-  class AWS_POLLY_API ListSpeechSynthesisTasksResult
+  class ListSpeechSynthesisTasksResult
   {
   public:
-    ListSpeechSynthesisTasksResult();
-    ListSpeechSynthesisTasksResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListSpeechSynthesisTasksResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_POLLY_API ListSpeechSynthesisTasksResult();
+    AWS_POLLY_API ListSpeechSynthesisTasksResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_POLLY_API ListSpeechSynthesisTasksResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

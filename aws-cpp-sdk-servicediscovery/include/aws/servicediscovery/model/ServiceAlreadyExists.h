@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/ServiceAlreadyExists">AWS
    * API Reference</a></p>
    */
-  class AWS_SERVICEDISCOVERY_API ServiceAlreadyExists
+  class ServiceAlreadyExists
   {
   public:
-    ServiceAlreadyExists();
-    ServiceAlreadyExists(Aws::Utils::Json::JsonView jsonValue);
-    ServiceAlreadyExists& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SERVICEDISCOVERY_API ServiceAlreadyExists();
+    AWS_SERVICEDISCOVERY_API ServiceAlreadyExists(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICEDISCOVERY_API ServiceAlreadyExists& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICEDISCOVERY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/TestReportSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEBUILD_API TestReportSummary
+  class TestReportSummary
   {
   public:
-    TestReportSummary();
-    TestReportSummary(Aws::Utils::Json::JsonView jsonValue);
-    TestReportSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEBUILD_API TestReportSummary();
+    AWS_CODEBUILD_API TestReportSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEBUILD_API TestReportSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEBUILD_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

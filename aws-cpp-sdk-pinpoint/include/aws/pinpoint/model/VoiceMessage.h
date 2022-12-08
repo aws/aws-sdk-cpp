@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/VoiceMessage">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API VoiceMessage
+  class VoiceMessage
   {
   public:
-    VoiceMessage();
-    VoiceMessage(Aws::Utils::Json::JsonView jsonValue);
-    VoiceMessage& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API VoiceMessage();
+    AWS_PINPOINT_API VoiceMessage(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API VoiceMessage& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

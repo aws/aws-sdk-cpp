@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_EFS_API DeleteFileSystemPolicyRequest : public EFSRequest
+  class DeleteFileSystemPolicyRequest : public EFSRequest
   {
   public:
-    DeleteFileSystemPolicyRequest();
+    AWS_EFS_API DeleteFileSystemPolicyRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,7 +29,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DeleteFileSystemPolicy"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_EFS_API Aws::String SerializePayload() const override;
 
 
     /**

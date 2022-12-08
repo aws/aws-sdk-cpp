@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/ServiceUnavailableException">AWS
    * API Reference</a></p>
    */
-  class AWS_APIGATEWAY_API ServiceUnavailableException
+  class ServiceUnavailableException
   {
   public:
-    ServiceUnavailableException();
-    ServiceUnavailableException(Aws::Utils::Json::JsonView jsonValue);
-    ServiceUnavailableException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APIGATEWAY_API ServiceUnavailableException();
+    AWS_APIGATEWAY_API ServiceUnavailableException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APIGATEWAY_API ServiceUnavailableException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APIGATEWAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

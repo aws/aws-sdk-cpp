@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/AliasListEntry">AWS
    * API Reference</a></p>
    */
-  class AWS_KMS_API AliasListEntry
+  class AliasListEntry
   {
   public:
-    AliasListEntry();
-    AliasListEntry(Aws::Utils::Json::JsonView jsonValue);
-    AliasListEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KMS_API AliasListEntry();
+    AWS_KMS_API AliasListEntry(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KMS_API AliasListEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

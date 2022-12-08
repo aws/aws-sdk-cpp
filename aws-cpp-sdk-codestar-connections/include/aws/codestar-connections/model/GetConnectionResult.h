@@ -24,12 +24,12 @@ namespace CodeStarconnections
 {
 namespace Model
 {
-  class AWS_CODESTARCONNECTIONS_API GetConnectionResult
+  class GetConnectionResult
   {
   public:
-    GetConnectionResult();
-    GetConnectionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetConnectionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODESTARCONNECTIONS_API GetConnectionResult();
+    AWS_CODESTARCONNECTIONS_API GetConnectionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODESTARCONNECTIONS_API GetConnectionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

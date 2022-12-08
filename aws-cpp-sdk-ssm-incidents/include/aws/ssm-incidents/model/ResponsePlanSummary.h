@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/ResponsePlanSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_SSMINCIDENTS_API ResponsePlanSummary
+  class ResponsePlanSummary
   {
   public:
-    ResponsePlanSummary();
-    ResponsePlanSummary(Aws::Utils::Json::JsonView jsonValue);
-    ResponsePlanSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSMINCIDENTS_API ResponsePlanSummary();
+    AWS_SSMINCIDENTS_API ResponsePlanSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSMINCIDENTS_API ResponsePlanSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSMINCIDENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

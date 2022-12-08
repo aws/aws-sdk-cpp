@@ -22,12 +22,12 @@ namespace DirectoryService
 {
 namespace Model
 {
-  class AWS_DIRECTORYSERVICE_API UpdateNumberOfDomainControllersResult
+  class UpdateNumberOfDomainControllersResult
   {
   public:
-    UpdateNumberOfDomainControllersResult();
-    UpdateNumberOfDomainControllersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateNumberOfDomainControllersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DIRECTORYSERVICE_API UpdateNumberOfDomainControllersResult();
+    AWS_DIRECTORYSERVICE_API UpdateNumberOfDomainControllersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DIRECTORYSERVICE_API UpdateNumberOfDomainControllersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

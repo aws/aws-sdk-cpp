@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/TablePaginatedReportOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API TablePaginatedReportOptions
+  class TablePaginatedReportOptions
   {
   public:
-    TablePaginatedReportOptions();
-    TablePaginatedReportOptions(Aws::Utils::Json::JsonView jsonValue);
-    TablePaginatedReportOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API TablePaginatedReportOptions();
+    AWS_QUICKSIGHT_API TablePaginatedReportOptions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API TablePaginatedReportOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

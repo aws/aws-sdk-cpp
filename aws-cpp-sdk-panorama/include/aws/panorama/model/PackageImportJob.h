@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/panorama-2019-07-24/PackageImportJob">AWS
    * API Reference</a></p>
    */
-  class AWS_PANORAMA_API PackageImportJob
+  class PackageImportJob
   {
   public:
-    PackageImportJob();
-    PackageImportJob(Aws::Utils::Json::JsonView jsonValue);
-    PackageImportJob& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PANORAMA_API PackageImportJob();
+    AWS_PANORAMA_API PackageImportJob(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PANORAMA_API PackageImportJob& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PANORAMA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

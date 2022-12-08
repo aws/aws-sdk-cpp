@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/GrowthRateComputation">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API GrowthRateComputation
+  class GrowthRateComputation
   {
   public:
-    GrowthRateComputation();
-    GrowthRateComputation(Aws::Utils::Json::JsonView jsonValue);
-    GrowthRateComputation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API GrowthRateComputation();
+    AWS_QUICKSIGHT_API GrowthRateComputation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API GrowthRateComputation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

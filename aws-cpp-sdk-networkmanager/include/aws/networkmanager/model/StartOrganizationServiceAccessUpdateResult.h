@@ -24,12 +24,12 @@ namespace NetworkManager
 {
 namespace Model
 {
-  class AWS_NETWORKMANAGER_API StartOrganizationServiceAccessUpdateResult
+  class StartOrganizationServiceAccessUpdateResult
   {
   public:
-    StartOrganizationServiceAccessUpdateResult();
-    StartOrganizationServiceAccessUpdateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    StartOrganizationServiceAccessUpdateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_NETWORKMANAGER_API StartOrganizationServiceAccessUpdateResult();
+    AWS_NETWORKMANAGER_API StartOrganizationServiceAccessUpdateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_NETWORKMANAGER_API StartOrganizationServiceAccessUpdateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

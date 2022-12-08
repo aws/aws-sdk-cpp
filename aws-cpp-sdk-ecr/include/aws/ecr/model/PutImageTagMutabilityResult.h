@@ -25,12 +25,12 @@ namespace ECR
 {
 namespace Model
 {
-  class AWS_ECR_API PutImageTagMutabilityResult
+  class PutImageTagMutabilityResult
   {
   public:
-    PutImageTagMutabilityResult();
-    PutImageTagMutabilityResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PutImageTagMutabilityResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ECR_API PutImageTagMutabilityResult();
+    AWS_ECR_API PutImageTagMutabilityResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ECR_API PutImageTagMutabilityResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

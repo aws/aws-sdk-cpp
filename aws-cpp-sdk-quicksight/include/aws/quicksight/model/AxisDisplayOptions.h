@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/AxisDisplayOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API AxisDisplayOptions
+  class AxisDisplayOptions
   {
   public:
-    AxisDisplayOptions();
-    AxisDisplayOptions(Aws::Utils::Json::JsonView jsonValue);
-    AxisDisplayOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API AxisDisplayOptions();
+    AWS_QUICKSIGHT_API AxisDisplayOptions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API AxisDisplayOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

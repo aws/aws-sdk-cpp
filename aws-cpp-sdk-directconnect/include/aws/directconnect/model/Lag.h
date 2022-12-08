@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/Lag">AWS
    * API Reference</a></p>
    */
-  class AWS_DIRECTCONNECT_API Lag
+  class Lag
   {
   public:
-    Lag();
-    Lag(Aws::Utils::Json::JsonView jsonValue);
-    Lag& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DIRECTCONNECT_API Lag();
+    AWS_DIRECTCONNECT_API Lag(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTCONNECT_API Lag& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTCONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

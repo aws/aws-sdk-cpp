@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_IVSCHAT_API DisconnectUserRequest : public IvschatRequest
+  class DisconnectUserRequest : public IvschatRequest
   {
   public:
-    DisconnectUserRequest();
+    AWS_IVSCHAT_API DisconnectUserRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,7 +29,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DisconnectUser"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_IVSCHAT_API Aws::String SerializePayload() const override;
 
 
     /**

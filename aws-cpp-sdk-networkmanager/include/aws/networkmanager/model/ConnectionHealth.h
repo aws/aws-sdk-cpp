@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ConnectionHealth">AWS
    * API Reference</a></p>
    */
-  class AWS_NETWORKMANAGER_API ConnectionHealth
+  class ConnectionHealth
   {
   public:
-    ConnectionHealth();
-    ConnectionHealth(Aws::Utils::Json::JsonView jsonValue);
-    ConnectionHealth& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_NETWORKMANAGER_API ConnectionHealth();
+    AWS_NETWORKMANAGER_API ConnectionHealth(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKMANAGER_API ConnectionHealth& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

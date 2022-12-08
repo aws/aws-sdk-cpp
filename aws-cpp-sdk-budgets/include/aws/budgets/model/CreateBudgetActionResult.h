@@ -24,12 +24,12 @@ namespace Budgets
 {
 namespace Model
 {
-  class AWS_BUDGETS_API CreateBudgetActionResult
+  class CreateBudgetActionResult
   {
   public:
-    CreateBudgetActionResult();
-    CreateBudgetActionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateBudgetActionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_BUDGETS_API CreateBudgetActionResult();
+    AWS_BUDGETS_API CreateBudgetActionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_BUDGETS_API CreateBudgetActionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     

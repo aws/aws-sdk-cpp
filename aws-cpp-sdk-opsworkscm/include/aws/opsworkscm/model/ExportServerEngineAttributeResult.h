@@ -25,12 +25,12 @@ namespace OpsWorksCM
 {
 namespace Model
 {
-  class AWS_OPSWORKSCM_API ExportServerEngineAttributeResult
+  class ExportServerEngineAttributeResult
   {
   public:
-    ExportServerEngineAttributeResult();
-    ExportServerEngineAttributeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ExportServerEngineAttributeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OPSWORKSCM_API ExportServerEngineAttributeResult();
+    AWS_OPSWORKSCM_API ExportServerEngineAttributeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OPSWORKSCM_API ExportServerEngineAttributeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

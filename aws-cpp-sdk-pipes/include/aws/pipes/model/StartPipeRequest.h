@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_PIPES_API StartPipeRequest : public PipesRequest
+  class StartPipeRequest : public PipesRequest
   {
   public:
-    StartPipeRequest();
+    AWS_PIPES_API StartPipeRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,7 +29,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "StartPipe"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_PIPES_API Aws::String SerializePayload() const override;
 
 
     /**

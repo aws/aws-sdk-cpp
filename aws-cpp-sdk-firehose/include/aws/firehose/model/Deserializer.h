@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/Deserializer">AWS
    * API Reference</a></p>
    */
-  class AWS_FIREHOSE_API Deserializer
+  class Deserializer
   {
   public:
-    Deserializer();
-    Deserializer(Aws::Utils::Json::JsonView jsonValue);
-    Deserializer& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FIREHOSE_API Deserializer();
+    AWS_FIREHOSE_API Deserializer(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FIREHOSE_API Deserializer& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FIREHOSE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

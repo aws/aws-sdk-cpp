@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/XssMatchStatement">AWS
    * API Reference</a></p>
    */
-  class AWS_WAFV2_API XssMatchStatement
+  class XssMatchStatement
   {
   public:
-    XssMatchStatement();
-    XssMatchStatement(Aws::Utils::Json::JsonView jsonValue);
-    XssMatchStatement& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WAFV2_API XssMatchStatement();
+    AWS_WAFV2_API XssMatchStatement(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API XssMatchStatement& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

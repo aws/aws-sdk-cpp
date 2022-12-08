@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/S3Object">AWS
    * API Reference</a></p>
    */
-  class AWS_GROUNDSTATION_API S3Object
+  class S3Object
   {
   public:
-    S3Object();
-    S3Object(Aws::Utils::Json::JsonView jsonValue);
-    S3Object& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GROUNDSTATION_API S3Object();
+    AWS_GROUNDSTATION_API S3Object(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GROUNDSTATION_API S3Object& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GROUNDSTATION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/AlgorithmSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API AlgorithmSummary
+  class AlgorithmSummary
   {
   public:
-    AlgorithmSummary();
-    AlgorithmSummary(Aws::Utils::Json::JsonView jsonValue);
-    AlgorithmSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API AlgorithmSummary();
+    AWS_SAGEMAKER_API AlgorithmSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API AlgorithmSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

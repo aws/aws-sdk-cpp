@@ -26,12 +26,12 @@ namespace Budgets
 {
 namespace Model
 {
-  class AWS_BUDGETS_API DescribeBudgetActionHistoriesResult
+  class DescribeBudgetActionHistoriesResult
   {
   public:
-    DescribeBudgetActionHistoriesResult();
-    DescribeBudgetActionHistoriesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeBudgetActionHistoriesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_BUDGETS_API DescribeBudgetActionHistoriesResult();
+    AWS_BUDGETS_API DescribeBudgetActionHistoriesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_BUDGETS_API DescribeBudgetActionHistoriesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

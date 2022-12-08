@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/DiskResourceUtilization">AWS
    * API Reference</a></p>
    */
-  class AWS_COSTEXPLORER_API DiskResourceUtilization
+  class DiskResourceUtilization
   {
   public:
-    DiskResourceUtilization();
-    DiskResourceUtilization(Aws::Utils::Json::JsonView jsonValue);
-    DiskResourceUtilization& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COSTEXPLORER_API DiskResourceUtilization();
+    AWS_COSTEXPLORER_API DiskResourceUtilization(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API DiskResourceUtilization& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

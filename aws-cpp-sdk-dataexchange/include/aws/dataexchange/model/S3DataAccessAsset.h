@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/S3DataAccessAsset">AWS
    * API Reference</a></p>
    */
-  class AWS_DATAEXCHANGE_API S3DataAccessAsset
+  class S3DataAccessAsset
   {
   public:
-    S3DataAccessAsset();
-    S3DataAccessAsset(Aws::Utils::Json::JsonView jsonValue);
-    S3DataAccessAsset& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DATAEXCHANGE_API S3DataAccessAsset();
+    AWS_DATAEXCHANGE_API S3DataAccessAsset(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATAEXCHANGE_API S3DataAccessAsset& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATAEXCHANGE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

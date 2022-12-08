@@ -30,15 +30,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/ManagedRuleDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDWATCH_API ManagedRuleDescription
+  class ManagedRuleDescription
   {
   public:
-    ManagedRuleDescription();
-    ManagedRuleDescription(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ManagedRuleDescription& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDWATCH_API ManagedRuleDescription();
+    AWS_CLOUDWATCH_API ManagedRuleDescription(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDWATCH_API ManagedRuleDescription& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_CLOUDWATCH_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_CLOUDWATCH_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**

@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/UsageLimit">AWS
    * API Reference</a></p>
    */
-  class AWS_REDSHIFTSERVERLESS_API UsageLimit
+  class UsageLimit
   {
   public:
-    UsageLimit();
-    UsageLimit(Aws::Utils::Json::JsonView jsonValue);
-    UsageLimit& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_REDSHIFTSERVERLESS_API UsageLimit();
+    AWS_REDSHIFTSERVERLESS_API UsageLimit(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REDSHIFTSERVERLESS_API UsageLimit& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REDSHIFTSERVERLESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

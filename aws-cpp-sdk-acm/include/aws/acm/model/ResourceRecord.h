@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/ResourceRecord">AWS
    * API Reference</a></p>
    */
-  class AWS_ACM_API ResourceRecord
+  class ResourceRecord
   {
   public:
-    ResourceRecord();
-    ResourceRecord(Aws::Utils::Json::JsonView jsonValue);
-    ResourceRecord& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ACM_API ResourceRecord();
+    AWS_ACM_API ResourceRecord(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACM_API ResourceRecord& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

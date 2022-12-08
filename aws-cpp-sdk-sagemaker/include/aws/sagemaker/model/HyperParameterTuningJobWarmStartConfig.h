@@ -40,13 +40,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/HyperParameterTuningJobWarmStartConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API HyperParameterTuningJobWarmStartConfig
+  class HyperParameterTuningJobWarmStartConfig
   {
   public:
-    HyperParameterTuningJobWarmStartConfig();
-    HyperParameterTuningJobWarmStartConfig(Aws::Utils::Json::JsonView jsonValue);
-    HyperParameterTuningJobWarmStartConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API HyperParameterTuningJobWarmStartConfig();
+    AWS_SAGEMAKER_API HyperParameterTuningJobWarmStartConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API HyperParameterTuningJobWarmStartConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

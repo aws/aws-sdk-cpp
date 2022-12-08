@@ -24,12 +24,12 @@ namespace Lambda
 {
 namespace Model
 {
-  class AWS_LAMBDA_API PutFunctionCodeSigningConfigResult
+  class PutFunctionCodeSigningConfigResult
   {
   public:
-    PutFunctionCodeSigningConfigResult();
-    PutFunctionCodeSigningConfigResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PutFunctionCodeSigningConfigResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LAMBDA_API PutFunctionCodeSigningConfigResult();
+    AWS_LAMBDA_API PutFunctionCodeSigningConfigResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LAMBDA_API PutFunctionCodeSigningConfigResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

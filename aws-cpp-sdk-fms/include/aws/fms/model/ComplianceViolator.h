@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ComplianceViolator">AWS
    * API Reference</a></p>
    */
-  class AWS_FMS_API ComplianceViolator
+  class ComplianceViolator
   {
   public:
-    ComplianceViolator();
-    ComplianceViolator(Aws::Utils::Json::JsonView jsonValue);
-    ComplianceViolator& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FMS_API ComplianceViolator();
+    AWS_FMS_API ComplianceViolator(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FMS_API ComplianceViolator& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

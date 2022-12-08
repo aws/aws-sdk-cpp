@@ -24,12 +24,12 @@ namespace IoTSecureTunneling
 {
 namespace Model
 {
-  class AWS_IOTSECURETUNNELING_API OpenTunnelResult
+  class OpenTunnelResult
   {
   public:
-    OpenTunnelResult();
-    OpenTunnelResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    OpenTunnelResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOTSECURETUNNELING_API OpenTunnelResult();
+    AWS_IOTSECURETUNNELING_API OpenTunnelResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOTSECURETUNNELING_API OpenTunnelResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

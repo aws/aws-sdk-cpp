@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsEc2NetworkInterfaceAttachment">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsEc2NetworkInterfaceAttachment
+  class AwsEc2NetworkInterfaceAttachment
   {
   public:
-    AwsEc2NetworkInterfaceAttachment();
-    AwsEc2NetworkInterfaceAttachment(Aws::Utils::Json::JsonView jsonValue);
-    AwsEc2NetworkInterfaceAttachment& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsEc2NetworkInterfaceAttachment();
+    AWS_SECURITYHUB_API AwsEc2NetworkInterfaceAttachment(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsEc2NetworkInterfaceAttachment& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

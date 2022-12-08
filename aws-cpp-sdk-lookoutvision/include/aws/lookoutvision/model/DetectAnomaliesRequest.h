@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_LOOKOUTFORVISION_API DetectAnomaliesRequest : public StreamingLookoutforVisionRequest
+  class DetectAnomaliesRequest : public StreamingLookoutforVisionRequest
   {
   public:
-    DetectAnomaliesRequest();
+    AWS_LOOKOUTFORVISION_API DetectAnomaliesRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.

@@ -26,12 +26,12 @@ namespace SMS
 {
 namespace Model
 {
-  class AWS_SMS_API GetConnectorsResult
+  class GetConnectorsResult
   {
   public:
-    GetConnectorsResult();
-    GetConnectorsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetConnectorsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SMS_API GetConnectorsResult();
+    AWS_SMS_API GetConnectorsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SMS_API GetConnectorsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

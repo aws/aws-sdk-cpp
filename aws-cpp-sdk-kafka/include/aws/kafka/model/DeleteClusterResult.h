@@ -25,12 +25,12 @@ namespace Kafka
 {
 namespace Model
 {
-  class AWS_KAFKA_API DeleteClusterResult
+  class DeleteClusterResult
   {
   public:
-    DeleteClusterResult();
-    DeleteClusterResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteClusterResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KAFKA_API DeleteClusterResult();
+    AWS_KAFKA_API DeleteClusterResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KAFKA_API DeleteClusterResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

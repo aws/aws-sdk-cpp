@@ -25,12 +25,12 @@ namespace FSx
 {
 namespace Model
 {
-  class AWS_FSX_API DeleteDataRepositoryAssociationResult
+  class DeleteDataRepositoryAssociationResult
   {
   public:
-    DeleteDataRepositoryAssociationResult();
-    DeleteDataRepositoryAssociationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteDataRepositoryAssociationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_FSX_API DeleteDataRepositoryAssociationResult();
+    AWS_FSX_API DeleteDataRepositoryAssociationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_FSX_API DeleteDataRepositoryAssociationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

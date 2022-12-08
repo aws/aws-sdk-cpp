@@ -37,13 +37,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/CreateComponentData">AWS
    * API Reference</a></p>
    */
-  class AWS_AMPLIFYUIBUILDER_API CreateComponentData
+  class CreateComponentData
   {
   public:
-    CreateComponentData();
-    CreateComponentData(Aws::Utils::Json::JsonView jsonValue);
-    CreateComponentData& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_AMPLIFYUIBUILDER_API CreateComponentData();
+    AWS_AMPLIFYUIBUILDER_API CreateComponentData(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFYUIBUILDER_API CreateComponentData& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFYUIBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

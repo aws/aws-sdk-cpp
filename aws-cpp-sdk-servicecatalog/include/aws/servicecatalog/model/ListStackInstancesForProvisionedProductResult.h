@@ -26,12 +26,12 @@ namespace ServiceCatalog
 {
 namespace Model
 {
-  class AWS_SERVICECATALOG_API ListStackInstancesForProvisionedProductResult
+  class ListStackInstancesForProvisionedProductResult
   {
   public:
-    ListStackInstancesForProvisionedProductResult();
-    ListStackInstancesForProvisionedProductResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListStackInstancesForProvisionedProductResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SERVICECATALOG_API ListStackInstancesForProvisionedProductResult();
+    AWS_SERVICECATALOG_API ListStackInstancesForProvisionedProductResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SERVICECATALOG_API ListStackInstancesForProvisionedProductResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

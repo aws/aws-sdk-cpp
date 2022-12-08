@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/SearchPlaceIndexForTextSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_LOCATIONSERVICE_API SearchPlaceIndexForTextSummary
+  class SearchPlaceIndexForTextSummary
   {
   public:
-    SearchPlaceIndexForTextSummary();
-    SearchPlaceIndexForTextSummary(Aws::Utils::Json::JsonView jsonValue);
-    SearchPlaceIndexForTextSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LOCATIONSERVICE_API SearchPlaceIndexForTextSummary();
+    AWS_LOCATIONSERVICE_API SearchPlaceIndexForTextSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOCATIONSERVICE_API SearchPlaceIndexForTextSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOCATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

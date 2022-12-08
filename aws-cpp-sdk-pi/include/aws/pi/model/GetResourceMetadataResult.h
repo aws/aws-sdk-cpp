@@ -26,12 +26,12 @@ namespace PI
 {
 namespace Model
 {
-  class AWS_PI_API GetResourceMetadataResult
+  class GetResourceMetadataResult
   {
   public:
-    GetResourceMetadataResult();
-    GetResourceMetadataResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetResourceMetadataResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PI_API GetResourceMetadataResult();
+    AWS_PI_API GetResourceMetadataResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PI_API GetResourceMetadataResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

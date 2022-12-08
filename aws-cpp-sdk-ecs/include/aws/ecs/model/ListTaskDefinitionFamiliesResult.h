@@ -25,12 +25,12 @@ namespace ECS
 {
 namespace Model
 {
-  class AWS_ECS_API ListTaskDefinitionFamiliesResult
+  class ListTaskDefinitionFamiliesResult
   {
   public:
-    ListTaskDefinitionFamiliesResult();
-    ListTaskDefinitionFamiliesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListTaskDefinitionFamiliesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ECS_API ListTaskDefinitionFamiliesResult();
+    AWS_ECS_API ListTaskDefinitionFamiliesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ECS_API ListTaskDefinitionFamiliesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

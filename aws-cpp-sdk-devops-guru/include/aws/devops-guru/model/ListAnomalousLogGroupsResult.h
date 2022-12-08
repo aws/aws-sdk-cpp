@@ -26,12 +26,12 @@ namespace DevOpsGuru
 {
 namespace Model
 {
-  class AWS_DEVOPSGURU_API ListAnomalousLogGroupsResult
+  class ListAnomalousLogGroupsResult
   {
   public:
-    ListAnomalousLogGroupsResult();
-    ListAnomalousLogGroupsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListAnomalousLogGroupsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DEVOPSGURU_API ListAnomalousLogGroupsResult();
+    AWS_DEVOPSGURU_API ListAnomalousLogGroupsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DEVOPSGURU_API ListAnomalousLogGroupsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

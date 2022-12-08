@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_CLOUDWATCHRUM_API UpdateAppMonitorRequest : public CloudWatchRUMRequest
+  class UpdateAppMonitorRequest : public CloudWatchRUMRequest
   {
   public:
-    UpdateAppMonitorRequest();
+    AWS_CLOUDWATCHRUM_API UpdateAppMonitorRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,7 +31,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateAppMonitor"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CLOUDWATCHRUM_API Aws::String SerializePayload() const override;
 
 
     /**

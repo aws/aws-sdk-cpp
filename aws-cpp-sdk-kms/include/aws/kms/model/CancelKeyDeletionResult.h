@@ -24,12 +24,12 @@ namespace KMS
 {
 namespace Model
 {
-  class AWS_KMS_API CancelKeyDeletionResult
+  class CancelKeyDeletionResult
   {
   public:
-    CancelKeyDeletionResult();
-    CancelKeyDeletionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CancelKeyDeletionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KMS_API CancelKeyDeletionResult();
+    AWS_KMS_API CancelKeyDeletionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KMS_API CancelKeyDeletionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

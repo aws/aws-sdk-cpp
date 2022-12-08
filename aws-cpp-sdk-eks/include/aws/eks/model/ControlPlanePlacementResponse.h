@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ControlPlanePlacementResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_EKS_API ControlPlanePlacementResponse
+  class ControlPlanePlacementResponse
   {
   public:
-    ControlPlanePlacementResponse();
-    ControlPlanePlacementResponse(Aws::Utils::Json::JsonView jsonValue);
-    ControlPlanePlacementResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EKS_API ControlPlanePlacementResponse();
+    AWS_EKS_API ControlPlanePlacementResponse(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EKS_API ControlPlanePlacementResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EKS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

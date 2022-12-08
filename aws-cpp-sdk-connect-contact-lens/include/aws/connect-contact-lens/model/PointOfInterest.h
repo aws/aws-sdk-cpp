@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-contact-lens-2020-08-21/PointOfInterest">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECTCONTACTLENS_API PointOfInterest
+  class PointOfInterest
   {
   public:
-    PointOfInterest();
-    PointOfInterest(Aws::Utils::Json::JsonView jsonValue);
-    PointOfInterest& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECTCONTACTLENS_API PointOfInterest();
+    AWS_CONNECTCONTACTLENS_API PointOfInterest(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTCONTACTLENS_API PointOfInterest& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTCONTACTLENS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

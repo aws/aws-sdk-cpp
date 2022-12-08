@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/Exclusion">AWS
    * API Reference</a></p>
    */
-  class AWS_INSPECTOR_API Exclusion
+  class Exclusion
   {
   public:
-    Exclusion();
-    Exclusion(Aws::Utils::Json::JsonView jsonValue);
-    Exclusion& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_INSPECTOR_API Exclusion();
+    AWS_INSPECTOR_API Exclusion(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR_API Exclusion& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

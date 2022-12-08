@@ -26,12 +26,12 @@ namespace LakeFormation
 {
 namespace Model
 {
-  class AWS_LAKEFORMATION_API SearchDatabasesByLFTagsResult
+  class SearchDatabasesByLFTagsResult
   {
   public:
-    SearchDatabasesByLFTagsResult();
-    SearchDatabasesByLFTagsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    SearchDatabasesByLFTagsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LAKEFORMATION_API SearchDatabasesByLFTagsResult();
+    AWS_LAKEFORMATION_API SearchDatabasesByLFTagsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LAKEFORMATION_API SearchDatabasesByLFTagsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

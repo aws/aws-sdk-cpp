@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/SelectParameters">AWS
    * API Reference</a></p>
    */
-  class AWS_GLACIER_API SelectParameters
+  class SelectParameters
   {
   public:
-    SelectParameters();
-    SelectParameters(Aws::Utils::Json::JsonView jsonValue);
-    SelectParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLACIER_API SelectParameters();
+    AWS_GLACIER_API SelectParameters(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLACIER_API SelectParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLACIER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

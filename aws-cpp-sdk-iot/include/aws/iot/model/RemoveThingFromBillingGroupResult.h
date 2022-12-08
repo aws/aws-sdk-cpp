@@ -22,12 +22,12 @@ namespace IoT
 {
 namespace Model
 {
-  class AWS_IOT_API RemoveThingFromBillingGroupResult
+  class RemoveThingFromBillingGroupResult
   {
   public:
-    RemoveThingFromBillingGroupResult();
-    RemoveThingFromBillingGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    RemoveThingFromBillingGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOT_API RemoveThingFromBillingGroupResult();
+    AWS_IOT_API RemoveThingFromBillingGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOT_API RemoveThingFromBillingGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

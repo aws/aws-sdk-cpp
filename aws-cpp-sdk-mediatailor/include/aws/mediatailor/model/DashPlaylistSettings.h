@@ -26,13 +26,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/DashPlaylistSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIATAILOR_API DashPlaylistSettings
+  class DashPlaylistSettings
   {
   public:
-    DashPlaylistSettings();
-    DashPlaylistSettings(Aws::Utils::Json::JsonView jsonValue);
-    DashPlaylistSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIATAILOR_API DashPlaylistSettings();
+    AWS_MEDIATAILOR_API DashPlaylistSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIATAILOR_API DashPlaylistSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIATAILOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

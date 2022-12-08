@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsWafRateBasedRuleMatchPredicate">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsWafRateBasedRuleMatchPredicate
+  class AwsWafRateBasedRuleMatchPredicate
   {
   public:
-    AwsWafRateBasedRuleMatchPredicate();
-    AwsWafRateBasedRuleMatchPredicate(Aws::Utils::Json::JsonView jsonValue);
-    AwsWafRateBasedRuleMatchPredicate& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsWafRateBasedRuleMatchPredicate();
+    AWS_SECURITYHUB_API AwsWafRateBasedRuleMatchPredicate(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsWafRateBasedRuleMatchPredicate& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

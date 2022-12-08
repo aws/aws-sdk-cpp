@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/LaunchProfileInitializationActiveDirectory">AWS
    * API Reference</a></p>
    */
-  class AWS_NIMBLESTUDIO_API LaunchProfileInitializationActiveDirectory
+  class LaunchProfileInitializationActiveDirectory
   {
   public:
-    LaunchProfileInitializationActiveDirectory();
-    LaunchProfileInitializationActiveDirectory(Aws::Utils::Json::JsonView jsonValue);
-    LaunchProfileInitializationActiveDirectory& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_NIMBLESTUDIO_API LaunchProfileInitializationActiveDirectory();
+    AWS_NIMBLESTUDIO_API LaunchProfileInitializationActiveDirectory(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NIMBLESTUDIO_API LaunchProfileInitializationActiveDirectory& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NIMBLESTUDIO_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

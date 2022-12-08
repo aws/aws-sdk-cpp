@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/TimeSeriesTransformation">AWS
    * API Reference</a></p>
    */
-  class AWS_FORECASTSERVICE_API TimeSeriesTransformation
+  class TimeSeriesTransformation
   {
   public:
-    TimeSeriesTransformation();
-    TimeSeriesTransformation(Aws::Utils::Json::JsonView jsonValue);
-    TimeSeriesTransformation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FORECASTSERVICE_API TimeSeriesTransformation();
+    AWS_FORECASTSERVICE_API TimeSeriesTransformation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FORECASTSERVICE_API TimeSeriesTransformation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FORECASTSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

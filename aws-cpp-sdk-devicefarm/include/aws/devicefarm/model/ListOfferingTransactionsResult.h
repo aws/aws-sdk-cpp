@@ -32,12 +32,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListOfferingTransactionsResult">AWS
    * API Reference</a></p>
    */
-  class AWS_DEVICEFARM_API ListOfferingTransactionsResult
+  class ListOfferingTransactionsResult
   {
   public:
-    ListOfferingTransactionsResult();
-    ListOfferingTransactionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListOfferingTransactionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DEVICEFARM_API ListOfferingTransactionsResult();
+    AWS_DEVICEFARM_API ListOfferingTransactionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DEVICEFARM_API ListOfferingTransactionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

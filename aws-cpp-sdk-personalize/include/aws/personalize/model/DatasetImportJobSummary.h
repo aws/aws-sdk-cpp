@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DatasetImportJobSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_PERSONALIZE_API DatasetImportJobSummary
+  class DatasetImportJobSummary
   {
   public:
-    DatasetImportJobSummary();
-    DatasetImportJobSummary(Aws::Utils::Json::JsonView jsonValue);
-    DatasetImportJobSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PERSONALIZE_API DatasetImportJobSummary();
+    AWS_PERSONALIZE_API DatasetImportJobSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PERSONALIZE_API DatasetImportJobSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PERSONALIZE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/User">AWS API
    * Reference</a></p>
    */
-  class AWS_MQ_API User
+  class User
   {
   public:
-    User();
-    User(Aws::Utils::Json::JsonView jsonValue);
-    User& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MQ_API User();
+    AWS_MQ_API User(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MQ_API User& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MQ_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -32,12 +32,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetApplicationRevisionOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEDEPLOY_API GetApplicationRevisionResult
+  class GetApplicationRevisionResult
   {
   public:
-    GetApplicationRevisionResult();
-    GetApplicationRevisionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetApplicationRevisionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODEDEPLOY_API GetApplicationRevisionResult();
+    AWS_CODEDEPLOY_API GetApplicationRevisionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODEDEPLOY_API GetApplicationRevisionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pipes-2015-10-07/EcsContainerOverride">AWS
    * API Reference</a></p>
    */
-  class AWS_PIPES_API EcsContainerOverride
+  class EcsContainerOverride
   {
   public:
-    EcsContainerOverride();
-    EcsContainerOverride(Aws::Utils::Json::JsonView jsonValue);
-    EcsContainerOverride& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PIPES_API EcsContainerOverride();
+    AWS_PIPES_API EcsContainerOverride(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PIPES_API EcsContainerOverride& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PIPES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

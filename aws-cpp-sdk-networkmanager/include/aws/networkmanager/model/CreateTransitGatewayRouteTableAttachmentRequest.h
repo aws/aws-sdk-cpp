@@ -21,10 +21,10 @@ namespace Model
 
   /**
    */
-  class AWS_NETWORKMANAGER_API CreateTransitGatewayRouteTableAttachmentRequest : public NetworkManagerRequest
+  class CreateTransitGatewayRouteTableAttachmentRequest : public NetworkManagerRequest
   {
   public:
-    CreateTransitGatewayRouteTableAttachmentRequest();
+    AWS_NETWORKMANAGER_API CreateTransitGatewayRouteTableAttachmentRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,7 +32,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateTransitGatewayRouteTableAttachment"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_NETWORKMANAGER_API Aws::String SerializePayload() const override;
 
 
     /**

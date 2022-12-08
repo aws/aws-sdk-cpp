@@ -28,12 +28,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteUploadResult">AWS
    * API Reference</a></p>
    */
-  class AWS_DEVICEFARM_API DeleteUploadResult
+  class DeleteUploadResult
   {
   public:
-    DeleteUploadResult();
-    DeleteUploadResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteUploadResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DEVICEFARM_API DeleteUploadResult();
+    AWS_DEVICEFARM_API DeleteUploadResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DEVICEFARM_API DeleteUploadResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

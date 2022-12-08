@@ -33,12 +33,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/ListEmailIdentitiesResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_SESV2_API ListEmailIdentitiesResult
+  class ListEmailIdentitiesResult
   {
   public:
-    ListEmailIdentitiesResult();
-    ListEmailIdentitiesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListEmailIdentitiesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SESV2_API ListEmailIdentitiesResult();
+    AWS_SESV2_API ListEmailIdentitiesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SESV2_API ListEmailIdentitiesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

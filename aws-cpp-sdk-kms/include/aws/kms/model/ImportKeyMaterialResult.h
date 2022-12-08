@@ -22,12 +22,12 @@ namespace KMS
 {
 namespace Model
 {
-  class AWS_KMS_API ImportKeyMaterialResult
+  class ImportKeyMaterialResult
   {
   public:
-    ImportKeyMaterialResult();
-    ImportKeyMaterialResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ImportKeyMaterialResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KMS_API ImportKeyMaterialResult();
+    AWS_KMS_API ImportKeyMaterialResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KMS_API ImportKeyMaterialResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

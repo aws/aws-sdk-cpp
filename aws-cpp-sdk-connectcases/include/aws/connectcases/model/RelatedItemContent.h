@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/RelatedItemContent">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECTCASES_API RelatedItemContent
+  class RelatedItemContent
   {
   public:
-    RelatedItemContent();
-    RelatedItemContent(Aws::Utils::Json::JsonView jsonValue);
-    RelatedItemContent& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECTCASES_API RelatedItemContent();
+    AWS_CONNECTCASES_API RelatedItemContent(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTCASES_API RelatedItemContent& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTCASES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

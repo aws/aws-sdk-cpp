@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/PolicyTargetSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_ORGANIZATIONS_API PolicyTargetSummary
+  class PolicyTargetSummary
   {
   public:
-    PolicyTargetSummary();
-    PolicyTargetSummary(Aws::Utils::Json::JsonView jsonValue);
-    PolicyTargetSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ORGANIZATIONS_API PolicyTargetSummary();
+    AWS_ORGANIZATIONS_API PolicyTargetSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ORGANIZATIONS_API PolicyTargetSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ORGANIZATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -26,12 +26,12 @@ namespace LookoutMetrics
 {
 namespace Model
 {
-  class AWS_LOOKOUTMETRICS_API ListAnomalyGroupTimeSeriesResult
+  class ListAnomalyGroupTimeSeriesResult
   {
   public:
-    ListAnomalyGroupTimeSeriesResult();
-    ListAnomalyGroupTimeSeriesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListAnomalyGroupTimeSeriesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LOOKOUTMETRICS_API ListAnomalyGroupTimeSeriesResult();
+    AWS_LOOKOUTMETRICS_API ListAnomalyGroupTimeSeriesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LOOKOUTMETRICS_API ListAnomalyGroupTimeSeriesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/honeycode-2020-03-01/ImportDataSource">AWS
    * API Reference</a></p>
    */
-  class AWS_HONEYCODE_API ImportDataSource
+  class ImportDataSource
   {
   public:
-    ImportDataSource();
-    ImportDataSource(Aws::Utils::Json::JsonView jsonValue);
-    ImportDataSource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_HONEYCODE_API ImportDataSource();
+    AWS_HONEYCODE_API ImportDataSource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_HONEYCODE_API ImportDataSource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_HONEYCODE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

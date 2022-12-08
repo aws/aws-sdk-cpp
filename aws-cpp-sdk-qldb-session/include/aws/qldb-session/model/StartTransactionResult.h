@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/qldb-session-2019-07-11/StartTransactionResult">AWS
    * API Reference</a></p>
    */
-  class AWS_QLDBSESSION_API StartTransactionResult
+  class StartTransactionResult
   {
   public:
-    StartTransactionResult();
-    StartTransactionResult(Aws::Utils::Json::JsonView jsonValue);
-    StartTransactionResult& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QLDBSESSION_API StartTransactionResult();
+    AWS_QLDBSESSION_API StartTransactionResult(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QLDBSESSION_API StartTransactionResult& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QLDBSESSION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

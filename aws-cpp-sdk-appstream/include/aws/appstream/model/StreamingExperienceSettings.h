@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/StreamingExperienceSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_APPSTREAM_API StreamingExperienceSettings
+  class StreamingExperienceSettings
   {
   public:
-    StreamingExperienceSettings();
-    StreamingExperienceSettings(Aws::Utils::Json::JsonView jsonValue);
-    StreamingExperienceSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPSTREAM_API StreamingExperienceSettings();
+    AWS_APPSTREAM_API StreamingExperienceSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPSTREAM_API StreamingExperienceSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPSTREAM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

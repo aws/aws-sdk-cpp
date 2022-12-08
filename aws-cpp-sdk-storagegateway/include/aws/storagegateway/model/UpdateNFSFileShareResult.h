@@ -29,12 +29,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateNFSFileShareOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_STORAGEGATEWAY_API UpdateNFSFileShareResult
+  class UpdateNFSFileShareResult
   {
   public:
-    UpdateNFSFileShareResult();
-    UpdateNFSFileShareResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateNFSFileShareResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_STORAGEGATEWAY_API UpdateNFSFileShareResult();
+    AWS_STORAGEGATEWAY_API UpdateNFSFileShareResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_STORAGEGATEWAY_API UpdateNFSFileShareResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

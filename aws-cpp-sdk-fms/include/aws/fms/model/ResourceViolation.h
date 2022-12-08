@@ -50,13 +50,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ResourceViolation">AWS
    * API Reference</a></p>
    */
-  class AWS_FMS_API ResourceViolation
+  class ResourceViolation
   {
   public:
-    ResourceViolation();
-    ResourceViolation(Aws::Utils::Json::JsonView jsonValue);
-    ResourceViolation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FMS_API ResourceViolation();
+    AWS_FMS_API ResourceViolation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FMS_API ResourceViolation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -25,12 +25,12 @@ namespace EC2
 {
 namespace Model
 {
-  class AWS_EC2_API DeleteTransitGatewayPeeringAttachmentResponse
+  class DeleteTransitGatewayPeeringAttachmentResponse
   {
   public:
-    DeleteTransitGatewayPeeringAttachmentResponse();
-    DeleteTransitGatewayPeeringAttachmentResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DeleteTransitGatewayPeeringAttachmentResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API DeleteTransitGatewayPeeringAttachmentResponse();
+    AWS_EC2_API DeleteTransitGatewayPeeringAttachmentResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API DeleteTransitGatewayPeeringAttachmentResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

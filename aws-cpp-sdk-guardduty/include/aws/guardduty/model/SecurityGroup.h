@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/SecurityGroup">AWS
    * API Reference</a></p>
    */
-  class AWS_GUARDDUTY_API SecurityGroup
+  class SecurityGroup
   {
   public:
-    SecurityGroup();
-    SecurityGroup(Aws::Utils::Json::JsonView jsonValue);
-    SecurityGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GUARDDUTY_API SecurityGroup();
+    AWS_GUARDDUTY_API SecurityGroup(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API SecurityGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

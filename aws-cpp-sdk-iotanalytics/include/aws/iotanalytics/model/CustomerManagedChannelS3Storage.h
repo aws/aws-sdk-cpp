@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/CustomerManagedChannelS3Storage">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTANALYTICS_API CustomerManagedChannelS3Storage
+  class CustomerManagedChannelS3Storage
   {
   public:
-    CustomerManagedChannelS3Storage();
-    CustomerManagedChannelS3Storage(Aws::Utils::Json::JsonView jsonValue);
-    CustomerManagedChannelS3Storage& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTANALYTICS_API CustomerManagedChannelS3Storage();
+    AWS_IOTANALYTICS_API CustomerManagedChannelS3Storage(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTANALYTICS_API CustomerManagedChannelS3Storage& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

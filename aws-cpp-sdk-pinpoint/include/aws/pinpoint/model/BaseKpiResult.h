@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/BaseKpiResult">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API BaseKpiResult
+  class BaseKpiResult
   {
   public:
-    BaseKpiResult();
-    BaseKpiResult(Aws::Utils::Json::JsonView jsonValue);
-    BaseKpiResult& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API BaseKpiResult();
+    AWS_PINPOINT_API BaseKpiResult(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API BaseKpiResult& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

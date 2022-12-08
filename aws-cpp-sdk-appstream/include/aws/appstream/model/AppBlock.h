@@ -37,13 +37,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/AppBlock">AWS
    * API Reference</a></p>
    */
-  class AWS_APPSTREAM_API AppBlock
+  class AppBlock
   {
   public:
-    AppBlock();
-    AppBlock(Aws::Utils::Json::JsonView jsonValue);
-    AppBlock& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPSTREAM_API AppBlock();
+    AWS_APPSTREAM_API AppBlock(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPSTREAM_API AppBlock& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPSTREAM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

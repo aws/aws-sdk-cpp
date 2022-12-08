@@ -25,12 +25,12 @@ namespace Schemas
 {
 namespace Model
 {
-  class AWS_SCHEMAS_API CreateRegistryResult
+  class CreateRegistryResult
   {
   public:
-    CreateRegistryResult();
-    CreateRegistryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateRegistryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SCHEMAS_API CreateRegistryResult();
+    AWS_SCHEMAS_API CreateRegistryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SCHEMAS_API CreateRegistryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

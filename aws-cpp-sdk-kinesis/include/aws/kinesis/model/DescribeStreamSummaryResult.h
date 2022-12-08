@@ -24,12 +24,12 @@ namespace Kinesis
 {
 namespace Model
 {
-  class AWS_KINESIS_API DescribeStreamSummaryResult
+  class DescribeStreamSummaryResult
   {
   public:
-    DescribeStreamSummaryResult();
-    DescribeStreamSummaryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeStreamSummaryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KINESIS_API DescribeStreamSummaryResult();
+    AWS_KINESIS_API DescribeStreamSummaryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KINESIS_API DescribeStreamSummaryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

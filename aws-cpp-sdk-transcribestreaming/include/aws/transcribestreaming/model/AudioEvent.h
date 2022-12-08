@@ -23,11 +23,11 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-streaming-2017-10-26/AudioEvent">AWS
    * API Reference</a></p>
    */
-  class AWS_TRANSCRIBESTREAMINGSERVICE_API AudioEvent
+  class AudioEvent
   {
   public:
-    AudioEvent() = default;
-    AudioEvent(Aws::Vector<unsigned char>&& value) { m_audioChunk = std::move(value); }
+    AWS_TRANSCRIBESTREAMINGSERVICE_API AudioEvent() = default;
+    AWS_TRANSCRIBESTREAMINGSERVICE_API AudioEvent(Aws::Vector<unsigned char>&& value) { m_audioChunk = std::move(value); }
 
     /**
      * <p>An audio blob that contains the next part of the audio that you want to

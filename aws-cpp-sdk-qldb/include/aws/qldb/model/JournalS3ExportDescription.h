@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/JournalS3ExportDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_QLDB_API JournalS3ExportDescription
+  class JournalS3ExportDescription
   {
   public:
-    JournalS3ExportDescription();
-    JournalS3ExportDescription(Aws::Utils::Json::JsonView jsonValue);
-    JournalS3ExportDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QLDB_API JournalS3ExportDescription();
+    AWS_QLDB_API JournalS3ExportDescription(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QLDB_API JournalS3ExportDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QLDB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchUpdatePartitionRequestEntry">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API BatchUpdatePartitionRequestEntry
+  class BatchUpdatePartitionRequestEntry
   {
   public:
-    BatchUpdatePartitionRequestEntry();
-    BatchUpdatePartitionRequestEntry(Aws::Utils::Json::JsonView jsonValue);
-    BatchUpdatePartitionRequestEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API BatchUpdatePartitionRequestEntry();
+    AWS_GLUE_API BatchUpdatePartitionRequestEntry(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API BatchUpdatePartitionRequestEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

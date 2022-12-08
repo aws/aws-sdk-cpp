@@ -42,13 +42,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/Eac3Settings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API Eac3Settings
+  class Eac3Settings
   {
   public:
-    Eac3Settings();
-    Eac3Settings(Aws::Utils::Json::JsonView jsonValue);
-    Eac3Settings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API Eac3Settings();
+    AWS_MEDIACONVERT_API Eac3Settings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Eac3Settings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

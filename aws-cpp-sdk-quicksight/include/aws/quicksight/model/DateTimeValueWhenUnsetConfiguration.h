@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DateTimeValueWhenUnsetConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API DateTimeValueWhenUnsetConfiguration
+  class DateTimeValueWhenUnsetConfiguration
   {
   public:
-    DateTimeValueWhenUnsetConfiguration();
-    DateTimeValueWhenUnsetConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    DateTimeValueWhenUnsetConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API DateTimeValueWhenUnsetConfiguration();
+    AWS_QUICKSIGHT_API DateTimeValueWhenUnsetConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API DateTimeValueWhenUnsetConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

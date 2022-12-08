@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ActivityType">AWS
    * API Reference</a></p>
    */
-  class AWS_SWF_API ActivityType
+  class ActivityType
   {
   public:
-    ActivityType();
-    ActivityType(Aws::Utils::Json::JsonView jsonValue);
-    ActivityType& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SWF_API ActivityType();
+    AWS_SWF_API ActivityType(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SWF_API ActivityType& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SWF_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

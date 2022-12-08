@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/PredictorMonitorEvaluation">AWS
    * API Reference</a></p>
    */
-  class AWS_FORECASTSERVICE_API PredictorMonitorEvaluation
+  class PredictorMonitorEvaluation
   {
   public:
-    PredictorMonitorEvaluation();
-    PredictorMonitorEvaluation(Aws::Utils::Json::JsonView jsonValue);
-    PredictorMonitorEvaluation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FORECASTSERVICE_API PredictorMonitorEvaluation();
+    AWS_FORECASTSERVICE_API PredictorMonitorEvaluation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FORECASTSERVICE_API PredictorMonitorEvaluation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FORECASTSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

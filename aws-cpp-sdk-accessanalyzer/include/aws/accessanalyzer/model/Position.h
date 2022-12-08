@@ -26,13 +26,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/Position">AWS
    * API Reference</a></p>
    */
-  class AWS_ACCESSANALYZER_API Position
+  class Position
   {
   public:
-    Position();
-    Position(Aws::Utils::Json::JsonView jsonValue);
-    Position& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ACCESSANALYZER_API Position();
+    AWS_ACCESSANALYZER_API Position(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACCESSANALYZER_API Position& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACCESSANALYZER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

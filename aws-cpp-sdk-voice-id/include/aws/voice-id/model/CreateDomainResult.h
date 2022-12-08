@@ -24,12 +24,12 @@ namespace VoiceID
 {
 namespace Model
 {
-  class AWS_VOICEID_API CreateDomainResult
+  class CreateDomainResult
   {
   public:
-    CreateDomainResult();
-    CreateDomainResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateDomainResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_VOICEID_API CreateDomainResult();
+    AWS_VOICEID_API CreateDomainResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_VOICEID_API CreateDomainResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

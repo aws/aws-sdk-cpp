@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_EKS_API UpdateClusterVersionRequest : public EKSRequest
+  class UpdateClusterVersionRequest : public EKSRequest
   {
   public:
-    UpdateClusterVersionRequest();
+    AWS_EKS_API UpdateClusterVersionRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,7 +30,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateClusterVersion"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_EKS_API Aws::String SerializePayload() const override;
 
 
     /**

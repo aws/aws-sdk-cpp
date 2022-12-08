@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/OperationSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_APPRUNNER_API OperationSummary
+  class OperationSummary
   {
   public:
-    OperationSummary();
-    OperationSummary(Aws::Utils::Json::JsonView jsonValue);
-    OperationSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPRUNNER_API OperationSummary();
+    AWS_APPRUNNER_API OperationSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPRUNNER_API OperationSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPRUNNER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

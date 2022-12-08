@@ -30,15 +30,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/PendingModifiedValues">AWS
    * API Reference</a></p>
    */
-  class AWS_NEPTUNE_API PendingModifiedValues
+  class PendingModifiedValues
   {
   public:
-    PendingModifiedValues();
-    PendingModifiedValues(const Aws::Utils::Xml::XmlNode& xmlNode);
-    PendingModifiedValues& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_NEPTUNE_API PendingModifiedValues();
+    AWS_NEPTUNE_API PendingModifiedValues(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_NEPTUNE_API PendingModifiedValues& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_NEPTUNE_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_NEPTUNE_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**

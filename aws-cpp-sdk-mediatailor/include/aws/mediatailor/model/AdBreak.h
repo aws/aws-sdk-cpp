@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/AdBreak">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIATAILOR_API AdBreak
+  class AdBreak
   {
   public:
-    AdBreak();
-    AdBreak(Aws::Utils::Json::JsonView jsonValue);
-    AdBreak& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIATAILOR_API AdBreak();
+    AWS_MEDIATAILOR_API AdBreak(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIATAILOR_API AdBreak& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIATAILOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

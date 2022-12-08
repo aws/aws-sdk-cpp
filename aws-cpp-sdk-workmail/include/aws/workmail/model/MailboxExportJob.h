@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/MailboxExportJob">AWS
    * API Reference</a></p>
    */
-  class AWS_WORKMAIL_API MailboxExportJob
+  class MailboxExportJob
   {
   public:
-    MailboxExportJob();
-    MailboxExportJob(Aws::Utils::Json::JsonView jsonValue);
-    MailboxExportJob& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WORKMAIL_API MailboxExportJob();
+    AWS_WORKMAIL_API MailboxExportJob(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKMAIL_API MailboxExportJob& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKMAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

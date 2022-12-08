@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/MetricSetDataQualityMetric">AWS
    * API Reference</a></p>
    */
-  class AWS_LOOKOUTMETRICS_API MetricSetDataQualityMetric
+  class MetricSetDataQualityMetric
   {
   public:
-    MetricSetDataQualityMetric();
-    MetricSetDataQualityMetric(Aws::Utils::Json::JsonView jsonValue);
-    MetricSetDataQualityMetric& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LOOKOUTMETRICS_API MetricSetDataQualityMetric();
+    AWS_LOOKOUTMETRICS_API MetricSetDataQualityMetric(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTMETRICS_API MetricSetDataQualityMetric& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTMETRICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

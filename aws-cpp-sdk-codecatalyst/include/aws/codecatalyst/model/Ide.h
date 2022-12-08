@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codecatalyst-2022-09-28/Ide">AWS
    * API Reference</a></p>
    */
-  class AWS_CODECATALYST_API Ide
+  class Ide
   {
   public:
-    Ide();
-    Ide(Aws::Utils::Json::JsonView jsonValue);
-    Ide& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODECATALYST_API Ide();
+    AWS_CODECATALYST_API Ide(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODECATALYST_API Ide& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODECATALYST_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

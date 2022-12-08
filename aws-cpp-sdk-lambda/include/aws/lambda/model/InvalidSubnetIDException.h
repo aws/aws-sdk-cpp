@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/InvalidSubnetIDException">AWS
    * API Reference</a></p>
    */
-  class AWS_LAMBDA_API InvalidSubnetIDException
+  class InvalidSubnetIDException
   {
   public:
-    InvalidSubnetIDException();
-    InvalidSubnetIDException(Aws::Utils::Json::JsonView jsonValue);
-    InvalidSubnetIDException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LAMBDA_API InvalidSubnetIDException();
+    AWS_LAMBDA_API InvalidSubnetIDException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAMBDA_API InvalidSubnetIDException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAMBDA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

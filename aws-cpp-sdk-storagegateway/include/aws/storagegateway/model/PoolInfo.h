@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/PoolInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_STORAGEGATEWAY_API PoolInfo
+  class PoolInfo
   {
   public:
-    PoolInfo();
-    PoolInfo(Aws::Utils::Json::JsonView jsonValue);
-    PoolInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_STORAGEGATEWAY_API PoolInfo();
+    AWS_STORAGEGATEWAY_API PoolInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_STORAGEGATEWAY_API PoolInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_STORAGEGATEWAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

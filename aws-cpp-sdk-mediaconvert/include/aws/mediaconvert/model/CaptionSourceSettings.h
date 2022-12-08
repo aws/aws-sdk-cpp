@@ -38,13 +38,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/CaptionSourceSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API CaptionSourceSettings
+  class CaptionSourceSettings
   {
   public:
-    CaptionSourceSettings();
-    CaptionSourceSettings(Aws::Utils::Json::JsonView jsonValue);
-    CaptionSourceSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API CaptionSourceSettings();
+    AWS_MEDIACONVERT_API CaptionSourceSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API CaptionSourceSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

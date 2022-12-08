@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/SnapStartTimeoutException">AWS
    * API Reference</a></p>
    */
-  class AWS_LAMBDA_API SnapStartTimeoutException
+  class SnapStartTimeoutException
   {
   public:
-    SnapStartTimeoutException();
-    SnapStartTimeoutException(Aws::Utils::Json::JsonView jsonValue);
-    SnapStartTimeoutException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LAMBDA_API SnapStartTimeoutException();
+    AWS_LAMBDA_API SnapStartTimeoutException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAMBDA_API SnapStartTimeoutException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAMBDA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

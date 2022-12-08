@@ -22,12 +22,12 @@ namespace ApplicationAutoScaling
 {
 namespace Model
 {
-  class AWS_APPLICATIONAUTOSCALING_API RegisterScalableTargetResult
+  class RegisterScalableTargetResult
   {
   public:
-    RegisterScalableTargetResult();
-    RegisterScalableTargetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    RegisterScalableTargetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPLICATIONAUTOSCALING_API RegisterScalableTargetResult();
+    AWS_APPLICATIONAUTOSCALING_API RegisterScalableTargetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPLICATIONAUTOSCALING_API RegisterScalableTargetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

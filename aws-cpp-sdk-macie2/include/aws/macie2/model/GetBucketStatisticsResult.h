@@ -30,12 +30,12 @@ namespace Macie2
 {
 namespace Model
 {
-  class AWS_MACIE2_API GetBucketStatisticsResult
+  class GetBucketStatisticsResult
   {
   public:
-    GetBucketStatisticsResult();
-    GetBucketStatisticsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetBucketStatisticsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MACIE2_API GetBucketStatisticsResult();
+    AWS_MACIE2_API GetBucketStatisticsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MACIE2_API GetBucketStatisticsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

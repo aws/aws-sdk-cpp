@@ -33,10 +33,10 @@ namespace Model
 
   /**
    */
-  class AWS_ELASTICSEARCHSERVICE_API CreateElasticsearchDomainRequest : public ElasticsearchServiceRequest
+  class CreateElasticsearchDomainRequest : public ElasticsearchServiceRequest
   {
   public:
-    CreateElasticsearchDomainRequest();
+    AWS_ELASTICSEARCHSERVICE_API CreateElasticsearchDomainRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,7 +44,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateElasticsearchDomain"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_ELASTICSEARCHSERVICE_API Aws::String SerializePayload() const override;
 
 
     /**

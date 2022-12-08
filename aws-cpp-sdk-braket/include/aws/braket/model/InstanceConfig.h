@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/braket-2019-09-01/InstanceConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_BRAKET_API InstanceConfig
+  class InstanceConfig
   {
   public:
-    InstanceConfig();
-    InstanceConfig(Aws::Utils::Json::JsonView jsonValue);
-    InstanceConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BRAKET_API InstanceConfig();
+    AWS_BRAKET_API InstanceConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BRAKET_API InstanceConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BRAKET_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

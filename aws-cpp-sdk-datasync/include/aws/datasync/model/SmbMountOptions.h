@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/SmbMountOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_DATASYNC_API SmbMountOptions
+  class SmbMountOptions
   {
   public:
-    SmbMountOptions();
-    SmbMountOptions(Aws::Utils::Json::JsonView jsonValue);
-    SmbMountOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DATASYNC_API SmbMountOptions();
+    AWS_DATASYNC_API SmbMountOptions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATASYNC_API SmbMountOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATASYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

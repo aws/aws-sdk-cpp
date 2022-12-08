@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ContactData">AWS
    * API Reference</a></p>
    */
-  class AWS_ALEXAFORBUSINESS_API ContactData
+  class ContactData
   {
   public:
-    ContactData();
-    ContactData(Aws::Utils::Json::JsonView jsonValue);
-    ContactData& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ALEXAFORBUSINESS_API ContactData();
+    AWS_ALEXAFORBUSINESS_API ContactData(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ALEXAFORBUSINESS_API ContactData& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ALEXAFORBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/Condition">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELSV2_API Condition
+  class Condition
   {
   public:
-    Condition();
-    Condition(Aws::Utils::Json::JsonView jsonValue);
-    Condition& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELSV2_API Condition();
+    AWS_LEXMODELSV2_API Condition(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API Condition& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

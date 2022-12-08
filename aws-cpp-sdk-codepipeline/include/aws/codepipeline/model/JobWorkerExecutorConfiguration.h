@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/JobWorkerExecutorConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEPIPELINE_API JobWorkerExecutorConfiguration
+  class JobWorkerExecutorConfiguration
   {
   public:
-    JobWorkerExecutorConfiguration();
-    JobWorkerExecutorConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    JobWorkerExecutorConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEPIPELINE_API JobWorkerExecutorConfiguration();
+    AWS_CODEPIPELINE_API JobWorkerExecutorConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEPIPELINE_API JobWorkerExecutorConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

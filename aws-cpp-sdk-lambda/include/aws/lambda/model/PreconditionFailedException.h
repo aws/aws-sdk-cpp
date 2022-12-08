@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PreconditionFailedException">AWS
    * API Reference</a></p>
    */
-  class AWS_LAMBDA_API PreconditionFailedException
+  class PreconditionFailedException
   {
   public:
-    PreconditionFailedException();
-    PreconditionFailedException(Aws::Utils::Json::JsonView jsonValue);
-    PreconditionFailedException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LAMBDA_API PreconditionFailedException();
+    AWS_LAMBDA_API PreconditionFailedException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAMBDA_API PreconditionFailedException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAMBDA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

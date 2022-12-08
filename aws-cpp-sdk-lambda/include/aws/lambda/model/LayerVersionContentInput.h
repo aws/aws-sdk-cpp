@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/LayerVersionContentInput">AWS
    * API Reference</a></p>
    */
-  class AWS_LAMBDA_API LayerVersionContentInput
+  class LayerVersionContentInput
   {
   public:
-    LayerVersionContentInput();
-    LayerVersionContentInput(Aws::Utils::Json::JsonView jsonValue);
-    LayerVersionContentInput& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LAMBDA_API LayerVersionContentInput();
+    AWS_LAMBDA_API LayerVersionContentInput(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAMBDA_API LayerVersionContentInput& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAMBDA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/MultiplexProgramPacketIdentifiersMap">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API MultiplexProgramPacketIdentifiersMap
+  class MultiplexProgramPacketIdentifiersMap
   {
   public:
-    MultiplexProgramPacketIdentifiersMap();
-    MultiplexProgramPacketIdentifiersMap(Aws::Utils::Json::JsonView jsonValue);
-    MultiplexProgramPacketIdentifiersMap& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API MultiplexProgramPacketIdentifiersMap();
+    AWS_MEDIALIVE_API MultiplexProgramPacketIdentifiersMap(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API MultiplexProgramPacketIdentifiersMap& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

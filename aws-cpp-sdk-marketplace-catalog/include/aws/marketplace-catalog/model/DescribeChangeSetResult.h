@@ -28,12 +28,12 @@ namespace MarketplaceCatalog
 {
 namespace Model
 {
-  class AWS_MARKETPLACECATALOG_API DescribeChangeSetResult
+  class DescribeChangeSetResult
   {
   public:
-    DescribeChangeSetResult();
-    DescribeChangeSetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeChangeSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MARKETPLACECATALOG_API DescribeChangeSetResult();
+    AWS_MARKETPLACECATALOG_API DescribeChangeSetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MARKETPLACECATALOG_API DescribeChangeSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

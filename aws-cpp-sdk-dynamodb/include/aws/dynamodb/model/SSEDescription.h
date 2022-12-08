@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/SSEDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_DYNAMODB_API SSEDescription
+  class SSEDescription
   {
   public:
-    SSEDescription();
-    SSEDescription(Aws::Utils::Json::JsonView jsonValue);
-    SSEDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DYNAMODB_API SSEDescription();
+    AWS_DYNAMODB_API SSEDescription(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API SSEDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

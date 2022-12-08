@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ModelDashboardEndpoint">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API ModelDashboardEndpoint
+  class ModelDashboardEndpoint
   {
   public:
-    ModelDashboardEndpoint();
-    ModelDashboardEndpoint(Aws::Utils::Json::JsonView jsonValue);
-    ModelDashboardEndpoint& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API ModelDashboardEndpoint();
+    AWS_SAGEMAKER_API ModelDashboardEndpoint(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API ModelDashboardEndpoint& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

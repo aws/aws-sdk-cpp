@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/OEMEphemeris">AWS
    * API Reference</a></p>
    */
-  class AWS_GROUNDSTATION_API OEMEphemeris
+  class OEMEphemeris
   {
   public:
-    OEMEphemeris();
-    OEMEphemeris(Aws::Utils::Json::JsonView jsonValue);
-    OEMEphemeris& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GROUNDSTATION_API OEMEphemeris();
+    AWS_GROUNDSTATION_API OEMEphemeris(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GROUNDSTATION_API OEMEphemeris& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GROUNDSTATION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

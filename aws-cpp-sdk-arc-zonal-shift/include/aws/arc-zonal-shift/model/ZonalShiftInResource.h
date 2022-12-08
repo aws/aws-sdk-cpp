@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/arc-zonal-shift-2022-10-30/ZonalShiftInResource">AWS
    * API Reference</a></p>
    */
-  class AWS_ARCZONALSHIFT_API ZonalShiftInResource
+  class ZonalShiftInResource
   {
   public:
-    ZonalShiftInResource();
-    ZonalShiftInResource(Aws::Utils::Json::JsonView jsonValue);
-    ZonalShiftInResource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ARCZONALSHIFT_API ZonalShiftInResource();
+    AWS_ARCZONALSHIFT_API ZonalShiftInResource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ARCZONALSHIFT_API ZonalShiftInResource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ARCZONALSHIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

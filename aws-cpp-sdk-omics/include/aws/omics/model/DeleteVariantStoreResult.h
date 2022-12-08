@@ -24,12 +24,12 @@ namespace Omics
 {
 namespace Model
 {
-  class AWS_OMICS_API DeleteVariantStoreResult
+  class DeleteVariantStoreResult
   {
   public:
-    DeleteVariantStoreResult();
-    DeleteVariantStoreResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteVariantStoreResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OMICS_API DeleteVariantStoreResult();
+    AWS_OMICS_API DeleteVariantStoreResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OMICS_API DeleteVariantStoreResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/DedicatedIp">AWS
    * API Reference</a></p>
    */
-  class AWS_SESV2_API DedicatedIp
+  class DedicatedIp
   {
   public:
-    DedicatedIp();
-    DedicatedIp(Aws::Utils::Json::JsonView jsonValue);
-    DedicatedIp& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SESV2_API DedicatedIp();
+    AWS_SESV2_API DedicatedIp(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SESV2_API DedicatedIp& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SESV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -24,12 +24,12 @@ namespace Athena
 {
 namespace Model
 {
-  class AWS_ATHENA_API CreatePresignedNotebookUrlResult
+  class CreatePresignedNotebookUrlResult
   {
   public:
-    CreatePresignedNotebookUrlResult();
-    CreatePresignedNotebookUrlResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreatePresignedNotebookUrlResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ATHENA_API CreatePresignedNotebookUrlResult();
+    AWS_ATHENA_API CreatePresignedNotebookUrlResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ATHENA_API CreatePresignedNotebookUrlResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

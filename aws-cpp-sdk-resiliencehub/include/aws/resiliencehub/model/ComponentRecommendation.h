@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ComponentRecommendation">AWS
    * API Reference</a></p>
    */
-  class AWS_RESILIENCEHUB_API ComponentRecommendation
+  class ComponentRecommendation
   {
   public:
-    ComponentRecommendation();
-    ComponentRecommendation(Aws::Utils::Json::JsonView jsonValue);
-    ComponentRecommendation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_RESILIENCEHUB_API ComponentRecommendation();
+    AWS_RESILIENCEHUB_API ComponentRecommendation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RESILIENCEHUB_API ComponentRecommendation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RESILIENCEHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

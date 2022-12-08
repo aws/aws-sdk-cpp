@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/StillWaitingResponseSpecification">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELSV2_API StillWaitingResponseSpecification
+  class StillWaitingResponseSpecification
   {
   public:
-    StillWaitingResponseSpecification();
-    StillWaitingResponseSpecification(Aws::Utils::Json::JsonView jsonValue);
-    StillWaitingResponseSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELSV2_API StillWaitingResponseSpecification();
+    AWS_LEXMODELSV2_API StillWaitingResponseSpecification(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API StillWaitingResponseSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

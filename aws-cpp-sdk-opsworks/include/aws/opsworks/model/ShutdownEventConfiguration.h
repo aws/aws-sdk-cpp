@@ -26,13 +26,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/ShutdownEventConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_OPSWORKS_API ShutdownEventConfiguration
+  class ShutdownEventConfiguration
   {
   public:
-    ShutdownEventConfiguration();
-    ShutdownEventConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    ShutdownEventConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OPSWORKS_API ShutdownEventConfiguration();
+    AWS_OPSWORKS_API ShutdownEventConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPSWORKS_API ShutdownEventConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPSWORKS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

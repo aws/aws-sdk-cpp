@@ -25,12 +25,12 @@ namespace EC2
 {
 namespace Model
 {
-  class AWS_EC2_API DisableTransitGatewayRouteTablePropagationResponse
+  class DisableTransitGatewayRouteTablePropagationResponse
   {
   public:
-    DisableTransitGatewayRouteTablePropagationResponse();
-    DisableTransitGatewayRouteTablePropagationResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DisableTransitGatewayRouteTablePropagationResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API DisableTransitGatewayRouteTablePropagationResponse();
+    AWS_EC2_API DisableTransitGatewayRouteTablePropagationResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API DisableTransitGatewayRouteTablePropagationResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

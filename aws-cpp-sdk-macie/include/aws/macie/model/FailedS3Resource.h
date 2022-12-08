@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie-2017-12-19/FailedS3Resource">AWS
    * API Reference</a></p>
    */
-  class AWS_MACIE_API FailedS3Resource
+  class FailedS3Resource
   {
   public:
-    FailedS3Resource();
-    FailedS3Resource(Aws::Utils::Json::JsonView jsonValue);
-    FailedS3Resource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MACIE_API FailedS3Resource();
+    AWS_MACIE_API FailedS3Resource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE_API FailedS3Resource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

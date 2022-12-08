@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/ReservationPurchaseRecommendationMetadata">AWS
    * API Reference</a></p>
    */
-  class AWS_COSTEXPLORER_API ReservationPurchaseRecommendationMetadata
+  class ReservationPurchaseRecommendationMetadata
   {
   public:
-    ReservationPurchaseRecommendationMetadata();
-    ReservationPurchaseRecommendationMetadata(Aws::Utils::Json::JsonView jsonValue);
-    ReservationPurchaseRecommendationMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COSTEXPLORER_API ReservationPurchaseRecommendationMetadata();
+    AWS_COSTEXPLORER_API ReservationPurchaseRecommendationMetadata(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API ReservationPurchaseRecommendationMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

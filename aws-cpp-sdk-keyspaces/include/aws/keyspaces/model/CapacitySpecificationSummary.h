@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/keyspaces-2022-02-10/CapacitySpecificationSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_KEYSPACES_API CapacitySpecificationSummary
+  class CapacitySpecificationSummary
   {
   public:
-    CapacitySpecificationSummary();
-    CapacitySpecificationSummary(Aws::Utils::Json::JsonView jsonValue);
-    CapacitySpecificationSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KEYSPACES_API CapacitySpecificationSummary();
+    AWS_KEYSPACES_API CapacitySpecificationSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KEYSPACES_API CapacitySpecificationSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KEYSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

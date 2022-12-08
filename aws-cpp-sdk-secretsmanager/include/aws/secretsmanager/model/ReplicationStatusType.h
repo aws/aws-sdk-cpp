@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/ReplicationStatusType">AWS
    * API Reference</a></p>
    */
-  class AWS_SECRETSMANAGER_API ReplicationStatusType
+  class ReplicationStatusType
   {
   public:
-    ReplicationStatusType();
-    ReplicationStatusType(Aws::Utils::Json::JsonView jsonValue);
-    ReplicationStatusType& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECRETSMANAGER_API ReplicationStatusType();
+    AWS_SECRETSMANAGER_API ReplicationStatusType(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECRETSMANAGER_API ReplicationStatusType& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECRETSMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

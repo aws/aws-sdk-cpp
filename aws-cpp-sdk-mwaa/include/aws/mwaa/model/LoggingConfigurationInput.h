@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mwaa-2020-07-01/LoggingConfigurationInput">AWS
    * API Reference</a></p>
    */
-  class AWS_MWAA_API LoggingConfigurationInput
+  class LoggingConfigurationInput
   {
   public:
-    LoggingConfigurationInput();
-    LoggingConfigurationInput(Aws::Utils::Json::JsonView jsonValue);
-    LoggingConfigurationInput& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MWAA_API LoggingConfigurationInput();
+    AWS_MWAA_API LoggingConfigurationInput(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MWAA_API LoggingConfigurationInput& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MWAA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

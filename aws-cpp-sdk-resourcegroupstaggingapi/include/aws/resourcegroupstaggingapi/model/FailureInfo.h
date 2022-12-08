@@ -51,13 +51,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/resourcegroupstaggingapi-2017-01-26/FailureInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_RESOURCEGROUPSTAGGINGAPI_API FailureInfo
+  class FailureInfo
   {
   public:
-    FailureInfo();
-    FailureInfo(Aws::Utils::Json::JsonView jsonValue);
-    FailureInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_RESOURCEGROUPSTAGGINGAPI_API FailureInfo();
+    AWS_RESOURCEGROUPSTAGGINGAPI_API FailureInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RESOURCEGROUPSTAGGINGAPI_API FailureInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RESOURCEGROUPSTAGGINGAPI_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

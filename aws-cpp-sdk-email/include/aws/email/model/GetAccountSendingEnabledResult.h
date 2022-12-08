@@ -30,12 +30,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/GetAccountSendingEnabledResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_SES_API GetAccountSendingEnabledResult
+  class GetAccountSendingEnabledResult
   {
   public:
-    GetAccountSendingEnabledResult();
-    GetAccountSendingEnabledResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    GetAccountSendingEnabledResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_SES_API GetAccountSendingEnabledResult();
+    AWS_SES_API GetAccountSendingEnabledResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_SES_API GetAccountSendingEnabledResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

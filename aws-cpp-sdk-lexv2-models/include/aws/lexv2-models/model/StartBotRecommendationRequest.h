@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_LEXMODELSV2_API StartBotRecommendationRequest : public LexModelsV2Request
+  class StartBotRecommendationRequest : public LexModelsV2Request
   {
   public:
-    StartBotRecommendationRequest();
+    AWS_LEXMODELSV2_API StartBotRecommendationRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,7 +31,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "StartBotRecommendation"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_LEXMODELSV2_API Aws::String SerializePayload() const override;
 
 
     /**

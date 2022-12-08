@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/MaintenanceSchedule">AWS
    * API Reference</a></p>
    */
-  class AWS_MAINFRAMEMODERNIZATION_API MaintenanceSchedule
+  class MaintenanceSchedule
   {
   public:
-    MaintenanceSchedule();
-    MaintenanceSchedule(Aws::Utils::Json::JsonView jsonValue);
-    MaintenanceSchedule& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MAINFRAMEMODERNIZATION_API MaintenanceSchedule();
+    AWS_MAINFRAMEMODERNIZATION_API MaintenanceSchedule(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MAINFRAMEMODERNIZATION_API MaintenanceSchedule& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MAINFRAMEMODERNIZATION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

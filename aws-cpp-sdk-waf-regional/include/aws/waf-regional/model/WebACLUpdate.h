@@ -38,13 +38,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/WebACLUpdate">AWS
    * API Reference</a></p>
    */
-  class AWS_WAFREGIONAL_API WebACLUpdate
+  class WebACLUpdate
   {
   public:
-    WebACLUpdate();
-    WebACLUpdate(Aws::Utils::Json::JsonView jsonValue);
-    WebACLUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WAFREGIONAL_API WebACLUpdate();
+    AWS_WAFREGIONAL_API WebACLUpdate(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFREGIONAL_API WebACLUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFREGIONAL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

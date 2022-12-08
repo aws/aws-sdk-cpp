@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/MemberAccountStatus">AWS
    * API Reference</a></p>
    */
-  class AWS_CONFIGSERVICE_API MemberAccountStatus
+  class MemberAccountStatus
   {
   public:
-    MemberAccountStatus();
-    MemberAccountStatus(Aws::Utils::Json::JsonView jsonValue);
-    MemberAccountStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONFIGSERVICE_API MemberAccountStatus();
+    AWS_CONFIGSERVICE_API MemberAccountStatus(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API MemberAccountStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

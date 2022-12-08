@@ -26,12 +26,12 @@ namespace Proton
 {
 namespace Model
 {
-  class AWS_PROTON_API ListServiceInstanceProvisionedResourcesResult
+  class ListServiceInstanceProvisionedResourcesResult
   {
   public:
-    ListServiceInstanceProvisionedResourcesResult();
-    ListServiceInstanceProvisionedResourcesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListServiceInstanceProvisionedResourcesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PROTON_API ListServiceInstanceProvisionedResourcesResult();
+    AWS_PROTON_API ListServiceInstanceProvisionedResourcesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PROTON_API ListServiceInstanceProvisionedResourcesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

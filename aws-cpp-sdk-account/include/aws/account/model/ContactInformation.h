@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/ContactInformation">AWS
    * API Reference</a></p>
    */
-  class AWS_ACCOUNT_API ContactInformation
+  class ContactInformation
   {
   public:
-    ContactInformation();
-    ContactInformation(Aws::Utils::Json::JsonView jsonValue);
-    ContactInformation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ACCOUNT_API ContactInformation();
+    AWS_ACCOUNT_API ContactInformation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACCOUNT_API ContactInformation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACCOUNT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

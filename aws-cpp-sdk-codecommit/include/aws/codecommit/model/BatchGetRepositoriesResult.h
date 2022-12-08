@@ -32,12 +32,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/BatchGetRepositoriesOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_CODECOMMIT_API BatchGetRepositoriesResult
+  class BatchGetRepositoriesResult
   {
   public:
-    BatchGetRepositoriesResult();
-    BatchGetRepositoriesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    BatchGetRepositoriesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODECOMMIT_API BatchGetRepositoriesResult();
+    AWS_CODECOMMIT_API BatchGetRepositoriesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODECOMMIT_API BatchGetRepositoriesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

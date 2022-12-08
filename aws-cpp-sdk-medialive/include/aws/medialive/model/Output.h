@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/Output">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API Output
+  class Output
   {
   public:
-    Output();
-    Output(Aws::Utils::Json::JsonView jsonValue);
-    Output& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API Output();
+    AWS_MEDIALIVE_API Output(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Output& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -32,12 +32,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/VpcLinks">AWS
    * API Reference</a></p>
    */
-  class AWS_APIGATEWAY_API GetVpcLinksResult
+  class GetVpcLinksResult
   {
   public:
-    GetVpcLinksResult();
-    GetVpcLinksResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetVpcLinksResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APIGATEWAY_API GetVpcLinksResult();
+    AWS_APIGATEWAY_API GetVpcLinksResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APIGATEWAY_API GetVpcLinksResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     

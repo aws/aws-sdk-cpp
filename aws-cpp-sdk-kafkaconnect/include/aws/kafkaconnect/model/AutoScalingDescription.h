@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/AutoScalingDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_KAFKACONNECT_API AutoScalingDescription
+  class AutoScalingDescription
   {
   public:
-    AutoScalingDescription();
-    AutoScalingDescription(Aws::Utils::Json::JsonView jsonValue);
-    AutoScalingDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KAFKACONNECT_API AutoScalingDescription();
+    AWS_KAFKACONNECT_API AutoScalingDescription(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKACONNECT_API AutoScalingDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKACONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

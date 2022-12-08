@@ -25,12 +25,12 @@ namespace Connect
 {
 namespace Model
 {
-  class AWS_CONNECT_API GetContactAttributesResult
+  class GetContactAttributesResult
   {
   public:
-    GetContactAttributesResult();
-    GetContactAttributesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetContactAttributesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CONNECT_API GetContactAttributesResult();
+    AWS_CONNECT_API GetContactAttributesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CONNECT_API GetContactAttributesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

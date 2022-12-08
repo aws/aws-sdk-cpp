@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/LifeCycleLastCutoverInitiated">AWS
    * API Reference</a></p>
    */
-  class AWS_MGN_API LifeCycleLastCutoverInitiated
+  class LifeCycleLastCutoverInitiated
   {
   public:
-    LifeCycleLastCutoverInitiated();
-    LifeCycleLastCutoverInitiated(Aws::Utils::Json::JsonView jsonValue);
-    LifeCycleLastCutoverInitiated& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MGN_API LifeCycleLastCutoverInitiated();
+    AWS_MGN_API LifeCycleLastCutoverInitiated(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MGN_API LifeCycleLastCutoverInitiated& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MGN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

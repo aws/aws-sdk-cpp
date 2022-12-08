@@ -22,12 +22,12 @@ namespace ServiceCatalog
 {
 namespace Model
 {
-  class AWS_SERVICECATALOG_API DisassociatePrincipalFromPortfolioResult
+  class DisassociatePrincipalFromPortfolioResult
   {
   public:
-    DisassociatePrincipalFromPortfolioResult();
-    DisassociatePrincipalFromPortfolioResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DisassociatePrincipalFromPortfolioResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SERVICECATALOG_API DisassociatePrincipalFromPortfolioResult();
+    AWS_SERVICECATALOG_API DisassociatePrincipalFromPortfolioResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SERVICECATALOG_API DisassociatePrincipalFromPortfolioResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

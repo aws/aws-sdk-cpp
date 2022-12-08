@@ -25,12 +25,12 @@ namespace WAFV2
 {
 namespace Model
 {
-  class AWS_WAFV2_API GetManagedRuleSetResult
+  class GetManagedRuleSetResult
   {
   public:
-    GetManagedRuleSetResult();
-    GetManagedRuleSetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetManagedRuleSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WAFV2_API GetManagedRuleSetResult();
+    AWS_WAFV2_API GetManagedRuleSetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WAFV2_API GetManagedRuleSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

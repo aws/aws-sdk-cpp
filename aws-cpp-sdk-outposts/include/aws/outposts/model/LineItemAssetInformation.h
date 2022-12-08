@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/LineItemAssetInformation">AWS
    * API Reference</a></p>
    */
-  class AWS_OUTPOSTS_API LineItemAssetInformation
+  class LineItemAssetInformation
   {
   public:
-    LineItemAssetInformation();
-    LineItemAssetInformation(Aws::Utils::Json::JsonView jsonValue);
-    LineItemAssetInformation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OUTPOSTS_API LineItemAssetInformation();
+    AWS_OUTPOSTS_API LineItemAssetInformation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OUTPOSTS_API LineItemAssetInformation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OUTPOSTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -30,12 +30,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/GetDashboardEmbedUrlResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API GetDashboardEmbedUrlResult
+  class GetDashboardEmbedUrlResult
   {
   public:
-    GetDashboardEmbedUrlResult();
-    GetDashboardEmbedUrlResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetDashboardEmbedUrlResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_QUICKSIGHT_API GetDashboardEmbedUrlResult();
+    AWS_QUICKSIGHT_API GetDashboardEmbedUrlResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_QUICKSIGHT_API GetDashboardEmbedUrlResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

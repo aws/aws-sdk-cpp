@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/ApiStage">AWS
    * API Reference</a></p>
    */
-  class AWS_APIGATEWAY_API ApiStage
+  class ApiStage
   {
   public:
-    ApiStage();
-    ApiStage(Aws::Utils::Json::JsonView jsonValue);
-    ApiStage& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APIGATEWAY_API ApiStage();
+    AWS_APIGATEWAY_API ApiStage(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APIGATEWAY_API ApiStage& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APIGATEWAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

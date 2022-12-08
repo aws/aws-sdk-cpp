@@ -30,15 +30,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/LaunchTemplateOverrides">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API LaunchTemplateOverrides
+  class LaunchTemplateOverrides
   {
   public:
-    LaunchTemplateOverrides();
-    LaunchTemplateOverrides(const Aws::Utils::Xml::XmlNode& xmlNode);
-    LaunchTemplateOverrides& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API LaunchTemplateOverrides();
+    AWS_EC2_API LaunchTemplateOverrides(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API LaunchTemplateOverrides& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**

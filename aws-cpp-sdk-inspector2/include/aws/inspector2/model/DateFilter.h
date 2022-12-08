@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/DateFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_INSPECTOR2_API DateFilter
+  class DateFilter
   {
   public:
-    DateFilter();
-    DateFilter(Aws::Utils::Json::JsonView jsonValue);
-    DateFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_INSPECTOR2_API DateFilter();
+    AWS_INSPECTOR2_API DateFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR2_API DateFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

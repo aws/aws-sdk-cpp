@@ -26,13 +26,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/VcfOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_OMICS_API VcfOptions
+  class VcfOptions
   {
   public:
-    VcfOptions();
-    VcfOptions(Aws::Utils::Json::JsonView jsonValue);
-    VcfOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OMICS_API VcfOptions();
+    AWS_OMICS_API VcfOptions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OMICS_API VcfOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OMICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/Endpoint">AWS API
    * Reference</a></p>
    */
-  class AWS_DAX_API Endpoint
+  class Endpoint
   {
   public:
-    Endpoint();
-    Endpoint(Aws::Utils::Json::JsonView jsonValue);
-    Endpoint& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DAX_API Endpoint();
+    AWS_DAX_API Endpoint(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DAX_API Endpoint& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DAX_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

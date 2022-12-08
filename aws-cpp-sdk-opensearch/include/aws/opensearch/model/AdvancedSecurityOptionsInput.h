@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/AdvancedSecurityOptionsInput">AWS
    * API Reference</a></p>
    */
-  class AWS_OPENSEARCHSERVICE_API AdvancedSecurityOptionsInput
+  class AdvancedSecurityOptionsInput
   {
   public:
-    AdvancedSecurityOptionsInput();
-    AdvancedSecurityOptionsInput(Aws::Utils::Json::JsonView jsonValue);
-    AdvancedSecurityOptionsInput& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OPENSEARCHSERVICE_API AdvancedSecurityOptionsInput();
+    AWS_OPENSEARCHSERVICE_API AdvancedSecurityOptionsInput(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPENSEARCHSERVICE_API AdvancedSecurityOptionsInput& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPENSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

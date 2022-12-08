@@ -22,12 +22,12 @@ namespace KMS
 {
 namespace Model
 {
-  class AWS_KMS_API GetKeyRotationStatusResult
+  class GetKeyRotationStatusResult
   {
   public:
-    GetKeyRotationStatusResult();
-    GetKeyRotationStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetKeyRotationStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KMS_API GetKeyRotationStatusResult();
+    AWS_KMS_API GetKeyRotationStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KMS_API GetKeyRotationStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

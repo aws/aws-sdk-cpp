@@ -38,13 +38,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsOpenSearchServiceDomainDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsOpenSearchServiceDomainDetails
+  class AwsOpenSearchServiceDomainDetails
   {
   public:
-    AwsOpenSearchServiceDomainDetails();
-    AwsOpenSearchServiceDomainDetails(Aws::Utils::Json::JsonView jsonValue);
-    AwsOpenSearchServiceDomainDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsOpenSearchServiceDomainDetails();
+    AWS_SECURITYHUB_API AwsOpenSearchServiceDomainDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsOpenSearchServiceDomainDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

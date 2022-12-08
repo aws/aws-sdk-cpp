@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/ConfigurationSetInformation">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINTSMSVOICEV2_API ConfigurationSetInformation
+  class ConfigurationSetInformation
   {
   public:
-    ConfigurationSetInformation();
-    ConfigurationSetInformation(Aws::Utils::Json::JsonView jsonValue);
-    ConfigurationSetInformation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINTSMSVOICEV2_API ConfigurationSetInformation();
+    AWS_PINPOINTSMSVOICEV2_API ConfigurationSetInformation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINTSMSVOICEV2_API ConfigurationSetInformation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINTSMSVOICEV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

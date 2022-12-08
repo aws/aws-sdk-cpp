@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/AdditionalSearchKey">AWS
    * API Reference</a></p>
    */
-  class AWS_CUSTOMERPROFILES_API AdditionalSearchKey
+  class AdditionalSearchKey
   {
   public:
-    AdditionalSearchKey();
-    AdditionalSearchKey(Aws::Utils::Json::JsonView jsonValue);
-    AdditionalSearchKey& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CUSTOMERPROFILES_API AdditionalSearchKey();
+    AWS_CUSTOMERPROFILES_API AdditionalSearchKey(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CUSTOMERPROFILES_API AdditionalSearchKey& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CUSTOMERPROFILES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

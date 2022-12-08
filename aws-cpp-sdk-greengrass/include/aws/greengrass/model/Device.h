@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/Device">AWS
    * API Reference</a></p>
    */
-  class AWS_GREENGRASS_API Device
+  class Device
   {
   public:
-    Device();
-    Device(Aws::Utils::Json::JsonView jsonValue);
-    Device& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GREENGRASS_API Device();
+    AWS_GREENGRASS_API Device(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASS_API Device& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

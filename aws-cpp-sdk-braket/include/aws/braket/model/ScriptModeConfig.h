@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/braket-2019-09-01/ScriptModeConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_BRAKET_API ScriptModeConfig
+  class ScriptModeConfig
   {
   public:
-    ScriptModeConfig();
-    ScriptModeConfig(Aws::Utils::Json::JsonView jsonValue);
-    ScriptModeConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BRAKET_API ScriptModeConfig();
+    AWS_BRAKET_API ScriptModeConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BRAKET_API ScriptModeConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BRAKET_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/TransformInput">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API TransformInput
+  class TransformInput
   {
   public:
-    TransformInput();
-    TransformInput(Aws::Utils::Json::JsonView jsonValue);
-    TransformInput& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API TransformInput();
+    AWS_SAGEMAKER_API TransformInput(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API TransformInput& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

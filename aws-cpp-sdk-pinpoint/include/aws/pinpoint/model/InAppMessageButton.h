@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/InAppMessageButton">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API InAppMessageButton
+  class InAppMessageButton
   {
   public:
-    InAppMessageButton();
-    InAppMessageButton(Aws::Utils::Json::JsonView jsonValue);
-    InAppMessageButton& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API InAppMessageButton();
+    AWS_PINPOINT_API InAppMessageButton(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API InAppMessageButton& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

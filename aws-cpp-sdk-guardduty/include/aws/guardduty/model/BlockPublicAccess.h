@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/BlockPublicAccess">AWS
    * API Reference</a></p>
    */
-  class AWS_GUARDDUTY_API BlockPublicAccess
+  class BlockPublicAccess
   {
   public:
-    BlockPublicAccess();
-    BlockPublicAccess(Aws::Utils::Json::JsonView jsonValue);
-    BlockPublicAccess& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GUARDDUTY_API BlockPublicAccess();
+    AWS_GUARDDUTY_API BlockPublicAccess(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API BlockPublicAccess& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

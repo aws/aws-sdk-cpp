@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/EvaluationModeConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_CONFIGSERVICE_API EvaluationModeConfiguration
+  class EvaluationModeConfiguration
   {
   public:
-    EvaluationModeConfiguration();
-    EvaluationModeConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    EvaluationModeConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONFIGSERVICE_API EvaluationModeConfiguration();
+    AWS_CONFIGSERVICE_API EvaluationModeConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API EvaluationModeConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ivschat-2020-07-14/CloudWatchLogsDestinationConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_IVSCHAT_API CloudWatchLogsDestinationConfiguration
+  class CloudWatchLogsDestinationConfiguration
   {
   public:
-    CloudWatchLogsDestinationConfiguration();
-    CloudWatchLogsDestinationConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    CloudWatchLogsDestinationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IVSCHAT_API CloudWatchLogsDestinationConfiguration();
+    AWS_IVSCHAT_API CloudWatchLogsDestinationConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IVSCHAT_API CloudWatchLogsDestinationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IVSCHAT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

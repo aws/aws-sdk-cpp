@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/AccountState">AWS
    * API Reference</a></p>
    */
-  class AWS_INSPECTOR2_API AccountState
+  class AccountState
   {
   public:
-    AccountState();
-    AccountState(Aws::Utils::Json::JsonView jsonValue);
-    AccountState& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_INSPECTOR2_API AccountState();
+    AWS_INSPECTOR2_API AccountState(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR2_API AccountState& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/PlacementConstraint">AWS
    * API Reference</a></p>
    */
-  class AWS_ECS_API PlacementConstraint
+  class PlacementConstraint
   {
   public:
-    PlacementConstraint();
-    PlacementConstraint(Aws::Utils::Json::JsonView jsonValue);
-    PlacementConstraint& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ECS_API PlacementConstraint();
+    AWS_ECS_API PlacementConstraint(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECS_API PlacementConstraint& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

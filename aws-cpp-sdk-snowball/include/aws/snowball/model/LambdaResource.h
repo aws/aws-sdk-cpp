@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/LambdaResource">AWS
    * API Reference</a></p>
    */
-  class AWS_SNOWBALL_API LambdaResource
+  class LambdaResource
   {
   public:
-    LambdaResource();
-    LambdaResource(Aws::Utils::Json::JsonView jsonValue);
-    LambdaResource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SNOWBALL_API LambdaResource();
+    AWS_SNOWBALL_API LambdaResource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SNOWBALL_API LambdaResource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SNOWBALL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -26,12 +26,12 @@ namespace DirectoryService
 {
 namespace Model
 {
-  class AWS_DIRECTORYSERVICE_API DescribeClientAuthenticationSettingsResult
+  class DescribeClientAuthenticationSettingsResult
   {
   public:
-    DescribeClientAuthenticationSettingsResult();
-    DescribeClientAuthenticationSettingsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeClientAuthenticationSettingsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DIRECTORYSERVICE_API DescribeClientAuthenticationSettingsResult();
+    AWS_DIRECTORYSERVICE_API DescribeClientAuthenticationSettingsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DIRECTORYSERVICE_API DescribeClientAuthenticationSettingsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

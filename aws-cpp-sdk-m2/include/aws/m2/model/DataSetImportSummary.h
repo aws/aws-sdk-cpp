@@ -26,13 +26,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/DataSetImportSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_MAINFRAMEMODERNIZATION_API DataSetImportSummary
+  class DataSetImportSummary
   {
   public:
-    DataSetImportSummary();
-    DataSetImportSummary(Aws::Utils::Json::JsonView jsonValue);
-    DataSetImportSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MAINFRAMEMODERNIZATION_API DataSetImportSummary();
+    AWS_MAINFRAMEMODERNIZATION_API DataSetImportSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MAINFRAMEMODERNIZATION_API DataSetImportSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MAINFRAMEMODERNIZATION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

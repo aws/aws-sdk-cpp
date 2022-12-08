@@ -25,12 +25,12 @@ namespace Neptune
 {
 namespace Model
 {
-  class AWS_NEPTUNE_API AddSourceIdentifierToSubscriptionResult
+  class AddSourceIdentifierToSubscriptionResult
   {
   public:
-    AddSourceIdentifierToSubscriptionResult();
-    AddSourceIdentifierToSubscriptionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    AddSourceIdentifierToSubscriptionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_NEPTUNE_API AddSourceIdentifierToSubscriptionResult();
+    AWS_NEPTUNE_API AddSourceIdentifierToSubscriptionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_NEPTUNE_API AddSourceIdentifierToSubscriptionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     

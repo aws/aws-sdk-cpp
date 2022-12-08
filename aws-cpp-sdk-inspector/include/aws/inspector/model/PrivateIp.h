@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/PrivateIp">AWS
    * API Reference</a></p>
    */
-  class AWS_INSPECTOR_API PrivateIp
+  class PrivateIp
   {
   public:
-    PrivateIp();
-    PrivateIp(Aws::Utils::Json::JsonView jsonValue);
-    PrivateIp& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_INSPECTOR_API PrivateIp();
+    AWS_INSPECTOR_API PrivateIp(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR_API PrivateIp& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

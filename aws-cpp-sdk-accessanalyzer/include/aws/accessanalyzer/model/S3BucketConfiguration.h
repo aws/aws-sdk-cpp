@@ -45,13 +45,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/S3BucketConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_ACCESSANALYZER_API S3BucketConfiguration
+  class S3BucketConfiguration
   {
   public:
-    S3BucketConfiguration();
-    S3BucketConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    S3BucketConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ACCESSANALYZER_API S3BucketConfiguration();
+    AWS_ACCESSANALYZER_API S3BucketConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACCESSANALYZER_API S3BucketConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACCESSANALYZER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

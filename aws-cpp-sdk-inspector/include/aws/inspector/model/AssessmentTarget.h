@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/AssessmentTarget">AWS
    * API Reference</a></p>
    */
-  class AWS_INSPECTOR_API AssessmentTarget
+  class AssessmentTarget
   {
   public:
-    AssessmentTarget();
-    AssessmentTarget(Aws::Utils::Json::JsonView jsonValue);
-    AssessmentTarget& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_INSPECTOR_API AssessmentTarget();
+    AWS_INSPECTOR_API AssessmentTarget(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR_API AssessmentTarget& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -26,12 +26,12 @@ namespace KinesisVideoArchivedMedia
 {
 namespace Model
 {
-  class AWS_KINESISVIDEOARCHIVEDMEDIA_API ListFragmentsResult
+  class ListFragmentsResult
   {
   public:
-    ListFragmentsResult();
-    ListFragmentsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListFragmentsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KINESISVIDEOARCHIVEDMEDIA_API ListFragmentsResult();
+    AWS_KINESISVIDEOARCHIVEDMEDIA_API ListFragmentsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KINESISVIDEOARCHIVEDMEDIA_API ListFragmentsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-edge-2020-09-23/Model">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKEREDGEMANAGER_API Model
+  class Model
   {
   public:
-    Model();
-    Model(Aws::Utils::Json::JsonView jsonValue);
-    Model& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKEREDGEMANAGER_API Model();
+    AWS_SAGEMAKEREDGEMANAGER_API Model(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKEREDGEMANAGER_API Model& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKEREDGEMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

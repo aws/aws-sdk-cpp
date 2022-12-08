@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/EndpointOutputConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API EndpointOutputConfiguration
+  class EndpointOutputConfiguration
   {
   public:
-    EndpointOutputConfiguration();
-    EndpointOutputConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    EndpointOutputConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API EndpointOutputConfiguration();
+    AWS_SAGEMAKER_API EndpointOutputConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API EndpointOutputConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

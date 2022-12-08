@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ServiceRegistry">AWS
    * API Reference</a></p>
    */
-  class AWS_ECS_API ServiceRegistry
+  class ServiceRegistry
   {
   public:
-    ServiceRegistry();
-    ServiceRegistry(Aws::Utils::Json::JsonView jsonValue);
-    ServiceRegistry& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ECS_API ServiceRegistry();
+    AWS_ECS_API ServiceRegistry(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECS_API ServiceRegistry& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

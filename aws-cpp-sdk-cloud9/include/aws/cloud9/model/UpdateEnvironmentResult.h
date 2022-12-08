@@ -22,12 +22,12 @@ namespace Cloud9
 {
 namespace Model
 {
-  class AWS_CLOUD9_API UpdateEnvironmentResult
+  class UpdateEnvironmentResult
   {
   public:
-    UpdateEnvironmentResult();
-    UpdateEnvironmentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateEnvironmentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CLOUD9_API UpdateEnvironmentResult();
+    AWS_CLOUD9_API UpdateEnvironmentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CLOUD9_API UpdateEnvironmentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

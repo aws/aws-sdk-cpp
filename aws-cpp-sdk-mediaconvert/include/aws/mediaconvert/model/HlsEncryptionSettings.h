@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/HlsEncryptionSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API HlsEncryptionSettings
+  class HlsEncryptionSettings
   {
   public:
-    HlsEncryptionSettings();
-    HlsEncryptionSettings(Aws::Utils::Json::JsonView jsonValue);
-    HlsEncryptionSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API HlsEncryptionSettings();
+    AWS_MEDIACONVERT_API HlsEncryptionSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API HlsEncryptionSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

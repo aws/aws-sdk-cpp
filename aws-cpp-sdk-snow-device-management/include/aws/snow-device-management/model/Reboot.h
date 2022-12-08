@@ -26,13 +26,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/snow-device-management-2021-08-04/Reboot">AWS
    * API Reference</a></p>
    */
-  class AWS_SNOWDEVICEMANAGEMENT_API Reboot
+  class Reboot
   {
   public:
-    Reboot();
-    Reboot(Aws::Utils::Json::JsonView jsonValue);
-    Reboot& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SNOWDEVICEMANAGEMENT_API Reboot();
+    AWS_SNOWDEVICEMANAGEMENT_API Reboot(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SNOWDEVICEMANAGEMENT_API Reboot& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SNOWDEVICEMANAGEMENT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
   };
 

@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/AutoScalingTargetTrackingScalingPolicyConfigurationDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_DYNAMODB_API AutoScalingTargetTrackingScalingPolicyConfigurationDescription
+  class AutoScalingTargetTrackingScalingPolicyConfigurationDescription
   {
   public:
-    AutoScalingTargetTrackingScalingPolicyConfigurationDescription();
-    AutoScalingTargetTrackingScalingPolicyConfigurationDescription(Aws::Utils::Json::JsonView jsonValue);
-    AutoScalingTargetTrackingScalingPolicyConfigurationDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DYNAMODB_API AutoScalingTargetTrackingScalingPolicyConfigurationDescription();
+    AWS_DYNAMODB_API AutoScalingTargetTrackingScalingPolicyConfigurationDescription(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API AutoScalingTargetTrackingScalingPolicyConfigurationDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

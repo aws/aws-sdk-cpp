@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/SourceConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_APPRUNNER_API SourceConfiguration
+  class SourceConfiguration
   {
   public:
-    SourceConfiguration();
-    SourceConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    SourceConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPRUNNER_API SourceConfiguration();
+    AWS_APPRUNNER_API SourceConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPRUNNER_API SourceConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPRUNNER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

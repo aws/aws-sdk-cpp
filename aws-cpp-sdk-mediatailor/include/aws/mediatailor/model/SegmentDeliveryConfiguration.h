@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/SegmentDeliveryConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIATAILOR_API SegmentDeliveryConfiguration
+  class SegmentDeliveryConfiguration
   {
   public:
-    SegmentDeliveryConfiguration();
-    SegmentDeliveryConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    SegmentDeliveryConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIATAILOR_API SegmentDeliveryConfiguration();
+    AWS_MEDIATAILOR_API SegmentDeliveryConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIATAILOR_API SegmentDeliveryConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIATAILOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

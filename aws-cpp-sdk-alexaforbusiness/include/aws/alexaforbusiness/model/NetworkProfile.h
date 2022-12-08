@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/NetworkProfile">AWS
    * API Reference</a></p>
    */
-  class AWS_ALEXAFORBUSINESS_API NetworkProfile
+  class NetworkProfile
   {
   public:
-    NetworkProfile();
-    NetworkProfile(Aws::Utils::Json::JsonView jsonValue);
-    NetworkProfile& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ALEXAFORBUSINESS_API NetworkProfile();
+    AWS_ALEXAFORBUSINESS_API NetworkProfile(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ALEXAFORBUSINESS_API NetworkProfile& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ALEXAFORBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

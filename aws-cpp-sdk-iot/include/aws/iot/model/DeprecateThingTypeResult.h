@@ -28,12 +28,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeprecateThingTypeResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API DeprecateThingTypeResult
+  class DeprecateThingTypeResult
   {
   public:
-    DeprecateThingTypeResult();
-    DeprecateThingTypeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeprecateThingTypeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOT_API DeprecateThingTypeResult();
+    AWS_IOT_API DeprecateThingTypeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOT_API DeprecateThingTypeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

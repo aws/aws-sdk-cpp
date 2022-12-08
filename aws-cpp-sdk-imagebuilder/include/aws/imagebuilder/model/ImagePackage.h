@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ImagePackage">AWS
    * API Reference</a></p>
    */
-  class AWS_IMAGEBUILDER_API ImagePackage
+  class ImagePackage
   {
   public:
-    ImagePackage();
-    ImagePackage(Aws::Utils::Json::JsonView jsonValue);
-    ImagePackage& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IMAGEBUILDER_API ImagePackage();
+    AWS_IMAGEBUILDER_API ImagePackage(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IMAGEBUILDER_API ImagePackage& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IMAGEBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

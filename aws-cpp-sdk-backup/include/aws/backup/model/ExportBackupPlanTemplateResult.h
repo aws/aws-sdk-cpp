@@ -24,12 +24,12 @@ namespace Backup
 {
 namespace Model
 {
-  class AWS_BACKUP_API ExportBackupPlanTemplateResult
+  class ExportBackupPlanTemplateResult
   {
   public:
-    ExportBackupPlanTemplateResult();
-    ExportBackupPlanTemplateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ExportBackupPlanTemplateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_BACKUP_API ExportBackupPlanTemplateResult();
+    AWS_BACKUP_API ExportBackupPlanTemplateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_BACKUP_API ExportBackupPlanTemplateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/scheduler-2021-06-30/PlacementConstraint">AWS
    * API Reference</a></p>
    */
-  class AWS_SCHEDULER_API PlacementConstraint
+  class PlacementConstraint
   {
   public:
-    PlacementConstraint();
-    PlacementConstraint(Aws::Utils::Json::JsonView jsonValue);
-    PlacementConstraint& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SCHEDULER_API PlacementConstraint();
+    AWS_SCHEDULER_API PlacementConstraint(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SCHEDULER_API PlacementConstraint& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SCHEDULER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

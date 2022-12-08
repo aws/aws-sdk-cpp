@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/RenewalSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_ACM_API RenewalSummary
+  class RenewalSummary
   {
   public:
-    RenewalSummary();
-    RenewalSummary(Aws::Utils::Json::JsonView jsonValue);
-    RenewalSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ACM_API RenewalSummary();
+    AWS_ACM_API RenewalSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACM_API RenewalSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

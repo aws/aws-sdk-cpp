@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-vod-2018-11-07/DashPackage">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIAPACKAGEVOD_API DashPackage
+  class DashPackage
   {
   public:
-    DashPackage();
-    DashPackage(Aws::Utils::Json::JsonView jsonValue);
-    DashPackage& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIAPACKAGEVOD_API DashPackage();
+    AWS_MEDIAPACKAGEVOD_API DashPackage(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIAPACKAGEVOD_API DashPackage& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIAPACKAGEVOD_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -30,15 +30,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/EventCategoriesMap">AWS
    * API Reference</a></p>
    */
-  class AWS_DOCDB_API EventCategoriesMap
+  class EventCategoriesMap
   {
   public:
-    EventCategoriesMap();
-    EventCategoriesMap(const Aws::Utils::Xml::XmlNode& xmlNode);
-    EventCategoriesMap& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_DOCDB_API EventCategoriesMap();
+    AWS_DOCDB_API EventCategoriesMap(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_DOCDB_API EventCategoriesMap& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_DOCDB_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_DOCDB_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**

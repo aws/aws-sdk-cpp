@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/LabelingJobSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API LabelingJobSummary
+  class LabelingJobSummary
   {
   public:
-    LabelingJobSummary();
-    LabelingJobSummary(Aws::Utils::Json::JsonView jsonValue);
-    LabelingJobSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API LabelingJobSummary();
+    AWS_SAGEMAKER_API LabelingJobSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API LabelingJobSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

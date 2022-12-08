@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/WebCrawlerConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_KENDRA_API WebCrawlerConfiguration
+  class WebCrawlerConfiguration
   {
   public:
-    WebCrawlerConfiguration();
-    WebCrawlerConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    WebCrawlerConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KENDRA_API WebCrawlerConfiguration();
+    AWS_KENDRA_API WebCrawlerConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API WebCrawlerConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

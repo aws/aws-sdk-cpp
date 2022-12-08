@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ProfilerRuleConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API ProfilerRuleConfiguration
+  class ProfilerRuleConfiguration
   {
   public:
-    ProfilerRuleConfiguration();
-    ProfilerRuleConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    ProfilerRuleConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API ProfilerRuleConfiguration();
+    AWS_SAGEMAKER_API ProfilerRuleConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API ProfilerRuleConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

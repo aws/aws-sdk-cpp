@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/migration-hub-refactor-spaces-2021-10-26/ApiGatewayProxySummary">AWS
    * API Reference</a></p>
    */
-  class AWS_MIGRATIONHUBREFACTORSPACES_API ApiGatewayProxySummary
+  class ApiGatewayProxySummary
   {
   public:
-    ApiGatewayProxySummary();
-    ApiGatewayProxySummary(Aws::Utils::Json::JsonView jsonValue);
-    ApiGatewayProxySummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MIGRATIONHUBREFACTORSPACES_API ApiGatewayProxySummary();
+    AWS_MIGRATIONHUBREFACTORSPACES_API ApiGatewayProxySummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MIGRATIONHUBREFACTORSPACES_API ApiGatewayProxySummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MIGRATIONHUBREFACTORSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

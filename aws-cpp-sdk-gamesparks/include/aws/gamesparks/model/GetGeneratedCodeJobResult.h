@@ -24,12 +24,12 @@ namespace GameSparks
 {
 namespace Model
 {
-  class AWS_GAMESPARKS_API GetGeneratedCodeJobResult
+  class GetGeneratedCodeJobResult
   {
   public:
-    GetGeneratedCodeJobResult();
-    GetGeneratedCodeJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetGeneratedCodeJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GAMESPARKS_API GetGeneratedCodeJobResult();
+    AWS_GAMESPARKS_API GetGeneratedCodeJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GAMESPARKS_API GetGeneratedCodeJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/AgentAlreadyRunningAssessment">AWS
    * API Reference</a></p>
    */
-  class AWS_INSPECTOR_API AgentAlreadyRunningAssessment
+  class AgentAlreadyRunningAssessment
   {
   public:
-    AgentAlreadyRunningAssessment();
-    AgentAlreadyRunningAssessment(Aws::Utils::Json::JsonView jsonValue);
-    AgentAlreadyRunningAssessment& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_INSPECTOR_API AgentAlreadyRunningAssessment();
+    AWS_INSPECTOR_API AgentAlreadyRunningAssessment(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR_API AgentAlreadyRunningAssessment& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

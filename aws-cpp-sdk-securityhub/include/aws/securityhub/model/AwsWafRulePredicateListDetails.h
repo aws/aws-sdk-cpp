@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsWafRulePredicateListDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsWafRulePredicateListDetails
+  class AwsWafRulePredicateListDetails
   {
   public:
-    AwsWafRulePredicateListDetails();
-    AwsWafRulePredicateListDetails(Aws::Utils::Json::JsonView jsonValue);
-    AwsWafRulePredicateListDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsWafRulePredicateListDetails();
+    AWS_SECURITYHUB_API AwsWafRulePredicateListDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsWafRulePredicateListDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

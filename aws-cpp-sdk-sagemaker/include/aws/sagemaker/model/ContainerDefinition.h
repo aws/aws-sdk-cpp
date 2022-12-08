@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ContainerDefinition">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API ContainerDefinition
+  class ContainerDefinition
   {
   public:
-    ContainerDefinition();
-    ContainerDefinition(Aws::Utils::Json::JsonView jsonValue);
-    ContainerDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API ContainerDefinition();
+    AWS_SAGEMAKER_API ContainerDefinition(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API ContainerDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

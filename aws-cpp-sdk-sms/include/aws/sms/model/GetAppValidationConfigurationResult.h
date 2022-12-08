@@ -26,12 +26,12 @@ namespace SMS
 {
 namespace Model
 {
-  class AWS_SMS_API GetAppValidationConfigurationResult
+  class GetAppValidationConfigurationResult
   {
   public:
-    GetAppValidationConfigurationResult();
-    GetAppValidationConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetAppValidationConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SMS_API GetAppValidationConfigurationResult();
+    AWS_SMS_API GetAppValidationConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SMS_API GetAppValidationConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

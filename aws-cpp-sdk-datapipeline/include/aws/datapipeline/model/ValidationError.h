@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/ValidationError">AWS
    * API Reference</a></p>
    */
-  class AWS_DATAPIPELINE_API ValidationError
+  class ValidationError
   {
   public:
-    ValidationError();
-    ValidationError(Aws::Utils::Json::JsonView jsonValue);
-    ValidationError& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DATAPIPELINE_API ValidationError();
+    AWS_DATAPIPELINE_API ValidationError(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATAPIPELINE_API ValidationError& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATAPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

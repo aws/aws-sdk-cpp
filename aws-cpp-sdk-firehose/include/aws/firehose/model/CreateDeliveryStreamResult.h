@@ -24,12 +24,12 @@ namespace Firehose
 {
 namespace Model
 {
-  class AWS_FIREHOSE_API CreateDeliveryStreamResult
+  class CreateDeliveryStreamResult
   {
   public:
-    CreateDeliveryStreamResult();
-    CreateDeliveryStreamResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateDeliveryStreamResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_FIREHOSE_API CreateDeliveryStreamResult();
+    AWS_FIREHOSE_API CreateDeliveryStreamResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_FIREHOSE_API CreateDeliveryStreamResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

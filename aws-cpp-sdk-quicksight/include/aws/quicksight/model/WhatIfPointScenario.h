@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/WhatIfPointScenario">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API WhatIfPointScenario
+  class WhatIfPointScenario
   {
   public:
-    WhatIfPointScenario();
-    WhatIfPointScenario(Aws::Utils::Json::JsonView jsonValue);
-    WhatIfPointScenario& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API WhatIfPointScenario();
+    AWS_QUICKSIGHT_API WhatIfPointScenario(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API WhatIfPointScenario& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

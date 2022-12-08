@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/TitleAggregationResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_INSPECTOR2_API TitleAggregationResponse
+  class TitleAggregationResponse
   {
   public:
-    TitleAggregationResponse();
-    TitleAggregationResponse(Aws::Utils::Json::JsonView jsonValue);
-    TitleAggregationResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_INSPECTOR2_API TitleAggregationResponse();
+    AWS_INSPECTOR2_API TitleAggregationResponse(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR2_API TitleAggregationResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

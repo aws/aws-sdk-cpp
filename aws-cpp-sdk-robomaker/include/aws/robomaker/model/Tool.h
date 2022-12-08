@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/Tool">AWS API
    * Reference</a></p>
    */
-  class AWS_ROBOMAKER_API Tool
+  class Tool
   {
   public:
-    Tool();
-    Tool(Aws::Utils::Json::JsonView jsonValue);
-    Tool& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ROBOMAKER_API Tool();
+    AWS_ROBOMAKER_API Tool(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROBOMAKER_API Tool& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROBOMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

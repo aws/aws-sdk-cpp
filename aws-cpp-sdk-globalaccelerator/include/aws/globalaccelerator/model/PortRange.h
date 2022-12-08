@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/PortRange">AWS
    * API Reference</a></p>
    */
-  class AWS_GLOBALACCELERATOR_API PortRange
+  class PortRange
   {
   public:
-    PortRange();
-    PortRange(Aws::Utils::Json::JsonView jsonValue);
-    PortRange& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLOBALACCELERATOR_API PortRange();
+    AWS_GLOBALACCELERATOR_API PortRange(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLOBALACCELERATOR_API PortRange& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLOBALACCELERATOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

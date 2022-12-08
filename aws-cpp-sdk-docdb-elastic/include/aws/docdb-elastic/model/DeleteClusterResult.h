@@ -24,12 +24,12 @@ namespace DocDBElastic
 {
 namespace Model
 {
-  class AWS_DOCDBELASTIC_API DeleteClusterResult
+  class DeleteClusterResult
   {
   public:
-    DeleteClusterResult();
-    DeleteClusterResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteClusterResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DOCDBELASTIC_API DeleteClusterResult();
+    AWS_DOCDBELASTIC_API DeleteClusterResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DOCDBELASTIC_API DeleteClusterResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

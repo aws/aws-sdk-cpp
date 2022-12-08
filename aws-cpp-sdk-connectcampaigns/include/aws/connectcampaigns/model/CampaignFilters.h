@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/connectcampaigns-2021-01-30/CampaignFilters">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECTCAMPAIGNS_API CampaignFilters
+  class CampaignFilters
   {
   public:
-    CampaignFilters();
-    CampaignFilters(Aws::Utils::Json::JsonView jsonValue);
-    CampaignFilters& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECTCAMPAIGNS_API CampaignFilters();
+    AWS_CONNECTCAMPAIGNS_API CampaignFilters(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTCAMPAIGNS_API CampaignFilters& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTCAMPAIGNS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

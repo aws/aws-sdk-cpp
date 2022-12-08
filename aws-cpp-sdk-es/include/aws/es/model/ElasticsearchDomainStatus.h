@@ -43,13 +43,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/ElasticsearchDomainStatus">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICSEARCHSERVICE_API ElasticsearchDomainStatus
+  class ElasticsearchDomainStatus
   {
   public:
-    ElasticsearchDomainStatus();
-    ElasticsearchDomainStatus(Aws::Utils::Json::JsonView jsonValue);
-    ElasticsearchDomainStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ELASTICSEARCHSERVICE_API ElasticsearchDomainStatus();
+    AWS_ELASTICSEARCHSERVICE_API ElasticsearchDomainStatus(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICSEARCHSERVICE_API ElasticsearchDomainStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

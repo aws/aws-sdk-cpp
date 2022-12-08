@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ParticipatingGateways">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTWIRELESS_API ParticipatingGateways
+  class ParticipatingGateways
   {
   public:
-    ParticipatingGateways();
-    ParticipatingGateways(Aws::Utils::Json::JsonView jsonValue);
-    ParticipatingGateways& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTWIRELESS_API ParticipatingGateways();
+    AWS_IOTWIRELESS_API ParticipatingGateways(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API ParticipatingGateways& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

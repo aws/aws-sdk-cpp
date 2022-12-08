@@ -24,12 +24,12 @@ namespace KMS
 {
 namespace Model
 {
-  class AWS_KMS_API GenerateRandomResult
+  class GenerateRandomResult
   {
   public:
-    GenerateRandomResult();
-    GenerateRandomResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GenerateRandomResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KMS_API GenerateRandomResult();
+    AWS_KMS_API GenerateRandomResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KMS_API GenerateRandomResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

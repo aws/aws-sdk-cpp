@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/AppInstanceAdmin">AWS
    * API Reference</a></p>
    */
-  class AWS_CHIME_API AppInstanceAdmin
+  class AppInstanceAdmin
   {
   public:
-    AppInstanceAdmin();
-    AppInstanceAdmin(Aws::Utils::Json::JsonView jsonValue);
-    AppInstanceAdmin& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIME_API AppInstanceAdmin();
+    AWS_CHIME_API AppInstanceAdmin(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API AppInstanceAdmin& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

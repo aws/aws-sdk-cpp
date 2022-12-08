@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/InternalServerException">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYLAKE_API InternalServerException
+  class InternalServerException
   {
   public:
-    InternalServerException();
-    InternalServerException(Aws::Utils::Json::JsonView jsonValue);
-    InternalServerException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYLAKE_API InternalServerException();
+    AWS_SECURITYLAKE_API InternalServerException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYLAKE_API InternalServerException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYLAKE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/AddOn">AWS API
    * Reference</a></p>
    */
-  class AWS_LIGHTSAIL_API AddOn
+  class AddOn
   {
   public:
-    AddOn();
-    AddOn(Aws::Utils::Json::JsonView jsonValue);
-    AddOn& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LIGHTSAIL_API AddOn();
+    AWS_LIGHTSAIL_API AddOn(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API AddOn& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

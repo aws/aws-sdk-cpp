@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ContinuousBackupsDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_DYNAMODB_API ContinuousBackupsDescription
+  class ContinuousBackupsDescription
   {
   public:
-    ContinuousBackupsDescription();
-    ContinuousBackupsDescription(Aws::Utils::Json::JsonView jsonValue);
-    ContinuousBackupsDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DYNAMODB_API ContinuousBackupsDescription();
+    AWS_DYNAMODB_API ContinuousBackupsDescription(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API ContinuousBackupsDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

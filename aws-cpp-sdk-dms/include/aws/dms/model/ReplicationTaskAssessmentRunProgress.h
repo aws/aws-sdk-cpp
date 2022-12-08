@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ReplicationTaskAssessmentRunProgress">AWS
    * API Reference</a></p>
    */
-  class AWS_DATABASEMIGRATIONSERVICE_API ReplicationTaskAssessmentRunProgress
+  class ReplicationTaskAssessmentRunProgress
   {
   public:
-    ReplicationTaskAssessmentRunProgress();
-    ReplicationTaskAssessmentRunProgress(Aws::Utils::Json::JsonView jsonValue);
-    ReplicationTaskAssessmentRunProgress& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DATABASEMIGRATIONSERVICE_API ReplicationTaskAssessmentRunProgress();
+    AWS_DATABASEMIGRATIONSERVICE_API ReplicationTaskAssessmentRunProgress(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATABASEMIGRATIONSERVICE_API ReplicationTaskAssessmentRunProgress& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATABASEMIGRATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

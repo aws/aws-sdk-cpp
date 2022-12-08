@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/Entity">AWS
    * API Reference</a></p>
    */
-  class AWS_COMPREHEND_API Entity
+  class Entity
   {
   public:
-    Entity();
-    Entity(Aws::Utils::Json::JsonView jsonValue);
-    Entity& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COMPREHEND_API Entity();
+    AWS_COMPREHEND_API Entity(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHEND_API Entity& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHEND_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

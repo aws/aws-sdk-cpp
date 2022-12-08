@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/BackendAuthAppleProviderConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_AMPLIFYBACKEND_API BackendAuthAppleProviderConfig
+  class BackendAuthAppleProviderConfig
   {
   public:
-    BackendAuthAppleProviderConfig();
-    BackendAuthAppleProviderConfig(Aws::Utils::Json::JsonView jsonValue);
-    BackendAuthAppleProviderConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_AMPLIFYBACKEND_API BackendAuthAppleProviderConfig();
+    AWS_AMPLIFYBACKEND_API BackendAuthAppleProviderConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFYBACKEND_API BackendAuthAppleProviderConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFYBACKEND_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

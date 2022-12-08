@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/AppValidationConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_SMS_API AppValidationConfiguration
+  class AppValidationConfiguration
   {
   public:
-    AppValidationConfiguration();
-    AppValidationConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    AppValidationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SMS_API AppValidationConfiguration();
+    AWS_SMS_API AppValidationConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SMS_API AppValidationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

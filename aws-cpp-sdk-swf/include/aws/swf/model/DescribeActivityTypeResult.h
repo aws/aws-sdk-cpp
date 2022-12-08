@@ -30,12 +30,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ActivityTypeDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_SWF_API DescribeActivityTypeResult
+  class DescribeActivityTypeResult
   {
   public:
-    DescribeActivityTypeResult();
-    DescribeActivityTypeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeActivityTypeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SWF_API DescribeActivityTypeResult();
+    AWS_SWF_API DescribeActivityTypeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SWF_API DescribeActivityTypeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

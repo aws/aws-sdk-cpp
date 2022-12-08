@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/RecoveryPointCreator">AWS
    * API Reference</a></p>
    */
-  class AWS_BACKUP_API RecoveryPointCreator
+  class RecoveryPointCreator
   {
   public:
-    RecoveryPointCreator();
-    RecoveryPointCreator(Aws::Utils::Json::JsonView jsonValue);
-    RecoveryPointCreator& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BACKUP_API RecoveryPointCreator();
+    AWS_BACKUP_API RecoveryPointCreator(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BACKUP_API RecoveryPointCreator& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BACKUP_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

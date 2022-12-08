@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigRulesFilters">AWS
    * API Reference</a></p>
    */
-  class AWS_CONFIGSERVICE_API DescribeConfigRulesFilters
+  class DescribeConfigRulesFilters
   {
   public:
-    DescribeConfigRulesFilters();
-    DescribeConfigRulesFilters(Aws::Utils::Json::JsonView jsonValue);
-    DescribeConfigRulesFilters& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONFIGSERVICE_API DescribeConfigRulesFilters();
+    AWS_CONFIGSERVICE_API DescribeConfigRulesFilters(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API DescribeConfigRulesFilters& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

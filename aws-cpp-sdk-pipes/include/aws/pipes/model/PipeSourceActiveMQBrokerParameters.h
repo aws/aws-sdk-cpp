@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pipes-2015-10-07/PipeSourceActiveMQBrokerParameters">AWS
    * API Reference</a></p>
    */
-  class AWS_PIPES_API PipeSourceActiveMQBrokerParameters
+  class PipeSourceActiveMQBrokerParameters
   {
   public:
-    PipeSourceActiveMQBrokerParameters();
-    PipeSourceActiveMQBrokerParameters(Aws::Utils::Json::JsonView jsonValue);
-    PipeSourceActiveMQBrokerParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PIPES_API PipeSourceActiveMQBrokerParameters();
+    AWS_PIPES_API PipeSourceActiveMQBrokerParameters(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PIPES_API PipeSourceActiveMQBrokerParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PIPES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

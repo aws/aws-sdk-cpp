@@ -31,12 +31,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UploadSSHPublicKeyResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_IAM_API UploadSSHPublicKeyResult
+  class UploadSSHPublicKeyResult
   {
   public:
-    UploadSSHPublicKeyResult();
-    UploadSSHPublicKeyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    UploadSSHPublicKeyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_IAM_API UploadSSHPublicKeyResult();
+    AWS_IAM_API UploadSSHPublicKeyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_IAM_API UploadSSHPublicKeyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

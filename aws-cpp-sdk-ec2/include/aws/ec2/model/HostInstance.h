@@ -28,15 +28,15 @@ namespace Model
    * <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/HostInstance">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API HostInstance
+  class HostInstance
   {
   public:
-    HostInstance();
-    HostInstance(const Aws::Utils::Xml::XmlNode& xmlNode);
-    HostInstance& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API HostInstance();
+    AWS_EC2_API HostInstance(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API HostInstance& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**

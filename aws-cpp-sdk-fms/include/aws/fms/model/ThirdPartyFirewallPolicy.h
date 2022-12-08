@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ThirdPartyFirewallPolicy">AWS
    * API Reference</a></p>
    */
-  class AWS_FMS_API ThirdPartyFirewallPolicy
+  class ThirdPartyFirewallPolicy
   {
   public:
-    ThirdPartyFirewallPolicy();
-    ThirdPartyFirewallPolicy(Aws::Utils::Json::JsonView jsonValue);
-    ThirdPartyFirewallPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FMS_API ThirdPartyFirewallPolicy();
+    AWS_FMS_API ThirdPartyFirewallPolicy(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FMS_API ThirdPartyFirewallPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

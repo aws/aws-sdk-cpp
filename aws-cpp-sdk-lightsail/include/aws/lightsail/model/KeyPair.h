@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/KeyPair">AWS
    * API Reference</a></p>
    */
-  class AWS_LIGHTSAIL_API KeyPair
+  class KeyPair
   {
   public:
-    KeyPair();
-    KeyPair(Aws::Utils::Json::JsonView jsonValue);
-    KeyPair& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LIGHTSAIL_API KeyPair();
+    AWS_LIGHTSAIL_API KeyPair(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API KeyPair& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

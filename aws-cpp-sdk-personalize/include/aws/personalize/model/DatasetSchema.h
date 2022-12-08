@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DatasetSchema">AWS
    * API Reference</a></p>
    */
-  class AWS_PERSONALIZE_API DatasetSchema
+  class DatasetSchema
   {
   public:
-    DatasetSchema();
-    DatasetSchema(Aws::Utils::Json::JsonView jsonValue);
-    DatasetSchema& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PERSONALIZE_API DatasetSchema();
+    AWS_PERSONALIZE_API DatasetSchema(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PERSONALIZE_API DatasetSchema& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PERSONALIZE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

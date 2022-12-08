@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-2018-09-05/EventDestination">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINTSMSVOICE_API EventDestination
+  class EventDestination
   {
   public:
-    EventDestination();
-    EventDestination(Aws::Utils::Json::JsonView jsonValue);
-    EventDestination& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINTSMSVOICE_API EventDestination();
+    AWS_PINPOINTSMSVOICE_API EventDestination(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINTSMSVOICE_API EventDestination& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINTSMSVOICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/LocationTimestamp">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API LocationTimestamp
+  class LocationTimestamp
   {
   public:
-    LocationTimestamp();
-    LocationTimestamp(Aws::Utils::Json::JsonView jsonValue);
-    LocationTimestamp& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API LocationTimestamp();
+    AWS_IOT_API LocationTimestamp(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API LocationTimestamp& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

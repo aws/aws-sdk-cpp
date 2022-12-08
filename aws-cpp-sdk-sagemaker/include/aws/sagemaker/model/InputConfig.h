@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/InputConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API InputConfig
+  class InputConfig
   {
   public:
-    InputConfig();
-    InputConfig(Aws::Utils::Json::JsonView jsonValue);
-    InputConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API InputConfig();
+    AWS_SAGEMAKER_API InputConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API InputConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

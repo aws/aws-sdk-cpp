@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/LargeTimestampGaps">AWS
    * API Reference</a></p>
    */
-  class AWS_LOOKOUTEQUIPMENT_API LargeTimestampGaps
+  class LargeTimestampGaps
   {
   public:
-    LargeTimestampGaps();
-    LargeTimestampGaps(Aws::Utils::Json::JsonView jsonValue);
-    LargeTimestampGaps& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LOOKOUTEQUIPMENT_API LargeTimestampGaps();
+    AWS_LOOKOUTEQUIPMENT_API LargeTimestampGaps(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTEQUIPMENT_API LargeTimestampGaps& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTEQUIPMENT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

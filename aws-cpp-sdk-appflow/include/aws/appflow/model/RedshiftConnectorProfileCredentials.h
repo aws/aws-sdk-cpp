@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/RedshiftConnectorProfileCredentials">AWS
    * API Reference</a></p>
    */
-  class AWS_APPFLOW_API RedshiftConnectorProfileCredentials
+  class RedshiftConnectorProfileCredentials
   {
   public:
-    RedshiftConnectorProfileCredentials();
-    RedshiftConnectorProfileCredentials(Aws::Utils::Json::JsonView jsonValue);
-    RedshiftConnectorProfileCredentials& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPFLOW_API RedshiftConnectorProfileCredentials();
+    AWS_APPFLOW_API RedshiftConnectorProfileCredentials(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API RedshiftConnectorProfileCredentials& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

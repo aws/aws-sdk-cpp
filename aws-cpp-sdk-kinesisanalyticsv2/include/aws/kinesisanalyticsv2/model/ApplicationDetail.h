@@ -38,13 +38,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/ApplicationDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_KINESISANALYTICSV2_API ApplicationDetail
+  class ApplicationDetail
   {
   public:
-    ApplicationDetail();
-    ApplicationDetail(Aws::Utils::Json::JsonView jsonValue);
-    ApplicationDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KINESISANALYTICSV2_API ApplicationDetail();
+    AWS_KINESISANALYTICSV2_API ApplicationDetail(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICSV2_API ApplicationDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

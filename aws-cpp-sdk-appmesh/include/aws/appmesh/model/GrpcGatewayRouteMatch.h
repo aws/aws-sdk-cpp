@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/GrpcGatewayRouteMatch">AWS
    * API Reference</a></p>
    */
-  class AWS_APPMESH_API GrpcGatewayRouteMatch
+  class GrpcGatewayRouteMatch
   {
   public:
-    GrpcGatewayRouteMatch();
-    GrpcGatewayRouteMatch(Aws::Utils::Json::JsonView jsonValue);
-    GrpcGatewayRouteMatch& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPMESH_API GrpcGatewayRouteMatch();
+    AWS_APPMESH_API GrpcGatewayRouteMatch(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API GrpcGatewayRouteMatch& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

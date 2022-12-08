@@ -22,12 +22,12 @@ namespace Snowball
 {
 namespace Model
 {
-  class AWS_SNOWBALL_API CancelJobResult
+  class CancelJobResult
   {
   public:
-    CancelJobResult();
-    CancelJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CancelJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SNOWBALL_API CancelJobResult();
+    AWS_SNOWBALL_API CancelJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SNOWBALL_API CancelJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

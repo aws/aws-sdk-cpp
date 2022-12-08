@@ -23,13 +23,13 @@ namespace ChimeSDKVoice
 namespace Model
 {
 
-  class AWS_CHIMESDKVOICE_API StreamingNotificationTarget
+  class StreamingNotificationTarget
   {
   public:
-    StreamingNotificationTarget();
-    StreamingNotificationTarget(Aws::Utils::Json::JsonView jsonValue);
-    StreamingNotificationTarget& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIMESDKVOICE_API StreamingNotificationTarget();
+    AWS_CHIMESDKVOICE_API StreamingNotificationTarget(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKVOICE_API StreamingNotificationTarget& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKVOICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

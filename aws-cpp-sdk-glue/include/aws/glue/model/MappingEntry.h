@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/MappingEntry">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API MappingEntry
+  class MappingEntry
   {
   public:
-    MappingEntry();
-    MappingEntry(Aws::Utils::Json::JsonView jsonValue);
-    MappingEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API MappingEntry();
+    AWS_GLUE_API MappingEntry(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API MappingEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -39,13 +39,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/resource-explorer-2-2022-07-28/Index">AWS
    * API Reference</a></p>
    */
-  class AWS_RESOURCEEXPLORER2_API Index
+  class Index
   {
   public:
-    Index();
-    Index(Aws::Utils::Json::JsonView jsonValue);
-    Index& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_RESOURCEEXPLORER2_API Index();
+    AWS_RESOURCEEXPLORER2_API Index(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RESOURCEEXPLORER2_API Index& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RESOURCEEXPLORER2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

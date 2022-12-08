@@ -24,12 +24,12 @@ namespace drs
 {
 namespace Model
 {
-  class AWS_DRS_API TerminateRecoveryInstancesResult
+  class TerminateRecoveryInstancesResult
   {
   public:
-    TerminateRecoveryInstancesResult();
-    TerminateRecoveryInstancesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    TerminateRecoveryInstancesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DRS_API TerminateRecoveryInstancesResult();
+    AWS_DRS_API TerminateRecoveryInstancesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DRS_API TerminateRecoveryInstancesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

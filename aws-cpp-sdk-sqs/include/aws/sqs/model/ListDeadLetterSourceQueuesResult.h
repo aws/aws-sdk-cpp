@@ -31,12 +31,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ListDeadLetterSourceQueuesResult">AWS
    * API Reference</a></p>
    */
-  class AWS_SQS_API ListDeadLetterSourceQueuesResult
+  class ListDeadLetterSourceQueuesResult
   {
   public:
-    ListDeadLetterSourceQueuesResult();
-    ListDeadLetterSourceQueuesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ListDeadLetterSourceQueuesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_SQS_API ListDeadLetterSourceQueuesResult();
+    AWS_SQS_API ListDeadLetterSourceQueuesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_SQS_API ListDeadLetterSourceQueuesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

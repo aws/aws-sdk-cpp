@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/VirtualGatewayHealthCheckPolicy">AWS
    * API Reference</a></p>
    */
-  class AWS_APPMESH_API VirtualGatewayHealthCheckPolicy
+  class VirtualGatewayHealthCheckPolicy
   {
   public:
-    VirtualGatewayHealthCheckPolicy();
-    VirtualGatewayHealthCheckPolicy(Aws::Utils::Json::JsonView jsonValue);
-    VirtualGatewayHealthCheckPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPMESH_API VirtualGatewayHealthCheckPolicy();
+    AWS_APPMESH_API VirtualGatewayHealthCheckPolicy(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API VirtualGatewayHealthCheckPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

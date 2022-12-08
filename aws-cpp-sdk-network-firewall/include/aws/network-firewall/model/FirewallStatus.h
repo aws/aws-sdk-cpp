@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/FirewallStatus">AWS
    * API Reference</a></p>
    */
-  class AWS_NETWORKFIREWALL_API FirewallStatus
+  class FirewallStatus
   {
   public:
-    FirewallStatus();
-    FirewallStatus(Aws::Utils::Json::JsonView jsonValue);
-    FirewallStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_NETWORKFIREWALL_API FirewallStatus();
+    AWS_NETWORKFIREWALL_API FirewallStatus(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKFIREWALL_API FirewallStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKFIREWALL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

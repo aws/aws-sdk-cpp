@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/InsightsConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_XRAY_API InsightsConfiguration
+  class InsightsConfiguration
   {
   public:
-    InsightsConfiguration();
-    InsightsConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    InsightsConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_XRAY_API InsightsConfiguration();
+    AWS_XRAY_API InsightsConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_XRAY_API InsightsConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_XRAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdateProvisioningPreferences">AWS
    * API Reference</a></p>
    */
-  class AWS_SERVICECATALOG_API UpdateProvisioningPreferences
+  class UpdateProvisioningPreferences
   {
   public:
-    UpdateProvisioningPreferences();
-    UpdateProvisioningPreferences(Aws::Utils::Json::JsonView jsonValue);
-    UpdateProvisioningPreferences& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SERVICECATALOG_API UpdateProvisioningPreferences();
+    AWS_SERVICECATALOG_API UpdateProvisioningPreferences(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICECATALOG_API UpdateProvisioningPreferences& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICECATALOG_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

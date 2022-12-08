@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/PropertyType">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTSITEWISE_API PropertyType
+  class PropertyType
   {
   public:
-    PropertyType();
-    PropertyType(Aws::Utils::Json::JsonView jsonValue);
-    PropertyType& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTSITEWISE_API PropertyType();
+    AWS_IOTSITEWISE_API PropertyType(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API PropertyType& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

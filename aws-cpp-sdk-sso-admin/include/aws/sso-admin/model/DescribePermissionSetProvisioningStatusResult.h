@@ -24,12 +24,12 @@ namespace SSOAdmin
 {
 namespace Model
 {
-  class AWS_SSOADMIN_API DescribePermissionSetProvisioningStatusResult
+  class DescribePermissionSetProvisioningStatusResult
   {
   public:
-    DescribePermissionSetProvisioningStatusResult();
-    DescribePermissionSetProvisioningStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribePermissionSetProvisioningStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSOADMIN_API DescribePermissionSetProvisioningStatusResult();
+    AWS_SSOADMIN_API DescribePermissionSetProvisioningStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSOADMIN_API DescribePermissionSetProvisioningStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

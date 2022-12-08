@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CatalogKinesisSource">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API CatalogKinesisSource
+  class CatalogKinesisSource
   {
   public:
-    CatalogKinesisSource();
-    CatalogKinesisSource(Aws::Utils::Json::JsonView jsonValue);
-    CatalogKinesisSource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API CatalogKinesisSource();
+    AWS_GLUE_API CatalogKinesisSource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API CatalogKinesisSource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

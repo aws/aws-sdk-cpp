@@ -33,12 +33,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSpotFleetInstancesResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API DescribeSpotFleetInstancesResponse
+  class DescribeSpotFleetInstancesResponse
   {
   public:
-    DescribeSpotFleetInstancesResponse();
-    DescribeSpotFleetInstancesResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeSpotFleetInstancesResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API DescribeSpotFleetInstancesResponse();
+    AWS_EC2_API DescribeSpotFleetInstancesResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API DescribeSpotFleetInstancesResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

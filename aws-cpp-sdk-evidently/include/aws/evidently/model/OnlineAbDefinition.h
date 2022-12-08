@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/OnlineAbDefinition">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDWATCHEVIDENTLY_API OnlineAbDefinition
+  class OnlineAbDefinition
   {
   public:
-    OnlineAbDefinition();
-    OnlineAbDefinition(Aws::Utils::Json::JsonView jsonValue);
-    OnlineAbDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDWATCHEVIDENTLY_API OnlineAbDefinition();
+    AWS_CLOUDWATCHEVIDENTLY_API OnlineAbDefinition(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHEVIDENTLY_API OnlineAbDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHEVIDENTLY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

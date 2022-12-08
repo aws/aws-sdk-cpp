@@ -37,13 +37,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/RuleGroupResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_NETWORKFIREWALL_API RuleGroupResponse
+  class RuleGroupResponse
   {
   public:
-    RuleGroupResponse();
-    RuleGroupResponse(Aws::Utils::Json::JsonView jsonValue);
-    RuleGroupResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_NETWORKFIREWALL_API RuleGroupResponse();
+    AWS_NETWORKFIREWALL_API RuleGroupResponse(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKFIREWALL_API RuleGroupResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKFIREWALL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

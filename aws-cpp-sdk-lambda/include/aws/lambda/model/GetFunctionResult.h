@@ -28,12 +28,12 @@ namespace Lambda
 {
 namespace Model
 {
-  class AWS_LAMBDA_API GetFunctionResult
+  class GetFunctionResult
   {
   public:
-    GetFunctionResult();
-    GetFunctionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetFunctionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LAMBDA_API GetFunctionResult();
+    AWS_LAMBDA_API GetFunctionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LAMBDA_API GetFunctionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

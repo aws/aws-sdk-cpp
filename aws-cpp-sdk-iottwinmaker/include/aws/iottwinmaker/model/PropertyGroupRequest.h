@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/PropertyGroupRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTTWINMAKER_API PropertyGroupRequest
+  class PropertyGroupRequest
   {
   public:
-    PropertyGroupRequest();
-    PropertyGroupRequest(Aws::Utils::Json::JsonView jsonValue);
-    PropertyGroupRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTTWINMAKER_API PropertyGroupRequest();
+    AWS_IOTTWINMAKER_API PropertyGroupRequest(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTTWINMAKER_API PropertyGroupRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTTWINMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

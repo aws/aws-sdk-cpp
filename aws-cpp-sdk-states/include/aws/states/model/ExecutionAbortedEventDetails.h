@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/ExecutionAbortedEventDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SFN_API ExecutionAbortedEventDetails
+  class ExecutionAbortedEventDetails
   {
   public:
-    ExecutionAbortedEventDetails();
-    ExecutionAbortedEventDetails(Aws::Utils::Json::JsonView jsonValue);
-    ExecutionAbortedEventDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SFN_API ExecutionAbortedEventDetails();
+    AWS_SFN_API ExecutionAbortedEventDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SFN_API ExecutionAbortedEventDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SFN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

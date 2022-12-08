@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_MIGRATIONHUBORCHESTRATOR_API StopWorkflowRequest : public MigrationHubOrchestratorRequest
+  class StopWorkflowRequest : public MigrationHubOrchestratorRequest
   {
   public:
-    StopWorkflowRequest();
+    AWS_MIGRATIONHUBORCHESTRATOR_API StopWorkflowRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,7 +29,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "StopWorkflow"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_MIGRATIONHUBORCHESTRATOR_API Aws::String SerializePayload() const override;
 
 
     /**

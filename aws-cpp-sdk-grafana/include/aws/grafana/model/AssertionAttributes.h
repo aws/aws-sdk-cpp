@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/AssertionAttributes">AWS
    * API Reference</a></p>
    */
-  class AWS_MANAGEDGRAFANA_API AssertionAttributes
+  class AssertionAttributes
   {
   public:
-    AssertionAttributes();
-    AssertionAttributes(Aws::Utils::Json::JsonView jsonValue);
-    AssertionAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MANAGEDGRAFANA_API AssertionAttributes();
+    AWS_MANAGEDGRAFANA_API AssertionAttributes(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MANAGEDGRAFANA_API AssertionAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MANAGEDGRAFANA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

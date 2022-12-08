@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/FilterExpression">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUEDATABREW_API FilterExpression
+  class FilterExpression
   {
   public:
-    FilterExpression();
-    FilterExpression(Aws::Utils::Json::JsonView jsonValue);
-    FilterExpression& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUEDATABREW_API FilterExpression();
+    AWS_GLUEDATABREW_API FilterExpression(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUEDATABREW_API FilterExpression& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUEDATABREW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

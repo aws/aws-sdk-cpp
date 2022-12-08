@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/simspaceweaver-2022-10-28/S3Location">AWS
    * API Reference</a></p>
    */
-  class AWS_SIMSPACEWEAVER_API S3Location
+  class S3Location
   {
   public:
-    S3Location();
-    S3Location(Aws::Utils::Json::JsonView jsonValue);
-    S3Location& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SIMSPACEWEAVER_API S3Location();
+    AWS_SIMSPACEWEAVER_API S3Location(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SIMSPACEWEAVER_API S3Location& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SIMSPACEWEAVER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

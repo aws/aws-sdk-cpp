@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ShapeConditionalFormat">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API ShapeConditionalFormat
+  class ShapeConditionalFormat
   {
   public:
-    ShapeConditionalFormat();
-    ShapeConditionalFormat(Aws::Utils::Json::JsonView jsonValue);
-    ShapeConditionalFormat& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API ShapeConditionalFormat();
+    AWS_QUICKSIGHT_API ShapeConditionalFormat(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API ShapeConditionalFormat& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

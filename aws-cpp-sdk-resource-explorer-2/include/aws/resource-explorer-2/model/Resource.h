@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/resource-explorer-2-2022-07-28/Resource">AWS
    * API Reference</a></p>
    */
-  class AWS_RESOURCEEXPLORER2_API Resource
+  class Resource
   {
   public:
-    Resource();
-    Resource(Aws::Utils::Json::JsonView jsonValue);
-    Resource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_RESOURCEEXPLORER2_API Resource();
+    AWS_RESOURCEEXPLORER2_API Resource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RESOURCEEXPLORER2_API Resource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RESOURCEEXPLORER2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

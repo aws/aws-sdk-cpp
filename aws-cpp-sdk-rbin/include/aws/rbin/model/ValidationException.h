@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rbin-2021-06-15/ValidationException">AWS
    * API Reference</a></p>
    */
-  class AWS_RECYCLEBIN_API ValidationException
+  class ValidationException
   {
   public:
-    ValidationException();
-    ValidationException(Aws::Utils::Json::JsonView jsonValue);
-    ValidationException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_RECYCLEBIN_API ValidationException();
+    AWS_RECYCLEBIN_API ValidationException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RECYCLEBIN_API ValidationException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RECYCLEBIN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

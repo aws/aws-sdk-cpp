@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/DeviceRegistrationStateEventConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTWIRELESS_API DeviceRegistrationStateEventConfiguration
+  class DeviceRegistrationStateEventConfiguration
   {
   public:
-    DeviceRegistrationStateEventConfiguration();
-    DeviceRegistrationStateEventConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    DeviceRegistrationStateEventConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTWIRELESS_API DeviceRegistrationStateEventConfiguration();
+    AWS_IOTWIRELESS_API DeviceRegistrationStateEventConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API DeviceRegistrationStateEventConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

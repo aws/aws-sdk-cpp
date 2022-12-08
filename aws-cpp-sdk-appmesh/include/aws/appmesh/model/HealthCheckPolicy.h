@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/HealthCheckPolicy">AWS
    * API Reference</a></p>
    */
-  class AWS_APPMESH_API HealthCheckPolicy
+  class HealthCheckPolicy
   {
   public:
-    HealthCheckPolicy();
-    HealthCheckPolicy(Aws::Utils::Json::JsonView jsonValue);
-    HealthCheckPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPMESH_API HealthCheckPolicy();
+    AWS_APPMESH_API HealthCheckPolicy(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API HealthCheckPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

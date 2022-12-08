@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/BotLocaleFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELSV2_API BotLocaleFilter
+  class BotLocaleFilter
   {
   public:
-    BotLocaleFilter();
-    BotLocaleFilter(Aws::Utils::Json::JsonView jsonValue);
-    BotLocaleFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELSV2_API BotLocaleFilter();
+    AWS_LEXMODELSV2_API BotLocaleFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API BotLocaleFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

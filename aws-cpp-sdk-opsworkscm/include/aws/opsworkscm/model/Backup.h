@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/Backup">AWS
    * API Reference</a></p>
    */
-  class AWS_OPSWORKSCM_API Backup
+  class Backup
   {
   public:
-    Backup();
-    Backup(Aws::Utils::Json::JsonView jsonValue);
-    Backup& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OPSWORKSCM_API Backup();
+    AWS_OPSWORKSCM_API Backup(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPSWORKSCM_API Backup& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPSWORKSCM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

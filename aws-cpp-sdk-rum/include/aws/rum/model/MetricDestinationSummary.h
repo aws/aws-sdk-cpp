@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rum-2018-05-10/MetricDestinationSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDWATCHRUM_API MetricDestinationSummary
+  class MetricDestinationSummary
   {
   public:
-    MetricDestinationSummary();
-    MetricDestinationSummary(Aws::Utils::Json::JsonView jsonValue);
-    MetricDestinationSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDWATCHRUM_API MetricDestinationSummary();
+    AWS_CLOUDWATCHRUM_API MetricDestinationSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHRUM_API MetricDestinationSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHRUM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

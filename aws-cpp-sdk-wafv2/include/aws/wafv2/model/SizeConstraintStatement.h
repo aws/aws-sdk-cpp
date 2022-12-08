@@ -41,13 +41,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/SizeConstraintStatement">AWS
    * API Reference</a></p>
    */
-  class AWS_WAFV2_API SizeConstraintStatement
+  class SizeConstraintStatement
   {
   public:
-    SizeConstraintStatement();
-    SizeConstraintStatement(Aws::Utils::Json::JsonView jsonValue);
-    SizeConstraintStatement& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WAFV2_API SizeConstraintStatement();
+    AWS_WAFV2_API SizeConstraintStatement(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API SizeConstraintStatement& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

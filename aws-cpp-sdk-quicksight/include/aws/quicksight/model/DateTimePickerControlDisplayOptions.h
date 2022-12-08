@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DateTimePickerControlDisplayOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API DateTimePickerControlDisplayOptions
+  class DateTimePickerControlDisplayOptions
   {
   public:
-    DateTimePickerControlDisplayOptions();
-    DateTimePickerControlDisplayOptions(Aws::Utils::Json::JsonView jsonValue);
-    DateTimePickerControlDisplayOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API DateTimePickerControlDisplayOptions();
+    AWS_QUICKSIGHT_API DateTimePickerControlDisplayOptions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API DateTimePickerControlDisplayOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/Domain">AWS API
    * Reference</a></p>
    */
-  class AWS_WORKMAIL_API Domain
+  class Domain
   {
   public:
-    Domain();
-    Domain(Aws::Utils::Json::JsonView jsonValue);
-    Domain& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WORKMAIL_API Domain();
+    AWS_WORKMAIL_API Domain(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKMAIL_API Domain& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKMAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

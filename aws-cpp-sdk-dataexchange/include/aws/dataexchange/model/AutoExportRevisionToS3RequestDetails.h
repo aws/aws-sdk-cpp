@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/AutoExportRevisionToS3RequestDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_DATAEXCHANGE_API AutoExportRevisionToS3RequestDetails
+  class AutoExportRevisionToS3RequestDetails
   {
   public:
-    AutoExportRevisionToS3RequestDetails();
-    AutoExportRevisionToS3RequestDetails(Aws::Utils::Json::JsonView jsonValue);
-    AutoExportRevisionToS3RequestDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DATAEXCHANGE_API AutoExportRevisionToS3RequestDetails();
+    AWS_DATAEXCHANGE_API AutoExportRevisionToS3RequestDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATAEXCHANGE_API AutoExportRevisionToS3RequestDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATAEXCHANGE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

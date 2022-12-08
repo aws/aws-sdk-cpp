@@ -26,12 +26,12 @@ namespace FMS
 {
 namespace Model
 {
-  class AWS_FMS_API ListResourceSetResourcesResult
+  class ListResourceSetResourcesResult
   {
   public:
-    ListResourceSetResourcesResult();
-    ListResourceSetResourcesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListResourceSetResourcesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_FMS_API ListResourceSetResourcesResult();
+    AWS_FMS_API ListResourceSetResourcesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_FMS_API ListResourceSetResourcesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

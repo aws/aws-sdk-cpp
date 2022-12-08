@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/GradientColor">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API GradientColor
+  class GradientColor
   {
   public:
-    GradientColor();
-    GradientColor(Aws::Utils::Json::JsonView jsonValue);
-    GradientColor& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API GradientColor();
+    AWS_QUICKSIGHT_API GradientColor(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API GradientColor& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

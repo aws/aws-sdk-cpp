@@ -28,12 +28,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/AttachThingPrincipalResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API AttachThingPrincipalResult
+  class AttachThingPrincipalResult
   {
   public:
-    AttachThingPrincipalResult();
-    AttachThingPrincipalResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AttachThingPrincipalResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOT_API AttachThingPrincipalResult();
+    AWS_IOT_API AttachThingPrincipalResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOT_API AttachThingPrincipalResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

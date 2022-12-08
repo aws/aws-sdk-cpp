@@ -23,13 +23,13 @@ namespace ChimeSDKVoice
 namespace Model
 {
 
-  class AWS_CHIMESDKVOICE_API SipRuleTargetApplication
+  class SipRuleTargetApplication
   {
   public:
-    SipRuleTargetApplication();
-    SipRuleTargetApplication(Aws::Utils::Json::JsonView jsonValue);
-    SipRuleTargetApplication& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIMESDKVOICE_API SipRuleTargetApplication();
+    AWS_CHIMESDKVOICE_API SipRuleTargetApplication(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKVOICE_API SipRuleTargetApplication& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKVOICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

@@ -28,12 +28,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DisableSsoResult">AWS
    * API Reference</a></p>
    */
-  class AWS_DIRECTORYSERVICE_API DisableSsoResult
+  class DisableSsoResult
   {
   public:
-    DisableSsoResult();
-    DisableSsoResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DisableSsoResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DIRECTORYSERVICE_API DisableSsoResult();
+    AWS_DIRECTORYSERVICE_API DisableSsoResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DIRECTORYSERVICE_API DisableSsoResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

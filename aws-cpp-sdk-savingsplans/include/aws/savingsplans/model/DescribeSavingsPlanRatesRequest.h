@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_SAVINGSPLANS_API DescribeSavingsPlanRatesRequest : public SavingsPlansRequest
+  class DescribeSavingsPlanRatesRequest : public SavingsPlansRequest
   {
   public:
-    DescribeSavingsPlanRatesRequest();
+    AWS_SAVINGSPLANS_API DescribeSavingsPlanRatesRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,7 +31,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DescribeSavingsPlanRates"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SAVINGSPLANS_API Aws::String SerializePayload() const override;
 
 
     /**

@@ -22,12 +22,12 @@ namespace Lightsail
 {
 namespace Model
 {
-  class AWS_LIGHTSAIL_API IsVpcPeeredResult
+  class IsVpcPeeredResult
   {
   public:
-    IsVpcPeeredResult();
-    IsVpcPeeredResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    IsVpcPeeredResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LIGHTSAIL_API IsVpcPeeredResult();
+    AWS_LIGHTSAIL_API IsVpcPeeredResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LIGHTSAIL_API IsVpcPeeredResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

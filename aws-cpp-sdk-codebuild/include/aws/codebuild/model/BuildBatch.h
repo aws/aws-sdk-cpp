@@ -42,13 +42,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/BuildBatch">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEBUILD_API BuildBatch
+  class BuildBatch
   {
   public:
-    BuildBatch();
-    BuildBatch(Aws::Utils::Json::JsonView jsonValue);
-    BuildBatch& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEBUILD_API BuildBatch();
+    AWS_CODEBUILD_API BuildBatch(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEBUILD_API BuildBatch& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEBUILD_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

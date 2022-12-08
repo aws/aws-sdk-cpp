@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ReadSetListItem">AWS
    * API Reference</a></p>
    */
-  class AWS_OMICS_API ReadSetListItem
+  class ReadSetListItem
   {
   public:
-    ReadSetListItem();
-    ReadSetListItem(Aws::Utils::Json::JsonView jsonValue);
-    ReadSetListItem& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OMICS_API ReadSetListItem();
+    AWS_OMICS_API ReadSetListItem(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OMICS_API ReadSetListItem& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OMICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

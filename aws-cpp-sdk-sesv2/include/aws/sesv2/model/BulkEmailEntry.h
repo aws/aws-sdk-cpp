@@ -26,13 +26,13 @@ namespace SESV2
 namespace Model
 {
 
-  class AWS_SESV2_API BulkEmailEntry
+  class BulkEmailEntry
   {
   public:
-    BulkEmailEntry();
-    BulkEmailEntry(Aws::Utils::Json::JsonView jsonValue);
-    BulkEmailEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SESV2_API BulkEmailEntry();
+    AWS_SESV2_API BulkEmailEntry(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SESV2_API BulkEmailEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SESV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

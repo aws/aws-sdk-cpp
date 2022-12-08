@@ -28,12 +28,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/DeleteTrailResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDTRAIL_API DeleteTrailResult
+  class DeleteTrailResult
   {
   public:
-    DeleteTrailResult();
-    DeleteTrailResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteTrailResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CLOUDTRAIL_API DeleteTrailResult();
+    AWS_CLOUDTRAIL_API DeleteTrailResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CLOUDTRAIL_API DeleteTrailResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

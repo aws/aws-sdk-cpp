@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/MetricInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_SERVICEQUOTAS_API MetricInfo
+  class MetricInfo
   {
   public:
-    MetricInfo();
-    MetricInfo(Aws::Utils::Json::JsonView jsonValue);
-    MetricInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SERVICEQUOTAS_API MetricInfo();
+    AWS_SERVICEQUOTAS_API MetricInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICEQUOTAS_API MetricInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICEQUOTAS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

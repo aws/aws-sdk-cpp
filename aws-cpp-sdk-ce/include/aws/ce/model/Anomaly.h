@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/Anomaly">AWS API
    * Reference</a></p>
    */
-  class AWS_COSTEXPLORER_API Anomaly
+  class Anomaly
   {
   public:
-    Anomaly();
-    Anomaly(Aws::Utils::Json::JsonView jsonValue);
-    Anomaly& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COSTEXPLORER_API Anomaly();
+    AWS_COSTEXPLORER_API Anomaly(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API Anomaly& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

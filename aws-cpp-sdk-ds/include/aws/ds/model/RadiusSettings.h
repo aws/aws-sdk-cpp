@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/RadiusSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_DIRECTORYSERVICE_API RadiusSettings
+  class RadiusSettings
   {
   public:
-    RadiusSettings();
-    RadiusSettings(Aws::Utils::Json::JsonView jsonValue);
-    RadiusSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DIRECTORYSERVICE_API RadiusSettings();
+    AWS_DIRECTORYSERVICE_API RadiusSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTORYSERVICE_API RadiusSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTORYSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

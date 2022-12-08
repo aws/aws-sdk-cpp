@@ -26,12 +26,12 @@ namespace OpsWorksCM
 {
 namespace Model
 {
-  class AWS_OPSWORKSCM_API DescribeNodeAssociationStatusResult
+  class DescribeNodeAssociationStatusResult
   {
   public:
-    DescribeNodeAssociationStatusResult();
-    DescribeNodeAssociationStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeNodeAssociationStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OPSWORKSCM_API DescribeNodeAssociationStatusResult();
+    AWS_OPSWORKSCM_API DescribeNodeAssociationStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OPSWORKSCM_API DescribeNodeAssociationStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

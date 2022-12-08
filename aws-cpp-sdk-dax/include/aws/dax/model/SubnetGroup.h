@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/SubnetGroup">AWS API
    * Reference</a></p>
    */
-  class AWS_DAX_API SubnetGroup
+  class SubnetGroup
   {
   public:
-    SubnetGroup();
-    SubnetGroup(Aws::Utils::Json::JsonView jsonValue);
-    SubnetGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DAX_API SubnetGroup();
+    AWS_DAX_API SubnetGroup(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DAX_API SubnetGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DAX_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

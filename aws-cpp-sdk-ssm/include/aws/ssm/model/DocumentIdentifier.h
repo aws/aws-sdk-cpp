@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DocumentIdentifier">AWS
    * API Reference</a></p>
    */
-  class AWS_SSM_API DocumentIdentifier
+  class DocumentIdentifier
   {
   public:
-    DocumentIdentifier();
-    DocumentIdentifier(Aws::Utils::Json::JsonView jsonValue);
-    DocumentIdentifier& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSM_API DocumentIdentifier();
+    AWS_SSM_API DocumentIdentifier(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API DocumentIdentifier& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

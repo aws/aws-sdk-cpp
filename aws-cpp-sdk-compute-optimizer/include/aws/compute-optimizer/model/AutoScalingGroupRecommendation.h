@@ -37,13 +37,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/AutoScalingGroupRecommendation">AWS
    * API Reference</a></p>
    */
-  class AWS_COMPUTEOPTIMIZER_API AutoScalingGroupRecommendation
+  class AutoScalingGroupRecommendation
   {
   public:
-    AutoScalingGroupRecommendation();
-    AutoScalingGroupRecommendation(Aws::Utils::Json::JsonView jsonValue);
-    AutoScalingGroupRecommendation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COMPUTEOPTIMIZER_API AutoScalingGroupRecommendation();
+    AWS_COMPUTEOPTIMIZER_API AutoScalingGroupRecommendation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPUTEOPTIMIZER_API AutoScalingGroupRecommendation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPUTEOPTIMIZER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

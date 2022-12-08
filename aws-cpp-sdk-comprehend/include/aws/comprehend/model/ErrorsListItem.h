@@ -44,13 +44,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ErrorsListItem">AWS
    * API Reference</a></p>
    */
-  class AWS_COMPREHEND_API ErrorsListItem
+  class ErrorsListItem
   {
   public:
-    ErrorsListItem();
-    ErrorsListItem(Aws::Utils::Json::JsonView jsonValue);
-    ErrorsListItem& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COMPREHEND_API ErrorsListItem();
+    AWS_COMPREHEND_API ErrorsListItem(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHEND_API ErrorsListItem& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHEND_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

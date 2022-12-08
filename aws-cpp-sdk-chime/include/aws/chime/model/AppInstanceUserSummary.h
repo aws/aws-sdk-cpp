@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/AppInstanceUserSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_CHIME_API AppInstanceUserSummary
+  class AppInstanceUserSummary
   {
   public:
-    AppInstanceUserSummary();
-    AppInstanceUserSummary(Aws::Utils::Json::JsonView jsonValue);
-    AppInstanceUserSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIME_API AppInstanceUserSummary();
+    AWS_CHIME_API AppInstanceUserSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API AppInstanceUserSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -23,13 +23,13 @@ namespace Schemas
 namespace Model
 {
 
-  class AWS_SCHEMAS_API ForbiddenException
+  class ForbiddenException
   {
   public:
-    ForbiddenException();
-    ForbiddenException(Aws::Utils::Json::JsonView jsonValue);
-    ForbiddenException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SCHEMAS_API ForbiddenException();
+    AWS_SCHEMAS_API ForbiddenException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SCHEMAS_API ForbiddenException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SCHEMAS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

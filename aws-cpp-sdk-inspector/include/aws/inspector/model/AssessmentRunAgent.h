@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/AssessmentRunAgent">AWS
    * API Reference</a></p>
    */
-  class AWS_INSPECTOR_API AssessmentRunAgent
+  class AssessmentRunAgent
   {
   public:
-    AssessmentRunAgent();
-    AssessmentRunAgent(Aws::Utils::Json::JsonView jsonValue);
-    AssessmentRunAgent& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_INSPECTOR_API AssessmentRunAgent();
+    AWS_INSPECTOR_API AssessmentRunAgent(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR_API AssessmentRunAgent& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

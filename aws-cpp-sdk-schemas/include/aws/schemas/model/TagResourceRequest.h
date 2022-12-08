@@ -22,10 +22,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/TagResourceRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_SCHEMAS_API TagResourceRequest : public SchemasRequest
+  class TagResourceRequest : public SchemasRequest
   {
   public:
-    TagResourceRequest();
+    AWS_SCHEMAS_API TagResourceRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,7 +33,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "TagResource"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SCHEMAS_API Aws::String SerializePayload() const override;
 
 
     /**

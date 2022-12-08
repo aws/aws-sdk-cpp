@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsElasticsearchDomainVPCOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsElasticsearchDomainVPCOptions
+  class AwsElasticsearchDomainVPCOptions
   {
   public:
-    AwsElasticsearchDomainVPCOptions();
-    AwsElasticsearchDomainVPCOptions(Aws::Utils::Json::JsonView jsonValue);
-    AwsElasticsearchDomainVPCOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsElasticsearchDomainVPCOptions();
+    AWS_SECURITYHUB_API AwsElasticsearchDomainVPCOptions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsElasticsearchDomainVPCOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

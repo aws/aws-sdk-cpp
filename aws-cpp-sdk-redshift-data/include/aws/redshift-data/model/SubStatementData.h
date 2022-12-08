@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-data-2019-12-20/SubStatementData">AWS
    * API Reference</a></p>
    */
-  class AWS_REDSHIFTDATAAPISERVICE_API SubStatementData
+  class SubStatementData
   {
   public:
-    SubStatementData();
-    SubStatementData(Aws::Utils::Json::JsonView jsonValue);
-    SubStatementData& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_REDSHIFTDATAAPISERVICE_API SubStatementData();
+    AWS_REDSHIFTDATAAPISERVICE_API SubStatementData(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REDSHIFTDATAAPISERVICE_API SubStatementData& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REDSHIFTDATAAPISERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

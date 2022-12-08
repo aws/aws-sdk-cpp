@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/emr-serverless-2021-07-13/InitialCapacityConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_EMRSERVERLESS_API InitialCapacityConfig
+  class InitialCapacityConfig
   {
   public:
-    InitialCapacityConfig();
-    InitialCapacityConfig(Aws::Utils::Json::JsonView jsonValue);
-    InitialCapacityConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EMRSERVERLESS_API InitialCapacityConfig();
+    AWS_EMRSERVERLESS_API InitialCapacityConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMRSERVERLESS_API InitialCapacityConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMRSERVERLESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

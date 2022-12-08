@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/Warning">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICTRANSCODER_API Warning
+  class Warning
   {
   public:
-    Warning();
-    Warning(Aws::Utils::Json::JsonView jsonValue);
-    Warning& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ELASTICTRANSCODER_API Warning();
+    AWS_ELASTICTRANSCODER_API Warning(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICTRANSCODER_API Warning& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICTRANSCODER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

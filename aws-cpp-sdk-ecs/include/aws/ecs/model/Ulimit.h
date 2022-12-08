@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/Ulimit">AWS API
    * Reference</a></p>
    */
-  class AWS_ECS_API Ulimit
+  class Ulimit
   {
   public:
-    Ulimit();
-    Ulimit(Aws::Utils::Json::JsonView jsonValue);
-    Ulimit& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ECS_API Ulimit();
+    AWS_ECS_API Ulimit(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECS_API Ulimit& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

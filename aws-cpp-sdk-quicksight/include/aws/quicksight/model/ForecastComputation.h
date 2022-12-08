@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ForecastComputation">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API ForecastComputation
+  class ForecastComputation
   {
   public:
-    ForecastComputation();
-    ForecastComputation(Aws::Utils::Json::JsonView jsonValue);
-    ForecastComputation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API ForecastComputation();
+    AWS_QUICKSIGHT_API ForecastComputation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API ForecastComputation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

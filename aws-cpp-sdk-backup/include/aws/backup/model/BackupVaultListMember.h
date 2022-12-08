@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/BackupVaultListMember">AWS
    * API Reference</a></p>
    */
-  class AWS_BACKUP_API BackupVaultListMember
+  class BackupVaultListMember
   {
   public:
-    BackupVaultListMember();
-    BackupVaultListMember(Aws::Utils::Json::JsonView jsonValue);
-    BackupVaultListMember& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BACKUP_API BackupVaultListMember();
+    AWS_BACKUP_API BackupVaultListMember(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BACKUP_API BackupVaultListMember& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BACKUP_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

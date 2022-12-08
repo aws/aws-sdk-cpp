@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/PartitionIndexDescriptor">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API PartitionIndexDescriptor
+  class PartitionIndexDescriptor
   {
   public:
-    PartitionIndexDescriptor();
-    PartitionIndexDescriptor(Aws::Utils::Json::JsonView jsonValue);
-    PartitionIndexDescriptor& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API PartitionIndexDescriptor();
+    AWS_GLUE_API PartitionIndexDescriptor(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API PartitionIndexDescriptor& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

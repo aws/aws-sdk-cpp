@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/OpsMetadata">AWS API
    * Reference</a></p>
    */
-  class AWS_SSM_API OpsMetadata
+  class OpsMetadata
   {
   public:
-    OpsMetadata();
-    OpsMetadata(Aws::Utils::Json::JsonView jsonValue);
-    OpsMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSM_API OpsMetadata();
+    AWS_SSM_API OpsMetadata(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API OpsMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

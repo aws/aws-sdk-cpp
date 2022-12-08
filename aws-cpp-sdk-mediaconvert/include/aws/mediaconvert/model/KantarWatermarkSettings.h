@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/KantarWatermarkSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API KantarWatermarkSettings
+  class KantarWatermarkSettings
   {
   public:
-    KantarWatermarkSettings();
-    KantarWatermarkSettings(Aws::Utils::Json::JsonView jsonValue);
-    KantarWatermarkSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API KantarWatermarkSettings();
+    AWS_MEDIACONVERT_API KantarWatermarkSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API KantarWatermarkSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

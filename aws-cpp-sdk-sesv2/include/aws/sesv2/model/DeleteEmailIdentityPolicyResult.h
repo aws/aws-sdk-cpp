@@ -28,12 +28,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/DeleteEmailIdentityPolicyResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_SESV2_API DeleteEmailIdentityPolicyResult
+  class DeleteEmailIdentityPolicyResult
   {
   public:
-    DeleteEmailIdentityPolicyResult();
-    DeleteEmailIdentityPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteEmailIdentityPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SESV2_API DeleteEmailIdentityPolicyResult();
+    AWS_SESV2_API DeleteEmailIdentityPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SESV2_API DeleteEmailIdentityPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

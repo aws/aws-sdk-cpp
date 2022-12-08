@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-roborunner-2018-05-10/PositionCoordinates">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTROBORUNNER_API PositionCoordinates
+  class PositionCoordinates
   {
   public:
-    PositionCoordinates();
-    PositionCoordinates(Aws::Utils::Json::JsonView jsonValue);
-    PositionCoordinates& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTROBORUNNER_API PositionCoordinates();
+    AWS_IOTROBORUNNER_API PositionCoordinates(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTROBORUNNER_API PositionCoordinates& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTROBORUNNER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/SubscriptionLimits">AWS
    * API Reference</a></p>
    */
-  class AWS_SHIELD_API SubscriptionLimits
+  class SubscriptionLimits
   {
   public:
-    SubscriptionLimits();
-    SubscriptionLimits(Aws::Utils::Json::JsonView jsonValue);
-    SubscriptionLimits& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SHIELD_API SubscriptionLimits();
+    AWS_SHIELD_API SubscriptionLimits(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SHIELD_API SubscriptionLimits& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SHIELD_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

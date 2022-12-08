@@ -26,12 +26,12 @@ namespace Shield
 {
 namespace Model
 {
-  class AWS_SHIELD_API ListProtectionGroupsResult
+  class ListProtectionGroupsResult
   {
   public:
-    ListProtectionGroupsResult();
-    ListProtectionGroupsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListProtectionGroupsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SHIELD_API ListProtectionGroupsResult();
+    AWS_SHIELD_API ListProtectionGroupsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SHIELD_API ListProtectionGroupsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

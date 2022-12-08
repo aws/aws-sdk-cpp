@@ -30,12 +30,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/DisableDomainTransferLockResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53DOMAINS_API DisableDomainTransferLockResult
+  class DisableDomainTransferLockResult
   {
   public:
-    DisableDomainTransferLockResult();
-    DisableDomainTransferLockResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DisableDomainTransferLockResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ROUTE53DOMAINS_API DisableDomainTransferLockResult();
+    AWS_ROUTE53DOMAINS_API DisableDomainTransferLockResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ROUTE53DOMAINS_API DisableDomainTransferLockResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

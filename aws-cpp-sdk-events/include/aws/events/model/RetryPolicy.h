@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/RetryPolicy">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDWATCHEVENTS_API RetryPolicy
+  class RetryPolicy
   {
   public:
-    RetryPolicy();
-    RetryPolicy(Aws::Utils::Json::JsonView jsonValue);
-    RetryPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDWATCHEVENTS_API RetryPolicy();
+    AWS_CLOUDWATCHEVENTS_API RetryPolicy(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHEVENTS_API RetryPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHEVENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -37,13 +37,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/Output">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API Output
+  class Output
   {
   public:
-    Output();
-    Output(Aws::Utils::Json::JsonView jsonValue);
-    Output& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API Output();
+    AWS_MEDIACONVERT_API Output(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Output& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

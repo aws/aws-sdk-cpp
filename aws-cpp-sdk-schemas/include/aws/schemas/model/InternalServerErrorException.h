@@ -23,13 +23,13 @@ namespace Schemas
 namespace Model
 {
 
-  class AWS_SCHEMAS_API InternalServerErrorException
+  class InternalServerErrorException
   {
   public:
-    InternalServerErrorException();
-    InternalServerErrorException(Aws::Utils::Json::JsonView jsonValue);
-    InternalServerErrorException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SCHEMAS_API InternalServerErrorException();
+    AWS_SCHEMAS_API InternalServerErrorException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SCHEMAS_API InternalServerErrorException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SCHEMAS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

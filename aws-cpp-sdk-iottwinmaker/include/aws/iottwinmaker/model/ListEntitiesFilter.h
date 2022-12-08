@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/ListEntitiesFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTTWINMAKER_API ListEntitiesFilter
+  class ListEntitiesFilter
   {
   public:
-    ListEntitiesFilter();
-    ListEntitiesFilter(Aws::Utils::Json::JsonView jsonValue);
-    ListEntitiesFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTTWINMAKER_API ListEntitiesFilter();
+    AWS_IOTTWINMAKER_API ListEntitiesFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTTWINMAKER_API ListEntitiesFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTTWINMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

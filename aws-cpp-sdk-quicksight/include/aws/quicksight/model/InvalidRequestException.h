@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/InvalidRequestException">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API InvalidRequestException
+  class InvalidRequestException
   {
   public:
-    InvalidRequestException();
-    InvalidRequestException(Aws::Utils::Json::JsonView jsonValue);
-    InvalidRequestException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API InvalidRequestException();
+    AWS_QUICKSIGHT_API InvalidRequestException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API InvalidRequestException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

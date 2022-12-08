@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/CustomerConnectorInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_APPLICATIONDISCOVERYSERVICE_API CustomerConnectorInfo
+  class CustomerConnectorInfo
   {
   public:
-    CustomerConnectorInfo();
-    CustomerConnectorInfo(Aws::Utils::Json::JsonView jsonValue);
-    CustomerConnectorInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPLICATIONDISCOVERYSERVICE_API CustomerConnectorInfo();
+    AWS_APPLICATIONDISCOVERYSERVICE_API CustomerConnectorInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPLICATIONDISCOVERYSERVICE_API CustomerConnectorInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPLICATIONDISCOVERYSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

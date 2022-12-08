@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/SlackConnectorProfileCredentials">AWS
    * API Reference</a></p>
    */
-  class AWS_APPFLOW_API SlackConnectorProfileCredentials
+  class SlackConnectorProfileCredentials
   {
   public:
-    SlackConnectorProfileCredentials();
-    SlackConnectorProfileCredentials(Aws::Utils::Json::JsonView jsonValue);
-    SlackConnectorProfileCredentials& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPFLOW_API SlackConnectorProfileCredentials();
+    AWS_APPFLOW_API SlackConnectorProfileCredentials(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API SlackConnectorProfileCredentials& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

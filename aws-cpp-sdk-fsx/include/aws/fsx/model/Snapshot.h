@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/Snapshot">AWS API
    * Reference</a></p>
    */
-  class AWS_FSX_API Snapshot
+  class Snapshot
   {
   public:
-    Snapshot();
-    Snapshot(Aws::Utils::Json::JsonView jsonValue);
-    Snapshot& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FSX_API Snapshot();
+    AWS_FSX_API Snapshot(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API Snapshot& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

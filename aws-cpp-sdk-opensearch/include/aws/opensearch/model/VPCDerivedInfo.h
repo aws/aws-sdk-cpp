@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/VPCDerivedInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_OPENSEARCHSERVICE_API VPCDerivedInfo
+  class VPCDerivedInfo
   {
   public:
-    VPCDerivedInfo();
-    VPCDerivedInfo(Aws::Utils::Json::JsonView jsonValue);
-    VPCDerivedInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OPENSEARCHSERVICE_API VPCDerivedInfo();
+    AWS_OPENSEARCHSERVICE_API VPCDerivedInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPENSEARCHSERVICE_API VPCDerivedInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPENSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

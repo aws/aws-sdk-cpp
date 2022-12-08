@@ -55,13 +55,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-plans-2018-01-06/ScalingInstruction">AWS
    * API Reference</a></p>
    */
-  class AWS_AUTOSCALINGPLANS_API ScalingInstruction
+  class ScalingInstruction
   {
   public:
-    ScalingInstruction();
-    ScalingInstruction(Aws::Utils::Json::JsonView jsonValue);
-    ScalingInstruction& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_AUTOSCALINGPLANS_API ScalingInstruction();
+    AWS_AUTOSCALINGPLANS_API ScalingInstruction(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AUTOSCALINGPLANS_API ScalingInstruction& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AUTOSCALINGPLANS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

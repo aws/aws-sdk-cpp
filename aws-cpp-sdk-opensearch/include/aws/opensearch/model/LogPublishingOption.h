@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/LogPublishingOption">AWS
    * API Reference</a></p>
    */
-  class AWS_OPENSEARCHSERVICE_API LogPublishingOption
+  class LogPublishingOption
   {
   public:
-    LogPublishingOption();
-    LogPublishingOption(Aws::Utils::Json::JsonView jsonValue);
-    LogPublishingOption& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OPENSEARCHSERVICE_API LogPublishingOption();
+    AWS_OPENSEARCHSERVICE_API LogPublishingOption(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPENSEARCHSERVICE_API LogPublishingOption& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPENSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

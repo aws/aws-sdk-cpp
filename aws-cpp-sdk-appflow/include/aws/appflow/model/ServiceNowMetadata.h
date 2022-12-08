@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/ServiceNowMetadata">AWS
    * API Reference</a></p>
    */
-  class AWS_APPFLOW_API ServiceNowMetadata
+  class ServiceNowMetadata
   {
   public:
-    ServiceNowMetadata();
-    ServiceNowMetadata(Aws::Utils::Json::JsonView jsonValue);
-    ServiceNowMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPFLOW_API ServiceNowMetadata();
+    AWS_APPFLOW_API ServiceNowMetadata(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API ServiceNowMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
   };
 

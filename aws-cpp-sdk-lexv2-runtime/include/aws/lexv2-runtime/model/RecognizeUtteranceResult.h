@@ -19,21 +19,21 @@ namespace LexRuntimeV2
 {
 namespace Model
 {
-  class AWS_LEXRUNTIMEV2_API RecognizeUtteranceResult
+  class RecognizeUtteranceResult
   {
   public:
-    RecognizeUtteranceResult();
+    AWS_LEXRUNTIMEV2_API RecognizeUtteranceResult();
     //We have to define these because Microsoft doesn't auto generate them
-    RecognizeUtteranceResult(RecognizeUtteranceResult&&);
-    RecognizeUtteranceResult& operator=(RecognizeUtteranceResult&&);
+    AWS_LEXRUNTIMEV2_API RecognizeUtteranceResult(RecognizeUtteranceResult&&);
+    AWS_LEXRUNTIMEV2_API RecognizeUtteranceResult& operator=(RecognizeUtteranceResult&&);
     //we delete these because Microsoft doesn't handle move generation correctly
     //and we therefore don't trust them to get it right here either.
     RecognizeUtteranceResult(const RecognizeUtteranceResult&) = delete;
     RecognizeUtteranceResult& operator=(const RecognizeUtteranceResult&) = delete;
 
 
-    RecognizeUtteranceResult(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
-    RecognizeUtteranceResult& operator=(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
+    AWS_LEXRUNTIMEV2_API RecognizeUtteranceResult(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
+    AWS_LEXRUNTIMEV2_API RecognizeUtteranceResult& operator=(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
 
 
 

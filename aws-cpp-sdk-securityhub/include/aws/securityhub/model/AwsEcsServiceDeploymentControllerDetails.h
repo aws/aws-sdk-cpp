@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsEcsServiceDeploymentControllerDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsEcsServiceDeploymentControllerDetails
+  class AwsEcsServiceDeploymentControllerDetails
   {
   public:
-    AwsEcsServiceDeploymentControllerDetails();
-    AwsEcsServiceDeploymentControllerDetails(Aws::Utils::Json::JsonView jsonValue);
-    AwsEcsServiceDeploymentControllerDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsEcsServiceDeploymentControllerDetails();
+    AWS_SECURITYHUB_API AwsEcsServiceDeploymentControllerDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsEcsServiceDeploymentControllerDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/JDBCConnectorSource">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API JDBCConnectorSource
+  class JDBCConnectorSource
   {
   public:
-    JDBCConnectorSource();
-    JDBCConnectorSource(Aws::Utils::Json::JsonView jsonValue);
-    JDBCConnectorSource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API JDBCConnectorSource();
+    AWS_GLUE_API JDBCConnectorSource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API JDBCConnectorSource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

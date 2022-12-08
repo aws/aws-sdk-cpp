@@ -22,12 +22,12 @@ namespace SSM
 {
 namespace Model
 {
-  class AWS_SSM_API StartAssociationsOnceResult
+  class StartAssociationsOnceResult
   {
   public:
-    StartAssociationsOnceResult();
-    StartAssociationsOnceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    StartAssociationsOnceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSM_API StartAssociationsOnceResult();
+    AWS_SSM_API StartAssociationsOnceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSM_API StartAssociationsOnceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

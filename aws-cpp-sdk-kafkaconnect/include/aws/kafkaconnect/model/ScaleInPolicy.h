@@ -26,13 +26,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/ScaleInPolicy">AWS
    * API Reference</a></p>
    */
-  class AWS_KAFKACONNECT_API ScaleInPolicy
+  class ScaleInPolicy
   {
   public:
-    ScaleInPolicy();
-    ScaleInPolicy(Aws::Utils::Json::JsonView jsonValue);
-    ScaleInPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KAFKACONNECT_API ScaleInPolicy();
+    AWS_KAFKACONNECT_API ScaleInPolicy(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKACONNECT_API ScaleInPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKACONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

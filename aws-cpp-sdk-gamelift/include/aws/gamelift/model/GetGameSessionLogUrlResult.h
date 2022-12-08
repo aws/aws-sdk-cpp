@@ -24,12 +24,12 @@ namespace GameLift
 {
 namespace Model
 {
-  class AWS_GAMELIFT_API GetGameSessionLogUrlResult
+  class GetGameSessionLogUrlResult
   {
   public:
-    GetGameSessionLogUrlResult();
-    GetGameSessionLogUrlResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetGameSessionLogUrlResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GAMELIFT_API GetGameSessionLogUrlResult();
+    AWS_GAMELIFT_API GetGameSessionLogUrlResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GAMELIFT_API GetGameSessionLogUrlResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

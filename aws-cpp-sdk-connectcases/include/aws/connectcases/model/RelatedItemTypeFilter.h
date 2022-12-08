@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/RelatedItemTypeFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECTCASES_API RelatedItemTypeFilter
+  class RelatedItemTypeFilter
   {
   public:
-    RelatedItemTypeFilter();
-    RelatedItemTypeFilter(Aws::Utils::Json::JsonView jsonValue);
-    RelatedItemTypeFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECTCASES_API RelatedItemTypeFilter();
+    AWS_CONNECTCASES_API RelatedItemTypeFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTCASES_API RelatedItemTypeFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTCASES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

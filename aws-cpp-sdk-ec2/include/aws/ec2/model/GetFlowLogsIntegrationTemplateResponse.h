@@ -25,12 +25,12 @@ namespace EC2
 {
 namespace Model
 {
-  class AWS_EC2_API GetFlowLogsIntegrationTemplateResponse
+  class GetFlowLogsIntegrationTemplateResponse
   {
   public:
-    GetFlowLogsIntegrationTemplateResponse();
-    GetFlowLogsIntegrationTemplateResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    GetFlowLogsIntegrationTemplateResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API GetFlowLogsIntegrationTemplateResponse();
+    AWS_EC2_API GetFlowLogsIntegrationTemplateResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API GetFlowLogsIntegrationTemplateResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/TrainingJobStatusCounters">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API TrainingJobStatusCounters
+  class TrainingJobStatusCounters
   {
   public:
-    TrainingJobStatusCounters();
-    TrainingJobStatusCounters(Aws::Utils::Json::JsonView jsonValue);
-    TrainingJobStatusCounters& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API TrainingJobStatusCounters();
+    AWS_SAGEMAKER_API TrainingJobStatusCounters(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API TrainingJobStatusCounters& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

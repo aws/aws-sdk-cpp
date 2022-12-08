@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/MicrosoftSQLServerCatalogSource">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API MicrosoftSQLServerCatalogSource
+  class MicrosoftSQLServerCatalogSource
   {
   public:
-    MicrosoftSQLServerCatalogSource();
-    MicrosoftSQLServerCatalogSource(Aws::Utils::Json::JsonView jsonValue);
-    MicrosoftSQLServerCatalogSource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API MicrosoftSQLServerCatalogSource();
+    AWS_GLUE_API MicrosoftSQLServerCatalogSource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API MicrosoftSQLServerCatalogSource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

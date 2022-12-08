@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/RegisteredUserQuickSightConsoleEmbeddingConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API RegisteredUserQuickSightConsoleEmbeddingConfiguration
+  class RegisteredUserQuickSightConsoleEmbeddingConfiguration
   {
   public:
-    RegisteredUserQuickSightConsoleEmbeddingConfiguration();
-    RegisteredUserQuickSightConsoleEmbeddingConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    RegisteredUserQuickSightConsoleEmbeddingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API RegisteredUserQuickSightConsoleEmbeddingConfiguration();
+    AWS_QUICKSIGHT_API RegisteredUserQuickSightConsoleEmbeddingConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API RegisteredUserQuickSightConsoleEmbeddingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

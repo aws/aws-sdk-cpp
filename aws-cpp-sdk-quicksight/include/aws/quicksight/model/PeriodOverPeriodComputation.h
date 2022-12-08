@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/PeriodOverPeriodComputation">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API PeriodOverPeriodComputation
+  class PeriodOverPeriodComputation
   {
   public:
-    PeriodOverPeriodComputation();
-    PeriodOverPeriodComputation(Aws::Utils::Json::JsonView jsonValue);
-    PeriodOverPeriodComputation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API PeriodOverPeriodComputation();
+    AWS_QUICKSIGHT_API PeriodOverPeriodComputation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API PeriodOverPeriodComputation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

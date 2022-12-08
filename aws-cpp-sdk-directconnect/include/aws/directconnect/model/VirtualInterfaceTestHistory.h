@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/VirtualInterfaceTestHistory">AWS
    * API Reference</a></p>
    */
-  class AWS_DIRECTCONNECT_API VirtualInterfaceTestHistory
+  class VirtualInterfaceTestHistory
   {
   public:
-    VirtualInterfaceTestHistory();
-    VirtualInterfaceTestHistory(Aws::Utils::Json::JsonView jsonValue);
-    VirtualInterfaceTestHistory& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DIRECTCONNECT_API VirtualInterfaceTestHistory();
+    AWS_DIRECTCONNECT_API VirtualInterfaceTestHistory(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTCONNECT_API VirtualInterfaceTestHistory& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTCONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

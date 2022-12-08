@@ -28,13 +28,13 @@ namespace Model
    * <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/Owner">AWS
    * API Reference</a></p>
    */
-  class AWS_GUARDDUTY_API Owner
+  class Owner
   {
   public:
-    Owner();
-    Owner(Aws::Utils::Json::JsonView jsonValue);
-    Owner& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GUARDDUTY_API Owner();
+    AWS_GUARDDUTY_API Owner(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API Owner& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

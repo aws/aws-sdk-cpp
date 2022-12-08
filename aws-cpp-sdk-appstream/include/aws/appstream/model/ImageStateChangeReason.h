@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ImageStateChangeReason">AWS
    * API Reference</a></p>
    */
-  class AWS_APPSTREAM_API ImageStateChangeReason
+  class ImageStateChangeReason
   {
   public:
-    ImageStateChangeReason();
-    ImageStateChangeReason(Aws::Utils::Json::JsonView jsonValue);
-    ImageStateChangeReason& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPSTREAM_API ImageStateChangeReason();
+    AWS_APPSTREAM_API ImageStateChangeReason(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPSTREAM_API ImageStateChangeReason& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPSTREAM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

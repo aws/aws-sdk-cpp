@@ -25,12 +25,12 @@ namespace Appflow
 {
 namespace Model
 {
-  class AWS_APPFLOW_API CreateFlowResult
+  class CreateFlowResult
   {
   public:
-    CreateFlowResult();
-    CreateFlowResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateFlowResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPFLOW_API CreateFlowResult();
+    AWS_APPFLOW_API CreateFlowResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPFLOW_API CreateFlowResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

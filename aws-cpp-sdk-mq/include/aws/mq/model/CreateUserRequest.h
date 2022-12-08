@@ -22,10 +22,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/CreateUserRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_MQ_API CreateUserRequest : public MQRequest
+  class CreateUserRequest : public MQRequest
   {
   public:
-    CreateUserRequest();
+    AWS_MQ_API CreateUserRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,7 +33,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateUser"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_MQ_API Aws::String SerializePayload() const override;
 
 
     /**

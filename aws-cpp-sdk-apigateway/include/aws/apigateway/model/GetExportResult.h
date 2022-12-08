@@ -25,21 +25,21 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/ExportResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_APIGATEWAY_API GetExportResult
+  class GetExportResult
   {
   public:
-    GetExportResult();
+    AWS_APIGATEWAY_API GetExportResult();
     //We have to define these because Microsoft doesn't auto generate them
-    GetExportResult(GetExportResult&&);
-    GetExportResult& operator=(GetExportResult&&);
+    AWS_APIGATEWAY_API GetExportResult(GetExportResult&&);
+    AWS_APIGATEWAY_API GetExportResult& operator=(GetExportResult&&);
     //we delete these because Microsoft doesn't handle move generation correctly
     //and we therefore don't trust them to get it right here either.
     GetExportResult(const GetExportResult&) = delete;
     GetExportResult& operator=(const GetExportResult&) = delete;
 
 
-    GetExportResult(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
-    GetExportResult& operator=(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
+    AWS_APIGATEWAY_API GetExportResult(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
+    AWS_APIGATEWAY_API GetExportResult& operator=(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
 
 
 

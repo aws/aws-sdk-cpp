@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/CommitDiffSourceCodeType">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEGURUREVIEWER_API CommitDiffSourceCodeType
+  class CommitDiffSourceCodeType
   {
   public:
-    CommitDiffSourceCodeType();
-    CommitDiffSourceCodeType(Aws::Utils::Json::JsonView jsonValue);
-    CommitDiffSourceCodeType& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEGURUREVIEWER_API CommitDiffSourceCodeType();
+    AWS_CODEGURUREVIEWER_API CommitDiffSourceCodeType(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEGURUREVIEWER_API CommitDiffSourceCodeType& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEGURUREVIEWER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

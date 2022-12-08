@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DefaultPushNotificationMessage">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API DefaultPushNotificationMessage
+  class DefaultPushNotificationMessage
   {
   public:
-    DefaultPushNotificationMessage();
-    DefaultPushNotificationMessage(Aws::Utils::Json::JsonView jsonValue);
-    DefaultPushNotificationMessage& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API DefaultPushNotificationMessage();
+    AWS_PINPOINT_API DefaultPushNotificationMessage(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API DefaultPushNotificationMessage& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

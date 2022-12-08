@@ -30,12 +30,12 @@ namespace Omics
 {
 namespace Model
 {
-  class AWS_OMICS_API GetRunResult
+  class GetRunResult
   {
   public:
-    GetRunResult();
-    GetRunResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetRunResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OMICS_API GetRunResult();
+    AWS_OMICS_API GetRunResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OMICS_API GetRunResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

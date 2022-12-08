@@ -29,12 +29,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/DataflowEndpointGroupIdResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_GROUNDSTATION_API DeleteDataflowEndpointGroupResult
+  class DeleteDataflowEndpointGroupResult
   {
   public:
-    DeleteDataflowEndpointGroupResult();
-    DeleteDataflowEndpointGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteDataflowEndpointGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GROUNDSTATION_API DeleteDataflowEndpointGroupResult();
+    AWS_GROUNDSTATION_API DeleteDataflowEndpointGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GROUNDSTATION_API DeleteDataflowEndpointGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -27,12 +27,12 @@ namespace EC2
 {
 namespace Model
 {
-  class AWS_EC2_API GetInstanceTypesFromInstanceRequirementsResponse
+  class GetInstanceTypesFromInstanceRequirementsResponse
   {
   public:
-    GetInstanceTypesFromInstanceRequirementsResponse();
-    GetInstanceTypesFromInstanceRequirementsResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    GetInstanceTypesFromInstanceRequirementsResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API GetInstanceTypesFromInstanceRequirementsResponse();
+    AWS_EC2_API GetInstanceTypesFromInstanceRequirementsResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API GetInstanceTypesFromInstanceRequirementsResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

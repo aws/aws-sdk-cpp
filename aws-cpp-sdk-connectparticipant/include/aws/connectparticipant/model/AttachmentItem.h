@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/connectparticipant-2018-09-07/AttachmentItem">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECTPARTICIPANT_API AttachmentItem
+  class AttachmentItem
   {
   public:
-    AttachmentItem();
-    AttachmentItem(Aws::Utils::Json::JsonView jsonValue);
-    AttachmentItem& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECTPARTICIPANT_API AttachmentItem();
+    AWS_CONNECTPARTICIPANT_API AttachmentItem(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTPARTICIPANT_API AttachmentItem& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTPARTICIPANT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

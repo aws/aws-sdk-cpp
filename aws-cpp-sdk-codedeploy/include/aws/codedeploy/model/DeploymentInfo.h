@@ -45,13 +45,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/DeploymentInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEDEPLOY_API DeploymentInfo
+  class DeploymentInfo
   {
   public:
-    DeploymentInfo();
-    DeploymentInfo(Aws::Utils::Json::JsonView jsonValue);
-    DeploymentInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEDEPLOY_API DeploymentInfo();
+    AWS_CODEDEPLOY_API DeploymentInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEDEPLOY_API DeploymentInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEDEPLOY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

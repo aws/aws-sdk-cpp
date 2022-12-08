@@ -22,12 +22,12 @@ namespace Comprehend
 {
 namespace Model
 {
-  class AWS_COMPREHEND_API UpdateEndpointResult
+  class UpdateEndpointResult
   {
   public:
-    UpdateEndpointResult();
-    UpdateEndpointResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateEndpointResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_COMPREHEND_API UpdateEndpointResult();
+    AWS_COMPREHEND_API UpdateEndpointResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_COMPREHEND_API UpdateEndpointResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

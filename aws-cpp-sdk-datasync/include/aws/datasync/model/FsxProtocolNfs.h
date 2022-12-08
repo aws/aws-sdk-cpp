@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/FsxProtocolNfs">AWS
    * API Reference</a></p>
    */
-  class AWS_DATASYNC_API FsxProtocolNfs
+  class FsxProtocolNfs
   {
   public:
-    FsxProtocolNfs();
-    FsxProtocolNfs(Aws::Utils::Json::JsonView jsonValue);
-    FsxProtocolNfs& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DATASYNC_API FsxProtocolNfs();
+    AWS_DATASYNC_API FsxProtocolNfs(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATASYNC_API FsxProtocolNfs& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATASYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

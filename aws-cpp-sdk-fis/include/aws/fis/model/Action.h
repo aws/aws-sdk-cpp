@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/Action">AWS API
    * Reference</a></p>
    */
-  class AWS_FIS_API Action
+  class Action
   {
   public:
-    Action();
-    Action(Aws::Utils::Json::JsonView jsonValue);
-    Action& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FIS_API Action();
+    AWS_FIS_API Action(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FIS_API Action& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FIS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

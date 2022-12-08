@@ -26,12 +26,12 @@ namespace PI
 {
 namespace Model
 {
-  class AWS_PI_API ListAvailableResourceDimensionsResult
+  class ListAvailableResourceDimensionsResult
   {
   public:
-    ListAvailableResourceDimensionsResult();
-    ListAvailableResourceDimensionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListAvailableResourceDimensionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PI_API ListAvailableResourceDimensionsResult();
+    AWS_PI_API ListAvailableResourceDimensionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PI_API ListAvailableResourceDimensionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

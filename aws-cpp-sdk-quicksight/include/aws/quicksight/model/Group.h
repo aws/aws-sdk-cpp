@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/Group">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API Group
+  class Group
   {
   public:
-    Group();
-    Group(Aws::Utils::Json::JsonView jsonValue);
-    Group& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API Group();
+    AWS_QUICKSIGHT_API Group(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Group& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

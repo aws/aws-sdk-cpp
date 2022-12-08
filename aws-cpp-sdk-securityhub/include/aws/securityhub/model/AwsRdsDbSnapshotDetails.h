@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsRdsDbSnapshotDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsRdsDbSnapshotDetails
+  class AwsRdsDbSnapshotDetails
   {
   public:
-    AwsRdsDbSnapshotDetails();
-    AwsRdsDbSnapshotDetails(Aws::Utils::Json::JsonView jsonValue);
-    AwsRdsDbSnapshotDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsRdsDbSnapshotDetails();
+    AWS_SECURITYHUB_API AwsRdsDbSnapshotDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsRdsDbSnapshotDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

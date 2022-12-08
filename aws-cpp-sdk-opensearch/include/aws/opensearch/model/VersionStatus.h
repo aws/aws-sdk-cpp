@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/VersionStatus">AWS
    * API Reference</a></p>
    */
-  class AWS_OPENSEARCHSERVICE_API VersionStatus
+  class VersionStatus
   {
   public:
-    VersionStatus();
-    VersionStatus(Aws::Utils::Json::JsonView jsonValue);
-    VersionStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OPENSEARCHSERVICE_API VersionStatus();
+    AWS_OPENSEARCHSERVICE_API VersionStatus(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPENSEARCHSERVICE_API VersionStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPENSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

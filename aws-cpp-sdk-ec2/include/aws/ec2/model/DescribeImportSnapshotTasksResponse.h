@@ -27,12 +27,12 @@ namespace EC2
 {
 namespace Model
 {
-  class AWS_EC2_API DescribeImportSnapshotTasksResponse
+  class DescribeImportSnapshotTasksResponse
   {
   public:
-    DescribeImportSnapshotTasksResponse();
-    DescribeImportSnapshotTasksResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeImportSnapshotTasksResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API DescribeImportSnapshotTasksResponse();
+    AWS_EC2_API DescribeImportSnapshotTasksResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API DescribeImportSnapshotTasksResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

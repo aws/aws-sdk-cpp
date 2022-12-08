@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/Upload">AWS
    * API Reference</a></p>
    */
-  class AWS_DEVICEFARM_API Upload
+  class Upload
   {
   public:
-    Upload();
-    Upload(Aws::Utils::Json::JsonView jsonValue);
-    Upload& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DEVICEFARM_API Upload();
+    AWS_DEVICEFARM_API Upload(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVICEFARM_API Upload& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVICEFARM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

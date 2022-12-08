@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/DestinationSchema">AWS
    * API Reference</a></p>
    */
-  class AWS_KINESISANALYTICS_API DestinationSchema
+  class DestinationSchema
   {
   public:
-    DestinationSchema();
-    DestinationSchema(Aws::Utils::Json::JsonView jsonValue);
-    DestinationSchema& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KINESISANALYTICS_API DestinationSchema();
+    AWS_KINESISANALYTICS_API DestinationSchema(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICS_API DestinationSchema& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

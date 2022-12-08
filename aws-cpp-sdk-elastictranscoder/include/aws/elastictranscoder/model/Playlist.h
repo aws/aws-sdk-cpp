@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/Playlist">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICTRANSCODER_API Playlist
+  class Playlist
   {
   public:
-    Playlist();
-    Playlist(Aws::Utils::Json::JsonView jsonValue);
-    Playlist& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ELASTICTRANSCODER_API Playlist();
+    AWS_ELASTICTRANSCODER_API Playlist(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICTRANSCODER_API Playlist& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICTRANSCODER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

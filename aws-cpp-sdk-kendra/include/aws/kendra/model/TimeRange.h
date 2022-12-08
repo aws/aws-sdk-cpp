@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/TimeRange">AWS
    * API Reference</a></p>
    */
-  class AWS_KENDRA_API TimeRange
+  class TimeRange
   {
   public:
-    TimeRange();
-    TimeRange(Aws::Utils::Json::JsonView jsonValue);
-    TimeRange& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KENDRA_API TimeRange();
+    AWS_KENDRA_API TimeRange(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API TimeRange& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

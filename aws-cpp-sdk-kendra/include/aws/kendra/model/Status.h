@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/Status">AWS API
    * Reference</a></p>
    */
-  class AWS_KENDRA_API Status
+  class Status
   {
   public:
-    Status();
-    Status(Aws::Utils::Json::JsonView jsonValue);
-    Status& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KENDRA_API Status();
+    AWS_KENDRA_API Status(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API Status& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

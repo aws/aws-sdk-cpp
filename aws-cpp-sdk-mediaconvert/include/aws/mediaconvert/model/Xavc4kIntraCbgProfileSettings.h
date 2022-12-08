@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/Xavc4kIntraCbgProfileSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API Xavc4kIntraCbgProfileSettings
+  class Xavc4kIntraCbgProfileSettings
   {
   public:
-    Xavc4kIntraCbgProfileSettings();
-    Xavc4kIntraCbgProfileSettings(Aws::Utils::Json::JsonView jsonValue);
-    Xavc4kIntraCbgProfileSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API Xavc4kIntraCbgProfileSettings();
+    AWS_MEDIACONVERT_API Xavc4kIntraCbgProfileSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Xavc4kIntraCbgProfileSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

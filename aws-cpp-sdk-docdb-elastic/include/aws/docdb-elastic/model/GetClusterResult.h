@@ -24,12 +24,12 @@ namespace DocDBElastic
 {
 namespace Model
 {
-  class AWS_DOCDBELASTIC_API GetClusterResult
+  class GetClusterResult
   {
   public:
-    GetClusterResult();
-    GetClusterResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetClusterResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DOCDBELASTIC_API GetClusterResult();
+    AWS_DOCDBELASTIC_API GetClusterResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DOCDBELASTIC_API GetClusterResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

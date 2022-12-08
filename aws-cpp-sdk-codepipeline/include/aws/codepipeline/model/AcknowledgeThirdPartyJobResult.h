@@ -30,12 +30,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/AcknowledgeThirdPartyJobOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEPIPELINE_API AcknowledgeThirdPartyJobResult
+  class AcknowledgeThirdPartyJobResult
   {
   public:
-    AcknowledgeThirdPartyJobResult();
-    AcknowledgeThirdPartyJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AcknowledgeThirdPartyJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODEPIPELINE_API AcknowledgeThirdPartyJobResult();
+    AWS_CODEPIPELINE_API AcknowledgeThirdPartyJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODEPIPELINE_API AcknowledgeThirdPartyJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

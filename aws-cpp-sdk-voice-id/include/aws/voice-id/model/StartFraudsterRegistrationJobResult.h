@@ -24,12 +24,12 @@ namespace VoiceID
 {
 namespace Model
 {
-  class AWS_VOICEID_API StartFraudsterRegistrationJobResult
+  class StartFraudsterRegistrationJobResult
   {
   public:
-    StartFraudsterRegistrationJobResult();
-    StartFraudsterRegistrationJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    StartFraudsterRegistrationJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_VOICEID_API StartFraudsterRegistrationJobResult();
+    AWS_VOICEID_API StartFraudsterRegistrationJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_VOICEID_API StartFraudsterRegistrationJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

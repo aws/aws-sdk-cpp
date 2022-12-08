@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/AutoExportRevisionDestinationEntry">AWS
    * API Reference</a></p>
    */
-  class AWS_DATAEXCHANGE_API AutoExportRevisionDestinationEntry
+  class AutoExportRevisionDestinationEntry
   {
   public:
-    AutoExportRevisionDestinationEntry();
-    AutoExportRevisionDestinationEntry(Aws::Utils::Json::JsonView jsonValue);
-    AutoExportRevisionDestinationEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DATAEXCHANGE_API AutoExportRevisionDestinationEntry();
+    AWS_DATAEXCHANGE_API AutoExportRevisionDestinationEntry(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATAEXCHANGE_API AutoExportRevisionDestinationEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATAEXCHANGE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

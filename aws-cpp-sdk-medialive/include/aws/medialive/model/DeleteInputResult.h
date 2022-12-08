@@ -27,12 +27,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DeleteInputResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API DeleteInputResult
+  class DeleteInputResult
   {
   public:
-    DeleteInputResult();
-    DeleteInputResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteInputResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MEDIALIVE_API DeleteInputResult();
+    AWS_MEDIALIVE_API DeleteInputResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MEDIALIVE_API DeleteInputResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

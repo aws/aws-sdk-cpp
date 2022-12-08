@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/LabelDetection">AWS
    * API Reference</a></p>
    */
-  class AWS_REKOGNITION_API LabelDetection
+  class LabelDetection
   {
   public:
-    LabelDetection();
-    LabelDetection(Aws::Utils::Json::JsonView jsonValue);
-    LabelDetection& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_REKOGNITION_API LabelDetection();
+    AWS_REKOGNITION_API LabelDetection(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API LabelDetection& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

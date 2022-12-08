@@ -30,12 +30,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateSnapshotScheduleOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_STORAGEGATEWAY_API UpdateSnapshotScheduleResult
+  class UpdateSnapshotScheduleResult
   {
   public:
-    UpdateSnapshotScheduleResult();
-    UpdateSnapshotScheduleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateSnapshotScheduleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_STORAGEGATEWAY_API UpdateSnapshotScheduleResult();
+    AWS_STORAGEGATEWAY_API UpdateSnapshotScheduleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_STORAGEGATEWAY_API UpdateSnapshotScheduleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

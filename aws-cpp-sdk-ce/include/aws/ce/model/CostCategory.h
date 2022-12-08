@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/CostCategory">AWS API
    * Reference</a></p>
    */
-  class AWS_COSTEXPLORER_API CostCategory
+  class CostCategory
   {
   public:
-    CostCategory();
-    CostCategory(Aws::Utils::Json::JsonView jsonValue);
-    CostCategory& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COSTEXPLORER_API CostCategory();
+    AWS_COSTEXPLORER_API CostCategory(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API CostCategory& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

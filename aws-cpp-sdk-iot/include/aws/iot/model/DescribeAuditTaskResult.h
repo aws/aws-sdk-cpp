@@ -30,12 +30,12 @@ namespace IoT
 {
 namespace Model
 {
-  class AWS_IOT_API DescribeAuditTaskResult
+  class DescribeAuditTaskResult
   {
   public:
-    DescribeAuditTaskResult();
-    DescribeAuditTaskResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeAuditTaskResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOT_API DescribeAuditTaskResult();
+    AWS_IOT_API DescribeAuditTaskResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOT_API DescribeAuditTaskResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

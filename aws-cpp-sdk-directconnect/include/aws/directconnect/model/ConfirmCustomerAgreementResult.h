@@ -24,12 +24,12 @@ namespace DirectConnect
 {
 namespace Model
 {
-  class AWS_DIRECTCONNECT_API ConfirmCustomerAgreementResult
+  class ConfirmCustomerAgreementResult
   {
   public:
-    ConfirmCustomerAgreementResult();
-    ConfirmCustomerAgreementResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ConfirmCustomerAgreementResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DIRECTCONNECT_API ConfirmCustomerAgreementResult();
+    AWS_DIRECTCONNECT_API ConfirmCustomerAgreementResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DIRECTCONNECT_API ConfirmCustomerAgreementResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

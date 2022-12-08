@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/CreateFormData">AWS
    * API Reference</a></p>
    */
-  class AWS_AMPLIFYUIBUILDER_API CreateFormData
+  class CreateFormData
   {
   public:
-    CreateFormData();
-    CreateFormData(Aws::Utils::Json::JsonView jsonValue);
-    CreateFormData& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_AMPLIFYUIBUILDER_API CreateFormData();
+    AWS_AMPLIFYUIBUILDER_API CreateFormData(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFYUIBUILDER_API CreateFormData& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFYUIBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

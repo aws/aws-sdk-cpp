@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rolesanywhere-2018-05-10/CrlDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_ROLESANYWHERE_API CrlDetail
+  class CrlDetail
   {
   public:
-    CrlDetail();
-    CrlDetail(Aws::Utils::Json::JsonView jsonValue);
-    CrlDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ROLESANYWHERE_API CrlDetail();
+    AWS_ROLESANYWHERE_API CrlDetail(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROLESANYWHERE_API CrlDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROLESANYWHERE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

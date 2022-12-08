@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rolesanywhere-2018-05-10/TrustAnchorDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_ROLESANYWHERE_API TrustAnchorDetail
+  class TrustAnchorDetail
   {
   public:
-    TrustAnchorDetail();
-    TrustAnchorDetail(Aws::Utils::Json::JsonView jsonValue);
-    TrustAnchorDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ROLESANYWHERE_API TrustAnchorDetail();
+    AWS_ROLESANYWHERE_API TrustAnchorDetail(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROLESANYWHERE_API TrustAnchorDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROLESANYWHERE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/TimeBasedForecastProperties">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API TimeBasedForecastProperties
+  class TimeBasedForecastProperties
   {
   public:
-    TimeBasedForecastProperties();
-    TimeBasedForecastProperties(Aws::Utils::Json::JsonView jsonValue);
-    TimeBasedForecastProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API TimeBasedForecastProperties();
+    AWS_QUICKSIGHT_API TimeBasedForecastProperties(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API TimeBasedForecastProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -22,12 +22,12 @@ namespace ConnectParticipant
 {
 namespace Model
 {
-  class AWS_CONNECTPARTICIPANT_API DisconnectParticipantResult
+  class DisconnectParticipantResult
   {
   public:
-    DisconnectParticipantResult();
-    DisconnectParticipantResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DisconnectParticipantResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CONNECTPARTICIPANT_API DisconnectParticipantResult();
+    AWS_CONNECTPARTICIPANT_API DisconnectParticipantResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CONNECTPARTICIPANT_API DisconnectParticipantResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

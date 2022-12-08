@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/LexiconAttributes">AWS
    * API Reference</a></p>
    */
-  class AWS_POLLY_API LexiconAttributes
+  class LexiconAttributes
   {
   public:
-    LexiconAttributes();
-    LexiconAttributes(Aws::Utils::Json::JsonView jsonValue);
-    LexiconAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_POLLY_API LexiconAttributes();
+    AWS_POLLY_API LexiconAttributes(Aws::Utils::Json::JsonView jsonValue);
+    AWS_POLLY_API LexiconAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_POLLY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

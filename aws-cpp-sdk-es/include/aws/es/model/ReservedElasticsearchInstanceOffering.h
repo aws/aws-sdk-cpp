@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/ReservedElasticsearchInstanceOffering">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICSEARCHSERVICE_API ReservedElasticsearchInstanceOffering
+  class ReservedElasticsearchInstanceOffering
   {
   public:
-    ReservedElasticsearchInstanceOffering();
-    ReservedElasticsearchInstanceOffering(Aws::Utils::Json::JsonView jsonValue);
-    ReservedElasticsearchInstanceOffering& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ELASTICSEARCHSERVICE_API ReservedElasticsearchInstanceOffering();
+    AWS_ELASTICSEARCHSERVICE_API ReservedElasticsearchInstanceOffering(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICSEARCHSERVICE_API ReservedElasticsearchInstanceOffering& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

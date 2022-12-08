@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/ClosedDays">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API ClosedDays
+  class ClosedDays
   {
   public:
-    ClosedDays();
-    ClosedDays(Aws::Utils::Json::JsonView jsonValue);
-    ClosedDays& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API ClosedDays();
+    AWS_PINPOINT_API ClosedDays(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API ClosedDays& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

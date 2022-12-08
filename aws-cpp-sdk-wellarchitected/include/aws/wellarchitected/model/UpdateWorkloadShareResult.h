@@ -30,12 +30,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/UpdateWorkloadShareOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_WELLARCHITECTED_API UpdateWorkloadShareResult
+  class UpdateWorkloadShareResult
   {
   public:
-    UpdateWorkloadShareResult();
-    UpdateWorkloadShareResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateWorkloadShareResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WELLARCHITECTED_API UpdateWorkloadShareResult();
+    AWS_WELLARCHITECTED_API UpdateWorkloadShareResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WELLARCHITECTED_API UpdateWorkloadShareResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     

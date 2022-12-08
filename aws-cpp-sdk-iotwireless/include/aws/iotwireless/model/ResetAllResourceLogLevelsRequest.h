@@ -16,10 +16,10 @@ namespace Model
 
   /**
    */
-  class AWS_IOTWIRELESS_API ResetAllResourceLogLevelsRequest : public IoTWirelessRequest
+  class ResetAllResourceLogLevelsRequest : public IoTWirelessRequest
   {
   public:
-    ResetAllResourceLogLevelsRequest();
+    AWS_IOTWIRELESS_API ResetAllResourceLogLevelsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -27,7 +27,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ResetAllResourceLogLevels"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_IOTWIRELESS_API Aws::String SerializePayload() const override;
 
   };
 

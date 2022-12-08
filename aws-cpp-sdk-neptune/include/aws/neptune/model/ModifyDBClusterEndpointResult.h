@@ -38,12 +38,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/ModifyDBClusterEndpointOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_NEPTUNE_API ModifyDBClusterEndpointResult
+  class ModifyDBClusterEndpointResult
   {
   public:
-    ModifyDBClusterEndpointResult();
-    ModifyDBClusterEndpointResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ModifyDBClusterEndpointResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_NEPTUNE_API ModifyDBClusterEndpointResult();
+    AWS_NEPTUNE_API ModifyDBClusterEndpointResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_NEPTUNE_API ModifyDBClusterEndpointResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

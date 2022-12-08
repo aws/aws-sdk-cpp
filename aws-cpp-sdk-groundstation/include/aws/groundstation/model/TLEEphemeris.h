@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/TLEEphemeris">AWS
    * API Reference</a></p>
    */
-  class AWS_GROUNDSTATION_API TLEEphemeris
+  class TLEEphemeris
   {
   public:
-    TLEEphemeris();
-    TLEEphemeris(Aws::Utils::Json::JsonView jsonValue);
-    TLEEphemeris& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GROUNDSTATION_API TLEEphemeris();
+    AWS_GROUNDSTATION_API TLEEphemeris(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GROUNDSTATION_API TLEEphemeris& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GROUNDSTATION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

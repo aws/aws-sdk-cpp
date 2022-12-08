@@ -27,12 +27,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/ReportTaskProgressOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_DATAPIPELINE_API ReportTaskProgressResult
+  class ReportTaskProgressResult
   {
   public:
-    ReportTaskProgressResult();
-    ReportTaskProgressResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ReportTaskProgressResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DATAPIPELINE_API ReportTaskProgressResult();
+    AWS_DATAPIPELINE_API ReportTaskProgressResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DATAPIPELINE_API ReportTaskProgressResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

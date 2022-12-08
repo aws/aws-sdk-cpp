@@ -20,21 +20,21 @@ namespace BackupStorage
 {
 namespace Model
 {
-  class AWS_BACKUPSTORAGE_API GetObjectMetadataResult
+  class GetObjectMetadataResult
   {
   public:
-    GetObjectMetadataResult();
+    AWS_BACKUPSTORAGE_API GetObjectMetadataResult();
     //We have to define these because Microsoft doesn't auto generate them
-    GetObjectMetadataResult(GetObjectMetadataResult&&);
-    GetObjectMetadataResult& operator=(GetObjectMetadataResult&&);
+    AWS_BACKUPSTORAGE_API GetObjectMetadataResult(GetObjectMetadataResult&&);
+    AWS_BACKUPSTORAGE_API GetObjectMetadataResult& operator=(GetObjectMetadataResult&&);
     //we delete these because Microsoft doesn't handle move generation correctly
     //and we therefore don't trust them to get it right here either.
     GetObjectMetadataResult(const GetObjectMetadataResult&) = delete;
     GetObjectMetadataResult& operator=(const GetObjectMetadataResult&) = delete;
 
 
-    GetObjectMetadataResult(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
-    GetObjectMetadataResult& operator=(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
+    AWS_BACKUPSTORAGE_API GetObjectMetadataResult(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
+    AWS_BACKUPSTORAGE_API GetObjectMetadataResult& operator=(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
 
 
 

@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/Edge">AWS API
    * Reference</a></p>
    */
-  class AWS_XRAY_API Edge
+  class Edge
   {
   public:
-    Edge();
-    Edge(Aws::Utils::Json::JsonView jsonValue);
-    Edge& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_XRAY_API Edge();
+    AWS_XRAY_API Edge(Aws::Utils::Json::JsonView jsonValue);
+    AWS_XRAY_API Edge& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_XRAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -26,12 +26,12 @@ namespace FIS
 {
 namespace Model
 {
-  class AWS_FIS_API ListTargetResourceTypesResult
+  class ListTargetResourceTypesResult
   {
   public:
-    ListTargetResourceTypesResult();
-    ListTargetResourceTypesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListTargetResourceTypesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_FIS_API ListTargetResourceTypesResult();
+    AWS_FIS_API ListTargetResourceTypesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_FIS_API ListTargetResourceTypesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

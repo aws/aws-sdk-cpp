@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/LineChartMarkerStyleSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API LineChartMarkerStyleSettings
+  class LineChartMarkerStyleSettings
   {
   public:
-    LineChartMarkerStyleSettings();
-    LineChartMarkerStyleSettings(Aws::Utils::Json::JsonView jsonValue);
-    LineChartMarkerStyleSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API LineChartMarkerStyleSettings();
+    AWS_QUICKSIGHT_API LineChartMarkerStyleSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API LineChartMarkerStyleSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

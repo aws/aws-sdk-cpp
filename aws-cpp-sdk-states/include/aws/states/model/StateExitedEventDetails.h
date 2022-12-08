@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/StateExitedEventDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SFN_API StateExitedEventDetails
+  class StateExitedEventDetails
   {
   public:
-    StateExitedEventDetails();
-    StateExitedEventDetails(Aws::Utils::Json::JsonView jsonValue);
-    StateExitedEventDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SFN_API StateExitedEventDetails();
+    AWS_SFN_API StateExitedEventDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SFN_API StateExitedEventDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SFN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

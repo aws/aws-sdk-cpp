@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CsvClassifier">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API CsvClassifier
+  class CsvClassifier
   {
   public:
-    CsvClassifier();
-    CsvClassifier(Aws::Utils::Json::JsonView jsonValue);
-    CsvClassifier& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API CsvClassifier();
+    AWS_GLUE_API CsvClassifier(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API CsvClassifier& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

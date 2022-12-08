@@ -28,14 +28,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ContentTypeProfiles">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFRONT_API ContentTypeProfiles
+  class ContentTypeProfiles
   {
   public:
-    ContentTypeProfiles();
-    ContentTypeProfiles(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ContentTypeProfiles& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API ContentTypeProfiles();
+    AWS_CLOUDFRONT_API ContentTypeProfiles(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API ContentTypeProfiles& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**

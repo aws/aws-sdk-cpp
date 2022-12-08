@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/BarChartSortConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API BarChartSortConfiguration
+  class BarChartSortConfiguration
   {
   public:
-    BarChartSortConfiguration();
-    BarChartSortConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    BarChartSortConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API BarChartSortConfiguration();
+    AWS_QUICKSIGHT_API BarChartSortConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API BarChartSortConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

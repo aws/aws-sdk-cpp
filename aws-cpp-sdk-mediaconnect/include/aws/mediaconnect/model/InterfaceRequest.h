@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/InterfaceRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONNECT_API InterfaceRequest
+  class InterfaceRequest
   {
   public:
-    InterfaceRequest();
-    InterfaceRequest(Aws::Utils::Json::JsonView jsonValue);
-    InterfaceRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONNECT_API InterfaceRequest();
+    AWS_MEDIACONNECT_API InterfaceRequest(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONNECT_API InterfaceRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

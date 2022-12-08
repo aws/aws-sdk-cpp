@@ -25,12 +25,12 @@ namespace LakeFormation
 {
 namespace Model
 {
-  class AWS_LAKEFORMATION_API AssumeDecoratedRoleWithSAMLResult
+  class AssumeDecoratedRoleWithSAMLResult
   {
   public:
-    AssumeDecoratedRoleWithSAMLResult();
-    AssumeDecoratedRoleWithSAMLResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AssumeDecoratedRoleWithSAMLResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LAKEFORMATION_API AssumeDecoratedRoleWithSAMLResult();
+    AWS_LAKEFORMATION_API AssumeDecoratedRoleWithSAMLResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LAKEFORMATION_API AssumeDecoratedRoleWithSAMLResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

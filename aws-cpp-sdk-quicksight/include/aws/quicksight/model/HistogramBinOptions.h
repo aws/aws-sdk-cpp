@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/HistogramBinOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API HistogramBinOptions
+  class HistogramBinOptions
   {
   public:
-    HistogramBinOptions();
-    HistogramBinOptions(Aws::Utils::Json::JsonView jsonValue);
-    HistogramBinOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API HistogramBinOptions();
+    AWS_QUICKSIGHT_API HistogramBinOptions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API HistogramBinOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

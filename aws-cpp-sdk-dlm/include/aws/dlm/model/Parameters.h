@@ -38,13 +38,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dlm-2018-01-12/Parameters">AWS API
    * Reference</a></p>
    */
-  class AWS_DLM_API Parameters
+  class Parameters
   {
   public:
-    Parameters();
-    Parameters(Aws::Utils::Json::JsonView jsonValue);
-    Parameters& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DLM_API Parameters();
+    AWS_DLM_API Parameters(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DLM_API Parameters& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DLM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

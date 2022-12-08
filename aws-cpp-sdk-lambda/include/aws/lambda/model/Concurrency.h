@@ -21,13 +21,13 @@ namespace Lambda
 namespace Model
 {
 
-  class AWS_LAMBDA_API Concurrency
+  class Concurrency
   {
   public:
-    Concurrency();
-    Concurrency(Aws::Utils::Json::JsonView jsonValue);
-    Concurrency& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LAMBDA_API Concurrency();
+    AWS_LAMBDA_API Concurrency(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAMBDA_API Concurrency& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAMBDA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

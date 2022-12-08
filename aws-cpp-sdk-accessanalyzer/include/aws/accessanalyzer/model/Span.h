@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/Span">AWS
    * API Reference</a></p>
    */
-  class AWS_ACCESSANALYZER_API Span
+  class Span
   {
   public:
-    Span();
-    Span(Aws::Utils::Json::JsonView jsonValue);
-    Span& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ACCESSANALYZER_API Span();
+    AWS_ACCESSANALYZER_API Span(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACCESSANALYZER_API Span& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACCESSANALYZER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
