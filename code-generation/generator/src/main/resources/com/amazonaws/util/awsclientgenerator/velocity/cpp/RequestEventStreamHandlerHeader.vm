@@ -4,6 +4,7 @@
 #set($metadata = $serviceModel.metadata)
 #set($rootNamespace = $serviceModel.namespace)
 #set($serviceNamespace = $metadata.namespace)
+#set($exportMacro = $typeInfo.exportValue)
 \#include <aws/core/utils/HashingUtils.h>
 \#include <aws/core/utils/event/EventStreamHandler.h>
 \#include <aws/core/client/AWSError.h>
@@ -33,7 +34,7 @@ namespace Model
         UNKNOWN
     };
 
-    class ${typeInfo.exportValue} ${operation.name}Handler : public Aws::Utils::Event::EventStreamHandler
+    class ${operation.name}Handler : public Aws::Utils::Event::EventStreamHandler
     {
 #foreach($eventMemberEntry in $eventStreamShape.members.entrySet())
 #set($eventShape = $eventMemberEntry.value.shape)
@@ -50,10 +51,10 @@ namespace Model
         typedef std::function<void(const Aws::Client::AWSError<${metadata.classNamePrefix}Errors>& error)> ErrorCallback;
 
     public:
-        ${operation.name}Handler();
-        ${operation.name}Handler& operator=(const ${operation.name}Handler&) = default;
+        ${exportMacro} ${operation.name}Handler();
+        ${exportMacro} ${operation.name}Handler& operator=(const ${operation.name}Handler&) = default;
 
-        virtual void OnEvent() override;
+        ${exportMacro} virtual void OnEvent() override;
 
 #foreach($eventMemberEntry in $eventStreamShape.members.entrySet())
 #if(!$eventMemberEntry.value.shape.isException())
@@ -64,9 +65,9 @@ namespace Model
         inline void SetOnErrorCallback(const ErrorCallback& callback) { m_onError = callback; }
 
     private:
-        void HandleEventInMessage();
-        void HandleErrorInMessage();
-        void MarshallError(const Aws::String& errorCode, const Aws::String& errorMessage);
+        ${exportMacro} void HandleEventInMessage();
+        ${exportMacro} void HandleErrorInMessage();
+        ${exportMacro} void MarshallError(const Aws::String& errorCode, const Aws::String& errorMessage);
 
 #foreach($eventMemberEntry in $eventStreamShape.members.entrySet())
 #set($eventShapeName = $eventMemberEntry.value.shape.name)
