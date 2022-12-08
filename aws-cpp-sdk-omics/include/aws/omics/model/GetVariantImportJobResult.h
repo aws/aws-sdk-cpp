@@ -28,12 +28,12 @@ namespace Omics
 {
 namespace Model
 {
-  class AWS_OMICS_API GetVariantImportJobResult
+  class GetVariantImportJobResult
   {
   public:
-    GetVariantImportJobResult();
-    GetVariantImportJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetVariantImportJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OMICS_API GetVariantImportJobResult();
+    AWS_OMICS_API GetVariantImportJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OMICS_API GetVariantImportJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

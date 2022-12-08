@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/AppSyncRuntime">AWS
    * API Reference</a></p>
    */
-  class AWS_APPSYNC_API AppSyncRuntime
+  class AppSyncRuntime
   {
   public:
-    AppSyncRuntime();
-    AppSyncRuntime(Aws::Utils::Json::JsonView jsonValue);
-    AppSyncRuntime& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPSYNC_API AppSyncRuntime();
+    AWS_APPSYNC_API AppSyncRuntime(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPSYNC_API AppSyncRuntime& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPSYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

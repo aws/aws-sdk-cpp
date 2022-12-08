@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ImageTestsConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_IMAGEBUILDER_API ImageTestsConfiguration
+  class ImageTestsConfiguration
   {
   public:
-    ImageTestsConfiguration();
-    ImageTestsConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    ImageTestsConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IMAGEBUILDER_API ImageTestsConfiguration();
+    AWS_IMAGEBUILDER_API ImageTestsConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IMAGEBUILDER_API ImageTestsConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IMAGEBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

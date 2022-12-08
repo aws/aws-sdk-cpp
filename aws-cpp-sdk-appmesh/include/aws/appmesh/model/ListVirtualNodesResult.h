@@ -31,12 +31,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/ListVirtualNodesOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_APPMESH_API ListVirtualNodesResult
+  class ListVirtualNodesResult
   {
   public:
-    ListVirtualNodesResult();
-    ListVirtualNodesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListVirtualNodesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPMESH_API ListVirtualNodesResult();
+    AWS_APPMESH_API ListVirtualNodesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPMESH_API ListVirtualNodesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

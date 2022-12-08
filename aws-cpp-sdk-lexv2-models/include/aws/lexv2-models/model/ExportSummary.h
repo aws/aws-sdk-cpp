@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ExportSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELSV2_API ExportSummary
+  class ExportSummary
   {
   public:
-    ExportSummary();
-    ExportSummary(Aws::Utils::Json::JsonView jsonValue);
-    ExportSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELSV2_API ExportSummary();
+    AWS_LEXMODELSV2_API ExportSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API ExportSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

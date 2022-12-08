@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/MetricGoalConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDWATCHEVIDENTLY_API MetricGoalConfig
+  class MetricGoalConfig
   {
   public:
-    MetricGoalConfig();
-    MetricGoalConfig(Aws::Utils::Json::JsonView jsonValue);
-    MetricGoalConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDWATCHEVIDENTLY_API MetricGoalConfig();
+    AWS_CLOUDWATCHEVIDENTLY_API MetricGoalConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHEVIDENTLY_API MetricGoalConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHEVIDENTLY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

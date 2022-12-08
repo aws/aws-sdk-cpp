@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/Output">AWS
    * API Reference</a></p>
    */
-  class AWS_KINESISANALYTICSV2_API Output
+  class Output
   {
   public:
-    Output();
-    Output(Aws::Utils::Json::JsonView jsonValue);
-    Output& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KINESISANALYTICSV2_API Output();
+    AWS_KINESISANALYTICSV2_API Output(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICSV2_API Output& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

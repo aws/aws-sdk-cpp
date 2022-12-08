@@ -41,13 +41,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/Handshake">AWS
    * API Reference</a></p>
    */
-  class AWS_ORGANIZATIONS_API Handshake
+  class Handshake
   {
   public:
-    Handshake();
-    Handshake(Aws::Utils::Json::JsonView jsonValue);
-    Handshake& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ORGANIZATIONS_API Handshake();
+    AWS_ORGANIZATIONS_API Handshake(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ORGANIZATIONS_API Handshake& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ORGANIZATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

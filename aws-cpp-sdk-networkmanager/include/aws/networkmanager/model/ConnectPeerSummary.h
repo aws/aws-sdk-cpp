@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ConnectPeerSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_NETWORKMANAGER_API ConnectPeerSummary
+  class ConnectPeerSummary
   {
   public:
-    ConnectPeerSummary();
-    ConnectPeerSummary(Aws::Utils::Json::JsonView jsonValue);
-    ConnectPeerSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_NETWORKMANAGER_API ConnectPeerSummary();
+    AWS_NETWORKMANAGER_API ConnectPeerSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKMANAGER_API ConnectPeerSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

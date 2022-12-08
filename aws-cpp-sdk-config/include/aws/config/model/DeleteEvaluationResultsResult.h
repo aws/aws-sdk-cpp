@@ -28,12 +28,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteEvaluationResultsResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_CONFIGSERVICE_API DeleteEvaluationResultsResult
+  class DeleteEvaluationResultsResult
   {
   public:
-    DeleteEvaluationResultsResult();
-    DeleteEvaluationResultsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteEvaluationResultsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CONFIGSERVICE_API DeleteEvaluationResultsResult();
+    AWS_CONFIGSERVICE_API DeleteEvaluationResultsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CONFIGSERVICE_API DeleteEvaluationResultsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

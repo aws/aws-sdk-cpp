@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codecatalyst-2022-09-28/DevEnvironmentAccessDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_CODECATALYST_API DevEnvironmentAccessDetails
+  class DevEnvironmentAccessDetails
   {
   public:
-    DevEnvironmentAccessDetails();
-    DevEnvironmentAccessDetails(Aws::Utils::Json::JsonView jsonValue);
-    DevEnvironmentAccessDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODECATALYST_API DevEnvironmentAccessDetails();
+    AWS_CODECATALYST_API DevEnvironmentAccessDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODECATALYST_API DevEnvironmentAccessDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODECATALYST_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

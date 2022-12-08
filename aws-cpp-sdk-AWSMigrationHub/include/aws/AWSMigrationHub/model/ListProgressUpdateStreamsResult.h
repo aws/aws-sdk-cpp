@@ -26,12 +26,12 @@ namespace MigrationHub
 {
 namespace Model
 {
-  class AWS_MIGRATIONHUB_API ListProgressUpdateStreamsResult
+  class ListProgressUpdateStreamsResult
   {
   public:
-    ListProgressUpdateStreamsResult();
-    ListProgressUpdateStreamsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListProgressUpdateStreamsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MIGRATIONHUB_API ListProgressUpdateStreamsResult();
+    AWS_MIGRATIONHUB_API ListProgressUpdateStreamsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MIGRATIONHUB_API ListProgressUpdateStreamsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

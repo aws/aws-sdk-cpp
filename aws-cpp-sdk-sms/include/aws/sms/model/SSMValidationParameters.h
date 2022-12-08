@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/SSMValidationParameters">AWS
    * API Reference</a></p>
    */
-  class AWS_SMS_API SSMValidationParameters
+  class SSMValidationParameters
   {
   public:
-    SSMValidationParameters();
-    SSMValidationParameters(Aws::Utils::Json::JsonView jsonValue);
-    SSMValidationParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SMS_API SSMValidationParameters();
+    AWS_SMS_API SSMValidationParameters(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SMS_API SSMValidationParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/SourceServerActionsRequestFilters">AWS
    * API Reference</a></p>
    */
-  class AWS_MGN_API SourceServerActionsRequestFilters
+  class SourceServerActionsRequestFilters
   {
   public:
-    SourceServerActionsRequestFilters();
-    SourceServerActionsRequestFilters(Aws::Utils::Json::JsonView jsonValue);
-    SourceServerActionsRequestFilters& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MGN_API SourceServerActionsRequestFilters();
+    AWS_MGN_API SourceServerActionsRequestFilters(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MGN_API SourceServerActionsRequestFilters& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MGN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/LendingSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_TEXTRACT_API LendingSummary
+  class LendingSummary
   {
   public:
-    LendingSummary();
-    LendingSummary(Aws::Utils::Json::JsonView jsonValue);
-    LendingSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TEXTRACT_API LendingSummary();
+    AWS_TEXTRACT_API LendingSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TEXTRACT_API LendingSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TEXTRACT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

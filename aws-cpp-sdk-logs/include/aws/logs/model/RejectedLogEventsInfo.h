@@ -26,13 +26,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/RejectedLogEventsInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDWATCHLOGS_API RejectedLogEventsInfo
+  class RejectedLogEventsInfo
   {
   public:
-    RejectedLogEventsInfo();
-    RejectedLogEventsInfo(Aws::Utils::Json::JsonView jsonValue);
-    RejectedLogEventsInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDWATCHLOGS_API RejectedLogEventsInfo();
+    AWS_CLOUDWATCHLOGS_API RejectedLogEventsInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHLOGS_API RejectedLogEventsInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHLOGS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

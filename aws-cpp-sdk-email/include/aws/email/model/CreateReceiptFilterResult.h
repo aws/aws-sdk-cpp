@@ -30,12 +30,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/CreateReceiptFilterResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_SES_API CreateReceiptFilterResult
+  class CreateReceiptFilterResult
   {
   public:
-    CreateReceiptFilterResult();
-    CreateReceiptFilterResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    CreateReceiptFilterResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_SES_API CreateReceiptFilterResult();
+    AWS_SES_API CreateReceiptFilterResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_SES_API CreateReceiptFilterResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     

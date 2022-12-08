@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/TriggerUpdate">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API TriggerUpdate
+  class TriggerUpdate
   {
   public:
-    TriggerUpdate();
-    TriggerUpdate(Aws::Utils::Json::JsonView jsonValue);
-    TriggerUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API TriggerUpdate();
+    AWS_GLUE_API TriggerUpdate(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API TriggerUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

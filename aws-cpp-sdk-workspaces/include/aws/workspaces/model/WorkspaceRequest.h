@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/WorkspaceRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_WORKSPACES_API WorkspaceRequest
+  class WorkspaceRequest
   {
   public:
-    WorkspaceRequest();
-    WorkspaceRequest(Aws::Utils::Json::JsonView jsonValue);
-    WorkspaceRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WORKSPACES_API WorkspaceRequest();
+    AWS_WORKSPACES_API WorkspaceRequest(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKSPACES_API WorkspaceRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

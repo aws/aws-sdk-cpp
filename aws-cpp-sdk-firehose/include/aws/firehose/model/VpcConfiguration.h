@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/VpcConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_FIREHOSE_API VpcConfiguration
+  class VpcConfiguration
   {
   public:
-    VpcConfiguration();
-    VpcConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    VpcConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FIREHOSE_API VpcConfiguration();
+    AWS_FIREHOSE_API VpcConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FIREHOSE_API VpcConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FIREHOSE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

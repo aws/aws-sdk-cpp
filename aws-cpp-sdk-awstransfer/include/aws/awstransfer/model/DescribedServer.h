@@ -40,13 +40,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribedServer">AWS
    * API Reference</a></p>
    */
-  class AWS_TRANSFER_API DescribedServer
+  class DescribedServer
   {
   public:
-    DescribedServer();
-    DescribedServer(Aws::Utils::Json::JsonView jsonValue);
-    DescribedServer& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TRANSFER_API DescribedServer();
+    AWS_TRANSFER_API DescribedServer(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSFER_API DescribedServer& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSFER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

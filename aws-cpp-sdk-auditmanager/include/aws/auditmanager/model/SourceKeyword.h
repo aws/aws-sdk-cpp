@@ -41,13 +41,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/SourceKeyword">AWS
    * API Reference</a></p>
    */
-  class AWS_AUDITMANAGER_API SourceKeyword
+  class SourceKeyword
   {
   public:
-    SourceKeyword();
-    SourceKeyword(Aws::Utils::Json::JsonView jsonValue);
-    SourceKeyword& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_AUDITMANAGER_API SourceKeyword();
+    AWS_AUDITMANAGER_API SourceKeyword(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AUDITMANAGER_API SourceKeyword& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AUDITMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

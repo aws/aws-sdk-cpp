@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GCMChannelResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API GCMChannelResponse
+  class GCMChannelResponse
   {
   public:
-    GCMChannelResponse();
-    GCMChannelResponse(Aws::Utils::Json::JsonView jsonValue);
-    GCMChannelResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API GCMChannelResponse();
+    AWS_PINPOINT_API GCMChannelResponse(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API GCMChannelResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

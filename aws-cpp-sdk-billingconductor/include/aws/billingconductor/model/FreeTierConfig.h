@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/FreeTierConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_BILLINGCONDUCTOR_API FreeTierConfig
+  class FreeTierConfig
   {
   public:
-    FreeTierConfig();
-    FreeTierConfig(Aws::Utils::Json::JsonView jsonValue);
-    FreeTierConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BILLINGCONDUCTOR_API FreeTierConfig();
+    AWS_BILLINGCONDUCTOR_API FreeTierConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BILLINGCONDUCTOR_API FreeTierConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BILLINGCONDUCTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

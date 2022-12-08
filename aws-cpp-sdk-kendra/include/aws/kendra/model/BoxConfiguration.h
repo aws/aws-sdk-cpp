@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/BoxConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_KENDRA_API BoxConfiguration
+  class BoxConfiguration
   {
   public:
-    BoxConfiguration();
-    BoxConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    BoxConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KENDRA_API BoxConfiguration();
+    AWS_KENDRA_API BoxConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API BoxConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

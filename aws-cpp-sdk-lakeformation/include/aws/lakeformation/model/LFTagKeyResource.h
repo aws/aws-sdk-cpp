@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/LFTagKeyResource">AWS
    * API Reference</a></p>
    */
-  class AWS_LAKEFORMATION_API LFTagKeyResource
+  class LFTagKeyResource
   {
   public:
-    LFTagKeyResource();
-    LFTagKeyResource(Aws::Utils::Json::JsonView jsonValue);
-    LFTagKeyResource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LAKEFORMATION_API LFTagKeyResource();
+    AWS_LAKEFORMATION_API LFTagKeyResource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAKEFORMATION_API LFTagKeyResource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAKEFORMATION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/AttributeOperation">AWS
    * API Reference</a></p>
    */
-  class AWS_IDENTITYSTORE_API AttributeOperation
+  class AttributeOperation
   {
   public:
-    AttributeOperation();
-    AttributeOperation(Aws::Utils::Json::JsonView jsonValue);
-    AttributeOperation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IDENTITYSTORE_API AttributeOperation();
+    AWS_IDENTITYSTORE_API AttributeOperation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IDENTITYSTORE_API AttributeOperation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IDENTITYSTORE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

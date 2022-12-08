@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/InferenceInputNameConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_LOOKOUTEQUIPMENT_API InferenceInputNameConfiguration
+  class InferenceInputNameConfiguration
   {
   public:
-    InferenceInputNameConfiguration();
-    InferenceInputNameConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    InferenceInputNameConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LOOKOUTEQUIPMENT_API InferenceInputNameConfiguration();
+    AWS_LOOKOUTEQUIPMENT_API InferenceInputNameConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTEQUIPMENT_API InferenceInputNameConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTEQUIPMENT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

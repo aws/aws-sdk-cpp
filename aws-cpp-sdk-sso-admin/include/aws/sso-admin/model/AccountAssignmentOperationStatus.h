@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/AccountAssignmentOperationStatus">AWS
    * API Reference</a></p>
    */
-  class AWS_SSOADMIN_API AccountAssignmentOperationStatus
+  class AccountAssignmentOperationStatus
   {
   public:
-    AccountAssignmentOperationStatus();
-    AccountAssignmentOperationStatus(Aws::Utils::Json::JsonView jsonValue);
-    AccountAssignmentOperationStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSOADMIN_API AccountAssignmentOperationStatus();
+    AWS_SSOADMIN_API AccountAssignmentOperationStatus(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSOADMIN_API AccountAssignmentOperationStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSOADMIN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

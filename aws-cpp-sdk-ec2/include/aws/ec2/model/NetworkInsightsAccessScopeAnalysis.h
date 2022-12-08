@@ -33,15 +33,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/NetworkInsightsAccessScopeAnalysis">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API NetworkInsightsAccessScopeAnalysis
+  class NetworkInsightsAccessScopeAnalysis
   {
   public:
-    NetworkInsightsAccessScopeAnalysis();
-    NetworkInsightsAccessScopeAnalysis(const Aws::Utils::Xml::XmlNode& xmlNode);
-    NetworkInsightsAccessScopeAnalysis& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API NetworkInsightsAccessScopeAnalysis();
+    AWS_EC2_API NetworkInsightsAccessScopeAnalysis(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API NetworkInsightsAccessScopeAnalysis& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**

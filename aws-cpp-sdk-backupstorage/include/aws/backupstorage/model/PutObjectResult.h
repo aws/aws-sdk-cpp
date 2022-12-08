@@ -26,12 +26,12 @@ namespace BackupStorage
 {
 namespace Model
 {
-  class AWS_BACKUPSTORAGE_API PutObjectResult
+  class PutObjectResult
   {
   public:
-    PutObjectResult();
-    PutObjectResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PutObjectResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_BACKUPSTORAGE_API PutObjectResult();
+    AWS_BACKUPSTORAGE_API PutObjectResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_BACKUPSTORAGE_API PutObjectResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

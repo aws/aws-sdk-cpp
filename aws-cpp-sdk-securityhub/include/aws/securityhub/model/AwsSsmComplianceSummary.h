@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsSsmComplianceSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsSsmComplianceSummary
+  class AwsSsmComplianceSummary
   {
   public:
-    AwsSsmComplianceSummary();
-    AwsSsmComplianceSummary(Aws::Utils::Json::JsonView jsonValue);
-    AwsSsmComplianceSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsSsmComplianceSummary();
+    AWS_SECURITYHUB_API AwsSsmComplianceSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsSsmComplianceSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

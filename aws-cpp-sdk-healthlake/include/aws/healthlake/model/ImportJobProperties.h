@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/ImportJobProperties">AWS
    * API Reference</a></p>
    */
-  class AWS_HEALTHLAKE_API ImportJobProperties
+  class ImportJobProperties
   {
   public:
-    ImportJobProperties();
-    ImportJobProperties(Aws::Utils::Json::JsonView jsonValue);
-    ImportJobProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_HEALTHLAKE_API ImportJobProperties();
+    AWS_HEALTHLAKE_API ImportJobProperties(Aws::Utils::Json::JsonView jsonValue);
+    AWS_HEALTHLAKE_API ImportJobProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_HEALTHLAKE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

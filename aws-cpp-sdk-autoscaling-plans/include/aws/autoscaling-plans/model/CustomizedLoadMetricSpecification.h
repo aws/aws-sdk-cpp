@@ -57,13 +57,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-plans-2018-01-06/CustomizedLoadMetricSpecification">AWS
    * API Reference</a></p>
    */
-  class AWS_AUTOSCALINGPLANS_API CustomizedLoadMetricSpecification
+  class CustomizedLoadMetricSpecification
   {
   public:
-    CustomizedLoadMetricSpecification();
-    CustomizedLoadMetricSpecification(Aws::Utils::Json::JsonView jsonValue);
-    CustomizedLoadMetricSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_AUTOSCALINGPLANS_API CustomizedLoadMetricSpecification();
+    AWS_AUTOSCALINGPLANS_API CustomizedLoadMetricSpecification(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AUTOSCALINGPLANS_API CustomizedLoadMetricSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AUTOSCALINGPLANS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

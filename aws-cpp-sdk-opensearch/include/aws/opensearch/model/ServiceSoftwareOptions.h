@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/ServiceSoftwareOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_OPENSEARCHSERVICE_API ServiceSoftwareOptions
+  class ServiceSoftwareOptions
   {
   public:
-    ServiceSoftwareOptions();
-    ServiceSoftwareOptions(Aws::Utils::Json::JsonView jsonValue);
-    ServiceSoftwareOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OPENSEARCHSERVICE_API ServiceSoftwareOptions();
+    AWS_OPENSEARCHSERVICE_API ServiceSoftwareOptions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPENSEARCHSERVICE_API ServiceSoftwareOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPENSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

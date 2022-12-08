@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/oam-2022-06-10/InvalidParameterException">AWS
    * API Reference</a></p>
    */
-  class AWS_OAM_API InvalidParameterException
+  class InvalidParameterException
   {
   public:
-    InvalidParameterException();
-    InvalidParameterException(Aws::Utils::Json::JsonView jsonValue);
-    InvalidParameterException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OAM_API InvalidParameterException();
+    AWS_OAM_API InvalidParameterException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OAM_API InvalidParameterException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OAM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

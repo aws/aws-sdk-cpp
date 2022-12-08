@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/NeighborConnectionDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_APPLICATIONDISCOVERYSERVICE_API NeighborConnectionDetail
+  class NeighborConnectionDetail
   {
   public:
-    NeighborConnectionDetail();
-    NeighborConnectionDetail(Aws::Utils::Json::JsonView jsonValue);
-    NeighborConnectionDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPLICATIONDISCOVERYSERVICE_API NeighborConnectionDetail();
+    AWS_APPLICATIONDISCOVERYSERVICE_API NeighborConnectionDetail(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPLICATIONDISCOVERYSERVICE_API NeighborConnectionDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPLICATIONDISCOVERYSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

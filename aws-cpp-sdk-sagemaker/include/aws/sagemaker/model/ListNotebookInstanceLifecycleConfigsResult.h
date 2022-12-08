@@ -26,12 +26,12 @@ namespace SageMaker
 {
 namespace Model
 {
-  class AWS_SAGEMAKER_API ListNotebookInstanceLifecycleConfigsResult
+  class ListNotebookInstanceLifecycleConfigsResult
   {
   public:
-    ListNotebookInstanceLifecycleConfigsResult();
-    ListNotebookInstanceLifecycleConfigsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListNotebookInstanceLifecycleConfigsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SAGEMAKER_API ListNotebookInstanceLifecycleConfigsResult();
+    AWS_SAGEMAKER_API ListNotebookInstanceLifecycleConfigsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SAGEMAKER_API ListNotebookInstanceLifecycleConfigsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ModelCardVersionSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API ModelCardVersionSummary
+  class ModelCardVersionSummary
   {
   public:
-    ModelCardVersionSummary();
-    ModelCardVersionSummary(Aws::Utils::Json::JsonView jsonValue);
-    ModelCardVersionSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API ModelCardVersionSummary();
+    AWS_SAGEMAKER_API ModelCardVersionSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API ModelCardVersionSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

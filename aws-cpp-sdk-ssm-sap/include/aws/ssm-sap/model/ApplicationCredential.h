@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/ApplicationCredential">AWS
    * API Reference</a></p>
    */
-  class AWS_SSMSAP_API ApplicationCredential
+  class ApplicationCredential
   {
   public:
-    ApplicationCredential();
-    ApplicationCredential(Aws::Utils::Json::JsonView jsonValue);
-    ApplicationCredential& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSMSAP_API ApplicationCredential();
+    AWS_SSMSAP_API ApplicationCredential(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSMSAP_API ApplicationCredential& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSMSAP_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

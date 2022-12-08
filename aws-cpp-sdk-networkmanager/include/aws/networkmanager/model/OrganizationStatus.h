@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/OrganizationStatus">AWS
    * API Reference</a></p>
    */
-  class AWS_NETWORKMANAGER_API OrganizationStatus
+  class OrganizationStatus
   {
   public:
-    OrganizationStatus();
-    OrganizationStatus(Aws::Utils::Json::JsonView jsonValue);
-    OrganizationStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_NETWORKMANAGER_API OrganizationStatus();
+    AWS_NETWORKMANAGER_API OrganizationStatus(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKMANAGER_API OrganizationStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CodeSigningConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_LAMBDA_API CodeSigningConfig
+  class CodeSigningConfig
   {
   public:
-    CodeSigningConfig();
-    CodeSigningConfig(Aws::Utils::Json::JsonView jsonValue);
-    CodeSigningConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LAMBDA_API CodeSigningConfig();
+    AWS_LAMBDA_API CodeSigningConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAMBDA_API CodeSigningConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAMBDA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

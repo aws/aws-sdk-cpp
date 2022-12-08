@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ConditionalFormattingSolidColor">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API ConditionalFormattingSolidColor
+  class ConditionalFormattingSolidColor
   {
   public:
-    ConditionalFormattingSolidColor();
-    ConditionalFormattingSolidColor(Aws::Utils::Json::JsonView jsonValue);
-    ConditionalFormattingSolidColor& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API ConditionalFormattingSolidColor();
+    AWS_QUICKSIGHT_API ConditionalFormattingSolidColor(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API ConditionalFormattingSolidColor& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

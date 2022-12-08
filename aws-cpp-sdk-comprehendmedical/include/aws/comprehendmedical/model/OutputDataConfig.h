@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/OutputDataConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_COMPREHENDMEDICAL_API OutputDataConfig
+  class OutputDataConfig
   {
   public:
-    OutputDataConfig();
-    OutputDataConfig(Aws::Utils::Json::JsonView jsonValue);
-    OutputDataConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COMPREHENDMEDICAL_API OutputDataConfig();
+    AWS_COMPREHENDMEDICAL_API OutputDataConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHENDMEDICAL_API OutputDataConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHENDMEDICAL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

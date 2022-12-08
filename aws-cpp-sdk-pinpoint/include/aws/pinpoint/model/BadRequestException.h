@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/BadRequestException">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API BadRequestException
+  class BadRequestException
   {
   public:
-    BadRequestException();
-    BadRequestException(Aws::Utils::Json::JsonView jsonValue);
-    BadRequestException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API BadRequestException();
+    AWS_PINPOINT_API BadRequestException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API BadRequestException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

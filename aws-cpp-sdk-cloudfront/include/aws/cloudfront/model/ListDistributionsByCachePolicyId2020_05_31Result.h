@@ -24,12 +24,12 @@ namespace CloudFront
 {
 namespace Model
 {
-  class AWS_CLOUDFRONT_API ListDistributionsByCachePolicyId2020_05_31Result
+  class ListDistributionsByCachePolicyId2020_05_31Result
   {
   public:
-    ListDistributionsByCachePolicyId2020_05_31Result();
-    ListDistributionsByCachePolicyId2020_05_31Result(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ListDistributionsByCachePolicyId2020_05_31Result& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_CLOUDFRONT_API ListDistributionsByCachePolicyId2020_05_31Result();
+    AWS_CLOUDFRONT_API ListDistributionsByCachePolicyId2020_05_31Result(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_CLOUDFRONT_API ListDistributionsByCachePolicyId2020_05_31Result& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

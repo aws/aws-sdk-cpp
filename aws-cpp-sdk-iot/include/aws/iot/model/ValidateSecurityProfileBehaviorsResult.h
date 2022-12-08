@@ -25,12 +25,12 @@ namespace IoT
 {
 namespace Model
 {
-  class AWS_IOT_API ValidateSecurityProfileBehaviorsResult
+  class ValidateSecurityProfileBehaviorsResult
   {
   public:
-    ValidateSecurityProfileBehaviorsResult();
-    ValidateSecurityProfileBehaviorsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ValidateSecurityProfileBehaviorsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOT_API ValidateSecurityProfileBehaviorsResult();
+    AWS_IOT_API ValidateSecurityProfileBehaviorsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOT_API ValidateSecurityProfileBehaviorsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

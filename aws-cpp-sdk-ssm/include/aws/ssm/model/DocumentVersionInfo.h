@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DocumentVersionInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_SSM_API DocumentVersionInfo
+  class DocumentVersionInfo
   {
   public:
-    DocumentVersionInfo();
-    DocumentVersionInfo(Aws::Utils::Json::JsonView jsonValue);
-    DocumentVersionInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSM_API DocumentVersionInfo();
+    AWS_SSM_API DocumentVersionInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API DocumentVersionInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

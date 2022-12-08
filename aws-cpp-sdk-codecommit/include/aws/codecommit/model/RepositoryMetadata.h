@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/RepositoryMetadata">AWS
    * API Reference</a></p>
    */
-  class AWS_CODECOMMIT_API RepositoryMetadata
+  class RepositoryMetadata
   {
   public:
-    RepositoryMetadata();
-    RepositoryMetadata(Aws::Utils::Json::JsonView jsonValue);
-    RepositoryMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODECOMMIT_API RepositoryMetadata();
+    AWS_CODECOMMIT_API RepositoryMetadata(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODECOMMIT_API RepositoryMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODECOMMIT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

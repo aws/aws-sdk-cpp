@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/LambdaAvailabilityProvider">AWS
    * API Reference</a></p>
    */
-  class AWS_WORKMAIL_API LambdaAvailabilityProvider
+  class LambdaAvailabilityProvider
   {
   public:
-    LambdaAvailabilityProvider();
-    LambdaAvailabilityProvider(Aws::Utils::Json::JsonView jsonValue);
-    LambdaAvailabilityProvider& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WORKMAIL_API LambdaAvailabilityProvider();
+    AWS_WORKMAIL_API LambdaAvailabilityProvider(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKMAIL_API LambdaAvailabilityProvider& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKMAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/BatchDetachTypedLinkResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDDIRECTORY_API BatchDetachTypedLinkResponse
+  class BatchDetachTypedLinkResponse
   {
   public:
-    BatchDetachTypedLinkResponse();
-    BatchDetachTypedLinkResponse(Aws::Utils::Json::JsonView jsonValue);
-    BatchDetachTypedLinkResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDDIRECTORY_API BatchDetachTypedLinkResponse();
+    AWS_CLOUDDIRECTORY_API BatchDetachTypedLinkResponse(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDDIRECTORY_API BatchDetachTypedLinkResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDDIRECTORY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
   };
 

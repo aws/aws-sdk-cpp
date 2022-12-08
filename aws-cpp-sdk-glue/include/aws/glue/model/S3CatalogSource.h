@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/S3CatalogSource">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API S3CatalogSource
+  class S3CatalogSource
   {
   public:
-    S3CatalogSource();
-    S3CatalogSource(Aws::Utils::Json::JsonView jsonValue);
-    S3CatalogSource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API S3CatalogSource();
+    AWS_GLUE_API S3CatalogSource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API S3CatalogSource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

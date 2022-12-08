@@ -24,12 +24,12 @@ namespace Route53
 {
 namespace Model
 {
-  class AWS_ROUTE53_API DisableHostedZoneDNSSECResult
+  class DisableHostedZoneDNSSECResult
   {
   public:
-    DisableHostedZoneDNSSECResult();
-    DisableHostedZoneDNSSECResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DisableHostedZoneDNSSECResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ROUTE53_API DisableHostedZoneDNSSECResult();
+    AWS_ROUTE53_API DisableHostedZoneDNSSECResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ROUTE53_API DisableHostedZoneDNSSECResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     

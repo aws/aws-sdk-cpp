@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ProductViewSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_SERVICECATALOG_API ProductViewSummary
+  class ProductViewSummary
   {
   public:
-    ProductViewSummary();
-    ProductViewSummary(Aws::Utils::Json::JsonView jsonValue);
-    ProductViewSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SERVICECATALOG_API ProductViewSummary();
+    AWS_SERVICECATALOG_API ProductViewSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICECATALOG_API ProductViewSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICECATALOG_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

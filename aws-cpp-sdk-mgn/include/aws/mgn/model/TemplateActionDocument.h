@@ -26,13 +26,13 @@ namespace mgn
 namespace Model
 {
 
-  class AWS_MGN_API TemplateActionDocument
+  class TemplateActionDocument
   {
   public:
-    TemplateActionDocument();
-    TemplateActionDocument(Aws::Utils::Json::JsonView jsonValue);
-    TemplateActionDocument& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MGN_API TemplateActionDocument();
+    AWS_MGN_API TemplateActionDocument(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MGN_API TemplateActionDocument& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MGN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

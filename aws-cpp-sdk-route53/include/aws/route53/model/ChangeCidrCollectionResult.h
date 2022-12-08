@@ -24,12 +24,12 @@ namespace Route53
 {
 namespace Model
 {
-  class AWS_ROUTE53_API ChangeCidrCollectionResult
+  class ChangeCidrCollectionResult
   {
   public:
-    ChangeCidrCollectionResult();
-    ChangeCidrCollectionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ChangeCidrCollectionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ROUTE53_API ChangeCidrCollectionResult();
+    AWS_ROUTE53_API ChangeCidrCollectionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ROUTE53_API ChangeCidrCollectionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/Branch">AWS API
    * Reference</a></p>
    */
-  class AWS_AMPLIFY_API Branch
+  class Branch
   {
   public:
-    Branch();
-    Branch(Aws::Utils::Json::JsonView jsonValue);
-    Branch& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_AMPLIFY_API Branch();
+    AWS_AMPLIFY_API Branch(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFY_API Branch& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

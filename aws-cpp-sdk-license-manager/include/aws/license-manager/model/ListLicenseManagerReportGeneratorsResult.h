@@ -26,12 +26,12 @@ namespace LicenseManager
 {
 namespace Model
 {
-  class AWS_LICENSEMANAGER_API ListLicenseManagerReportGeneratorsResult
+  class ListLicenseManagerReportGeneratorsResult
   {
   public:
-    ListLicenseManagerReportGeneratorsResult();
-    ListLicenseManagerReportGeneratorsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListLicenseManagerReportGeneratorsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LICENSEMANAGER_API ListLicenseManagerReportGeneratorsResult();
+    AWS_LICENSEMANAGER_API ListLicenseManagerReportGeneratorsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LICENSEMANAGER_API ListLicenseManagerReportGeneratorsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

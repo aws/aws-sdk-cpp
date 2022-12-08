@@ -26,12 +26,12 @@ namespace Redshift
 {
 namespace Model
 {
-  class AWS_REDSHIFT_API GetClusterCredentialsWithIAMResult
+  class GetClusterCredentialsWithIAMResult
   {
   public:
-    GetClusterCredentialsWithIAMResult();
-    GetClusterCredentialsWithIAMResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    GetClusterCredentialsWithIAMResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_REDSHIFT_API GetClusterCredentialsWithIAMResult();
+    AWS_REDSHIFT_API GetClusterCredentialsWithIAMResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_REDSHIFT_API GetClusterCredentialsWithIAMResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

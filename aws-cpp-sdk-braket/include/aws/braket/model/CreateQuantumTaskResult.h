@@ -24,12 +24,12 @@ namespace Braket
 {
 namespace Model
 {
-  class AWS_BRAKET_API CreateQuantumTaskResult
+  class CreateQuantumTaskResult
   {
   public:
-    CreateQuantumTaskResult();
-    CreateQuantumTaskResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateQuantumTaskResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_BRAKET_API CreateQuantumTaskResult();
+    AWS_BRAKET_API CreateQuantumTaskResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_BRAKET_API CreateQuantumTaskResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

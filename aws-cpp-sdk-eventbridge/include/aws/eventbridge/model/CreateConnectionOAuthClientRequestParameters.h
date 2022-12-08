@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/CreateConnectionOAuthClientRequestParameters">AWS
    * API Reference</a></p>
    */
-  class AWS_EVENTBRIDGE_API CreateConnectionOAuthClientRequestParameters
+  class CreateConnectionOAuthClientRequestParameters
   {
   public:
-    CreateConnectionOAuthClientRequestParameters();
-    CreateConnectionOAuthClientRequestParameters(Aws::Utils::Json::JsonView jsonValue);
-    CreateConnectionOAuthClientRequestParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EVENTBRIDGE_API CreateConnectionOAuthClientRequestParameters();
+    AWS_EVENTBRIDGE_API CreateConnectionOAuthClientRequestParameters(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EVENTBRIDGE_API CreateConnectionOAuthClientRequestParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EVENTBRIDGE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

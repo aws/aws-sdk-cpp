@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/AdditionalResultAttributeValue">AWS
    * API Reference</a></p>
    */
-  class AWS_KENDRA_API AdditionalResultAttributeValue
+  class AdditionalResultAttributeValue
   {
   public:
-    AdditionalResultAttributeValue();
-    AdditionalResultAttributeValue(Aws::Utils::Json::JsonView jsonValue);
-    AdditionalResultAttributeValue& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KENDRA_API AdditionalResultAttributeValue();
+    AWS_KENDRA_API AdditionalResultAttributeValue(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API AdditionalResultAttributeValue& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

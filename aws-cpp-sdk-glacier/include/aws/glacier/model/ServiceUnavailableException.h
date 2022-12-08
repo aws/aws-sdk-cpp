@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/ServiceUnavailableException">AWS
    * API Reference</a></p>
    */
-  class AWS_GLACIER_API ServiceUnavailableException
+  class ServiceUnavailableException
   {
   public:
-    ServiceUnavailableException();
-    ServiceUnavailableException(Aws::Utils::Json::JsonView jsonValue);
-    ServiceUnavailableException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLACIER_API ServiceUnavailableException();
+    AWS_GLACIER_API ServiceUnavailableException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLACIER_API ServiceUnavailableException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLACIER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

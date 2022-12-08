@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-2017-10-12/S3Destination">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIAPACKAGE_API S3Destination
+  class S3Destination
   {
   public:
-    S3Destination();
-    S3Destination(Aws::Utils::Json::JsonView jsonValue);
-    S3Destination& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIAPACKAGE_API S3Destination();
+    AWS_MEDIAPACKAGE_API S3Destination(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIAPACKAGE_API S3Destination& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIAPACKAGE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/Authorizer">AWS
    * API Reference</a></p>
    */
-  class AWS_APIGATEWAY_API Authorizer
+  class Authorizer
   {
   public:
-    Authorizer();
-    Authorizer(Aws::Utils::Json::JsonView jsonValue);
-    Authorizer& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APIGATEWAY_API Authorizer();
+    AWS_APIGATEWAY_API Authorizer(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APIGATEWAY_API Authorizer& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APIGATEWAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

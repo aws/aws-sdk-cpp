@@ -42,13 +42,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/BatchReadSuccessfulResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDDIRECTORY_API BatchReadSuccessfulResponse
+  class BatchReadSuccessfulResponse
   {
   public:
-    BatchReadSuccessfulResponse();
-    BatchReadSuccessfulResponse(Aws::Utils::Json::JsonView jsonValue);
-    BatchReadSuccessfulResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDDIRECTORY_API BatchReadSuccessfulResponse();
+    AWS_CLOUDDIRECTORY_API BatchReadSuccessfulResponse(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDDIRECTORY_API BatchReadSuccessfulResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDDIRECTORY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

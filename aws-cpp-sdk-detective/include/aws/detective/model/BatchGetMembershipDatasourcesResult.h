@@ -26,12 +26,12 @@ namespace Detective
 {
 namespace Model
 {
-  class AWS_DETECTIVE_API BatchGetMembershipDatasourcesResult
+  class BatchGetMembershipDatasourcesResult
   {
   public:
-    BatchGetMembershipDatasourcesResult();
-    BatchGetMembershipDatasourcesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    BatchGetMembershipDatasourcesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DETECTIVE_API BatchGetMembershipDatasourcesResult();
+    AWS_DETECTIVE_API BatchGetMembershipDatasourcesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DETECTIVE_API BatchGetMembershipDatasourcesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -37,13 +37,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/ComputeResource">AWS
    * API Reference</a></p>
    */
-  class AWS_BATCH_API ComputeResource
+  class ComputeResource
   {
   public:
-    ComputeResource();
-    ComputeResource(Aws::Utils::Json::JsonView jsonValue);
-    ComputeResource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BATCH_API ComputeResource();
+    AWS_BATCH_API ComputeResource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BATCH_API ComputeResource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BATCH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

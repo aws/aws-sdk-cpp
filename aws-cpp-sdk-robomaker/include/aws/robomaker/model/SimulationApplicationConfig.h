@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/SimulationApplicationConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_ROBOMAKER_API SimulationApplicationConfig
+  class SimulationApplicationConfig
   {
   public:
-    SimulationApplicationConfig();
-    SimulationApplicationConfig(Aws::Utils::Json::JsonView jsonValue);
-    SimulationApplicationConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ROBOMAKER_API SimulationApplicationConfig();
+    AWS_ROBOMAKER_API SimulationApplicationConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROBOMAKER_API SimulationApplicationConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROBOMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

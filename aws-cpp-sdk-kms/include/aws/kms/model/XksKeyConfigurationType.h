@@ -39,13 +39,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/XksKeyConfigurationType">AWS
    * API Reference</a></p>
    */
-  class AWS_KMS_API XksKeyConfigurationType
+  class XksKeyConfigurationType
   {
   public:
-    XksKeyConfigurationType();
-    XksKeyConfigurationType(Aws::Utils::Json::JsonView jsonValue);
-    XksKeyConfigurationType& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KMS_API XksKeyConfigurationType();
+    AWS_KMS_API XksKeyConfigurationType(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KMS_API XksKeyConfigurationType& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

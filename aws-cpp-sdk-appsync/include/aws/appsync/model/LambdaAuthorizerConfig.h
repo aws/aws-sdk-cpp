@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/LambdaAuthorizerConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_APPSYNC_API LambdaAuthorizerConfig
+  class LambdaAuthorizerConfig
   {
   public:
-    LambdaAuthorizerConfig();
-    LambdaAuthorizerConfig(Aws::Utils::Json::JsonView jsonValue);
-    LambdaAuthorizerConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPSYNC_API LambdaAuthorizerConfig();
+    AWS_APPSYNC_API LambdaAuthorizerConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPSYNC_API LambdaAuthorizerConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPSYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

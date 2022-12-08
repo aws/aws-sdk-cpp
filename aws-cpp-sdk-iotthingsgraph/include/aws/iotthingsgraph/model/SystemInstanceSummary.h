@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/SystemInstanceSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTTHINGSGRAPH_API SystemInstanceSummary
+  class SystemInstanceSummary
   {
   public:
-    SystemInstanceSummary();
-    SystemInstanceSummary(Aws::Utils::Json::JsonView jsonValue);
-    SystemInstanceSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTTHINGSGRAPH_API SystemInstanceSummary();
+    AWS_IOTTHINGSGRAPH_API SystemInstanceSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTTHINGSGRAPH_API SystemInstanceSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTTHINGSGRAPH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

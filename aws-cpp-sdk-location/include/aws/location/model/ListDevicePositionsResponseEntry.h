@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/ListDevicePositionsResponseEntry">AWS
    * API Reference</a></p>
    */
-  class AWS_LOCATIONSERVICE_API ListDevicePositionsResponseEntry
+  class ListDevicePositionsResponseEntry
   {
   public:
-    ListDevicePositionsResponseEntry();
-    ListDevicePositionsResponseEntry(Aws::Utils::Json::JsonView jsonValue);
-    ListDevicePositionsResponseEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LOCATIONSERVICE_API ListDevicePositionsResponseEntry();
+    AWS_LOCATIONSERVICE_API ListDevicePositionsResponseEntry(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOCATIONSERVICE_API ListDevicePositionsResponseEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOCATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

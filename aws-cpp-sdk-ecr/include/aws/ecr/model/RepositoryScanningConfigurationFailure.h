@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/RepositoryScanningConfigurationFailure">AWS
    * API Reference</a></p>
    */
-  class AWS_ECR_API RepositoryScanningConfigurationFailure
+  class RepositoryScanningConfigurationFailure
   {
   public:
-    RepositoryScanningConfigurationFailure();
-    RepositoryScanningConfigurationFailure(Aws::Utils::Json::JsonView jsonValue);
-    RepositoryScanningConfigurationFailure& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ECR_API RepositoryScanningConfigurationFailure();
+    AWS_ECR_API RepositoryScanningConfigurationFailure(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECR_API RepositoryScanningConfigurationFailure& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

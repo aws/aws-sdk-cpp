@@ -26,13 +26,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/WcdmaNmrObj">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTWIRELESS_API WcdmaNmrObj
+  class WcdmaNmrObj
   {
   public:
-    WcdmaNmrObj();
-    WcdmaNmrObj(Aws::Utils::Json::JsonView jsonValue);
-    WcdmaNmrObj& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTWIRELESS_API WcdmaNmrObj();
+    AWS_IOTWIRELESS_API WcdmaNmrObj(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API WcdmaNmrObj& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

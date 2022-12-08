@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/runtime.lex-2016-11-28/LimitExceededException">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXRUNTIMESERVICE_API LimitExceededException
+  class LimitExceededException
   {
   public:
-    LimitExceededException();
-    LimitExceededException(Aws::Utils::Json::JsonView jsonValue);
-    LimitExceededException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXRUNTIMESERVICE_API LimitExceededException();
+    AWS_LEXRUNTIMESERVICE_API LimitExceededException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXRUNTIMESERVICE_API LimitExceededException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXRUNTIMESERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

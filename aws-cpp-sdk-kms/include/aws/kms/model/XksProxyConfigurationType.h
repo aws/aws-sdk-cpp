@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/XksProxyConfigurationType">AWS
    * API Reference</a></p>
    */
-  class AWS_KMS_API XksProxyConfigurationType
+  class XksProxyConfigurationType
   {
   public:
-    XksProxyConfigurationType();
-    XksProxyConfigurationType(Aws::Utils::Json::JsonView jsonValue);
-    XksProxyConfigurationType& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KMS_API XksProxyConfigurationType();
+    AWS_KMS_API XksProxyConfigurationType(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KMS_API XksProxyConfigurationType& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

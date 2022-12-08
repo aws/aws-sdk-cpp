@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/ExecutionStartedEventDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SFN_API ExecutionStartedEventDetails
+  class ExecutionStartedEventDetails
   {
   public:
-    ExecutionStartedEventDetails();
-    ExecutionStartedEventDetails(Aws::Utils::Json::JsonView jsonValue);
-    ExecutionStartedEventDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SFN_API ExecutionStartedEventDetails();
+    AWS_SFN_API ExecutionStartedEventDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SFN_API ExecutionStartedEventDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SFN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

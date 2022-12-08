@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/ReactiveInsight">AWS
    * API Reference</a></p>
    */
-  class AWS_DEVOPSGURU_API ReactiveInsight
+  class ReactiveInsight
   {
   public:
-    ReactiveInsight();
-    ReactiveInsight(Aws::Utils::Json::JsonView jsonValue);
-    ReactiveInsight& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DEVOPSGURU_API ReactiveInsight();
+    AWS_DEVOPSGURU_API ReactiveInsight(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVOPSGURU_API ReactiveInsight& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVOPSGURU_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

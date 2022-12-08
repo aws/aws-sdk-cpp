@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ReplicaSettingsUpdate">AWS
    * API Reference</a></p>
    */
-  class AWS_DYNAMODB_API ReplicaSettingsUpdate
+  class ReplicaSettingsUpdate
   {
   public:
-    ReplicaSettingsUpdate();
-    ReplicaSettingsUpdate(Aws::Utils::Json::JsonView jsonValue);
-    ReplicaSettingsUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DYNAMODB_API ReplicaSettingsUpdate();
+    AWS_DYNAMODB_API ReplicaSettingsUpdate(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API ReplicaSettingsUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

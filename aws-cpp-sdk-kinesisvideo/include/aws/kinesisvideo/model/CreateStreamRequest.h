@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_KINESISVIDEO_API CreateStreamRequest : public KinesisVideoRequest
+  class CreateStreamRequest : public KinesisVideoRequest
   {
   public:
-    CreateStreamRequest();
+    AWS_KINESISVIDEO_API CreateStreamRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,7 +30,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateStream"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_KINESISVIDEO_API Aws::String SerializePayload() const override;
 
 
     /**

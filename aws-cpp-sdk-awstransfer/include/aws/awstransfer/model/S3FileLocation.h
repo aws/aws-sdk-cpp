@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/S3FileLocation">AWS
    * API Reference</a></p>
    */
-  class AWS_TRANSFER_API S3FileLocation
+  class S3FileLocation
   {
   public:
-    S3FileLocation();
-    S3FileLocation(Aws::Utils::Json::JsonView jsonValue);
-    S3FileLocation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TRANSFER_API S3FileLocation();
+    AWS_TRANSFER_API S3FileLocation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSFER_API S3FileLocation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSFER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

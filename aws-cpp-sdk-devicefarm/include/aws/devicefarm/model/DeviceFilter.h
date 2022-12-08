@@ -37,13 +37,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeviceFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_DEVICEFARM_API DeviceFilter
+  class DeviceFilter
   {
   public:
-    DeviceFilter();
-    DeviceFilter(Aws::Utils::Json::JsonView jsonValue);
-    DeviceFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DEVICEFARM_API DeviceFilter();
+    AWS_DEVICEFARM_API DeviceFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVICEFARM_API DeviceFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVICEFARM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ActivityTaskCanceledEventAttributes">AWS
    * API Reference</a></p>
    */
-  class AWS_SWF_API ActivityTaskCanceledEventAttributes
+  class ActivityTaskCanceledEventAttributes
   {
   public:
-    ActivityTaskCanceledEventAttributes();
-    ActivityTaskCanceledEventAttributes(Aws::Utils::Json::JsonView jsonValue);
-    ActivityTaskCanceledEventAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SWF_API ActivityTaskCanceledEventAttributes();
+    AWS_SWF_API ActivityTaskCanceledEventAttributes(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SWF_API ActivityTaskCanceledEventAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SWF_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

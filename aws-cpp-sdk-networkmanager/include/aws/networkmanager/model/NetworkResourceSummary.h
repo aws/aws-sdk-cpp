@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/NetworkResourceSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_NETWORKMANAGER_API NetworkResourceSummary
+  class NetworkResourceSummary
   {
   public:
-    NetworkResourceSummary();
-    NetworkResourceSummary(Aws::Utils::Json::JsonView jsonValue);
-    NetworkResourceSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_NETWORKMANAGER_API NetworkResourceSummary();
+    AWS_NETWORKMANAGER_API NetworkResourceSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKMANAGER_API NetworkResourceSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

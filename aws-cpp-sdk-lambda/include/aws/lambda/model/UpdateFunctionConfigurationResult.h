@@ -46,12 +46,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/FunctionConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_LAMBDA_API UpdateFunctionConfigurationResult
+  class UpdateFunctionConfigurationResult
   {
   public:
-    UpdateFunctionConfigurationResult();
-    UpdateFunctionConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateFunctionConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LAMBDA_API UpdateFunctionConfigurationResult();
+    AWS_LAMBDA_API UpdateFunctionConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LAMBDA_API UpdateFunctionConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

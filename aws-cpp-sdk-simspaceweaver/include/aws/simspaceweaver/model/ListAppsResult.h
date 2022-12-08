@@ -26,12 +26,12 @@ namespace SimSpaceWeaver
 {
 namespace Model
 {
-  class AWS_SIMSPACEWEAVER_API ListAppsResult
+  class ListAppsResult
   {
   public:
-    ListAppsResult();
-    ListAppsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListAppsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SIMSPACEWEAVER_API ListAppsResult();
+    AWS_SIMSPACEWEAVER_API ListAppsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SIMSPACEWEAVER_API ListAppsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

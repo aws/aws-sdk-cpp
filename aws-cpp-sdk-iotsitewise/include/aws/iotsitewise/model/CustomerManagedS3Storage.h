@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/CustomerManagedS3Storage">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTSITEWISE_API CustomerManagedS3Storage
+  class CustomerManagedS3Storage
   {
   public:
-    CustomerManagedS3Storage();
-    CustomerManagedS3Storage(Aws::Utils::Json::JsonView jsonValue);
-    CustomerManagedS3Storage& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTSITEWISE_API CustomerManagedS3Storage();
+    AWS_IOTSITEWISE_API CustomerManagedS3Storage(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API CustomerManagedS3Storage& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

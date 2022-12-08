@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/oam-2022-06-10/ListLinksItem">AWS
    * API Reference</a></p>
    */
-  class AWS_OAM_API ListLinksItem
+  class ListLinksItem
   {
   public:
-    ListLinksItem();
-    ListLinksItem(Aws::Utils::Json::JsonView jsonValue);
-    ListLinksItem& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OAM_API ListLinksItem();
+    AWS_OAM_API ListLinksItem(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OAM_API ListLinksItem& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OAM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

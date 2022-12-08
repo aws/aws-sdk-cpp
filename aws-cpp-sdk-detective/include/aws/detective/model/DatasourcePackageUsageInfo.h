@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/DatasourcePackageUsageInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_DETECTIVE_API DatasourcePackageUsageInfo
+  class DatasourcePackageUsageInfo
   {
   public:
-    DatasourcePackageUsageInfo();
-    DatasourcePackageUsageInfo(Aws::Utils::Json::JsonView jsonValue);
-    DatasourcePackageUsageInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DETECTIVE_API DatasourcePackageUsageInfo();
+    AWS_DETECTIVE_API DatasourcePackageUsageInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DETECTIVE_API DatasourcePackageUsageInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DETECTIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

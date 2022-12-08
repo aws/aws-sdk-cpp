@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/GridLayoutScreenCanvasSizeOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API GridLayoutScreenCanvasSizeOptions
+  class GridLayoutScreenCanvasSizeOptions
   {
   public:
-    GridLayoutScreenCanvasSizeOptions();
-    GridLayoutScreenCanvasSizeOptions(Aws::Utils::Json::JsonView jsonValue);
-    GridLayoutScreenCanvasSizeOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API GridLayoutScreenCanvasSizeOptions();
+    AWS_QUICKSIGHT_API GridLayoutScreenCanvasSizeOptions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API GridLayoutScreenCanvasSizeOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -25,13 +25,13 @@ namespace ChimeSDKVoice
 namespace Model
 {
 
-  class AWS_CHIMESDKVOICE_API PhoneNumberAssociation
+  class PhoneNumberAssociation
   {
   public:
-    PhoneNumberAssociation();
-    PhoneNumberAssociation(Aws::Utils::Json::JsonView jsonValue);
-    PhoneNumberAssociation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIMESDKVOICE_API PhoneNumberAssociation();
+    AWS_CHIMESDKVOICE_API PhoneNumberAssociation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKVOICE_API PhoneNumberAssociation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKVOICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

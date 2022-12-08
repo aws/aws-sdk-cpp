@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/HubInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API HubInfo
+  class HubInfo
   {
   public:
-    HubInfo();
-    HubInfo(Aws::Utils::Json::JsonView jsonValue);
-    HubInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API HubInfo();
+    AWS_SAGEMAKER_API HubInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API HubInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/EvaluateOnExit">AWS
    * API Reference</a></p>
    */
-  class AWS_BATCH_API EvaluateOnExit
+  class EvaluateOnExit
   {
   public:
-    EvaluateOnExit();
-    EvaluateOnExit(Aws::Utils::Json::JsonView jsonValue);
-    EvaluateOnExit& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BATCH_API EvaluateOnExit();
+    AWS_BATCH_API EvaluateOnExit(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BATCH_API EvaluateOnExit& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BATCH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

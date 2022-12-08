@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DelegatedService">AWS
    * API Reference</a></p>
    */
-  class AWS_ORGANIZATIONS_API DelegatedService
+  class DelegatedService
   {
   public:
-    DelegatedService();
-    DelegatedService(Aws::Utils::Json::JsonView jsonValue);
-    DelegatedService& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ORGANIZATIONS_API DelegatedService();
+    AWS_ORGANIZATIONS_API DelegatedService(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ORGANIZATIONS_API DelegatedService& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ORGANIZATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

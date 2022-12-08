@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/GrantEntitlementRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONNECT_API GrantEntitlementRequest
+  class GrantEntitlementRequest
   {
   public:
-    GrantEntitlementRequest();
-    GrantEntitlementRequest(Aws::Utils::Json::JsonView jsonValue);
-    GrantEntitlementRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONNECT_API GrantEntitlementRequest();
+    AWS_MEDIACONNECT_API GrantEntitlementRequest(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONNECT_API GrantEntitlementRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

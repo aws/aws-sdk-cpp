@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/TimeSeriesServiceStatistics">AWS
    * API Reference</a></p>
    */
-  class AWS_XRAY_API TimeSeriesServiceStatistics
+  class TimeSeriesServiceStatistics
   {
   public:
-    TimeSeriesServiceStatistics();
-    TimeSeriesServiceStatistics(Aws::Utils::Json::JsonView jsonValue);
-    TimeSeriesServiceStatistics& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_XRAY_API TimeSeriesServiceStatistics();
+    AWS_XRAY_API TimeSeriesServiceStatistics(Aws::Utils::Json::JsonView jsonValue);
+    AWS_XRAY_API TimeSeriesServiceStatistics& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_XRAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

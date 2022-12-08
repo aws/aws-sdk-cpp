@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/TemporaryCredential">AWS
    * API Reference</a></p>
    */
-  class AWS_OPSWORKS_API TemporaryCredential
+  class TemporaryCredential
   {
   public:
-    TemporaryCredential();
-    TemporaryCredential(Aws::Utils::Json::JsonView jsonValue);
-    TemporaryCredential& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OPSWORKS_API TemporaryCredential();
+    AWS_OPSWORKS_API TemporaryCredential(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPSWORKS_API TemporaryCredential& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPSWORKS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

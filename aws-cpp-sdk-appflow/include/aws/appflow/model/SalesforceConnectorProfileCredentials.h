@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/SalesforceConnectorProfileCredentials">AWS
    * API Reference</a></p>
    */
-  class AWS_APPFLOW_API SalesforceConnectorProfileCredentials
+  class SalesforceConnectorProfileCredentials
   {
   public:
-    SalesforceConnectorProfileCredentials();
-    SalesforceConnectorProfileCredentials(Aws::Utils::Json::JsonView jsonValue);
-    SalesforceConnectorProfileCredentials& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPFLOW_API SalesforceConnectorProfileCredentials();
+    AWS_APPFLOW_API SalesforceConnectorProfileCredentials(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API SalesforceConnectorProfileCredentials& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/RedshiftDestinationConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_FIREHOSE_API RedshiftDestinationConfiguration
+  class RedshiftDestinationConfiguration
   {
   public:
-    RedshiftDestinationConfiguration();
-    RedshiftDestinationConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    RedshiftDestinationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FIREHOSE_API RedshiftDestinationConfiguration();
+    AWS_FIREHOSE_API RedshiftDestinationConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FIREHOSE_API RedshiftDestinationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FIREHOSE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

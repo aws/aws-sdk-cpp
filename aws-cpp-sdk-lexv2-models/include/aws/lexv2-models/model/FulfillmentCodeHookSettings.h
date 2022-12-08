@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/FulfillmentCodeHookSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELSV2_API FulfillmentCodeHookSettings
+  class FulfillmentCodeHookSettings
   {
   public:
-    FulfillmentCodeHookSettings();
-    FulfillmentCodeHookSettings(Aws::Utils::Json::JsonView jsonValue);
-    FulfillmentCodeHookSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELSV2_API FulfillmentCodeHookSettings();
+    AWS_LEXMODELSV2_API FulfillmentCodeHookSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API FulfillmentCodeHookSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ReferenceLineDynamicDataConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API ReferenceLineDynamicDataConfiguration
+  class ReferenceLineDynamicDataConfiguration
   {
   public:
-    ReferenceLineDynamicDataConfiguration();
-    ReferenceLineDynamicDataConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    ReferenceLineDynamicDataConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API ReferenceLineDynamicDataConfiguration();
+    AWS_QUICKSIGHT_API ReferenceLineDynamicDataConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API ReferenceLineDynamicDataConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

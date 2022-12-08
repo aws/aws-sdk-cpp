@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/Bot">AWS API
    * Reference</a></p>
    */
-  class AWS_CHIME_API Bot
+  class Bot
   {
   public:
-    Bot();
-    Bot(Aws::Utils::Json::JsonView jsonValue);
-    Bot& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIME_API Bot();
+    AWS_CHIME_API Bot(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API Bot& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

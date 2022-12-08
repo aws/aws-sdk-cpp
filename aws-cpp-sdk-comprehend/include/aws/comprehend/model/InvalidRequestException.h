@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/InvalidRequestException">AWS
    * API Reference</a></p>
    */
-  class AWS_COMPREHEND_API InvalidRequestException
+  class InvalidRequestException
   {
   public:
-    InvalidRequestException();
-    InvalidRequestException(Aws::Utils::Json::JsonView jsonValue);
-    InvalidRequestException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COMPREHEND_API InvalidRequestException();
+    AWS_COMPREHEND_API InvalidRequestException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHEND_API InvalidRequestException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHEND_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

@@ -25,12 +25,12 @@ namespace SageMaker
 {
 namespace Model
 {
-  class AWS_SAGEMAKER_API DescribePipelineDefinitionForExecutionResult
+  class DescribePipelineDefinitionForExecutionResult
   {
   public:
-    DescribePipelineDefinitionForExecutionResult();
-    DescribePipelineDefinitionForExecutionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribePipelineDefinitionForExecutionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SAGEMAKER_API DescribePipelineDefinitionForExecutionResult();
+    AWS_SAGEMAKER_API DescribePipelineDefinitionForExecutionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SAGEMAKER_API DescribePipelineDefinitionForExecutionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -26,13 +26,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/snow-device-management-2021-08-04/Unlock">AWS
    * API Reference</a></p>
    */
-  class AWS_SNOWDEVICEMANAGEMENT_API Unlock
+  class Unlock
   {
   public:
-    Unlock();
-    Unlock(Aws::Utils::Json::JsonView jsonValue);
-    Unlock& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SNOWDEVICEMANAGEMENT_API Unlock();
+    AWS_SNOWDEVICEMANAGEMENT_API Unlock(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SNOWDEVICEMANAGEMENT_API Unlock& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SNOWDEVICEMANAGEMENT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
   };
 

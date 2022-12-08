@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/GatewaySummary">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTSITEWISE_API GatewaySummary
+  class GatewaySummary
   {
   public:
-    GatewaySummary();
-    GatewaySummary(Aws::Utils::Json::JsonView jsonValue);
-    GatewaySummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTSITEWISE_API GatewaySummary();
+    AWS_IOTSITEWISE_API GatewaySummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API GatewaySummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

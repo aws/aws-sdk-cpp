@@ -24,12 +24,12 @@ namespace PrivateNetworks
 {
 namespace Model
 {
-  class AWS_PRIVATENETWORKS_API AcknowledgeOrderReceiptResult
+  class AcknowledgeOrderReceiptResult
   {
   public:
-    AcknowledgeOrderReceiptResult();
-    AcknowledgeOrderReceiptResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AcknowledgeOrderReceiptResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PRIVATENETWORKS_API AcknowledgeOrderReceiptResult();
+    AWS_PRIVATENETWORKS_API AcknowledgeOrderReceiptResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PRIVATENETWORKS_API AcknowledgeOrderReceiptResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

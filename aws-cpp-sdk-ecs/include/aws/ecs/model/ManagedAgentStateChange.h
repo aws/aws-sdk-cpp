@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ManagedAgentStateChange">AWS
    * API Reference</a></p>
    */
-  class AWS_ECS_API ManagedAgentStateChange
+  class ManagedAgentStateChange
   {
   public:
-    ManagedAgentStateChange();
-    ManagedAgentStateChange(Aws::Utils::Json::JsonView jsonValue);
-    ManagedAgentStateChange& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ECS_API ManagedAgentStateChange();
+    AWS_ECS_API ManagedAgentStateChange(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECS_API ManagedAgentStateChange& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

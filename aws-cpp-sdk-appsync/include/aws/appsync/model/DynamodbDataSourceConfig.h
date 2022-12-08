@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/DynamodbDataSourceConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_APPSYNC_API DynamodbDataSourceConfig
+  class DynamodbDataSourceConfig
   {
   public:
-    DynamodbDataSourceConfig();
-    DynamodbDataSourceConfig(Aws::Utils::Json::JsonView jsonValue);
-    DynamodbDataSourceConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPSYNC_API DynamodbDataSourceConfig();
+    AWS_APPSYNC_API DynamodbDataSourceConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPSYNC_API DynamodbDataSourceConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPSYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

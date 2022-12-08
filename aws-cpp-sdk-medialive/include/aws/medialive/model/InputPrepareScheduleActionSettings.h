@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/InputPrepareScheduleActionSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API InputPrepareScheduleActionSettings
+  class InputPrepareScheduleActionSettings
   {
   public:
-    InputPrepareScheduleActionSettings();
-    InputPrepareScheduleActionSettings(Aws::Utils::Json::JsonView jsonValue);
-    InputPrepareScheduleActionSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API InputPrepareScheduleActionSettings();
+    AWS_MEDIALIVE_API InputPrepareScheduleActionSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API InputPrepareScheduleActionSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

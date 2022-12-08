@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ResourceProfileArtifact">AWS
    * API Reference</a></p>
    */
-  class AWS_MACIE2_API ResourceProfileArtifact
+  class ResourceProfileArtifact
   {
   public:
-    ResourceProfileArtifact();
-    ResourceProfileArtifact(Aws::Utils::Json::JsonView jsonValue);
-    ResourceProfileArtifact& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MACIE2_API ResourceProfileArtifact();
+    AWS_MACIE2_API ResourceProfileArtifact(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API ResourceProfileArtifact& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

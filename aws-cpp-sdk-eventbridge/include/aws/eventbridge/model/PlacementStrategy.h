@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/PlacementStrategy">AWS
    * API Reference</a></p>
    */
-  class AWS_EVENTBRIDGE_API PlacementStrategy
+  class PlacementStrategy
   {
   public:
-    PlacementStrategy();
-    PlacementStrategy(Aws::Utils::Json::JsonView jsonValue);
-    PlacementStrategy& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EVENTBRIDGE_API PlacementStrategy();
+    AWS_EVENTBRIDGE_API PlacementStrategy(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EVENTBRIDGE_API PlacementStrategy& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EVENTBRIDGE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

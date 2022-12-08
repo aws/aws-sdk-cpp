@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/AudioTrackSelection">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API AudioTrackSelection
+  class AudioTrackSelection
   {
   public:
-    AudioTrackSelection();
-    AudioTrackSelection(Aws::Utils::Json::JsonView jsonValue);
-    AudioTrackSelection& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API AudioTrackSelection();
+    AWS_MEDIALIVE_API AudioTrackSelection(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API AudioTrackSelection& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

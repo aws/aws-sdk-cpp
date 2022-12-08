@@ -38,13 +38,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ResourceDataSyncSourceWithState">AWS
    * API Reference</a></p>
    */
-  class AWS_SSM_API ResourceDataSyncSourceWithState
+  class ResourceDataSyncSourceWithState
   {
   public:
-    ResourceDataSyncSourceWithState();
-    ResourceDataSyncSourceWithState(Aws::Utils::Json::JsonView jsonValue);
-    ResourceDataSyncSourceWithState& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSM_API ResourceDataSyncSourceWithState();
+    AWS_SSM_API ResourceDataSyncSourceWithState(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API ResourceDataSyncSourceWithState& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

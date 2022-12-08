@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/CodeSource">AWS
    * API Reference</a></p>
    */
-  class AWS_CODESTAR_API CodeSource
+  class CodeSource
   {
   public:
-    CodeSource();
-    CodeSource(Aws::Utils::Json::JsonView jsonValue);
-    CodeSource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODESTAR_API CodeSource();
+    AWS_CODESTAR_API CodeSource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODESTAR_API CodeSource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODESTAR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

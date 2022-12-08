@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/ExportAssetsToS3RequestDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_DATAEXCHANGE_API ExportAssetsToS3RequestDetails
+  class ExportAssetsToS3RequestDetails
   {
   public:
-    ExportAssetsToS3RequestDetails();
-    ExportAssetsToS3RequestDetails(Aws::Utils::Json::JsonView jsonValue);
-    ExportAssetsToS3RequestDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DATAEXCHANGE_API ExportAssetsToS3RequestDetails();
+    AWS_DATAEXCHANGE_API ExportAssetsToS3RequestDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATAEXCHANGE_API ExportAssetsToS3RequestDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATAEXCHANGE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

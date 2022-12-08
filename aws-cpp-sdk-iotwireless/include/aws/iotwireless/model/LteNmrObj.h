@@ -26,13 +26,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/LteNmrObj">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTWIRELESS_API LteNmrObj
+  class LteNmrObj
   {
   public:
-    LteNmrObj();
-    LteNmrObj(Aws::Utils::Json::JsonView jsonValue);
-    LteNmrObj& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTWIRELESS_API LteNmrObj();
+    AWS_IOTWIRELESS_API LteNmrObj(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API LteNmrObj& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

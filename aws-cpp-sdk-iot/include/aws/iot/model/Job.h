@@ -41,13 +41,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/Job">AWS API
    * Reference</a></p>
    */
-  class AWS_IOT_API Job
+  class Job
   {
   public:
-    Job();
-    Job(Aws::Utils::Json::JsonView jsonValue);
-    Job& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API Job();
+    AWS_IOT_API Job(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Job& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

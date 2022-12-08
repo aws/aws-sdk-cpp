@@ -22,12 +22,12 @@ namespace Chime
 {
 namespace Model
 {
-  class AWS_CHIME_API AssociateSigninDelegateGroupsWithAccountResult
+  class AssociateSigninDelegateGroupsWithAccountResult
   {
   public:
-    AssociateSigninDelegateGroupsWithAccountResult();
-    AssociateSigninDelegateGroupsWithAccountResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AssociateSigninDelegateGroupsWithAccountResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CHIME_API AssociateSigninDelegateGroupsWithAccountResult();
+    AWS_CHIME_API AssociateSigninDelegateGroupsWithAccountResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CHIME_API AssociateSigninDelegateGroupsWithAccountResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

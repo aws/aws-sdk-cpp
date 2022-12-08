@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/Member">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API Member
+  class Member
   {
   public:
-    Member();
-    Member(Aws::Utils::Json::JsonView jsonValue);
-    Member& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API Member();
+    AWS_SECURITYHUB_API Member(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Member& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

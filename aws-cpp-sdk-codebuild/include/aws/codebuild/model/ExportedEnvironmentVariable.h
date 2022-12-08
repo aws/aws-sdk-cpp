@@ -38,13 +38,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ExportedEnvironmentVariable">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEBUILD_API ExportedEnvironmentVariable
+  class ExportedEnvironmentVariable
   {
   public:
-    ExportedEnvironmentVariable();
-    ExportedEnvironmentVariable(Aws::Utils::Json::JsonView jsonValue);
-    ExportedEnvironmentVariable& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEBUILD_API ExportedEnvironmentVariable();
+    AWS_CODEBUILD_API ExportedEnvironmentVariable(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEBUILD_API ExportedEnvironmentVariable& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEBUILD_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

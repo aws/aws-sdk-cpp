@@ -22,12 +22,12 @@ namespace Shield
 {
 namespace Model
 {
-  class AWS_SHIELD_API AssociateProactiveEngagementDetailsResult
+  class AssociateProactiveEngagementDetailsResult
   {
   public:
-    AssociateProactiveEngagementDetailsResult();
-    AssociateProactiveEngagementDetailsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AssociateProactiveEngagementDetailsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SHIELD_API AssociateProactiveEngagementDetailsResult();
+    AWS_SHIELD_API AssociateProactiveEngagementDetailsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SHIELD_API AssociateProactiveEngagementDetailsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

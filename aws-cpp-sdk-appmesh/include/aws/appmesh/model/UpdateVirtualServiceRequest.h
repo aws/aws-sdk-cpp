@@ -27,10 +27,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/UpdateVirtualServiceInput">AWS
    * API Reference</a></p>
    */
-  class AWS_APPMESH_API UpdateVirtualServiceRequest : public AppMeshRequest
+  class UpdateVirtualServiceRequest : public AppMeshRequest
   {
   public:
-    UpdateVirtualServiceRequest();
+    AWS_APPMESH_API UpdateVirtualServiceRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,9 +38,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateVirtualService"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_APPMESH_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_APPMESH_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**

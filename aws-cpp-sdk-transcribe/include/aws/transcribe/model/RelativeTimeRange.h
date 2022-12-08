@@ -37,13 +37,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/RelativeTimeRange">AWS
    * API Reference</a></p>
    */
-  class AWS_TRANSCRIBESERVICE_API RelativeTimeRange
+  class RelativeTimeRange
   {
   public:
-    RelativeTimeRange();
-    RelativeTimeRange(Aws::Utils::Json::JsonView jsonValue);
-    RelativeTimeRange& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TRANSCRIBESERVICE_API RelativeTimeRange();
+    AWS_TRANSCRIBESERVICE_API RelativeTimeRange(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSCRIBESERVICE_API RelativeTimeRange& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSCRIBESERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

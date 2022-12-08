@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codecatalyst-2022-09-28/ExecuteCommandSessionConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_CODECATALYST_API ExecuteCommandSessionConfiguration
+  class ExecuteCommandSessionConfiguration
   {
   public:
-    ExecuteCommandSessionConfiguration();
-    ExecuteCommandSessionConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    ExecuteCommandSessionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODECATALYST_API ExecuteCommandSessionConfiguration();
+    AWS_CODECATALYST_API ExecuteCommandSessionConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODECATALYST_API ExecuteCommandSessionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODECATALYST_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

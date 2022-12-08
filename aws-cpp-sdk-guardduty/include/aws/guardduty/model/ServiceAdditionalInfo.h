@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ServiceAdditionalInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_GUARDDUTY_API ServiceAdditionalInfo
+  class ServiceAdditionalInfo
   {
   public:
-    ServiceAdditionalInfo();
-    ServiceAdditionalInfo(Aws::Utils::Json::JsonView jsonValue);
-    ServiceAdditionalInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GUARDDUTY_API ServiceAdditionalInfo();
+    AWS_GUARDDUTY_API ServiceAdditionalInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API ServiceAdditionalInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

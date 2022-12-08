@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsRedshiftClusterIamRole">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsRedshiftClusterIamRole
+  class AwsRedshiftClusterIamRole
   {
   public:
-    AwsRedshiftClusterIamRole();
-    AwsRedshiftClusterIamRole(Aws::Utils::Json::JsonView jsonValue);
-    AwsRedshiftClusterIamRole& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsRedshiftClusterIamRole();
+    AWS_SECURITYHUB_API AwsRedshiftClusterIamRole(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsRedshiftClusterIamRole& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

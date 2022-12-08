@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/EngineAttribute">AWS
    * API Reference</a></p>
    */
-  class AWS_OPSWORKSCM_API EngineAttribute
+  class EngineAttribute
   {
   public:
-    EngineAttribute();
-    EngineAttribute(Aws::Utils::Json::JsonView jsonValue);
-    EngineAttribute& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OPSWORKSCM_API EngineAttribute();
+    AWS_OPSWORKSCM_API EngineAttribute(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPSWORKSCM_API EngineAttribute& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPSWORKSCM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

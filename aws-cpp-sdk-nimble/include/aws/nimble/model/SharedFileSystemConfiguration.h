@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/SharedFileSystemConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_NIMBLESTUDIO_API SharedFileSystemConfiguration
+  class SharedFileSystemConfiguration
   {
   public:
-    SharedFileSystemConfiguration();
-    SharedFileSystemConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    SharedFileSystemConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_NIMBLESTUDIO_API SharedFileSystemConfiguration();
+    AWS_NIMBLESTUDIO_API SharedFileSystemConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NIMBLESTUDIO_API SharedFileSystemConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NIMBLESTUDIO_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

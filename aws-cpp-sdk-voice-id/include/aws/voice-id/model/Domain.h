@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/Domain">AWS API
    * Reference</a></p>
    */
-  class AWS_VOICEID_API Domain
+  class Domain
   {
   public:
-    Domain();
-    Domain(Aws::Utils::Json::JsonView jsonValue);
-    Domain& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_VOICEID_API Domain();
+    AWS_VOICEID_API Domain(Aws::Utils::Json::JsonView jsonValue);
+    AWS_VOICEID_API Domain& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_VOICEID_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/WcdmaLocalId">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTWIRELESS_API WcdmaLocalId
+  class WcdmaLocalId
   {
   public:
-    WcdmaLocalId();
-    WcdmaLocalId(Aws::Utils::Json::JsonView jsonValue);
-    WcdmaLocalId& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTWIRELESS_API WcdmaLocalId();
+    AWS_IOTWIRELESS_API WcdmaLocalId(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API WcdmaLocalId& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

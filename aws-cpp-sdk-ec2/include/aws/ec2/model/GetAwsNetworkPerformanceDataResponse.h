@@ -27,12 +27,12 @@ namespace EC2
 {
 namespace Model
 {
-  class AWS_EC2_API GetAwsNetworkPerformanceDataResponse
+  class GetAwsNetworkPerformanceDataResponse
   {
   public:
-    GetAwsNetworkPerformanceDataResponse();
-    GetAwsNetworkPerformanceDataResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    GetAwsNetworkPerformanceDataResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API GetAwsNetworkPerformanceDataResponse();
+    AWS_EC2_API GetAwsNetworkPerformanceDataResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API GetAwsNetworkPerformanceDataResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/VerifyOTPMessageRequestParameters">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API VerifyOTPMessageRequestParameters
+  class VerifyOTPMessageRequestParameters
   {
   public:
-    VerifyOTPMessageRequestParameters();
-    VerifyOTPMessageRequestParameters(Aws::Utils::Json::JsonView jsonValue);
-    VerifyOTPMessageRequestParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API VerifyOTPMessageRequestParameters();
+    AWS_PINPOINT_API VerifyOTPMessageRequestParameters(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API VerifyOTPMessageRequestParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/JiraConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_KENDRA_API JiraConfiguration
+  class JiraConfiguration
   {
   public:
-    JiraConfiguration();
-    JiraConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    JiraConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KENDRA_API JiraConfiguration();
+    AWS_KENDRA_API JiraConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API JiraConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

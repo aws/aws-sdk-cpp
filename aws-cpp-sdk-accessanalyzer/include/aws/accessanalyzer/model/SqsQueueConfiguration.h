@@ -38,13 +38,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/SqsQueueConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_ACCESSANALYZER_API SqsQueueConfiguration
+  class SqsQueueConfiguration
   {
   public:
-    SqsQueueConfiguration();
-    SqsQueueConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    SqsQueueConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ACCESSANALYZER_API SqsQueueConfiguration();
+    AWS_ACCESSANALYZER_API SqsQueueConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACCESSANALYZER_API SqsQueueConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACCESSANALYZER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

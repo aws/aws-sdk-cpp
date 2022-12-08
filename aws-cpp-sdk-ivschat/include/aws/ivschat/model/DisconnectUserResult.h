@@ -22,12 +22,12 @@ namespace ivschat
 {
 namespace Model
 {
-  class AWS_IVSCHAT_API DisconnectUserResult
+  class DisconnectUserResult
   {
   public:
-    DisconnectUserResult();
-    DisconnectUserResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DisconnectUserResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IVSCHAT_API DisconnectUserResult();
+    AWS_IVSCHAT_API DisconnectUserResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IVSCHAT_API DisconnectUserResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

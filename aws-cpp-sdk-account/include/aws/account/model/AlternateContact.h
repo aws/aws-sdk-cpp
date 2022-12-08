@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/AlternateContact">AWS
    * API Reference</a></p>
    */
-  class AWS_ACCOUNT_API AlternateContact
+  class AlternateContact
   {
   public:
-    AlternateContact();
-    AlternateContact(Aws::Utils::Json::JsonView jsonValue);
-    AlternateContact& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ACCOUNT_API AlternateContact();
+    AWS_ACCOUNT_API AlternateContact(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACCOUNT_API AlternateContact& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACCOUNT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

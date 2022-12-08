@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/PortRangeFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_INSPECTOR2_API PortRangeFilter
+  class PortRangeFilter
   {
   public:
-    PortRangeFilter();
-    PortRangeFilter(Aws::Utils::Json::JsonView jsonValue);
-    PortRangeFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_INSPECTOR2_API PortRangeFilter();
+    AWS_INSPECTOR2_API PortRangeFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR2_API PortRangeFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

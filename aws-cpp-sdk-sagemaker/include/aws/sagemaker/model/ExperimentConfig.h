@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ExperimentConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API ExperimentConfig
+  class ExperimentConfig
   {
   public:
-    ExperimentConfig();
-    ExperimentConfig(Aws::Utils::Json::JsonView jsonValue);
-    ExperimentConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API ExperimentConfig();
+    AWS_SAGEMAKER_API ExperimentConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API ExperimentConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

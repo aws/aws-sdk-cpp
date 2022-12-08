@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/ServerGroupValidationConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_SMS_API ServerGroupValidationConfiguration
+  class ServerGroupValidationConfiguration
   {
   public:
-    ServerGroupValidationConfiguration();
-    ServerGroupValidationConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    ServerGroupValidationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SMS_API ServerGroupValidationConfiguration();
+    AWS_SMS_API ServerGroupValidationConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SMS_API ServerGroupValidationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

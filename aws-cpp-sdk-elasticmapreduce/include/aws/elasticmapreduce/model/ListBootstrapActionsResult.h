@@ -32,12 +32,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListBootstrapActionsOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_EMR_API ListBootstrapActionsResult
+  class ListBootstrapActionsResult
   {
   public:
-    ListBootstrapActionsResult();
-    ListBootstrapActionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListBootstrapActionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_EMR_API ListBootstrapActionsResult();
+    AWS_EMR_API ListBootstrapActionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_EMR_API ListBootstrapActionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

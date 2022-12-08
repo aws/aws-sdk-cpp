@@ -24,12 +24,12 @@ namespace CodeDeploy
 {
 namespace Model
 {
-  class AWS_CODEDEPLOY_API GetDeploymentTargetResult
+  class GetDeploymentTargetResult
   {
   public:
-    GetDeploymentTargetResult();
-    GetDeploymentTargetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetDeploymentTargetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODEDEPLOY_API GetDeploymentTargetResult();
+    AWS_CODEDEPLOY_API GetDeploymentTargetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODEDEPLOY_API GetDeploymentTargetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

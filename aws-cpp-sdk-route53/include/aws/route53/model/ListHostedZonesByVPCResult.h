@@ -26,12 +26,12 @@ namespace Route53
 {
 namespace Model
 {
-  class AWS_ROUTE53_API ListHostedZonesByVPCResult
+  class ListHostedZonesByVPCResult
   {
   public:
-    ListHostedZonesByVPCResult();
-    ListHostedZonesByVPCResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ListHostedZonesByVPCResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ROUTE53_API ListHostedZonesByVPCResult();
+    AWS_ROUTE53_API ListHostedZonesByVPCResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ROUTE53_API ListHostedZonesByVPCResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

@@ -22,12 +22,12 @@ namespace EMR
 {
 namespace Model
 {
-  class AWS_EMR_API PutManagedScalingPolicyResult
+  class PutManagedScalingPolicyResult
   {
   public:
-    PutManagedScalingPolicyResult();
-    PutManagedScalingPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PutManagedScalingPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_EMR_API PutManagedScalingPolicyResult();
+    AWS_EMR_API PutManagedScalingPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_EMR_API PutManagedScalingPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

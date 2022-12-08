@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/FleetError">AWS
    * API Reference</a></p>
    */
-  class AWS_APPSTREAM_API FleetError
+  class FleetError
   {
   public:
-    FleetError();
-    FleetError(Aws::Utils::Json::JsonView jsonValue);
-    FleetError& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPSTREAM_API FleetError();
+    AWS_APPSTREAM_API FleetError(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPSTREAM_API FleetError& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPSTREAM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/SsmActionDefinition">AWS
    * API Reference</a></p>
    */
-  class AWS_BUDGETS_API SsmActionDefinition
+  class SsmActionDefinition
   {
   public:
-    SsmActionDefinition();
-    SsmActionDefinition(Aws::Utils::Json::JsonView jsonValue);
-    SsmActionDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BUDGETS_API SsmActionDefinition();
+    AWS_BUDGETS_API SsmActionDefinition(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BUDGETS_API SsmActionDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BUDGETS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

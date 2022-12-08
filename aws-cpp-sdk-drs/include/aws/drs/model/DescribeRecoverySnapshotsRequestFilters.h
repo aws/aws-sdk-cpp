@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/DescribeRecoverySnapshotsRequestFilters">AWS
    * API Reference</a></p>
    */
-  class AWS_DRS_API DescribeRecoverySnapshotsRequestFilters
+  class DescribeRecoverySnapshotsRequestFilters
   {
   public:
-    DescribeRecoverySnapshotsRequestFilters();
-    DescribeRecoverySnapshotsRequestFilters(Aws::Utils::Json::JsonView jsonValue);
-    DescribeRecoverySnapshotsRequestFilters& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DRS_API DescribeRecoverySnapshotsRequestFilters();
+    AWS_DRS_API DescribeRecoverySnapshotsRequestFilters(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DRS_API DescribeRecoverySnapshotsRequestFilters& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DRS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

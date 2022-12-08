@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/AthenaSourceConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_LOOKOUTMETRICS_API AthenaSourceConfig
+  class AthenaSourceConfig
   {
   public:
-    AthenaSourceConfig();
-    AthenaSourceConfig(Aws::Utils::Json::JsonView jsonValue);
-    AthenaSourceConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LOOKOUTMETRICS_API AthenaSourceConfig();
+    AWS_LOOKOUTMETRICS_API AthenaSourceConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTMETRICS_API AthenaSourceConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTMETRICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

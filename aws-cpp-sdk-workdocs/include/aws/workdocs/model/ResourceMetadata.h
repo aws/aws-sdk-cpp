@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/ResourceMetadata">AWS
    * API Reference</a></p>
    */
-  class AWS_WORKDOCS_API ResourceMetadata
+  class ResourceMetadata
   {
   public:
-    ResourceMetadata();
-    ResourceMetadata(Aws::Utils::Json::JsonView jsonValue);
-    ResourceMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WORKDOCS_API ResourceMetadata();
+    AWS_WORKDOCS_API ResourceMetadata(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKDOCS_API ResourceMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKDOCS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

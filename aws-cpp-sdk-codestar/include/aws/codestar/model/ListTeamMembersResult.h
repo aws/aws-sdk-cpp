@@ -26,12 +26,12 @@ namespace CodeStar
 {
 namespace Model
 {
-  class AWS_CODESTAR_API ListTeamMembersResult
+  class ListTeamMembersResult
   {
   public:
-    ListTeamMembersResult();
-    ListTeamMembersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListTeamMembersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODESTAR_API ListTeamMembersResult();
+    AWS_CODESTAR_API ListTeamMembersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODESTAR_API ListTeamMembersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

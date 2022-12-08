@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/VariantStoreItem">AWS
    * API Reference</a></p>
    */
-  class AWS_OMICS_API VariantStoreItem
+  class VariantStoreItem
   {
   public:
-    VariantStoreItem();
-    VariantStoreItem(Aws::Utils::Json::JsonView jsonValue);
-    VariantStoreItem& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OMICS_API VariantStoreItem();
+    AWS_OMICS_API VariantStoreItem(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OMICS_API VariantStoreItem& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OMICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

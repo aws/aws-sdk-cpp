@@ -30,12 +30,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/SetLoadBalancerListenerSSLCertificateOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICLOADBALANCING_API SetLoadBalancerListenerSSLCertificateResult
+  class SetLoadBalancerListenerSSLCertificateResult
   {
   public:
-    SetLoadBalancerListenerSSLCertificateResult();
-    SetLoadBalancerListenerSSLCertificateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    SetLoadBalancerListenerSSLCertificateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ELASTICLOADBALANCING_API SetLoadBalancerListenerSSLCertificateResult();
+    AWS_ELASTICLOADBALANCING_API SetLoadBalancerListenerSSLCertificateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ELASTICLOADBALANCING_API SetLoadBalancerListenerSSLCertificateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     

@@ -25,12 +25,12 @@ namespace STS
 {
 namespace Model
 {
-  class AWS_STS_API GetAccessKeyInfoResult
+  class GetAccessKeyInfoResult
   {
   public:
-    GetAccessKeyInfoResult();
-    GetAccessKeyInfoResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    GetAccessKeyInfoResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_STS_API GetAccessKeyInfoResult();
+    AWS_STS_API GetAccessKeyInfoResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_STS_API GetAccessKeyInfoResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

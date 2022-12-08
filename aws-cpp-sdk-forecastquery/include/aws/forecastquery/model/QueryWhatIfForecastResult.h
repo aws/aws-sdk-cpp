@@ -24,12 +24,12 @@ namespace ForecastQueryService
 {
 namespace Model
 {
-  class AWS_FORECASTQUERYSERVICE_API QueryWhatIfForecastResult
+  class QueryWhatIfForecastResult
   {
   public:
-    QueryWhatIfForecastResult();
-    QueryWhatIfForecastResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    QueryWhatIfForecastResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_FORECASTQUERYSERVICE_API QueryWhatIfForecastResult();
+    AWS_FORECASTQUERYSERVICE_API QueryWhatIfForecastResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_FORECASTQUERYSERVICE_API QueryWhatIfForecastResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     

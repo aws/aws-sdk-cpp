@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-data-2019-12-20/ExecuteStatementException">AWS
    * API Reference</a></p>
    */
-  class AWS_REDSHIFTDATAAPISERVICE_API ExecuteStatementException
+  class ExecuteStatementException
   {
   public:
-    ExecuteStatementException();
-    ExecuteStatementException(Aws::Utils::Json::JsonView jsonValue);
-    ExecuteStatementException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_REDSHIFTDATAAPISERVICE_API ExecuteStatementException();
+    AWS_REDSHIFTDATAAPISERVICE_API ExecuteStatementException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REDSHIFTDATAAPISERVICE_API ExecuteStatementException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REDSHIFTDATAAPISERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

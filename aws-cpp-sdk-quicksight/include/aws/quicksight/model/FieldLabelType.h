@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/FieldLabelType">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API FieldLabelType
+  class FieldLabelType
   {
   public:
-    FieldLabelType();
-    FieldLabelType(Aws::Utils::Json::JsonView jsonValue);
-    FieldLabelType& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API FieldLabelType();
+    AWS_QUICKSIGHT_API FieldLabelType(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API FieldLabelType& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

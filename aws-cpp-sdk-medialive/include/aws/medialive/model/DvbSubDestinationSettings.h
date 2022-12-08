@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DvbSubDestinationSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API DvbSubDestinationSettings
+  class DvbSubDestinationSettings
   {
   public:
-    DvbSubDestinationSettings();
-    DvbSubDestinationSettings(Aws::Utils::Json::JsonView jsonValue);
-    DvbSubDestinationSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API DvbSubDestinationSettings();
+    AWS_MEDIALIVE_API DvbSubDestinationSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API DvbSubDestinationSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

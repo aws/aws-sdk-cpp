@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/BaseConfigurationItem">AWS
    * API Reference</a></p>
    */
-  class AWS_CONFIGSERVICE_API BaseConfigurationItem
+  class BaseConfigurationItem
   {
   public:
-    BaseConfigurationItem();
-    BaseConfigurationItem(Aws::Utils::Json::JsonView jsonValue);
-    BaseConfigurationItem& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONFIGSERVICE_API BaseConfigurationItem();
+    AWS_CONFIGSERVICE_API BaseConfigurationItem(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API BaseConfigurationItem& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

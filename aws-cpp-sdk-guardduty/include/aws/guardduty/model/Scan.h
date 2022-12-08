@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/Scan">AWS API
    * Reference</a></p>
    */
-  class AWS_GUARDDUTY_API Scan
+  class Scan
   {
   public:
-    Scan();
-    Scan(Aws::Utils::Json::JsonView jsonValue);
-    Scan& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GUARDDUTY_API Scan();
+    AWS_GUARDDUTY_API Scan(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API Scan& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

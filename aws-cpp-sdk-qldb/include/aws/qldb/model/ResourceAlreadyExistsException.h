@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/ResourceAlreadyExistsException">AWS
    * API Reference</a></p>
    */
-  class AWS_QLDB_API ResourceAlreadyExistsException
+  class ResourceAlreadyExistsException
   {
   public:
-    ResourceAlreadyExistsException();
-    ResourceAlreadyExistsException(Aws::Utils::Json::JsonView jsonValue);
-    ResourceAlreadyExistsException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QLDB_API ResourceAlreadyExistsException();
+    AWS_QLDB_API ResourceAlreadyExistsException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QLDB_API ResourceAlreadyExistsException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QLDB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

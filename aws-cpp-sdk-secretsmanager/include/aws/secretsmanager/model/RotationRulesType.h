@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/RotationRulesType">AWS
    * API Reference</a></p>
    */
-  class AWS_SECRETSMANAGER_API RotationRulesType
+  class RotationRulesType
   {
   public:
-    RotationRulesType();
-    RotationRulesType(Aws::Utils::Json::JsonView jsonValue);
-    RotationRulesType& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECRETSMANAGER_API RotationRulesType();
+    AWS_SECRETSMANAGER_API RotationRulesType(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECRETSMANAGER_API RotationRulesType& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECRETSMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

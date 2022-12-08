@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/State">AWS API
    * Reference</a></p>
    */
-  class AWS_IOTEVENTS_API State
+  class State
   {
   public:
-    State();
-    State(Aws::Utils::Json::JsonView jsonValue);
-    State& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTEVENTS_API State();
+    AWS_IOTEVENTS_API State(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTEVENTS_API State& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTEVENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

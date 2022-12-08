@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/ExecutionListItem">AWS
    * API Reference</a></p>
    */
-  class AWS_SFN_API ExecutionListItem
+  class ExecutionListItem
   {
   public:
-    ExecutionListItem();
-    ExecutionListItem(Aws::Utils::Json::JsonView jsonValue);
-    ExecutionListItem& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SFN_API ExecutionListItem();
+    AWS_SFN_API ExecutionListItem(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SFN_API ExecutionListItem& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SFN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

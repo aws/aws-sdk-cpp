@@ -26,13 +26,13 @@ namespace mgn
 namespace Model
 {
 
-  class AWS_MGN_API SourceServerActionDocument
+  class SourceServerActionDocument
   {
   public:
-    SourceServerActionDocument();
-    SourceServerActionDocument(Aws::Utils::Json::JsonView jsonValue);
-    SourceServerActionDocument& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MGN_API SourceServerActionDocument();
+    AWS_MGN_API SourceServerActionDocument(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MGN_API SourceServerActionDocument& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MGN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

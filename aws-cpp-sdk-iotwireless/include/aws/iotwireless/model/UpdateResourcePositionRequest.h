@@ -24,10 +24,10 @@ namespace Model
 
   /**
    */
-  class AWS_IOTWIRELESS_API UpdateResourcePositionRequest : public StreamingIoTWirelessRequest
+  class UpdateResourcePositionRequest : public StreamingIoTWirelessRequest
   {
   public:
-    UpdateResourcePositionRequest();
+    AWS_IOTWIRELESS_API UpdateResourcePositionRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -35,7 +35,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateResourcePosition"; }
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_IOTWIRELESS_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**

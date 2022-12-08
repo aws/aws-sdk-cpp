@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/Group">AWS API
    * Reference</a></p>
    */
-  class AWS_COSTEXPLORER_API Group
+  class Group
   {
   public:
-    Group();
-    Group(Aws::Utils::Json::JsonView jsonValue);
-    Group& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COSTEXPLORER_API Group();
+    AWS_COSTEXPLORER_API Group(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API Group& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

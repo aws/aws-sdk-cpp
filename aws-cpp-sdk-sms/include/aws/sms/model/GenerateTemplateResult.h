@@ -24,12 +24,12 @@ namespace SMS
 {
 namespace Model
 {
-  class AWS_SMS_API GenerateTemplateResult
+  class GenerateTemplateResult
   {
   public:
-    GenerateTemplateResult();
-    GenerateTemplateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GenerateTemplateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SMS_API GenerateTemplateResult();
+    AWS_SMS_API GenerateTemplateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SMS_API GenerateTemplateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

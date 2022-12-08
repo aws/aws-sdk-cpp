@@ -22,12 +22,12 @@ namespace WorkMail
 {
 namespace Model
 {
-  class AWS_WORKMAIL_API DisassociateDelegateFromResourceResult
+  class DisassociateDelegateFromResourceResult
   {
   public:
-    DisassociateDelegateFromResourceResult();
-    DisassociateDelegateFromResourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DisassociateDelegateFromResourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WORKMAIL_API DisassociateDelegateFromResourceResult();
+    AWS_WORKMAIL_API DisassociateDelegateFromResourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WORKMAIL_API DisassociateDelegateFromResourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

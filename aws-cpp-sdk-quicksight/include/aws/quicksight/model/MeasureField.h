@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/MeasureField">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API MeasureField
+  class MeasureField
   {
   public:
-    MeasureField();
-    MeasureField(Aws::Utils::Json::JsonView jsonValue);
-    MeasureField& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API MeasureField();
+    AWS_QUICKSIGHT_API MeasureField(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API MeasureField& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

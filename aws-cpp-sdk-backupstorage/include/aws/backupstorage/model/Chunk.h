@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/backupstorage-2018-04-10/Chunk">AWS
    * API Reference</a></p>
    */
-  class AWS_BACKUPSTORAGE_API Chunk
+  class Chunk
   {
   public:
-    Chunk();
-    Chunk(Aws::Utils::Json::JsonView jsonValue);
-    Chunk& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BACKUPSTORAGE_API Chunk();
+    AWS_BACKUPSTORAGE_API Chunk(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BACKUPSTORAGE_API Chunk& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BACKUPSTORAGE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

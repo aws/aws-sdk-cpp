@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/DomainValidation">AWS
    * API Reference</a></p>
    */
-  class AWS_ACM_API DomainValidation
+  class DomainValidation
   {
   public:
-    DomainValidation();
-    DomainValidation(Aws::Utils::Json::JsonView jsonValue);
-    DomainValidation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ACM_API DomainValidation();
+    AWS_ACM_API DomainValidation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACM_API DomainValidation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

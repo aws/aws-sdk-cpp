@@ -32,12 +32,12 @@ namespace SSM
 {
 namespace Model
 {
-  class AWS_SSM_API UpdatePatchBaselineResult
+  class UpdatePatchBaselineResult
   {
   public:
-    UpdatePatchBaselineResult();
-    UpdatePatchBaselineResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdatePatchBaselineResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSM_API UpdatePatchBaselineResult();
+    AWS_SSM_API UpdatePatchBaselineResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSM_API UpdatePatchBaselineResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

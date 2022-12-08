@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ReportPlan">AWS
    * API Reference</a></p>
    */
-  class AWS_BACKUP_API ReportPlan
+  class ReportPlan
   {
   public:
-    ReportPlan();
-    ReportPlan(Aws::Utils::Json::JsonView jsonValue);
-    ReportPlan& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BACKUP_API ReportPlan();
+    AWS_BACKUP_API ReportPlan(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BACKUP_API ReportPlan& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BACKUP_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

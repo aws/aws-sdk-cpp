@@ -26,12 +26,12 @@ namespace mgn
 {
 namespace Model
 {
-  class AWS_MGN_API ArchiveWaveResult
+  class ArchiveWaveResult
   {
   public:
-    ArchiveWaveResult();
-    ArchiveWaveResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ArchiveWaveResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MGN_API ArchiveWaveResult();
+    AWS_MGN_API ArchiveWaveResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MGN_API ArchiveWaveResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

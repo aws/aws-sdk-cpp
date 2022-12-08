@@ -44,13 +44,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/Document">AWS
    * API Reference</a></p>
    */
-  class AWS_TEXTRACT_API Document
+  class Document
   {
   public:
-    Document();
-    Document(Aws::Utils::Json::JsonView jsonValue);
-    Document& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TEXTRACT_API Document();
+    AWS_TEXTRACT_API Document(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TEXTRACT_API Document& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TEXTRACT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

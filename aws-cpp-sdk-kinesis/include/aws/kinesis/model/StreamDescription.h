@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/StreamDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_KINESIS_API StreamDescription
+  class StreamDescription
   {
   public:
-    StreamDescription();
-    StreamDescription(Aws::Utils::Json::JsonView jsonValue);
-    StreamDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KINESIS_API StreamDescription();
+    AWS_KINESIS_API StreamDescription(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESIS_API StreamDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESIS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

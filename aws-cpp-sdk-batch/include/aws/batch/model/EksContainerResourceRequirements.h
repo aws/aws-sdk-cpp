@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/EksContainerResourceRequirements">AWS
    * API Reference</a></p>
    */
-  class AWS_BATCH_API EksContainerResourceRequirements
+  class EksContainerResourceRequirements
   {
   public:
-    EksContainerResourceRequirements();
-    EksContainerResourceRequirements(Aws::Utils::Json::JsonView jsonValue);
-    EksContainerResourceRequirements& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BATCH_API EksContainerResourceRequirements();
+    AWS_BATCH_API EksContainerResourceRequirements(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BATCH_API EksContainerResourceRequirements& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BATCH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/AutoScalingPolicyStateChangeReason">AWS
    * API Reference</a></p>
    */
-  class AWS_EMR_API AutoScalingPolicyStateChangeReason
+  class AutoScalingPolicyStateChangeReason
   {
   public:
-    AutoScalingPolicyStateChangeReason();
-    AutoScalingPolicyStateChangeReason(Aws::Utils::Json::JsonView jsonValue);
-    AutoScalingPolicyStateChangeReason& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EMR_API AutoScalingPolicyStateChangeReason();
+    AWS_EMR_API AutoScalingPolicyStateChangeReason(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMR_API AutoScalingPolicyStateChangeReason& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

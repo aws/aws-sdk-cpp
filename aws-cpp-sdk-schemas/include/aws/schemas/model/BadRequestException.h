@@ -23,13 +23,13 @@ namespace Schemas
 namespace Model
 {
 
-  class AWS_SCHEMAS_API BadRequestException
+  class BadRequestException
   {
   public:
-    BadRequestException();
-    BadRequestException(Aws::Utils::Json::JsonView jsonValue);
-    BadRequestException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SCHEMAS_API BadRequestException();
+    AWS_SCHEMAS_API BadRequestException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SCHEMAS_API BadRequestException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SCHEMAS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

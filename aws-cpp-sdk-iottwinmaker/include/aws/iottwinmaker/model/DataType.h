@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/DataType">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTTWINMAKER_API DataType
+  class DataType
   {
   public:
-    DataType();
-    DataType(Aws::Utils::Json::JsonView jsonValue);
-    DataType& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTTWINMAKER_API DataType();
+    AWS_IOTTWINMAKER_API DataType(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTTWINMAKER_API DataType& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTTWINMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -76,32 +76,32 @@ namespace Model
     /**
      * <p>The nested type in the data type.</p>
      */
-    const DataType& GetNestedType() const;
+    AWS_IOTTWINMAKER_API const DataType& GetNestedType() const;
 
     /**
      * <p>The nested type in the data type.</p>
      */
-    bool NestedTypeHasBeenSet() const;
+    AWS_IOTTWINMAKER_API bool NestedTypeHasBeenSet() const;
 
     /**
      * <p>The nested type in the data type.</p>
      */
-    void SetNestedType(const DataType& value);
+    AWS_IOTTWINMAKER_API void SetNestedType(const DataType& value);
 
     /**
      * <p>The nested type in the data type.</p>
      */
-    void SetNestedType(DataType&& value);
+    AWS_IOTTWINMAKER_API void SetNestedType(DataType&& value);
 
     /**
      * <p>The nested type in the data type.</p>
      */
-    DataType& WithNestedType(const DataType& value);
+    AWS_IOTTWINMAKER_API DataType& WithNestedType(const DataType& value);
 
     /**
      * <p>The nested type in the data type.</p>
      */
-    DataType& WithNestedType(DataType&& value);
+    AWS_IOTTWINMAKER_API DataType& WithNestedType(DataType&& value);
 
 
     /**

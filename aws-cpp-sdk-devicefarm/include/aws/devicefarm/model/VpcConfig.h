@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/VpcConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_DEVICEFARM_API VpcConfig
+  class VpcConfig
   {
   public:
-    VpcConfig();
-    VpcConfig(Aws::Utils::Json::JsonView jsonValue);
-    VpcConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DEVICEFARM_API VpcConfig();
+    AWS_DEVICEFARM_API VpcConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVICEFARM_API VpcConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVICEFARM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

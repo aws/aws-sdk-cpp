@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/GeospatialCoordinateBounds">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API GeospatialCoordinateBounds
+  class GeospatialCoordinateBounds
   {
   public:
-    GeospatialCoordinateBounds();
-    GeospatialCoordinateBounds(Aws::Utils::Json::JsonView jsonValue);
-    GeospatialCoordinateBounds& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API GeospatialCoordinateBounds();
+    AWS_QUICKSIGHT_API GeospatialCoordinateBounds(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API GeospatialCoordinateBounds& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

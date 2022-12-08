@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ActiveViolation">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API ActiveViolation
+  class ActiveViolation
   {
   public:
-    ActiveViolation();
-    ActiveViolation(Aws::Utils::Json::JsonView jsonValue);
-    ActiveViolation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API ActiveViolation();
+    AWS_IOT_API ActiveViolation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API ActiveViolation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

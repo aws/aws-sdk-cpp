@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/EFSVolumeConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_BATCH_API EFSVolumeConfiguration
+  class EFSVolumeConfiguration
   {
   public:
-    EFSVolumeConfiguration();
-    EFSVolumeConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    EFSVolumeConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BATCH_API EFSVolumeConfiguration();
+    AWS_BATCH_API EFSVolumeConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BATCH_API EFSVolumeConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BATCH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

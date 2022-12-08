@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/FairsharePolicy">AWS
    * API Reference</a></p>
    */
-  class AWS_BATCH_API FairsharePolicy
+  class FairsharePolicy
   {
   public:
-    FairsharePolicy();
-    FairsharePolicy(Aws::Utils::Json::JsonView jsonValue);
-    FairsharePolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BATCH_API FairsharePolicy();
+    AWS_BATCH_API FairsharePolicy(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BATCH_API FairsharePolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BATCH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

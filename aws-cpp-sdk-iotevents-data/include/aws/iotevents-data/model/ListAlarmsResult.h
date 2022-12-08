@@ -26,12 +26,12 @@ namespace IoTEventsData
 {
 namespace Model
 {
-  class AWS_IOTEVENTSDATA_API ListAlarmsResult
+  class ListAlarmsResult
   {
   public:
-    ListAlarmsResult();
-    ListAlarmsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListAlarmsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOTEVENTSDATA_API ListAlarmsResult();
+    AWS_IOTEVENTSDATA_API ListAlarmsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOTEVENTSDATA_API ListAlarmsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

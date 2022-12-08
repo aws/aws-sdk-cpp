@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-elastic-2022-11-28/ThrottlingException">AWS
    * API Reference</a></p>
    */
-  class AWS_DOCDBELASTIC_API ThrottlingException
+  class ThrottlingException
   {
   public:
-    ThrottlingException();
-    ThrottlingException(Aws::Utils::Json::JsonView jsonValue);
-    ThrottlingException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DOCDBELASTIC_API ThrottlingException();
+    AWS_DOCDBELASTIC_API ThrottlingException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DOCDBELASTIC_API ThrottlingException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DOCDBELASTIC_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

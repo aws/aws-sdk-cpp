@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CompliantSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_SSM_API CompliantSummary
+  class CompliantSummary
   {
   public:
-    CompliantSummary();
-    CompliantSummary(Aws::Utils::Json::JsonView jsonValue);
-    CompliantSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSM_API CompliantSummary();
+    AWS_SSM_API CompliantSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API CompliantSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

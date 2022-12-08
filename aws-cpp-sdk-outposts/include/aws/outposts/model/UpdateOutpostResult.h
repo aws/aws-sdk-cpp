@@ -24,12 +24,12 @@ namespace Outposts
 {
 namespace Model
 {
-  class AWS_OUTPOSTS_API UpdateOutpostResult
+  class UpdateOutpostResult
   {
   public:
-    UpdateOutpostResult();
-    UpdateOutpostResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateOutpostResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OUTPOSTS_API UpdateOutpostResult();
+    AWS_OUTPOSTS_API UpdateOutpostResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OUTPOSTS_API UpdateOutpostResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     

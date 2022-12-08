@@ -29,12 +29,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/importexport-2010-06-01/CancelJobOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_IMPORTEXPORT_API CancelJobResult
+  class CancelJobResult
   {
   public:
-    CancelJobResult();
-    CancelJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    CancelJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_IMPORTEXPORT_API CancelJobResult();
+    AWS_IMPORTEXPORT_API CancelJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_IMPORTEXPORT_API CancelJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     

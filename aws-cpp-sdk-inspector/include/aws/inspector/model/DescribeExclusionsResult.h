@@ -27,12 +27,12 @@ namespace Inspector
 {
 namespace Model
 {
-  class AWS_INSPECTOR_API DescribeExclusionsResult
+  class DescribeExclusionsResult
   {
   public:
-    DescribeExclusionsResult();
-    DescribeExclusionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeExclusionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_INSPECTOR_API DescribeExclusionsResult();
+    AWS_INSPECTOR_API DescribeExclusionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_INSPECTOR_API DescribeExclusionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

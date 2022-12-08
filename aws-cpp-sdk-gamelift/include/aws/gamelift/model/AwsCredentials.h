@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/AwsCredentials">AWS
    * API Reference</a></p>
    */
-  class AWS_GAMELIFT_API AwsCredentials
+  class AwsCredentials
   {
   public:
-    AwsCredentials();
-    AwsCredentials(Aws::Utils::Json::JsonView jsonValue);
-    AwsCredentials& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GAMELIFT_API AwsCredentials();
+    AWS_GAMELIFT_API AwsCredentials(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMELIFT_API AwsCredentials& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

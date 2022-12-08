@@ -19,21 +19,21 @@ namespace LocationService
 {
 namespace Model
 {
-  class AWS_LOCATIONSERVICE_API GetMapGlyphsResult
+  class GetMapGlyphsResult
   {
   public:
-    GetMapGlyphsResult();
+    AWS_LOCATIONSERVICE_API GetMapGlyphsResult();
     //We have to define these because Microsoft doesn't auto generate them
-    GetMapGlyphsResult(GetMapGlyphsResult&&);
-    GetMapGlyphsResult& operator=(GetMapGlyphsResult&&);
+    AWS_LOCATIONSERVICE_API GetMapGlyphsResult(GetMapGlyphsResult&&);
+    AWS_LOCATIONSERVICE_API GetMapGlyphsResult& operator=(GetMapGlyphsResult&&);
     //we delete these because Microsoft doesn't handle move generation correctly
     //and we therefore don't trust them to get it right here either.
     GetMapGlyphsResult(const GetMapGlyphsResult&) = delete;
     GetMapGlyphsResult& operator=(const GetMapGlyphsResult&) = delete;
 
 
-    GetMapGlyphsResult(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
-    GetMapGlyphsResult& operator=(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
+    AWS_LOCATIONSERVICE_API GetMapGlyphsResult(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
+    AWS_LOCATIONSERVICE_API GetMapGlyphsResult& operator=(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
 
 
 

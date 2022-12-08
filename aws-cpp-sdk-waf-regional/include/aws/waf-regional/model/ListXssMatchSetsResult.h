@@ -32,12 +32,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ListXssMatchSetsResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_WAFREGIONAL_API ListXssMatchSetsResult
+  class ListXssMatchSetsResult
   {
   public:
-    ListXssMatchSetsResult();
-    ListXssMatchSetsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListXssMatchSetsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WAFREGIONAL_API ListXssMatchSetsResult();
+    AWS_WAFREGIONAL_API ListXssMatchSetsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WAFREGIONAL_API ListXssMatchSetsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

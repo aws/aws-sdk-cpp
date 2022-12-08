@@ -25,12 +25,12 @@ namespace MarketplaceMetering
 {
 namespace Model
 {
-  class AWS_MARKETPLACEMETERING_API RegisterUsageResult
+  class RegisterUsageResult
   {
   public:
-    RegisterUsageResult();
-    RegisterUsageResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    RegisterUsageResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MARKETPLACEMETERING_API RegisterUsageResult();
+    AWS_MARKETPLACEMETERING_API RegisterUsageResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MARKETPLACEMETERING_API RegisterUsageResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

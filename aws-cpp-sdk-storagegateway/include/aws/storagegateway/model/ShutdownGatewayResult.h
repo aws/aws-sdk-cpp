@@ -30,12 +30,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ShutdownGatewayOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_STORAGEGATEWAY_API ShutdownGatewayResult
+  class ShutdownGatewayResult
   {
   public:
-    ShutdownGatewayResult();
-    ShutdownGatewayResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ShutdownGatewayResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_STORAGEGATEWAY_API ShutdownGatewayResult();
+    AWS_STORAGEGATEWAY_API ShutdownGatewayResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_STORAGEGATEWAY_API ShutdownGatewayResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     

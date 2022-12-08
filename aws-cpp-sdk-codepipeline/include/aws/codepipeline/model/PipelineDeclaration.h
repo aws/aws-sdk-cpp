@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PipelineDeclaration">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEPIPELINE_API PipelineDeclaration
+  class PipelineDeclaration
   {
   public:
-    PipelineDeclaration();
-    PipelineDeclaration(Aws::Utils::Json::JsonView jsonValue);
-    PipelineDeclaration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEPIPELINE_API PipelineDeclaration();
+    AWS_CODEPIPELINE_API PipelineDeclaration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEPIPELINE_API PipelineDeclaration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

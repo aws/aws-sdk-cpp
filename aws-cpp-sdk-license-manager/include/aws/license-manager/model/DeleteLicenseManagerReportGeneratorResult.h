@@ -22,12 +22,12 @@ namespace LicenseManager
 {
 namespace Model
 {
-  class AWS_LICENSEMANAGER_API DeleteLicenseManagerReportGeneratorResult
+  class DeleteLicenseManagerReportGeneratorResult
   {
   public:
-    DeleteLicenseManagerReportGeneratorResult();
-    DeleteLicenseManagerReportGeneratorResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteLicenseManagerReportGeneratorResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LICENSEMANAGER_API DeleteLicenseManagerReportGeneratorResult();
+    AWS_LICENSEMANAGER_API DeleteLicenseManagerReportGeneratorResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LICENSEMANAGER_API DeleteLicenseManagerReportGeneratorResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

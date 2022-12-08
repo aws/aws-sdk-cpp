@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/ListAccountAssociationsFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_BILLINGCONDUCTOR_API ListAccountAssociationsFilter
+  class ListAccountAssociationsFilter
   {
   public:
-    ListAccountAssociationsFilter();
-    ListAccountAssociationsFilter(Aws::Utils::Json::JsonView jsonValue);
-    ListAccountAssociationsFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BILLINGCONDUCTOR_API ListAccountAssociationsFilter();
+    AWS_BILLINGCONDUCTOR_API ListAccountAssociationsFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BILLINGCONDUCTOR_API ListAccountAssociationsFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BILLINGCONDUCTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -24,12 +24,12 @@ namespace Amplify
 {
 namespace Model
 {
-  class AWS_AMPLIFY_API CreateAppResult
+  class CreateAppResult
   {
   public:
-    CreateAppResult();
-    CreateAppResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateAppResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_AMPLIFY_API CreateAppResult();
+    AWS_AMPLIFY_API CreateAppResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_AMPLIFY_API CreateAppResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     

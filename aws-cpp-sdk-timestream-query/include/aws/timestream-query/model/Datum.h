@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/timestream-query-2018-11-01/Datum">AWS
    * API Reference</a></p>
    */
-  class AWS_TIMESTREAMQUERY_API Datum
+  class Datum
   {
   public:
-    Datum();
-    Datum(Aws::Utils::Json::JsonView jsonValue);
-    Datum& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TIMESTREAMQUERY_API Datum();
+    AWS_TIMESTREAMQUERY_API Datum(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TIMESTREAMQUERY_API Datum& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TIMESTREAMQUERY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -177,32 +177,32 @@ namespace Model
     /**
      * <p> Indicates if the data point is a row. </p>
      */
-    const Row& GetRowValue() const;
+    AWS_TIMESTREAMQUERY_API const Row& GetRowValue() const;
 
     /**
      * <p> Indicates if the data point is a row. </p>
      */
-    bool RowValueHasBeenSet() const;
+    AWS_TIMESTREAMQUERY_API bool RowValueHasBeenSet() const;
 
     /**
      * <p> Indicates if the data point is a row. </p>
      */
-    void SetRowValue(const Row& value);
+    AWS_TIMESTREAMQUERY_API void SetRowValue(const Row& value);
 
     /**
      * <p> Indicates if the data point is a row. </p>
      */
-    void SetRowValue(Row&& value);
+    AWS_TIMESTREAMQUERY_API void SetRowValue(Row&& value);
 
     /**
      * <p> Indicates if the data point is a row. </p>
      */
-    Datum& WithRowValue(const Row& value);
+    AWS_TIMESTREAMQUERY_API Datum& WithRowValue(const Row& value);
 
     /**
      * <p> Indicates if the data point is a row. </p>
      */
-    Datum& WithRowValue(Row&& value);
+    AWS_TIMESTREAMQUERY_API Datum& WithRowValue(Row&& value);
 
 
     /**

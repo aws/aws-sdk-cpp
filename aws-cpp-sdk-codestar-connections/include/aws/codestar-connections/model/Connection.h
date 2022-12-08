@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/Connection">AWS
    * API Reference</a></p>
    */
-  class AWS_CODESTARCONNECTIONS_API Connection
+  class Connection
   {
   public:
-    Connection();
-    Connection(Aws::Utils::Json::JsonView jsonValue);
-    Connection& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODESTARCONNECTIONS_API Connection();
+    AWS_CODESTARCONNECTIONS_API Connection(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODESTARCONNECTIONS_API Connection& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODESTARCONNECTIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

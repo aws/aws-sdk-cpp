@@ -24,12 +24,12 @@ namespace FMS
 {
 namespace Model
 {
-  class AWS_FMS_API DisassociateThirdPartyFirewallResult
+  class DisassociateThirdPartyFirewallResult
   {
   public:
-    DisassociateThirdPartyFirewallResult();
-    DisassociateThirdPartyFirewallResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DisassociateThirdPartyFirewallResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_FMS_API DisassociateThirdPartyFirewallResult();
+    AWS_FMS_API DisassociateThirdPartyFirewallResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_FMS_API DisassociateThirdPartyFirewallResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/JobDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_MACIE2_API JobDetails
+  class JobDetails
   {
   public:
-    JobDetails();
-    JobDetails(Aws::Utils::Json::JsonView jsonValue);
-    JobDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MACIE2_API JobDetails();
+    AWS_MACIE2_API JobDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API JobDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

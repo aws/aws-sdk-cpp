@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ComparisonFormatConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API ComparisonFormatConfiguration
+  class ComparisonFormatConfiguration
   {
   public:
-    ComparisonFormatConfiguration();
-    ComparisonFormatConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    ComparisonFormatConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API ComparisonFormatConfiguration();
+    AWS_QUICKSIGHT_API ComparisonFormatConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API ComparisonFormatConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

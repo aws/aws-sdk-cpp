@@ -29,12 +29,12 @@ namespace mgn
 {
 namespace Model
 {
-  class AWS_MGN_API UpdateLaunchConfigurationResult
+  class UpdateLaunchConfigurationResult
   {
   public:
-    UpdateLaunchConfigurationResult();
-    UpdateLaunchConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateLaunchConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MGN_API UpdateLaunchConfigurationResult();
+    AWS_MGN_API UpdateLaunchConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MGN_API UpdateLaunchConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

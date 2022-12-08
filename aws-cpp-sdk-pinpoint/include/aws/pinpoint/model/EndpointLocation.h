@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/EndpointLocation">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API EndpointLocation
+  class EndpointLocation
   {
   public:
-    EndpointLocation();
-    EndpointLocation(Aws::Utils::Json::JsonView jsonValue);
-    EndpointLocation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API EndpointLocation();
+    AWS_PINPOINT_API EndpointLocation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API EndpointLocation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/ExpenseDocument">AWS
    * API Reference</a></p>
    */
-  class AWS_TEXTRACT_API ExpenseDocument
+  class ExpenseDocument
   {
   public:
-    ExpenseDocument();
-    ExpenseDocument(Aws::Utils::Json::JsonView jsonValue);
-    ExpenseDocument& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TEXTRACT_API ExpenseDocument();
+    AWS_TEXTRACT_API ExpenseDocument(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TEXTRACT_API ExpenseDocument& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TEXTRACT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

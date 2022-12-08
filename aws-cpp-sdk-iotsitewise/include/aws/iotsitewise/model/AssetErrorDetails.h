@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/AssetErrorDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTSITEWISE_API AssetErrorDetails
+  class AssetErrorDetails
   {
   public:
-    AssetErrorDetails();
-    AssetErrorDetails(Aws::Utils::Json::JsonView jsonValue);
-    AssetErrorDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTSITEWISE_API AssetErrorDetails();
+    AWS_IOTSITEWISE_API AssetErrorDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API AssetErrorDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

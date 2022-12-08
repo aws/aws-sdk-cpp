@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/ImageInserter">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API ImageInserter
+  class ImageInserter
   {
   public:
-    ImageInserter();
-    ImageInserter(Aws::Utils::Json::JsonView jsonValue);
-    ImageInserter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API ImageInserter();
+    AWS_MEDIACONVERT_API ImageInserter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API ImageInserter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

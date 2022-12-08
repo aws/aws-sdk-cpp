@@ -27,12 +27,12 @@ namespace Detective
 {
 namespace Model
 {
-  class AWS_DETECTIVE_API ListDatasourcePackagesResult
+  class ListDatasourcePackagesResult
   {
   public:
-    ListDatasourcePackagesResult();
-    ListDatasourcePackagesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListDatasourcePackagesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DETECTIVE_API ListDatasourcePackagesResult();
+    AWS_DETECTIVE_API ListDatasourcePackagesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DETECTIVE_API ListDatasourcePackagesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

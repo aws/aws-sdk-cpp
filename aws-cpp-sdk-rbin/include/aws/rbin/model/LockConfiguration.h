@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rbin-2021-06-15/LockConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_RECYCLEBIN_API LockConfiguration
+  class LockConfiguration
   {
   public:
-    LockConfiguration();
-    LockConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    LockConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_RECYCLEBIN_API LockConfiguration();
+    AWS_RECYCLEBIN_API LockConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RECYCLEBIN_API LockConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RECYCLEBIN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

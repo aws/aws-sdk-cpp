@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sso-oidc-2019-06-10/ExpiredTokenException">AWS
    * API Reference</a></p>
    */
-  class AWS_SSOOIDC_API ExpiredTokenException
+  class ExpiredTokenException
   {
   public:
-    ExpiredTokenException();
-    ExpiredTokenException(Aws::Utils::Json::JsonView jsonValue);
-    ExpiredTokenException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSOOIDC_API ExpiredTokenException();
+    AWS_SSOOIDC_API ExpiredTokenException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSOOIDC_API ExpiredTokenException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSOOIDC_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

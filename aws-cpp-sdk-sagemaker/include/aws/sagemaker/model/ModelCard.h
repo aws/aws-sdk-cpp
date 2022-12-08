@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ModelCard">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API ModelCard
+  class ModelCard
   {
   public:
-    ModelCard();
-    ModelCard(Aws::Utils::Json::JsonView jsonValue);
-    ModelCard& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API ModelCard();
+    AWS_SAGEMAKER_API ModelCard(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API ModelCard& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

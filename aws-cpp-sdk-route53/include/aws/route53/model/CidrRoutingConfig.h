@@ -31,14 +31,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CidrRoutingConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53_API CidrRoutingConfig
+  class CidrRoutingConfig
   {
   public:
-    CidrRoutingConfig();
-    CidrRoutingConfig(const Aws::Utils::Xml::XmlNode& xmlNode);
-    CidrRoutingConfig& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ROUTE53_API CidrRoutingConfig();
+    AWS_ROUTE53_API CidrRoutingConfig(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ROUTE53_API CidrRoutingConfig& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_ROUTE53_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**

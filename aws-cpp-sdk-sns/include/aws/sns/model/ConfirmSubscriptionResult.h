@@ -30,12 +30,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ConfirmSubscriptionResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_SNS_API ConfirmSubscriptionResult
+  class ConfirmSubscriptionResult
   {
   public:
-    ConfirmSubscriptionResult();
-    ConfirmSubscriptionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ConfirmSubscriptionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_SNS_API ConfirmSubscriptionResult();
+    AWS_SNS_API ConfirmSubscriptionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_SNS_API ConfirmSubscriptionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

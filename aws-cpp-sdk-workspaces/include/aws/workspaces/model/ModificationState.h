@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ModificationState">AWS
    * API Reference</a></p>
    */
-  class AWS_WORKSPACES_API ModificationState
+  class ModificationState
   {
   public:
-    ModificationState();
-    ModificationState(Aws::Utils::Json::JsonView jsonValue);
-    ModificationState& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WORKSPACES_API ModificationState();
+    AWS_WORKSPACES_API ModificationState(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKSPACES_API ModificationState& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

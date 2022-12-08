@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/User">AWS API
    * Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API User
+  class User
   {
   public:
-    User();
-    User(Aws::Utils::Json::JsonView jsonValue);
-    User& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API User();
+    AWS_QUICKSIGHT_API User(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API User& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

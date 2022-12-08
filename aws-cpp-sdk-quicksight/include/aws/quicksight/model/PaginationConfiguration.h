@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/PaginationConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API PaginationConfiguration
+  class PaginationConfiguration
   {
   public:
-    PaginationConfiguration();
-    PaginationConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    PaginationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API PaginationConfiguration();
+    AWS_QUICKSIGHT_API PaginationConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API PaginationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

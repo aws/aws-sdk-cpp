@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/LaunchGroupConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDWATCHEVIDENTLY_API LaunchGroupConfig
+  class LaunchGroupConfig
   {
   public:
-    LaunchGroupConfig();
-    LaunchGroupConfig(Aws::Utils::Json::JsonView jsonValue);
-    LaunchGroupConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDWATCHEVIDENTLY_API LaunchGroupConfig();
+    AWS_CLOUDWATCHEVIDENTLY_API LaunchGroupConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHEVIDENTLY_API LaunchGroupConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHEVIDENTLY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

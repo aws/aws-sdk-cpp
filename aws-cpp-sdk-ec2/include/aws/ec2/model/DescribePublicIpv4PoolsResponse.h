@@ -27,12 +27,12 @@ namespace EC2
 {
 namespace Model
 {
-  class AWS_EC2_API DescribePublicIpv4PoolsResponse
+  class DescribePublicIpv4PoolsResponse
   {
   public:
-    DescribePublicIpv4PoolsResponse();
-    DescribePublicIpv4PoolsResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribePublicIpv4PoolsResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API DescribePublicIpv4PoolsResponse();
+    AWS_EC2_API DescribePublicIpv4PoolsResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API DescribePublicIpv4PoolsResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

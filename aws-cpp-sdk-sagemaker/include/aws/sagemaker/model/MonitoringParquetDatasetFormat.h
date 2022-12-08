@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/MonitoringParquetDatasetFormat">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API MonitoringParquetDatasetFormat
+  class MonitoringParquetDatasetFormat
   {
   public:
-    MonitoringParquetDatasetFormat();
-    MonitoringParquetDatasetFormat(Aws::Utils::Json::JsonView jsonValue);
-    MonitoringParquetDatasetFormat& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API MonitoringParquetDatasetFormat();
+    AWS_SAGEMAKER_API MonitoringParquetDatasetFormat(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API MonitoringParquetDatasetFormat& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
   };
 

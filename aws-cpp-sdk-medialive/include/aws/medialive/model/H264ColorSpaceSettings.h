@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/H264ColorSpaceSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API H264ColorSpaceSettings
+  class H264ColorSpaceSettings
   {
   public:
-    H264ColorSpaceSettings();
-    H264ColorSpaceSettings(Aws::Utils::Json::JsonView jsonValue);
-    H264ColorSpaceSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API H264ColorSpaceSettings();
+    AWS_MEDIALIVE_API H264ColorSpaceSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API H264ColorSpaceSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

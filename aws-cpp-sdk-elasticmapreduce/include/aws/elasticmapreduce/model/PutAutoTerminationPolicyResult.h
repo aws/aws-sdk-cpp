@@ -22,12 +22,12 @@ namespace EMR
 {
 namespace Model
 {
-  class AWS_EMR_API PutAutoTerminationPolicyResult
+  class PutAutoTerminationPolicyResult
   {
   public:
-    PutAutoTerminationPolicyResult();
-    PutAutoTerminationPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PutAutoTerminationPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_EMR_API PutAutoTerminationPolicyResult();
+    AWS_EMR_API PutAutoTerminationPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_EMR_API PutAutoTerminationPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

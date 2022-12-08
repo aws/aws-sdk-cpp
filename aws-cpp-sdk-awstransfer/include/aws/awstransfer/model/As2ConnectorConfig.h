@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/As2ConnectorConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_TRANSFER_API As2ConnectorConfig
+  class As2ConnectorConfig
   {
   public:
-    As2ConnectorConfig();
-    As2ConnectorConfig(Aws::Utils::Json::JsonView jsonValue);
-    As2ConnectorConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TRANSFER_API As2ConnectorConfig();
+    AWS_TRANSFER_API As2ConnectorConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSFER_API As2ConnectorConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSFER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

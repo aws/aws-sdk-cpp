@@ -52,13 +52,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/GrantConstraints">AWS
    * API Reference</a></p>
    */
-  class AWS_KMS_API GrantConstraints
+  class GrantConstraints
   {
   public:
-    GrantConstraints();
-    GrantConstraints(Aws::Utils::Json::JsonView jsonValue);
-    GrantConstraints& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KMS_API GrantConstraints();
+    AWS_KMS_API GrantConstraints(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KMS_API GrantConstraints& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ProductionVariantServerlessConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API ProductionVariantServerlessConfig
+  class ProductionVariantServerlessConfig
   {
   public:
-    ProductionVariantServerlessConfig();
-    ProductionVariantServerlessConfig(Aws::Utils::Json::JsonView jsonValue);
-    ProductionVariantServerlessConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API ProductionVariantServerlessConfig();
+    AWS_SAGEMAKER_API ProductionVariantServerlessConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API ProductionVariantServerlessConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

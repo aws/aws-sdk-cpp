@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/AssessmentRunNotification">AWS
    * API Reference</a></p>
    */
-  class AWS_INSPECTOR_API AssessmentRunNotification
+  class AssessmentRunNotification
   {
   public:
-    AssessmentRunNotification();
-    AssessmentRunNotification(Aws::Utils::Json::JsonView jsonValue);
-    AssessmentRunNotification& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_INSPECTOR_API AssessmentRunNotification();
+    AWS_INSPECTOR_API AssessmentRunNotification(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR_API AssessmentRunNotification& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

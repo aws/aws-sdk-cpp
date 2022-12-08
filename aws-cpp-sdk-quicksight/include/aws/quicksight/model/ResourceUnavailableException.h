@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ResourceUnavailableException">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API ResourceUnavailableException
+  class ResourceUnavailableException
   {
   public:
-    ResourceUnavailableException();
-    ResourceUnavailableException(Aws::Utils::Json::JsonView jsonValue);
-    ResourceUnavailableException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API ResourceUnavailableException();
+    AWS_QUICKSIGHT_API ResourceUnavailableException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API ResourceUnavailableException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

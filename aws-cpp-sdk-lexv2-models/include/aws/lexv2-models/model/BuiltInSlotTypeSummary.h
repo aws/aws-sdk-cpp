@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/BuiltInSlotTypeSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELSV2_API BuiltInSlotTypeSummary
+  class BuiltInSlotTypeSummary
   {
   public:
-    BuiltInSlotTypeSummary();
-    BuiltInSlotTypeSummary(Aws::Utils::Json::JsonView jsonValue);
-    BuiltInSlotTypeSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELSV2_API BuiltInSlotTypeSummary();
+    AWS_LEXMODELSV2_API BuiltInSlotTypeSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API BuiltInSlotTypeSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

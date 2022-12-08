@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/ResourceNotFoundException">AWS
    * API Reference</a></p>
    */
-  class AWS_BACKUPGATEWAY_API ResourceNotFoundException
+  class ResourceNotFoundException
   {
   public:
-    ResourceNotFoundException();
-    ResourceNotFoundException(Aws::Utils::Json::JsonView jsonValue);
-    ResourceNotFoundException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BACKUPGATEWAY_API ResourceNotFoundException();
+    AWS_BACKUPGATEWAY_API ResourceNotFoundException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BACKUPGATEWAY_API ResourceNotFoundException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BACKUPGATEWAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

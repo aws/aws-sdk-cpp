@@ -30,12 +30,12 @@ namespace MQ
 {
 namespace Model
 {
-  class AWS_MQ_API UpdateBrokerResult
+  class UpdateBrokerResult
   {
   public:
-    UpdateBrokerResult();
-    UpdateBrokerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateBrokerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MQ_API UpdateBrokerResult();
+    AWS_MQ_API UpdateBrokerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MQ_API UpdateBrokerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

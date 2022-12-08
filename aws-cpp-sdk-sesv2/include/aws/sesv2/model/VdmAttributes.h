@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/VdmAttributes">AWS
    * API Reference</a></p>
    */
-  class AWS_SESV2_API VdmAttributes
+  class VdmAttributes
   {
   public:
-    VdmAttributes();
-    VdmAttributes(Aws::Utils::Json::JsonView jsonValue);
-    VdmAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SESV2_API VdmAttributes();
+    AWS_SESV2_API VdmAttributes(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SESV2_API VdmAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SESV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

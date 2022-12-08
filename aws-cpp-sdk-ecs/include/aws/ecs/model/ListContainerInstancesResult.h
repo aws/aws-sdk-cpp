@@ -25,12 +25,12 @@ namespace ECS
 {
 namespace Model
 {
-  class AWS_ECS_API ListContainerInstancesResult
+  class ListContainerInstancesResult
   {
   public:
-    ListContainerInstancesResult();
-    ListContainerInstancesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListContainerInstancesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ECS_API ListContainerInstancesResult();
+    AWS_ECS_API ListContainerInstancesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ECS_API ListContainerInstancesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

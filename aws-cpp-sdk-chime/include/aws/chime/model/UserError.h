@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UserError">AWS API
    * Reference</a></p>
    */
-  class AWS_CHIME_API UserError
+  class UserError
   {
   public:
-    UserError();
-    UserError(Aws::Utils::Json::JsonView jsonValue);
-    UserError& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIME_API UserError();
+    AWS_CHIME_API UserError(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API UserError& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

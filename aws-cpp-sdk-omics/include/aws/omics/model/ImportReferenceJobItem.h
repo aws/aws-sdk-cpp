@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ImportReferenceJobItem">AWS
    * API Reference</a></p>
    */
-  class AWS_OMICS_API ImportReferenceJobItem
+  class ImportReferenceJobItem
   {
   public:
-    ImportReferenceJobItem();
-    ImportReferenceJobItem(Aws::Utils::Json::JsonView jsonValue);
-    ImportReferenceJobItem& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OMICS_API ImportReferenceJobItem();
+    AWS_OMICS_API ImportReferenceJobItem(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OMICS_API ImportReferenceJobItem& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OMICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

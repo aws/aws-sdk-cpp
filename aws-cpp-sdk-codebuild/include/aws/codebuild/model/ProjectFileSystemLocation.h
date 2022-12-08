@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ProjectFileSystemLocation">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEBUILD_API ProjectFileSystemLocation
+  class ProjectFileSystemLocation
   {
   public:
-    ProjectFileSystemLocation();
-    ProjectFileSystemLocation(Aws::Utils::Json::JsonView jsonValue);
-    ProjectFileSystemLocation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEBUILD_API ProjectFileSystemLocation();
+    AWS_CODEBUILD_API ProjectFileSystemLocation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEBUILD_API ProjectFileSystemLocation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEBUILD_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

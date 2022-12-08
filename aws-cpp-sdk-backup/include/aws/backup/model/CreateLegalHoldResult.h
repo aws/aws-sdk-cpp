@@ -27,12 +27,12 @@ namespace Backup
 {
 namespace Model
 {
-  class AWS_BACKUP_API CreateLegalHoldResult
+  class CreateLegalHoldResult
   {
   public:
-    CreateLegalHoldResult();
-    CreateLegalHoldResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateLegalHoldResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_BACKUP_API CreateLegalHoldResult();
+    AWS_BACKUP_API CreateLegalHoldResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_BACKUP_API CreateLegalHoldResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

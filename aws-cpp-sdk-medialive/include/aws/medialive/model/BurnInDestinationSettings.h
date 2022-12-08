@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/BurnInDestinationSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API BurnInDestinationSettings
+  class BurnInDestinationSettings
   {
   public:
-    BurnInDestinationSettings();
-    BurnInDestinationSettings(Aws::Utils::Json::JsonView jsonValue);
-    BurnInDestinationSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API BurnInDestinationSettings();
+    AWS_MEDIALIVE_API BurnInDestinationSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API BurnInDestinationSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

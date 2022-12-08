@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/HumanTaskConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API HumanTaskConfig
+  class HumanTaskConfig
   {
   public:
-    HumanTaskConfig();
-    HumanTaskConfig(Aws::Utils::Json::JsonView jsonValue);
-    HumanTaskConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API HumanTaskConfig();
+    AWS_SAGEMAKER_API HumanTaskConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API HumanTaskConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

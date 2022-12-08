@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/HumanLoopConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API HumanLoopConfig
+  class HumanLoopConfig
   {
   public:
-    HumanLoopConfig();
-    HumanLoopConfig(Aws::Utils::Json::JsonView jsonValue);
-    HumanLoopConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API HumanLoopConfig();
+    AWS_SAGEMAKER_API HumanLoopConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API HumanLoopConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

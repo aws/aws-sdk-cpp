@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/Termination">AWS
    * API Reference</a></p>
    */
-  class AWS_CHIME_API Termination
+  class Termination
   {
   public:
-    Termination();
-    Termination(Aws::Utils::Json::JsonView jsonValue);
-    Termination& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIME_API Termination();
+    AWS_CHIME_API Termination(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API Termination& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

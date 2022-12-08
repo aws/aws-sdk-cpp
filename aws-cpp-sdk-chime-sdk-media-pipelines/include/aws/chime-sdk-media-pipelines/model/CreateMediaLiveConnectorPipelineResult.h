@@ -24,12 +24,12 @@ namespace ChimeSDKMediaPipelines
 {
 namespace Model
 {
-  class AWS_CHIMESDKMEDIAPIPELINES_API CreateMediaLiveConnectorPipelineResult
+  class CreateMediaLiveConnectorPipelineResult
   {
   public:
-    CreateMediaLiveConnectorPipelineResult();
-    CreateMediaLiveConnectorPipelineResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateMediaLiveConnectorPipelineResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CHIMESDKMEDIAPIPELINES_API CreateMediaLiveConnectorPipelineResult();
+    AWS_CHIMESDKMEDIAPIPELINES_API CreateMediaLiveConnectorPipelineResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CHIMESDKMEDIAPIPELINES_API CreateMediaLiveConnectorPipelineResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

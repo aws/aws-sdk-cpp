@@ -38,13 +38,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ConnectionPasswordEncryption">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API ConnectionPasswordEncryption
+  class ConnectionPasswordEncryption
   {
   public:
-    ConnectionPasswordEncryption();
-    ConnectionPasswordEncryption(Aws::Utils::Json::JsonView jsonValue);
-    ConnectionPasswordEncryption& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API ConnectionPasswordEncryption();
+    AWS_GLUE_API ConnectionPasswordEncryption(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API ConnectionPasswordEncryption& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

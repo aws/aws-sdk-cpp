@@ -25,12 +25,12 @@ namespace EC2
 {
 namespace Model
 {
-  class AWS_EC2_API ModifyVerifiedAccessGroupPolicyResponse
+  class ModifyVerifiedAccessGroupPolicyResponse
   {
   public:
-    ModifyVerifiedAccessGroupPolicyResponse();
-    ModifyVerifiedAccessGroupPolicyResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ModifyVerifiedAccessGroupPolicyResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API ModifyVerifiedAccessGroupPolicyResponse();
+    AWS_EC2_API ModifyVerifiedAccessGroupPolicyResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API ModifyVerifiedAccessGroupPolicyResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

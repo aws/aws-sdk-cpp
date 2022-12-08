@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/SubDomain">AWS
    * API Reference</a></p>
    */
-  class AWS_AMPLIFY_API SubDomain
+  class SubDomain
   {
   public:
-    SubDomain();
-    SubDomain(Aws::Utils::Json::JsonView jsonValue);
-    SubDomain& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_AMPLIFY_API SubDomain();
+    AWS_AMPLIFY_API SubDomain(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFY_API SubDomain& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

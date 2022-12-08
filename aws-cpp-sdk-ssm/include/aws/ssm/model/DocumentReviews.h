@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DocumentReviews">AWS
    * API Reference</a></p>
    */
-  class AWS_SSM_API DocumentReviews
+  class DocumentReviews
   {
   public:
-    DocumentReviews();
-    DocumentReviews(Aws::Utils::Json::JsonView jsonValue);
-    DocumentReviews& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSM_API DocumentReviews();
+    AWS_SSM_API DocumentReviews(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API DocumentReviews& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -25,12 +25,12 @@ namespace WellArchitected
 {
 namespace Model
 {
-  class AWS_WELLARCHITECTED_API GetLensVersionDifferenceResult
+  class GetLensVersionDifferenceResult
   {
   public:
-    GetLensVersionDifferenceResult();
-    GetLensVersionDifferenceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetLensVersionDifferenceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WELLARCHITECTED_API GetLensVersionDifferenceResult();
+    AWS_WELLARCHITECTED_API GetLensVersionDifferenceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WELLARCHITECTED_API GetLensVersionDifferenceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     

@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/EmptyChatChannel">AWS
    * API Reference</a></p>
    */
-  class AWS_SSMINCIDENTS_API EmptyChatChannel
+  class EmptyChatChannel
   {
   public:
-    EmptyChatChannel();
-    EmptyChatChannel(Aws::Utils::Json::JsonView jsonValue);
-    EmptyChatChannel& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSMINCIDENTS_API EmptyChatChannel();
+    AWS_SSMINCIDENTS_API EmptyChatChannel(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSMINCIDENTS_API EmptyChatChannel& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSMINCIDENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
   };
 

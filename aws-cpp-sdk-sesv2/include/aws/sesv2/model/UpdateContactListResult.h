@@ -22,12 +22,12 @@ namespace SESV2
 {
 namespace Model
 {
-  class AWS_SESV2_API UpdateContactListResult
+  class UpdateContactListResult
   {
   public:
-    UpdateContactListResult();
-    UpdateContactListResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateContactListResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SESV2_API UpdateContactListResult();
+    AWS_SESV2_API UpdateContactListResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SESV2_API UpdateContactListResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

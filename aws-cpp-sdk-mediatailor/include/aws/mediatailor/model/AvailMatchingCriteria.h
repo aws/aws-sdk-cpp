@@ -44,13 +44,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/AvailMatchingCriteria">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIATAILOR_API AvailMatchingCriteria
+  class AvailMatchingCriteria
   {
   public:
-    AvailMatchingCriteria();
-    AvailMatchingCriteria(Aws::Utils::Json::JsonView jsonValue);
-    AvailMatchingCriteria& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIATAILOR_API AvailMatchingCriteria();
+    AWS_MEDIATAILOR_API AvailMatchingCriteria(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIATAILOR_API AvailMatchingCriteria& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIATAILOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

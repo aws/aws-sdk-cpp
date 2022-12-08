@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/panorama-2019-07-24/NodeInputPort">AWS
    * API Reference</a></p>
    */
-  class AWS_PANORAMA_API NodeInputPort
+  class NodeInputPort
   {
   public:
-    NodeInputPort();
-    NodeInputPort(Aws::Utils::Json::JsonView jsonValue);
-    NodeInputPort& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PANORAMA_API NodeInputPort();
+    AWS_PANORAMA_API NodeInputPort(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PANORAMA_API NodeInputPort& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PANORAMA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

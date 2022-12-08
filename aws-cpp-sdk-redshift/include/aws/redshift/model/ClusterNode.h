@@ -28,15 +28,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ClusterNode">AWS
    * API Reference</a></p>
    */
-  class AWS_REDSHIFT_API ClusterNode
+  class ClusterNode
   {
   public:
-    ClusterNode();
-    ClusterNode(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ClusterNode& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_REDSHIFT_API ClusterNode();
+    AWS_REDSHIFT_API ClusterNode(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_REDSHIFT_API ClusterNode& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_REDSHIFT_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_REDSHIFT_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**

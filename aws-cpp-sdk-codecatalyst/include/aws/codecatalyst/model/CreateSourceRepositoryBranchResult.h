@@ -25,12 +25,12 @@ namespace CodeCatalyst
 {
 namespace Model
 {
-  class AWS_CODECATALYST_API CreateSourceRepositoryBranchResult
+  class CreateSourceRepositoryBranchResult
   {
   public:
-    CreateSourceRepositoryBranchResult();
-    CreateSourceRepositoryBranchResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateSourceRepositoryBranchResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODECATALYST_API CreateSourceRepositoryBranchResult();
+    AWS_CODECATALYST_API CreateSourceRepositoryBranchResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODECATALYST_API CreateSourceRepositoryBranchResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

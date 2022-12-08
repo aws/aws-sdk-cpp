@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/InvalidItemContentException">AWS
    * API Reference</a></p>
    */
-  class AWS_SSM_API InvalidItemContentException
+  class InvalidItemContentException
   {
   public:
-    InvalidItemContentException();
-    InvalidItemContentException(Aws::Utils::Json::JsonView jsonValue);
-    InvalidItemContentException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSM_API InvalidItemContentException();
+    AWS_SSM_API InvalidItemContentException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API InvalidItemContentException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

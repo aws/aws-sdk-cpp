@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DatabaseConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_KENDRA_API DatabaseConfiguration
+  class DatabaseConfiguration
   {
   public:
-    DatabaseConfiguration();
-    DatabaseConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    DatabaseConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KENDRA_API DatabaseConfiguration();
+    AWS_KENDRA_API DatabaseConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API DatabaseConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

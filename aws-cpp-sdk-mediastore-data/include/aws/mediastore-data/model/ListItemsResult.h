@@ -26,12 +26,12 @@ namespace MediaStoreData
 {
 namespace Model
 {
-  class AWS_MEDIASTOREDATA_API ListItemsResult
+  class ListItemsResult
   {
   public:
-    ListItemsResult();
-    ListItemsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListItemsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MEDIASTOREDATA_API ListItemsResult();
+    AWS_MEDIASTOREDATA_API ListItemsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MEDIASTOREDATA_API ListItemsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

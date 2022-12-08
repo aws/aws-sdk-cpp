@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/ReputationOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINTEMAIL_API ReputationOptions
+  class ReputationOptions
   {
   public:
-    ReputationOptions();
-    ReputationOptions(Aws::Utils::Json::JsonView jsonValue);
-    ReputationOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINTEMAIL_API ReputationOptions();
+    AWS_PINPOINTEMAIL_API ReputationOptions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINTEMAIL_API ReputationOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINTEMAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

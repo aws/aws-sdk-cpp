@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/Bucket">AWS
    * API Reference</a></p>
    */
-  class AWS_LIGHTSAIL_API Bucket
+  class Bucket
   {
   public:
-    Bucket();
-    Bucket(Aws::Utils::Json::JsonView jsonValue);
-    Bucket& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LIGHTSAIL_API Bucket();
+    AWS_LIGHTSAIL_API Bucket(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API Bucket& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

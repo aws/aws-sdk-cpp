@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/BuildSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEBUILD_API BuildSummary
+  class BuildSummary
   {
   public:
-    BuildSummary();
-    BuildSummary(Aws::Utils::Json::JsonView jsonValue);
-    BuildSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEBUILD_API BuildSummary();
+    AWS_CODEBUILD_API BuildSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEBUILD_API BuildSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEBUILD_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

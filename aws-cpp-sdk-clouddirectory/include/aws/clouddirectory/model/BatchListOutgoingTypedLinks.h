@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/BatchListOutgoingTypedLinks">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDDIRECTORY_API BatchListOutgoingTypedLinks
+  class BatchListOutgoingTypedLinks
   {
   public:
-    BatchListOutgoingTypedLinks();
-    BatchListOutgoingTypedLinks(Aws::Utils::Json::JsonView jsonValue);
-    BatchListOutgoingTypedLinks& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDDIRECTORY_API BatchListOutgoingTypedLinks();
+    AWS_CLOUDDIRECTORY_API BatchListOutgoingTypedLinks(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDDIRECTORY_API BatchListOutgoingTypedLinks& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDDIRECTORY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

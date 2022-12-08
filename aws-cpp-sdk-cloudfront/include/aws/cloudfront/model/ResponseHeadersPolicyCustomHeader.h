@@ -29,14 +29,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ResponseHeadersPolicyCustomHeader">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFRONT_API ResponseHeadersPolicyCustomHeader
+  class ResponseHeadersPolicyCustomHeader
   {
   public:
-    ResponseHeadersPolicyCustomHeader();
-    ResponseHeadersPolicyCustomHeader(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ResponseHeadersPolicyCustomHeader& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API ResponseHeadersPolicyCustomHeader();
+    AWS_CLOUDFRONT_API ResponseHeadersPolicyCustomHeader(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API ResponseHeadersPolicyCustomHeader& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/SessionData">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECTWISDOMSERVICE_API SessionData
+  class SessionData
   {
   public:
-    SessionData();
-    SessionData(Aws::Utils::Json::JsonView jsonValue);
-    SessionData& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECTWISDOMSERVICE_API SessionData();
+    AWS_CONNECTWISDOMSERVICE_API SessionData(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTWISDOMSERVICE_API SessionData& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTWISDOMSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

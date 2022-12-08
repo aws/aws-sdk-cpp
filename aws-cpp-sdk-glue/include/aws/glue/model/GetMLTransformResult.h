@@ -33,12 +33,12 @@ namespace Glue
 {
 namespace Model
 {
-  class AWS_GLUE_API GetMLTransformResult
+  class GetMLTransformResult
   {
   public:
-    GetMLTransformResult();
-    GetMLTransformResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetMLTransformResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GLUE_API GetMLTransformResult();
+    AWS_GLUE_API GetMLTransformResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GLUE_API GetMLTransformResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

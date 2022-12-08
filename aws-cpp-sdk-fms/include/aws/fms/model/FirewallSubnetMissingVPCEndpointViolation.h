@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/FirewallSubnetMissingVPCEndpointViolation">AWS
    * API Reference</a></p>
    */
-  class AWS_FMS_API FirewallSubnetMissingVPCEndpointViolation
+  class FirewallSubnetMissingVPCEndpointViolation
   {
   public:
-    FirewallSubnetMissingVPCEndpointViolation();
-    FirewallSubnetMissingVPCEndpointViolation(Aws::Utils::Json::JsonView jsonValue);
-    FirewallSubnetMissingVPCEndpointViolation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FMS_API FirewallSubnetMissingVPCEndpointViolation();
+    AWS_FMS_API FirewallSubnetMissingVPCEndpointViolation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FMS_API FirewallSubnetMissingVPCEndpointViolation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

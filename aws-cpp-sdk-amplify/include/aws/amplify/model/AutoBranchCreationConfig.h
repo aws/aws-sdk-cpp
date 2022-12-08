@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/AutoBranchCreationConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_AMPLIFY_API AutoBranchCreationConfig
+  class AutoBranchCreationConfig
   {
   public:
-    AutoBranchCreationConfig();
-    AutoBranchCreationConfig(Aws::Utils::Json::JsonView jsonValue);
-    AutoBranchCreationConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_AMPLIFY_API AutoBranchCreationConfig();
+    AWS_AMPLIFY_API AutoBranchCreationConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFY_API AutoBranchCreationConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearchdomain-2013-01-01/SuggestionMatch">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDSEARCHDOMAIN_API SuggestionMatch
+  class SuggestionMatch
   {
   public:
-    SuggestionMatch();
-    SuggestionMatch(Aws::Utils::Json::JsonView jsonValue);
-    SuggestionMatch& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDSEARCHDOMAIN_API SuggestionMatch();
+    AWS_CLOUDSEARCHDOMAIN_API SuggestionMatch(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDSEARCHDOMAIN_API SuggestionMatch& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDSEARCHDOMAIN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

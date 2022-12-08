@@ -29,12 +29,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/RefreshCacheOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_STORAGEGATEWAY_API RefreshCacheResult
+  class RefreshCacheResult
   {
   public:
-    RefreshCacheResult();
-    RefreshCacheResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    RefreshCacheResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_STORAGEGATEWAY_API RefreshCacheResult();
+    AWS_STORAGEGATEWAY_API RefreshCacheResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_STORAGEGATEWAY_API RefreshCacheResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     

@@ -29,15 +29,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/VerifiedAccessLogS3Destination">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API VerifiedAccessLogS3Destination
+  class VerifiedAccessLogS3Destination
   {
   public:
-    VerifiedAccessLogS3Destination();
-    VerifiedAccessLogS3Destination(const Aws::Utils::Xml::XmlNode& xmlNode);
-    VerifiedAccessLogS3Destination& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API VerifiedAccessLogS3Destination();
+    AWS_EC2_API VerifiedAccessLogS3Destination(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API VerifiedAccessLogS3Destination& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**

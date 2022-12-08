@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/BaiduChannelResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API BaiduChannelResponse
+  class BaiduChannelResponse
   {
   public:
-    BaiduChannelResponse();
-    BaiduChannelResponse(Aws::Utils::Json::JsonView jsonValue);
-    BaiduChannelResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API BaiduChannelResponse();
+    AWS_PINPOINT_API BaiduChannelResponse(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API BaiduChannelResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

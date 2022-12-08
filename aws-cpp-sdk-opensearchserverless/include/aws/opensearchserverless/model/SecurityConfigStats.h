@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/SecurityConfigStats">AWS
    * API Reference</a></p>
    */
-  class AWS_OPENSEARCHSERVERLESS_API SecurityConfigStats
+  class SecurityConfigStats
   {
   public:
-    SecurityConfigStats();
-    SecurityConfigStats(Aws::Utils::Json::JsonView jsonValue);
-    SecurityConfigStats& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OPENSEARCHSERVERLESS_API SecurityConfigStats();
+    AWS_OPENSEARCHSERVERLESS_API SecurityConfigStats(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPENSEARCHSERVERLESS_API SecurityConfigStats& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPENSEARCHSERVERLESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

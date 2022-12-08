@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DashboardSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTSITEWISE_API DashboardSummary
+  class DashboardSummary
   {
   public:
-    DashboardSummary();
-    DashboardSummary(Aws::Utils::Json::JsonView jsonValue);
-    DashboardSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTSITEWISE_API DashboardSummary();
+    AWS_IOTSITEWISE_API DashboardSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API DashboardSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

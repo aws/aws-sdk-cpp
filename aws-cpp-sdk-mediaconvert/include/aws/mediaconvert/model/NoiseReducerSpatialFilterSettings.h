@@ -26,13 +26,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/NoiseReducerSpatialFilterSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API NoiseReducerSpatialFilterSettings
+  class NoiseReducerSpatialFilterSettings
   {
   public:
-    NoiseReducerSpatialFilterSettings();
-    NoiseReducerSpatialFilterSettings(Aws::Utils::Json::JsonView jsonValue);
-    NoiseReducerSpatialFilterSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API NoiseReducerSpatialFilterSettings();
+    AWS_MEDIACONVERT_API NoiseReducerSpatialFilterSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API NoiseReducerSpatialFilterSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

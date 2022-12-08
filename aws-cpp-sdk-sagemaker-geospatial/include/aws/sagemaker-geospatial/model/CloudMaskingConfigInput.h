@@ -26,13 +26,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-geospatial-2020-05-27/CloudMaskingConfigInput">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKERGEOSPATIAL_API CloudMaskingConfigInput
+  class CloudMaskingConfigInput
   {
   public:
-    CloudMaskingConfigInput();
-    CloudMaskingConfigInput(Aws::Utils::Json::JsonView jsonValue);
-    CloudMaskingConfigInput& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKERGEOSPATIAL_API CloudMaskingConfigInput();
+    AWS_SAGEMAKERGEOSPATIAL_API CloudMaskingConfigInput(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKERGEOSPATIAL_API CloudMaskingConfigInput& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKERGEOSPATIAL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
   };
 

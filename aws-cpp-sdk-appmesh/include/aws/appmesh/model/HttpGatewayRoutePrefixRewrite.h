@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/HttpGatewayRoutePrefixRewrite">AWS
    * API Reference</a></p>
    */
-  class AWS_APPMESH_API HttpGatewayRoutePrefixRewrite
+  class HttpGatewayRoutePrefixRewrite
   {
   public:
-    HttpGatewayRoutePrefixRewrite();
-    HttpGatewayRoutePrefixRewrite(Aws::Utils::Json::JsonView jsonValue);
-    HttpGatewayRoutePrefixRewrite& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPMESH_API HttpGatewayRoutePrefixRewrite();
+    AWS_APPMESH_API HttpGatewayRoutePrefixRewrite(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API HttpGatewayRoutePrefixRewrite& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

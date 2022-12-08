@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/S3DestinationAccessControl">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API S3DestinationAccessControl
+  class S3DestinationAccessControl
   {
   public:
-    S3DestinationAccessControl();
-    S3DestinationAccessControl(Aws::Utils::Json::JsonView jsonValue);
-    S3DestinationAccessControl& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API S3DestinationAccessControl();
+    AWS_MEDIACONVERT_API S3DestinationAccessControl(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API S3DestinationAccessControl& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

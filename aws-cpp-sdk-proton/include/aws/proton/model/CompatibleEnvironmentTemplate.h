@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CompatibleEnvironmentTemplate">AWS
    * API Reference</a></p>
    */
-  class AWS_PROTON_API CompatibleEnvironmentTemplate
+  class CompatibleEnvironmentTemplate
   {
   public:
-    CompatibleEnvironmentTemplate();
-    CompatibleEnvironmentTemplate(Aws::Utils::Json::JsonView jsonValue);
-    CompatibleEnvironmentTemplate& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PROTON_API CompatibleEnvironmentTemplate();
+    AWS_PROTON_API CompatibleEnvironmentTemplate(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PROTON_API CompatibleEnvironmentTemplate& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PROTON_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

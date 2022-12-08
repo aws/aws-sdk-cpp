@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/PackageOriginConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEARTIFACT_API PackageOriginConfiguration
+  class PackageOriginConfiguration
   {
   public:
-    PackageOriginConfiguration();
-    PackageOriginConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    PackageOriginConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEARTIFACT_API PackageOriginConfiguration();
+    AWS_CODEARTIFACT_API PackageOriginConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEARTIFACT_API PackageOriginConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEARTIFACT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

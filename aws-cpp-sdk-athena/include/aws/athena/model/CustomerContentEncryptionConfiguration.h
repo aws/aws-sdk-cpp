@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/CustomerContentEncryptionConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_ATHENA_API CustomerContentEncryptionConfiguration
+  class CustomerContentEncryptionConfiguration
   {
   public:
-    CustomerContentEncryptionConfiguration();
-    CustomerContentEncryptionConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    CustomerContentEncryptionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ATHENA_API CustomerContentEncryptionConfiguration();
+    AWS_ATHENA_API CustomerContentEncryptionConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ATHENA_API CustomerContentEncryptionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ATHENA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

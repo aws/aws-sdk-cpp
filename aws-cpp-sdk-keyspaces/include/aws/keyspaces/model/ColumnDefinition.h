@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/keyspaces-2022-02-10/ColumnDefinition">AWS
    * API Reference</a></p>
    */
-  class AWS_KEYSPACES_API ColumnDefinition
+  class ColumnDefinition
   {
   public:
-    ColumnDefinition();
-    ColumnDefinition(Aws::Utils::Json::JsonView jsonValue);
-    ColumnDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KEYSPACES_API ColumnDefinition();
+    AWS_KEYSPACES_API ColumnDefinition(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KEYSPACES_API ColumnDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KEYSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

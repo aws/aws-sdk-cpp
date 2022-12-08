@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DirectoryVpcSettingsDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_DIRECTORYSERVICE_API DirectoryVpcSettingsDescription
+  class DirectoryVpcSettingsDescription
   {
   public:
-    DirectoryVpcSettingsDescription();
-    DirectoryVpcSettingsDescription(Aws::Utils::Json::JsonView jsonValue);
-    DirectoryVpcSettingsDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DIRECTORYSERVICE_API DirectoryVpcSettingsDescription();
+    AWS_DIRECTORYSERVICE_API DirectoryVpcSettingsDescription(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTORYSERVICE_API DirectoryVpcSettingsDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTORYSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

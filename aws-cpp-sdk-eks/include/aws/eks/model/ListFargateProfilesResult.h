@@ -25,12 +25,12 @@ namespace EKS
 {
 namespace Model
 {
-  class AWS_EKS_API ListFargateProfilesResult
+  class ListFargateProfilesResult
   {
   public:
-    ListFargateProfilesResult();
-    ListFargateProfilesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListFargateProfilesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_EKS_API ListFargateProfilesResult();
+    AWS_EKS_API ListFargateProfilesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_EKS_API ListFargateProfilesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

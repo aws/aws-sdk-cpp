@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_SSOOIDC_API CreateTokenRequest : public SSOOIDCRequest
+  class CreateTokenRequest : public SSOOIDCRequest
   {
   public:
-    CreateTokenRequest();
+    AWS_SSOOIDC_API CreateTokenRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,7 +30,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateToken"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SSOOIDC_API Aws::String SerializePayload() const override;
 
 
     /**

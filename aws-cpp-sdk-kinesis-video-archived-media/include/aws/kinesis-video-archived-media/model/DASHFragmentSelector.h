@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-video-archived-media-2017-09-30/DASHFragmentSelector">AWS
    * API Reference</a></p>
    */
-  class AWS_KINESISVIDEOARCHIVEDMEDIA_API DASHFragmentSelector
+  class DASHFragmentSelector
   {
   public:
-    DASHFragmentSelector();
-    DASHFragmentSelector(Aws::Utils::Json::JsonView jsonValue);
-    DASHFragmentSelector& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KINESISVIDEOARCHIVEDMEDIA_API DASHFragmentSelector();
+    AWS_KINESISVIDEOARCHIVEDMEDIA_API DASHFragmentSelector(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISVIDEOARCHIVEDMEDIA_API DASHFragmentSelector& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISVIDEOARCHIVEDMEDIA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

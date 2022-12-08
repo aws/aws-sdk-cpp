@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/privatenetworks-2021-12-03/NetworkSite">AWS
    * API Reference</a></p>
    */
-  class AWS_PRIVATENETWORKS_API NetworkSite
+  class NetworkSite
   {
   public:
-    NetworkSite();
-    NetworkSite(Aws::Utils::Json::JsonView jsonValue);
-    NetworkSite& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PRIVATENETWORKS_API NetworkSite();
+    AWS_PRIVATENETWORKS_API NetworkSite(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PRIVATENETWORKS_API NetworkSite& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PRIVATENETWORKS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

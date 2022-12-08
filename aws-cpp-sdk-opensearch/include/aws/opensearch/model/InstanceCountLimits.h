@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/InstanceCountLimits">AWS
    * API Reference</a></p>
    */
-  class AWS_OPENSEARCHSERVICE_API InstanceCountLimits
+  class InstanceCountLimits
   {
   public:
-    InstanceCountLimits();
-    InstanceCountLimits(Aws::Utils::Json::JsonView jsonValue);
-    InstanceCountLimits& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OPENSEARCHSERVICE_API InstanceCountLimits();
+    AWS_OPENSEARCHSERVICE_API InstanceCountLimits(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPENSEARCHSERVICE_API InstanceCountLimits& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPENSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

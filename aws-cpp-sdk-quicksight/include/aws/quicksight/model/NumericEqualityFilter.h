@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/NumericEqualityFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API NumericEqualityFilter
+  class NumericEqualityFilter
   {
   public:
-    NumericEqualityFilter();
-    NumericEqualityFilter(Aws::Utils::Json::JsonView jsonValue);
-    NumericEqualityFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API NumericEqualityFilter();
+    AWS_QUICKSIGHT_API NumericEqualityFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API NumericEqualityFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

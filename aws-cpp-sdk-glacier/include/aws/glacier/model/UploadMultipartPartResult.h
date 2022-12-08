@@ -30,12 +30,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/UploadMultipartPartOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_GLACIER_API UploadMultipartPartResult
+  class UploadMultipartPartResult
   {
   public:
-    UploadMultipartPartResult();
-    UploadMultipartPartResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UploadMultipartPartResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GLACIER_API UploadMultipartPartResult();
+    AWS_GLACIER_API UploadMultipartPartResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GLACIER_API UploadMultipartPartResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/IdentityInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINTEMAIL_API IdentityInfo
+  class IdentityInfo
   {
   public:
-    IdentityInfo();
-    IdentityInfo(Aws::Utils::Json::JsonView jsonValue);
-    IdentityInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINTEMAIL_API IdentityInfo();
+    AWS_PINPOINTEMAIL_API IdentityInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINTEMAIL_API IdentityInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINTEMAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

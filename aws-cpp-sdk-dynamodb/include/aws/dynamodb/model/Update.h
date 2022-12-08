@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/Update">AWS API
    * Reference</a></p>
    */
-  class AWS_DYNAMODB_API Update
+  class Update
   {
   public:
-    Update();
-    Update(Aws::Utils::Json::JsonView jsonValue);
-    Update& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DYNAMODB_API Update();
+    AWS_DYNAMODB_API Update(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API Update& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

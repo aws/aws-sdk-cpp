@@ -37,13 +37,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/TagCostEstimationResourceCollectionFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_DEVOPSGURU_API TagCostEstimationResourceCollectionFilter
+  class TagCostEstimationResourceCollectionFilter
   {
   public:
-    TagCostEstimationResourceCollectionFilter();
-    TagCostEstimationResourceCollectionFilter(Aws::Utils::Json::JsonView jsonValue);
-    TagCostEstimationResourceCollectionFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DEVOPSGURU_API TagCostEstimationResourceCollectionFilter();
+    AWS_DEVOPSGURU_API TagCostEstimationResourceCollectionFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVOPSGURU_API TagCostEstimationResourceCollectionFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVOPSGURU_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

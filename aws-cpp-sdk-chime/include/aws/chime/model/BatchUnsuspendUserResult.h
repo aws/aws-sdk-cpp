@@ -25,12 +25,12 @@ namespace Chime
 {
 namespace Model
 {
-  class AWS_CHIME_API BatchUnsuspendUserResult
+  class BatchUnsuspendUserResult
   {
   public:
-    BatchUnsuspendUserResult();
-    BatchUnsuspendUserResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    BatchUnsuspendUserResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CHIME_API BatchUnsuspendUserResult();
+    AWS_CHIME_API BatchUnsuspendUserResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CHIME_API BatchUnsuspendUserResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

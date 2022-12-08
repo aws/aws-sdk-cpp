@@ -26,12 +26,12 @@ namespace EFS
 {
 namespace Model
 {
-  class AWS_EFS_API DescribeAccessPointsResult
+  class DescribeAccessPointsResult
   {
   public:
-    DescribeAccessPointsResult();
-    DescribeAccessPointsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeAccessPointsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_EFS_API DescribeAccessPointsResult();
+    AWS_EFS_API DescribeAccessPointsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_EFS_API DescribeAccessPointsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

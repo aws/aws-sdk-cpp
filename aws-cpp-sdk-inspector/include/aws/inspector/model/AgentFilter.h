@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/AgentFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_INSPECTOR_API AgentFilter
+  class AgentFilter
   {
   public:
-    AgentFilter();
-    AgentFilter(Aws::Utils::Json::JsonView jsonValue);
-    AgentFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_INSPECTOR_API AgentFilter();
+    AWS_INSPECTOR_API AgentFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR_API AgentFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

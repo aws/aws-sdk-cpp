@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/Block">AWS
    * API Reference</a></p>
    */
-  class AWS_COMPREHEND_API Block
+  class Block
   {
   public:
-    Block();
-    Block(Aws::Utils::Json::JsonView jsonValue);
-    Block& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COMPREHEND_API Block();
+    AWS_COMPREHEND_API Block(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHEND_API Block& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHEND_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

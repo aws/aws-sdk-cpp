@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/OutputGroup">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API OutputGroup
+  class OutputGroup
   {
   public:
-    OutputGroup();
-    OutputGroup(Aws::Utils::Json::JsonView jsonValue);
-    OutputGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API OutputGroup();
+    AWS_MEDIALIVE_API OutputGroup(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API OutputGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

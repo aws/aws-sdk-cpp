@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/LoggingFormat">AWS
    * API Reference</a></p>
    */
-  class AWS_APPMESH_API LoggingFormat
+  class LoggingFormat
   {
   public:
-    LoggingFormat();
-    LoggingFormat(Aws::Utils::Json::JsonView jsonValue);
-    LoggingFormat& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPMESH_API LoggingFormat();
+    AWS_APPMESH_API LoggingFormat(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API LoggingFormat& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

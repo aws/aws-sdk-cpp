@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/EndpointConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_GLOBALACCELERATOR_API EndpointConfiguration
+  class EndpointConfiguration
   {
   public:
-    EndpointConfiguration();
-    EndpointConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    EndpointConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLOBALACCELERATOR_API EndpointConfiguration();
+    AWS_GLOBALACCELERATOR_API EndpointConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLOBALACCELERATOR_API EndpointConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLOBALACCELERATOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

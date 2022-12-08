@@ -26,12 +26,12 @@ namespace Glue
 {
 namespace Model
 {
-  class AWS_GLUE_API ListDataQualityRuleRecommendationRunsResult
+  class ListDataQualityRuleRecommendationRunsResult
   {
   public:
-    ListDataQualityRuleRecommendationRunsResult();
-    ListDataQualityRuleRecommendationRunsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListDataQualityRuleRecommendationRunsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GLUE_API ListDataQualityRuleRecommendationRunsResult();
+    AWS_GLUE_API ListDataQualityRuleRecommendationRunsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GLUE_API ListDataQualityRuleRecommendationRunsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

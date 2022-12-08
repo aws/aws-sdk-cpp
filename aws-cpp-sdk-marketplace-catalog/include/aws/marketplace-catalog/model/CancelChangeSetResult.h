@@ -24,12 +24,12 @@ namespace MarketplaceCatalog
 {
 namespace Model
 {
-  class AWS_MARKETPLACECATALOG_API CancelChangeSetResult
+  class CancelChangeSetResult
   {
   public:
-    CancelChangeSetResult();
-    CancelChangeSetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CancelChangeSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MARKETPLACECATALOG_API CancelChangeSetResult();
+    AWS_MARKETPLACECATALOG_API CancelChangeSetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MARKETPLACECATALOG_API CancelChangeSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -26,12 +26,12 @@ namespace EC2
 {
 namespace Model
 {
-  class AWS_EC2_API CreateVpcEndpointServiceConfigurationResponse
+  class CreateVpcEndpointServiceConfigurationResponse
   {
   public:
-    CreateVpcEndpointServiceConfigurationResponse();
-    CreateVpcEndpointServiceConfigurationResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    CreateVpcEndpointServiceConfigurationResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API CreateVpcEndpointServiceConfigurationResponse();
+    AWS_EC2_API CreateVpcEndpointServiceConfigurationResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API CreateVpcEndpointServiceConfigurationResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

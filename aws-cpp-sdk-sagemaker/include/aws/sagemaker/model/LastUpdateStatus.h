@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/LastUpdateStatus">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API LastUpdateStatus
+  class LastUpdateStatus
   {
   public:
-    LastUpdateStatus();
-    LastUpdateStatus(Aws::Utils::Json::JsonView jsonValue);
-    LastUpdateStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API LastUpdateStatus();
+    AWS_SAGEMAKER_API LastUpdateStatus(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API LastUpdateStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

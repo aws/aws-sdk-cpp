@@ -22,12 +22,12 @@ namespace AlexaForBusiness
 {
 namespace Model
 {
-  class AWS_ALEXAFORBUSINESS_API StartSmartHomeApplianceDiscoveryResult
+  class StartSmartHomeApplianceDiscoveryResult
   {
   public:
-    StartSmartHomeApplianceDiscoveryResult();
-    StartSmartHomeApplianceDiscoveryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    StartSmartHomeApplianceDiscoveryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ALEXAFORBUSINESS_API StartSmartHomeApplianceDiscoveryResult();
+    AWS_ALEXAFORBUSINESS_API StartSmartHomeApplianceDiscoveryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ALEXAFORBUSINESS_API StartSmartHomeApplianceDiscoveryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

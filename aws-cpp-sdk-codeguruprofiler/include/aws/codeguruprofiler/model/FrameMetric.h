@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/FrameMetric">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEGURUPROFILER_API FrameMetric
+  class FrameMetric
   {
   public:
-    FrameMetric();
-    FrameMetric(Aws::Utils::Json::JsonView jsonValue);
-    FrameMetric& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEGURUPROFILER_API FrameMetric();
+    AWS_CODEGURUPROFILER_API FrameMetric(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEGURUPROFILER_API FrameMetric& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEGURUPROFILER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

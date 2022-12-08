@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/Application">AWS
    * API Reference</a></p>
    */
-  class AWS_APPSTREAM_API Application
+  class Application
   {
   public:
-    Application();
-    Application(Aws::Utils::Json::JsonView jsonValue);
-    Application& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPSTREAM_API Application();
+    AWS_APPSTREAM_API Application(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPSTREAM_API Application& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPSTREAM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

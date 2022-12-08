@@ -26,12 +26,12 @@ namespace Inspector
 {
 namespace Model
 {
-  class AWS_INSPECTOR_API AddAttributesToFindingsResult
+  class AddAttributesToFindingsResult
   {
   public:
-    AddAttributesToFindingsResult();
-    AddAttributesToFindingsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AddAttributesToFindingsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_INSPECTOR_API AddAttributesToFindingsResult();
+    AWS_INSPECTOR_API AddAttributesToFindingsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_INSPECTOR_API AddAttributesToFindingsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

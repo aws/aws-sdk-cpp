@@ -25,12 +25,12 @@ namespace EFS
 {
 namespace Model
 {
-  class AWS_EFS_API DescribeLifecycleConfigurationResult
+  class DescribeLifecycleConfigurationResult
   {
   public:
-    DescribeLifecycleConfigurationResult();
-    DescribeLifecycleConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeLifecycleConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_EFS_API DescribeLifecycleConfigurationResult();
+    AWS_EFS_API DescribeLifecycleConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_EFS_API DescribeLifecycleConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

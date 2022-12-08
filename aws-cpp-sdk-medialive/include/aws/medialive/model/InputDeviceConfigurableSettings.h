@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/InputDeviceConfigurableSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API InputDeviceConfigurableSettings
+  class InputDeviceConfigurableSettings
   {
   public:
-    InputDeviceConfigurableSettings();
-    InputDeviceConfigurableSettings(Aws::Utils::Json::JsonView jsonValue);
-    InputDeviceConfigurableSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API InputDeviceConfigurableSettings();
+    AWS_MEDIALIVE_API InputDeviceConfigurableSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API InputDeviceConfigurableSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

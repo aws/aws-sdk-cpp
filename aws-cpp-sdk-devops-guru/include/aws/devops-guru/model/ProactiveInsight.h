@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/ProactiveInsight">AWS
    * API Reference</a></p>
    */
-  class AWS_DEVOPSGURU_API ProactiveInsight
+  class ProactiveInsight
   {
   public:
-    ProactiveInsight();
-    ProactiveInsight(Aws::Utils::Json::JsonView jsonValue);
-    ProactiveInsight& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DEVOPSGURU_API ProactiveInsight();
+    AWS_DEVOPSGURU_API ProactiveInsight(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVOPSGURU_API ProactiveInsight& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVOPSGURU_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

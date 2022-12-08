@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/WebhookDefinition">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEPIPELINE_API WebhookDefinition
+  class WebhookDefinition
   {
   public:
-    WebhookDefinition();
-    WebhookDefinition(Aws::Utils::Json::JsonView jsonValue);
-    WebhookDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEPIPELINE_API WebhookDefinition();
+    AWS_CODEPIPELINE_API WebhookDefinition(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEPIPELINE_API WebhookDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

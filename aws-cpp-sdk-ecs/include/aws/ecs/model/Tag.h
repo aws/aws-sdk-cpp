@@ -43,13 +43,13 @@ namespace Model
    * <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/Tag">AWS API
    * Reference</a></p>
    */
-  class AWS_ECS_API Tag
+  class Tag
   {
   public:
-    Tag();
-    Tag(Aws::Utils::Json::JsonView jsonValue);
-    Tag& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ECS_API Tag();
+    AWS_ECS_API Tag(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECS_API Tag& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

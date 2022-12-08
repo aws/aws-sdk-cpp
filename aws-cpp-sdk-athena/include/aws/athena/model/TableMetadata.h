@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/TableMetadata">AWS
    * API Reference</a></p>
    */
-  class AWS_ATHENA_API TableMetadata
+  class TableMetadata
   {
   public:
-    TableMetadata();
-    TableMetadata(Aws::Utils::Json::JsonView jsonValue);
-    TableMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ATHENA_API TableMetadata();
+    AWS_ATHENA_API TableMetadata(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ATHENA_API TableMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ATHENA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

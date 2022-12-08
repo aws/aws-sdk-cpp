@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/StringFormatConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API StringFormatConfiguration
+  class StringFormatConfiguration
   {
   public:
-    StringFormatConfiguration();
-    StringFormatConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    StringFormatConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API StringFormatConfiguration();
+    AWS_QUICKSIGHT_API StringFormatConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API StringFormatConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

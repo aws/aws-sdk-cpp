@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/DestinationPortMapping">AWS
    * API Reference</a></p>
    */
-  class AWS_GLOBALACCELERATOR_API DestinationPortMapping
+  class DestinationPortMapping
   {
   public:
-    DestinationPortMapping();
-    DestinationPortMapping(Aws::Utils::Json::JsonView jsonValue);
-    DestinationPortMapping& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLOBALACCELERATOR_API DestinationPortMapping();
+    AWS_GLOBALACCELERATOR_API DestinationPortMapping(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLOBALACCELERATOR_API DestinationPortMapping& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLOBALACCELERATOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -22,12 +22,12 @@ namespace AugmentedAIRuntime
 {
 namespace Model
 {
-  class AWS_AUGMENTEDAIRUNTIME_API DeleteHumanLoopResult
+  class DeleteHumanLoopResult
   {
   public:
-    DeleteHumanLoopResult();
-    DeleteHumanLoopResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteHumanLoopResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_AUGMENTEDAIRUNTIME_API DeleteHumanLoopResult();
+    AWS_AUGMENTEDAIRUNTIME_API DeleteHumanLoopResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_AUGMENTEDAIRUNTIME_API DeleteHumanLoopResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

@@ -80,13 +80,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rum-2018-05-10/MetricDefinitionRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDWATCHRUM_API MetricDefinitionRequest
+  class MetricDefinitionRequest
   {
   public:
-    MetricDefinitionRequest();
-    MetricDefinitionRequest(Aws::Utils::Json::JsonView jsonValue);
-    MetricDefinitionRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDWATCHRUM_API MetricDefinitionRequest();
+    AWS_CLOUDWATCHRUM_API MetricDefinitionRequest(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHRUM_API MetricDefinitionRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHRUM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

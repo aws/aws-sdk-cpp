@@ -26,13 +26,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/RawSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API RawSettings
+  class RawSettings
   {
   public:
-    RawSettings();
-    RawSettings(Aws::Utils::Json::JsonView jsonValue);
-    RawSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API RawSettings();
+    AWS_MEDIALIVE_API RawSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API RawSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
   };
 

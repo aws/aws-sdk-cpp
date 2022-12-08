@@ -30,13 +30,13 @@ namespace Model
    * <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/IpRouteInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_DIRECTORYSERVICE_API IpRouteInfo
+  class IpRouteInfo
   {
   public:
-    IpRouteInfo();
-    IpRouteInfo(Aws::Utils::Json::JsonView jsonValue);
-    IpRouteInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DIRECTORYSERVICE_API IpRouteInfo();
+    AWS_DIRECTORYSERVICE_API IpRouteInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTORYSERVICE_API IpRouteInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTORYSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

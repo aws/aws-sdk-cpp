@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/AppInstanceUserMembershipSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_CHIMESDKMESSAGING_API AppInstanceUserMembershipSummary
+  class AppInstanceUserMembershipSummary
   {
   public:
-    AppInstanceUserMembershipSummary();
-    AppInstanceUserMembershipSummary(Aws::Utils::Json::JsonView jsonValue);
-    AppInstanceUserMembershipSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIMESDKMESSAGING_API AppInstanceUserMembershipSummary();
+    AWS_CHIMESDKMESSAGING_API AppInstanceUserMembershipSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKMESSAGING_API AppInstanceUserMembershipSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKMESSAGING_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

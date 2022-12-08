@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/QueueSearchFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECT_API QueueSearchFilter
+  class QueueSearchFilter
   {
   public:
-    QueueSearchFilter();
-    QueueSearchFilter(Aws::Utils::Json::JsonView jsonValue);
-    QueueSearchFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECT_API QueueSearchFilter();
+    AWS_CONNECT_API QueueSearchFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API QueueSearchFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

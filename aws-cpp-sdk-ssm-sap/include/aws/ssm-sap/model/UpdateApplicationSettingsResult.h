@@ -25,12 +25,12 @@ namespace SsmSap
 {
 namespace Model
 {
-  class AWS_SSMSAP_API UpdateApplicationSettingsResult
+  class UpdateApplicationSettingsResult
   {
   public:
-    UpdateApplicationSettingsResult();
-    UpdateApplicationSettingsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateApplicationSettingsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSMSAP_API UpdateApplicationSettingsResult();
+    AWS_SSMSAP_API UpdateApplicationSettingsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSMSAP_API UpdateApplicationSettingsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

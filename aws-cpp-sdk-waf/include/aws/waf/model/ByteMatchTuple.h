@@ -41,13 +41,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ByteMatchTuple">AWS
    * API Reference</a></p>
    */
-  class AWS_WAF_API ByteMatchTuple
+  class ByteMatchTuple
   {
   public:
-    ByteMatchTuple();
-    ByteMatchTuple(Aws::Utils::Json::JsonView jsonValue);
-    ByteMatchTuple& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WAF_API ByteMatchTuple();
+    AWS_WAF_API ByteMatchTuple(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAF_API ByteMatchTuple& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAF_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

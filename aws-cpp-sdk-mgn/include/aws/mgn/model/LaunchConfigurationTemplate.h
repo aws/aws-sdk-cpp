@@ -30,13 +30,13 @@ namespace mgn
 namespace Model
 {
 
-  class AWS_MGN_API LaunchConfigurationTemplate
+  class LaunchConfigurationTemplate
   {
   public:
-    LaunchConfigurationTemplate();
-    LaunchConfigurationTemplate(Aws::Utils::Json::JsonView jsonValue);
-    LaunchConfigurationTemplate& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MGN_API LaunchConfigurationTemplate();
+    AWS_MGN_API LaunchConfigurationTemplate(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MGN_API LaunchConfigurationTemplate& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MGN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

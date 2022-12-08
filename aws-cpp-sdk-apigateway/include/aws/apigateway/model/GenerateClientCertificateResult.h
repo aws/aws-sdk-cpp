@@ -33,12 +33,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/ClientCertificate">AWS
    * API Reference</a></p>
    */
-  class AWS_APIGATEWAY_API GenerateClientCertificateResult
+  class GenerateClientCertificateResult
   {
   public:
-    GenerateClientCertificateResult();
-    GenerateClientCertificateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GenerateClientCertificateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APIGATEWAY_API GenerateClientCertificateResult();
+    AWS_APIGATEWAY_API GenerateClientCertificateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APIGATEWAY_API GenerateClientCertificateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

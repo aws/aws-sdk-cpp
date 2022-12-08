@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/WordCloudFieldWells">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API WordCloudFieldWells
+  class WordCloudFieldWells
   {
   public:
-    WordCloudFieldWells();
-    WordCloudFieldWells(Aws::Utils::Json::JsonView jsonValue);
-    WordCloudFieldWells& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API WordCloudFieldWells();
+    AWS_QUICKSIGHT_API WordCloudFieldWells(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API WordCloudFieldWells& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

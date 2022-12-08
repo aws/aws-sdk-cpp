@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/ControlInsightsMetadataItem">AWS
    * API Reference</a></p>
    */
-  class AWS_AUDITMANAGER_API ControlInsightsMetadataItem
+  class ControlInsightsMetadataItem
   {
   public:
-    ControlInsightsMetadataItem();
-    ControlInsightsMetadataItem(Aws::Utils::Json::JsonView jsonValue);
-    ControlInsightsMetadataItem& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_AUDITMANAGER_API ControlInsightsMetadataItem();
+    AWS_AUDITMANAGER_API ControlInsightsMetadataItem(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AUDITMANAGER_API ControlInsightsMetadataItem& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AUDITMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

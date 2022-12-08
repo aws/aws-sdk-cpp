@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/synthetics-2017-10-11/CanaryLastRun">AWS
    * API Reference</a></p>
    */
-  class AWS_SYNTHETICS_API CanaryLastRun
+  class CanaryLastRun
   {
   public:
-    CanaryLastRun();
-    CanaryLastRun(Aws::Utils::Json::JsonView jsonValue);
-    CanaryLastRun& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SYNTHETICS_API CanaryLastRun();
+    AWS_SYNTHETICS_API CanaryLastRun(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SYNTHETICS_API CanaryLastRun& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SYNTHETICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

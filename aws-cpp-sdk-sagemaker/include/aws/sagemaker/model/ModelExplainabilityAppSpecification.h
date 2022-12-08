@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ModelExplainabilityAppSpecification">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API ModelExplainabilityAppSpecification
+  class ModelExplainabilityAppSpecification
   {
   public:
-    ModelExplainabilityAppSpecification();
-    ModelExplainabilityAppSpecification(Aws::Utils::Json::JsonView jsonValue);
-    ModelExplainabilityAppSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API ModelExplainabilityAppSpecification();
+    AWS_SAGEMAKER_API ModelExplainabilityAppSpecification(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API ModelExplainabilityAppSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

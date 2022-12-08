@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/ThumbnailConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_IVS_API ThumbnailConfiguration
+  class ThumbnailConfiguration
   {
   public:
-    ThumbnailConfiguration();
-    ThumbnailConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    ThumbnailConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IVS_API ThumbnailConfiguration();
+    AWS_IVS_API ThumbnailConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IVS_API ThumbnailConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IVS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

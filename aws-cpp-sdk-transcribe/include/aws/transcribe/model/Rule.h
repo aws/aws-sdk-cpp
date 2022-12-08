@@ -41,13 +41,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/Rule">AWS API
    * Reference</a></p>
    */
-  class AWS_TRANSCRIBESERVICE_API Rule
+  class Rule
   {
   public:
-    Rule();
-    Rule(Aws::Utils::Json::JsonView jsonValue);
-    Rule& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TRANSCRIBESERVICE_API Rule();
+    AWS_TRANSCRIBESERVICE_API Rule(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSCRIBESERVICE_API Rule& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSCRIBESERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

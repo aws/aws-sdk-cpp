@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/AccessDeniedException">AWS
    * API Reference</a></p>
    */
-  class AWS_DRS_API AccessDeniedException
+  class AccessDeniedException
   {
   public:
-    AccessDeniedException();
-    AccessDeniedException(Aws::Utils::Json::JsonView jsonValue);
-    AccessDeniedException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DRS_API AccessDeniedException();
+    AWS_DRS_API AccessDeniedException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DRS_API AccessDeniedException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DRS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

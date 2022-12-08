@@ -43,13 +43,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/Build">AWS API
    * Reference</a></p>
    */
-  class AWS_CODEBUILD_API Build
+  class Build
   {
   public:
-    Build();
-    Build(Aws::Utils::Json::JsonView jsonValue);
-    Build& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEBUILD_API Build();
+    AWS_CODEBUILD_API Build(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEBUILD_API Build& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEBUILD_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

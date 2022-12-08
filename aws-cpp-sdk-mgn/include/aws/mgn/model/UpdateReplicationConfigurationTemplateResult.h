@@ -29,12 +29,12 @@ namespace mgn
 {
 namespace Model
 {
-  class AWS_MGN_API UpdateReplicationConfigurationTemplateResult
+  class UpdateReplicationConfigurationTemplateResult
   {
   public:
-    UpdateReplicationConfigurationTemplateResult();
-    UpdateReplicationConfigurationTemplateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateReplicationConfigurationTemplateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MGN_API UpdateReplicationConfigurationTemplateResult();
+    AWS_MGN_API UpdateReplicationConfigurationTemplateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MGN_API UpdateReplicationConfigurationTemplateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

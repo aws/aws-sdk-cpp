@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/MapRunFailedEventDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SFN_API MapRunFailedEventDetails
+  class MapRunFailedEventDetails
   {
   public:
-    MapRunFailedEventDetails();
-    MapRunFailedEventDetails(Aws::Utils::Json::JsonView jsonValue);
-    MapRunFailedEventDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SFN_API MapRunFailedEventDetails();
+    AWS_SFN_API MapRunFailedEventDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SFN_API MapRunFailedEventDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SFN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

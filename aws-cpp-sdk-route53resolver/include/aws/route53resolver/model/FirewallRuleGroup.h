@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/FirewallRuleGroup">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53RESOLVER_API FirewallRuleGroup
+  class FirewallRuleGroup
   {
   public:
-    FirewallRuleGroup();
-    FirewallRuleGroup(Aws::Utils::Json::JsonView jsonValue);
-    FirewallRuleGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ROUTE53RESOLVER_API FirewallRuleGroup();
+    AWS_ROUTE53RESOLVER_API FirewallRuleGroup(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROUTE53RESOLVER_API FirewallRuleGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROUTE53RESOLVER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

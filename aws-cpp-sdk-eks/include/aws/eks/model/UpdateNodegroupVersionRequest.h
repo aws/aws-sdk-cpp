@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_EKS_API UpdateNodegroupVersionRequest : public EKSRequest
+  class UpdateNodegroupVersionRequest : public EKSRequest
   {
   public:
-    UpdateNodegroupVersionRequest();
+    AWS_EKS_API UpdateNodegroupVersionRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,7 +31,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateNodegroupVersion"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_EKS_API Aws::String SerializePayload() const override;
 
 
     /**

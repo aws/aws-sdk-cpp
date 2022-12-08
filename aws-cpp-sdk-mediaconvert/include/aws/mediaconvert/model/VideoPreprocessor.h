@@ -37,13 +37,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/VideoPreprocessor">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API VideoPreprocessor
+  class VideoPreprocessor
   {
   public:
-    VideoPreprocessor();
-    VideoPreprocessor(Aws::Utils::Json::JsonView jsonValue);
-    VideoPreprocessor& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API VideoPreprocessor();
+    AWS_MEDIACONVERT_API VideoPreprocessor(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API VideoPreprocessor& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

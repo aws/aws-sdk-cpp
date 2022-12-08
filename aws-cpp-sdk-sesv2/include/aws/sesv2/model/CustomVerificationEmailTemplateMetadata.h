@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/CustomVerificationEmailTemplateMetadata">AWS
    * API Reference</a></p>
    */
-  class AWS_SESV2_API CustomVerificationEmailTemplateMetadata
+  class CustomVerificationEmailTemplateMetadata
   {
   public:
-    CustomVerificationEmailTemplateMetadata();
-    CustomVerificationEmailTemplateMetadata(Aws::Utils::Json::JsonView jsonValue);
-    CustomVerificationEmailTemplateMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SESV2_API CustomVerificationEmailTemplateMetadata();
+    AWS_SESV2_API CustomVerificationEmailTemplateMetadata(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SESV2_API CustomVerificationEmailTemplateMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SESV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

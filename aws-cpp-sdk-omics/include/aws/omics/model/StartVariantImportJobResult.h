@@ -24,12 +24,12 @@ namespace Omics
 {
 namespace Model
 {
-  class AWS_OMICS_API StartVariantImportJobResult
+  class StartVariantImportJobResult
   {
   public:
-    StartVariantImportJobResult();
-    StartVariantImportJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    StartVariantImportJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OMICS_API StartVariantImportJobResult();
+    AWS_OMICS_API StartVariantImportJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OMICS_API StartVariantImportJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

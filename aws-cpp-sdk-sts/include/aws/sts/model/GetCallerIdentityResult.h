@@ -32,12 +32,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/GetCallerIdentityResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_STS_API GetCallerIdentityResult
+  class GetCallerIdentityResult
   {
   public:
-    GetCallerIdentityResult();
-    GetCallerIdentityResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    GetCallerIdentityResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_STS_API GetCallerIdentityResult();
+    AWS_STS_API GetCallerIdentityResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_STS_API GetCallerIdentityResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

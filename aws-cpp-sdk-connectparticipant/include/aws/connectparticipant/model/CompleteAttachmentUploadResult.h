@@ -22,12 +22,12 @@ namespace ConnectParticipant
 {
 namespace Model
 {
-  class AWS_CONNECTPARTICIPANT_API CompleteAttachmentUploadResult
+  class CompleteAttachmentUploadResult
   {
   public:
-    CompleteAttachmentUploadResult();
-    CompleteAttachmentUploadResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CompleteAttachmentUploadResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CONNECTPARTICIPANT_API CompleteAttachmentUploadResult();
+    AWS_CONNECTPARTICIPANT_API CompleteAttachmentUploadResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CONNECTPARTICIPANT_API CompleteAttachmentUploadResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

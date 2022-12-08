@@ -23,13 +23,13 @@ namespace IoT1ClickDevicesService
 namespace Model
 {
 
-  class AWS_IOT1CLICKDEVICESSERVICE_API ForbiddenException
+  class ForbiddenException
   {
   public:
-    ForbiddenException();
-    ForbiddenException(Aws::Utils::Json::JsonView jsonValue);
-    ForbiddenException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT1CLICKDEVICESSERVICE_API ForbiddenException();
+    AWS_IOT1CLICKDEVICESSERVICE_API ForbiddenException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT1CLICKDEVICESSERVICE_API ForbiddenException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT1CLICKDEVICESSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

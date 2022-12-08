@@ -24,12 +24,12 @@ namespace LicenseManager
 {
 namespace Model
 {
-  class AWS_LICENSEMANAGER_API ExtendLicenseConsumptionResult
+  class ExtendLicenseConsumptionResult
   {
   public:
-    ExtendLicenseConsumptionResult();
-    ExtendLicenseConsumptionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ExtendLicenseConsumptionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LICENSEMANAGER_API ExtendLicenseConsumptionResult();
+    AWS_LICENSEMANAGER_API ExtendLicenseConsumptionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LICENSEMANAGER_API ExtendLicenseConsumptionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -32,12 +32,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListTopicsResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_SNS_API ListTopicsResult
+  class ListTopicsResult
   {
   public:
-    ListTopicsResult();
-    ListTopicsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ListTopicsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_SNS_API ListTopicsResult();
+    AWS_SNS_API ListTopicsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_SNS_API ListTopicsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

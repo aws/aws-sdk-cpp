@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/Occurrences">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API Occurrences
+  class Occurrences
   {
   public:
-    Occurrences();
-    Occurrences(Aws::Utils::Json::JsonView jsonValue);
-    Occurrences& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API Occurrences();
+    AWS_SECURITYHUB_API Occurrences(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Occurrences& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

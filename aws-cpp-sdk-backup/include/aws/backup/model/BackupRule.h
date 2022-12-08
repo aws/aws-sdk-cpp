@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/BackupRule">AWS
    * API Reference</a></p>
    */
-  class AWS_BACKUP_API BackupRule
+  class BackupRule
   {
   public:
-    BackupRule();
-    BackupRule(Aws::Utils::Json::JsonView jsonValue);
-    BackupRule& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BACKUP_API BackupRule();
+    AWS_BACKUP_API BackupRule(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BACKUP_API BackupRule& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BACKUP_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

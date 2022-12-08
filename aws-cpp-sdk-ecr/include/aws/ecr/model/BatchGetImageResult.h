@@ -26,12 +26,12 @@ namespace ECR
 {
 namespace Model
 {
-  class AWS_ECR_API BatchGetImageResult
+  class BatchGetImageResult
   {
   public:
-    BatchGetImageResult();
-    BatchGetImageResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    BatchGetImageResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ECR_API BatchGetImageResult();
+    AWS_ECR_API BatchGetImageResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ECR_API BatchGetImageResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

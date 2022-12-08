@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/GcpMySQLSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_DATABASEMIGRATIONSERVICE_API GcpMySQLSettings
+  class GcpMySQLSettings
   {
   public:
-    GcpMySQLSettings();
-    GcpMySQLSettings(Aws::Utils::Json::JsonView jsonValue);
-    GcpMySQLSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DATABASEMIGRATIONSERVICE_API GcpMySQLSettings();
+    AWS_DATABASEMIGRATIONSERVICE_API GcpMySQLSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATABASEMIGRATIONSERVICE_API GcpMySQLSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATABASEMIGRATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/ThrottlingException">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTFLEETWISE_API ThrottlingException
+  class ThrottlingException
   {
   public:
-    ThrottlingException();
-    ThrottlingException(Aws::Utils::Json::JsonView jsonValue);
-    ThrottlingException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTFLEETWISE_API ThrottlingException();
+    AWS_IOTFLEETWISE_API ThrottlingException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTFLEETWISE_API ThrottlingException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTFLEETWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

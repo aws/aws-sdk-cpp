@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/Assignment">AWS
    * API Reference</a></p>
    */
-  class AWS_MTURK_API Assignment
+  class Assignment
   {
   public:
-    Assignment();
-    Assignment(Aws::Utils::Json::JsonView jsonValue);
-    Assignment& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MTURK_API Assignment();
+    AWS_MTURK_API Assignment(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MTURK_API Assignment& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MTURK_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

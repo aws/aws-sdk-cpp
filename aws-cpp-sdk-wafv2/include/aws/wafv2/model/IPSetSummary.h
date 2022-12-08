@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/IPSetSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_WAFV2_API IPSetSummary
+  class IPSetSummary
   {
   public:
-    IPSetSummary();
-    IPSetSummary(Aws::Utils::Json::JsonView jsonValue);
-    IPSetSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WAFV2_API IPSetSummary();
+    AWS_WAFV2_API IPSetSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API IPSetSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

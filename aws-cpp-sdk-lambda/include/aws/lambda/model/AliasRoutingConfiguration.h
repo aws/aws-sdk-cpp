@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/AliasRoutingConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_LAMBDA_API AliasRoutingConfiguration
+  class AliasRoutingConfiguration
   {
   public:
-    AliasRoutingConfiguration();
-    AliasRoutingConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    AliasRoutingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LAMBDA_API AliasRoutingConfiguration();
+    AWS_LAMBDA_API AliasRoutingConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAMBDA_API AliasRoutingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAMBDA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

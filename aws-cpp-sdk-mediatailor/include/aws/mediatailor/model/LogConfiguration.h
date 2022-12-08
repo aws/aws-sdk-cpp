@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/LogConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIATAILOR_API LogConfiguration
+  class LogConfiguration
   {
   public:
-    LogConfiguration();
-    LogConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    LogConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIATAILOR_API LogConfiguration();
+    AWS_MEDIATAILOR_API LogConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIATAILOR_API LogConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIATAILOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

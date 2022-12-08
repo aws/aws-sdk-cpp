@@ -44,13 +44,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/PieChartVisual">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API PieChartVisual
+  class PieChartVisual
   {
   public:
-    PieChartVisual();
-    PieChartVisual(Aws::Utils::Json::JsonView jsonValue);
-    PieChartVisual& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API PieChartVisual();
+    AWS_QUICKSIGHT_API PieChartVisual(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API PieChartVisual& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

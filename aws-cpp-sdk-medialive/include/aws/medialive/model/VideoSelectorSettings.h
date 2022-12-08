@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/VideoSelectorSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API VideoSelectorSettings
+  class VideoSelectorSettings
   {
   public:
-    VideoSelectorSettings();
-    VideoSelectorSettings(Aws::Utils::Json::JsonView jsonValue);
-    VideoSelectorSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API VideoSelectorSettings();
+    AWS_MEDIALIVE_API VideoSelectorSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API VideoSelectorSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

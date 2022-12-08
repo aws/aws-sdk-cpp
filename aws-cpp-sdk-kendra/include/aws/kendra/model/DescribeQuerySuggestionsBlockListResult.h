@@ -27,12 +27,12 @@ namespace kendra
 {
 namespace Model
 {
-  class AWS_KENDRA_API DescribeQuerySuggestionsBlockListResult
+  class DescribeQuerySuggestionsBlockListResult
   {
   public:
-    DescribeQuerySuggestionsBlockListResult();
-    DescribeQuerySuggestionsBlockListResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeQuerySuggestionsBlockListResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KENDRA_API DescribeQuerySuggestionsBlockListResult();
+    AWS_KENDRA_API DescribeQuerySuggestionsBlockListResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KENDRA_API DescribeQuerySuggestionsBlockListResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

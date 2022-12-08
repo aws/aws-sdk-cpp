@@ -24,12 +24,12 @@ namespace Cloud9
 {
 namespace Model
 {
-  class AWS_CLOUD9_API UpdateEnvironmentMembershipResult
+  class UpdateEnvironmentMembershipResult
   {
   public:
-    UpdateEnvironmentMembershipResult();
-    UpdateEnvironmentMembershipResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateEnvironmentMembershipResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CLOUD9_API UpdateEnvironmentMembershipResult();
+    AWS_CLOUD9_API UpdateEnvironmentMembershipResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CLOUD9_API UpdateEnvironmentMembershipResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CustomParameterValues">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API CustomParameterValues
+  class CustomParameterValues
   {
   public:
-    CustomParameterValues();
-    CustomParameterValues(Aws::Utils::Json::JsonView jsonValue);
-    CustomParameterValues& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API CustomParameterValues();
+    AWS_QUICKSIGHT_API CustomParameterValues(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API CustomParameterValues& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

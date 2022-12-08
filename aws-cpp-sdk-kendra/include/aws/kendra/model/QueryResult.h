@@ -29,12 +29,12 @@ namespace kendra
 {
 namespace Model
 {
-  class AWS_KENDRA_API QueryResult
+  class QueryResult
   {
   public:
-    QueryResult();
-    QueryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    QueryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KENDRA_API QueryResult();
+    AWS_KENDRA_API QueryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KENDRA_API QueryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

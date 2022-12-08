@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/DecoderManifestSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTFLEETWISE_API DecoderManifestSummary
+  class DecoderManifestSummary
   {
   public:
-    DecoderManifestSummary();
-    DecoderManifestSummary(Aws::Utils::Json::JsonView jsonValue);
-    DecoderManifestSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTFLEETWISE_API DecoderManifestSummary();
+    AWS_IOTFLEETWISE_API DecoderManifestSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTFLEETWISE_API DecoderManifestSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTFLEETWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

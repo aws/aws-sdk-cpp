@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/OrganizationEbsVolumes">AWS
    * API Reference</a></p>
    */
-  class AWS_GUARDDUTY_API OrganizationEbsVolumes
+  class OrganizationEbsVolumes
   {
   public:
-    OrganizationEbsVolumes();
-    OrganizationEbsVolumes(Aws::Utils::Json::JsonView jsonValue);
-    OrganizationEbsVolumes& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GUARDDUTY_API OrganizationEbsVolumes();
+    AWS_GUARDDUTY_API OrganizationEbsVolumes(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API OrganizationEbsVolumes& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

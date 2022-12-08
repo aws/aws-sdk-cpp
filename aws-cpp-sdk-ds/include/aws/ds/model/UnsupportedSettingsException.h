@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/UnsupportedSettingsException">AWS
    * API Reference</a></p>
    */
-  class AWS_DIRECTORYSERVICE_API UnsupportedSettingsException
+  class UnsupportedSettingsException
   {
   public:
-    UnsupportedSettingsException();
-    UnsupportedSettingsException(Aws::Utils::Json::JsonView jsonValue);
-    UnsupportedSettingsException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DIRECTORYSERVICE_API UnsupportedSettingsException();
+    AWS_DIRECTORYSERVICE_API UnsupportedSettingsException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTORYSERVICE_API UnsupportedSettingsException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTORYSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

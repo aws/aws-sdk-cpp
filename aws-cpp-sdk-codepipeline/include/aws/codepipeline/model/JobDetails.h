@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/JobDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEPIPELINE_API JobDetails
+  class JobDetails
   {
   public:
-    JobDetails();
-    JobDetails(Aws::Utils::Json::JsonView jsonValue);
-    JobDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEPIPELINE_API JobDetails();
+    AWS_CODEPIPELINE_API JobDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEPIPELINE_API JobDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

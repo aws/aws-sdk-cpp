@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/Severity">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API Severity
+  class Severity
   {
   public:
-    Severity();
-    Severity(Aws::Utils::Json::JsonView jsonValue);
-    Severity& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API Severity();
+    AWS_SECURITYHUB_API Severity(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Severity& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

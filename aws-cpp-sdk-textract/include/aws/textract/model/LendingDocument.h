@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/LendingDocument">AWS
    * API Reference</a></p>
    */
-  class AWS_TEXTRACT_API LendingDocument
+  class LendingDocument
   {
   public:
-    LendingDocument();
-    LendingDocument(Aws::Utils::Json::JsonView jsonValue);
-    LendingDocument& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TEXTRACT_API LendingDocument();
+    AWS_TEXTRACT_API LendingDocument(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TEXTRACT_API LendingDocument& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TEXTRACT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

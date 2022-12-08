@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/PullRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_CODECOMMIT_API PullRequest
+  class PullRequest
   {
   public:
-    PullRequest();
-    PullRequest(Aws::Utils::Json::JsonView jsonValue);
-    PullRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODECOMMIT_API PullRequest();
+    AWS_CODECOMMIT_API PullRequest(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODECOMMIT_API PullRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODECOMMIT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

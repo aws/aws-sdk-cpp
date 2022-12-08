@@ -30,14 +30,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DelegationSet">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53_API DelegationSet
+  class DelegationSet
   {
   public:
-    DelegationSet();
-    DelegationSet(const Aws::Utils::Xml::XmlNode& xmlNode);
-    DelegationSet& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ROUTE53_API DelegationSet();
+    AWS_ROUTE53_API DelegationSet(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ROUTE53_API DelegationSet& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_ROUTE53_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**

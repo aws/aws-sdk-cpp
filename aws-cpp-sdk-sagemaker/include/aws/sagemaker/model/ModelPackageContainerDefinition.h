@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ModelPackageContainerDefinition">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API ModelPackageContainerDefinition
+  class ModelPackageContainerDefinition
   {
   public:
-    ModelPackageContainerDefinition();
-    ModelPackageContainerDefinition(Aws::Utils::Json::JsonView jsonValue);
-    ModelPackageContainerDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API ModelPackageContainerDefinition();
+    AWS_SAGEMAKER_API ModelPackageContainerDefinition(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API ModelPackageContainerDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

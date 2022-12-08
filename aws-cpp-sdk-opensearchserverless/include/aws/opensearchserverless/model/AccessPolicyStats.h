@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/AccessPolicyStats">AWS
    * API Reference</a></p>
    */
-  class AWS_OPENSEARCHSERVERLESS_API AccessPolicyStats
+  class AccessPolicyStats
   {
   public:
-    AccessPolicyStats();
-    AccessPolicyStats(Aws::Utils::Json::JsonView jsonValue);
-    AccessPolicyStats& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OPENSEARCHSERVERLESS_API AccessPolicyStats();
+    AWS_OPENSEARCHSERVERLESS_API AccessPolicyStats(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPENSEARCHSERVERLESS_API AccessPolicyStats& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPENSEARCHSERVERLESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

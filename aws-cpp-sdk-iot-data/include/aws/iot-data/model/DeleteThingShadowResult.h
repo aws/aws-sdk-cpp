@@ -24,21 +24,21 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-data-2015-05-28/DeleteThingShadowResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTDATAPLANE_API DeleteThingShadowResult
+  class DeleteThingShadowResult
   {
   public:
-    DeleteThingShadowResult();
+    AWS_IOTDATAPLANE_API DeleteThingShadowResult();
     //We have to define these because Microsoft doesn't auto generate them
-    DeleteThingShadowResult(DeleteThingShadowResult&&);
-    DeleteThingShadowResult& operator=(DeleteThingShadowResult&&);
+    AWS_IOTDATAPLANE_API DeleteThingShadowResult(DeleteThingShadowResult&&);
+    AWS_IOTDATAPLANE_API DeleteThingShadowResult& operator=(DeleteThingShadowResult&&);
     //we delete these because Microsoft doesn't handle move generation correctly
     //and we therefore don't trust them to get it right here either.
     DeleteThingShadowResult(const DeleteThingShadowResult&) = delete;
     DeleteThingShadowResult& operator=(const DeleteThingShadowResult&) = delete;
 
 
-    DeleteThingShadowResult(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
-    DeleteThingShadowResult& operator=(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
+    AWS_IOTDATAPLANE_API DeleteThingShadowResult(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
+    AWS_IOTDATAPLANE_API DeleteThingShadowResult& operator=(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
 
 
 

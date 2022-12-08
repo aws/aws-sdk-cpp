@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/Graph">AWS API
    * Reference</a></p>
    */
-  class AWS_DETECTIVE_API Graph
+  class Graph
   {
   public:
-    Graph();
-    Graph(Aws::Utils::Json::JsonView jsonValue);
-    Graph& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DETECTIVE_API Graph();
+    AWS_DETECTIVE_API Graph(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DETECTIVE_API Graph& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DETECTIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

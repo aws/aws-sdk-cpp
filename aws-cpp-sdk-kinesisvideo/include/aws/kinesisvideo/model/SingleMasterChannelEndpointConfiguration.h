@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/SingleMasterChannelEndpointConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_KINESISVIDEO_API SingleMasterChannelEndpointConfiguration
+  class SingleMasterChannelEndpointConfiguration
   {
   public:
-    SingleMasterChannelEndpointConfiguration();
-    SingleMasterChannelEndpointConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    SingleMasterChannelEndpointConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KINESISVIDEO_API SingleMasterChannelEndpointConfiguration();
+    AWS_KINESISVIDEO_API SingleMasterChannelEndpointConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISVIDEO_API SingleMasterChannelEndpointConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISVIDEO_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

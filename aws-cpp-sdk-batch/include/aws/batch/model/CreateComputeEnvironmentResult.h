@@ -24,12 +24,12 @@ namespace Batch
 {
 namespace Model
 {
-  class AWS_BATCH_API CreateComputeEnvironmentResult
+  class CreateComputeEnvironmentResult
   {
   public:
-    CreateComputeEnvironmentResult();
-    CreateComputeEnvironmentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateComputeEnvironmentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_BATCH_API CreateComputeEnvironmentResult();
+    AWS_BATCH_API CreateComputeEnvironmentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_BATCH_API CreateComputeEnvironmentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

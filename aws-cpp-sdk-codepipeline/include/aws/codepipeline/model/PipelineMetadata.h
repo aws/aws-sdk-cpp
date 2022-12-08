@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PipelineMetadata">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEPIPELINE_API PipelineMetadata
+  class PipelineMetadata
   {
   public:
-    PipelineMetadata();
-    PipelineMetadata(Aws::Utils::Json::JsonView jsonValue);
-    PipelineMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEPIPELINE_API PipelineMetadata();
+    AWS_CODEPIPELINE_API PipelineMetadata(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEPIPELINE_API PipelineMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

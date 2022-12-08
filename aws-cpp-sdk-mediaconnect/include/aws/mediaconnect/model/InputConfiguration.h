@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/InputConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONNECT_API InputConfiguration
+  class InputConfiguration
   {
   public:
-    InputConfiguration();
-    InputConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    InputConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONNECT_API InputConfiguration();
+    AWS_MEDIACONNECT_API InputConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONNECT_API InputConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

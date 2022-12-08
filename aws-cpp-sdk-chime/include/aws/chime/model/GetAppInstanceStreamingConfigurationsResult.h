@@ -25,12 +25,12 @@ namespace Chime
 {
 namespace Model
 {
-  class AWS_CHIME_API GetAppInstanceStreamingConfigurationsResult
+  class GetAppInstanceStreamingConfigurationsResult
   {
   public:
-    GetAppInstanceStreamingConfigurationsResult();
-    GetAppInstanceStreamingConfigurationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetAppInstanceStreamingConfigurationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CHIME_API GetAppInstanceStreamingConfigurationsResult();
+    AWS_CHIME_API GetAppInstanceStreamingConfigurationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CHIME_API GetAppInstanceStreamingConfigurationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

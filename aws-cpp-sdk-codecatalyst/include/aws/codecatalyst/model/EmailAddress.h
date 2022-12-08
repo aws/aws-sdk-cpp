@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codecatalyst-2022-09-28/EmailAddress">AWS
    * API Reference</a></p>
    */
-  class AWS_CODECATALYST_API EmailAddress
+  class EmailAddress
   {
   public:
-    EmailAddress();
-    EmailAddress(Aws::Utils::Json::JsonView jsonValue);
-    EmailAddress& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODECATALYST_API EmailAddress();
+    AWS_CODECATALYST_API EmailAddress(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODECATALYST_API EmailAddress& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODECATALYST_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

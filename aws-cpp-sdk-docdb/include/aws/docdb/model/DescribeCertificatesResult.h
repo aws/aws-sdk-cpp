@@ -27,12 +27,12 @@ namespace DocDB
 {
 namespace Model
 {
-  class AWS_DOCDB_API DescribeCertificatesResult
+  class DescribeCertificatesResult
   {
   public:
-    DescribeCertificatesResult();
-    DescribeCertificatesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeCertificatesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_DOCDB_API DescribeCertificatesResult();
+    AWS_DOCDB_API DescribeCertificatesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_DOCDB_API DescribeCertificatesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

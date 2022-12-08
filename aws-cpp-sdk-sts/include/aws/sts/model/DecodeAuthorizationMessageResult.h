@@ -32,12 +32,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/DecodeAuthorizationMessageResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_STS_API DecodeAuthorizationMessageResult
+  class DecodeAuthorizationMessageResult
   {
   public:
-    DecodeAuthorizationMessageResult();
-    DecodeAuthorizationMessageResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DecodeAuthorizationMessageResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_STS_API DecodeAuthorizationMessageResult();
+    AWS_STS_API DecodeAuthorizationMessageResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_STS_API DecodeAuthorizationMessageResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/InvalidParameterException">AWS
    * API Reference</a></p>
    */
-  class AWS_SHIELD_API InvalidParameterException
+  class InvalidParameterException
   {
   public:
-    InvalidParameterException();
-    InvalidParameterException(Aws::Utils::Json::JsonView jsonValue);
-    InvalidParameterException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SHIELD_API InvalidParameterException();
+    AWS_SHIELD_API InvalidParameterException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SHIELD_API InvalidParameterException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SHIELD_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

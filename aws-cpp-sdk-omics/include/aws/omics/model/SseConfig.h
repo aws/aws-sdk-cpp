@@ -29,13 +29,13 @@ namespace Model
    * <a href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/SseConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_OMICS_API SseConfig
+  class SseConfig
   {
   public:
-    SseConfig();
-    SseConfig(Aws::Utils::Json::JsonView jsonValue);
-    SseConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OMICS_API SseConfig();
+    AWS_OMICS_API SseConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OMICS_API SseConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OMICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

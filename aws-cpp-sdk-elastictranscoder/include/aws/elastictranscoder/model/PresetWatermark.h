@@ -39,13 +39,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/PresetWatermark">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICTRANSCODER_API PresetWatermark
+  class PresetWatermark
   {
   public:
-    PresetWatermark();
-    PresetWatermark(Aws::Utils::Json::JsonView jsonValue);
-    PresetWatermark& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ELASTICTRANSCODER_API PresetWatermark();
+    AWS_ELASTICTRANSCODER_API PresetWatermark(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICTRANSCODER_API PresetWatermark& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICTRANSCODER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

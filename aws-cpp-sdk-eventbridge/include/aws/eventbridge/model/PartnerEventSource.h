@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/PartnerEventSource">AWS
    * API Reference</a></p>
    */
-  class AWS_EVENTBRIDGE_API PartnerEventSource
+  class PartnerEventSource
   {
   public:
-    PartnerEventSource();
-    PartnerEventSource(Aws::Utils::Json::JsonView jsonValue);
-    PartnerEventSource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EVENTBRIDGE_API PartnerEventSource();
+    AWS_EVENTBRIDGE_API PartnerEventSource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EVENTBRIDGE_API PartnerEventSource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EVENTBRIDGE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

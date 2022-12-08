@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/connectcampaigns-2021-01-30/OutboundCallConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECTCAMPAIGNS_API OutboundCallConfig
+  class OutboundCallConfig
   {
   public:
-    OutboundCallConfig();
-    OutboundCallConfig(Aws::Utils::Json::JsonView jsonValue);
-    OutboundCallConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECTCAMPAIGNS_API OutboundCallConfig();
+    AWS_CONNECTCAMPAIGNS_API OutboundCallConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTCAMPAIGNS_API OutboundCallConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTCAMPAIGNS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

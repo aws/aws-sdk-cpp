@@ -19,21 +19,21 @@ namespace DataExchange
 {
 namespace Model
 {
-  class AWS_DATAEXCHANGE_API SendApiAssetResult
+  class SendApiAssetResult
   {
   public:
-    SendApiAssetResult();
+    AWS_DATAEXCHANGE_API SendApiAssetResult();
     //We have to define these because Microsoft doesn't auto generate them
-    SendApiAssetResult(SendApiAssetResult&&);
-    SendApiAssetResult& operator=(SendApiAssetResult&&);
+    AWS_DATAEXCHANGE_API SendApiAssetResult(SendApiAssetResult&&);
+    AWS_DATAEXCHANGE_API SendApiAssetResult& operator=(SendApiAssetResult&&);
     //we delete these because Microsoft doesn't handle move generation correctly
     //and we therefore don't trust them to get it right here either.
     SendApiAssetResult(const SendApiAssetResult&) = delete;
     SendApiAssetResult& operator=(const SendApiAssetResult&) = delete;
 
 
-    SendApiAssetResult(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
-    SendApiAssetResult& operator=(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
+    AWS_DATAEXCHANGE_API SendApiAssetResult(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
+    AWS_DATAEXCHANGE_API SendApiAssetResult& operator=(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
 
 
 

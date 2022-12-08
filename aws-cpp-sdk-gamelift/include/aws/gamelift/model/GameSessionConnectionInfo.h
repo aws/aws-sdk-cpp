@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/GameSessionConnectionInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_GAMELIFT_API GameSessionConnectionInfo
+  class GameSessionConnectionInfo
   {
   public:
-    GameSessionConnectionInfo();
-    GameSessionConnectionInfo(Aws::Utils::Json::JsonView jsonValue);
-    GameSessionConnectionInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GAMELIFT_API GameSessionConnectionInfo();
+    AWS_GAMELIFT_API GameSessionConnectionInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMELIFT_API GameSessionConnectionInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

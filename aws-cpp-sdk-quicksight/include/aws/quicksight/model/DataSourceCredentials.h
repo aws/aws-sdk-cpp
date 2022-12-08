@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DataSourceCredentials">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API DataSourceCredentials
+  class DataSourceCredentials
   {
   public:
-    DataSourceCredentials();
-    DataSourceCredentials(Aws::Utils::Json::JsonView jsonValue);
-    DataSourceCredentials& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API DataSourceCredentials();
+    AWS_QUICKSIGHT_API DataSourceCredentials(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API DataSourceCredentials& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/Layout">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API Layout
+  class Layout
   {
   public:
-    Layout();
-    Layout(Aws::Utils::Json::JsonView jsonValue);
-    Layout& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API Layout();
+    AWS_QUICKSIGHT_API Layout(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Layout& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

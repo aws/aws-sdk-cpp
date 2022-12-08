@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/LongFormatText">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API LongFormatText
+  class LongFormatText
   {
   public:
-    LongFormatText();
-    LongFormatText(Aws::Utils::Json::JsonView jsonValue);
-    LongFormatText& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API LongFormatText();
+    AWS_QUICKSIGHT_API LongFormatText(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API LongFormatText& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

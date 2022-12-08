@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/ResourceAlreadyExistsException">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTEVENTS_API ResourceAlreadyExistsException
+  class ResourceAlreadyExistsException
   {
   public:
-    ResourceAlreadyExistsException();
-    ResourceAlreadyExistsException(Aws::Utils::Json::JsonView jsonValue);
-    ResourceAlreadyExistsException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTEVENTS_API ResourceAlreadyExistsException();
+    AWS_IOTEVENTS_API ResourceAlreadyExistsException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTEVENTS_API ResourceAlreadyExistsException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTEVENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CodeGenNodeArg">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API CodeGenNodeArg
+  class CodeGenNodeArg
   {
   public:
-    CodeGenNodeArg();
-    CodeGenNodeArg(Aws::Utils::Json::JsonView jsonValue);
-    CodeGenNodeArg& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API CodeGenNodeArg();
+    AWS_GLUE_API CodeGenNodeArg(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API CodeGenNodeArg& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

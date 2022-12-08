@@ -28,12 +28,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/DeletePresetResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICTRANSCODER_API DeletePresetResult
+  class DeletePresetResult
   {
   public:
-    DeletePresetResult();
-    DeletePresetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeletePresetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ELASTICTRANSCODER_API DeletePresetResult();
+    AWS_ELASTICTRANSCODER_API DeletePresetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ELASTICTRANSCODER_API DeletePresetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

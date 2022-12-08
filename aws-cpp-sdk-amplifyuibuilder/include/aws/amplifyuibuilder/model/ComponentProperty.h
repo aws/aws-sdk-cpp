@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/ComponentProperty">AWS
    * API Reference</a></p>
    */
-  class AWS_AMPLIFYUIBUILDER_API ComponentProperty
+  class ComponentProperty
   {
   public:
-    ComponentProperty();
-    ComponentProperty(Aws::Utils::Json::JsonView jsonValue);
-    ComponentProperty& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_AMPLIFYUIBUILDER_API ComponentProperty();
+    AWS_AMPLIFYUIBUILDER_API ComponentProperty(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFYUIBUILDER_API ComponentProperty& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFYUIBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -268,37 +268,37 @@ namespace Model
      * <p>The conditional expression to use to assign a value to the component
      * property.</p>
      */
-    const ComponentConditionProperty& GetCondition() const;
+    AWS_AMPLIFYUIBUILDER_API const ComponentConditionProperty& GetCondition() const;
 
     /**
      * <p>The conditional expression to use to assign a value to the component
      * property.</p>
      */
-    bool ConditionHasBeenSet() const;
+    AWS_AMPLIFYUIBUILDER_API bool ConditionHasBeenSet() const;
 
     /**
      * <p>The conditional expression to use to assign a value to the component
      * property.</p>
      */
-    void SetCondition(const ComponentConditionProperty& value);
+    AWS_AMPLIFYUIBUILDER_API void SetCondition(const ComponentConditionProperty& value);
 
     /**
      * <p>The conditional expression to use to assign a value to the component
      * property.</p>
      */
-    void SetCondition(ComponentConditionProperty&& value);
+    AWS_AMPLIFYUIBUILDER_API void SetCondition(ComponentConditionProperty&& value);
 
     /**
      * <p>The conditional expression to use to assign a value to the component
      * property.</p>
      */
-    ComponentProperty& WithCondition(const ComponentConditionProperty& value);
+    AWS_AMPLIFYUIBUILDER_API ComponentProperty& WithCondition(const ComponentConditionProperty& value);
 
     /**
      * <p>The conditional expression to use to assign a value to the component
      * property.</p>
      */
-    ComponentProperty& WithCondition(ComponentConditionProperty&& value);
+    AWS_AMPLIFYUIBUILDER_API ComponentProperty& WithCondition(ComponentConditionProperty&& value);
 
 
     /**

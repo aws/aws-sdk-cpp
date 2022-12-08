@@ -33,12 +33,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ReservedCacheNodeMessage">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICACHE_API DescribeReservedCacheNodesResult
+  class DescribeReservedCacheNodesResult
   {
   public:
-    DescribeReservedCacheNodesResult();
-    DescribeReservedCacheNodesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeReservedCacheNodesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ELASTICACHE_API DescribeReservedCacheNodesResult();
+    AWS_ELASTICACHE_API DescribeReservedCacheNodesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ELASTICACHE_API DescribeReservedCacheNodesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

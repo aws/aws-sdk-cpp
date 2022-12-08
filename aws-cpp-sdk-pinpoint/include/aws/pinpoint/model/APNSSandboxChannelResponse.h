@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/APNSSandboxChannelResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API APNSSandboxChannelResponse
+  class APNSSandboxChannelResponse
   {
   public:
-    APNSSandboxChannelResponse();
-    APNSSandboxChannelResponse(Aws::Utils::Json::JsonView jsonValue);
-    APNSSandboxChannelResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API APNSSandboxChannelResponse();
+    AWS_PINPOINT_API APNSSandboxChannelResponse(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API APNSSandboxChannelResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

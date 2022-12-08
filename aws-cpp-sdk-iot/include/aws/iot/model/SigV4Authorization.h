@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/SigV4Authorization">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API SigV4Authorization
+  class SigV4Authorization
   {
   public:
-    SigV4Authorization();
-    SigV4Authorization(Aws::Utils::Json::JsonView jsonValue);
-    SigV4Authorization& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API SigV4Authorization();
+    AWS_IOT_API SigV4Authorization(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API SigV4Authorization& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -26,12 +26,12 @@ namespace Transfer
 {
 namespace Model
 {
-  class AWS_TRANSFER_API ListServersResult
+  class ListServersResult
   {
   public:
-    ListServersResult();
-    ListServersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListServersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_TRANSFER_API ListServersResult();
+    AWS_TRANSFER_API ListServersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_TRANSFER_API ListServersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

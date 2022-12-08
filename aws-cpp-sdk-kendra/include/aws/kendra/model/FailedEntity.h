@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/FailedEntity">AWS
    * API Reference</a></p>
    */
-  class AWS_KENDRA_API FailedEntity
+  class FailedEntity
   {
   public:
-    FailedEntity();
-    FailedEntity(Aws::Utils::Json::JsonView jsonValue);
-    FailedEntity& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KENDRA_API FailedEntity();
+    AWS_KENDRA_API FailedEntity(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API FailedEntity& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

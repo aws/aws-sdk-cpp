@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/SortCriterion">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API SortCriterion
+  class SortCriterion
   {
   public:
-    SortCriterion();
-    SortCriterion(Aws::Utils::Json::JsonView jsonValue);
-    SortCriterion& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API SortCriterion();
+    AWS_SECURITYHUB_API SortCriterion(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API SortCriterion& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

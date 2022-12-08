@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/StartReferenceImportJobSourceItem">AWS
    * API Reference</a></p>
    */
-  class AWS_OMICS_API StartReferenceImportJobSourceItem
+  class StartReferenceImportJobSourceItem
   {
   public:
-    StartReferenceImportJobSourceItem();
-    StartReferenceImportJobSourceItem(Aws::Utils::Json::JsonView jsonValue);
-    StartReferenceImportJobSourceItem& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OMICS_API StartReferenceImportJobSourceItem();
+    AWS_OMICS_API StartReferenceImportJobSourceItem(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OMICS_API StartReferenceImportJobSourceItem& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OMICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

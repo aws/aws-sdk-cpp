@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/FilterCondition">AWS
    * API Reference</a></p>
    */
-  class AWS_GUARDDUTY_API FilterCondition
+  class FilterCondition
   {
   public:
-    FilterCondition();
-    FilterCondition(Aws::Utils::Json::JsonView jsonValue);
-    FilterCondition& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GUARDDUTY_API FilterCondition();
+    AWS_GUARDDUTY_API FilterCondition(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API FilterCondition& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

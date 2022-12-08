@@ -30,14 +30,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/AlarmIdentifier">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53_API AlarmIdentifier
+  class AlarmIdentifier
   {
   public:
-    AlarmIdentifier();
-    AlarmIdentifier(const Aws::Utils::Xml::XmlNode& xmlNode);
-    AlarmIdentifier& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ROUTE53_API AlarmIdentifier();
+    AWS_ROUTE53_API AlarmIdentifier(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ROUTE53_API AlarmIdentifier& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_ROUTE53_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**

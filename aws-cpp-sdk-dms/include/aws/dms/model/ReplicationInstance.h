@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ReplicationInstance">AWS
    * API Reference</a></p>
    */
-  class AWS_DATABASEMIGRATIONSERVICE_API ReplicationInstance
+  class ReplicationInstance
   {
   public:
-    ReplicationInstance();
-    ReplicationInstance(Aws::Utils::Json::JsonView jsonValue);
-    ReplicationInstance& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DATABASEMIGRATIONSERVICE_API ReplicationInstance();
+    AWS_DATABASEMIGRATIONSERVICE_API ReplicationInstance(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATABASEMIGRATIONSERVICE_API ReplicationInstance& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATABASEMIGRATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

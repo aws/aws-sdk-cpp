@@ -38,13 +38,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/Flow">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONNECT_API Flow
+  class Flow
   {
   public:
-    Flow();
-    Flow(Aws::Utils::Json::JsonView jsonValue);
-    Flow& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONNECT_API Flow();
+    AWS_MEDIACONNECT_API Flow(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONNECT_API Flow& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

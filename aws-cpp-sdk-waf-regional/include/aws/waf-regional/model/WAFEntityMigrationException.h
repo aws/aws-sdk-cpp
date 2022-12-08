@@ -42,13 +42,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/WAFEntityMigrationException">AWS
    * API Reference</a></p>
    */
-  class AWS_WAFREGIONAL_API WAFEntityMigrationException
+  class WAFEntityMigrationException
   {
   public:
-    WAFEntityMigrationException();
-    WAFEntityMigrationException(Aws::Utils::Json::JsonView jsonValue);
-    WAFEntityMigrationException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WAFREGIONAL_API WAFEntityMigrationException();
+    AWS_WAFREGIONAL_API WAFEntityMigrationException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFREGIONAL_API WAFEntityMigrationException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFREGIONAL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

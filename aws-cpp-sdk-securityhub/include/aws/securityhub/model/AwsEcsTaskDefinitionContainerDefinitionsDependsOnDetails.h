@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetails
+  class AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetails
   {
   public:
-    AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetails();
-    AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetails(Aws::Utils::Json::JsonView jsonValue);
-    AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetails();
+    AWS_SECURITYHUB_API AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

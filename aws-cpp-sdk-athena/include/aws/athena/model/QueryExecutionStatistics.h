@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/QueryExecutionStatistics">AWS
    * API Reference</a></p>
    */
-  class AWS_ATHENA_API QueryExecutionStatistics
+  class QueryExecutionStatistics
   {
   public:
-    QueryExecutionStatistics();
-    QueryExecutionStatistics(Aws::Utils::Json::JsonView jsonValue);
-    QueryExecutionStatistics& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ATHENA_API QueryExecutionStatistics();
+    AWS_ATHENA_API QueryExecutionStatistics(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ATHENA_API QueryExecutionStatistics& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ATHENA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

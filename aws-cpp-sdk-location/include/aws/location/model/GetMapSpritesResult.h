@@ -19,21 +19,21 @@ namespace LocationService
 {
 namespace Model
 {
-  class AWS_LOCATIONSERVICE_API GetMapSpritesResult
+  class GetMapSpritesResult
   {
   public:
-    GetMapSpritesResult();
+    AWS_LOCATIONSERVICE_API GetMapSpritesResult();
     //We have to define these because Microsoft doesn't auto generate them
-    GetMapSpritesResult(GetMapSpritesResult&&);
-    GetMapSpritesResult& operator=(GetMapSpritesResult&&);
+    AWS_LOCATIONSERVICE_API GetMapSpritesResult(GetMapSpritesResult&&);
+    AWS_LOCATIONSERVICE_API GetMapSpritesResult& operator=(GetMapSpritesResult&&);
     //we delete these because Microsoft doesn't handle move generation correctly
     //and we therefore don't trust them to get it right here either.
     GetMapSpritesResult(const GetMapSpritesResult&) = delete;
     GetMapSpritesResult& operator=(const GetMapSpritesResult&) = delete;
 
 
-    GetMapSpritesResult(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
-    GetMapSpritesResult& operator=(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
+    AWS_LOCATIONSERVICE_API GetMapSpritesResult(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
+    AWS_LOCATIONSERVICE_API GetMapSpritesResult& operator=(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
 
 
 

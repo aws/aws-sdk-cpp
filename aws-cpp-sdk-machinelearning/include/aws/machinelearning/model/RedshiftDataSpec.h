@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/RedshiftDataSpec">AWS
    * API Reference</a></p>
    */
-  class AWS_MACHINELEARNING_API RedshiftDataSpec
+  class RedshiftDataSpec
   {
   public:
-    RedshiftDataSpec();
-    RedshiftDataSpec(Aws::Utils::Json::JsonView jsonValue);
-    RedshiftDataSpec& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MACHINELEARNING_API RedshiftDataSpec();
+    AWS_MACHINELEARNING_API RedshiftDataSpec(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACHINELEARNING_API RedshiftDataSpec& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACHINELEARNING_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

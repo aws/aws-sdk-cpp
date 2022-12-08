@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/AvailSuppression">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIATAILOR_API AvailSuppression
+  class AvailSuppression
   {
   public:
-    AvailSuppression();
-    AvailSuppression(Aws::Utils::Json::JsonView jsonValue);
-    AvailSuppression& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIATAILOR_API AvailSuppression();
+    AWS_MEDIATAILOR_API AvailSuppression(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIATAILOR_API AvailSuppression& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIATAILOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

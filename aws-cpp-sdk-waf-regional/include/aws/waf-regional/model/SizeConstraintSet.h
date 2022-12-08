@@ -42,13 +42,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/SizeConstraintSet">AWS
    * API Reference</a></p>
    */
-  class AWS_WAFREGIONAL_API SizeConstraintSet
+  class SizeConstraintSet
   {
   public:
-    SizeConstraintSet();
-    SizeConstraintSet(Aws::Utils::Json::JsonView jsonValue);
-    SizeConstraintSet& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WAFREGIONAL_API SizeConstraintSet();
+    AWS_WAFREGIONAL_API SizeConstraintSet(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFREGIONAL_API SizeConstraintSet& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFREGIONAL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

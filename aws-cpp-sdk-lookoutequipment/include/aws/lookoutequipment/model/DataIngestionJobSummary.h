@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DataIngestionJobSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_LOOKOUTEQUIPMENT_API DataIngestionJobSummary
+  class DataIngestionJobSummary
   {
   public:
-    DataIngestionJobSummary();
-    DataIngestionJobSummary(Aws::Utils::Json::JsonView jsonValue);
-    DataIngestionJobSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LOOKOUTEQUIPMENT_API DataIngestionJobSummary();
+    AWS_LOOKOUTEQUIPMENT_API DataIngestionJobSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTEQUIPMENT_API DataIngestionJobSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTEQUIPMENT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/CalculateRouteSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_LOCATIONSERVICE_API CalculateRouteSummary
+  class CalculateRouteSummary
   {
   public:
-    CalculateRouteSummary();
-    CalculateRouteSummary(Aws::Utils::Json::JsonView jsonValue);
-    CalculateRouteSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LOCATIONSERVICE_API CalculateRouteSummary();
+    AWS_LOCATIONSERVICE_API CalculateRouteSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOCATIONSERVICE_API CalculateRouteSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOCATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

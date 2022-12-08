@@ -25,12 +25,12 @@ namespace SMS
 {
 namespace Model
 {
-  class AWS_SMS_API GetAppReplicationConfigurationResult
+  class GetAppReplicationConfigurationResult
   {
   public:
-    GetAppReplicationConfigurationResult();
-    GetAppReplicationConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetAppReplicationConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SMS_API GetAppReplicationConfigurationResult();
+    AWS_SMS_API GetAppReplicationConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SMS_API GetAppReplicationConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

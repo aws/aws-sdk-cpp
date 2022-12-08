@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/InputLambdaProcessorDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_KINESISANALYTICSV2_API InputLambdaProcessorDescription
+  class InputLambdaProcessorDescription
   {
   public:
-    InputLambdaProcessorDescription();
-    InputLambdaProcessorDescription(Aws::Utils::Json::JsonView jsonValue);
-    InputLambdaProcessorDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KINESISANALYTICSV2_API InputLambdaProcessorDescription();
+    AWS_KINESISANALYTICSV2_API InputLambdaProcessorDescription(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICSV2_API InputLambdaProcessorDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

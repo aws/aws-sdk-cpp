@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/WorkUnitRange">AWS
    * API Reference</a></p>
    */
-  class AWS_LAKEFORMATION_API WorkUnitRange
+  class WorkUnitRange
   {
   public:
-    WorkUnitRange();
-    WorkUnitRange(Aws::Utils::Json::JsonView jsonValue);
-    WorkUnitRange& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LAKEFORMATION_API WorkUnitRange();
+    AWS_LAKEFORMATION_API WorkUnitRange(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAKEFORMATION_API WorkUnitRange& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAKEFORMATION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

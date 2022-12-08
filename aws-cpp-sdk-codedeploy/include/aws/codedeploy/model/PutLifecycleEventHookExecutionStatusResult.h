@@ -24,12 +24,12 @@ namespace CodeDeploy
 {
 namespace Model
 {
-  class AWS_CODEDEPLOY_API PutLifecycleEventHookExecutionStatusResult
+  class PutLifecycleEventHookExecutionStatusResult
   {
   public:
-    PutLifecycleEventHookExecutionStatusResult();
-    PutLifecycleEventHookExecutionStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PutLifecycleEventHookExecutionStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODEDEPLOY_API PutLifecycleEventHookExecutionStatusResult();
+    AWS_CODEDEPLOY_API PutLifecycleEventHookExecutionStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODEDEPLOY_API PutLifecycleEventHookExecutionStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

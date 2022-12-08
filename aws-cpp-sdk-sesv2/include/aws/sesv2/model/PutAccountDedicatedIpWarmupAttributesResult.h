@@ -28,12 +28,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutAccountDedicatedIpWarmupAttributesResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_SESV2_API PutAccountDedicatedIpWarmupAttributesResult
+  class PutAccountDedicatedIpWarmupAttributesResult
   {
   public:
-    PutAccountDedicatedIpWarmupAttributesResult();
-    PutAccountDedicatedIpWarmupAttributesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PutAccountDedicatedIpWarmupAttributesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SESV2_API PutAccountDedicatedIpWarmupAttributesResult();
+    AWS_SESV2_API PutAccountDedicatedIpWarmupAttributesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SESV2_API PutAccountDedicatedIpWarmupAttributesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

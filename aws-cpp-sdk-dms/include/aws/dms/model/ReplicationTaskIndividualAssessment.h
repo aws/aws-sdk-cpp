@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ReplicationTaskIndividualAssessment">AWS
    * API Reference</a></p>
    */
-  class AWS_DATABASEMIGRATIONSERVICE_API ReplicationTaskIndividualAssessment
+  class ReplicationTaskIndividualAssessment
   {
   public:
-    ReplicationTaskIndividualAssessment();
-    ReplicationTaskIndividualAssessment(Aws::Utils::Json::JsonView jsonValue);
-    ReplicationTaskIndividualAssessment& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DATABASEMIGRATIONSERVICE_API ReplicationTaskIndividualAssessment();
+    AWS_DATABASEMIGRATIONSERVICE_API ReplicationTaskIndividualAssessment(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATABASEMIGRATIONSERVICE_API ReplicationTaskIndividualAssessment& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATABASEMIGRATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

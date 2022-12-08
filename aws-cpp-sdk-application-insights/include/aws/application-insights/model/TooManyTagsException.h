@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/TooManyTagsException">AWS
    * API Reference</a></p>
    */
-  class AWS_APPLICATIONINSIGHTS_API TooManyTagsException
+  class TooManyTagsException
   {
   public:
-    TooManyTagsException();
-    TooManyTagsException(Aws::Utils::Json::JsonView jsonValue);
-    TooManyTagsException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPLICATIONINSIGHTS_API TooManyTagsException();
+    AWS_APPLICATIONINSIGHTS_API TooManyTagsException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPLICATIONINSIGHTS_API TooManyTagsException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPLICATIONINSIGHTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

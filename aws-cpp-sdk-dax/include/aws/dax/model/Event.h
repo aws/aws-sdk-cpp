@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/Event">AWS API
    * Reference</a></p>
    */
-  class AWS_DAX_API Event
+  class Event
   {
   public:
-    Event();
-    Event(Aws::Utils::Json::JsonView jsonValue);
-    Event& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DAX_API Event();
+    AWS_DAX_API Event(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DAX_API Event& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DAX_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

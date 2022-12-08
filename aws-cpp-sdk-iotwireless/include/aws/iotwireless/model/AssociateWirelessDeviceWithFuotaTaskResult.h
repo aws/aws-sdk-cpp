@@ -22,12 +22,12 @@ namespace IoTWireless
 {
 namespace Model
 {
-  class AWS_IOTWIRELESS_API AssociateWirelessDeviceWithFuotaTaskResult
+  class AssociateWirelessDeviceWithFuotaTaskResult
   {
   public:
-    AssociateWirelessDeviceWithFuotaTaskResult();
-    AssociateWirelessDeviceWithFuotaTaskResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AssociateWirelessDeviceWithFuotaTaskResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOTWIRELESS_API AssociateWirelessDeviceWithFuotaTaskResult();
+    AWS_IOTWIRELESS_API AssociateWirelessDeviceWithFuotaTaskResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOTWIRELESS_API AssociateWirelessDeviceWithFuotaTaskResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

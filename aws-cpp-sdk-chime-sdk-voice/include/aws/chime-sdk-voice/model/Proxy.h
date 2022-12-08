@@ -24,13 +24,13 @@ namespace ChimeSDKVoice
 namespace Model
 {
 
-  class AWS_CHIMESDKVOICE_API Proxy
+  class Proxy
   {
   public:
-    Proxy();
-    Proxy(Aws::Utils::Json::JsonView jsonValue);
-    Proxy& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIMESDKVOICE_API Proxy();
+    AWS_CHIMESDKVOICE_API Proxy(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKVOICE_API Proxy& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKVOICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

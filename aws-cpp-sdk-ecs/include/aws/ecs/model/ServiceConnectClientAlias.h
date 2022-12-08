@@ -38,13 +38,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ServiceConnectClientAlias">AWS
    * API Reference</a></p>
    */
-  class AWS_ECS_API ServiceConnectClientAlias
+  class ServiceConnectClientAlias
   {
   public:
-    ServiceConnectClientAlias();
-    ServiceConnectClientAlias(Aws::Utils::Json::JsonView jsonValue);
-    ServiceConnectClientAlias& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ECS_API ServiceConnectClientAlias();
+    AWS_ECS_API ServiceConnectClientAlias(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECS_API ServiceConnectClientAlias& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

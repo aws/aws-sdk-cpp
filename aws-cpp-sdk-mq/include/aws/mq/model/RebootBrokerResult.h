@@ -22,12 +22,12 @@ namespace MQ
 {
 namespace Model
 {
-  class AWS_MQ_API RebootBrokerResult
+  class RebootBrokerResult
   {
   public:
-    RebootBrokerResult();
-    RebootBrokerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    RebootBrokerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MQ_API RebootBrokerResult();
+    AWS_MQ_API RebootBrokerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MQ_API RebootBrokerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/BranchInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_CODECOMMIT_API BranchInfo
+  class BranchInfo
   {
   public:
-    BranchInfo();
-    BranchInfo(Aws::Utils::Json::JsonView jsonValue);
-    BranchInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODECOMMIT_API BranchInfo();
+    AWS_CODECOMMIT_API BranchInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODECOMMIT_API BranchInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODECOMMIT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

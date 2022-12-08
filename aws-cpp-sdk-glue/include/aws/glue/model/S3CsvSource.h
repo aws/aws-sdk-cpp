@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/S3CsvSource">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API S3CsvSource
+  class S3CsvSource
   {
   public:
-    S3CsvSource();
-    S3CsvSource(Aws::Utils::Json::JsonView jsonValue);
-    S3CsvSource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API S3CsvSource();
+    AWS_GLUE_API S3CsvSource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API S3CsvSource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

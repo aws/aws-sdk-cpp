@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/ControlDomainInsights">AWS
    * API Reference</a></p>
    */
-  class AWS_AUDITMANAGER_API ControlDomainInsights
+  class ControlDomainInsights
   {
   public:
-    ControlDomainInsights();
-    ControlDomainInsights(Aws::Utils::Json::JsonView jsonValue);
-    ControlDomainInsights& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_AUDITMANAGER_API ControlDomainInsights();
+    AWS_AUDITMANAGER_API ControlDomainInsights(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AUDITMANAGER_API ControlDomainInsights& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AUDITMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

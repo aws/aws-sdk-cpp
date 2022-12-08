@@ -32,12 +32,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/ListProfileTimesResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEGURUPROFILER_API ListProfileTimesResult
+  class ListProfileTimesResult
   {
   public:
-    ListProfileTimesResult();
-    ListProfileTimesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListProfileTimesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODEGURUPROFILER_API ListProfileTimesResult();
+    AWS_CODEGURUPROFILER_API ListProfileTimesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODEGURUPROFILER_API ListProfileTimesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

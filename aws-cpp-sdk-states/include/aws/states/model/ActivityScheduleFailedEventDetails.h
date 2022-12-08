@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/ActivityScheduleFailedEventDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SFN_API ActivityScheduleFailedEventDetails
+  class ActivityScheduleFailedEventDetails
   {
   public:
-    ActivityScheduleFailedEventDetails();
-    ActivityScheduleFailedEventDetails(Aws::Utils::Json::JsonView jsonValue);
-    ActivityScheduleFailedEventDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SFN_API ActivityScheduleFailedEventDetails();
+    AWS_SFN_API ActivityScheduleFailedEventDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SFN_API ActivityScheduleFailedEventDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SFN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

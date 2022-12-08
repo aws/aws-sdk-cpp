@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/Filter">AWS API
    * Reference</a></p>
    */
-  class AWS_FORECASTSERVICE_API Filter
+  class Filter
   {
   public:
-    Filter();
-    Filter(Aws::Utils::Json::JsonView jsonValue);
-    Filter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FORECASTSERVICE_API Filter();
+    AWS_FORECASTSERVICE_API Filter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FORECASTSERVICE_API Filter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FORECASTSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

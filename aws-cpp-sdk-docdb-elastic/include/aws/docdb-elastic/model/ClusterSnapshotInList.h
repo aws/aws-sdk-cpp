@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-elastic-2022-11-28/ClusterSnapshotInList">AWS
    * API Reference</a></p>
    */
-  class AWS_DOCDBELASTIC_API ClusterSnapshotInList
+  class ClusterSnapshotInList
   {
   public:
-    ClusterSnapshotInList();
-    ClusterSnapshotInList(Aws::Utils::Json::JsonView jsonValue);
-    ClusterSnapshotInList& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DOCDBELASTIC_API ClusterSnapshotInList();
+    AWS_DOCDBELASTIC_API ClusterSnapshotInList(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DOCDBELASTIC_API ClusterSnapshotInList& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DOCDBELASTIC_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

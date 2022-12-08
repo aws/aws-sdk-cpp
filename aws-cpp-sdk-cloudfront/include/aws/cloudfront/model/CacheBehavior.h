@@ -54,14 +54,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CacheBehavior">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFRONT_API CacheBehavior
+  class CacheBehavior
   {
   public:
-    CacheBehavior();
-    CacheBehavior(const Aws::Utils::Xml::XmlNode& xmlNode);
-    CacheBehavior& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API CacheBehavior();
+    AWS_CLOUDFRONT_API CacheBehavior(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API CacheBehavior& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**

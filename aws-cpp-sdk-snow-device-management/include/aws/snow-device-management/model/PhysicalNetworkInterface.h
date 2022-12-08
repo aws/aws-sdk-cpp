@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/snow-device-management-2021-08-04/PhysicalNetworkInterface">AWS
    * API Reference</a></p>
    */
-  class AWS_SNOWDEVICEMANAGEMENT_API PhysicalNetworkInterface
+  class PhysicalNetworkInterface
   {
   public:
-    PhysicalNetworkInterface();
-    PhysicalNetworkInterface(Aws::Utils::Json::JsonView jsonValue);
-    PhysicalNetworkInterface& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SNOWDEVICEMANAGEMENT_API PhysicalNetworkInterface();
+    AWS_SNOWDEVICEMANAGEMENT_API PhysicalNetworkInterface(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SNOWDEVICEMANAGEMENT_API PhysicalNetworkInterface& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SNOWDEVICEMANAGEMENT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

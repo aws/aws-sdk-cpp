@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/AssessmentMetadata">AWS
    * API Reference</a></p>
    */
-  class AWS_AUDITMANAGER_API AssessmentMetadata
+  class AssessmentMetadata
   {
   public:
-    AssessmentMetadata();
-    AssessmentMetadata(Aws::Utils::Json::JsonView jsonValue);
-    AssessmentMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_AUDITMANAGER_API AssessmentMetadata();
+    AWS_AUDITMANAGER_API AssessmentMetadata(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AUDITMANAGER_API AssessmentMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AUDITMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

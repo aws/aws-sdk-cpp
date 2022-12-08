@@ -37,13 +37,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/UpdateComponentData">AWS
    * API Reference</a></p>
    */
-  class AWS_AMPLIFYUIBUILDER_API UpdateComponentData
+  class UpdateComponentData
   {
   public:
-    UpdateComponentData();
-    UpdateComponentData(Aws::Utils::Json::JsonView jsonValue);
-    UpdateComponentData& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_AMPLIFYUIBUILDER_API UpdateComponentData();
+    AWS_AMPLIFYUIBUILDER_API UpdateComponentData(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFYUIBUILDER_API UpdateComponentData& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFYUIBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -22,12 +22,12 @@ namespace Rekognition
 {
 namespace Model
 {
-  class AWS_REKOGNITION_API UpdateStreamProcessorResult
+  class UpdateStreamProcessorResult
   {
   public:
-    UpdateStreamProcessorResult();
-    UpdateStreamProcessorResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateStreamProcessorResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_REKOGNITION_API UpdateStreamProcessorResult();
+    AWS_REKOGNITION_API UpdateStreamProcessorResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_REKOGNITION_API UpdateStreamProcessorResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

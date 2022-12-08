@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ThreatIntelIndicator">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API ThreatIntelIndicator
+  class ThreatIntelIndicator
   {
   public:
-    ThreatIntelIndicator();
-    ThreatIntelIndicator(Aws::Utils::Json::JsonView jsonValue);
-    ThreatIntelIndicator& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API ThreatIntelIndicator();
+    AWS_SECURITYHUB_API ThreatIntelIndicator(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API ThreatIntelIndicator& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

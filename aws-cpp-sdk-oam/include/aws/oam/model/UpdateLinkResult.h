@@ -26,12 +26,12 @@ namespace OAM
 {
 namespace Model
 {
-  class AWS_OAM_API UpdateLinkResult
+  class UpdateLinkResult
   {
   public:
-    UpdateLinkResult();
-    UpdateLinkResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateLinkResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OAM_API UpdateLinkResult();
+    AWS_OAM_API UpdateLinkResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OAM_API UpdateLinkResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

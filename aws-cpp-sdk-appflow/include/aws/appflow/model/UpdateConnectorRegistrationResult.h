@@ -24,12 +24,12 @@ namespace Appflow
 {
 namespace Model
 {
-  class AWS_APPFLOW_API UpdateConnectorRegistrationResult
+  class UpdateConnectorRegistrationResult
   {
   public:
-    UpdateConnectorRegistrationResult();
-    UpdateConnectorRegistrationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateConnectorRegistrationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPFLOW_API UpdateConnectorRegistrationResult();
+    AWS_APPFLOW_API UpdateConnectorRegistrationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPFLOW_API UpdateConnectorRegistrationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/ResponseDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_DATAEXCHANGE_API ResponseDetails
+  class ResponseDetails
   {
   public:
-    ResponseDetails();
-    ResponseDetails(Aws::Utils::Json::JsonView jsonValue);
-    ResponseDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DATAEXCHANGE_API ResponseDetails();
+    AWS_DATAEXCHANGE_API ResponseDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATAEXCHANGE_API ResponseDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATAEXCHANGE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

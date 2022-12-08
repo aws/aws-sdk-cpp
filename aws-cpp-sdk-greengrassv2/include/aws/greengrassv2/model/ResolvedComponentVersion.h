@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/ResolvedComponentVersion">AWS
    * API Reference</a></p>
    */
-  class AWS_GREENGRASSV2_API ResolvedComponentVersion
+  class ResolvedComponentVersion
   {
   public:
-    ResolvedComponentVersion();
-    ResolvedComponentVersion(Aws::Utils::Json::JsonView jsonValue);
-    ResolvedComponentVersion& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GREENGRASSV2_API ResolvedComponentVersion();
+    AWS_GREENGRASSV2_API ResolvedComponentVersion(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASSV2_API ResolvedComponentVersion& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/ChannelStorage">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTANALYTICS_API ChannelStorage
+  class ChannelStorage
   {
   public:
-    ChannelStorage();
-    ChannelStorage(Aws::Utils::Json::JsonView jsonValue);
-    ChannelStorage& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTANALYTICS_API ChannelStorage();
+    AWS_IOTANALYTICS_API ChannelStorage(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTANALYTICS_API ChannelStorage& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

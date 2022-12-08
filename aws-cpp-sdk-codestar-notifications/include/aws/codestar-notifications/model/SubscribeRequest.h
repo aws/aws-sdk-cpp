@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_CODESTARNOTIFICATIONS_API SubscribeRequest : public CodeStarNotificationsRequest
+  class SubscribeRequest : public CodeStarNotificationsRequest
   {
   public:
-    SubscribeRequest();
+    AWS_CODESTARNOTIFICATIONS_API SubscribeRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,7 +30,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "Subscribe"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CODESTARNOTIFICATIONS_API Aws::String SerializePayload() const override;
 
 
     /**

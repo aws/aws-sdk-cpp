@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/SessionSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_ATHENA_API SessionSummary
+  class SessionSummary
   {
   public:
-    SessionSummary();
-    SessionSummary(Aws::Utils::Json::JsonView jsonValue);
-    SessionSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ATHENA_API SessionSummary();
+    AWS_ATHENA_API SessionSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ATHENA_API SessionSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ATHENA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DetectLabelsImageBackground">AWS
    * API Reference</a></p>
    */
-  class AWS_REKOGNITION_API DetectLabelsImageBackground
+  class DetectLabelsImageBackground
   {
   public:
-    DetectLabelsImageBackground();
-    DetectLabelsImageBackground(Aws::Utils::Json::JsonView jsonValue);
-    DetectLabelsImageBackground& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_REKOGNITION_API DetectLabelsImageBackground();
+    AWS_REKOGNITION_API DetectLabelsImageBackground(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API DetectLabelsImageBackground& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsElbLoadBalancerConnectionDraining">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsElbLoadBalancerConnectionDraining
+  class AwsElbLoadBalancerConnectionDraining
   {
   public:
-    AwsElbLoadBalancerConnectionDraining();
-    AwsElbLoadBalancerConnectionDraining(Aws::Utils::Json::JsonView jsonValue);
-    AwsElbLoadBalancerConnectionDraining& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsElbLoadBalancerConnectionDraining();
+    AWS_SECURITYHUB_API AwsElbLoadBalancerConnectionDraining(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsElbLoadBalancerConnectionDraining& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rum-2018-05-10/BatchDeleteRumMetricDefinitionsError">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDWATCHRUM_API BatchDeleteRumMetricDefinitionsError
+  class BatchDeleteRumMetricDefinitionsError
   {
   public:
-    BatchDeleteRumMetricDefinitionsError();
-    BatchDeleteRumMetricDefinitionsError(Aws::Utils::Json::JsonView jsonValue);
-    BatchDeleteRumMetricDefinitionsError& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDWATCHRUM_API BatchDeleteRumMetricDefinitionsError();
+    AWS_CLOUDWATCHRUM_API BatchDeleteRumMetricDefinitionsError(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHRUM_API BatchDeleteRumMetricDefinitionsError& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHRUM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

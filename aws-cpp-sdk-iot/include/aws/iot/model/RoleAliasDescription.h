@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/RoleAliasDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API RoleAliasDescription
+  class RoleAliasDescription
   {
   public:
-    RoleAliasDescription();
-    RoleAliasDescription(Aws::Utils::Json::JsonView jsonValue);
-    RoleAliasDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API RoleAliasDescription();
+    AWS_IOT_API RoleAliasDescription(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API RoleAliasDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

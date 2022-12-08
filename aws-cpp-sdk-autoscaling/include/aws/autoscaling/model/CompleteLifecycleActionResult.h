@@ -24,12 +24,12 @@ namespace AutoScaling
 {
 namespace Model
 {
-  class AWS_AUTOSCALING_API CompleteLifecycleActionResult
+  class CompleteLifecycleActionResult
   {
   public:
-    CompleteLifecycleActionResult();
-    CompleteLifecycleActionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    CompleteLifecycleActionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_AUTOSCALING_API CompleteLifecycleActionResult();
+    AWS_AUTOSCALING_API CompleteLifecycleActionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_AUTOSCALING_API CompleteLifecycleActionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     

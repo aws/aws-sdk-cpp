@@ -24,12 +24,12 @@ namespace ChimeSDKMessaging
 {
 namespace Model
 {
-  class AWS_CHIMESDKMESSAGING_API DescribeChannelMembershipForAppInstanceUserResult
+  class DescribeChannelMembershipForAppInstanceUserResult
   {
   public:
-    DescribeChannelMembershipForAppInstanceUserResult();
-    DescribeChannelMembershipForAppInstanceUserResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeChannelMembershipForAppInstanceUserResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CHIMESDKMESSAGING_API DescribeChannelMembershipForAppInstanceUserResult();
+    AWS_CHIMESDKMESSAGING_API DescribeChannelMembershipForAppInstanceUserResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CHIMESDKMESSAGING_API DescribeChannelMembershipForAppInstanceUserResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

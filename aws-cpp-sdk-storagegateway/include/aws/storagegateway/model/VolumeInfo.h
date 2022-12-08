@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/VolumeInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_STORAGEGATEWAY_API VolumeInfo
+  class VolumeInfo
   {
   public:
-    VolumeInfo();
-    VolumeInfo(Aws::Utils::Json::JsonView jsonValue);
-    VolumeInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_STORAGEGATEWAY_API VolumeInfo();
+    AWS_STORAGEGATEWAY_API VolumeInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_STORAGEGATEWAY_API VolumeInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_STORAGEGATEWAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

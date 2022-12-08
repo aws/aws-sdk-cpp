@@ -26,12 +26,12 @@ namespace EMR
 {
 namespace Model
 {
-  class AWS_EMR_API ListInstanceFleetsResult
+  class ListInstanceFleetsResult
   {
   public:
-    ListInstanceFleetsResult();
-    ListInstanceFleetsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListInstanceFleetsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_EMR_API ListInstanceFleetsResult();
+    AWS_EMR_API ListInstanceFleetsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_EMR_API ListInstanceFleetsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

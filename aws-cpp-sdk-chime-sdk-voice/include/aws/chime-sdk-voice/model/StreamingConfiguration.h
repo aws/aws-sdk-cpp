@@ -24,13 +24,13 @@ namespace ChimeSDKVoice
 namespace Model
 {
 
-  class AWS_CHIMESDKVOICE_API StreamingConfiguration
+  class StreamingConfiguration
   {
   public:
-    StreamingConfiguration();
-    StreamingConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    StreamingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIMESDKVOICE_API StreamingConfiguration();
+    AWS_CHIMESDKVOICE_API StreamingConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKVOICE_API StreamingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKVOICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

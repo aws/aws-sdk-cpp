@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/StreamingSession">AWS
    * API Reference</a></p>
    */
-  class AWS_NIMBLESTUDIO_API StreamingSession
+  class StreamingSession
   {
   public:
-    StreamingSession();
-    StreamingSession(Aws::Utils::Json::JsonView jsonValue);
-    StreamingSession& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_NIMBLESTUDIO_API StreamingSession();
+    AWS_NIMBLESTUDIO_API StreamingSession(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NIMBLESTUDIO_API StreamingSession& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NIMBLESTUDIO_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

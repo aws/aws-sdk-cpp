@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/Font">AWS API
    * Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API Font
+  class Font
   {
   public:
-    Font();
-    Font(Aws::Utils::Json::JsonView jsonValue);
-    Font& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API Font();
+    AWS_QUICKSIGHT_API Font(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Font& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

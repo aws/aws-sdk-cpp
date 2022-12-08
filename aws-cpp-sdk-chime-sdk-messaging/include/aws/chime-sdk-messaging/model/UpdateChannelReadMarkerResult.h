@@ -24,12 +24,12 @@ namespace ChimeSDKMessaging
 {
 namespace Model
 {
-  class AWS_CHIMESDKMESSAGING_API UpdateChannelReadMarkerResult
+  class UpdateChannelReadMarkerResult
   {
   public:
-    UpdateChannelReadMarkerResult();
-    UpdateChannelReadMarkerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateChannelReadMarkerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CHIMESDKMESSAGING_API UpdateChannelReadMarkerResult();
+    AWS_CHIMESDKMESSAGING_API UpdateChannelReadMarkerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CHIMESDKMESSAGING_API UpdateChannelReadMarkerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -36,14 +36,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DefaultCacheBehavior">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFRONT_API DefaultCacheBehavior
+  class DefaultCacheBehavior
   {
   public:
-    DefaultCacheBehavior();
-    DefaultCacheBehavior(const Aws::Utils::Xml::XmlNode& xmlNode);
-    DefaultCacheBehavior& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API DefaultCacheBehavior();
+    AWS_CLOUDFRONT_API DefaultCacheBehavior(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API DefaultCacheBehavior& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**

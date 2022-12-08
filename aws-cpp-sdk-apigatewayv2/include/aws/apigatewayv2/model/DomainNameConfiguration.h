@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DomainNameConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_APIGATEWAYV2_API DomainNameConfiguration
+  class DomainNameConfiguration
   {
   public:
-    DomainNameConfiguration();
-    DomainNameConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    DomainNameConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APIGATEWAYV2_API DomainNameConfiguration();
+    AWS_APIGATEWAYV2_API DomainNameConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APIGATEWAYV2_API DomainNameConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APIGATEWAYV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

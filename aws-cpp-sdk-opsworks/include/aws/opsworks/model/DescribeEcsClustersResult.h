@@ -32,12 +32,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeEcsClustersResult">AWS
    * API Reference</a></p>
    */
-  class AWS_OPSWORKS_API DescribeEcsClustersResult
+  class DescribeEcsClustersResult
   {
   public:
-    DescribeEcsClustersResult();
-    DescribeEcsClustersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeEcsClustersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OPSWORKS_API DescribeEcsClustersResult();
+    AWS_OPSWORKS_API DescribeEcsClustersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OPSWORKS_API DescribeEcsClustersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

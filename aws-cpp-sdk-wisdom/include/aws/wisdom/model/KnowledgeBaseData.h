@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/KnowledgeBaseData">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECTWISDOMSERVICE_API KnowledgeBaseData
+  class KnowledgeBaseData
   {
   public:
-    KnowledgeBaseData();
-    KnowledgeBaseData(Aws::Utils::Json::JsonView jsonValue);
-    KnowledgeBaseData& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECTWISDOMSERVICE_API KnowledgeBaseData();
+    AWS_CONNECTWISDOMSERVICE_API KnowledgeBaseData(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTWISDOMSERVICE_API KnowledgeBaseData& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTWISDOMSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

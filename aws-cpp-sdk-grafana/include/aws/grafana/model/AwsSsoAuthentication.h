@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/AwsSsoAuthentication">AWS
    * API Reference</a></p>
    */
-  class AWS_MANAGEDGRAFANA_API AwsSsoAuthentication
+  class AwsSsoAuthentication
   {
   public:
-    AwsSsoAuthentication();
-    AwsSsoAuthentication(Aws::Utils::Json::JsonView jsonValue);
-    AwsSsoAuthentication& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MANAGEDGRAFANA_API AwsSsoAuthentication();
+    AWS_MANAGEDGRAFANA_API AwsSsoAuthentication(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MANAGEDGRAFANA_API AwsSsoAuthentication& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MANAGEDGRAFANA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

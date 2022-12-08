@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/SchemaVersionNumber">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API SchemaVersionNumber
+  class SchemaVersionNumber
   {
   public:
-    SchemaVersionNumber();
-    SchemaVersionNumber(Aws::Utils::Json::JsonView jsonValue);
-    SchemaVersionNumber& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API SchemaVersionNumber();
+    AWS_GLUE_API SchemaVersionNumber(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API SchemaVersionNumber& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

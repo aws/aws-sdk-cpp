@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/TargetedSentimentEntity">AWS
    * API Reference</a></p>
    */
-  class AWS_COMPREHEND_API TargetedSentimentEntity
+  class TargetedSentimentEntity
   {
   public:
-    TargetedSentimentEntity();
-    TargetedSentimentEntity(Aws::Utils::Json::JsonView jsonValue);
-    TargetedSentimentEntity& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COMPREHEND_API TargetedSentimentEntity();
+    AWS_COMPREHEND_API TargetedSentimentEntity(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHEND_API TargetedSentimentEntity& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHEND_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

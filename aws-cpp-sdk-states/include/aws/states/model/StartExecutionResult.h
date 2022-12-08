@@ -25,12 +25,12 @@ namespace SFN
 {
 namespace Model
 {
-  class AWS_SFN_API StartExecutionResult
+  class StartExecutionResult
   {
   public:
-    StartExecutionResult();
-    StartExecutionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    StartExecutionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SFN_API StartExecutionResult();
+    AWS_SFN_API StartExecutionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SFN_API StartExecutionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

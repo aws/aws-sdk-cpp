@@ -34,12 +34,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListUniqueProblemsResult">AWS
    * API Reference</a></p>
    */
-  class AWS_DEVICEFARM_API ListUniqueProblemsResult
+  class ListUniqueProblemsResult
   {
   public:
-    ListUniqueProblemsResult();
-    ListUniqueProblemsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListUniqueProblemsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DEVICEFARM_API ListUniqueProblemsResult();
+    AWS_DEVICEFARM_API ListUniqueProblemsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DEVICEFARM_API ListUniqueProblemsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -22,12 +22,12 @@ namespace kendra
 {
 namespace Model
 {
-  class AWS_KENDRA_API UpdateAccessControlConfigurationResult
+  class UpdateAccessControlConfigurationResult
   {
   public:
-    UpdateAccessControlConfigurationResult();
-    UpdateAccessControlConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateAccessControlConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KENDRA_API UpdateAccessControlConfigurationResult();
+    AWS_KENDRA_API UpdateAccessControlConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KENDRA_API UpdateAccessControlConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

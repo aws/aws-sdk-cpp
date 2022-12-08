@@ -36,12 +36,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeNetworkInterfaceAttributeResult">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API DescribeNetworkInterfaceAttributeResponse
+  class DescribeNetworkInterfaceAttributeResponse
   {
   public:
-    DescribeNetworkInterfaceAttributeResponse();
-    DescribeNetworkInterfaceAttributeResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeNetworkInterfaceAttributeResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API DescribeNetworkInterfaceAttributeResponse();
+    AWS_EC2_API DescribeNetworkInterfaceAttributeResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API DescribeNetworkInterfaceAttributeResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

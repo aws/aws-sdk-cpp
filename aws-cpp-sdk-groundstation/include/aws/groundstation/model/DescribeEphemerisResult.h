@@ -29,12 +29,12 @@ namespace GroundStation
 {
 namespace Model
 {
-  class AWS_GROUNDSTATION_API DescribeEphemerisResult
+  class DescribeEphemerisResult
   {
   public:
-    DescribeEphemerisResult();
-    DescribeEphemerisResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeEphemerisResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GROUNDSTATION_API DescribeEphemerisResult();
+    AWS_GROUNDSTATION_API DescribeEphemerisResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GROUNDSTATION_API DescribeEphemerisResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

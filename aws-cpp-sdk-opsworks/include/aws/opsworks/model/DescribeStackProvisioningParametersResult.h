@@ -31,12 +31,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeStackProvisioningParametersResult">AWS
    * API Reference</a></p>
    */
-  class AWS_OPSWORKS_API DescribeStackProvisioningParametersResult
+  class DescribeStackProvisioningParametersResult
   {
   public:
-    DescribeStackProvisioningParametersResult();
-    DescribeStackProvisioningParametersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeStackProvisioningParametersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OPSWORKS_API DescribeStackProvisioningParametersResult();
+    AWS_OPSWORKS_API DescribeStackProvisioningParametersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OPSWORKS_API DescribeStackProvisioningParametersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/SqlApplicationConfigurationUpdate">AWS
    * API Reference</a></p>
    */
-  class AWS_KINESISANALYTICSV2_API SqlApplicationConfigurationUpdate
+  class SqlApplicationConfigurationUpdate
   {
   public:
-    SqlApplicationConfigurationUpdate();
-    SqlApplicationConfigurationUpdate(Aws::Utils::Json::JsonView jsonValue);
-    SqlApplicationConfigurationUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KINESISANALYTICSV2_API SqlApplicationConfigurationUpdate();
+    AWS_KINESISANALYTICSV2_API SqlApplicationConfigurationUpdate(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICSV2_API SqlApplicationConfigurationUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

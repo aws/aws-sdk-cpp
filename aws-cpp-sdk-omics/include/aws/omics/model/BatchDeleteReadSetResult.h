@@ -25,12 +25,12 @@ namespace Omics
 {
 namespace Model
 {
-  class AWS_OMICS_API BatchDeleteReadSetResult
+  class BatchDeleteReadSetResult
   {
   public:
-    BatchDeleteReadSetResult();
-    BatchDeleteReadSetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    BatchDeleteReadSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OMICS_API BatchDeleteReadSetResult();
+    AWS_OMICS_API BatchDeleteReadSetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OMICS_API BatchDeleteReadSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

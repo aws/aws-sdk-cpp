@@ -25,12 +25,12 @@ namespace EMR
 {
 namespace Model
 {
-  class AWS_EMR_API ListReleaseLabelsResult
+  class ListReleaseLabelsResult
   {
   public:
-    ListReleaseLabelsResult();
-    ListReleaseLabelsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListReleaseLabelsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_EMR_API ListReleaseLabelsResult();
+    AWS_EMR_API ListReleaseLabelsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_EMR_API ListReleaseLabelsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

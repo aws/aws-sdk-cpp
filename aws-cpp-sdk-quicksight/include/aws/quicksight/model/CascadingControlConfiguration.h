@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CascadingControlConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API CascadingControlConfiguration
+  class CascadingControlConfiguration
   {
   public:
-    CascadingControlConfiguration();
-    CascadingControlConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    CascadingControlConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API CascadingControlConfiguration();
+    AWS_QUICKSIGHT_API CascadingControlConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API CascadingControlConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -26,12 +26,12 @@ namespace EC2
 {
 namespace Model
 {
-  class AWS_EC2_API CreateLaunchTemplateVersionResponse
+  class CreateLaunchTemplateVersionResponse
   {
   public:
-    CreateLaunchTemplateVersionResponse();
-    CreateLaunchTemplateVersionResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    CreateLaunchTemplateVersionResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API CreateLaunchTemplateVersionResponse();
+    AWS_EC2_API CreateLaunchTemplateVersionResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API CreateLaunchTemplateVersionResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

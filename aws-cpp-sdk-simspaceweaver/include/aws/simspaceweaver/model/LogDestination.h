@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/simspaceweaver-2022-10-28/LogDestination">AWS
    * API Reference</a></p>
    */
-  class AWS_SIMSPACEWEAVER_API LogDestination
+  class LogDestination
   {
   public:
-    LogDestination();
-    LogDestination(Aws::Utils::Json::JsonView jsonValue);
-    LogDestination& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SIMSPACEWEAVER_API LogDestination();
+    AWS_SIMSPACEWEAVER_API LogDestination(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SIMSPACEWEAVER_API LogDestination& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SIMSPACEWEAVER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

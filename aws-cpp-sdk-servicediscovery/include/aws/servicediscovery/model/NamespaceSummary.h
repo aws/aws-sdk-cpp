@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/NamespaceSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_SERVICEDISCOVERY_API NamespaceSummary
+  class NamespaceSummary
   {
   public:
-    NamespaceSummary();
-    NamespaceSummary(Aws::Utils::Json::JsonView jsonValue);
-    NamespaceSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SERVICEDISCOVERY_API NamespaceSummary();
+    AWS_SERVICEDISCOVERY_API NamespaceSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICEDISCOVERY_API NamespaceSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICEDISCOVERY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

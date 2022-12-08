@@ -24,12 +24,12 @@ namespace Omics
 {
 namespace Model
 {
-  class AWS_OMICS_API DeleteAnnotationStoreResult
+  class DeleteAnnotationStoreResult
   {
   public:
-    DeleteAnnotationStoreResult();
-    DeleteAnnotationStoreResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteAnnotationStoreResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OMICS_API DeleteAnnotationStoreResult();
+    AWS_OMICS_API DeleteAnnotationStoreResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OMICS_API DeleteAnnotationStoreResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

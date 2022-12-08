@@ -40,13 +40,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/PortMapping">AWS API
    * Reference</a></p>
    */
-  class AWS_ECS_API PortMapping
+  class PortMapping
   {
   public:
-    PortMapping();
-    PortMapping(Aws::Utils::Json::JsonView jsonValue);
-    PortMapping& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ECS_API PortMapping();
+    AWS_ECS_API PortMapping(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECS_API PortMapping& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

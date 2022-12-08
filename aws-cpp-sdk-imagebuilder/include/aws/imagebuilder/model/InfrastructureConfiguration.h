@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/InfrastructureConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_IMAGEBUILDER_API InfrastructureConfiguration
+  class InfrastructureConfiguration
   {
   public:
-    InfrastructureConfiguration();
-    InfrastructureConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    InfrastructureConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IMAGEBUILDER_API InfrastructureConfiguration();
+    AWS_IMAGEBUILDER_API InfrastructureConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IMAGEBUILDER_API InfrastructureConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IMAGEBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsLambdaFunctionEnvironmentError">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsLambdaFunctionEnvironmentError
+  class AwsLambdaFunctionEnvironmentError
   {
   public:
-    AwsLambdaFunctionEnvironmentError();
-    AwsLambdaFunctionEnvironmentError(Aws::Utils::Json::JsonView jsonValue);
-    AwsLambdaFunctionEnvironmentError& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsLambdaFunctionEnvironmentError();
+    AWS_SECURITYHUB_API AwsLambdaFunctionEnvironmentError(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsLambdaFunctionEnvironmentError& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

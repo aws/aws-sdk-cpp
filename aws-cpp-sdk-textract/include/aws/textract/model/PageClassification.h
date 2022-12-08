@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/PageClassification">AWS
    * API Reference</a></p>
    */
-  class AWS_TEXTRACT_API PageClassification
+  class PageClassification
   {
   public:
-    PageClassification();
-    PageClassification(Aws::Utils::Json::JsonView jsonValue);
-    PageClassification& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TEXTRACT_API PageClassification();
+    AWS_TEXTRACT_API PageClassification(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TEXTRACT_API PageClassification& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TEXTRACT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

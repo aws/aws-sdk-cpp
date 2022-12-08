@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/CustomerProfilesMetadata">AWS
    * API Reference</a></p>
    */
-  class AWS_APPFLOW_API CustomerProfilesMetadata
+  class CustomerProfilesMetadata
   {
   public:
-    CustomerProfilesMetadata();
-    CustomerProfilesMetadata(Aws::Utils::Json::JsonView jsonValue);
-    CustomerProfilesMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPFLOW_API CustomerProfilesMetadata();
+    AWS_APPFLOW_API CustomerProfilesMetadata(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API CustomerProfilesMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
   };
 

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/SlotTypeMetadata">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELBUILDINGSERVICE_API SlotTypeMetadata
+  class SlotTypeMetadata
   {
   public:
-    SlotTypeMetadata();
-    SlotTypeMetadata(Aws::Utils::Json::JsonView jsonValue);
-    SlotTypeMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELBUILDINGSERVICE_API SlotTypeMetadata();
+    AWS_LEXMODELBUILDINGSERVICE_API SlotTypeMetadata(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELBUILDINGSERVICE_API SlotTypeMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELBUILDINGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

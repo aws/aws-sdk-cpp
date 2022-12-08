@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/EksAttemptDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_BATCH_API EksAttemptDetail
+  class EksAttemptDetail
   {
   public:
-    EksAttemptDetail();
-    EksAttemptDetail(Aws::Utils::Json::JsonView jsonValue);
-    EksAttemptDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BATCH_API EksAttemptDetail();
+    AWS_BATCH_API EksAttemptDetail(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BATCH_API EksAttemptDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BATCH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

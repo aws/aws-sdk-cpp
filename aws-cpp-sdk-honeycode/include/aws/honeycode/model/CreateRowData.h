@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/honeycode-2020-03-01/CreateRowData">AWS
    * API Reference</a></p>
    */
-  class AWS_HONEYCODE_API CreateRowData
+  class CreateRowData
   {
   public:
-    CreateRowData();
-    CreateRowData(Aws::Utils::Json::JsonView jsonValue);
-    CreateRowData& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_HONEYCODE_API CreateRowData();
+    AWS_HONEYCODE_API CreateRowData(Aws::Utils::Json::JsonView jsonValue);
+    AWS_HONEYCODE_API CreateRowData& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_HONEYCODE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -27,12 +27,12 @@ namespace Pipes
 {
 namespace Model
 {
-  class AWS_PIPES_API CreatePipeResult
+  class CreatePipeResult
   {
   public:
-    CreatePipeResult();
-    CreatePipeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreatePipeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PIPES_API CreatePipeResult();
+    AWS_PIPES_API CreatePipeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PIPES_API CreatePipeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

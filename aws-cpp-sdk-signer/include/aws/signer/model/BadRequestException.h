@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/BadRequestException">AWS
    * API Reference</a></p>
    */
-  class AWS_SIGNER_API BadRequestException
+  class BadRequestException
   {
   public:
-    BadRequestException();
-    BadRequestException(Aws::Utils::Json::JsonView jsonValue);
-    BadRequestException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SIGNER_API BadRequestException();
+    AWS_SIGNER_API BadRequestException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SIGNER_API BadRequestException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SIGNER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

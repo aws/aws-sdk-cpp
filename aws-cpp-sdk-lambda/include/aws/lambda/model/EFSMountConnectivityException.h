@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/EFSMountConnectivityException">AWS
    * API Reference</a></p>
    */
-  class AWS_LAMBDA_API EFSMountConnectivityException
+  class EFSMountConnectivityException
   {
   public:
-    EFSMountConnectivityException();
-    EFSMountConnectivityException(Aws::Utils::Json::JsonView jsonValue);
-    EFSMountConnectivityException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LAMBDA_API EFSMountConnectivityException();
+    AWS_LAMBDA_API EFSMountConnectivityException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAMBDA_API EFSMountConnectivityException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAMBDA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

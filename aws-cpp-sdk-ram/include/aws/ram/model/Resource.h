@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/Resource">AWS API
    * Reference</a></p>
    */
-  class AWS_RAM_API Resource
+  class Resource
   {
   public:
-    Resource();
-    Resource(Aws::Utils::Json::JsonView jsonValue);
-    Resource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_RAM_API Resource();
+    AWS_RAM_API Resource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RAM_API Resource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RAM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

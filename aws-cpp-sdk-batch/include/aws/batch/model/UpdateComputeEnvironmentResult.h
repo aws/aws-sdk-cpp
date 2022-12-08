@@ -24,12 +24,12 @@ namespace Batch
 {
 namespace Model
 {
-  class AWS_BATCH_API UpdateComputeEnvironmentResult
+  class UpdateComputeEnvironmentResult
   {
   public:
-    UpdateComputeEnvironmentResult();
-    UpdateComputeEnvironmentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateComputeEnvironmentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_BATCH_API UpdateComputeEnvironmentResult();
+    AWS_BATCH_API UpdateComputeEnvironmentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_BATCH_API UpdateComputeEnvironmentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

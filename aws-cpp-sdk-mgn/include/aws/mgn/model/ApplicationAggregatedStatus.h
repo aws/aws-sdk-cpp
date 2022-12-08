@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ApplicationAggregatedStatus">AWS
    * API Reference</a></p>
    */
-  class AWS_MGN_API ApplicationAggregatedStatus
+  class ApplicationAggregatedStatus
   {
   public:
-    ApplicationAggregatedStatus();
-    ApplicationAggregatedStatus(Aws::Utils::Json::JsonView jsonValue);
-    ApplicationAggregatedStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MGN_API ApplicationAggregatedStatus();
+    AWS_MGN_API ApplicationAggregatedStatus(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MGN_API ApplicationAggregatedStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MGN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

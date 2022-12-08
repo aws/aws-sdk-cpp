@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/VpcIngressConnectionSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_APPRUNNER_API VpcIngressConnectionSummary
+  class VpcIngressConnectionSummary
   {
   public:
-    VpcIngressConnectionSummary();
-    VpcIngressConnectionSummary(Aws::Utils::Json::JsonView jsonValue);
-    VpcIngressConnectionSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPRUNNER_API VpcIngressConnectionSummary();
+    AWS_APPRUNNER_API VpcIngressConnectionSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPRUNNER_API VpcIngressConnectionSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPRUNNER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

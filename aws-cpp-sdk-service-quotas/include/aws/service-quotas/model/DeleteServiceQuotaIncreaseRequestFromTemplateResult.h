@@ -22,12 +22,12 @@ namespace ServiceQuotas
 {
 namespace Model
 {
-  class AWS_SERVICEQUOTAS_API DeleteServiceQuotaIncreaseRequestFromTemplateResult
+  class DeleteServiceQuotaIncreaseRequestFromTemplateResult
   {
   public:
-    DeleteServiceQuotaIncreaseRequestFromTemplateResult();
-    DeleteServiceQuotaIncreaseRequestFromTemplateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteServiceQuotaIncreaseRequestFromTemplateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SERVICEQUOTAS_API DeleteServiceQuotaIncreaseRequestFromTemplateResult();
+    AWS_SERVICEQUOTAS_API DeleteServiceQuotaIncreaseRequestFromTemplateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SERVICEQUOTAS_API DeleteServiceQuotaIncreaseRequestFromTemplateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

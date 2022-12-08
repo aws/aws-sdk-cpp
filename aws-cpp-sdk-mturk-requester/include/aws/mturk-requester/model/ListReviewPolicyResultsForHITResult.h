@@ -26,12 +26,12 @@ namespace MTurk
 {
 namespace Model
 {
-  class AWS_MTURK_API ListReviewPolicyResultsForHITResult
+  class ListReviewPolicyResultsForHITResult
   {
   public:
-    ListReviewPolicyResultsForHITResult();
-    ListReviewPolicyResultsForHITResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListReviewPolicyResultsForHITResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MTURK_API ListReviewPolicyResultsForHITResult();
+    AWS_MTURK_API ListReviewPolicyResultsForHITResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MTURK_API ListReviewPolicyResultsForHITResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

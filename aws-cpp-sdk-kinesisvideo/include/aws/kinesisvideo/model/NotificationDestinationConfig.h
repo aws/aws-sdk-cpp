@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/NotificationDestinationConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_KINESISVIDEO_API NotificationDestinationConfig
+  class NotificationDestinationConfig
   {
   public:
-    NotificationDestinationConfig();
-    NotificationDestinationConfig(Aws::Utils::Json::JsonView jsonValue);
-    NotificationDestinationConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KINESISVIDEO_API NotificationDestinationConfig();
+    AWS_KINESISVIDEO_API NotificationDestinationConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISVIDEO_API NotificationDestinationConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISVIDEO_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

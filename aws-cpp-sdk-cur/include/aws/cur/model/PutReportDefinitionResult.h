@@ -28,12 +28,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cur-2017-01-06/PutReportDefinitionResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_COSTANDUSAGEREPORTSERVICE_API PutReportDefinitionResult
+  class PutReportDefinitionResult
   {
   public:
-    PutReportDefinitionResult();
-    PutReportDefinitionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PutReportDefinitionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_COSTANDUSAGEREPORTSERVICE_API PutReportDefinitionResult();
+    AWS_COSTANDUSAGEREPORTSERVICE_API PutReportDefinitionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_COSTANDUSAGEREPORTSERVICE_API PutReportDefinitionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

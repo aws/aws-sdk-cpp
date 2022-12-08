@@ -33,12 +33,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/CreateDataSourceFromS3Output">AWS
    * API Reference</a></p>
    */
-  class AWS_MACHINELEARNING_API CreateDataSourceFromS3Result
+  class CreateDataSourceFromS3Result
   {
   public:
-    CreateDataSourceFromS3Result();
-    CreateDataSourceFromS3Result(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateDataSourceFromS3Result& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MACHINELEARNING_API CreateDataSourceFromS3Result();
+    AWS_MACHINELEARNING_API CreateDataSourceFromS3Result(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MACHINELEARNING_API CreateDataSourceFromS3Result& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

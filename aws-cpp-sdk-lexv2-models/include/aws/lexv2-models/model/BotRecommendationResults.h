@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/BotRecommendationResults">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELSV2_API BotRecommendationResults
+  class BotRecommendationResults
   {
   public:
-    BotRecommendationResults();
-    BotRecommendationResults(Aws::Utils::Json::JsonView jsonValue);
-    BotRecommendationResults& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELSV2_API BotRecommendationResults();
+    AWS_LEXMODELSV2_API BotRecommendationResults(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API BotRecommendationResults& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

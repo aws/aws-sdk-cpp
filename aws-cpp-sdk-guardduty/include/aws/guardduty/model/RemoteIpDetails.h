@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/RemoteIpDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_GUARDDUTY_API RemoteIpDetails
+  class RemoteIpDetails
   {
   public:
-    RemoteIpDetails();
-    RemoteIpDetails(Aws::Utils::Json::JsonView jsonValue);
-    RemoteIpDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GUARDDUTY_API RemoteIpDetails();
+    AWS_GUARDDUTY_API RemoteIpDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API RemoteIpDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -30,12 +30,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/WorkflowTypeDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_SWF_API DescribeWorkflowTypeResult
+  class DescribeWorkflowTypeResult
   {
   public:
-    DescribeWorkflowTypeResult();
-    DescribeWorkflowTypeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeWorkflowTypeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SWF_API DescribeWorkflowTypeResult();
+    AWS_SWF_API DescribeWorkflowTypeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SWF_API DescribeWorkflowTypeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

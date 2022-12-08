@@ -31,13 +31,13 @@ namespace Model
    * <a href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/Metrics">AWS
    * API Reference</a></p>
    */
-  class AWS_FORECASTSERVICE_API Metrics
+  class Metrics
   {
   public:
-    Metrics();
-    Metrics(Aws::Utils::Json::JsonView jsonValue);
-    Metrics& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FORECASTSERVICE_API Metrics();
+    AWS_FORECASTSERVICE_API Metrics(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FORECASTSERVICE_API Metrics& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FORECASTSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

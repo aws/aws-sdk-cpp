@@ -16,10 +16,10 @@ namespace Model
 
   /**
    */
-  class AWS_MTURK_API GetAccountBalanceRequest : public MTurkRequest
+  class GetAccountBalanceRequest : public MTurkRequest
   {
   public:
-    GetAccountBalanceRequest();
+    AWS_MTURK_API GetAccountBalanceRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -27,9 +27,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "GetAccountBalance"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_MTURK_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_MTURK_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
   };
 

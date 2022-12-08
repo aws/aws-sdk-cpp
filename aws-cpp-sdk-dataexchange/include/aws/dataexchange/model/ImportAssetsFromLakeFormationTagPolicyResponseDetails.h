@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/ImportAssetsFromLakeFormationTagPolicyResponseDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_DATAEXCHANGE_API ImportAssetsFromLakeFormationTagPolicyResponseDetails
+  class ImportAssetsFromLakeFormationTagPolicyResponseDetails
   {
   public:
-    ImportAssetsFromLakeFormationTagPolicyResponseDetails();
-    ImportAssetsFromLakeFormationTagPolicyResponseDetails(Aws::Utils::Json::JsonView jsonValue);
-    ImportAssetsFromLakeFormationTagPolicyResponseDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DATAEXCHANGE_API ImportAssetsFromLakeFormationTagPolicyResponseDetails();
+    AWS_DATAEXCHANGE_API ImportAssetsFromLakeFormationTagPolicyResponseDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATAEXCHANGE_API ImportAssetsFromLakeFormationTagPolicyResponseDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATAEXCHANGE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

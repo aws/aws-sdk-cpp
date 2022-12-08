@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/Task">AWS
    * API Reference</a></p>
    */
-  class AWS_CUSTOMERPROFILES_API Task
+  class Task
   {
   public:
-    Task();
-    Task(Aws::Utils::Json::JsonView jsonValue);
-    Task& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CUSTOMERPROFILES_API Task();
+    AWS_CUSTOMERPROFILES_API Task(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CUSTOMERPROFILES_API Task& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CUSTOMERPROFILES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

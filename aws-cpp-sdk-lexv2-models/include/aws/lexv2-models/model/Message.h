@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/Message">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELSV2_API Message
+  class Message
   {
   public:
-    Message();
-    Message(Aws::Utils::Json::JsonView jsonValue);
-    Message& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELSV2_API Message();
+    AWS_LEXMODELSV2_API Message(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API Message& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

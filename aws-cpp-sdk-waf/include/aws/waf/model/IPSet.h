@@ -47,13 +47,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/IPSet">AWS API
    * Reference</a></p>
    */
-  class AWS_WAF_API IPSet
+  class IPSet
   {
   public:
-    IPSet();
-    IPSet(Aws::Utils::Json::JsonView jsonValue);
-    IPSet& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WAF_API IPSet();
+    AWS_WAF_API IPSet(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAF_API IPSet& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAF_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

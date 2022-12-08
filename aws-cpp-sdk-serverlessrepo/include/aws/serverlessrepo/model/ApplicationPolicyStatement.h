@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/ApplicationPolicyStatement">AWS
    * API Reference</a></p>
    */
-  class AWS_SERVERLESSAPPLICATIONREPOSITORY_API ApplicationPolicyStatement
+  class ApplicationPolicyStatement
   {
   public:
-    ApplicationPolicyStatement();
-    ApplicationPolicyStatement(Aws::Utils::Json::JsonView jsonValue);
-    ApplicationPolicyStatement& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SERVERLESSAPPLICATIONREPOSITORY_API ApplicationPolicyStatement();
+    AWS_SERVERLESSAPPLICATIONREPOSITORY_API ApplicationPolicyStatement(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVERLESSAPPLICATIONREPOSITORY_API ApplicationPolicyStatement& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVERLESSAPPLICATIONREPOSITORY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

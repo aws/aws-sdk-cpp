@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ClassificationResult">AWS
    * API Reference</a></p>
    */
-  class AWS_MACIE2_API ClassificationResult
+  class ClassificationResult
   {
   public:
-    ClassificationResult();
-    ClassificationResult(Aws::Utils::Json::JsonView jsonValue);
-    ClassificationResult& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MACIE2_API ClassificationResult();
+    AWS_MACIE2_API ClassificationResult(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API ClassificationResult& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

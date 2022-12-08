@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/SensitiveDataResult">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API SensitiveDataResult
+  class SensitiveDataResult
   {
   public:
-    SensitiveDataResult();
-    SensitiveDataResult(Aws::Utils::Json::JsonView jsonValue);
-    SensitiveDataResult& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API SensitiveDataResult();
+    AWS_SECURITYHUB_API SensitiveDataResult(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API SensitiveDataResult& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

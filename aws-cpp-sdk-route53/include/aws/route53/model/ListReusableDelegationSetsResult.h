@@ -33,12 +33,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListReusableDelegationSetsResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53_API ListReusableDelegationSetsResult
+  class ListReusableDelegationSetsResult
   {
   public:
-    ListReusableDelegationSetsResult();
-    ListReusableDelegationSetsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ListReusableDelegationSetsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ROUTE53_API ListReusableDelegationSetsResult();
+    AWS_ROUTE53_API ListReusableDelegationSetsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ROUTE53_API ListReusableDelegationSetsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

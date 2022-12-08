@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/SplitFields">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API SplitFields
+  class SplitFields
   {
   public:
-    SplitFields();
-    SplitFields(Aws::Utils::Json::JsonView jsonValue);
-    SplitFields& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API SplitFields();
+    AWS_GLUE_API SplitFields(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API SplitFields& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

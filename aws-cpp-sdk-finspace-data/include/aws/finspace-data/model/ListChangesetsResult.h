@@ -32,12 +32,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/ListChangesetsResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_FINSPACEDATA_API ListChangesetsResult
+  class ListChangesetsResult
   {
   public:
-    ListChangesetsResult();
-    ListChangesetsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListChangesetsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_FINSPACEDATA_API ListChangesetsResult();
+    AWS_FINSPACEDATA_API ListChangesetsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_FINSPACEDATA_API ListChangesetsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

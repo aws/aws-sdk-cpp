@@ -26,12 +26,12 @@ namespace IoTFleetWise
 {
 namespace Model
 {
-  class AWS_IOTFLEETWISE_API ListDecoderManifestSignalsResult
+  class ListDecoderManifestSignalsResult
   {
   public:
-    ListDecoderManifestSignalsResult();
-    ListDecoderManifestSignalsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListDecoderManifestSignalsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOTFLEETWISE_API ListDecoderManifestSignalsResult();
+    AWS_IOTFLEETWISE_API ListDecoderManifestSignalsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOTFLEETWISE_API ListDecoderManifestSignalsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

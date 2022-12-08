@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/AssessmentReportsDestination">AWS
    * API Reference</a></p>
    */
-  class AWS_AUDITMANAGER_API AssessmentReportsDestination
+  class AssessmentReportsDestination
   {
   public:
-    AssessmentReportsDestination();
-    AssessmentReportsDestination(Aws::Utils::Json::JsonView jsonValue);
-    AssessmentReportsDestination& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_AUDITMANAGER_API AssessmentReportsDestination();
+    AWS_AUDITMANAGER_API AssessmentReportsDestination(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AUDITMANAGER_API AssessmentReportsDestination& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AUDITMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

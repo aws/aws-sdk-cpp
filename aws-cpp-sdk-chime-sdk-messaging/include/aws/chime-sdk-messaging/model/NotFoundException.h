@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/NotFoundException">AWS
    * API Reference</a></p>
    */
-  class AWS_CHIMESDKMESSAGING_API NotFoundException
+  class NotFoundException
   {
   public:
-    NotFoundException();
-    NotFoundException(Aws::Utils::Json::JsonView jsonValue);
-    NotFoundException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIMESDKMESSAGING_API NotFoundException();
+    AWS_CHIMESDKMESSAGING_API NotFoundException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKMESSAGING_API NotFoundException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKMESSAGING_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

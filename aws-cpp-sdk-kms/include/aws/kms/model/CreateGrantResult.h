@@ -24,12 +24,12 @@ namespace KMS
 {
 namespace Model
 {
-  class AWS_KMS_API CreateGrantResult
+  class CreateGrantResult
   {
   public:
-    CreateGrantResult();
-    CreateGrantResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateGrantResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KMS_API CreateGrantResult();
+    AWS_KMS_API CreateGrantResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KMS_API CreateGrantResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

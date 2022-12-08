@@ -22,12 +22,12 @@ namespace Snowball
 {
 namespace Model
 {
-  class AWS_SNOWBALL_API UpdateJobResult
+  class UpdateJobResult
   {
   public:
-    UpdateJobResult();
-    UpdateJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SNOWBALL_API UpdateJobResult();
+    AWS_SNOWBALL_API UpdateJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SNOWBALL_API UpdateJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

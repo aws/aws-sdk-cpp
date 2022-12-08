@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/CopyJob">AWS API
    * Reference</a></p>
    */
-  class AWS_BACKUP_API CopyJob
+  class CopyJob
   {
   public:
-    CopyJob();
-    CopyJob(Aws::Utils::Json::JsonView jsonValue);
-    CopyJob& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BACKUP_API CopyJob();
+    AWS_BACKUP_API CopyJob(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BACKUP_API CopyJob& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BACKUP_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

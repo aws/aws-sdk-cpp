@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/TranscriptionConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_CHIME_API TranscriptionConfiguration
+  class TranscriptionConfiguration
   {
   public:
-    TranscriptionConfiguration();
-    TranscriptionConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    TranscriptionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIME_API TranscriptionConfiguration();
+    AWS_CHIME_API TranscriptionConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API TranscriptionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/Database">AWS API
    * Reference</a></p>
    */
-  class AWS_GLUE_API Database
+  class Database
   {
   public:
-    Database();
-    Database(Aws::Utils::Json::JsonView jsonValue);
-    Database& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API Database();
+    AWS_GLUE_API Database(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Database& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ConditionalForwarder">AWS
    * API Reference</a></p>
    */
-  class AWS_DIRECTORYSERVICE_API ConditionalForwarder
+  class ConditionalForwarder
   {
   public:
-    ConditionalForwarder();
-    ConditionalForwarder(Aws::Utils::Json::JsonView jsonValue);
-    ConditionalForwarder& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DIRECTORYSERVICE_API ConditionalForwarder();
+    AWS_DIRECTORYSERVICE_API ConditionalForwarder(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTORYSERVICE_API ConditionalForwarder& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTORYSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

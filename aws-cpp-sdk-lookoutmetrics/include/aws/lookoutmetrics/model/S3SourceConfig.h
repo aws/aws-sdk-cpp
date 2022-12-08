@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/S3SourceConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_LOOKOUTMETRICS_API S3SourceConfig
+  class S3SourceConfig
   {
   public:
-    S3SourceConfig();
-    S3SourceConfig(Aws::Utils::Json::JsonView jsonValue);
-    S3SourceConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LOOKOUTMETRICS_API S3SourceConfig();
+    AWS_LOOKOUTMETRICS_API S3SourceConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTMETRICS_API S3SourceConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTMETRICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

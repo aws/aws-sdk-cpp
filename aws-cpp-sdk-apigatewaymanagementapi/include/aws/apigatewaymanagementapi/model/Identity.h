@@ -23,13 +23,13 @@ namespace ApiGatewayManagementApi
 namespace Model
 {
 
-  class AWS_APIGATEWAYMANAGEMENTAPI_API Identity
+  class Identity
   {
   public:
-    Identity();
-    Identity(Aws::Utils::Json::JsonView jsonValue);
-    Identity& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APIGATEWAYMANAGEMENTAPI_API Identity();
+    AWS_APIGATEWAYMANAGEMENTAPI_API Identity(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APIGATEWAYMANAGEMENTAPI_API Identity& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APIGATEWAYMANAGEMENTAPI_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

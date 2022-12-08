@@ -20,21 +20,21 @@ namespace BackupStorage
 {
 namespace Model
 {
-  class AWS_BACKUPSTORAGE_API GetChunkResult
+  class GetChunkResult
   {
   public:
-    GetChunkResult();
+    AWS_BACKUPSTORAGE_API GetChunkResult();
     //We have to define these because Microsoft doesn't auto generate them
-    GetChunkResult(GetChunkResult&&);
-    GetChunkResult& operator=(GetChunkResult&&);
+    AWS_BACKUPSTORAGE_API GetChunkResult(GetChunkResult&&);
+    AWS_BACKUPSTORAGE_API GetChunkResult& operator=(GetChunkResult&&);
     //we delete these because Microsoft doesn't handle move generation correctly
     //and we therefore don't trust them to get it right here either.
     GetChunkResult(const GetChunkResult&) = delete;
     GetChunkResult& operator=(const GetChunkResult&) = delete;
 
 
-    GetChunkResult(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
-    GetChunkResult& operator=(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
+    AWS_BACKUPSTORAGE_API GetChunkResult(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
+    AWS_BACKUPSTORAGE_API GetChunkResult& operator=(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
 
 
 

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/AppliedExtension">AWS
    * API Reference</a></p>
    */
-  class AWS_APPCONFIG_API AppliedExtension
+  class AppliedExtension
   {
   public:
-    AppliedExtension();
-    AppliedExtension(Aws::Utils::Json::JsonView jsonValue);
-    AppliedExtension& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPCONFIG_API AppliedExtension();
+    AWS_APPCONFIG_API AppliedExtension(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPCONFIG_API AppliedExtension& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPCONFIG_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

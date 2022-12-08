@@ -27,12 +27,12 @@ namespace Redshift
 {
 namespace Model
 {
-  class AWS_REDSHIFT_API BatchDeleteClusterSnapshotsResult
+  class BatchDeleteClusterSnapshotsResult
   {
   public:
-    BatchDeleteClusterSnapshotsResult();
-    BatchDeleteClusterSnapshotsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    BatchDeleteClusterSnapshotsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_REDSHIFT_API BatchDeleteClusterSnapshotsResult();
+    AWS_REDSHIFT_API BatchDeleteClusterSnapshotsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_REDSHIFT_API BatchDeleteClusterSnapshotsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

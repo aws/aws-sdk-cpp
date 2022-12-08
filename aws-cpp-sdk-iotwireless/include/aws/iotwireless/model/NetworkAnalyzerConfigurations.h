@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/NetworkAnalyzerConfigurations">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTWIRELESS_API NetworkAnalyzerConfigurations
+  class NetworkAnalyzerConfigurations
   {
   public:
-    NetworkAnalyzerConfigurations();
-    NetworkAnalyzerConfigurations(Aws::Utils::Json::JsonView jsonValue);
-    NetworkAnalyzerConfigurations& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTWIRELESS_API NetworkAnalyzerConfigurations();
+    AWS_IOTWIRELESS_API NetworkAnalyzerConfigurations(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API NetworkAnalyzerConfigurations& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

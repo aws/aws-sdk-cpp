@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateInstantBooking">AWS
    * API Reference</a></p>
    */
-  class AWS_ALEXAFORBUSINESS_API UpdateInstantBooking
+  class UpdateInstantBooking
   {
   public:
-    UpdateInstantBooking();
-    UpdateInstantBooking(Aws::Utils::Json::JsonView jsonValue);
-    UpdateInstantBooking& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ALEXAFORBUSINESS_API UpdateInstantBooking();
+    AWS_ALEXAFORBUSINESS_API UpdateInstantBooking(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ALEXAFORBUSINESS_API UpdateInstantBooking& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ALEXAFORBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

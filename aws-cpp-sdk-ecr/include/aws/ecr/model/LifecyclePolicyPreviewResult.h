@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/LifecyclePolicyPreviewResult">AWS
    * API Reference</a></p>
    */
-  class AWS_ECR_API LifecyclePolicyPreviewResult
+  class LifecyclePolicyPreviewResult
   {
   public:
-    LifecyclePolicyPreviewResult();
-    LifecyclePolicyPreviewResult(Aws::Utils::Json::JsonView jsonValue);
-    LifecyclePolicyPreviewResult& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ECR_API LifecyclePolicyPreviewResult();
+    AWS_ECR_API LifecyclePolicyPreviewResult(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECR_API LifecyclePolicyPreviewResult& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -30,12 +30,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mobile-2017-07-01/DescribeBundleResult">AWS
    * API Reference</a></p>
    */
-  class AWS_MOBILE_API DescribeBundleResult
+  class DescribeBundleResult
   {
   public:
-    DescribeBundleResult();
-    DescribeBundleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeBundleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MOBILE_API DescribeBundleResult();
+    AWS_MOBILE_API DescribeBundleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MOBILE_API DescribeBundleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

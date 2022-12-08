@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/UnmappedAttribute">AWS
    * API Reference</a></p>
    */
-  class AWS_COMPREHENDMEDICAL_API UnmappedAttribute
+  class UnmappedAttribute
   {
   public:
-    UnmappedAttribute();
-    UnmappedAttribute(Aws::Utils::Json::JsonView jsonValue);
-    UnmappedAttribute& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COMPREHENDMEDICAL_API UnmappedAttribute();
+    AWS_COMPREHENDMEDICAL_API UnmappedAttribute(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHENDMEDICAL_API UnmappedAttribute& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHENDMEDICAL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

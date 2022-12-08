@@ -24,12 +24,12 @@ namespace CloudHSMV2
 {
 namespace Model
 {
-  class AWS_CLOUDHSMV2_API ModifyBackupAttributesResult
+  class ModifyBackupAttributesResult
   {
   public:
-    ModifyBackupAttributesResult();
-    ModifyBackupAttributesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ModifyBackupAttributesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CLOUDHSMV2_API ModifyBackupAttributesResult();
+    AWS_CLOUDHSMV2_API ModifyBackupAttributesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CLOUDHSMV2_API ModifyBackupAttributesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     

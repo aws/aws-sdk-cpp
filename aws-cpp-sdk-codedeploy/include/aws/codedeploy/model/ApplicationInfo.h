@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ApplicationInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEDEPLOY_API ApplicationInfo
+  class ApplicationInfo
   {
   public:
-    ApplicationInfo();
-    ApplicationInfo(Aws::Utils::Json::JsonView jsonValue);
-    ApplicationInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEDEPLOY_API ApplicationInfo();
+    AWS_CODEDEPLOY_API ApplicationInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEDEPLOY_API ApplicationInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEDEPLOY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

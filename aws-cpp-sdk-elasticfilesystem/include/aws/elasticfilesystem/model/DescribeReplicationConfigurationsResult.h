@@ -26,12 +26,12 @@ namespace EFS
 {
 namespace Model
 {
-  class AWS_EFS_API DescribeReplicationConfigurationsResult
+  class DescribeReplicationConfigurationsResult
   {
   public:
-    DescribeReplicationConfigurationsResult();
-    DescribeReplicationConfigurationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeReplicationConfigurationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_EFS_API DescribeReplicationConfigurationsResult();
+    AWS_EFS_API DescribeReplicationConfigurationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_EFS_API DescribeReplicationConfigurationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

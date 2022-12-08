@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/ContainerOverrides">AWS
    * API Reference</a></p>
    */
-  class AWS_BATCH_API ContainerOverrides
+  class ContainerOverrides
   {
   public:
-    ContainerOverrides();
-    ContainerOverrides(Aws::Utils::Json::JsonView jsonValue);
-    ContainerOverrides& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BATCH_API ContainerOverrides();
+    AWS_BATCH_API ContainerOverrides(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BATCH_API ContainerOverrides& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BATCH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/NamespaceFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_SERVICEDISCOVERY_API NamespaceFilter
+  class NamespaceFilter
   {
   public:
-    NamespaceFilter();
-    NamespaceFilter(Aws::Utils::Json::JsonView jsonValue);
-    NamespaceFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SERVICEDISCOVERY_API NamespaceFilter();
+    AWS_SERVICEDISCOVERY_API NamespaceFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICEDISCOVERY_API NamespaceFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICEDISCOVERY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

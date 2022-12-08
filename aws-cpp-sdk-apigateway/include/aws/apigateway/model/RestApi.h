@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/RestApi">AWS
    * API Reference</a></p>
    */
-  class AWS_APIGATEWAY_API RestApi
+  class RestApi
   {
   public:
-    RestApi();
-    RestApi(Aws::Utils::Json::JsonView jsonValue);
-    RestApi& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APIGATEWAY_API RestApi();
+    AWS_APIGATEWAY_API RestApi(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APIGATEWAY_API RestApi& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APIGATEWAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

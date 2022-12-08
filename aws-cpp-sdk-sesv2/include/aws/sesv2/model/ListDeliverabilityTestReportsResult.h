@@ -33,12 +33,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/ListDeliverabilityTestReportsResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_SESV2_API ListDeliverabilityTestReportsResult
+  class ListDeliverabilityTestReportsResult
   {
   public:
-    ListDeliverabilityTestReportsResult();
-    ListDeliverabilityTestReportsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListDeliverabilityTestReportsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SESV2_API ListDeliverabilityTestReportsResult();
+    AWS_SESV2_API ListDeliverabilityTestReportsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SESV2_API ListDeliverabilityTestReportsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

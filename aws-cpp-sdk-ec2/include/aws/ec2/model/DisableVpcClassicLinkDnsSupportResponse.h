@@ -24,12 +24,12 @@ namespace EC2
 {
 namespace Model
 {
-  class AWS_EC2_API DisableVpcClassicLinkDnsSupportResponse
+  class DisableVpcClassicLinkDnsSupportResponse
   {
   public:
-    DisableVpcClassicLinkDnsSupportResponse();
-    DisableVpcClassicLinkDnsSupportResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DisableVpcClassicLinkDnsSupportResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API DisableVpcClassicLinkDnsSupportResponse();
+    AWS_EC2_API DisableVpcClassicLinkDnsSupportResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API DisableVpcClassicLinkDnsSupportResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

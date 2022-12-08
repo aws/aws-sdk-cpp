@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/AuthorizerDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API AuthorizerDescription
+  class AuthorizerDescription
   {
   public:
-    AuthorizerDescription();
-    AuthorizerDescription(Aws::Utils::Json::JsonView jsonValue);
-    AuthorizerDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API AuthorizerDescription();
+    AWS_IOT_API AuthorizerDescription(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API AuthorizerDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

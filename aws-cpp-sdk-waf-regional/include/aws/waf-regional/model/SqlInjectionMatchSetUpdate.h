@@ -40,13 +40,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/SqlInjectionMatchSetUpdate">AWS
    * API Reference</a></p>
    */
-  class AWS_WAFREGIONAL_API SqlInjectionMatchSetUpdate
+  class SqlInjectionMatchSetUpdate
   {
   public:
-    SqlInjectionMatchSetUpdate();
-    SqlInjectionMatchSetUpdate(Aws::Utils::Json::JsonView jsonValue);
-    SqlInjectionMatchSetUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WAFREGIONAL_API SqlInjectionMatchSetUpdate();
+    AWS_WAFREGIONAL_API SqlInjectionMatchSetUpdate(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFREGIONAL_API SqlInjectionMatchSetUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFREGIONAL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

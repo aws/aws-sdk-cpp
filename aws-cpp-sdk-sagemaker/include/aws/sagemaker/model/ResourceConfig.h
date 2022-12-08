@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ResourceConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API ResourceConfig
+  class ResourceConfig
   {
   public:
-    ResourceConfig();
-    ResourceConfig(Aws::Utils::Json::JsonView jsonValue);
-    ResourceConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API ResourceConfig();
+    AWS_SAGEMAKER_API ResourceConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API ResourceConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

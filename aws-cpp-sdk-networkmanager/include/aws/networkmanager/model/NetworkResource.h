@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/NetworkResource">AWS
    * API Reference</a></p>
    */
-  class AWS_NETWORKMANAGER_API NetworkResource
+  class NetworkResource
   {
   public:
-    NetworkResource();
-    NetworkResource(Aws::Utils::Json::JsonView jsonValue);
-    NetworkResource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_NETWORKMANAGER_API NetworkResource();
+    AWS_NETWORKMANAGER_API NetworkResource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKMANAGER_API NetworkResource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-2017-10-12/OriginEndpoint">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIAPACKAGE_API OriginEndpoint
+  class OriginEndpoint
   {
   public:
-    OriginEndpoint();
-    OriginEndpoint(Aws::Utils::Json::JsonView jsonValue);
-    OriginEndpoint& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIAPACKAGE_API OriginEndpoint();
+    AWS_MEDIAPACKAGE_API OriginEndpoint(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIAPACKAGE_API OriginEndpoint& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIAPACKAGE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

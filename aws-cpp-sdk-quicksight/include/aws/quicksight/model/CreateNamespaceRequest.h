@@ -21,10 +21,10 @@ namespace Model
 
   /**
    */
-  class AWS_QUICKSIGHT_API CreateNamespaceRequest : public QuickSightRequest
+  class CreateNamespaceRequest : public QuickSightRequest
   {
   public:
-    CreateNamespaceRequest();
+    AWS_QUICKSIGHT_API CreateNamespaceRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,7 +32,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateNamespace"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_QUICKSIGHT_API Aws::String SerializePayload() const override;
 
 
     /**

@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/AmiDistributionConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_IMAGEBUILDER_API AmiDistributionConfiguration
+  class AmiDistributionConfiguration
   {
   public:
-    AmiDistributionConfiguration();
-    AmiDistributionConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    AmiDistributionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IMAGEBUILDER_API AmiDistributionConfiguration();
+    AWS_IMAGEBUILDER_API AmiDistributionConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IMAGEBUILDER_API AmiDistributionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IMAGEBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

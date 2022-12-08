@@ -25,12 +25,12 @@ namespace CodeCatalyst
 {
 namespace Model
 {
-  class AWS_CODECATALYST_API StartDevEnvironmentSessionResult
+  class StartDevEnvironmentSessionResult
   {
   public:
-    StartDevEnvironmentSessionResult();
-    StartDevEnvironmentSessionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    StartDevEnvironmentSessionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODECATALYST_API StartDevEnvironmentSessionResult();
+    AWS_CODECATALYST_API StartDevEnvironmentSessionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODECATALYST_API StartDevEnvironmentSessionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     

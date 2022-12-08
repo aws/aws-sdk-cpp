@@ -30,12 +30,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/GetProgrammaticAccessCredentialsResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_FINSPACEDATA_API GetProgrammaticAccessCredentialsResult
+  class GetProgrammaticAccessCredentialsResult
   {
   public:
-    GetProgrammaticAccessCredentialsResult();
-    GetProgrammaticAccessCredentialsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetProgrammaticAccessCredentialsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_FINSPACEDATA_API GetProgrammaticAccessCredentialsResult();
+    AWS_FINSPACEDATA_API GetProgrammaticAccessCredentialsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_FINSPACEDATA_API GetProgrammaticAccessCredentialsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -25,12 +25,12 @@ namespace FinSpaceData
 {
 namespace Model
 {
-  class AWS_FINSPACEDATA_API GetExternalDataViewAccessDetailsResult
+  class GetExternalDataViewAccessDetailsResult
   {
   public:
-    GetExternalDataViewAccessDetailsResult();
-    GetExternalDataViewAccessDetailsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetExternalDataViewAccessDetailsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_FINSPACEDATA_API GetExternalDataViewAccessDetailsResult();
+    AWS_FINSPACEDATA_API GetExternalDataViewAccessDetailsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_FINSPACEDATA_API GetExternalDataViewAccessDetailsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

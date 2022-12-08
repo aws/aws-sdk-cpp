@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/SidewalkResourceTypeEventConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTWIRELESS_API SidewalkResourceTypeEventConfiguration
+  class SidewalkResourceTypeEventConfiguration
   {
   public:
-    SidewalkResourceTypeEventConfiguration();
-    SidewalkResourceTypeEventConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    SidewalkResourceTypeEventConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTWIRELESS_API SidewalkResourceTypeEventConfiguration();
+    AWS_IOTWIRELESS_API SidewalkResourceTypeEventConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API SidewalkResourceTypeEventConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

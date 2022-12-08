@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsRedshiftClusterPendingModifiedValues">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsRedshiftClusterPendingModifiedValues
+  class AwsRedshiftClusterPendingModifiedValues
   {
   public:
-    AwsRedshiftClusterPendingModifiedValues();
-    AwsRedshiftClusterPendingModifiedValues(Aws::Utils::Json::JsonView jsonValue);
-    AwsRedshiftClusterPendingModifiedValues& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsRedshiftClusterPendingModifiedValues();
+    AWS_SECURITYHUB_API AwsRedshiftClusterPendingModifiedValues(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsRedshiftClusterPendingModifiedValues& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

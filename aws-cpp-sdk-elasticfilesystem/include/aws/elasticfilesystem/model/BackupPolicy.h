@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/BackupPolicy">AWS
    * API Reference</a></p>
    */
-  class AWS_EFS_API BackupPolicy
+  class BackupPolicy
   {
   public:
-    BackupPolicy();
-    BackupPolicy(Aws::Utils::Json::JsonView jsonValue);
-    BackupPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EFS_API BackupPolicy();
+    AWS_EFS_API BackupPolicy(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EFS_API BackupPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EFS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

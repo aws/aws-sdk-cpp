@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/MigrationTask">AWS
    * API Reference</a></p>
    */
-  class AWS_MIGRATIONHUB_API MigrationTask
+  class MigrationTask
   {
   public:
-    MigrationTask();
-    MigrationTask(Aws::Utils::Json::JsonView jsonValue);
-    MigrationTask& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MIGRATIONHUB_API MigrationTask();
+    AWS_MIGRATIONHUB_API MigrationTask(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MIGRATIONHUB_API MigrationTask& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MIGRATIONHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

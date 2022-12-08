@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/AlternateIdentifier">AWS
    * API Reference</a></p>
    */
-  class AWS_IDENTITYSTORE_API AlternateIdentifier
+  class AlternateIdentifier
   {
   public:
-    AlternateIdentifier();
-    AlternateIdentifier(Aws::Utils::Json::JsonView jsonValue);
-    AlternateIdentifier& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IDENTITYSTORE_API AlternateIdentifier();
+    AWS_IDENTITYSTORE_API AlternateIdentifier(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IDENTITYSTORE_API AlternateIdentifier& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IDENTITYSTORE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

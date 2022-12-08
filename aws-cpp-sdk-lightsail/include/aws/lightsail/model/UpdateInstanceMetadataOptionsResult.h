@@ -24,12 +24,12 @@ namespace Lightsail
 {
 namespace Model
 {
-  class AWS_LIGHTSAIL_API UpdateInstanceMetadataOptionsResult
+  class UpdateInstanceMetadataOptionsResult
   {
   public:
-    UpdateInstanceMetadataOptionsResult();
-    UpdateInstanceMetadataOptionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateInstanceMetadataOptionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LIGHTSAIL_API UpdateInstanceMetadataOptionsResult();
+    AWS_LIGHTSAIL_API UpdateInstanceMetadataOptionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LIGHTSAIL_API UpdateInstanceMetadataOptionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DynamicDefaultValue">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API DynamicDefaultValue
+  class DynamicDefaultValue
   {
   public:
-    DynamicDefaultValue();
-    DynamicDefaultValue(Aws::Utils::Json::JsonView jsonValue);
-    DynamicDefaultValue& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API DynamicDefaultValue();
+    AWS_QUICKSIGHT_API DynamicDefaultValue(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API DynamicDefaultValue& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

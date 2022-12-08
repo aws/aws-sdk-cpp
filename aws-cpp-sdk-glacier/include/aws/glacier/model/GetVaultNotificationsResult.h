@@ -30,12 +30,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/GetVaultNotificationsOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_GLACIER_API GetVaultNotificationsResult
+  class GetVaultNotificationsResult
   {
   public:
-    GetVaultNotificationsResult();
-    GetVaultNotificationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetVaultNotificationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GLACIER_API GetVaultNotificationsResult();
+    AWS_GLACIER_API GetVaultNotificationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GLACIER_API GetVaultNotificationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

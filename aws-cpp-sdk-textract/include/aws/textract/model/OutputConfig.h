@@ -48,13 +48,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/OutputConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_TEXTRACT_API OutputConfig
+  class OutputConfig
   {
   public:
-    OutputConfig();
-    OutputConfig(Aws::Utils::Json::JsonView jsonValue);
-    OutputConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TEXTRACT_API OutputConfig();
+    AWS_TEXTRACT_API OutputConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TEXTRACT_API OutputConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TEXTRACT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

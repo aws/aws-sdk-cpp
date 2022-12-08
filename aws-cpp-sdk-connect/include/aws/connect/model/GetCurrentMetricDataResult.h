@@ -27,12 +27,12 @@ namespace Connect
 {
 namespace Model
 {
-  class AWS_CONNECT_API GetCurrentMetricDataResult
+  class GetCurrentMetricDataResult
   {
   public:
-    GetCurrentMetricDataResult();
-    GetCurrentMetricDataResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetCurrentMetricDataResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CONNECT_API GetCurrentMetricDataResult();
+    AWS_CONNECT_API GetCurrentMetricDataResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CONNECT_API GetCurrentMetricDataResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

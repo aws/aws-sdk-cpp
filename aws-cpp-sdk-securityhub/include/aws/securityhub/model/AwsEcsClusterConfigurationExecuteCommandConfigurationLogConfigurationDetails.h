@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationDetails
+  class AwsEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationDetails
   {
   public:
-    AwsEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationDetails();
-    AwsEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationDetails(Aws::Utils::Json::JsonView jsonValue);
-    AwsEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationDetails();
+    AWS_SECURITYHUB_API AwsEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -21,10 +21,10 @@ namespace Model
 
   /**
    */
-  class AWS_COSTEXPLORER_API GetUsageForecastRequest : public CostExplorerRequest
+  class GetUsageForecastRequest : public CostExplorerRequest
   {
   public:
-    GetUsageForecastRequest();
+    AWS_COSTEXPLORER_API GetUsageForecastRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,9 +32,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "GetUsageForecast"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_COSTEXPLORER_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_COSTEXPLORER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**

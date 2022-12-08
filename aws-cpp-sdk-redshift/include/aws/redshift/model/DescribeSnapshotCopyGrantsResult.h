@@ -32,12 +32,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/SnapshotCopyGrantMessage">AWS
    * API Reference</a></p>
    */
-  class AWS_REDSHIFT_API DescribeSnapshotCopyGrantsResult
+  class DescribeSnapshotCopyGrantsResult
   {
   public:
-    DescribeSnapshotCopyGrantsResult();
-    DescribeSnapshotCopyGrantsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeSnapshotCopyGrantsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_REDSHIFT_API DescribeSnapshotCopyGrantsResult();
+    AWS_REDSHIFT_API DescribeSnapshotCopyGrantsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_REDSHIFT_API DescribeSnapshotCopyGrantsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

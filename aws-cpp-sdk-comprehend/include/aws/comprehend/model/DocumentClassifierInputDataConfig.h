@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DocumentClassifierInputDataConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_COMPREHEND_API DocumentClassifierInputDataConfig
+  class DocumentClassifierInputDataConfig
   {
   public:
-    DocumentClassifierInputDataConfig();
-    DocumentClassifierInputDataConfig(Aws::Utils::Json::JsonView jsonValue);
-    DocumentClassifierInputDataConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COMPREHEND_API DocumentClassifierInputDataConfig();
+    AWS_COMPREHEND_API DocumentClassifierInputDataConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHEND_API DocumentClassifierInputDataConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHEND_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

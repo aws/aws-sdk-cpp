@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/Framework">AWS
    * API Reference</a></p>
    */
-  class AWS_BACKUP_API Framework
+  class Framework
   {
   public:
-    Framework();
-    Framework(Aws::Utils::Json::JsonView jsonValue);
-    Framework& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BACKUP_API Framework();
+    AWS_BACKUP_API Framework(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BACKUP_API Framework& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BACKUP_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

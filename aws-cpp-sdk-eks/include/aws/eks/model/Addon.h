@@ -35,13 +35,13 @@ namespace Model
    * <a href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/Addon">AWS API
    * Reference</a></p>
    */
-  class AWS_EKS_API Addon
+  class Addon
   {
   public:
-    Addon();
-    Addon(Aws::Utils::Json::JsonView jsonValue);
-    Addon& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EKS_API Addon();
+    AWS_EKS_API Addon(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EKS_API Addon& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EKS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

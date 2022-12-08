@@ -29,15 +29,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/EventInfoMap">AWS
    * API Reference</a></p>
    */
-  class AWS_REDSHIFT_API EventInfoMap
+  class EventInfoMap
   {
   public:
-    EventInfoMap();
-    EventInfoMap(const Aws::Utils::Xml::XmlNode& xmlNode);
-    EventInfoMap& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_REDSHIFT_API EventInfoMap();
+    AWS_REDSHIFT_API EventInfoMap(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_REDSHIFT_API EventInfoMap& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_REDSHIFT_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_REDSHIFT_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**

@@ -48,13 +48,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ActivatedRule">AWS
    * API Reference</a></p>
    */
-  class AWS_WAFREGIONAL_API ActivatedRule
+  class ActivatedRule
   {
   public:
-    ActivatedRule();
-    ActivatedRule(Aws::Utils::Json::JsonView jsonValue);
-    ActivatedRule& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WAFREGIONAL_API ActivatedRule();
+    AWS_WAFREGIONAL_API ActivatedRule(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFREGIONAL_API ActivatedRule& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFREGIONAL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

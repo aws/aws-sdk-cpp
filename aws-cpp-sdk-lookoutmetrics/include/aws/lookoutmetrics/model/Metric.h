@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/Metric">AWS
    * API Reference</a></p>
    */
-  class AWS_LOOKOUTMETRICS_API Metric
+  class Metric
   {
   public:
-    Metric();
-    Metric(Aws::Utils::Json::JsonView jsonValue);
-    Metric& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LOOKOUTMETRICS_API Metric();
+    AWS_LOOKOUTMETRICS_API Metric(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTMETRICS_API Metric& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTMETRICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

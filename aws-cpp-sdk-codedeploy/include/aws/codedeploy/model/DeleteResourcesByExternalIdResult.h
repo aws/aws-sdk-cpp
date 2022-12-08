@@ -22,12 +22,12 @@ namespace CodeDeploy
 {
 namespace Model
 {
-  class AWS_CODEDEPLOY_API DeleteResourcesByExternalIdResult
+  class DeleteResourcesByExternalIdResult
   {
   public:
-    DeleteResourcesByExternalIdResult();
-    DeleteResourcesByExternalIdResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteResourcesByExternalIdResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODEDEPLOY_API DeleteResourcesByExternalIdResult();
+    AWS_CODEDEPLOY_API DeleteResourcesByExternalIdResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODEDEPLOY_API DeleteResourcesByExternalIdResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

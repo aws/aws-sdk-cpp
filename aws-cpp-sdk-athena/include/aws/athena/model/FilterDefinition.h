@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/FilterDefinition">AWS
    * API Reference</a></p>
    */
-  class AWS_ATHENA_API FilterDefinition
+  class FilterDefinition
   {
   public:
-    FilterDefinition();
-    FilterDefinition(Aws::Utils::Json::JsonView jsonValue);
-    FilterDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ATHENA_API FilterDefinition();
+    AWS_ATHENA_API FilterDefinition(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ATHENA_API FilterDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ATHENA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

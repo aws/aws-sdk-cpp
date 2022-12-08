@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/InstanceConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_APPRUNNER_API InstanceConfiguration
+  class InstanceConfiguration
   {
   public:
-    InstanceConfiguration();
-    InstanceConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    InstanceConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPRUNNER_API InstanceConfiguration();
+    AWS_APPRUNNER_API InstanceConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPRUNNER_API InstanceConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPRUNNER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

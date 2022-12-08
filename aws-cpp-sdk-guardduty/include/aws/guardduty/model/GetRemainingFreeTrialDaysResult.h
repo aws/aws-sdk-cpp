@@ -26,12 +26,12 @@ namespace GuardDuty
 {
 namespace Model
 {
-  class AWS_GUARDDUTY_API GetRemainingFreeTrialDaysResult
+  class GetRemainingFreeTrialDaysResult
   {
   public:
-    GetRemainingFreeTrialDaysResult();
-    GetRemainingFreeTrialDaysResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetRemainingFreeTrialDaysResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GUARDDUTY_API GetRemainingFreeTrialDaysResult();
+    AWS_GUARDDUTY_API GetRemainingFreeTrialDaysResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GUARDDUTY_API GetRemainingFreeTrialDaysResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

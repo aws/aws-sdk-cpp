@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/LongColumnStatisticsData">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API LongColumnStatisticsData
+  class LongColumnStatisticsData
   {
   public:
-    LongColumnStatisticsData();
-    LongColumnStatisticsData(Aws::Utils::Json::JsonView jsonValue);
-    LongColumnStatisticsData& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API LongColumnStatisticsData();
+    AWS_GLUE_API LongColumnStatisticsData(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API LongColumnStatisticsData& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

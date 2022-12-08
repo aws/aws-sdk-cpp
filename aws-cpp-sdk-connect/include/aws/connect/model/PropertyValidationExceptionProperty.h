@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/PropertyValidationExceptionProperty">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECT_API PropertyValidationExceptionProperty
+  class PropertyValidationExceptionProperty
   {
   public:
-    PropertyValidationExceptionProperty();
-    PropertyValidationExceptionProperty(Aws::Utils::Json::JsonView jsonValue);
-    PropertyValidationExceptionProperty& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECT_API PropertyValidationExceptionProperty();
+    AWS_CONNECT_API PropertyValidationExceptionProperty(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API PropertyValidationExceptionProperty& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

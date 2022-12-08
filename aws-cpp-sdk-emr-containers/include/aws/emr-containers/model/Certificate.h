@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/Certificate">AWS
    * API Reference</a></p>
    */
-  class AWS_EMRCONTAINERS_API Certificate
+  class Certificate
   {
   public:
-    Certificate();
-    Certificate(Aws::Utils::Json::JsonView jsonValue);
-    Certificate& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EMRCONTAINERS_API Certificate();
+    AWS_EMRCONTAINERS_API Certificate(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMRCONTAINERS_API Certificate& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMRCONTAINERS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

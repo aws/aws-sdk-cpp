@@ -38,13 +38,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/BoundingBox">AWS
    * API Reference</a></p>
    */
-  class AWS_TEXTRACT_API BoundingBox
+  class BoundingBox
   {
   public:
-    BoundingBox();
-    BoundingBox(Aws::Utils::Json::JsonView jsonValue);
-    BoundingBox& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TEXTRACT_API BoundingBox();
+    AWS_TEXTRACT_API BoundingBox(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TEXTRACT_API BoundingBox& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TEXTRACT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

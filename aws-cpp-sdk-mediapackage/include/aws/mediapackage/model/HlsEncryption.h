@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-2017-10-12/HlsEncryption">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIAPACKAGE_API HlsEncryption
+  class HlsEncryption
   {
   public:
-    HlsEncryption();
-    HlsEncryption(Aws::Utils::Json::JsonView jsonValue);
-    HlsEncryption& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIAPACKAGE_API HlsEncryption();
+    AWS_MEDIAPACKAGE_API HlsEncryption(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIAPACKAGE_API HlsEncryption& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIAPACKAGE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

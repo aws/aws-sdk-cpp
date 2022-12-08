@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/IcmpTypeCode">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API IcmpTypeCode
+  class IcmpTypeCode
   {
   public:
-    IcmpTypeCode();
-    IcmpTypeCode(Aws::Utils::Json::JsonView jsonValue);
-    IcmpTypeCode& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API IcmpTypeCode();
+    AWS_SECURITYHUB_API IcmpTypeCode(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API IcmpTypeCode& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

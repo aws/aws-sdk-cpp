@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ResourceDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_SERVICECATALOG_API ResourceDetail
+  class ResourceDetail
   {
   public:
-    ResourceDetail();
-    ResourceDetail(Aws::Utils::Json::JsonView jsonValue);
-    ResourceDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SERVICECATALOG_API ResourceDetail();
+    AWS_SERVICECATALOG_API ResourceDetail(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICECATALOG_API ResourceDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICECATALOG_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

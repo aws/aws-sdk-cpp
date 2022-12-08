@@ -24,12 +24,12 @@ namespace CloudWatchLogs
 {
 namespace Model
 {
-  class AWS_CLOUDWATCHLOGS_API PutDataProtectionPolicyResult
+  class PutDataProtectionPolicyResult
   {
   public:
-    PutDataProtectionPolicyResult();
-    PutDataProtectionPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PutDataProtectionPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CLOUDWATCHLOGS_API PutDataProtectionPolicyResult();
+    AWS_CLOUDWATCHLOGS_API PutDataProtectionPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CLOUDWATCHLOGS_API PutDataProtectionPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

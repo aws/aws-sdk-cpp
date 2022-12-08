@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/DnsConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_SERVICEDISCOVERY_API DnsConfig
+  class DnsConfig
   {
   public:
-    DnsConfig();
-    DnsConfig(Aws::Utils::Json::JsonView jsonValue);
-    DnsConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SERVICEDISCOVERY_API DnsConfig();
+    AWS_SERVICEDISCOVERY_API DnsConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICEDISCOVERY_API DnsConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICEDISCOVERY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

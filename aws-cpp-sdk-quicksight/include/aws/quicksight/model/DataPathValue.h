@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DataPathValue">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API DataPathValue
+  class DataPathValue
   {
   public:
-    DataPathValue();
-    DataPathValue(Aws::Utils::Json::JsonView jsonValue);
-    DataPathValue& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API DataPathValue();
+    AWS_QUICKSIGHT_API DataPathValue(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API DataPathValue& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

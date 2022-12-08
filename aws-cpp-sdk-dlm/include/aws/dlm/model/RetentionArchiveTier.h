@@ -37,13 +37,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dlm-2018-01-12/RetentionArchiveTier">AWS
    * API Reference</a></p>
    */
-  class AWS_DLM_API RetentionArchiveTier
+  class RetentionArchiveTier
   {
   public:
-    RetentionArchiveTier();
-    RetentionArchiveTier(Aws::Utils::Json::JsonView jsonValue);
-    RetentionArchiveTier& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DLM_API RetentionArchiveTier();
+    AWS_DLM_API RetentionArchiveTier(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DLM_API RetentionArchiveTier& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DLM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

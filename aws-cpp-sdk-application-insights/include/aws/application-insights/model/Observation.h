@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/Observation">AWS
    * API Reference</a></p>
    */
-  class AWS_APPLICATIONINSIGHTS_API Observation
+  class Observation
   {
   public:
-    Observation();
-    Observation(Aws::Utils::Json::JsonView jsonValue);
-    Observation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPLICATIONINSIGHTS_API Observation();
+    AWS_APPLICATIONINSIGHTS_API Observation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPLICATIONINSIGHTS_API Observation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPLICATIONINSIGHTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

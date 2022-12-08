@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/KinesisParameters">AWS
    * API Reference</a></p>
    */
-  class AWS_EVENTBRIDGE_API KinesisParameters
+  class KinesisParameters
   {
   public:
-    KinesisParameters();
-    KinesisParameters(Aws::Utils::Json::JsonView jsonValue);
-    KinesisParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EVENTBRIDGE_API KinesisParameters();
+    AWS_EVENTBRIDGE_API KinesisParameters(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EVENTBRIDGE_API KinesisParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EVENTBRIDGE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

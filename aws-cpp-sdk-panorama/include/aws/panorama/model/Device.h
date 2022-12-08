@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/panorama-2019-07-24/Device">AWS API
    * Reference</a></p>
    */
-  class AWS_PANORAMA_API Device
+  class Device
   {
   public:
-    Device();
-    Device(Aws::Utils::Json::JsonView jsonValue);
-    Device& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PANORAMA_API Device();
+    AWS_PANORAMA_API Device(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PANORAMA_API Device& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PANORAMA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

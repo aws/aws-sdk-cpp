@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateEndOfMeetingReminder">AWS
    * API Reference</a></p>
    */
-  class AWS_ALEXAFORBUSINESS_API CreateEndOfMeetingReminder
+  class CreateEndOfMeetingReminder
   {
   public:
-    CreateEndOfMeetingReminder();
-    CreateEndOfMeetingReminder(Aws::Utils::Json::JsonView jsonValue);
-    CreateEndOfMeetingReminder& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ALEXAFORBUSINESS_API CreateEndOfMeetingReminder();
+    AWS_ALEXAFORBUSINESS_API CreateEndOfMeetingReminder(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ALEXAFORBUSINESS_API CreateEndOfMeetingReminder& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ALEXAFORBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

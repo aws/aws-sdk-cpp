@@ -31,12 +31,12 @@ namespace Omics
 {
 namespace Model
 {
-  class AWS_OMICS_API GetAnnotationStoreResult
+  class GetAnnotationStoreResult
   {
   public:
-    GetAnnotationStoreResult();
-    GetAnnotationStoreResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetAnnotationStoreResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OMICS_API GetAnnotationStoreResult();
+    AWS_OMICS_API GetAnnotationStoreResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OMICS_API GetAnnotationStoreResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/Cors">AWS API
    * Reference</a></p>
    */
-  class AWS_LAMBDA_API Cors
+  class Cors
   {
   public:
-    Cors();
-    Cors(Aws::Utils::Json::JsonView jsonValue);
-    Cors& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LAMBDA_API Cors();
+    AWS_LAMBDA_API Cors(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAMBDA_API Cors& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAMBDA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

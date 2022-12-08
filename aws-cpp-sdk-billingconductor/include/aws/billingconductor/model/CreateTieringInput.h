@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/CreateTieringInput">AWS
    * API Reference</a></p>
    */
-  class AWS_BILLINGCONDUCTOR_API CreateTieringInput
+  class CreateTieringInput
   {
   public:
-    CreateTieringInput();
-    CreateTieringInput(Aws::Utils::Json::JsonView jsonValue);
-    CreateTieringInput& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BILLINGCONDUCTOR_API CreateTieringInput();
+    AWS_BILLINGCONDUCTOR_API CreateTieringInput(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BILLINGCONDUCTOR_API CreateTieringInput& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BILLINGCONDUCTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

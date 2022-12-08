@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/CognitoOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICSEARCHSERVICE_API CognitoOptions
+  class CognitoOptions
   {
   public:
-    CognitoOptions();
-    CognitoOptions(Aws::Utils::Json::JsonView jsonValue);
-    CognitoOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ELASTICSEARCHSERVICE_API CognitoOptions();
+    AWS_ELASTICSEARCHSERVICE_API CognitoOptions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICSEARCHSERVICE_API CognitoOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

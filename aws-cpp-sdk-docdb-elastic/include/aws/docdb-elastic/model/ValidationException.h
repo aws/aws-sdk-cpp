@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-elastic-2022-11-28/ValidationException">AWS
    * API Reference</a></p>
    */
-  class AWS_DOCDBELASTIC_API ValidationException
+  class ValidationException
   {
   public:
-    ValidationException();
-    ValidationException(Aws::Utils::Json::JsonView jsonValue);
-    ValidationException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DOCDBELASTIC_API ValidationException();
+    AWS_DOCDBELASTIC_API ValidationException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DOCDBELASTIC_API ValidationException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DOCDBELASTIC_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

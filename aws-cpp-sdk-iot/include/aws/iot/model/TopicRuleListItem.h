@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/TopicRuleListItem">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API TopicRuleListItem
+  class TopicRuleListItem
   {
   public:
-    TopicRuleListItem();
-    TopicRuleListItem(Aws::Utils::Json::JsonView jsonValue);
-    TopicRuleListItem& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API TopicRuleListItem();
+    AWS_IOT_API TopicRuleListItem(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API TopicRuleListItem& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

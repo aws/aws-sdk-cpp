@@ -27,12 +27,12 @@ namespace EC2
 {
 namespace Model
 {
-  class AWS_EC2_API GetIpamPoolAllocationsResponse
+  class GetIpamPoolAllocationsResponse
   {
   public:
-    GetIpamPoolAllocationsResponse();
-    GetIpamPoolAllocationsResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    GetIpamPoolAllocationsResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API GetIpamPoolAllocationsResponse();
+    AWS_EC2_API GetIpamPoolAllocationsResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API GetIpamPoolAllocationsResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

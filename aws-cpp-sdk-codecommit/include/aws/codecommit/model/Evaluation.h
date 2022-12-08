@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/Evaluation">AWS
    * API Reference</a></p>
    */
-  class AWS_CODECOMMIT_API Evaluation
+  class Evaluation
   {
   public:
-    Evaluation();
-    Evaluation(Aws::Utils::Json::JsonView jsonValue);
-    Evaluation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODECOMMIT_API Evaluation();
+    AWS_CODECOMMIT_API Evaluation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODECOMMIT_API Evaluation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODECOMMIT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/InventoryDeletionStatusItem">AWS
    * API Reference</a></p>
    */
-  class AWS_SSM_API InventoryDeletionStatusItem
+  class InventoryDeletionStatusItem
   {
   public:
-    InventoryDeletionStatusItem();
-    InventoryDeletionStatusItem(Aws::Utils::Json::JsonView jsonValue);
-    InventoryDeletionStatusItem& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSM_API InventoryDeletionStatusItem();
+    AWS_SSM_API InventoryDeletionStatusItem(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API InventoryDeletionStatusItem& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

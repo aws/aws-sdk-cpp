@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_ALEXAFORBUSINESS_API GetProfileRequest : public AlexaForBusinessRequest
+  class GetProfileRequest : public AlexaForBusinessRequest
   {
   public:
-    GetProfileRequest();
+    AWS_ALEXAFORBUSINESS_API GetProfileRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,9 +29,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "GetProfile"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_ALEXAFORBUSINESS_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_ALEXAFORBUSINESS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**

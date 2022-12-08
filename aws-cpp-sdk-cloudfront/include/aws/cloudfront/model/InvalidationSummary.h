@@ -28,14 +28,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/InvalidationSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFRONT_API InvalidationSummary
+  class InvalidationSummary
   {
   public:
-    InvalidationSummary();
-    InvalidationSummary(const Aws::Utils::Xml::XmlNode& xmlNode);
-    InvalidationSummary& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API InvalidationSummary();
+    AWS_CLOUDFRONT_API InvalidationSummary(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API InvalidationSummary& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**

@@ -26,12 +26,12 @@ namespace Route53Resolver
 {
 namespace Model
 {
-  class AWS_ROUTE53RESOLVER_API ListResolverDnssecConfigsResult
+  class ListResolverDnssecConfigsResult
   {
   public:
-    ListResolverDnssecConfigsResult();
-    ListResolverDnssecConfigsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListResolverDnssecConfigsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ROUTE53RESOLVER_API ListResolverDnssecConfigsResult();
+    AWS_ROUTE53RESOLVER_API ListResolverDnssecConfigsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ROUTE53RESOLVER_API ListResolverDnssecConfigsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

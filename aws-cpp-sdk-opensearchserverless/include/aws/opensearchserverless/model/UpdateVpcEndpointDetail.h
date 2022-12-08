@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/UpdateVpcEndpointDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_OPENSEARCHSERVERLESS_API UpdateVpcEndpointDetail
+  class UpdateVpcEndpointDetail
   {
   public:
-    UpdateVpcEndpointDetail();
-    UpdateVpcEndpointDetail(Aws::Utils::Json::JsonView jsonValue);
-    UpdateVpcEndpointDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OPENSEARCHSERVERLESS_API UpdateVpcEndpointDetail();
+    AWS_OPENSEARCHSERVERLESS_API UpdateVpcEndpointDetail(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPENSEARCHSERVERLESS_API UpdateVpcEndpointDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPENSEARCHSERVERLESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

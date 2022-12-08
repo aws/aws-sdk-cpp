@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/migration-hub-refactor-spaces-2021-10-26/UrlEndpointConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_MIGRATIONHUBREFACTORSPACES_API UrlEndpointConfig
+  class UrlEndpointConfig
   {
   public:
-    UrlEndpointConfig();
-    UrlEndpointConfig(Aws::Utils::Json::JsonView jsonValue);
-    UrlEndpointConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MIGRATIONHUBREFACTORSPACES_API UrlEndpointConfig();
+    AWS_MIGRATIONHUBREFACTORSPACES_API UrlEndpointConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MIGRATIONHUBREFACTORSPACES_API UrlEndpointConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MIGRATIONHUBREFACTORSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

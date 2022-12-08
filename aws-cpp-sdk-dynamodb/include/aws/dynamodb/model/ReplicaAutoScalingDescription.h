@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ReplicaAutoScalingDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_DYNAMODB_API ReplicaAutoScalingDescription
+  class ReplicaAutoScalingDescription
   {
   public:
-    ReplicaAutoScalingDescription();
-    ReplicaAutoScalingDescription(Aws::Utils::Json::JsonView jsonValue);
-    ReplicaAutoScalingDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DYNAMODB_API ReplicaAutoScalingDescription();
+    AWS_DYNAMODB_API ReplicaAutoScalingDescription(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API ReplicaAutoScalingDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

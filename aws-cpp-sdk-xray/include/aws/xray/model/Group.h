@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/Group">AWS API
    * Reference</a></p>
    */
-  class AWS_XRAY_API Group
+  class Group
   {
   public:
-    Group();
-    Group(Aws::Utils::Json::JsonView jsonValue);
-    Group& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_XRAY_API Group();
+    AWS_XRAY_API Group(Aws::Utils::Json::JsonView jsonValue);
+    AWS_XRAY_API Group& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_XRAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

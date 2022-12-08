@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_KINESISANALYTICS_API DeleteApplicationInputProcessingConfigurationRequest : public KinesisAnalyticsRequest
+  class DeleteApplicationInputProcessingConfigurationRequest : public KinesisAnalyticsRequest
   {
   public:
-    DeleteApplicationInputProcessingConfigurationRequest();
+    AWS_KINESISANALYTICS_API DeleteApplicationInputProcessingConfigurationRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,9 +29,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DeleteApplicationInputProcessingConfiguration"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_KINESISANALYTICS_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_KINESISANALYTICS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**

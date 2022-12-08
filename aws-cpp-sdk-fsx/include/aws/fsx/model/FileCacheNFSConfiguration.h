@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/FileCacheNFSConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_FSX_API FileCacheNFSConfiguration
+  class FileCacheNFSConfiguration
   {
   public:
-    FileCacheNFSConfiguration();
-    FileCacheNFSConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    FileCacheNFSConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FSX_API FileCacheNFSConfiguration();
+    AWS_FSX_API FileCacheNFSConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API FileCacheNFSConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

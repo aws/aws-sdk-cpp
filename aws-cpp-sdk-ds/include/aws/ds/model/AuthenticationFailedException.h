@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/AuthenticationFailedException">AWS
    * API Reference</a></p>
    */
-  class AWS_DIRECTORYSERVICE_API AuthenticationFailedException
+  class AuthenticationFailedException
   {
   public:
-    AuthenticationFailedException();
-    AuthenticationFailedException(Aws::Utils::Json::JsonView jsonValue);
-    AuthenticationFailedException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DIRECTORYSERVICE_API AuthenticationFailedException();
+    AWS_DIRECTORYSERVICE_API AuthenticationFailedException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTORYSERVICE_API AuthenticationFailedException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTORYSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

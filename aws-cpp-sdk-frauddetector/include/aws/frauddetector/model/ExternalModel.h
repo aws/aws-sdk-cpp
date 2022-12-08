@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/ExternalModel">AWS
    * API Reference</a></p>
    */
-  class AWS_FRAUDDETECTOR_API ExternalModel
+  class ExternalModel
   {
   public:
-    ExternalModel();
-    ExternalModel(Aws::Utils::Json::JsonView jsonValue);
-    ExternalModel& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FRAUDDETECTOR_API ExternalModel();
+    AWS_FRAUDDETECTOR_API ExternalModel(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FRAUDDETECTOR_API ExternalModel& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FRAUDDETECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

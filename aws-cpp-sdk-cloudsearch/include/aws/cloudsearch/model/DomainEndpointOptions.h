@@ -28,15 +28,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/DomainEndpointOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDSEARCH_API DomainEndpointOptions
+  class DomainEndpointOptions
   {
   public:
-    DomainEndpointOptions();
-    DomainEndpointOptions(const Aws::Utils::Xml::XmlNode& xmlNode);
-    DomainEndpointOptions& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDSEARCH_API DomainEndpointOptions();
+    AWS_CLOUDSEARCH_API DomainEndpointOptions(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDSEARCH_API DomainEndpointOptions& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_CLOUDSEARCH_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_CLOUDSEARCH_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**

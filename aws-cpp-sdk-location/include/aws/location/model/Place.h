@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/Place">AWS API
    * Reference</a></p>
    */
-  class AWS_LOCATIONSERVICE_API Place
+  class Place
   {
   public:
-    Place();
-    Place(Aws::Utils::Json::JsonView jsonValue);
-    Place& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LOCATIONSERVICE_API Place();
+    AWS_LOCATIONSERVICE_API Place(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOCATIONSERVICE_API Place& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOCATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

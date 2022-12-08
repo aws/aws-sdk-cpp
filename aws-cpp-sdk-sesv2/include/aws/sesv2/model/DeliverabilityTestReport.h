@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/DeliverabilityTestReport">AWS
    * API Reference</a></p>
    */
-  class AWS_SESV2_API DeliverabilityTestReport
+  class DeliverabilityTestReport
   {
   public:
-    DeliverabilityTestReport();
-    DeliverabilityTestReport(Aws::Utils::Json::JsonView jsonValue);
-    DeliverabilityTestReport& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SESV2_API DeliverabilityTestReport();
+    AWS_SESV2_API DeliverabilityTestReport(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SESV2_API DeliverabilityTestReport& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SESV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

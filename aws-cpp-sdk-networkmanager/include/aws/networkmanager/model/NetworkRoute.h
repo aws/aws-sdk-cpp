@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/NetworkRoute">AWS
    * API Reference</a></p>
    */
-  class AWS_NETWORKMANAGER_API NetworkRoute
+  class NetworkRoute
   {
   public:
-    NetworkRoute();
-    NetworkRoute(Aws::Utils::Json::JsonView jsonValue);
-    NetworkRoute& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_NETWORKMANAGER_API NetworkRoute();
+    AWS_NETWORKMANAGER_API NetworkRoute(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKMANAGER_API NetworkRoute& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

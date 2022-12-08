@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/ParameterDefinition">AWS
    * API Reference</a></p>
    */
-  class AWS_SERVERLESSAPPLICATIONREPOSITORY_API ParameterDefinition
+  class ParameterDefinition
   {
   public:
-    ParameterDefinition();
-    ParameterDefinition(Aws::Utils::Json::JsonView jsonValue);
-    ParameterDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SERVERLESSAPPLICATIONREPOSITORY_API ParameterDefinition();
+    AWS_SERVERLESSAPPLICATIONREPOSITORY_API ParameterDefinition(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVERLESSAPPLICATIONREPOSITORY_API ParameterDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVERLESSAPPLICATIONREPOSITORY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

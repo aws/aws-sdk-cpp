@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/FieldPosition">AWS
    * API Reference</a></p>
    */
-  class AWS_AMPLIFYUIBUILDER_API FieldPosition
+  class FieldPosition
   {
   public:
-    FieldPosition();
-    FieldPosition(Aws::Utils::Json::JsonView jsonValue);
-    FieldPosition& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_AMPLIFYUIBUILDER_API FieldPosition();
+    AWS_AMPLIFYUIBUILDER_API FieldPosition(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFYUIBUILDER_API FieldPosition& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFYUIBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

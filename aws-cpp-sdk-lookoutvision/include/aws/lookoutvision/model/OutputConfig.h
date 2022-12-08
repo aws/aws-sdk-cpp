@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutvision-2020-11-20/OutputConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_LOOKOUTFORVISION_API OutputConfig
+  class OutputConfig
   {
   public:
-    OutputConfig();
-    OutputConfig(Aws::Utils::Json::JsonView jsonValue);
-    OutputConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LOOKOUTFORVISION_API OutputConfig();
+    AWS_LOOKOUTFORVISION_API OutputConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTFORVISION_API OutputConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTFORVISION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

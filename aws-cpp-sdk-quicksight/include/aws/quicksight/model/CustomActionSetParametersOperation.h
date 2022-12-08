@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CustomActionSetParametersOperation">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API CustomActionSetParametersOperation
+  class CustomActionSetParametersOperation
   {
   public:
-    CustomActionSetParametersOperation();
-    CustomActionSetParametersOperation(Aws::Utils::Json::JsonView jsonValue);
-    CustomActionSetParametersOperation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API CustomActionSetParametersOperation();
+    AWS_QUICKSIGHT_API CustomActionSetParametersOperation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API CustomActionSetParametersOperation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -30,12 +30,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/UpdateChannelClassResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API UpdateChannelClassResult
+  class UpdateChannelClassResult
   {
   public:
-    UpdateChannelClassResult();
-    UpdateChannelClassResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateChannelClassResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MEDIALIVE_API UpdateChannelClassResult();
+    AWS_MEDIALIVE_API UpdateChannelClassResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MEDIALIVE_API UpdateChannelClassResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     

@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-readiness-2019-12-02/ReadinessCheckSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53RECOVERYREADINESS_API ReadinessCheckSummary
+  class ReadinessCheckSummary
   {
   public:
-    ReadinessCheckSummary();
-    ReadinessCheckSummary(Aws::Utils::Json::JsonView jsonValue);
-    ReadinessCheckSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ROUTE53RECOVERYREADINESS_API ReadinessCheckSummary();
+    AWS_ROUTE53RECOVERYREADINESS_API ReadinessCheckSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROUTE53RECOVERYREADINESS_API ReadinessCheckSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROUTE53RECOVERYREADINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

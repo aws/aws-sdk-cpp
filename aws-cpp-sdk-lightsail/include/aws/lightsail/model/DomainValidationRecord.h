@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DomainValidationRecord">AWS
    * API Reference</a></p>
    */
-  class AWS_LIGHTSAIL_API DomainValidationRecord
+  class DomainValidationRecord
   {
   public:
-    DomainValidationRecord();
-    DomainValidationRecord(Aws::Utils::Json::JsonView jsonValue);
-    DomainValidationRecord& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LIGHTSAIL_API DomainValidationRecord();
+    AWS_LIGHTSAIL_API DomainValidationRecord(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API DomainValidationRecord& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

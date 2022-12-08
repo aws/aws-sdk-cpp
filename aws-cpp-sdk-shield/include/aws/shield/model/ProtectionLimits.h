@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/ProtectionLimits">AWS
    * API Reference</a></p>
    */
-  class AWS_SHIELD_API ProtectionLimits
+  class ProtectionLimits
   {
   public:
-    ProtectionLimits();
-    ProtectionLimits(Aws::Utils::Json::JsonView jsonValue);
-    ProtectionLimits& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SHIELD_API ProtectionLimits();
+    AWS_SHIELD_API ProtectionLimits(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SHIELD_API ProtectionLimits& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SHIELD_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

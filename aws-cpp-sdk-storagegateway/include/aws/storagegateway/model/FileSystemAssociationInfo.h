@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/FileSystemAssociationInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_STORAGEGATEWAY_API FileSystemAssociationInfo
+  class FileSystemAssociationInfo
   {
   public:
-    FileSystemAssociationInfo();
-    FileSystemAssociationInfo(Aws::Utils::Json::JsonView jsonValue);
-    FileSystemAssociationInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_STORAGEGATEWAY_API FileSystemAssociationInfo();
+    AWS_STORAGEGATEWAY_API FileSystemAssociationInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_STORAGEGATEWAY_API FileSystemAssociationInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_STORAGEGATEWAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

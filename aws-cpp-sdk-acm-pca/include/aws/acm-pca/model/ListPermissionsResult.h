@@ -26,12 +26,12 @@ namespace ACMPCA
 {
 namespace Model
 {
-  class AWS_ACMPCA_API ListPermissionsResult
+  class ListPermissionsResult
   {
   public:
-    ListPermissionsResult();
-    ListPermissionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListPermissionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ACMPCA_API ListPermissionsResult();
+    AWS_ACMPCA_API ListPermissionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ACMPCA_API ListPermissionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

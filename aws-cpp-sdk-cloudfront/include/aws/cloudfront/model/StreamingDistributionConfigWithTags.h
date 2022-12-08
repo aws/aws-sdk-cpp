@@ -29,14 +29,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/StreamingDistributionConfigWithTags">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFRONT_API StreamingDistributionConfigWithTags
+  class StreamingDistributionConfigWithTags
   {
   public:
-    StreamingDistributionConfigWithTags();
-    StreamingDistributionConfigWithTags(const Aws::Utils::Xml::XmlNode& xmlNode);
-    StreamingDistributionConfigWithTags& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API StreamingDistributionConfigWithTags();
+    AWS_CLOUDFRONT_API StreamingDistributionConfigWithTags(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API StreamingDistributionConfigWithTags& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**

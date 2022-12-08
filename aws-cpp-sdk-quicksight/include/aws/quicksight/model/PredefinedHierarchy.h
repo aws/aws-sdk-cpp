@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/PredefinedHierarchy">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API PredefinedHierarchy
+  class PredefinedHierarchy
   {
   public:
-    PredefinedHierarchy();
-    PredefinedHierarchy(Aws::Utils::Json::JsonView jsonValue);
-    PredefinedHierarchy& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API PredefinedHierarchy();
+    AWS_QUICKSIGHT_API PredefinedHierarchy(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API PredefinedHierarchy& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

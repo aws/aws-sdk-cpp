@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/InputLambdaProcessorUpdate">AWS
    * API Reference</a></p>
    */
-  class AWS_KINESISANALYTICS_API InputLambdaProcessorUpdate
+  class InputLambdaProcessorUpdate
   {
   public:
-    InputLambdaProcessorUpdate();
-    InputLambdaProcessorUpdate(Aws::Utils::Json::JsonView jsonValue);
-    InputLambdaProcessorUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KINESISANALYTICS_API InputLambdaProcessorUpdate();
+    AWS_KINESISANALYTICS_API InputLambdaProcessorUpdate(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICS_API InputLambdaProcessorUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/LicenseInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEARTIFACT_API LicenseInfo
+  class LicenseInfo
   {
   public:
-    LicenseInfo();
-    LicenseInfo(Aws::Utils::Json::JsonView jsonValue);
-    LicenseInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEARTIFACT_API LicenseInfo();
+    AWS_CODEARTIFACT_API LicenseInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEARTIFACT_API LicenseInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEARTIFACT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

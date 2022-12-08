@@ -25,12 +25,12 @@ namespace Macie
 {
 namespace Model
 {
-  class AWS_MACIE_API UpdateS3ResourcesResult
+  class UpdateS3ResourcesResult
   {
   public:
-    UpdateS3ResourcesResult();
-    UpdateS3ResourcesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateS3ResourcesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MACIE_API UpdateS3ResourcesResult();
+    AWS_MACIE_API UpdateS3ResourcesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MACIE_API UpdateS3ResourcesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

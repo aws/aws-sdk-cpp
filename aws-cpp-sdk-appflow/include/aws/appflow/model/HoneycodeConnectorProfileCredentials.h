@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/HoneycodeConnectorProfileCredentials">AWS
    * API Reference</a></p>
    */
-  class AWS_APPFLOW_API HoneycodeConnectorProfileCredentials
+  class HoneycodeConnectorProfileCredentials
   {
   public:
-    HoneycodeConnectorProfileCredentials();
-    HoneycodeConnectorProfileCredentials(Aws::Utils::Json::JsonView jsonValue);
-    HoneycodeConnectorProfileCredentials& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPFLOW_API HoneycodeConnectorProfileCredentials();
+    AWS_APPFLOW_API HoneycodeConnectorProfileCredentials(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API HoneycodeConnectorProfileCredentials& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

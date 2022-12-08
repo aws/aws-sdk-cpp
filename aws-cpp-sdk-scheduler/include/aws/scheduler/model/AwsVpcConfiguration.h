@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/scheduler-2021-06-30/AwsVpcConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_SCHEDULER_API AwsVpcConfiguration
+  class AwsVpcConfiguration
   {
   public:
-    AwsVpcConfiguration();
-    AwsVpcConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    AwsVpcConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SCHEDULER_API AwsVpcConfiguration();
+    AWS_SCHEDULER_API AwsVpcConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SCHEDULER_API AwsVpcConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SCHEDULER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

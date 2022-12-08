@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/TestGridSessionAction">AWS
    * API Reference</a></p>
    */
-  class AWS_DEVICEFARM_API TestGridSessionAction
+  class TestGridSessionAction
   {
   public:
-    TestGridSessionAction();
-    TestGridSessionAction(Aws::Utils::Json::JsonView jsonValue);
-    TestGridSessionAction& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DEVICEFARM_API TestGridSessionAction();
+    AWS_DEVICEFARM_API TestGridSessionAction(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVICEFARM_API TestGridSessionAction& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVICEFARM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

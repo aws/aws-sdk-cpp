@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/ForbiddenException">AWS
    * API Reference</a></p>
    */
-  class AWS_SERVERLESSAPPLICATIONREPOSITORY_API ForbiddenException
+  class ForbiddenException
   {
   public:
-    ForbiddenException();
-    ForbiddenException(Aws::Utils::Json::JsonView jsonValue);
-    ForbiddenException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SERVERLESSAPPLICATIONREPOSITORY_API ForbiddenException();
+    AWS_SERVERLESSAPPLICATIONREPOSITORY_API ForbiddenException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVERLESSAPPLICATIONREPOSITORY_API ForbiddenException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVERLESSAPPLICATIONREPOSITORY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

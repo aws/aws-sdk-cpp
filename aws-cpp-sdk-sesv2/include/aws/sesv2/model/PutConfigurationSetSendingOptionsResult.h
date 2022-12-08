@@ -28,12 +28,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutConfigurationSetSendingOptionsResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_SESV2_API PutConfigurationSetSendingOptionsResult
+  class PutConfigurationSetSendingOptionsResult
   {
   public:
-    PutConfigurationSetSendingOptionsResult();
-    PutConfigurationSetSendingOptionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PutConfigurationSetSendingOptionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SESV2_API PutConfigurationSetSendingOptionsResult();
+    AWS_SESV2_API PutConfigurationSetSendingOptionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SESV2_API PutConfigurationSetSendingOptionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

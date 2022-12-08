@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-vod-2018-11-07/CmafPackage">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIAPACKAGEVOD_API CmafPackage
+  class CmafPackage
   {
   public:
-    CmafPackage();
-    CmafPackage(Aws::Utils::Json::JsonView jsonValue);
-    CmafPackage& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIAPACKAGEVOD_API CmafPackage();
+    AWS_MEDIAPACKAGEVOD_API CmafPackage(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIAPACKAGEVOD_API CmafPackage& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIAPACKAGEVOD_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

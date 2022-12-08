@@ -26,12 +26,12 @@ namespace SSM
 {
 namespace Model
 {
-  class AWS_SSM_API DescribeEffectivePatchesForPatchBaselineResult
+  class DescribeEffectivePatchesForPatchBaselineResult
   {
   public:
-    DescribeEffectivePatchesForPatchBaselineResult();
-    DescribeEffectivePatchesForPatchBaselineResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeEffectivePatchesForPatchBaselineResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSM_API DescribeEffectivePatchesForPatchBaselineResult();
+    AWS_SSM_API DescribeEffectivePatchesForPatchBaselineResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSM_API DescribeEffectivePatchesForPatchBaselineResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

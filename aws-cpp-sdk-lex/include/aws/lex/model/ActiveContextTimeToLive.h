@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/runtime.lex-2016-11-28/ActiveContextTimeToLive">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXRUNTIMESERVICE_API ActiveContextTimeToLive
+  class ActiveContextTimeToLive
   {
   public:
-    ActiveContextTimeToLive();
-    ActiveContextTimeToLive(Aws::Utils::Json::JsonView jsonValue);
-    ActiveContextTimeToLive& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXRUNTIMESERVICE_API ActiveContextTimeToLive();
+    AWS_LEXRUNTIMESERVICE_API ActiveContextTimeToLive(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXRUNTIMESERVICE_API ActiveContextTimeToLive& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXRUNTIMESERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

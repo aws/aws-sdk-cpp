@@ -18,21 +18,21 @@ namespace SageMakerGeospatial
 {
 namespace Model
 {
-  class AWS_SAGEMAKERGEOSPATIAL_API GetTileResult
+  class GetTileResult
   {
   public:
-    GetTileResult();
+    AWS_SAGEMAKERGEOSPATIAL_API GetTileResult();
     //We have to define these because Microsoft doesn't auto generate them
-    GetTileResult(GetTileResult&&);
-    GetTileResult& operator=(GetTileResult&&);
+    AWS_SAGEMAKERGEOSPATIAL_API GetTileResult(GetTileResult&&);
+    AWS_SAGEMAKERGEOSPATIAL_API GetTileResult& operator=(GetTileResult&&);
     //we delete these because Microsoft doesn't handle move generation correctly
     //and we therefore don't trust them to get it right here either.
     GetTileResult(const GetTileResult&) = delete;
     GetTileResult& operator=(const GetTileResult&) = delete;
 
 
-    GetTileResult(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
-    GetTileResult& operator=(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
+    AWS_SAGEMAKERGEOSPATIAL_API GetTileResult(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
+    AWS_SAGEMAKERGEOSPATIAL_API GetTileResult& operator=(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
 
 
 

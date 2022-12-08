@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/SnapshotOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_OPENSEARCHSERVICE_API SnapshotOptions
+  class SnapshotOptions
   {
   public:
-    SnapshotOptions();
-    SnapshotOptions(Aws::Utils::Json::JsonView jsonValue);
-    SnapshotOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OPENSEARCHSERVICE_API SnapshotOptions();
+    AWS_OPENSEARCHSERVICE_API SnapshotOptions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPENSEARCHSERVICE_API SnapshotOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPENSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

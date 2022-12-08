@@ -29,14 +29,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DistributionConfigWithTags">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFRONT_API DistributionConfigWithTags
+  class DistributionConfigWithTags
   {
   public:
-    DistributionConfigWithTags();
-    DistributionConfigWithTags(const Aws::Utils::Xml::XmlNode& xmlNode);
-    DistributionConfigWithTags& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API DistributionConfigWithTags();
+    AWS_CLOUDFRONT_API DistributionConfigWithTags(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API DistributionConfigWithTags& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**

@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/GeneralName">AWS
    * API Reference</a></p>
    */
-  class AWS_ACMPCA_API GeneralName
+  class GeneralName
   {
   public:
-    GeneralName();
-    GeneralName(Aws::Utils::Json::JsonView jsonValue);
-    GeneralName& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ACMPCA_API GeneralName();
+    AWS_ACMPCA_API GeneralName(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACMPCA_API GeneralName& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACMPCA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/ChannelSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_CHIMESDKMESSAGING_API ChannelSummary
+  class ChannelSummary
   {
   public:
-    ChannelSummary();
-    ChannelSummary(Aws::Utils::Json::JsonView jsonValue);
-    ChannelSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIMESDKMESSAGING_API ChannelSummary();
+    AWS_CHIMESDKMESSAGING_API ChannelSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKMESSAGING_API ChannelSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKMESSAGING_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

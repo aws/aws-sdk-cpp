@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_IDENTITYSTORE_API GetGroupMembershipIdRequest : public IdentityStoreRequest
+  class GetGroupMembershipIdRequest : public IdentityStoreRequest
   {
   public:
-    GetGroupMembershipIdRequest();
+    AWS_IDENTITYSTORE_API GetGroupMembershipIdRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,9 +30,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "GetGroupMembershipId"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_IDENTITYSTORE_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_IDENTITYSTORE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**

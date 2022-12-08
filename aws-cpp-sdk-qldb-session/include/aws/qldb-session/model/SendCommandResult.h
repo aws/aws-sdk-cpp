@@ -30,12 +30,12 @@ namespace QLDBSession
 {
 namespace Model
 {
-  class AWS_QLDBSESSION_API SendCommandResult
+  class SendCommandResult
   {
   public:
-    SendCommandResult();
-    SendCommandResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    SendCommandResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_QLDBSESSION_API SendCommandResult();
+    AWS_QLDBSESSION_API SendCommandResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_QLDBSESSION_API SendCommandResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

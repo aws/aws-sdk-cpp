@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/SubnetIPAddressLimitReachedException">AWS
    * API Reference</a></p>
    */
-  class AWS_LAMBDA_API SubnetIPAddressLimitReachedException
+  class SubnetIPAddressLimitReachedException
   {
   public:
-    SubnetIPAddressLimitReachedException();
-    SubnetIPAddressLimitReachedException(Aws::Utils::Json::JsonView jsonValue);
-    SubnetIPAddressLimitReachedException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LAMBDA_API SubnetIPAddressLimitReachedException();
+    AWS_LAMBDA_API SubnetIPAddressLimitReachedException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAMBDA_API SubnetIPAddressLimitReachedException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAMBDA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

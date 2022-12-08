@@ -24,12 +24,12 @@ namespace AmplifyBackend
 {
 namespace Model
 {
-  class AWS_AMPLIFYBACKEND_API CloneBackendResult
+  class CloneBackendResult
   {
   public:
-    CloneBackendResult();
-    CloneBackendResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CloneBackendResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_AMPLIFYBACKEND_API CloneBackendResult();
+    AWS_AMPLIFYBACKEND_API CloneBackendResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_AMPLIFYBACKEND_API CloneBackendResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

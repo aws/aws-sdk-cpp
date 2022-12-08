@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsSqsQueueDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsSqsQueueDetails
+  class AwsSqsQueueDetails
   {
   public:
-    AwsSqsQueueDetails();
-    AwsSqsQueueDetails(Aws::Utils::Json::JsonView jsonValue);
-    AwsSqsQueueDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsSqsQueueDetails();
+    AWS_SECURITYHUB_API AwsSqsQueueDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsSqsQueueDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

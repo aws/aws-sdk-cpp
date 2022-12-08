@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ParameterDateTimePickerControl">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API ParameterDateTimePickerControl
+  class ParameterDateTimePickerControl
   {
   public:
-    ParameterDateTimePickerControl();
-    ParameterDateTimePickerControl(Aws::Utils::Json::JsonView jsonValue);
-    ParameterDateTimePickerControl& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API ParameterDateTimePickerControl();
+    AWS_QUICKSIGHT_API ParameterDateTimePickerControl(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API ParameterDateTimePickerControl& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

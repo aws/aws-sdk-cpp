@@ -24,12 +24,12 @@ namespace SsmSap
 {
 namespace Model
 {
-  class AWS_SSMSAP_API GetOperationResult
+  class GetOperationResult
   {
   public:
-    GetOperationResult();
-    GetOperationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetOperationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSMSAP_API GetOperationResult();
+    AWS_SSMSAP_API GetOperationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSMSAP_API GetOperationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

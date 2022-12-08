@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codecatalyst-2022-09-28/ListSourceRepositoriesItem">AWS
    * API Reference</a></p>
    */
-  class AWS_CODECATALYST_API ListSourceRepositoriesItem
+  class ListSourceRepositoriesItem
   {
   public:
-    ListSourceRepositoriesItem();
-    ListSourceRepositoriesItem(Aws::Utils::Json::JsonView jsonValue);
-    ListSourceRepositoriesItem& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODECATALYST_API ListSourceRepositoriesItem();
+    AWS_CODECATALYST_API ListSourceRepositoriesItem(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODECATALYST_API ListSourceRepositoriesItem& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODECATALYST_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

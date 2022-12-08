@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pipes-2015-10-07/PipeEnrichmentParameters">AWS
    * API Reference</a></p>
    */
-  class AWS_PIPES_API PipeEnrichmentParameters
+  class PipeEnrichmentParameters
   {
   public:
-    PipeEnrichmentParameters();
-    PipeEnrichmentParameters(Aws::Utils::Json::JsonView jsonValue);
-    PipeEnrichmentParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PIPES_API PipeEnrichmentParameters();
+    AWS_PIPES_API PipeEnrichmentParameters(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PIPES_API PipeEnrichmentParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PIPES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

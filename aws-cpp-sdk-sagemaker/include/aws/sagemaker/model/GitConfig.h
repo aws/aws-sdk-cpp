@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/GitConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API GitConfig
+  class GitConfig
   {
   public:
-    GitConfig();
-    GitConfig(Aws::Utils::Json::JsonView jsonValue);
-    GitConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API GitConfig();
+    AWS_SAGEMAKER_API GitConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API GitConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

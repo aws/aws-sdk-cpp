@@ -26,12 +26,12 @@ namespace EMR
 {
 namespace Model
 {
-  class AWS_EMR_API ListStudiosResult
+  class ListStudiosResult
   {
   public:
-    ListStudiosResult();
-    ListStudiosResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListStudiosResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_EMR_API ListStudiosResult();
+    AWS_EMR_API ListStudiosResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_EMR_API ListStudiosResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/AggregateConformancePackComplianceFilters">AWS
    * API Reference</a></p>
    */
-  class AWS_CONFIGSERVICE_API AggregateConformancePackComplianceFilters
+  class AggregateConformancePackComplianceFilters
   {
   public:
-    AggregateConformancePackComplianceFilters();
-    AggregateConformancePackComplianceFilters(Aws::Utils::Json::JsonView jsonValue);
-    AggregateConformancePackComplianceFilters& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONFIGSERVICE_API AggregateConformancePackComplianceFilters();
+    AWS_CONFIGSERVICE_API AggregateConformancePackComplianceFilters(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API AggregateConformancePackComplianceFilters& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

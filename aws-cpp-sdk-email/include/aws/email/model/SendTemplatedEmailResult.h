@@ -25,12 +25,12 @@ namespace SES
 {
 namespace Model
 {
-  class AWS_SES_API SendTemplatedEmailResult
+  class SendTemplatedEmailResult
   {
   public:
-    SendTemplatedEmailResult();
-    SendTemplatedEmailResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    SendTemplatedEmailResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_SES_API SendTemplatedEmailResult();
+    AWS_SES_API SendTemplatedEmailResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_SES_API SendTemplatedEmailResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

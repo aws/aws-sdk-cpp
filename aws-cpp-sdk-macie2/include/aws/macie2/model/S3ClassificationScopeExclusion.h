@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/S3ClassificationScopeExclusion">AWS
    * API Reference</a></p>
    */
-  class AWS_MACIE2_API S3ClassificationScopeExclusion
+  class S3ClassificationScopeExclusion
   {
   public:
-    S3ClassificationScopeExclusion();
-    S3ClassificationScopeExclusion(Aws::Utils::Json::JsonView jsonValue);
-    S3ClassificationScopeExclusion& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MACIE2_API S3ClassificationScopeExclusion();
+    AWS_MACIE2_API S3ClassificationScopeExclusion(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API S3ClassificationScopeExclusion& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

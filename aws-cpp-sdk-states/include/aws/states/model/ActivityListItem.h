@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/ActivityListItem">AWS
    * API Reference</a></p>
    */
-  class AWS_SFN_API ActivityListItem
+  class ActivityListItem
   {
   public:
-    ActivityListItem();
-    ActivityListItem(Aws::Utils::Json::JsonView jsonValue);
-    ActivityListItem& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SFN_API ActivityListItem();
+    AWS_SFN_API ActivityListItem(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SFN_API ActivityListItem& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SFN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

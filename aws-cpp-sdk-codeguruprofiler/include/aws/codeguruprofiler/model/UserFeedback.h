@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/UserFeedback">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEGURUPROFILER_API UserFeedback
+  class UserFeedback
   {
   public:
-    UserFeedback();
-    UserFeedback(Aws::Utils::Json::JsonView jsonValue);
-    UserFeedback& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEGURUPROFILER_API UserFeedback();
+    AWS_CODEGURUPROFILER_API UserFeedback(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEGURUPROFILER_API UserFeedback& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEGURUPROFILER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

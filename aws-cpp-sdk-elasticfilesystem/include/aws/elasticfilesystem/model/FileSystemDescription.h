@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/FileSystemDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_EFS_API FileSystemDescription
+  class FileSystemDescription
   {
   public:
-    FileSystemDescription();
-    FileSystemDescription(Aws::Utils::Json::JsonView jsonValue);
-    FileSystemDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EFS_API FileSystemDescription();
+    AWS_EFS_API FileSystemDescription(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EFS_API FileSystemDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EFS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

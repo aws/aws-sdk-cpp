@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/TopicsDetectionJobFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_COMPREHEND_API TopicsDetectionJobFilter
+  class TopicsDetectionJobFilter
   {
   public:
-    TopicsDetectionJobFilter();
-    TopicsDetectionJobFilter(Aws::Utils::Json::JsonView jsonValue);
-    TopicsDetectionJobFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COMPREHEND_API TopicsDetectionJobFilter();
+    AWS_COMPREHEND_API TopicsDetectionJobFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHEND_API TopicsDetectionJobFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHEND_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

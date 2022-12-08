@@ -39,13 +39,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/LicenseConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_LICENSEMANAGER_API LicenseConfiguration
+  class LicenseConfiguration
   {
   public:
-    LicenseConfiguration();
-    LicenseConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    LicenseConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LICENSEMANAGER_API LicenseConfiguration();
+    AWS_LICENSEMANAGER_API LicenseConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LICENSEMANAGER_API LicenseConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LICENSEMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

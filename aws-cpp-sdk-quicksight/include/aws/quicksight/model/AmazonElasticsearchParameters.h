@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/AmazonElasticsearchParameters">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API AmazonElasticsearchParameters
+  class AmazonElasticsearchParameters
   {
   public:
-    AmazonElasticsearchParameters();
-    AmazonElasticsearchParameters(Aws::Utils::Json::JsonView jsonValue);
-    AmazonElasticsearchParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API AmazonElasticsearchParameters();
+    AWS_QUICKSIGHT_API AmazonElasticsearchParameters(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API AmazonElasticsearchParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

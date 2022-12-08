@@ -31,12 +31,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AcceptReservedInstancesExchangeQuoteResult">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API AcceptReservedInstancesExchangeQuoteResponse
+  class AcceptReservedInstancesExchangeQuoteResponse
   {
   public:
-    AcceptReservedInstancesExchangeQuoteResponse();
-    AcceptReservedInstancesExchangeQuoteResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    AcceptReservedInstancesExchangeQuoteResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API AcceptReservedInstancesExchangeQuoteResponse();
+    AWS_EC2_API AcceptReservedInstancesExchangeQuoteResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API AcceptReservedInstancesExchangeQuoteResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

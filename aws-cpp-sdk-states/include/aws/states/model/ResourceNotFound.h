@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/ResourceNotFound">AWS
    * API Reference</a></p>
    */
-  class AWS_SFN_API ResourceNotFound
+  class ResourceNotFound
   {
   public:
-    ResourceNotFound();
-    ResourceNotFound(Aws::Utils::Json::JsonView jsonValue);
-    ResourceNotFound& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SFN_API ResourceNotFound();
+    AWS_SFN_API ResourceNotFound(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SFN_API ResourceNotFound& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SFN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

@@ -42,13 +42,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/KmsKeyConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_ACCESSANALYZER_API KmsKeyConfiguration
+  class KmsKeyConfiguration
   {
   public:
-    KmsKeyConfiguration();
-    KmsKeyConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    KmsKeyConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ACCESSANALYZER_API KmsKeyConfiguration();
+    AWS_ACCESSANALYZER_API KmsKeyConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACCESSANALYZER_API KmsKeyConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACCESSANALYZER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

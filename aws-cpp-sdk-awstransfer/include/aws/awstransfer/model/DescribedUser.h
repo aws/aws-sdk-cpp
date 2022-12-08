@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribedUser">AWS
    * API Reference</a></p>
    */
-  class AWS_TRANSFER_API DescribedUser
+  class DescribedUser
   {
   public:
-    DescribedUser();
-    DescribedUser(Aws::Utils::Json::JsonView jsonValue);
-    DescribedUser& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TRANSFER_API DescribedUser();
+    AWS_TRANSFER_API DescribedUser(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSFER_API DescribedUser& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSFER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

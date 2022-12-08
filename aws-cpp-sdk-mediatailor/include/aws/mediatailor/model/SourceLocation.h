@@ -39,13 +39,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/SourceLocation">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIATAILOR_API SourceLocation
+  class SourceLocation
   {
   public:
-    SourceLocation();
-    SourceLocation(Aws::Utils::Json::JsonView jsonValue);
-    SourceLocation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIATAILOR_API SourceLocation();
+    AWS_MEDIATAILOR_API SourceLocation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIATAILOR_API SourceLocation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIATAILOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

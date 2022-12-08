@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/Role">AWS
    * API Reference</a></p>
    */
-  class AWS_AUDITMANAGER_API Role
+  class Role
   {
   public:
-    Role();
-    Role(Aws::Utils::Json::JsonView jsonValue);
-    Role& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_AUDITMANAGER_API Role();
+    AWS_AUDITMANAGER_API Role(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AUDITMANAGER_API Role& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AUDITMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

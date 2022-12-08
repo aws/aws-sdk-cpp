@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/TotalImpactFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_COSTEXPLORER_API TotalImpactFilter
+  class TotalImpactFilter
   {
   public:
-    TotalImpactFilter();
-    TotalImpactFilter(Aws::Utils::Json::JsonView jsonValue);
-    TotalImpactFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COSTEXPLORER_API TotalImpactFilter();
+    AWS_COSTEXPLORER_API TotalImpactFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API TotalImpactFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

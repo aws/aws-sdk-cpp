@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/RobotApplicationConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_ROBOMAKER_API RobotApplicationConfig
+  class RobotApplicationConfig
   {
   public:
-    RobotApplicationConfig();
-    RobotApplicationConfig(Aws::Utils::Json::JsonView jsonValue);
-    RobotApplicationConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ROBOMAKER_API RobotApplicationConfig();
+    AWS_ROBOMAKER_API RobotApplicationConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROBOMAKER_API RobotApplicationConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROBOMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

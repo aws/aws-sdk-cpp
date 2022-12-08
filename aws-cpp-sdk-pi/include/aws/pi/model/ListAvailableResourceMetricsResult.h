@@ -26,12 +26,12 @@ namespace PI
 {
 namespace Model
 {
-  class AWS_PI_API ListAvailableResourceMetricsResult
+  class ListAvailableResourceMetricsResult
   {
   public:
-    ListAvailableResourceMetricsResult();
-    ListAvailableResourceMetricsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListAvailableResourceMetricsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PI_API ListAvailableResourceMetricsResult();
+    AWS_PI_API ListAvailableResourceMetricsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PI_API ListAvailableResourceMetricsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

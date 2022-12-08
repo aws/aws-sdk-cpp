@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/connectcampaigns-2021-01-30/DialRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECTCAMPAIGNS_API DialRequest
+  class DialRequest
   {
   public:
-    DialRequest();
-    DialRequest(Aws::Utils::Json::JsonView jsonValue);
-    DialRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECTCAMPAIGNS_API DialRequest();
+    AWS_CONNECTCAMPAIGNS_API DialRequest(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTCAMPAIGNS_API DialRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTCAMPAIGNS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

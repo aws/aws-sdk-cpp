@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/Receipt">AWS
    * API Reference</a></p>
    */
-  class AWS_SSMCONTACTS_API Receipt
+  class Receipt
   {
   public:
-    Receipt();
-    Receipt(Aws::Utils::Json::JsonView jsonValue);
-    Receipt& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSMCONTACTS_API Receipt();
+    AWS_SSMCONTACTS_API Receipt(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSMCONTACTS_API Receipt& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSMCONTACTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

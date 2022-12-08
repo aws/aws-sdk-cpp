@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GsmNmrObj">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTWIRELESS_API GsmNmrObj
+  class GsmNmrObj
   {
   public:
-    GsmNmrObj();
-    GsmNmrObj(Aws::Utils::Json::JsonView jsonValue);
-    GsmNmrObj& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTWIRELESS_API GsmNmrObj();
+    AWS_IOTWIRELESS_API GsmNmrObj(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API GsmNmrObj& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

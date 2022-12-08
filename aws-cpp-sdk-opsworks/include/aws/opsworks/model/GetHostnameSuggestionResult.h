@@ -30,12 +30,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/GetHostnameSuggestionResult">AWS
    * API Reference</a></p>
    */
-  class AWS_OPSWORKS_API GetHostnameSuggestionResult
+  class GetHostnameSuggestionResult
   {
   public:
-    GetHostnameSuggestionResult();
-    GetHostnameSuggestionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetHostnameSuggestionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OPSWORKS_API GetHostnameSuggestionResult();
+    AWS_OPSWORKS_API GetHostnameSuggestionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OPSWORKS_API GetHostnameSuggestionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

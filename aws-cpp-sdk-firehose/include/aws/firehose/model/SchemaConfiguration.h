@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/SchemaConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_FIREHOSE_API SchemaConfiguration
+  class SchemaConfiguration
   {
   public:
-    SchemaConfiguration();
-    SchemaConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    SchemaConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FIREHOSE_API SchemaConfiguration();
+    AWS_FIREHOSE_API SchemaConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FIREHOSE_API SchemaConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FIREHOSE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

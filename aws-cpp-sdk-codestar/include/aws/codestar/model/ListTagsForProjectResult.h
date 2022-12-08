@@ -25,12 +25,12 @@ namespace CodeStar
 {
 namespace Model
 {
-  class AWS_CODESTAR_API ListTagsForProjectResult
+  class ListTagsForProjectResult
   {
   public:
-    ListTagsForProjectResult();
-    ListTagsForProjectResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListTagsForProjectResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODESTAR_API ListTagsForProjectResult();
+    AWS_CODESTAR_API ListTagsForProjectResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODESTAR_API ListTagsForProjectResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -29,12 +29,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeleteTrustResult">AWS
    * API Reference</a></p>
    */
-  class AWS_DIRECTORYSERVICE_API DeleteTrustResult
+  class DeleteTrustResult
   {
   public:
-    DeleteTrustResult();
-    DeleteTrustResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteTrustResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DIRECTORYSERVICE_API DeleteTrustResult();
+    AWS_DIRECTORYSERVICE_API DeleteTrustResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DIRECTORYSERVICE_API DeleteTrustResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

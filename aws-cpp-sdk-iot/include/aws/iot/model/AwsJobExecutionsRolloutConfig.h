@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/AwsJobExecutionsRolloutConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API AwsJobExecutionsRolloutConfig
+  class AwsJobExecutionsRolloutConfig
   {
   public:
-    AwsJobExecutionsRolloutConfig();
-    AwsJobExecutionsRolloutConfig(Aws::Utils::Json::JsonView jsonValue);
-    AwsJobExecutionsRolloutConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API AwsJobExecutionsRolloutConfig();
+    AWS_IOT_API AwsJobExecutionsRolloutConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API AwsJobExecutionsRolloutConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

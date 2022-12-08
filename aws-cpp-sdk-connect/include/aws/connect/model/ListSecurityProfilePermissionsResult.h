@@ -25,12 +25,12 @@ namespace Connect
 {
 namespace Model
 {
-  class AWS_CONNECT_API ListSecurityProfilePermissionsResult
+  class ListSecurityProfilePermissionsResult
   {
   public:
-    ListSecurityProfilePermissionsResult();
-    ListSecurityProfilePermissionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListSecurityProfilePermissionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CONNECT_API ListSecurityProfilePermissionsResult();
+    AWS_CONNECT_API ListSecurityProfilePermissionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CONNECT_API ListSecurityProfilePermissionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

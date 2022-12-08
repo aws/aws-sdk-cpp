@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/ResourceConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTANALYTICS_API ResourceConfiguration
+  class ResourceConfiguration
   {
   public:
-    ResourceConfiguration();
-    ResourceConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    ResourceConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTANALYTICS_API ResourceConfiguration();
+    AWS_IOTANALYTICS_API ResourceConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTANALYTICS_API ResourceConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

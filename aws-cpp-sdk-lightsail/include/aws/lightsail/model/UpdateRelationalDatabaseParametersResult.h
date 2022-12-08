@@ -25,12 +25,12 @@ namespace Lightsail
 {
 namespace Model
 {
-  class AWS_LIGHTSAIL_API UpdateRelationalDatabaseParametersResult
+  class UpdateRelationalDatabaseParametersResult
   {
   public:
-    UpdateRelationalDatabaseParametersResult();
-    UpdateRelationalDatabaseParametersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateRelationalDatabaseParametersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LIGHTSAIL_API UpdateRelationalDatabaseParametersResult();
+    AWS_LIGHTSAIL_API UpdateRelationalDatabaseParametersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LIGHTSAIL_API UpdateRelationalDatabaseParametersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

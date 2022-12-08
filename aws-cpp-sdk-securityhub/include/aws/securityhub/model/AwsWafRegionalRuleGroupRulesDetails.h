@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsWafRegionalRuleGroupRulesDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsWafRegionalRuleGroupRulesDetails
+  class AwsWafRegionalRuleGroupRulesDetails
   {
   public:
-    AwsWafRegionalRuleGroupRulesDetails();
-    AwsWafRegionalRuleGroupRulesDetails(Aws::Utils::Json::JsonView jsonValue);
-    AwsWafRegionalRuleGroupRulesDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsWafRegionalRuleGroupRulesDetails();
+    AWS_SECURITYHUB_API AwsWafRegionalRuleGroupRulesDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsWafRegionalRuleGroupRulesDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

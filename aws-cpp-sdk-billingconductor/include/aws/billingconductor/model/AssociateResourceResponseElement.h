@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/AssociateResourceResponseElement">AWS
    * API Reference</a></p>
    */
-  class AWS_BILLINGCONDUCTOR_API AssociateResourceResponseElement
+  class AssociateResourceResponseElement
   {
   public:
-    AssociateResourceResponseElement();
-    AssociateResourceResponseElement(Aws::Utils::Json::JsonView jsonValue);
-    AssociateResourceResponseElement& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BILLINGCONDUCTOR_API AssociateResourceResponseElement();
+    AWS_BILLINGCONDUCTOR_API AssociateResourceResponseElement(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BILLINGCONDUCTOR_API AssociateResourceResponseElement& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BILLINGCONDUCTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

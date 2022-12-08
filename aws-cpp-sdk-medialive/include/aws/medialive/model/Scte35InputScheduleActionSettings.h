@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/Scte35InputScheduleActionSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API Scte35InputScheduleActionSettings
+  class Scte35InputScheduleActionSettings
   {
   public:
-    Scte35InputScheduleActionSettings();
-    Scte35InputScheduleActionSettings(Aws::Utils::Json::JsonView jsonValue);
-    Scte35InputScheduleActionSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API Scte35InputScheduleActionSettings();
+    AWS_MEDIALIVE_API Scte35InputScheduleActionSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Scte35InputScheduleActionSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

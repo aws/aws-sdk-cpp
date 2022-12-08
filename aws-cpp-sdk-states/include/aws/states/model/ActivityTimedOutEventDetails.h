@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/ActivityTimedOutEventDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SFN_API ActivityTimedOutEventDetails
+  class ActivityTimedOutEventDetails
   {
   public:
-    ActivityTimedOutEventDetails();
-    ActivityTimedOutEventDetails(Aws::Utils::Json::JsonView jsonValue);
-    ActivityTimedOutEventDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SFN_API ActivityTimedOutEventDetails();
+    AWS_SFN_API ActivityTimedOutEventDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SFN_API ActivityTimedOutEventDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SFN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

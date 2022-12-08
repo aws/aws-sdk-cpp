@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/JupyterServerAppSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API JupyterServerAppSettings
+  class JupyterServerAppSettings
   {
   public:
-    JupyterServerAppSettings();
-    JupyterServerAppSettings(Aws::Utils::Json::JsonView jsonValue);
-    JupyterServerAppSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API JupyterServerAppSettings();
+    AWS_SAGEMAKER_API JupyterServerAppSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API JupyterServerAppSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

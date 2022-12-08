@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/Application">AWS
    * API Reference</a></p>
    */
-  class AWS_SSMSAP_API Application
+  class Application
   {
   public:
-    Application();
-    Application(Aws::Utils::Json::JsonView jsonValue);
-    Application& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSMSAP_API Application();
+    AWS_SSMSAP_API Application(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSMSAP_API Application& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSMSAP_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

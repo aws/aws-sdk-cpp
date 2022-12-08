@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/Tag">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53DOMAINS_API Tag
+  class Tag
   {
   public:
-    Tag();
-    Tag(Aws::Utils::Json::JsonView jsonValue);
-    Tag& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ROUTE53DOMAINS_API Tag();
+    AWS_ROUTE53DOMAINS_API Tag(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROUTE53DOMAINS_API Tag& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROUTE53DOMAINS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

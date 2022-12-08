@@ -26,12 +26,12 @@ namespace EC2
 {
 namespace Model
 {
-  class AWS_EC2_API RestoreAddressToClassicResponse
+  class RestoreAddressToClassicResponse
   {
   public:
-    RestoreAddressToClassicResponse();
-    RestoreAddressToClassicResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    RestoreAddressToClassicResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API RestoreAddressToClassicResponse();
+    AWS_EC2_API RestoreAddressToClassicResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API RestoreAddressToClassicResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

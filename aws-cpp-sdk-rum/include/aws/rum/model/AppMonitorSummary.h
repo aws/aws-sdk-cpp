@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rum-2018-05-10/AppMonitorSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDWATCHRUM_API AppMonitorSummary
+  class AppMonitorSummary
   {
   public:
-    AppMonitorSummary();
-    AppMonitorSummary(Aws::Utils::Json::JsonView jsonValue);
-    AppMonitorSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDWATCHRUM_API AppMonitorSummary();
+    AWS_CLOUDWATCHRUM_API AppMonitorSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHRUM_API AppMonitorSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHRUM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

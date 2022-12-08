@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/Scope">AWS API
    * Reference</a></p>
    */
-  class AWS_INSPECTOR_API Scope
+  class Scope
   {
   public:
-    Scope();
-    Scope(Aws::Utils::Json::JsonView jsonValue);
-    Scope& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_INSPECTOR_API Scope();
+    AWS_INSPECTOR_API Scope(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR_API Scope& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/LogsSummary">AWS API
    * Reference</a></p>
    */
-  class AWS_MQ_API LogsSummary
+  class LogsSummary
   {
   public:
-    LogsSummary();
-    LogsSummary(Aws::Utils::Json::JsonView jsonValue);
-    LogsSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MQ_API LogsSummary();
+    AWS_MQ_API LogsSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MQ_API LogsSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MQ_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

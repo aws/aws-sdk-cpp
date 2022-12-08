@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/BatchUpdateDevicePositionError">AWS
    * API Reference</a></p>
    */
-  class AWS_LOCATIONSERVICE_API BatchUpdateDevicePositionError
+  class BatchUpdateDevicePositionError
   {
   public:
-    BatchUpdateDevicePositionError();
-    BatchUpdateDevicePositionError(Aws::Utils::Json::JsonView jsonValue);
-    BatchUpdateDevicePositionError& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LOCATIONSERVICE_API BatchUpdateDevicePositionError();
+    AWS_LOCATIONSERVICE_API BatchUpdateDevicePositionError(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOCATIONSERVICE_API BatchUpdateDevicePositionError& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOCATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -23,13 +23,13 @@ namespace ChimeSDKVoice
 namespace Model
 {
 
-  class AWS_CHIMESDKVOICE_API Participant
+  class Participant
   {
   public:
-    Participant();
-    Participant(Aws::Utils::Json::JsonView jsonValue);
-    Participant& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIMESDKVOICE_API Participant();
+    AWS_CHIMESDKVOICE_API Participant(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKVOICE_API Participant& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKVOICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

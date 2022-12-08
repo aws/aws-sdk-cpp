@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/ObdSignal">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTFLEETWISE_API ObdSignal
+  class ObdSignal
   {
   public:
-    ObdSignal();
-    ObdSignal(Aws::Utils::Json::JsonView jsonValue);
-    ObdSignal& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTFLEETWISE_API ObdSignal();
+    AWS_IOTFLEETWISE_API ObdSignal(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTFLEETWISE_API ObdSignal& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTFLEETWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

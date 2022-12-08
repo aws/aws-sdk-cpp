@@ -22,12 +22,12 @@ namespace AugmentedAIRuntime
 {
 namespace Model
 {
-  class AWS_AUGMENTEDAIRUNTIME_API StopHumanLoopResult
+  class StopHumanLoopResult
   {
   public:
-    StopHumanLoopResult();
-    StopHumanLoopResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    StopHumanLoopResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_AUGMENTEDAIRUNTIME_API StopHumanLoopResult();
+    AWS_AUGMENTEDAIRUNTIME_API StopHumanLoopResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_AUGMENTEDAIRUNTIME_API StopHumanLoopResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

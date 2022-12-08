@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/EcsTaskDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_GUARDDUTY_API EcsTaskDetails
+  class EcsTaskDetails
   {
   public:
-    EcsTaskDetails();
-    EcsTaskDetails(Aws::Utils::Json::JsonView jsonValue);
-    EcsTaskDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GUARDDUTY_API EcsTaskDetails();
+    AWS_GUARDDUTY_API EcsTaskDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API EcsTaskDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

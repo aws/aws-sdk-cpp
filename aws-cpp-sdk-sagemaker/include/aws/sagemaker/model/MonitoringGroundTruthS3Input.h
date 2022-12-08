@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/MonitoringGroundTruthS3Input">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API MonitoringGroundTruthS3Input
+  class MonitoringGroundTruthS3Input
   {
   public:
-    MonitoringGroundTruthS3Input();
-    MonitoringGroundTruthS3Input(Aws::Utils::Json::JsonView jsonValue);
-    MonitoringGroundTruthS3Input& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API MonitoringGroundTruthS3Input();
+    AWS_SAGEMAKER_API MonitoringGroundTruthS3Input(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API MonitoringGroundTruthS3Input& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

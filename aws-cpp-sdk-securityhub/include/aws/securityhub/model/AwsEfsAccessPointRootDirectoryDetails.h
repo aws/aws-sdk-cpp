@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsEfsAccessPointRootDirectoryDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsEfsAccessPointRootDirectoryDetails
+  class AwsEfsAccessPointRootDirectoryDetails
   {
   public:
-    AwsEfsAccessPointRootDirectoryDetails();
-    AwsEfsAccessPointRootDirectoryDetails(Aws::Utils::Json::JsonView jsonValue);
-    AwsEfsAccessPointRootDirectoryDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsEfsAccessPointRootDirectoryDetails();
+    AWS_SECURITYHUB_API AwsEfsAccessPointRootDirectoryDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsEfsAccessPointRootDirectoryDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/IpAddressDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_MACIE2_API IpAddressDetails
+  class IpAddressDetails
   {
   public:
-    IpAddressDetails();
-    IpAddressDetails(Aws::Utils::Json::JsonView jsonValue);
-    IpAddressDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MACIE2_API IpAddressDetails();
+    AWS_MACIE2_API IpAddressDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API IpAddressDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

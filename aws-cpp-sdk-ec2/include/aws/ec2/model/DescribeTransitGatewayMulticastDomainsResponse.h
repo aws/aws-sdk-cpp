@@ -27,12 +27,12 @@ namespace EC2
 {
 namespace Model
 {
-  class AWS_EC2_API DescribeTransitGatewayMulticastDomainsResponse
+  class DescribeTransitGatewayMulticastDomainsResponse
   {
   public:
-    DescribeTransitGatewayMulticastDomainsResponse();
-    DescribeTransitGatewayMulticastDomainsResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeTransitGatewayMulticastDomainsResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API DescribeTransitGatewayMulticastDomainsResponse();
+    AWS_EC2_API DescribeTransitGatewayMulticastDomainsResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API DescribeTransitGatewayMulticastDomainsResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

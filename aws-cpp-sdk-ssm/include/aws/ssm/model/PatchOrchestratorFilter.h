@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/PatchOrchestratorFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_SSM_API PatchOrchestratorFilter
+  class PatchOrchestratorFilter
   {
   public:
-    PatchOrchestratorFilter();
-    PatchOrchestratorFilter(Aws::Utils::Json::JsonView jsonValue);
-    PatchOrchestratorFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSM_API PatchOrchestratorFilter();
+    AWS_SSM_API PatchOrchestratorFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API PatchOrchestratorFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

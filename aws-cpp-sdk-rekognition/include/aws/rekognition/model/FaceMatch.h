@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/FaceMatch">AWS
    * API Reference</a></p>
    */
-  class AWS_REKOGNITION_API FaceMatch
+  class FaceMatch
   {
   public:
-    FaceMatch();
-    FaceMatch(Aws::Utils::Json::JsonView jsonValue);
-    FaceMatch& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_REKOGNITION_API FaceMatch();
+    AWS_REKOGNITION_API FaceMatch(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API FaceMatch& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

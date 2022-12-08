@@ -24,10 +24,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/UpdateMonitoringRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_KAFKA_API UpdateMonitoringRequest : public KafkaRequest
+  class UpdateMonitoringRequest : public KafkaRequest
   {
   public:
-    UpdateMonitoringRequest();
+    AWS_KAFKA_API UpdateMonitoringRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -35,7 +35,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateMonitoring"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_KAFKA_API Aws::String SerializePayload() const override;
 
 
     /**

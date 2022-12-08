@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/SectionPageBreakConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API SectionPageBreakConfiguration
+  class SectionPageBreakConfiguration
   {
   public:
-    SectionPageBreakConfiguration();
-    SectionPageBreakConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    SectionPageBreakConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API SectionPageBreakConfiguration();
+    AWS_QUICKSIGHT_API SectionPageBreakConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API SectionPageBreakConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

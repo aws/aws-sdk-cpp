@@ -32,13 +32,13 @@ namespace Model
    * <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/VpcConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_LAMBDA_API VpcConfig
+  class VpcConfig
   {
   public:
-    VpcConfig();
-    VpcConfig(Aws::Utils::Json::JsonView jsonValue);
-    VpcConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LAMBDA_API VpcConfig();
+    AWS_LAMBDA_API VpcConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAMBDA_API VpcConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAMBDA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

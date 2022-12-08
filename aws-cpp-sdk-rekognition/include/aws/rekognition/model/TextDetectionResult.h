@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/TextDetectionResult">AWS
    * API Reference</a></p>
    */
-  class AWS_REKOGNITION_API TextDetectionResult
+  class TextDetectionResult
   {
   public:
-    TextDetectionResult();
-    TextDetectionResult(Aws::Utils::Json::JsonView jsonValue);
-    TextDetectionResult& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_REKOGNITION_API TextDetectionResult();
+    AWS_REKOGNITION_API TextDetectionResult(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API TextDetectionResult& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

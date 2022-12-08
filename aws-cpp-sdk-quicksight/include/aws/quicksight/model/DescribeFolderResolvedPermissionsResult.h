@@ -26,12 +26,12 @@ namespace QuickSight
 {
 namespace Model
 {
-  class AWS_QUICKSIGHT_API DescribeFolderResolvedPermissionsResult
+  class DescribeFolderResolvedPermissionsResult
   {
   public:
-    DescribeFolderResolvedPermissionsResult();
-    DescribeFolderResolvedPermissionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeFolderResolvedPermissionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_QUICKSIGHT_API DescribeFolderResolvedPermissionsResult();
+    AWS_QUICKSIGHT_API DescribeFolderResolvedPermissionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_QUICKSIGHT_API DescribeFolderResolvedPermissionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

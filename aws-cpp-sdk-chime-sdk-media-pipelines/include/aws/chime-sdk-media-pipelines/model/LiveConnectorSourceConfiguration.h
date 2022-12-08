@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/LiveConnectorSourceConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_CHIMESDKMEDIAPIPELINES_API LiveConnectorSourceConfiguration
+  class LiveConnectorSourceConfiguration
   {
   public:
-    LiveConnectorSourceConfiguration();
-    LiveConnectorSourceConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    LiveConnectorSourceConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIMESDKMEDIAPIPELINES_API LiveConnectorSourceConfiguration();
+    AWS_CHIMESDKMEDIAPIPELINES_API LiveConnectorSourceConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKMEDIAPIPELINES_API LiveConnectorSourceConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKMEDIAPIPELINES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

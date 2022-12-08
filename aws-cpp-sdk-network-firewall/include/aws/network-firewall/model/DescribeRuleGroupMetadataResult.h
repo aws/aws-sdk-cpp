@@ -27,12 +27,12 @@ namespace NetworkFirewall
 {
 namespace Model
 {
-  class AWS_NETWORKFIREWALL_API DescribeRuleGroupMetadataResult
+  class DescribeRuleGroupMetadataResult
   {
   public:
-    DescribeRuleGroupMetadataResult();
-    DescribeRuleGroupMetadataResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeRuleGroupMetadataResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_NETWORKFIREWALL_API DescribeRuleGroupMetadataResult();
+    AWS_NETWORKFIREWALL_API DescribeRuleGroupMetadataResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_NETWORKFIREWALL_API DescribeRuleGroupMetadataResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

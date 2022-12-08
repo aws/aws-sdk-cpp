@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/StorediSCSIVolume">AWS
    * API Reference</a></p>
    */
-  class AWS_STORAGEGATEWAY_API StorediSCSIVolume
+  class StorediSCSIVolume
   {
   public:
-    StorediSCSIVolume();
-    StorediSCSIVolume(Aws::Utils::Json::JsonView jsonValue);
-    StorediSCSIVolume& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_STORAGEGATEWAY_API StorediSCSIVolume();
+    AWS_STORAGEGATEWAY_API StorediSCSIVolume(Aws::Utils::Json::JsonView jsonValue);
+    AWS_STORAGEGATEWAY_API StorediSCSIVolume& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_STORAGEGATEWAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/DomainDeliverabilityCampaign">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINTEMAIL_API DomainDeliverabilityCampaign
+  class DomainDeliverabilityCampaign
   {
   public:
-    DomainDeliverabilityCampaign();
-    DomainDeliverabilityCampaign(Aws::Utils::Json::JsonView jsonValue);
-    DomainDeliverabilityCampaign& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINTEMAIL_API DomainDeliverabilityCampaign();
+    AWS_PINPOINTEMAIL_API DomainDeliverabilityCampaign(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINTEMAIL_API DomainDeliverabilityCampaign& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINTEMAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

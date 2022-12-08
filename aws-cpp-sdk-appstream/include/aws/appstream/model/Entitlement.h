@@ -38,13 +38,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/Entitlement">AWS
    * API Reference</a></p>
    */
-  class AWS_APPSTREAM_API Entitlement
+  class Entitlement
   {
   public:
-    Entitlement();
-    Entitlement(Aws::Utils::Json::JsonView jsonValue);
-    Entitlement& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPSTREAM_API Entitlement();
+    AWS_APPSTREAM_API Entitlement(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPSTREAM_API Entitlement& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPSTREAM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

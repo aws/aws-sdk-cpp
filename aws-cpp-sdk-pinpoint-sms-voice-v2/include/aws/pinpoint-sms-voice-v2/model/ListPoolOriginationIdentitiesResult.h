@@ -26,12 +26,12 @@ namespace PinpointSMSVoiceV2
 {
 namespace Model
 {
-  class AWS_PINPOINTSMSVOICEV2_API ListPoolOriginationIdentitiesResult
+  class ListPoolOriginationIdentitiesResult
   {
   public:
-    ListPoolOriginationIdentitiesResult();
-    ListPoolOriginationIdentitiesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListPoolOriginationIdentitiesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PINPOINTSMSVOICEV2_API ListPoolOriginationIdentitiesResult();
+    AWS_PINPOINTSMSVOICEV2_API ListPoolOriginationIdentitiesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PINPOINTSMSVOICEV2_API ListPoolOriginationIdentitiesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

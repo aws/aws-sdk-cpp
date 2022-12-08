@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/JobPostLaunchActionsLaunchStatus">AWS
    * API Reference</a></p>
    */
-  class AWS_MGN_API JobPostLaunchActionsLaunchStatus
+  class JobPostLaunchActionsLaunchStatus
   {
   public:
-    JobPostLaunchActionsLaunchStatus();
-    JobPostLaunchActionsLaunchStatus(Aws::Utils::Json::JsonView jsonValue);
-    JobPostLaunchActionsLaunchStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MGN_API JobPostLaunchActionsLaunchStatus();
+    AWS_MGN_API JobPostLaunchActionsLaunchStatus(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MGN_API JobPostLaunchActionsLaunchStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MGN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

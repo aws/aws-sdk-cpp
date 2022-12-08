@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/CreatedArtifact">AWS
    * API Reference</a></p>
    */
-  class AWS_MIGRATIONHUB_API CreatedArtifact
+  class CreatedArtifact
   {
   public:
-    CreatedArtifact();
-    CreatedArtifact(Aws::Utils::Json::JsonView jsonValue);
-    CreatedArtifact& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MIGRATIONHUB_API CreatedArtifact();
+    AWS_MIGRATIONHUB_API CreatedArtifact(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MIGRATIONHUB_API CreatedArtifact& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MIGRATIONHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

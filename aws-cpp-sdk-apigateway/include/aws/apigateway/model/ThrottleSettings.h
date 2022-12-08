@@ -26,13 +26,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/ThrottleSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_APIGATEWAY_API ThrottleSettings
+  class ThrottleSettings
   {
   public:
-    ThrottleSettings();
-    ThrottleSettings(Aws::Utils::Json::JsonView jsonValue);
-    ThrottleSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APIGATEWAY_API ThrottleSettings();
+    AWS_APIGATEWAY_API ThrottleSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APIGATEWAY_API ThrottleSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APIGATEWAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

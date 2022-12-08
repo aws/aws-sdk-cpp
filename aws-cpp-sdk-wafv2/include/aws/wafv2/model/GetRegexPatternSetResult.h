@@ -25,12 +25,12 @@ namespace WAFV2
 {
 namespace Model
 {
-  class AWS_WAFV2_API GetRegexPatternSetResult
+  class GetRegexPatternSetResult
   {
   public:
-    GetRegexPatternSetResult();
-    GetRegexPatternSetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetRegexPatternSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WAFV2_API GetRegexPatternSetResult();
+    AWS_WAFV2_API GetRegexPatternSetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WAFV2_API GetRegexPatternSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

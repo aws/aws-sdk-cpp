@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/XksProxyAuthenticationCredentialType">AWS
    * API Reference</a></p>
    */
-  class AWS_KMS_API XksProxyAuthenticationCredentialType
+  class XksProxyAuthenticationCredentialType
   {
   public:
-    XksProxyAuthenticationCredentialType();
-    XksProxyAuthenticationCredentialType(Aws::Utils::Json::JsonView jsonValue);
-    XksProxyAuthenticationCredentialType& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KMS_API XksProxyAuthenticationCredentialType();
+    AWS_KMS_API XksProxyAuthenticationCredentialType(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KMS_API XksProxyAuthenticationCredentialType& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

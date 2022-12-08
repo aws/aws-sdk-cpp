@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elastic-inference-2017-07-25/ElasticInferenceAccelerator">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICINFERENCE_API ElasticInferenceAccelerator
+  class ElasticInferenceAccelerator
   {
   public:
-    ElasticInferenceAccelerator();
-    ElasticInferenceAccelerator(Aws::Utils::Json::JsonView jsonValue);
-    ElasticInferenceAccelerator& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ELASTICINFERENCE_API ElasticInferenceAccelerator();
+    AWS_ELASTICINFERENCE_API ElasticInferenceAccelerator(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICINFERENCE_API ElasticInferenceAccelerator& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICINFERENCE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

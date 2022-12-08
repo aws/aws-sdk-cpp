@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codestar-notifications-2019-10-15/ListTargetsFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_CODESTARNOTIFICATIONS_API ListTargetsFilter
+  class ListTargetsFilter
   {
   public:
-    ListTargetsFilter();
-    ListTargetsFilter(Aws::Utils::Json::JsonView jsonValue);
-    ListTargetsFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODESTARNOTIFICATIONS_API ListTargetsFilter();
+    AWS_CODESTARNOTIFICATIONS_API ListTargetsFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODESTARNOTIFICATIONS_API ListTargetsFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODESTARNOTIFICATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

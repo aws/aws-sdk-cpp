@@ -32,15 +32,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ClusterSecurityGroup">AWS
    * API Reference</a></p>
    */
-  class AWS_REDSHIFT_API ClusterSecurityGroup
+  class ClusterSecurityGroup
   {
   public:
-    ClusterSecurityGroup();
-    ClusterSecurityGroup(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ClusterSecurityGroup& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_REDSHIFT_API ClusterSecurityGroup();
+    AWS_REDSHIFT_API ClusterSecurityGroup(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_REDSHIFT_API ClusterSecurityGroup& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_REDSHIFT_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_REDSHIFT_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**

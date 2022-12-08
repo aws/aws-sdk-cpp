@@ -42,13 +42,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/PermissionsBoundary">AWS
    * API Reference</a></p>
    */
-  class AWS_SSOADMIN_API PermissionsBoundary
+  class PermissionsBoundary
   {
   public:
-    PermissionsBoundary();
-    PermissionsBoundary(Aws::Utils::Json::JsonView jsonValue);
-    PermissionsBoundary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSOADMIN_API PermissionsBoundary();
+    AWS_SSOADMIN_API PermissionsBoundary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSOADMIN_API PermissionsBoundary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSOADMIN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

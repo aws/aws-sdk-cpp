@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/CustomVocabularyItem">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELSV2_API CustomVocabularyItem
+  class CustomVocabularyItem
   {
   public:
-    CustomVocabularyItem();
-    CustomVocabularyItem(Aws::Utils::Json::JsonView jsonValue);
-    CustomVocabularyItem& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELSV2_API CustomVocabularyItem();
+    AWS_LEXMODELSV2_API CustomVocabularyItem(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API CustomVocabularyItem& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/SectionLayoutConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API SectionLayoutConfiguration
+  class SectionLayoutConfiguration
   {
   public:
-    SectionLayoutConfiguration();
-    SectionLayoutConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    SectionLayoutConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API SectionLayoutConfiguration();
+    AWS_QUICKSIGHT_API SectionLayoutConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API SectionLayoutConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

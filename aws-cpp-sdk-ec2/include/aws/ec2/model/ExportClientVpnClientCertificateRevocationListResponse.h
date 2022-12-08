@@ -26,12 +26,12 @@ namespace EC2
 {
 namespace Model
 {
-  class AWS_EC2_API ExportClientVpnClientCertificateRevocationListResponse
+  class ExportClientVpnClientCertificateRevocationListResponse
   {
   public:
-    ExportClientVpnClientCertificateRevocationListResponse();
-    ExportClientVpnClientCertificateRevocationListResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ExportClientVpnClientCertificateRevocationListResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API ExportClientVpnClientCertificateRevocationListResponse();
+    AWS_EC2_API ExportClientVpnClientCertificateRevocationListResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API ExportClientVpnClientCertificateRevocationListResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

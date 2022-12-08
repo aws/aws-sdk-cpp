@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/MasterUserOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICSEARCHSERVICE_API MasterUserOptions
+  class MasterUserOptions
   {
   public:
-    MasterUserOptions();
-    MasterUserOptions(Aws::Utils::Json::JsonView jsonValue);
-    MasterUserOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ELASTICSEARCHSERVICE_API MasterUserOptions();
+    AWS_ELASTICSEARCHSERVICE_API MasterUserOptions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICSEARCHSERVICE_API MasterUserOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

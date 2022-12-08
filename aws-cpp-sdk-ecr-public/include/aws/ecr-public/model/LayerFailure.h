@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-public-2020-10-30/LayerFailure">AWS
    * API Reference</a></p>
    */
-  class AWS_ECRPUBLIC_API LayerFailure
+  class LayerFailure
   {
   public:
-    LayerFailure();
-    LayerFailure(Aws::Utils::Json::JsonView jsonValue);
-    LayerFailure& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ECRPUBLIC_API LayerFailure();
+    AWS_ECRPUBLIC_API LayerFailure(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECRPUBLIC_API LayerFailure& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECRPUBLIC_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

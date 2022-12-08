@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudcontrol-2021-09-30/ResourceRequestStatusFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDCONTROLAPI_API ResourceRequestStatusFilter
+  class ResourceRequestStatusFilter
   {
   public:
-    ResourceRequestStatusFilter();
-    ResourceRequestStatusFilter(Aws::Utils::Json::JsonView jsonValue);
-    ResourceRequestStatusFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDCONTROLAPI_API ResourceRequestStatusFilter();
+    AWS_CLOUDCONTROLAPI_API ResourceRequestStatusFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDCONTROLAPI_API ResourceRequestStatusFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDCONTROLAPI_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

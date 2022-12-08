@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/braket-2019-09-01/SearchQuantumTasksFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_BRAKET_API SearchQuantumTasksFilter
+  class SearchQuantumTasksFilter
   {
   public:
-    SearchQuantumTasksFilter();
-    SearchQuantumTasksFilter(Aws::Utils::Json::JsonView jsonValue);
-    SearchQuantumTasksFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BRAKET_API SearchQuantumTasksFilter();
+    AWS_BRAKET_API SearchQuantumTasksFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BRAKET_API SearchQuantumTasksFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BRAKET_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

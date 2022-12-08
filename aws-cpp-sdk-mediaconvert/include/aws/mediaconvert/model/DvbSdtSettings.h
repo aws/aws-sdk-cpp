@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/DvbSdtSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API DvbSdtSettings
+  class DvbSdtSettings
   {
   public:
-    DvbSdtSettings();
-    DvbSdtSettings(Aws::Utils::Json::JsonView jsonValue);
-    DvbSdtSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API DvbSdtSettings();
+    AWS_MEDIACONVERT_API DvbSdtSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API DvbSdtSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/WriteApplicationSettingsRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API WriteApplicationSettingsRequest
+  class WriteApplicationSettingsRequest
   {
   public:
-    WriteApplicationSettingsRequest();
-    WriteApplicationSettingsRequest(Aws::Utils::Json::JsonView jsonValue);
-    WriteApplicationSettingsRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API WriteApplicationSettingsRequest();
+    AWS_PINPOINT_API WriteApplicationSettingsRequest(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API WriteApplicationSettingsRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

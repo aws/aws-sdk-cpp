@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mobile-2017-07-01/TooManyRequestsException">AWS
    * API Reference</a></p>
    */
-  class AWS_MOBILE_API TooManyRequestsException
+  class TooManyRequestsException
   {
   public:
-    TooManyRequestsException();
-    TooManyRequestsException(Aws::Utils::Json::JsonView jsonValue);
-    TooManyRequestsException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MOBILE_API TooManyRequestsException();
+    AWS_MOBILE_API TooManyRequestsException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MOBILE_API TooManyRequestsException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MOBILE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
