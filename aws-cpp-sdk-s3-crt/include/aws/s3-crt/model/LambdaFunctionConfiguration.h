@@ -31,14 +31,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/LambdaFunctionConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_S3CRT_API LambdaFunctionConfiguration
+  class LambdaFunctionConfiguration
   {
   public:
-    LambdaFunctionConfiguration();
-    LambdaFunctionConfiguration(const Aws::Utils::Xml::XmlNode& xmlNode);
-    LambdaFunctionConfiguration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CRT_API LambdaFunctionConfiguration();
+    AWS_S3CRT_API LambdaFunctionConfiguration(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CRT_API LambdaFunctionConfiguration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_S3CRT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     

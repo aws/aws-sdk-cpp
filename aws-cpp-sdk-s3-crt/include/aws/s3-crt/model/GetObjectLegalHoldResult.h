@@ -24,12 +24,12 @@ namespace S3Crt
 {
 namespace Model
 {
-  class AWS_S3CRT_API GetObjectLegalHoldResult
+  class GetObjectLegalHoldResult
   {
   public:
-    GetObjectLegalHoldResult();
-    GetObjectLegalHoldResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    GetObjectLegalHoldResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_S3CRT_API GetObjectLegalHoldResult();
+    AWS_S3CRT_API GetObjectLegalHoldResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_S3CRT_API GetObjectLegalHoldResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

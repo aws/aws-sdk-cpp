@@ -27,12 +27,12 @@ namespace RDS
 {
 namespace Model
 {
-  class AWS_RDS_API DescribeExportTasksResult
+  class DescribeExportTasksResult
   {
   public:
-    DescribeExportTasksResult();
-    DescribeExportTasksResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeExportTasksResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_RDS_API DescribeExportTasksResult();
+    AWS_RDS_API DescribeExportTasksResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_RDS_API DescribeExportTasksResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

@@ -24,12 +24,12 @@ namespace RDS
 {
 namespace Model
 {
-  class AWS_RDS_API DeregisterDBProxyTargetsResult
+  class DeregisterDBProxyTargetsResult
   {
   public:
-    DeregisterDBProxyTargetsResult();
-    DeregisterDBProxyTargetsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DeregisterDBProxyTargetsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_RDS_API DeregisterDBProxyTargetsResult();
+    AWS_RDS_API DeregisterDBProxyTargetsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_RDS_API DeregisterDBProxyTargetsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     

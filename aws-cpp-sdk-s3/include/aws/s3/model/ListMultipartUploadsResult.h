@@ -28,12 +28,12 @@ namespace S3
 {
 namespace Model
 {
-  class AWS_S3_API ListMultipartUploadsResult
+  class ListMultipartUploadsResult
   {
   public:
-    ListMultipartUploadsResult();
-    ListMultipartUploadsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ListMultipartUploadsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_S3_API ListMultipartUploadsResult();
+    AWS_S3_API ListMultipartUploadsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_S3_API ListMultipartUploadsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

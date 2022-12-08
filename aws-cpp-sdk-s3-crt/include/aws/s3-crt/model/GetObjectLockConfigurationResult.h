@@ -24,12 +24,12 @@ namespace S3Crt
 {
 namespace Model
 {
-  class AWS_S3CRT_API GetObjectLockConfigurationResult
+  class GetObjectLockConfigurationResult
   {
   public:
-    GetObjectLockConfigurationResult();
-    GetObjectLockConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    GetObjectLockConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_S3CRT_API GetObjectLockConfigurationResult();
+    AWS_S3CRT_API GetObjectLockConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_S3CRT_API GetObjectLockConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

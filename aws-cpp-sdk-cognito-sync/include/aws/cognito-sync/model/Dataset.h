@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/Dataset">AWS
    * API Reference</a></p>
    */
-  class AWS_COGNITOSYNC_API Dataset
+  class Dataset
   {
   public:
-    Dataset();
-    Dataset(Aws::Utils::Json::JsonView jsonValue);
-    Dataset& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COGNITOSYNC_API Dataset();
+    AWS_COGNITOSYNC_API Dataset(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COGNITOSYNC_API Dataset& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COGNITOSYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

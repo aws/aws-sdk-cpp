@@ -28,14 +28,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ObjectPart">AWS API
    * Reference</a></p>
    */
-  class AWS_S3_API ObjectPart
+  class ObjectPart
   {
   public:
-    ObjectPart();
-    ObjectPart(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ObjectPart& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3_API ObjectPart();
+    AWS_S3_API ObjectPart(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3_API ObjectPart& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_S3_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**

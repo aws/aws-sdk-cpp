@@ -22,12 +22,12 @@ namespace CognitoIdentityProvider
 {
 namespace Model
 {
-  class AWS_COGNITOIDENTITYPROVIDER_API UpdateAuthEventFeedbackResult
+  class UpdateAuthEventFeedbackResult
   {
   public:
-    UpdateAuthEventFeedbackResult();
-    UpdateAuthEventFeedbackResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateAuthEventFeedbackResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_COGNITOIDENTITYPROVIDER_API UpdateAuthEventFeedbackResult();
+    AWS_COGNITOIDENTITYPROVIDER_API UpdateAuthEventFeedbackResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_COGNITOIDENTITYPROVIDER_API UpdateAuthEventFeedbackResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

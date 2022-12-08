@@ -23,10 +23,10 @@ namespace Model
 
   /**
    */
-  class AWS_S3_API ListBucketIntelligentTieringConfigurationsRequest : public S3Request
+  class ListBucketIntelligentTieringConfigurationsRequest : public S3Request
   {
   public:
-    ListBucketIntelligentTieringConfigurationsRequest();
+    AWS_S3_API ListBucketIntelligentTieringConfigurationsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,14 +34,14 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ListBucketIntelligentTieringConfigurations"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_S3_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_S3_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
     /**
      * Helper function to collect parameters (configurable and static hardcoded) required for endpoint computation.
      */
-    EndpointParameters GetEndpointContextParams() const override;
+    AWS_S3_API EndpointParameters GetEndpointContextParams() const override;
 
     /**
      * <p>The name of the Amazon S3 bucket whose configuration you want to modify or

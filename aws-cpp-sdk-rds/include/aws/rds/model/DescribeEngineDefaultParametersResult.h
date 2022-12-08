@@ -25,12 +25,12 @@ namespace RDS
 {
 namespace Model
 {
-  class AWS_RDS_API DescribeEngineDefaultParametersResult
+  class DescribeEngineDefaultParametersResult
   {
   public:
-    DescribeEngineDefaultParametersResult();
-    DescribeEngineDefaultParametersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeEngineDefaultParametersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_RDS_API DescribeEngineDefaultParametersResult();
+    AWS_RDS_API DescribeEngineDefaultParametersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_RDS_API DescribeEngineDefaultParametersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     

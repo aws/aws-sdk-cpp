@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/RulesConfigurationType">AWS
    * API Reference</a></p>
    */
-  class AWS_COGNITOIDENTITY_API RulesConfigurationType
+  class RulesConfigurationType
   {
   public:
-    RulesConfigurationType();
-    RulesConfigurationType(Aws::Utils::Json::JsonView jsonValue);
-    RulesConfigurationType& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COGNITOIDENTITY_API RulesConfigurationType();
+    AWS_COGNITOIDENTITY_API RulesConfigurationType(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COGNITOIDENTITY_API RulesConfigurationType& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COGNITOIDENTITY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

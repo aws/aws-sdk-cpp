@@ -34,12 +34,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DBInstanceAutomatedBackupMessage">AWS
    * API Reference</a></p>
    */
-  class AWS_RDS_API DescribeDBInstanceAutomatedBackupsResult
+  class DescribeDBInstanceAutomatedBackupsResult
   {
   public:
-    DescribeDBInstanceAutomatedBackupsResult();
-    DescribeDBInstanceAutomatedBackupsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeDBInstanceAutomatedBackupsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_RDS_API DescribeDBInstanceAutomatedBackupsResult();
+    AWS_RDS_API DescribeDBInstanceAutomatedBackupsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_RDS_API DescribeDBInstanceAutomatedBackupsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

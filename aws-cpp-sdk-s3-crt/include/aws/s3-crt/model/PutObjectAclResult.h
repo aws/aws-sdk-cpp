@@ -24,12 +24,12 @@ namespace S3Crt
 {
 namespace Model
 {
-  class AWS_S3CRT_API PutObjectAclResult
+  class PutObjectAclResult
   {
   public:
-    PutObjectAclResult();
-    PutObjectAclResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    PutObjectAclResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_S3CRT_API PutObjectAclResult();
+    AWS_S3CRT_API PutObjectAclResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_S3CRT_API PutObjectAclResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     

@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_S3CONTROL_API CreateMultiRegionAccessPointRequest : public S3ControlRequest
+  class CreateMultiRegionAccessPointRequest : public S3ControlRequest
   {
   public:
-    CreateMultiRegionAccessPointRequest();
+    AWS_S3CONTROL_API CreateMultiRegionAccessPointRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,16 +31,16 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateMultiRegionAccessPoint"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_S3CONTROL_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_S3CONTROL_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-    inline bool ShouldComputeContentMd5() const override { return true; }
+    AWS_S3CONTROL_API inline bool ShouldComputeContentMd5() const override { return true; }
 
     /**
      * Helper function to collect parameters (configurable and static hardcoded) required for endpoint computation.
      */
-    EndpointParameters GetEndpointContextParams() const override;
+    AWS_S3CONTROL_API EndpointParameters GetEndpointContextParams() const override;
 
     /**
      * <p>The Amazon Web Services account ID for the owner of the Multi-Region Access

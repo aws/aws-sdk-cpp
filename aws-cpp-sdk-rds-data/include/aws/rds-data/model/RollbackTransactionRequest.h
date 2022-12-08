@@ -22,10 +22,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-data-2018-08-01/RollbackTransactionRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_RDSDATASERVICE_API RollbackTransactionRequest : public RDSDataServiceRequest
+  class RollbackTransactionRequest : public RDSDataServiceRequest
   {
   public:
-    RollbackTransactionRequest();
+    AWS_RDSDATASERVICE_API RollbackTransactionRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,7 +33,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "RollbackTransaction"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_RDSDATASERVICE_API Aws::String SerializePayload() const override;
 
 
     /**

@@ -29,14 +29,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/InvalidObjectState">AWS
    * API Reference</a></p>
    */
-  class AWS_S3_API InvalidObjectState
+  class InvalidObjectState
   {
   public:
-    InvalidObjectState();
-    InvalidObjectState(const Aws::Utils::Xml::XmlNode& xmlNode);
-    InvalidObjectState& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3_API InvalidObjectState();
+    AWS_S3_API InvalidObjectState(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3_API InvalidObjectState& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_S3_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     

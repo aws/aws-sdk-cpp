@@ -21,10 +21,10 @@ namespace Model
 
   /**
    */
-  class AWS_S3CONTROL_API PutStorageLensConfigurationRequest : public S3ControlRequest
+  class PutStorageLensConfigurationRequest : public S3ControlRequest
   {
   public:
-    PutStorageLensConfigurationRequest();
+    AWS_S3CONTROL_API PutStorageLensConfigurationRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,14 +32,14 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "PutStorageLensConfiguration"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_S3CONTROL_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_S3CONTROL_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
     /**
      * Helper function to collect parameters (configurable and static hardcoded) required for endpoint computation.
      */
-    EndpointParameters GetEndpointContextParams() const override;
+    AWS_S3CONTROL_API EndpointParameters GetEndpointContextParams() const override;
 
     /**
      * <p>The ID of the S3 Storage Lens configuration.</p>

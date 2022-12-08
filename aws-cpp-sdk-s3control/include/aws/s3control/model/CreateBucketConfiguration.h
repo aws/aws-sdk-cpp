@@ -29,14 +29,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/CreateBucketConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_S3CONTROL_API CreateBucketConfiguration
+  class CreateBucketConfiguration
   {
   public:
-    CreateBucketConfiguration();
-    CreateBucketConfiguration(const Aws::Utils::Xml::XmlNode& xmlNode);
-    CreateBucketConfiguration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CONTROL_API CreateBucketConfiguration();
+    AWS_S3CONTROL_API CreateBucketConfiguration(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CONTROL_API CreateBucketConfiguration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_S3CONTROL_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/Credentials">AWS
    * API Reference</a></p>
    */
-  class AWS_COGNITOIDENTITY_API Credentials
+  class Credentials
   {
   public:
-    Credentials();
-    Credentials(Aws::Utils::Json::JsonView jsonValue);
-    Credentials& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COGNITOIDENTITY_API Credentials();
+    AWS_COGNITOIDENTITY_API Credentials(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COGNITOIDENTITY_API Credentials& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COGNITOIDENTITY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

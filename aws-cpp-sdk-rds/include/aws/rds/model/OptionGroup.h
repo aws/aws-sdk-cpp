@@ -30,15 +30,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/OptionGroup">AWS API
    * Reference</a></p>
    */
-  class AWS_RDS_API OptionGroup
+  class OptionGroup
   {
   public:
-    OptionGroup();
-    OptionGroup(const Aws::Utils::Xml::XmlNode& xmlNode);
-    OptionGroup& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_RDS_API OptionGroup();
+    AWS_RDS_API OptionGroup(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_RDS_API OptionGroup& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_RDS_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_RDS_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**

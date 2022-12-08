@@ -24,12 +24,12 @@ namespace S3Crt
 {
 namespace Model
 {
-  class AWS_S3CRT_API PutObjectTaggingResult
+  class PutObjectTaggingResult
   {
   public:
-    PutObjectTaggingResult();
-    PutObjectTaggingResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    PutObjectTaggingResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_S3CRT_API PutObjectTaggingResult();
+    AWS_S3CRT_API PutObjectTaggingResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_S3CRT_API PutObjectTaggingResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

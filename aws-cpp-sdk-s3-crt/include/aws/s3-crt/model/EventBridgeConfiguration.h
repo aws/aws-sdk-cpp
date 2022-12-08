@@ -26,14 +26,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/EventBridgeConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_S3CRT_API EventBridgeConfiguration
+  class EventBridgeConfiguration
   {
   public:
-    EventBridgeConfiguration();
-    EventBridgeConfiguration(const Aws::Utils::Xml::XmlNode& xmlNode);
-    EventBridgeConfiguration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CRT_API EventBridgeConfiguration();
+    AWS_S3CRT_API EventBridgeConfiguration(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CRT_API EventBridgeConfiguration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_S3CRT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
   };
 

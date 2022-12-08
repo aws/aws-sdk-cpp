@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-data-2018-08-01/ResultFrame">AWS
    * API Reference</a></p>
    */
-  class AWS_RDSDATASERVICE_API ResultFrame
+  class ResultFrame
   {
   public:
-    ResultFrame();
-    ResultFrame(Aws::Utils::Json::JsonView jsonValue);
-    ResultFrame& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_RDSDATASERVICE_API ResultFrame();
+    AWS_RDSDATASERVICE_API ResultFrame(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RDSDATASERVICE_API ResultFrame& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RDSDATASERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

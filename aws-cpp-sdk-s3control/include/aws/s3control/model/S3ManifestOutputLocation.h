@@ -30,14 +30,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/S3ManifestOutputLocation">AWS
    * API Reference</a></p>
    */
-  class AWS_S3CONTROL_API S3ManifestOutputLocation
+  class S3ManifestOutputLocation
   {
   public:
-    S3ManifestOutputLocation();
-    S3ManifestOutputLocation(const Aws::Utils::Xml::XmlNode& xmlNode);
-    S3ManifestOutputLocation& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CONTROL_API S3ManifestOutputLocation();
+    AWS_S3CONTROL_API S3ManifestOutputLocation(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CONTROL_API S3ManifestOutputLocation& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_S3CONTROL_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**

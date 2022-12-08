@@ -22,12 +22,12 @@ namespace S3Control
 {
 namespace Model
 {
-  class AWS_S3CONTROL_API DeleteJobTaggingResult
+  class DeleteJobTaggingResult
   {
   public:
-    DeleteJobTaggingResult();
-    DeleteJobTaggingResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DeleteJobTaggingResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_S3CONTROL_API DeleteJobTaggingResult();
+    AWS_S3CONTROL_API DeleteJobTaggingResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_S3CONTROL_API DeleteJobTaggingResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
   };
 

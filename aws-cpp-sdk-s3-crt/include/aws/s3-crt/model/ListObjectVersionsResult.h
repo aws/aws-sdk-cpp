@@ -29,12 +29,12 @@ namespace S3Crt
 {
 namespace Model
 {
-  class AWS_S3CRT_API ListObjectVersionsResult
+  class ListObjectVersionsResult
   {
   public:
-    ListObjectVersionsResult();
-    ListObjectVersionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ListObjectVersionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_S3CRT_API ListObjectVersionsResult();
+    AWS_S3CRT_API ListObjectVersionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_S3CRT_API ListObjectVersionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

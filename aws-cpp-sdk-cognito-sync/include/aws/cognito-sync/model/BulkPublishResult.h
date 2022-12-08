@@ -29,12 +29,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/BulkPublishResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_COGNITOSYNC_API BulkPublishResult
+  class BulkPublishResult
   {
   public:
-    BulkPublishResult();
-    BulkPublishResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    BulkPublishResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_COGNITOSYNC_API BulkPublishResult();
+    AWS_COGNITOSYNC_API BulkPublishResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_COGNITOSYNC_API BulkPublishResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -26,12 +26,12 @@ namespace S3
 {
 namespace Model
 {
-  class AWS_S3_API UploadPartResult
+  class UploadPartResult
   {
   public:
-    UploadPartResult();
-    UploadPartResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    UploadPartResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_S3_API UploadPartResult();
+    AWS_S3_API UploadPartResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_S3_API UploadPartResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/VerificationMessageTemplateType">AWS
    * API Reference</a></p>
    */
-  class AWS_COGNITOIDENTITYPROVIDER_API VerificationMessageTemplateType
+  class VerificationMessageTemplateType
   {
   public:
-    VerificationMessageTemplateType();
-    VerificationMessageTemplateType(Aws::Utils::Json::JsonView jsonValue);
-    VerificationMessageTemplateType& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COGNITOIDENTITYPROVIDER_API VerificationMessageTemplateType();
+    AWS_COGNITOIDENTITYPROVIDER_API VerificationMessageTemplateType(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COGNITOIDENTITYPROVIDER_API VerificationMessageTemplateType& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COGNITOIDENTITYPROVIDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

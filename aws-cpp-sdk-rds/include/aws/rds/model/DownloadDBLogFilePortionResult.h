@@ -31,12 +31,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DownloadDBLogFilePortionDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_RDS_API DownloadDBLogFilePortionResult
+  class DownloadDBLogFilePortionResult
   {
   public:
-    DownloadDBLogFilePortionResult();
-    DownloadDBLogFilePortionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DownloadDBLogFilePortionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_RDS_API DownloadDBLogFilePortionResult();
+    AWS_RDS_API DownloadDBLogFilePortionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_RDS_API DownloadDBLogFilePortionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

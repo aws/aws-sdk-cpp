@@ -32,10 +32,10 @@ namespace Model
 
   /**
    */
-  class AWS_S3CRT_API PutObjectRequest : public StreamingS3CrtRequest
+  class PutObjectRequest : public StreamingS3CrtRequest
   {
   public:
-    PutObjectRequest();
+    AWS_S3CRT_API PutObjectRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,16 +43,16 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "PutObject"; }
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_S3CRT_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_S3CRT_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-    Aws::String GetChecksumAlgorithmName() const override;
+    AWS_S3CRT_API Aws::String GetChecksumAlgorithmName() const override;
 
     /**
      * Helper function to collect parameters (configurable and static hardcoded) required for endpoint computation.
      */
-    EndpointParameters GetEndpointContextParams() const override;
+    AWS_S3CRT_API EndpointParameters GetEndpointContextParams() const override;
 
     /**
      * <p>The canned ACL to apply to the object. For more information, see <a

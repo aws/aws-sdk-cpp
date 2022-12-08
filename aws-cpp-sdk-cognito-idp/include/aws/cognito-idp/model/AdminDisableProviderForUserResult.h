@@ -22,12 +22,12 @@ namespace CognitoIdentityProvider
 {
 namespace Model
 {
-  class AWS_COGNITOIDENTITYPROVIDER_API AdminDisableProviderForUserResult
+  class AdminDisableProviderForUserResult
   {
   public:
-    AdminDisableProviderForUserResult();
-    AdminDisableProviderForUserResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AdminDisableProviderForUserResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_COGNITOIDENTITYPROVIDER_API AdminDisableProviderForUserResult();
+    AWS_COGNITOIDENTITYPROVIDER_API AdminDisableProviderForUserResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_COGNITOIDENTITYPROVIDER_API AdminDisableProviderForUserResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

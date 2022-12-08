@@ -27,12 +27,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/UnsubscribeFromDatasetResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_COGNITOSYNC_API UnsubscribeFromDatasetResult
+  class UnsubscribeFromDatasetResult
   {
   public:
-    UnsubscribeFromDatasetResult();
-    UnsubscribeFromDatasetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UnsubscribeFromDatasetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_COGNITOSYNC_API UnsubscribeFromDatasetResult();
+    AWS_COGNITOSYNC_API UnsubscribeFromDatasetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_COGNITOSYNC_API UnsubscribeFromDatasetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

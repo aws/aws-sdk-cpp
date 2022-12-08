@@ -26,12 +26,12 @@ namespace S3Control
 {
 namespace Model
 {
-  class AWS_S3CONTROL_API ListStorageLensConfigurationsResult
+  class ListStorageLensConfigurationsResult
   {
   public:
-    ListStorageLensConfigurationsResult();
-    ListStorageLensConfigurationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ListStorageLensConfigurationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_S3CONTROL_API ListStorageLensConfigurationsResult();
+    AWS_S3CONTROL_API ListStorageLensConfigurationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_S3CONTROL_API ListStorageLensConfigurationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

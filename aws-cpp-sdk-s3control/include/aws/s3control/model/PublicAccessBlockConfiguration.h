@@ -31,14 +31,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PublicAccessBlockConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_S3CONTROL_API PublicAccessBlockConfiguration
+  class PublicAccessBlockConfiguration
   {
   public:
-    PublicAccessBlockConfiguration();
-    PublicAccessBlockConfiguration(const Aws::Utils::Xml::XmlNode& xmlNode);
-    PublicAccessBlockConfiguration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CONTROL_API PublicAccessBlockConfiguration();
+    AWS_S3CONTROL_API PublicAccessBlockConfiguration(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CONTROL_API PublicAccessBlockConfiguration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_S3CONTROL_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**

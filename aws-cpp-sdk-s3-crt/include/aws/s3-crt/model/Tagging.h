@@ -28,14 +28,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/Tagging">AWS API
    * Reference</a></p>
    */
-  class AWS_S3CRT_API Tagging
+  class Tagging
   {
   public:
-    Tagging();
-    Tagging(const Aws::Utils::Xml::XmlNode& xmlNode);
-    Tagging& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CRT_API Tagging();
+    AWS_S3CRT_API Tagging(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CRT_API Tagging& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_S3CRT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**

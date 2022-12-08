@@ -32,12 +32,12 @@ namespace S3Crt
 {
 namespace Model
 {
-  class AWS_S3CRT_API ListPartsResult
+  class ListPartsResult
   {
   public:
-    ListPartsResult();
-    ListPartsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ListPartsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_S3CRT_API ListPartsResult();
+    AWS_S3CRT_API ListPartsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_S3CRT_API ListPartsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

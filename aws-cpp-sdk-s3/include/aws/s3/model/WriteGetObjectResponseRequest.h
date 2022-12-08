@@ -31,10 +31,10 @@ namespace Model
 
   /**
    */
-  class AWS_S3_API WriteGetObjectResponseRequest : public StreamingS3Request
+  class WriteGetObjectResponseRequest : public StreamingS3Request
   {
   public:
-    WriteGetObjectResponseRequest();
+    AWS_S3_API WriteGetObjectResponseRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,18 +42,18 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "WriteGetObjectResponse"; }
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_S3_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_S3_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-    bool SignBody() const override { return false; }
+    AWS_S3_API bool SignBody() const override { return false; }
 
-    bool IsChunked() const override { return true; }
+    AWS_S3_API bool IsChunked() const override { return true; }
 
     /**
      * Helper function to collect parameters (configurable and static hardcoded) required for endpoint computation.
      */
-    EndpointParameters GetEndpointContextParams() const override;
+    AWS_S3_API EndpointParameters GetEndpointContextParams() const override;
 
     /**
      * <p>Route prefix to the HTTP URL generated.</p>

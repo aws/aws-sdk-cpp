@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminCreateUserConfigType">AWS
    * API Reference</a></p>
    */
-  class AWS_COGNITOIDENTITYPROVIDER_API AdminCreateUserConfigType
+  class AdminCreateUserConfigType
   {
   public:
-    AdminCreateUserConfigType();
-    AdminCreateUserConfigType(Aws::Utils::Json::JsonView jsonValue);
-    AdminCreateUserConfigType& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COGNITOIDENTITYPROVIDER_API AdminCreateUserConfigType();
+    AWS_COGNITOIDENTITYPROVIDER_API AdminCreateUserConfigType(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COGNITOIDENTITYPROVIDER_API AdminCreateUserConfigType& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COGNITOIDENTITYPROVIDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

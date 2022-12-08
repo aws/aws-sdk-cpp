@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AccountTakeoverActionsType">AWS
    * API Reference</a></p>
    */
-  class AWS_COGNITOIDENTITYPROVIDER_API AccountTakeoverActionsType
+  class AccountTakeoverActionsType
   {
   public:
-    AccountTakeoverActionsType();
-    AccountTakeoverActionsType(Aws::Utils::Json::JsonView jsonValue);
-    AccountTakeoverActionsType& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COGNITOIDENTITYPROVIDER_API AccountTakeoverActionsType();
+    AWS_COGNITOIDENTITYPROVIDER_API AccountTakeoverActionsType(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COGNITOIDENTITYPROVIDER_API AccountTakeoverActionsType& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COGNITOIDENTITYPROVIDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

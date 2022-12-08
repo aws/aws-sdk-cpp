@@ -28,14 +28,14 @@ namespace Model
    * <a href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/Grantee">AWS API
    * Reference</a></p>
    */
-  class AWS_S3CRT_API Grantee
+  class Grantee
   {
   public:
-    Grantee();
-    Grantee(const Aws::Utils::Xml::XmlNode& xmlNode);
-    Grantee& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CRT_API Grantee();
+    AWS_S3CRT_API Grantee(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CRT_API Grantee& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_S3CRT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**

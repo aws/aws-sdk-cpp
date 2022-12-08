@@ -27,21 +27,21 @@ namespace S3Crt
 {
 namespace Model
 {
-  class AWS_S3CRT_API GetObjectResult
+  class GetObjectResult
   {
   public:
-    GetObjectResult();
+    AWS_S3CRT_API GetObjectResult();
     //We have to define these because Microsoft doesn't auto generate them
-    GetObjectResult(GetObjectResult&&);
-    GetObjectResult& operator=(GetObjectResult&&);
+    AWS_S3CRT_API GetObjectResult(GetObjectResult&&);
+    AWS_S3CRT_API GetObjectResult& operator=(GetObjectResult&&);
     //we delete these because Microsoft doesn't handle move generation correctly
     //and we therefore don't trust them to get it right here either.
     GetObjectResult(const GetObjectResult&) = delete;
     GetObjectResult& operator=(const GetObjectResult&) = delete;
 
 
-    GetObjectResult(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
-    GetObjectResult& operator=(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
+    AWS_S3CRT_API GetObjectResult(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
+    AWS_S3CRT_API GetObjectResult& operator=(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
 
 
 

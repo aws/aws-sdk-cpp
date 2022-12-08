@@ -31,14 +31,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/InputSerialization">AWS
    * API Reference</a></p>
    */
-  class AWS_S3CRT_API InputSerialization
+  class InputSerialization
   {
   public:
-    InputSerialization();
-    InputSerialization(const Aws::Utils::Xml::XmlNode& xmlNode);
-    InputSerialization& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CRT_API InputSerialization();
+    AWS_S3CRT_API InputSerialization(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CRT_API InputSerialization& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_S3CRT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**

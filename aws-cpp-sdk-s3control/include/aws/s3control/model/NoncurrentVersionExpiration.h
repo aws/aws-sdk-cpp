@@ -26,14 +26,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/NoncurrentVersionExpiration">AWS
    * API Reference</a></p>
    */
-  class AWS_S3CONTROL_API NoncurrentVersionExpiration
+  class NoncurrentVersionExpiration
   {
   public:
-    NoncurrentVersionExpiration();
-    NoncurrentVersionExpiration(const Aws::Utils::Xml::XmlNode& xmlNode);
-    NoncurrentVersionExpiration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CONTROL_API NoncurrentVersionExpiration();
+    AWS_S3CONTROL_API NoncurrentVersionExpiration(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CONTROL_API NoncurrentVersionExpiration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_S3CONTROL_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**

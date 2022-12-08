@@ -27,12 +27,12 @@ namespace S3Crt
 {
 namespace Model
 {
-  class AWS_S3CRT_API UploadPartCopyResult
+  class UploadPartCopyResult
   {
   public:
-    UploadPartCopyResult();
-    UploadPartCopyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    UploadPartCopyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_S3CRT_API UploadPartCopyResult();
+    AWS_S3CRT_API UploadPartCopyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_S3CRT_API UploadPartCopyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

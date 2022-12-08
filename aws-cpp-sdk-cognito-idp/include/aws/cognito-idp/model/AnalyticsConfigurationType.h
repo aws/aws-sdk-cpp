@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AnalyticsConfigurationType">AWS
    * API Reference</a></p>
    */
-  class AWS_COGNITOIDENTITYPROVIDER_API AnalyticsConfigurationType
+  class AnalyticsConfigurationType
   {
   public:
-    AnalyticsConfigurationType();
-    AnalyticsConfigurationType(Aws::Utils::Json::JsonView jsonValue);
-    AnalyticsConfigurationType& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COGNITOIDENTITYPROVIDER_API AnalyticsConfigurationType();
+    AWS_COGNITOIDENTITYPROVIDER_API AnalyticsConfigurationType(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COGNITOIDENTITYPROVIDER_API AnalyticsConfigurationType& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COGNITOIDENTITYPROVIDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

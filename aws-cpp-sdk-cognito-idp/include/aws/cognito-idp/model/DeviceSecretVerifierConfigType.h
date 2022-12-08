@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DeviceSecretVerifierConfigType">AWS
    * API Reference</a></p>
    */
-  class AWS_COGNITOIDENTITYPROVIDER_API DeviceSecretVerifierConfigType
+  class DeviceSecretVerifierConfigType
   {
   public:
-    DeviceSecretVerifierConfigType();
-    DeviceSecretVerifierConfigType(Aws::Utils::Json::JsonView jsonValue);
-    DeviceSecretVerifierConfigType& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COGNITOIDENTITYPROVIDER_API DeviceSecretVerifierConfigType();
+    AWS_COGNITOIDENTITYPROVIDER_API DeviceSecretVerifierConfigType(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COGNITOIDENTITYPROVIDER_API DeviceSecretVerifierConfigType& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COGNITOIDENTITYPROVIDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

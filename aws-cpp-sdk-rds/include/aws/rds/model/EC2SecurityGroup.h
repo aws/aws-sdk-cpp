@@ -32,15 +32,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/EC2SecurityGroup">AWS
    * API Reference</a></p>
    */
-  class AWS_RDS_API EC2SecurityGroup
+  class EC2SecurityGroup
   {
   public:
-    EC2SecurityGroup();
-    EC2SecurityGroup(const Aws::Utils::Xml::XmlNode& xmlNode);
-    EC2SecurityGroup& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_RDS_API EC2SecurityGroup();
+    AWS_RDS_API EC2SecurityGroup(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_RDS_API EC2SecurityGroup& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_RDS_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_RDS_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**

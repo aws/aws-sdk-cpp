@@ -37,15 +37,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DBProxyEndpoint">AWS
    * API Reference</a></p>
    */
-  class AWS_RDS_API DBProxyEndpoint
+  class DBProxyEndpoint
   {
   public:
-    DBProxyEndpoint();
-    DBProxyEndpoint(const Aws::Utils::Xml::XmlNode& xmlNode);
-    DBProxyEndpoint& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_RDS_API DBProxyEndpoint();
+    AWS_RDS_API DBProxyEndpoint(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_RDS_API DBProxyEndpoint& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_RDS_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_RDS_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**

@@ -30,14 +30,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ObjectLambdaTransformationConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_S3CONTROL_API ObjectLambdaTransformationConfiguration
+  class ObjectLambdaTransformationConfiguration
   {
   public:
-    ObjectLambdaTransformationConfiguration();
-    ObjectLambdaTransformationConfiguration(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ObjectLambdaTransformationConfiguration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CONTROL_API ObjectLambdaTransformationConfiguration();
+    AWS_S3CONTROL_API ObjectLambdaTransformationConfiguration(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CONTROL_API ObjectLambdaTransformationConfiguration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_S3CONTROL_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**

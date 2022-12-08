@@ -37,13 +37,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-data-2018-08-01/Value">AWS API
    * Reference</a></p>
    */
-  class AWS_RDSDATASERVICE_API Value
+  class Value
   {
   public:
-    Value();
-    Value(Aws::Utils::Json::JsonView jsonValue);
-    Value& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_RDSDATASERVICE_API Value();
+    AWS_RDSDATASERVICE_API Value(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RDSDATASERVICE_API Value& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RDSDATASERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -288,32 +288,32 @@ namespace Model
     /**
      * <p>A value for a column of STRUCT data type.</p>
      */
-    const StructValue& GetStructValue() const;
+    AWS_RDSDATASERVICE_API const StructValue& GetStructValue() const;
 
     /**
      * <p>A value for a column of STRUCT data type.</p>
      */
-    bool StructValueHasBeenSet() const;
+    AWS_RDSDATASERVICE_API bool StructValueHasBeenSet() const;
 
     /**
      * <p>A value for a column of STRUCT data type.</p>
      */
-    void SetStructValue(const StructValue& value);
+    AWS_RDSDATASERVICE_API void SetStructValue(const StructValue& value);
 
     /**
      * <p>A value for a column of STRUCT data type.</p>
      */
-    void SetStructValue(StructValue&& value);
+    AWS_RDSDATASERVICE_API void SetStructValue(StructValue&& value);
 
     /**
      * <p>A value for a column of STRUCT data type.</p>
      */
-    Value& WithStructValue(const StructValue& value);
+    AWS_RDSDATASERVICE_API Value& WithStructValue(const StructValue& value);
 
     /**
      * <p>A value for a column of STRUCT data type.</p>
      */
-    Value& WithStructValue(StructValue&& value);
+    AWS_RDSDATASERVICE_API Value& WithStructValue(StructValue&& value);
 
   private:
 

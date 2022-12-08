@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/IdentityPoolUsage">AWS
    * API Reference</a></p>
    */
-  class AWS_COGNITOSYNC_API IdentityPoolUsage
+  class IdentityPoolUsage
   {
   public:
-    IdentityPoolUsage();
-    IdentityPoolUsage(Aws::Utils::Json::JsonView jsonValue);
-    IdentityPoolUsage& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COGNITOSYNC_API IdentityPoolUsage();
+    AWS_COGNITOSYNC_API IdentityPoolUsage(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COGNITOSYNC_API IdentityPoolUsage& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COGNITOSYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

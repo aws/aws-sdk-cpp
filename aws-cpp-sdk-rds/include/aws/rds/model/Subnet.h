@@ -31,15 +31,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/Subnet">AWS API
    * Reference</a></p>
    */
-  class AWS_RDS_API Subnet
+  class Subnet
   {
   public:
-    Subnet();
-    Subnet(const Aws::Utils::Xml::XmlNode& xmlNode);
-    Subnet& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_RDS_API Subnet();
+    AWS_RDS_API Subnet(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_RDS_API Subnet& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_RDS_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_RDS_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**

@@ -30,14 +30,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/AccessControlPolicy">AWS
    * API Reference</a></p>
    */
-  class AWS_S3CRT_API AccessControlPolicy
+  class AccessControlPolicy
   {
   public:
-    AccessControlPolicy();
-    AccessControlPolicy(const Aws::Utils::Xml::XmlNode& xmlNode);
-    AccessControlPolicy& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CRT_API AccessControlPolicy();
+    AWS_S3CRT_API AccessControlPolicy(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CRT_API AccessControlPolicy& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_S3CRT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**

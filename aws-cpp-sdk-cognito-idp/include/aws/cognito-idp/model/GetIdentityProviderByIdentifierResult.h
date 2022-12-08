@@ -24,12 +24,12 @@ namespace CognitoIdentityProvider
 {
 namespace Model
 {
-  class AWS_COGNITOIDENTITYPROVIDER_API GetIdentityProviderByIdentifierResult
+  class GetIdentityProviderByIdentifierResult
   {
   public:
-    GetIdentityProviderByIdentifierResult();
-    GetIdentityProviderByIdentifierResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetIdentityProviderByIdentifierResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_COGNITOIDENTITYPROVIDER_API GetIdentityProviderByIdentifierResult();
+    AWS_COGNITOIDENTITYPROVIDER_API GetIdentityProviderByIdentifierResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_COGNITOIDENTITYPROVIDER_API GetIdentityProviderByIdentifierResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

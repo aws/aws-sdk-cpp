@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-data-2018-08-01/StatementTimeoutException">AWS
    * API Reference</a></p>
    */
-  class AWS_RDSDATASERVICE_API StatementTimeoutException
+  class StatementTimeoutException
   {
   public:
-    StatementTimeoutException();
-    StatementTimeoutException(Aws::Utils::Json::JsonView jsonValue);
-    StatementTimeoutException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_RDSDATASERVICE_API StatementTimeoutException();
+    AWS_RDSDATASERVICE_API StatementTimeoutException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RDSDATASERVICE_API StatementTimeoutException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RDSDATASERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -25,12 +25,12 @@ namespace RDS
 {
 namespace Model
 {
-  class AWS_RDS_API RemoveSourceIdentifierFromSubscriptionResult
+  class RemoveSourceIdentifierFromSubscriptionResult
   {
   public:
-    RemoveSourceIdentifierFromSubscriptionResult();
-    RemoveSourceIdentifierFromSubscriptionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    RemoveSourceIdentifierFromSubscriptionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_RDS_API RemoveSourceIdentifierFromSubscriptionResult();
+    AWS_RDS_API RemoveSourceIdentifierFromSubscriptionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_RDS_API RemoveSourceIdentifierFromSubscriptionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     

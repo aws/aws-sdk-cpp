@@ -26,12 +26,12 @@ namespace S3Control
 {
 namespace Model
 {
-  class AWS_S3CONTROL_API ListRegionalBucketsResult
+  class ListRegionalBucketsResult
   {
   public:
-    ListRegionalBucketsResult();
-    ListRegionalBucketsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ListRegionalBucketsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_S3CONTROL_API ListRegionalBucketsResult();
+    AWS_S3CONTROL_API ListRegionalBucketsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_S3CONTROL_API ListRegionalBucketsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

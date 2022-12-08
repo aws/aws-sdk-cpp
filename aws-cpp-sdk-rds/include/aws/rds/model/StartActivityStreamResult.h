@@ -27,12 +27,12 @@ namespace RDS
 {
 namespace Model
 {
-  class AWS_RDS_API StartActivityStreamResult
+  class StartActivityStreamResult
   {
   public:
-    StartActivityStreamResult();
-    StartActivityStreamResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    StartActivityStreamResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_RDS_API StartActivityStreamResult();
+    AWS_RDS_API StartActivityStreamResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_RDS_API StartActivityStreamResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

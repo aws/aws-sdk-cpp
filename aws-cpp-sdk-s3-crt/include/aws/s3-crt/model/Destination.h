@@ -34,14 +34,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/Destination">AWS API
    * Reference</a></p>
    */
-  class AWS_S3CRT_API Destination
+  class Destination
   {
   public:
-    Destination();
-    Destination(const Aws::Utils::Xml::XmlNode& xmlNode);
-    Destination& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CRT_API Destination();
+    AWS_S3CRT_API Destination(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CRT_API Destination& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_S3CRT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**

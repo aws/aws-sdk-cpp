@@ -89,15 +89,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/AccountQuota">AWS
    * API Reference</a></p>
    */
-  class AWS_RDS_API AccountQuota
+  class AccountQuota
   {
   public:
-    AccountQuota();
-    AccountQuota(const Aws::Utils::Xml::XmlNode& xmlNode);
-    AccountQuota& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_RDS_API AccountQuota();
+    AWS_RDS_API AccountQuota(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_RDS_API AccountQuota& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_RDS_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_RDS_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**

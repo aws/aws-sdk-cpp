@@ -29,15 +29,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DBClusterOptionGroupStatus">AWS
    * API Reference</a></p>
    */
-  class AWS_RDS_API DBClusterOptionGroupStatus
+  class DBClusterOptionGroupStatus
   {
   public:
-    DBClusterOptionGroupStatus();
-    DBClusterOptionGroupStatus(const Aws::Utils::Xml::XmlNode& xmlNode);
-    DBClusterOptionGroupStatus& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_RDS_API DBClusterOptionGroupStatus();
+    AWS_RDS_API DBClusterOptionGroupStatus(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_RDS_API DBClusterOptionGroupStatus& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_RDS_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_RDS_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**

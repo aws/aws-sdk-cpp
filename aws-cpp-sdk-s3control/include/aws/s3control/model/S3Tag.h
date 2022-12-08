@@ -27,14 +27,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/S3Tag">AWS API
    * Reference</a></p>
    */
-  class AWS_S3CONTROL_API S3Tag
+  class S3Tag
   {
   public:
-    S3Tag();
-    S3Tag(const Aws::Utils::Xml::XmlNode& xmlNode);
-    S3Tag& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CONTROL_API S3Tag();
+    AWS_S3CONTROL_API S3Tag(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CONTROL_API S3Tag& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_S3CONTROL_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**

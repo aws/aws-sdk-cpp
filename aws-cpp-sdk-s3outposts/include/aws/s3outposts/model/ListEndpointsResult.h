@@ -26,12 +26,12 @@ namespace S3Outposts
 {
 namespace Model
 {
-  class AWS_S3OUTPOSTS_API ListEndpointsResult
+  class ListEndpointsResult
   {
   public:
-    ListEndpointsResult();
-    ListEndpointsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListEndpointsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_S3OUTPOSTS_API ListEndpointsResult();
+    AWS_S3OUTPOSTS_API ListEndpointsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_S3OUTPOSTS_API ListEndpointsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

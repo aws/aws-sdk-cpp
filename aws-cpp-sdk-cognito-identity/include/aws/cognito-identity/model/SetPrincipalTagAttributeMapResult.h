@@ -25,12 +25,12 @@ namespace CognitoIdentity
 {
 namespace Model
 {
-  class AWS_COGNITOIDENTITY_API SetPrincipalTagAttributeMapResult
+  class SetPrincipalTagAttributeMapResult
   {
   public:
-    SetPrincipalTagAttributeMapResult();
-    SetPrincipalTagAttributeMapResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    SetPrincipalTagAttributeMapResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_COGNITOIDENTITY_API SetPrincipalTagAttributeMapResult();
+    AWS_COGNITOIDENTITY_API SetPrincipalTagAttributeMapResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_COGNITOIDENTITY_API SetPrincipalTagAttributeMapResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

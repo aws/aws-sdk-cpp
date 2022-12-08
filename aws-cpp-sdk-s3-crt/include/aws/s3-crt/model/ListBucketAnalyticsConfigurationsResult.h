@@ -26,12 +26,12 @@ namespace S3Crt
 {
 namespace Model
 {
-  class AWS_S3CRT_API ListBucketAnalyticsConfigurationsResult
+  class ListBucketAnalyticsConfigurationsResult
   {
   public:
-    ListBucketAnalyticsConfigurationsResult();
-    ListBucketAnalyticsConfigurationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ListBucketAnalyticsConfigurationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_S3CRT_API ListBucketAnalyticsConfigurationsResult();
+    AWS_S3CRT_API ListBucketAnalyticsConfigurationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_S3CRT_API ListBucketAnalyticsConfigurationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

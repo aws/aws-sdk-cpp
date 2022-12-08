@@ -26,12 +26,12 @@ namespace RDS
 {
 namespace Model
 {
-  class AWS_RDS_API RegisterDBProxyTargetsResult
+  class RegisterDBProxyTargetsResult
   {
   public:
-    RegisterDBProxyTargetsResult();
-    RegisterDBProxyTargetsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    RegisterDBProxyTargetsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_RDS_API RegisterDBProxyTargetsResult();
+    AWS_RDS_API RegisterDBProxyTargetsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_RDS_API RegisterDBProxyTargetsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UserPoolClientDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_COGNITOIDENTITYPROVIDER_API UserPoolClientDescription
+  class UserPoolClientDescription
   {
   public:
-    UserPoolClientDescription();
-    UserPoolClientDescription(Aws::Utils::Json::JsonView jsonValue);
-    UserPoolClientDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COGNITOIDENTITYPROVIDER_API UserPoolClientDescription();
+    AWS_COGNITOIDENTITYPROVIDER_API UserPoolClientDescription(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COGNITOIDENTITYPROVIDER_API UserPoolClientDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COGNITOIDENTITYPROVIDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

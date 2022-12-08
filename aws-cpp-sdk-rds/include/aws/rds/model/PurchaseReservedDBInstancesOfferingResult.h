@@ -25,12 +25,12 @@ namespace RDS
 {
 namespace Model
 {
-  class AWS_RDS_API PurchaseReservedDBInstancesOfferingResult
+  class PurchaseReservedDBInstancesOfferingResult
   {
   public:
-    PurchaseReservedDBInstancesOfferingResult();
-    PurchaseReservedDBInstancesOfferingResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    PurchaseReservedDBInstancesOfferingResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_RDS_API PurchaseReservedDBInstancesOfferingResult();
+    AWS_RDS_API PurchaseReservedDBInstancesOfferingResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_RDS_API PurchaseReservedDBInstancesOfferingResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     

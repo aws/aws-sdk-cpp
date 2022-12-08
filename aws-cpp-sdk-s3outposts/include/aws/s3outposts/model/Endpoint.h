@@ -39,13 +39,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3outposts-2017-07-25/Endpoint">AWS
    * API Reference</a></p>
    */
-  class AWS_S3OUTPOSTS_API Endpoint
+  class Endpoint
   {
   public:
-    Endpoint();
-    Endpoint(Aws::Utils::Json::JsonView jsonValue);
-    Endpoint& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_S3OUTPOSTS_API Endpoint();
+    AWS_S3OUTPOSTS_API Endpoint(Aws::Utils::Json::JsonView jsonValue);
+    AWS_S3OUTPOSTS_API Endpoint& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_S3OUTPOSTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

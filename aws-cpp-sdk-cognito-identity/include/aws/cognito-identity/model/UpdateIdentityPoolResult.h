@@ -33,12 +33,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/IdentityPool">AWS
    * API Reference</a></p>
    */
-  class AWS_COGNITOIDENTITY_API UpdateIdentityPoolResult
+  class UpdateIdentityPoolResult
   {
   public:
-    UpdateIdentityPoolResult();
-    UpdateIdentityPoolResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateIdentityPoolResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_COGNITOIDENTITY_API UpdateIdentityPoolResult();
+    AWS_COGNITOIDENTITY_API UpdateIdentityPoolResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_COGNITOIDENTITY_API UpdateIdentityPoolResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

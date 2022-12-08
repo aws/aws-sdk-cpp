@@ -33,15 +33,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DBSecurityGroup">AWS
    * API Reference</a></p>
    */
-  class AWS_RDS_API DBSecurityGroup
+  class DBSecurityGroup
   {
   public:
-    DBSecurityGroup();
-    DBSecurityGroup(const Aws::Utils::Xml::XmlNode& xmlNode);
-    DBSecurityGroup& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_RDS_API DBSecurityGroup();
+    AWS_RDS_API DBSecurityGroup(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_RDS_API DBSecurityGroup& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_RDS_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_RDS_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**

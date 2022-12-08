@@ -25,12 +25,12 @@ namespace RDS
 {
 namespace Model
 {
-  class AWS_RDS_API RestoreDBInstanceFromS3Result
+  class RestoreDBInstanceFromS3Result
   {
   public:
-    RestoreDBInstanceFromS3Result();
-    RestoreDBInstanceFromS3Result(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    RestoreDBInstanceFromS3Result& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_RDS_API RestoreDBInstanceFromS3Result();
+    AWS_RDS_API RestoreDBInstanceFromS3Result(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_RDS_API RestoreDBInstanceFromS3Result& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     

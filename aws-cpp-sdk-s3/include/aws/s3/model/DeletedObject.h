@@ -27,14 +27,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeletedObject">AWS
    * API Reference</a></p>
    */
-  class AWS_S3_API DeletedObject
+  class DeletedObject
   {
   public:
-    DeletedObject();
-    DeletedObject(const Aws::Utils::Xml::XmlNode& xmlNode);
-    DeletedObject& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3_API DeletedObject();
+    AWS_S3_API DeletedObject(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3_API DeletedObject& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_S3_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**

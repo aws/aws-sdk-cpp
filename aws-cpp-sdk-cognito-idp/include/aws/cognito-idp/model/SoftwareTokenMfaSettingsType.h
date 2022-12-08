@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/SoftwareTokenMfaSettingsType">AWS
    * API Reference</a></p>
    */
-  class AWS_COGNITOIDENTITYPROVIDER_API SoftwareTokenMfaSettingsType
+  class SoftwareTokenMfaSettingsType
   {
   public:
-    SoftwareTokenMfaSettingsType();
-    SoftwareTokenMfaSettingsType(Aws::Utils::Json::JsonView jsonValue);
-    SoftwareTokenMfaSettingsType& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COGNITOIDENTITYPROVIDER_API SoftwareTokenMfaSettingsType();
+    AWS_COGNITOIDENTITYPROVIDER_API SoftwareTokenMfaSettingsType(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COGNITOIDENTITYPROVIDER_API SoftwareTokenMfaSettingsType& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COGNITOIDENTITYPROVIDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

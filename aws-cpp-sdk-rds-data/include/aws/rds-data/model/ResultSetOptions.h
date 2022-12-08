@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-data-2018-08-01/ResultSetOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_RDSDATASERVICE_API ResultSetOptions
+  class ResultSetOptions
   {
   public:
-    ResultSetOptions();
-    ResultSetOptions(Aws::Utils::Json::JsonView jsonValue);
-    ResultSetOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_RDSDATASERVICE_API ResultSetOptions();
+    AWS_RDSDATASERVICE_API ResultSetOptions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RDSDATASERVICE_API ResultSetOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RDSDATASERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/PushSync">AWS
    * API Reference</a></p>
    */
-  class AWS_COGNITOSYNC_API PushSync
+  class PushSync
   {
   public:
-    PushSync();
-    PushSync(Aws::Utils::Json::JsonView jsonValue);
-    PushSync& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COGNITOSYNC_API PushSync();
+    AWS_COGNITOSYNC_API PushSync(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COGNITOSYNC_API PushSync& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COGNITOSYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

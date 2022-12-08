@@ -35,14 +35,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/S3Location">AWS API
    * Reference</a></p>
    */
-  class AWS_S3CRT_API S3Location
+  class S3Location
   {
   public:
-    S3Location();
-    S3Location(const Aws::Utils::Xml::XmlNode& xmlNode);
-    S3Location& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CRT_API S3Location();
+    AWS_S3CRT_API S3Location(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CRT_API S3Location& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_S3CRT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**

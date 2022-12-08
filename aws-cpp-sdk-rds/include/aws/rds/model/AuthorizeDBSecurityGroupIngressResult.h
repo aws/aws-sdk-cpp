@@ -25,12 +25,12 @@ namespace RDS
 {
 namespace Model
 {
-  class AWS_RDS_API AuthorizeDBSecurityGroupIngressResult
+  class AuthorizeDBSecurityGroupIngressResult
   {
   public:
-    AuthorizeDBSecurityGroupIngressResult();
-    AuthorizeDBSecurityGroupIngressResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    AuthorizeDBSecurityGroupIngressResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_RDS_API AuthorizeDBSecurityGroupIngressResult();
+    AWS_RDS_API AuthorizeDBSecurityGroupIngressResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_RDS_API AuthorizeDBSecurityGroupIngressResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     
