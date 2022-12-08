@@ -25,12 +25,12 @@ namespace RDS
 {
 namespace Model
 {
-  class AWS_RDS_API RestoreDBClusterFromS3Result
+  class RestoreDBClusterFromS3Result
   {
   public:
-    RestoreDBClusterFromS3Result();
-    RestoreDBClusterFromS3Result(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    RestoreDBClusterFromS3Result& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_RDS_API RestoreDBClusterFromS3Result();
+    AWS_RDS_API RestoreDBClusterFromS3Result(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_RDS_API RestoreDBClusterFromS3Result& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     

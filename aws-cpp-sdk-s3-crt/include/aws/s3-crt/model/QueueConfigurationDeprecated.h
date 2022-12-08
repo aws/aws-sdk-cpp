@@ -33,14 +33,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/QueueConfigurationDeprecated">AWS
    * API Reference</a></p>
    */
-  class AWS_S3CRT_API QueueConfigurationDeprecated
+  class QueueConfigurationDeprecated
   {
   public:
-    QueueConfigurationDeprecated();
-    QueueConfigurationDeprecated(const Aws::Utils::Xml::XmlNode& xmlNode);
-    QueueConfigurationDeprecated& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CRT_API QueueConfigurationDeprecated();
+    AWS_S3CRT_API QueueConfigurationDeprecated(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CRT_API QueueConfigurationDeprecated& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_S3CRT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     

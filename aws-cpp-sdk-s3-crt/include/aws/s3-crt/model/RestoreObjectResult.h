@@ -25,12 +25,12 @@ namespace S3Crt
 {
 namespace Model
 {
-  class AWS_S3CRT_API RestoreObjectResult
+  class RestoreObjectResult
   {
   public:
-    RestoreObjectResult();
-    RestoreObjectResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    RestoreObjectResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_S3CRT_API RestoreObjectResult();
+    AWS_S3CRT_API RestoreObjectResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_S3CRT_API RestoreObjectResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     

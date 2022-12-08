@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/CognitoStreams">AWS
    * API Reference</a></p>
    */
-  class AWS_COGNITOSYNC_API CognitoStreams
+  class CognitoStreams
   {
   public:
-    CognitoStreams();
-    CognitoStreams(Aws::Utils::Json::JsonView jsonValue);
-    CognitoStreams& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COGNITOSYNC_API CognitoStreams();
+    AWS_COGNITOSYNC_API CognitoStreams(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COGNITOSYNC_API CognitoStreams& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COGNITOSYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

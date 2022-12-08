@@ -32,12 +32,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/OptionGroups">AWS
    * API Reference</a></p>
    */
-  class AWS_RDS_API DescribeOptionGroupsResult
+  class DescribeOptionGroupsResult
   {
   public:
-    DescribeOptionGroupsResult();
-    DescribeOptionGroupsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeOptionGroupsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_RDS_API DescribeOptionGroupsResult();
+    AWS_RDS_API DescribeOptionGroupsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_RDS_API DescribeOptionGroupsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

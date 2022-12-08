@@ -26,12 +26,12 @@ namespace S3Crt
 {
 namespace Model
 {
-  class AWS_S3CRT_API CompleteMultipartUploadResult
+  class CompleteMultipartUploadResult
   {
   public:
-    CompleteMultipartUploadResult();
-    CompleteMultipartUploadResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    CompleteMultipartUploadResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_S3CRT_API CompleteMultipartUploadResult();
+    AWS_S3CRT_API CompleteMultipartUploadResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_S3CRT_API CompleteMultipartUploadResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

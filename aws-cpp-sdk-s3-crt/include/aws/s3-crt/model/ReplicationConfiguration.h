@@ -30,14 +30,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ReplicationConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_S3CRT_API ReplicationConfiguration
+  class ReplicationConfiguration
   {
   public:
-    ReplicationConfiguration();
-    ReplicationConfiguration(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ReplicationConfiguration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CRT_API ReplicationConfiguration();
+    AWS_S3CRT_API ReplicationConfiguration(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CRT_API ReplicationConfiguration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_S3CRT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**

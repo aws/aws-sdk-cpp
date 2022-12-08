@@ -27,12 +27,12 @@ namespace S3
 {
 namespace Model
 {
-  class AWS_S3_API CopyObjectResult
+  class CopyObjectResult
   {
   public:
-    CopyObjectResult();
-    CopyObjectResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    CopyObjectResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_S3_API CopyObjectResult();
+    AWS_S3_API CopyObjectResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_S3_API CopyObjectResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

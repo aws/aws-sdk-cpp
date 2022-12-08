@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/CognitoIdentityProvider">AWS
    * API Reference</a></p>
    */
-  class AWS_COGNITOIDENTITY_API CognitoIdentityProvider
+  class CognitoIdentityProvider
   {
   public:
-    CognitoIdentityProvider();
-    CognitoIdentityProvider(Aws::Utils::Json::JsonView jsonValue);
-    CognitoIdentityProvider& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COGNITOIDENTITY_API CognitoIdentityProvider();
+    AWS_COGNITOIDENTITY_API CognitoIdentityProvider(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COGNITOIDENTITY_API CognitoIdentityProvider& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COGNITOIDENTITY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

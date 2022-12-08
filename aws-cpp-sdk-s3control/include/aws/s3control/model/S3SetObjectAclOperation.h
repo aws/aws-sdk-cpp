@@ -31,14 +31,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/S3SetObjectAclOperation">AWS
    * API Reference</a></p>
    */
-  class AWS_S3CONTROL_API S3SetObjectAclOperation
+  class S3SetObjectAclOperation
   {
   public:
-    S3SetObjectAclOperation();
-    S3SetObjectAclOperation(const Aws::Utils::Xml::XmlNode& xmlNode);
-    S3SetObjectAclOperation& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CONTROL_API S3SetObjectAclOperation();
+    AWS_S3CONTROL_API S3SetObjectAclOperation(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CONTROL_API S3SetObjectAclOperation& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_S3CONTROL_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**

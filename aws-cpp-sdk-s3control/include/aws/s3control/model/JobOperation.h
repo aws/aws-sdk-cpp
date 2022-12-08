@@ -38,14 +38,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/JobOperation">AWS
    * API Reference</a></p>
    */
-  class AWS_S3CONTROL_API JobOperation
+  class JobOperation
   {
   public:
-    JobOperation();
-    JobOperation(const Aws::Utils::Xml::XmlNode& xmlNode);
-    JobOperation& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CONTROL_API JobOperation();
+    AWS_S3CONTROL_API JobOperation(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CONTROL_API JobOperation& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_S3CONTROL_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
