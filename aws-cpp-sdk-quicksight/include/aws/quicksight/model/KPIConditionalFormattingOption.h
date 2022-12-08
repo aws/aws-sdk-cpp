@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/KPIConditionalFormattingOption">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API KPIConditionalFormattingOption
+  class KPIConditionalFormattingOption
   {
   public:
-    KPIConditionalFormattingOption();
-    KPIConditionalFormattingOption(Aws::Utils::Json::JsonView jsonValue);
-    KPIConditionalFormattingOption& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API KPIConditionalFormattingOption();
+    AWS_QUICKSIGHT_API KPIConditionalFormattingOption(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API KPIConditionalFormattingOption& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

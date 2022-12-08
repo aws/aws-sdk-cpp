@@ -27,12 +27,12 @@ namespace SageMakerFeatureStoreRuntime
 {
 namespace Model
 {
-  class AWS_SAGEMAKERFEATURESTORERUNTIME_API BatchGetRecordResult
+  class BatchGetRecordResult
   {
   public:
-    BatchGetRecordResult();
-    BatchGetRecordResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    BatchGetRecordResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SAGEMAKERFEATURESTORERUNTIME_API BatchGetRecordResult();
+    AWS_SAGEMAKERFEATURESTORERUNTIME_API BatchGetRecordResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SAGEMAKERFEATURESTORERUNTIME_API BatchGetRecordResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

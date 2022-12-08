@@ -32,12 +32,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListInputDeviceTransfersResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API ListInputDeviceTransfersResult
+  class ListInputDeviceTransfersResult
   {
   public:
-    ListInputDeviceTransfersResult();
-    ListInputDeviceTransfersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListInputDeviceTransfersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MEDIALIVE_API ListInputDeviceTransfersResult();
+    AWS_MEDIALIVE_API ListInputDeviceTransfersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MEDIALIVE_API ListInputDeviceTransfersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

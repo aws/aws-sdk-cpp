@@ -32,14 +32,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/HealthCheck">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53_API HealthCheck
+  class HealthCheck
   {
   public:
-    HealthCheck();
-    HealthCheck(const Aws::Utils::Xml::XmlNode& xmlNode);
-    HealthCheck& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ROUTE53_API HealthCheck();
+    AWS_ROUTE53_API HealthCheck(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ROUTE53_API HealthCheck& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_ROUTE53_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**

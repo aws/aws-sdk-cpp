@@ -30,12 +30,12 @@ namespace Backup
 {
 namespace Model
 {
-  class AWS_BACKUP_API DescribeRecoveryPointResult
+  class DescribeRecoveryPointResult
   {
   public:
-    DescribeRecoveryPointResult();
-    DescribeRecoveryPointResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeRecoveryPointResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_BACKUP_API DescribeRecoveryPointResult();
+    AWS_BACKUP_API DescribeRecoveryPointResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_BACKUP_API DescribeRecoveryPointResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

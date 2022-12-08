@@ -40,15 +40,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/IpamScope">AWS API
    * Reference</a></p>
    */
-  class AWS_EC2_API IpamScope
+  class IpamScope
   {
   public:
-    IpamScope();
-    IpamScope(const Aws::Utils::Xml::XmlNode& xmlNode);
-    IpamScope& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API IpamScope();
+    AWS_EC2_API IpamScope(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API IpamScope& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**

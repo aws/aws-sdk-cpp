@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/Certificate">AWS API
    * Reference</a></p>
    */
-  class AWS_DIRECTORYSERVICE_API Certificate
+  class Certificate
   {
   public:
-    Certificate();
-    Certificate(Aws::Utils::Json::JsonView jsonValue);
-    Certificate& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DIRECTORYSERVICE_API Certificate();
+    AWS_DIRECTORYSERVICE_API Certificate(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTORYSERVICE_API Certificate& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTORYSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

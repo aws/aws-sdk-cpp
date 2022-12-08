@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/FraudsterRegistrationJobSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_VOICEID_API FraudsterRegistrationJobSummary
+  class FraudsterRegistrationJobSummary
   {
   public:
-    FraudsterRegistrationJobSummary();
-    FraudsterRegistrationJobSummary(Aws::Utils::Json::JsonView jsonValue);
-    FraudsterRegistrationJobSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_VOICEID_API FraudsterRegistrationJobSummary();
+    AWS_VOICEID_API FraudsterRegistrationJobSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_VOICEID_API FraudsterRegistrationJobSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_VOICEID_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

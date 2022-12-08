@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/SearchInsightsFilters">AWS
    * API Reference</a></p>
    */
-  class AWS_DEVOPSGURU_API SearchInsightsFilters
+  class SearchInsightsFilters
   {
   public:
-    SearchInsightsFilters();
-    SearchInsightsFilters(Aws::Utils::Json::JsonView jsonValue);
-    SearchInsightsFilters& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DEVOPSGURU_API SearchInsightsFilters();
+    AWS_DEVOPSGURU_API SearchInsightsFilters(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVOPSGURU_API SearchInsightsFilters& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVOPSGURU_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

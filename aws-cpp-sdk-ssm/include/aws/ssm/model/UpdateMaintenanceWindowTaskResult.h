@@ -32,12 +32,12 @@ namespace SSM
 {
 namespace Model
 {
-  class AWS_SSM_API UpdateMaintenanceWindowTaskResult
+  class UpdateMaintenanceWindowTaskResult
   {
   public:
-    UpdateMaintenanceWindowTaskResult();
-    UpdateMaintenanceWindowTaskResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateMaintenanceWindowTaskResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSM_API UpdateMaintenanceWindowTaskResult();
+    AWS_SSM_API UpdateMaintenanceWindowTaskResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSM_API UpdateMaintenanceWindowTaskResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

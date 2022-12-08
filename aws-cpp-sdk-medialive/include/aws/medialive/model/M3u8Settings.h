@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/M3u8Settings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API M3u8Settings
+  class M3u8Settings
   {
   public:
-    M3u8Settings();
-    M3u8Settings(Aws::Utils::Json::JsonView jsonValue);
-    M3u8Settings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API M3u8Settings();
+    AWS_MEDIALIVE_API M3u8Settings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API M3u8Settings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

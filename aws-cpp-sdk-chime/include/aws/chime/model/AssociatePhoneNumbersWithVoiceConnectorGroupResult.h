@@ -25,12 +25,12 @@ namespace Chime
 {
 namespace Model
 {
-  class AWS_CHIME_API AssociatePhoneNumbersWithVoiceConnectorGroupResult
+  class AssociatePhoneNumbersWithVoiceConnectorGroupResult
   {
   public:
-    AssociatePhoneNumbersWithVoiceConnectorGroupResult();
-    AssociatePhoneNumbersWithVoiceConnectorGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AssociatePhoneNumbersWithVoiceConnectorGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CHIME_API AssociatePhoneNumbersWithVoiceConnectorGroupResult();
+    AWS_CHIME_API AssociatePhoneNumbersWithVoiceConnectorGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CHIME_API AssociatePhoneNumbersWithVoiceConnectorGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

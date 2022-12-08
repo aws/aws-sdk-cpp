@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/scheduler-2021-06-30/ScheduleSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_SCHEDULER_API ScheduleSummary
+  class ScheduleSummary
   {
   public:
-    ScheduleSummary();
-    ScheduleSummary(Aws::Utils::Json::JsonView jsonValue);
-    ScheduleSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SCHEDULER_API ScheduleSummary();
+    AWS_SCHEDULER_API ScheduleSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SCHEDULER_API ScheduleSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SCHEDULER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

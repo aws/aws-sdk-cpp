@@ -22,12 +22,12 @@ namespace IoT1ClickProjects
 {
 namespace Model
 {
-  class AWS_IOT1CLICKPROJECTS_API DisassociateDeviceFromPlacementResult
+  class DisassociateDeviceFromPlacementResult
   {
   public:
-    DisassociateDeviceFromPlacementResult();
-    DisassociateDeviceFromPlacementResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DisassociateDeviceFromPlacementResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOT1CLICKPROJECTS_API DisassociateDeviceFromPlacementResult();
+    AWS_IOT1CLICKPROJECTS_API DisassociateDeviceFromPlacementResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOT1CLICKPROJECTS_API DisassociateDeviceFromPlacementResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/PortalStatus">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTSITEWISE_API PortalStatus
+  class PortalStatus
   {
   public:
-    PortalStatus();
-    PortalStatus(Aws::Utils::Json::JsonView jsonValue);
-    PortalStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTSITEWISE_API PortalStatus();
+    AWS_IOTSITEWISE_API PortalStatus(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API PortalStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

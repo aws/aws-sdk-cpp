@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails
+  class AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails
   {
   public:
-    AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails();
-    AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails(Aws::Utils::Json::JsonView jsonValue);
-    AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails();
+    AWS_SECURITYHUB_API AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

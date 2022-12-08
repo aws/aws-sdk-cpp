@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/AuditCheckDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API AuditCheckDetails
+  class AuditCheckDetails
   {
   public:
-    AuditCheckDetails();
-    AuditCheckDetails(Aws::Utils::Json::JsonView jsonValue);
-    AuditCheckDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API AuditCheckDetails();
+    AWS_IOT_API AuditCheckDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API AuditCheckDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

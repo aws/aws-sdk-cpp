@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/Branch">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTFLEETWISE_API Branch
+  class Branch
   {
   public:
-    Branch();
-    Branch(Aws::Utils::Json::JsonView jsonValue);
-    Branch& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTFLEETWISE_API Branch();
+    AWS_IOTFLEETWISE_API Branch(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTFLEETWISE_API Branch& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTFLEETWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

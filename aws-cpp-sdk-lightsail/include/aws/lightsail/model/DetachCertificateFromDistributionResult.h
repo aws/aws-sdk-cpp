@@ -24,12 +24,12 @@ namespace Lightsail
 {
 namespace Model
 {
-  class AWS_LIGHTSAIL_API DetachCertificateFromDistributionResult
+  class DetachCertificateFromDistributionResult
   {
   public:
-    DetachCertificateFromDistributionResult();
-    DetachCertificateFromDistributionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DetachCertificateFromDistributionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LIGHTSAIL_API DetachCertificateFromDistributionResult();
+    AWS_LIGHTSAIL_API DetachCertificateFromDistributionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LIGHTSAIL_API DetachCertificateFromDistributionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

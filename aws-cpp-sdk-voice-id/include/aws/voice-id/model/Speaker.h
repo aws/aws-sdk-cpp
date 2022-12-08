@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/Speaker">AWS
    * API Reference</a></p>
    */
-  class AWS_VOICEID_API Speaker
+  class Speaker
   {
   public:
-    Speaker();
-    Speaker(Aws::Utils::Json::JsonView jsonValue);
-    Speaker& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_VOICEID_API Speaker();
+    AWS_VOICEID_API Speaker(Aws::Utils::Json::JsonView jsonValue);
+    AWS_VOICEID_API Speaker& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_VOICEID_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

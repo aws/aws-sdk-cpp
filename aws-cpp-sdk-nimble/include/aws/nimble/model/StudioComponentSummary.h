@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/StudioComponentSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_NIMBLESTUDIO_API StudioComponentSummary
+  class StudioComponentSummary
   {
   public:
-    StudioComponentSummary();
-    StudioComponentSummary(Aws::Utils::Json::JsonView jsonValue);
-    StudioComponentSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_NIMBLESTUDIO_API StudioComponentSummary();
+    AWS_NIMBLESTUDIO_API StudioComponentSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NIMBLESTUDIO_API StudioComponentSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NIMBLESTUDIO_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

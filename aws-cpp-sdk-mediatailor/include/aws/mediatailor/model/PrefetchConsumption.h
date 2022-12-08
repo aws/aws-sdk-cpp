@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/PrefetchConsumption">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIATAILOR_API PrefetchConsumption
+  class PrefetchConsumption
   {
   public:
-    PrefetchConsumption();
-    PrefetchConsumption(Aws::Utils::Json::JsonView jsonValue);
-    PrefetchConsumption& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIATAILOR_API PrefetchConsumption();
+    AWS_MEDIATAILOR_API PrefetchConsumption(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIATAILOR_API PrefetchConsumption& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIATAILOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

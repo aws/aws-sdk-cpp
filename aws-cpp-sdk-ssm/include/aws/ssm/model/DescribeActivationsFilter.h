@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeActivationsFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_SSM_API DescribeActivationsFilter
+  class DescribeActivationsFilter
   {
   public:
-    DescribeActivationsFilter();
-    DescribeActivationsFilter(Aws::Utils::Json::JsonView jsonValue);
-    DescribeActivationsFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSM_API DescribeActivationsFilter();
+    AWS_SSM_API DescribeActivationsFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API DescribeActivationsFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

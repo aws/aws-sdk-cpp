@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/StandardsSubscriptionRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API StandardsSubscriptionRequest
+  class StandardsSubscriptionRequest
   {
   public:
-    StandardsSubscriptionRequest();
-    StandardsSubscriptionRequest(Aws::Utils::Json::JsonView jsonValue);
-    StandardsSubscriptionRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API StandardsSubscriptionRequest();
+    AWS_SECURITYHUB_API StandardsSubscriptionRequest(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API StandardsSubscriptionRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

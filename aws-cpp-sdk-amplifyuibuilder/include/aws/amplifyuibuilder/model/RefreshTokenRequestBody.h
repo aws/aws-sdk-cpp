@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/RefreshTokenRequestBody">AWS
    * API Reference</a></p>
    */
-  class AWS_AMPLIFYUIBUILDER_API RefreshTokenRequestBody
+  class RefreshTokenRequestBody
   {
   public:
-    RefreshTokenRequestBody();
-    RefreshTokenRequestBody(Aws::Utils::Json::JsonView jsonValue);
-    RefreshTokenRequestBody& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_AMPLIFYUIBUILDER_API RefreshTokenRequestBody();
+    AWS_AMPLIFYUIBUILDER_API RefreshTokenRequestBody(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFYUIBUILDER_API RefreshTokenRequestBody& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFYUIBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

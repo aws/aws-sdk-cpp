@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ModelQualityJobInput">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API ModelQualityJobInput
+  class ModelQualityJobInput
   {
   public:
-    ModelQualityJobInput();
-    ModelQualityJobInput(Aws::Utils::Json::JsonView jsonValue);
-    ModelQualityJobInput& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API ModelQualityJobInput();
+    AWS_SAGEMAKER_API ModelQualityJobInput(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API ModelQualityJobInput& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

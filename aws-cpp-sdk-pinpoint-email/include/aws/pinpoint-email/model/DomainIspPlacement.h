@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/DomainIspPlacement">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINTEMAIL_API DomainIspPlacement
+  class DomainIspPlacement
   {
   public:
-    DomainIspPlacement();
-    DomainIspPlacement(Aws::Utils::Json::JsonView jsonValue);
-    DomainIspPlacement& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINTEMAIL_API DomainIspPlacement();
+    AWS_PINPOINTEMAIL_API DomainIspPlacement(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINTEMAIL_API DomainIspPlacement& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINTEMAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

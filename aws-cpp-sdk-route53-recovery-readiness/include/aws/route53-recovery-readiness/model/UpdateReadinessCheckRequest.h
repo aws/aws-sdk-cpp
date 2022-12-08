@@ -21,10 +21,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-readiness-2019-12-02/UpdateReadinessCheckRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53RECOVERYREADINESS_API UpdateReadinessCheckRequest : public Route53RecoveryReadinessRequest
+  class UpdateReadinessCheckRequest : public Route53RecoveryReadinessRequest
   {
   public:
-    UpdateReadinessCheckRequest();
+    AWS_ROUTE53RECOVERYREADINESS_API UpdateReadinessCheckRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,7 +32,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateReadinessCheck"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_ROUTE53RECOVERYREADINESS_API Aws::String SerializePayload() const override;
 
 
     /**

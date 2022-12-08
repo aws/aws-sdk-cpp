@@ -29,12 +29,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/RetrieveTapeArchiveOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_STORAGEGATEWAY_API RetrieveTapeArchiveResult
+  class RetrieveTapeArchiveResult
   {
   public:
-    RetrieveTapeArchiveResult();
-    RetrieveTapeArchiveResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    RetrieveTapeArchiveResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_STORAGEGATEWAY_API RetrieveTapeArchiveResult();
+    AWS_STORAGEGATEWAY_API RetrieveTapeArchiveResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_STORAGEGATEWAY_API RetrieveTapeArchiveResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

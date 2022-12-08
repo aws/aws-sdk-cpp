@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/RemoveTargetsResultEntry">AWS
    * API Reference</a></p>
    */
-  class AWS_EVENTBRIDGE_API RemoveTargetsResultEntry
+  class RemoveTargetsResultEntry
   {
   public:
-    RemoveTargetsResultEntry();
-    RemoveTargetsResultEntry(Aws::Utils::Json::JsonView jsonValue);
-    RemoveTargetsResultEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EVENTBRIDGE_API RemoveTargetsResultEntry();
+    AWS_EVENTBRIDGE_API RemoveTargetsResultEntry(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EVENTBRIDGE_API RemoveTargetsResultEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EVENTBRIDGE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

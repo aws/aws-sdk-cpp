@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeltaTarget">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API DeltaTarget
+  class DeltaTarget
   {
   public:
-    DeltaTarget();
-    DeltaTarget(Aws::Utils::Json::JsonView jsonValue);
-    DeltaTarget& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API DeltaTarget();
+    AWS_GLUE_API DeltaTarget(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API DeltaTarget& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

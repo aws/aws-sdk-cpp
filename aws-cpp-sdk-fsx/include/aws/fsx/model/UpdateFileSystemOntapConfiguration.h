@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/UpdateFileSystemOntapConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_FSX_API UpdateFileSystemOntapConfiguration
+  class UpdateFileSystemOntapConfiguration
   {
   public:
-    UpdateFileSystemOntapConfiguration();
-    UpdateFileSystemOntapConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    UpdateFileSystemOntapConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FSX_API UpdateFileSystemOntapConfiguration();
+    AWS_FSX_API UpdateFileSystemOntapConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API UpdateFileSystemOntapConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

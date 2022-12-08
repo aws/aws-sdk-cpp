@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/ComputeAttributes">AWS
    * API Reference</a></p>
    */
-  class AWS_OUTPOSTS_API ComputeAttributes
+  class ComputeAttributes
   {
   public:
-    ComputeAttributes();
-    ComputeAttributes(Aws::Utils::Json::JsonView jsonValue);
-    ComputeAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OUTPOSTS_API ComputeAttributes();
+    AWS_OUTPOSTS_API ComputeAttributes(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OUTPOSTS_API ComputeAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OUTPOSTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

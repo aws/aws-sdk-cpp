@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/BatchDetectTargetedSentimentItemResult">AWS
    * API Reference</a></p>
    */
-  class AWS_COMPREHEND_API BatchDetectTargetedSentimentItemResult
+  class BatchDetectTargetedSentimentItemResult
   {
   public:
-    BatchDetectTargetedSentimentItemResult();
-    BatchDetectTargetedSentimentItemResult(Aws::Utils::Json::JsonView jsonValue);
-    BatchDetectTargetedSentimentItemResult& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COMPREHEND_API BatchDetectTargetedSentimentItemResult();
+    AWS_COMPREHEND_API BatchDetectTargetedSentimentItemResult(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHEND_API BatchDetectTargetedSentimentItemResult& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHEND_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

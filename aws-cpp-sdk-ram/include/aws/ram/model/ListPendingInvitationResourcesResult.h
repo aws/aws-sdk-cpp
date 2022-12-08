@@ -26,12 +26,12 @@ namespace RAM
 {
 namespace Model
 {
-  class AWS_RAM_API ListPendingInvitationResourcesResult
+  class ListPendingInvitationResourcesResult
   {
   public:
-    ListPendingInvitationResourcesResult();
-    ListPendingInvitationResourcesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListPendingInvitationResourcesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_RAM_API ListPendingInvitationResourcesResult();
+    AWS_RAM_API ListPendingInvitationResourcesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_RAM_API ListPendingInvitationResourcesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

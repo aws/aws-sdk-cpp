@@ -26,12 +26,12 @@ namespace WAFV2
 {
 namespace Model
 {
-  class AWS_WAFV2_API ListAvailableManagedRuleGroupVersionsResult
+  class ListAvailableManagedRuleGroupVersionsResult
   {
   public:
-    ListAvailableManagedRuleGroupVersionsResult();
-    ListAvailableManagedRuleGroupVersionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListAvailableManagedRuleGroupVersionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WAFV2_API ListAvailableManagedRuleGroupVersionsResult();
+    AWS_WAFV2_API ListAvailableManagedRuleGroupVersionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WAFV2_API ListAvailableManagedRuleGroupVersionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

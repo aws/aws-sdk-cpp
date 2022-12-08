@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/LiveConnectorSinkConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_CHIMESDKMEDIAPIPELINES_API LiveConnectorSinkConfiguration
+  class LiveConnectorSinkConfiguration
   {
   public:
-    LiveConnectorSinkConfiguration();
-    LiveConnectorSinkConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    LiveConnectorSinkConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIMESDKMEDIAPIPELINES_API LiveConnectorSinkConfiguration();
+    AWS_CHIMESDKMEDIAPIPELINES_API LiveConnectorSinkConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKMEDIAPIPELINES_API LiveConnectorSinkConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKMEDIAPIPELINES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -37,13 +37,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/Finding">AWS
    * API Reference</a></p>
    */
-  class AWS_INSPECTOR_API Finding
+  class Finding
   {
   public:
-    Finding();
-    Finding(Aws::Utils::Json::JsonView jsonValue);
-    Finding& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_INSPECTOR_API Finding();
+    AWS_INSPECTOR_API Finding(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR_API Finding& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

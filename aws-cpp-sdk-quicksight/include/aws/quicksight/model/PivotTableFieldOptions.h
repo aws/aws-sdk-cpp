@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/PivotTableFieldOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API PivotTableFieldOptions
+  class PivotTableFieldOptions
   {
   public:
-    PivotTableFieldOptions();
-    PivotTableFieldOptions(Aws::Utils::Json::JsonView jsonValue);
-    PivotTableFieldOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API PivotTableFieldOptions();
+    AWS_QUICKSIGHT_API PivotTableFieldOptions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API PivotTableFieldOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

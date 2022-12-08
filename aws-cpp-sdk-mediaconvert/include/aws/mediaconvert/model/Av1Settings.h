@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/Av1Settings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API Av1Settings
+  class Av1Settings
   {
   public:
-    Av1Settings();
-    Av1Settings(Aws::Utils::Json::JsonView jsonValue);
-    Av1Settings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API Av1Settings();
+    AWS_MEDIACONVERT_API Av1Settings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Av1Settings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

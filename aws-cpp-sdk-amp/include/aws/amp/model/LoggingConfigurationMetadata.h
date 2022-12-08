@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/LoggingConfigurationMetadata">AWS
    * API Reference</a></p>
    */
-  class AWS_PROMETHEUSSERVICE_API LoggingConfigurationMetadata
+  class LoggingConfigurationMetadata
   {
   public:
-    LoggingConfigurationMetadata();
-    LoggingConfigurationMetadata(Aws::Utils::Json::JsonView jsonValue);
-    LoggingConfigurationMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PROMETHEUSSERVICE_API LoggingConfigurationMetadata();
+    AWS_PROMETHEUSSERVICE_API LoggingConfigurationMetadata(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PROMETHEUSSERVICE_API LoggingConfigurationMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PROMETHEUSSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/Accuracy">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTWIRELESS_API Accuracy
+  class Accuracy
   {
   public:
-    Accuracy();
-    Accuracy(Aws::Utils::Json::JsonView jsonValue);
-    Accuracy& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTWIRELESS_API Accuracy();
+    AWS_IOTWIRELESS_API Accuracy(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API Accuracy& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

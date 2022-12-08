@@ -26,13 +26,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/Scte27DestinationSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API Scte27DestinationSettings
+  class Scte27DestinationSettings
   {
   public:
-    Scte27DestinationSettings();
-    Scte27DestinationSettings(Aws::Utils::Json::JsonView jsonValue);
-    Scte27DestinationSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API Scte27DestinationSettings();
+    AWS_MEDIALIVE_API Scte27DestinationSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Scte27DestinationSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
   };
 

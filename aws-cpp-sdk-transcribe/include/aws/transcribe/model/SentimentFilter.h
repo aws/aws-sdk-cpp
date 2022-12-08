@@ -44,13 +44,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/SentimentFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_TRANSCRIBESERVICE_API SentimentFilter
+  class SentimentFilter
   {
   public:
-    SentimentFilter();
-    SentimentFilter(Aws::Utils::Json::JsonView jsonValue);
-    SentimentFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TRANSCRIBESERVICE_API SentimentFilter();
+    AWS_TRANSCRIBESERVICE_API SentimentFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSCRIBESERVICE_API SentimentFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSCRIBESERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

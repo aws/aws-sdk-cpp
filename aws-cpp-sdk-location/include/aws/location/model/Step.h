@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/Step">AWS API
    * Reference</a></p>
    */
-  class AWS_LOCATIONSERVICE_API Step
+  class Step
   {
   public:
-    Step();
-    Step(Aws::Utils::Json::JsonView jsonValue);
-    Step& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LOCATIONSERVICE_API Step();
+    AWS_LOCATIONSERVICE_API Step(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOCATIONSERVICE_API Step& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOCATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

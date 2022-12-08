@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pipes-2015-10-07/PipeTargetRedshiftDataParameters">AWS
    * API Reference</a></p>
    */
-  class AWS_PIPES_API PipeTargetRedshiftDataParameters
+  class PipeTargetRedshiftDataParameters
   {
   public:
-    PipeTargetRedshiftDataParameters();
-    PipeTargetRedshiftDataParameters(Aws::Utils::Json::JsonView jsonValue);
-    PipeTargetRedshiftDataParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PIPES_API PipeTargetRedshiftDataParameters();
+    AWS_PIPES_API PipeTargetRedshiftDataParameters(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PIPES_API PipeTargetRedshiftDataParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PIPES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

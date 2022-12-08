@@ -26,13 +26,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/EmbeddedDestinationSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API EmbeddedDestinationSettings
+  class EmbeddedDestinationSettings
   {
   public:
-    EmbeddedDestinationSettings();
-    EmbeddedDestinationSettings(Aws::Utils::Json::JsonView jsonValue);
-    EmbeddedDestinationSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API EmbeddedDestinationSettings();
+    AWS_MEDIALIVE_API EmbeddedDestinationSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API EmbeddedDestinationSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
   };
 

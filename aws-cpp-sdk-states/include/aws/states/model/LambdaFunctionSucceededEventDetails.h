@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/LambdaFunctionSucceededEventDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SFN_API LambdaFunctionSucceededEventDetails
+  class LambdaFunctionSucceededEventDetails
   {
   public:
-    LambdaFunctionSucceededEventDetails();
-    LambdaFunctionSucceededEventDetails(Aws::Utils::Json::JsonView jsonValue);
-    LambdaFunctionSucceededEventDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SFN_API LambdaFunctionSucceededEventDetails();
+    AWS_SFN_API LambdaFunctionSucceededEventDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SFN_API LambdaFunctionSucceededEventDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SFN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

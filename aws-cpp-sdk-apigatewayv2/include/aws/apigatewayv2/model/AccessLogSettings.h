@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/AccessLogSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_APIGATEWAYV2_API AccessLogSettings
+  class AccessLogSettings
   {
   public:
-    AccessLogSettings();
-    AccessLogSettings(Aws::Utils::Json::JsonView jsonValue);
-    AccessLogSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APIGATEWAYV2_API AccessLogSettings();
+    AWS_APIGATEWAYV2_API AccessLogSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APIGATEWAYV2_API AccessLogSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APIGATEWAYV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/TableFieldLinkContentConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API TableFieldLinkContentConfiguration
+  class TableFieldLinkContentConfiguration
   {
   public:
-    TableFieldLinkContentConfiguration();
-    TableFieldLinkContentConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    TableFieldLinkContentConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API TableFieldLinkContentConfiguration();
+    AWS_QUICKSIGHT_API TableFieldLinkContentConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API TableFieldLinkContentConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

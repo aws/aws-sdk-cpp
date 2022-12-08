@@ -26,13 +26,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeviceStats">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API DeviceStats
+  class DeviceStats
   {
   public:
-    DeviceStats();
-    DeviceStats(Aws::Utils::Json::JsonView jsonValue);
-    DeviceStats& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API DeviceStats();
+    AWS_SAGEMAKER_API DeviceStats(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API DeviceStats& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

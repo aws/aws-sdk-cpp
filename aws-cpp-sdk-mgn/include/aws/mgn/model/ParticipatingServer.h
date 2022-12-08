@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ParticipatingServer">AWS
    * API Reference</a></p>
    */
-  class AWS_MGN_API ParticipatingServer
+  class ParticipatingServer
   {
   public:
-    ParticipatingServer();
-    ParticipatingServer(Aws::Utils::Json::JsonView jsonValue);
-    ParticipatingServer& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MGN_API ParticipatingServer();
+    AWS_MGN_API ParticipatingServer(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MGN_API ParticipatingServer& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MGN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ThirdPartyFirewallMissingSubnetViolation">AWS
    * API Reference</a></p>
    */
-  class AWS_FMS_API ThirdPartyFirewallMissingSubnetViolation
+  class ThirdPartyFirewallMissingSubnetViolation
   {
   public:
-    ThirdPartyFirewallMissingSubnetViolation();
-    ThirdPartyFirewallMissingSubnetViolation(Aws::Utils::Json::JsonView jsonValue);
-    ThirdPartyFirewallMissingSubnetViolation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FMS_API ThirdPartyFirewallMissingSubnetViolation();
+    AWS_FMS_API ThirdPartyFirewallMissingSubnetViolation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FMS_API ThirdPartyFirewallMissingSubnetViolation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

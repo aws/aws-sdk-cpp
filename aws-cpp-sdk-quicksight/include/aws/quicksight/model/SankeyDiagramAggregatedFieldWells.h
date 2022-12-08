@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/SankeyDiagramAggregatedFieldWells">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API SankeyDiagramAggregatedFieldWells
+  class SankeyDiagramAggregatedFieldWells
   {
   public:
-    SankeyDiagramAggregatedFieldWells();
-    SankeyDiagramAggregatedFieldWells(Aws::Utils::Json::JsonView jsonValue);
-    SankeyDiagramAggregatedFieldWells& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API SankeyDiagramAggregatedFieldWells();
+    AWS_QUICKSIGHT_API SankeyDiagramAggregatedFieldWells(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API SankeyDiagramAggregatedFieldWells& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/JobConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTSITEWISE_API JobConfiguration
+  class JobConfiguration
   {
   public:
-    JobConfiguration();
-    JobConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    JobConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTSITEWISE_API JobConfiguration();
+    AWS_IOTSITEWISE_API JobConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API JobConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

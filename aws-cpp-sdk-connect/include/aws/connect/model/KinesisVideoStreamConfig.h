@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/KinesisVideoStreamConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECT_API KinesisVideoStreamConfig
+  class KinesisVideoStreamConfig
   {
   public:
-    KinesisVideoStreamConfig();
-    KinesisVideoStreamConfig(Aws::Utils::Json::JsonView jsonValue);
-    KinesisVideoStreamConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECT_API KinesisVideoStreamConfig();
+    AWS_CONNECT_API KinesisVideoStreamConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API KinesisVideoStreamConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

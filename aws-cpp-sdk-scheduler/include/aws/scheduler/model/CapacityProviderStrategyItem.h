@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/scheduler-2021-06-30/CapacityProviderStrategyItem">AWS
    * API Reference</a></p>
    */
-  class AWS_SCHEDULER_API CapacityProviderStrategyItem
+  class CapacityProviderStrategyItem
   {
   public:
-    CapacityProviderStrategyItem();
-    CapacityProviderStrategyItem(Aws::Utils::Json::JsonView jsonValue);
-    CapacityProviderStrategyItem& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SCHEDULER_API CapacityProviderStrategyItem();
+    AWS_SCHEDULER_API CapacityProviderStrategyItem(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SCHEDULER_API CapacityProviderStrategyItem& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SCHEDULER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

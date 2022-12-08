@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/RouteHasOutOfScopeEndpointViolation">AWS
    * API Reference</a></p>
    */
-  class AWS_FMS_API RouteHasOutOfScopeEndpointViolation
+  class RouteHasOutOfScopeEndpointViolation
   {
   public:
-    RouteHasOutOfScopeEndpointViolation();
-    RouteHasOutOfScopeEndpointViolation(Aws::Utils::Json::JsonView jsonValue);
-    RouteHasOutOfScopeEndpointViolation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FMS_API RouteHasOutOfScopeEndpointViolation();
+    AWS_FMS_API RouteHasOutOfScopeEndpointViolation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FMS_API RouteHasOutOfScopeEndpointViolation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

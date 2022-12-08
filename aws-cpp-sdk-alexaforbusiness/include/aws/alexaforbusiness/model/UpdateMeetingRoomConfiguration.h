@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateMeetingRoomConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_ALEXAFORBUSINESS_API UpdateMeetingRoomConfiguration
+  class UpdateMeetingRoomConfiguration
   {
   public:
-    UpdateMeetingRoomConfiguration();
-    UpdateMeetingRoomConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    UpdateMeetingRoomConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ALEXAFORBUSINESS_API UpdateMeetingRoomConfiguration();
+    AWS_ALEXAFORBUSINESS_API UpdateMeetingRoomConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ALEXAFORBUSINESS_API UpdateMeetingRoomConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ALEXAFORBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

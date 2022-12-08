@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/AccountSources">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYLAKE_API AccountSources
+  class AccountSources
   {
   public:
-    AccountSources();
-    AccountSources(Aws::Utils::Json::JsonView jsonValue);
-    AccountSources& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYLAKE_API AccountSources();
+    AWS_SECURITYLAKE_API AccountSources(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYLAKE_API AccountSources& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYLAKE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

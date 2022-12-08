@@ -26,12 +26,12 @@ namespace IoT
 {
 namespace Model
 {
-  class AWS_IOT_API ListJobExecutionsForJobResult
+  class ListJobExecutionsForJobResult
   {
   public:
-    ListJobExecutionsForJobResult();
-    ListJobExecutionsForJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListJobExecutionsForJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOT_API ListJobExecutionsForJobResult();
+    AWS_IOT_API ListJobExecutionsForJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOT_API ListJobExecutionsForJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

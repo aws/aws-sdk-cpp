@@ -43,13 +43,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ProcessingJob">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API ProcessingJob
+  class ProcessingJob
   {
   public:
-    ProcessingJob();
-    ProcessingJob(Aws::Utils::Json::JsonView jsonValue);
-    ProcessingJob& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API ProcessingJob();
+    AWS_SAGEMAKER_API ProcessingJob(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API ProcessingJob& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

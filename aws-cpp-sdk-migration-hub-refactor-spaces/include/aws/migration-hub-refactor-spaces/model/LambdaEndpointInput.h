@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/migration-hub-refactor-spaces-2021-10-26/LambdaEndpointInput">AWS
    * API Reference</a></p>
    */
-  class AWS_MIGRATIONHUBREFACTORSPACES_API LambdaEndpointInput
+  class LambdaEndpointInput
   {
   public:
-    LambdaEndpointInput();
-    LambdaEndpointInput(Aws::Utils::Json::JsonView jsonValue);
-    LambdaEndpointInput& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MIGRATIONHUBREFACTORSPACES_API LambdaEndpointInput();
+    AWS_MIGRATIONHUBREFACTORSPACES_API LambdaEndpointInput(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MIGRATIONHUBREFACTORSPACES_API LambdaEndpointInput& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MIGRATIONHUBREFACTORSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

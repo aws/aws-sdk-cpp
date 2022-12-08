@@ -28,13 +28,13 @@ namespace Model
    * <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/File">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTSITEWISE_API File
+  class File
   {
   public:
-    File();
-    File(Aws::Utils::Json::JsonView jsonValue);
-    File& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTSITEWISE_API File();
+    AWS_IOTSITEWISE_API File(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API File& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

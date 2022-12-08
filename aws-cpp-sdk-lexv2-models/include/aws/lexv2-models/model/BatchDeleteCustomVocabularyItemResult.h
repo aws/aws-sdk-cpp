@@ -27,12 +27,12 @@ namespace LexModelsV2
 {
 namespace Model
 {
-  class AWS_LEXMODELSV2_API BatchDeleteCustomVocabularyItemResult
+  class BatchDeleteCustomVocabularyItemResult
   {
   public:
-    BatchDeleteCustomVocabularyItemResult();
-    BatchDeleteCustomVocabularyItemResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    BatchDeleteCustomVocabularyItemResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LEXMODELSV2_API BatchDeleteCustomVocabularyItemResult();
+    AWS_LEXMODELSV2_API BatchDeleteCustomVocabularyItemResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LEXMODELSV2_API BatchDeleteCustomVocabularyItemResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

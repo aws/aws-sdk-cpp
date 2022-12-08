@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/RequestTimeoutException">AWS
    * API Reference</a></p>
    */
-  class AWS_GLACIER_API RequestTimeoutException
+  class RequestTimeoutException
   {
   public:
-    RequestTimeoutException();
-    RequestTimeoutException(Aws::Utils::Json::JsonView jsonValue);
-    RequestTimeoutException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLACIER_API RequestTimeoutException();
+    AWS_GLACIER_API RequestTimeoutException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLACIER_API RequestTimeoutException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLACIER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

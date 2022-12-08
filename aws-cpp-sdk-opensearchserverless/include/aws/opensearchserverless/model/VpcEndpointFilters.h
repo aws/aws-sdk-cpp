@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/VpcEndpointFilters">AWS
    * API Reference</a></p>
    */
-  class AWS_OPENSEARCHSERVERLESS_API VpcEndpointFilters
+  class VpcEndpointFilters
   {
   public:
-    VpcEndpointFilters();
-    VpcEndpointFilters(Aws::Utils::Json::JsonView jsonValue);
-    VpcEndpointFilters& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OPENSEARCHSERVERLESS_API VpcEndpointFilters();
+    AWS_OPENSEARCHSERVERLESS_API VpcEndpointFilters(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPENSEARCHSERVERLESS_API VpcEndpointFilters& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPENSEARCHSERVERLESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

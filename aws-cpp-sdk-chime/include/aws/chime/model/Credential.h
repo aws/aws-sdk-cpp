@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/Credential">AWS
    * API Reference</a></p>
    */
-  class AWS_CHIME_API Credential
+  class Credential
   {
   public:
-    Credential();
-    Credential(Aws::Utils::Json::JsonView jsonValue);
-    Credential& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIME_API Credential();
+    AWS_CHIME_API Credential(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API Credential& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

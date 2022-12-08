@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/Compute">AWS
    * API Reference</a></p>
    */
-  class AWS_ROBOMAKER_API Compute
+  class Compute
   {
   public:
-    Compute();
-    Compute(Aws::Utils::Json::JsonView jsonValue);
-    Compute& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ROBOMAKER_API Compute();
+    AWS_ROBOMAKER_API Compute(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROBOMAKER_API Compute& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROBOMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

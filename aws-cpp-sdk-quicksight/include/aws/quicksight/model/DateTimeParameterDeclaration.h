@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DateTimeParameterDeclaration">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API DateTimeParameterDeclaration
+  class DateTimeParameterDeclaration
   {
   public:
-    DateTimeParameterDeclaration();
-    DateTimeParameterDeclaration(Aws::Utils::Json::JsonView jsonValue);
-    DateTimeParameterDeclaration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API DateTimeParameterDeclaration();
+    AWS_QUICKSIGHT_API DateTimeParameterDeclaration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API DateTimeParameterDeclaration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

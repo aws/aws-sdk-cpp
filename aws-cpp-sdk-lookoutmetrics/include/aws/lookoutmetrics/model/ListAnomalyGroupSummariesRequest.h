@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_LOOKOUTMETRICS_API ListAnomalyGroupSummariesRequest : public LookoutMetricsRequest
+  class ListAnomalyGroupSummariesRequest : public LookoutMetricsRequest
   {
   public:
-    ListAnomalyGroupSummariesRequest();
+    AWS_LOOKOUTMETRICS_API ListAnomalyGroupSummariesRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,7 +29,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ListAnomalyGroupSummaries"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_LOOKOUTMETRICS_API Aws::String SerializePayload() const override;
 
 
     /**

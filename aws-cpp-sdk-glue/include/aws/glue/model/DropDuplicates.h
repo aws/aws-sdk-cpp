@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DropDuplicates">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API DropDuplicates
+  class DropDuplicates
   {
   public:
-    DropDuplicates();
-    DropDuplicates(Aws::Utils::Json::JsonView jsonValue);
-    DropDuplicates& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API DropDuplicates();
+    AWS_GLUE_API DropDuplicates(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API DropDuplicates& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

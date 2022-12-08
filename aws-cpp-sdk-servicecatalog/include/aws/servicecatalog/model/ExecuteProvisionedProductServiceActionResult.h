@@ -24,12 +24,12 @@ namespace ServiceCatalog
 {
 namespace Model
 {
-  class AWS_SERVICECATALOG_API ExecuteProvisionedProductServiceActionResult
+  class ExecuteProvisionedProductServiceActionResult
   {
   public:
-    ExecuteProvisionedProductServiceActionResult();
-    ExecuteProvisionedProductServiceActionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ExecuteProvisionedProductServiceActionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SERVICECATALOG_API ExecuteProvisionedProductServiceActionResult();
+    AWS_SERVICECATALOG_API ExecuteProvisionedProductServiceActionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SERVICECATALOG_API ExecuteProvisionedProductServiceActionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

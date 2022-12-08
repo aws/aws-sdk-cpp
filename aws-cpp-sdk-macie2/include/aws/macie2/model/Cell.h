@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/Cell">AWS API
    * Reference</a></p>
    */
-  class AWS_MACIE2_API Cell
+  class Cell
   {
   public:
-    Cell();
-    Cell(Aws::Utils::Json::JsonView jsonValue);
-    Cell& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MACIE2_API Cell();
+    AWS_MACIE2_API Cell(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API Cell& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

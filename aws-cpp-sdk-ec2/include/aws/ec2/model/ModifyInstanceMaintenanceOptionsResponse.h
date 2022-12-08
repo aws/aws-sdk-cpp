@@ -26,12 +26,12 @@ namespace EC2
 {
 namespace Model
 {
-  class AWS_EC2_API ModifyInstanceMaintenanceOptionsResponse
+  class ModifyInstanceMaintenanceOptionsResponse
   {
   public:
-    ModifyInstanceMaintenanceOptionsResponse();
-    ModifyInstanceMaintenanceOptionsResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ModifyInstanceMaintenanceOptionsResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API ModifyInstanceMaintenanceOptionsResponse();
+    AWS_EC2_API ModifyInstanceMaintenanceOptionsResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API ModifyInstanceMaintenanceOptionsResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

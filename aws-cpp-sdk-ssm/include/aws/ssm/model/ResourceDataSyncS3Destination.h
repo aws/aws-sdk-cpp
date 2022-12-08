@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ResourceDataSyncS3Destination">AWS
    * API Reference</a></p>
    */
-  class AWS_SSM_API ResourceDataSyncS3Destination
+  class ResourceDataSyncS3Destination
   {
   public:
-    ResourceDataSyncS3Destination();
-    ResourceDataSyncS3Destination(Aws::Utils::Json::JsonView jsonValue);
-    ResourceDataSyncS3Destination& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSM_API ResourceDataSyncS3Destination();
+    AWS_SSM_API ResourceDataSyncS3Destination(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API ResourceDataSyncS3Destination& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

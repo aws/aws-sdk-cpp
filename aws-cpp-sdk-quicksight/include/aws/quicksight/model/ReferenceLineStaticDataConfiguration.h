@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ReferenceLineStaticDataConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API ReferenceLineStaticDataConfiguration
+  class ReferenceLineStaticDataConfiguration
   {
   public:
-    ReferenceLineStaticDataConfiguration();
-    ReferenceLineStaticDataConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    ReferenceLineStaticDataConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API ReferenceLineStaticDataConfiguration();
+    AWS_QUICKSIGHT_API ReferenceLineStaticDataConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API ReferenceLineStaticDataConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

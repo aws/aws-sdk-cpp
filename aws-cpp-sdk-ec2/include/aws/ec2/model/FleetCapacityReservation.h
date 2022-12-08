@@ -32,15 +32,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/FleetCapacityReservation">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API FleetCapacityReservation
+  class FleetCapacityReservation
   {
   public:
-    FleetCapacityReservation();
-    FleetCapacityReservation(const Aws::Utils::Xml::XmlNode& xmlNode);
-    FleetCapacityReservation& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API FleetCapacityReservation();
+    AWS_EC2_API FleetCapacityReservation(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API FleetCapacityReservation& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**

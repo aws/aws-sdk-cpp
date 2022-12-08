@@ -44,13 +44,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/SourceConnectorProperties">AWS
    * API Reference</a></p>
    */
-  class AWS_APPFLOW_API SourceConnectorProperties
+  class SourceConnectorProperties
   {
   public:
-    SourceConnectorProperties();
-    SourceConnectorProperties(Aws::Utils::Json::JsonView jsonValue);
-    SourceConnectorProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPFLOW_API SourceConnectorProperties();
+    AWS_APPFLOW_API SourceConnectorProperties(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API SourceConnectorProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

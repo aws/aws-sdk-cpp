@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/VpcSecurityGroupMembership">AWS
    * API Reference</a></p>
    */
-  class AWS_REDSHIFTSERVERLESS_API VpcSecurityGroupMembership
+  class VpcSecurityGroupMembership
   {
   public:
-    VpcSecurityGroupMembership();
-    VpcSecurityGroupMembership(Aws::Utils::Json::JsonView jsonValue);
-    VpcSecurityGroupMembership& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_REDSHIFTSERVERLESS_API VpcSecurityGroupMembership();
+    AWS_REDSHIFTSERVERLESS_API VpcSecurityGroupMembership(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REDSHIFTSERVERLESS_API VpcSecurityGroupMembership& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REDSHIFTSERVERLESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

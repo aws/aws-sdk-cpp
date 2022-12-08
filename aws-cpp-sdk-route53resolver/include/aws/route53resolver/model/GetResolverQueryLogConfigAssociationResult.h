@@ -24,12 +24,12 @@ namespace Route53Resolver
 {
 namespace Model
 {
-  class AWS_ROUTE53RESOLVER_API GetResolverQueryLogConfigAssociationResult
+  class GetResolverQueryLogConfigAssociationResult
   {
   public:
-    GetResolverQueryLogConfigAssociationResult();
-    GetResolverQueryLogConfigAssociationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetResolverQueryLogConfigAssociationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ROUTE53RESOLVER_API GetResolverQueryLogConfigAssociationResult();
+    AWS_ROUTE53RESOLVER_API GetResolverQueryLogConfigAssociationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ROUTE53RESOLVER_API GetResolverQueryLogConfigAssociationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

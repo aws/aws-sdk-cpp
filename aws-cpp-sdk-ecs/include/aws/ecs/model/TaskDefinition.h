@@ -47,13 +47,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/TaskDefinition">AWS
    * API Reference</a></p>
    */
-  class AWS_ECS_API TaskDefinition
+  class TaskDefinition
   {
   public:
-    TaskDefinition();
-    TaskDefinition(Aws::Utils::Json::JsonView jsonValue);
-    TaskDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ECS_API TaskDefinition();
+    AWS_ECS_API TaskDefinition(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECS_API TaskDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -25,12 +25,12 @@ namespace ChimeSDKVoice
 {
 namespace Model
 {
-  class AWS_CHIMESDKVOICE_API ListAvailableVoiceConnectorRegionsResult
+  class ListAvailableVoiceConnectorRegionsResult
   {
   public:
-    ListAvailableVoiceConnectorRegionsResult();
-    ListAvailableVoiceConnectorRegionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListAvailableVoiceConnectorRegionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CHIMESDKVOICE_API ListAvailableVoiceConnectorRegionsResult();
+    AWS_CHIMESDKVOICE_API ListAvailableVoiceConnectorRegionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CHIMESDKVOICE_API ListAvailableVoiceConnectorRegionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     

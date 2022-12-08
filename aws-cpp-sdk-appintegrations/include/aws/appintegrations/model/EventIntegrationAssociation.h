@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appintegrations-2020-07-29/EventIntegrationAssociation">AWS
    * API Reference</a></p>
    */
-  class AWS_APPINTEGRATIONSSERVICE_API EventIntegrationAssociation
+  class EventIntegrationAssociation
   {
   public:
-    EventIntegrationAssociation();
-    EventIntegrationAssociation(Aws::Utils::Json::JsonView jsonValue);
-    EventIntegrationAssociation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPINTEGRATIONSSERVICE_API EventIntegrationAssociation();
+    AWS_APPINTEGRATIONSSERVICE_API EventIntegrationAssociation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPINTEGRATIONSSERVICE_API EventIntegrationAssociation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPINTEGRATIONSSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

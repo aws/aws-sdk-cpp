@@ -26,12 +26,12 @@ namespace Comprehend
 {
 namespace Model
 {
-  class AWS_COMPREHEND_API ListDominantLanguageDetectionJobsResult
+  class ListDominantLanguageDetectionJobsResult
   {
   public:
-    ListDominantLanguageDetectionJobsResult();
-    ListDominantLanguageDetectionJobsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListDominantLanguageDetectionJobsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_COMPREHEND_API ListDominantLanguageDetectionJobsResult();
+    AWS_COMPREHEND_API ListDominantLanguageDetectionJobsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_COMPREHEND_API ListDominantLanguageDetectionJobsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribedProfile">AWS
    * API Reference</a></p>
    */
-  class AWS_TRANSFER_API DescribedProfile
+  class DescribedProfile
   {
   public:
-    DescribedProfile();
-    DescribedProfile(Aws::Utils::Json::JsonView jsonValue);
-    DescribedProfile& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TRANSFER_API DescribedProfile();
+    AWS_TRANSFER_API DescribedProfile(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSFER_API DescribedProfile& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSFER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

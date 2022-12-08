@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/NetworkSettingsSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_WORKSPACESWEB_API NetworkSettingsSummary
+  class NetworkSettingsSummary
   {
   public:
-    NetworkSettingsSummary();
-    NetworkSettingsSummary(Aws::Utils::Json::JsonView jsonValue);
-    NetworkSettingsSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WORKSPACESWEB_API NetworkSettingsSummary();
+    AWS_WORKSPACESWEB_API NetworkSettingsSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKSPACESWEB_API NetworkSettingsSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKSPACESWEB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

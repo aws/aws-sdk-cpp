@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/HashKeyRange">AWS
    * API Reference</a></p>
    */
-  class AWS_KINESIS_API HashKeyRange
+  class HashKeyRange
   {
   public:
-    HashKeyRange();
-    HashKeyRange(Aws::Utils::Json::JsonView jsonValue);
-    HashKeyRange& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KINESIS_API HashKeyRange();
+    AWS_KINESIS_API HashKeyRange(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESIS_API HashKeyRange& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESIS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

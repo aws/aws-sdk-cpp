@@ -26,12 +26,12 @@ namespace PrivateNetworks
 {
 namespace Model
 {
-  class AWS_PRIVATENETWORKS_API UpdateNetworkSitePlanResult
+  class UpdateNetworkSitePlanResult
   {
   public:
-    UpdateNetworkSitePlanResult();
-    UpdateNetworkSitePlanResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateNetworkSitePlanResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PRIVATENETWORKS_API UpdateNetworkSitePlanResult();
+    AWS_PRIVATENETWORKS_API UpdateNetworkSitePlanResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PRIVATENETWORKS_API UpdateNetworkSitePlanResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

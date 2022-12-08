@@ -31,15 +31,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/Message">AWS API
    * Reference</a></p>
    */
-  class AWS_SQS_API Message
+  class Message
   {
   public:
-    Message();
-    Message(const Aws::Utils::Xml::XmlNode& xmlNode);
-    Message& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_SQS_API Message();
+    AWS_SQS_API Message(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_SQS_API Message& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_SQS_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_SQS_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**

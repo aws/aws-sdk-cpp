@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/SourceConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDTRAIL_API SourceConfig
+  class SourceConfig
   {
   public:
-    SourceConfig();
-    SourceConfig(Aws::Utils::Json::JsonView jsonValue);
-    SourceConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDTRAIL_API SourceConfig();
+    AWS_CLOUDTRAIL_API SourceConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDTRAIL_API SourceConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDTRAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

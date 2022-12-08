@@ -43,13 +43,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/Project">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEBUILD_API Project
+  class Project
   {
   public:
-    Project();
-    Project(Aws::Utils::Json::JsonView jsonValue);
-    Project& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEBUILD_API Project();
+    AWS_CODEBUILD_API Project(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEBUILD_API Project& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEBUILD_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

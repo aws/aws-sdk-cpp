@@ -39,13 +39,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/TumblingWindow">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTSITEWISE_API TumblingWindow
+  class TumblingWindow
   {
   public:
-    TumblingWindow();
-    TumblingWindow(Aws::Utils::Json::JsonView jsonValue);
-    TumblingWindow& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTSITEWISE_API TumblingWindow();
+    AWS_IOTSITEWISE_API TumblingWindow(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API TumblingWindow& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

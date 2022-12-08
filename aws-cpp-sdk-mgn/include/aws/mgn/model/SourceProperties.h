@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/SourceProperties">AWS
    * API Reference</a></p>
    */
-  class AWS_MGN_API SourceProperties
+  class SourceProperties
   {
   public:
-    SourceProperties();
-    SourceProperties(Aws::Utils::Json::JsonView jsonValue);
-    SourceProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MGN_API SourceProperties();
+    AWS_MGN_API SourceProperties(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MGN_API SourceProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MGN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

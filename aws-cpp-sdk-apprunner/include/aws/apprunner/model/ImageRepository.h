@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/ImageRepository">AWS
    * API Reference</a></p>
    */
-  class AWS_APPRUNNER_API ImageRepository
+  class ImageRepository
   {
   public:
-    ImageRepository();
-    ImageRepository(Aws::Utils::Json::JsonView jsonValue);
-    ImageRepository& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPRUNNER_API ImageRepository();
+    AWS_APPRUNNER_API ImageRepository(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPRUNNER_API ImageRepository& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPRUNNER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/OrganizationEventFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_HEALTH_API OrganizationEventFilter
+  class OrganizationEventFilter
   {
   public:
-    OrganizationEventFilter();
-    OrganizationEventFilter(Aws::Utils::Json::JsonView jsonValue);
-    OrganizationEventFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_HEALTH_API OrganizationEventFilter();
+    AWS_HEALTH_API OrganizationEventFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_HEALTH_API OrganizationEventFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_HEALTH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

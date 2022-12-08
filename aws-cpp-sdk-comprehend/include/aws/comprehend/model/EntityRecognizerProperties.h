@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/EntityRecognizerProperties">AWS
    * API Reference</a></p>
    */
-  class AWS_COMPREHEND_API EntityRecognizerProperties
+  class EntityRecognizerProperties
   {
   public:
-    EntityRecognizerProperties();
-    EntityRecognizerProperties(Aws::Utils::Json::JsonView jsonValue);
-    EntityRecognizerProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COMPREHEND_API EntityRecognizerProperties();
+    AWS_COMPREHEND_API EntityRecognizerProperties(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHEND_API EntityRecognizerProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHEND_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

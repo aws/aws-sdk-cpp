@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/RecipeSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_PERSONALIZE_API RecipeSummary
+  class RecipeSummary
   {
   public:
-    RecipeSummary();
-    RecipeSummary(Aws::Utils::Json::JsonView jsonValue);
-    RecipeSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PERSONALIZE_API RecipeSummary();
+    AWS_PERSONALIZE_API RecipeSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PERSONALIZE_API RecipeSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PERSONALIZE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -22,12 +22,12 @@ namespace Polly
 {
 namespace Model
 {
-  class AWS_POLLY_API DeleteLexiconResult
+  class DeleteLexiconResult
   {
   public:
-    DeleteLexiconResult();
-    DeleteLexiconResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteLexiconResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_POLLY_API DeleteLexiconResult();
+    AWS_POLLY_API DeleteLexiconResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_POLLY_API DeleteLexiconResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

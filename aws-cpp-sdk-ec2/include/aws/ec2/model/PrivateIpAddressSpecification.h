@@ -29,15 +29,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/PrivateIpAddressSpecification">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API PrivateIpAddressSpecification
+  class PrivateIpAddressSpecification
   {
   public:
-    PrivateIpAddressSpecification();
-    PrivateIpAddressSpecification(const Aws::Utils::Xml::XmlNode& xmlNode);
-    PrivateIpAddressSpecification& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API PrivateIpAddressSpecification();
+    AWS_EC2_API PrivateIpAddressSpecification(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API PrivateIpAddressSpecification& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**

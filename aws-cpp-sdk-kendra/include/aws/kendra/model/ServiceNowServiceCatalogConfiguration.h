@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ServiceNowServiceCatalogConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_KENDRA_API ServiceNowServiceCatalogConfiguration
+  class ServiceNowServiceCatalogConfiguration
   {
   public:
-    ServiceNowServiceCatalogConfiguration();
-    ServiceNowServiceCatalogConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    ServiceNowServiceCatalogConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KENDRA_API ServiceNowServiceCatalogConfiguration();
+    AWS_KENDRA_API ServiceNowServiceCatalogConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API ServiceNowServiceCatalogConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

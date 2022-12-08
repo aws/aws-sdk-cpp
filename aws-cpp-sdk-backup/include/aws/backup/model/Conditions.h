@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/Conditions">AWS
    * API Reference</a></p>
    */
-  class AWS_BACKUP_API Conditions
+  class Conditions
   {
   public:
-    Conditions();
-    Conditions(Aws::Utils::Json::JsonView jsonValue);
-    Conditions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BACKUP_API Conditions();
+    AWS_BACKUP_API Conditions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BACKUP_API Conditions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BACKUP_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

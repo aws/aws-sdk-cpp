@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dlm-2018-01-12/ArchiveRetainRule">AWS
    * API Reference</a></p>
    */
-  class AWS_DLM_API ArchiveRetainRule
+  class ArchiveRetainRule
   {
   public:
-    ArchiveRetainRule();
-    ArchiveRetainRule(Aws::Utils::Json::JsonView jsonValue);
-    ArchiveRetainRule& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DLM_API ArchiveRetainRule();
+    AWS_DLM_API ArchiveRetainRule(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DLM_API ArchiveRetainRule& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DLM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

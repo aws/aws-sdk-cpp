@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/OrganizationScanEc2InstanceWithFindings">AWS
    * API Reference</a></p>
    */
-  class AWS_GUARDDUTY_API OrganizationScanEc2InstanceWithFindings
+  class OrganizationScanEc2InstanceWithFindings
   {
   public:
-    OrganizationScanEc2InstanceWithFindings();
-    OrganizationScanEc2InstanceWithFindings(Aws::Utils::Json::JsonView jsonValue);
-    OrganizationScanEc2InstanceWithFindings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GUARDDUTY_API OrganizationScanEc2InstanceWithFindings();
+    AWS_GUARDDUTY_API OrganizationScanEc2InstanceWithFindings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API OrganizationScanEc2InstanceWithFindings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

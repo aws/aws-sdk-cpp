@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_SAGEMAKERRUNTIME_API InvokeEndpointRequest : public StreamingSageMakerRuntimeRequest
+  class InvokeEndpointRequest : public StreamingSageMakerRuntimeRequest
   {
   public:
-    InvokeEndpointRequest();
+    AWS_SAGEMAKERRUNTIME_API InvokeEndpointRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,7 +30,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "InvokeEndpoint"; }
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_SAGEMAKERRUNTIME_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**

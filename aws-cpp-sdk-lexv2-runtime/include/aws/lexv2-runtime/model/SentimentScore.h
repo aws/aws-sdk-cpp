@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/runtime.lex.v2-2020-08-07/SentimentScore">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXRUNTIMEV2_API SentimentScore
+  class SentimentScore
   {
   public:
-    SentimentScore();
-    SentimentScore(Aws::Utils::Json::JsonView jsonValue);
-    SentimentScore& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXRUNTIMEV2_API SentimentScore();
+    AWS_LEXRUNTIMEV2_API SentimentScore(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXRUNTIMEV2_API SentimentScore& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXRUNTIMEV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

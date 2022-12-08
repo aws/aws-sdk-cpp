@@ -43,13 +43,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/SearchRecord">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API SearchRecord
+  class SearchRecord
   {
   public:
-    SearchRecord();
-    SearchRecord(Aws::Utils::Json::JsonView jsonValue);
-    SearchRecord& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API SearchRecord();
+    AWS_SAGEMAKER_API SearchRecord(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API SearchRecord& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/HadoopStepConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_EMR_API HadoopStepConfig
+  class HadoopStepConfig
   {
   public:
-    HadoopStepConfig();
-    HadoopStepConfig(Aws::Utils::Json::JsonView jsonValue);
-    HadoopStepConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EMR_API HadoopStepConfig();
+    AWS_EMR_API HadoopStepConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMR_API HadoopStepConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

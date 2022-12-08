@@ -25,12 +25,12 @@ namespace EC2
 {
 namespace Model
 {
-  class AWS_EC2_API MoveByoipCidrToIpamResponse
+  class MoveByoipCidrToIpamResponse
   {
   public:
-    MoveByoipCidrToIpamResponse();
-    MoveByoipCidrToIpamResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    MoveByoipCidrToIpamResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API MoveByoipCidrToIpamResponse();
+    AWS_EC2_API MoveByoipCidrToIpamResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API MoveByoipCidrToIpamResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

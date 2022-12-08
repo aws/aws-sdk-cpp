@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ErrorDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTSITEWISE_API ErrorDetails
+  class ErrorDetails
   {
   public:
-    ErrorDetails();
-    ErrorDetails(Aws::Utils::Json::JsonView jsonValue);
-    ErrorDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTSITEWISE_API ErrorDetails();
+    AWS_IOTSITEWISE_API ErrorDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API ErrorDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

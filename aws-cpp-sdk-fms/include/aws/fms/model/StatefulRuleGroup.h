@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/StatefulRuleGroup">AWS
    * API Reference</a></p>
    */
-  class AWS_FMS_API StatefulRuleGroup
+  class StatefulRuleGroup
   {
   public:
-    StatefulRuleGroup();
-    StatefulRuleGroup(Aws::Utils::Json::JsonView jsonValue);
-    StatefulRuleGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FMS_API StatefulRuleGroup();
+    AWS_FMS_API StatefulRuleGroup(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FMS_API StatefulRuleGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

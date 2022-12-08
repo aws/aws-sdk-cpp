@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/EndpointGroup">AWS
    * API Reference</a></p>
    */
-  class AWS_GLOBALACCELERATOR_API EndpointGroup
+  class EndpointGroup
   {
   public:
-    EndpointGroup();
-    EndpointGroup(Aws::Utils::Json::JsonView jsonValue);
-    EndpointGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLOBALACCELERATOR_API EndpointGroup();
+    AWS_GLOBALACCELERATOR_API EndpointGroup(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLOBALACCELERATOR_API EndpointGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLOBALACCELERATOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

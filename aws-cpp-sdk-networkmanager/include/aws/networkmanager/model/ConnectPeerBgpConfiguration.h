@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ConnectPeerBgpConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_NETWORKMANAGER_API ConnectPeerBgpConfiguration
+  class ConnectPeerBgpConfiguration
   {
   public:
-    ConnectPeerBgpConfiguration();
-    ConnectPeerBgpConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    ConnectPeerBgpConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_NETWORKMANAGER_API ConnectPeerBgpConfiguration();
+    AWS_NETWORKMANAGER_API ConnectPeerBgpConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKMANAGER_API ConnectPeerBgpConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CommandPlugin">AWS
    * API Reference</a></p>
    */
-  class AWS_SSM_API CommandPlugin
+  class CommandPlugin
   {
   public:
-    CommandPlugin();
-    CommandPlugin(Aws::Utils::Json::JsonView jsonValue);
-    CommandPlugin& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSM_API CommandPlugin();
+    AWS_SSM_API CommandPlugin(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API CommandPlugin& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

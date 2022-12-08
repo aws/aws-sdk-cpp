@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/OAuthProperties">AWS
    * API Reference</a></p>
    */
-  class AWS_APPFLOW_API OAuthProperties
+  class OAuthProperties
   {
   public:
-    OAuthProperties();
-    OAuthProperties(Aws::Utils::Json::JsonView jsonValue);
-    OAuthProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPFLOW_API OAuthProperties();
+    AWS_APPFLOW_API OAuthProperties(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API OAuthProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/AppRegistryConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_APPREGISTRY_API AppRegistryConfiguration
+  class AppRegistryConfiguration
   {
   public:
-    AppRegistryConfiguration();
-    AppRegistryConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    AppRegistryConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPREGISTRY_API AppRegistryConfiguration();
+    AWS_APPREGISTRY_API AppRegistryConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPREGISTRY_API AppRegistryConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPREGISTRY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

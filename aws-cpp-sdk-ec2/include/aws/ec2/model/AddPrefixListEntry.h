@@ -28,15 +28,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AddPrefixListEntry">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API AddPrefixListEntry
+  class AddPrefixListEntry
   {
   public:
-    AddPrefixListEntry();
-    AddPrefixListEntry(const Aws::Utils::Xml::XmlNode& xmlNode);
-    AddPrefixListEntry& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API AddPrefixListEntry();
+    AWS_EC2_API AddPrefixListEntry(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API AddPrefixListEntry& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**

@@ -27,12 +27,12 @@ namespace EC2
 {
 namespace Model
 {
-  class AWS_EC2_API DescribeVerifiedAccessEndpointsResponse
+  class DescribeVerifiedAccessEndpointsResponse
   {
   public:
-    DescribeVerifiedAccessEndpointsResponse();
-    DescribeVerifiedAccessEndpointsResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeVerifiedAccessEndpointsResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API DescribeVerifiedAccessEndpointsResponse();
+    AWS_EC2_API DescribeVerifiedAccessEndpointsResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API DescribeVerifiedAccessEndpointsResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

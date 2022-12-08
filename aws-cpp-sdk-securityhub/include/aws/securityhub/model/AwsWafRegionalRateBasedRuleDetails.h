@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsWafRegionalRateBasedRuleDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsWafRegionalRateBasedRuleDetails
+  class AwsWafRegionalRateBasedRuleDetails
   {
   public:
-    AwsWafRegionalRateBasedRuleDetails();
-    AwsWafRegionalRateBasedRuleDetails(Aws::Utils::Json::JsonView jsonValue);
-    AwsWafRegionalRateBasedRuleDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsWafRegionalRateBasedRuleDetails();
+    AWS_SECURITYHUB_API AwsWafRegionalRateBasedRuleDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsWafRegionalRateBasedRuleDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

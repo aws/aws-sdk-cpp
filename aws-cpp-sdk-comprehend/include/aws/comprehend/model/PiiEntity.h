@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/PiiEntity">AWS
    * API Reference</a></p>
    */
-  class AWS_COMPREHEND_API PiiEntity
+  class PiiEntity
   {
   public:
-    PiiEntity();
-    PiiEntity(Aws::Utils::Json::JsonView jsonValue);
-    PiiEntity& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COMPREHEND_API PiiEntity();
+    AWS_COMPREHEND_API PiiEntity(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHEND_API PiiEntity& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHEND_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

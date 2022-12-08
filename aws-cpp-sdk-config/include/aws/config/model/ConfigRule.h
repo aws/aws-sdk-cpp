@@ -56,13 +56,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ConfigRule">AWS
    * API Reference</a></p>
    */
-  class AWS_CONFIGSERVICE_API ConfigRule
+  class ConfigRule
   {
   public:
-    ConfigRule();
-    ConfigRule(Aws::Utils::Json::JsonView jsonValue);
-    ConfigRule& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONFIGSERVICE_API ConfigRule();
+    AWS_CONFIGSERVICE_API ConfigRule(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API ConfigRule& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

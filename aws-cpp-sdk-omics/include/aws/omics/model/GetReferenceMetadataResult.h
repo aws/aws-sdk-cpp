@@ -27,12 +27,12 @@ namespace Omics
 {
 namespace Model
 {
-  class AWS_OMICS_API GetReferenceMetadataResult
+  class GetReferenceMetadataResult
   {
   public:
-    GetReferenceMetadataResult();
-    GetReferenceMetadataResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetReferenceMetadataResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OMICS_API GetReferenceMetadataResult();
+    AWS_OMICS_API GetReferenceMetadataResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OMICS_API GetReferenceMetadataResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

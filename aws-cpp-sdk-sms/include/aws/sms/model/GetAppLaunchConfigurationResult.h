@@ -26,12 +26,12 @@ namespace SMS
 {
 namespace Model
 {
-  class AWS_SMS_API GetAppLaunchConfigurationResult
+  class GetAppLaunchConfigurationResult
   {
   public:
-    GetAppLaunchConfigurationResult();
-    GetAppLaunchConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetAppLaunchConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SMS_API GetAppLaunchConfigurationResult();
+    AWS_SMS_API GetAppLaunchConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SMS_API GetAppLaunchConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

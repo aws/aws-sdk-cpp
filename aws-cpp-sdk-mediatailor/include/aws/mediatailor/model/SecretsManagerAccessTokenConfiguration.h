@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/SecretsManagerAccessTokenConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIATAILOR_API SecretsManagerAccessTokenConfiguration
+  class SecretsManagerAccessTokenConfiguration
   {
   public:
-    SecretsManagerAccessTokenConfiguration();
-    SecretsManagerAccessTokenConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    SecretsManagerAccessTokenConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIATAILOR_API SecretsManagerAccessTokenConfiguration();
+    AWS_MEDIATAILOR_API SecretsManagerAccessTokenConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIATAILOR_API SecretsManagerAccessTokenConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIATAILOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

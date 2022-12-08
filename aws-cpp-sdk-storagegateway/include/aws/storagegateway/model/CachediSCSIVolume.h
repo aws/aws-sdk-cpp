@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CachediSCSIVolume">AWS
    * API Reference</a></p>
    */
-  class AWS_STORAGEGATEWAY_API CachediSCSIVolume
+  class CachediSCSIVolume
   {
   public:
-    CachediSCSIVolume();
-    CachediSCSIVolume(Aws::Utils::Json::JsonView jsonValue);
-    CachediSCSIVolume& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_STORAGEGATEWAY_API CachediSCSIVolume();
+    AWS_STORAGEGATEWAY_API CachediSCSIVolume(Aws::Utils::Json::JsonView jsonValue);
+    AWS_STORAGEGATEWAY_API CachediSCSIVolume& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_STORAGEGATEWAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

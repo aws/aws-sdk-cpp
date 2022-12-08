@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/OriginationRoute">AWS
    * API Reference</a></p>
    */
-  class AWS_CHIME_API OriginationRoute
+  class OriginationRoute
   {
   public:
-    OriginationRoute();
-    OriginationRoute(Aws::Utils::Json::JsonView jsonValue);
-    OriginationRoute& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIME_API OriginationRoute();
+    AWS_CHIME_API OriginationRoute(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API OriginationRoute& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

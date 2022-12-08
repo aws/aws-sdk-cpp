@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/AlgorithmStatusDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API AlgorithmStatusDetails
+  class AlgorithmStatusDetails
   {
   public:
-    AlgorithmStatusDetails();
-    AlgorithmStatusDetails(Aws::Utils::Json::JsonView jsonValue);
-    AlgorithmStatusDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API AlgorithmStatusDetails();
+    AWS_SAGEMAKER_API AlgorithmStatusDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API AlgorithmStatusDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -24,12 +24,12 @@ namespace Kinesis
 {
 namespace Model
 {
-  class AWS_KINESIS_API UpdateShardCountResult
+  class UpdateShardCountResult
   {
   public:
-    UpdateShardCountResult();
-    UpdateShardCountResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateShardCountResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KINESIS_API UpdateShardCountResult();
+    AWS_KINESIS_API UpdateShardCountResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KINESIS_API UpdateShardCountResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

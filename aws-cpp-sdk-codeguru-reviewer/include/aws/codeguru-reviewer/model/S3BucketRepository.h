@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/S3BucketRepository">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEGURUREVIEWER_API S3BucketRepository
+  class S3BucketRepository
   {
   public:
-    S3BucketRepository();
-    S3BucketRepository(Aws::Utils::Json::JsonView jsonValue);
-    S3BucketRepository& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEGURUREVIEWER_API S3BucketRepository();
+    AWS_CODEGURUREVIEWER_API S3BucketRepository(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEGURUREVIEWER_API S3BucketRepository& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEGURUREVIEWER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

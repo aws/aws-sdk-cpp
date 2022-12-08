@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/LogicalResourceId">AWS
    * API Reference</a></p>
    */
-  class AWS_RESILIENCEHUB_API LogicalResourceId
+  class LogicalResourceId
   {
   public:
-    LogicalResourceId();
-    LogicalResourceId(Aws::Utils::Json::JsonView jsonValue);
-    LogicalResourceId& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_RESILIENCEHUB_API LogicalResourceId();
+    AWS_RESILIENCEHUB_API LogicalResourceId(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RESILIENCEHUB_API LogicalResourceId& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RESILIENCEHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

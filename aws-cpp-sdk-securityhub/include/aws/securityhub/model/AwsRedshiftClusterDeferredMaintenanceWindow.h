@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsRedshiftClusterDeferredMaintenanceWindow">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsRedshiftClusterDeferredMaintenanceWindow
+  class AwsRedshiftClusterDeferredMaintenanceWindow
   {
   public:
-    AwsRedshiftClusterDeferredMaintenanceWindow();
-    AwsRedshiftClusterDeferredMaintenanceWindow(Aws::Utils::Json::JsonView jsonValue);
-    AwsRedshiftClusterDeferredMaintenanceWindow& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsRedshiftClusterDeferredMaintenanceWindow();
+    AWS_SECURITYHUB_API AwsRedshiftClusterDeferredMaintenanceWindow(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsRedshiftClusterDeferredMaintenanceWindow& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

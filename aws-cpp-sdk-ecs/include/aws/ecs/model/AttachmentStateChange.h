@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/AttachmentStateChange">AWS
    * API Reference</a></p>
    */
-  class AWS_ECS_API AttachmentStateChange
+  class AttachmentStateChange
   {
   public:
-    AttachmentStateChange();
-    AttachmentStateChange(Aws::Utils::Json::JsonView jsonValue);
-    AttachmentStateChange& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ECS_API AttachmentStateChange();
+    AWS_ECS_API AttachmentStateChange(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECS_API AttachmentStateChange& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

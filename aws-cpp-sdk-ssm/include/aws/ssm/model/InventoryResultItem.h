@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/InventoryResultItem">AWS
    * API Reference</a></p>
    */
-  class AWS_SSM_API InventoryResultItem
+  class InventoryResultItem
   {
   public:
-    InventoryResultItem();
-    InventoryResultItem(Aws::Utils::Json::JsonView jsonValue);
-    InventoryResultItem& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSM_API InventoryResultItem();
+    AWS_SSM_API InventoryResultItem(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API InventoryResultItem& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

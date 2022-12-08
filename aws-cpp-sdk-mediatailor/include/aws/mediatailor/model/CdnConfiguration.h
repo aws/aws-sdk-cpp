@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/CdnConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIATAILOR_API CdnConfiguration
+  class CdnConfiguration
   {
   public:
-    CdnConfiguration();
-    CdnConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    CdnConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIATAILOR_API CdnConfiguration();
+    AWS_MEDIATAILOR_API CdnConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIATAILOR_API CdnConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIATAILOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

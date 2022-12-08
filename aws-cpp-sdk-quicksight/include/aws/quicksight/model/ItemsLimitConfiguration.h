@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ItemsLimitConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API ItemsLimitConfiguration
+  class ItemsLimitConfiguration
   {
   public:
-    ItemsLimitConfiguration();
-    ItemsLimitConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    ItemsLimitConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API ItemsLimitConfiguration();
+    AWS_QUICKSIGHT_API ItemsLimitConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API ItemsLimitConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -31,12 +31,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/DeleteDeploymentGroupOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEDEPLOY_API DeleteDeploymentGroupResult
+  class DeleteDeploymentGroupResult
   {
   public:
-    DeleteDeploymentGroupResult();
-    DeleteDeploymentGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteDeploymentGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODEDEPLOY_API DeleteDeploymentGroupResult();
+    AWS_CODEDEPLOY_API DeleteDeploymentGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODEDEPLOY_API DeleteDeploymentGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

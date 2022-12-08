@@ -28,14 +28,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/AccountLimit">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53_API AccountLimit
+  class AccountLimit
   {
   public:
-    AccountLimit();
-    AccountLimit(const Aws::Utils::Xml::XmlNode& xmlNode);
-    AccountLimit& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ROUTE53_API AccountLimit();
+    AWS_ROUTE53_API AccountLimit(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ROUTE53_API AccountLimit& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_ROUTE53_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**

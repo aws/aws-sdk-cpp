@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/BucketSortCriteria">AWS
    * API Reference</a></p>
    */
-  class AWS_MACIE2_API BucketSortCriteria
+  class BucketSortCriteria
   {
   public:
-    BucketSortCriteria();
-    BucketSortCriteria(Aws::Utils::Json::JsonView jsonValue);
-    BucketSortCriteria& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MACIE2_API BucketSortCriteria();
+    AWS_MACIE2_API BucketSortCriteria(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API BucketSortCriteria& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

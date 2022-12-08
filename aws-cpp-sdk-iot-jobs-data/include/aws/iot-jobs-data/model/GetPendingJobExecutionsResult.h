@@ -25,12 +25,12 @@ namespace IoTJobsDataPlane
 {
 namespace Model
 {
-  class AWS_IOTJOBSDATAPLANE_API GetPendingJobExecutionsResult
+  class GetPendingJobExecutionsResult
   {
   public:
-    GetPendingJobExecutionsResult();
-    GetPendingJobExecutionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetPendingJobExecutionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOTJOBSDATAPLANE_API GetPendingJobExecutionsResult();
+    AWS_IOTJOBSDATAPLANE_API GetPendingJobExecutionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOTJOBSDATAPLANE_API GetPendingJobExecutionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

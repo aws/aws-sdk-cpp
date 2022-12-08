@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/ErrorStatistics">AWS
    * API Reference</a></p>
    */
-  class AWS_XRAY_API ErrorStatistics
+  class ErrorStatistics
   {
   public:
-    ErrorStatistics();
-    ErrorStatistics(Aws::Utils::Json::JsonView jsonValue);
-    ErrorStatistics& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_XRAY_API ErrorStatistics();
+    AWS_XRAY_API ErrorStatistics(Aws::Utils::Json::JsonView jsonValue);
+    AWS_XRAY_API ErrorStatistics& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_XRAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

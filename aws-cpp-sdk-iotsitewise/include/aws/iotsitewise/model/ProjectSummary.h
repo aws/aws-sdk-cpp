@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ProjectSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTSITEWISE_API ProjectSummary
+  class ProjectSummary
   {
   public:
-    ProjectSummary();
-    ProjectSummary(Aws::Utils::Json::JsonView jsonValue);
-    ProjectSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTSITEWISE_API ProjectSummary();
+    AWS_IOTSITEWISE_API ProjectSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API ProjectSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

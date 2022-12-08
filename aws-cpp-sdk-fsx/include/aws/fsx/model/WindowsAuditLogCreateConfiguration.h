@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/WindowsAuditLogCreateConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_FSX_API WindowsAuditLogCreateConfiguration
+  class WindowsAuditLogCreateConfiguration
   {
   public:
-    WindowsAuditLogCreateConfiguration();
-    WindowsAuditLogCreateConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    WindowsAuditLogCreateConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FSX_API WindowsAuditLogCreateConfiguration();
+    AWS_FSX_API WindowsAuditLogCreateConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API WindowsAuditLogCreateConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

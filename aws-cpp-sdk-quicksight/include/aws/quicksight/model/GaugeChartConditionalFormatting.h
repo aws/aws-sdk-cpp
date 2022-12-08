@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/GaugeChartConditionalFormatting">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API GaugeChartConditionalFormatting
+  class GaugeChartConditionalFormatting
   {
   public:
-    GaugeChartConditionalFormatting();
-    GaugeChartConditionalFormatting(Aws::Utils::Json::JsonView jsonValue);
-    GaugeChartConditionalFormatting& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API GaugeChartConditionalFormatting();
+    AWS_QUICKSIGHT_API GaugeChartConditionalFormatting(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API GaugeChartConditionalFormatting& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

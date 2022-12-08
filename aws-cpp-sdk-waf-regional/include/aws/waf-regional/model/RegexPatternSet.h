@@ -39,13 +39,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/RegexPatternSet">AWS
    * API Reference</a></p>
    */
-  class AWS_WAFREGIONAL_API RegexPatternSet
+  class RegexPatternSet
   {
   public:
-    RegexPatternSet();
-    RegexPatternSet(Aws::Utils::Json::JsonView jsonValue);
-    RegexPatternSet& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WAFREGIONAL_API RegexPatternSet();
+    AWS_WAFREGIONAL_API RegexPatternSet(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFREGIONAL_API RegexPatternSet& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFREGIONAL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

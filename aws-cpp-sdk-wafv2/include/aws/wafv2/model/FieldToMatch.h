@@ -46,13 +46,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/FieldToMatch">AWS
    * API Reference</a></p>
    */
-  class AWS_WAFV2_API FieldToMatch
+  class FieldToMatch
   {
   public:
-    FieldToMatch();
-    FieldToMatch(Aws::Utils::Json::JsonView jsonValue);
-    FieldToMatch& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WAFV2_API FieldToMatch();
+    AWS_WAFV2_API FieldToMatch(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API FieldToMatch& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

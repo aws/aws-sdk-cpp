@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/S3DataSourceConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_KENDRA_API S3DataSourceConfiguration
+  class S3DataSourceConfiguration
   {
   public:
-    S3DataSourceConfiguration();
-    S3DataSourceConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    S3DataSourceConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KENDRA_API S3DataSourceConfiguration();
+    AWS_KENDRA_API S3DataSourceConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API S3DataSourceConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

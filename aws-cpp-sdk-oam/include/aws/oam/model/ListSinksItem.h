@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/oam-2022-06-10/ListSinksItem">AWS
    * API Reference</a></p>
    */
-  class AWS_OAM_API ListSinksItem
+  class ListSinksItem
   {
   public:
-    ListSinksItem();
-    ListSinksItem(Aws::Utils::Json::JsonView jsonValue);
-    ListSinksItem& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OAM_API ListSinksItem();
+    AWS_OAM_API ListSinksItem(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OAM_API ListSinksItem& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OAM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/ScheduleEntry">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIATAILOR_API ScheduleEntry
+  class ScheduleEntry
   {
   public:
-    ScheduleEntry();
-    ScheduleEntry(Aws::Utils::Json::JsonView jsonValue);
-    ScheduleEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIATAILOR_API ScheduleEntry();
+    AWS_MEDIATAILOR_API ScheduleEntry(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIATAILOR_API ScheduleEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIATAILOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

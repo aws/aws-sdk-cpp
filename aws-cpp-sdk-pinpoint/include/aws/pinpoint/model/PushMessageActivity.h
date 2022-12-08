@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/PushMessageActivity">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API PushMessageActivity
+  class PushMessageActivity
   {
   public:
-    PushMessageActivity();
-    PushMessageActivity(Aws::Utils::Json::JsonView jsonValue);
-    PushMessageActivity& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API PushMessageActivity();
+    AWS_PINPOINT_API PushMessageActivity(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API PushMessageActivity& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

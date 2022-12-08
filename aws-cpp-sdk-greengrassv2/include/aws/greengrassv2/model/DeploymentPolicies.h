@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/DeploymentPolicies">AWS
    * API Reference</a></p>
    */
-  class AWS_GREENGRASSV2_API DeploymentPolicies
+  class DeploymentPolicies
   {
   public:
-    DeploymentPolicies();
-    DeploymentPolicies(Aws::Utils::Json::JsonView jsonValue);
-    DeploymentPolicies& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GREENGRASSV2_API DeploymentPolicies();
+    AWS_GREENGRASSV2_API DeploymentPolicies(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASSV2_API DeploymentPolicies& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UsageCriteria">AWS
    * API Reference</a></p>
    */
-  class AWS_GUARDDUTY_API UsageCriteria
+  class UsageCriteria
   {
   public:
-    UsageCriteria();
-    UsageCriteria(Aws::Utils::Json::JsonView jsonValue);
-    UsageCriteria& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GUARDDUTY_API UsageCriteria();
+    AWS_GUARDDUTY_API UsageCriteria(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API UsageCriteria& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

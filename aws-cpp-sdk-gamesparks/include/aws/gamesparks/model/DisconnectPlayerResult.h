@@ -25,12 +25,12 @@ namespace GameSparks
 {
 namespace Model
 {
-  class AWS_GAMESPARKS_API DisconnectPlayerResult
+  class DisconnectPlayerResult
   {
   public:
-    DisconnectPlayerResult();
-    DisconnectPlayerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DisconnectPlayerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GAMESPARKS_API DisconnectPlayerResult();
+    AWS_GAMESPARKS_API DisconnectPlayerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GAMESPARKS_API DisconnectPlayerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

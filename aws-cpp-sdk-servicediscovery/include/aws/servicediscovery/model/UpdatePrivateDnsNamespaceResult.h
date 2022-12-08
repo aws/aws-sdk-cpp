@@ -24,12 +24,12 @@ namespace ServiceDiscovery
 {
 namespace Model
 {
-  class AWS_SERVICEDISCOVERY_API UpdatePrivateDnsNamespaceResult
+  class UpdatePrivateDnsNamespaceResult
   {
   public:
-    UpdatePrivateDnsNamespaceResult();
-    UpdatePrivateDnsNamespaceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdatePrivateDnsNamespaceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SERVICEDISCOVERY_API UpdatePrivateDnsNamespaceResult();
+    AWS_SERVICEDISCOVERY_API UpdatePrivateDnsNamespaceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SERVICEDISCOVERY_API UpdatePrivateDnsNamespaceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

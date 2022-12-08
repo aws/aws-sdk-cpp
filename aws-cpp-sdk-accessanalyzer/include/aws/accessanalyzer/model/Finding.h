@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/Finding">AWS
    * API Reference</a></p>
    */
-  class AWS_ACCESSANALYZER_API Finding
+  class Finding
   {
   public:
-    Finding();
-    Finding(Aws::Utils::Json::JsonView jsonValue);
-    Finding& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ACCESSANALYZER_API Finding();
+    AWS_ACCESSANALYZER_API Finding(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACCESSANALYZER_API Finding& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACCESSANALYZER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

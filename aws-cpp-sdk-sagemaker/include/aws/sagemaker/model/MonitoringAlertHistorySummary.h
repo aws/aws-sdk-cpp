@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/MonitoringAlertHistorySummary">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API MonitoringAlertHistorySummary
+  class MonitoringAlertHistorySummary
   {
   public:
-    MonitoringAlertHistorySummary();
-    MonitoringAlertHistorySummary(Aws::Utils::Json::JsonView jsonValue);
-    MonitoringAlertHistorySummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API MonitoringAlertHistorySummary();
+    AWS_SAGEMAKER_API MonitoringAlertHistorySummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API MonitoringAlertHistorySummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -28,12 +28,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/DeleteDedicatedIpPoolResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINTEMAIL_API DeleteDedicatedIpPoolResult
+  class DeleteDedicatedIpPoolResult
   {
   public:
-    DeleteDedicatedIpPoolResult();
-    DeleteDedicatedIpPoolResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteDedicatedIpPoolResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PINPOINTEMAIL_API DeleteDedicatedIpPoolResult();
+    AWS_PINPOINTEMAIL_API DeleteDedicatedIpPoolResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PINPOINTEMAIL_API DeleteDedicatedIpPoolResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

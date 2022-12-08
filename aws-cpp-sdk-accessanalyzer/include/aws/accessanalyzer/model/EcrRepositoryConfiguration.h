@@ -40,13 +40,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/EcrRepositoryConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_ACCESSANALYZER_API EcrRepositoryConfiguration
+  class EcrRepositoryConfiguration
   {
   public:
-    EcrRepositoryConfiguration();
-    EcrRepositoryConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    EcrRepositoryConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ACCESSANALYZER_API EcrRepositoryConfiguration();
+    AWS_ACCESSANALYZER_API EcrRepositoryConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACCESSANALYZER_API EcrRepositoryConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACCESSANALYZER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

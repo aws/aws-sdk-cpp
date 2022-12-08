@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/HlsCdnSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API HlsCdnSettings
+  class HlsCdnSettings
   {
   public:
-    HlsCdnSettings();
-    HlsCdnSettings(Aws::Utils::Json::JsonView jsonValue);
-    HlsCdnSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API HlsCdnSettings();
+    AWS_MEDIALIVE_API HlsCdnSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API HlsCdnSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

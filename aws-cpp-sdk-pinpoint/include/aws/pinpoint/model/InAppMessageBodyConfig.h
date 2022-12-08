@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/InAppMessageBodyConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API InAppMessageBodyConfig
+  class InAppMessageBodyConfig
   {
   public:
-    InAppMessageBodyConfig();
-    InAppMessageBodyConfig(Aws::Utils::Json::JsonView jsonValue);
-    InAppMessageBodyConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API InAppMessageBodyConfig();
+    AWS_PINPOINT_API InAppMessageBodyConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API InAppMessageBodyConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

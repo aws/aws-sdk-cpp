@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/GeospatialMapConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API GeospatialMapConfiguration
+  class GeospatialMapConfiguration
   {
   public:
-    GeospatialMapConfiguration();
-    GeospatialMapConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    GeospatialMapConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API GeospatialMapConfiguration();
+    AWS_QUICKSIGHT_API GeospatialMapConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API GeospatialMapConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

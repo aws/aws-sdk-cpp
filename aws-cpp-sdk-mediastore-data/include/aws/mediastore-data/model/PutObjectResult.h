@@ -25,12 +25,12 @@ namespace MediaStoreData
 {
 namespace Model
 {
-  class AWS_MEDIASTOREDATA_API PutObjectResult
+  class PutObjectResult
   {
   public:
-    PutObjectResult();
-    PutObjectResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PutObjectResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MEDIASTOREDATA_API PutObjectResult();
+    AWS_MEDIASTOREDATA_API PutObjectResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MEDIASTOREDATA_API PutObjectResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

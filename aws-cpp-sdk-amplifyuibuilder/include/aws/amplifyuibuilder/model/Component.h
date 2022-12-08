@@ -41,13 +41,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/Component">AWS
    * API Reference</a></p>
    */
-  class AWS_AMPLIFYUIBUILDER_API Component
+  class Component
   {
   public:
-    Component();
-    Component(Aws::Utils::Json::JsonView jsonValue);
-    Component& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_AMPLIFYUIBUILDER_API Component();
+    AWS_AMPLIFYUIBUILDER_API Component(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFYUIBUILDER_API Component& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFYUIBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -29,13 +29,13 @@ namespace mgn
 namespace Model
 {
 
-  class AWS_MGN_API SourceServer
+  class SourceServer
   {
   public:
-    SourceServer();
-    SourceServer(Aws::Utils::Json::JsonView jsonValue);
-    SourceServer& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MGN_API SourceServer();
+    AWS_MGN_API SourceServer(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MGN_API SourceServer& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MGN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -32,12 +32,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/CalculateRouteResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_LOCATIONSERVICE_API CalculateRouteResult
+  class CalculateRouteResult
   {
   public:
-    CalculateRouteResult();
-    CalculateRouteResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CalculateRouteResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LOCATIONSERVICE_API CalculateRouteResult();
+    AWS_LOCATIONSERVICE_API CalculateRouteResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LOCATIONSERVICE_API CalculateRouteResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

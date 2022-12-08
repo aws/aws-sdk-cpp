@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/FailedItemDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_INSPECTOR_API FailedItemDetails
+  class FailedItemDetails
   {
   public:
-    FailedItemDetails();
-    FailedItemDetails(Aws::Utils::Json::JsonView jsonValue);
-    FailedItemDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_INSPECTOR_API FailedItemDetails();
+    AWS_INSPECTOR_API FailedItemDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR_API FailedItemDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

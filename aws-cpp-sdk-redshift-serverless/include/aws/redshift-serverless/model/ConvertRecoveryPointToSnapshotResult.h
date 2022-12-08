@@ -24,12 +24,12 @@ namespace RedshiftServerless
 {
 namespace Model
 {
-  class AWS_REDSHIFTSERVERLESS_API ConvertRecoveryPointToSnapshotResult
+  class ConvertRecoveryPointToSnapshotResult
   {
   public:
-    ConvertRecoveryPointToSnapshotResult();
-    ConvertRecoveryPointToSnapshotResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ConvertRecoveryPointToSnapshotResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_REDSHIFTSERVERLESS_API ConvertRecoveryPointToSnapshotResult();
+    AWS_REDSHIFTSERVERLESS_API ConvertRecoveryPointToSnapshotResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_REDSHIFTSERVERLESS_API ConvertRecoveryPointToSnapshotResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

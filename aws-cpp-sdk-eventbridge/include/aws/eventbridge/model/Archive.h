@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/Archive">AWS
    * API Reference</a></p>
    */
-  class AWS_EVENTBRIDGE_API Archive
+  class Archive
   {
   public:
-    Archive();
-    Archive(Aws::Utils::Json::JsonView jsonValue);
-    Archive& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EVENTBRIDGE_API Archive();
+    AWS_EVENTBRIDGE_API Archive(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EVENTBRIDGE_API Archive& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EVENTBRIDGE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

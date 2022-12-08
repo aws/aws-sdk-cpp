@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/BatchJobDefinition">AWS
    * API Reference</a></p>
    */
-  class AWS_MAINFRAMEMODERNIZATION_API BatchJobDefinition
+  class BatchJobDefinition
   {
   public:
-    BatchJobDefinition();
-    BatchJobDefinition(Aws::Utils::Json::JsonView jsonValue);
-    BatchJobDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MAINFRAMEMODERNIZATION_API BatchJobDefinition();
+    AWS_MAINFRAMEMODERNIZATION_API BatchJobDefinition(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MAINFRAMEMODERNIZATION_API BatchJobDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MAINFRAMEMODERNIZATION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-2017-10-12/SpekeKeyProvider">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIAPACKAGE_API SpekeKeyProvider
+  class SpekeKeyProvider
   {
   public:
-    SpekeKeyProvider();
-    SpekeKeyProvider(Aws::Utils::Json::JsonView jsonValue);
-    SpekeKeyProvider& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIAPACKAGE_API SpekeKeyProvider();
+    AWS_MEDIAPACKAGE_API SpekeKeyProvider(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIAPACKAGE_API SpekeKeyProvider& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIAPACKAGE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -24,12 +24,12 @@ namespace GroundStation
 {
 namespace Model
 {
-  class AWS_GROUNDSTATION_API CreateEphemerisResult
+  class CreateEphemerisResult
   {
   public:
-    CreateEphemerisResult();
-    CreateEphemerisResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateEphemerisResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GROUNDSTATION_API CreateEphemerisResult();
+    AWS_GROUNDSTATION_API CreateEphemerisResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GROUNDSTATION_API CreateEphemerisResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

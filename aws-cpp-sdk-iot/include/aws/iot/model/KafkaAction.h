@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/KafkaAction">AWS API
    * Reference</a></p>
    */
-  class AWS_IOT_API KafkaAction
+  class KafkaAction
   {
   public:
-    KafkaAction();
-    KafkaAction(Aws::Utils::Json::JsonView jsonValue);
-    KafkaAction& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API KafkaAction();
+    AWS_IOT_API KafkaAction(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API KafkaAction& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

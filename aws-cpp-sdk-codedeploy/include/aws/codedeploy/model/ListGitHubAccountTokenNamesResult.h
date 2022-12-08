@@ -31,12 +31,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListGitHubAccountTokenNamesOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEDEPLOY_API ListGitHubAccountTokenNamesResult
+  class ListGitHubAccountTokenNamesResult
   {
   public:
-    ListGitHubAccountTokenNamesResult();
-    ListGitHubAccountTokenNamesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListGitHubAccountTokenNamesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODEDEPLOY_API ListGitHubAccountTokenNamesResult();
+    AWS_CODEDEPLOY_API ListGitHubAccountTokenNamesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODEDEPLOY_API ListGitHubAccountTokenNamesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

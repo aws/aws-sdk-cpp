@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeviceiSCSIAttributes">AWS
    * API Reference</a></p>
    */
-  class AWS_STORAGEGATEWAY_API DeviceiSCSIAttributes
+  class DeviceiSCSIAttributes
   {
   public:
-    DeviceiSCSIAttributes();
-    DeviceiSCSIAttributes(Aws::Utils::Json::JsonView jsonValue);
-    DeviceiSCSIAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_STORAGEGATEWAY_API DeviceiSCSIAttributes();
+    AWS_STORAGEGATEWAY_API DeviceiSCSIAttributes(Aws::Utils::Json::JsonView jsonValue);
+    AWS_STORAGEGATEWAY_API DeviceiSCSIAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_STORAGEGATEWAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

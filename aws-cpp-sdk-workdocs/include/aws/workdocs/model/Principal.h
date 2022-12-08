@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/Principal">AWS
    * API Reference</a></p>
    */
-  class AWS_WORKDOCS_API Principal
+  class Principal
   {
   public:
-    Principal();
-    Principal(Aws::Utils::Json::JsonView jsonValue);
-    Principal& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WORKDOCS_API Principal();
+    AWS_WORKDOCS_API Principal(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKDOCS_API Principal& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKDOCS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

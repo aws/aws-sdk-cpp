@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/EvidenceFinderEnablement">AWS
    * API Reference</a></p>
    */
-  class AWS_AUDITMANAGER_API EvidenceFinderEnablement
+  class EvidenceFinderEnablement
   {
   public:
-    EvidenceFinderEnablement();
-    EvidenceFinderEnablement(Aws::Utils::Json::JsonView jsonValue);
-    EvidenceFinderEnablement& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_AUDITMANAGER_API EvidenceFinderEnablement();
+    AWS_AUDITMANAGER_API EvidenceFinderEnablement(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AUDITMANAGER_API EvidenceFinderEnablement& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AUDITMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

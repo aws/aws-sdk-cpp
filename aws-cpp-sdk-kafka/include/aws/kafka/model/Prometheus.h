@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/Prometheus">AWS
    * API Reference</a></p>
    */
-  class AWS_KAFKA_API Prometheus
+  class Prometheus
   {
   public:
-    Prometheus();
-    Prometheus(Aws::Utils::Json::JsonView jsonValue);
-    Prometheus& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KAFKA_API Prometheus();
+    AWS_KAFKA_API Prometheus(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKA_API Prometheus& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/Schedule">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUEDATABREW_API Schedule
+  class Schedule
   {
   public:
-    Schedule();
-    Schedule(Aws::Utils::Json::JsonView jsonValue);
-    Schedule& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUEDATABREW_API Schedule();
+    AWS_GLUEDATABREW_API Schedule(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUEDATABREW_API Schedule& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUEDATABREW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

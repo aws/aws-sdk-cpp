@@ -29,12 +29,12 @@ namespace LexModelBuildingService
 {
 namespace Model
 {
-  class AWS_LEXMODELBUILDINGSERVICE_API CreateSlotTypeVersionResult
+  class CreateSlotTypeVersionResult
   {
   public:
-    CreateSlotTypeVersionResult();
-    CreateSlotTypeVersionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateSlotTypeVersionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LEXMODELBUILDINGSERVICE_API CreateSlotTypeVersionResult();
+    AWS_LEXMODELBUILDINGSERVICE_API CreateSlotTypeVersionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LEXMODELBUILDINGSERVICE_API CreateSlotTypeVersionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

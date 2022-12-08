@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/SparkConnectorSource">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API SparkConnectorSource
+  class SparkConnectorSource
   {
   public:
-    SparkConnectorSource();
-    SparkConnectorSource(Aws::Utils::Json::JsonView jsonValue);
-    SparkConnectorSource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API SparkConnectorSource();
+    AWS_GLUE_API SparkConnectorSource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API SparkConnectorSource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

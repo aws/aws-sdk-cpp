@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/ListPlaceIndexesResponseEntry">AWS
    * API Reference</a></p>
    */
-  class AWS_LOCATIONSERVICE_API ListPlaceIndexesResponseEntry
+  class ListPlaceIndexesResponseEntry
   {
   public:
-    ListPlaceIndexesResponseEntry();
-    ListPlaceIndexesResponseEntry(Aws::Utils::Json::JsonView jsonValue);
-    ListPlaceIndexesResponseEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LOCATIONSERVICE_API ListPlaceIndexesResponseEntry();
+    AWS_LOCATIONSERVICE_API ListPlaceIndexesResponseEntry(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOCATIONSERVICE_API ListPlaceIndexesResponseEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOCATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

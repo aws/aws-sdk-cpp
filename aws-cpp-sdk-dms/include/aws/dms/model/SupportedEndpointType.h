@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/SupportedEndpointType">AWS
    * API Reference</a></p>
    */
-  class AWS_DATABASEMIGRATIONSERVICE_API SupportedEndpointType
+  class SupportedEndpointType
   {
   public:
-    SupportedEndpointType();
-    SupportedEndpointType(Aws::Utils::Json::JsonView jsonValue);
-    SupportedEndpointType& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DATABASEMIGRATIONSERVICE_API SupportedEndpointType();
+    AWS_DATABASEMIGRATIONSERVICE_API SupportedEndpointType(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATABASEMIGRATIONSERVICE_API SupportedEndpointType& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATABASEMIGRATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

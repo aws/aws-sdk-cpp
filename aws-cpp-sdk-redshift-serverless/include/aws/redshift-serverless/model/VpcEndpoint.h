@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/VpcEndpoint">AWS
    * API Reference</a></p>
    */
-  class AWS_REDSHIFTSERVERLESS_API VpcEndpoint
+  class VpcEndpoint
   {
   public:
-    VpcEndpoint();
-    VpcEndpoint(Aws::Utils::Json::JsonView jsonValue);
-    VpcEndpoint& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_REDSHIFTSERVERLESS_API VpcEndpoint();
+    AWS_REDSHIFTSERVERLESS_API VpcEndpoint(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REDSHIFTSERVERLESS_API VpcEndpoint& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REDSHIFTSERVERLESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

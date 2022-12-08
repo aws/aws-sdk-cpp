@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/TooltipOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API TooltipOptions
+  class TooltipOptions
   {
   public:
-    TooltipOptions();
-    TooltipOptions(Aws::Utils::Json::JsonView jsonValue);
-    TooltipOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API TooltipOptions();
+    AWS_QUICKSIGHT_API TooltipOptions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API TooltipOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

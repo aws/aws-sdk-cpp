@@ -30,12 +30,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetAccountLimitResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53_API GetAccountLimitResult
+  class GetAccountLimitResult
   {
   public:
-    GetAccountLimitResult();
-    GetAccountLimitResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    GetAccountLimitResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ROUTE53_API GetAccountLimitResult();
+    AWS_ROUTE53_API GetAccountLimitResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ROUTE53_API GetAccountLimitResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

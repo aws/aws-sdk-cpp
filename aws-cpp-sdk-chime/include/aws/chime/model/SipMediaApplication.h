@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/SipMediaApplication">AWS
    * API Reference</a></p>
    */
-  class AWS_CHIME_API SipMediaApplication
+  class SipMediaApplication
   {
   public:
-    SipMediaApplication();
-    SipMediaApplication(Aws::Utils::Json::JsonView jsonValue);
-    SipMediaApplication& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIME_API SipMediaApplication();
+    AWS_CHIME_API SipMediaApplication(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API SipMediaApplication& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

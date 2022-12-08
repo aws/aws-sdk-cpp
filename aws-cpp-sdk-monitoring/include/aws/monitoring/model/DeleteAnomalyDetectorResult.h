@@ -24,12 +24,12 @@ namespace CloudWatch
 {
 namespace Model
 {
-  class AWS_CLOUDWATCH_API DeleteAnomalyDetectorResult
+  class DeleteAnomalyDetectorResult
   {
   public:
-    DeleteAnomalyDetectorResult();
-    DeleteAnomalyDetectorResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DeleteAnomalyDetectorResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_CLOUDWATCH_API DeleteAnomalyDetectorResult();
+    AWS_CLOUDWATCH_API DeleteAnomalyDetectorResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_CLOUDWATCH_API DeleteAnomalyDetectorResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     

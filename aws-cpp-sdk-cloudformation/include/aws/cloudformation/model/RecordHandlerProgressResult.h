@@ -24,12 +24,12 @@ namespace CloudFormation
 {
 namespace Model
 {
-  class AWS_CLOUDFORMATION_API RecordHandlerProgressResult
+  class RecordHandlerProgressResult
   {
   public:
-    RecordHandlerProgressResult();
-    RecordHandlerProgressResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    RecordHandlerProgressResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_CLOUDFORMATION_API RecordHandlerProgressResult();
+    AWS_CLOUDFORMATION_API RecordHandlerProgressResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_CLOUDFORMATION_API RecordHandlerProgressResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     

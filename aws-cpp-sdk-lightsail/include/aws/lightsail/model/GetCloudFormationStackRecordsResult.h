@@ -26,12 +26,12 @@ namespace Lightsail
 {
 namespace Model
 {
-  class AWS_LIGHTSAIL_API GetCloudFormationStackRecordsResult
+  class GetCloudFormationStackRecordsResult
   {
   public:
-    GetCloudFormationStackRecordsResult();
-    GetCloudFormationStackRecordsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetCloudFormationStackRecordsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LIGHTSAIL_API GetCloudFormationStackRecordsResult();
+    AWS_LIGHTSAIL_API GetCloudFormationStackRecordsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LIGHTSAIL_API GetCloudFormationStackRecordsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

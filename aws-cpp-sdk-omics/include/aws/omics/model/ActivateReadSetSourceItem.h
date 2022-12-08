@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ActivateReadSetSourceItem">AWS
    * API Reference</a></p>
    */
-  class AWS_OMICS_API ActivateReadSetSourceItem
+  class ActivateReadSetSourceItem
   {
   public:
-    ActivateReadSetSourceItem();
-    ActivateReadSetSourceItem(Aws::Utils::Json::JsonView jsonValue);
-    ActivateReadSetSourceItem& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OMICS_API ActivateReadSetSourceItem();
+    AWS_OMICS_API ActivateReadSetSourceItem(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OMICS_API ActivateReadSetSourceItem& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OMICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

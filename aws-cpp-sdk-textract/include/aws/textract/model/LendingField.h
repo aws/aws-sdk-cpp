@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/LendingField">AWS
    * API Reference</a></p>
    */
-  class AWS_TEXTRACT_API LendingField
+  class LendingField
   {
   public:
-    LendingField();
-    LendingField(Aws::Utils::Json::JsonView jsonValue);
-    LendingField& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TEXTRACT_API LendingField();
+    AWS_TEXTRACT_API LendingField(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TEXTRACT_API LendingField& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TEXTRACT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

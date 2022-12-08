@@ -26,12 +26,12 @@ namespace Braket
 {
 namespace Model
 {
-  class AWS_BRAKET_API SearchDevicesResult
+  class SearchDevicesResult
   {
   public:
-    SearchDevicesResult();
-    SearchDevicesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    SearchDevicesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_BRAKET_API SearchDevicesResult();
+    AWS_BRAKET_API SearchDevicesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_BRAKET_API SearchDevicesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

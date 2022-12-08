@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ComboChartAggregatedFieldWells">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API ComboChartAggregatedFieldWells
+  class ComboChartAggregatedFieldWells
   {
   public:
-    ComboChartAggregatedFieldWells();
-    ComboChartAggregatedFieldWells(Aws::Utils::Json::JsonView jsonValue);
-    ComboChartAggregatedFieldWells& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API ComboChartAggregatedFieldWells();
+    AWS_QUICKSIGHT_API ComboChartAggregatedFieldWells(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API ComboChartAggregatedFieldWells& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

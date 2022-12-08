@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SecurityProfile">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECT_API SecurityProfile
+  class SecurityProfile
   {
   public:
-    SecurityProfile();
-    SecurityProfile(Aws::Utils::Json::JsonView jsonValue);
-    SecurityProfile& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECT_API SecurityProfile();
+    AWS_CONNECT_API SecurityProfile(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API SecurityProfile& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

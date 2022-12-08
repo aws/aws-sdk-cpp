@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/CloudWatchLogDeliveryOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTFLEETWISE_API CloudWatchLogDeliveryOptions
+  class CloudWatchLogDeliveryOptions
   {
   public:
-    CloudWatchLogDeliveryOptions();
-    CloudWatchLogDeliveryOptions(Aws::Utils::Json::JsonView jsonValue);
-    CloudWatchLogDeliveryOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTFLEETWISE_API CloudWatchLogDeliveryOptions();
+    AWS_IOTFLEETWISE_API CloudWatchLogDeliveryOptions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTFLEETWISE_API CloudWatchLogDeliveryOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTFLEETWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

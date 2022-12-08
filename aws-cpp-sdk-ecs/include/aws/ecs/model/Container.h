@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/Container">AWS API
    * Reference</a></p>
    */
-  class AWS_ECS_API Container
+  class Container
   {
   public:
-    Container();
-    Container(Aws::Utils::Json::JsonView jsonValue);
-    Container& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ECS_API Container();
+    AWS_ECS_API Container(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECS_API Container& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

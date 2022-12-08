@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribedSecurityPolicy">AWS
    * API Reference</a></p>
    */
-  class AWS_TRANSFER_API DescribedSecurityPolicy
+  class DescribedSecurityPolicy
   {
   public:
-    DescribedSecurityPolicy();
-    DescribedSecurityPolicy(Aws::Utils::Json::JsonView jsonValue);
-    DescribedSecurityPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TRANSFER_API DescribedSecurityPolicy();
+    AWS_TRANSFER_API DescribedSecurityPolicy(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSFER_API DescribedSecurityPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSFER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

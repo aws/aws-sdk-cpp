@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ActionTypeProperty">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEPIPELINE_API ActionTypeProperty
+  class ActionTypeProperty
   {
   public:
-    ActionTypeProperty();
-    ActionTypeProperty(Aws::Utils::Json::JsonView jsonValue);
-    ActionTypeProperty& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEPIPELINE_API ActionTypeProperty();
+    AWS_CODEPIPELINE_API ActionTypeProperty(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEPIPELINE_API ActionTypeProperty& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

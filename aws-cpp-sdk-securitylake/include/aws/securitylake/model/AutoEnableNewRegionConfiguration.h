@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/AutoEnableNewRegionConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYLAKE_API AutoEnableNewRegionConfiguration
+  class AutoEnableNewRegionConfiguration
   {
   public:
-    AutoEnableNewRegionConfiguration();
-    AutoEnableNewRegionConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    AutoEnableNewRegionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYLAKE_API AutoEnableNewRegionConfiguration();
+    AWS_SECURITYLAKE_API AutoEnableNewRegionConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYLAKE_API AutoEnableNewRegionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYLAKE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

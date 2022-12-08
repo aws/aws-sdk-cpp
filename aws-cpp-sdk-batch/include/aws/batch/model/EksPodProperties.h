@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/EksPodProperties">AWS
    * API Reference</a></p>
    */
-  class AWS_BATCH_API EksPodProperties
+  class EksPodProperties
   {
   public:
-    EksPodProperties();
-    EksPodProperties(Aws::Utils::Json::JsonView jsonValue);
-    EksPodProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BATCH_API EksPodProperties();
+    AWS_BATCH_API EksPodProperties(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BATCH_API EksPodProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BATCH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

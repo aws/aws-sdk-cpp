@@ -21,10 +21,10 @@ namespace Model
 
   /**
    */
-  class AWS_NIMBLESTUDIO_API PutStudioMembersRequest : public NimbleStudioRequest
+  class PutStudioMembersRequest : public NimbleStudioRequest
   {
   public:
-    PutStudioMembersRequest();
+    AWS_NIMBLESTUDIO_API PutStudioMembersRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,9 +32,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "PutStudioMembers"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_NIMBLESTUDIO_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_NIMBLESTUDIO_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**

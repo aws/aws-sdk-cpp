@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/Recipe">AWS API
    * Reference</a></p>
    */
-  class AWS_GLUEDATABREW_API Recipe
+  class Recipe
   {
   public:
-    Recipe();
-    Recipe(Aws::Utils::Json::JsonView jsonValue);
-    Recipe& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUEDATABREW_API Recipe();
+    AWS_GLUEDATABREW_API Recipe(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUEDATABREW_API Recipe& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUEDATABREW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

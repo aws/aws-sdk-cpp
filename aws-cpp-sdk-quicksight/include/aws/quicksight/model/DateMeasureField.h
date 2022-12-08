@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DateMeasureField">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API DateMeasureField
+  class DateMeasureField
   {
   public:
-    DateMeasureField();
-    DateMeasureField(Aws::Utils::Json::JsonView jsonValue);
-    DateMeasureField& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API DateMeasureField();
+    AWS_QUICKSIGHT_API DateMeasureField(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API DateMeasureField& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/KinesisDataStreamDestination">AWS
    * API Reference</a></p>
    */
-  class AWS_DYNAMODB_API KinesisDataStreamDestination
+  class KinesisDataStreamDestination
   {
   public:
-    KinesisDataStreamDestination();
-    KinesisDataStreamDestination(Aws::Utils::Json::JsonView jsonValue);
-    KinesisDataStreamDestination& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DYNAMODB_API KinesisDataStreamDestination();
+    AWS_DYNAMODB_API KinesisDataStreamDestination(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API KinesisDataStreamDestination& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

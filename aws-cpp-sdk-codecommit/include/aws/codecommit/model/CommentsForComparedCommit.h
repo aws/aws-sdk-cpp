@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/CommentsForComparedCommit">AWS
    * API Reference</a></p>
    */
-  class AWS_CODECOMMIT_API CommentsForComparedCommit
+  class CommentsForComparedCommit
   {
   public:
-    CommentsForComparedCommit();
-    CommentsForComparedCommit(Aws::Utils::Json::JsonView jsonValue);
-    CommentsForComparedCommit& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODECOMMIT_API CommentsForComparedCommit();
+    AWS_CODECOMMIT_API CommentsForComparedCommit(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODECOMMIT_API CommentsForComparedCommit& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODECOMMIT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

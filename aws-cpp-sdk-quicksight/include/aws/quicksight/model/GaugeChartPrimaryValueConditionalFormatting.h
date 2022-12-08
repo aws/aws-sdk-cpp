@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/GaugeChartPrimaryValueConditionalFormatting">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API GaugeChartPrimaryValueConditionalFormatting
+  class GaugeChartPrimaryValueConditionalFormatting
   {
   public:
-    GaugeChartPrimaryValueConditionalFormatting();
-    GaugeChartPrimaryValueConditionalFormatting(Aws::Utils::Json::JsonView jsonValue);
-    GaugeChartPrimaryValueConditionalFormatting& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API GaugeChartPrimaryValueConditionalFormatting();
+    AWS_QUICKSIGHT_API GaugeChartPrimaryValueConditionalFormatting(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API GaugeChartPrimaryValueConditionalFormatting& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

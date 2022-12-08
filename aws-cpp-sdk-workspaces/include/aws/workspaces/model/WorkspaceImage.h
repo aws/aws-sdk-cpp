@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/WorkspaceImage">AWS
    * API Reference</a></p>
    */
-  class AWS_WORKSPACES_API WorkspaceImage
+  class WorkspaceImage
   {
   public:
-    WorkspaceImage();
-    WorkspaceImage(Aws::Utils::Json::JsonView jsonValue);
-    WorkspaceImage& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WORKSPACES_API WorkspaceImage();
+    AWS_WORKSPACES_API WorkspaceImage(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKSPACES_API WorkspaceImage& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -26,12 +26,12 @@ namespace kendra
 {
 namespace Model
 {
-  class AWS_KENDRA_API ListGroupsOlderThanOrderingIdResult
+  class ListGroupsOlderThanOrderingIdResult
   {
   public:
-    ListGroupsOlderThanOrderingIdResult();
-    ListGroupsOlderThanOrderingIdResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListGroupsOlderThanOrderingIdResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KENDRA_API ListGroupsOlderThanOrderingIdResult();
+    AWS_KENDRA_API ListGroupsOlderThanOrderingIdResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KENDRA_API ListGroupsOlderThanOrderingIdResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

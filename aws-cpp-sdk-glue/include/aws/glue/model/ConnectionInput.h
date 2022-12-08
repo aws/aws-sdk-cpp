@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ConnectionInput">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API ConnectionInput
+  class ConnectionInput
   {
   public:
-    ConnectionInput();
-    ConnectionInput(Aws::Utils::Json::JsonView jsonValue);
-    ConnectionInput& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API ConnectionInput();
+    AWS_GLUE_API ConnectionInput(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API ConnectionInput& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/privatenetworks-2021-12-03/NetworkResourceDefinition">AWS
    * API Reference</a></p>
    */
-  class AWS_PRIVATENETWORKS_API NetworkResourceDefinition
+  class NetworkResourceDefinition
   {
   public:
-    NetworkResourceDefinition();
-    NetworkResourceDefinition(Aws::Utils::Json::JsonView jsonValue);
-    NetworkResourceDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PRIVATENETWORKS_API NetworkResourceDefinition();
+    AWS_PRIVATENETWORKS_API NetworkResourceDefinition(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PRIVATENETWORKS_API NetworkResourceDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PRIVATENETWORKS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

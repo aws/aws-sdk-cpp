@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ImportTableDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_DYNAMODB_API ImportTableDescription
+  class ImportTableDescription
   {
   public:
-    ImportTableDescription();
-    ImportTableDescription(Aws::Utils::Json::JsonView jsonValue);
-    ImportTableDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DYNAMODB_API ImportTableDescription();
+    AWS_DYNAMODB_API ImportTableDescription(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API ImportTableDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

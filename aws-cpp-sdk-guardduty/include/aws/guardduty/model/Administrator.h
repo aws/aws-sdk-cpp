@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/Administrator">AWS
    * API Reference</a></p>
    */
-  class AWS_GUARDDUTY_API Administrator
+  class Administrator
   {
   public:
-    Administrator();
-    Administrator(Aws::Utils::Json::JsonView jsonValue);
-    Administrator& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GUARDDUTY_API Administrator();
+    AWS_GUARDDUTY_API Administrator(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API Administrator& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -24,10 +24,10 @@ namespace Model
 
   /**
    */
-  class AWS_KENDRA_API UpdateIndexRequest : public KendraRequest
+  class UpdateIndexRequest : public KendraRequest
   {
   public:
-    UpdateIndexRequest();
+    AWS_KENDRA_API UpdateIndexRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -35,9 +35,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateIndex"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_KENDRA_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_KENDRA_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**

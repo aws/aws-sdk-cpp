@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/VcenterClient">AWS
    * API Reference</a></p>
    */
-  class AWS_MGN_API VcenterClient
+  class VcenterClient
   {
   public:
-    VcenterClient();
-    VcenterClient(Aws::Utils::Json::JsonView jsonValue);
-    VcenterClient& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MGN_API VcenterClient();
+    AWS_MGN_API VcenterClient(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MGN_API VcenterClient& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MGN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

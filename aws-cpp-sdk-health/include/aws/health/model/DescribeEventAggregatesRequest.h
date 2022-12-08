@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_HEALTH_API DescribeEventAggregatesRequest : public HealthRequest
+  class DescribeEventAggregatesRequest : public HealthRequest
   {
   public:
-    DescribeEventAggregatesRequest();
+    AWS_HEALTH_API DescribeEventAggregatesRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,9 +31,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DescribeEventAggregates"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_HEALTH_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_HEALTH_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloud9-2017-09-23/EnvironmentLifecycle">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUD9_API EnvironmentLifecycle
+  class EnvironmentLifecycle
   {
   public:
-    EnvironmentLifecycle();
-    EnvironmentLifecycle(Aws::Utils::Json::JsonView jsonValue);
-    EnvironmentLifecycle& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUD9_API EnvironmentLifecycle();
+    AWS_CLOUD9_API EnvironmentLifecycle(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUD9_API EnvironmentLifecycle& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUD9_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

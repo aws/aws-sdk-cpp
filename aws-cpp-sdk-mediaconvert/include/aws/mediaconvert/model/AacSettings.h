@@ -40,13 +40,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/AacSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API AacSettings
+  class AacSettings
   {
   public:
-    AacSettings();
-    AacSettings(Aws::Utils::Json::JsonView jsonValue);
-    AacSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API AacSettings();
+    AWS_MEDIACONVERT_API AacSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API AacSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

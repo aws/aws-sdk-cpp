@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/Host">AWS
    * API Reference</a></p>
    */
-  class AWS_CODESTARCONNECTIONS_API Host
+  class Host
   {
   public:
-    Host();
-    Host(Aws::Utils::Json::JsonView jsonValue);
-    Host& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODESTARCONNECTIONS_API Host();
+    AWS_CODESTARCONNECTIONS_API Host(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODESTARCONNECTIONS_API Host& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODESTARCONNECTIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dlm-2018-01-12/EncryptionConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_DLM_API EncryptionConfiguration
+  class EncryptionConfiguration
   {
   public:
-    EncryptionConfiguration();
-    EncryptionConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    EncryptionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DLM_API EncryptionConfiguration();
+    AWS_DLM_API EncryptionConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DLM_API EncryptionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DLM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

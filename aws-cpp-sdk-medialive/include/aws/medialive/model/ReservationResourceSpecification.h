@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ReservationResourceSpecification">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API ReservationResourceSpecification
+  class ReservationResourceSpecification
   {
   public:
-    ReservationResourceSpecification();
-    ReservationResourceSpecification(Aws::Utils::Json::JsonView jsonValue);
-    ReservationResourceSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API ReservationResourceSpecification();
+    AWS_MEDIALIVE_API ReservationResourceSpecification(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API ReservationResourceSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -25,12 +25,12 @@ namespace Omics
 {
 namespace Model
 {
-  class AWS_OMICS_API CreateRunGroupResult
+  class CreateRunGroupResult
   {
   public:
-    CreateRunGroupResult();
-    CreateRunGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateRunGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OMICS_API CreateRunGroupResult();
+    AWS_OMICS_API CreateRunGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OMICS_API CreateRunGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

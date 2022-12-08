@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/NewPrivateVirtualInterface">AWS
    * API Reference</a></p>
    */
-  class AWS_DIRECTCONNECT_API NewPrivateVirtualInterface
+  class NewPrivateVirtualInterface
   {
   public:
-    NewPrivateVirtualInterface();
-    NewPrivateVirtualInterface(Aws::Utils::Json::JsonView jsonValue);
-    NewPrivateVirtualInterface& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DIRECTCONNECT_API NewPrivateVirtualInterface();
+    AWS_DIRECTCONNECT_API NewPrivateVirtualInterface(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTCONNECT_API NewPrivateVirtualInterface& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTCONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

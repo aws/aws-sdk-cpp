@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/LastActiveDefinition">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API LastActiveDefinition
+  class LastActiveDefinition
   {
   public:
-    LastActiveDefinition();
-    LastActiveDefinition(Aws::Utils::Json::JsonView jsonValue);
-    LastActiveDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API LastActiveDefinition();
+    AWS_GLUE_API LastActiveDefinition(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API LastActiveDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

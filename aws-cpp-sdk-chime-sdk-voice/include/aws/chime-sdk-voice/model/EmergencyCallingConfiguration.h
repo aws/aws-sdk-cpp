@@ -24,13 +24,13 @@ namespace ChimeSDKVoice
 namespace Model
 {
 
-  class AWS_CHIMESDKVOICE_API EmergencyCallingConfiguration
+  class EmergencyCallingConfiguration
   {
   public:
-    EmergencyCallingConfiguration();
-    EmergencyCallingConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    EmergencyCallingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIMESDKVOICE_API EmergencyCallingConfiguration();
+    AWS_CHIMESDKVOICE_API EmergencyCallingConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKVOICE_API EmergencyCallingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKVOICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

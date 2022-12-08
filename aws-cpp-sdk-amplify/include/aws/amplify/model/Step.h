@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/Step">AWS API
    * Reference</a></p>
    */
-  class AWS_AMPLIFY_API Step
+  class Step
   {
   public:
-    Step();
-    Step(Aws::Utils::Json::JsonView jsonValue);
-    Step& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_AMPLIFY_API Step();
+    AWS_AMPLIFY_API Step(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFY_API Step& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

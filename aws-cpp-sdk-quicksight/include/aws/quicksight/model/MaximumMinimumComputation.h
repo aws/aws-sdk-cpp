@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/MaximumMinimumComputation">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API MaximumMinimumComputation
+  class MaximumMinimumComputation
   {
   public:
-    MaximumMinimumComputation();
-    MaximumMinimumComputation(Aws::Utils::Json::JsonView jsonValue);
-    MaximumMinimumComputation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API MaximumMinimumComputation();
+    AWS_QUICKSIGHT_API MaximumMinimumComputation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API MaximumMinimumComputation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

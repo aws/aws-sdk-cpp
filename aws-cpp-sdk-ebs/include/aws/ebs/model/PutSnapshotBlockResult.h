@@ -25,12 +25,12 @@ namespace EBS
 {
 namespace Model
 {
-  class AWS_EBS_API PutSnapshotBlockResult
+  class PutSnapshotBlockResult
   {
   public:
-    PutSnapshotBlockResult();
-    PutSnapshotBlockResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PutSnapshotBlockResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_EBS_API PutSnapshotBlockResult();
+    AWS_EBS_API PutSnapshotBlockResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_EBS_API PutSnapshotBlockResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

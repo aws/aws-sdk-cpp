@@ -30,14 +30,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/TestResult">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFRONT_API TestResult
+  class TestResult
   {
   public:
-    TestResult();
-    TestResult(const Aws::Utils::Xml::XmlNode& xmlNode);
-    TestResult& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API TestResult();
+    AWS_CLOUDFRONT_API TestResult(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API TestResult& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**

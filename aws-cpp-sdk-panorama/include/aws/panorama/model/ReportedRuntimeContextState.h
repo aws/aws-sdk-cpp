@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/panorama-2019-07-24/ReportedRuntimeContextState">AWS
    * API Reference</a></p>
    */
-  class AWS_PANORAMA_API ReportedRuntimeContextState
+  class ReportedRuntimeContextState
   {
   public:
-    ReportedRuntimeContextState();
-    ReportedRuntimeContextState(Aws::Utils::Json::JsonView jsonValue);
-    ReportedRuntimeContextState& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PANORAMA_API ReportedRuntimeContextState();
+    AWS_PANORAMA_API ReportedRuntimeContextState(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PANORAMA_API ReportedRuntimeContextState& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PANORAMA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

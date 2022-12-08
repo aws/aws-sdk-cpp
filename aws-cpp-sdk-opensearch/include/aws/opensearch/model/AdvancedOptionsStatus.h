@@ -50,13 +50,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/AdvancedOptionsStatus">AWS
    * API Reference</a></p>
    */
-  class AWS_OPENSEARCHSERVICE_API AdvancedOptionsStatus
+  class AdvancedOptionsStatus
   {
   public:
-    AdvancedOptionsStatus();
-    AdvancedOptionsStatus(Aws::Utils::Json::JsonView jsonValue);
-    AdvancedOptionsStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OPENSEARCHSERVICE_API AdvancedOptionsStatus();
+    AWS_OPENSEARCHSERVICE_API AdvancedOptionsStatus(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPENSEARCHSERVICE_API AdvancedOptionsStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPENSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/RulesSource">AWS
    * API Reference</a></p>
    */
-  class AWS_NETWORKFIREWALL_API RulesSource
+  class RulesSource
   {
   public:
-    RulesSource();
-    RulesSource(Aws::Utils::Json::JsonView jsonValue);
-    RulesSource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_NETWORKFIREWALL_API RulesSource();
+    AWS_NETWORKFIREWALL_API RulesSource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKFIREWALL_API RulesSource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKFIREWALL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

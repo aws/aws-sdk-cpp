@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpsertRedshiftTargetOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API UpsertRedshiftTargetOptions
+  class UpsertRedshiftTargetOptions
   {
   public:
-    UpsertRedshiftTargetOptions();
-    UpsertRedshiftTargetOptions(Aws::Utils::Json::JsonView jsonValue);
-    UpsertRedshiftTargetOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API UpsertRedshiftTargetOptions();
+    AWS_GLUE_API UpsertRedshiftTargetOptions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API UpsertRedshiftTargetOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

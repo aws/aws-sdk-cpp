@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/SingleQueryArgument">AWS
    * API Reference</a></p>
    */
-  class AWS_WAFV2_API SingleQueryArgument
+  class SingleQueryArgument
   {
   public:
-    SingleQueryArgument();
-    SingleQueryArgument(Aws::Utils::Json::JsonView jsonValue);
-    SingleQueryArgument& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WAFV2_API SingleQueryArgument();
+    AWS_WAFV2_API SingleQueryArgument(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API SingleQueryArgument& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

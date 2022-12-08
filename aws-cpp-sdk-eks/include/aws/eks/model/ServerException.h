@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ServerException">AWS
    * API Reference</a></p>
    */
-  class AWS_EKS_API ServerException
+  class ServerException
   {
   public:
-    ServerException();
-    ServerException(Aws::Utils::Json::JsonView jsonValue);
-    ServerException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EKS_API ServerException();
+    AWS_EKS_API ServerException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EKS_API ServerException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EKS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

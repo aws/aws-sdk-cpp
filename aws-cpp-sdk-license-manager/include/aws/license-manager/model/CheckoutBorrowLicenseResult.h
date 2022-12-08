@@ -27,12 +27,12 @@ namespace LicenseManager
 {
 namespace Model
 {
-  class AWS_LICENSEMANAGER_API CheckoutBorrowLicenseResult
+  class CheckoutBorrowLicenseResult
   {
   public:
-    CheckoutBorrowLicenseResult();
-    CheckoutBorrowLicenseResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CheckoutBorrowLicenseResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LICENSEMANAGER_API CheckoutBorrowLicenseResult();
+    AWS_LICENSEMANAGER_API CheckoutBorrowLicenseResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LICENSEMANAGER_API CheckoutBorrowLicenseResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_AMPLIFYUIBUILDER_API DeleteFormRequest : public AmplifyUIBuilderRequest
+  class DeleteFormRequest : public AmplifyUIBuilderRequest
   {
   public:
-    DeleteFormRequest();
+    AWS_AMPLIFYUIBUILDER_API DeleteFormRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,7 +29,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DeleteForm"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_AMPLIFYUIBUILDER_API Aws::String SerializePayload() const override;
 
 
     /**

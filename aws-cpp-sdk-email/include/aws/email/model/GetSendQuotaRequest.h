@@ -16,10 +16,10 @@ namespace Model
 
   /**
    */
-  class AWS_SES_API GetSendQuotaRequest : public SESRequest
+  class GetSendQuotaRequest : public SESRequest
   {
   public:
-    GetSendQuotaRequest();
+    AWS_SES_API GetSendQuotaRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -27,10 +27,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "GetSendQuota"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SES_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_SES_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
   };

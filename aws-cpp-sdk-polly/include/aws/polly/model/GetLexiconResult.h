@@ -25,12 +25,12 @@ namespace Polly
 {
 namespace Model
 {
-  class AWS_POLLY_API GetLexiconResult
+  class GetLexiconResult
   {
   public:
-    GetLexiconResult();
-    GetLexiconResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetLexiconResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_POLLY_API GetLexiconResult();
+    AWS_POLLY_API GetLexiconResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_POLLY_API GetLexiconResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/AssetAttributes">AWS
    * API Reference</a></p>
    */
-  class AWS_INSPECTOR_API AssetAttributes
+  class AssetAttributes
   {
   public:
-    AssetAttributes();
-    AssetAttributes(Aws::Utils::Json::JsonView jsonValue);
-    AssetAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_INSPECTOR_API AssetAttributes();
+    AWS_INSPECTOR_API AssetAttributes(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR_API AssetAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

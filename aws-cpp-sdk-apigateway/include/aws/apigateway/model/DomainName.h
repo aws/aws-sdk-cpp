@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DomainName">AWS
    * API Reference</a></p>
    */
-  class AWS_APIGATEWAY_API DomainName
+  class DomainName
   {
   public:
-    DomainName();
-    DomainName(Aws::Utils::Json::JsonView jsonValue);
-    DomainName& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APIGATEWAY_API DomainName();
+    AWS_APIGATEWAY_API DomainName(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APIGATEWAY_API DomainName& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APIGATEWAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

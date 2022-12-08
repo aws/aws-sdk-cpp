@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/ReplicationRun">AWS
    * API Reference</a></p>
    */
-  class AWS_SMS_API ReplicationRun
+  class ReplicationRun
   {
   public:
-    ReplicationRun();
-    ReplicationRun(Aws::Utils::Json::JsonView jsonValue);
-    ReplicationRun& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SMS_API ReplicationRun();
+    AWS_SMS_API ReplicationRun(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SMS_API ReplicationRun& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

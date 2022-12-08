@@ -28,12 +28,12 @@ namespace CustomerProfiles
 {
 namespace Model
 {
-  class AWS_CUSTOMERPROFILES_API GetProfileObjectTypeTemplateResult
+  class GetProfileObjectTypeTemplateResult
   {
   public:
-    GetProfileObjectTypeTemplateResult();
-    GetProfileObjectTypeTemplateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetProfileObjectTypeTemplateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CUSTOMERPROFILES_API GetProfileObjectTypeTemplateResult();
+    AWS_CUSTOMERPROFILES_API GetProfileObjectTypeTemplateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CUSTOMERPROFILES_API GetProfileObjectTypeTemplateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

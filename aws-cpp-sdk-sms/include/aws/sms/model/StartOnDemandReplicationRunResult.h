@@ -24,12 +24,12 @@ namespace SMS
 {
 namespace Model
 {
-  class AWS_SMS_API StartOnDemandReplicationRunResult
+  class StartOnDemandReplicationRunResult
   {
   public:
-    StartOnDemandReplicationRunResult();
-    StartOnDemandReplicationRunResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    StartOnDemandReplicationRunResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SMS_API StartOnDemandReplicationRunResult();
+    AWS_SMS_API StartOnDemandReplicationRunResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SMS_API StartOnDemandReplicationRunResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

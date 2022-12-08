@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/AgentConfigurationStatus">AWS
    * API Reference</a></p>
    */
-  class AWS_APPLICATIONDISCOVERYSERVICE_API AgentConfigurationStatus
+  class AgentConfigurationStatus
   {
   public:
-    AgentConfigurationStatus();
-    AgentConfigurationStatus(Aws::Utils::Json::JsonView jsonValue);
-    AgentConfigurationStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPLICATIONDISCOVERYSERVICE_API AgentConfigurationStatus();
+    AWS_APPLICATIONDISCOVERYSERVICE_API AgentConfigurationStatus(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPLICATIONDISCOVERYSERVICE_API AgentConfigurationStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPLICATIONDISCOVERYSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

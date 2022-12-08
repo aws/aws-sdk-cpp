@@ -30,12 +30,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/GetLensReviewReportOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_WELLARCHITECTED_API GetLensReviewReportResult
+  class GetLensReviewReportResult
   {
   public:
-    GetLensReviewReportResult();
-    GetLensReviewReportResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetLensReviewReportResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WELLARCHITECTED_API GetLensReviewReportResult();
+    AWS_WELLARCHITECTED_API GetLensReviewReportResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WELLARCHITECTED_API GetLensReviewReportResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     

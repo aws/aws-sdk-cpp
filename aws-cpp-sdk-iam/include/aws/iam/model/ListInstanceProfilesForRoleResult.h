@@ -33,12 +33,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListInstanceProfilesForRoleResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_IAM_API ListInstanceProfilesForRoleResult
+  class ListInstanceProfilesForRoleResult
   {
   public:
-    ListInstanceProfilesForRoleResult();
-    ListInstanceProfilesForRoleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ListInstanceProfilesForRoleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_IAM_API ListInstanceProfilesForRoleResult();
+    AWS_IAM_API ListInstanceProfilesForRoleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_IAM_API ListInstanceProfilesForRoleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

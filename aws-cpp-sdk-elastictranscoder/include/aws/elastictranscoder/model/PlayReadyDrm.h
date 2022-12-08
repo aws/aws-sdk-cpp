@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/PlayReadyDrm">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICTRANSCODER_API PlayReadyDrm
+  class PlayReadyDrm
   {
   public:
-    PlayReadyDrm();
-    PlayReadyDrm(Aws::Utils::Json::JsonView jsonValue);
-    PlayReadyDrm& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ELASTICTRANSCODER_API PlayReadyDrm();
+    AWS_ELASTICTRANSCODER_API PlayReadyDrm(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICTRANSCODER_API PlayReadyDrm& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICTRANSCODER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

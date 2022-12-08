@@ -42,13 +42,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/StartTimerDecisionAttributes">AWS
    * API Reference</a></p>
    */
-  class AWS_SWF_API StartTimerDecisionAttributes
+  class StartTimerDecisionAttributes
   {
   public:
-    StartTimerDecisionAttributes();
-    StartTimerDecisionAttributes(Aws::Utils::Json::JsonView jsonValue);
-    StartTimerDecisionAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SWF_API StartTimerDecisionAttributes();
+    AWS_SWF_API StartTimerDecisionAttributes(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SWF_API StartTimerDecisionAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SWF_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

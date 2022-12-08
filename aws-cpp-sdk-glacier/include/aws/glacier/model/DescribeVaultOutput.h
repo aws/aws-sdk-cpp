@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/DescribeVaultOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_GLACIER_API DescribeVaultOutput
+  class DescribeVaultOutput
   {
   public:
-    DescribeVaultOutput();
-    DescribeVaultOutput(Aws::Utils::Json::JsonView jsonValue);
-    DescribeVaultOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLACIER_API DescribeVaultOutput();
+    AWS_GLACIER_API DescribeVaultOutput(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLACIER_API DescribeVaultOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLACIER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

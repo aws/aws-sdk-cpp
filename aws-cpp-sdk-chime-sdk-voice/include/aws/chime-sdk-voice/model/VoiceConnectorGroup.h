@@ -26,13 +26,13 @@ namespace ChimeSDKVoice
 namespace Model
 {
 
-  class AWS_CHIMESDKVOICE_API VoiceConnectorGroup
+  class VoiceConnectorGroup
   {
   public:
-    VoiceConnectorGroup();
-    VoiceConnectorGroup(Aws::Utils::Json::JsonView jsonValue);
-    VoiceConnectorGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIMESDKVOICE_API VoiceConnectorGroup();
+    AWS_CHIMESDKVOICE_API VoiceConnectorGroup(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKVOICE_API VoiceConnectorGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKVOICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

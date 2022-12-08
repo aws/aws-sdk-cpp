@@ -22,12 +22,12 @@ namespace AuditManager
 {
 namespace Model
 {
-  class AWS_AUDITMANAGER_API AssociateAssessmentReportEvidenceFolderResult
+  class AssociateAssessmentReportEvidenceFolderResult
   {
   public:
-    AssociateAssessmentReportEvidenceFolderResult();
-    AssociateAssessmentReportEvidenceFolderResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AssociateAssessmentReportEvidenceFolderResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_AUDITMANAGER_API AssociateAssessmentReportEvidenceFolderResult();
+    AWS_AUDITMANAGER_API AssociateAssessmentReportEvidenceFolderResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_AUDITMANAGER_API AssociateAssessmentReportEvidenceFolderResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

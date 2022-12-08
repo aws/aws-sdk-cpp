@@ -148,13 +148,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ConstraintViolationException">AWS
    * API Reference</a></p>
    */
-  class AWS_ORGANIZATIONS_API ConstraintViolationException
+  class ConstraintViolationException
   {
   public:
-    ConstraintViolationException();
-    ConstraintViolationException(Aws::Utils::Json::JsonView jsonValue);
-    ConstraintViolationException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ORGANIZATIONS_API ConstraintViolationException();
+    AWS_ORGANIZATIONS_API ConstraintViolationException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ORGANIZATIONS_API ConstraintViolationException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ORGANIZATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

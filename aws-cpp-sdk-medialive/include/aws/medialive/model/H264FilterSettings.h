@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/H264FilterSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API H264FilterSettings
+  class H264FilterSettings
   {
   public:
-    H264FilterSettings();
-    H264FilterSettings(Aws::Utils::Json::JsonView jsonValue);
-    H264FilterSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API H264FilterSettings();
+    AWS_MEDIALIVE_API H264FilterSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API H264FilterSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DvbSubSourceSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API DvbSubSourceSettings
+  class DvbSubSourceSettings
   {
   public:
-    DvbSubSourceSettings();
-    DvbSubSourceSettings(Aws::Utils::Json::JsonView jsonValue);
-    DvbSubSourceSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API DvbSubSourceSettings();
+    AWS_MEDIALIVE_API DvbSubSourceSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API DvbSubSourceSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

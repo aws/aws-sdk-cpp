@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/FilesLimit">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUEDATABREW_API FilesLimit
+  class FilesLimit
   {
   public:
-    FilesLimit();
-    FilesLimit(Aws::Utils::Json::JsonView jsonValue);
-    FilesLimit& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUEDATABREW_API FilesLimit();
+    AWS_GLUEDATABREW_API FilesLimit(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUEDATABREW_API FilesLimit& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUEDATABREW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

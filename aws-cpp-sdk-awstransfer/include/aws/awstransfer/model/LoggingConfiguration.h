@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/LoggingConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_TRANSFER_API LoggingConfiguration
+  class LoggingConfiguration
   {
   public:
-    LoggingConfiguration();
-    LoggingConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    LoggingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TRANSFER_API LoggingConfiguration();
+    AWS_TRANSFER_API LoggingConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSFER_API LoggingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSFER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

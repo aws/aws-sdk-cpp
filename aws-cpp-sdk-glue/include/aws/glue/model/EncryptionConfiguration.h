@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/EncryptionConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API EncryptionConfiguration
+  class EncryptionConfiguration
   {
   public:
-    EncryptionConfiguration();
-    EncryptionConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    EncryptionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API EncryptionConfiguration();
+    AWS_GLUE_API EncryptionConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API EncryptionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

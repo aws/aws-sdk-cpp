@@ -29,14 +29,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/Change">AWS API
    * Reference</a></p>
    */
-  class AWS_ROUTE53_API Change
+  class Change
   {
   public:
-    Change();
-    Change(const Aws::Utils::Xml::XmlNode& xmlNode);
-    Change& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ROUTE53_API Change();
+    AWS_ROUTE53_API Change(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ROUTE53_API Change& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_ROUTE53_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**

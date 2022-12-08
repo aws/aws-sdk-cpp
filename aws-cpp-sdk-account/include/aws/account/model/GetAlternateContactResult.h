@@ -24,12 +24,12 @@ namespace Account
 {
 namespace Model
 {
-  class AWS_ACCOUNT_API GetAlternateContactResult
+  class GetAlternateContactResult
   {
   public:
-    GetAlternateContactResult();
-    GetAlternateContactResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetAlternateContactResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ACCOUNT_API GetAlternateContactResult();
+    AWS_ACCOUNT_API GetAlternateContactResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ACCOUNT_API GetAlternateContactResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

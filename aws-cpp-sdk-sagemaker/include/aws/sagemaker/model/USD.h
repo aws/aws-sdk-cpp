@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/USD">AWS API
    * Reference</a></p>
    */
-  class AWS_SAGEMAKER_API USD
+  class USD
   {
   public:
-    USD();
-    USD(Aws::Utils::Json::JsonView jsonValue);
-    USD& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API USD();
+    AWS_SAGEMAKER_API USD(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API USD& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

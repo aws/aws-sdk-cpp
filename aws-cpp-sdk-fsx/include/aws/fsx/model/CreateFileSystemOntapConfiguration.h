@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateFileSystemOntapConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_FSX_API CreateFileSystemOntapConfiguration
+  class CreateFileSystemOntapConfiguration
   {
   public:
-    CreateFileSystemOntapConfiguration();
-    CreateFileSystemOntapConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    CreateFileSystemOntapConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FSX_API CreateFileSystemOntapConfiguration();
+    AWS_FSX_API CreateFileSystemOntapConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API CreateFileSystemOntapConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

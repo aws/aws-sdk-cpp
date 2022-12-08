@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/GetFieldResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECTCASES_API GetFieldResponse
+  class GetFieldResponse
   {
   public:
-    GetFieldResponse();
-    GetFieldResponse(Aws::Utils::Json::JsonView jsonValue);
-    GetFieldResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECTCASES_API GetFieldResponse();
+    AWS_CONNECTCASES_API GetFieldResponse(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTCASES_API GetFieldResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTCASES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

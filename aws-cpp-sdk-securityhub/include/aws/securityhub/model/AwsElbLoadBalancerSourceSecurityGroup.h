@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsElbLoadBalancerSourceSecurityGroup">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsElbLoadBalancerSourceSecurityGroup
+  class AwsElbLoadBalancerSourceSecurityGroup
   {
   public:
-    AwsElbLoadBalancerSourceSecurityGroup();
-    AwsElbLoadBalancerSourceSecurityGroup(Aws::Utils::Json::JsonView jsonValue);
-    AwsElbLoadBalancerSourceSecurityGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsElbLoadBalancerSourceSecurityGroup();
+    AWS_SECURITYHUB_API AwsElbLoadBalancerSourceSecurityGroup(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsElbLoadBalancerSourceSecurityGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -39,13 +39,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/OverrideAction">AWS
    * API Reference</a></p>
    */
-  class AWS_WAFV2_API OverrideAction
+  class OverrideAction
   {
   public:
-    OverrideAction();
-    OverrideAction(Aws::Utils::Json::JsonView jsonValue);
-    OverrideAction& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WAFV2_API OverrideAction();
+    AWS_WAFV2_API OverrideAction(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API OverrideAction& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

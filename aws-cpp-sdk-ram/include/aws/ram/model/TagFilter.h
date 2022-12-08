@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/TagFilter">AWS API
    * Reference</a></p>
    */
-  class AWS_RAM_API TagFilter
+  class TagFilter
   {
   public:
-    TagFilter();
-    TagFilter(Aws::Utils::Json::JsonView jsonValue);
-    TagFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_RAM_API TagFilter();
+    AWS_RAM_API TagFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RAM_API TagFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RAM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

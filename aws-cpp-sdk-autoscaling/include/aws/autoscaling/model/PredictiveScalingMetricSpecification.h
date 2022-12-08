@@ -62,15 +62,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/PredictiveScalingMetricSpecification">AWS
    * API Reference</a></p>
    */
-  class AWS_AUTOSCALING_API PredictiveScalingMetricSpecification
+  class PredictiveScalingMetricSpecification
   {
   public:
-    PredictiveScalingMetricSpecification();
-    PredictiveScalingMetricSpecification(const Aws::Utils::Xml::XmlNode& xmlNode);
-    PredictiveScalingMetricSpecification& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_AUTOSCALING_API PredictiveScalingMetricSpecification();
+    AWS_AUTOSCALING_API PredictiveScalingMetricSpecification(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_AUTOSCALING_API PredictiveScalingMetricSpecification& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_AUTOSCALING_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_AUTOSCALING_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**

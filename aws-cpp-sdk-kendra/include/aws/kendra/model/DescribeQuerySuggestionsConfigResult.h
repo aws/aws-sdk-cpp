@@ -26,12 +26,12 @@ namespace kendra
 {
 namespace Model
 {
-  class AWS_KENDRA_API DescribeQuerySuggestionsConfigResult
+  class DescribeQuerySuggestionsConfigResult
   {
   public:
-    DescribeQuerySuggestionsConfigResult();
-    DescribeQuerySuggestionsConfigResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeQuerySuggestionsConfigResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KENDRA_API DescribeQuerySuggestionsConfigResult();
+    AWS_KENDRA_API DescribeQuerySuggestionsConfigResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KENDRA_API DescribeQuerySuggestionsConfigResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

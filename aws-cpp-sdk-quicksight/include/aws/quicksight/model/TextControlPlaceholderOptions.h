@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/TextControlPlaceholderOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API TextControlPlaceholderOptions
+  class TextControlPlaceholderOptions
   {
   public:
-    TextControlPlaceholderOptions();
-    TextControlPlaceholderOptions(Aws::Utils::Json::JsonView jsonValue);
-    TextControlPlaceholderOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API TextControlPlaceholderOptions();
+    AWS_QUICKSIGHT_API TextControlPlaceholderOptions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API TextControlPlaceholderOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

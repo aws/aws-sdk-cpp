@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/NegativeValueConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API NegativeValueConfiguration
+  class NegativeValueConfiguration
   {
   public:
-    NegativeValueConfiguration();
-    NegativeValueConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    NegativeValueConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API NegativeValueConfiguration();
+    AWS_QUICKSIGHT_API NegativeValueConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API NegativeValueConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

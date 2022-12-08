@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/BarChartAggregatedFieldWells">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API BarChartAggregatedFieldWells
+  class BarChartAggregatedFieldWells
   {
   public:
-    BarChartAggregatedFieldWells();
-    BarChartAggregatedFieldWells(Aws::Utils::Json::JsonView jsonValue);
-    BarChartAggregatedFieldWells& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API BarChartAggregatedFieldWells();
+    AWS_QUICKSIGHT_API BarChartAggregatedFieldWells(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API BarChartAggregatedFieldWells& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ColumnInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_ATHENA_API ColumnInfo
+  class ColumnInfo
   {
   public:
-    ColumnInfo();
-    ColumnInfo(Aws::Utils::Json::JsonView jsonValue);
-    ColumnInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ATHENA_API ColumnInfo();
+    AWS_ATHENA_API ColumnInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ATHENA_API ColumnInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ATHENA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

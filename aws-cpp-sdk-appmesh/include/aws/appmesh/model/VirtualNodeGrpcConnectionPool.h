@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/VirtualNodeGrpcConnectionPool">AWS
    * API Reference</a></p>
    */
-  class AWS_APPMESH_API VirtualNodeGrpcConnectionPool
+  class VirtualNodeGrpcConnectionPool
   {
   public:
-    VirtualNodeGrpcConnectionPool();
-    VirtualNodeGrpcConnectionPool(Aws::Utils::Json::JsonView jsonValue);
-    VirtualNodeGrpcConnectionPool& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPMESH_API VirtualNodeGrpcConnectionPool();
+    AWS_APPMESH_API VirtualNodeGrpcConnectionPool(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API VirtualNodeGrpcConnectionPool& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

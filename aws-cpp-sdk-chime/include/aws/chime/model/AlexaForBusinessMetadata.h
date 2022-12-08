@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/AlexaForBusinessMetadata">AWS
    * API Reference</a></p>
    */
-  class AWS_CHIME_API AlexaForBusinessMetadata
+  class AlexaForBusinessMetadata
   {
   public:
-    AlexaForBusinessMetadata();
-    AlexaForBusinessMetadata(Aws::Utils::Json::JsonView jsonValue);
-    AlexaForBusinessMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIME_API AlexaForBusinessMetadata();
+    AWS_CHIME_API AlexaForBusinessMetadata(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API AlexaForBusinessMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

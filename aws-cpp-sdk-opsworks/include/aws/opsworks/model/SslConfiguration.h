@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/SslConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_OPSWORKS_API SslConfiguration
+  class SslConfiguration
   {
   public:
-    SslConfiguration();
-    SslConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    SslConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OPSWORKS_API SslConfiguration();
+    AWS_OPSWORKS_API SslConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPSWORKS_API SslConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPSWORKS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/Alarm">AWS API
    * Reference</a></p>
    */
-  class AWS_SSM_API Alarm
+  class Alarm
   {
   public:
-    Alarm();
-    Alarm(Aws::Utils::Json::JsonView jsonValue);
-    Alarm& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSM_API Alarm();
+    AWS_SSM_API Alarm(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API Alarm& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

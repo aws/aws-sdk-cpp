@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/UserSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_WORKSPACESWEB_API UserSettings
+  class UserSettings
   {
   public:
-    UserSettings();
-    UserSettings(Aws::Utils::Json::JsonView jsonValue);
-    UserSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WORKSPACESWEB_API UserSettings();
+    AWS_WORKSPACESWEB_API UserSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKSPACESWEB_API UserSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKSPACESWEB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

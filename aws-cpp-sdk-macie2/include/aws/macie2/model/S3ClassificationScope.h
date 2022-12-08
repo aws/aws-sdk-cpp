@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/S3ClassificationScope">AWS
    * API Reference</a></p>
    */
-  class AWS_MACIE2_API S3ClassificationScope
+  class S3ClassificationScope
   {
   public:
-    S3ClassificationScope();
-    S3ClassificationScope(Aws::Utils::Json::JsonView jsonValue);
-    S3ClassificationScope& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MACIE2_API S3ClassificationScope();
+    AWS_MACIE2_API S3ClassificationScope(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API S3ClassificationScope& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

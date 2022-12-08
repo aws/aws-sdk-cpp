@@ -31,12 +31,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudsearch-2013-01-01/UpdateScalingParametersResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDSEARCH_API UpdateScalingParametersResult
+  class UpdateScalingParametersResult
   {
   public:
-    UpdateScalingParametersResult();
-    UpdateScalingParametersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    UpdateScalingParametersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_CLOUDSEARCH_API UpdateScalingParametersResult();
+    AWS_CLOUDSEARCH_API UpdateScalingParametersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_CLOUDSEARCH_API UpdateScalingParametersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     

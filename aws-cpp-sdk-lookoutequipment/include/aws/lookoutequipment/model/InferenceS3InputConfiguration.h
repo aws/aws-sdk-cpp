@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/InferenceS3InputConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_LOOKOUTEQUIPMENT_API InferenceS3InputConfiguration
+  class InferenceS3InputConfiguration
   {
   public:
-    InferenceS3InputConfiguration();
-    InferenceS3InputConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    InferenceS3InputConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LOOKOUTEQUIPMENT_API InferenceS3InputConfiguration();
+    AWS_LOOKOUTEQUIPMENT_API InferenceS3InputConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTEQUIPMENT_API InferenceS3InputConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTEQUIPMENT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -22,12 +22,12 @@ namespace SSOAdmin
 {
 namespace Model
 {
-  class AWS_SSOADMIN_API DeletePermissionsBoundaryFromPermissionSetResult
+  class DeletePermissionsBoundaryFromPermissionSetResult
   {
   public:
-    DeletePermissionsBoundaryFromPermissionSetResult();
-    DeletePermissionsBoundaryFromPermissionSetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeletePermissionsBoundaryFromPermissionSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSOADMIN_API DeletePermissionsBoundaryFromPermissionSetResult();
+    AWS_SSOADMIN_API DeletePermissionsBoundaryFromPermissionSetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSOADMIN_API DeletePermissionsBoundaryFromPermissionSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

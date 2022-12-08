@@ -29,14 +29,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/EncryptionEntities">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFRONT_API EncryptionEntities
+  class EncryptionEntities
   {
   public:
-    EncryptionEntities();
-    EncryptionEntities(const Aws::Utils::Xml::XmlNode& xmlNode);
-    EncryptionEntities& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API EncryptionEntities();
+    AWS_CLOUDFRONT_API EncryptionEntities(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API EncryptionEntities& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**

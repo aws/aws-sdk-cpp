@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudcontrol-2021-09-30/ProgressEvent">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDCONTROLAPI_API ProgressEvent
+  class ProgressEvent
   {
   public:
-    ProgressEvent();
-    ProgressEvent(Aws::Utils::Json::JsonView jsonValue);
-    ProgressEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDCONTROLAPI_API ProgressEvent();
+    AWS_CLOUDCONTROLAPI_API ProgressEvent(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDCONTROLAPI_API ProgressEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDCONTROLAPI_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

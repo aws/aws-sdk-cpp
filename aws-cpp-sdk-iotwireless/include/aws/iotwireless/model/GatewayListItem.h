@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GatewayListItem">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTWIRELESS_API GatewayListItem
+  class GatewayListItem
   {
   public:
-    GatewayListItem();
-    GatewayListItem(Aws::Utils::Json::JsonView jsonValue);
-    GatewayListItem& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTWIRELESS_API GatewayListItem();
+    AWS_IOTWIRELESS_API GatewayListItem(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API GatewayListItem& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

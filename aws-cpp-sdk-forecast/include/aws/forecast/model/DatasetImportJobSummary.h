@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DatasetImportJobSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_FORECASTSERVICE_API DatasetImportJobSummary
+  class DatasetImportJobSummary
   {
   public:
-    DatasetImportJobSummary();
-    DatasetImportJobSummary(Aws::Utils::Json::JsonView jsonValue);
-    DatasetImportJobSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FORECASTSERVICE_API DatasetImportJobSummary();
+    AWS_FORECASTSERVICE_API DatasetImportJobSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FORECASTSERVICE_API DatasetImportJobSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FORECASTSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

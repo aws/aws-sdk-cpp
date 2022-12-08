@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/UserPendingChanges">AWS
    * API Reference</a></p>
    */
-  class AWS_MQ_API UserPendingChanges
+  class UserPendingChanges
   {
   public:
-    UserPendingChanges();
-    UserPendingChanges(Aws::Utils::Json::JsonView jsonValue);
-    UserPendingChanges& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MQ_API UserPendingChanges();
+    AWS_MQ_API UserPendingChanges(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MQ_API UserPendingChanges& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MQ_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

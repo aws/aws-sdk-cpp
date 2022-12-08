@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/InferenceExperimentDataStorageConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API InferenceExperimentDataStorageConfig
+  class InferenceExperimentDataStorageConfig
   {
   public:
-    InferenceExperimentDataStorageConfig();
-    InferenceExperimentDataStorageConfig(Aws::Utils::Json::JsonView jsonValue);
-    InferenceExperimentDataStorageConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API InferenceExperimentDataStorageConfig();
+    AWS_SAGEMAKER_API InferenceExperimentDataStorageConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API InferenceExperimentDataStorageConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

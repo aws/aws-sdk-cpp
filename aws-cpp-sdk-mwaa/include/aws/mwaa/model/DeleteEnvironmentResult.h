@@ -22,12 +22,12 @@ namespace MWAA
 {
 namespace Model
 {
-  class AWS_MWAA_API DeleteEnvironmentResult
+  class DeleteEnvironmentResult
   {
   public:
-    DeleteEnvironmentResult();
-    DeleteEnvironmentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteEnvironmentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MWAA_API DeleteEnvironmentResult();
+    AWS_MWAA_API DeleteEnvironmentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MWAA_API DeleteEnvironmentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

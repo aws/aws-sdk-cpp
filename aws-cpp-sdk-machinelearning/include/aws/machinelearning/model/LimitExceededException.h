@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/LimitExceededException">AWS
    * API Reference</a></p>
    */
-  class AWS_MACHINELEARNING_API LimitExceededException
+  class LimitExceededException
   {
   public:
-    LimitExceededException();
-    LimitExceededException(Aws::Utils::Json::JsonView jsonValue);
-    LimitExceededException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MACHINELEARNING_API LimitExceededException();
+    AWS_MACHINELEARNING_API LimitExceededException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACHINELEARNING_API LimitExceededException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACHINELEARNING_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

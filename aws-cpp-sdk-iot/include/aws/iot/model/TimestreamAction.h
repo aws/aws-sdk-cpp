@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/TimestreamAction">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API TimestreamAction
+  class TimestreamAction
   {
   public:
-    TimestreamAction();
-    TimestreamAction(Aws::Utils::Json::JsonView jsonValue);
-    TimestreamAction& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API TimestreamAction();
+    AWS_IOT_API TimestreamAction(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API TimestreamAction& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

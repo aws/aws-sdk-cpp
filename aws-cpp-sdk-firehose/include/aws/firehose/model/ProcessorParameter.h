@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/ProcessorParameter">AWS
    * API Reference</a></p>
    */
-  class AWS_FIREHOSE_API ProcessorParameter
+  class ProcessorParameter
   {
   public:
-    ProcessorParameter();
-    ProcessorParameter(Aws::Utils::Json::JsonView jsonValue);
-    ProcessorParameter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FIREHOSE_API ProcessorParameter();
+    AWS_FIREHOSE_API ProcessorParameter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FIREHOSE_API ProcessorParameter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FIREHOSE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

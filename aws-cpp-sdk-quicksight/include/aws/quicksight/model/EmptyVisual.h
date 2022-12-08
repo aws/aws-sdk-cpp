@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/EmptyVisual">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API EmptyVisual
+  class EmptyVisual
   {
   public:
-    EmptyVisual();
-    EmptyVisual(Aws::Utils::Json::JsonView jsonValue);
-    EmptyVisual& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API EmptyVisual();
+    AWS_QUICKSIGHT_API EmptyVisual(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API EmptyVisual& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

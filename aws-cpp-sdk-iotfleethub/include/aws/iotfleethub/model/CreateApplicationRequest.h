@@ -20,10 +20,10 @@ namespace Model
 
   /**
    */
-  class AWS_IOTFLEETHUB_API CreateApplicationRequest : public IoTFleetHubRequest
+  class CreateApplicationRequest : public IoTFleetHubRequest
   {
   public:
-    CreateApplicationRequest();
+    AWS_IOTFLEETHUB_API CreateApplicationRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -31,7 +31,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateApplication"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_IOTFLEETHUB_API Aws::String SerializePayload() const override;
 
 
     /**

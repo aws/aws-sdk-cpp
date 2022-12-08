@@ -25,12 +25,12 @@ namespace WAF
 {
 namespace Model
 {
-  class AWS_WAF_API GetRateBasedRuleManagedKeysResult
+  class GetRateBasedRuleManagedKeysResult
   {
   public:
-    GetRateBasedRuleManagedKeysResult();
-    GetRateBasedRuleManagedKeysResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetRateBasedRuleManagedKeysResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WAF_API GetRateBasedRuleManagedKeysResult();
+    AWS_WAF_API GetRateBasedRuleManagedKeysResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WAF_API GetRateBasedRuleManagedKeysResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

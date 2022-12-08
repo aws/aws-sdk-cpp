@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/ResourceDoesNotSupportTagging">AWS
    * API Reference</a></p>
    */
-  class AWS_FSX_API ResourceDoesNotSupportTagging
+  class ResourceDoesNotSupportTagging
   {
   public:
-    ResourceDoesNotSupportTagging();
-    ResourceDoesNotSupportTagging(Aws::Utils::Json::JsonView jsonValue);
-    ResourceDoesNotSupportTagging& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FSX_API ResourceDoesNotSupportTagging();
+    AWS_FSX_API ResourceDoesNotSupportTagging(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API ResourceDoesNotSupportTagging& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

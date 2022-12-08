@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/MaintenanceWindowExecutionTaskIdentity">AWS
    * API Reference</a></p>
    */
-  class AWS_SSM_API MaintenanceWindowExecutionTaskIdentity
+  class MaintenanceWindowExecutionTaskIdentity
   {
   public:
-    MaintenanceWindowExecutionTaskIdentity();
-    MaintenanceWindowExecutionTaskIdentity(Aws::Utils::Json::JsonView jsonValue);
-    MaintenanceWindowExecutionTaskIdentity& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSM_API MaintenanceWindowExecutionTaskIdentity();
+    AWS_SSM_API MaintenanceWindowExecutionTaskIdentity(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API MaintenanceWindowExecutionTaskIdentity& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

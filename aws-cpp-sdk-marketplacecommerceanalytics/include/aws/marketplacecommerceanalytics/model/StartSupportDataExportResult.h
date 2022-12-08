@@ -30,12 +30,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/marketplacecommerceanalytics-2015-07-01/StartSupportDataExportResult">AWS
    * API Reference</a></p>
    */
-  class AWS_MARKETPLACECOMMERCEANALYTICS_API StartSupportDataExportResult
+  class StartSupportDataExportResult
   {
   public:
-    StartSupportDataExportResult();
-    StartSupportDataExportResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    StartSupportDataExportResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MARKETPLACECOMMERCEANALYTICS_API StartSupportDataExportResult();
+    AWS_MARKETPLACECOMMERCEANALYTICS_API StartSupportDataExportResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MARKETPLACECOMMERCEANALYTICS_API StartSupportDataExportResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/NodeEthereumAttributes">AWS
    * API Reference</a></p>
    */
-  class AWS_MANAGEDBLOCKCHAIN_API NodeEthereumAttributes
+  class NodeEthereumAttributes
   {
   public:
-    NodeEthereumAttributes();
-    NodeEthereumAttributes(Aws::Utils::Json::JsonView jsonValue);
-    NodeEthereumAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MANAGEDBLOCKCHAIN_API NodeEthereumAttributes();
+    AWS_MANAGEDBLOCKCHAIN_API NodeEthereumAttributes(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MANAGEDBLOCKCHAIN_API NodeEthereumAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MANAGEDBLOCKCHAIN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

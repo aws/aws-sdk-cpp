@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/InstancePortInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_LIGHTSAIL_API InstancePortInfo
+  class InstancePortInfo
   {
   public:
-    InstancePortInfo();
-    InstancePortInfo(Aws::Utils::Json::JsonView jsonValue);
-    InstancePortInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LIGHTSAIL_API InstancePortInfo();
+    AWS_LIGHTSAIL_API InstancePortInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API InstancePortInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

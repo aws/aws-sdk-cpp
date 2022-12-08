@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/EmailContent">AWS
    * API Reference</a></p>
    */
-  class AWS_SESV2_API EmailContent
+  class EmailContent
   {
   public:
-    EmailContent();
-    EmailContent(Aws::Utils::Json::JsonView jsonValue);
-    EmailContent& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SESV2_API EmailContent();
+    AWS_SESV2_API EmailContent(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SESV2_API EmailContent& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SESV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/TargetTrackingScalingPolicyConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_APPLICATIONAUTOSCALING_API TargetTrackingScalingPolicyConfiguration
+  class TargetTrackingScalingPolicyConfiguration
   {
   public:
-    TargetTrackingScalingPolicyConfiguration();
-    TargetTrackingScalingPolicyConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    TargetTrackingScalingPolicyConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPLICATIONAUTOSCALING_API TargetTrackingScalingPolicyConfiguration();
+    AWS_APPLICATIONAUTOSCALING_API TargetTrackingScalingPolicyConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPLICATIONAUTOSCALING_API TargetTrackingScalingPolicyConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPLICATIONAUTOSCALING_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

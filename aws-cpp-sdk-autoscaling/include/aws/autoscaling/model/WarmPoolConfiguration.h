@@ -30,15 +30,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/WarmPoolConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_AUTOSCALING_API WarmPoolConfiguration
+  class WarmPoolConfiguration
   {
   public:
-    WarmPoolConfiguration();
-    WarmPoolConfiguration(const Aws::Utils::Xml::XmlNode& xmlNode);
-    WarmPoolConfiguration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_AUTOSCALING_API WarmPoolConfiguration();
+    AWS_AUTOSCALING_API WarmPoolConfiguration(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_AUTOSCALING_API WarmPoolConfiguration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_AUTOSCALING_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_AUTOSCALING_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**

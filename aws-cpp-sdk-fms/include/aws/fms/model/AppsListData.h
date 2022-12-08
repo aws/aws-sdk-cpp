@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/AppsListData">AWS
    * API Reference</a></p>
    */
-  class AWS_FMS_API AppsListData
+  class AppsListData
   {
   public:
-    AppsListData();
-    AppsListData(Aws::Utils::Json::JsonView jsonValue);
-    AppsListData& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FMS_API AppsListData();
+    AWS_FMS_API AppsListData(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FMS_API AppsListData& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

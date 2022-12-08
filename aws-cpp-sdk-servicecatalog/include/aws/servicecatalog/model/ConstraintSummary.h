@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ConstraintSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_SERVICECATALOG_API ConstraintSummary
+  class ConstraintSummary
   {
   public:
-    ConstraintSummary();
-    ConstraintSummary(Aws::Utils::Json::JsonView jsonValue);
-    ConstraintSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SERVICECATALOG_API ConstraintSummary();
+    AWS_SERVICECATALOG_API ConstraintSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICECATALOG_API ConstraintSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICECATALOG_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

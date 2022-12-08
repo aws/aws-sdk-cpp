@@ -31,14 +31,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CachePolicyQueryStringsConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFRONT_API CachePolicyQueryStringsConfig
+  class CachePolicyQueryStringsConfig
   {
   public:
-    CachePolicyQueryStringsConfig();
-    CachePolicyQueryStringsConfig(const Aws::Utils::Xml::XmlNode& xmlNode);
-    CachePolicyQueryStringsConfig& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API CachePolicyQueryStringsConfig();
+    AWS_CLOUDFRONT_API CachePolicyQueryStringsConfig(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API CachePolicyQueryStringsConfig& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**

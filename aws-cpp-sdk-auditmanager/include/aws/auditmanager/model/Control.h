@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/Control">AWS
    * API Reference</a></p>
    */
-  class AWS_AUDITMANAGER_API Control
+  class Control
   {
   public:
-    Control();
-    Control(Aws::Utils::Json::JsonView jsonValue);
-    Control& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_AUDITMANAGER_API Control();
+    AWS_AUDITMANAGER_API Control(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AUDITMANAGER_API Control& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AUDITMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

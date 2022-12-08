@@ -22,10 +22,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeCacheParametersMessage">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICACHE_API DescribeCacheParametersRequest : public ElastiCacheRequest
+  class DescribeCacheParametersRequest : public ElastiCacheRequest
   {
   public:
-    DescribeCacheParametersRequest();
+    AWS_ELASTICACHE_API DescribeCacheParametersRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,10 +33,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DescribeCacheParameters"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_ELASTICACHE_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_ELASTICACHE_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 

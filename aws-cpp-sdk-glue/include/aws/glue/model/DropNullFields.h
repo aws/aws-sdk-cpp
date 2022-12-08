@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DropNullFields">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API DropNullFields
+  class DropNullFields
   {
   public:
-    DropNullFields();
-    DropNullFields(Aws::Utils::Json::JsonView jsonValue);
-    DropNullFields& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API DropNullFields();
+    AWS_GLUE_API DropNullFields(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API DropNullFields& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

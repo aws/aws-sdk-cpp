@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/AddonHealth">AWS API
    * Reference</a></p>
    */
-  class AWS_EKS_API AddonHealth
+  class AddonHealth
   {
   public:
-    AddonHealth();
-    AddonHealth(Aws::Utils::Json::JsonView jsonValue);
-    AddonHealth& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EKS_API AddonHealth();
+    AWS_EKS_API AddonHealth(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EKS_API AddonHealth& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EKS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

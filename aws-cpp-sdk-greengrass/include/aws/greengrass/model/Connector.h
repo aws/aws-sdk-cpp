@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/Connector">AWS
    * API Reference</a></p>
    */
-  class AWS_GREENGRASS_API Connector
+  class Connector
   {
   public:
-    Connector();
-    Connector(Aws::Utils::Json::JsonView jsonValue);
-    Connector& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GREENGRASS_API Connector();
+    AWS_GREENGRASS_API Connector(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASS_API Connector& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

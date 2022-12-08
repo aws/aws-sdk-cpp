@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/NumericEqualityDrillDownFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API NumericEqualityDrillDownFilter
+  class NumericEqualityDrillDownFilter
   {
   public:
-    NumericEqualityDrillDownFilter();
-    NumericEqualityDrillDownFilter(Aws::Utils::Json::JsonView jsonValue);
-    NumericEqualityDrillDownFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API NumericEqualityDrillDownFilter();
+    AWS_QUICKSIGHT_API NumericEqualityDrillDownFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API NumericEqualityDrillDownFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

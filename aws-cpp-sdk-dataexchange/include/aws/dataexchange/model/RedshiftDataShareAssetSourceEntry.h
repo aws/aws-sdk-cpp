@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/RedshiftDataShareAssetSourceEntry">AWS
    * API Reference</a></p>
    */
-  class AWS_DATAEXCHANGE_API RedshiftDataShareAssetSourceEntry
+  class RedshiftDataShareAssetSourceEntry
   {
   public:
-    RedshiftDataShareAssetSourceEntry();
-    RedshiftDataShareAssetSourceEntry(Aws::Utils::Json::JsonView jsonValue);
-    RedshiftDataShareAssetSourceEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DATAEXCHANGE_API RedshiftDataShareAssetSourceEntry();
+    AWS_DATAEXCHANGE_API RedshiftDataShareAssetSourceEntry(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATAEXCHANGE_API RedshiftDataShareAssetSourceEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATAEXCHANGE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

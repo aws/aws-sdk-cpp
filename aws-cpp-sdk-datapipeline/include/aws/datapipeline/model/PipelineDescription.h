@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/PipelineDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_DATAPIPELINE_API PipelineDescription
+  class PipelineDescription
   {
   public:
-    PipelineDescription();
-    PipelineDescription(Aws::Utils::Json::JsonView jsonValue);
-    PipelineDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DATAPIPELINE_API PipelineDescription();
+    AWS_DATAPIPELINE_API PipelineDescription(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATAPIPELINE_API PipelineDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATAPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

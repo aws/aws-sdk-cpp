@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/TopBottomRankedComputation">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API TopBottomRankedComputation
+  class TopBottomRankedComputation
   {
   public:
-    TopBottomRankedComputation();
-    TopBottomRankedComputation(Aws::Utils::Json::JsonView jsonValue);
-    TopBottomRankedComputation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API TopBottomRankedComputation();
+    AWS_QUICKSIGHT_API TopBottomRankedComputation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API TopBottomRankedComputation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

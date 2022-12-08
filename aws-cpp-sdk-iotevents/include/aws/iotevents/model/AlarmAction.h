@@ -37,13 +37,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/AlarmAction">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTEVENTS_API AlarmAction
+  class AlarmAction
   {
   public:
-    AlarmAction();
-    AlarmAction(Aws::Utils::Json::JsonView jsonValue);
-    AlarmAction& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTEVENTS_API AlarmAction();
+    AWS_IOTEVENTS_API AlarmAction(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTEVENTS_API AlarmAction& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTEVENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

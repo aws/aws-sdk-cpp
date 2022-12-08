@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/VoiceConnector">AWS
    * API Reference</a></p>
    */
-  class AWS_CHIME_API VoiceConnector
+  class VoiceConnector
   {
   public:
-    VoiceConnector();
-    VoiceConnector(Aws::Utils::Json::JsonView jsonValue);
-    VoiceConnector& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIME_API VoiceConnector();
+    AWS_CHIME_API VoiceConnector(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API VoiceConnector& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

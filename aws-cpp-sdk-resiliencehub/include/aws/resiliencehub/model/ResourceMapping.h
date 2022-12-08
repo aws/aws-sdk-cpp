@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ResourceMapping">AWS
    * API Reference</a></p>
    */
-  class AWS_RESILIENCEHUB_API ResourceMapping
+  class ResourceMapping
   {
   public:
-    ResourceMapping();
-    ResourceMapping(Aws::Utils::Json::JsonView jsonValue);
-    ResourceMapping& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_RESILIENCEHUB_API ResourceMapping();
+    AWS_RESILIENCEHUB_API ResourceMapping(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RESILIENCEHUB_API ResourceMapping& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RESILIENCEHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

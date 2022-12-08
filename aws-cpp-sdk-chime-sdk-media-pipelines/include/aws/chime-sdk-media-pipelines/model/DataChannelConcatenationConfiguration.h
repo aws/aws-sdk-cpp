@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/DataChannelConcatenationConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_CHIMESDKMEDIAPIPELINES_API DataChannelConcatenationConfiguration
+  class DataChannelConcatenationConfiguration
   {
   public:
-    DataChannelConcatenationConfiguration();
-    DataChannelConcatenationConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    DataChannelConcatenationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIMESDKMEDIAPIPELINES_API DataChannelConcatenationConfiguration();
+    AWS_CHIMESDKMEDIAPIPELINES_API DataChannelConcatenationConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKMEDIAPIPELINES_API DataChannelConcatenationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKMEDIAPIPELINES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

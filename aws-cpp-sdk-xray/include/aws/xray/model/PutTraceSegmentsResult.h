@@ -25,12 +25,12 @@ namespace XRay
 {
 namespace Model
 {
-  class AWS_XRAY_API PutTraceSegmentsResult
+  class PutTraceSegmentsResult
   {
   public:
-    PutTraceSegmentsResult();
-    PutTraceSegmentsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PutTraceSegmentsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_XRAY_API PutTraceSegmentsResult();
+    AWS_XRAY_API PutTraceSegmentsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_XRAY_API PutTraceSegmentsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

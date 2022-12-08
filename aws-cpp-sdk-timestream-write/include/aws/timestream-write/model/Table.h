@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/timestream-write-2018-11-01/Table">AWS
    * API Reference</a></p>
    */
-  class AWS_TIMESTREAMWRITE_API Table
+  class Table
   {
   public:
-    Table();
-    Table(Aws::Utils::Json::JsonView jsonValue);
-    Table& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TIMESTREAMWRITE_API Table();
+    AWS_TIMESTREAMWRITE_API Table(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TIMESTREAMWRITE_API Table& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TIMESTREAMWRITE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

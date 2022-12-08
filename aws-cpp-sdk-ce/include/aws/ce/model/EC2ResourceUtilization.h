@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/EC2ResourceUtilization">AWS
    * API Reference</a></p>
    */
-  class AWS_COSTEXPLORER_API EC2ResourceUtilization
+  class EC2ResourceUtilization
   {
   public:
-    EC2ResourceUtilization();
-    EC2ResourceUtilization(Aws::Utils::Json::JsonView jsonValue);
-    EC2ResourceUtilization& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COSTEXPLORER_API EC2ResourceUtilization();
+    AWS_COSTEXPLORER_API EC2ResourceUtilization(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API EC2ResourceUtilization& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

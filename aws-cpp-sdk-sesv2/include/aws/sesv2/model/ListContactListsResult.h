@@ -26,12 +26,12 @@ namespace SESV2
 {
 namespace Model
 {
-  class AWS_SESV2_API ListContactListsResult
+  class ListContactListsResult
   {
   public:
-    ListContactListsResult();
-    ListContactListsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListContactListsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SESV2_API ListContactListsResult();
+    AWS_SESV2_API ListContactListsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SESV2_API ListContactListsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

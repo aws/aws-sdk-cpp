@@ -29,14 +29,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GeoLocationDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53_API GeoLocationDetails
+  class GeoLocationDetails
   {
   public:
-    GeoLocationDetails();
-    GeoLocationDetails(const Aws::Utils::Xml::XmlNode& xmlNode);
-    GeoLocationDetails& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ROUTE53_API GeoLocationDetails();
+    AWS_ROUTE53_API GeoLocationDetails(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ROUTE53_API GeoLocationDetails& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_ROUTE53_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**

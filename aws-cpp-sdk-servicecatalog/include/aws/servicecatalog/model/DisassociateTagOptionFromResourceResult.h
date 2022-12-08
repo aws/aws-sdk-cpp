@@ -22,12 +22,12 @@ namespace ServiceCatalog
 {
 namespace Model
 {
-  class AWS_SERVICECATALOG_API DisassociateTagOptionFromResourceResult
+  class DisassociateTagOptionFromResourceResult
   {
   public:
-    DisassociateTagOptionFromResourceResult();
-    DisassociateTagOptionFromResourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DisassociateTagOptionFromResourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SERVICECATALOG_API DisassociateTagOptionFromResourceResult();
+    AWS_SERVICECATALOG_API DisassociateTagOptionFromResourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SERVICECATALOG_API DisassociateTagOptionFromResourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/LogAnomalyClass">AWS
    * API Reference</a></p>
    */
-  class AWS_DEVOPSGURU_API LogAnomalyClass
+  class LogAnomalyClass
   {
   public:
-    LogAnomalyClass();
-    LogAnomalyClass(Aws::Utils::Json::JsonView jsonValue);
-    LogAnomalyClass& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DEVOPSGURU_API LogAnomalyClass();
+    AWS_DEVOPSGURU_API LogAnomalyClass(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVOPSGURU_API LogAnomalyClass& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVOPSGURU_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

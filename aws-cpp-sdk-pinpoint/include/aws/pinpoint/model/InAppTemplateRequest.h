@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/InAppTemplateRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API InAppTemplateRequest
+  class InAppTemplateRequest
   {
   public:
-    InAppTemplateRequest();
-    InAppTemplateRequest(Aws::Utils::Json::JsonView jsonValue);
-    InAppTemplateRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API InAppTemplateRequest();
+    AWS_PINPOINT_API InAppTemplateRequest(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API InAppTemplateRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

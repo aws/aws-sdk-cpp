@@ -30,15 +30,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ResponseError">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API ResponseError
+  class ResponseError
   {
   public:
-    ResponseError();
-    ResponseError(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ResponseError& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API ResponseError();
+    AWS_EC2_API ResponseError(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API ResponseError& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**

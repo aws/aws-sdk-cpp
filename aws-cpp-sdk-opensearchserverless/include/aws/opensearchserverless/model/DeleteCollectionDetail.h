@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/DeleteCollectionDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_OPENSEARCHSERVERLESS_API DeleteCollectionDetail
+  class DeleteCollectionDetail
   {
   public:
-    DeleteCollectionDetail();
-    DeleteCollectionDetail(Aws::Utils::Json::JsonView jsonValue);
-    DeleteCollectionDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OPENSEARCHSERVERLESS_API DeleteCollectionDetail();
+    AWS_OPENSEARCHSERVERLESS_API DeleteCollectionDetail(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPENSEARCHSERVERLESS_API DeleteCollectionDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPENSEARCHSERVERLESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

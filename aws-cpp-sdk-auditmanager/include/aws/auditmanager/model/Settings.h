@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/Settings">AWS
    * API Reference</a></p>
    */
-  class AWS_AUDITMANAGER_API Settings
+  class Settings
   {
   public:
-    Settings();
-    Settings(Aws::Utils::Json::JsonView jsonValue);
-    Settings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_AUDITMANAGER_API Settings();
+    AWS_AUDITMANAGER_API Settings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AUDITMANAGER_API Settings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AUDITMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

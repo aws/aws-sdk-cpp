@@ -24,12 +24,12 @@ namespace EC2
 {
 namespace Model
 {
-  class AWS_EC2_API ModifyPrivateDnsNameOptionsResponse
+  class ModifyPrivateDnsNameOptionsResponse
   {
   public:
-    ModifyPrivateDnsNameOptionsResponse();
-    ModifyPrivateDnsNameOptionsResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ModifyPrivateDnsNameOptionsResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API ModifyPrivateDnsNameOptionsResponse();
+    AWS_EC2_API ModifyPrivateDnsNameOptionsResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API ModifyPrivateDnsNameOptionsResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

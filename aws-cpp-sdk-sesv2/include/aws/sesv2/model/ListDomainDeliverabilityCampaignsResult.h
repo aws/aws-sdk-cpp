@@ -34,12 +34,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/ListDomainDeliverabilityCampaignsResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_SESV2_API ListDomainDeliverabilityCampaignsResult
+  class ListDomainDeliverabilityCampaignsResult
   {
   public:
-    ListDomainDeliverabilityCampaignsResult();
-    ListDomainDeliverabilityCampaignsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListDomainDeliverabilityCampaignsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SESV2_API ListDomainDeliverabilityCampaignsResult();
+    AWS_SESV2_API ListDomainDeliverabilityCampaignsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SESV2_API ListDomainDeliverabilityCampaignsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

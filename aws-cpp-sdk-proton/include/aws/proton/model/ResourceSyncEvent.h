@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ResourceSyncEvent">AWS
    * API Reference</a></p>
    */
-  class AWS_PROTON_API ResourceSyncEvent
+  class ResourceSyncEvent
   {
   public:
-    ResourceSyncEvent();
-    ResourceSyncEvent(Aws::Utils::Json::JsonView jsonValue);
-    ResourceSyncEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PROTON_API ResourceSyncEvent();
+    AWS_PROTON_API ResourceSyncEvent(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PROTON_API ResourceSyncEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PROTON_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

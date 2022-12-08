@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/arc-zonal-shift-2022-10-30/ValidationException">AWS
    * API Reference</a></p>
    */
-  class AWS_ARCZONALSHIFT_API ValidationException
+  class ValidationException
   {
   public:
-    ValidationException();
-    ValidationException(Aws::Utils::Json::JsonView jsonValue);
-    ValidationException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ARCZONALSHIFT_API ValidationException();
+    AWS_ARCZONALSHIFT_API ValidationException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ARCZONALSHIFT_API ValidationException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ARCZONALSHIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

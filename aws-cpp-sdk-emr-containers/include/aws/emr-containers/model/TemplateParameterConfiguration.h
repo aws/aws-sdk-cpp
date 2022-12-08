@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/TemplateParameterConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_EMRCONTAINERS_API TemplateParameterConfiguration
+  class TemplateParameterConfiguration
   {
   public:
-    TemplateParameterConfiguration();
-    TemplateParameterConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    TemplateParameterConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EMRCONTAINERS_API TemplateParameterConfiguration();
+    AWS_EMRCONTAINERS_API TemplateParameterConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMRCONTAINERS_API TemplateParameterConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMRCONTAINERS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

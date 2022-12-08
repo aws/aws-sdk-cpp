@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/AssociateResourceError">AWS
    * API Reference</a></p>
    */
-  class AWS_BILLINGCONDUCTOR_API AssociateResourceError
+  class AssociateResourceError
   {
   public:
-    AssociateResourceError();
-    AssociateResourceError(Aws::Utils::Json::JsonView jsonValue);
-    AssociateResourceError& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BILLINGCONDUCTOR_API AssociateResourceError();
+    AWS_BILLINGCONDUCTOR_API AssociateResourceError(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BILLINGCONDUCTOR_API AssociateResourceError& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BILLINGCONDUCTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

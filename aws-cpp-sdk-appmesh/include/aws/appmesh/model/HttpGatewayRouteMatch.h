@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/HttpGatewayRouteMatch">AWS
    * API Reference</a></p>
    */
-  class AWS_APPMESH_API HttpGatewayRouteMatch
+  class HttpGatewayRouteMatch
   {
   public:
-    HttpGatewayRouteMatch();
-    HttpGatewayRouteMatch(Aws::Utils::Json::JsonView jsonValue);
-    HttpGatewayRouteMatch& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPMESH_API HttpGatewayRouteMatch();
+    AWS_APPMESH_API HttpGatewayRouteMatch(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API HttpGatewayRouteMatch& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

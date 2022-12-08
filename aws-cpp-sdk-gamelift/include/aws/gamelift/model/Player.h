@@ -32,13 +32,13 @@ namespace Model
    * <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/Player">AWS
    * API Reference</a></p>
    */
-  class AWS_GAMELIFT_API Player
+  class Player
   {
   public:
-    Player();
-    Player(Aws::Utils::Json::JsonView jsonValue);
-    Player& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GAMELIFT_API Player();
+    AWS_GAMELIFT_API Player(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMELIFT_API Player& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

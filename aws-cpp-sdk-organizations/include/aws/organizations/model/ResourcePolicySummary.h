@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ResourcePolicySummary">AWS
    * API Reference</a></p>
    */
-  class AWS_ORGANIZATIONS_API ResourcePolicySummary
+  class ResourcePolicySummary
   {
   public:
-    ResourcePolicySummary();
-    ResourcePolicySummary(Aws::Utils::Json::JsonView jsonValue);
-    ResourcePolicySummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ORGANIZATIONS_API ResourcePolicySummary();
+    AWS_ORGANIZATIONS_API ResourcePolicySummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ORGANIZATIONS_API ResourcePolicySummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ORGANIZATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

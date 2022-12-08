@@ -38,13 +38,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/JobRun">AWS API
    * Reference</a></p>
    */
-  class AWS_GLUEDATABREW_API JobRun
+  class JobRun
   {
   public:
-    JobRun();
-    JobRun(Aws::Utils::Json::JsonView jsonValue);
-    JobRun& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUEDATABREW_API JobRun();
+    AWS_GLUEDATABREW_API JobRun(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUEDATABREW_API JobRun& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUEDATABREW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

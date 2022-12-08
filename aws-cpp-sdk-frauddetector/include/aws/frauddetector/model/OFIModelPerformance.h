@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/OFIModelPerformance">AWS
    * API Reference</a></p>
    */
-  class AWS_FRAUDDETECTOR_API OFIModelPerformance
+  class OFIModelPerformance
   {
   public:
-    OFIModelPerformance();
-    OFIModelPerformance(Aws::Utils::Json::JsonView jsonValue);
-    OFIModelPerformance& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FRAUDDETECTOR_API OFIModelPerformance();
+    AWS_FRAUDDETECTOR_API OFIModelPerformance(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FRAUDDETECTOR_API OFIModelPerformance& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FRAUDDETECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

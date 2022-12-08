@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/TaskSubmittedEventDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SFN_API TaskSubmittedEventDetails
+  class TaskSubmittedEventDetails
   {
   public:
-    TaskSubmittedEventDetails();
-    TaskSubmittedEventDetails(Aws::Utils::Json::JsonView jsonValue);
-    TaskSubmittedEventDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SFN_API TaskSubmittedEventDetails();
+    AWS_SFN_API TaskSubmittedEventDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SFN_API TaskSubmittedEventDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SFN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

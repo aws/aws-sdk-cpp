@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-vod-2018-11-07/PackagingGroup">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIAPACKAGEVOD_API PackagingGroup
+  class PackagingGroup
   {
   public:
-    PackagingGroup();
-    PackagingGroup(Aws::Utils::Json::JsonView jsonValue);
-    PackagingGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIAPACKAGEVOD_API PackagingGroup();
+    AWS_MEDIAPACKAGEVOD_API PackagingGroup(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIAPACKAGEVOD_API PackagingGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIAPACKAGEVOD_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

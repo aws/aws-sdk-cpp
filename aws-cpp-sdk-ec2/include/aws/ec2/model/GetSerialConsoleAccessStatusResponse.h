@@ -24,12 +24,12 @@ namespace EC2
 {
 namespace Model
 {
-  class AWS_EC2_API GetSerialConsoleAccessStatusResponse
+  class GetSerialConsoleAccessStatusResponse
   {
   public:
-    GetSerialConsoleAccessStatusResponse();
-    GetSerialConsoleAccessStatusResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    GetSerialConsoleAccessStatusResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API GetSerialConsoleAccessStatusResponse();
+    AWS_EC2_API GetSerialConsoleAccessStatusResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API GetSerialConsoleAccessStatusResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

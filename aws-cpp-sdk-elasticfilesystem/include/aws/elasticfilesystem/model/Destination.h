@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/Destination">AWS
    * API Reference</a></p>
    */
-  class AWS_EFS_API Destination
+  class Destination
   {
   public:
-    Destination();
-    Destination(Aws::Utils::Json::JsonView jsonValue);
-    Destination& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EFS_API Destination();
+    AWS_EFS_API Destination(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EFS_API Destination& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EFS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

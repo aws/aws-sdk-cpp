@@ -25,12 +25,12 @@ namespace ImportExport
 {
 namespace Model
 {
-  class AWS_IMPORTEXPORT_API GetShippingLabelResult
+  class GetShippingLabelResult
   {
   public:
-    GetShippingLabelResult();
-    GetShippingLabelResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    GetShippingLabelResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_IMPORTEXPORT_API GetShippingLabelResult();
+    AWS_IMPORTEXPORT_API GetShippingLabelResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_IMPORTEXPORT_API GetShippingLabelResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     

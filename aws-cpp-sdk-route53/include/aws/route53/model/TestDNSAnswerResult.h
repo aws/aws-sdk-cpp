@@ -32,12 +32,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/TestDNSAnswerResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53_API TestDNSAnswerResult
+  class TestDNSAnswerResult
   {
   public:
-    TestDNSAnswerResult();
-    TestDNSAnswerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    TestDNSAnswerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ROUTE53_API TestDNSAnswerResult();
+    AWS_ROUTE53_API TestDNSAnswerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ROUTE53_API TestDNSAnswerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

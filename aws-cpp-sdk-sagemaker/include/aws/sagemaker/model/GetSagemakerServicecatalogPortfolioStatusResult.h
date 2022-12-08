@@ -24,12 +24,12 @@ namespace SageMaker
 {
 namespace Model
 {
-  class AWS_SAGEMAKER_API GetSagemakerServicecatalogPortfolioStatusResult
+  class GetSagemakerServicecatalogPortfolioStatusResult
   {
   public:
-    GetSagemakerServicecatalogPortfolioStatusResult();
-    GetSagemakerServicecatalogPortfolioStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetSagemakerServicecatalogPortfolioStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SAGEMAKER_API GetSagemakerServicecatalogPortfolioStatusResult();
+    AWS_SAGEMAKER_API GetSagemakerServicecatalogPortfolioStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SAGEMAKER_API GetSagemakerServicecatalogPortfolioStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/S3Settings">AWS API
    * Reference</a></p>
    */
-  class AWS_DATABASEMIGRATIONSERVICE_API S3Settings
+  class S3Settings
   {
   public:
-    S3Settings();
-    S3Settings(Aws::Utils::Json::JsonView jsonValue);
-    S3Settings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DATABASEMIGRATIONSERVICE_API S3Settings();
+    AWS_DATABASEMIGRATIONSERVICE_API S3Settings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATABASEMIGRATIONSERVICE_API S3Settings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATABASEMIGRATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

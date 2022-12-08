@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/AlarmConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEDEPLOY_API AlarmConfiguration
+  class AlarmConfiguration
   {
   public:
-    AlarmConfiguration();
-    AlarmConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    AlarmConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEDEPLOY_API AlarmConfiguration();
+    AWS_CODEDEPLOY_API AlarmConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEDEPLOY_API AlarmConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEDEPLOY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

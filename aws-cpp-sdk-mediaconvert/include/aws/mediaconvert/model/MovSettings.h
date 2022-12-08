@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/MovSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API MovSettings
+  class MovSettings
   {
   public:
-    MovSettings();
-    MovSettings(Aws::Utils::Json::JsonView jsonValue);
-    MovSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API MovSettings();
+    AWS_MEDIACONVERT_API MovSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API MovSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

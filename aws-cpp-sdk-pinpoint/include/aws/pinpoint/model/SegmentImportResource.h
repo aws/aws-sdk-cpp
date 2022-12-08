@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/SegmentImportResource">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API SegmentImportResource
+  class SegmentImportResource
   {
   public:
-    SegmentImportResource();
-    SegmentImportResource(Aws::Utils::Json::JsonView jsonValue);
-    SegmentImportResource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API SegmentImportResource();
+    AWS_PINPOINT_API SegmentImportResource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API SegmentImportResource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

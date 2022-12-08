@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/RecoveryPoint">AWS
    * API Reference</a></p>
    */
-  class AWS_REDSHIFTSERVERLESS_API RecoveryPoint
+  class RecoveryPoint
   {
   public:
-    RecoveryPoint();
-    RecoveryPoint(Aws::Utils::Json::JsonView jsonValue);
-    RecoveryPoint& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_REDSHIFTSERVERLESS_API RecoveryPoint();
+    AWS_REDSHIFTSERVERLESS_API RecoveryPoint(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REDSHIFTSERVERLESS_API RecoveryPoint& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REDSHIFTSERVERLESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DetectMitigationActionsTaskSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API DetectMitigationActionsTaskSummary
+  class DetectMitigationActionsTaskSummary
   {
   public:
-    DetectMitigationActionsTaskSummary();
-    DetectMitigationActionsTaskSummary(Aws::Utils::Json::JsonView jsonValue);
-    DetectMitigationActionsTaskSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API DetectMitigationActionsTaskSummary();
+    AWS_IOT_API DetectMitigationActionsTaskSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API DetectMitigationActionsTaskSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

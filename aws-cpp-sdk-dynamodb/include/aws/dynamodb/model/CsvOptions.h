@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/CsvOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_DYNAMODB_API CsvOptions
+  class CsvOptions
   {
   public:
-    CsvOptions();
-    CsvOptions(Aws::Utils::Json::JsonView jsonValue);
-    CsvOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DYNAMODB_API CsvOptions();
+    AWS_DYNAMODB_API CsvOptions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API CsvOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -38,13 +38,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/ObservabilityConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_APPRUNNER_API ObservabilityConfiguration
+  class ObservabilityConfiguration
   {
   public:
-    ObservabilityConfiguration();
-    ObservabilityConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    ObservabilityConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPRUNNER_API ObservabilityConfiguration();
+    AWS_APPRUNNER_API ObservabilityConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPRUNNER_API ObservabilityConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPRUNNER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

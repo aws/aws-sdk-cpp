@@ -27,12 +27,12 @@ namespace ElasticBeanstalk
 {
 namespace Model
 {
-  class AWS_ELASTICBEANSTALK_API ListPlatformBranchesResult
+  class ListPlatformBranchesResult
   {
   public:
-    ListPlatformBranchesResult();
-    ListPlatformBranchesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ListPlatformBranchesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ELASTICBEANSTALK_API ListPlatformBranchesResult();
+    AWS_ELASTICBEANSTALK_API ListPlatformBranchesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ELASTICBEANSTALK_API ListPlatformBranchesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

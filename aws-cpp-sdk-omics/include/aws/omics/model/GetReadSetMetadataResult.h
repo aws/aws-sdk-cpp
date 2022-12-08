@@ -29,12 +29,12 @@ namespace Omics
 {
 namespace Model
 {
-  class AWS_OMICS_API GetReadSetMetadataResult
+  class GetReadSetMetadataResult
   {
   public:
-    GetReadSetMetadataResult();
-    GetReadSetMetadataResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetReadSetMetadataResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OMICS_API GetReadSetMetadataResult();
+    AWS_OMICS_API GetReadSetMetadataResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OMICS_API GetReadSetMetadataResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/SessionConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_ATHENA_API SessionConfiguration
+  class SessionConfiguration
   {
   public:
-    SessionConfiguration();
-    SessionConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    SessionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ATHENA_API SessionConfiguration();
+    AWS_ATHENA_API SessionConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ATHENA_API SessionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ATHENA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/ApplicationInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_APPLICATIONINSIGHTS_API ApplicationInfo
+  class ApplicationInfo
   {
   public:
-    ApplicationInfo();
-    ApplicationInfo(Aws::Utils::Json::JsonView jsonValue);
-    ApplicationInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPLICATIONINSIGHTS_API ApplicationInfo();
+    AWS_APPLICATIONINSIGHTS_API ApplicationInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPLICATIONINSIGHTS_API ApplicationInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPLICATIONINSIGHTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

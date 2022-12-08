@@ -24,12 +24,12 @@ namespace CodeCommit
 {
 namespace Model
 {
-  class AWS_CODECOMMIT_API GetPullRequestOverrideStateResult
+  class GetPullRequestOverrideStateResult
   {
   public:
-    GetPullRequestOverrideStateResult();
-    GetPullRequestOverrideStateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetPullRequestOverrideStateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODECOMMIT_API GetPullRequestOverrideStateResult();
+    AWS_CODECOMMIT_API GetPullRequestOverrideStateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODECOMMIT_API GetPullRequestOverrideStateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

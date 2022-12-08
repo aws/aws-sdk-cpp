@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/Ip">AWS API
    * Reference</a></p>
    */
-  class AWS_IOTWIRELESS_API Ip
+  class Ip
   {
   public:
-    Ip();
-    Ip(Aws::Utils::Json::JsonView jsonValue);
-    Ip& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTWIRELESS_API Ip();
+    AWS_IOTWIRELESS_API Ip(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API Ip& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/Identity">AWS
    * API Reference</a></p>
    */
-  class AWS_CHIMESDKMESSAGING_API Identity
+  class Identity
   {
   public:
-    Identity();
-    Identity(Aws::Utils::Json::JsonView jsonValue);
-    Identity& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIMESDKMESSAGING_API Identity();
+    AWS_CHIMESDKMESSAGING_API Identity(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKMESSAGING_API Identity& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKMESSAGING_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

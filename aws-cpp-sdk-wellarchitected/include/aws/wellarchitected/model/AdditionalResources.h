@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/AdditionalResources">AWS
    * API Reference</a></p>
    */
-  class AWS_WELLARCHITECTED_API AdditionalResources
+  class AdditionalResources
   {
   public:
-    AdditionalResources();
-    AdditionalResources(Aws::Utils::Json::JsonView jsonValue);
-    AdditionalResources& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WELLARCHITECTED_API AdditionalResources();
+    AWS_WELLARCHITECTED_API AdditionalResources(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WELLARCHITECTED_API AdditionalResources& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WELLARCHITECTED_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

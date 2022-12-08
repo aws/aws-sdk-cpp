@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/UpdateFPorts">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTWIRELESS_API UpdateFPorts
+  class UpdateFPorts
   {
   public:
-    UpdateFPorts();
-    UpdateFPorts(Aws::Utils::Json::JsonView jsonValue);
-    UpdateFPorts& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTWIRELESS_API UpdateFPorts();
+    AWS_IOTWIRELESS_API UpdateFPorts(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API UpdateFPorts& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

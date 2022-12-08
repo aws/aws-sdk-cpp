@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/ObdInterface">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTFLEETWISE_API ObdInterface
+  class ObdInterface
   {
   public:
-    ObdInterface();
-    ObdInterface(Aws::Utils::Json::JsonView jsonValue);
-    ObdInterface& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTFLEETWISE_API ObdInterface();
+    AWS_IOTFLEETWISE_API ObdInterface(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTFLEETWISE_API ObdInterface& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTFLEETWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

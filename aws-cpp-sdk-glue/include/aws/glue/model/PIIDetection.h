@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/PIIDetection">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API PIIDetection
+  class PIIDetection
   {
   public:
-    PIIDetection();
-    PIIDetection(Aws::Utils::Json::JsonView jsonValue);
-    PIIDetection& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API PIIDetection();
+    AWS_GLUE_API PIIDetection(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API PIIDetection& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

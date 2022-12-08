@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pipes-2015-10-07/PipeTargetLambdaFunctionParameters">AWS
    * API Reference</a></p>
    */
-  class AWS_PIPES_API PipeTargetLambdaFunctionParameters
+  class PipeTargetLambdaFunctionParameters
   {
   public:
-    PipeTargetLambdaFunctionParameters();
-    PipeTargetLambdaFunctionParameters(Aws::Utils::Json::JsonView jsonValue);
-    PipeTargetLambdaFunctionParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PIPES_API PipeTargetLambdaFunctionParameters();
+    AWS_PIPES_API PipeTargetLambdaFunctionParameters(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PIPES_API PipeTargetLambdaFunctionParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PIPES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

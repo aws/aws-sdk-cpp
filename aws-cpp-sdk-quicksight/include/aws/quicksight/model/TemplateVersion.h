@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/TemplateVersion">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API TemplateVersion
+  class TemplateVersion
   {
   public:
-    TemplateVersion();
-    TemplateVersion(Aws::Utils::Json::JsonView jsonValue);
-    TemplateVersion& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API TemplateVersion();
+    AWS_QUICKSIGHT_API TemplateVersion(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API TemplateVersion& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

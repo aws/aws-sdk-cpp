@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/GroupOrderingIdSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_KENDRA_API GroupOrderingIdSummary
+  class GroupOrderingIdSummary
   {
   public:
-    GroupOrderingIdSummary();
-    GroupOrderingIdSummary(Aws::Utils::Json::JsonView jsonValue);
-    GroupOrderingIdSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KENDRA_API GroupOrderingIdSummary();
+    AWS_KENDRA_API GroupOrderingIdSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API GroupOrderingIdSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

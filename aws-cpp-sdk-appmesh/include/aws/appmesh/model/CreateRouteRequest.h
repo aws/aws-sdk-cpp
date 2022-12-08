@@ -29,10 +29,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/CreateRouteInput">AWS
    * API Reference</a></p>
    */
-  class AWS_APPMESH_API CreateRouteRequest : public AppMeshRequest
+  class CreateRouteRequest : public AppMeshRequest
   {
   public:
-    CreateRouteRequest();
+    AWS_APPMESH_API CreateRouteRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,9 +40,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateRoute"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_APPMESH_API Aws::String SerializePayload() const override;
 
-    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+    AWS_APPMESH_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**

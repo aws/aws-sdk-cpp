@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/TaskCredentials">AWS
    * API Reference</a></p>
    */
-  class AWS_SFN_API TaskCredentials
+  class TaskCredentials
   {
   public:
-    TaskCredentials();
-    TaskCredentials(Aws::Utils::Json::JsonView jsonValue);
-    TaskCredentials& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SFN_API TaskCredentials();
+    AWS_SFN_API TaskCredentials(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SFN_API TaskCredentials& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SFN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

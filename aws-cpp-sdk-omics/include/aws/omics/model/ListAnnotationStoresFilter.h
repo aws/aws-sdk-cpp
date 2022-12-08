@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListAnnotationStoresFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_OMICS_API ListAnnotationStoresFilter
+  class ListAnnotationStoresFilter
   {
   public:
-    ListAnnotationStoresFilter();
-    ListAnnotationStoresFilter(Aws::Utils::Json::JsonView jsonValue);
-    ListAnnotationStoresFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OMICS_API ListAnnotationStoresFilter();
+    AWS_OMICS_API ListAnnotationStoresFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OMICS_API ListAnnotationStoresFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OMICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

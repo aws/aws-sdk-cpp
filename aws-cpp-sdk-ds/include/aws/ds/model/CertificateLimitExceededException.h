@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CertificateLimitExceededException">AWS
    * API Reference</a></p>
    */
-  class AWS_DIRECTORYSERVICE_API CertificateLimitExceededException
+  class CertificateLimitExceededException
   {
   public:
-    CertificateLimitExceededException();
-    CertificateLimitExceededException(Aws::Utils::Json::JsonView jsonValue);
-    CertificateLimitExceededException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DIRECTORYSERVICE_API CertificateLimitExceededException();
+    AWS_DIRECTORYSERVICE_API CertificateLimitExceededException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTORYSERVICE_API CertificateLimitExceededException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTORYSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

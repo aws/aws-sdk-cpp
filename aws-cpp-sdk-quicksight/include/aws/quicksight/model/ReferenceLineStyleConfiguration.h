@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ReferenceLineStyleConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API ReferenceLineStyleConfiguration
+  class ReferenceLineStyleConfiguration
   {
   public:
-    ReferenceLineStyleConfiguration();
-    ReferenceLineStyleConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    ReferenceLineStyleConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API ReferenceLineStyleConfiguration();
+    AWS_QUICKSIGHT_API ReferenceLineStyleConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API ReferenceLineStyleConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

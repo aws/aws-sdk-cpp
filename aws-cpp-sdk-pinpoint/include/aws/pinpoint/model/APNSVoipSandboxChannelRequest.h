@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/APNSVoipSandboxChannelRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API APNSVoipSandboxChannelRequest
+  class APNSVoipSandboxChannelRequest
   {
   public:
-    APNSVoipSandboxChannelRequest();
-    APNSVoipSandboxChannelRequest(Aws::Utils::Json::JsonView jsonValue);
-    APNSVoipSandboxChannelRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API APNSVoipSandboxChannelRequest();
+    AWS_PINPOINT_API APNSVoipSandboxChannelRequest(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API APNSVoipSandboxChannelRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

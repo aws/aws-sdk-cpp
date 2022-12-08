@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/DefinitionDocument">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTTHINGSGRAPH_API DefinitionDocument
+  class DefinitionDocument
   {
   public:
-    DefinitionDocument();
-    DefinitionDocument(Aws::Utils::Json::JsonView jsonValue);
-    DefinitionDocument& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTTHINGSGRAPH_API DefinitionDocument();
+    AWS_IOTTHINGSGRAPH_API DefinitionDocument(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTTHINGSGRAPH_API DefinitionDocument& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTTHINGSGRAPH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

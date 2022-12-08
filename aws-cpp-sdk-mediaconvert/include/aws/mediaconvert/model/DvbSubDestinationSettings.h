@@ -45,13 +45,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/DvbSubDestinationSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API DvbSubDestinationSettings
+  class DvbSubDestinationSettings
   {
   public:
-    DvbSubDestinationSettings();
-    DvbSubDestinationSettings(Aws::Utils::Json::JsonView jsonValue);
-    DvbSubDestinationSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API DvbSubDestinationSettings();
+    AWS_MEDIACONVERT_API DvbSubDestinationSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API DvbSubDestinationSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

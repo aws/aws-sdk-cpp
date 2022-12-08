@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsCloudFormationStackOutputsDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsCloudFormationStackOutputsDetails
+  class AwsCloudFormationStackOutputsDetails
   {
   public:
-    AwsCloudFormationStackOutputsDetails();
-    AwsCloudFormationStackOutputsDetails(Aws::Utils::Json::JsonView jsonValue);
-    AwsCloudFormationStackOutputsDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsCloudFormationStackOutputsDetails();
+    AWS_SECURITYHUB_API AwsCloudFormationStackOutputsDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsCloudFormationStackOutputsDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

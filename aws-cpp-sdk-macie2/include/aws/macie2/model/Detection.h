@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/Detection">AWS
    * API Reference</a></p>
    */
-  class AWS_MACIE2_API Detection
+  class Detection
   {
   public:
-    Detection();
-    Detection(Aws::Utils::Json::JsonView jsonValue);
-    Detection& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MACIE2_API Detection();
+    AWS_MACIE2_API Detection(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API Detection& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

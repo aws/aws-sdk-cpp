@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/EntitiesDetectionJobProperties">AWS
    * API Reference</a></p>
    */
-  class AWS_COMPREHEND_API EntitiesDetectionJobProperties
+  class EntitiesDetectionJobProperties
   {
   public:
-    EntitiesDetectionJobProperties();
-    EntitiesDetectionJobProperties(Aws::Utils::Json::JsonView jsonValue);
-    EntitiesDetectionJobProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COMPREHEND_API EntitiesDetectionJobProperties();
+    AWS_COMPREHEND_API EntitiesDetectionJobProperties(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHEND_API EntitiesDetectionJobProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHEND_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

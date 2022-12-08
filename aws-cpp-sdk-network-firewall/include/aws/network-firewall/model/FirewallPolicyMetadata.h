@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/FirewallPolicyMetadata">AWS
    * API Reference</a></p>
    */
-  class AWS_NETWORKFIREWALL_API FirewallPolicyMetadata
+  class FirewallPolicyMetadata
   {
   public:
-    FirewallPolicyMetadata();
-    FirewallPolicyMetadata(Aws::Utils::Json::JsonView jsonValue);
-    FirewallPolicyMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_NETWORKFIREWALL_API FirewallPolicyMetadata();
+    AWS_NETWORKFIREWALL_API FirewallPolicyMetadata(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKFIREWALL_API FirewallPolicyMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKFIREWALL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

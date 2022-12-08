@@ -44,13 +44,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/H265Settings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API H265Settings
+  class H265Settings
   {
   public:
-    H265Settings();
-    H265Settings(Aws::Utils::Json::JsonView jsonValue);
-    H265Settings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API H265Settings();
+    AWS_MEDIALIVE_API H265Settings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API H265Settings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

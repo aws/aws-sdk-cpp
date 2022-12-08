@@ -34,13 +34,13 @@ namespace Model
    * <a href="http://docs.aws.amazon.com/goto/WebAPI/pi-2018-02-27/MetricQuery">AWS
    * API Reference</a></p>
    */
-  class AWS_PI_API MetricQuery
+  class MetricQuery
   {
   public:
-    MetricQuery();
-    MetricQuery(Aws::Utils::Json::JsonView jsonValue);
-    MetricQuery& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PI_API MetricQuery();
+    AWS_PI_API MetricQuery(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PI_API MetricQuery& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PI_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

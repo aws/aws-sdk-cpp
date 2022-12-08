@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/CapacityDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_KAFKACONNECT_API CapacityDescription
+  class CapacityDescription
   {
   public:
-    CapacityDescription();
-    CapacityDescription(Aws::Utils::Json::JsonView jsonValue);
-    CapacityDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KAFKACONNECT_API CapacityDescription();
+    AWS_KAFKACONNECT_API CapacityDescription(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKACONNECT_API CapacityDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKACONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

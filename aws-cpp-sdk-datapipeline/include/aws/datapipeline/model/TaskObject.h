@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/TaskObject">AWS
    * API Reference</a></p>
    */
-  class AWS_DATAPIPELINE_API TaskObject
+  class TaskObject
   {
   public:
-    TaskObject();
-    TaskObject(Aws::Utils::Json::JsonView jsonValue);
-    TaskObject& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DATAPIPELINE_API TaskObject();
+    AWS_DATAPIPELINE_API TaskObject(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATAPIPELINE_API TaskObject& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATAPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

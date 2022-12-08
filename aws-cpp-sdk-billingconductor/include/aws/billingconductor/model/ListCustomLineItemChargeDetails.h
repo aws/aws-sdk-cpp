@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/ListCustomLineItemChargeDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_BILLINGCONDUCTOR_API ListCustomLineItemChargeDetails
+  class ListCustomLineItemChargeDetails
   {
   public:
-    ListCustomLineItemChargeDetails();
-    ListCustomLineItemChargeDetails(Aws::Utils::Json::JsonView jsonValue);
-    ListCustomLineItemChargeDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BILLINGCONDUCTOR_API ListCustomLineItemChargeDetails();
+    AWS_BILLINGCONDUCTOR_API ListCustomLineItemChargeDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BILLINGCONDUCTOR_API ListCustomLineItemChargeDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BILLINGCONDUCTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

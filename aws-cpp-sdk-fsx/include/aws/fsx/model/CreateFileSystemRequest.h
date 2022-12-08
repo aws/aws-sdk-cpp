@@ -31,10 +31,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateFileSystemRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_FSX_API CreateFileSystemRequest : public FSxRequest
+  class CreateFileSystemRequest : public FSxRequest
   {
   public:
-    CreateFileSystemRequest();
+    AWS_FSX_API CreateFileSystemRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,9 +42,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateFileSystem"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_FSX_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_FSX_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**

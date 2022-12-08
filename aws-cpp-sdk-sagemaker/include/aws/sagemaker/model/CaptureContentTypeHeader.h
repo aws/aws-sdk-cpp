@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CaptureContentTypeHeader">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API CaptureContentTypeHeader
+  class CaptureContentTypeHeader
   {
   public:
-    CaptureContentTypeHeader();
-    CaptureContentTypeHeader(Aws::Utils::Json::JsonView jsonValue);
-    CaptureContentTypeHeader& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API CaptureContentTypeHeader();
+    AWS_SAGEMAKER_API CaptureContentTypeHeader(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API CaptureContentTypeHeader& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

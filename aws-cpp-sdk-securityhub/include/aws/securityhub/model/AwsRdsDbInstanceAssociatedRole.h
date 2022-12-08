@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsRdsDbInstanceAssociatedRole">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsRdsDbInstanceAssociatedRole
+  class AwsRdsDbInstanceAssociatedRole
   {
   public:
-    AwsRdsDbInstanceAssociatedRole();
-    AwsRdsDbInstanceAssociatedRole(Aws::Utils::Json::JsonView jsonValue);
-    AwsRdsDbInstanceAssociatedRole& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsRdsDbInstanceAssociatedRole();
+    AWS_SECURITYHUB_API AwsRdsDbInstanceAssociatedRole(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsRdsDbInstanceAssociatedRole& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/EngineTranscribeSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_CHIME_API EngineTranscribeSettings
+  class EngineTranscribeSettings
   {
   public:
-    EngineTranscribeSettings();
-    EngineTranscribeSettings(Aws::Utils::Json::JsonView jsonValue);
-    EngineTranscribeSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIME_API EngineTranscribeSettings();
+    AWS_CHIME_API EngineTranscribeSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API EngineTranscribeSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

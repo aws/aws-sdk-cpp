@@ -29,14 +29,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/KeyGroupList">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFRONT_API KeyGroupList
+  class KeyGroupList
   {
   public:
-    KeyGroupList();
-    KeyGroupList(const Aws::Utils::Xml::XmlNode& xmlNode);
-    KeyGroupList& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API KeyGroupList();
+    AWS_CLOUDFRONT_API KeyGroupList(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API KeyGroupList& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**

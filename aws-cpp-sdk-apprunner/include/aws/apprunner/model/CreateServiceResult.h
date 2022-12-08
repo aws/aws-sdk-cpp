@@ -25,12 +25,12 @@ namespace AppRunner
 {
 namespace Model
 {
-  class AWS_APPRUNNER_API CreateServiceResult
+  class CreateServiceResult
   {
   public:
-    CreateServiceResult();
-    CreateServiceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateServiceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPRUNNER_API CreateServiceResult();
+    AWS_APPRUNNER_API CreateServiceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPRUNNER_API CreateServiceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

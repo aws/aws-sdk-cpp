@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/NetworkFabricAttributes">AWS
    * API Reference</a></p>
    */
-  class AWS_MANAGEDBLOCKCHAIN_API NetworkFabricAttributes
+  class NetworkFabricAttributes
   {
   public:
-    NetworkFabricAttributes();
-    NetworkFabricAttributes(Aws::Utils::Json::JsonView jsonValue);
-    NetworkFabricAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MANAGEDBLOCKCHAIN_API NetworkFabricAttributes();
+    AWS_MANAGEDBLOCKCHAIN_API NetworkFabricAttributes(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MANAGEDBLOCKCHAIN_API NetworkFabricAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MANAGEDBLOCKCHAIN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

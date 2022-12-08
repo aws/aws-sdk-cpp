@@ -25,12 +25,12 @@ namespace ChimeSDKVoice
 {
 namespace Model
 {
-  class AWS_CHIMESDKVOICE_API DisassociatePhoneNumbersFromVoiceConnectorGroupResult
+  class DisassociatePhoneNumbersFromVoiceConnectorGroupResult
   {
   public:
-    DisassociatePhoneNumbersFromVoiceConnectorGroupResult();
-    DisassociatePhoneNumbersFromVoiceConnectorGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DisassociatePhoneNumbersFromVoiceConnectorGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CHIMESDKVOICE_API DisassociatePhoneNumbersFromVoiceConnectorGroupResult();
+    AWS_CHIMESDKVOICE_API DisassociatePhoneNumbersFromVoiceConnectorGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CHIMESDKVOICE_API DisassociatePhoneNumbersFromVoiceConnectorGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     

@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GroupVersion">AWS
    * API Reference</a></p>
    */
-  class AWS_GREENGRASS_API GroupVersion
+  class GroupVersion
   {
   public:
-    GroupVersion();
-    GroupVersion(Aws::Utils::Json::JsonView jsonValue);
-    GroupVersion& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GREENGRASS_API GroupVersion();
+    AWS_GREENGRASS_API GroupVersion(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASS_API GroupVersion& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

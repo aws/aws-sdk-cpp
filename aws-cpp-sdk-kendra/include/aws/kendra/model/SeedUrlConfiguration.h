@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/SeedUrlConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_KENDRA_API SeedUrlConfiguration
+  class SeedUrlConfiguration
   {
   public:
-    SeedUrlConfiguration();
-    SeedUrlConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    SeedUrlConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KENDRA_API SeedUrlConfiguration();
+    AWS_KENDRA_API SeedUrlConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API SeedUrlConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

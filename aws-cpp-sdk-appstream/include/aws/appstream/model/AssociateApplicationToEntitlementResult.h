@@ -22,12 +22,12 @@ namespace AppStream
 {
 namespace Model
 {
-  class AWS_APPSTREAM_API AssociateApplicationToEntitlementResult
+  class AssociateApplicationToEntitlementResult
   {
   public:
-    AssociateApplicationToEntitlementResult();
-    AssociateApplicationToEntitlementResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AssociateApplicationToEntitlementResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPSTREAM_API AssociateApplicationToEntitlementResult();
+    AWS_APPSTREAM_API AssociateApplicationToEntitlementResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPSTREAM_API AssociateApplicationToEntitlementResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

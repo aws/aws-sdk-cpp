@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/SavingsPlansUtilization">AWS
    * API Reference</a></p>
    */
-  class AWS_COSTEXPLORER_API SavingsPlansUtilization
+  class SavingsPlansUtilization
   {
   public:
-    SavingsPlansUtilization();
-    SavingsPlansUtilization(Aws::Utils::Json::JsonView jsonValue);
-    SavingsPlansUtilization& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COSTEXPLORER_API SavingsPlansUtilization();
+    AWS_COSTEXPLORER_API SavingsPlansUtilization(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API SavingsPlansUtilization& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

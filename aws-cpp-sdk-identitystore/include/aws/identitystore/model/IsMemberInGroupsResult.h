@@ -25,12 +25,12 @@ namespace IdentityStore
 {
 namespace Model
 {
-  class AWS_IDENTITYSTORE_API IsMemberInGroupsResult
+  class IsMemberInGroupsResult
   {
   public:
-    IsMemberInGroupsResult();
-    IsMemberInGroupsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    IsMemberInGroupsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IDENTITYSTORE_API IsMemberInGroupsResult();
+    AWS_IDENTITYSTORE_API IsMemberInGroupsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IDENTITYSTORE_API IsMemberInGroupsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

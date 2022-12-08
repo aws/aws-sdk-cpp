@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/PredictorExecution">AWS
    * API Reference</a></p>
    */
-  class AWS_FORECASTSERVICE_API PredictorExecution
+  class PredictorExecution
   {
   public:
-    PredictorExecution();
-    PredictorExecution(Aws::Utils::Json::JsonView jsonValue);
-    PredictorExecution& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FORECASTSERVICE_API PredictorExecution();
+    AWS_FORECASTSERVICE_API PredictorExecution(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FORECASTSERVICE_API PredictorExecution& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FORECASTSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ebs-2019-11-02/RequestThrottledException">AWS
    * API Reference</a></p>
    */
-  class AWS_EBS_API RequestThrottledException
+  class RequestThrottledException
   {
   public:
-    RequestThrottledException();
-    RequestThrottledException(Aws::Utils::Json::JsonView jsonValue);
-    RequestThrottledException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EBS_API RequestThrottledException();
+    AWS_EBS_API RequestThrottledException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EBS_API RequestThrottledException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EBS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

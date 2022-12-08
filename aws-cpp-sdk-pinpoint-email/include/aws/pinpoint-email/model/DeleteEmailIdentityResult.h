@@ -28,12 +28,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/DeleteEmailIdentityResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINTEMAIL_API DeleteEmailIdentityResult
+  class DeleteEmailIdentityResult
   {
   public:
-    DeleteEmailIdentityResult();
-    DeleteEmailIdentityResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteEmailIdentityResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PINPOINTEMAIL_API DeleteEmailIdentityResult();
+    AWS_PINPOINTEMAIL_API DeleteEmailIdentityResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PINPOINTEMAIL_API DeleteEmailIdentityResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

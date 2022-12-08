@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/resourcegroupstaggingapi-2017-01-26/ResourceTagMapping">AWS
    * API Reference</a></p>
    */
-  class AWS_RESOURCEGROUPSTAGGINGAPI_API ResourceTagMapping
+  class ResourceTagMapping
   {
   public:
-    ResourceTagMapping();
-    ResourceTagMapping(Aws::Utils::Json::JsonView jsonValue);
-    ResourceTagMapping& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_RESOURCEGROUPSTAGGINGAPI_API ResourceTagMapping();
+    AWS_RESOURCEGROUPSTAGGINGAPI_API ResourceTagMapping(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RESOURCEGROUPSTAGGINGAPI_API ResourceTagMapping& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RESOURCEGROUPSTAGGINGAPI_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

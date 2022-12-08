@@ -26,12 +26,12 @@ namespace EMR
 {
 namespace Model
 {
-  class AWS_EMR_API ListStudioSessionMappingsResult
+  class ListStudioSessionMappingsResult
   {
   public:
-    ListStudioSessionMappingsResult();
-    ListStudioSessionMappingsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListStudioSessionMappingsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_EMR_API ListStudioSessionMappingsResult();
+    AWS_EMR_API ListStudioSessionMappingsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_EMR_API ListStudioSessionMappingsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

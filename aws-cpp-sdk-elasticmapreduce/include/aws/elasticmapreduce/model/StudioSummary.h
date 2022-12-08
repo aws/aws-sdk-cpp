@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/StudioSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_EMR_API StudioSummary
+  class StudioSummary
   {
   public:
-    StudioSummary();
-    StudioSummary(Aws::Utils::Json::JsonView jsonValue);
-    StudioSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EMR_API StudioSummary();
+    AWS_EMR_API StudioSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMR_API StudioSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

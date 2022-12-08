@@ -25,12 +25,12 @@ namespace Honeycode
 {
 namespace Model
 {
-  class AWS_HONEYCODE_API StartTableDataImportJobResult
+  class StartTableDataImportJobResult
   {
   public:
-    StartTableDataImportJobResult();
-    StartTableDataImportJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    StartTableDataImportJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_HONEYCODE_API StartTableDataImportJobResult();
+    AWS_HONEYCODE_API StartTableDataImportJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_HONEYCODE_API StartTableDataImportJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

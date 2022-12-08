@@ -39,12 +39,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DescribeConfigurationSetResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_SES_API DescribeConfigurationSetResult
+  class DescribeConfigurationSetResult
   {
   public:
-    DescribeConfigurationSetResult();
-    DescribeConfigurationSetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeConfigurationSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_SES_API DescribeConfigurationSetResult();
+    AWS_SES_API DescribeConfigurationSetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_SES_API DescribeConfigurationSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

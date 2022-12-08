@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ConfigurationStatus">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTSITEWISE_API ConfigurationStatus
+  class ConfigurationStatus
   {
   public:
-    ConfigurationStatus();
-    ConfigurationStatus(Aws::Utils::Json::JsonView jsonValue);
-    ConfigurationStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTSITEWISE_API ConfigurationStatus();
+    AWS_IOTSITEWISE_API ConfigurationStatus(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API ConfigurationStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

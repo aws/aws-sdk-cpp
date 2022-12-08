@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/ShotSegment">AWS
    * API Reference</a></p>
    */
-  class AWS_REKOGNITION_API ShotSegment
+  class ShotSegment
   {
   public:
-    ShotSegment();
-    ShotSegment(Aws::Utils::Json::JsonView jsonValue);
-    ShotSegment& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_REKOGNITION_API ShotSegment();
+    AWS_REKOGNITION_API ShotSegment(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API ShotSegment& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DiskIopsConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_FSX_API DiskIopsConfiguration
+  class DiskIopsConfiguration
   {
   public:
-    DiskIopsConfiguration();
-    DiskIopsConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    DiskIopsConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FSX_API DiskIopsConfiguration();
+    AWS_FSX_API DiskIopsConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API DiskIopsConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

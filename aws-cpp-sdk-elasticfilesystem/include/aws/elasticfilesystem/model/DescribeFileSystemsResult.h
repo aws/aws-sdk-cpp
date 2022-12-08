@@ -26,12 +26,12 @@ namespace EFS
 {
 namespace Model
 {
-  class AWS_EFS_API DescribeFileSystemsResult
+  class DescribeFileSystemsResult
   {
   public:
-    DescribeFileSystemsResult();
-    DescribeFileSystemsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeFileSystemsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_EFS_API DescribeFileSystemsResult();
+    AWS_EFS_API DescribeFileSystemsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_EFS_API DescribeFileSystemsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

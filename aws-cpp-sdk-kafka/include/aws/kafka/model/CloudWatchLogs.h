@@ -23,13 +23,13 @@ namespace Kafka
 namespace Model
 {
 
-  class AWS_KAFKA_API CloudWatchLogs
+  class CloudWatchLogs
   {
   public:
-    CloudWatchLogs();
-    CloudWatchLogs(Aws::Utils::Json::JsonView jsonValue);
-    CloudWatchLogs& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KAFKA_API CloudWatchLogs();
+    AWS_KAFKA_API CloudWatchLogs(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKA_API CloudWatchLogs& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

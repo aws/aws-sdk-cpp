@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsElbLbCookieStickinessPolicy">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsElbLbCookieStickinessPolicy
+  class AwsElbLbCookieStickinessPolicy
   {
   public:
-    AwsElbLbCookieStickinessPolicy();
-    AwsElbLbCookieStickinessPolicy(Aws::Utils::Json::JsonView jsonValue);
-    AwsElbLbCookieStickinessPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsElbLbCookieStickinessPolicy();
+    AWS_SECURITYHUB_API AwsElbLbCookieStickinessPolicy(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsElbLbCookieStickinessPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

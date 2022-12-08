@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/MarketoDestinationProperties">AWS
    * API Reference</a></p>
    */
-  class AWS_APPFLOW_API MarketoDestinationProperties
+  class MarketoDestinationProperties
   {
   public:
-    MarketoDestinationProperties();
-    MarketoDestinationProperties(Aws::Utils::Json::JsonView jsonValue);
-    MarketoDestinationProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPFLOW_API MarketoDestinationProperties();
+    AWS_APPFLOW_API MarketoDestinationProperties(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API MarketoDestinationProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

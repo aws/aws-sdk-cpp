@@ -22,12 +22,12 @@ namespace Panorama
 {
 namespace Model
 {
-  class AWS_PANORAMA_API DeregisterPackageVersionResult
+  class DeregisterPackageVersionResult
   {
   public:
-    DeregisterPackageVersionResult();
-    DeregisterPackageVersionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeregisterPackageVersionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PANORAMA_API DeregisterPackageVersionResult();
+    AWS_PANORAMA_API DeregisterPackageVersionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PANORAMA_API DeregisterPackageVersionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

@@ -26,12 +26,12 @@ namespace ForecastService
 {
 namespace Model
 {
-  class AWS_FORECASTSERVICE_API ListPredictorBacktestExportJobsResult
+  class ListPredictorBacktestExportJobsResult
   {
   public:
-    ListPredictorBacktestExportJobsResult();
-    ListPredictorBacktestExportJobsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListPredictorBacktestExportJobsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_FORECASTSERVICE_API ListPredictorBacktestExportJobsResult();
+    AWS_FORECASTSERVICE_API ListPredictorBacktestExportJobsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_FORECASTSERVICE_API ListPredictorBacktestExportJobsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

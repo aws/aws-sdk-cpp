@@ -47,13 +47,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/LaunchTemplateSpecification">AWS
    * API Reference</a></p>
    */
-  class AWS_EKS_API LaunchTemplateSpecification
+  class LaunchTemplateSpecification
   {
   public:
-    LaunchTemplateSpecification();
-    LaunchTemplateSpecification(Aws::Utils::Json::JsonView jsonValue);
-    LaunchTemplateSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EKS_API LaunchTemplateSpecification();
+    AWS_EKS_API LaunchTemplateSpecification(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EKS_API LaunchTemplateSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EKS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

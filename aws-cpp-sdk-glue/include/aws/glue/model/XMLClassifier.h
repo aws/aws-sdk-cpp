@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/XMLClassifier">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API XMLClassifier
+  class XMLClassifier
   {
   public:
-    XMLClassifier();
-    XMLClassifier(Aws::Utils::Json::JsonView jsonValue);
-    XMLClassifier& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API XMLClassifier();
+    AWS_GLUE_API XMLClassifier(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API XMLClassifier& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

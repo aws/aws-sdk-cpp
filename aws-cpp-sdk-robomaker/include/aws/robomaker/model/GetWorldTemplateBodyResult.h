@@ -24,12 +24,12 @@ namespace RoboMaker
 {
 namespace Model
 {
-  class AWS_ROBOMAKER_API GetWorldTemplateBodyResult
+  class GetWorldTemplateBodyResult
   {
   public:
-    GetWorldTemplateBodyResult();
-    GetWorldTemplateBodyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetWorldTemplateBodyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ROBOMAKER_API GetWorldTemplateBodyResult();
+    AWS_ROBOMAKER_API GetWorldTemplateBodyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ROBOMAKER_API GetWorldTemplateBodyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

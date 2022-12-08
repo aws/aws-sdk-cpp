@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/WorkGroupConfigurationUpdates">AWS
    * API Reference</a></p>
    */
-  class AWS_ATHENA_API WorkGroupConfigurationUpdates
+  class WorkGroupConfigurationUpdates
   {
   public:
-    WorkGroupConfigurationUpdates();
-    WorkGroupConfigurationUpdates(Aws::Utils::Json::JsonView jsonValue);
-    WorkGroupConfigurationUpdates& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ATHENA_API WorkGroupConfigurationUpdates();
+    AWS_ATHENA_API WorkGroupConfigurationUpdates(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ATHENA_API WorkGroupConfigurationUpdates& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ATHENA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -24,12 +24,12 @@ namespace WorkSpacesWeb
 {
 namespace Model
 {
-  class AWS_WORKSPACESWEB_API GetPortalServiceProviderMetadataResult
+  class GetPortalServiceProviderMetadataResult
   {
   public:
-    GetPortalServiceProviderMetadataResult();
-    GetPortalServiceProviderMetadataResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetPortalServiceProviderMetadataResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WORKSPACESWEB_API GetPortalServiceProviderMetadataResult();
+    AWS_WORKSPACESWEB_API GetPortalServiceProviderMetadataResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WORKSPACESWEB_API GetPortalServiceProviderMetadataResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

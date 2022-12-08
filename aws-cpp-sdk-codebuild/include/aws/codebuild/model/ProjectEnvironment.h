@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ProjectEnvironment">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEBUILD_API ProjectEnvironment
+  class ProjectEnvironment
   {
   public:
-    ProjectEnvironment();
-    ProjectEnvironment(Aws::Utils::Json::JsonView jsonValue);
-    ProjectEnvironment& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEBUILD_API ProjectEnvironment();
+    AWS_CODEBUILD_API ProjectEnvironment(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEBUILD_API ProjectEnvironment& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEBUILD_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

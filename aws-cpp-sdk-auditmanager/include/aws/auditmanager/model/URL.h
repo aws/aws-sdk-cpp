@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/URL">AWS
    * API Reference</a></p>
    */
-  class AWS_AUDITMANAGER_API URL
+  class URL
   {
   public:
-    URL();
-    URL(Aws::Utils::Json::JsonView jsonValue);
-    URL& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_AUDITMANAGER_API URL();
+    AWS_AUDITMANAGER_API URL(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AUDITMANAGER_API URL& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AUDITMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

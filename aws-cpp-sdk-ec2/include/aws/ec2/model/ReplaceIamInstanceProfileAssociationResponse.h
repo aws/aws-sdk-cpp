@@ -25,12 +25,12 @@ namespace EC2
 {
 namespace Model
 {
-  class AWS_EC2_API ReplaceIamInstanceProfileAssociationResponse
+  class ReplaceIamInstanceProfileAssociationResponse
   {
   public:
-    ReplaceIamInstanceProfileAssociationResponse();
-    ReplaceIamInstanceProfileAssociationResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ReplaceIamInstanceProfileAssociationResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API ReplaceIamInstanceProfileAssociationResponse();
+    AWS_EC2_API ReplaceIamInstanceProfileAssociationResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API ReplaceIamInstanceProfileAssociationResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

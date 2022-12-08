@@ -26,12 +26,12 @@ namespace Backup
 {
 namespace Model
 {
-  class AWS_BACKUP_API UpdateRecoveryPointLifecycleResult
+  class UpdateRecoveryPointLifecycleResult
   {
   public:
-    UpdateRecoveryPointLifecycleResult();
-    UpdateRecoveryPointLifecycleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateRecoveryPointLifecycleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_BACKUP_API UpdateRecoveryPointLifecycleResult();
+    AWS_BACKUP_API UpdateRecoveryPointLifecycleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_BACKUP_API UpdateRecoveryPointLifecycleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

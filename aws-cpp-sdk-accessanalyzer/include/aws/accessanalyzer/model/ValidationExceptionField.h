@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/ValidationExceptionField">AWS
    * API Reference</a></p>
    */
-  class AWS_ACCESSANALYZER_API ValidationExceptionField
+  class ValidationExceptionField
   {
   public:
-    ValidationExceptionField();
-    ValidationExceptionField(Aws::Utils::Json::JsonView jsonValue);
-    ValidationExceptionField& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ACCESSANALYZER_API ValidationExceptionField();
+    AWS_ACCESSANALYZER_API ValidationExceptionField(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACCESSANALYZER_API ValidationExceptionField& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACCESSANALYZER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

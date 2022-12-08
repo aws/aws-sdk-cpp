@@ -27,12 +27,12 @@ namespace SNS
 {
 namespace Model
 {
-  class AWS_SNS_API ListOriginationNumbersResult
+  class ListOriginationNumbersResult
   {
   public:
-    ListOriginationNumbersResult();
-    ListOriginationNumbersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ListOriginationNumbersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_SNS_API ListOriginationNumbersResult();
+    AWS_SNS_API ListOriginationNumbersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_SNS_API ListOriginationNumbersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

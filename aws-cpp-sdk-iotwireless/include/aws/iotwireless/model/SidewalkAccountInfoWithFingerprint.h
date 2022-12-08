@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/SidewalkAccountInfoWithFingerprint">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTWIRELESS_API SidewalkAccountInfoWithFingerprint
+  class SidewalkAccountInfoWithFingerprint
   {
   public:
-    SidewalkAccountInfoWithFingerprint();
-    SidewalkAccountInfoWithFingerprint(Aws::Utils::Json::JsonView jsonValue);
-    SidewalkAccountInfoWithFingerprint& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTWIRELESS_API SidewalkAccountInfoWithFingerprint();
+    AWS_IOTWIRELESS_API SidewalkAccountInfoWithFingerprint(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API SidewalkAccountInfoWithFingerprint& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

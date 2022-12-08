@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/MetricTransformation">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDWATCHLOGS_API MetricTransformation
+  class MetricTransformation
   {
   public:
-    MetricTransformation();
-    MetricTransformation(Aws::Utils::Json::JsonView jsonValue);
-    MetricTransformation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDWATCHLOGS_API MetricTransformation();
+    AWS_CLOUDWATCHLOGS_API MetricTransformation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHLOGS_API MetricTransformation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHLOGS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

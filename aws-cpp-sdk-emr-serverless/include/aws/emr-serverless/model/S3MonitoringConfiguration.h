@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/emr-serverless-2021-07-13/S3MonitoringConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_EMRSERVERLESS_API S3MonitoringConfiguration
+  class S3MonitoringConfiguration
   {
   public:
-    S3MonitoringConfiguration();
-    S3MonitoringConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    S3MonitoringConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EMRSERVERLESS_API S3MonitoringConfiguration();
+    AWS_EMRSERVERLESS_API S3MonitoringConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMRSERVERLESS_API S3MonitoringConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMRSERVERLESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

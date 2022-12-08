@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/NumericSeparatorConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API NumericSeparatorConfiguration
+  class NumericSeparatorConfiguration
   {
   public:
-    NumericSeparatorConfiguration();
-    NumericSeparatorConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    NumericSeparatorConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API NumericSeparatorConfiguration();
+    AWS_QUICKSIGHT_API NumericSeparatorConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API NumericSeparatorConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

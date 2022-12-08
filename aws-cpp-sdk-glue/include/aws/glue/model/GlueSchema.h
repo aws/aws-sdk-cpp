@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GlueSchema">AWS API
    * Reference</a></p>
    */
-  class AWS_GLUE_API GlueSchema
+  class GlueSchema
   {
   public:
-    GlueSchema();
-    GlueSchema(Aws::Utils::Json::JsonView jsonValue);
-    GlueSchema& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API GlueSchema();
+    AWS_GLUE_API GlueSchema(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API GlueSchema& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/FileSystemNotFound">AWS
    * API Reference</a></p>
    */
-  class AWS_EFS_API FileSystemNotFound
+  class FileSystemNotFound
   {
   public:
-    FileSystemNotFound();
-    FileSystemNotFound(Aws::Utils::Json::JsonView jsonValue);
-    FileSystemNotFound& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EFS_API FileSystemNotFound();
+    AWS_EFS_API FileSystemNotFound(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EFS_API FileSystemNotFound& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EFS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

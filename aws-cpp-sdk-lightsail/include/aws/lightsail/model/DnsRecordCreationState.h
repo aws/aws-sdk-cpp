@@ -41,13 +41,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DnsRecordCreationState">AWS
    * API Reference</a></p>
    */
-  class AWS_LIGHTSAIL_API DnsRecordCreationState
+  class DnsRecordCreationState
   {
   public:
-    DnsRecordCreationState();
-    DnsRecordCreationState(Aws::Utils::Json::JsonView jsonValue);
-    DnsRecordCreationState& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LIGHTSAIL_API DnsRecordCreationState();
+    AWS_LIGHTSAIL_API DnsRecordCreationState(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API DnsRecordCreationState& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

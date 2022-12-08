@@ -25,12 +25,12 @@ namespace SSOAdmin
 {
 namespace Model
 {
-  class AWS_SSOADMIN_API ListPermissionSetsProvisionedToAccountResult
+  class ListPermissionSetsProvisionedToAccountResult
   {
   public:
-    ListPermissionSetsProvisionedToAccountResult();
-    ListPermissionSetsProvisionedToAccountResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListPermissionSetsProvisionedToAccountResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSOADMIN_API ListPermissionSetsProvisionedToAccountResult();
+    AWS_SSOADMIN_API ListPermissionSetsProvisionedToAccountResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSOADMIN_API ListPermissionSetsProvisionedToAccountResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

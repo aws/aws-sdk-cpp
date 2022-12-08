@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ResultConfigurationUpdates">AWS
    * API Reference</a></p>
    */
-  class AWS_ATHENA_API ResultConfigurationUpdates
+  class ResultConfigurationUpdates
   {
   public:
-    ResultConfigurationUpdates();
-    ResultConfigurationUpdates(Aws::Utils::Json::JsonView jsonValue);
-    ResultConfigurationUpdates& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ATHENA_API ResultConfigurationUpdates();
+    AWS_ATHENA_API ResultConfigurationUpdates(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ATHENA_API ResultConfigurationUpdates& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ATHENA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

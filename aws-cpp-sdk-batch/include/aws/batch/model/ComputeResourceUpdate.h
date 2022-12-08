@@ -38,13 +38,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/ComputeResourceUpdate">AWS
    * API Reference</a></p>
    */
-  class AWS_BATCH_API ComputeResourceUpdate
+  class ComputeResourceUpdate
   {
   public:
-    ComputeResourceUpdate();
-    ComputeResourceUpdate(Aws::Utils::Json::JsonView jsonValue);
-    ComputeResourceUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BATCH_API ComputeResourceUpdate();
+    AWS_BATCH_API ComputeResourceUpdate(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BATCH_API ComputeResourceUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BATCH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

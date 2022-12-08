@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/FileModes">AWS
    * API Reference</a></p>
    */
-  class AWS_CODECOMMIT_API FileModes
+  class FileModes
   {
   public:
-    FileModes();
-    FileModes(Aws::Utils::Json::JsonView jsonValue);
-    FileModes& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODECOMMIT_API FileModes();
+    AWS_CODECOMMIT_API FileModes(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODECOMMIT_API FileModes& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODECOMMIT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

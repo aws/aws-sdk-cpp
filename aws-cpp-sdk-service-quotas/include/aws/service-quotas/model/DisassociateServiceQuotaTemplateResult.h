@@ -22,12 +22,12 @@ namespace ServiceQuotas
 {
 namespace Model
 {
-  class AWS_SERVICEQUOTAS_API DisassociateServiceQuotaTemplateResult
+  class DisassociateServiceQuotaTemplateResult
   {
   public:
-    DisassociateServiceQuotaTemplateResult();
-    DisassociateServiceQuotaTemplateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DisassociateServiceQuotaTemplateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SERVICEQUOTAS_API DisassociateServiceQuotaTemplateResult();
+    AWS_SERVICEQUOTAS_API DisassociateServiceQuotaTemplateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SERVICEQUOTAS_API DisassociateServiceQuotaTemplateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

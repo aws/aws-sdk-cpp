@@ -26,12 +26,12 @@ namespace CloudWatchRUM
 {
 namespace Model
 {
-  class AWS_CLOUDWATCHRUM_API BatchCreateRumMetricDefinitionsResult
+  class BatchCreateRumMetricDefinitionsResult
   {
   public:
-    BatchCreateRumMetricDefinitionsResult();
-    BatchCreateRumMetricDefinitionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    BatchCreateRumMetricDefinitionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CLOUDWATCHRUM_API BatchCreateRumMetricDefinitionsResult();
+    AWS_CLOUDWATCHRUM_API BatchCreateRumMetricDefinitionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CLOUDWATCHRUM_API BatchCreateRumMetricDefinitionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

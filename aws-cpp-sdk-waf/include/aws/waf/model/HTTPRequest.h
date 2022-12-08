@@ -41,13 +41,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/HTTPRequest">AWS API
    * Reference</a></p>
    */
-  class AWS_WAF_API HTTPRequest
+  class HTTPRequest
   {
   public:
-    HTTPRequest();
-    HTTPRequest(Aws::Utils::Json::JsonView jsonValue);
-    HTTPRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WAF_API HTTPRequest();
+    AWS_WAF_API HTTPRequest(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAF_API HTTPRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAF_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

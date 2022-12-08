@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/ResourceShareInvitation">AWS
    * API Reference</a></p>
    */
-  class AWS_RAM_API ResourceShareInvitation
+  class ResourceShareInvitation
   {
   public:
-    ResourceShareInvitation();
-    ResourceShareInvitation(Aws::Utils::Json::JsonView jsonValue);
-    ResourceShareInvitation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_RAM_API ResourceShareInvitation();
+    AWS_RAM_API ResourceShareInvitation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RAM_API ResourceShareInvitation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RAM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

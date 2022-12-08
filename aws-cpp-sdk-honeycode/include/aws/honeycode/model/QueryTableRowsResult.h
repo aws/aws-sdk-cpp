@@ -26,12 +26,12 @@ namespace Honeycode
 {
 namespace Model
 {
-  class AWS_HONEYCODE_API QueryTableRowsResult
+  class QueryTableRowsResult
   {
   public:
-    QueryTableRowsResult();
-    QueryTableRowsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    QueryTableRowsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_HONEYCODE_API QueryTableRowsResult();
+    AWS_HONEYCODE_API QueryTableRowsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_HONEYCODE_API QueryTableRowsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

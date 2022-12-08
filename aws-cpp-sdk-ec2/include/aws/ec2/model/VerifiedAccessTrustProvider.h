@@ -35,15 +35,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/VerifiedAccessTrustProvider">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API VerifiedAccessTrustProvider
+  class VerifiedAccessTrustProvider
   {
   public:
-    VerifiedAccessTrustProvider();
-    VerifiedAccessTrustProvider(const Aws::Utils::Xml::XmlNode& xmlNode);
-    VerifiedAccessTrustProvider& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API VerifiedAccessTrustProvider();
+    AWS_EC2_API VerifiedAccessTrustProvider(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API VerifiedAccessTrustProvider& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**

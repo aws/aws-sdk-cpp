@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/TextTranslationJobFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_TRANSLATE_API TextTranslationJobFilter
+  class TextTranslationJobFilter
   {
   public:
-    TextTranslationJobFilter();
-    TextTranslationJobFilter(Aws::Utils::Json::JsonView jsonValue);
-    TextTranslationJobFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TRANSLATE_API TextTranslationJobFilter();
+    AWS_TRANSLATE_API TextTranslationJobFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSLATE_API TextTranslationJobFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSLATE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

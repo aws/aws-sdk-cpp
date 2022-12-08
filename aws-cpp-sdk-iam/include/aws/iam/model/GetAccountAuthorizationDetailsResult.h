@@ -36,12 +36,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetAccountAuthorizationDetailsResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_IAM_API GetAccountAuthorizationDetailsResult
+  class GetAccountAuthorizationDetailsResult
   {
   public:
-    GetAccountAuthorizationDetailsResult();
-    GetAccountAuthorizationDetailsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    GetAccountAuthorizationDetailsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_IAM_API GetAccountAuthorizationDetailsResult();
+    AWS_IAM_API GetAccountAuthorizationDetailsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_IAM_API GetAccountAuthorizationDetailsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

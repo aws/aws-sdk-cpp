@@ -28,12 +28,12 @@ namespace Inspector2
 {
 namespace Model
 {
-  class AWS_INSPECTOR2_API GetFindingsReportStatusResult
+  class GetFindingsReportStatusResult
   {
   public:
-    GetFindingsReportStatusResult();
-    GetFindingsReportStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetFindingsReportStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_INSPECTOR2_API GetFindingsReportStatusResult();
+    AWS_INSPECTOR2_API GetFindingsReportStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_INSPECTOR2_API GetFindingsReportStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

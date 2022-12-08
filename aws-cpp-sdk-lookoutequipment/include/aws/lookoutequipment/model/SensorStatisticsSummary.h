@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/SensorStatisticsSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_LOOKOUTEQUIPMENT_API SensorStatisticsSummary
+  class SensorStatisticsSummary
   {
   public:
-    SensorStatisticsSummary();
-    SensorStatisticsSummary(Aws::Utils::Json::JsonView jsonValue);
-    SensorStatisticsSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LOOKOUTEQUIPMENT_API SensorStatisticsSummary();
+    AWS_LOOKOUTEQUIPMENT_API SensorStatisticsSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTEQUIPMENT_API SensorStatisticsSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTEQUIPMENT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

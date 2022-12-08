@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/DataSource">AWS
    * API Reference</a></p>
    */
-  class AWS_MACHINELEARNING_API DataSource
+  class DataSource
   {
   public:
-    DataSource();
-    DataSource(Aws::Utils::Json::JsonView jsonValue);
-    DataSource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MACHINELEARNING_API DataSource();
+    AWS_MACHINELEARNING_API DataSource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACHINELEARNING_API DataSource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACHINELEARNING_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

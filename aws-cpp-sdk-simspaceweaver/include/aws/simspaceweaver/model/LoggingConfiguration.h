@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/simspaceweaver-2022-10-28/LoggingConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_SIMSPACEWEAVER_API LoggingConfiguration
+  class LoggingConfiguration
   {
   public:
-    LoggingConfiguration();
-    LoggingConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    LoggingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SIMSPACEWEAVER_API LoggingConfiguration();
+    AWS_SIMSPACEWEAVER_API LoggingConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SIMSPACEWEAVER_API LoggingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SIMSPACEWEAVER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

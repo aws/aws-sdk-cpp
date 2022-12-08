@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/ApprovalRule">AWS
    * API Reference</a></p>
    */
-  class AWS_CODECOMMIT_API ApprovalRule
+  class ApprovalRule
   {
   public:
-    ApprovalRule();
-    ApprovalRule(Aws::Utils::Json::JsonView jsonValue);
-    ApprovalRule& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODECOMMIT_API ApprovalRule();
+    AWS_CODECOMMIT_API ApprovalRule(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODECOMMIT_API ApprovalRule& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODECOMMIT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

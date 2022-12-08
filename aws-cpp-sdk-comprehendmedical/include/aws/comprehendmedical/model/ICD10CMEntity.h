@@ -39,13 +39,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/ICD10CMEntity">AWS
    * API Reference</a></p>
    */
-  class AWS_COMPREHENDMEDICAL_API ICD10CMEntity
+  class ICD10CMEntity
   {
   public:
-    ICD10CMEntity();
-    ICD10CMEntity(Aws::Utils::Json::JsonView jsonValue);
-    ICD10CMEntity& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COMPREHENDMEDICAL_API ICD10CMEntity();
+    AWS_COMPREHENDMEDICAL_API ICD10CMEntity(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHENDMEDICAL_API ICD10CMEntity& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHENDMEDICAL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

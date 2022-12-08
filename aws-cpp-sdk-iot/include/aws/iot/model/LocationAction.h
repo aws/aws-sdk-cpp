@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/LocationAction">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API LocationAction
+  class LocationAction
   {
   public:
-    LocationAction();
-    LocationAction(Aws::Utils::Json::JsonView jsonValue);
-    LocationAction& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API LocationAction();
+    AWS_IOT_API LocationAction(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API LocationAction& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

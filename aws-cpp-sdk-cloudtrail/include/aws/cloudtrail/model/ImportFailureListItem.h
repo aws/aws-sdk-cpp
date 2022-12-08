@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ImportFailureListItem">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDTRAIL_API ImportFailureListItem
+  class ImportFailureListItem
   {
   public:
-    ImportFailureListItem();
-    ImportFailureListItem(Aws::Utils::Json::JsonView jsonValue);
-    ImportFailureListItem& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDTRAIL_API ImportFailureListItem();
+    AWS_CLOUDTRAIL_API ImportFailureListItem(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDTRAIL_API ImportFailureListItem& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDTRAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

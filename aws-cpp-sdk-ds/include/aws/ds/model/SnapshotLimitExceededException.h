@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/SnapshotLimitExceededException">AWS
    * API Reference</a></p>
    */
-  class AWS_DIRECTORYSERVICE_API SnapshotLimitExceededException
+  class SnapshotLimitExceededException
   {
   public:
-    SnapshotLimitExceededException();
-    SnapshotLimitExceededException(Aws::Utils::Json::JsonView jsonValue);
-    SnapshotLimitExceededException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DIRECTORYSERVICE_API SnapshotLimitExceededException();
+    AWS_DIRECTORYSERVICE_API SnapshotLimitExceededException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTORYSERVICE_API SnapshotLimitExceededException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTORYSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

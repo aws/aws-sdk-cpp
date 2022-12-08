@@ -30,15 +30,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ProcessedUpdateAction">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICACHE_API ProcessedUpdateAction
+  class ProcessedUpdateAction
   {
   public:
-    ProcessedUpdateAction();
-    ProcessedUpdateAction(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ProcessedUpdateAction& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICACHE_API ProcessedUpdateAction();
+    AWS_ELASTICACHE_API ProcessedUpdateAction(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICACHE_API ProcessedUpdateAction& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_ELASTICACHE_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_ELASTICACHE_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**

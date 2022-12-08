@@ -25,12 +25,12 @@ namespace Health
 {
 namespace Model
 {
-  class AWS_HEALTH_API DescribeEventTypesResult
+  class DescribeEventTypesResult
   {
   public:
-    DescribeEventTypesResult();
-    DescribeEventTypesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeEventTypesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_HEALTH_API DescribeEventTypesResult();
+    AWS_HEALTH_API DescribeEventTypesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_HEALTH_API DescribeEventTypesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

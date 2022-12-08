@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rum-2018-05-10/BatchCreateRumMetricDefinitionsError">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDWATCHRUM_API BatchCreateRumMetricDefinitionsError
+  class BatchCreateRumMetricDefinitionsError
   {
   public:
-    BatchCreateRumMetricDefinitionsError();
-    BatchCreateRumMetricDefinitionsError(Aws::Utils::Json::JsonView jsonValue);
-    BatchCreateRumMetricDefinitionsError& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDWATCHRUM_API BatchCreateRumMetricDefinitionsError();
+    AWS_CLOUDWATCHRUM_API BatchCreateRumMetricDefinitionsError(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHRUM_API BatchCreateRumMetricDefinitionsError& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHRUM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

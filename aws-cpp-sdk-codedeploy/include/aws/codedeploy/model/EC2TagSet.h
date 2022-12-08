@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/EC2TagSet">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEDEPLOY_API EC2TagSet
+  class EC2TagSet
   {
   public:
-    EC2TagSet();
-    EC2TagSet(Aws::Utils::Json::JsonView jsonValue);
-    EC2TagSet& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEDEPLOY_API EC2TagSet();
+    AWS_CODEDEPLOY_API EC2TagSet(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEDEPLOY_API EC2TagSet& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEDEPLOY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

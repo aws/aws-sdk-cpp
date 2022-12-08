@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/ShareAttributes">AWS
    * API Reference</a></p>
    */
-  class AWS_BATCH_API ShareAttributes
+  class ShareAttributes
   {
   public:
-    ShareAttributes();
-    ShareAttributes(Aws::Utils::Json::JsonView jsonValue);
-    ShareAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BATCH_API ShareAttributes();
+    AWS_BATCH_API ShareAttributes(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BATCH_API ShareAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BATCH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

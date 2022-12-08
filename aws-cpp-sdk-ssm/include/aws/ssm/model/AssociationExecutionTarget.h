@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/AssociationExecutionTarget">AWS
    * API Reference</a></p>
    */
-  class AWS_SSM_API AssociationExecutionTarget
+  class AssociationExecutionTarget
   {
   public:
-    AssociationExecutionTarget();
-    AssociationExecutionTarget(Aws::Utils::Json::JsonView jsonValue);
-    AssociationExecutionTarget& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSM_API AssociationExecutionTarget();
+    AWS_SSM_API AssociationExecutionTarget(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API AssociationExecutionTarget& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

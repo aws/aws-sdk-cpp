@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sso-oidc-2019-06-10/SlowDownException">AWS
    * API Reference</a></p>
    */
-  class AWS_SSOOIDC_API SlowDownException
+  class SlowDownException
   {
   public:
-    SlowDownException();
-    SlowDownException(Aws::Utils::Json::JsonView jsonValue);
-    SlowDownException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSOOIDC_API SlowDownException();
+    AWS_SSOOIDC_API SlowDownException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSOOIDC_API SlowDownException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSOOIDC_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

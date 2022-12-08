@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/SparkSubmitJobDriver">AWS
    * API Reference</a></p>
    */
-  class AWS_EMRCONTAINERS_API SparkSubmitJobDriver
+  class SparkSubmitJobDriver
   {
   public:
-    SparkSubmitJobDriver();
-    SparkSubmitJobDriver(Aws::Utils::Json::JsonView jsonValue);
-    SparkSubmitJobDriver& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EMRCONTAINERS_API SparkSubmitJobDriver();
+    AWS_EMRCONTAINERS_API SparkSubmitJobDriver(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMRCONTAINERS_API SparkSubmitJobDriver& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMRCONTAINERS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

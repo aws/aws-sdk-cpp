@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/EwsAvailabilityProvider">AWS
    * API Reference</a></p>
    */
-  class AWS_WORKMAIL_API EwsAvailabilityProvider
+  class EwsAvailabilityProvider
   {
   public:
-    EwsAvailabilityProvider();
-    EwsAvailabilityProvider(Aws::Utils::Json::JsonView jsonValue);
-    EwsAvailabilityProvider& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WORKMAIL_API EwsAvailabilityProvider();
+    AWS_WORKMAIL_API EwsAvailabilityProvider(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKMAIL_API EwsAvailabilityProvider& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKMAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

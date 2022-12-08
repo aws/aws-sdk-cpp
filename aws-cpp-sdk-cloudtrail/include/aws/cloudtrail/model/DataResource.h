@@ -65,13 +65,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/DataResource">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDTRAIL_API DataResource
+  class DataResource
   {
   public:
-    DataResource();
-    DataResource(Aws::Utils::Json::JsonView jsonValue);
-    DataResource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDTRAIL_API DataResource();
+    AWS_CLOUDTRAIL_API DataResource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDTRAIL_API DataResource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDTRAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

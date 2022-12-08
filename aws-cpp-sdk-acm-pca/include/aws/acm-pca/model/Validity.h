@@ -39,13 +39,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/Validity">AWS
    * API Reference</a></p>
    */
-  class AWS_ACMPCA_API Validity
+  class Validity
   {
   public:
-    Validity();
-    Validity(Aws::Utils::Json::JsonView jsonValue);
-    Validity& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ACMPCA_API Validity();
+    AWS_ACMPCA_API Validity(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACMPCA_API Validity& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACMPCA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

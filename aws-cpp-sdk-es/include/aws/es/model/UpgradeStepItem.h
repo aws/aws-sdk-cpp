@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/UpgradeStepItem">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICSEARCHSERVICE_API UpgradeStepItem
+  class UpgradeStepItem
   {
   public:
-    UpgradeStepItem();
-    UpgradeStepItem(Aws::Utils::Json::JsonView jsonValue);
-    UpgradeStepItem& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ELASTICSEARCHSERVICE_API UpgradeStepItem();
+    AWS_ELASTICSEARCHSERVICE_API UpgradeStepItem(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICSEARCHSERVICE_API UpgradeStepItem& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

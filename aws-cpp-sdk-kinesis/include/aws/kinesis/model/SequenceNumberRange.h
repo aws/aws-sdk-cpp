@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/SequenceNumberRange">AWS
    * API Reference</a></p>
    */
-  class AWS_KINESIS_API SequenceNumberRange
+  class SequenceNumberRange
   {
   public:
-    SequenceNumberRange();
-    SequenceNumberRange(Aws::Utils::Json::JsonView jsonValue);
-    SequenceNumberRange& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KINESIS_API SequenceNumberRange();
+    AWS_KINESIS_API SequenceNumberRange(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESIS_API SequenceNumberRange& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESIS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

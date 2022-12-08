@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ApplyMapping">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API ApplyMapping
+  class ApplyMapping
   {
   public:
-    ApplyMapping();
-    ApplyMapping(Aws::Utils::Json::JsonView jsonValue);
-    ApplyMapping& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API ApplyMapping();
+    AWS_GLUE_API ApplyMapping(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API ApplyMapping& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/MergeMetadata">AWS
    * API Reference</a></p>
    */
-  class AWS_CODECOMMIT_API MergeMetadata
+  class MergeMetadata
   {
   public:
-    MergeMetadata();
-    MergeMetadata(Aws::Utils::Json::JsonView jsonValue);
-    MergeMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODECOMMIT_API MergeMetadata();
+    AWS_CODECOMMIT_API MergeMetadata(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODECOMMIT_API MergeMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODECOMMIT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

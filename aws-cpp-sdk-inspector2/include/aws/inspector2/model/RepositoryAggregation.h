@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/RepositoryAggregation">AWS
    * API Reference</a></p>
    */
-  class AWS_INSPECTOR2_API RepositoryAggregation
+  class RepositoryAggregation
   {
   public:
-    RepositoryAggregation();
-    RepositoryAggregation(Aws::Utils::Json::JsonView jsonValue);
-    RepositoryAggregation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_INSPECTOR2_API RepositoryAggregation();
+    AWS_INSPECTOR2_API RepositoryAggregation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR2_API RepositoryAggregation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/NodeTypeSpecificValue">AWS
    * API Reference</a></p>
    */
-  class AWS_DAX_API NodeTypeSpecificValue
+  class NodeTypeSpecificValue
   {
   public:
-    NodeTypeSpecificValue();
-    NodeTypeSpecificValue(Aws::Utils::Json::JsonView jsonValue);
-    NodeTypeSpecificValue& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DAX_API NodeTypeSpecificValue();
+    AWS_DAX_API NodeTypeSpecificValue(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DAX_API NodeTypeSpecificValue& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DAX_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

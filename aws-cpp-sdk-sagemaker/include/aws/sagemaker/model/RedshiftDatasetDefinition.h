@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/RedshiftDatasetDefinition">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API RedshiftDatasetDefinition
+  class RedshiftDatasetDefinition
   {
   public:
-    RedshiftDatasetDefinition();
-    RedshiftDatasetDefinition(Aws::Utils::Json::JsonView jsonValue);
-    RedshiftDatasetDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API RedshiftDatasetDefinition();
+    AWS_SAGEMAKER_API RedshiftDatasetDefinition(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API RedshiftDatasetDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

@@ -26,13 +26,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/CatalogResource">AWS
    * API Reference</a></p>
    */
-  class AWS_LAKEFORMATION_API CatalogResource
+  class CatalogResource
   {
   public:
-    CatalogResource();
-    CatalogResource(Aws::Utils::Json::JsonView jsonValue);
-    CatalogResource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LAKEFORMATION_API CatalogResource();
+    AWS_LAKEFORMATION_API CatalogResource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAKEFORMATION_API CatalogResource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAKEFORMATION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
   };
 

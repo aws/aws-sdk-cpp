@@ -25,12 +25,12 @@ namespace PI
 {
 namespace Model
 {
-  class AWS_PI_API GetDimensionKeyDetailsResult
+  class GetDimensionKeyDetailsResult
   {
   public:
-    GetDimensionKeyDetailsResult();
-    GetDimensionKeyDetailsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetDimensionKeyDetailsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PI_API GetDimensionKeyDetailsResult();
+    AWS_PI_API GetDimensionKeyDetailsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PI_API GetDimensionKeyDetailsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

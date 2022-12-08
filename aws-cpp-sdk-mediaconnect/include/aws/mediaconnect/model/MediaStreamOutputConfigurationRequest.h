@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/MediaStreamOutputConfigurationRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONNECT_API MediaStreamOutputConfigurationRequest
+  class MediaStreamOutputConfigurationRequest
   {
   public:
-    MediaStreamOutputConfigurationRequest();
-    MediaStreamOutputConfigurationRequest(Aws::Utils::Json::JsonView jsonValue);
-    MediaStreamOutputConfigurationRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONNECT_API MediaStreamOutputConfigurationRequest();
+    AWS_MEDIACONNECT_API MediaStreamOutputConfigurationRequest(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONNECT_API MediaStreamOutputConfigurationRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

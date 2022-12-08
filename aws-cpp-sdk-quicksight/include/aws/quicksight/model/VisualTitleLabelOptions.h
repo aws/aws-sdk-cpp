@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/VisualTitleLabelOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API VisualTitleLabelOptions
+  class VisualTitleLabelOptions
   {
   public:
-    VisualTitleLabelOptions();
-    VisualTitleLabelOptions(Aws::Utils::Json::JsonView jsonValue);
-    VisualTitleLabelOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API VisualTitleLabelOptions();
+    AWS_QUICKSIGHT_API VisualTitleLabelOptions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API VisualTitleLabelOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

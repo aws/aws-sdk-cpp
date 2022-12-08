@@ -38,13 +38,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/InstanceFleet">AWS
    * API Reference</a></p>
    */
-  class AWS_EMR_API InstanceFleet
+  class InstanceFleet
   {
   public:
-    InstanceFleet();
-    InstanceFleet(Aws::Utils::Json::JsonView jsonValue);
-    InstanceFleet& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EMR_API InstanceFleet();
+    AWS_EMR_API InstanceFleet(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMR_API InstanceFleet& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

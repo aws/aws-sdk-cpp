@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-roborunner-2018-05-10/Site">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTROBORUNNER_API Site
+  class Site
   {
   public:
-    Site();
-    Site(Aws::Utils::Json::JsonView jsonValue);
-    Site& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTROBORUNNER_API Site();
+    AWS_IOTROBORUNNER_API Site(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTROBORUNNER_API Site& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTROBORUNNER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

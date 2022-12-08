@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/streams-dynamodb-2012-08-10/Identity">AWS
    * API Reference</a></p>
    */
-  class AWS_DYNAMODBSTREAMS_API Identity
+  class Identity
   {
   public:
-    Identity();
-    Identity(Aws::Utils::Json::JsonView jsonValue);
-    Identity& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DYNAMODBSTREAMS_API Identity();
+    AWS_DYNAMODBSTREAMS_API Identity(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODBSTREAMS_API Identity& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODBSTREAMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

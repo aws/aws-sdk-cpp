@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/FMSPolicyUpdateFirewallCreationConfigAction">AWS
    * API Reference</a></p>
    */
-  class AWS_FMS_API FMSPolicyUpdateFirewallCreationConfigAction
+  class FMSPolicyUpdateFirewallCreationConfigAction
   {
   public:
-    FMSPolicyUpdateFirewallCreationConfigAction();
-    FMSPolicyUpdateFirewallCreationConfigAction(Aws::Utils::Json::JsonView jsonValue);
-    FMSPolicyUpdateFirewallCreationConfigAction& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FMS_API FMSPolicyUpdateFirewallCreationConfigAction();
+    AWS_FMS_API FMSPolicyUpdateFirewallCreationConfigAction(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FMS_API FMSPolicyUpdateFirewallCreationConfigAction& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

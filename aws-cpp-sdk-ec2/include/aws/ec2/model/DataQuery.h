@@ -31,15 +31,15 @@ namespace Model
    * <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DataQuery">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API DataQuery
+  class DataQuery
   {
   public:
-    DataQuery();
-    DataQuery(const Aws::Utils::Xml::XmlNode& xmlNode);
-    DataQuery& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API DataQuery();
+    AWS_EC2_API DataQuery(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API DataQuery& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**

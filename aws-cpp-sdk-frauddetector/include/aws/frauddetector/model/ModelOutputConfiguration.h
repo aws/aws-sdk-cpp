@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/ModelOutputConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_FRAUDDETECTOR_API ModelOutputConfiguration
+  class ModelOutputConfiguration
   {
   public:
-    ModelOutputConfiguration();
-    ModelOutputConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    ModelOutputConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FRAUDDETECTOR_API ModelOutputConfiguration();
+    AWS_FRAUDDETECTOR_API ModelOutputConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FRAUDDETECTOR_API ModelOutputConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FRAUDDETECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

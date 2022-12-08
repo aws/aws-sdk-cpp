@@ -26,13 +26,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/TextInputSpecification">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELSV2_API TextInputSpecification
+  class TextInputSpecification
   {
   public:
-    TextInputSpecification();
-    TextInputSpecification(Aws::Utils::Json::JsonView jsonValue);
-    TextInputSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELSV2_API TextInputSpecification();
+    AWS_LEXMODELSV2_API TextInputSpecification(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API TextInputSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

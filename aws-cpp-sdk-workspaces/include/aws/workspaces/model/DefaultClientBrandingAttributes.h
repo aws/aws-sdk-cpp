@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DefaultClientBrandingAttributes">AWS
    * API Reference</a></p>
    */
-  class AWS_WORKSPACES_API DefaultClientBrandingAttributes
+  class DefaultClientBrandingAttributes
   {
   public:
-    DefaultClientBrandingAttributes();
-    DefaultClientBrandingAttributes(Aws::Utils::Json::JsonView jsonValue);
-    DefaultClientBrandingAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WORKSPACES_API DefaultClientBrandingAttributes();
+    AWS_WORKSPACES_API DefaultClientBrandingAttributes(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKSPACES_API DefaultClientBrandingAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

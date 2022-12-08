@@ -38,13 +38,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/TimeSignalMessage">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIATAILOR_API TimeSignalMessage
+  class TimeSignalMessage
   {
   public:
-    TimeSignalMessage();
-    TimeSignalMessage(Aws::Utils::Json::JsonView jsonValue);
-    TimeSignalMessage& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIATAILOR_API TimeSignalMessage();
+    AWS_MEDIATAILOR_API TimeSignalMessage(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIATAILOR_API TimeSignalMessage& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIATAILOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

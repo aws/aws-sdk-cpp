@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/Hsm">AWS API
    * Reference</a></p>
    */
-  class AWS_CLOUDHSMV2_API Hsm
+  class Hsm
   {
   public:
-    Hsm();
-    Hsm(Aws::Utils::Json::JsonView jsonValue);
-    Hsm& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDHSMV2_API Hsm();
+    AWS_CLOUDHSMV2_API Hsm(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDHSMV2_API Hsm& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDHSMV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

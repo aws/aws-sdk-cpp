@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ClusterSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_EMR_API ClusterSummary
+  class ClusterSummary
   {
   public:
-    ClusterSummary();
-    ClusterSummary(Aws::Utils::Json::JsonView jsonValue);
-    ClusterSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EMR_API ClusterSummary();
+    AWS_EMR_API ClusterSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMR_API ClusterSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

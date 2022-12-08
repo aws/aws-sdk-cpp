@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/InferenceExecutionSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_LOOKOUTEQUIPMENT_API InferenceExecutionSummary
+  class InferenceExecutionSummary
   {
   public:
-    InferenceExecutionSummary();
-    InferenceExecutionSummary(Aws::Utils::Json::JsonView jsonValue);
-    InferenceExecutionSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LOOKOUTEQUIPMENT_API InferenceExecutionSummary();
+    AWS_LOOKOUTEQUIPMENT_API InferenceExecutionSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTEQUIPMENT_API InferenceExecutionSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTEQUIPMENT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

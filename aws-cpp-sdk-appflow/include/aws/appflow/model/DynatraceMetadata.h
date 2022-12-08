@@ -26,13 +26,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/DynatraceMetadata">AWS
    * API Reference</a></p>
    */
-  class AWS_APPFLOW_API DynatraceMetadata
+  class DynatraceMetadata
   {
   public:
-    DynatraceMetadata();
-    DynatraceMetadata(Aws::Utils::Json::JsonView jsonValue);
-    DynatraceMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPFLOW_API DynatraceMetadata();
+    AWS_APPFLOW_API DynatraceMetadata(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API DynatraceMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
   };
 

@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ActionRemoteIpDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API ActionRemoteIpDetails
+  class ActionRemoteIpDetails
   {
   public:
-    ActionRemoteIpDetails();
-    ActionRemoteIpDetails(Aws::Utils::Json::JsonView jsonValue);
-    ActionRemoteIpDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API ActionRemoteIpDetails();
+    AWS_SECURITYHUB_API ActionRemoteIpDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API ActionRemoteIpDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

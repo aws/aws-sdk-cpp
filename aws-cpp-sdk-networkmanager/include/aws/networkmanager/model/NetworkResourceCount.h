@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/NetworkResourceCount">AWS
    * API Reference</a></p>
    */
-  class AWS_NETWORKMANAGER_API NetworkResourceCount
+  class NetworkResourceCount
   {
   public:
-    NetworkResourceCount();
-    NetworkResourceCount(Aws::Utils::Json::JsonView jsonValue);
-    NetworkResourceCount& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_NETWORKMANAGER_API NetworkResourceCount();
+    AWS_NETWORKMANAGER_API NetworkResourceCount(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKMANAGER_API NetworkResourceCount& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

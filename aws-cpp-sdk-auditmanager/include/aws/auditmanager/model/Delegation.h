@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/Delegation">AWS
    * API Reference</a></p>
    */
-  class AWS_AUDITMANAGER_API Delegation
+  class Delegation
   {
   public:
-    Delegation();
-    Delegation(Aws::Utils::Json::JsonView jsonValue);
-    Delegation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_AUDITMANAGER_API Delegation();
+    AWS_AUDITMANAGER_API Delegation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AUDITMANAGER_API Delegation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AUDITMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

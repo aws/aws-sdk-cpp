@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DecimalDefaultValues">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API DecimalDefaultValues
+  class DecimalDefaultValues
   {
   public:
-    DecimalDefaultValues();
-    DecimalDefaultValues(Aws::Utils::Json::JsonView jsonValue);
-    DecimalDefaultValues& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API DecimalDefaultValues();
+    AWS_QUICKSIGHT_API DecimalDefaultValues(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API DecimalDefaultValues& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

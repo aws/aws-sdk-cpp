@@ -22,12 +22,12 @@ namespace Omics
 {
 namespace Model
 {
-  class AWS_OMICS_API DeleteReferenceResult
+  class DeleteReferenceResult
   {
   public:
-    DeleteReferenceResult();
-    DeleteReferenceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteReferenceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OMICS_API DeleteReferenceResult();
+    AWS_OMICS_API DeleteReferenceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OMICS_API DeleteReferenceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

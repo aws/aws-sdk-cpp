@@ -39,13 +39,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/CmfcSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API CmfcSettings
+  class CmfcSettings
   {
   public:
-    CmfcSettings();
-    CmfcSettings(Aws::Utils::Json::JsonView jsonValue);
-    CmfcSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API CmfcSettings();
+    AWS_MEDIACONVERT_API CmfcSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API CmfcSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

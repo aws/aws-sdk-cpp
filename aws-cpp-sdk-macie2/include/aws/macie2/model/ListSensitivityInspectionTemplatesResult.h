@@ -26,12 +26,12 @@ namespace Macie2
 {
 namespace Model
 {
-  class AWS_MACIE2_API ListSensitivityInspectionTemplatesResult
+  class ListSensitivityInspectionTemplatesResult
   {
   public:
-    ListSensitivityInspectionTemplatesResult();
-    ListSensitivityInspectionTemplatesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListSensitivityInspectionTemplatesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MACIE2_API ListSensitivityInspectionTemplatesResult();
+    AWS_MACIE2_API ListSensitivityInspectionTemplatesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MACIE2_API ListSensitivityInspectionTemplatesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

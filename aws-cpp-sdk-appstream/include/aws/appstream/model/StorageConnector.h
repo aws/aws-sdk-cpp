@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/StorageConnector">AWS
    * API Reference</a></p>
    */
-  class AWS_APPSTREAM_API StorageConnector
+  class StorageConnector
   {
   public:
-    StorageConnector();
-    StorageConnector(Aws::Utils::Json::JsonView jsonValue);
-    StorageConnector& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPSTREAM_API StorageConnector();
+    AWS_APPSTREAM_API StorageConnector(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPSTREAM_API StorageConnector& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPSTREAM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

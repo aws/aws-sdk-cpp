@@ -61,13 +61,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/HistoryEvent">AWS
    * API Reference</a></p>
    */
-  class AWS_SFN_API HistoryEvent
+  class HistoryEvent
   {
   public:
-    HistoryEvent();
-    HistoryEvent(Aws::Utils::Json::JsonView jsonValue);
-    HistoryEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SFN_API HistoryEvent();
+    AWS_SFN_API HistoryEvent(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SFN_API HistoryEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SFN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

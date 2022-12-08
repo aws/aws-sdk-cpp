@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/HttpInstanceSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_SERVICEDISCOVERY_API HttpInstanceSummary
+  class HttpInstanceSummary
   {
   public:
-    HttpInstanceSummary();
-    HttpInstanceSummary(Aws::Utils::Json::JsonView jsonValue);
-    HttpInstanceSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SERVICEDISCOVERY_API HttpInstanceSummary();
+    AWS_SERVICEDISCOVERY_API HttpInstanceSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICEDISCOVERY_API HttpInstanceSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICEDISCOVERY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

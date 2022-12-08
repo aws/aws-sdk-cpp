@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/Relevance">AWS
    * API Reference</a></p>
    */
-  class AWS_KENDRA_API Relevance
+  class Relevance
   {
   public:
-    Relevance();
-    Relevance(Aws::Utils::Json::JsonView jsonValue);
-    Relevance& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KENDRA_API Relevance();
+    AWS_KENDRA_API Relevance(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API Relevance& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

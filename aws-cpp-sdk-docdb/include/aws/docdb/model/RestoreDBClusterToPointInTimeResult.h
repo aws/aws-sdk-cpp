@@ -25,12 +25,12 @@ namespace DocDB
 {
 namespace Model
 {
-  class AWS_DOCDB_API RestoreDBClusterToPointInTimeResult
+  class RestoreDBClusterToPointInTimeResult
   {
   public:
-    RestoreDBClusterToPointInTimeResult();
-    RestoreDBClusterToPointInTimeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    RestoreDBClusterToPointInTimeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_DOCDB_API RestoreDBClusterToPointInTimeResult();
+    AWS_DOCDB_API RestoreDBClusterToPointInTimeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_DOCDB_API RestoreDBClusterToPointInTimeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     

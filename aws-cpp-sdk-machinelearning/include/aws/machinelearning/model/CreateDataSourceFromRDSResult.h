@@ -37,12 +37,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/CreateDataSourceFromRDSOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_MACHINELEARNING_API CreateDataSourceFromRDSResult
+  class CreateDataSourceFromRDSResult
   {
   public:
-    CreateDataSourceFromRDSResult();
-    CreateDataSourceFromRDSResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateDataSourceFromRDSResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MACHINELEARNING_API CreateDataSourceFromRDSResult();
+    AWS_MACHINELEARNING_API CreateDataSourceFromRDSResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MACHINELEARNING_API CreateDataSourceFromRDSResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

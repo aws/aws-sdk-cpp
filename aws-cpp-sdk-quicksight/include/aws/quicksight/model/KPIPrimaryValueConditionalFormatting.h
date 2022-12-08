@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/KPIPrimaryValueConditionalFormatting">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API KPIPrimaryValueConditionalFormatting
+  class KPIPrimaryValueConditionalFormatting
   {
   public:
-    KPIPrimaryValueConditionalFormatting();
-    KPIPrimaryValueConditionalFormatting(Aws::Utils::Json::JsonView jsonValue);
-    KPIPrimaryValueConditionalFormatting& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API KPIPrimaryValueConditionalFormatting();
+    AWS_QUICKSIGHT_API KPIPrimaryValueConditionalFormatting(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API KPIPrimaryValueConditionalFormatting& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

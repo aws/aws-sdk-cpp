@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ContainerStateChange">AWS
    * API Reference</a></p>
    */
-  class AWS_ECS_API ContainerStateChange
+  class ContainerStateChange
   {
   public:
-    ContainerStateChange();
-    ContainerStateChange(Aws::Utils::Json::JsonView jsonValue);
-    ContainerStateChange& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ECS_API ContainerStateChange();
+    AWS_ECS_API ContainerStateChange(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECS_API ContainerStateChange& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

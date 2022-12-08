@@ -42,14 +42,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/OriginRequestPolicy">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFRONT_API OriginRequestPolicy
+  class OriginRequestPolicy
   {
   public:
-    OriginRequestPolicy();
-    OriginRequestPolicy(const Aws::Utils::Xml::XmlNode& xmlNode);
-    OriginRequestPolicy& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API OriginRequestPolicy();
+    AWS_CLOUDFRONT_API OriginRequestPolicy(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API OriginRequestPolicy& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**

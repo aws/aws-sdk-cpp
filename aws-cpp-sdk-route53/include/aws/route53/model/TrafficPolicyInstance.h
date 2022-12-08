@@ -29,14 +29,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/TrafficPolicyInstance">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53_API TrafficPolicyInstance
+  class TrafficPolicyInstance
   {
   public:
-    TrafficPolicyInstance();
-    TrafficPolicyInstance(const Aws::Utils::Xml::XmlNode& xmlNode);
-    TrafficPolicyInstance& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ROUTE53_API TrafficPolicyInstance();
+    AWS_ROUTE53_API TrafficPolicyInstance(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ROUTE53_API TrafficPolicyInstance& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_ROUTE53_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**

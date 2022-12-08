@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/Site">AWS API
    * Reference</a></p>
    */
-  class AWS_OUTPOSTS_API Site
+  class Site
   {
   public:
-    Site();
-    Site(Aws::Utils::Json::JsonView jsonValue);
-    Site& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OUTPOSTS_API Site();
+    AWS_OUTPOSTS_API Site(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OUTPOSTS_API Site& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OUTPOSTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

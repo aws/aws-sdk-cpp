@@ -28,12 +28,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/PutResolverQueryLogConfigPolicyResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53RESOLVER_API PutResolverQueryLogConfigPolicyResult
+  class PutResolverQueryLogConfigPolicyResult
   {
   public:
-    PutResolverQueryLogConfigPolicyResult();
-    PutResolverQueryLogConfigPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PutResolverQueryLogConfigPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ROUTE53RESOLVER_API PutResolverQueryLogConfigPolicyResult();
+    AWS_ROUTE53RESOLVER_API PutResolverQueryLogConfigPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ROUTE53RESOLVER_API PutResolverQueryLogConfigPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

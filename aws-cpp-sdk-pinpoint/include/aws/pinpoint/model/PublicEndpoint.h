@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/PublicEndpoint">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API PublicEndpoint
+  class PublicEndpoint
   {
   public:
-    PublicEndpoint();
-    PublicEndpoint(Aws::Utils::Json::JsonView jsonValue);
-    PublicEndpoint& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API PublicEndpoint();
+    AWS_PINPOINT_API PublicEndpoint(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API PublicEndpoint& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

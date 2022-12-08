@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/Route">AWS API
    * Reference</a></p>
    */
-  class AWS_FMS_API Route
+  class Route
   {
   public:
-    Route();
-    Route(Aws::Utils::Json::JsonView jsonValue);
-    Route& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FMS_API Route();
+    AWS_FMS_API Route(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FMS_API Route& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

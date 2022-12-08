@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ConformancePackComplianceScore">AWS
    * API Reference</a></p>
    */
-  class AWS_CONFIGSERVICE_API ConformancePackComplianceScore
+  class ConformancePackComplianceScore
   {
   public:
-    ConformancePackComplianceScore();
-    ConformancePackComplianceScore(Aws::Utils::Json::JsonView jsonValue);
-    ConformancePackComplianceScore& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONFIGSERVICE_API ConformancePackComplianceScore();
+    AWS_CONFIGSERVICE_API ConformancePackComplianceScore(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API ConformancePackComplianceScore& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

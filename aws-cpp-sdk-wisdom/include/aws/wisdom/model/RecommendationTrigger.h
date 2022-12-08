@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/RecommendationTrigger">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECTWISDOMSERVICE_API RecommendationTrigger
+  class RecommendationTrigger
   {
   public:
-    RecommendationTrigger();
-    RecommendationTrigger(Aws::Utils::Json::JsonView jsonValue);
-    RecommendationTrigger& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECTWISDOMSERVICE_API RecommendationTrigger();
+    AWS_CONNECTWISDOMSERVICE_API RecommendationTrigger(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTWISDOMSERVICE_API RecommendationTrigger& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTWISDOMSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

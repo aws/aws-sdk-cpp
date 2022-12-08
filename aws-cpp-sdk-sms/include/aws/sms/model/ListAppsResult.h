@@ -26,12 +26,12 @@ namespace SMS
 {
 namespace Model
 {
-  class AWS_SMS_API ListAppsResult
+  class ListAppsResult
   {
   public:
-    ListAppsResult();
-    ListAppsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListAppsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SMS_API ListAppsResult();
+    AWS_SMS_API ListAppsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SMS_API ListAppsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

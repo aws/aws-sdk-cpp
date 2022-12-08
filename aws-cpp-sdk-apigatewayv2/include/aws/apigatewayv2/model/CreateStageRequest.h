@@ -25,10 +25,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/CreateStageRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_APIGATEWAYV2_API CreateStageRequest : public ApiGatewayV2Request
+  class CreateStageRequest : public ApiGatewayV2Request
   {
   public:
-    CreateStageRequest();
+    AWS_APIGATEWAYV2_API CreateStageRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,7 +36,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateStage"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_APIGATEWAYV2_API Aws::String SerializePayload() const override;
 
 
     /**

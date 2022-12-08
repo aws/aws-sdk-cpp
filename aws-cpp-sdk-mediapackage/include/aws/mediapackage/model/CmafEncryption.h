@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-2017-10-12/CmafEncryption">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIAPACKAGE_API CmafEncryption
+  class CmafEncryption
   {
   public:
-    CmafEncryption();
-    CmafEncryption(Aws::Utils::Json::JsonView jsonValue);
-    CmafEncryption& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIAPACKAGE_API CmafEncryption();
+    AWS_MEDIAPACKAGE_API CmafEncryption(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIAPACKAGE_API CmafEncryption& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIAPACKAGE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

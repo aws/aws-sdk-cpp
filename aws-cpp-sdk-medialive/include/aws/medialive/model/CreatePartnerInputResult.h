@@ -30,12 +30,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CreatePartnerInputResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API CreatePartnerInputResult
+  class CreatePartnerInputResult
   {
   public:
-    CreatePartnerInputResult();
-    CreatePartnerInputResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreatePartnerInputResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MEDIALIVE_API CreatePartnerInputResult();
+    AWS_MEDIALIVE_API CreatePartnerInputResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MEDIALIVE_API CreatePartnerInputResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     

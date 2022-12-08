@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/EventBridgeActionDefinition">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECT_API EventBridgeActionDefinition
+  class EventBridgeActionDefinition
   {
   public:
-    EventBridgeActionDefinition();
-    EventBridgeActionDefinition(Aws::Utils::Json::JsonView jsonValue);
-    EventBridgeActionDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECT_API EventBridgeActionDefinition();
+    AWS_CONNECT_API EventBridgeActionDefinition(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API EventBridgeActionDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/KendraConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELSV2_API KendraConfiguration
+  class KendraConfiguration
   {
   public:
-    KendraConfiguration();
-    KendraConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    KendraConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELSV2_API KendraConfiguration();
+    AWS_LEXMODELSV2_API KendraConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API KendraConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

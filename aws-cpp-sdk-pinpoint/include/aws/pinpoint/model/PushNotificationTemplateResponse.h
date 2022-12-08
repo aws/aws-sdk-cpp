@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/PushNotificationTemplateResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API PushNotificationTemplateResponse
+  class PushNotificationTemplateResponse
   {
   public:
-    PushNotificationTemplateResponse();
-    PushNotificationTemplateResponse(Aws::Utils::Json::JsonView jsonValue);
-    PushNotificationTemplateResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API PushNotificationTemplateResponse();
+    AWS_PINPOINT_API PushNotificationTemplateResponse(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API PushNotificationTemplateResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

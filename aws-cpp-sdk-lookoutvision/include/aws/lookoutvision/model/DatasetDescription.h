@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutvision-2020-11-20/DatasetDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_LOOKOUTFORVISION_API DatasetDescription
+  class DatasetDescription
   {
   public:
-    DatasetDescription();
-    DatasetDescription(Aws::Utils::Json::JsonView jsonValue);
-    DatasetDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LOOKOUTFORVISION_API DatasetDescription();
+    AWS_LOOKOUTFORVISION_API DatasetDescription(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTFORVISION_API DatasetDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTFORVISION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -26,12 +26,12 @@ namespace CloudWatchRUM
 {
 namespace Model
 {
-  class AWS_CLOUDWATCHRUM_API BatchDeleteRumMetricDefinitionsResult
+  class BatchDeleteRumMetricDefinitionsResult
   {
   public:
-    BatchDeleteRumMetricDefinitionsResult();
-    BatchDeleteRumMetricDefinitionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    BatchDeleteRumMetricDefinitionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CLOUDWATCHRUM_API BatchDeleteRumMetricDefinitionsResult();
+    AWS_CLOUDWATCHRUM_API BatchDeleteRumMetricDefinitionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CLOUDWATCHRUM_API BatchDeleteRumMetricDefinitionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

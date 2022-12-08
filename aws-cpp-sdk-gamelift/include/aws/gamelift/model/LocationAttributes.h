@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/LocationAttributes">AWS
    * API Reference</a></p>
    */
-  class AWS_GAMELIFT_API LocationAttributes
+  class LocationAttributes
   {
   public:
-    LocationAttributes();
-    LocationAttributes(Aws::Utils::Json::JsonView jsonValue);
-    LocationAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GAMELIFT_API LocationAttributes();
+    AWS_GAMELIFT_API LocationAttributes(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMELIFT_API LocationAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/SecretVersionsListEntry">AWS
    * API Reference</a></p>
    */
-  class AWS_SECRETSMANAGER_API SecretVersionsListEntry
+  class SecretVersionsListEntry
   {
   public:
-    SecretVersionsListEntry();
-    SecretVersionsListEntry(Aws::Utils::Json::JsonView jsonValue);
-    SecretVersionsListEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECRETSMANAGER_API SecretVersionsListEntry();
+    AWS_SECRETSMANAGER_API SecretVersionsListEntry(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECRETSMANAGER_API SecretVersionsListEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECRETSMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

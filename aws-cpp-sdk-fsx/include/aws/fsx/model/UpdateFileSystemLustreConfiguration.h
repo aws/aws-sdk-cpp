@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/UpdateFileSystemLustreConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_FSX_API UpdateFileSystemLustreConfiguration
+  class UpdateFileSystemLustreConfiguration
   {
   public:
-    UpdateFileSystemLustreConfiguration();
-    UpdateFileSystemLustreConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    UpdateFileSystemLustreConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FSX_API UpdateFileSystemLustreConfiguration();
+    AWS_FSX_API UpdateFileSystemLustreConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API UpdateFileSystemLustreConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

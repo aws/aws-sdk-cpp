@@ -44,13 +44,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/StepAdjustment">AWS
    * API Reference</a></p>
    */
-  class AWS_APPLICATIONAUTOSCALING_API StepAdjustment
+  class StepAdjustment
   {
   public:
-    StepAdjustment();
-    StepAdjustment(Aws::Utils::Json::JsonView jsonValue);
-    StepAdjustment& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPLICATIONAUTOSCALING_API StepAdjustment();
+    AWS_APPLICATIONAUTOSCALING_API StepAdjustment(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPLICATIONAUTOSCALING_API StepAdjustment& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPLICATIONAUTOSCALING_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

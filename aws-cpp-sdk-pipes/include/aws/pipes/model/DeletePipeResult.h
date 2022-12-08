@@ -27,12 +27,12 @@ namespace Pipes
 {
 namespace Model
 {
-  class AWS_PIPES_API DeletePipeResult
+  class DeletePipeResult
   {
   public:
-    DeletePipeResult();
-    DeletePipeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeletePipeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PIPES_API DeletePipeResult();
+    AWS_PIPES_API DeletePipeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PIPES_API DeletePipeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

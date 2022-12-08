@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/CountAction">AWS
    * API Reference</a></p>
    */
-  class AWS_SHIELD_API CountAction
+  class CountAction
   {
   public:
-    CountAction();
-    CountAction(Aws::Utils::Json::JsonView jsonValue);
-    CountAction& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SHIELD_API CountAction();
+    AWS_SHIELD_API CountAction(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SHIELD_API CountAction& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SHIELD_API Aws::Utils::Json::JsonValue Jsonize() const;
 
   };
 

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/DeleteRegionAction">AWS
    * API Reference</a></p>
    */
-  class AWS_SSMINCIDENTS_API DeleteRegionAction
+  class DeleteRegionAction
   {
   public:
-    DeleteRegionAction();
-    DeleteRegionAction(Aws::Utils::Json::JsonView jsonValue);
-    DeleteRegionAction& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSMINCIDENTS_API DeleteRegionAction();
+    AWS_SSMINCIDENTS_API DeleteRegionAction(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSMINCIDENTS_API DeleteRegionAction& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSMINCIDENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

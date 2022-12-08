@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/IntentConfirmationSetting">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELSV2_API IntentConfirmationSetting
+  class IntentConfirmationSetting
   {
   public:
-    IntentConfirmationSetting();
-    IntentConfirmationSetting(Aws::Utils::Json::JsonView jsonValue);
-    IntentConfirmationSetting& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELSV2_API IntentConfirmationSetting();
+    AWS_LEXMODELSV2_API IntentConfirmationSetting(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API IntentConfirmationSetting& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

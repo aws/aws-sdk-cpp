@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/ExperimentStopCondition">AWS
    * API Reference</a></p>
    */
-  class AWS_FIS_API ExperimentStopCondition
+  class ExperimentStopCondition
   {
   public:
-    ExperimentStopCondition();
-    ExperimentStopCondition(Aws::Utils::Json::JsonView jsonValue);
-    ExperimentStopCondition& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FIS_API ExperimentStopCondition();
+    AWS_FIS_API ExperimentStopCondition(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FIS_API ExperimentStopCondition& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FIS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/VpcInfoCidrBlockSetDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API VpcInfoCidrBlockSetDetails
+  class VpcInfoCidrBlockSetDetails
   {
   public:
-    VpcInfoCidrBlockSetDetails();
-    VpcInfoCidrBlockSetDetails(Aws::Utils::Json::JsonView jsonValue);
-    VpcInfoCidrBlockSetDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API VpcInfoCidrBlockSetDetails();
+    AWS_SECURITYHUB_API VpcInfoCidrBlockSetDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API VpcInfoCidrBlockSetDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

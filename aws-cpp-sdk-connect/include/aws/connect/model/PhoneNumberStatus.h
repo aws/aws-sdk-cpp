@@ -51,13 +51,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/PhoneNumberStatus">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECT_API PhoneNumberStatus
+  class PhoneNumberStatus
   {
   public:
-    PhoneNumberStatus();
-    PhoneNumberStatus(Aws::Utils::Json::JsonView jsonValue);
-    PhoneNumberStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECT_API PhoneNumberStatus();
+    AWS_CONNECT_API PhoneNumberStatus(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API PhoneNumberStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

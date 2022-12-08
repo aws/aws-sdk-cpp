@@ -24,12 +24,12 @@ namespace Route53
 {
 namespace Model
 {
-  class AWS_ROUTE53_API GetQueryLoggingConfigResult
+  class GetQueryLoggingConfigResult
   {
   public:
-    GetQueryLoggingConfigResult();
-    GetQueryLoggingConfigResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    GetQueryLoggingConfigResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ROUTE53_API GetQueryLoggingConfigResult();
+    AWS_ROUTE53_API GetQueryLoggingConfigResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ROUTE53_API GetQueryLoggingConfigResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

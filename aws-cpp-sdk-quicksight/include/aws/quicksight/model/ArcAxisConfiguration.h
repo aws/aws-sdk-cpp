@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ArcAxisConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API ArcAxisConfiguration
+  class ArcAxisConfiguration
   {
   public:
-    ArcAxisConfiguration();
-    ArcAxisConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    ArcAxisConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API ArcAxisConfiguration();
+    AWS_QUICKSIGHT_API ArcAxisConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API ArcAxisConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

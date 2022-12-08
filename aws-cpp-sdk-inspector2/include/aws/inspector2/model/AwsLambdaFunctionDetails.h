@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/AwsLambdaFunctionDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_INSPECTOR2_API AwsLambdaFunctionDetails
+  class AwsLambdaFunctionDetails
   {
   public:
-    AwsLambdaFunctionDetails();
-    AwsLambdaFunctionDetails(Aws::Utils::Json::JsonView jsonValue);
-    AwsLambdaFunctionDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_INSPECTOR2_API AwsLambdaFunctionDetails();
+    AWS_INSPECTOR2_API AwsLambdaFunctionDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR2_API AwsLambdaFunctionDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

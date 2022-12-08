@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/RemoteAccountDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_GUARDDUTY_API RemoteAccountDetails
+  class RemoteAccountDetails
   {
   public:
-    RemoteAccountDetails();
-    RemoteAccountDetails(Aws::Utils::Json::JsonView jsonValue);
-    RemoteAccountDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GUARDDUTY_API RemoteAccountDetails();
+    AWS_GUARDDUTY_API RemoteAccountDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API RemoteAccountDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

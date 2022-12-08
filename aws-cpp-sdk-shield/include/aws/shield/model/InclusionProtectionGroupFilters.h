@@ -37,13 +37,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/InclusionProtectionGroupFilters">AWS
    * API Reference</a></p>
    */
-  class AWS_SHIELD_API InclusionProtectionGroupFilters
+  class InclusionProtectionGroupFilters
   {
   public:
-    InclusionProtectionGroupFilters();
-    InclusionProtectionGroupFilters(Aws::Utils::Json::JsonView jsonValue);
-    InclusionProtectionGroupFilters& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SHIELD_API InclusionProtectionGroupFilters();
+    AWS_SHIELD_API InclusionProtectionGroupFilters(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SHIELD_API InclusionProtectionGroupFilters& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SHIELD_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

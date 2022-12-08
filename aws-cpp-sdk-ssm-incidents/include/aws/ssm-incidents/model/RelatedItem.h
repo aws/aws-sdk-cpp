@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/RelatedItem">AWS
    * API Reference</a></p>
    */
-  class AWS_SSMINCIDENTS_API RelatedItem
+  class RelatedItem
   {
   public:
-    RelatedItem();
-    RelatedItem(Aws::Utils::Json::JsonView jsonValue);
-    RelatedItem& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSMINCIDENTS_API RelatedItem();
+    AWS_SSMINCIDENTS_API RelatedItem(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSMINCIDENTS_API RelatedItem& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSMINCIDENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

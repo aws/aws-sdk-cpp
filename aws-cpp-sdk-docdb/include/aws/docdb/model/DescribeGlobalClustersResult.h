@@ -27,12 +27,12 @@ namespace DocDB
 {
 namespace Model
 {
-  class AWS_DOCDB_API DescribeGlobalClustersResult
+  class DescribeGlobalClustersResult
   {
   public:
-    DescribeGlobalClustersResult();
-    DescribeGlobalClustersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeGlobalClustersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_DOCDB_API DescribeGlobalClustersResult();
+    AWS_DOCDB_API DescribeGlobalClustersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_DOCDB_API DescribeGlobalClustersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

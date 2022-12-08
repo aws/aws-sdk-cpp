@@ -29,15 +29,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/Subnet">AWS API
    * Reference</a></p>
    */
-  class AWS_DOCDB_API Subnet
+  class Subnet
   {
   public:
-    Subnet();
-    Subnet(const Aws::Utils::Xml::XmlNode& xmlNode);
-    Subnet& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_DOCDB_API Subnet();
+    AWS_DOCDB_API Subnet(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_DOCDB_API Subnet& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_DOCDB_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_DOCDB_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**

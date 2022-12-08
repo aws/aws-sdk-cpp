@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/Document">AWS API
    * Reference</a></p>
    */
-  class AWS_KENDRA_API Document
+  class Document
   {
   public:
-    Document();
-    Document(Aws::Utils::Json::JsonView jsonValue);
-    Document& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KENDRA_API Document();
+    AWS_KENDRA_API Document(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API Document& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

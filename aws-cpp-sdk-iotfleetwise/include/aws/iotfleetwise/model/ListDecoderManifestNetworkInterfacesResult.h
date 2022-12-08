@@ -26,12 +26,12 @@ namespace IoTFleetWise
 {
 namespace Model
 {
-  class AWS_IOTFLEETWISE_API ListDecoderManifestNetworkInterfacesResult
+  class ListDecoderManifestNetworkInterfacesResult
   {
   public:
-    ListDecoderManifestNetworkInterfacesResult();
-    ListDecoderManifestNetworkInterfacesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListDecoderManifestNetworkInterfacesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOTFLEETWISE_API ListDecoderManifestNetworkInterfacesResult();
+    AWS_IOTFLEETWISE_API ListDecoderManifestNetworkInterfacesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOTFLEETWISE_API ListDecoderManifestNetworkInterfacesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/PhoneNumberError">AWS
    * API Reference</a></p>
    */
-  class AWS_CHIME_API PhoneNumberError
+  class PhoneNumberError
   {
   public:
-    PhoneNumberError();
-    PhoneNumberError(Aws::Utils::Json::JsonView jsonValue);
-    PhoneNumberError& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIME_API PhoneNumberError();
+    AWS_CHIME_API PhoneNumberError(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API PhoneNumberError& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

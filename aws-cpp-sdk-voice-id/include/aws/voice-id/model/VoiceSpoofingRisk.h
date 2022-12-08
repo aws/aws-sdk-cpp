@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/VoiceSpoofingRisk">AWS
    * API Reference</a></p>
    */
-  class AWS_VOICEID_API VoiceSpoofingRisk
+  class VoiceSpoofingRisk
   {
   public:
-    VoiceSpoofingRisk();
-    VoiceSpoofingRisk(Aws::Utils::Json::JsonView jsonValue);
-    VoiceSpoofingRisk& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_VOICEID_API VoiceSpoofingRisk();
+    AWS_VOICEID_API VoiceSpoofingRisk(Aws::Utils::Json::JsonView jsonValue);
+    AWS_VOICEID_API VoiceSpoofingRisk& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_VOICEID_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

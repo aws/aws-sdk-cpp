@@ -26,15 +26,15 @@ namespace ElastiCache
 namespace Model
 {
 
-  class AWS_ELASTICACHE_API UserGroup
+  class UserGroup
   {
   public:
-    UserGroup();
-    UserGroup(const Aws::Utils::Xml::XmlNode& xmlNode);
-    UserGroup& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICACHE_API UserGroup();
+    AWS_ELASTICACHE_API UserGroup(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICACHE_API UserGroup& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_ELASTICACHE_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_ELASTICACHE_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**

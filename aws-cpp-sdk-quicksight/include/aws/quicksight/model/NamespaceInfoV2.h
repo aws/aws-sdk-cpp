@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/NamespaceInfoV2">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API NamespaceInfoV2
+  class NamespaceInfoV2
   {
   public:
-    NamespaceInfoV2();
-    NamespaceInfoV2(Aws::Utils::Json::JsonView jsonValue);
-    NamespaceInfoV2& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API NamespaceInfoV2();
+    AWS_QUICKSIGHT_API NamespaceInfoV2(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API NamespaceInfoV2& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

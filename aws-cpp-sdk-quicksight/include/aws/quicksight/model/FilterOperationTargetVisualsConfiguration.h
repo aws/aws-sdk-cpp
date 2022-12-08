@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/FilterOperationTargetVisualsConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API FilterOperationTargetVisualsConfiguration
+  class FilterOperationTargetVisualsConfiguration
   {
   public:
-    FilterOperationTargetVisualsConfiguration();
-    FilterOperationTargetVisualsConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    FilterOperationTargetVisualsConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API FilterOperationTargetVisualsConfiguration();
+    AWS_QUICKSIGHT_API FilterOperationTargetVisualsConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API FilterOperationTargetVisualsConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

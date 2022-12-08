@@ -25,12 +25,12 @@ namespace BillingConductor
 {
 namespace Model
 {
-  class AWS_BILLINGCONDUCTOR_API BatchDisassociateResourcesFromCustomLineItemResult
+  class BatchDisassociateResourcesFromCustomLineItemResult
   {
   public:
-    BatchDisassociateResourcesFromCustomLineItemResult();
-    BatchDisassociateResourcesFromCustomLineItemResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    BatchDisassociateResourcesFromCustomLineItemResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_BILLINGCONDUCTOR_API BatchDisassociateResourcesFromCustomLineItemResult();
+    AWS_BILLINGCONDUCTOR_API BatchDisassociateResourcesFromCustomLineItemResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_BILLINGCONDUCTOR_API BatchDisassociateResourcesFromCustomLineItemResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

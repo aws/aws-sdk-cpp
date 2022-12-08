@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/Join">AWS API
    * Reference</a></p>
    */
-  class AWS_GLUE_API Join
+  class Join
   {
   public:
-    Join();
-    Join(Aws::Utils::Json::JsonView jsonValue);
-    Join& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API Join();
+    AWS_GLUE_API Join(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Join& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

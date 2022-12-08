@@ -29,12 +29,12 @@ namespace LexRuntimeV2
 {
 namespace Model
 {
-  class AWS_LEXRUNTIMEV2_API RecognizeTextResult
+  class RecognizeTextResult
   {
   public:
-    RecognizeTextResult();
-    RecognizeTextResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    RecognizeTextResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LEXRUNTIMEV2_API RecognizeTextResult();
+    AWS_LEXRUNTIMEV2_API RecognizeTextResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LEXRUNTIMEV2_API RecognizeTextResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

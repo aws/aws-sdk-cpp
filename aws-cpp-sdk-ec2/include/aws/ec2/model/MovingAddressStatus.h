@@ -34,15 +34,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/MovingAddressStatus">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API MovingAddressStatus
+  class MovingAddressStatus
   {
   public:
-    MovingAddressStatus();
-    MovingAddressStatus(const Aws::Utils::Xml::XmlNode& xmlNode);
-    MovingAddressStatus& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API MovingAddressStatus();
+    AWS_EC2_API MovingAddressStatus(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API MovingAddressStatus& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**

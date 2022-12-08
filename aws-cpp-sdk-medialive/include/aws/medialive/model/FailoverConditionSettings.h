@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/FailoverConditionSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API FailoverConditionSettings
+  class FailoverConditionSettings
   {
   public:
-    FailoverConditionSettings();
-    FailoverConditionSettings(Aws::Utils::Json::JsonView jsonValue);
-    FailoverConditionSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API FailoverConditionSettings();
+    AWS_MEDIALIVE_API FailoverConditionSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API FailoverConditionSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/EnvironmentAccountConnectionSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_PROTON_API EnvironmentAccountConnectionSummary
+  class EnvironmentAccountConnectionSummary
   {
   public:
-    EnvironmentAccountConnectionSummary();
-    EnvironmentAccountConnectionSummary(Aws::Utils::Json::JsonView jsonValue);
-    EnvironmentAccountConnectionSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PROTON_API EnvironmentAccountConnectionSummary();
+    AWS_PROTON_API EnvironmentAccountConnectionSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PROTON_API EnvironmentAccountConnectionSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PROTON_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

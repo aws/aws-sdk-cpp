@@ -28,12 +28,12 @@ namespace ivschat
 {
 namespace Model
 {
-  class AWS_IVSCHAT_API CreateRoomResult
+  class CreateRoomResult
   {
   public:
-    CreateRoomResult();
-    CreateRoomResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateRoomResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IVSCHAT_API CreateRoomResult();
+    AWS_IVSCHAT_API CreateRoomResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IVSCHAT_API CreateRoomResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DecimalValueWhenUnsetConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API DecimalValueWhenUnsetConfiguration
+  class DecimalValueWhenUnsetConfiguration
   {
   public:
-    DecimalValueWhenUnsetConfiguration();
-    DecimalValueWhenUnsetConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    DecimalValueWhenUnsetConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API DecimalValueWhenUnsetConfiguration();
+    AWS_QUICKSIGHT_API DecimalValueWhenUnsetConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API DecimalValueWhenUnsetConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

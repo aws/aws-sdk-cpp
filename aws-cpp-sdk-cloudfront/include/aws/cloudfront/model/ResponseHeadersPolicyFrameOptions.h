@@ -31,14 +31,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ResponseHeadersPolicyFrameOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFRONT_API ResponseHeadersPolicyFrameOptions
+  class ResponseHeadersPolicyFrameOptions
   {
   public:
-    ResponseHeadersPolicyFrameOptions();
-    ResponseHeadersPolicyFrameOptions(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ResponseHeadersPolicyFrameOptions& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API ResponseHeadersPolicyFrameOptions();
+    AWS_CLOUDFRONT_API ResponseHeadersPolicyFrameOptions(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API ResponseHeadersPolicyFrameOptions& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**

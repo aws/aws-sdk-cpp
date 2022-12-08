@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/EC2InstanceLimit">AWS
    * API Reference</a></p>
    */
-  class AWS_GAMELIFT_API EC2InstanceLimit
+  class EC2InstanceLimit
   {
   public:
-    EC2InstanceLimit();
-    EC2InstanceLimit(Aws::Utils::Json::JsonView jsonValue);
-    EC2InstanceLimit& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GAMELIFT_API EC2InstanceLimit();
+    AWS_GAMELIFT_API EC2InstanceLimit(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMELIFT_API EC2InstanceLimit& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

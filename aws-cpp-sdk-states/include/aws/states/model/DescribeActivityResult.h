@@ -25,12 +25,12 @@ namespace SFN
 {
 namespace Model
 {
-  class AWS_SFN_API DescribeActivityResult
+  class DescribeActivityResult
   {
   public:
-    DescribeActivityResult();
-    DescribeActivityResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeActivityResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SFN_API DescribeActivityResult();
+    AWS_SFN_API DescribeActivityResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SFN_API DescribeActivityResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

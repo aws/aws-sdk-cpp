@@ -26,12 +26,12 @@ namespace FMS
 {
 namespace Model
 {
-  class AWS_FMS_API ListProtocolsListsResult
+  class ListProtocolsListsResult
   {
   public:
-    ListProtocolsListsResult();
-    ListProtocolsListsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListProtocolsListsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_FMS_API ListProtocolsListsResult();
+    AWS_FMS_API ListProtocolsListsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_FMS_API ListProtocolsListsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

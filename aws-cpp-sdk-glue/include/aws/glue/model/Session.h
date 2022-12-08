@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/Session">AWS API
    * Reference</a></p>
    */
-  class AWS_GLUE_API Session
+  class Session
   {
   public:
-    Session();
-    Session(Aws::Utils::Json::JsonView jsonValue);
-    Session& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API Session();
+    AWS_GLUE_API Session(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Session& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

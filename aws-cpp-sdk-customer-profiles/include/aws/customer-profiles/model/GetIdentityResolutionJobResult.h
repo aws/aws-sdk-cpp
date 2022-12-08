@@ -29,12 +29,12 @@ namespace CustomerProfiles
 {
 namespace Model
 {
-  class AWS_CUSTOMERPROFILES_API GetIdentityResolutionJobResult
+  class GetIdentityResolutionJobResult
   {
   public:
-    GetIdentityResolutionJobResult();
-    GetIdentityResolutionJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetIdentityResolutionJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CUSTOMERPROFILES_API GetIdentityResolutionJobResult();
+    AWS_CUSTOMERPROFILES_API GetIdentityResolutionJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CUSTOMERPROFILES_API GetIdentityResolutionJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

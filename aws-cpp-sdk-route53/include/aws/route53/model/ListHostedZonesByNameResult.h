@@ -32,12 +32,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListHostedZonesByNameResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53_API ListHostedZonesByNameResult
+  class ListHostedZonesByNameResult
   {
   public:
-    ListHostedZonesByNameResult();
-    ListHostedZonesByNameResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ListHostedZonesByNameResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ROUTE53_API ListHostedZonesByNameResult();
+    AWS_ROUTE53_API ListHostedZonesByNameResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ROUTE53_API ListHostedZonesByNameResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

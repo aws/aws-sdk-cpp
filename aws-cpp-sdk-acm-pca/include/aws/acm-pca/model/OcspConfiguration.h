@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/OcspConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_ACMPCA_API OcspConfiguration
+  class OcspConfiguration
   {
   public:
-    OcspConfiguration();
-    OcspConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    OcspConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ACMPCA_API OcspConfiguration();
+    AWS_ACMPCA_API OcspConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACMPCA_API OcspConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACMPCA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

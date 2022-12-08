@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/App">AWS
    * API Reference</a></p>
    */
-  class AWS_RESILIENCEHUB_API App
+  class App
   {
   public:
-    App();
-    App(Aws::Utils::Json::JsonView jsonValue);
-    App& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_RESILIENCEHUB_API App();
+    AWS_RESILIENCEHUB_API App(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RESILIENCEHUB_API App& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RESILIENCEHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

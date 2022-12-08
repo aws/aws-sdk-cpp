@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/synthetics-2017-10-11/CanaryRunStatus">AWS
    * API Reference</a></p>
    */
-  class AWS_SYNTHETICS_API CanaryRunStatus
+  class CanaryRunStatus
   {
   public:
-    CanaryRunStatus();
-    CanaryRunStatus(Aws::Utils::Json::JsonView jsonValue);
-    CanaryRunStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SYNTHETICS_API CanaryRunStatus();
+    AWS_SYNTHETICS_API CanaryRunStatus(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SYNTHETICS_API CanaryRunStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SYNTHETICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

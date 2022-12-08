@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/QualificationType">AWS
    * API Reference</a></p>
    */
-  class AWS_MTURK_API QualificationType
+  class QualificationType
   {
   public:
-    QualificationType();
-    QualificationType(Aws::Utils::Json::JsonView jsonValue);
-    QualificationType& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MTURK_API QualificationType();
+    AWS_MTURK_API QualificationType(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MTURK_API QualificationType& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MTURK_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

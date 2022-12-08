@@ -31,12 +31,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListMultiplexesResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API ListMultiplexesResult
+  class ListMultiplexesResult
   {
   public:
-    ListMultiplexesResult();
-    ListMultiplexesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListMultiplexesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MEDIALIVE_API ListMultiplexesResult();
+    AWS_MEDIALIVE_API ListMultiplexesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MEDIALIVE_API ListMultiplexesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

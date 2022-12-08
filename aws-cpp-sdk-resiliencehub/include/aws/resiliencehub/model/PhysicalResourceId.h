@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/PhysicalResourceId">AWS
    * API Reference</a></p>
    */
-  class AWS_RESILIENCEHUB_API PhysicalResourceId
+  class PhysicalResourceId
   {
   public:
-    PhysicalResourceId();
-    PhysicalResourceId(Aws::Utils::Json::JsonView jsonValue);
-    PhysicalResourceId& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_RESILIENCEHUB_API PhysicalResourceId();
+    AWS_RESILIENCEHUB_API PhysicalResourceId(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RESILIENCEHUB_API PhysicalResourceId& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RESILIENCEHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

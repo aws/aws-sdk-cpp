@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/JobFlowDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_EMR_API JobFlowDetail
+  class JobFlowDetail
   {
   public:
-    JobFlowDetail();
-    JobFlowDetail(Aws::Utils::Json::JsonView jsonValue);
-    JobFlowDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EMR_API JobFlowDetail();
+    AWS_EMR_API JobFlowDetail(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMR_API JobFlowDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

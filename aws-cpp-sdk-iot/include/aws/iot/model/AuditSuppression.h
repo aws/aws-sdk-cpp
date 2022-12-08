@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/AuditSuppression">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API AuditSuppression
+  class AuditSuppression
   {
   public:
-    AuditSuppression();
-    AuditSuppression(Aws::Utils::Json::JsonView jsonValue);
-    AuditSuppression& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API AuditSuppression();
+    AWS_IOT_API AuditSuppression(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API AuditSuppression& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

@@ -39,13 +39,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/JobUpdate">AWS API
    * Reference</a></p>
    */
-  class AWS_GLUE_API JobUpdate
+  class JobUpdate
   {
   public:
-    JobUpdate();
-    JobUpdate(Aws::Utils::Json::JsonView jsonValue);
-    JobUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API JobUpdate();
+    AWS_GLUE_API JobUpdate(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API JobUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

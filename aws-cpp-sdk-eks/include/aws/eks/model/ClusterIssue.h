@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ClusterIssue">AWS
    * API Reference</a></p>
    */
-  class AWS_EKS_API ClusterIssue
+  class ClusterIssue
   {
   public:
-    ClusterIssue();
-    ClusterIssue(Aws::Utils::Json::JsonView jsonValue);
-    ClusterIssue& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EKS_API ClusterIssue();
+    AWS_EKS_API ClusterIssue(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EKS_API ClusterIssue& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EKS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

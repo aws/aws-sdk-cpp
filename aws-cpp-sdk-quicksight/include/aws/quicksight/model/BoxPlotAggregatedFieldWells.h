@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/BoxPlotAggregatedFieldWells">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API BoxPlotAggregatedFieldWells
+  class BoxPlotAggregatedFieldWells
   {
   public:
-    BoxPlotAggregatedFieldWells();
-    BoxPlotAggregatedFieldWells(Aws::Utils::Json::JsonView jsonValue);
-    BoxPlotAggregatedFieldWells& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API BoxPlotAggregatedFieldWells();
+    AWS_QUICKSIGHT_API BoxPlotAggregatedFieldWells(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API BoxPlotAggregatedFieldWells& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

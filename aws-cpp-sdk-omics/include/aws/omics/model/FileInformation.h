@@ -26,13 +26,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/FileInformation">AWS
    * API Reference</a></p>
    */
-  class AWS_OMICS_API FileInformation
+  class FileInformation
   {
   public:
-    FileInformation();
-    FileInformation(Aws::Utils::Json::JsonView jsonValue);
-    FileInformation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OMICS_API FileInformation();
+    AWS_OMICS_API FileInformation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OMICS_API FileInformation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OMICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

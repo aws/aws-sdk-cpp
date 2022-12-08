@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/Entitlement">AWS
    * API Reference</a></p>
    */
-  class AWS_LICENSEMANAGER_API Entitlement
+  class Entitlement
   {
   public:
-    Entitlement();
-    Entitlement(Aws::Utils::Json::JsonView jsonValue);
-    Entitlement& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LICENSEMANAGER_API Entitlement();
+    AWS_LICENSEMANAGER_API Entitlement(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LICENSEMANAGER_API Entitlement& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LICENSEMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

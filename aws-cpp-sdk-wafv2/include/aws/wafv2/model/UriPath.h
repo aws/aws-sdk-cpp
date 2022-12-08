@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/UriPath">AWS API
    * Reference</a></p>
    */
-  class AWS_WAFV2_API UriPath
+  class UriPath
   {
   public:
-    UriPath();
-    UriPath(Aws::Utils::Json::JsonView jsonValue);
-    UriPath& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WAFV2_API UriPath();
+    AWS_WAFV2_API UriPath(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API UriPath& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
   };
 

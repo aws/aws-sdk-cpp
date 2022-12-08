@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/OutpostConfigResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_EKS_API OutpostConfigResponse
+  class OutpostConfigResponse
   {
   public:
-    OutpostConfigResponse();
-    OutpostConfigResponse(Aws::Utils::Json::JsonView jsonValue);
-    OutpostConfigResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EKS_API OutpostConfigResponse();
+    AWS_EKS_API OutpostConfigResponse(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EKS_API OutpostConfigResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EKS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

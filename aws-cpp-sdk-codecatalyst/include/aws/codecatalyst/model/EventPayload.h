@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codecatalyst-2022-09-28/EventPayload">AWS
    * API Reference</a></p>
    */
-  class AWS_CODECATALYST_API EventPayload
+  class EventPayload
   {
   public:
-    EventPayload();
-    EventPayload(Aws::Utils::Json::JsonView jsonValue);
-    EventPayload& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODECATALYST_API EventPayload();
+    AWS_CODECATALYST_API EventPayload(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODECATALYST_API EventPayload& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODECATALYST_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

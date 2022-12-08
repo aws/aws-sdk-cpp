@@ -29,14 +29,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/OriginCustomHeader">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFRONT_API OriginCustomHeader
+  class OriginCustomHeader
   {
   public:
-    OriginCustomHeader();
-    OriginCustomHeader(const Aws::Utils::Xml::XmlNode& xmlNode);
-    OriginCustomHeader& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API OriginCustomHeader();
+    AWS_CLOUDFRONT_API OriginCustomHeader(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API OriginCustomHeader& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**

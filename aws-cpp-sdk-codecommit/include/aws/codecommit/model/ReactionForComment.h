@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/ReactionForComment">AWS
    * API Reference</a></p>
    */
-  class AWS_CODECOMMIT_API ReactionForComment
+  class ReactionForComment
   {
   public:
-    ReactionForComment();
-    ReactionForComment(Aws::Utils::Json::JsonView jsonValue);
-    ReactionForComment& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODECOMMIT_API ReactionForComment();
+    AWS_CODECOMMIT_API ReactionForComment(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODECOMMIT_API ReactionForComment& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODECOMMIT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

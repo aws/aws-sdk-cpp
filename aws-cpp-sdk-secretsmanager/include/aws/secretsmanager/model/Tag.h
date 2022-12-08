@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/Tag">AWS
    * API Reference</a></p>
    */
-  class AWS_SECRETSMANAGER_API Tag
+  class Tag
   {
   public:
-    Tag();
-    Tag(Aws::Utils::Json::JsonView jsonValue);
-    Tag& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECRETSMANAGER_API Tag();
+    AWS_SECRETSMANAGER_API Tag(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECRETSMANAGER_API Tag& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECRETSMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

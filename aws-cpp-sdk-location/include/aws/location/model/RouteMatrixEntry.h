@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/RouteMatrixEntry">AWS
    * API Reference</a></p>
    */
-  class AWS_LOCATIONSERVICE_API RouteMatrixEntry
+  class RouteMatrixEntry
   {
   public:
-    RouteMatrixEntry();
-    RouteMatrixEntry(Aws::Utils::Json::JsonView jsonValue);
-    RouteMatrixEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LOCATIONSERVICE_API RouteMatrixEntry();
+    AWS_LOCATIONSERVICE_API RouteMatrixEntry(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOCATIONSERVICE_API RouteMatrixEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOCATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

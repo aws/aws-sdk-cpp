@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/Search">AWS API
    * Reference</a></p>
    */
-  class AWS_KENDRA_API Search
+  class Search
   {
   public:
-    Search();
-    Search(Aws::Utils::Json::JsonView jsonValue);
-    Search& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KENDRA_API Search();
+    AWS_KENDRA_API Search(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API Search& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

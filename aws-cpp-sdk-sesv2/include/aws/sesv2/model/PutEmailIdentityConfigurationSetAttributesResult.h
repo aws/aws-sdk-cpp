@@ -28,12 +28,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutEmailIdentityConfigurationSetAttributesResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_SESV2_API PutEmailIdentityConfigurationSetAttributesResult
+  class PutEmailIdentityConfigurationSetAttributesResult
   {
   public:
-    PutEmailIdentityConfigurationSetAttributesResult();
-    PutEmailIdentityConfigurationSetAttributesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PutEmailIdentityConfigurationSetAttributesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SESV2_API PutEmailIdentityConfigurationSetAttributesResult();
+    AWS_SESV2_API PutEmailIdentityConfigurationSetAttributesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SESV2_API PutEmailIdentityConfigurationSetAttributesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

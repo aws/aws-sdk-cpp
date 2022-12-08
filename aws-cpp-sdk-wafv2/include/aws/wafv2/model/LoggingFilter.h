@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/LoggingFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_WAFV2_API LoggingFilter
+  class LoggingFilter
   {
   public:
-    LoggingFilter();
-    LoggingFilter(Aws::Utils::Json::JsonView jsonValue);
-    LoggingFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WAFV2_API LoggingFilter();
+    AWS_WAFV2_API LoggingFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API LoggingFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

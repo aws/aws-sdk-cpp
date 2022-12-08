@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsApiGatewayMethodSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsApiGatewayMethodSettings
+  class AwsApiGatewayMethodSettings
   {
   public:
-    AwsApiGatewayMethodSettings();
-    AwsApiGatewayMethodSettings(Aws::Utils::Json::JsonView jsonValue);
-    AwsApiGatewayMethodSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsApiGatewayMethodSettings();
+    AWS_SECURITYHUB_API AwsApiGatewayMethodSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsApiGatewayMethodSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

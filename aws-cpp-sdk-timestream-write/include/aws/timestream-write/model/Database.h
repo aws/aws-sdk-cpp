@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/timestream-write-2018-11-01/Database">AWS
    * API Reference</a></p>
    */
-  class AWS_TIMESTREAMWRITE_API Database
+  class Database
   {
   public:
-    Database();
-    Database(Aws::Utils::Json::JsonView jsonValue);
-    Database& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TIMESTREAMWRITE_API Database();
+    AWS_TIMESTREAMWRITE_API Database(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TIMESTREAMWRITE_API Database& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TIMESTREAMWRITE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

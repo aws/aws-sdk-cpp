@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ResourceDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_CONFIGSERVICE_API ResourceDetails
+  class ResourceDetails
   {
   public:
-    ResourceDetails();
-    ResourceDetails(Aws::Utils::Json::JsonView jsonValue);
-    ResourceDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONFIGSERVICE_API ResourceDetails();
+    AWS_CONFIGSERVICE_API ResourceDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API ResourceDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

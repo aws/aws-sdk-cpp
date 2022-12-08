@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/ConfigurationId">AWS
    * API Reference</a></p>
    */
-  class AWS_MQ_API ConfigurationId
+  class ConfigurationId
   {
   public:
-    ConfigurationId();
-    ConfigurationId(Aws::Utils::Json::JsonView jsonValue);
-    ConfigurationId& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MQ_API ConfigurationId();
+    AWS_MQ_API ConfigurationId(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MQ_API ConfigurationId& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MQ_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

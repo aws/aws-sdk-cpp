@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/Connection">AWS
    * API Reference</a></p>
    */
-  class AWS_EVENTBRIDGE_API Connection
+  class Connection
   {
   public:
-    Connection();
-    Connection(Aws::Utils::Json::JsonView jsonValue);
-    Connection& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EVENTBRIDGE_API Connection();
+    AWS_EVENTBRIDGE_API Connection(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EVENTBRIDGE_API Connection& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EVENTBRIDGE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/EksContainerVolumeMount">AWS
    * API Reference</a></p>
    */
-  class AWS_BATCH_API EksContainerVolumeMount
+  class EksContainerVolumeMount
   {
   public:
-    EksContainerVolumeMount();
-    EksContainerVolumeMount(Aws::Utils::Json::JsonView jsonValue);
-    EksContainerVolumeMount& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BATCH_API EksContainerVolumeMount();
+    AWS_BATCH_API EksContainerVolumeMount(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BATCH_API EksContainerVolumeMount& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BATCH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

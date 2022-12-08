@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/CoreDevice">AWS
    * API Reference</a></p>
    */
-  class AWS_GREENGRASSV2_API CoreDevice
+  class CoreDevice
   {
   public:
-    CoreDevice();
-    CoreDevice(Aws::Utils::Json::JsonView jsonValue);
-    CoreDevice& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GREENGRASSV2_API CoreDevice();
+    AWS_GREENGRASSV2_API CoreDevice(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASSV2_API CoreDevice& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

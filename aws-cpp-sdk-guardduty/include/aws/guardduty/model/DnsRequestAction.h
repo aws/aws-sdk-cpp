@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DnsRequestAction">AWS
    * API Reference</a></p>
    */
-  class AWS_GUARDDUTY_API DnsRequestAction
+  class DnsRequestAction
   {
   public:
-    DnsRequestAction();
-    DnsRequestAction(Aws::Utils::Json::JsonView jsonValue);
-    DnsRequestAction& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GUARDDUTY_API DnsRequestAction();
+    AWS_GUARDDUTY_API DnsRequestAction(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API DnsRequestAction& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DashboardSourceTemplate">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API DashboardSourceTemplate
+  class DashboardSourceTemplate
   {
   public:
-    DashboardSourceTemplate();
-    DashboardSourceTemplate(Aws::Utils::Json::JsonView jsonValue);
-    DashboardSourceTemplate& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API DashboardSourceTemplate();
+    AWS_QUICKSIGHT_API DashboardSourceTemplate(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API DashboardSourceTemplate& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

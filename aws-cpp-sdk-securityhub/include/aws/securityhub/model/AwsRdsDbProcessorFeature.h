@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsRdsDbProcessorFeature">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsRdsDbProcessorFeature
+  class AwsRdsDbProcessorFeature
   {
   public:
-    AwsRdsDbProcessorFeature();
-    AwsRdsDbProcessorFeature(Aws::Utils::Json::JsonView jsonValue);
-    AwsRdsDbProcessorFeature& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsRdsDbProcessorFeature();
+    AWS_SECURITYHUB_API AwsRdsDbProcessorFeature(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsRdsDbProcessorFeature& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

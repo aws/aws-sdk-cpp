@@ -30,15 +30,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/VgwTelemetry">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API VgwTelemetry
+  class VgwTelemetry
   {
   public:
-    VgwTelemetry();
-    VgwTelemetry(const Aws::Utils::Xml::XmlNode& xmlNode);
-    VgwTelemetry& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API VgwTelemetry();
+    AWS_EC2_API VgwTelemetry(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API VgwTelemetry& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**

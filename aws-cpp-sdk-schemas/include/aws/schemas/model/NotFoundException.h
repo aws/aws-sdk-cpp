@@ -23,13 +23,13 @@ namespace Schemas
 namespace Model
 {
 
-  class AWS_SCHEMAS_API NotFoundException
+  class NotFoundException
   {
   public:
-    NotFoundException();
-    NotFoundException(Aws::Utils::Json::JsonView jsonValue);
-    NotFoundException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SCHEMAS_API NotFoundException();
+    AWS_SCHEMAS_API NotFoundException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SCHEMAS_API NotFoundException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SCHEMAS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

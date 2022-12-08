@@ -33,15 +33,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ApplicationVersionDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICBEANSTALK_API ApplicationVersionDescription
+  class ApplicationVersionDescription
   {
   public:
-    ApplicationVersionDescription();
-    ApplicationVersionDescription(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ApplicationVersionDescription& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICBEANSTALK_API ApplicationVersionDescription();
+    AWS_ELASTICBEANSTALK_API ApplicationVersionDescription(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICBEANSTALK_API ApplicationVersionDescription& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_ELASTICBEANSTALK_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_ELASTICBEANSTALK_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**

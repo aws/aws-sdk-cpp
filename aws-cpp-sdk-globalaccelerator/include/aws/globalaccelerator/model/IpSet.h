@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/IpSet">AWS
    * API Reference</a></p>
    */
-  class AWS_GLOBALACCELERATOR_API IpSet
+  class IpSet
   {
   public:
-    IpSet();
-    IpSet(Aws::Utils::Json::JsonView jsonValue);
-    IpSet& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLOBALACCELERATOR_API IpSet();
+    AWS_GLOBALACCELERATOR_API IpSet(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLOBALACCELERATOR_API IpSet& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLOBALACCELERATOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

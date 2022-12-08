@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ScanFilePath">AWS
    * API Reference</a></p>
    */
-  class AWS_GUARDDUTY_API ScanFilePath
+  class ScanFilePath
   {
   public:
-    ScanFilePath();
-    ScanFilePath(Aws::Utils::Json::JsonView jsonValue);
-    ScanFilePath& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GUARDDUTY_API ScanFilePath();
+    AWS_GUARDDUTY_API ScanFilePath(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API ScanFilePath& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

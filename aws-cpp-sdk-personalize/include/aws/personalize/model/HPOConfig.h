@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/HPOConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_PERSONALIZE_API HPOConfig
+  class HPOConfig
   {
   public:
-    HPOConfig();
-    HPOConfig(Aws::Utils::Json::JsonView jsonValue);
-    HPOConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PERSONALIZE_API HPOConfig();
+    AWS_PERSONALIZE_API HPOConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PERSONALIZE_API HPOConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PERSONALIZE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

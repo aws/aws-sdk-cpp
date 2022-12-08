@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CustomContentConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API CustomContentConfiguration
+  class CustomContentConfiguration
   {
   public:
-    CustomContentConfiguration();
-    CustomContentConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    CustomContentConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API CustomContentConfiguration();
+    AWS_QUICKSIGHT_API CustomContentConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API CustomContentConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/TopicPreference">AWS
    * API Reference</a></p>
    */
-  class AWS_SESV2_API TopicPreference
+  class TopicPreference
   {
   public:
-    TopicPreference();
-    TopicPreference(Aws::Utils::Json::JsonView jsonValue);
-    TopicPreference& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SESV2_API TopicPreference();
+    AWS_SESV2_API TopicPreference(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SESV2_API TopicPreference& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SESV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

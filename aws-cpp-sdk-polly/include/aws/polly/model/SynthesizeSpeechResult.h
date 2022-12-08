@@ -19,21 +19,21 @@ namespace Polly
 {
 namespace Model
 {
-  class AWS_POLLY_API SynthesizeSpeechResult
+  class SynthesizeSpeechResult
   {
   public:
-    SynthesizeSpeechResult();
+    AWS_POLLY_API SynthesizeSpeechResult();
     //We have to define these because Microsoft doesn't auto generate them
-    SynthesizeSpeechResult(SynthesizeSpeechResult&&);
-    SynthesizeSpeechResult& operator=(SynthesizeSpeechResult&&);
+    AWS_POLLY_API SynthesizeSpeechResult(SynthesizeSpeechResult&&);
+    AWS_POLLY_API SynthesizeSpeechResult& operator=(SynthesizeSpeechResult&&);
     //we delete these because Microsoft doesn't handle move generation correctly
     //and we therefore don't trust them to get it right here either.
     SynthesizeSpeechResult(const SynthesizeSpeechResult&) = delete;
     SynthesizeSpeechResult& operator=(const SynthesizeSpeechResult&) = delete;
 
 
-    SynthesizeSpeechResult(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
-    SynthesizeSpeechResult& operator=(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
+    AWS_POLLY_API SynthesizeSpeechResult(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
+    AWS_POLLY_API SynthesizeSpeechResult& operator=(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
 
 
 

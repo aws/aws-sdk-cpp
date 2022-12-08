@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsRedshiftClusterEndpoint">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsRedshiftClusterEndpoint
+  class AwsRedshiftClusterEndpoint
   {
   public:
-    AwsRedshiftClusterEndpoint();
-    AwsRedshiftClusterEndpoint(Aws::Utils::Json::JsonView jsonValue);
-    AwsRedshiftClusterEndpoint& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsRedshiftClusterEndpoint();
+    AWS_SECURITYHUB_API AwsRedshiftClusterEndpoint(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsRedshiftClusterEndpoint& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

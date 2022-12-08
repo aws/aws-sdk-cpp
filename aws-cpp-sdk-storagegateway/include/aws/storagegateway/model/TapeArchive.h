@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/TapeArchive">AWS
    * API Reference</a></p>
    */
-  class AWS_STORAGEGATEWAY_API TapeArchive
+  class TapeArchive
   {
   public:
-    TapeArchive();
-    TapeArchive(Aws::Utils::Json::JsonView jsonValue);
-    TapeArchive& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_STORAGEGATEWAY_API TapeArchive();
+    AWS_STORAGEGATEWAY_API TapeArchive(Aws::Utils::Json::JsonView jsonValue);
+    AWS_STORAGEGATEWAY_API TapeArchive& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_STORAGEGATEWAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

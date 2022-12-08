@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/Suite">AWS
    * API Reference</a></p>
    */
-  class AWS_DEVICEFARM_API Suite
+  class Suite
   {
   public:
-    Suite();
-    Suite(Aws::Utils::Json::JsonView jsonValue);
-    Suite& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DEVICEFARM_API Suite();
+    AWS_DEVICEFARM_API Suite(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVICEFARM_API Suite& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVICEFARM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

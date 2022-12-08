@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/TeamMember">AWS
    * API Reference</a></p>
    */
-  class AWS_CODESTAR_API TeamMember
+  class TeamMember
   {
   public:
-    TeamMember();
-    TeamMember(Aws::Utils::Json::JsonView jsonValue);
-    TeamMember& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODESTAR_API TeamMember();
+    AWS_CODESTAR_API TeamMember(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODESTAR_API TeamMember& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODESTAR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

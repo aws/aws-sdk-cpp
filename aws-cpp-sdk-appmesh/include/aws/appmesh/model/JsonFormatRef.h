@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/JsonFormatRef">AWS
    * API Reference</a></p>
    */
-  class AWS_APPMESH_API JsonFormatRef
+  class JsonFormatRef
   {
   public:
-    JsonFormatRef();
-    JsonFormatRef(Aws::Utils::Json::JsonView jsonValue);
-    JsonFormatRef& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPMESH_API JsonFormatRef();
+    AWS_APPMESH_API JsonFormatRef(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API JsonFormatRef& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

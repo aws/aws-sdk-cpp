@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/RetentionSetting">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYLAKE_API RetentionSetting
+  class RetentionSetting
   {
   public:
-    RetentionSetting();
-    RetentionSetting(Aws::Utils::Json::JsonView jsonValue);
-    RetentionSetting& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYLAKE_API RetentionSetting();
+    AWS_SECURITYLAKE_API RetentionSetting(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYLAKE_API RetentionSetting& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYLAKE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

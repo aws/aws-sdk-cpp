@@ -24,13 +24,13 @@ namespace ChimeSDKVoice
 namespace Model
 {
 
-  class AWS_CHIMESDKVOICE_API Termination
+  class Termination
   {
   public:
-    Termination();
-    Termination(Aws::Utils::Json::JsonView jsonValue);
-    Termination& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIMESDKVOICE_API Termination();
+    AWS_CHIMESDKVOICE_API Termination(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKVOICE_API Termination& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKVOICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

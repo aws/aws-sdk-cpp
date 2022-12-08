@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/SocketAddress">AWS
    * API Reference</a></p>
    */
-  class AWS_GROUNDSTATION_API SocketAddress
+  class SocketAddress
   {
   public:
-    SocketAddress();
-    SocketAddress(Aws::Utils::Json::JsonView jsonValue);
-    SocketAddress& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GROUNDSTATION_API SocketAddress();
+    AWS_GROUNDSTATION_API SocketAddress(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GROUNDSTATION_API SocketAddress& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GROUNDSTATION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/Operation">AWS
    * API Reference</a></p>
    */
-  class AWS_SSMSAP_API Operation
+  class Operation
   {
   public:
-    Operation();
-    Operation(Aws::Utils::Json::JsonView jsonValue);
-    Operation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSMSAP_API Operation();
+    AWS_SSMSAP_API Operation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSMSAP_API Operation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSMSAP_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

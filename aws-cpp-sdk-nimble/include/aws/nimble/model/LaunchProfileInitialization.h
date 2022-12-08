@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/LaunchProfileInitialization">AWS
    * API Reference</a></p>
    */
-  class AWS_NIMBLESTUDIO_API LaunchProfileInitialization
+  class LaunchProfileInitialization
   {
   public:
-    LaunchProfileInitialization();
-    LaunchProfileInitialization(Aws::Utils::Json::JsonView jsonValue);
-    LaunchProfileInitialization& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_NIMBLESTUDIO_API LaunchProfileInitialization();
+    AWS_NIMBLESTUDIO_API LaunchProfileInitialization(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NIMBLESTUDIO_API LaunchProfileInitialization& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NIMBLESTUDIO_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

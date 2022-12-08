@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_SECURITYLAKE_API UpdateSubscriptionNotificationConfigurationRequest : public SecurityLakeRequest
+  class UpdateSubscriptionNotificationConfigurationRequest : public SecurityLakeRequest
   {
   public:
-    UpdateSubscriptionNotificationConfigurationRequest();
+    AWS_SECURITYLAKE_API UpdateSubscriptionNotificationConfigurationRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,7 +30,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateSubscriptionNotificationConfiguration"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SECURITYLAKE_API Aws::String SerializePayload() const override;
 
 
     /**

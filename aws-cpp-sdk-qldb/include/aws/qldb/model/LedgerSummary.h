@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/LedgerSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_QLDB_API LedgerSummary
+  class LedgerSummary
   {
   public:
-    LedgerSummary();
-    LedgerSummary(Aws::Utils::Json::JsonView jsonValue);
-    LedgerSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QLDB_API LedgerSummary();
+    AWS_QLDB_API LedgerSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QLDB_API LedgerSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QLDB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

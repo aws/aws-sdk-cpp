@@ -26,12 +26,12 @@ namespace MQ
 {
 namespace Model
 {
-  class AWS_MQ_API DescribeBrokerInstanceOptionsResult
+  class DescribeBrokerInstanceOptionsResult
   {
   public:
-    DescribeBrokerInstanceOptionsResult();
-    DescribeBrokerInstanceOptionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeBrokerInstanceOptionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MQ_API DescribeBrokerInstanceOptionsResult();
+    AWS_MQ_API DescribeBrokerInstanceOptionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MQ_API DescribeBrokerInstanceOptionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

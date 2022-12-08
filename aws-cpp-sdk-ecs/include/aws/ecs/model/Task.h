@@ -41,13 +41,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/Task">AWS API
    * Reference</a></p>
    */
-  class AWS_ECS_API Task
+  class Task
   {
   public:
-    Task();
-    Task(Aws::Utils::Json::JsonView jsonValue);
-    Task& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ECS_API Task();
+    AWS_ECS_API Task(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECS_API Task& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

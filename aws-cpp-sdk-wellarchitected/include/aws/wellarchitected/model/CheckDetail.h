@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/CheckDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_WELLARCHITECTED_API CheckDetail
+  class CheckDetail
   {
   public:
-    CheckDetail();
-    CheckDetail(Aws::Utils::Json::JsonView jsonValue);
-    CheckDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WELLARCHITECTED_API CheckDetail();
+    AWS_WELLARCHITECTED_API CheckDetail(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WELLARCHITECTED_API CheckDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WELLARCHITECTED_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

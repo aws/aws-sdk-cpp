@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/PrefetchRetrieval">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIATAILOR_API PrefetchRetrieval
+  class PrefetchRetrieval
   {
   public:
-    PrefetchRetrieval();
-    PrefetchRetrieval(Aws::Utils::Json::JsonView jsonValue);
-    PrefetchRetrieval& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIATAILOR_API PrefetchRetrieval();
+    AWS_MEDIATAILOR_API PrefetchRetrieval(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIATAILOR_API PrefetchRetrieval& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIATAILOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

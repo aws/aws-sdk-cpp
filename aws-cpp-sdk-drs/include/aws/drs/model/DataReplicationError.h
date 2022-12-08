@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/DataReplicationError">AWS
    * API Reference</a></p>
    */
-  class AWS_DRS_API DataReplicationError
+  class DataReplicationError
   {
   public:
-    DataReplicationError();
-    DataReplicationError(Aws::Utils::Json::JsonView jsonValue);
-    DataReplicationError& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DRS_API DataReplicationError();
+    AWS_DRS_API DataReplicationError(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DRS_API DataReplicationError& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DRS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

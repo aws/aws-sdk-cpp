@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/InterMetricImpactDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_LOOKOUTMETRICS_API InterMetricImpactDetails
+  class InterMetricImpactDetails
   {
   public:
-    InterMetricImpactDetails();
-    InterMetricImpactDetails(Aws::Utils::Json::JsonView jsonValue);
-    InterMetricImpactDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LOOKOUTMETRICS_API InterMetricImpactDetails();
+    AWS_LOOKOUTMETRICS_API InterMetricImpactDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTMETRICS_API InterMetricImpactDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTMETRICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

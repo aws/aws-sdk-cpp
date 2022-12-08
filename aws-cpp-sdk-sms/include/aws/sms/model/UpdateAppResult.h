@@ -27,12 +27,12 @@ namespace SMS
 {
 namespace Model
 {
-  class AWS_SMS_API UpdateAppResult
+  class UpdateAppResult
   {
   public:
-    UpdateAppResult();
-    UpdateAppResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateAppResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SMS_API UpdateAppResult();
+    AWS_SMS_API UpdateAppResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SMS_API UpdateAppResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

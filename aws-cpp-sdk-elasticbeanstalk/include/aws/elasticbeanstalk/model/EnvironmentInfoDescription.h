@@ -31,15 +31,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/EnvironmentInfoDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICBEANSTALK_API EnvironmentInfoDescription
+  class EnvironmentInfoDescription
   {
   public:
-    EnvironmentInfoDescription();
-    EnvironmentInfoDescription(const Aws::Utils::Xml::XmlNode& xmlNode);
-    EnvironmentInfoDescription& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICBEANSTALK_API EnvironmentInfoDescription();
+    AWS_ELASTICBEANSTALK_API EnvironmentInfoDescription(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICBEANSTALK_API EnvironmentInfoDescription& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_ELASTICBEANSTALK_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_ELASTICBEANSTALK_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**

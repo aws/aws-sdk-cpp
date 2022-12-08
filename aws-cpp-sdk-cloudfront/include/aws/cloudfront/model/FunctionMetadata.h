@@ -29,14 +29,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/FunctionMetadata">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFRONT_API FunctionMetadata
+  class FunctionMetadata
   {
   public:
-    FunctionMetadata();
-    FunctionMetadata(const Aws::Utils::Xml::XmlNode& xmlNode);
-    FunctionMetadata& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API FunctionMetadata();
+    AWS_CLOUDFRONT_API FunctionMetadata(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API FunctionMetadata& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**

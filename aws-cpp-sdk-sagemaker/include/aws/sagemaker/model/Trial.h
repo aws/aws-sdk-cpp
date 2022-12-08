@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/Trial">AWS API
    * Reference</a></p>
    */
-  class AWS_SAGEMAKER_API Trial
+  class Trial
   {
   public:
-    Trial();
-    Trial(Aws::Utils::Json::JsonView jsonValue);
-    Trial& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API Trial();
+    AWS_SAGEMAKER_API Trial(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Trial& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/BillingModeSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_DYNAMODB_API BillingModeSummary
+  class BillingModeSummary
   {
   public:
-    BillingModeSummary();
-    BillingModeSummary(Aws::Utils::Json::JsonView jsonValue);
-    BillingModeSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DYNAMODB_API BillingModeSummary();
+    AWS_DYNAMODB_API BillingModeSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API BillingModeSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

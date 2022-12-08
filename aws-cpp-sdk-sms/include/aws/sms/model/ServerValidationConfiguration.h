@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/ServerValidationConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_SMS_API ServerValidationConfiguration
+  class ServerValidationConfiguration
   {
   public:
-    ServerValidationConfiguration();
-    ServerValidationConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    ServerValidationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SMS_API ServerValidationConfiguration();
+    AWS_SMS_API ServerValidationConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SMS_API ServerValidationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

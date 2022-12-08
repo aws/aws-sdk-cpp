@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsElbLoadBalancerHealthCheck">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsElbLoadBalancerHealthCheck
+  class AwsElbLoadBalancerHealthCheck
   {
   public:
-    AwsElbLoadBalancerHealthCheck();
-    AwsElbLoadBalancerHealthCheck(Aws::Utils::Json::JsonView jsonValue);
-    AwsElbLoadBalancerHealthCheck& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsElbLoadBalancerHealthCheck();
+    AWS_SECURITYHUB_API AwsElbLoadBalancerHealthCheck(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsElbLoadBalancerHealthCheck& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -32,12 +32,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/GetFindingsReportAccountSummaryResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEGURUPROFILER_API GetFindingsReportAccountSummaryResult
+  class GetFindingsReportAccountSummaryResult
   {
   public:
-    GetFindingsReportAccountSummaryResult();
-    GetFindingsReportAccountSummaryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetFindingsReportAccountSummaryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODEGURUPROFILER_API GetFindingsReportAccountSummaryResult();
+    AWS_CODEGURUPROFILER_API GetFindingsReportAccountSummaryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODEGURUPROFILER_API GetFindingsReportAccountSummaryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

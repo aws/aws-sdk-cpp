@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotsecuretunneling-2018-10-05/DestinationConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTSECURETUNNELING_API DestinationConfig
+  class DestinationConfig
   {
   public:
-    DestinationConfig();
-    DestinationConfig(Aws::Utils::Json::JsonView jsonValue);
-    DestinationConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTSECURETUNNELING_API DestinationConfig();
+    AWS_IOTSECURETUNNELING_API DestinationConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSECURETUNNELING_API DestinationConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSECURETUNNELING_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

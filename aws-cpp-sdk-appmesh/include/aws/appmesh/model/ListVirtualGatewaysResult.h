@@ -26,12 +26,12 @@ namespace AppMesh
 {
 namespace Model
 {
-  class AWS_APPMESH_API ListVirtualGatewaysResult
+  class ListVirtualGatewaysResult
   {
   public:
-    ListVirtualGatewaysResult();
-    ListVirtualGatewaysResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListVirtualGatewaysResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPMESH_API ListVirtualGatewaysResult();
+    AWS_APPMESH_API ListVirtualGatewaysResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPMESH_API ListVirtualGatewaysResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

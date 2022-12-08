@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/LensUpgradeSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_WELLARCHITECTED_API LensUpgradeSummary
+  class LensUpgradeSummary
   {
   public:
-    LensUpgradeSummary();
-    LensUpgradeSummary(Aws::Utils::Json::JsonView jsonValue);
-    LensUpgradeSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WELLARCHITECTED_API LensUpgradeSummary();
+    AWS_WELLARCHITECTED_API LensUpgradeSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WELLARCHITECTED_API LensUpgradeSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WELLARCHITECTED_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

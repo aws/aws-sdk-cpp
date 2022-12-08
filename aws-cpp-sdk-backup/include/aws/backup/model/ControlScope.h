@@ -37,13 +37,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ControlScope">AWS
    * API Reference</a></p>
    */
-  class AWS_BACKUP_API ControlScope
+  class ControlScope
   {
   public:
-    ControlScope();
-    ControlScope(Aws::Utils::Json::JsonView jsonValue);
-    ControlScope& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BACKUP_API ControlScope();
+    AWS_BACKUP_API ControlScope(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BACKUP_API ControlScope& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BACKUP_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

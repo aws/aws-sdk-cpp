@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/SourceType">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYLAKE_API SourceType
+  class SourceType
   {
   public:
-    SourceType();
-    SourceType(Aws::Utils::Json::JsonView jsonValue);
-    SourceType& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYLAKE_API SourceType();
+    AWS_SECURITYLAKE_API SourceType(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYLAKE_API SourceType& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYLAKE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

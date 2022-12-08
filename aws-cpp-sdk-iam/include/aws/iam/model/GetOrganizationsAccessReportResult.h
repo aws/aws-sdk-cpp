@@ -30,12 +30,12 @@ namespace IAM
 {
 namespace Model
 {
-  class AWS_IAM_API GetOrganizationsAccessReportResult
+  class GetOrganizationsAccessReportResult
   {
   public:
-    GetOrganizationsAccessReportResult();
-    GetOrganizationsAccessReportResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    GetOrganizationsAccessReportResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_IAM_API GetOrganizationsAccessReportResult();
+    AWS_IAM_API GetOrganizationsAccessReportResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_IAM_API GetOrganizationsAccessReportResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

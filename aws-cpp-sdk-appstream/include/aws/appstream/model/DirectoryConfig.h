@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DirectoryConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_APPSTREAM_API DirectoryConfig
+  class DirectoryConfig
   {
   public:
-    DirectoryConfig();
-    DirectoryConfig(Aws::Utils::Json::JsonView jsonValue);
-    DirectoryConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPSTREAM_API DirectoryConfig();
+    AWS_APPSTREAM_API DirectoryConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPSTREAM_API DirectoryConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPSTREAM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

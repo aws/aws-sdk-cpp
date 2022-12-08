@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/MonitoringInput">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API MonitoringInput
+  class MonitoringInput
   {
   public:
-    MonitoringInput();
-    MonitoringInput(Aws::Utils::Json::JsonView jsonValue);
-    MonitoringInput& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API MonitoringInput();
+    AWS_SAGEMAKER_API MonitoringInput(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API MonitoringInput& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

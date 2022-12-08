@@ -30,12 +30,12 @@ namespace SageMaker
 {
 namespace Model
 {
-  class AWS_SAGEMAKER_API GetDeviceFleetReportResult
+  class GetDeviceFleetReportResult
   {
   public:
-    GetDeviceFleetReportResult();
-    GetDeviceFleetReportResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetDeviceFleetReportResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SAGEMAKER_API GetDeviceFleetReportResult();
+    AWS_SAGEMAKER_API GetDeviceFleetReportResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SAGEMAKER_API GetDeviceFleetReportResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/ClientCertificate">AWS
    * API Reference</a></p>
    */
-  class AWS_APIGATEWAY_API ClientCertificate
+  class ClientCertificate
   {
   public:
-    ClientCertificate();
-    ClientCertificate(Aws::Utils::Json::JsonView jsonValue);
-    ClientCertificate& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APIGATEWAY_API ClientCertificate();
+    AWS_APIGATEWAY_API ClientCertificate(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APIGATEWAY_API ClientCertificate& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APIGATEWAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

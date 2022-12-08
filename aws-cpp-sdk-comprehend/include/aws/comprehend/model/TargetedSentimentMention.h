@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/TargetedSentimentMention">AWS
    * API Reference</a></p>
    */
-  class AWS_COMPREHEND_API TargetedSentimentMention
+  class TargetedSentimentMention
   {
   public:
-    TargetedSentimentMention();
-    TargetedSentimentMention(Aws::Utils::Json::JsonView jsonValue);
-    TargetedSentimentMention& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COMPREHEND_API TargetedSentimentMention();
+    AWS_COMPREHEND_API TargetedSentimentMention(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHEND_API TargetedSentimentMention& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHEND_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -26,12 +26,12 @@ namespace Route53
 {
 namespace Model
 {
-  class AWS_ROUTE53_API ListQueryLoggingConfigsResult
+  class ListQueryLoggingConfigsResult
   {
   public:
-    ListQueryLoggingConfigsResult();
-    ListQueryLoggingConfigsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ListQueryLoggingConfigsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ROUTE53_API ListQueryLoggingConfigsResult();
+    AWS_ROUTE53_API ListQueryLoggingConfigsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ROUTE53_API ListQueryLoggingConfigsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

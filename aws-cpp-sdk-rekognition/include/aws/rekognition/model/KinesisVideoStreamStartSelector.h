@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/KinesisVideoStreamStartSelector">AWS
    * API Reference</a></p>
    */
-  class AWS_REKOGNITION_API KinesisVideoStreamStartSelector
+  class KinesisVideoStreamStartSelector
   {
   public:
-    KinesisVideoStreamStartSelector();
-    KinesisVideoStreamStartSelector(Aws::Utils::Json::JsonView jsonValue);
-    KinesisVideoStreamStartSelector& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_REKOGNITION_API KinesisVideoStreamStartSelector();
+    AWS_REKOGNITION_API KinesisVideoStreamStartSelector(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API KinesisVideoStreamStartSelector& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

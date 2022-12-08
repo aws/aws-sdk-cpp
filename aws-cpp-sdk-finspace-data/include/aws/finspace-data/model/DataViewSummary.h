@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/DataViewSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_FINSPACEDATA_API DataViewSummary
+  class DataViewSummary
   {
   public:
-    DataViewSummary();
-    DataViewSummary(Aws::Utils::Json::JsonView jsonValue);
-    DataViewSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FINSPACEDATA_API DataViewSummary();
+    AWS_FINSPACEDATA_API DataViewSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FINSPACEDATA_API DataViewSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FINSPACEDATA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

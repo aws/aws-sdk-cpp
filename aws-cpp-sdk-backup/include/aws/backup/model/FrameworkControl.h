@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/FrameworkControl">AWS
    * API Reference</a></p>
    */
-  class AWS_BACKUP_API FrameworkControl
+  class FrameworkControl
   {
   public:
-    FrameworkControl();
-    FrameworkControl(Aws::Utils::Json::JsonView jsonValue);
-    FrameworkControl& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BACKUP_API FrameworkControl();
+    AWS_BACKUP_API FrameworkControl(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BACKUP_API FrameworkControl& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BACKUP_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

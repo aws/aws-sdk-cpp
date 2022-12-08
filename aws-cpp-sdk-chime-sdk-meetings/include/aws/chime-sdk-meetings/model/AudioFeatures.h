@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/AudioFeatures">AWS
    * API Reference</a></p>
    */
-  class AWS_CHIMESDKMEETINGS_API AudioFeatures
+  class AudioFeatures
   {
   public:
-    AudioFeatures();
-    AudioFeatures(Aws::Utils::Json::JsonView jsonValue);
-    AudioFeatures& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIMESDKMEETINGS_API AudioFeatures();
+    AWS_CHIMESDKMEETINGS_API AudioFeatures(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKMEETINGS_API AudioFeatures& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKMEETINGS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

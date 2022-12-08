@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CustomerArtifactPaths">AWS
    * API Reference</a></p>
    */
-  class AWS_DEVICEFARM_API CustomerArtifactPaths
+  class CustomerArtifactPaths
   {
   public:
-    CustomerArtifactPaths();
-    CustomerArtifactPaths(Aws::Utils::Json::JsonView jsonValue);
-    CustomerArtifactPaths& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DEVICEFARM_API CustomerArtifactPaths();
+    AWS_DEVICEFARM_API CustomerArtifactPaths(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVICEFARM_API CustomerArtifactPaths& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVICEFARM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

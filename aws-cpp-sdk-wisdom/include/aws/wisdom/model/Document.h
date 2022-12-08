@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/Document">AWS API
    * Reference</a></p>
    */
-  class AWS_CONNECTWISDOMSERVICE_API Document
+  class Document
   {
   public:
-    Document();
-    Document(Aws::Utils::Json::JsonView jsonValue);
-    Document& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECTWISDOMSERVICE_API Document();
+    AWS_CONNECTWISDOMSERVICE_API Document(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTWISDOMSERVICE_API Document& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTWISDOMSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DocumentationVersion">AWS
    * API Reference</a></p>
    */
-  class AWS_APIGATEWAY_API DocumentationVersion
+  class DocumentationVersion
   {
   public:
-    DocumentationVersion();
-    DocumentationVersion(Aws::Utils::Json::JsonView jsonValue);
-    DocumentationVersion& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APIGATEWAY_API DocumentationVersion();
+    AWS_APIGATEWAY_API DocumentationVersion(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APIGATEWAY_API DocumentationVersion& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APIGATEWAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

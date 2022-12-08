@@ -36,12 +36,12 @@ namespace Macie2
 {
 namespace Model
 {
-  class AWS_MACIE2_API DescribeClassificationJobResult
+  class DescribeClassificationJobResult
   {
   public:
-    DescribeClassificationJobResult();
-    DescribeClassificationJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeClassificationJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MACIE2_API DescribeClassificationJobResult();
+    AWS_MACIE2_API DescribeClassificationJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MACIE2_API DescribeClassificationJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

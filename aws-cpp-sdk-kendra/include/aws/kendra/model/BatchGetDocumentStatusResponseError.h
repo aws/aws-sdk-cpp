@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/BatchGetDocumentStatusResponseError">AWS
    * API Reference</a></p>
    */
-  class AWS_KENDRA_API BatchGetDocumentStatusResponseError
+  class BatchGetDocumentStatusResponseError
   {
   public:
-    BatchGetDocumentStatusResponseError();
-    BatchGetDocumentStatusResponseError(Aws::Utils::Json::JsonView jsonValue);
-    BatchGetDocumentStatusResponseError& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KENDRA_API BatchGetDocumentStatusResponseError();
+    AWS_KENDRA_API BatchGetDocumentStatusResponseError(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API BatchGetDocumentStatusResponseError& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

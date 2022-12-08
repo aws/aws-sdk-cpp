@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/AnalyzedResource">AWS
    * API Reference</a></p>
    */
-  class AWS_ACCESSANALYZER_API AnalyzedResource
+  class AnalyzedResource
   {
   public:
-    AnalyzedResource();
-    AnalyzedResource(Aws::Utils::Json::JsonView jsonValue);
-    AnalyzedResource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ACCESSANALYZER_API AnalyzedResource();
+    AWS_ACCESSANALYZER_API AnalyzedResource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACCESSANALYZER_API AnalyzedResource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACCESSANALYZER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

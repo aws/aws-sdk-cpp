@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/EndpointAccess">AWS
    * API Reference</a></p>
    */
-  class AWS_REDSHIFTSERVERLESS_API EndpointAccess
+  class EndpointAccess
   {
   public:
-    EndpointAccess();
-    EndpointAccess(Aws::Utils::Json::JsonView jsonValue);
-    EndpointAccess& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_REDSHIFTSERVERLESS_API EndpointAccess();
+    AWS_REDSHIFTSERVERLESS_API EndpointAccess(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REDSHIFTSERVERLESS_API EndpointAccess& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REDSHIFTSERVERLESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

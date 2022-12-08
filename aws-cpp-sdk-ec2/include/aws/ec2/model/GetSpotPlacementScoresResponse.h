@@ -27,12 +27,12 @@ namespace EC2
 {
 namespace Model
 {
-  class AWS_EC2_API GetSpotPlacementScoresResponse
+  class GetSpotPlacementScoresResponse
   {
   public:
-    GetSpotPlacementScoresResponse();
-    GetSpotPlacementScoresResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    GetSpotPlacementScoresResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API GetSpotPlacementScoresResponse();
+    AWS_EC2_API GetSpotPlacementScoresResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API GetSpotPlacementScoresResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/ListGeofenceResponseEntry">AWS
    * API Reference</a></p>
    */
-  class AWS_LOCATIONSERVICE_API ListGeofenceResponseEntry
+  class ListGeofenceResponseEntry
   {
   public:
-    ListGeofenceResponseEntry();
-    ListGeofenceResponseEntry(Aws::Utils::Json::JsonView jsonValue);
-    ListGeofenceResponseEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LOCATIONSERVICE_API ListGeofenceResponseEntry();
+    AWS_LOCATIONSERVICE_API ListGeofenceResponseEntry(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOCATIONSERVICE_API ListGeofenceResponseEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOCATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

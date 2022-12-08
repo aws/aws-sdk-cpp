@@ -33,15 +33,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/LoadBalancerAttributes">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICLOADBALANCING_API LoadBalancerAttributes
+  class LoadBalancerAttributes
   {
   public:
-    LoadBalancerAttributes();
-    LoadBalancerAttributes(const Aws::Utils::Xml::XmlNode& xmlNode);
-    LoadBalancerAttributes& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICLOADBALANCING_API LoadBalancerAttributes();
+    AWS_ELASTICLOADBALANCING_API LoadBalancerAttributes(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICLOADBALANCING_API LoadBalancerAttributes& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_ELASTICLOADBALANCING_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_ELASTICLOADBALANCING_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**

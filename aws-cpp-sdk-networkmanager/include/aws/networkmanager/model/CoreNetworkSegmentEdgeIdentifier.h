@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/CoreNetworkSegmentEdgeIdentifier">AWS
    * API Reference</a></p>
    */
-  class AWS_NETWORKMANAGER_API CoreNetworkSegmentEdgeIdentifier
+  class CoreNetworkSegmentEdgeIdentifier
   {
   public:
-    CoreNetworkSegmentEdgeIdentifier();
-    CoreNetworkSegmentEdgeIdentifier(Aws::Utils::Json::JsonView jsonValue);
-    CoreNetworkSegmentEdgeIdentifier& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_NETWORKMANAGER_API CoreNetworkSegmentEdgeIdentifier();
+    AWS_NETWORKMANAGER_API CoreNetworkSegmentEdgeIdentifier(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKMANAGER_API CoreNetworkSegmentEdgeIdentifier& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

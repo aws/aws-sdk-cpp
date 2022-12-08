@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/IncompatibilityMessage">AWS
    * API Reference</a></p>
    */
-  class AWS_DEVICEFARM_API IncompatibilityMessage
+  class IncompatibilityMessage
   {
   public:
-    IncompatibilityMessage();
-    IncompatibilityMessage(Aws::Utils::Json::JsonView jsonValue);
-    IncompatibilityMessage& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DEVICEFARM_API IncompatibilityMessage();
+    AWS_DEVICEFARM_API IncompatibilityMessage(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVICEFARM_API IncompatibilityMessage& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVICEFARM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

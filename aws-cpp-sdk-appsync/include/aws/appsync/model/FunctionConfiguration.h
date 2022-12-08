@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/FunctionConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_APPSYNC_API FunctionConfiguration
+  class FunctionConfiguration
   {
   public:
-    FunctionConfiguration();
-    FunctionConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    FunctionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPSYNC_API FunctionConfiguration();
+    AWS_APPSYNC_API FunctionConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPSYNC_API FunctionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPSYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

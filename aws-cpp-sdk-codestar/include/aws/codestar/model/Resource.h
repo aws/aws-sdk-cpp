@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/Resource">AWS
    * API Reference</a></p>
    */
-  class AWS_CODESTAR_API Resource
+  class Resource
   {
   public:
-    Resource();
-    Resource(Aws::Utils::Json::JsonView jsonValue);
-    Resource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODESTAR_API Resource();
+    AWS_CODESTAR_API Resource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODESTAR_API Resource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODESTAR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

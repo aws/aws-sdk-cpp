@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/Framework">AWS
    * API Reference</a></p>
    */
-  class AWS_AUDITMANAGER_API Framework
+  class Framework
   {
   public:
-    Framework();
-    Framework(Aws::Utils::Json::JsonView jsonValue);
-    Framework& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_AUDITMANAGER_API Framework();
+    AWS_AUDITMANAGER_API Framework(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AUDITMANAGER_API Framework& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AUDITMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

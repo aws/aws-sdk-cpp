@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/IntegerParameterRange">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API IntegerParameterRange
+  class IntegerParameterRange
   {
   public:
-    IntegerParameterRange();
-    IntegerParameterRange(Aws::Utils::Json::JsonView jsonValue);
-    IntegerParameterRange& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API IntegerParameterRange();
+    AWS_SAGEMAKER_API IntegerParameterRange(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API IntegerParameterRange& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

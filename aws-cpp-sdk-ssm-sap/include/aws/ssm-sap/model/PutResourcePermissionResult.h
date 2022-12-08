@@ -24,12 +24,12 @@ namespace SsmSap
 {
 namespace Model
 {
-  class AWS_SSMSAP_API PutResourcePermissionResult
+  class PutResourcePermissionResult
   {
   public:
-    PutResourcePermissionResult();
-    PutResourcePermissionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PutResourcePermissionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSMSAP_API PutResourcePermissionResult();
+    AWS_SSMSAP_API PutResourcePermissionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSMSAP_API PutResourcePermissionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

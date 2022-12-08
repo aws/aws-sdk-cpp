@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SendNotificationActionDefinition">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECT_API SendNotificationActionDefinition
+  class SendNotificationActionDefinition
   {
   public:
-    SendNotificationActionDefinition();
-    SendNotificationActionDefinition(Aws::Utils::Json::JsonView jsonValue);
-    SendNotificationActionDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECT_API SendNotificationActionDefinition();
+    AWS_CONNECT_API SendNotificationActionDefinition(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API SendNotificationActionDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

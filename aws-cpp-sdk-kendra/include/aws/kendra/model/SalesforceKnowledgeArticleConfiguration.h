@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/SalesforceKnowledgeArticleConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_KENDRA_API SalesforceKnowledgeArticleConfiguration
+  class SalesforceKnowledgeArticleConfiguration
   {
   public:
-    SalesforceKnowledgeArticleConfiguration();
-    SalesforceKnowledgeArticleConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    SalesforceKnowledgeArticleConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KENDRA_API SalesforceKnowledgeArticleConfiguration();
+    AWS_KENDRA_API SalesforceKnowledgeArticleConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API SalesforceKnowledgeArticleConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

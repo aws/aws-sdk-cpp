@@ -43,13 +43,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/BarChartVisual">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API BarChartVisual
+  class BarChartVisual
   {
   public:
-    BarChartVisual();
-    BarChartVisual(Aws::Utils::Json::JsonView jsonValue);
-    BarChartVisual& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API BarChartVisual();
+    AWS_QUICKSIGHT_API BarChartVisual(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API BarChartVisual& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

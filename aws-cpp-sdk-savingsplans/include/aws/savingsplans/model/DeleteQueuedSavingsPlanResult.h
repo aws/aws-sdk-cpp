@@ -22,12 +22,12 @@ namespace SavingsPlans
 {
 namespace Model
 {
-  class AWS_SAVINGSPLANS_API DeleteQueuedSavingsPlanResult
+  class DeleteQueuedSavingsPlanResult
   {
   public:
-    DeleteQueuedSavingsPlanResult();
-    DeleteQueuedSavingsPlanResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteQueuedSavingsPlanResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SAVINGSPLANS_API DeleteQueuedSavingsPlanResult();
+    AWS_SAVINGSPLANS_API DeleteQueuedSavingsPlanResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SAVINGSPLANS_API DeleteQueuedSavingsPlanResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

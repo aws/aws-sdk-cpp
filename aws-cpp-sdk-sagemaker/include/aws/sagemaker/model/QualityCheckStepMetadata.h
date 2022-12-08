@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/QualityCheckStepMetadata">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API QualityCheckStepMetadata
+  class QualityCheckStepMetadata
   {
   public:
-    QualityCheckStepMetadata();
-    QualityCheckStepMetadata(Aws::Utils::Json::JsonView jsonValue);
-    QualityCheckStepMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API QualityCheckStepMetadata();
+    AWS_SAGEMAKER_API QualityCheckStepMetadata(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API QualityCheckStepMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/Link">AWS
    * API Reference</a></p>
    */
-  class AWS_NETWORKMANAGER_API Link
+  class Link
   {
   public:
-    Link();
-    Link(Aws::Utils::Json::JsonView jsonValue);
-    Link& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_NETWORKMANAGER_API Link();
+    AWS_NETWORKMANAGER_API Link(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKMANAGER_API Link& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

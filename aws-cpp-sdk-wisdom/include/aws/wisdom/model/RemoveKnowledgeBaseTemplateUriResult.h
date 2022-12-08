@@ -22,12 +22,12 @@ namespace ConnectWisdomService
 {
 namespace Model
 {
-  class AWS_CONNECTWISDOMSERVICE_API RemoveKnowledgeBaseTemplateUriResult
+  class RemoveKnowledgeBaseTemplateUriResult
   {
   public:
-    RemoveKnowledgeBaseTemplateUriResult();
-    RemoveKnowledgeBaseTemplateUriResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    RemoveKnowledgeBaseTemplateUriResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CONNECTWISDOMSERVICE_API RemoveKnowledgeBaseTemplateUriResult();
+    AWS_CONNECTWISDOMSERVICE_API RemoveKnowledgeBaseTemplateUriResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CONNECTWISDOMSERVICE_API RemoveKnowledgeBaseTemplateUriResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

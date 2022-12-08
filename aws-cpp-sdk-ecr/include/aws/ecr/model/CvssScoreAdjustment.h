@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/CvssScoreAdjustment">AWS
    * API Reference</a></p>
    */
-  class AWS_ECR_API CvssScoreAdjustment
+  class CvssScoreAdjustment
   {
   public:
-    CvssScoreAdjustment();
-    CvssScoreAdjustment(Aws::Utils::Json::JsonView jsonValue);
-    CvssScoreAdjustment& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ECR_API CvssScoreAdjustment();
+    AWS_ECR_API CvssScoreAdjustment(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECR_API CvssScoreAdjustment& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/BatchPrediction">AWS
    * API Reference</a></p>
    */
-  class AWS_MACHINELEARNING_API BatchPrediction
+  class BatchPrediction
   {
   public:
-    BatchPrediction();
-    BatchPrediction(Aws::Utils::Json::JsonView jsonValue);
-    BatchPrediction& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MACHINELEARNING_API BatchPrediction();
+    AWS_MACHINELEARNING_API BatchPrediction(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACHINELEARNING_API BatchPrediction& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACHINELEARNING_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

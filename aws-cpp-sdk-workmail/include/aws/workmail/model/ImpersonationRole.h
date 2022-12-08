@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ImpersonationRole">AWS
    * API Reference</a></p>
    */
-  class AWS_WORKMAIL_API ImpersonationRole
+  class ImpersonationRole
   {
   public:
-    ImpersonationRole();
-    ImpersonationRole(Aws::Utils::Json::JsonView jsonValue);
-    ImpersonationRole& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WORKMAIL_API ImpersonationRole();
+    AWS_WORKMAIL_API ImpersonationRole(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKMAIL_API ImpersonationRole& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKMAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-vod-2018-11-07/DashManifest">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIAPACKAGEVOD_API DashManifest
+  class DashManifest
   {
   public:
-    DashManifest();
-    DashManifest(Aws::Utils::Json::JsonView jsonValue);
-    DashManifest& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIAPACKAGEVOD_API DashManifest();
+    AWS_MEDIAPACKAGEVOD_API DashManifest(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIAPACKAGEVOD_API DashManifest& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIAPACKAGEVOD_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

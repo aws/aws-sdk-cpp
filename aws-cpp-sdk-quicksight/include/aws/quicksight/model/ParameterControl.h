@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ParameterControl">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API ParameterControl
+  class ParameterControl
   {
   public:
-    ParameterControl();
-    ParameterControl(Aws::Utils::Json::JsonView jsonValue);
-    ParameterControl& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API ParameterControl();
+    AWS_QUICKSIGHT_API ParameterControl(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API ParameterControl& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

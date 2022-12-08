@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/SessionSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECTWISDOMSERVICE_API SessionSummary
+  class SessionSummary
   {
   public:
-    SessionSummary();
-    SessionSummary(Aws::Utils::Json::JsonView jsonValue);
-    SessionSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECTWISDOMSERVICE_API SessionSummary();
+    AWS_CONNECTWISDOMSERVICE_API SessionSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTWISDOMSERVICE_API SessionSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTWISDOMSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

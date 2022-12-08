@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/ChannelSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_IVS_API ChannelSummary
+  class ChannelSummary
   {
   public:
-    ChannelSummary();
-    ChannelSummary(Aws::Utils::Json::JsonView jsonValue);
-    ChannelSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IVS_API ChannelSummary();
+    AWS_IVS_API ChannelSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IVS_API ChannelSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IVS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

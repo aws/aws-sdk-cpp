@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/TaskActionDefinition">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECT_API TaskActionDefinition
+  class TaskActionDefinition
   {
   public:
-    TaskActionDefinition();
-    TaskActionDefinition(Aws::Utils::Json::JsonView jsonValue);
-    TaskActionDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECT_API TaskActionDefinition();
+    AWS_CONNECT_API TaskActionDefinition(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API TaskActionDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

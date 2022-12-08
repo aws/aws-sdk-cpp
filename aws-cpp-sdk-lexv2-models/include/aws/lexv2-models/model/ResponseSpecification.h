@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ResponseSpecification">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELSV2_API ResponseSpecification
+  class ResponseSpecification
   {
   public:
-    ResponseSpecification();
-    ResponseSpecification(Aws::Utils::Json::JsonView jsonValue);
-    ResponseSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELSV2_API ResponseSpecification();
+    AWS_LEXMODELSV2_API ResponseSpecification(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API ResponseSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/Location">AWS API
    * Reference</a></p>
    */
-  class AWS_GLUE_API Location
+  class Location
   {
   public:
-    Location();
-    Location(Aws::Utils::Json::JsonView jsonValue);
-    Location& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API Location();
+    AWS_GLUE_API Location(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Location& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

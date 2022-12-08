@@ -49,13 +49,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/Block">AWS API
    * Reference</a></p>
    */
-  class AWS_TEXTRACT_API Block
+  class Block
   {
   public:
-    Block();
-    Block(Aws::Utils::Json::JsonView jsonValue);
-    Block& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TEXTRACT_API Block();
+    AWS_TEXTRACT_API Block(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TEXTRACT_API Block& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TEXTRACT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

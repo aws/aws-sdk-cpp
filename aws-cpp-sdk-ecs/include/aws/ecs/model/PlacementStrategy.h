@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/PlacementStrategy">AWS
    * API Reference</a></p>
    */
-  class AWS_ECS_API PlacementStrategy
+  class PlacementStrategy
   {
   public:
-    PlacementStrategy();
-    PlacementStrategy(Aws::Utils::Json::JsonView jsonValue);
-    PlacementStrategy& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ECS_API PlacementStrategy();
+    AWS_ECS_API PlacementStrategy(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECS_API PlacementStrategy& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

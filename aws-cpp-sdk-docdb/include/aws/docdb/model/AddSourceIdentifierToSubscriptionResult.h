@@ -25,12 +25,12 @@ namespace DocDB
 {
 namespace Model
 {
-  class AWS_DOCDB_API AddSourceIdentifierToSubscriptionResult
+  class AddSourceIdentifierToSubscriptionResult
   {
   public:
-    AddSourceIdentifierToSubscriptionResult();
-    AddSourceIdentifierToSubscriptionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    AddSourceIdentifierToSubscriptionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_DOCDB_API AddSourceIdentifierToSubscriptionResult();
+    AWS_DOCDB_API AddSourceIdentifierToSubscriptionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_DOCDB_API AddSourceIdentifierToSubscriptionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     

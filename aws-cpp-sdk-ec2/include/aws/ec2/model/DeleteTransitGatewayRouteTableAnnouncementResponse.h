@@ -25,12 +25,12 @@ namespace EC2
 {
 namespace Model
 {
-  class AWS_EC2_API DeleteTransitGatewayRouteTableAnnouncementResponse
+  class DeleteTransitGatewayRouteTableAnnouncementResponse
   {
   public:
-    DeleteTransitGatewayRouteTableAnnouncementResponse();
-    DeleteTransitGatewayRouteTableAnnouncementResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DeleteTransitGatewayRouteTableAnnouncementResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API DeleteTransitGatewayRouteTableAnnouncementResponse();
+    AWS_EC2_API DeleteTransitGatewayRouteTableAnnouncementResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API DeleteTransitGatewayRouteTableAnnouncementResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

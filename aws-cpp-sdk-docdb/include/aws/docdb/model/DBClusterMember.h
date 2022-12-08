@@ -29,15 +29,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DBClusterMember">AWS
    * API Reference</a></p>
    */
-  class AWS_DOCDB_API DBClusterMember
+  class DBClusterMember
   {
   public:
-    DBClusterMember();
-    DBClusterMember(const Aws::Utils::Xml::XmlNode& xmlNode);
-    DBClusterMember& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_DOCDB_API DBClusterMember();
+    AWS_DOCDB_API DBClusterMember(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_DOCDB_API DBClusterMember& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_DOCDB_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_DOCDB_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**

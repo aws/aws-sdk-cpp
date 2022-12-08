@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/IdentificationHints">AWS
    * API Reference</a></p>
    */
-  class AWS_DRS_API IdentificationHints
+  class IdentificationHints
   {
   public:
-    IdentificationHints();
-    IdentificationHints(Aws::Utils::Json::JsonView jsonValue);
-    IdentificationHints& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DRS_API IdentificationHints();
+    AWS_DRS_API IdentificationHints(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DRS_API IdentificationHints& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DRS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

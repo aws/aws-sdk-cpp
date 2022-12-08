@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/DataLakeSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_LAKEFORMATION_API DataLakeSettings
+  class DataLakeSettings
   {
   public:
-    DataLakeSettings();
-    DataLakeSettings(Aws::Utils::Json::JsonView jsonValue);
-    DataLakeSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LAKEFORMATION_API DataLakeSettings();
+    AWS_LAKEFORMATION_API DataLakeSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAKEFORMATION_API DataLakeSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAKEFORMATION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

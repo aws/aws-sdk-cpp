@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/Limit">AWS API
    * Reference</a></p>
    */
-  class AWS_SHIELD_API Limit
+  class Limit
   {
   public:
-    Limit();
-    Limit(Aws::Utils::Json::JsonView jsonValue);
-    Limit& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SHIELD_API Limit();
+    AWS_SHIELD_API Limit(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SHIELD_API Limit& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SHIELD_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

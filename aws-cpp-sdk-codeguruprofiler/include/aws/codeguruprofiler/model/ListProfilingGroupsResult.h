@@ -32,12 +32,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/ListProfilingGroupsResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEGURUPROFILER_API ListProfilingGroupsResult
+  class ListProfilingGroupsResult
   {
   public:
-    ListProfilingGroupsResult();
-    ListProfilingGroupsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListProfilingGroupsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODEGURUPROFILER_API ListProfilingGroupsResult();
+    AWS_CODEGURUPROFILER_API ListProfilingGroupsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODEGURUPROFILER_API ListProfilingGroupsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

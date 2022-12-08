@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/Database">AWS
    * API Reference</a></p>
    */
-  class AWS_SSMSAP_API Database
+  class Database
   {
   public:
-    Database();
-    Database(Aws::Utils::Json::JsonView jsonValue);
-    Database& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSMSAP_API Database();
+    AWS_SSMSAP_API Database(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSMSAP_API Database& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSMSAP_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -31,14 +31,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ConflictingAlias">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFRONT_API ConflictingAlias
+  class ConflictingAlias
   {
   public:
-    ConflictingAlias();
-    ConflictingAlias(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ConflictingAlias& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API ConflictingAlias();
+    AWS_CLOUDFRONT_API ConflictingAlias(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API ConflictingAlias& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**

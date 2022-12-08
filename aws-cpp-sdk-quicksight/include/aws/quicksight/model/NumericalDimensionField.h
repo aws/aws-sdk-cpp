@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/NumericalDimensionField">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API NumericalDimensionField
+  class NumericalDimensionField
   {
   public:
-    NumericalDimensionField();
-    NumericalDimensionField(Aws::Utils::Json::JsonView jsonValue);
-    NumericalDimensionField& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API NumericalDimensionField();
+    AWS_QUICKSIGHT_API NumericalDimensionField(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API NumericalDimensionField& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

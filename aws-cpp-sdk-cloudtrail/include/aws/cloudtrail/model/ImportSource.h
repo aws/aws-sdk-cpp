@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ImportSource">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDTRAIL_API ImportSource
+  class ImportSource
   {
   public:
-    ImportSource();
-    ImportSource(Aws::Utils::Json::JsonView jsonValue);
-    ImportSource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDTRAIL_API ImportSource();
+    AWS_CLOUDTRAIL_API ImportSource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDTRAIL_API ImportSource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDTRAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

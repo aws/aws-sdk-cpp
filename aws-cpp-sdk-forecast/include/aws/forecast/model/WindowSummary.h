@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/WindowSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_FORECASTSERVICE_API WindowSummary
+  class WindowSummary
   {
   public:
-    WindowSummary();
-    WindowSummary(Aws::Utils::Json::JsonView jsonValue);
-    WindowSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FORECASTSERVICE_API WindowSummary();
+    AWS_FORECASTSERVICE_API WindowSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FORECASTSERVICE_API WindowSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FORECASTSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

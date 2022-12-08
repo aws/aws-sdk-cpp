@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/DecoderManifestValidationException">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTFLEETWISE_API DecoderManifestValidationException
+  class DecoderManifestValidationException
   {
   public:
-    DecoderManifestValidationException();
-    DecoderManifestValidationException(Aws::Utils::Json::JsonView jsonValue);
-    DecoderManifestValidationException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTFLEETWISE_API DecoderManifestValidationException();
+    AWS_IOTFLEETWISE_API DecoderManifestValidationException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTFLEETWISE_API DecoderManifestValidationException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTFLEETWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/MaintenanceStatus">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API MaintenanceStatus
+  class MaintenanceStatus
   {
   public:
-    MaintenanceStatus();
-    MaintenanceStatus(Aws::Utils::Json::JsonView jsonValue);
-    MaintenanceStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API MaintenanceStatus();
+    AWS_MEDIALIVE_API MaintenanceStatus(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API MaintenanceStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

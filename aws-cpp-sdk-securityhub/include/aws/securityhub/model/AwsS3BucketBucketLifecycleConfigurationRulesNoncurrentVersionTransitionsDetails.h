@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsS3BucketBucketLifecycleConfigurationRulesNoncurrentVersionTransitionsDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsS3BucketBucketLifecycleConfigurationRulesNoncurrentVersionTransitionsDetails
+  class AwsS3BucketBucketLifecycleConfigurationRulesNoncurrentVersionTransitionsDetails
   {
   public:
-    AwsS3BucketBucketLifecycleConfigurationRulesNoncurrentVersionTransitionsDetails();
-    AwsS3BucketBucketLifecycleConfigurationRulesNoncurrentVersionTransitionsDetails(Aws::Utils::Json::JsonView jsonValue);
-    AwsS3BucketBucketLifecycleConfigurationRulesNoncurrentVersionTransitionsDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsS3BucketBucketLifecycleConfigurationRulesNoncurrentVersionTransitionsDetails();
+    AWS_SECURITYHUB_API AwsS3BucketBucketLifecycleConfigurationRulesNoncurrentVersionTransitionsDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsS3BucketBucketLifecycleConfigurationRulesNoncurrentVersionTransitionsDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/NotifyWorkersFailureStatus">AWS
    * API Reference</a></p>
    */
-  class AWS_MTURK_API NotifyWorkersFailureStatus
+  class NotifyWorkersFailureStatus
   {
   public:
-    NotifyWorkersFailureStatus();
-    NotifyWorkersFailureStatus(Aws::Utils::Json::JsonView jsonValue);
-    NotifyWorkersFailureStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MTURK_API NotifyWorkersFailureStatus();
+    AWS_MTURK_API NotifyWorkersFailureStatus(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MTURK_API NotifyWorkersFailureStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MTURK_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

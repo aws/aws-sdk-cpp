@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/CostCategorySplitChargeRule">AWS
    * API Reference</a></p>
    */
-  class AWS_COSTEXPLORER_API CostCategorySplitChargeRule
+  class CostCategorySplitChargeRule
   {
   public:
-    CostCategorySplitChargeRule();
-    CostCategorySplitChargeRule(Aws::Utils::Json::JsonView jsonValue);
-    CostCategorySplitChargeRule& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COSTEXPLORER_API CostCategorySplitChargeRule();
+    AWS_COSTEXPLORER_API CostCategorySplitChargeRule(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API CostCategorySplitChargeRule& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
