@@ -20,6 +20,7 @@
 /* Service model headers required in AutoScalingClient header */
 #include <aws/autoscaling/model/AttachLoadBalancerTargetGroupsResult.h>
 #include <aws/autoscaling/model/AttachLoadBalancersResult.h>
+#include <aws/autoscaling/model/AttachTrafficSourcesResult.h>
 #include <aws/autoscaling/model/BatchDeleteScheduledActionResult.h>
 #include <aws/autoscaling/model/BatchPutScheduledUpdateGroupActionResult.h>
 #include <aws/autoscaling/model/CancelInstanceRefreshResult.h>
@@ -45,10 +46,12 @@
 #include <aws/autoscaling/model/DescribeScheduledActionsResult.h>
 #include <aws/autoscaling/model/DescribeTagsResult.h>
 #include <aws/autoscaling/model/DescribeTerminationPolicyTypesResult.h>
+#include <aws/autoscaling/model/DescribeTrafficSourcesResult.h>
 #include <aws/autoscaling/model/DescribeWarmPoolResult.h>
 #include <aws/autoscaling/model/DetachInstancesResult.h>
 #include <aws/autoscaling/model/DetachLoadBalancerTargetGroupsResult.h>
 #include <aws/autoscaling/model/DetachLoadBalancersResult.h>
+#include <aws/autoscaling/model/DetachTrafficSourcesResult.h>
 #include <aws/autoscaling/model/EnterStandbyResult.h>
 #include <aws/autoscaling/model/ExitStandbyResult.h>
 #include <aws/autoscaling/model/GetPredictiveScalingForecastResult.h>
@@ -103,6 +106,7 @@ namespace Aws
       class AttachInstancesRequest;
       class AttachLoadBalancerTargetGroupsRequest;
       class AttachLoadBalancersRequest;
+      class AttachTrafficSourcesRequest;
       class BatchDeleteScheduledActionRequest;
       class BatchPutScheduledUpdateGroupActionRequest;
       class CancelInstanceRefreshRequest;
@@ -137,10 +141,12 @@ namespace Aws
       class DescribeScheduledActionsRequest;
       class DescribeTagsRequest;
       class DescribeTerminationPolicyTypesRequest;
+      class DescribeTrafficSourcesRequest;
       class DescribeWarmPoolRequest;
       class DetachInstancesRequest;
       class DetachLoadBalancerTargetGroupsRequest;
       class DetachLoadBalancersRequest;
+      class DetachTrafficSourcesRequest;
       class DisableMetricsCollectionRequest;
       class EnableMetricsCollectionRequest;
       class EnterStandbyRequest;
@@ -167,6 +173,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<Aws::NoResult, AutoScalingError> AttachInstancesOutcome;
       typedef Aws::Utils::Outcome<AttachLoadBalancerTargetGroupsResult, AutoScalingError> AttachLoadBalancerTargetGroupsOutcome;
       typedef Aws::Utils::Outcome<AttachLoadBalancersResult, AutoScalingError> AttachLoadBalancersOutcome;
+      typedef Aws::Utils::Outcome<AttachTrafficSourcesResult, AutoScalingError> AttachTrafficSourcesOutcome;
       typedef Aws::Utils::Outcome<BatchDeleteScheduledActionResult, AutoScalingError> BatchDeleteScheduledActionOutcome;
       typedef Aws::Utils::Outcome<BatchPutScheduledUpdateGroupActionResult, AutoScalingError> BatchPutScheduledUpdateGroupActionOutcome;
       typedef Aws::Utils::Outcome<CancelInstanceRefreshResult, AutoScalingError> CancelInstanceRefreshOutcome;
@@ -201,10 +208,12 @@ namespace Aws
       typedef Aws::Utils::Outcome<DescribeScheduledActionsResult, AutoScalingError> DescribeScheduledActionsOutcome;
       typedef Aws::Utils::Outcome<DescribeTagsResult, AutoScalingError> DescribeTagsOutcome;
       typedef Aws::Utils::Outcome<DescribeTerminationPolicyTypesResult, AutoScalingError> DescribeTerminationPolicyTypesOutcome;
+      typedef Aws::Utils::Outcome<DescribeTrafficSourcesResult, AutoScalingError> DescribeTrafficSourcesOutcome;
       typedef Aws::Utils::Outcome<DescribeWarmPoolResult, AutoScalingError> DescribeWarmPoolOutcome;
       typedef Aws::Utils::Outcome<DetachInstancesResult, AutoScalingError> DetachInstancesOutcome;
       typedef Aws::Utils::Outcome<DetachLoadBalancerTargetGroupsResult, AutoScalingError> DetachLoadBalancerTargetGroupsOutcome;
       typedef Aws::Utils::Outcome<DetachLoadBalancersResult, AutoScalingError> DetachLoadBalancersOutcome;
+      typedef Aws::Utils::Outcome<DetachTrafficSourcesResult, AutoScalingError> DetachTrafficSourcesOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, AutoScalingError> DisableMetricsCollectionOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, AutoScalingError> EnableMetricsCollectionOutcome;
       typedef Aws::Utils::Outcome<EnterStandbyResult, AutoScalingError> EnterStandbyOutcome;
@@ -231,6 +240,7 @@ namespace Aws
       typedef std::future<AttachInstancesOutcome> AttachInstancesOutcomeCallable;
       typedef std::future<AttachLoadBalancerTargetGroupsOutcome> AttachLoadBalancerTargetGroupsOutcomeCallable;
       typedef std::future<AttachLoadBalancersOutcome> AttachLoadBalancersOutcomeCallable;
+      typedef std::future<AttachTrafficSourcesOutcome> AttachTrafficSourcesOutcomeCallable;
       typedef std::future<BatchDeleteScheduledActionOutcome> BatchDeleteScheduledActionOutcomeCallable;
       typedef std::future<BatchPutScheduledUpdateGroupActionOutcome> BatchPutScheduledUpdateGroupActionOutcomeCallable;
       typedef std::future<CancelInstanceRefreshOutcome> CancelInstanceRefreshOutcomeCallable;
@@ -265,10 +275,12 @@ namespace Aws
       typedef std::future<DescribeScheduledActionsOutcome> DescribeScheduledActionsOutcomeCallable;
       typedef std::future<DescribeTagsOutcome> DescribeTagsOutcomeCallable;
       typedef std::future<DescribeTerminationPolicyTypesOutcome> DescribeTerminationPolicyTypesOutcomeCallable;
+      typedef std::future<DescribeTrafficSourcesOutcome> DescribeTrafficSourcesOutcomeCallable;
       typedef std::future<DescribeWarmPoolOutcome> DescribeWarmPoolOutcomeCallable;
       typedef std::future<DetachInstancesOutcome> DetachInstancesOutcomeCallable;
       typedef std::future<DetachLoadBalancerTargetGroupsOutcome> DetachLoadBalancerTargetGroupsOutcomeCallable;
       typedef std::future<DetachLoadBalancersOutcome> DetachLoadBalancersOutcomeCallable;
+      typedef std::future<DetachTrafficSourcesOutcome> DetachTrafficSourcesOutcomeCallable;
       typedef std::future<DisableMetricsCollectionOutcome> DisableMetricsCollectionOutcomeCallable;
       typedef std::future<EnableMetricsCollectionOutcome> EnableMetricsCollectionOutcomeCallable;
       typedef std::future<EnterStandbyOutcome> EnterStandbyOutcomeCallable;
@@ -298,6 +310,7 @@ namespace Aws
     typedef std::function<void(const AutoScalingClient*, const Model::AttachInstancesRequest&, const Model::AttachInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AttachInstancesResponseReceivedHandler;
     typedef std::function<void(const AutoScalingClient*, const Model::AttachLoadBalancerTargetGroupsRequest&, const Model::AttachLoadBalancerTargetGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AttachLoadBalancerTargetGroupsResponseReceivedHandler;
     typedef std::function<void(const AutoScalingClient*, const Model::AttachLoadBalancersRequest&, const Model::AttachLoadBalancersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AttachLoadBalancersResponseReceivedHandler;
+    typedef std::function<void(const AutoScalingClient*, const Model::AttachTrafficSourcesRequest&, const Model::AttachTrafficSourcesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AttachTrafficSourcesResponseReceivedHandler;
     typedef std::function<void(const AutoScalingClient*, const Model::BatchDeleteScheduledActionRequest&, const Model::BatchDeleteScheduledActionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchDeleteScheduledActionResponseReceivedHandler;
     typedef std::function<void(const AutoScalingClient*, const Model::BatchPutScheduledUpdateGroupActionRequest&, const Model::BatchPutScheduledUpdateGroupActionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchPutScheduledUpdateGroupActionResponseReceivedHandler;
     typedef std::function<void(const AutoScalingClient*, const Model::CancelInstanceRefreshRequest&, const Model::CancelInstanceRefreshOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelInstanceRefreshResponseReceivedHandler;
@@ -332,10 +345,12 @@ namespace Aws
     typedef std::function<void(const AutoScalingClient*, const Model::DescribeScheduledActionsRequest&, const Model::DescribeScheduledActionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeScheduledActionsResponseReceivedHandler;
     typedef std::function<void(const AutoScalingClient*, const Model::DescribeTagsRequest&, const Model::DescribeTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTagsResponseReceivedHandler;
     typedef std::function<void(const AutoScalingClient*, const Model::DescribeTerminationPolicyTypesRequest&, const Model::DescribeTerminationPolicyTypesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTerminationPolicyTypesResponseReceivedHandler;
+    typedef std::function<void(const AutoScalingClient*, const Model::DescribeTrafficSourcesRequest&, const Model::DescribeTrafficSourcesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTrafficSourcesResponseReceivedHandler;
     typedef std::function<void(const AutoScalingClient*, const Model::DescribeWarmPoolRequest&, const Model::DescribeWarmPoolOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeWarmPoolResponseReceivedHandler;
     typedef std::function<void(const AutoScalingClient*, const Model::DetachInstancesRequest&, const Model::DetachInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DetachInstancesResponseReceivedHandler;
     typedef std::function<void(const AutoScalingClient*, const Model::DetachLoadBalancerTargetGroupsRequest&, const Model::DetachLoadBalancerTargetGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DetachLoadBalancerTargetGroupsResponseReceivedHandler;
     typedef std::function<void(const AutoScalingClient*, const Model::DetachLoadBalancersRequest&, const Model::DetachLoadBalancersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DetachLoadBalancersResponseReceivedHandler;
+    typedef std::function<void(const AutoScalingClient*, const Model::DetachTrafficSourcesRequest&, const Model::DetachTrafficSourcesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DetachTrafficSourcesResponseReceivedHandler;
     typedef std::function<void(const AutoScalingClient*, const Model::DisableMetricsCollectionRequest&, const Model::DisableMetricsCollectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableMetricsCollectionResponseReceivedHandler;
     typedef std::function<void(const AutoScalingClient*, const Model::EnableMetricsCollectionRequest&, const Model::EnableMetricsCollectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableMetricsCollectionResponseReceivedHandler;
     typedef std::function<void(const AutoScalingClient*, const Model::EnterStandbyRequest&, const Model::EnterStandbyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnterStandbyResponseReceivedHandler;

@@ -16,6 +16,7 @@
 #include <aws/autoscaling/model/SuspendedProcess.h>
 #include <aws/autoscaling/model/EnabledMetric.h>
 #include <aws/autoscaling/model/TagDescription.h>
+#include <aws/autoscaling/model/TrafficSourceIdentifier.h>
 #include <utility>
 
 namespace Aws
@@ -490,66 +491,82 @@ namespace Model
 
 
     /**
-     * <p>The service to use for the health checks. The valid values are
-     * <code>EC2</code> and <code>ELB</code>. If you configure an Auto Scaling group to
-     * use <code>ELB</code> health checks, it considers the instance unhealthy if it
-     * fails either the EC2 status checks or the load balancer health checks.</p>
+     * <p>Determines whether any additional health checks are performed on the
+     * instances in this group. Amazon EC2 health checks are always on.</p> <p>The
+     * valid values are <code>EC2</code> (default), <code>ELB</code>, and
+     * <code>VPC_LATTICE</code>. The <code>VPC_LATTICE</code> health check type is
+     * reserved for use with VPC Lattice, which is in preview release and is subject to
+     * change.</p>
      */
     inline const Aws::String& GetHealthCheckType() const{ return m_healthCheckType; }
 
     /**
-     * <p>The service to use for the health checks. The valid values are
-     * <code>EC2</code> and <code>ELB</code>. If you configure an Auto Scaling group to
-     * use <code>ELB</code> health checks, it considers the instance unhealthy if it
-     * fails either the EC2 status checks or the load balancer health checks.</p>
+     * <p>Determines whether any additional health checks are performed on the
+     * instances in this group. Amazon EC2 health checks are always on.</p> <p>The
+     * valid values are <code>EC2</code> (default), <code>ELB</code>, and
+     * <code>VPC_LATTICE</code>. The <code>VPC_LATTICE</code> health check type is
+     * reserved for use with VPC Lattice, which is in preview release and is subject to
+     * change.</p>
      */
     inline bool HealthCheckTypeHasBeenSet() const { return m_healthCheckTypeHasBeenSet; }
 
     /**
-     * <p>The service to use for the health checks. The valid values are
-     * <code>EC2</code> and <code>ELB</code>. If you configure an Auto Scaling group to
-     * use <code>ELB</code> health checks, it considers the instance unhealthy if it
-     * fails either the EC2 status checks or the load balancer health checks.</p>
+     * <p>Determines whether any additional health checks are performed on the
+     * instances in this group. Amazon EC2 health checks are always on.</p> <p>The
+     * valid values are <code>EC2</code> (default), <code>ELB</code>, and
+     * <code>VPC_LATTICE</code>. The <code>VPC_LATTICE</code> health check type is
+     * reserved for use with VPC Lattice, which is in preview release and is subject to
+     * change.</p>
      */
     inline void SetHealthCheckType(const Aws::String& value) { m_healthCheckTypeHasBeenSet = true; m_healthCheckType = value; }
 
     /**
-     * <p>The service to use for the health checks. The valid values are
-     * <code>EC2</code> and <code>ELB</code>. If you configure an Auto Scaling group to
-     * use <code>ELB</code> health checks, it considers the instance unhealthy if it
-     * fails either the EC2 status checks or the load balancer health checks.</p>
+     * <p>Determines whether any additional health checks are performed on the
+     * instances in this group. Amazon EC2 health checks are always on.</p> <p>The
+     * valid values are <code>EC2</code> (default), <code>ELB</code>, and
+     * <code>VPC_LATTICE</code>. The <code>VPC_LATTICE</code> health check type is
+     * reserved for use with VPC Lattice, which is in preview release and is subject to
+     * change.</p>
      */
     inline void SetHealthCheckType(Aws::String&& value) { m_healthCheckTypeHasBeenSet = true; m_healthCheckType = std::move(value); }
 
     /**
-     * <p>The service to use for the health checks. The valid values are
-     * <code>EC2</code> and <code>ELB</code>. If you configure an Auto Scaling group to
-     * use <code>ELB</code> health checks, it considers the instance unhealthy if it
-     * fails either the EC2 status checks or the load balancer health checks.</p>
+     * <p>Determines whether any additional health checks are performed on the
+     * instances in this group. Amazon EC2 health checks are always on.</p> <p>The
+     * valid values are <code>EC2</code> (default), <code>ELB</code>, and
+     * <code>VPC_LATTICE</code>. The <code>VPC_LATTICE</code> health check type is
+     * reserved for use with VPC Lattice, which is in preview release and is subject to
+     * change.</p>
      */
     inline void SetHealthCheckType(const char* value) { m_healthCheckTypeHasBeenSet = true; m_healthCheckType.assign(value); }
 
     /**
-     * <p>The service to use for the health checks. The valid values are
-     * <code>EC2</code> and <code>ELB</code>. If you configure an Auto Scaling group to
-     * use <code>ELB</code> health checks, it considers the instance unhealthy if it
-     * fails either the EC2 status checks or the load balancer health checks.</p>
+     * <p>Determines whether any additional health checks are performed on the
+     * instances in this group. Amazon EC2 health checks are always on.</p> <p>The
+     * valid values are <code>EC2</code> (default), <code>ELB</code>, and
+     * <code>VPC_LATTICE</code>. The <code>VPC_LATTICE</code> health check type is
+     * reserved for use with VPC Lattice, which is in preview release and is subject to
+     * change.</p>
      */
     inline AutoScalingGroup& WithHealthCheckType(const Aws::String& value) { SetHealthCheckType(value); return *this;}
 
     /**
-     * <p>The service to use for the health checks. The valid values are
-     * <code>EC2</code> and <code>ELB</code>. If you configure an Auto Scaling group to
-     * use <code>ELB</code> health checks, it considers the instance unhealthy if it
-     * fails either the EC2 status checks or the load balancer health checks.</p>
+     * <p>Determines whether any additional health checks are performed on the
+     * instances in this group. Amazon EC2 health checks are always on.</p> <p>The
+     * valid values are <code>EC2</code> (default), <code>ELB</code>, and
+     * <code>VPC_LATTICE</code>. The <code>VPC_LATTICE</code> health check type is
+     * reserved for use with VPC Lattice, which is in preview release and is subject to
+     * change.</p>
      */
     inline AutoScalingGroup& WithHealthCheckType(Aws::String&& value) { SetHealthCheckType(std::move(value)); return *this;}
 
     /**
-     * <p>The service to use for the health checks. The valid values are
-     * <code>EC2</code> and <code>ELB</code>. If you configure an Auto Scaling group to
-     * use <code>ELB</code> health checks, it considers the instance unhealthy if it
-     * fails either the EC2 status checks or the load balancer health checks.</p>
+     * <p>Determines whether any additional health checks are performed on the
+     * instances in this group. Amazon EC2 health checks are always on.</p> <p>The
+     * valid values are <code>EC2</code> (default), <code>ELB</code>, and
+     * <code>VPC_LATTICE</code>. The <code>VPC_LATTICE</code> health check type is
+     * reserved for use with VPC Lattice, which is in preview release and is subject to
+     * change.</p>
      */
     inline AutoScalingGroup& WithHealthCheckType(const char* value) { SetHealthCheckType(value); return *this;}
 
@@ -1245,6 +1262,47 @@ namespace Model
      */
     inline AutoScalingGroup& WithDefaultInstanceWarmup(int value) { SetDefaultInstanceWarmup(value); return *this;}
 
+
+    /**
+     * <p>The unique identifiers of the traffic sources.</p>
+     */
+    inline const Aws::Vector<TrafficSourceIdentifier>& GetTrafficSources() const{ return m_trafficSources; }
+
+    /**
+     * <p>The unique identifiers of the traffic sources.</p>
+     */
+    inline bool TrafficSourcesHasBeenSet() const { return m_trafficSourcesHasBeenSet; }
+
+    /**
+     * <p>The unique identifiers of the traffic sources.</p>
+     */
+    inline void SetTrafficSources(const Aws::Vector<TrafficSourceIdentifier>& value) { m_trafficSourcesHasBeenSet = true; m_trafficSources = value; }
+
+    /**
+     * <p>The unique identifiers of the traffic sources.</p>
+     */
+    inline void SetTrafficSources(Aws::Vector<TrafficSourceIdentifier>&& value) { m_trafficSourcesHasBeenSet = true; m_trafficSources = std::move(value); }
+
+    /**
+     * <p>The unique identifiers of the traffic sources.</p>
+     */
+    inline AutoScalingGroup& WithTrafficSources(const Aws::Vector<TrafficSourceIdentifier>& value) { SetTrafficSources(value); return *this;}
+
+    /**
+     * <p>The unique identifiers of the traffic sources.</p>
+     */
+    inline AutoScalingGroup& WithTrafficSources(Aws::Vector<TrafficSourceIdentifier>&& value) { SetTrafficSources(std::move(value)); return *this;}
+
+    /**
+     * <p>The unique identifiers of the traffic sources.</p>
+     */
+    inline AutoScalingGroup& AddTrafficSources(const TrafficSourceIdentifier& value) { m_trafficSourcesHasBeenSet = true; m_trafficSources.push_back(value); return *this; }
+
+    /**
+     * <p>The unique identifiers of the traffic sources.</p>
+     */
+    inline AutoScalingGroup& AddTrafficSources(TrafficSourceIdentifier&& value) { m_trafficSourcesHasBeenSet = true; m_trafficSources.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_autoScalingGroupName;
@@ -1345,6 +1403,9 @@ namespace Model
 
     int m_defaultInstanceWarmup;
     bool m_defaultInstanceWarmupHasBeenSet = false;
+
+    Aws::Vector<TrafficSourceIdentifier> m_trafficSources;
+    bool m_trafficSourcesHasBeenSet = false;
   };
 
 } // namespace Model

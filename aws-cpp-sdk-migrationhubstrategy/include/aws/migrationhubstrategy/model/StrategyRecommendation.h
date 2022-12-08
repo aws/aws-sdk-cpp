@@ -18,7 +18,8 @@ namespace Model
     NOT_SET,
     recommended,
     viableOption,
-    notRecommended
+    notRecommended,
+    potential
   };
 
 namespace StrategyRecommendationMapper

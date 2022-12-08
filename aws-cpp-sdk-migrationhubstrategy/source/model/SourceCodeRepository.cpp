@@ -20,6 +20,7 @@ namespace Model
 
 SourceCodeRepository::SourceCodeRepository() : 
     m_branchHasBeenSet(false),
+    m_projectNameHasBeenSet(false),
     m_repositoryHasBeenSet(false),
     m_versionControlTypeHasBeenSet(false)
 {
@@ -27,6 +28,7 @@ SourceCodeRepository::SourceCodeRepository() :
 
 SourceCodeRepository::SourceCodeRepository(JsonView jsonValue) : 
     m_branchHasBeenSet(false),
+    m_projectNameHasBeenSet(false),
     m_repositoryHasBeenSet(false),
     m_versionControlTypeHasBeenSet(false)
 {
@@ -40,6 +42,13 @@ SourceCodeRepository& SourceCodeRepository::operator =(JsonView jsonValue)
     m_branch = jsonValue.GetString("branch");
 
     m_branchHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("projectName"))
+  {
+    m_projectName = jsonValue.GetString("projectName");
+
+    m_projectNameHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("repository"))
@@ -66,6 +75,12 @@ JsonValue SourceCodeRepository::Jsonize() const
   if(m_branchHasBeenSet)
   {
    payload.WithString("branch", m_branch);
+
+  }
+
+  if(m_projectNameHasBeenSet)
+  {
+   payload.WithString("projectName", m_projectName);
 
   }
 

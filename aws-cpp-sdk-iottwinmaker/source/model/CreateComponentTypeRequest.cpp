@@ -22,7 +22,8 @@ CreateComponentTypeRequest::CreateComponentTypeRequest() :
     m_extendsFromHasBeenSet(false),
     m_functionsHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_propertyGroupsHasBeenSet(false)
+    m_propertyGroupsHasBeenSet(false),
+    m_componentTypeNameHasBeenSet(false)
 {
 }
 
@@ -94,6 +95,12 @@ Aws::String CreateComponentTypeRequest::SerializePayload() const
      propertyGroupsJsonMap.WithObject(propertyGroupsItem.first, propertyGroupsItem.second.Jsonize());
    }
    payload.WithObject("propertyGroups", std::move(propertyGroupsJsonMap));
+
+  }
+
+  if(m_componentTypeNameHasBeenSet)
+  {
+   payload.WithString("componentTypeName", m_componentTypeName);
 
   }
 

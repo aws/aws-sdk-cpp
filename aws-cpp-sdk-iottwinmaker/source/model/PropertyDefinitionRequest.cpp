@@ -29,7 +29,8 @@ PropertyDefinitionRequest::PropertyDefinitionRequest() :
     m_isTimeSeries(false),
     m_isTimeSeriesHasBeenSet(false),
     m_defaultValueHasBeenSet(false),
-    m_configurationHasBeenSet(false)
+    m_configurationHasBeenSet(false),
+    m_displayNameHasBeenSet(false)
 {
 }
 
@@ -44,7 +45,8 @@ PropertyDefinitionRequest::PropertyDefinitionRequest(JsonView jsonValue) :
     m_isTimeSeries(false),
     m_isTimeSeriesHasBeenSet(false),
     m_defaultValueHasBeenSet(false),
-    m_configurationHasBeenSet(false)
+    m_configurationHasBeenSet(false),
+    m_displayNameHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -103,6 +105,13 @@ PropertyDefinitionRequest& PropertyDefinitionRequest::operator =(JsonView jsonVa
     m_configurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("displayName"))
+  {
+    m_displayName = jsonValue.GetString("displayName");
+
+    m_displayNameHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -154,6 +163,12 @@ JsonValue PropertyDefinitionRequest::Jsonize() const
      configurationJsonMap.WithString(configurationItem.first, configurationItem.second);
    }
    payload.WithObject("configuration", std::move(configurationJsonMap));
+
+  }
+
+  if(m_displayNameHasBeenSet)
+  {
+   payload.WithString("displayName", m_displayName);
 
   }
 

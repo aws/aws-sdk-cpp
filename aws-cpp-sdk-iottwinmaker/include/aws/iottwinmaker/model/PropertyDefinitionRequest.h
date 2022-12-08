@@ -286,6 +286,47 @@ namespace Model
      */
     inline PropertyDefinitionRequest& AddConfiguration(const char* key, const char* value) { m_configurationHasBeenSet = true; m_configuration.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>A friendly name for the property.</p>
+     */
+    inline const Aws::String& GetDisplayName() const{ return m_displayName; }
+
+    /**
+     * <p>A friendly name for the property.</p>
+     */
+    inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
+
+    /**
+     * <p>A friendly name for the property.</p>
+     */
+    inline void SetDisplayName(const Aws::String& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
+
+    /**
+     * <p>A friendly name for the property.</p>
+     */
+    inline void SetDisplayName(Aws::String&& value) { m_displayNameHasBeenSet = true; m_displayName = std::move(value); }
+
+    /**
+     * <p>A friendly name for the property.</p>
+     */
+    inline void SetDisplayName(const char* value) { m_displayNameHasBeenSet = true; m_displayName.assign(value); }
+
+    /**
+     * <p>A friendly name for the property.</p>
+     */
+    inline PropertyDefinitionRequest& WithDisplayName(const Aws::String& value) { SetDisplayName(value); return *this;}
+
+    /**
+     * <p>A friendly name for the property.</p>
+     */
+    inline PropertyDefinitionRequest& WithDisplayName(Aws::String&& value) { SetDisplayName(std::move(value)); return *this;}
+
+    /**
+     * <p>A friendly name for the property.</p>
+     */
+    inline PropertyDefinitionRequest& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
+
   private:
 
     DataType m_dataType;
@@ -308,6 +349,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_configuration;
     bool m_configurationHasBeenSet = false;
+
+    Aws::String m_displayName;
+    bool m_displayNameHasBeenSet = false;
   };
 
 } // namespace Model

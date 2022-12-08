@@ -23,6 +23,7 @@ Collector::Collector() :
     m_collectorHealthHasBeenSet(false),
     m_collectorIdHasBeenSet(false),
     m_collectorVersionHasBeenSet(false),
+    m_configurationSummaryHasBeenSet(false),
     m_hostNameHasBeenSet(false),
     m_ipAddressHasBeenSet(false),
     m_lastActivityTimeStampHasBeenSet(false),
@@ -35,6 +36,7 @@ Collector::Collector(JsonView jsonValue) :
     m_collectorHealthHasBeenSet(false),
     m_collectorIdHasBeenSet(false),
     m_collectorVersionHasBeenSet(false),
+    m_configurationSummaryHasBeenSet(false),
     m_hostNameHasBeenSet(false),
     m_ipAddressHasBeenSet(false),
     m_lastActivityTimeStampHasBeenSet(false),
@@ -64,6 +66,13 @@ Collector& Collector::operator =(JsonView jsonValue)
     m_collectorVersion = jsonValue.GetString("collectorVersion");
 
     m_collectorVersionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("configurationSummary"))
+  {
+    m_configurationSummary = jsonValue.GetObject("configurationSummary");
+
+    m_configurationSummaryHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("hostName"))
@@ -115,6 +124,12 @@ JsonValue Collector::Jsonize() const
   if(m_collectorVersionHasBeenSet)
   {
    payload.WithString("collectorVersion", m_collectorVersion);
+
+  }
+
+  if(m_configurationSummaryHasBeenSet)
+  {
+   payload.WithObject("configurationSummary", m_configurationSummary.Jsonize());
 
   }
 

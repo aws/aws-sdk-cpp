@@ -298,11 +298,9 @@ namespace Model
      * Instances from several pools. This is the default value, but it might lead to
      * high interruption rates because this strategy only considers instance price and
      * not available capacity.</p> </dd> <dt>price-capacity-optimized
-     * (recommended)</dt> <dd> <p>Amazon EC2 Auto Scaling identifies the pools with the
-     * highest capacity availability for the number of instances that are launching.
-     * This means that we will request Spot Instances from the pools that we believe
-     * have the lowest chance of interruption in the near term. Amazon EC2 Auto Scaling
-     * then requests Spot Instances from the lowest priced of these pools.</p> </dd>
+     * (recommended)</dt> <dd> <p>The price and capacity optimized allocation strategy
+     * looks at both price and capacity to select the Spot Instance pools that are the
+     * least likely to be interrupted and have the lowest possible price.</p> </dd>
      * </dl>
      */
     inline const Aws::String& GetSpotAllocationStrategy() const{ return m_spotAllocationStrategy; }
@@ -329,11 +327,9 @@ namespace Model
      * Instances from several pools. This is the default value, but it might lead to
      * high interruption rates because this strategy only considers instance price and
      * not available capacity.</p> </dd> <dt>price-capacity-optimized
-     * (recommended)</dt> <dd> <p>Amazon EC2 Auto Scaling identifies the pools with the
-     * highest capacity availability for the number of instances that are launching.
-     * This means that we will request Spot Instances from the pools that we believe
-     * have the lowest chance of interruption in the near term. Amazon EC2 Auto Scaling
-     * then requests Spot Instances from the lowest priced of these pools.</p> </dd>
+     * (recommended)</dt> <dd> <p>The price and capacity optimized allocation strategy
+     * looks at both price and capacity to select the Spot Instance pools that are the
+     * least likely to be interrupted and have the lowest possible price.</p> </dd>
      * </dl>
      */
     inline bool SpotAllocationStrategyHasBeenSet() const { return m_spotAllocationStrategyHasBeenSet; }
@@ -360,11 +356,9 @@ namespace Model
      * Instances from several pools. This is the default value, but it might lead to
      * high interruption rates because this strategy only considers instance price and
      * not available capacity.</p> </dd> <dt>price-capacity-optimized
-     * (recommended)</dt> <dd> <p>Amazon EC2 Auto Scaling identifies the pools with the
-     * highest capacity availability for the number of instances that are launching.
-     * This means that we will request Spot Instances from the pools that we believe
-     * have the lowest chance of interruption in the near term. Amazon EC2 Auto Scaling
-     * then requests Spot Instances from the lowest priced of these pools.</p> </dd>
+     * (recommended)</dt> <dd> <p>The price and capacity optimized allocation strategy
+     * looks at both price and capacity to select the Spot Instance pools that are the
+     * least likely to be interrupted and have the lowest possible price.</p> </dd>
      * </dl>
      */
     inline void SetSpotAllocationStrategy(const Aws::String& value) { m_spotAllocationStrategyHasBeenSet = true; m_spotAllocationStrategy = value; }
@@ -391,11 +385,9 @@ namespace Model
      * Instances from several pools. This is the default value, but it might lead to
      * high interruption rates because this strategy only considers instance price and
      * not available capacity.</p> </dd> <dt>price-capacity-optimized
-     * (recommended)</dt> <dd> <p>Amazon EC2 Auto Scaling identifies the pools with the
-     * highest capacity availability for the number of instances that are launching.
-     * This means that we will request Spot Instances from the pools that we believe
-     * have the lowest chance of interruption in the near term. Amazon EC2 Auto Scaling
-     * then requests Spot Instances from the lowest priced of these pools.</p> </dd>
+     * (recommended)</dt> <dd> <p>The price and capacity optimized allocation strategy
+     * looks at both price and capacity to select the Spot Instance pools that are the
+     * least likely to be interrupted and have the lowest possible price.</p> </dd>
      * </dl>
      */
     inline void SetSpotAllocationStrategy(Aws::String&& value) { m_spotAllocationStrategyHasBeenSet = true; m_spotAllocationStrategy = std::move(value); }
@@ -422,11 +414,9 @@ namespace Model
      * Instances from several pools. This is the default value, but it might lead to
      * high interruption rates because this strategy only considers instance price and
      * not available capacity.</p> </dd> <dt>price-capacity-optimized
-     * (recommended)</dt> <dd> <p>Amazon EC2 Auto Scaling identifies the pools with the
-     * highest capacity availability for the number of instances that are launching.
-     * This means that we will request Spot Instances from the pools that we believe
-     * have the lowest chance of interruption in the near term. Amazon EC2 Auto Scaling
-     * then requests Spot Instances from the lowest priced of these pools.</p> </dd>
+     * (recommended)</dt> <dd> <p>The price and capacity optimized allocation strategy
+     * looks at both price and capacity to select the Spot Instance pools that are the
+     * least likely to be interrupted and have the lowest possible price.</p> </dd>
      * </dl>
      */
     inline void SetSpotAllocationStrategy(const char* value) { m_spotAllocationStrategyHasBeenSet = true; m_spotAllocationStrategy.assign(value); }
@@ -453,11 +443,9 @@ namespace Model
      * Instances from several pools. This is the default value, but it might lead to
      * high interruption rates because this strategy only considers instance price and
      * not available capacity.</p> </dd> <dt>price-capacity-optimized
-     * (recommended)</dt> <dd> <p>Amazon EC2 Auto Scaling identifies the pools with the
-     * highest capacity availability for the number of instances that are launching.
-     * This means that we will request Spot Instances from the pools that we believe
-     * have the lowest chance of interruption in the near term. Amazon EC2 Auto Scaling
-     * then requests Spot Instances from the lowest priced of these pools.</p> </dd>
+     * (recommended)</dt> <dd> <p>The price and capacity optimized allocation strategy
+     * looks at both price and capacity to select the Spot Instance pools that are the
+     * least likely to be interrupted and have the lowest possible price.</p> </dd>
      * </dl>
      */
     inline InstancesDistribution& WithSpotAllocationStrategy(const Aws::String& value) { SetSpotAllocationStrategy(value); return *this;}
@@ -484,11 +472,9 @@ namespace Model
      * Instances from several pools. This is the default value, but it might lead to
      * high interruption rates because this strategy only considers instance price and
      * not available capacity.</p> </dd> <dt>price-capacity-optimized
-     * (recommended)</dt> <dd> <p>Amazon EC2 Auto Scaling identifies the pools with the
-     * highest capacity availability for the number of instances that are launching.
-     * This means that we will request Spot Instances from the pools that we believe
-     * have the lowest chance of interruption in the near term. Amazon EC2 Auto Scaling
-     * then requests Spot Instances from the lowest priced of these pools.</p> </dd>
+     * (recommended)</dt> <dd> <p>The price and capacity optimized allocation strategy
+     * looks at both price and capacity to select the Spot Instance pools that are the
+     * least likely to be interrupted and have the lowest possible price.</p> </dd>
      * </dl>
      */
     inline InstancesDistribution& WithSpotAllocationStrategy(Aws::String&& value) { SetSpotAllocationStrategy(std::move(value)); return *this;}
@@ -515,11 +501,9 @@ namespace Model
      * Instances from several pools. This is the default value, but it might lead to
      * high interruption rates because this strategy only considers instance price and
      * not available capacity.</p> </dd> <dt>price-capacity-optimized
-     * (recommended)</dt> <dd> <p>Amazon EC2 Auto Scaling identifies the pools with the
-     * highest capacity availability for the number of instances that are launching.
-     * This means that we will request Spot Instances from the pools that we believe
-     * have the lowest chance of interruption in the near term. Amazon EC2 Auto Scaling
-     * then requests Spot Instances from the lowest priced of these pools.</p> </dd>
+     * (recommended)</dt> <dd> <p>The price and capacity optimized allocation strategy
+     * looks at both price and capacity to select the Spot Instance pools that are the
+     * least likely to be interrupted and have the lowest possible price.</p> </dd>
      * </dl>
      */
     inline InstancesDistribution& WithSpotAllocationStrategy(const char* value) { SetSpotAllocationStrategy(value); return *this;}

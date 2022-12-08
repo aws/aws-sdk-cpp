@@ -25,6 +25,8 @@ namespace Aws
         static const int STRATEGY_HASH = HashingUtils::HashString("STRATEGY");
         static const int DESTINATION_HASH = HashingUtils::HashString("DESTINATION");
         static const int SERVER_ID_HASH = HashingUtils::HashString("SERVER_ID");
+        static const int ANALYSIS_STATUS_HASH = HashingUtils::HashString("ANALYSIS_STATUS");
+        static const int ERROR_CATEGORY_HASH = HashingUtils::HashString("ERROR_CATEGORY");
 
 
         ServerCriteria GetServerCriteriaForName(const Aws::String& name)
@@ -50,6 +52,14 @@ namespace Aws
           {
             return ServerCriteria::SERVER_ID;
           }
+          else if (hashCode == ANALYSIS_STATUS_HASH)
+          {
+            return ServerCriteria::ANALYSIS_STATUS;
+          }
+          else if (hashCode == ERROR_CATEGORY_HASH)
+          {
+            return ServerCriteria::ERROR_CATEGORY;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -74,6 +84,10 @@ namespace Aws
             return "DESTINATION";
           case ServerCriteria::SERVER_ID:
             return "SERVER_ID";
+          case ServerCriteria::ANALYSIS_STATUS:
+            return "ANALYSIS_STATUS";
+          case ServerCriteria::ERROR_CATEGORY:
+            return "ERROR_CATEGORY";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

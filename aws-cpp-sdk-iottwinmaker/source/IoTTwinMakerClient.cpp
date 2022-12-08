@@ -25,10 +25,12 @@
 #include <aws/iottwinmaker/model/CreateComponentTypeRequest.h>
 #include <aws/iottwinmaker/model/CreateEntityRequest.h>
 #include <aws/iottwinmaker/model/CreateSceneRequest.h>
+#include <aws/iottwinmaker/model/CreateSyncJobRequest.h>
 #include <aws/iottwinmaker/model/CreateWorkspaceRequest.h>
 #include <aws/iottwinmaker/model/DeleteComponentTypeRequest.h>
 #include <aws/iottwinmaker/model/DeleteEntityRequest.h>
 #include <aws/iottwinmaker/model/DeleteSceneRequest.h>
+#include <aws/iottwinmaker/model/DeleteSyncJobRequest.h>
 #include <aws/iottwinmaker/model/DeleteWorkspaceRequest.h>
 #include <aws/iottwinmaker/model/ExecuteQueryRequest.h>
 #include <aws/iottwinmaker/model/GetComponentTypeRequest.h>
@@ -37,10 +39,13 @@
 #include <aws/iottwinmaker/model/GetPropertyValueRequest.h>
 #include <aws/iottwinmaker/model/GetPropertyValueHistoryRequest.h>
 #include <aws/iottwinmaker/model/GetSceneRequest.h>
+#include <aws/iottwinmaker/model/GetSyncJobRequest.h>
 #include <aws/iottwinmaker/model/GetWorkspaceRequest.h>
 #include <aws/iottwinmaker/model/ListComponentTypesRequest.h>
 #include <aws/iottwinmaker/model/ListEntitiesRequest.h>
 #include <aws/iottwinmaker/model/ListScenesRequest.h>
+#include <aws/iottwinmaker/model/ListSyncJobsRequest.h>
+#include <aws/iottwinmaker/model/ListSyncResourcesRequest.h>
 #include <aws/iottwinmaker/model/ListTagsForResourceRequest.h>
 #include <aws/iottwinmaker/model/ListWorkspacesRequest.h>
 #include <aws/iottwinmaker/model/TagResourceRequest.h>
@@ -320,6 +325,46 @@ void IoTTwinMakerClient::CreateSceneAsync(const CreateSceneRequest& request, con
     } );
 }
 
+CreateSyncJobOutcome IoTTwinMakerClient::CreateSyncJob(const CreateSyncJobRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateSyncJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.WorkspaceIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateSyncJob", "Required field: WorkspaceId, is not set");
+    return CreateSyncJobOutcome(Aws::Client::AWSError<IoTTwinMakerErrors>(IoTTwinMakerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [WorkspaceId]", false));
+  }
+  if (!request.SyncSourceHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateSyncJob", "Required field: SyncSource, is not set");
+    return CreateSyncJobOutcome(Aws::Client::AWSError<IoTTwinMakerErrors>(IoTTwinMakerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SyncSource]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateSyncJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("api.");
+  AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), CreateSyncJobOutcome(addPrefixErr.value()));
+  endpointResolutionOutcome.GetResult().AddPathSegments("/workspaces/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkspaceId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/sync-jobs/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSyncSource());
+  return CreateSyncJobOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateSyncJobOutcomeCallable IoTTwinMakerClient::CreateSyncJobCallable(const CreateSyncJobRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateSyncJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateSyncJob(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTTwinMakerClient::CreateSyncJobAsync(const CreateSyncJobRequest& request, const CreateSyncJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateSyncJob(request), context);
+    } );
+}
+
 CreateWorkspaceOutcome IoTTwinMakerClient::CreateWorkspace(const CreateWorkspaceRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateWorkspace, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -470,6 +515,46 @@ void IoTTwinMakerClient::DeleteSceneAsync(const DeleteSceneRequest& request, con
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, DeleteScene(request), context);
+    } );
+}
+
+DeleteSyncJobOutcome IoTTwinMakerClient::DeleteSyncJob(const DeleteSyncJobRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteSyncJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.WorkspaceIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteSyncJob", "Required field: WorkspaceId, is not set");
+    return DeleteSyncJobOutcome(Aws::Client::AWSError<IoTTwinMakerErrors>(IoTTwinMakerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [WorkspaceId]", false));
+  }
+  if (!request.SyncSourceHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteSyncJob", "Required field: SyncSource, is not set");
+    return DeleteSyncJobOutcome(Aws::Client::AWSError<IoTTwinMakerErrors>(IoTTwinMakerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SyncSource]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteSyncJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("api.");
+  AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), DeleteSyncJobOutcome(addPrefixErr.value()));
+  endpointResolutionOutcome.GetResult().AddPathSegments("/workspaces/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkspaceId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/sync-jobs/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSyncSource());
+  return DeleteSyncJobOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteSyncJobOutcomeCallable IoTTwinMakerClient::DeleteSyncJobCallable(const DeleteSyncJobRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteSyncJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteSyncJob(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTTwinMakerClient::DeleteSyncJobAsync(const DeleteSyncJobRequest& request, const DeleteSyncJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteSyncJob(request), context);
     } );
 }
 
@@ -748,6 +833,39 @@ void IoTTwinMakerClient::GetSceneAsync(const GetSceneRequest& request, const Get
     } );
 }
 
+GetSyncJobOutcome IoTTwinMakerClient::GetSyncJob(const GetSyncJobRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetSyncJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.SyncSourceHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetSyncJob", "Required field: SyncSource, is not set");
+    return GetSyncJobOutcome(Aws::Client::AWSError<IoTTwinMakerErrors>(IoTTwinMakerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SyncSource]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetSyncJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("api.");
+  AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), GetSyncJobOutcome(addPrefixErr.value()));
+  endpointResolutionOutcome.GetResult().AddPathSegments("/sync-jobs/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSyncSource());
+  return GetSyncJobOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetSyncJobOutcomeCallable IoTTwinMakerClient::GetSyncJobCallable(const GetSyncJobRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetSyncJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetSyncJob(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTTwinMakerClient::GetSyncJobAsync(const GetSyncJobRequest& request, const GetSyncJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetSyncJob(request), context);
+    } );
+}
+
 GetWorkspaceOutcome IoTTwinMakerClient::GetWorkspace(const GetWorkspaceRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetWorkspace, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -880,6 +998,81 @@ void IoTTwinMakerClient::ListScenesAsync(const ListScenesRequest& request, const
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, ListScenes(request), context);
+    } );
+}
+
+ListSyncJobsOutcome IoTTwinMakerClient::ListSyncJobs(const ListSyncJobsRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListSyncJobs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.WorkspaceIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListSyncJobs", "Required field: WorkspaceId, is not set");
+    return ListSyncJobsOutcome(Aws::Client::AWSError<IoTTwinMakerErrors>(IoTTwinMakerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [WorkspaceId]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListSyncJobs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("api.");
+  AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), ListSyncJobsOutcome(addPrefixErr.value()));
+  endpointResolutionOutcome.GetResult().AddPathSegments("/workspaces/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkspaceId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/sync-jobs-list");
+  return ListSyncJobsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListSyncJobsOutcomeCallable IoTTwinMakerClient::ListSyncJobsCallable(const ListSyncJobsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListSyncJobsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListSyncJobs(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTTwinMakerClient::ListSyncJobsAsync(const ListSyncJobsRequest& request, const ListSyncJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListSyncJobs(request), context);
+    } );
+}
+
+ListSyncResourcesOutcome IoTTwinMakerClient::ListSyncResources(const ListSyncResourcesRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListSyncResources, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.WorkspaceIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListSyncResources", "Required field: WorkspaceId, is not set");
+    return ListSyncResourcesOutcome(Aws::Client::AWSError<IoTTwinMakerErrors>(IoTTwinMakerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [WorkspaceId]", false));
+  }
+  if (!request.SyncSourceHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListSyncResources", "Required field: SyncSource, is not set");
+    return ListSyncResourcesOutcome(Aws::Client::AWSError<IoTTwinMakerErrors>(IoTTwinMakerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SyncSource]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListSyncResources, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("api.");
+  AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), ListSyncResourcesOutcome(addPrefixErr.value()));
+  endpointResolutionOutcome.GetResult().AddPathSegments("/workspaces/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkspaceId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/sync-jobs/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSyncSource());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/resources-list");
+  return ListSyncResourcesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListSyncResourcesOutcomeCallable IoTTwinMakerClient::ListSyncResourcesCallable(const ListSyncResourcesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListSyncResourcesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListSyncResources(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTTwinMakerClient::ListSyncResourcesAsync(const ListSyncResourcesRequest& request, const ListSyncResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListSyncResources(request), context);
     } );
 }
 

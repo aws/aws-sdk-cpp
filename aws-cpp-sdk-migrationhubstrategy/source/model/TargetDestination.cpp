@@ -33,6 +33,7 @@ namespace Aws
         static const int Amazon_DocumentDB_HASH = HashingUtils::HashString("Amazon DocumentDB");
         static const int Amazon_DynamoDB_HASH = HashingUtils::HashString("Amazon DynamoDB");
         static const int Amazon_Relational_Database_Service_HASH = HashingUtils::HashString("Amazon Relational Database Service");
+        static const int Babelfish_for_Aurora_PostgreSQL_HASH = HashingUtils::HashString("Babelfish for Aurora PostgreSQL");
 
 
         TargetDestination GetTargetDestinationForName(const Aws::String& name)
@@ -90,6 +91,10 @@ namespace Aws
           {
             return TargetDestination::Amazon_Relational_Database_Service;
           }
+          else if (hashCode == Babelfish_for_Aurora_PostgreSQL_HASH)
+          {
+            return TargetDestination::Babelfish_for_Aurora_PostgreSQL;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -130,6 +135,8 @@ namespace Aws
             return "Amazon DynamoDB";
           case TargetDestination::Amazon_Relational_Database_Service:
             return "Amazon Relational Database Service";
+          case TargetDestination::Babelfish_for_Aurora_PostgreSQL:
+            return "Babelfish for Aurora PostgreSQL";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

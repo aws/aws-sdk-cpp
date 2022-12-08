@@ -6,7 +6,9 @@
 #pragma once
 #include <aws/migrationhubstrategy/MigrationHubStrategyRecommendations_EXPORTS.h>
 #include <aws/migrationhubstrategy/MigrationHubStrategyRecommendationsRequest.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/migrationhubstrategy/model/AssessmentTarget.h>
 #include <utility>
 
 namespace Aws
@@ -30,6 +32,47 @@ namespace Model
     inline virtual const char* GetServiceRequestName() const override { return "StartAssessment"; }
 
     AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API Aws::String SerializePayload() const override;
+
+
+    /**
+     * <p>List of criteria for assessment.</p>
+     */
+    inline const Aws::Vector<AssessmentTarget>& GetAssessmentTargets() const{ return m_assessmentTargets; }
+
+    /**
+     * <p>List of criteria for assessment.</p>
+     */
+    inline bool AssessmentTargetsHasBeenSet() const { return m_assessmentTargetsHasBeenSet; }
+
+    /**
+     * <p>List of criteria for assessment.</p>
+     */
+    inline void SetAssessmentTargets(const Aws::Vector<AssessmentTarget>& value) { m_assessmentTargetsHasBeenSet = true; m_assessmentTargets = value; }
+
+    /**
+     * <p>List of criteria for assessment.</p>
+     */
+    inline void SetAssessmentTargets(Aws::Vector<AssessmentTarget>&& value) { m_assessmentTargetsHasBeenSet = true; m_assessmentTargets = std::move(value); }
+
+    /**
+     * <p>List of criteria for assessment.</p>
+     */
+    inline StartAssessmentRequest& WithAssessmentTargets(const Aws::Vector<AssessmentTarget>& value) { SetAssessmentTargets(value); return *this;}
+
+    /**
+     * <p>List of criteria for assessment.</p>
+     */
+    inline StartAssessmentRequest& WithAssessmentTargets(Aws::Vector<AssessmentTarget>&& value) { SetAssessmentTargets(std::move(value)); return *this;}
+
+    /**
+     * <p>List of criteria for assessment.</p>
+     */
+    inline StartAssessmentRequest& AddAssessmentTargets(const AssessmentTarget& value) { m_assessmentTargetsHasBeenSet = true; m_assessmentTargets.push_back(value); return *this; }
+
+    /**
+     * <p>List of criteria for assessment.</p>
+     */
+    inline StartAssessmentRequest& AddAssessmentTargets(AssessmentTarget&& value) { m_assessmentTargetsHasBeenSet = true; m_assessmentTargets.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -130,6 +173,9 @@ namespace Model
     inline StartAssessmentRequest& WithS3bucketForReportData(const char* value) { SetS3bucketForReportData(value); return *this;}
 
   private:
+
+    Aws::Vector<AssessmentTarget> m_assessmentTargets;
+    bool m_assessmentTargetsHasBeenSet = false;
 
     Aws::String m_s3bucketForAnalysisData;
     bool m_s3bucketForAnalysisDataHasBeenSet = false;

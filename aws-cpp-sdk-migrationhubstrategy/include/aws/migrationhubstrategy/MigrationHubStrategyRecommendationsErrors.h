@@ -48,6 +48,7 @@ enum class MigrationHubStrategyRecommendationsErrors
   ///////////////////////////////////////////////////////////////////////////////////////////
 
   CONFLICT= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  DEPENDENCY,
   INTERNAL_SERVER,
   SERVICE_LINKED_ROLE_LOCK_CLIENT,
   SERVICE_QUOTA_EXCEEDED

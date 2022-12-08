@@ -16,11 +16,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetPortfolioPreferencesResult::GetPortfolioPreferencesResult()
+GetPortfolioPreferencesResult::GetPortfolioPreferencesResult() : 
+    m_applicationMode(ApplicationMode::NOT_SET)
 {
 }
 
-GetPortfolioPreferencesResult::GetPortfolioPreferencesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+GetPortfolioPreferencesResult::GetPortfolioPreferencesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
+    m_applicationMode(ApplicationMode::NOT_SET)
 {
   *this = result;
 }
@@ -28,6 +30,12 @@ GetPortfolioPreferencesResult::GetPortfolioPreferencesResult(const Aws::AmazonWe
 GetPortfolioPreferencesResult& GetPortfolioPreferencesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("applicationMode"))
+  {
+    m_applicationMode = ApplicationModeMapper::GetApplicationModeForName(jsonValue.GetString("applicationMode"));
+
+  }
+
   if(jsonValue.ValueExists("applicationPreferences"))
   {
     m_applicationPreferences = jsonValue.GetObject("applicationPreferences");

@@ -130,6 +130,18 @@ GetComponentTypeResult& GetComponentTypeResult::operator =(const Aws::AmazonWebS
     }
   }
 
+  if(jsonValue.ValueExists("syncSource"))
+  {
+    m_syncSource = jsonValue.GetString("syncSource");
+
+  }
+
+  if(jsonValue.ValueExists("componentTypeName"))
+  {
+    m_componentTypeName = jsonValue.GetString("componentTypeName");
+
+  }
+
 
 
   return *this;

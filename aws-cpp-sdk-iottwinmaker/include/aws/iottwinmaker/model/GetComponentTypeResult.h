@@ -556,6 +556,78 @@ namespace Model
      */
     inline GetComponentTypeResult& AddPropertyGroups(const char* key, const PropertyGroupResponse& value) { m_propertyGroups.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>The syncSource of the sync job, if this entity was created by a sync job.</p>
+     */
+    inline const Aws::String& GetSyncSource() const{ return m_syncSource; }
+
+    /**
+     * <p>The syncSource of the sync job, if this entity was created by a sync job.</p>
+     */
+    inline void SetSyncSource(const Aws::String& value) { m_syncSource = value; }
+
+    /**
+     * <p>The syncSource of the sync job, if this entity was created by a sync job.</p>
+     */
+    inline void SetSyncSource(Aws::String&& value) { m_syncSource = std::move(value); }
+
+    /**
+     * <p>The syncSource of the sync job, if this entity was created by a sync job.</p>
+     */
+    inline void SetSyncSource(const char* value) { m_syncSource.assign(value); }
+
+    /**
+     * <p>The syncSource of the sync job, if this entity was created by a sync job.</p>
+     */
+    inline GetComponentTypeResult& WithSyncSource(const Aws::String& value) { SetSyncSource(value); return *this;}
+
+    /**
+     * <p>The syncSource of the sync job, if this entity was created by a sync job.</p>
+     */
+    inline GetComponentTypeResult& WithSyncSource(Aws::String&& value) { SetSyncSource(std::move(value)); return *this;}
+
+    /**
+     * <p>The syncSource of the sync job, if this entity was created by a sync job.</p>
+     */
+    inline GetComponentTypeResult& WithSyncSource(const char* value) { SetSyncSource(value); return *this;}
+
+
+    /**
+     * <p>The component type name.</p>
+     */
+    inline const Aws::String& GetComponentTypeName() const{ return m_componentTypeName; }
+
+    /**
+     * <p>The component type name.</p>
+     */
+    inline void SetComponentTypeName(const Aws::String& value) { m_componentTypeName = value; }
+
+    /**
+     * <p>The component type name.</p>
+     */
+    inline void SetComponentTypeName(Aws::String&& value) { m_componentTypeName = std::move(value); }
+
+    /**
+     * <p>The component type name.</p>
+     */
+    inline void SetComponentTypeName(const char* value) { m_componentTypeName.assign(value); }
+
+    /**
+     * <p>The component type name.</p>
+     */
+    inline GetComponentTypeResult& WithComponentTypeName(const Aws::String& value) { SetComponentTypeName(value); return *this;}
+
+    /**
+     * <p>The component type name.</p>
+     */
+    inline GetComponentTypeResult& WithComponentTypeName(Aws::String&& value) { SetComponentTypeName(std::move(value)); return *this;}
+
+    /**
+     * <p>The component type name.</p>
+     */
+    inline GetComponentTypeResult& WithComponentTypeName(const char* value) { SetComponentTypeName(value); return *this;}
+
   private:
 
     Aws::String m_workspaceId;
@@ -585,6 +657,10 @@ namespace Model
     Status m_status;
 
     Aws::Map<Aws::String, PropertyGroupResponse> m_propertyGroups;
+
+    Aws::String m_syncSource;
+
+    Aws::String m_componentTypeName;
   };
 
 } // namespace Model

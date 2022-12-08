@@ -20,6 +20,7 @@ namespace Model
 
 SourceCode::SourceCode() : 
     m_locationHasBeenSet(false),
+    m_projectNameHasBeenSet(false),
     m_sourceVersionHasBeenSet(false),
     m_versionControl(VersionControl::NOT_SET),
     m_versionControlHasBeenSet(false)
@@ -28,6 +29,7 @@ SourceCode::SourceCode() :
 
 SourceCode::SourceCode(JsonView jsonValue) : 
     m_locationHasBeenSet(false),
+    m_projectNameHasBeenSet(false),
     m_sourceVersionHasBeenSet(false),
     m_versionControl(VersionControl::NOT_SET),
     m_versionControlHasBeenSet(false)
@@ -42,6 +44,13 @@ SourceCode& SourceCode::operator =(JsonView jsonValue)
     m_location = jsonValue.GetString("location");
 
     m_locationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("projectName"))
+  {
+    m_projectName = jsonValue.GetString("projectName");
+
+    m_projectNameHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("sourceVersion"))
@@ -68,6 +77,12 @@ JsonValue SourceCode::Jsonize() const
   if(m_locationHasBeenSet)
   {
    payload.WithString("location", m_location);
+
+  }
+
+  if(m_projectNameHasBeenSet)
+  {
+   payload.WithString("projectName", m_projectName);
 
   }
 

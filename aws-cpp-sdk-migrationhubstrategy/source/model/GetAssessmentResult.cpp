@@ -28,6 +28,15 @@ GetAssessmentResult::GetAssessmentResult(const Aws::AmazonWebServiceResult<JsonV
 GetAssessmentResult& GetAssessmentResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("assessmentTargets"))
+  {
+    Aws::Utils::Array<JsonView> assessmentTargetsJsonList = jsonValue.GetArray("assessmentTargets");
+    for(unsigned assessmentTargetsIndex = 0; assessmentTargetsIndex < assessmentTargetsJsonList.GetLength(); ++assessmentTargetsIndex)
+    {
+      m_assessmentTargets.push_back(assessmentTargetsJsonList[assessmentTargetsIndex].AsObject());
+    }
+  }
+
   if(jsonValue.ValueExists("dataCollectionDetails"))
   {
     m_dataCollectionDetails = jsonValue.GetObject("dataCollectionDetails");

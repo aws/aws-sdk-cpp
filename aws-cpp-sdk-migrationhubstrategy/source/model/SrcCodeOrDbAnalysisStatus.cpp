@@ -24,6 +24,9 @@ namespace Aws
         static const int ANALYSIS_STARTED_HASH = HashingUtils::HashString("ANALYSIS_STARTED");
         static const int ANALYSIS_SUCCESS_HASH = HashingUtils::HashString("ANALYSIS_SUCCESS");
         static const int ANALYSIS_FAILED_HASH = HashingUtils::HashString("ANALYSIS_FAILED");
+        static const int ANALYSIS_PARTIAL_SUCCESS_HASH = HashingUtils::HashString("ANALYSIS_PARTIAL_SUCCESS");
+        static const int UNCONFIGURED_HASH = HashingUtils::HashString("UNCONFIGURED");
+        static const int CONFIGURED_HASH = HashingUtils::HashString("CONFIGURED");
 
 
         SrcCodeOrDbAnalysisStatus GetSrcCodeOrDbAnalysisStatusForName(const Aws::String& name)
@@ -44,6 +47,18 @@ namespace Aws
           else if (hashCode == ANALYSIS_FAILED_HASH)
           {
             return SrcCodeOrDbAnalysisStatus::ANALYSIS_FAILED;
+          }
+          else if (hashCode == ANALYSIS_PARTIAL_SUCCESS_HASH)
+          {
+            return SrcCodeOrDbAnalysisStatus::ANALYSIS_PARTIAL_SUCCESS;
+          }
+          else if (hashCode == UNCONFIGURED_HASH)
+          {
+            return SrcCodeOrDbAnalysisStatus::UNCONFIGURED;
+          }
+          else if (hashCode == CONFIGURED_HASH)
+          {
+            return SrcCodeOrDbAnalysisStatus::CONFIGURED;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -67,6 +82,12 @@ namespace Aws
             return "ANALYSIS_SUCCESS";
           case SrcCodeOrDbAnalysisStatus::ANALYSIS_FAILED:
             return "ANALYSIS_FAILED";
+          case SrcCodeOrDbAnalysisStatus::ANALYSIS_PARTIAL_SUCCESS:
+            return "ANALYSIS_PARTIAL_SUCCESS";
+          case SrcCodeOrDbAnalysisStatus::UNCONFIGURED:
+            return "UNCONFIGURED";
+          case SrcCodeOrDbAnalysisStatus::CONFIGURED:
+            return "CONFIGURED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

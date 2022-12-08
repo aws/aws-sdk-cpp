@@ -503,6 +503,47 @@ namespace Model
      */
     inline CreateComponentTypeRequest& AddPropertyGroups(const char* key, const PropertyGroupRequest& value) { m_propertyGroupsHasBeenSet = true; m_propertyGroups.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>A friendly name for the component type.</p>
+     */
+    inline const Aws::String& GetComponentTypeName() const{ return m_componentTypeName; }
+
+    /**
+     * <p>A friendly name for the component type.</p>
+     */
+    inline bool ComponentTypeNameHasBeenSet() const { return m_componentTypeNameHasBeenSet; }
+
+    /**
+     * <p>A friendly name for the component type.</p>
+     */
+    inline void SetComponentTypeName(const Aws::String& value) { m_componentTypeNameHasBeenSet = true; m_componentTypeName = value; }
+
+    /**
+     * <p>A friendly name for the component type.</p>
+     */
+    inline void SetComponentTypeName(Aws::String&& value) { m_componentTypeNameHasBeenSet = true; m_componentTypeName = std::move(value); }
+
+    /**
+     * <p>A friendly name for the component type.</p>
+     */
+    inline void SetComponentTypeName(const char* value) { m_componentTypeNameHasBeenSet = true; m_componentTypeName.assign(value); }
+
+    /**
+     * <p>A friendly name for the component type.</p>
+     */
+    inline CreateComponentTypeRequest& WithComponentTypeName(const Aws::String& value) { SetComponentTypeName(value); return *this;}
+
+    /**
+     * <p>A friendly name for the component type.</p>
+     */
+    inline CreateComponentTypeRequest& WithComponentTypeName(Aws::String&& value) { SetComponentTypeName(std::move(value)); return *this;}
+
+    /**
+     * <p>A friendly name for the component type.</p>
+     */
+    inline CreateComponentTypeRequest& WithComponentTypeName(const char* value) { SetComponentTypeName(value); return *this;}
+
   private:
 
     Aws::String m_workspaceId;
@@ -531,6 +572,9 @@ namespace Model
 
     Aws::Map<Aws::String, PropertyGroupRequest> m_propertyGroups;
     bool m_propertyGroupsHasBeenSet = false;
+
+    Aws::String m_componentTypeName;
+    bool m_componentTypeNameHasBeenSet = false;
   };
 
 } // namespace Model

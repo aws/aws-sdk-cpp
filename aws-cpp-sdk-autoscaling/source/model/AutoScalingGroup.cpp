@@ -64,7 +64,8 @@ AutoScalingGroup::AutoScalingGroup() :
     m_contextHasBeenSet(false),
     m_desiredCapacityTypeHasBeenSet(false),
     m_defaultInstanceWarmup(0),
-    m_defaultInstanceWarmupHasBeenSet(false)
+    m_defaultInstanceWarmupHasBeenSet(false),
+    m_trafficSourcesHasBeenSet(false)
 {
 }
 
@@ -112,7 +113,8 @@ AutoScalingGroup::AutoScalingGroup(const XmlNode& xmlNode) :
     m_contextHasBeenSet(false),
     m_desiredCapacityTypeHasBeenSet(false),
     m_defaultInstanceWarmup(0),
-    m_defaultInstanceWarmupHasBeenSet(false)
+    m_defaultInstanceWarmupHasBeenSet(false),
+    m_trafficSourcesHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -369,6 +371,18 @@ AutoScalingGroup& AutoScalingGroup::operator =(const XmlNode& xmlNode)
       m_defaultInstanceWarmup = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(defaultInstanceWarmupNode.GetText()).c_str()).c_str());
       m_defaultInstanceWarmupHasBeenSet = true;
     }
+    XmlNode trafficSourcesNode = resultNode.FirstChild("TrafficSources");
+    if(!trafficSourcesNode.IsNull())
+    {
+      XmlNode trafficSourcesMember = trafficSourcesNode.FirstChild("member");
+      while(!trafficSourcesMember.IsNull())
+      {
+        m_trafficSources.push_back(trafficSourcesMember);
+        trafficSourcesMember = trafficSourcesMember.NextNode("member");
+      }
+
+      m_trafficSourcesHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -587,6 +601,17 @@ void AutoScalingGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
       oStream << location << index << locationValue << ".DefaultInstanceWarmup=" << m_defaultInstanceWarmup << "&";
   }
 
+  if(m_trafficSourcesHasBeenSet)
+  {
+      unsigned trafficSourcesIdx = 1;
+      for(auto& item : m_trafficSources)
+      {
+        Aws::StringStream trafficSourcesSs;
+        trafficSourcesSs << location << index << locationValue << ".TrafficSources.member." << trafficSourcesIdx++;
+        item.OutputToStream(oStream, trafficSourcesSs.str().c_str());
+      }
+  }
+
 }
 
 void AutoScalingGroup::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -768,6 +793,16 @@ void AutoScalingGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
   if(m_defaultInstanceWarmupHasBeenSet)
   {
       oStream << location << ".DefaultInstanceWarmup=" << m_defaultInstanceWarmup << "&";
+  }
+  if(m_trafficSourcesHasBeenSet)
+  {
+      unsigned trafficSourcesIdx = 1;
+      for(auto& item : m_trafficSources)
+      {
+        Aws::StringStream trafficSourcesSs;
+        trafficSourcesSs << location <<  ".TrafficSources.member." << trafficSourcesIdx++;
+        item.OutputToStream(oStream, trafficSourcesSs.str().c_str());
+      }
   }
 }
 

@@ -17,7 +17,10 @@ namespace Model
   {
     NOT_SET,
     VALIDATION_ERROR,
-    INTERNAL_FAILURE
+    INTERNAL_FAILURE,
+    SYNC_INITIALIZING_ERROR,
+    SYNC_CREATING_ERROR,
+    SYNC_PROCESSING_ERROR
   };
 
 namespace ErrorCodeMapper

@@ -13,6 +13,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 StartAssessmentRequest::StartAssessmentRequest() : 
+    m_assessmentTargetsHasBeenSet(false),
     m_s3bucketForAnalysisDataHasBeenSet(false),
     m_s3bucketForReportDataHasBeenSet(false)
 {
@@ -21,6 +22,17 @@ StartAssessmentRequest::StartAssessmentRequest() :
 Aws::String StartAssessmentRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_assessmentTargetsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> assessmentTargetsJsonList(m_assessmentTargets.size());
+   for(unsigned assessmentTargetsIndex = 0; assessmentTargetsIndex < assessmentTargetsJsonList.GetLength(); ++assessmentTargetsIndex)
+   {
+     assessmentTargetsJsonList[assessmentTargetsIndex].AsObject(m_assessmentTargets[assessmentTargetsIndex].Jsonize());
+   }
+   payload.WithArray("assessmentTargets", std::move(assessmentTargetsJsonList));
+
+  }
 
   if(m_s3bucketForAnalysisDataHasBeenSet)
   {

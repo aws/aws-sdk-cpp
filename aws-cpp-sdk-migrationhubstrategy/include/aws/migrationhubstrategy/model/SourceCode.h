@@ -81,6 +81,47 @@ namespace Model
 
 
     /**
+     * <p>The name of the project.</p>
+     */
+    inline const Aws::String& GetProjectName() const{ return m_projectName; }
+
+    /**
+     * <p>The name of the project.</p>
+     */
+    inline bool ProjectNameHasBeenSet() const { return m_projectNameHasBeenSet; }
+
+    /**
+     * <p>The name of the project.</p>
+     */
+    inline void SetProjectName(const Aws::String& value) { m_projectNameHasBeenSet = true; m_projectName = value; }
+
+    /**
+     * <p>The name of the project.</p>
+     */
+    inline void SetProjectName(Aws::String&& value) { m_projectNameHasBeenSet = true; m_projectName = std::move(value); }
+
+    /**
+     * <p>The name of the project.</p>
+     */
+    inline void SetProjectName(const char* value) { m_projectNameHasBeenSet = true; m_projectName.assign(value); }
+
+    /**
+     * <p>The name of the project.</p>
+     */
+    inline SourceCode& WithProjectName(const Aws::String& value) { SetProjectName(value); return *this;}
+
+    /**
+     * <p>The name of the project.</p>
+     */
+    inline SourceCode& WithProjectName(Aws::String&& value) { SetProjectName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the project.</p>
+     */
+    inline SourceCode& WithProjectName(const char* value) { SetProjectName(value); return *this;}
+
+
+    /**
      * <p> The branch of the source code. </p>
      */
     inline const Aws::String& GetSourceVersion() const{ return m_sourceVersion; }
@@ -155,6 +196,9 @@ namespace Model
 
     Aws::String m_location;
     bool m_locationHasBeenSet = false;
+
+    Aws::String m_projectName;
+    bool m_projectNameHasBeenSet = false;
 
     Aws::String m_sourceVersion;
     bool m_sourceVersionHasBeenSet = false;
