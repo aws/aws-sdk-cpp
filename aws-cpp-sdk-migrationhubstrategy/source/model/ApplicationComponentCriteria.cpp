@@ -26,6 +26,8 @@ namespace Aws
         static const int APP_TYPE_HASH = HashingUtils::HashString("APP_TYPE");
         static const int STRATEGY_HASH = HashingUtils::HashString("STRATEGY");
         static const int DESTINATION_HASH = HashingUtils::HashString("DESTINATION");
+        static const int ANALYSIS_STATUS_HASH = HashingUtils::HashString("ANALYSIS_STATUS");
+        static const int ERROR_CATEGORY_HASH = HashingUtils::HashString("ERROR_CATEGORY");
 
 
         ApplicationComponentCriteria GetApplicationComponentCriteriaForName(const Aws::String& name)
@@ -55,6 +57,14 @@ namespace Aws
           {
             return ApplicationComponentCriteria::DESTINATION;
           }
+          else if (hashCode == ANALYSIS_STATUS_HASH)
+          {
+            return ApplicationComponentCriteria::ANALYSIS_STATUS;
+          }
+          else if (hashCode == ERROR_CATEGORY_HASH)
+          {
+            return ApplicationComponentCriteria::ERROR_CATEGORY;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -81,6 +91,10 @@ namespace Aws
             return "STRATEGY";
           case ApplicationComponentCriteria::DESTINATION:
             return "DESTINATION";
+          case ApplicationComponentCriteria::ANALYSIS_STATUS:
+            return "ANALYSIS_STATUS";
+          case ApplicationComponentCriteria::ERROR_CATEGORY:
+            return "ERROR_CATEGORY";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

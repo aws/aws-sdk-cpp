@@ -7,6 +7,7 @@
 #include <aws/migrationhubstrategy/MigrationHubStrategyRecommendations_EXPORTS.h>
 #include <aws/migrationhubstrategy/model/CollectorHealth.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/migrationhubstrategy/model/ConfigurationSummary.h>
 #include <utility>
 
 namespace Aws
@@ -158,6 +159,37 @@ namespace Model
      * specify. </p>
      */
     inline Collector& WithCollectorVersion(const char* value) { SetCollectorVersion(value); return *this;}
+
+
+    /**
+     * <p>Summary of the collector configuration.</p>
+     */
+    inline const ConfigurationSummary& GetConfigurationSummary() const{ return m_configurationSummary; }
+
+    /**
+     * <p>Summary of the collector configuration.</p>
+     */
+    inline bool ConfigurationSummaryHasBeenSet() const { return m_configurationSummaryHasBeenSet; }
+
+    /**
+     * <p>Summary of the collector configuration.</p>
+     */
+    inline void SetConfigurationSummary(const ConfigurationSummary& value) { m_configurationSummaryHasBeenSet = true; m_configurationSummary = value; }
+
+    /**
+     * <p>Summary of the collector configuration.</p>
+     */
+    inline void SetConfigurationSummary(ConfigurationSummary&& value) { m_configurationSummaryHasBeenSet = true; m_configurationSummary = std::move(value); }
+
+    /**
+     * <p>Summary of the collector configuration.</p>
+     */
+    inline Collector& WithConfigurationSummary(const ConfigurationSummary& value) { SetConfigurationSummary(value); return *this;}
+
+    /**
+     * <p>Summary of the collector configuration.</p>
+     */
+    inline Collector& WithConfigurationSummary(ConfigurationSummary&& value) { SetConfigurationSummary(std::move(value)); return *this;}
 
 
     /**
@@ -333,6 +365,9 @@ namespace Model
 
     Aws::String m_collectorVersion;
     bool m_collectorVersionHasBeenSet = false;
+
+    ConfigurationSummary m_configurationSummary;
+    bool m_configurationSummaryHasBeenSet = false;
 
     Aws::String m_hostName;
     bool m_hostNameHasBeenSet = false;

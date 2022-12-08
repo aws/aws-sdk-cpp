@@ -154,6 +154,24 @@ namespace MigrationHubStrategyRecommendations
         virtual void GetImportFileTaskAsync(const Model::GetImportFileTaskRequest& request, const GetImportFileTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Retrieve the latest ID of a specific assessment task.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/migrationhubstrategy-2020-02-19/GetLatestAssessmentId">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetLatestAssessmentIdOutcome GetLatestAssessmentId(const Model::GetLatestAssessmentIdRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetLatestAssessmentId that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetLatestAssessmentIdOutcomeCallable GetLatestAssessmentIdCallable(const Model::GetLatestAssessmentIdRequest& request) const;
+
+        /**
+         * An Async wrapper for GetLatestAssessmentId that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetLatestAssessmentIdAsync(const Model::GetLatestAssessmentIdRequest& request, const GetLatestAssessmentIdResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p> Retrieves your migration and modernization preferences. </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/migrationhubstrategy-2020-02-19/GetPortfolioPreferences">AWS

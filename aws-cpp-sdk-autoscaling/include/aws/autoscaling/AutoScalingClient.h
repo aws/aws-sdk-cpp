@@ -179,6 +179,30 @@ namespace AutoScaling
         virtual void AttachLoadBalancersAsync(const Model::AttachLoadBalancersRequest& request, const AttachLoadBalancersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p> <b>Reserved for use with Amazon VPC Lattice, which is in preview and subject
+         * to change. Do not use this API for production workloads. This API is also
+         * subject to change.</b> </p> <p>Attaches one or more traffic sources to the
+         * specified Auto Scaling group.</p> <p>To describe the traffic sources for an Auto
+         * Scaling group, call the <a>DescribeTrafficSources</a> API. To detach a traffic
+         * source from the Auto Scaling group, call the <a>DetachTrafficSources</a>
+         * API.</p> <p>This operation is additive and does not detach existing traffic
+         * sources from the Auto Scaling group.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/AttachTrafficSources">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::AttachTrafficSourcesOutcome AttachTrafficSources(const Model::AttachTrafficSourcesRequest& request) const;
+
+        /**
+         * A Callable wrapper for AttachTrafficSources that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::AttachTrafficSourcesOutcomeCallable AttachTrafficSourcesCallable(const Model::AttachTrafficSourcesRequest& request) const;
+
+        /**
+         * An Async wrapper for AttachTrafficSources that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void AttachTrafficSourcesAsync(const Model::AttachTrafficSourcesRequest& request, const AttachTrafficSourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Deletes one or more scheduled actions for the specified Auto Scaling
          * group.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/BatchDeleteScheduledAction">AWS
@@ -758,8 +782,11 @@ namespace AutoScaling
          * User Guide</i>. For more information, see <a
          * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Use
          * Elastic Load Balancing to distribute traffic across the instances in your Auto
-         * Scaling group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
-         * </p><p><h3>See Also:</h3>   <a
+         * Scaling group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. </p> 
+         * <p>You can use this operation to describe target groups that were attached by
+         * using <a>AttachLoadBalancerTargetGroups</a>, but not for target groups that were
+         * attached by using <a>AttachTrafficSources</a>.</p> <p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeLoadBalancerTargetGroups">AWS
          * API Reference</a></p>
          */
@@ -988,6 +1015,26 @@ namespace AutoScaling
         virtual void DescribeTerminationPolicyTypesAsync(const Model::DescribeTerminationPolicyTypesRequest& request, const DescribeTerminationPolicyTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p> <b>Reserved for use with Amazon VPC Lattice, which is in preview and subject
+         * to change. Do not use this API for production workloads. This API is also
+         * subject to change.</b> </p> <p>Gets information about the traffic sources for
+         * the specified Auto Scaling group.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeTrafficSources">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeTrafficSourcesOutcome DescribeTrafficSources(const Model::DescribeTrafficSourcesRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeTrafficSources that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeTrafficSourcesOutcomeCallable DescribeTrafficSourcesCallable(const Model::DescribeTrafficSourcesRequest& request) const;
+
+        /**
+         * An Async wrapper for DescribeTrafficSources that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeTrafficSourcesAsync(const Model::DescribeTrafficSourcesRequest& request, const DescribeTrafficSourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Gets information about a warm pool and its instances.</p> <p>For more
          * information, see <a
          * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-warm-pools.html">Warm
@@ -1041,7 +1088,10 @@ namespace AutoScaling
          * while deregistering the instances in the group. When all instances are
          * deregistered, then you can no longer describe the target group using the
          * <a>DescribeLoadBalancerTargetGroups</a> API call. The instances remain
-         * running.</p><p><h3>See Also:</h3>   <a
+         * running.</p>  <p>You can use this operation to detach target groups that
+         * were attached by using <a>AttachLoadBalancerTargetGroups</a>, but not for target
+         * groups that were attached by using <a>AttachTrafficSources</a>.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DetachLoadBalancerTargetGroups">AWS
          * API Reference</a></p>
          */
@@ -1081,6 +1131,26 @@ namespace AutoScaling
          * An Async wrapper for DetachLoadBalancers that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DetachLoadBalancersAsync(const Model::DetachLoadBalancersRequest& request, const DetachLoadBalancersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p> <b>Reserved for use with Amazon VPC Lattice, which is in preview and subject
+         * to change. Do not use this API for production workloads. This API is also
+         * subject to change.</b> </p> <p>Detaches one or more traffic sources from the
+         * specified Auto Scaling group.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DetachTrafficSources">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DetachTrafficSourcesOutcome DetachTrafficSources(const Model::DetachTrafficSourcesRequest& request) const;
+
+        /**
+         * A Callable wrapper for DetachTrafficSources that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DetachTrafficSourcesOutcomeCallable DetachTrafficSourcesCallable(const Model::DetachTrafficSourcesRequest& request) const;
+
+        /**
+         * An Async wrapper for DetachTrafficSources that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DetachTrafficSourcesAsync(const Model::DetachTrafficSourcesRequest& request, const DetachTrafficSourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Disables group metrics collection for the specified Auto Scaling

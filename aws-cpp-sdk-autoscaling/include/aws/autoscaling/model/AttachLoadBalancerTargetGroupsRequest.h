@@ -79,7 +79,7 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Names (ARN) of the target groups. You can specify up to
+     * <p>The Amazon Resource Names (ARNs) of the target groups. You can specify up to
      * 10 target groups. To get the ARN of a target group, use the Elastic Load
      * Balancing <a
      * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTargetGroups.html">DescribeTargetGroups</a>
@@ -88,7 +88,7 @@ namespace Model
     inline const Aws::Vector<Aws::String>& GetTargetGroupARNs() const{ return m_targetGroupARNs; }
 
     /**
-     * <p>The Amazon Resource Names (ARN) of the target groups. You can specify up to
+     * <p>The Amazon Resource Names (ARNs) of the target groups. You can specify up to
      * 10 target groups. To get the ARN of a target group, use the Elastic Load
      * Balancing <a
      * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTargetGroups.html">DescribeTargetGroups</a>
@@ -97,7 +97,7 @@ namespace Model
     inline bool TargetGroupARNsHasBeenSet() const { return m_targetGroupARNsHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Names (ARN) of the target groups. You can specify up to
+     * <p>The Amazon Resource Names (ARNs) of the target groups. You can specify up to
      * 10 target groups. To get the ARN of a target group, use the Elastic Load
      * Balancing <a
      * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTargetGroups.html">DescribeTargetGroups</a>
@@ -106,7 +106,7 @@ namespace Model
     inline void SetTargetGroupARNs(const Aws::Vector<Aws::String>& value) { m_targetGroupARNsHasBeenSet = true; m_targetGroupARNs = value; }
 
     /**
-     * <p>The Amazon Resource Names (ARN) of the target groups. You can specify up to
+     * <p>The Amazon Resource Names (ARNs) of the target groups. You can specify up to
      * 10 target groups. To get the ARN of a target group, use the Elastic Load
      * Balancing <a
      * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTargetGroups.html">DescribeTargetGroups</a>
@@ -115,7 +115,7 @@ namespace Model
     inline void SetTargetGroupARNs(Aws::Vector<Aws::String>&& value) { m_targetGroupARNsHasBeenSet = true; m_targetGroupARNs = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Names (ARN) of the target groups. You can specify up to
+     * <p>The Amazon Resource Names (ARNs) of the target groups. You can specify up to
      * 10 target groups. To get the ARN of a target group, use the Elastic Load
      * Balancing <a
      * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTargetGroups.html">DescribeTargetGroups</a>
@@ -124,7 +124,7 @@ namespace Model
     inline AttachLoadBalancerTargetGroupsRequest& WithTargetGroupARNs(const Aws::Vector<Aws::String>& value) { SetTargetGroupARNs(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Names (ARN) of the target groups. You can specify up to
+     * <p>The Amazon Resource Names (ARNs) of the target groups. You can specify up to
      * 10 target groups. To get the ARN of a target group, use the Elastic Load
      * Balancing <a
      * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTargetGroups.html">DescribeTargetGroups</a>
@@ -133,7 +133,7 @@ namespace Model
     inline AttachLoadBalancerTargetGroupsRequest& WithTargetGroupARNs(Aws::Vector<Aws::String>&& value) { SetTargetGroupARNs(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Names (ARN) of the target groups. You can specify up to
+     * <p>The Amazon Resource Names (ARNs) of the target groups. You can specify up to
      * 10 target groups. To get the ARN of a target group, use the Elastic Load
      * Balancing <a
      * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTargetGroups.html">DescribeTargetGroups</a>
@@ -142,7 +142,7 @@ namespace Model
     inline AttachLoadBalancerTargetGroupsRequest& AddTargetGroupARNs(const Aws::String& value) { m_targetGroupARNsHasBeenSet = true; m_targetGroupARNs.push_back(value); return *this; }
 
     /**
-     * <p>The Amazon Resource Names (ARN) of the target groups. You can specify up to
+     * <p>The Amazon Resource Names (ARNs) of the target groups. You can specify up to
      * 10 target groups. To get the ARN of a target group, use the Elastic Load
      * Balancing <a
      * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTargetGroups.html">DescribeTargetGroups</a>
@@ -151,7 +151,7 @@ namespace Model
     inline AttachLoadBalancerTargetGroupsRequest& AddTargetGroupARNs(Aws::String&& value) { m_targetGroupARNsHasBeenSet = true; m_targetGroupARNs.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The Amazon Resource Names (ARN) of the target groups. You can specify up to
+     * <p>The Amazon Resource Names (ARNs) of the target groups. You can specify up to
      * 10 target groups. To get the ARN of a target group, use the Elastic Load
      * Balancing <a
      * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTargetGroups.html">DescribeTargetGroups</a>

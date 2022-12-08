@@ -29,6 +29,7 @@ DataCollectionDetails::DataCollectionDetails() :
     m_startTimeHasBeenSet(false),
     m_status(AssessmentStatus::NOT_SET),
     m_statusHasBeenSet(false),
+    m_statusMessageHasBeenSet(false),
     m_success(0),
     m_successHasBeenSet(false)
 {
@@ -45,6 +46,7 @@ DataCollectionDetails::DataCollectionDetails(JsonView jsonValue) :
     m_startTimeHasBeenSet(false),
     m_status(AssessmentStatus::NOT_SET),
     m_statusHasBeenSet(false),
+    m_statusMessageHasBeenSet(false),
     m_success(0),
     m_successHasBeenSet(false)
 {
@@ -95,6 +97,13 @@ DataCollectionDetails& DataCollectionDetails::operator =(JsonView jsonValue)
     m_statusHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("statusMessage"))
+  {
+    m_statusMessage = jsonValue.GetString("statusMessage");
+
+    m_statusMessageHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("success"))
   {
     m_success = jsonValue.GetInteger("success");
@@ -140,6 +149,12 @@ JsonValue DataCollectionDetails::Jsonize() const
   if(m_statusHasBeenSet)
   {
    payload.WithString("status", AssessmentStatusMapper::GetNameForAssessmentStatus(m_status));
+  }
+
+  if(m_statusMessageHasBeenSet)
+  {
+   payload.WithString("statusMessage", m_statusMessage);
+
   }
 
   if(m_successHasBeenSet)

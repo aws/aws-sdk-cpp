@@ -255,6 +255,47 @@ namespace Model
      */
     inline ComponentTypeSummary& WithStatus(Status&& value) { SetStatus(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The component type name.</p>
+     */
+    inline const Aws::String& GetComponentTypeName() const{ return m_componentTypeName; }
+
+    /**
+     * <p>The component type name.</p>
+     */
+    inline bool ComponentTypeNameHasBeenSet() const { return m_componentTypeNameHasBeenSet; }
+
+    /**
+     * <p>The component type name.</p>
+     */
+    inline void SetComponentTypeName(const Aws::String& value) { m_componentTypeNameHasBeenSet = true; m_componentTypeName = value; }
+
+    /**
+     * <p>The component type name.</p>
+     */
+    inline void SetComponentTypeName(Aws::String&& value) { m_componentTypeNameHasBeenSet = true; m_componentTypeName = std::move(value); }
+
+    /**
+     * <p>The component type name.</p>
+     */
+    inline void SetComponentTypeName(const char* value) { m_componentTypeNameHasBeenSet = true; m_componentTypeName.assign(value); }
+
+    /**
+     * <p>The component type name.</p>
+     */
+    inline ComponentTypeSummary& WithComponentTypeName(const Aws::String& value) { SetComponentTypeName(value); return *this;}
+
+    /**
+     * <p>The component type name.</p>
+     */
+    inline ComponentTypeSummary& WithComponentTypeName(Aws::String&& value) { SetComponentTypeName(std::move(value)); return *this;}
+
+    /**
+     * <p>The component type name.</p>
+     */
+    inline ComponentTypeSummary& WithComponentTypeName(const char* value) { SetComponentTypeName(value); return *this;}
+
   private:
 
     Aws::String m_arn;
@@ -274,6 +315,9 @@ namespace Model
 
     Status m_status;
     bool m_statusHasBeenSet = false;
+
+    Aws::String m_componentTypeName;
+    bool m_componentTypeNameHasBeenSet = false;
   };
 
 } // namespace Model

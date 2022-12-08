@@ -24,6 +24,7 @@
 #include <aws/autoscaling/model/AttachInstancesRequest.h>
 #include <aws/autoscaling/model/AttachLoadBalancerTargetGroupsRequest.h>
 #include <aws/autoscaling/model/AttachLoadBalancersRequest.h>
+#include <aws/autoscaling/model/AttachTrafficSourcesRequest.h>
 #include <aws/autoscaling/model/BatchDeleteScheduledActionRequest.h>
 #include <aws/autoscaling/model/BatchPutScheduledUpdateGroupActionRequest.h>
 #include <aws/autoscaling/model/CancelInstanceRefreshRequest.h>
@@ -58,10 +59,12 @@
 #include <aws/autoscaling/model/DescribeScheduledActionsRequest.h>
 #include <aws/autoscaling/model/DescribeTagsRequest.h>
 #include <aws/autoscaling/model/DescribeTerminationPolicyTypesRequest.h>
+#include <aws/autoscaling/model/DescribeTrafficSourcesRequest.h>
 #include <aws/autoscaling/model/DescribeWarmPoolRequest.h>
 #include <aws/autoscaling/model/DetachInstancesRequest.h>
 #include <aws/autoscaling/model/DetachLoadBalancerTargetGroupsRequest.h>
 #include <aws/autoscaling/model/DetachLoadBalancersRequest.h>
+#include <aws/autoscaling/model/DetachTrafficSourcesRequest.h>
 #include <aws/autoscaling/model/DisableMetricsCollectionRequest.h>
 #include <aws/autoscaling/model/EnableMetricsCollectionRequest.h>
 #include <aws/autoscaling/model/EnterStandbyRequest.h>
@@ -302,6 +305,30 @@ void AutoScalingClient::AttachLoadBalancersAsync(const AttachLoadBalancersReques
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, AttachLoadBalancers(request), context);
+    } );
+}
+
+AttachTrafficSourcesOutcome AutoScalingClient::AttachTrafficSources(const AttachTrafficSourcesRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, AttachTrafficSources, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, AttachTrafficSources, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return AttachTrafficSourcesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+}
+
+AttachTrafficSourcesOutcomeCallable AutoScalingClient::AttachTrafficSourcesCallable(const AttachTrafficSourcesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< AttachTrafficSourcesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AttachTrafficSources(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AutoScalingClient::AttachTrafficSourcesAsync(const AttachTrafficSourcesRequest& request, const AttachTrafficSourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, AttachTrafficSources(request), context);
     } );
 }
 
@@ -1121,6 +1148,30 @@ void AutoScalingClient::DescribeTerminationPolicyTypesAsync(const DescribeTermin
     } );
 }
 
+DescribeTrafficSourcesOutcome AutoScalingClient::DescribeTrafficSources(const DescribeTrafficSourcesRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeTrafficSources, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeTrafficSources, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DescribeTrafficSourcesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+}
+
+DescribeTrafficSourcesOutcomeCallable AutoScalingClient::DescribeTrafficSourcesCallable(const DescribeTrafficSourcesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeTrafficSourcesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeTrafficSources(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AutoScalingClient::DescribeTrafficSourcesAsync(const DescribeTrafficSourcesRequest& request, const DescribeTrafficSourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeTrafficSources(request), context);
+    } );
+}
+
 DescribeWarmPoolOutcome AutoScalingClient::DescribeWarmPool(const DescribeWarmPoolRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeWarmPool, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -1214,6 +1265,30 @@ void AutoScalingClient::DetachLoadBalancersAsync(const DetachLoadBalancersReques
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, DetachLoadBalancers(request), context);
+    } );
+}
+
+DetachTrafficSourcesOutcome AutoScalingClient::DetachTrafficSources(const DetachTrafficSourcesRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DetachTrafficSources, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DetachTrafficSources, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DetachTrafficSourcesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+}
+
+DetachTrafficSourcesOutcomeCallable AutoScalingClient::DetachTrafficSourcesCallable(const DetachTrafficSourcesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DetachTrafficSourcesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DetachTrafficSources(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AutoScalingClient::DetachTrafficSourcesAsync(const DetachTrafficSourcesRequest& request, const DetachTrafficSourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DetachTrafficSources(request), context);
     } );
 }
 

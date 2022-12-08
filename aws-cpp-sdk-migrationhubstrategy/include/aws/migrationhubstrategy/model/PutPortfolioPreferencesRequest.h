@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/migrationhubstrategy/MigrationHubStrategyRecommendations_EXPORTS.h>
 #include <aws/migrationhubstrategy/MigrationHubStrategyRecommendationsRequest.h>
+#include <aws/migrationhubstrategy/model/ApplicationMode.h>
 #include <aws/migrationhubstrategy/model/ApplicationPreferences.h>
 #include <aws/migrationhubstrategy/model/DatabasePreferences.h>
 #include <aws/migrationhubstrategy/model/PrioritizeBusinessGoals.h>
@@ -32,6 +33,37 @@ namespace Model
     inline virtual const char* GetServiceRequestName() const override { return "PutPortfolioPreferences"; }
 
     AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API Aws::String SerializePayload() const override;
+
+
+    /**
+     * <p>The classification for application component types.</p>
+     */
+    inline const ApplicationMode& GetApplicationMode() const{ return m_applicationMode; }
+
+    /**
+     * <p>The classification for application component types.</p>
+     */
+    inline bool ApplicationModeHasBeenSet() const { return m_applicationModeHasBeenSet; }
+
+    /**
+     * <p>The classification for application component types.</p>
+     */
+    inline void SetApplicationMode(const ApplicationMode& value) { m_applicationModeHasBeenSet = true; m_applicationMode = value; }
+
+    /**
+     * <p>The classification for application component types.</p>
+     */
+    inline void SetApplicationMode(ApplicationMode&& value) { m_applicationModeHasBeenSet = true; m_applicationMode = std::move(value); }
+
+    /**
+     * <p>The classification for application component types.</p>
+     */
+    inline PutPortfolioPreferencesRequest& WithApplicationMode(const ApplicationMode& value) { SetApplicationMode(value); return *this;}
+
+    /**
+     * <p>The classification for application component types.</p>
+     */
+    inline PutPortfolioPreferencesRequest& WithApplicationMode(ApplicationMode&& value) { SetApplicationMode(std::move(value)); return *this;}
 
 
     /**
@@ -127,6 +159,9 @@ namespace Model
     inline PutPortfolioPreferencesRequest& WithPrioritizeBusinessGoals(PrioritizeBusinessGoals&& value) { SetPrioritizeBusinessGoals(std::move(value)); return *this;}
 
   private:
+
+    ApplicationMode m_applicationMode;
+    bool m_applicationModeHasBeenSet = false;
 
     ApplicationPreferences m_applicationPreferences;
     bool m_applicationPreferencesHasBeenSet = false;

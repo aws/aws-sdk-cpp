@@ -35,7 +35,8 @@ PropertyDefinitionResponse::PropertyDefinitionResponse() :
     m_isInherited(false),
     m_isInheritedHasBeenSet(false),
     m_defaultValueHasBeenSet(false),
-    m_configurationHasBeenSet(false)
+    m_configurationHasBeenSet(false),
+    m_displayNameHasBeenSet(false)
 {
 }
 
@@ -56,7 +57,8 @@ PropertyDefinitionResponse::PropertyDefinitionResponse(JsonView jsonValue) :
     m_isInherited(false),
     m_isInheritedHasBeenSet(false),
     m_defaultValueHasBeenSet(false),
-    m_configurationHasBeenSet(false)
+    m_configurationHasBeenSet(false),
+    m_displayNameHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -136,6 +138,13 @@ PropertyDefinitionResponse& PropertyDefinitionResponse::operator =(JsonView json
     m_configurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("displayName"))
+  {
+    m_displayName = jsonValue.GetString("displayName");
+
+    m_displayNameHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -205,6 +214,12 @@ JsonValue PropertyDefinitionResponse::Jsonize() const
      configurationJsonMap.WithString(configurationItem.first, configurationItem.second);
    }
    payload.WithObject("configuration", std::move(configurationJsonMap));
+
+  }
+
+  if(m_displayNameHasBeenSet)
+  {
+   payload.WithString("displayName", m_displayName);
 
   }
 

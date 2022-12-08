@@ -11,8 +11,10 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/migrationhubstrategy/model/AntipatternSeveritySummary.h>
+#include <aws/migrationhubstrategy/model/ApplicationComponentStatusSummary.h>
 #include <aws/migrationhubstrategy/model/StrategySummary.h>
 #include <aws/migrationhubstrategy/model/ApplicationComponentSummary.h>
+#include <aws/migrationhubstrategy/model/ServerStatusSummary.h>
 #include <aws/migrationhubstrategy/model/ServerSummary.h>
 #include <utility>
 
@@ -222,6 +224,47 @@ namespace Model
 
 
     /**
+     * <p>List of status summaries of the analyzed application components.</p>
+     */
+    inline const Aws::Vector<ApplicationComponentStatusSummary>& GetListApplicationComponentStatusSummary() const{ return m_listApplicationComponentStatusSummary; }
+
+    /**
+     * <p>List of status summaries of the analyzed application components.</p>
+     */
+    inline bool ListApplicationComponentStatusSummaryHasBeenSet() const { return m_listApplicationComponentStatusSummaryHasBeenSet; }
+
+    /**
+     * <p>List of status summaries of the analyzed application components.</p>
+     */
+    inline void SetListApplicationComponentStatusSummary(const Aws::Vector<ApplicationComponentStatusSummary>& value) { m_listApplicationComponentStatusSummaryHasBeenSet = true; m_listApplicationComponentStatusSummary = value; }
+
+    /**
+     * <p>List of status summaries of the analyzed application components.</p>
+     */
+    inline void SetListApplicationComponentStatusSummary(Aws::Vector<ApplicationComponentStatusSummary>&& value) { m_listApplicationComponentStatusSummaryHasBeenSet = true; m_listApplicationComponentStatusSummary = std::move(value); }
+
+    /**
+     * <p>List of status summaries of the analyzed application components.</p>
+     */
+    inline AssessmentSummary& WithListApplicationComponentStatusSummary(const Aws::Vector<ApplicationComponentStatusSummary>& value) { SetListApplicationComponentStatusSummary(value); return *this;}
+
+    /**
+     * <p>List of status summaries of the analyzed application components.</p>
+     */
+    inline AssessmentSummary& WithListApplicationComponentStatusSummary(Aws::Vector<ApplicationComponentStatusSummary>&& value) { SetListApplicationComponentStatusSummary(std::move(value)); return *this;}
+
+    /**
+     * <p>List of status summaries of the analyzed application components.</p>
+     */
+    inline AssessmentSummary& AddListApplicationComponentStatusSummary(const ApplicationComponentStatusSummary& value) { m_listApplicationComponentStatusSummaryHasBeenSet = true; m_listApplicationComponentStatusSummary.push_back(value); return *this; }
+
+    /**
+     * <p>List of status summaries of the analyzed application components.</p>
+     */
+    inline AssessmentSummary& AddListApplicationComponentStatusSummary(ApplicationComponentStatusSummary&& value) { m_listApplicationComponentStatusSummaryHasBeenSet = true; m_listApplicationComponentStatusSummary.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p> List of ApplicationComponentStrategySummary. </p>
      */
     inline const Aws::Vector<StrategySummary>& GetListApplicationComponentStrategySummary() const{ return m_listApplicationComponentStrategySummary; }
@@ -301,6 +344,47 @@ namespace Model
      * <p> List of ApplicationComponentSummary. </p>
      */
     inline AssessmentSummary& AddListApplicationComponentSummary(ApplicationComponentSummary&& value) { m_listApplicationComponentSummaryHasBeenSet = true; m_listApplicationComponentSummary.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>List of status summaries of the analyzed servers.</p>
+     */
+    inline const Aws::Vector<ServerStatusSummary>& GetListServerStatusSummary() const{ return m_listServerStatusSummary; }
+
+    /**
+     * <p>List of status summaries of the analyzed servers.</p>
+     */
+    inline bool ListServerStatusSummaryHasBeenSet() const { return m_listServerStatusSummaryHasBeenSet; }
+
+    /**
+     * <p>List of status summaries of the analyzed servers.</p>
+     */
+    inline void SetListServerStatusSummary(const Aws::Vector<ServerStatusSummary>& value) { m_listServerStatusSummaryHasBeenSet = true; m_listServerStatusSummary = value; }
+
+    /**
+     * <p>List of status summaries of the analyzed servers.</p>
+     */
+    inline void SetListServerStatusSummary(Aws::Vector<ServerStatusSummary>&& value) { m_listServerStatusSummaryHasBeenSet = true; m_listServerStatusSummary = std::move(value); }
+
+    /**
+     * <p>List of status summaries of the analyzed servers.</p>
+     */
+    inline AssessmentSummary& WithListServerStatusSummary(const Aws::Vector<ServerStatusSummary>& value) { SetListServerStatusSummary(value); return *this;}
+
+    /**
+     * <p>List of status summaries of the analyzed servers.</p>
+     */
+    inline AssessmentSummary& WithListServerStatusSummary(Aws::Vector<ServerStatusSummary>&& value) { SetListServerStatusSummary(std::move(value)); return *this;}
+
+    /**
+     * <p>List of status summaries of the analyzed servers.</p>
+     */
+    inline AssessmentSummary& AddListServerStatusSummary(const ServerStatusSummary& value) { m_listServerStatusSummaryHasBeenSet = true; m_listServerStatusSummary.push_back(value); return *this; }
+
+    /**
+     * <p>List of status summaries of the analyzed servers.</p>
+     */
+    inline AssessmentSummary& AddListServerStatusSummary(ServerStatusSummary&& value) { m_listServerStatusSummaryHasBeenSet = true; m_listServerStatusSummary.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -401,11 +485,17 @@ namespace Model
     Aws::Vector<AntipatternSeveritySummary> m_listAntipatternSeveritySummary;
     bool m_listAntipatternSeveritySummaryHasBeenSet = false;
 
+    Aws::Vector<ApplicationComponentStatusSummary> m_listApplicationComponentStatusSummary;
+    bool m_listApplicationComponentStatusSummaryHasBeenSet = false;
+
     Aws::Vector<StrategySummary> m_listApplicationComponentStrategySummary;
     bool m_listApplicationComponentStrategySummaryHasBeenSet = false;
 
     Aws::Vector<ApplicationComponentSummary> m_listApplicationComponentSummary;
     bool m_listApplicationComponentSummaryHasBeenSet = false;
+
+    Aws::Vector<ServerStatusSummary> m_listServerStatusSummary;
+    bool m_listServerStatusSummaryHasBeenSet = false;
 
     Aws::Vector<StrategySummary> m_listServerStrategySummary;
     bool m_listServerStrategySummaryHasBeenSet = false;

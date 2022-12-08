@@ -22,6 +22,7 @@ namespace Aws
 
         static const int GITHUB_HASH = HashingUtils::HashString("GITHUB");
         static const int GITHUB_ENTERPRISE_HASH = HashingUtils::HashString("GITHUB_ENTERPRISE");
+        static const int AZURE_DEVOPS_GIT_HASH = HashingUtils::HashString("AZURE_DEVOPS_GIT");
 
 
         VersionControl GetVersionControlForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == GITHUB_ENTERPRISE_HASH)
           {
             return VersionControl::GITHUB_ENTERPRISE;
+          }
+          else if (hashCode == AZURE_DEVOPS_GIT_HASH)
+          {
+            return VersionControl::AZURE_DEVOPS_GIT;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -53,6 +58,8 @@ namespace Aws
             return "GITHUB";
           case VersionControl::GITHUB_ENTERPRISE:
             return "GITHUB_ENTERPRISE";
+          case VersionControl::AZURE_DEVOPS_GIT:
+            return "AZURE_DEVOPS_GIT";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

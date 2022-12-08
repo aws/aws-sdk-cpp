@@ -38,42 +38,42 @@ namespace Model
 
 
     /**
-     * <p>The ID of the workspace that contains the component type.</p>
+     * <p>The ID of the workspace.</p>
      */
     inline const Aws::String& GetWorkspaceId() const{ return m_workspaceId; }
 
     /**
-     * <p>The ID of the workspace that contains the component type.</p>
+     * <p>The ID of the workspace.</p>
      */
     inline bool WorkspaceIdHasBeenSet() const { return m_workspaceIdHasBeenSet; }
 
     /**
-     * <p>The ID of the workspace that contains the component type.</p>
+     * <p>The ID of the workspace.</p>
      */
     inline void SetWorkspaceId(const Aws::String& value) { m_workspaceIdHasBeenSet = true; m_workspaceId = value; }
 
     /**
-     * <p>The ID of the workspace that contains the component type.</p>
+     * <p>The ID of the workspace.</p>
      */
     inline void SetWorkspaceId(Aws::String&& value) { m_workspaceIdHasBeenSet = true; m_workspaceId = std::move(value); }
 
     /**
-     * <p>The ID of the workspace that contains the component type.</p>
+     * <p>The ID of the workspace.</p>
      */
     inline void SetWorkspaceId(const char* value) { m_workspaceIdHasBeenSet = true; m_workspaceId.assign(value); }
 
     /**
-     * <p>The ID of the workspace that contains the component type.</p>
+     * <p>The ID of the workspace.</p>
      */
     inline UpdateComponentTypeRequest& WithWorkspaceId(const Aws::String& value) { SetWorkspaceId(value); return *this;}
 
     /**
-     * <p>The ID of the workspace that contains the component type.</p>
+     * <p>The ID of the workspace.</p>
      */
     inline UpdateComponentTypeRequest& WithWorkspaceId(Aws::String&& value) { SetWorkspaceId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the workspace that contains the component type.</p>
+     * <p>The ID of the workspace.</p>
      */
     inline UpdateComponentTypeRequest& WithWorkspaceId(const char* value) { SetWorkspaceId(value); return *this;}
 
@@ -437,6 +437,47 @@ namespace Model
      */
     inline UpdateComponentTypeRequest& AddPropertyGroups(const char* key, const PropertyGroupRequest& value) { m_propertyGroupsHasBeenSet = true; m_propertyGroups.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>The component type name.</p>
+     */
+    inline const Aws::String& GetComponentTypeName() const{ return m_componentTypeName; }
+
+    /**
+     * <p>The component type name.</p>
+     */
+    inline bool ComponentTypeNameHasBeenSet() const { return m_componentTypeNameHasBeenSet; }
+
+    /**
+     * <p>The component type name.</p>
+     */
+    inline void SetComponentTypeName(const Aws::String& value) { m_componentTypeNameHasBeenSet = true; m_componentTypeName = value; }
+
+    /**
+     * <p>The component type name.</p>
+     */
+    inline void SetComponentTypeName(Aws::String&& value) { m_componentTypeNameHasBeenSet = true; m_componentTypeName = std::move(value); }
+
+    /**
+     * <p>The component type name.</p>
+     */
+    inline void SetComponentTypeName(const char* value) { m_componentTypeNameHasBeenSet = true; m_componentTypeName.assign(value); }
+
+    /**
+     * <p>The component type name.</p>
+     */
+    inline UpdateComponentTypeRequest& WithComponentTypeName(const Aws::String& value) { SetComponentTypeName(value); return *this;}
+
+    /**
+     * <p>The component type name.</p>
+     */
+    inline UpdateComponentTypeRequest& WithComponentTypeName(Aws::String&& value) { SetComponentTypeName(std::move(value)); return *this;}
+
+    /**
+     * <p>The component type name.</p>
+     */
+    inline UpdateComponentTypeRequest& WithComponentTypeName(const char* value) { SetComponentTypeName(value); return *this;}
+
   private:
 
     Aws::String m_workspaceId;
@@ -462,6 +503,9 @@ namespace Model
 
     Aws::Map<Aws::String, PropertyGroupRequest> m_propertyGroups;
     bool m_propertyGroupsHasBeenSet = false;
+
+    Aws::String m_componentTypeName;
+    bool m_componentTypeNameHasBeenSet = false;
   };
 
 } // namespace Model

@@ -21,7 +21,23 @@ namespace Model
     SQLServer,
     IIS,
     Oracle,
-    Other
+    Other,
+    Tomcat,
+    JBoss,
+    Spring,
+    Mongo_DB,
+    DB2,
+    Maria_DB,
+    MySQL,
+    Sybase,
+    PostgreSQLServer,
+    Cassandra,
+    IBM_WebSphere,
+    Oracle_WebLogic,
+    Visual_Basic,
+    Unknown,
+    DotnetCore,
+    Dotnet
   };
 
 namespace AppTypeMapper
