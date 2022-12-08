@@ -4,6 +4,7 @@
 #set($metadata = $serviceModel.metadata)
 #set($rootNamespace = $serviceModel.namespace)
 #set($serviceNamespace = $metadata.namespace)
+#set($exportMacro = $typeInfo.exportValue)
 \#include <aws/$metadata.projectName/${metadata.classNamePrefix}_EXPORTS.h>
 \#include <aws/core/utils/stream/ResponseStream.h>
 #foreach($header in $typeInfo.headerIncludes)
@@ -30,21 +31,21 @@ namespace Model
    * $shape.documentation
    */
 #end
-  class $typeInfo.exportValue $typeInfo.className
+  class $typeInfo.className
   {
   public:
-    ${typeInfo.className}();
+    ${exportMacro} ${typeInfo.className}();
     //We have to define these because Microsoft doesn't auto generate them
-    ${typeInfo.className}(${typeInfo.className}&&);
-    ${classNameRef} operator=(${typeInfo.className}&&);
+    ${exportMacro} ${typeInfo.className}(${typeInfo.className}&&);
+    ${exportMacro} ${classNameRef} operator=(${typeInfo.className}&&);
     //we delete these because Microsoft doesn't handle move generation correctly
     //and we therefore don't trust them to get it right here either.
     ${typeInfo.className}(const ${typeInfo.className}&) = delete;
     ${classNameRef} operator=(const ${typeInfo.className}&) = delete;
 
 
-    ${typeInfo.className}(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
-    ${classNameRef} operator=(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
+    ${exportMacro} ${typeInfo.className}(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
+    ${exportMacro} ${classNameRef} operator=(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
 
 
 #set($useRequiredField = false)

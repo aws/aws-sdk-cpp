@@ -4,6 +4,7 @@
 #set($metadata = $serviceModel.metadata)
 #set($rootNamespace = $serviceModel.namespace)
 #set($serviceNamespace = $metadata.namespace)
+#set($exportMacro = $typeInfo.exportValue)
 \#include <aws/$metadata.projectName/${metadata.classNamePrefix}_EXPORTS.h>
 #foreach($header in $typeInfo.headerIncludes)
 \#include $header
@@ -38,13 +39,13 @@ namespace Model
    * $shape.documentation
    */
 #end
-  class $typeInfo.exportValue $typeInfo.className
+  class $typeInfo.className
   {
   public:
-    ${typeInfo.className}();
-    ${typeInfo.className}(${typeInfo.jsonViewType} jsonValue);
-    ${classNameRef} operator=(${typeInfo.jsonViewType} jsonValue);
-    ${typeInfo.jsonType} Jsonize() const;
+    ${exportMacro} ${typeInfo.className}();
+    ${exportMacro} ${typeInfo.className}(${typeInfo.jsonViewType} jsonValue);
+    ${exportMacro} ${classNameRef} operator=(${typeInfo.jsonViewType} jsonValue);
+    ${exportMacro} ${typeInfo.jsonType} Jsonize() const;
 
 #set($useRequiredField = true)
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ModelClassMembersAndInlines.vm")

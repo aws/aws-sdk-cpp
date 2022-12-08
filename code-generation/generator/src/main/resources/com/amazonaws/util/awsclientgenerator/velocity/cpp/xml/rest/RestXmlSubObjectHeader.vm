@@ -4,6 +4,7 @@
 #set($metadata = $serviceModel.metadata)
 #set($rootNamespace = $serviceModel.namespace)
 #set($serviceNamespace = $metadata.namespace)
+#set($exportMacro = $typeInfo.exportValue)
 \#include <aws/$metadata.projectName/${metadata.classNamePrefix}_EXPORTS.h>
 #foreach($header in $typeInfo.headerIncludes)
 \#include $header
@@ -35,14 +36,14 @@ namespace Model
    * $shape.documentation
    */
 #end
-  class $typeInfo.exportValue $typeInfo.className
+  class $typeInfo.className
   {
   public:
-    ${typeInfo.className}();
-    ${typeInfo.className}(const ${xmlRef} xmlNode);
-    ${classNameRef} operator=(const ${xmlRef} xmlNode);
+    ${exportMacro} ${typeInfo.className}();
+    ${exportMacro} ${typeInfo.className}(const ${xmlRef} xmlNode);
+    ${exportMacro} ${classNameRef} operator=(const ${xmlRef} xmlNode);
 
-    void AddToNode(${xmlRef} parentNode) const;
+    ${exportMacro} void AddToNode(${xmlRef} parentNode) const;
 
 #set($useRequiredField = true)
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ModelClassMembersAndInlines.vm")
