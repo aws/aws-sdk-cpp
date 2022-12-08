@@ -32,14 +32,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/AnalyticsAndOperator">AWS
    * API Reference</a></p>
    */
-  class AWS_S3CRT_API AnalyticsAndOperator
+  class AnalyticsAndOperator
   {
   public:
-    AnalyticsAndOperator();
-    AnalyticsAndOperator(const Aws::Utils::Xml::XmlNode& xmlNode);
-    AnalyticsAndOperator& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CRT_API AnalyticsAndOperator();
+    AWS_S3CRT_API AnalyticsAndOperator(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CRT_API AnalyticsAndOperator& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_S3CRT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**

@@ -35,12 +35,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ExportTask">AWS API
    * Reference</a></p>
    */
-  class AWS_RDS_API CancelExportTaskResult
+  class CancelExportTaskResult
   {
   public:
-    CancelExportTaskResult();
-    CancelExportTaskResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    CancelExportTaskResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_RDS_API CancelExportTaskResult();
+    AWS_RDS_API CancelExportTaskResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_RDS_API CancelExportTaskResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

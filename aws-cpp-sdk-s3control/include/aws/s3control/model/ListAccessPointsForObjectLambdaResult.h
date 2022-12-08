@@ -26,12 +26,12 @@ namespace S3Control
 {
 namespace Model
 {
-  class AWS_S3CONTROL_API ListAccessPointsForObjectLambdaResult
+  class ListAccessPointsForObjectLambdaResult
   {
   public:
-    ListAccessPointsForObjectLambdaResult();
-    ListAccessPointsForObjectLambdaResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ListAccessPointsForObjectLambdaResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_S3CONTROL_API ListAccessPointsForObjectLambdaResult();
+    AWS_S3CONTROL_API ListAccessPointsForObjectLambdaResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_S3CONTROL_API ListAccessPointsForObjectLambdaResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

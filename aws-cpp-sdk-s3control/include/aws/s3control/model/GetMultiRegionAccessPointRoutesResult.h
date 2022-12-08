@@ -26,12 +26,12 @@ namespace S3Control
 {
 namespace Model
 {
-  class AWS_S3CONTROL_API GetMultiRegionAccessPointRoutesResult
+  class GetMultiRegionAccessPointRoutesResult
   {
   public:
-    GetMultiRegionAccessPointRoutesResult();
-    GetMultiRegionAccessPointRoutesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    GetMultiRegionAccessPointRoutesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_S3CONTROL_API GetMultiRegionAccessPointRoutesResult();
+    AWS_S3CONTROL_API GetMultiRegionAccessPointRoutesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_S3CONTROL_API GetMultiRegionAccessPointRoutesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

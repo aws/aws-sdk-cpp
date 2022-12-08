@@ -28,14 +28,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/Part">AWS API
    * Reference</a></p>
    */
-  class AWS_S3CRT_API Part
+  class Part
   {
   public:
-    Part();
-    Part(const Aws::Utils::Xml::XmlNode& xmlNode);
-    Part& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CRT_API Part();
+    AWS_S3CRT_API Part(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CRT_API Part& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_S3CRT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**

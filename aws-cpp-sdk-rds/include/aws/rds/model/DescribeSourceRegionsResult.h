@@ -33,12 +33,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/SourceRegionMessage">AWS
    * API Reference</a></p>
    */
-  class AWS_RDS_API DescribeSourceRegionsResult
+  class DescribeSourceRegionsResult
   {
   public:
-    DescribeSourceRegionsResult();
-    DescribeSourceRegionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeSourceRegionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_RDS_API DescribeSourceRegionsResult();
+    AWS_RDS_API DescribeSourceRegionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_RDS_API DescribeSourceRegionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

@@ -27,12 +27,12 @@ namespace RDS
 {
 namespace Model
 {
-  class AWS_RDS_API DescribeBlueGreenDeploymentsResult
+  class DescribeBlueGreenDeploymentsResult
   {
   public:
-    DescribeBlueGreenDeploymentsResult();
-    DescribeBlueGreenDeploymentsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeBlueGreenDeploymentsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_RDS_API DescribeBlueGreenDeploymentsResult();
+    AWS_RDS_API DescribeBlueGreenDeploymentsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_RDS_API DescribeBlueGreenDeploymentsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

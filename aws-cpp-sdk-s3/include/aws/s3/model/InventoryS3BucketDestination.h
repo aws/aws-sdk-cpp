@@ -30,14 +30,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/InventoryS3BucketDestination">AWS
    * API Reference</a></p>
    */
-  class AWS_S3_API InventoryS3BucketDestination
+  class InventoryS3BucketDestination
   {
   public:
-    InventoryS3BucketDestination();
-    InventoryS3BucketDestination(const Aws::Utils::Xml::XmlNode& xmlNode);
-    InventoryS3BucketDestination& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3_API InventoryS3BucketDestination();
+    AWS_S3_API InventoryS3BucketDestination(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3_API InventoryS3BucketDestination& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_S3_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**

@@ -22,12 +22,12 @@ namespace S3Control
 {
 namespace Model
 {
-  class AWS_S3CONTROL_API PutJobTaggingResult
+  class PutJobTaggingResult
   {
   public:
-    PutJobTaggingResult();
-    PutJobTaggingResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    PutJobTaggingResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_S3CONTROL_API PutJobTaggingResult();
+    AWS_S3CONTROL_API PutJobTaggingResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_S3CONTROL_API PutJobTaggingResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
   };
 

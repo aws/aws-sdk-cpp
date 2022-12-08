@@ -35,15 +35,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/BlueGreenDeploymentTask">AWS
    * API Reference</a></p>
    */
-  class AWS_RDS_API BlueGreenDeploymentTask
+  class BlueGreenDeploymentTask
   {
   public:
-    BlueGreenDeploymentTask();
-    BlueGreenDeploymentTask(const Aws::Utils::Xml::XmlNode& xmlNode);
-    BlueGreenDeploymentTask& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_RDS_API BlueGreenDeploymentTask();
+    AWS_RDS_API BlueGreenDeploymentTask(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_RDS_API BlueGreenDeploymentTask& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_RDS_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_RDS_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**

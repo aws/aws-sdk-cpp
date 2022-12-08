@@ -31,15 +31,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/UserAuthConfigInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_RDS_API UserAuthConfigInfo
+  class UserAuthConfigInfo
   {
   public:
-    UserAuthConfigInfo();
-    UserAuthConfigInfo(const Aws::Utils::Xml::XmlNode& xmlNode);
-    UserAuthConfigInfo& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_RDS_API UserAuthConfigInfo();
+    AWS_RDS_API UserAuthConfigInfo(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_RDS_API UserAuthConfigInfo& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_RDS_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_RDS_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**

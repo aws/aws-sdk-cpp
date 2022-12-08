@@ -33,12 +33,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DBClusterBacktrackMessage">AWS
    * API Reference</a></p>
    */
-  class AWS_RDS_API DescribeDBClusterBacktracksResult
+  class DescribeDBClusterBacktracksResult
   {
   public:
-    DescribeDBClusterBacktracksResult();
-    DescribeDBClusterBacktracksResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeDBClusterBacktracksResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_RDS_API DescribeDBClusterBacktracksResult();
+    AWS_RDS_API DescribeDBClusterBacktracksResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_RDS_API DescribeDBClusterBacktracksResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

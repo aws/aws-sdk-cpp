@@ -28,14 +28,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/InventorySchedule">AWS
    * API Reference</a></p>
    */
-  class AWS_S3CRT_API InventorySchedule
+  class InventorySchedule
   {
   public:
-    InventorySchedule();
-    InventorySchedule(const Aws::Utils::Xml::XmlNode& xmlNode);
-    InventorySchedule& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CRT_API InventorySchedule();
+    AWS_S3CRT_API InventorySchedule(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CRT_API InventorySchedule& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_S3CRT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**

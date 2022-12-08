@@ -33,14 +33,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/MultiRegionAccessPointReport">AWS
    * API Reference</a></p>
    */
-  class AWS_S3CONTROL_API MultiRegionAccessPointReport
+  class MultiRegionAccessPointReport
   {
   public:
-    MultiRegionAccessPointReport();
-    MultiRegionAccessPointReport(const Aws::Utils::Xml::XmlNode& xmlNode);
-    MultiRegionAccessPointReport& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CONTROL_API MultiRegionAccessPointReport();
+    AWS_S3CONTROL_API MultiRegionAccessPointReport(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CONTROL_API MultiRegionAccessPointReport& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_S3CONTROL_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**

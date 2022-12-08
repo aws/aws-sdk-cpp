@@ -26,12 +26,12 @@ namespace S3Crt
 {
 namespace Model
 {
-  class AWS_S3CRT_API ListBucketsResult
+  class ListBucketsResult
   {
   public:
-    ListBucketsResult();
-    ListBucketsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ListBucketsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_S3CRT_API ListBucketsResult();
+    AWS_S3CRT_API ListBucketsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_S3CRT_API ListBucketsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

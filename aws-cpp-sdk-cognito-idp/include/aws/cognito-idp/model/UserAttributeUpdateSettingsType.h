@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UserAttributeUpdateSettingsType">AWS
    * API Reference</a></p>
    */
-  class AWS_COGNITOIDENTITYPROVIDER_API UserAttributeUpdateSettingsType
+  class UserAttributeUpdateSettingsType
   {
   public:
-    UserAttributeUpdateSettingsType();
-    UserAttributeUpdateSettingsType(Aws::Utils::Json::JsonView jsonValue);
-    UserAttributeUpdateSettingsType& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COGNITOIDENTITYPROVIDER_API UserAttributeUpdateSettingsType();
+    AWS_COGNITOIDENTITYPROVIDER_API UserAttributeUpdateSettingsType(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COGNITOIDENTITYPROVIDER_API UserAttributeUpdateSettingsType& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COGNITOIDENTITYPROVIDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

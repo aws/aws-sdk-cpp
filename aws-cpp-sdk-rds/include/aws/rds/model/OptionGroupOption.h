@@ -31,15 +31,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/OptionGroupOption">AWS
    * API Reference</a></p>
    */
-  class AWS_RDS_API OptionGroupOption
+  class OptionGroupOption
   {
   public:
-    OptionGroupOption();
-    OptionGroupOption(const Aws::Utils::Xml::XmlNode& xmlNode);
-    OptionGroupOption& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_RDS_API OptionGroupOption();
+    AWS_RDS_API OptionGroupOption(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_RDS_API OptionGroupOption& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_RDS_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_RDS_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
