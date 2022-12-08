@@ -3,5 +3,5 @@
     /**
      * Helper function to collect parameters (configurable and static hardcoded) required for endpoint computation.
      */
-    EndpointParameters GetEndpointContextParams() const override;
+    ${exportMacro} EndpointParameters GetEndpointContextParams() const override;
 #end
