@@ -41,6 +41,27 @@ namespace Model
 
 
     /**
+     * The approximate asset count of the PackagingGroup.
+     */
+    inline int GetApproximateAssetCount() const{ return m_approximateAssetCount; }
+
+    /**
+     * The approximate asset count of the PackagingGroup.
+     */
+    inline bool ApproximateAssetCountHasBeenSet() const { return m_approximateAssetCountHasBeenSet; }
+
+    /**
+     * The approximate asset count of the PackagingGroup.
+     */
+    inline void SetApproximateAssetCount(int value) { m_approximateAssetCountHasBeenSet = true; m_approximateAssetCount = value; }
+
+    /**
+     * The approximate asset count of the PackagingGroup.
+     */
+    inline PackagingGroup& WithApproximateAssetCount(int value) { SetApproximateAssetCount(value); return *this;}
+
+
+    /**
      * The ARN of the PackagingGroup.
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
@@ -241,6 +262,9 @@ namespace Model
     inline PackagingGroup& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
   private:
+
+    int m_approximateAssetCount;
+    bool m_approximateAssetCountHasBeenSet = false;
 
     Aws::String m_arn;
     bool m_arnHasBeenSet = false;

@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/iotfleetwise/IoTFleetWise_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iotfleetwise/model/InvalidSignalDecoder.h>
 #include <aws/iotfleetwise/model/InvalidNetworkInterface.h>
 #include <utility>
@@ -137,6 +138,31 @@ namespace Model
      */
     inline DecoderManifestValidationException& AddInvalidNetworkInterfaces(InvalidNetworkInterface&& value) { m_invalidNetworkInterfacesHasBeenSet = true; m_invalidNetworkInterfaces.push_back(std::move(value)); return *this; }
 
+
+    
+    inline const Aws::String& GetMessage() const{ return m_message; }
+
+    
+    inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
+
+    
+    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
+
+    
+    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
+
+    
+    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
+
+    
+    inline DecoderManifestValidationException& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
+
+    
+    inline DecoderManifestValidationException& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
+
+    
+    inline DecoderManifestValidationException& WithMessage(const char* value) { SetMessage(value); return *this;}
+
   private:
 
     Aws::Vector<InvalidSignalDecoder> m_invalidSignals;
@@ -144,6 +170,9 @@ namespace Model
 
     Aws::Vector<InvalidNetworkInterface> m_invalidNetworkInterfaces;
     bool m_invalidNetworkInterfacesHasBeenSet = false;
+
+    Aws::String m_message;
+    bool m_messageHasBeenSet = false;
   };
 
 } // namespace Model

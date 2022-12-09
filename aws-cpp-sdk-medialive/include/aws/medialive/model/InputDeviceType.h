@@ -16,7 +16,8 @@ namespace Model
   enum class InputDeviceType
   {
     NOT_SET,
-    HD
+    HD,
+    UHD
   };
 
 namespace InputDeviceTypeMapper
