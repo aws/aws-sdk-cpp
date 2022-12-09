@@ -222,7 +222,7 @@ namespace
             uploadPart1Request.SetContentLength(static_cast<long>(partStream->tellg()));
             partStream->seekg(startingPoint);
 
-            return Client->SubmitCallable(&S3CrtClient::UploadPart, uploadPart1Request);
+            return Client->UploadPartCallable(uploadPart1Request);
         }
 
         static void VerifyUploadPartOutcome(UploadPartOutcome& outcome, const ByteBuffer& md5OfStream)
