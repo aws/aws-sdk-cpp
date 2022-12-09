@@ -32,7 +32,7 @@
 #end
   if (!computeEndpointOutcome.IsSuccess())
   {
-#if($operation.s3CrtSpecific)
+#if($serviceNamespace == "S3Crt" && $operation.s3CrtEnabled)
 #if($operation.request)
     return handler(this, request, ${operation.name}Outcome(computeEndpointOutcome.GetError()), handlerContext);
 #else
@@ -100,7 +100,7 @@
       {
 #if($operation.requireEndpointDiscovery)
         AWS_LOGSTREAM_ERROR("${operation.name}", "Failed to discover endpoints " << endpointOutcome.GetError());
-#if($operation.s3CrtSpecific)
+#if($serviceNamespace == "S3Crt" && $operation.s3CrtEnabled)
 #if($operation.request)
         return handler(this, request,
             ${operation.name}Outcome(Aws::Client::AWSError<${metadata.classNamePrefix}Errors>(${metadata.classNamePrefix}Errors::RESOURCE_NOT_FOUND, "INVALID_ENDPOINT", "Failed to discover endpoint", false)),
@@ -142,7 +142,7 @@
     if (request.Get${member}().empty())
     {
       AWS_LOGSTREAM_ERROR("${operation.name}", "HostPrefix required field: ${member}, is empty");
-#if($operation.s3CrtSpecific)
+#if($serviceNamespace == "S3Crt" && $operation.s3CrtEnabled)
 #if($operation.request)
       return handler(this, request, ${operation.name}Outcome(Aws::Client::AWSError<${metadata.classNamePrefix}Errors>(${metadata.classNamePrefix}Errors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host prefix field is empty", false)), handlerContext);
 #else
@@ -157,7 +157,7 @@
     if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
     {
       AWS_LOGSTREAM_ERROR("${operation.name}", "Invalid DNS host: " << uri.GetAuthority());
-#if($operation.s3CrtSpecific)
+#if($serviceNamespace == "S3Crt" && $operation.s3CrtEnabled)
 #if($operation.request)
       return handler(this, request, ${operation.name}Outcome(Aws::Client::AWSError<${metadata.classNamePrefix}Errors>(${metadata.classNamePrefix}Errors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false)), handlerContext);
 #else

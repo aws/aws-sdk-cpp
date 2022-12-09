@@ -169,7 +169,7 @@ void S3CrtClient::InitCommonCrtRequestOption(CrtRequestCallbackUserData *userDat
 }
 
 #foreach($operation in $serviceModel.operations)
-#if($operation.s3CrtSpecific)
+#if($serviceNamespace == "S3Crt" && $operation.s3CrtEnabled)
 static void ${operation.name}RequestShutdownCallback(void *user_data)
 {
   auto *userData = static_cast<S3CrtClient::CrtRequestCallbackUserData*>(user_data);

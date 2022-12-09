@@ -6,7 +6,7 @@
     endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   }
 #end
-#if(!$operation.request.shape.hasEventStreamMembers() && !$operation.s3CrtSpecific)
+#if(!$operation.request.shape.hasEventStreamMembers() && !($serviceNamespace == "S3Crt" && $operation.s3CrtEnabled))
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ${operation.name}, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
 #if($operation.hasEndpointTrait)## Note: EndpointDiscovery Trait is not Endpoint Trait
   auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing(${operation.endpoint.constructHostPrefixString("request")});

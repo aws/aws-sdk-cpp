@@ -28,7 +28,7 @@
 
       /* Service model Outcome callable definitions */
 #foreach($operation in $serviceModel.operations)
-#if(!$operation.s3CrtSpecific)
+#if($serviceNamespace != "S3Crt" || !$operation.s3CrtEnabled)
       typedef std::future<${operation.name}Outcome> ${operation.name}OutcomeCallable;
 #end
 #end
