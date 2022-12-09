@@ -54,7 +54,5 @@ ${operation.name}Outcome ${className}::${operation.name}(const ${operation.reque
 }
 
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/operation/withrequest/OperationOutcomeCallable.vm")
-
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/operation/withrequest/OperationAsync.vm")
-
 #end

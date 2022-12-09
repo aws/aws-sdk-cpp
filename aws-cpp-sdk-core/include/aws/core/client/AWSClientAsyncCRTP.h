@@ -25,6 +25,13 @@ namespace Client
         static const bool value = !std::is_const<typename std::remove_reference<RequestT>::type>::value;
     };
 
+    template<typename ReturnT, typename ClassT>
+    struct AWS_CORE_LOCAL IsEventStreamOperation<ReturnT(ClassT::*)() const>
+    {
+        static const bool value = false;
+    };
+
+
     /**
      * A CRTP-base class template that is used to add template methods to call AWS Operations in parallel using ThreadExecutor
      * An Aws<Service>Client is going to inherit from this class and will get methods below available.
