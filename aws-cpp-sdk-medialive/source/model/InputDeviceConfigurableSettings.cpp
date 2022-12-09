@@ -22,7 +22,9 @@ InputDeviceConfigurableSettings::InputDeviceConfigurableSettings() :
     m_configuredInput(InputDeviceConfiguredInput::NOT_SET),
     m_configuredInputHasBeenSet(false),
     m_maxBitrate(0),
-    m_maxBitrateHasBeenSet(false)
+    m_maxBitrateHasBeenSet(false),
+    m_latencyMs(0),
+    m_latencyMsHasBeenSet(false)
 {
 }
 
@@ -30,7 +32,9 @@ InputDeviceConfigurableSettings::InputDeviceConfigurableSettings(JsonView jsonVa
     m_configuredInput(InputDeviceConfiguredInput::NOT_SET),
     m_configuredInputHasBeenSet(false),
     m_maxBitrate(0),
-    m_maxBitrateHasBeenSet(false)
+    m_maxBitrateHasBeenSet(false),
+    m_latencyMs(0),
+    m_latencyMsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -51,6 +55,13 @@ InputDeviceConfigurableSettings& InputDeviceConfigurableSettings::operator =(Jso
     m_maxBitrateHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("latencyMs"))
+  {
+    m_latencyMs = jsonValue.GetInteger("latencyMs");
+
+    m_latencyMsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -66,6 +77,12 @@ JsonValue InputDeviceConfigurableSettings::Jsonize() const
   if(m_maxBitrateHasBeenSet)
   {
    payload.WithInteger("maxBitrate", m_maxBitrate);
+
+  }
+
+  if(m_latencyMsHasBeenSet)
+  {
+   payload.WithInteger("latencyMs", m_latencyMs);
 
   }
 

@@ -110,6 +110,27 @@ namespace Model
      */
     inline InputDeviceConfigurableSettings& WithMaxBitrate(int value) { SetMaxBitrate(value); return *this;}
 
+
+    /**
+     * The Link device's buffer size (latency) in milliseconds (ms).
+     */
+    inline int GetLatencyMs() const{ return m_latencyMs; }
+
+    /**
+     * The Link device's buffer size (latency) in milliseconds (ms).
+     */
+    inline bool LatencyMsHasBeenSet() const { return m_latencyMsHasBeenSet; }
+
+    /**
+     * The Link device's buffer size (latency) in milliseconds (ms).
+     */
+    inline void SetLatencyMs(int value) { m_latencyMsHasBeenSet = true; m_latencyMs = value; }
+
+    /**
+     * The Link device's buffer size (latency) in milliseconds (ms).
+     */
+    inline InputDeviceConfigurableSettings& WithLatencyMs(int value) { SetLatencyMs(value); return *this;}
+
   private:
 
     InputDeviceConfiguredInput m_configuredInput;
@@ -117,6 +138,9 @@ namespace Model
 
     int m_maxBitrate;
     bool m_maxBitrateHasBeenSet = false;
+
+    int m_latencyMs;
+    bool m_latencyMsHasBeenSet = false;
   };
 
 } // namespace Model

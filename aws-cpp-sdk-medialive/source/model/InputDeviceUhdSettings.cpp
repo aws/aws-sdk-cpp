@@ -34,7 +34,9 @@ InputDeviceUhdSettings::InputDeviceUhdSettings() :
     m_scanType(InputDeviceScanType::NOT_SET),
     m_scanTypeHasBeenSet(false),
     m_width(0),
-    m_widthHasBeenSet(false)
+    m_widthHasBeenSet(false),
+    m_latencyMs(0),
+    m_latencyMsHasBeenSet(false)
 {
 }
 
@@ -54,7 +56,9 @@ InputDeviceUhdSettings::InputDeviceUhdSettings(JsonView jsonValue) :
     m_scanType(InputDeviceScanType::NOT_SET),
     m_scanTypeHasBeenSet(false),
     m_width(0),
-    m_widthHasBeenSet(false)
+    m_widthHasBeenSet(false),
+    m_latencyMs(0),
+    m_latencyMsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -117,6 +121,13 @@ InputDeviceUhdSettings& InputDeviceUhdSettings::operator =(JsonView jsonValue)
     m_widthHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("latencyMs"))
+  {
+    m_latencyMs = jsonValue.GetInteger("latencyMs");
+
+    m_latencyMsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -165,6 +176,12 @@ JsonValue InputDeviceUhdSettings::Jsonize() const
   if(m_widthHasBeenSet)
   {
    payload.WithInteger("width", m_width);
+
+  }
+
+  if(m_latencyMsHasBeenSet)
+  {
+   payload.WithInteger("latencyMs", m_latencyMs);
 
   }
 

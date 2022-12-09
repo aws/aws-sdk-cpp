@@ -20,13 +20,15 @@ namespace Model
 
 DecoderManifestValidationException::DecoderManifestValidationException() : 
     m_invalidSignalsHasBeenSet(false),
-    m_invalidNetworkInterfacesHasBeenSet(false)
+    m_invalidNetworkInterfacesHasBeenSet(false),
+    m_messageHasBeenSet(false)
 {
 }
 
 DecoderManifestValidationException::DecoderManifestValidationException(JsonView jsonValue) : 
     m_invalidSignalsHasBeenSet(false),
-    m_invalidNetworkInterfacesHasBeenSet(false)
+    m_invalidNetworkInterfacesHasBeenSet(false),
+    m_messageHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -51,6 +53,13 @@ DecoderManifestValidationException& DecoderManifestValidationException::operator
       m_invalidNetworkInterfaces.push_back(invalidNetworkInterfacesJsonList[invalidNetworkInterfacesIndex].AsObject());
     }
     m_invalidNetworkInterfacesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("message"))
+  {
+    m_message = jsonValue.GetString("message");
+
+    m_messageHasBeenSet = true;
   }
 
   return *this;
@@ -79,6 +88,12 @@ JsonValue DecoderManifestValidationException::Jsonize() const
      invalidNetworkInterfacesJsonList[invalidNetworkInterfacesIndex].AsObject(m_invalidNetworkInterfaces[invalidNetworkInterfacesIndex].Jsonize());
    }
    payload.WithArray("invalidNetworkInterfaces", std::move(invalidNetworkInterfacesJsonList));
+
+  }
+
+  if(m_messageHasBeenSet)
+  {
+   payload.WithString("message", m_message);
 
   }
 

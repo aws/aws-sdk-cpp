@@ -264,6 +264,31 @@ namespace Model
      */
     inline InputDeviceUhdSettings& WithWidth(int value) { SetWidth(value); return *this;}
 
+
+    /**
+     * The Link device's buffer size (latency) in milliseconds (ms). You can specify
+     * this value.
+     */
+    inline int GetLatencyMs() const{ return m_latencyMs; }
+
+    /**
+     * The Link device's buffer size (latency) in milliseconds (ms). You can specify
+     * this value.
+     */
+    inline bool LatencyMsHasBeenSet() const { return m_latencyMsHasBeenSet; }
+
+    /**
+     * The Link device's buffer size (latency) in milliseconds (ms). You can specify
+     * this value.
+     */
+    inline void SetLatencyMs(int value) { m_latencyMsHasBeenSet = true; m_latencyMs = value; }
+
+    /**
+     * The Link device's buffer size (latency) in milliseconds (ms). You can specify
+     * this value.
+     */
+    inline InputDeviceUhdSettings& WithLatencyMs(int value) { SetLatencyMs(value); return *this;}
+
   private:
 
     InputDeviceActiveInput m_activeInput;
@@ -289,6 +314,9 @@ namespace Model
 
     int m_width;
     bool m_widthHasBeenSet = false;
+
+    int m_latencyMs;
+    bool m_latencyMsHasBeenSet = false;
   };
 
 } // namespace Model
