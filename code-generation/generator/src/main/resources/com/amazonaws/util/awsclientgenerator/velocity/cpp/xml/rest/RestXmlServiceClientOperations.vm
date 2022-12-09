@@ -1,5 +1,5 @@
 #foreach($operation in $serviceModel.operations)
-#if(!$operation.s3CrtSpecific)
+#if($serviceNamespace != "S3Crt" || !$operation.s3CrtEnabled)
 #if($arnEndpointSupported)
 #if($multiRegionAccessPointSupported)
 #set($signerName = ", computeEndpointOutcome.GetResult().signerName.c_str() /*signerName*/")
@@ -61,10 +61,7 @@ ${operation.name}Outcome ${className}::${operation.name}(${constText}${operation
 }
 
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/operation/withrequest/OperationOutcomeCallable.vm")
-
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/operation/withrequest/OperationAsync.vm")
-
-
 #else
 ${operation.name}Outcome ${className}::${operation.name}() const
 {
@@ -98,7 +95,7 @@ ${operation.name}Outcome ${className}::${operation.name}() const
 #end
 #end
 }
-
+#if(0)
 ${operation.name}OutcomeCallable ${className}::${operation.name}Callable() const
 {
   auto task = Aws::MakeShared< std::packaged_task< ${operation.name}Outcome() > >(ALLOCATION_TAG, [this](){ return this->${operation.name}(); } );
@@ -114,6 +111,7 @@ void ${className}::${operation.name}Async(${constText}${operation.name}ResponseR
       handler(this, ${operation.name}(), context);
     } );
 }
+#end
 
 #end
 #end

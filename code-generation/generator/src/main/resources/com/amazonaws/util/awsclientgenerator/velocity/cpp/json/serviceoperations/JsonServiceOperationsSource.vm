@@ -10,6 +10,5 @@
 #set($refText = "")
 #end
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/json/serviceoperations/JsonServiceOperationSource.vm")
-
 #end
 #end

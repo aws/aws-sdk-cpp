@@ -64,7 +64,7 @@ public class Operation {
     private boolean hasPreSignedUrl;
 
     // For S3 CRT
-    private boolean s3CrtSpecific;
+    private boolean s3CrtEnabled;
 
     // For flexible checksums
     private boolean requestChecksumRequired;

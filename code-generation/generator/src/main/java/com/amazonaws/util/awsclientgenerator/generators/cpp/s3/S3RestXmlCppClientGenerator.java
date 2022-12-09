@@ -27,7 +27,7 @@ public class S3RestXmlCppClientGenerator  extends RestXmlCppClientGenerator {
 
     private static Set<String> opsThatDoNotSupportVirtualAddressing = new HashSet<>();
     private static Set<String> opsThatDoNotSupportArnEndpoint = new HashSet<>();
-    private static Set<String> opsThatDoNotSupportFutureInS3CRT = new HashSet<>();
+    private static Set<String> s3CrtEnabledOps = new HashSet<>(); // All other ops are in fact regular SDK calls
     private static Set<String> bucketLocationConstraints = new HashSet<>();
     private Set<String> functionsWithEmbeddedErrors = ImmutableSet.of(
             "CompleteMultipartUploadRequest",
@@ -44,8 +44,8 @@ public class S3RestXmlCppClientGenerator  extends RestXmlCppClientGenerator {
         opsThatDoNotSupportArnEndpoint.add("ListBuckets");
         opsThatDoNotSupportArnEndpoint.add("WriteGetObjectResponse");
 
-        opsThatDoNotSupportFutureInS3CRT.add("GetObject");
-        opsThatDoNotSupportFutureInS3CRT.add("PutObject");
+        s3CrtEnabledOps.add("GetObject");
+        s3CrtEnabledOps.add("PutObject");
 
         bucketLocationConstraints.add("us-east-1");
         bucketLocationConstraints.add("us-east-2");
@@ -116,10 +116,11 @@ public class S3RestXmlCppClientGenerator  extends RestXmlCppClientGenerator {
                 });
 
 
-        if (serviceModel.getMetadata().getNamespace().equals("S3Crt")) {
+        if (serviceModel.getMetadata().getServiceId().equalsIgnoreCase("S3") ||
+                serviceModel.getMetadata().getServiceId().equalsIgnoreCase("S3-CRT")) {
             serviceModel.getOperations().values().stream()
-                    .filter(operationEntry -> opsThatDoNotSupportFutureInS3CRT.contains(operationEntry.getName()))
-                    .forEach(operationEntry -> operationEntry.setS3CrtSpecific(true));
+                    .filter(operationEntry -> s3CrtEnabledOps.contains(operationEntry.getName()))
+                    .forEach(operationEntry -> operationEntry.setS3CrtEnabled(true));
         }
 
         Shape locationConstraints = serviceModel.getShapes().get("BucketLocationConstraint");

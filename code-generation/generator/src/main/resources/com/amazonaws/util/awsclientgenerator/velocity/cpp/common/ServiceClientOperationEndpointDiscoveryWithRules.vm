@@ -52,7 +52,7 @@
       {
 #if($operation.requireEndpointDiscovery)
         AWS_LOGSTREAM_ERROR("${operation.name}", "Failed to discover endpoints " << endpointOutcome.GetError());
-#if($operation.s3CrtSpecific)
+#if($serviceNamespace == "S3Crt" && $operation.s3CrtEnabled)
 #if($operation.request)
         return handler(this, request,
             ${operation.name}Outcome(Aws::Client::AWSError<${metadata.classNamePrefix}Errors>(${metadata.classNamePrefix}Errors::RESOURCE_NOT_FOUND, "INVALID_ENDPOINT", "Failed to discover endpoint", false)),
