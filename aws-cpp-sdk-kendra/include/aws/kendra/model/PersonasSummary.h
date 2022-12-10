@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/PersonasSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_KENDRA_API PersonasSummary
+  class PersonasSummary
   {
   public:
-    PersonasSummary();
-    PersonasSummary(Aws::Utils::Json::JsonView jsonValue);
-    PersonasSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KENDRA_API PersonasSummary();
+    AWS_KENDRA_API PersonasSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API PersonasSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/ProtocolAndNotificationEndpoint">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYLAKE_API ProtocolAndNotificationEndpoint
+  class ProtocolAndNotificationEndpoint
   {
   public:
-    ProtocolAndNotificationEndpoint();
-    ProtocolAndNotificationEndpoint(Aws::Utils::Json::JsonView jsonValue);
-    ProtocolAndNotificationEndpoint& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYLAKE_API ProtocolAndNotificationEndpoint();
+    AWS_SECURITYLAKE_API ProtocolAndNotificationEndpoint(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYLAKE_API ProtocolAndNotificationEndpoint& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYLAKE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/ValidationException">AWS
    * API Reference</a></p>
    */
-  class AWS_LOCATIONSERVICE_API ValidationException
+  class ValidationException
   {
   public:
-    ValidationException();
-    ValidationException(Aws::Utils::Json::JsonView jsonValue);
-    ValidationException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LOCATIONSERVICE_API ValidationException();
+    AWS_LOCATIONSERVICE_API ValidationException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOCATIONSERVICE_API ValidationException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOCATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

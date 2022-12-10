@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/GatewayRouteData">AWS
    * API Reference</a></p>
    */
-  class AWS_APPMESH_API GatewayRouteData
+  class GatewayRouteData
   {
   public:
-    GatewayRouteData();
-    GatewayRouteData(Aws::Utils::Json::JsonView jsonValue);
-    GatewayRouteData& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPMESH_API GatewayRouteData();
+    AWS_APPMESH_API GatewayRouteData(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API GatewayRouteData& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

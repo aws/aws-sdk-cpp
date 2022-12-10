@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/SigningConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_SIGNER_API SigningConfiguration
+  class SigningConfiguration
   {
   public:
-    SigningConfiguration();
-    SigningConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    SigningConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SIGNER_API SigningConfiguration();
+    AWS_SIGNER_API SigningConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SIGNER_API SigningConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SIGNER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

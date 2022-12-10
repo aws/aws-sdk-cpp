@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/OrderableReplicationInstance">AWS
    * API Reference</a></p>
    */
-  class AWS_DATABASEMIGRATIONSERVICE_API OrderableReplicationInstance
+  class OrderableReplicationInstance
   {
   public:
-    OrderableReplicationInstance();
-    OrderableReplicationInstance(Aws::Utils::Json::JsonView jsonValue);
-    OrderableReplicationInstance& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DATABASEMIGRATIONSERVICE_API OrderableReplicationInstance();
+    AWS_DATABASEMIGRATIONSERVICE_API OrderableReplicationInstance(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATABASEMIGRATIONSERVICE_API OrderableReplicationInstance& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATABASEMIGRATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

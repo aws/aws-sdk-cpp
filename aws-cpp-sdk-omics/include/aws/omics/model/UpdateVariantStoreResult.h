@@ -27,12 +27,12 @@ namespace Omics
 {
 namespace Model
 {
-  class AWS_OMICS_API UpdateVariantStoreResult
+  class UpdateVariantStoreResult
   {
   public:
-    UpdateVariantStoreResult();
-    UpdateVariantStoreResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateVariantStoreResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OMICS_API UpdateVariantStoreResult();
+    AWS_OMICS_API UpdateVariantStoreResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OMICS_API UpdateVariantStoreResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

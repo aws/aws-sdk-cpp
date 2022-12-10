@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/TemplateSourceTemplate">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API TemplateSourceTemplate
+  class TemplateSourceTemplate
   {
   public:
-    TemplateSourceTemplate();
-    TemplateSourceTemplate(Aws::Utils::Json::JsonView jsonValue);
-    TemplateSourceTemplate& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API TemplateSourceTemplate();
+    AWS_QUICKSIGHT_API TemplateSourceTemplate(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API TemplateSourceTemplate& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

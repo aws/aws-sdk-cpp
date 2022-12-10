@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ServiceLimit">AWS
    * API Reference</a></p>
    */
-  class AWS_MACIE2_API ServiceLimit
+  class ServiceLimit
   {
   public:
-    ServiceLimit();
-    ServiceLimit(Aws::Utils::Json::JsonView jsonValue);
-    ServiceLimit& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MACIE2_API ServiceLimit();
+    AWS_MACIE2_API ServiceLimit(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API ServiceLimit& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

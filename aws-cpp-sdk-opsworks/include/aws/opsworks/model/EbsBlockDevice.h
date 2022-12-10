@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/EbsBlockDevice">AWS
    * API Reference</a></p>
    */
-  class AWS_OPSWORKS_API EbsBlockDevice
+  class EbsBlockDevice
   {
   public:
-    EbsBlockDevice();
-    EbsBlockDevice(Aws::Utils::Json::JsonView jsonValue);
-    EbsBlockDevice& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OPSWORKS_API EbsBlockDevice();
+    AWS_OPSWORKS_API EbsBlockDevice(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPSWORKS_API EbsBlockDevice& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPSWORKS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

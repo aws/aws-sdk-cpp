@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/EfsFileLocation">AWS
    * API Reference</a></p>
    */
-  class AWS_TRANSFER_API EfsFileLocation
+  class EfsFileLocation
   {
   public:
-    EfsFileLocation();
-    EfsFileLocation(Aws::Utils::Json::JsonView jsonValue);
-    EfsFileLocation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TRANSFER_API EfsFileLocation();
+    AWS_TRANSFER_API EfsFileLocation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSFER_API EfsFileLocation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSFER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

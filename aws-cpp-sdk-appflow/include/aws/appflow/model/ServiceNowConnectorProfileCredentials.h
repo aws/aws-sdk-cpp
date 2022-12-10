@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/ServiceNowConnectorProfileCredentials">AWS
    * API Reference</a></p>
    */
-  class AWS_APPFLOW_API ServiceNowConnectorProfileCredentials
+  class ServiceNowConnectorProfileCredentials
   {
   public:
-    ServiceNowConnectorProfileCredentials();
-    ServiceNowConnectorProfileCredentials(Aws::Utils::Json::JsonView jsonValue);
-    ServiceNowConnectorProfileCredentials& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPFLOW_API ServiceNowConnectorProfileCredentials();
+    AWS_APPFLOW_API ServiceNowConnectorProfileCredentials(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API ServiceNowConnectorProfileCredentials& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

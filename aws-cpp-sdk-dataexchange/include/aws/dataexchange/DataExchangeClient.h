@@ -7,6 +7,7 @@
 #include <aws/dataexchange/DataExchange_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/dataexchange/DataExchangeServiceClientModel.h>
 
@@ -34,7 +35,7 @@ namespace DataExchange
    * structured data file, an image file, or some other data file. Jobs are
    * asynchronous import or export operations used to create or copy assets.</p>
    */
-  class AWS_DATAEXCHANGE_API DataExchangeClient : public Aws::Client::AWSJsonClient
+  class AWS_DATAEXCHANGE_API DataExchangeClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<DataExchangeClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -88,7 +89,6 @@ namespace DataExchange
 
         /* End of legacy constructors due deprecation */
         virtual ~DataExchangeClient();
-
 
         /**
          * <p>This operation cancels a job. Jobs can be cancelled only when they are in the
@@ -602,6 +602,7 @@ namespace DataExchange
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<DataExchangeEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<DataExchangeClient>;
       void init(const DataExchangeClientConfiguration& clientConfiguration);
 
       DataExchangeClientConfiguration m_clientConfiguration;

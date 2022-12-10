@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/SectionStyle">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API SectionStyle
+  class SectionStyle
   {
   public:
-    SectionStyle();
-    SectionStyle(Aws::Utils::Json::JsonView jsonValue);
-    SectionStyle& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API SectionStyle();
+    AWS_QUICKSIGHT_API SectionStyle(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API SectionStyle& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/QueryStatisticsForDescribeQuery">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDTRAIL_API QueryStatisticsForDescribeQuery
+  class QueryStatisticsForDescribeQuery
   {
   public:
-    QueryStatisticsForDescribeQuery();
-    QueryStatisticsForDescribeQuery(Aws::Utils::Json::JsonView jsonValue);
-    QueryStatisticsForDescribeQuery& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDTRAIL_API QueryStatisticsForDescribeQuery();
+    AWS_CLOUDTRAIL_API QueryStatisticsForDescribeQuery(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDTRAIL_API QueryStatisticsForDescribeQuery& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDTRAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

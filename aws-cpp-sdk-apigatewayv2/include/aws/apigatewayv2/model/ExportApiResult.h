@@ -18,21 +18,21 @@ namespace ApiGatewayV2
 {
 namespace Model
 {
-  class AWS_APIGATEWAYV2_API ExportApiResult
+  class ExportApiResult
   {
   public:
-    ExportApiResult();
+    AWS_APIGATEWAYV2_API ExportApiResult();
     //We have to define these because Microsoft doesn't auto generate them
-    ExportApiResult(ExportApiResult&&);
-    ExportApiResult& operator=(ExportApiResult&&);
+    AWS_APIGATEWAYV2_API ExportApiResult(ExportApiResult&&);
+    AWS_APIGATEWAYV2_API ExportApiResult& operator=(ExportApiResult&&);
     //we delete these because Microsoft doesn't handle move generation correctly
     //and we therefore don't trust them to get it right here either.
     ExportApiResult(const ExportApiResult&) = delete;
     ExportApiResult& operator=(const ExportApiResult&) = delete;
 
 
-    ExportApiResult(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
-    ExportApiResult& operator=(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
+    AWS_APIGATEWAYV2_API ExportApiResult(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
+    AWS_APIGATEWAYV2_API ExportApiResult& operator=(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
 
 
 

@@ -38,13 +38,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/IPSetUpdate">AWS API
    * Reference</a></p>
    */
-  class AWS_WAF_API IPSetUpdate
+  class IPSetUpdate
   {
   public:
-    IPSetUpdate();
-    IPSetUpdate(Aws::Utils::Json::JsonView jsonValue);
-    IPSetUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WAF_API IPSetUpdate();
+    AWS_WAF_API IPSetUpdate(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAF_API IPSetUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAF_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

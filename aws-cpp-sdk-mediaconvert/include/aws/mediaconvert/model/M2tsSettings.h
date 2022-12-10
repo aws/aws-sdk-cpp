@@ -56,13 +56,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/M2tsSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API M2tsSettings
+  class M2tsSettings
   {
   public:
-    M2tsSettings();
-    M2tsSettings(Aws::Utils::Json::JsonView jsonValue);
-    M2tsSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API M2tsSettings();
+    AWS_MEDIACONVERT_API M2tsSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API M2tsSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DetectLabelsImageProperties">AWS
    * API Reference</a></p>
    */
-  class AWS_REKOGNITION_API DetectLabelsImageProperties
+  class DetectLabelsImageProperties
   {
   public:
-    DetectLabelsImageProperties();
-    DetectLabelsImageProperties(Aws::Utils::Json::JsonView jsonValue);
-    DetectLabelsImageProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_REKOGNITION_API DetectLabelsImageProperties();
+    AWS_REKOGNITION_API DetectLabelsImageProperties(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API DetectLabelsImageProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -35,12 +35,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/EndpointAuthorization">AWS
    * API Reference</a></p>
    */
-  class AWS_REDSHIFT_API AuthorizeEndpointAccessResult
+  class AuthorizeEndpointAccessResult
   {
   public:
-    AuthorizeEndpointAccessResult();
-    AuthorizeEndpointAccessResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    AuthorizeEndpointAccessResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_REDSHIFT_API AuthorizeEndpointAccessResult();
+    AWS_REDSHIFT_API AuthorizeEndpointAccessResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_REDSHIFT_API AuthorizeEndpointAccessResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

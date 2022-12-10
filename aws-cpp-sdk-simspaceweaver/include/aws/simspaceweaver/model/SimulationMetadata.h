@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/simspaceweaver-2022-10-28/SimulationMetadata">AWS
    * API Reference</a></p>
    */
-  class AWS_SIMSPACEWEAVER_API SimulationMetadata
+  class SimulationMetadata
   {
   public:
-    SimulationMetadata();
-    SimulationMetadata(Aws::Utils::Json::JsonView jsonValue);
-    SimulationMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SIMSPACEWEAVER_API SimulationMetadata();
+    AWS_SIMSPACEWEAVER_API SimulationMetadata(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SIMSPACEWEAVER_API SimulationMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SIMSPACEWEAVER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

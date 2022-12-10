@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/VisualCustomAction">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API VisualCustomAction
+  class VisualCustomAction
   {
   public:
-    VisualCustomAction();
-    VisualCustomAction(Aws::Utils::Json::JsonView jsonValue);
-    VisualCustomAction& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API VisualCustomAction();
+    AWS_QUICKSIGHT_API VisualCustomAction(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API VisualCustomAction& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

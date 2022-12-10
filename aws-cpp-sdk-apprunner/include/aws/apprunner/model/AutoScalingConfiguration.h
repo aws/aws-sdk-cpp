@@ -37,13 +37,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/AutoScalingConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_APPRUNNER_API AutoScalingConfiguration
+  class AutoScalingConfiguration
   {
   public:
-    AutoScalingConfiguration();
-    AutoScalingConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    AutoScalingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPRUNNER_API AutoScalingConfiguration();
+    AWS_APPRUNNER_API AutoScalingConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPRUNNER_API AutoScalingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPRUNNER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

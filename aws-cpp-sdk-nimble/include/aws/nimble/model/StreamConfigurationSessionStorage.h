@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/StreamConfigurationSessionStorage">AWS
    * API Reference</a></p>
    */
-  class AWS_NIMBLESTUDIO_API StreamConfigurationSessionStorage
+  class StreamConfigurationSessionStorage
   {
   public:
-    StreamConfigurationSessionStorage();
-    StreamConfigurationSessionStorage(Aws::Utils::Json::JsonView jsonValue);
-    StreamConfigurationSessionStorage& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_NIMBLESTUDIO_API StreamConfigurationSessionStorage();
+    AWS_NIMBLESTUDIO_API StreamConfigurationSessionStorage(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NIMBLESTUDIO_API StreamConfigurationSessionStorage& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NIMBLESTUDIO_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

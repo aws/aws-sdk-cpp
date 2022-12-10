@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/meteringmarketplace-2016-01-14/UsageRecord">AWS
    * API Reference</a></p>
    */
-  class AWS_MARKETPLACEMETERING_API UsageRecord
+  class UsageRecord
   {
   public:
-    UsageRecord();
-    UsageRecord(Aws::Utils::Json::JsonView jsonValue);
-    UsageRecord& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MARKETPLACEMETERING_API UsageRecord();
+    AWS_MARKETPLACEMETERING_API UsageRecord(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MARKETPLACEMETERING_API UsageRecord& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MARKETPLACEMETERING_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/EntityFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTTHINGSGRAPH_API EntityFilter
+  class EntityFilter
   {
   public:
-    EntityFilter();
-    EntityFilter(Aws::Utils::Json::JsonView jsonValue);
-    EntityFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTTHINGSGRAPH_API EntityFilter();
+    AWS_IOTTHINGSGRAPH_API EntityFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTTHINGSGRAPH_API EntityFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTTHINGSGRAPH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

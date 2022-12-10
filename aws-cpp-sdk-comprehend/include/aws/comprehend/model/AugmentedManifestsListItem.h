@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/AugmentedManifestsListItem">AWS
    * API Reference</a></p>
    */
-  class AWS_COMPREHEND_API AugmentedManifestsListItem
+  class AugmentedManifestsListItem
   {
   public:
-    AugmentedManifestsListItem();
-    AugmentedManifestsListItem(Aws::Utils::Json::JsonView jsonValue);
-    AugmentedManifestsListItem& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COMPREHEND_API AugmentedManifestsListItem();
+    AWS_COMPREHEND_API AugmentedManifestsListItem(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHEND_API AugmentedManifestsListItem& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHEND_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

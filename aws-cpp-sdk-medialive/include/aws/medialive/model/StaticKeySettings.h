@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/StaticKeySettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API StaticKeySettings
+  class StaticKeySettings
   {
   public:
-    StaticKeySettings();
-    StaticKeySettings(Aws::Utils::Json::JsonView jsonValue);
-    StaticKeySettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API StaticKeySettings();
+    AWS_MEDIALIVE_API StaticKeySettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API StaticKeySettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

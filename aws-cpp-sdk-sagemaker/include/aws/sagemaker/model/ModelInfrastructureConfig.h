@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ModelInfrastructureConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API ModelInfrastructureConfig
+  class ModelInfrastructureConfig
   {
   public:
-    ModelInfrastructureConfig();
-    ModelInfrastructureConfig(Aws::Utils::Json::JsonView jsonValue);
-    ModelInfrastructureConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API ModelInfrastructureConfig();
+    AWS_SAGEMAKER_API ModelInfrastructureConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API ModelInfrastructureConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

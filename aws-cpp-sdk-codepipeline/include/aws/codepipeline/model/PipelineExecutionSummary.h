@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PipelineExecutionSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEPIPELINE_API PipelineExecutionSummary
+  class PipelineExecutionSummary
   {
   public:
-    PipelineExecutionSummary();
-    PipelineExecutionSummary(Aws::Utils::Json::JsonView jsonValue);
-    PipelineExecutionSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEPIPELINE_API PipelineExecutionSummary();
+    AWS_CODEPIPELINE_API PipelineExecutionSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEPIPELINE_API PipelineExecutionSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

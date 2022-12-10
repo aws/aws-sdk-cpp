@@ -7,6 +7,7 @@
 #include <aws/simspaceweaver/SimSpaceWeaver_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/simspaceweaver/SimSpaceWeaverServiceClientModel.h>
 
@@ -29,7 +30,7 @@ namespace SimSpaceWeaver
    * API reference is included in the SimSpace Weaver app SDK documentation, which is
    * part of the SimSpace Weaver app SDK distributable package.</p>
    */
-  class AWS_SIMSPACEWEAVER_API SimSpaceWeaverClient : public Aws::Client::AWSJsonClient
+  class AWS_SIMSPACEWEAVER_API SimSpaceWeaverClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<SimSpaceWeaverClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -83,7 +84,6 @@ namespace SimSpaceWeaver
 
         /* End of legacy constructors due deprecation */
         virtual ~SimSpaceWeaverClient();
-
 
         /**
          * <p>Deletes the instance of the given custom app.</p><p><h3>See Also:</h3>   <a
@@ -362,6 +362,7 @@ namespace SimSpaceWeaver
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<SimSpaceWeaverEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<SimSpaceWeaverClient>;
       void init(const SimSpaceWeaverClientConfiguration& clientConfiguration);
 
       SimSpaceWeaverClientConfiguration m_clientConfiguration;

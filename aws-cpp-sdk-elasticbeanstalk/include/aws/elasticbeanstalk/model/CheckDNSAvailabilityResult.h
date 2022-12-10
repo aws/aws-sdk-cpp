@@ -30,12 +30,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CheckDNSAvailabilityResultMessage">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICBEANSTALK_API CheckDNSAvailabilityResult
+  class CheckDNSAvailabilityResult
   {
   public:
-    CheckDNSAvailabilityResult();
-    CheckDNSAvailabilityResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    CheckDNSAvailabilityResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ELASTICBEANSTALK_API CheckDNSAvailabilityResult();
+    AWS_ELASTICBEANSTALK_API CheckDNSAvailabilityResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ELASTICBEANSTALK_API CheckDNSAvailabilityResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

@@ -26,13 +26,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/Bandwidth">AWS
    * API Reference</a></p>
    */
-  class AWS_NETWORKMANAGER_API Bandwidth
+  class Bandwidth
   {
   public:
-    Bandwidth();
-    Bandwidth(Aws::Utils::Json::JsonView jsonValue);
-    Bandwidth& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_NETWORKMANAGER_API Bandwidth();
+    AWS_NETWORKMANAGER_API Bandwidth(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKMANAGER_API Bandwidth& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

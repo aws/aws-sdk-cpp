@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ebs-2019-11-02/Block">AWS API
    * Reference</a></p>
    */
-  class AWS_EBS_API Block
+  class Block
   {
   public:
-    Block();
-    Block(Aws::Utils::Json::JsonView jsonValue);
-    Block& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EBS_API Block();
+    AWS_EBS_API Block(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EBS_API Block& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EBS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

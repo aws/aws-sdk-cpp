@@ -25,7 +25,8 @@ ComponentResponse::ComponentResponse() :
     m_statusHasBeenSet(false),
     m_definedInHasBeenSet(false),
     m_propertiesHasBeenSet(false),
-    m_propertyGroupsHasBeenSet(false)
+    m_propertyGroupsHasBeenSet(false),
+    m_syncSourceHasBeenSet(false)
 {
 }
 
@@ -36,7 +37,8 @@ ComponentResponse::ComponentResponse(JsonView jsonValue) :
     m_statusHasBeenSet(false),
     m_definedInHasBeenSet(false),
     m_propertiesHasBeenSet(false),
-    m_propertyGroupsHasBeenSet(false)
+    m_propertyGroupsHasBeenSet(false),
+    m_syncSourceHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -98,6 +100,13 @@ ComponentResponse& ComponentResponse::operator =(JsonView jsonValue)
     m_propertyGroupsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("syncSource"))
+  {
+    m_syncSource = jsonValue.GetString("syncSource");
+
+    m_syncSourceHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -154,6 +163,12 @@ JsonValue ComponentResponse::Jsonize() const
      propertyGroupsJsonMap.WithObject(propertyGroupsItem.first, propertyGroupsItem.second.Jsonize());
    }
    payload.WithObject("propertyGroups", std::move(propertyGroupsJsonMap));
+
+  }
+
+  if(m_syncSourceHasBeenSet)
+  {
+   payload.WithString("syncSource", m_syncSource);
 
   }
 

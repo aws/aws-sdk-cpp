@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/S3Location">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUEDATABREW_API S3Location
+  class S3Location
   {
   public:
-    S3Location();
-    S3Location(Aws::Utils::Json::JsonView jsonValue);
-    S3Location& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUEDATABREW_API S3Location();
+    AWS_GLUEDATABREW_API S3Location(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUEDATABREW_API S3Location& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUEDATABREW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

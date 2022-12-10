@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/VpcAttachment">AWS
    * API Reference</a></p>
    */
-  class AWS_NETWORKMANAGER_API VpcAttachment
+  class VpcAttachment
   {
   public:
-    VpcAttachment();
-    VpcAttachment(Aws::Utils::Json::JsonView jsonValue);
-    VpcAttachment& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_NETWORKMANAGER_API VpcAttachment();
+    AWS_NETWORKMANAGER_API VpcAttachment(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKMANAGER_API VpcAttachment& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

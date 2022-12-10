@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-data-2019-12-20/ColumnMetadata">AWS
    * API Reference</a></p>
    */
-  class AWS_REDSHIFTDATAAPISERVICE_API ColumnMetadata
+  class ColumnMetadata
   {
   public:
-    ColumnMetadata();
-    ColumnMetadata(Aws::Utils::Json::JsonView jsonValue);
-    ColumnMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_REDSHIFTDATAAPISERVICE_API ColumnMetadata();
+    AWS_REDSHIFTDATAAPISERVICE_API ColumnMetadata(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REDSHIFTDATAAPISERVICE_API ColumnMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REDSHIFTDATAAPISERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

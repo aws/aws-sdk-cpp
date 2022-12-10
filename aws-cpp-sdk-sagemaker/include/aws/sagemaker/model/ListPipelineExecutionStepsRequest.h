@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_SAGEMAKER_API ListPipelineExecutionStepsRequest : public SageMakerRequest
+  class ListPipelineExecutionStepsRequest : public SageMakerRequest
   {
   public:
-    ListPipelineExecutionStepsRequest();
+    AWS_SAGEMAKER_API ListPipelineExecutionStepsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,9 +30,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ListPipelineExecutionSteps"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_SAGEMAKER_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_SAGEMAKER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/BundleInformation">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTTWINMAKER_API BundleInformation
+  class BundleInformation
   {
   public:
-    BundleInformation();
-    BundleInformation(Aws::Utils::Json::JsonView jsonValue);
-    BundleInformation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTTWINMAKER_API BundleInformation();
+    AWS_IOTTWINMAKER_API BundleInformation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTTWINMAKER_API BundleInformation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTTWINMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

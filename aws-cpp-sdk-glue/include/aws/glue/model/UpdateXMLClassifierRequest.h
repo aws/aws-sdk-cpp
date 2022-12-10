@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateXMLClassifierRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API UpdateXMLClassifierRequest
+  class UpdateXMLClassifierRequest
   {
   public:
-    UpdateXMLClassifierRequest();
-    UpdateXMLClassifierRequest(Aws::Utils::Json::JsonView jsonValue);
-    UpdateXMLClassifierRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API UpdateXMLClassifierRequest();
+    AWS_GLUE_API UpdateXMLClassifierRequest(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API UpdateXMLClassifierRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

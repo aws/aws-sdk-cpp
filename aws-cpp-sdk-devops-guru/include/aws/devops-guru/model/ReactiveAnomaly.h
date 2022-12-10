@@ -38,13 +38,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/ReactiveAnomaly">AWS
    * API Reference</a></p>
    */
-  class AWS_DEVOPSGURU_API ReactiveAnomaly
+  class ReactiveAnomaly
   {
   public:
-    ReactiveAnomaly();
-    ReactiveAnomaly(Aws::Utils::Json::JsonView jsonValue);
-    ReactiveAnomaly& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DEVOPSGURU_API ReactiveAnomaly();
+    AWS_DEVOPSGURU_API ReactiveAnomaly(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVOPSGURU_API ReactiveAnomaly& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVOPSGURU_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

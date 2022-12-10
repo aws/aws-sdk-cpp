@@ -25,12 +25,12 @@ namespace EC2
 {
 namespace Model
 {
-  class AWS_EC2_API DeleteNetworkInsightsAccessScopeResponse
+  class DeleteNetworkInsightsAccessScopeResponse
   {
   public:
-    DeleteNetworkInsightsAccessScopeResponse();
-    DeleteNetworkInsightsAccessScopeResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DeleteNetworkInsightsAccessScopeResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API DeleteNetworkInsightsAccessScopeResponse();
+    AWS_EC2_API DeleteNetworkInsightsAccessScopeResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API DeleteNetworkInsightsAccessScopeResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

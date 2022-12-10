@@ -26,12 +26,12 @@ namespace MediaConnect
 {
 namespace Model
 {
-  class AWS_MEDIACONNECT_API GrantFlowEntitlementsResult
+  class GrantFlowEntitlementsResult
   {
   public:
-    GrantFlowEntitlementsResult();
-    GrantFlowEntitlementsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GrantFlowEntitlementsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MEDIACONNECT_API GrantFlowEntitlementsResult();
+    AWS_MEDIACONNECT_API GrantFlowEntitlementsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MEDIACONNECT_API GrantFlowEntitlementsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

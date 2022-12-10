@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/panorama-2019-07-24/ApplicationInstance">AWS
    * API Reference</a></p>
    */
-  class AWS_PANORAMA_API ApplicationInstance
+  class ApplicationInstance
   {
   public:
-    ApplicationInstance();
-    ApplicationInstance(Aws::Utils::Json::JsonView jsonValue);
-    ApplicationInstance& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PANORAMA_API ApplicationInstance();
+    AWS_PANORAMA_API ApplicationInstance(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PANORAMA_API ApplicationInstance& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PANORAMA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

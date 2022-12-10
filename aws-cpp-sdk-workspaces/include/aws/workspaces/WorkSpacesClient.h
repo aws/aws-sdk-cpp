@@ -7,6 +7,7 @@
 #include <aws/workspaces/WorkSpaces_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/workspaces/WorkSpacesServiceClientModel.h>
 
@@ -39,7 +40,7 @@ namespace WorkSpaces
    * href="https://docs.aws.amazon.com/cli/latest/reference/workspaces/index.html">WorkSpaces
    * section of the CLI Reference</a>.</p>
    */
-  class AWS_WORKSPACES_API WorkSpacesClient : public Aws::Client::AWSJsonClient
+  class AWS_WORKSPACES_API WorkSpacesClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<WorkSpacesClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -93,7 +94,6 @@ namespace WorkSpaces
 
         /* End of legacy constructors due deprecation */
         virtual ~WorkSpacesClient();
-
 
         /**
          * <p>Associates the specified connection alias with the specified directory to
@@ -1501,6 +1501,7 @@ namespace WorkSpaces
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<WorkSpacesEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<WorkSpacesClient>;
       void init(const WorkSpacesClientConfiguration& clientConfiguration);
 
       WorkSpacesClientConfiguration m_clientConfiguration;

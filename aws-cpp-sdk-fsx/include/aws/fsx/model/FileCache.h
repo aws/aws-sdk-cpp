@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/FileCache">AWS API
    * Reference</a></p>
    */
-  class AWS_FSX_API FileCache
+  class FileCache
   {
   public:
-    FileCache();
-    FileCache(Aws::Utils::Json::JsonView jsonValue);
-    FileCache& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FSX_API FileCache();
+    AWS_FSX_API FileCache(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API FileCache& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

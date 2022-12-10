@@ -26,12 +26,12 @@ namespace EC2
 {
 namespace Model
 {
-  class AWS_EC2_API DescribeAvailabilityZonesResponse
+  class DescribeAvailabilityZonesResponse
   {
   public:
-    DescribeAvailabilityZonesResponse();
-    DescribeAvailabilityZonesResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeAvailabilityZonesResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API DescribeAvailabilityZonesResponse();
+    AWS_EC2_API DescribeAvailabilityZonesResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API DescribeAvailabilityZonesResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

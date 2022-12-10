@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elastic-inference-2017-07-25/AcceleratorTypeOffering">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICINFERENCE_API AcceleratorTypeOffering
+  class AcceleratorTypeOffering
   {
   public:
-    AcceleratorTypeOffering();
-    AcceleratorTypeOffering(Aws::Utils::Json::JsonView jsonValue);
-    AcceleratorTypeOffering& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ELASTICINFERENCE_API AcceleratorTypeOffering();
+    AWS_ELASTICINFERENCE_API AcceleratorTypeOffering(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICINFERENCE_API AcceleratorTypeOffering& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICINFERENCE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

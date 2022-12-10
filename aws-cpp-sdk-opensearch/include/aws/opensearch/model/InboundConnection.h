@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/InboundConnection">AWS
    * API Reference</a></p>
    */
-  class AWS_OPENSEARCHSERVICE_API InboundConnection
+  class InboundConnection
   {
   public:
-    InboundConnection();
-    InboundConnection(Aws::Utils::Json::JsonView jsonValue);
-    InboundConnection& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OPENSEARCHSERVICE_API InboundConnection();
+    AWS_OPENSEARCHSERVICE_API InboundConnection(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPENSEARCHSERVICE_API InboundConnection& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPENSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-data-2018-10-23/SimpleRuleEvaluation">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTEVENTSDATA_API SimpleRuleEvaluation
+  class SimpleRuleEvaluation
   {
   public:
-    SimpleRuleEvaluation();
-    SimpleRuleEvaluation(Aws::Utils::Json::JsonView jsonValue);
-    SimpleRuleEvaluation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTEVENTSDATA_API SimpleRuleEvaluation();
+    AWS_IOTEVENTSDATA_API SimpleRuleEvaluation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTEVENTSDATA_API SimpleRuleEvaluation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTEVENTSDATA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

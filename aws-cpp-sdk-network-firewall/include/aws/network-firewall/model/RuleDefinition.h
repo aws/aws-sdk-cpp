@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/RuleDefinition">AWS
    * API Reference</a></p>
    */
-  class AWS_NETWORKFIREWALL_API RuleDefinition
+  class RuleDefinition
   {
   public:
-    RuleDefinition();
-    RuleDefinition(Aws::Utils::Json::JsonView jsonValue);
-    RuleDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_NETWORKFIREWALL_API RuleDefinition();
+    AWS_NETWORKFIREWALL_API RuleDefinition(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKFIREWALL_API RuleDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKFIREWALL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/IdentityInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_SESV2_API IdentityInfo
+  class IdentityInfo
   {
   public:
-    IdentityInfo();
-    IdentityInfo(Aws::Utils::Json::JsonView jsonValue);
-    IdentityInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SESV2_API IdentityInfo();
+    AWS_SESV2_API IdentityInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SESV2_API IdentityInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SESV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

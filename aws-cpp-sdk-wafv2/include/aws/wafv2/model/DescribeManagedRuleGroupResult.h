@@ -27,12 +27,12 @@ namespace WAFV2
 {
 namespace Model
 {
-  class AWS_WAFV2_API DescribeManagedRuleGroupResult
+  class DescribeManagedRuleGroupResult
   {
   public:
-    DescribeManagedRuleGroupResult();
-    DescribeManagedRuleGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeManagedRuleGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WAFV2_API DescribeManagedRuleGroupResult();
+    AWS_WAFV2_API DescribeManagedRuleGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WAFV2_API DescribeManagedRuleGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

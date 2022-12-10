@@ -26,12 +26,12 @@ namespace SFN
 {
 namespace Model
 {
-  class AWS_SFN_API ListMapRunsResult
+  class ListMapRunsResult
   {
   public:
-    ListMapRunsResult();
-    ListMapRunsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListMapRunsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SFN_API ListMapRunsResult();
+    AWS_SFN_API ListMapRunsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SFN_API ListMapRunsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

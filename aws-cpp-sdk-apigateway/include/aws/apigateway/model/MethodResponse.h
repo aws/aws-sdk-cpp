@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/MethodResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_APIGATEWAY_API MethodResponse
+  class MethodResponse
   {
   public:
-    MethodResponse();
-    MethodResponse(Aws::Utils::Json::JsonView jsonValue);
-    MethodResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APIGATEWAY_API MethodResponse();
+    AWS_APIGATEWAY_API MethodResponse(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APIGATEWAY_API MethodResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APIGATEWAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/NeoVpcConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API NeoVpcConfig
+  class NeoVpcConfig
   {
   public:
-    NeoVpcConfig();
-    NeoVpcConfig(Aws::Utils::Json::JsonView jsonValue);
-    NeoVpcConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API NeoVpcConfig();
+    AWS_SAGEMAKER_API NeoVpcConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API NeoVpcConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

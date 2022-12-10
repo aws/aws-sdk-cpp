@@ -25,12 +25,12 @@ namespace CostExplorer
 {
 namespace Model
 {
-  class AWS_COSTEXPLORER_API UpdateCostAllocationTagsStatusResult
+  class UpdateCostAllocationTagsStatusResult
   {
   public:
-    UpdateCostAllocationTagsStatusResult();
-    UpdateCostAllocationTagsStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateCostAllocationTagsStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_COSTEXPLORER_API UpdateCostAllocationTagsStatusResult();
+    AWS_COSTEXPLORER_API UpdateCostAllocationTagsStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_COSTEXPLORER_API UpdateCostAllocationTagsStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

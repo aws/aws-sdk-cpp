@@ -35,12 +35,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/ListDomainDeliverabilityCampaignsResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINTEMAIL_API ListDomainDeliverabilityCampaignsResult
+  class ListDomainDeliverabilityCampaignsResult
   {
   public:
-    ListDomainDeliverabilityCampaignsResult();
-    ListDomainDeliverabilityCampaignsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListDomainDeliverabilityCampaignsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PINPOINTEMAIL_API ListDomainDeliverabilityCampaignsResult();
+    AWS_PINPOINTEMAIL_API ListDomainDeliverabilityCampaignsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PINPOINTEMAIL_API ListDomainDeliverabilityCampaignsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

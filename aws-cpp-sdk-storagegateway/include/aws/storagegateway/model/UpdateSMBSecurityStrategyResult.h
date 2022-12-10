@@ -24,12 +24,12 @@ namespace StorageGateway
 {
 namespace Model
 {
-  class AWS_STORAGEGATEWAY_API UpdateSMBSecurityStrategyResult
+  class UpdateSMBSecurityStrategyResult
   {
   public:
-    UpdateSMBSecurityStrategyResult();
-    UpdateSMBSecurityStrategyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateSMBSecurityStrategyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_STORAGEGATEWAY_API UpdateSMBSecurityStrategyResult();
+    AWS_STORAGEGATEWAY_API UpdateSMBSecurityStrategyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_STORAGEGATEWAY_API UpdateSMBSecurityStrategyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     

@@ -18,21 +18,21 @@ namespace Omics
 {
 namespace Model
 {
-  class AWS_OMICS_API GetReadSetResult
+  class GetReadSetResult
   {
   public:
-    GetReadSetResult();
+    AWS_OMICS_API GetReadSetResult();
     //We have to define these because Microsoft doesn't auto generate them
-    GetReadSetResult(GetReadSetResult&&);
-    GetReadSetResult& operator=(GetReadSetResult&&);
+    AWS_OMICS_API GetReadSetResult(GetReadSetResult&&);
+    AWS_OMICS_API GetReadSetResult& operator=(GetReadSetResult&&);
     //we delete these because Microsoft doesn't handle move generation correctly
     //and we therefore don't trust them to get it right here either.
     GetReadSetResult(const GetReadSetResult&) = delete;
     GetReadSetResult& operator=(const GetReadSetResult&) = delete;
 
 
-    GetReadSetResult(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
-    GetReadSetResult& operator=(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
+    AWS_OMICS_API GetReadSetResult(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
+    AWS_OMICS_API GetReadSetResult& operator=(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
 
 
 

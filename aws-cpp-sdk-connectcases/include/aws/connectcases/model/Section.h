@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/Section">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECTCASES_API Section
+  class Section
   {
   public:
-    Section();
-    Section(Aws::Utils::Json::JsonView jsonValue);
-    Section& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECTCASES_API Section();
+    AWS_CONNECTCASES_API Section(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTCASES_API Section& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTCASES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

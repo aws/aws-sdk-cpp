@@ -30,15 +30,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/ServerlessV2ScalingConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_NEPTUNE_API ServerlessV2ScalingConfiguration
+  class ServerlessV2ScalingConfiguration
   {
   public:
-    ServerlessV2ScalingConfiguration();
-    ServerlessV2ScalingConfiguration(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ServerlessV2ScalingConfiguration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_NEPTUNE_API ServerlessV2ScalingConfiguration();
+    AWS_NEPTUNE_API ServerlessV2ScalingConfiguration(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_NEPTUNE_API ServerlessV2ScalingConfiguration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_NEPTUNE_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_NEPTUNE_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**

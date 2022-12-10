@@ -71,13 +71,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/HealthCheckConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_SERVICEDISCOVERY_API HealthCheckConfig
+  class HealthCheckConfig
   {
   public:
-    HealthCheckConfig();
-    HealthCheckConfig(Aws::Utils::Json::JsonView jsonValue);
-    HealthCheckConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SERVICEDISCOVERY_API HealthCheckConfig();
+    AWS_SERVICEDISCOVERY_API HealthCheckConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICEDISCOVERY_API HealthCheckConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICEDISCOVERY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

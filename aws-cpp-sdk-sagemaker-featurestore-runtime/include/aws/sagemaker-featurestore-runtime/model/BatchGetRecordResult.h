@@ -27,12 +27,12 @@ namespace SageMakerFeatureStoreRuntime
 {
 namespace Model
 {
-  class AWS_SAGEMAKERFEATURESTORERUNTIME_API BatchGetRecordResult
+  class BatchGetRecordResult
   {
   public:
-    BatchGetRecordResult();
-    BatchGetRecordResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    BatchGetRecordResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SAGEMAKERFEATURESTORERUNTIME_API BatchGetRecordResult();
+    AWS_SAGEMAKERFEATURESTORERUNTIME_API BatchGetRecordResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SAGEMAKERFEATURESTORERUNTIME_API BatchGetRecordResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
@@ -72,37 +72,37 @@ namespace Model
 
 
     /**
-     * <p>A list of errors that have occured when retrieving a batch of Records.</p>
+     * <p>A list of errors that have occurred when retrieving a batch of Records.</p>
      */
     inline const Aws::Vector<BatchGetRecordError>& GetErrors() const{ return m_errors; }
 
     /**
-     * <p>A list of errors that have occured when retrieving a batch of Records.</p>
+     * <p>A list of errors that have occurred when retrieving a batch of Records.</p>
      */
     inline void SetErrors(const Aws::Vector<BatchGetRecordError>& value) { m_errors = value; }
 
     /**
-     * <p>A list of errors that have occured when retrieving a batch of Records.</p>
+     * <p>A list of errors that have occurred when retrieving a batch of Records.</p>
      */
     inline void SetErrors(Aws::Vector<BatchGetRecordError>&& value) { m_errors = std::move(value); }
 
     /**
-     * <p>A list of errors that have occured when retrieving a batch of Records.</p>
+     * <p>A list of errors that have occurred when retrieving a batch of Records.</p>
      */
     inline BatchGetRecordResult& WithErrors(const Aws::Vector<BatchGetRecordError>& value) { SetErrors(value); return *this;}
 
     /**
-     * <p>A list of errors that have occured when retrieving a batch of Records.</p>
+     * <p>A list of errors that have occurred when retrieving a batch of Records.</p>
      */
     inline BatchGetRecordResult& WithErrors(Aws::Vector<BatchGetRecordError>&& value) { SetErrors(std::move(value)); return *this;}
 
     /**
-     * <p>A list of errors that have occured when retrieving a batch of Records.</p>
+     * <p>A list of errors that have occurred when retrieving a batch of Records.</p>
      */
     inline BatchGetRecordResult& AddErrors(const BatchGetRecordError& value) { m_errors.push_back(value); return *this; }
 
     /**
-     * <p>A list of errors that have occured when retrieving a batch of Records.</p>
+     * <p>A list of errors that have occurred when retrieving a batch of Records.</p>
      */
     inline BatchGetRecordResult& AddErrors(BatchGetRecordError&& value) { m_errors.push_back(std::move(value)); return *this; }
 

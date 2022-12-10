@@ -26,12 +26,12 @@ namespace drs
 {
 namespace Model
 {
-  class AWS_DRS_API ListStagingAccountsResult
+  class ListStagingAccountsResult
   {
   public:
-    ListStagingAccountsResult();
-    ListStagingAccountsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListStagingAccountsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DRS_API ListStagingAccountsResult();
+    AWS_DRS_API ListStagingAccountsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DRS_API ListStagingAccountsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

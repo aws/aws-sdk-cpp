@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/ChannelAssociatedWithFlowSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_CHIMESDKMESSAGING_API ChannelAssociatedWithFlowSummary
+  class ChannelAssociatedWithFlowSummary
   {
   public:
-    ChannelAssociatedWithFlowSummary();
-    ChannelAssociatedWithFlowSummary(Aws::Utils::Json::JsonView jsonValue);
-    ChannelAssociatedWithFlowSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIMESDKMESSAGING_API ChannelAssociatedWithFlowSummary();
+    AWS_CHIMESDKMESSAGING_API ChannelAssociatedWithFlowSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKMESSAGING_API ChannelAssociatedWithFlowSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKMESSAGING_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

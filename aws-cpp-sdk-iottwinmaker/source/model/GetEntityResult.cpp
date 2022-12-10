@@ -99,6 +99,12 @@ GetEntityResult& GetEntityResult::operator =(const Aws::AmazonWebServiceResult<J
 
   }
 
+  if(jsonValue.ValueExists("syncSource"))
+  {
+    m_syncSource = jsonValue.GetString("syncSource");
+
+  }
+
 
 
   return *this;

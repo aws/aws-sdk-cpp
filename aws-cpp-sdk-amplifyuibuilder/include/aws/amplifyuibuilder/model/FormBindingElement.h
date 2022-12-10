@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/FormBindingElement">AWS
    * API Reference</a></p>
    */
-  class AWS_AMPLIFYUIBUILDER_API FormBindingElement
+  class FormBindingElement
   {
   public:
-    FormBindingElement();
-    FormBindingElement(Aws::Utils::Json::JsonView jsonValue);
-    FormBindingElement& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_AMPLIFYUIBUILDER_API FormBindingElement();
+    AWS_AMPLIFYUIBUILDER_API FormBindingElement(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFYUIBUILDER_API FormBindingElement& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFYUIBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

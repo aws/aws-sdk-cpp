@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/Grant">AWS
    * API Reference</a></p>
    */
-  class AWS_LICENSEMANAGER_API Grant
+  class Grant
   {
   public:
-    Grant();
-    Grant(Aws::Utils::Json::JsonView jsonValue);
-    Grant& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LICENSEMANAGER_API Grant();
+    AWS_LICENSEMANAGER_API Grant(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LICENSEMANAGER_API Grant& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LICENSEMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

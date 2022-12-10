@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/CvssScoreDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_INSPECTOR2_API CvssScoreDetails
+  class CvssScoreDetails
   {
   public:
-    CvssScoreDetails();
-    CvssScoreDetails(Aws::Utils::Json::JsonView jsonValue);
-    CvssScoreDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_INSPECTOR2_API CvssScoreDetails();
+    AWS_INSPECTOR2_API CvssScoreDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR2_API CvssScoreDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

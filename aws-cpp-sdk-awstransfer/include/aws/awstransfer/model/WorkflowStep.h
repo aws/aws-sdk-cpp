@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/WorkflowStep">AWS
    * API Reference</a></p>
    */
-  class AWS_TRANSFER_API WorkflowStep
+  class WorkflowStep
   {
   public:
-    WorkflowStep();
-    WorkflowStep(Aws::Utils::Json::JsonView jsonValue);
-    WorkflowStep& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TRANSFER_API WorkflowStep();
+    AWS_TRANSFER_API WorkflowStep(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSFER_API WorkflowStep& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSFER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/TestGridVpcConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_DEVICEFARM_API TestGridVpcConfig
+  class TestGridVpcConfig
   {
   public:
-    TestGridVpcConfig();
-    TestGridVpcConfig(Aws::Utils::Json::JsonView jsonValue);
-    TestGridVpcConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DEVICEFARM_API TestGridVpcConfig();
+    AWS_DEVICEFARM_API TestGridVpcConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVICEFARM_API TestGridVpcConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVICEFARM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -7,6 +7,7 @@
 #include <aws/detective/Detective_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/detective/DetectiveServiceClientModel.h>
 
@@ -61,7 +62,7 @@ namespace Detective
    * is used to centrally manage multiple accounts. In the case of Detective, the
    * administrator account manages the accounts in their behavior graph.</p> 
    */
-  class AWS_DETECTIVE_API DetectiveClient : public Aws::Client::AWSJsonClient
+  class AWS_DETECTIVE_API DetectiveClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<DetectiveClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -115,7 +116,6 @@ namespace Detective
 
         /* End of legacy constructors due deprecation */
         virtual ~DetectiveClient();
-
 
         /**
          * <p>Accepts an invitation for the member account to contribute data to a behavior
@@ -645,6 +645,7 @@ namespace Detective
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<DetectiveEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<DetectiveClient>;
       void init(const DetectiveClientConfiguration& clientConfiguration);
 
       DetectiveClientConfiguration m_clientConfiguration;

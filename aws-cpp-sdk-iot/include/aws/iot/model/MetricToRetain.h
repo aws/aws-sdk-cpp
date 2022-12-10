@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/MetricToRetain">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API MetricToRetain
+  class MetricToRetain
   {
   public:
-    MetricToRetain();
-    MetricToRetain(Aws::Utils::Json::JsonView jsonValue);
-    MetricToRetain& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API MetricToRetain();
+    AWS_IOT_API MetricToRetain(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API MetricToRetain& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

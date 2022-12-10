@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/EdgePackagingJobSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API EdgePackagingJobSummary
+  class EdgePackagingJobSummary
   {
   public:
-    EdgePackagingJobSummary();
-    EdgePackagingJobSummary(Aws::Utils::Json::JsonView jsonValue);
-    EdgePackagingJobSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API EdgePackagingJobSummary();
+    AWS_SAGEMAKER_API EdgePackagingJobSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API EdgePackagingJobSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

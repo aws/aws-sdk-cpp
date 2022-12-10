@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/Connection">AWS
    * API Reference</a></p>
    */
-  class AWS_APPRUNNER_API Connection
+  class Connection
   {
   public:
-    Connection();
-    Connection(Aws::Utils::Json::JsonView jsonValue);
-    Connection& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPRUNNER_API Connection();
+    AWS_APPRUNNER_API Connection(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPRUNNER_API Connection& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPRUNNER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

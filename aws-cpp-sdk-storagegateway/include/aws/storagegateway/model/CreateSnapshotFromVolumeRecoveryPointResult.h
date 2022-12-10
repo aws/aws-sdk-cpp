@@ -24,12 +24,12 @@ namespace StorageGateway
 {
 namespace Model
 {
-  class AWS_STORAGEGATEWAY_API CreateSnapshotFromVolumeRecoveryPointResult
+  class CreateSnapshotFromVolumeRecoveryPointResult
   {
   public:
-    CreateSnapshotFromVolumeRecoveryPointResult();
-    CreateSnapshotFromVolumeRecoveryPointResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateSnapshotFromVolumeRecoveryPointResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_STORAGEGATEWAY_API CreateSnapshotFromVolumeRecoveryPointResult();
+    AWS_STORAGEGATEWAY_API CreateSnapshotFromVolumeRecoveryPointResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_STORAGEGATEWAY_API CreateSnapshotFromVolumeRecoveryPointResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

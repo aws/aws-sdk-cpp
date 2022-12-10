@@ -26,12 +26,12 @@ namespace ElasticBeanstalk
 {
 namespace Model
 {
-  class AWS_ELASTICBEANSTALK_API UpdateApplicationResourceLifecycleResult
+  class UpdateApplicationResourceLifecycleResult
   {
   public:
-    UpdateApplicationResourceLifecycleResult();
-    UpdateApplicationResourceLifecycleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    UpdateApplicationResourceLifecycleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ELASTICBEANSTALK_API UpdateApplicationResourceLifecycleResult();
+    AWS_ELASTICBEANSTALK_API UpdateApplicationResourceLifecycleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ELASTICBEANSTALK_API UpdateApplicationResourceLifecycleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

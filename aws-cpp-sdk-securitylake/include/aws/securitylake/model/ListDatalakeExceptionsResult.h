@@ -26,12 +26,12 @@ namespace SecurityLake
 {
 namespace Model
 {
-  class AWS_SECURITYLAKE_API ListDatalakeExceptionsResult
+  class ListDatalakeExceptionsResult
   {
   public:
-    ListDatalakeExceptionsResult();
-    ListDatalakeExceptionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListDatalakeExceptionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SECURITYLAKE_API ListDatalakeExceptionsResult();
+    AWS_SECURITYLAKE_API ListDatalakeExceptionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SECURITYLAKE_API ListDatalakeExceptionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

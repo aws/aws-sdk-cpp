@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/EventNotificationItemConfigurations">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTWIRELESS_API EventNotificationItemConfigurations
+  class EventNotificationItemConfigurations
   {
   public:
-    EventNotificationItemConfigurations();
-    EventNotificationItemConfigurations(Aws::Utils::Json::JsonView jsonValue);
-    EventNotificationItemConfigurations& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTWIRELESS_API EventNotificationItemConfigurations();
+    AWS_IOTWIRELESS_API EventNotificationItemConfigurations(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API EventNotificationItemConfigurations& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -22,12 +22,12 @@ namespace CodeStar
 {
 namespace Model
 {
-  class AWS_CODESTAR_API UpdateProjectResult
+  class UpdateProjectResult
   {
   public:
-    UpdateProjectResult();
-    UpdateProjectResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateProjectResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODESTAR_API UpdateProjectResult();
+    AWS_CODESTAR_API UpdateProjectResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODESTAR_API UpdateProjectResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

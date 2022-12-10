@@ -24,12 +24,12 @@ namespace WAFV2
 {
 namespace Model
 {
-  class AWS_WAFV2_API DeleteFirewallManagerRuleGroupsResult
+  class DeleteFirewallManagerRuleGroupsResult
   {
   public:
-    DeleteFirewallManagerRuleGroupsResult();
-    DeleteFirewallManagerRuleGroupsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteFirewallManagerRuleGroupsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WAFV2_API DeleteFirewallManagerRuleGroupsResult();
+    AWS_WAFV2_API DeleteFirewallManagerRuleGroupsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WAFV2_API DeleteFirewallManagerRuleGroupsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

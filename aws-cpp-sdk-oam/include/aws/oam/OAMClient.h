@@ -7,6 +7,7 @@
 #include <aws/oam/OAM_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/oam/OAMServiceClientModel.h>
 
@@ -31,7 +32,7 @@ namespace OAM
    * observability data can include metrics in Amazon CloudWatch, logs in Amazon
    * CloudWatch Logs, and traces in X-Ray.&lt;/p&gt; </code></pre>
    */
-  class AWS_OAM_API OAMClient : public Aws::Client::AWSJsonClient
+  class AWS_OAM_API OAMClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<OAMClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -85,7 +86,6 @@ namespace OAM
 
         /* End of legacy constructors due deprecation */
         virtual ~OAMClient();
-
 
         /**
          * <p>Creates a link between a source account and a sink that you have created in a
@@ -419,6 +419,7 @@ namespace OAM
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<OAMEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<OAMClient>;
       void init(const OAMClientConfiguration& clientConfiguration);
 
       OAMClientConfiguration m_clientConfiguration;

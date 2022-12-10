@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/EvaluationResult">AWS
    * API Reference</a></p>
    */
-  class AWS_FMS_API EvaluationResult
+  class EvaluationResult
   {
   public:
-    EvaluationResult();
-    EvaluationResult(Aws::Utils::Json::JsonView jsonValue);
-    EvaluationResult& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FMS_API EvaluationResult();
+    AWS_FMS_API EvaluationResult(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FMS_API EvaluationResult& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

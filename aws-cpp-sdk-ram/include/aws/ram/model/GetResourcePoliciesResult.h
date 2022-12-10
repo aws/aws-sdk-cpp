@@ -25,12 +25,12 @@ namespace RAM
 {
 namespace Model
 {
-  class AWS_RAM_API GetResourcePoliciesResult
+  class GetResourcePoliciesResult
   {
   public:
-    GetResourcePoliciesResult();
-    GetResourcePoliciesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetResourcePoliciesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_RAM_API GetResourcePoliciesResult();
+    AWS_RAM_API GetResourcePoliciesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_RAM_API GetResourcePoliciesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

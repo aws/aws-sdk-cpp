@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dlm-2018-01-12/DeprecateRule">AWS
    * API Reference</a></p>
    */
-  class AWS_DLM_API DeprecateRule
+  class DeprecateRule
   {
   public:
-    DeprecateRule();
-    DeprecateRule(Aws::Utils::Json::JsonView jsonValue);
-    DeprecateRule& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DLM_API DeprecateRule();
+    AWS_DLM_API DeprecateRule(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DLM_API DeprecateRule& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DLM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

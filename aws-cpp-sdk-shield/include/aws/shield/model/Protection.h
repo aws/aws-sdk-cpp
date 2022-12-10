@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/Protection">AWS
    * API Reference</a></p>
    */
-  class AWS_SHIELD_API Protection
+  class Protection
   {
   public:
-    Protection();
-    Protection(Aws::Utils::Json::JsonView jsonValue);
-    Protection& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SHIELD_API Protection();
+    AWS_SHIELD_API Protection(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SHIELD_API Protection& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SHIELD_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

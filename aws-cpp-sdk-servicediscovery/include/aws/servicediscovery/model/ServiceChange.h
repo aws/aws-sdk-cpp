@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/ServiceChange">AWS
    * API Reference</a></p>
    */
-  class AWS_SERVICEDISCOVERY_API ServiceChange
+  class ServiceChange
   {
   public:
-    ServiceChange();
-    ServiceChange(Aws::Utils::Json::JsonView jsonValue);
-    ServiceChange& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SERVICEDISCOVERY_API ServiceChange();
+    AWS_SERVICEDISCOVERY_API ServiceChange(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICEDISCOVERY_API ServiceChange& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICEDISCOVERY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

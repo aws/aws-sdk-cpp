@@ -23,13 +23,13 @@ namespace Kafka
 namespace Model
 {
 
-  class AWS_KAFKA_API StateInfo
+  class StateInfo
   {
   public:
-    StateInfo();
-    StateInfo(Aws::Utils::Json::JsonView jsonValue);
-    StateInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KAFKA_API StateInfo();
+    AWS_KAFKA_API StateInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKA_API StateInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

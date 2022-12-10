@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/TranslationSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_TRANSLATE_API TranslationSettings
+  class TranslationSettings
   {
   public:
-    TranslationSettings();
-    TranslationSettings(Aws::Utils::Json::JsonView jsonValue);
-    TranslationSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TRANSLATE_API TranslationSettings();
+    AWS_TRANSLATE_API TranslationSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSLATE_API TranslationSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSLATE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

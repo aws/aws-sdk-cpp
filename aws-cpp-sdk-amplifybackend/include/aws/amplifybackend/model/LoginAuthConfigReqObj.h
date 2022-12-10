@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/LoginAuthConfigReqObj">AWS
    * API Reference</a></p>
    */
-  class AWS_AMPLIFYBACKEND_API LoginAuthConfigReqObj
+  class LoginAuthConfigReqObj
   {
   public:
-    LoginAuthConfigReqObj();
-    LoginAuthConfigReqObj(Aws::Utils::Json::JsonView jsonValue);
-    LoginAuthConfigReqObj& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_AMPLIFYBACKEND_API LoginAuthConfigReqObj();
+    AWS_AMPLIFYBACKEND_API LoginAuthConfigReqObj(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFYBACKEND_API LoginAuthConfigReqObj& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFYBACKEND_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

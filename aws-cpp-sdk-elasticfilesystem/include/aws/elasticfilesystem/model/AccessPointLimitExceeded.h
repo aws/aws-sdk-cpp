@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/AccessPointLimitExceeded">AWS
    * API Reference</a></p>
    */
-  class AWS_EFS_API AccessPointLimitExceeded
+  class AccessPointLimitExceeded
   {
   public:
-    AccessPointLimitExceeded();
-    AccessPointLimitExceeded(Aws::Utils::Json::JsonView jsonValue);
-    AccessPointLimitExceeded& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EFS_API AccessPointLimitExceeded();
+    AWS_EFS_API AccessPointLimitExceeded(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EFS_API AccessPointLimitExceeded& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EFS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

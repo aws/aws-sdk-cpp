@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/FraudRiskDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_VOICEID_API FraudRiskDetails
+  class FraudRiskDetails
   {
   public:
-    FraudRiskDetails();
-    FraudRiskDetails(Aws::Utils::Json::JsonView jsonValue);
-    FraudRiskDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_VOICEID_API FraudRiskDetails();
+    AWS_VOICEID_API FraudRiskDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_VOICEID_API FraudRiskDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_VOICEID_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

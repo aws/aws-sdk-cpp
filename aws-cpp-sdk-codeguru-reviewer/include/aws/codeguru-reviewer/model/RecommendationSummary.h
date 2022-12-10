@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/RecommendationSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEGURUREVIEWER_API RecommendationSummary
+  class RecommendationSummary
   {
   public:
-    RecommendationSummary();
-    RecommendationSummary(Aws::Utils::Json::JsonView jsonValue);
-    RecommendationSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEGURUREVIEWER_API RecommendationSummary();
+    AWS_CODEGURUREVIEWER_API RecommendationSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEGURUREVIEWER_API RecommendationSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEGURUREVIEWER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -37,13 +37,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/ExplainabilityConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_FORECASTSERVICE_API ExplainabilityConfig
+  class ExplainabilityConfig
   {
   public:
-    ExplainabilityConfig();
-    ExplainabilityConfig(Aws::Utils::Json::JsonView jsonValue);
-    ExplainabilityConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FORECASTSERVICE_API ExplainabilityConfig();
+    AWS_FORECASTSERVICE_API ExplainabilityConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FORECASTSERVICE_API ExplainabilityConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FORECASTSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

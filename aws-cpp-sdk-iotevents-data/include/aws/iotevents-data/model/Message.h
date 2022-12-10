@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-data-2018-10-23/Message">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTEVENTSDATA_API Message
+  class Message
   {
   public:
-    Message();
-    Message(Aws::Utils::Json::JsonView jsonValue);
-    Message& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTEVENTSDATA_API Message();
+    AWS_IOTEVENTSDATA_API Message(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTEVENTSDATA_API Message& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTEVENTSDATA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

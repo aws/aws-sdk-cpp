@@ -30,12 +30,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-data-2018-08-01/RollbackTransactionResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_RDSDATASERVICE_API RollbackTransactionResult
+  class RollbackTransactionResult
   {
   public:
-    RollbackTransactionResult();
-    RollbackTransactionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    RollbackTransactionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_RDSDATASERVICE_API RollbackTransactionResult();
+    AWS_RDSDATASERVICE_API RollbackTransactionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_RDSDATASERVICE_API RollbackTransactionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

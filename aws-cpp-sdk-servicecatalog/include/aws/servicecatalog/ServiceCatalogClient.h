@@ -7,6 +7,7 @@
 #include <aws/servicecatalog/ServiceCatalog_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/servicecatalog/ServiceCatalogServiceClientModel.h>
 
@@ -23,7 +24,7 @@ namespace ServiceCatalog
    * href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/what-is_concepts.html">Service
    * Catalog Concepts</a>.</p>
    */
-  class AWS_SERVICECATALOG_API ServiceCatalogClient : public Aws::Client::AWSJsonClient
+  class AWS_SERVICECATALOG_API ServiceCatalogClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<ServiceCatalogClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -77,7 +78,6 @@ namespace ServiceCatalog
 
         /* End of legacy constructors due deprecation */
         virtual ~ServiceCatalogClient();
-
 
         /**
          * <p>Accepts an offer to share the specified portfolio.</p><p><h3>See Also:</h3>  
@@ -1824,6 +1824,7 @@ namespace ServiceCatalog
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<ServiceCatalogEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<ServiceCatalogClient>;
       void init(const ServiceCatalogClientConfiguration& clientConfiguration);
 
       ServiceCatalogClientConfiguration m_clientConfiguration;

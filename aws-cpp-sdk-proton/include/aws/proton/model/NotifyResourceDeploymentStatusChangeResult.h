@@ -22,12 +22,12 @@ namespace Proton
 {
 namespace Model
 {
-  class AWS_PROTON_API NotifyResourceDeploymentStatusChangeResult
+  class NotifyResourceDeploymentStatusChangeResult
   {
   public:
-    NotifyResourceDeploymentStatusChangeResult();
-    NotifyResourceDeploymentStatusChangeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    NotifyResourceDeploymentStatusChangeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PROTON_API NotifyResourceDeploymentStatusChangeResult();
+    AWS_PROTON_API NotifyResourceDeploymentStatusChangeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PROTON_API NotifyResourceDeploymentStatusChangeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

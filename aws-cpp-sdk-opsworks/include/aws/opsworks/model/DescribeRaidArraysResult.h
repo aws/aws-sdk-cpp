@@ -31,12 +31,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeRaidArraysResult">AWS
    * API Reference</a></p>
    */
-  class AWS_OPSWORKS_API DescribeRaidArraysResult
+  class DescribeRaidArraysResult
   {
   public:
-    DescribeRaidArraysResult();
-    DescribeRaidArraysResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeRaidArraysResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OPSWORKS_API DescribeRaidArraysResult();
+    AWS_OPSWORKS_API DescribeRaidArraysResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OPSWORKS_API DescribeRaidArraysResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

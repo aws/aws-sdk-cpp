@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ChildBlock">AWS
    * API Reference</a></p>
    */
-  class AWS_COMPREHEND_API ChildBlock
+  class ChildBlock
   {
   public:
-    ChildBlock();
-    ChildBlock(Aws::Utils::Json::JsonView jsonValue);
-    ChildBlock& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COMPREHEND_API ChildBlock();
+    AWS_COMPREHEND_API ChildBlock(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHEND_API ChildBlock& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHEND_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

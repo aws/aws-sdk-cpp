@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ConditionalFormattingIconDisplayConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API ConditionalFormattingIconDisplayConfiguration
+  class ConditionalFormattingIconDisplayConfiguration
   {
   public:
-    ConditionalFormattingIconDisplayConfiguration();
-    ConditionalFormattingIconDisplayConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    ConditionalFormattingIconDisplayConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API ConditionalFormattingIconDisplayConfiguration();
+    AWS_QUICKSIGHT_API ConditionalFormattingIconDisplayConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API ConditionalFormattingIconDisplayConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

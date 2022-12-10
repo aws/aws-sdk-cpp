@@ -24,12 +24,12 @@ namespace ApplicationCostProfiler
 {
 namespace Model
 {
-  class AWS_APPLICATIONCOSTPROFILER_API DeleteReportDefinitionResult
+  class DeleteReportDefinitionResult
   {
   public:
-    DeleteReportDefinitionResult();
-    DeleteReportDefinitionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteReportDefinitionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPLICATIONCOSTPROFILER_API DeleteReportDefinitionResult();
+    AWS_APPLICATIONCOSTPROFILER_API DeleteReportDefinitionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPLICATIONCOSTPROFILER_API DeleteReportDefinitionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

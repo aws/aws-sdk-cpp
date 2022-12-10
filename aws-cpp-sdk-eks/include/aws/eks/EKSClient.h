@@ -7,6 +7,7 @@
 #include <aws/eks/EKS_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/eks/EKSServiceClientModel.h>
 
@@ -27,7 +28,7 @@ namespace EKS
    * means that you can easily migrate any standard Kubernetes application to Amazon
    * EKS without any code modification required.</p>
    */
-  class AWS_EKS_API EKSClient : public Aws::Client::AWSJsonClient
+  class AWS_EKS_API EKSClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<EKSClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -81,7 +82,6 @@ namespace EKS
 
         /* End of legacy constructors due deprecation */
         virtual ~EKSClient();
-
 
         /**
          * <p>Associate encryption configuration to an existing cluster.</p> <p>You can use
@@ -383,6 +383,23 @@ namespace EKS
          * An Async wrapper for DescribeAddon that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeAddonAsync(const Model::DescribeAddonRequest& request, const DescribeAddonResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns configuration options.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeAddonConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeAddonConfigurationOutcome DescribeAddonConfiguration(const Model::DescribeAddonConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeAddonConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeAddonConfigurationOutcomeCallable DescribeAddonConfigurationCallable(const Model::DescribeAddonConfigurationRequest& request) const;
+
+        /**
+         * An Async wrapper for DescribeAddonConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeAddonConfigurationAsync(const Model::DescribeAddonConfigurationRequest& request, const DescribeAddonConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the versions for an add-on. Information such as the Kubernetes
@@ -866,6 +883,7 @@ namespace EKS
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<EKSEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<EKSClient>;
       void init(const EKSClientConfiguration& clientConfiguration);
 
       EKSClientConfiguration m_clientConfiguration;

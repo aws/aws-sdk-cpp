@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/SameSheetTargetVisualConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API SameSheetTargetVisualConfiguration
+  class SameSheetTargetVisualConfiguration
   {
   public:
-    SameSheetTargetVisualConfiguration();
-    SameSheetTargetVisualConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    SameSheetTargetVisualConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API SameSheetTargetVisualConfiguration();
+    AWS_QUICKSIGHT_API SameSheetTargetVisualConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API SameSheetTargetVisualConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

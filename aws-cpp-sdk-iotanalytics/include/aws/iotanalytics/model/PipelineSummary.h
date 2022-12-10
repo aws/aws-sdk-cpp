@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/PipelineSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTANALYTICS_API PipelineSummary
+  class PipelineSummary
   {
   public:
-    PipelineSummary();
-    PipelineSummary(Aws::Utils::Json::JsonView jsonValue);
-    PipelineSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTANALYTICS_API PipelineSummary();
+    AWS_IOTANALYTICS_API PipelineSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTANALYTICS_API PipelineSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

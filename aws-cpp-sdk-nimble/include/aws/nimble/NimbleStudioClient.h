@@ -7,6 +7,7 @@
 #include <aws/nimble/NimbleStudio_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/nimble/NimbleStudioServiceClientModel.h>
 
@@ -21,7 +22,7 @@ namespace NimbleStudio
    * empowers visual effects, animation, and interactive content teams to create
    * content securely within a scalable, private cloud service.</p>
    */
-  class AWS_NIMBLESTUDIO_API NimbleStudioClient : public Aws::Client::AWSJsonClient
+  class AWS_NIMBLESTUDIO_API NimbleStudioClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<NimbleStudioClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -75,7 +76,6 @@ namespace NimbleStudio
 
         /* End of legacy constructors due deprecation */
         virtual ~NimbleStudioClient();
-
 
         /**
          * <p>Accept EULAs.</p><p><h3>See Also:</h3>   <a
@@ -940,6 +940,7 @@ namespace NimbleStudio
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<NimbleStudioEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<NimbleStudioClient>;
       void init(const NimbleStudioClientConfiguration& clientConfiguration);
 
       NimbleStudioClientConfiguration m_clientConfiguration;

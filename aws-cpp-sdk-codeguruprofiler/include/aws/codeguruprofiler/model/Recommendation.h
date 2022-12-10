@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/Recommendation">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEGURUPROFILER_API Recommendation
+  class Recommendation
   {
   public:
-    Recommendation();
-    Recommendation(Aws::Utils::Json::JsonView jsonValue);
-    Recommendation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEGURUPROFILER_API Recommendation();
+    AWS_CODEGURUPROFILER_API Recommendation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEGURUPROFILER_API Recommendation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEGURUPROFILER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

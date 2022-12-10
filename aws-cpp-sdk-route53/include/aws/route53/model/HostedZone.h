@@ -30,14 +30,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/HostedZone">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53_API HostedZone
+  class HostedZone
   {
   public:
-    HostedZone();
-    HostedZone(const Aws::Utils::Xml::XmlNode& xmlNode);
-    HostedZone& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ROUTE53_API HostedZone();
+    AWS_ROUTE53_API HostedZone(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ROUTE53_API HostedZone& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_ROUTE53_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**

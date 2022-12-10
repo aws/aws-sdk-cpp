@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/NetworkConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_BATCH_API NetworkConfiguration
+  class NetworkConfiguration
   {
   public:
-    NetworkConfiguration();
-    NetworkConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    NetworkConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BATCH_API NetworkConfiguration();
+    AWS_BATCH_API NetworkConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BATCH_API NetworkConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BATCH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

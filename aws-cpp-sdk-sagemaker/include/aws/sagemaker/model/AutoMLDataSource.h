@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/AutoMLDataSource">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API AutoMLDataSource
+  class AutoMLDataSource
   {
   public:
-    AutoMLDataSource();
-    AutoMLDataSource(Aws::Utils::Json::JsonView jsonValue);
-    AutoMLDataSource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API AutoMLDataSource();
+    AWS_SAGEMAKER_API AutoMLDataSource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API AutoMLDataSource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

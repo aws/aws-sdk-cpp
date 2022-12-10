@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/CloudWatchLogsLogStream">AWS
    * API Reference</a></p>
    */
-  class AWS_OPSWORKS_API CloudWatchLogsLogStream
+  class CloudWatchLogsLogStream
   {
   public:
-    CloudWatchLogsLogStream();
-    CloudWatchLogsLogStream(Aws::Utils::Json::JsonView jsonValue);
-    CloudWatchLogsLogStream& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OPSWORKS_API CloudWatchLogsLogStream();
+    AWS_OPSWORKS_API CloudWatchLogsLogStream(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPSWORKS_API CloudWatchLogsLogStream& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPSWORKS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

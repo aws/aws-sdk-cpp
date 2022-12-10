@@ -30,15 +30,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ProcessorInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API ProcessorInfo
+  class ProcessorInfo
   {
   public:
-    ProcessorInfo();
-    ProcessorInfo(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ProcessorInfo& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API ProcessorInfo();
+    AWS_EC2_API ProcessorInfo(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API ProcessorInfo& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**

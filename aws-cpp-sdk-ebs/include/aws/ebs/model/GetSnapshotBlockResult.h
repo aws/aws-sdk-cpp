@@ -20,21 +20,21 @@ namespace EBS
 {
 namespace Model
 {
-  class AWS_EBS_API GetSnapshotBlockResult
+  class GetSnapshotBlockResult
   {
   public:
-    GetSnapshotBlockResult();
+    AWS_EBS_API GetSnapshotBlockResult();
     //We have to define these because Microsoft doesn't auto generate them
-    GetSnapshotBlockResult(GetSnapshotBlockResult&&);
-    GetSnapshotBlockResult& operator=(GetSnapshotBlockResult&&);
+    AWS_EBS_API GetSnapshotBlockResult(GetSnapshotBlockResult&&);
+    AWS_EBS_API GetSnapshotBlockResult& operator=(GetSnapshotBlockResult&&);
     //we delete these because Microsoft doesn't handle move generation correctly
     //and we therefore don't trust them to get it right here either.
     GetSnapshotBlockResult(const GetSnapshotBlockResult&) = delete;
     GetSnapshotBlockResult& operator=(const GetSnapshotBlockResult&) = delete;
 
 
-    GetSnapshotBlockResult(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
-    GetSnapshotBlockResult& operator=(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
+    AWS_EBS_API GetSnapshotBlockResult(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
+    AWS_EBS_API GetSnapshotBlockResult& operator=(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
 
 
 

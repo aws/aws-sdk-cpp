@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/SendOTPMessageRequestParameters">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API SendOTPMessageRequestParameters
+  class SendOTPMessageRequestParameters
   {
   public:
-    SendOTPMessageRequestParameters();
-    SendOTPMessageRequestParameters(Aws::Utils::Json::JsonView jsonValue);
-    SendOTPMessageRequestParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API SendOTPMessageRequestParameters();
+    AWS_PINPOINT_API SendOTPMessageRequestParameters(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API SendOTPMessageRequestParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

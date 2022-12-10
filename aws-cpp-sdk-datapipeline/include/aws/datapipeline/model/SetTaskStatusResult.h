@@ -27,12 +27,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/SetTaskStatusOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_DATAPIPELINE_API SetTaskStatusResult
+  class SetTaskStatusResult
   {
   public:
-    SetTaskStatusResult();
-    SetTaskStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    SetTaskStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DATAPIPELINE_API SetTaskStatusResult();
+    AWS_DATAPIPELINE_API SetTaskStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DATAPIPELINE_API SetTaskStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

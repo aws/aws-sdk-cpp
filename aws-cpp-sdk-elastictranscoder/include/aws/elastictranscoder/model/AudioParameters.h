@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elastictranscoder-2012-09-25/AudioParameters">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICTRANSCODER_API AudioParameters
+  class AudioParameters
   {
   public:
-    AudioParameters();
-    AudioParameters(Aws::Utils::Json::JsonView jsonValue);
-    AudioParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ELASTICTRANSCODER_API AudioParameters();
+    AWS_ELASTICTRANSCODER_API AudioParameters(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICTRANSCODER_API AudioParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICTRANSCODER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

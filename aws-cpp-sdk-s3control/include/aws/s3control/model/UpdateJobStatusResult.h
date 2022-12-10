@@ -25,12 +25,12 @@ namespace S3Control
 {
 namespace Model
 {
-  class AWS_S3CONTROL_API UpdateJobStatusResult
+  class UpdateJobStatusResult
   {
   public:
-    UpdateJobStatusResult();
-    UpdateJobStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    UpdateJobStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_S3CONTROL_API UpdateJobStatusResult();
+    AWS_S3CONTROL_API UpdateJobStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_S3CONTROL_API UpdateJobStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ReferenceLineLabelConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API ReferenceLineLabelConfiguration
+  class ReferenceLineLabelConfiguration
   {
   public:
-    ReferenceLineLabelConfiguration();
-    ReferenceLineLabelConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    ReferenceLineLabelConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API ReferenceLineLabelConfiguration();
+    AWS_QUICKSIGHT_API ReferenceLineLabelConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API ReferenceLineLabelConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

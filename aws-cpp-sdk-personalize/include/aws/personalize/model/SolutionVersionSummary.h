@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/SolutionVersionSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_PERSONALIZE_API SolutionVersionSummary
+  class SolutionVersionSummary
   {
   public:
-    SolutionVersionSummary();
-    SolutionVersionSummary(Aws::Utils::Json::JsonView jsonValue);
-    SolutionVersionSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PERSONALIZE_API SolutionVersionSummary();
+    AWS_PERSONALIZE_API SolutionVersionSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PERSONALIZE_API SolutionVersionSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PERSONALIZE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

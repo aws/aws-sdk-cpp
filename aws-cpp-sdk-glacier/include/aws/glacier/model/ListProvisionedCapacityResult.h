@@ -25,12 +25,12 @@ namespace Glacier
 {
 namespace Model
 {
-  class AWS_GLACIER_API ListProvisionedCapacityResult
+  class ListProvisionedCapacityResult
   {
   public:
-    ListProvisionedCapacityResult();
-    ListProvisionedCapacityResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListProvisionedCapacityResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GLACIER_API ListProvisionedCapacityResult();
+    AWS_GLACIER_API ListProvisionedCapacityResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GLACIER_API ListProvisionedCapacityResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

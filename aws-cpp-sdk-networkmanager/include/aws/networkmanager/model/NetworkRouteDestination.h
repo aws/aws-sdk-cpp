@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/NetworkRouteDestination">AWS
    * API Reference</a></p>
    */
-  class AWS_NETWORKMANAGER_API NetworkRouteDestination
+  class NetworkRouteDestination
   {
   public:
-    NetworkRouteDestination();
-    NetworkRouteDestination(Aws::Utils::Json::JsonView jsonValue);
-    NetworkRouteDestination& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_NETWORKMANAGER_API NetworkRouteDestination();
+    AWS_NETWORKMANAGER_API NetworkRouteDestination(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKMANAGER_API NetworkRouteDestination& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NETWORKMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

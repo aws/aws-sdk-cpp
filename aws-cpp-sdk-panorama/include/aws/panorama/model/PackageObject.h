@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/panorama-2019-07-24/PackageObject">AWS
    * API Reference</a></p>
    */
-  class AWS_PANORAMA_API PackageObject
+  class PackageObject
   {
   public:
-    PackageObject();
-    PackageObject(Aws::Utils::Json::JsonView jsonValue);
-    PackageObject& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PANORAMA_API PackageObject();
+    AWS_PANORAMA_API PackageObject(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PANORAMA_API PackageObject& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PANORAMA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

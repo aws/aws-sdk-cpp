@@ -23,13 +23,13 @@ namespace Kafka
 namespace Model
 {
 
-  class AWS_KAFKA_API S3
+  class S3
   {
   public:
-    S3();
-    S3(Aws::Utils::Json::JsonView jsonValue);
-    S3& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KAFKA_API S3();
+    AWS_KAFKA_API S3(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKA_API S3& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

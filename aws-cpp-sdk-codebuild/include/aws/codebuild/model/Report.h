@@ -38,13 +38,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/Report">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEBUILD_API Report
+  class Report
   {
   public:
-    Report();
-    Report(Aws::Utils::Json::JsonView jsonValue);
-    Report& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEBUILD_API Report();
+    AWS_CODEBUILD_API Report(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEBUILD_API Report& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEBUILD_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

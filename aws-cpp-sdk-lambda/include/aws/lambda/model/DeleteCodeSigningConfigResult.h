@@ -22,12 +22,12 @@ namespace Lambda
 {
 namespace Model
 {
-  class AWS_LAMBDA_API DeleteCodeSigningConfigResult
+  class DeleteCodeSigningConfigResult
   {
   public:
-    DeleteCodeSigningConfigResult();
-    DeleteCodeSigningConfigResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteCodeSigningConfigResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LAMBDA_API DeleteCodeSigningConfigResult();
+    AWS_LAMBDA_API DeleteCodeSigningConfigResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LAMBDA_API DeleteCodeSigningConfigResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

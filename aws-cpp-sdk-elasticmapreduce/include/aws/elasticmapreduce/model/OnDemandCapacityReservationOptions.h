@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/OnDemandCapacityReservationOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_EMR_API OnDemandCapacityReservationOptions
+  class OnDemandCapacityReservationOptions
   {
   public:
-    OnDemandCapacityReservationOptions();
-    OnDemandCapacityReservationOptions(Aws::Utils::Json::JsonView jsonValue);
-    OnDemandCapacityReservationOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EMR_API OnDemandCapacityReservationOptions();
+    AWS_EMR_API OnDemandCapacityReservationOptions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMR_API OnDemandCapacityReservationOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

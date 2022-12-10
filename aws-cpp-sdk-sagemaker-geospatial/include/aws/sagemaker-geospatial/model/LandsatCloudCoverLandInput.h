@@ -26,13 +26,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-geospatial-2020-05-27/LandsatCloudCoverLandInput">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKERGEOSPATIAL_API LandsatCloudCoverLandInput
+  class LandsatCloudCoverLandInput
   {
   public:
-    LandsatCloudCoverLandInput();
-    LandsatCloudCoverLandInput(Aws::Utils::Json::JsonView jsonValue);
-    LandsatCloudCoverLandInput& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKERGEOSPATIAL_API LandsatCloudCoverLandInput();
+    AWS_SAGEMAKERGEOSPATIAL_API LandsatCloudCoverLandInput(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKERGEOSPATIAL_API LandsatCloudCoverLandInput& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKERGEOSPATIAL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

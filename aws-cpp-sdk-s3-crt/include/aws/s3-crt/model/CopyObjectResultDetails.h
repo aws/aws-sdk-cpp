@@ -28,14 +28,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/CopyObjectResult">AWS
    * API Reference</a></p>
    */
-  class AWS_S3CRT_API CopyObjectResultDetails
+  class CopyObjectResultDetails
   {
   public:
-    CopyObjectResultDetails();
-    CopyObjectResultDetails(const Aws::Utils::Xml::XmlNode& xmlNode);
-    CopyObjectResultDetails& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CRT_API CopyObjectResultDetails();
+    AWS_S3CRT_API CopyObjectResultDetails(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CRT_API CopyObjectResultDetails& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_S3CRT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**

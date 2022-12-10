@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/StatisticsConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUEDATABREW_API StatisticsConfiguration
+  class StatisticsConfiguration
   {
   public:
-    StatisticsConfiguration();
-    StatisticsConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    StatisticsConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUEDATABREW_API StatisticsConfiguration();
+    AWS_GLUEDATABREW_API StatisticsConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUEDATABREW_API StatisticsConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUEDATABREW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

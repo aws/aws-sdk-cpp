@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/Range">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API Range
+  class Range
   {
   public:
-    Range();
-    Range(Aws::Utils::Json::JsonView jsonValue);
-    Range& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API Range();
+    AWS_SECURITYHUB_API Range(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Range& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

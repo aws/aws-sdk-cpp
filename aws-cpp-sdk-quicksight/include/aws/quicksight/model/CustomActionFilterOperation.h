@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CustomActionFilterOperation">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API CustomActionFilterOperation
+  class CustomActionFilterOperation
   {
   public:
-    CustomActionFilterOperation();
-    CustomActionFilterOperation(Aws::Utils::Json::JsonView jsonValue);
-    CustomActionFilterOperation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API CustomActionFilterOperation();
+    AWS_QUICKSIGHT_API CustomActionFilterOperation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API CustomActionFilterOperation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/CaptionDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API CaptionDescription
+  class CaptionDescription
   {
   public:
-    CaptionDescription();
-    CaptionDescription(Aws::Utils::Json::JsonView jsonValue);
-    CaptionDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API CaptionDescription();
+    AWS_MEDIACONVERT_API CaptionDescription(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API CaptionDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-events-2018-03-22/Item">AWS
    * API Reference</a></p>
    */
-  class AWS_PERSONALIZEEVENTS_API Item
+  class Item
   {
   public:
-    Item();
-    Item(Aws::Utils::Json::JsonView jsonValue);
-    Item& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PERSONALIZEEVENTS_API Item();
+    AWS_PERSONALIZEEVENTS_API Item(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PERSONALIZEEVENTS_API Item& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PERSONALIZEEVENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

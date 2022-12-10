@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/ChannelsResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API ChannelsResponse
+  class ChannelsResponse
   {
   public:
-    ChannelsResponse();
-    ChannelsResponse(Aws::Utils::Json::JsonView jsonValue);
-    ChannelsResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API ChannelsResponse();
+    AWS_PINPOINT_API ChannelsResponse(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API ChannelsResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

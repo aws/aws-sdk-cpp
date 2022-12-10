@@ -23,13 +23,13 @@ namespace IoT1ClickDevicesService
 namespace Model
 {
 
-  class AWS_IOT1CLICKDEVICESSERVICE_API InternalFailureException
+  class InternalFailureException
   {
   public:
-    InternalFailureException();
-    InternalFailureException(Aws::Utils::Json::JsonView jsonValue);
-    InternalFailureException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT1CLICKDEVICESSERVICE_API InternalFailureException();
+    AWS_IOT1CLICKDEVICESSERVICE_API InternalFailureException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT1CLICKDEVICESSERVICE_API InternalFailureException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT1CLICKDEVICESSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

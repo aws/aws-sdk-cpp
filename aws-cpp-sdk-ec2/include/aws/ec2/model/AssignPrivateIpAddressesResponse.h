@@ -28,12 +28,12 @@ namespace EC2
 {
 namespace Model
 {
-  class AWS_EC2_API AssignPrivateIpAddressesResponse
+  class AssignPrivateIpAddressesResponse
   {
   public:
-    AssignPrivateIpAddressesResponse();
-    AssignPrivateIpAddressesResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    AssignPrivateIpAddressesResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API AssignPrivateIpAddressesResponse();
+    AWS_EC2_API AssignPrivateIpAddressesResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API AssignPrivateIpAddressesResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

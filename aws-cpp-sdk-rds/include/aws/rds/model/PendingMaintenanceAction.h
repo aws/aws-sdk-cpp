@@ -30,15 +30,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/PendingMaintenanceAction">AWS
    * API Reference</a></p>
    */
-  class AWS_RDS_API PendingMaintenanceAction
+  class PendingMaintenanceAction
   {
   public:
-    PendingMaintenanceAction();
-    PendingMaintenanceAction(const Aws::Utils::Xml::XmlNode& xmlNode);
-    PendingMaintenanceAction& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_RDS_API PendingMaintenanceAction();
+    AWS_RDS_API PendingMaintenanceAction(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_RDS_API PendingMaintenanceAction& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_RDS_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_RDS_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**

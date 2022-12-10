@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/RegistryId">AWS API
    * Reference</a></p>
    */
-  class AWS_GLUE_API RegistryId
+  class RegistryId
   {
   public:
-    RegistryId();
-    RegistryId(Aws::Utils::Json::JsonView jsonValue);
-    RegistryId& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API RegistryId();
+    AWS_GLUE_API RegistryId(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API RegistryId& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

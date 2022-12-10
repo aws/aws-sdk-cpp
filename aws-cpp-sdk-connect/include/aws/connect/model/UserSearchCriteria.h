@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UserSearchCriteria">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECT_API UserSearchCriteria
+  class UserSearchCriteria
   {
   public:
-    UserSearchCriteria();
-    UserSearchCriteria(Aws::Utils::Json::JsonView jsonValue);
-    UserSearchCriteria& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECT_API UserSearchCriteria();
+    AWS_CONNECT_API UserSearchCriteria(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API UserSearchCriteria& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

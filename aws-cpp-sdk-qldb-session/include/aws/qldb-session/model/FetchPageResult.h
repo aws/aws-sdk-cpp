@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/qldb-session-2019-07-11/FetchPageResult">AWS
    * API Reference</a></p>
    */
-  class AWS_QLDBSESSION_API FetchPageResult
+  class FetchPageResult
   {
   public:
-    FetchPageResult();
-    FetchPageResult(Aws::Utils::Json::JsonView jsonValue);
-    FetchPageResult& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QLDBSESSION_API FetchPageResult();
+    AWS_QLDBSESSION_API FetchPageResult(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QLDBSESSION_API FetchPageResult& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QLDBSESSION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

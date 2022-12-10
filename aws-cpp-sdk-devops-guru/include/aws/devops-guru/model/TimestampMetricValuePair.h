@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/TimestampMetricValuePair">AWS
    * API Reference</a></p>
    */
-  class AWS_DEVOPSGURU_API TimestampMetricValuePair
+  class TimestampMetricValuePair
   {
   public:
-    TimestampMetricValuePair();
-    TimestampMetricValuePair(Aws::Utils::Json::JsonView jsonValue);
-    TimestampMetricValuePair& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DEVOPSGURU_API TimestampMetricValuePair();
+    AWS_DEVOPSGURU_API TimestampMetricValuePair(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVOPSGURU_API TimestampMetricValuePair& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVOPSGURU_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

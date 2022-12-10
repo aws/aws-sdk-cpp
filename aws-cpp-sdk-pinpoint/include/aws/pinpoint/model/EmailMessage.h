@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/EmailMessage">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API EmailMessage
+  class EmailMessage
   {
   public:
-    EmailMessage();
-    EmailMessage(Aws::Utils::Json::JsonView jsonValue);
-    EmailMessage& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API EmailMessage();
+    AWS_PINPOINT_API EmailMessage(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API EmailMessage& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

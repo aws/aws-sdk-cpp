@@ -37,13 +37,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/Audio">AWS
    * API Reference</a></p>
    */
-  class AWS_ALEXAFORBUSINESS_API Audio
+  class Audio
   {
   public:
-    Audio();
-    Audio(Aws::Utils::Json::JsonView jsonValue);
-    Audio& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ALEXAFORBUSINESS_API Audio();
+    AWS_ALEXAFORBUSINESS_API Audio(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ALEXAFORBUSINESS_API Audio& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ALEXAFORBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

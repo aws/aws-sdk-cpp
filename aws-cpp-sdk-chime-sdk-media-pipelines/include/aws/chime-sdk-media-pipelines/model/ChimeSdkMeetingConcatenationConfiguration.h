@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/ChimeSdkMeetingConcatenationConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_CHIMESDKMEDIAPIPELINES_API ChimeSdkMeetingConcatenationConfiguration
+  class ChimeSdkMeetingConcatenationConfiguration
   {
   public:
-    ChimeSdkMeetingConcatenationConfiguration();
-    ChimeSdkMeetingConcatenationConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    ChimeSdkMeetingConcatenationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIMESDKMEDIAPIPELINES_API ChimeSdkMeetingConcatenationConfiguration();
+    AWS_CHIMESDKMEDIAPIPELINES_API ChimeSdkMeetingConcatenationConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKMEDIAPIPELINES_API ChimeSdkMeetingConcatenationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKMEDIAPIPELINES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

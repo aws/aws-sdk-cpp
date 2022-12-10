@@ -37,15 +37,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/MessageAttributeValue">AWS
    * API Reference</a></p>
    */
-  class AWS_SQS_API MessageAttributeValue
+  class MessageAttributeValue
   {
   public:
-    MessageAttributeValue();
-    MessageAttributeValue(const Aws::Utils::Xml::XmlNode& xmlNode);
-    MessageAttributeValue& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_SQS_API MessageAttributeValue();
+    AWS_SQS_API MessageAttributeValue(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_SQS_API MessageAttributeValue& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_SQS_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_SQS_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**

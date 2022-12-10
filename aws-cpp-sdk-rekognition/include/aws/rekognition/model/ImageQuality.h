@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/ImageQuality">AWS
    * API Reference</a></p>
    */
-  class AWS_REKOGNITION_API ImageQuality
+  class ImageQuality
   {
   public:
-    ImageQuality();
-    ImageQuality(Aws::Utils::Json::JsonView jsonValue);
-    ImageQuality& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_REKOGNITION_API ImageQuality();
+    AWS_REKOGNITION_API ImageQuality(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API ImageQuality& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/BatchDetachPolicyResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDDIRECTORY_API BatchDetachPolicyResponse
+  class BatchDetachPolicyResponse
   {
   public:
-    BatchDetachPolicyResponse();
-    BatchDetachPolicyResponse(Aws::Utils::Json::JsonView jsonValue);
-    BatchDetachPolicyResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDDIRECTORY_API BatchDetachPolicyResponse();
+    AWS_CLOUDDIRECTORY_API BatchDetachPolicyResponse(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDDIRECTORY_API BatchDetachPolicyResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDDIRECTORY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
   };
 

@@ -28,14 +28,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ReusableDelegationSetLimit">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53_API ReusableDelegationSetLimit
+  class ReusableDelegationSetLimit
   {
   public:
-    ReusableDelegationSetLimit();
-    ReusableDelegationSetLimit(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ReusableDelegationSetLimit& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ROUTE53_API ReusableDelegationSetLimit();
+    AWS_ROUTE53_API ReusableDelegationSetLimit(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ROUTE53_API ReusableDelegationSetLimit& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_ROUTE53_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**

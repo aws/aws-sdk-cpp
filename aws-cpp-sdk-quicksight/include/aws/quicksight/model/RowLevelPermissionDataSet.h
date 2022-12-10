@@ -38,13 +38,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/RowLevelPermissionDataSet">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API RowLevelPermissionDataSet
+  class RowLevelPermissionDataSet
   {
   public:
-    RowLevelPermissionDataSet();
-    RowLevelPermissionDataSet(Aws::Utils::Json::JsonView jsonValue);
-    RowLevelPermissionDataSet& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API RowLevelPermissionDataSet();
+    AWS_QUICKSIGHT_API RowLevelPermissionDataSet(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API RowLevelPermissionDataSet& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

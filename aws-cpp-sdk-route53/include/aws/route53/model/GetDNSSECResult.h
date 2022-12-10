@@ -26,12 +26,12 @@ namespace Route53
 {
 namespace Model
 {
-  class AWS_ROUTE53_API GetDNSSECResult
+  class GetDNSSECResult
   {
   public:
-    GetDNSSECResult();
-    GetDNSSECResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    GetDNSSECResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ROUTE53_API GetDNSSECResult();
+    AWS_ROUTE53_API GetDNSSECResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ROUTE53_API GetDNSSECResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

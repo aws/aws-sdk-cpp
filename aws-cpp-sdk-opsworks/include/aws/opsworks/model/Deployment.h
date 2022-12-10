@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/Deployment">AWS
    * API Reference</a></p>
    */
-  class AWS_OPSWORKS_API Deployment
+  class Deployment
   {
   public:
-    Deployment();
-    Deployment(Aws::Utils::Json::JsonView jsonValue);
-    Deployment& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OPSWORKS_API Deployment();
+    AWS_OPSWORKS_API Deployment(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPSWORKS_API Deployment& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPSWORKS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

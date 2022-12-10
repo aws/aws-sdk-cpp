@@ -31,12 +31,12 @@ namespace Connect
 {
 namespace Model
 {
-  class AWS_CONNECT_API GetTaskTemplateResult
+  class GetTaskTemplateResult
   {
   public:
-    GetTaskTemplateResult();
-    GetTaskTemplateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetTaskTemplateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CONNECT_API GetTaskTemplateResult();
+    AWS_CONNECT_API GetTaskTemplateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CONNECT_API GetTaskTemplateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

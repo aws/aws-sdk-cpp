@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/VpcDNSTarget">AWS
    * API Reference</a></p>
    */
-  class AWS_APPRUNNER_API VpcDNSTarget
+  class VpcDNSTarget
   {
   public:
-    VpcDNSTarget();
-    VpcDNSTarget(Aws::Utils::Json::JsonView jsonValue);
-    VpcDNSTarget& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPRUNNER_API VpcDNSTarget();
+    AWS_APPRUNNER_API VpcDNSTarget(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPRUNNER_API VpcDNSTarget& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPRUNNER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

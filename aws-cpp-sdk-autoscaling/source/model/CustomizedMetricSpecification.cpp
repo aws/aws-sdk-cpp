@@ -26,7 +26,8 @@ CustomizedMetricSpecification::CustomizedMetricSpecification() :
     m_dimensionsHasBeenSet(false),
     m_statistic(MetricStatistic::NOT_SET),
     m_statisticHasBeenSet(false),
-    m_unitHasBeenSet(false)
+    m_unitHasBeenSet(false),
+    m_metricsHasBeenSet(false)
 {
 }
 
@@ -36,7 +37,8 @@ CustomizedMetricSpecification::CustomizedMetricSpecification(const XmlNode& xmlN
     m_dimensionsHasBeenSet(false),
     m_statistic(MetricStatistic::NOT_SET),
     m_statisticHasBeenSet(false),
-    m_unitHasBeenSet(false)
+    m_unitHasBeenSet(false),
+    m_metricsHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -83,6 +85,18 @@ CustomizedMetricSpecification& CustomizedMetricSpecification::operator =(const X
       m_unit = Aws::Utils::Xml::DecodeEscapedXmlText(unitNode.GetText());
       m_unitHasBeenSet = true;
     }
+    XmlNode metricsNode = resultNode.FirstChild("Metrics");
+    if(!metricsNode.IsNull())
+    {
+      XmlNode metricsMember = metricsNode.FirstChild("member");
+      while(!metricsMember.IsNull())
+      {
+        m_metrics.push_back(metricsMember);
+        metricsMember = metricsMember.NextNode("member");
+      }
+
+      m_metricsHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -121,6 +135,17 @@ void CustomizedMetricSpecification::OutputToStream(Aws::OStream& oStream, const 
       oStream << location << index << locationValue << ".Unit=" << StringUtils::URLEncode(m_unit.c_str()) << "&";
   }
 
+  if(m_metricsHasBeenSet)
+  {
+      unsigned metricsIdx = 1;
+      for(auto& item : m_metrics)
+      {
+        Aws::StringStream metricsSs;
+        metricsSs << location << index << locationValue << ".Metrics.member." << metricsIdx++;
+        item.OutputToStream(oStream, metricsSs.str().c_str());
+      }
+  }
+
 }
 
 void CustomizedMetricSpecification::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -150,6 +175,16 @@ void CustomizedMetricSpecification::OutputToStream(Aws::OStream& oStream, const 
   if(m_unitHasBeenSet)
   {
       oStream << location << ".Unit=" << StringUtils::URLEncode(m_unit.c_str()) << "&";
+  }
+  if(m_metricsHasBeenSet)
+  {
+      unsigned metricsIdx = 1;
+      for(auto& item : m_metrics)
+      {
+        Aws::StringStream metricsSs;
+        metricsSs << location <<  ".Metrics.member." << metricsIdx++;
+        item.OutputToStream(oStream, metricsSs.str().c_str());
+      }
   }
 }
 

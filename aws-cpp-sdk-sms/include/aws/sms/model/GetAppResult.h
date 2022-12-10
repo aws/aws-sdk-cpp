@@ -27,12 +27,12 @@ namespace SMS
 {
 namespace Model
 {
-  class AWS_SMS_API GetAppResult
+  class GetAppResult
   {
   public:
-    GetAppResult();
-    GetAppResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetAppResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SMS_API GetAppResult();
+    AWS_SMS_API GetAppResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SMS_API GetAppResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

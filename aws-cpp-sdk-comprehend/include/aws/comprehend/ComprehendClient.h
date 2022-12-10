@@ -7,6 +7,7 @@
 #include <aws/comprehend/Comprehend_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/comprehend/ComprehendServiceClientModel.h>
 
@@ -20,7 +21,7 @@ namespace Comprehend
    * documents, the topics they discuss, the predominant sentiment expressed in them,
    * the predominant language used, and more.</p>
    */
-  class AWS_COMPREHEND_API ComprehendClient : public Aws::Client::AWSJsonClient
+  class AWS_COMPREHEND_API ComprehendClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<ComprehendClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -74,7 +75,6 @@ namespace Comprehend
 
         /* End of legacy constructors due deprecation */
         virtual ~ComprehendClient();
-
 
         /**
          * <p>Determines the dominant language of the input text for a batch of documents.
@@ -1540,6 +1540,7 @@ namespace Comprehend
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<ComprehendEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<ComprehendClient>;
       void init(const ComprehendClientConfiguration& clientConfiguration);
 
       ComprehendClientConfiguration m_clientConfiguration;

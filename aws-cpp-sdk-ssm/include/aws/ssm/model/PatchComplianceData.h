@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/PatchComplianceData">AWS
    * API Reference</a></p>
    */
-  class AWS_SSM_API PatchComplianceData
+  class PatchComplianceData
   {
   public:
-    PatchComplianceData();
-    PatchComplianceData(Aws::Utils::Json::JsonView jsonValue);
-    PatchComplianceData& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSM_API PatchComplianceData();
+    AWS_SSM_API PatchComplianceData(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API PatchComplianceData& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

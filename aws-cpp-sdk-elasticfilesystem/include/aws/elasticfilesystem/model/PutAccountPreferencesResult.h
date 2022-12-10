@@ -24,12 +24,12 @@ namespace EFS
 {
 namespace Model
 {
-  class AWS_EFS_API PutAccountPreferencesResult
+  class PutAccountPreferencesResult
   {
   public:
-    PutAccountPreferencesResult();
-    PutAccountPreferencesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PutAccountPreferencesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_EFS_API PutAccountPreferencesResult();
+    AWS_EFS_API PutAccountPreferencesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_EFS_API PutAccountPreferencesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     

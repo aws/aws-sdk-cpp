@@ -27,12 +27,12 @@ namespace ECR
 {
 namespace Model
 {
-  class AWS_ECR_API DescribeImageReplicationStatusResult
+  class DescribeImageReplicationStatusResult
   {
   public:
-    DescribeImageReplicationStatusResult();
-    DescribeImageReplicationStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeImageReplicationStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ECR_API DescribeImageReplicationStatusResult();
+    AWS_ECR_API DescribeImageReplicationStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ECR_API DescribeImageReplicationStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

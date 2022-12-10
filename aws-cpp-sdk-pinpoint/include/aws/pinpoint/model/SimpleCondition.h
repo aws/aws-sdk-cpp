@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/SimpleCondition">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API SimpleCondition
+  class SimpleCondition
   {
   public:
-    SimpleCondition();
-    SimpleCondition(Aws::Utils::Json::JsonView jsonValue);
-    SimpleCondition& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API SimpleCondition();
+    AWS_PINPOINT_API SimpleCondition(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API SimpleCondition& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -21,10 +21,10 @@ namespace Model
 
   /**
    */
-  class AWS_LEXRUNTIMESERVICE_API PostTextRequest : public LexRuntimeServiceRequest
+  class PostTextRequest : public LexRuntimeServiceRequest
   {
   public:
-    PostTextRequest();
+    AWS_LEXRUNTIMESERVICE_API PostTextRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,7 +32,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "PostText"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_LEXRUNTIMESERVICE_API Aws::String SerializePayload() const override;
 
 
     /**

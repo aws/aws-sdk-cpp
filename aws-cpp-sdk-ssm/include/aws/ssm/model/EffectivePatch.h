@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/EffectivePatch">AWS
    * API Reference</a></p>
    */
-  class AWS_SSM_API EffectivePatch
+  class EffectivePatch
   {
   public:
-    EffectivePatch();
-    EffectivePatch(Aws::Utils::Json::JsonView jsonValue);
-    EffectivePatch& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSM_API EffectivePatch();
+    AWS_SSM_API EffectivePatch(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API EffectivePatch& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DomainInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_OPENSEARCHSERVICE_API DomainInfo
+  class DomainInfo
   {
   public:
-    DomainInfo();
-    DomainInfo(Aws::Utils::Json::JsonView jsonValue);
-    DomainInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OPENSEARCHSERVICE_API DomainInfo();
+    AWS_OPENSEARCHSERVICE_API DomainInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPENSEARCHSERVICE_API DomainInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPENSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

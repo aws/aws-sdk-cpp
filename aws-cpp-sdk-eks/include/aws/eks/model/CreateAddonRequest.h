@@ -21,10 +21,10 @@ namespace Model
 
   /**
    */
-  class AWS_EKS_API CreateAddonRequest : public EKSRequest
+  class CreateAddonRequest : public EKSRequest
   {
   public:
-    CreateAddonRequest();
+    AWS_EKS_API CreateAddonRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,7 +32,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateAddon"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_EKS_API Aws::String SerializePayload() const override;
 
 
     /**
@@ -568,6 +568,71 @@ namespace Model
      */
     inline CreateAddonRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
+
+    /**
+     * <p> The set of configuration values for the add-on being created. Whatever
+     * values provided here are validated against the schema from <a
+     * href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonConfiguration.html">
+     * <code>DescribeAddonConfiguration</code> </a>.</p>
+     */
+    inline const Aws::String& GetConfigurationValues() const{ return m_configurationValues; }
+
+    /**
+     * <p> The set of configuration values for the add-on being created. Whatever
+     * values provided here are validated against the schema from <a
+     * href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonConfiguration.html">
+     * <code>DescribeAddonConfiguration</code> </a>.</p>
+     */
+    inline bool ConfigurationValuesHasBeenSet() const { return m_configurationValuesHasBeenSet; }
+
+    /**
+     * <p> The set of configuration values for the add-on being created. Whatever
+     * values provided here are validated against the schema from <a
+     * href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonConfiguration.html">
+     * <code>DescribeAddonConfiguration</code> </a>.</p>
+     */
+    inline void SetConfigurationValues(const Aws::String& value) { m_configurationValuesHasBeenSet = true; m_configurationValues = value; }
+
+    /**
+     * <p> The set of configuration values for the add-on being created. Whatever
+     * values provided here are validated against the schema from <a
+     * href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonConfiguration.html">
+     * <code>DescribeAddonConfiguration</code> </a>.</p>
+     */
+    inline void SetConfigurationValues(Aws::String&& value) { m_configurationValuesHasBeenSet = true; m_configurationValues = std::move(value); }
+
+    /**
+     * <p> The set of configuration values for the add-on being created. Whatever
+     * values provided here are validated against the schema from <a
+     * href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonConfiguration.html">
+     * <code>DescribeAddonConfiguration</code> </a>.</p>
+     */
+    inline void SetConfigurationValues(const char* value) { m_configurationValuesHasBeenSet = true; m_configurationValues.assign(value); }
+
+    /**
+     * <p> The set of configuration values for the add-on being created. Whatever
+     * values provided here are validated against the schema from <a
+     * href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonConfiguration.html">
+     * <code>DescribeAddonConfiguration</code> </a>.</p>
+     */
+    inline CreateAddonRequest& WithConfigurationValues(const Aws::String& value) { SetConfigurationValues(value); return *this;}
+
+    /**
+     * <p> The set of configuration values for the add-on being created. Whatever
+     * values provided here are validated against the schema from <a
+     * href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonConfiguration.html">
+     * <code>DescribeAddonConfiguration</code> </a>.</p>
+     */
+    inline CreateAddonRequest& WithConfigurationValues(Aws::String&& value) { SetConfigurationValues(std::move(value)); return *this;}
+
+    /**
+     * <p> The set of configuration values for the add-on being created. Whatever
+     * values provided here are validated against the schema from <a
+     * href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonConfiguration.html">
+     * <code>DescribeAddonConfiguration</code> </a>.</p>
+     */
+    inline CreateAddonRequest& WithConfigurationValues(const char* value) { SetConfigurationValues(value); return *this;}
+
   private:
 
     Aws::String m_clusterName;
@@ -590,6 +655,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    Aws::String m_configurationValues;
+    bool m_configurationValuesHasBeenSet = false;
   };
 
 } // namespace Model

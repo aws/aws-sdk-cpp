@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/EntityFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_HEALTH_API EntityFilter
+  class EntityFilter
   {
   public:
-    EntityFilter();
-    EntityFilter(Aws::Utils::Json::JsonView jsonValue);
-    EntityFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_HEALTH_API EntityFilter();
+    AWS_HEALTH_API EntityFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_HEALTH_API EntityFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_HEALTH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

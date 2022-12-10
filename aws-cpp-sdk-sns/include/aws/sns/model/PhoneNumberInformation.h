@@ -32,15 +32,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/PhoneNumberInformation">AWS
    * API Reference</a></p>
    */
-  class AWS_SNS_API PhoneNumberInformation
+  class PhoneNumberInformation
   {
   public:
-    PhoneNumberInformation();
-    PhoneNumberInformation(const Aws::Utils::Xml::XmlNode& xmlNode);
-    PhoneNumberInformation& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_SNS_API PhoneNumberInformation();
+    AWS_SNS_API PhoneNumberInformation(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_SNS_API PhoneNumberInformation& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_SNS_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_SNS_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**

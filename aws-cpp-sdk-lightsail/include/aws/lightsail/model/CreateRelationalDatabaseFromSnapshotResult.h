@@ -25,12 +25,12 @@ namespace Lightsail
 {
 namespace Model
 {
-  class AWS_LIGHTSAIL_API CreateRelationalDatabaseFromSnapshotResult
+  class CreateRelationalDatabaseFromSnapshotResult
   {
   public:
-    CreateRelationalDatabaseFromSnapshotResult();
-    CreateRelationalDatabaseFromSnapshotResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateRelationalDatabaseFromSnapshotResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LIGHTSAIL_API CreateRelationalDatabaseFromSnapshotResult();
+    AWS_LIGHTSAIL_API CreateRelationalDatabaseFromSnapshotResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LIGHTSAIL_API CreateRelationalDatabaseFromSnapshotResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

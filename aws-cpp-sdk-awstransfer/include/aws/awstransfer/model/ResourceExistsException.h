@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ResourceExistsException">AWS
    * API Reference</a></p>
    */
-  class AWS_TRANSFER_API ResourceExistsException
+  class ResourceExistsException
   {
   public:
-    ResourceExistsException();
-    ResourceExistsException(Aws::Utils::Json::JsonView jsonValue);
-    ResourceExistsException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TRANSFER_API ResourceExistsException();
+    AWS_TRANSFER_API ResourceExistsException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSFER_API ResourceExistsException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSFER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

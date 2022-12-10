@@ -62,13 +62,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/ByoipCidr">AWS
    * API Reference</a></p>
    */
-  class AWS_GLOBALACCELERATOR_API ByoipCidr
+  class ByoipCidr
   {
   public:
-    ByoipCidr();
-    ByoipCidr(Aws::Utils::Json::JsonView jsonValue);
-    ByoipCidr& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLOBALACCELERATOR_API ByoipCidr();
+    AWS_GLOBALACCELERATOR_API ByoipCidr(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLOBALACCELERATOR_API ByoipCidr& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLOBALACCELERATOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

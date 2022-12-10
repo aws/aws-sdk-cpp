@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsCertificateManagerCertificateRenewalSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsCertificateManagerCertificateRenewalSummary
+  class AwsCertificateManagerCertificateRenewalSummary
   {
   public:
-    AwsCertificateManagerCertificateRenewalSummary();
-    AwsCertificateManagerCertificateRenewalSummary(Aws::Utils::Json::JsonView jsonValue);
-    AwsCertificateManagerCertificateRenewalSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsCertificateManagerCertificateRenewalSummary();
+    AWS_SECURITYHUB_API AwsCertificateManagerCertificateRenewalSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsCertificateManagerCertificateRenewalSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

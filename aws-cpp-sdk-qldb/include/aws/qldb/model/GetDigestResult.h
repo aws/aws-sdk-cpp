@@ -25,12 +25,12 @@ namespace QLDB
 {
 namespace Model
 {
-  class AWS_QLDB_API GetDigestResult
+  class GetDigestResult
   {
   public:
-    GetDigestResult();
-    GetDigestResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetDigestResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_QLDB_API GetDigestResult();
+    AWS_QLDB_API GetDigestResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_QLDB_API GetDigestResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -24,12 +24,12 @@ namespace MQ
 {
 namespace Model
 {
-  class AWS_MQ_API CreateBrokerResult
+  class CreateBrokerResult
   {
   public:
-    CreateBrokerResult();
-    CreateBrokerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateBrokerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MQ_API CreateBrokerResult();
+    AWS_MQ_API CreateBrokerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MQ_API CreateBrokerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

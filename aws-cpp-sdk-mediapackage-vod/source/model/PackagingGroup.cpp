@@ -19,6 +19,8 @@ namespace Model
 {
 
 PackagingGroup::PackagingGroup() : 
+    m_approximateAssetCount(0),
+    m_approximateAssetCountHasBeenSet(false),
     m_arnHasBeenSet(false),
     m_authorizationHasBeenSet(false),
     m_domainNameHasBeenSet(false),
@@ -29,6 +31,8 @@ PackagingGroup::PackagingGroup() :
 }
 
 PackagingGroup::PackagingGroup(JsonView jsonValue) : 
+    m_approximateAssetCount(0),
+    m_approximateAssetCountHasBeenSet(false),
     m_arnHasBeenSet(false),
     m_authorizationHasBeenSet(false),
     m_domainNameHasBeenSet(false),
@@ -41,6 +45,13 @@ PackagingGroup::PackagingGroup(JsonView jsonValue) :
 
 PackagingGroup& PackagingGroup::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("approximateAssetCount"))
+  {
+    m_approximateAssetCount = jsonValue.GetInteger("approximateAssetCount");
+
+    m_approximateAssetCountHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
@@ -92,6 +103,12 @@ PackagingGroup& PackagingGroup::operator =(JsonView jsonValue)
 JsonValue PackagingGroup::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_approximateAssetCountHasBeenSet)
+  {
+   payload.WithInteger("approximateAssetCount", m_approximateAssetCount);
+
+  }
 
   if(m_arnHasBeenSet)
   {

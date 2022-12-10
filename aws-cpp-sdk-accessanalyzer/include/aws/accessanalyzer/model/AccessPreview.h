@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/AccessPreview">AWS
    * API Reference</a></p>
    */
-  class AWS_ACCESSANALYZER_API AccessPreview
+  class AccessPreview
   {
   public:
-    AccessPreview();
-    AccessPreview(Aws::Utils::Json::JsonView jsonValue);
-    AccessPreview& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ACCESSANALYZER_API AccessPreview();
+    AWS_ACCESSANALYZER_API AccessPreview(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACCESSANALYZER_API AccessPreview& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACCESSANALYZER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/CampaignSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTFLEETWISE_API CampaignSummary
+  class CampaignSummary
   {
   public:
-    CampaignSummary();
-    CampaignSummary(Aws::Utils::Json::JsonView jsonValue);
-    CampaignSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTFLEETWISE_API CampaignSummary();
+    AWS_IOTFLEETWISE_API CampaignSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTFLEETWISE_API CampaignSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTFLEETWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

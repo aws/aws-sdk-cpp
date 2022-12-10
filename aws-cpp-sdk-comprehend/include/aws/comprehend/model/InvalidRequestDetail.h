@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/InvalidRequestDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_COMPREHEND_API InvalidRequestDetail
+  class InvalidRequestDetail
   {
   public:
-    InvalidRequestDetail();
-    InvalidRequestDetail(Aws::Utils::Json::JsonView jsonValue);
-    InvalidRequestDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COMPREHEND_API InvalidRequestDetail();
+    AWS_COMPREHEND_API InvalidRequestDetail(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHEND_API InvalidRequestDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHEND_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -7,6 +7,7 @@
 #include <aws/polly/Polly_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/polly/PollyServiceClientModel.h>
 
@@ -21,7 +22,7 @@ namespace Polly
    * along with managing pronunciations lexicons that enable you to get the best
    * results for your application domain.</p>
    */
-  class AWS_POLLY_API PollyClient : public Aws::Client::AWSJsonClient
+  class AWS_POLLY_API PollyClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<PollyClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -75,7 +76,6 @@ namespace Polly
 
         /* End of legacy constructors due deprecation */
         virtual ~PollyClient();
-
 
         /**
          * <p>Deletes the specified pronunciation lexicon stored in an Amazon Web Services
@@ -282,6 +282,7 @@ namespace Polly
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<PollyEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<PollyClient>;
       void init(const PollyClientConfiguration& clientConfiguration);
 
       PollyClientConfiguration m_clientConfiguration;

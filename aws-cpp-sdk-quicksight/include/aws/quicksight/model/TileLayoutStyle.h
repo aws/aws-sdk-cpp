@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/TileLayoutStyle">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API TileLayoutStyle
+  class TileLayoutStyle
   {
   public:
-    TileLayoutStyle();
-    TileLayoutStyle(Aws::Utils::Json::JsonView jsonValue);
-    TileLayoutStyle& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API TileLayoutStyle();
+    AWS_QUICKSIGHT_API TileLayoutStyle(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API TileLayoutStyle& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

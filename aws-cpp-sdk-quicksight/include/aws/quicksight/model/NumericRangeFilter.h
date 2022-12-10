@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/NumericRangeFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API NumericRangeFilter
+  class NumericRangeFilter
   {
   public:
-    NumericRangeFilter();
-    NumericRangeFilter(Aws::Utils::Json::JsonView jsonValue);
-    NumericRangeFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API NumericRangeFilter();
+    AWS_QUICKSIGHT_API NumericRangeFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API NumericRangeFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

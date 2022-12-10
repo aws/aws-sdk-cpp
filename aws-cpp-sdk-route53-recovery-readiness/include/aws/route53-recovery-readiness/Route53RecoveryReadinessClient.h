@@ -7,6 +7,7 @@
 #include <aws/route53-recovery-readiness/Route53RecoveryReadiness_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/route53-recovery-readiness/Route53RecoveryReadinessServiceClientModel.h>
 
@@ -17,7 +18,7 @@ namespace Route53RecoveryReadiness
   /**
    * <p>Recovery readiness</p>
    */
-  class AWS_ROUTE53RECOVERYREADINESS_API Route53RecoveryReadinessClient : public Aws::Client::AWSJsonClient
+  class AWS_ROUTE53RECOVERYREADINESS_API Route53RecoveryReadinessClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<Route53RecoveryReadinessClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -71,7 +72,6 @@ namespace Route53RecoveryReadiness
 
         /* End of legacy constructors due deprecation */
         virtual ~Route53RecoveryReadinessClient();
-
 
         /**
          * <p>Creates a cell in an account.</p><p><h3>See Also:</h3>   <a
@@ -650,6 +650,7 @@ namespace Route53RecoveryReadiness
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<Route53RecoveryReadinessEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<Route53RecoveryReadinessClient>;
       void init(const Route53RecoveryReadinessClientConfiguration& clientConfiguration);
 
       Route53RecoveryReadinessClientConfiguration m_clientConfiguration;

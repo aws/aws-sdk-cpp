@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/IntentSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELSV2_API IntentSummary
+  class IntentSummary
   {
   public:
-    IntentSummary();
-    IntentSummary(Aws::Utils::Json::JsonView jsonValue);
-    IntentSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELSV2_API IntentSummary();
+    AWS_LEXMODELSV2_API IntentSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API IntentSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

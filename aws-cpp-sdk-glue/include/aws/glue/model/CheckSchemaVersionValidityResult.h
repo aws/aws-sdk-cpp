@@ -24,12 +24,12 @@ namespace Glue
 {
 namespace Model
 {
-  class AWS_GLUE_API CheckSchemaVersionValidityResult
+  class CheckSchemaVersionValidityResult
   {
   public:
-    CheckSchemaVersionValidityResult();
-    CheckSchemaVersionValidityResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CheckSchemaVersionValidityResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GLUE_API CheckSchemaVersionValidityResult();
+    AWS_GLUE_API CheckSchemaVersionValidityResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GLUE_API CheckSchemaVersionValidityResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

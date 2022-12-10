@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/Destination">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDTRAIL_API Destination
+  class Destination
   {
   public:
-    Destination();
-    Destination(Aws::Utils::Json::JsonView jsonValue);
-    Destination& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDTRAIL_API Destination();
+    AWS_CLOUDTRAIL_API Destination(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDTRAIL_API Destination& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDTRAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

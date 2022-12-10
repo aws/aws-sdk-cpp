@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/SlotFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELSV2_API SlotFilter
+  class SlotFilter
   {
   public:
-    SlotFilter();
-    SlotFilter(Aws::Utils::Json::JsonView jsonValue);
-    SlotFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELSV2_API SlotFilter();
+    AWS_LEXMODELSV2_API SlotFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API SlotFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

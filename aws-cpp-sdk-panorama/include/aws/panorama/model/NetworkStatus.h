@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/panorama-2019-07-24/NetworkStatus">AWS
    * API Reference</a></p>
    */
-  class AWS_PANORAMA_API NetworkStatus
+  class NetworkStatus
   {
   public:
-    NetworkStatus();
-    NetworkStatus(Aws::Utils::Json::JsonView jsonValue);
-    NetworkStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PANORAMA_API NetworkStatus();
+    AWS_PANORAMA_API NetworkStatus(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PANORAMA_API NetworkStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PANORAMA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

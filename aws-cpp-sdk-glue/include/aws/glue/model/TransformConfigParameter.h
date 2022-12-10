@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/TransformConfigParameter">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API TransformConfigParameter
+  class TransformConfigParameter
   {
   public:
-    TransformConfigParameter();
-    TransformConfigParameter(Aws::Utils::Json::JsonView jsonValue);
-    TransformConfigParameter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API TransformConfigParameter();
+    AWS_GLUE_API TransformConfigParameter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API TransformConfigParameter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

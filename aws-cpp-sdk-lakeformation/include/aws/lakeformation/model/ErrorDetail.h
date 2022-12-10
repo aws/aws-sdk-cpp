@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/ErrorDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_LAKEFORMATION_API ErrorDetail
+  class ErrorDetail
   {
   public:
-    ErrorDetail();
-    ErrorDetail(Aws::Utils::Json::JsonView jsonValue);
-    ErrorDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LAKEFORMATION_API ErrorDetail();
+    AWS_LAKEFORMATION_API ErrorDetail(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAKEFORMATION_API ErrorDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAKEFORMATION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

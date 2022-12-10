@@ -26,12 +26,12 @@ namespace ARCZonalShift
 {
 namespace Model
 {
-  class AWS_ARCZONALSHIFT_API ListZonalShiftsResult
+  class ListZonalShiftsResult
   {
   public:
-    ListZonalShiftsResult();
-    ListZonalShiftsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListZonalShiftsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ARCZONALSHIFT_API ListZonalShiftsResult();
+    AWS_ARCZONALSHIFT_API ListZonalShiftsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ARCZONALSHIFT_API ListZonalShiftsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

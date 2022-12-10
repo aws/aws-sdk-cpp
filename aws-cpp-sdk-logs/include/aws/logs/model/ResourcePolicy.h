@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/ResourcePolicy">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDWATCHLOGS_API ResourcePolicy
+  class ResourcePolicy
   {
   public:
-    ResourcePolicy();
-    ResourcePolicy(Aws::Utils::Json::JsonView jsonValue);
-    ResourcePolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDWATCHLOGS_API ResourcePolicy();
+    AWS_CLOUDWATCHLOGS_API ResourcePolicy(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHLOGS_API ResourcePolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHLOGS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

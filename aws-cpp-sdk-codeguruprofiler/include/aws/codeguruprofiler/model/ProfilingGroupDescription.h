@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/ProfilingGroupDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEGURUPROFILER_API ProfilingGroupDescription
+  class ProfilingGroupDescription
   {
   public:
-    ProfilingGroupDescription();
-    ProfilingGroupDescription(Aws::Utils::Json::JsonView jsonValue);
-    ProfilingGroupDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEGURUPROFILER_API ProfilingGroupDescription();
+    AWS_CODEGURUPROFILER_API ProfilingGroupDescription(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEGURUPROFILER_API ProfilingGroupDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEGURUPROFILER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

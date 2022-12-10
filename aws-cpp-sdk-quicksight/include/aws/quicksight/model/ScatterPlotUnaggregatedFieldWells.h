@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ScatterPlotUnaggregatedFieldWells">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API ScatterPlotUnaggregatedFieldWells
+  class ScatterPlotUnaggregatedFieldWells
   {
   public:
-    ScatterPlotUnaggregatedFieldWells();
-    ScatterPlotUnaggregatedFieldWells(Aws::Utils::Json::JsonView jsonValue);
-    ScatterPlotUnaggregatedFieldWells& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API ScatterPlotUnaggregatedFieldWells();
+    AWS_QUICKSIGHT_API ScatterPlotUnaggregatedFieldWells(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API ScatterPlotUnaggregatedFieldWells& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

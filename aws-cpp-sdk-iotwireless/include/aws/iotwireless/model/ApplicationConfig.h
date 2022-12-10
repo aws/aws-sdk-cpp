@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ApplicationConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTWIRELESS_API ApplicationConfig
+  class ApplicationConfig
   {
   public:
-    ApplicationConfig();
-    ApplicationConfig(Aws::Utils::Json::JsonView jsonValue);
-    ApplicationConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTWIRELESS_API ApplicationConfig();
+    AWS_IOTWIRELESS_API ApplicationConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API ApplicationConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/TimeRange">AWS
    * API Reference</a></p>
    */
-  class AWS_GROUNDSTATION_API TimeRange
+  class TimeRange
   {
   public:
-    TimeRange();
-    TimeRange(Aws::Utils::Json::JsonView jsonValue);
-    TimeRange& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GROUNDSTATION_API TimeRange();
+    AWS_GROUNDSTATION_API TimeRange(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GROUNDSTATION_API TimeRange& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GROUNDSTATION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

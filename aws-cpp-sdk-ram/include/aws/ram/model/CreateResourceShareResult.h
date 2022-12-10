@@ -25,12 +25,12 @@ namespace RAM
 {
 namespace Model
 {
-  class AWS_RAM_API CreateResourceShareResult
+  class CreateResourceShareResult
   {
   public:
-    CreateResourceShareResult();
-    CreateResourceShareResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateResourceShareResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_RAM_API CreateResourceShareResult();
+    AWS_RAM_API CreateResourceShareResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_RAM_API CreateResourceShareResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

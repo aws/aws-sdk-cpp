@@ -30,12 +30,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateCustomerGatewayResult">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API CreateCustomerGatewayResponse
+  class CreateCustomerGatewayResponse
   {
   public:
-    CreateCustomerGatewayResponse();
-    CreateCustomerGatewayResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    CreateCustomerGatewayResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API CreateCustomerGatewayResponse();
+    AWS_EC2_API CreateCustomerGatewayResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API CreateCustomerGatewayResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

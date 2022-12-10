@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_XRAY_API UpdateGroupRequest : public XRayRequest
+  class UpdateGroupRequest : public XRayRequest
   {
   public:
-    UpdateGroupRequest();
+    AWS_XRAY_API UpdateGroupRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,7 +30,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateGroup"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_XRAY_API Aws::String SerializePayload() const override;
 
 
     /**

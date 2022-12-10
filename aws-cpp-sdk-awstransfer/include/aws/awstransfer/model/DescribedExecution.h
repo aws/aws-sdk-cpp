@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribedExecution">AWS
    * API Reference</a></p>
    */
-  class AWS_TRANSFER_API DescribedExecution
+  class DescribedExecution
   {
   public:
-    DescribedExecution();
-    DescribedExecution(Aws::Utils::Json::JsonView jsonValue);
-    DescribedExecution& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TRANSFER_API DescribedExecution();
+    AWS_TRANSFER_API DescribedExecution(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSFER_API DescribedExecution& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSFER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

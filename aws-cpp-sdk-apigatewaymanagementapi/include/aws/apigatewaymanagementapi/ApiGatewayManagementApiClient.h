@@ -7,6 +7,7 @@
 #include <aws/apigatewaymanagementapi/ApiGatewayManagementApi_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/apigatewaymanagementapi/ApiGatewayManagementApiServiceClientModel.h>
 
@@ -22,7 +23,7 @@ namespace ApiGatewayManagementApi
    * the endpoint corresponding to your API's custom domain and base path, if
    * applicable.</p>
    */
-  class AWS_APIGATEWAYMANAGEMENTAPI_API ApiGatewayManagementApiClient : public Aws::Client::AWSJsonClient
+  class AWS_APIGATEWAYMANAGEMENTAPI_API ApiGatewayManagementApiClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<ApiGatewayManagementApiClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -76,7 +77,6 @@ namespace ApiGatewayManagementApi
 
         /* End of legacy constructors due deprecation */
         virtual ~ApiGatewayManagementApiClient();
-
 
         /**
          * <p>Delete the connection with the provided id.</p><p><h3>See Also:</h3>   <a
@@ -135,6 +135,7 @@ namespace ApiGatewayManagementApi
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<ApiGatewayManagementApiEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<ApiGatewayManagementApiClient>;
       void init(const ApiGatewayManagementApiClientConfiguration& clientConfiguration);
 
       ApiGatewayManagementApiClientConfiguration m_clientConfiguration;

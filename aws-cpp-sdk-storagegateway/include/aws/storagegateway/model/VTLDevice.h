@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/VTLDevice">AWS
    * API Reference</a></p>
    */
-  class AWS_STORAGEGATEWAY_API VTLDevice
+  class VTLDevice
   {
   public:
-    VTLDevice();
-    VTLDevice(Aws::Utils::Json::JsonView jsonValue);
-    VTLDevice& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_STORAGEGATEWAY_API VTLDevice();
+    AWS_STORAGEGATEWAY_API VTLDevice(Aws::Utils::Json::JsonView jsonValue);
+    AWS_STORAGEGATEWAY_API VTLDevice& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_STORAGEGATEWAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

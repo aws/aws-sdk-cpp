@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/TranscriptionMessagesConcatenationConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_CHIMESDKMEDIAPIPELINES_API TranscriptionMessagesConcatenationConfiguration
+  class TranscriptionMessagesConcatenationConfiguration
   {
   public:
-    TranscriptionMessagesConcatenationConfiguration();
-    TranscriptionMessagesConcatenationConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    TranscriptionMessagesConcatenationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIMESDKMEDIAPIPELINES_API TranscriptionMessagesConcatenationConfiguration();
+    AWS_CHIMESDKMEDIAPIPELINES_API TranscriptionMessagesConcatenationConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKMEDIAPIPELINES_API TranscriptionMessagesConcatenationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKMEDIAPIPELINES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

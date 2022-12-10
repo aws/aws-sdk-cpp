@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ConformancePackRuleCompliance">AWS
    * API Reference</a></p>
    */
-  class AWS_CONFIGSERVICE_API ConformancePackRuleCompliance
+  class ConformancePackRuleCompliance
   {
   public:
-    ConformancePackRuleCompliance();
-    ConformancePackRuleCompliance(Aws::Utils::Json::JsonView jsonValue);
-    ConformancePackRuleCompliance& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONFIGSERVICE_API ConformancePackRuleCompliance();
+    AWS_CONFIGSERVICE_API ConformancePackRuleCompliance(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API ConformancePackRuleCompliance& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

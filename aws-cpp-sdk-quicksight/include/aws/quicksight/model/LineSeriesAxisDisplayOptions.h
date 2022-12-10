@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/LineSeriesAxisDisplayOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API LineSeriesAxisDisplayOptions
+  class LineSeriesAxisDisplayOptions
   {
   public:
-    LineSeriesAxisDisplayOptions();
-    LineSeriesAxisDisplayOptions(Aws::Utils::Json::JsonView jsonValue);
-    LineSeriesAxisDisplayOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API LineSeriesAxisDisplayOptions();
+    AWS_QUICKSIGHT_API LineSeriesAxisDisplayOptions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API LineSeriesAxisDisplayOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

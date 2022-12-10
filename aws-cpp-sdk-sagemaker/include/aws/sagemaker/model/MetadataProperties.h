@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/MetadataProperties">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API MetadataProperties
+  class MetadataProperties
   {
   public:
-    MetadataProperties();
-    MetadataProperties(Aws::Utils::Json::JsonView jsonValue);
-    MetadataProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API MetadataProperties();
+    AWS_SAGEMAKER_API MetadataProperties(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API MetadataProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

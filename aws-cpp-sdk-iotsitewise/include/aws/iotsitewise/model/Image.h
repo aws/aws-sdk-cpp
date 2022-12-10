@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/Image">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTSITEWISE_API Image
+  class Image
   {
   public:
-    Image();
-    Image(Aws::Utils::Json::JsonView jsonValue);
-    Image& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTSITEWISE_API Image();
+    AWS_IOTSITEWISE_API Image(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API Image& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

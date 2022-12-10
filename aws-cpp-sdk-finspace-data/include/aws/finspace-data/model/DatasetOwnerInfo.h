@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/DatasetOwnerInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_FINSPACEDATA_API DatasetOwnerInfo
+  class DatasetOwnerInfo
   {
   public:
-    DatasetOwnerInfo();
-    DatasetOwnerInfo(Aws::Utils::Json::JsonView jsonValue);
-    DatasetOwnerInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FINSPACEDATA_API DatasetOwnerInfo();
+    AWS_FINSPACEDATA_API DatasetOwnerInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FINSPACEDATA_API DatasetOwnerInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FINSPACEDATA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/NumericalAggregationFunction">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API NumericalAggregationFunction
+  class NumericalAggregationFunction
   {
   public:
-    NumericalAggregationFunction();
-    NumericalAggregationFunction(Aws::Utils::Json::JsonView jsonValue);
-    NumericalAggregationFunction& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API NumericalAggregationFunction();
+    AWS_QUICKSIGHT_API NumericalAggregationFunction(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API NumericalAggregationFunction& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

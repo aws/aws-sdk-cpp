@@ -21,10 +21,10 @@ namespace Model
 
   /**
    */
-  class AWS_QLDB_API ExportJournalToS3Request : public QLDBRequest
+  class ExportJournalToS3Request : public QLDBRequest
   {
   public:
-    ExportJournalToS3Request();
+    AWS_QLDB_API ExportJournalToS3Request();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,7 +32,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ExportJournalToS3"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_QLDB_API Aws::String SerializePayload() const override;
 
 
     /**

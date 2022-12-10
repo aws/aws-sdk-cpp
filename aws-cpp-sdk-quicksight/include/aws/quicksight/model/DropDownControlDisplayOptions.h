@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DropDownControlDisplayOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API DropDownControlDisplayOptions
+  class DropDownControlDisplayOptions
   {
   public:
-    DropDownControlDisplayOptions();
-    DropDownControlDisplayOptions(Aws::Utils::Json::JsonView jsonValue);
-    DropDownControlDisplayOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API DropDownControlDisplayOptions();
+    AWS_QUICKSIGHT_API DropDownControlDisplayOptions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API DropDownControlDisplayOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -42,15 +42,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/SpotFleetRequestConfigData">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API SpotFleetRequestConfigData
+  class SpotFleetRequestConfigData
   {
   public:
-    SpotFleetRequestConfigData();
-    SpotFleetRequestConfigData(const Aws::Utils::Xml::XmlNode& xmlNode);
-    SpotFleetRequestConfigData& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API SpotFleetRequestConfigData();
+    AWS_EC2_API SpotFleetRequestConfigData(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API SpotFleetRequestConfigData& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**

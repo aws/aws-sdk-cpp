@@ -33,14 +33,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/StreamingDistributionConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFRONT_API StreamingDistributionConfig
+  class StreamingDistributionConfig
   {
   public:
-    StreamingDistributionConfig();
-    StreamingDistributionConfig(const Aws::Utils::Xml::XmlNode& xmlNode);
-    StreamingDistributionConfig& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API StreamingDistributionConfig();
+    AWS_CLOUDFRONT_API StreamingDistributionConfig(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API StreamingDistributionConfig& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**

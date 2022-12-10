@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/OutputConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_REKOGNITION_API OutputConfig
+  class OutputConfig
   {
   public:
-    OutputConfig();
-    OutputConfig(Aws::Utils::Json::JsonView jsonValue);
-    OutputConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_REKOGNITION_API OutputConfig();
+    AWS_REKOGNITION_API OutputConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API OutputConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

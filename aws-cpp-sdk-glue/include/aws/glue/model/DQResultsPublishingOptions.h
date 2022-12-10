@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DQResultsPublishingOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API DQResultsPublishingOptions
+  class DQResultsPublishingOptions
   {
   public:
-    DQResultsPublishingOptions();
-    DQResultsPublishingOptions(Aws::Utils::Json::JsonView jsonValue);
-    DQResultsPublishingOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API DQResultsPublishingOptions();
+    AWS_GLUE_API DQResultsPublishingOptions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API DQResultsPublishingOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -41,13 +41,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/ScalingPolicy">AWS
    * API Reference</a></p>
    */
-  class AWS_APPLICATIONAUTOSCALING_API ScalingPolicy
+  class ScalingPolicy
   {
   public:
-    ScalingPolicy();
-    ScalingPolicy(Aws::Utils::Json::JsonView jsonValue);
-    ScalingPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPLICATIONAUTOSCALING_API ScalingPolicy();
+    AWS_APPLICATIONAUTOSCALING_API ScalingPolicy(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPLICATIONAUTOSCALING_API ScalingPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPLICATIONAUTOSCALING_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

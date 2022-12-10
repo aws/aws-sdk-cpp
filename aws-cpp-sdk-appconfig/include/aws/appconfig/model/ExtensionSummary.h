@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/ExtensionSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_APPCONFIG_API ExtensionSummary
+  class ExtensionSummary
   {
   public:
-    ExtensionSummary();
-    ExtensionSummary(Aws::Utils::Json::JsonView jsonValue);
-    ExtensionSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPCONFIG_API ExtensionSummary();
+    AWS_APPCONFIG_API ExtensionSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPCONFIG_API ExtensionSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPCONFIG_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

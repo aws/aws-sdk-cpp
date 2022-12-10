@@ -7,6 +7,7 @@
 #include <aws/m2/MainframeModernization_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/m2/MainframeModernizationServiceClientModel.h>
 
@@ -22,7 +23,7 @@ namespace MainframeModernization
    * applications using COBOL or PL/I, and implementing an automated pipeline for
    * continuous integration and continuous delivery (CI/CD) of the applications.</p>
    */
-  class AWS_MAINFRAMEMODERNIZATION_API MainframeModernizationClient : public Aws::Client::AWSJsonClient
+  class AWS_MAINFRAMEMODERNIZATION_API MainframeModernizationClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<MainframeModernizationClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -76,7 +77,6 @@ namespace MainframeModernization
 
         /* End of legacy constructors due deprecation */
         virtual ~MainframeModernizationClient();
-
 
         /**
          * <p>Cancels the running of a specific batch job execution.</p><p><h3>See
@@ -666,6 +666,7 @@ namespace MainframeModernization
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<MainframeModernizationEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<MainframeModernizationClient>;
       void init(const MainframeModernizationClientConfiguration& clientConfiguration);
 
       MainframeModernizationClientConfiguration m_clientConfiguration;

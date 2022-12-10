@@ -24,12 +24,12 @@ namespace EBS
 {
 namespace Model
 {
-  class AWS_EBS_API CompleteSnapshotResult
+  class CompleteSnapshotResult
   {
   public:
-    CompleteSnapshotResult();
-    CompleteSnapshotResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CompleteSnapshotResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_EBS_API CompleteSnapshotResult();
+    AWS_EBS_API CompleteSnapshotResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_EBS_API CompleteSnapshotResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

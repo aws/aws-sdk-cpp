@@ -30,12 +30,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RequestSpotFleetResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API RequestSpotFleetResponse
+  class RequestSpotFleetResponse
   {
   public:
-    RequestSpotFleetResponse();
-    RequestSpotFleetResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    RequestSpotFleetResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API RequestSpotFleetResponse();
+    AWS_EC2_API RequestSpotFleetResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API RequestSpotFleetResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

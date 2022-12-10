@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/ServerReplicationParameters">AWS
    * API Reference</a></p>
    */
-  class AWS_SMS_API ServerReplicationParameters
+  class ServerReplicationParameters
   {
   public:
-    ServerReplicationParameters();
-    ServerReplicationParameters(Aws::Utils::Json::JsonView jsonValue);
-    ServerReplicationParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SMS_API ServerReplicationParameters();
+    AWS_SMS_API ServerReplicationParameters(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SMS_API ServerReplicationParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

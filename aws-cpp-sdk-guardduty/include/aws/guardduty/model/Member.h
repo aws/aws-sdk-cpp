@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/Member">AWS
    * API Reference</a></p>
    */
-  class AWS_GUARDDUTY_API Member
+  class Member
   {
   public:
-    Member();
-    Member(Aws::Utils::Json::JsonView jsonValue);
-    Member& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GUARDDUTY_API Member();
+    AWS_GUARDDUTY_API Member(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API Member& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

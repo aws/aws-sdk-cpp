@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/DeltaSyncConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_APPSYNC_API DeltaSyncConfig
+  class DeltaSyncConfig
   {
   public:
-    DeltaSyncConfig();
-    DeltaSyncConfig(Aws::Utils::Json::JsonView jsonValue);
-    DeltaSyncConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPSYNC_API DeltaSyncConfig();
+    AWS_APPSYNC_API DeltaSyncConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPSYNC_API DeltaSyncConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPSYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

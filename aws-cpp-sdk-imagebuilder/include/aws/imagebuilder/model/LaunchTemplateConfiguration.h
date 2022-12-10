@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/LaunchTemplateConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_IMAGEBUILDER_API LaunchTemplateConfiguration
+  class LaunchTemplateConfiguration
   {
   public:
-    LaunchTemplateConfiguration();
-    LaunchTemplateConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    LaunchTemplateConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IMAGEBUILDER_API LaunchTemplateConfiguration();
+    AWS_IMAGEBUILDER_API LaunchTemplateConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IMAGEBUILDER_API LaunchTemplateConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IMAGEBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

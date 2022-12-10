@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/DnsRuleGroupLimitExceededViolation">AWS
    * API Reference</a></p>
    */
-  class AWS_FMS_API DnsRuleGroupLimitExceededViolation
+  class DnsRuleGroupLimitExceededViolation
   {
   public:
-    DnsRuleGroupLimitExceededViolation();
-    DnsRuleGroupLimitExceededViolation(Aws::Utils::Json::JsonView jsonValue);
-    DnsRuleGroupLimitExceededViolation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FMS_API DnsRuleGroupLimitExceededViolation();
+    AWS_FMS_API DnsRuleGroupLimitExceededViolation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FMS_API DnsRuleGroupLimitExceededViolation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/Integration">AWS
    * API Reference</a></p>
    */
-  class AWS_SSMINCIDENTS_API Integration
+  class Integration
   {
   public:
-    Integration();
-    Integration(Aws::Utils::Json::JsonView jsonValue);
-    Integration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSMINCIDENTS_API Integration();
+    AWS_SSMINCIDENTS_API Integration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSMINCIDENTS_API Integration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSMINCIDENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -21,10 +21,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DeleteDBClusterMessage">AWS
    * API Reference</a></p>
    */
-  class AWS_DOCDB_API DeleteDBClusterRequest : public DocDBRequest
+  class DeleteDBClusterRequest : public DocDBRequest
   {
   public:
-    DeleteDBClusterRequest();
+    AWS_DOCDB_API DeleteDBClusterRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,10 +32,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DeleteDBCluster"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_DOCDB_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_DOCDB_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 

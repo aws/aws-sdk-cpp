@@ -26,12 +26,12 @@ namespace StorageGateway
 {
 namespace Model
 {
-  class AWS_STORAGEGATEWAY_API DescribeAvailabilityMonitorTestResult
+  class DescribeAvailabilityMonitorTestResult
   {
   public:
-    DescribeAvailabilityMonitorTestResult();
-    DescribeAvailabilityMonitorTestResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeAvailabilityMonitorTestResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_STORAGEGATEWAY_API DescribeAvailabilityMonitorTestResult();
+    AWS_STORAGEGATEWAY_API DescribeAvailabilityMonitorTestResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_STORAGEGATEWAY_API DescribeAvailabilityMonitorTestResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     

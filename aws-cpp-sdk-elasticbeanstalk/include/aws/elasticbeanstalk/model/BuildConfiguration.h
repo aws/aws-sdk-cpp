@@ -29,15 +29,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/BuildConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICBEANSTALK_API BuildConfiguration
+  class BuildConfiguration
   {
   public:
-    BuildConfiguration();
-    BuildConfiguration(const Aws::Utils::Xml::XmlNode& xmlNode);
-    BuildConfiguration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICBEANSTALK_API BuildConfiguration();
+    AWS_ELASTICBEANSTALK_API BuildConfiguration(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICBEANSTALK_API BuildConfiguration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_ELASTICBEANSTALK_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_ELASTICBEANSTALK_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**

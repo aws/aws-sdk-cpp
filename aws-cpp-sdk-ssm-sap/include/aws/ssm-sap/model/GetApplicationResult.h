@@ -26,12 +26,12 @@ namespace SsmSap
 {
 namespace Model
 {
-  class AWS_SSMSAP_API GetApplicationResult
+  class GetApplicationResult
   {
   public:
-    GetApplicationResult();
-    GetApplicationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetApplicationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSMSAP_API GetApplicationResult();
+    AWS_SSMSAP_API GetApplicationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSMSAP_API GetApplicationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

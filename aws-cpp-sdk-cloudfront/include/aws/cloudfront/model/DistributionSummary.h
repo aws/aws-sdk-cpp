@@ -41,14 +41,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DistributionSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFRONT_API DistributionSummary
+  class DistributionSummary
   {
   public:
-    DistributionSummary();
-    DistributionSummary(const Aws::Utils::Xml::XmlNode& xmlNode);
-    DistributionSummary& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API DistributionSummary();
+    AWS_CLOUDFRONT_API DistributionSummary(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API DistributionSummary& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -912,6 +912,27 @@ namespace Model
      */
     inline DistributionSummary& AddAliasICPRecordals(AliasICPRecordal&& value) { m_aliasICPRecordalsHasBeenSet = true; m_aliasICPRecordals.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Whether the primary distribution has a staging distribution enabled.</p>
+     */
+    inline bool GetStaging() const{ return m_staging; }
+
+    /**
+     * <p>Whether the primary distribution has a staging distribution enabled.</p>
+     */
+    inline bool StagingHasBeenSet() const { return m_stagingHasBeenSet; }
+
+    /**
+     * <p>Whether the primary distribution has a staging distribution enabled.</p>
+     */
+    inline void SetStaging(bool value) { m_stagingHasBeenSet = true; m_staging = value; }
+
+    /**
+     * <p>Whether the primary distribution has a staging distribution enabled.</p>
+     */
+    inline DistributionSummary& WithStaging(bool value) { SetStaging(value); return *this;}
+
   private:
 
     Aws::String m_id;
@@ -973,6 +994,9 @@ namespace Model
 
     Aws::Vector<AliasICPRecordal> m_aliasICPRecordals;
     bool m_aliasICPRecordalsHasBeenSet = false;
+
+    bool m_staging;
+    bool m_stagingHasBeenSet = false;
   };
 
 } // namespace Model

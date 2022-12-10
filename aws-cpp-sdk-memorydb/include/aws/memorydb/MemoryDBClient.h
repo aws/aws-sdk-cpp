@@ -7,6 +7,7 @@
 #include <aws/memorydb/MemoryDB_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/memorydb/MemoryDBServiceClientModel.h>
 
@@ -22,7 +23,7 @@ namespace MemoryDB
    * compatible with Redis, a popular open source data store, enabling you to
    * leverage Redis’ flexible and friendly data structures, APIs, and commands.</p>
    */
-  class AWS_MEMORYDB_API MemoryDBClient : public Aws::Client::AWSJsonClient
+  class AWS_MEMORYDB_API MemoryDBClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<MemoryDBClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -76,7 +77,6 @@ namespace MemoryDB
 
         /* End of legacy constructors due deprecation */
         virtual ~MemoryDBClient();
-
 
         /**
          * <p>Apply the service update to a list of clusters supplied. For more information
@@ -755,6 +755,7 @@ namespace MemoryDB
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<MemoryDBEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<MemoryDBClient>;
       void init(const MemoryDBClientConfiguration& clientConfiguration);
 
       MemoryDBClientConfiguration m_clientConfiguration;

@@ -25,12 +25,12 @@ namespace RDS
 {
 namespace Model
 {
-  class AWS_RDS_API ModifyCurrentDBClusterCapacityResult
+  class ModifyCurrentDBClusterCapacityResult
   {
   public:
-    ModifyCurrentDBClusterCapacityResult();
-    ModifyCurrentDBClusterCapacityResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ModifyCurrentDBClusterCapacityResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_RDS_API ModifyCurrentDBClusterCapacityResult();
+    AWS_RDS_API ModifyCurrentDBClusterCapacityResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_RDS_API ModifyCurrentDBClusterCapacityResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

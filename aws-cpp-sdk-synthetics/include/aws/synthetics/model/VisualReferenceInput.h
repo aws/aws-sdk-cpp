@@ -38,13 +38,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/synthetics-2017-10-11/VisualReferenceInput">AWS
    * API Reference</a></p>
    */
-  class AWS_SYNTHETICS_API VisualReferenceInput
+  class VisualReferenceInput
   {
   public:
-    VisualReferenceInput();
-    VisualReferenceInput(Aws::Utils::Json::JsonView jsonValue);
-    VisualReferenceInput& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SYNTHETICS_API VisualReferenceInput();
+    AWS_SYNTHETICS_API VisualReferenceInput(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SYNTHETICS_API VisualReferenceInput& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SYNTHETICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

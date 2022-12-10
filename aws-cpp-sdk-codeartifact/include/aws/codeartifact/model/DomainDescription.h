@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/DomainDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEARTIFACT_API DomainDescription
+  class DomainDescription
   {
   public:
-    DomainDescription();
-    DomainDescription(Aws::Utils::Json::JsonView jsonValue);
-    DomainDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEARTIFACT_API DomainDescription();
+    AWS_CODEARTIFACT_API DomainDescription(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEARTIFACT_API DomainDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEARTIFACT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

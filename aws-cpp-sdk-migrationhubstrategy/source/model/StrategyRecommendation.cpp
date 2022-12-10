@@ -23,6 +23,7 @@ namespace Aws
         static const int recommended_HASH = HashingUtils::HashString("recommended");
         static const int viableOption_HASH = HashingUtils::HashString("viableOption");
         static const int notRecommended_HASH = HashingUtils::HashString("notRecommended");
+        static const int potential_HASH = HashingUtils::HashString("potential");
 
 
         StrategyRecommendation GetStrategyRecommendationForName(const Aws::String& name)
@@ -39,6 +40,10 @@ namespace Aws
           else if (hashCode == notRecommended_HASH)
           {
             return StrategyRecommendation::notRecommended;
+          }
+          else if (hashCode == potential_HASH)
+          {
+            return StrategyRecommendation::potential;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -60,6 +65,8 @@ namespace Aws
             return "viableOption";
           case StrategyRecommendation::notRecommended:
             return "notRecommended";
+          case StrategyRecommendation::potential:
+            return "potential";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

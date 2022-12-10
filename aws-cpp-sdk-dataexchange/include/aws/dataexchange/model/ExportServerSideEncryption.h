@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/ExportServerSideEncryption">AWS
    * API Reference</a></p>
    */
-  class AWS_DATAEXCHANGE_API ExportServerSideEncryption
+  class ExportServerSideEncryption
   {
   public:
-    ExportServerSideEncryption();
-    ExportServerSideEncryption(Aws::Utils::Json::JsonView jsonValue);
-    ExportServerSideEncryption& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DATAEXCHANGE_API ExportServerSideEncryption();
+    AWS_DATAEXCHANGE_API ExportServerSideEncryption(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATAEXCHANGE_API ExportServerSideEncryption& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATAEXCHANGE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

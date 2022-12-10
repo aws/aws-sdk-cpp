@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/DatasetContentSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTANALYTICS_API DatasetContentSummary
+  class DatasetContentSummary
   {
   public:
-    DatasetContentSummary();
-    DatasetContentSummary(Aws::Utils::Json::JsonView jsonValue);
-    DatasetContentSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTANALYTICS_API DatasetContentSummary();
+    AWS_IOTANALYTICS_API DatasetContentSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTANALYTICS_API DatasetContentSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -28,12 +28,12 @@ namespace ApplicationCostProfiler
 {
 namespace Model
 {
-  class AWS_APPLICATIONCOSTPROFILER_API GetReportDefinitionResult
+  class GetReportDefinitionResult
   {
   public:
-    GetReportDefinitionResult();
-    GetReportDefinitionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetReportDefinitionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPLICATIONCOSTPROFILER_API GetReportDefinitionResult();
+    AWS_APPLICATIONCOSTPROFILER_API GetReportDefinitionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPLICATIONCOSTPROFILER_API GetReportDefinitionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

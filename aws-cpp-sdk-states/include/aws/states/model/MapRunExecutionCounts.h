@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/MapRunExecutionCounts">AWS
    * API Reference</a></p>
    */
-  class AWS_SFN_API MapRunExecutionCounts
+  class MapRunExecutionCounts
   {
   public:
-    MapRunExecutionCounts();
-    MapRunExecutionCounts(Aws::Utils::Json::JsonView jsonValue);
-    MapRunExecutionCounts& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SFN_API MapRunExecutionCounts();
+    AWS_SFN_API MapRunExecutionCounts(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SFN_API MapRunExecutionCounts& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SFN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

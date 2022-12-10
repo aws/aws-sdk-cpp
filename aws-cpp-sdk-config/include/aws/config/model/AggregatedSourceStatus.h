@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/AggregatedSourceStatus">AWS
    * API Reference</a></p>
    */
-  class AWS_CONFIGSERVICE_API AggregatedSourceStatus
+  class AggregatedSourceStatus
   {
   public:
-    AggregatedSourceStatus();
-    AggregatedSourceStatus(Aws::Utils::Json::JsonView jsonValue);
-    AggregatedSourceStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONFIGSERVICE_API AggregatedSourceStatus();
+    AWS_CONFIGSERVICE_API AggregatedSourceStatus(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API AggregatedSourceStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

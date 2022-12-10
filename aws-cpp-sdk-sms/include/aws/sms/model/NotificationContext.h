@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/NotificationContext">AWS
    * API Reference</a></p>
    */
-  class AWS_SMS_API NotificationContext
+  class NotificationContext
   {
   public:
-    NotificationContext();
-    NotificationContext(Aws::Utils::Json::JsonView jsonValue);
-    NotificationContext& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SMS_API NotificationContext();
+    AWS_SMS_API NotificationContext(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SMS_API NotificationContext& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

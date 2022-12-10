@@ -25,12 +25,12 @@ namespace EC2
 {
 namespace Model
 {
-  class AWS_EC2_API DeleteSubnetCidrReservationResponse
+  class DeleteSubnetCidrReservationResponse
   {
   public:
-    DeleteSubnetCidrReservationResponse();
-    DeleteSubnetCidrReservationResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DeleteSubnetCidrReservationResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API DeleteSubnetCidrReservationResponse();
+    AWS_EC2_API DeleteSubnetCidrReservationResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API DeleteSubnetCidrReservationResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

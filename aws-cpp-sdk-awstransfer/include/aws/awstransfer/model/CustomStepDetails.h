@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/CustomStepDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_TRANSFER_API CustomStepDetails
+  class CustomStepDetails
   {
   public:
-    CustomStepDetails();
-    CustomStepDetails(Aws::Utils::Json::JsonView jsonValue);
-    CustomStepDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TRANSFER_API CustomStepDetails();
+    AWS_TRANSFER_API CustomStepDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSFER_API CustomStepDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSFER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

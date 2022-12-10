@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/ChangeLog">AWS
    * API Reference</a></p>
    */
-  class AWS_AUDITMANAGER_API ChangeLog
+  class ChangeLog
   {
   public:
-    ChangeLog();
-    ChangeLog(Aws::Utils::Json::JsonView jsonValue);
-    ChangeLog& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_AUDITMANAGER_API ChangeLog();
+    AWS_AUDITMANAGER_API ChangeLog(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AUDITMANAGER_API ChangeLog& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AUDITMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

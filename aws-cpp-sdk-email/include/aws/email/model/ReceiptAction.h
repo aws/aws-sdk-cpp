@@ -39,15 +39,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ReceiptAction">AWS
    * API Reference</a></p>
    */
-  class AWS_SES_API ReceiptAction
+  class ReceiptAction
   {
   public:
-    ReceiptAction();
-    ReceiptAction(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ReceiptAction& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_SES_API ReceiptAction();
+    AWS_SES_API ReceiptAction(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_SES_API ReceiptAction& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_SES_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_SES_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**

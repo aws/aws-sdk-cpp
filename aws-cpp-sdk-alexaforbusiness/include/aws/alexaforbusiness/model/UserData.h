@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UserData">AWS
    * API Reference</a></p>
    */
-  class AWS_ALEXAFORBUSINESS_API UserData
+  class UserData
   {
   public:
-    UserData();
-    UserData(Aws::Utils::Json::JsonView jsonValue);
-    UserData& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ALEXAFORBUSINESS_API UserData();
+    AWS_ALEXAFORBUSINESS_API UserData(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ALEXAFORBUSINESS_API UserData& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ALEXAFORBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

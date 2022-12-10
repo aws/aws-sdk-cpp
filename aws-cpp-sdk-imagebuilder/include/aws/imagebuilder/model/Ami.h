@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/Ami">AWS
    * API Reference</a></p>
    */
-  class AWS_IMAGEBUILDER_API Ami
+  class Ami
   {
   public:
-    Ami();
-    Ami(Aws::Utils::Json::JsonView jsonValue);
-    Ami& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IMAGEBUILDER_API Ami();
+    AWS_IMAGEBUILDER_API Ami(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IMAGEBUILDER_API Ami& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IMAGEBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

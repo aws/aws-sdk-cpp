@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/ElasticsearchClusterConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICSEARCHSERVICE_API ElasticsearchClusterConfig
+  class ElasticsearchClusterConfig
   {
   public:
-    ElasticsearchClusterConfig();
-    ElasticsearchClusterConfig(Aws::Utils::Json::JsonView jsonValue);
-    ElasticsearchClusterConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ELASTICSEARCHSERVICE_API ElasticsearchClusterConfig();
+    AWS_ELASTICSEARCHSERVICE_API ElasticsearchClusterConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICSEARCHSERVICE_API ElasticsearchClusterConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

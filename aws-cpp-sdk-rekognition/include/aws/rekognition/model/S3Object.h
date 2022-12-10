@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/S3Object">AWS
    * API Reference</a></p>
    */
-  class AWS_REKOGNITION_API S3Object
+  class S3Object
   {
   public:
-    S3Object();
-    S3Object(Aws::Utils::Json::JsonView jsonValue);
-    S3Object& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_REKOGNITION_API S3Object();
+    AWS_REKOGNITION_API S3Object(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API S3Object& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

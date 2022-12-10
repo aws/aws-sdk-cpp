@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/SMBFileShareInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_STORAGEGATEWAY_API SMBFileShareInfo
+  class SMBFileShareInfo
   {
   public:
-    SMBFileShareInfo();
-    SMBFileShareInfo(Aws::Utils::Json::JsonView jsonValue);
-    SMBFileShareInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_STORAGEGATEWAY_API SMBFileShareInfo();
+    AWS_STORAGEGATEWAY_API SMBFileShareInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_STORAGEGATEWAY_API SMBFileShareInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_STORAGEGATEWAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

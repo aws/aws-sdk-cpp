@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/AlertManagerDefinitionStatus">AWS
    * API Reference</a></p>
    */
-  class AWS_PROMETHEUSSERVICE_API AlertManagerDefinitionStatus
+  class AlertManagerDefinitionStatus
   {
   public:
-    AlertManagerDefinitionStatus();
-    AlertManagerDefinitionStatus(Aws::Utils::Json::JsonView jsonValue);
-    AlertManagerDefinitionStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PROMETHEUSSERVICE_API AlertManagerDefinitionStatus();
+    AWS_PROMETHEUSSERVICE_API AlertManagerDefinitionStatus(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PROMETHEUSSERVICE_API AlertManagerDefinitionStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PROMETHEUSSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

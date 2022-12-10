@@ -7,6 +7,7 @@
 #include <aws/codestar-notifications/CodeStarNotifications_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/codestar-notifications/CodeStarNotificationsServiceClientModel.h>
 
@@ -44,7 +45,7 @@ namespace CodeStarNotifications
    * href="https://docs.aws.amazon.com/dtconsole/latest/userguide/what-is-dtconsole.html">Amazon
    * Web Services Developer Tools Console User Guide</a>. </p>
    */
-  class AWS_CODESTARNOTIFICATIONS_API CodeStarNotificationsClient : public Aws::Client::AWSJsonClient
+  class AWS_CODESTARNOTIFICATIONS_API CodeStarNotificationsClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<CodeStarNotificationsClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -98,7 +99,6 @@ namespace CodeStarNotifications
 
         /* End of legacy constructors due deprecation */
         virtual ~CodeStarNotificationsClient();
-
 
         /**
          * <p>Creates a notification rule for a resource. The rule specifies the events you
@@ -343,6 +343,7 @@ namespace CodeStarNotifications
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<CodeStarNotificationsEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<CodeStarNotificationsClient>;
       void init(const CodeStarNotificationsClientConfiguration& clientConfiguration);
 
       CodeStarNotificationsClientConfiguration m_clientConfiguration;

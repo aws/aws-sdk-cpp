@@ -38,13 +38,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ComboChartVisual">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API ComboChartVisual
+  class ComboChartVisual
   {
   public:
-    ComboChartVisual();
-    ComboChartVisual(Aws::Utils::Json::JsonView jsonValue);
-    ComboChartVisual& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API ComboChartVisual();
+    AWS_QUICKSIGHT_API ComboChartVisual(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API ComboChartVisual& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

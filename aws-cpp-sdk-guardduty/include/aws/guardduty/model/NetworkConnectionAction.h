@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/NetworkConnectionAction">AWS
    * API Reference</a></p>
    */
-  class AWS_GUARDDUTY_API NetworkConnectionAction
+  class NetworkConnectionAction
   {
   public:
-    NetworkConnectionAction();
-    NetworkConnectionAction(Aws::Utils::Json::JsonView jsonValue);
-    NetworkConnectionAction& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GUARDDUTY_API NetworkConnectionAction();
+    AWS_GUARDDUTY_API NetworkConnectionAction(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API NetworkConnectionAction& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

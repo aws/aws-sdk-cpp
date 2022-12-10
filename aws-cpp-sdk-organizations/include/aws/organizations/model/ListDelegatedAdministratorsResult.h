@@ -26,12 +26,12 @@ namespace Organizations
 {
 namespace Model
 {
-  class AWS_ORGANIZATIONS_API ListDelegatedAdministratorsResult
+  class ListDelegatedAdministratorsResult
   {
   public:
-    ListDelegatedAdministratorsResult();
-    ListDelegatedAdministratorsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListDelegatedAdministratorsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ORGANIZATIONS_API ListDelegatedAdministratorsResult();
+    AWS_ORGANIZATIONS_API ListDelegatedAdministratorsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ORGANIZATIONS_API ListDelegatedAdministratorsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

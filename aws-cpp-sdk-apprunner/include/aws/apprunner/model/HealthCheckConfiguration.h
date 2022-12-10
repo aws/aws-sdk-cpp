@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/HealthCheckConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_APPRUNNER_API HealthCheckConfiguration
+  class HealthCheckConfiguration
   {
   public:
-    HealthCheckConfiguration();
-    HealthCheckConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    HealthCheckConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPRUNNER_API HealthCheckConfiguration();
+    AWS_APPRUNNER_API HealthCheckConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPRUNNER_API HealthCheckConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPRUNNER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

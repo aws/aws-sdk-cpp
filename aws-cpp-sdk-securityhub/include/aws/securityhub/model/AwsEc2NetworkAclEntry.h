@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsEc2NetworkAclEntry">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsEc2NetworkAclEntry
+  class AwsEc2NetworkAclEntry
   {
   public:
-    AwsEc2NetworkAclEntry();
-    AwsEc2NetworkAclEntry(Aws::Utils::Json::JsonView jsonValue);
-    AwsEc2NetworkAclEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsEc2NetworkAclEntry();
+    AWS_SECURITYHUB_API AwsEc2NetworkAclEntry(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsEc2NetworkAclEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

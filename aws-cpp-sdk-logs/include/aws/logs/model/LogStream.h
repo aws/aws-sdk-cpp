@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/LogStream">AWS API
    * Reference</a></p>
    */
-  class AWS_CLOUDWATCHLOGS_API LogStream
+  class LogStream
   {
   public:
-    LogStream();
-    LogStream(Aws::Utils::Json::JsonView jsonValue);
-    LogStream& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDWATCHLOGS_API LogStream();
+    AWS_CLOUDWATCHLOGS_API LogStream(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHLOGS_API LogStream& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHLOGS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

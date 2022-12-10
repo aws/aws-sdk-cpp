@@ -7,6 +7,7 @@
 #include <aws/states/SFN_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/states/SFNServiceClientModel.h>
 
@@ -34,7 +35,7 @@ namespace SFN
    * href="https://docs.aws.amazon.com/step-functions/latest/dg/welcome.html">Step
    * Functions Developer Guide</a> </i>.</p>
    */
-  class AWS_SFN_API SFNClient : public Aws::Client::AWSJsonClient
+  class AWS_SFN_API SFNClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<SFNClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -88,7 +89,6 @@ namespace SFN
 
         /* End of legacy constructors due deprecation */
         virtual ~SFNClient();
-
 
         /**
          * <p>Creates an activity. An activity is a task that you write in any programming
@@ -736,6 +736,7 @@ namespace SFN
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<SFNEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<SFNClient>;
       void init(const SFNClientConfiguration& clientConfiguration);
 
       SFNClientConfiguration m_clientConfiguration;

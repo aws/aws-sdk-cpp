@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dlm-2018-01-12/LifecyclePolicy">AWS
    * API Reference</a></p>
    */
-  class AWS_DLM_API LifecyclePolicy
+  class LifecyclePolicy
   {
   public:
-    LifecyclePolicy();
-    LifecyclePolicy(Aws::Utils::Json::JsonView jsonValue);
-    LifecyclePolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DLM_API LifecyclePolicy();
+    AWS_DLM_API LifecyclePolicy(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DLM_API LifecyclePolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DLM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListedConnector">AWS
    * API Reference</a></p>
    */
-  class AWS_TRANSFER_API ListedConnector
+  class ListedConnector
   {
   public:
-    ListedConnector();
-    ListedConnector(Aws::Utils::Json::JsonView jsonValue);
-    ListedConnector& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TRANSFER_API ListedConnector();
+    AWS_TRANSFER_API ListedConnector(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSFER_API ListedConnector& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSFER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

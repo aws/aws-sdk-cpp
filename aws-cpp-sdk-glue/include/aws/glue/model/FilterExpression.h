@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/FilterExpression">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API FilterExpression
+  class FilterExpression
   {
   public:
-    FilterExpression();
-    FilterExpression(Aws::Utils::Json::JsonView jsonValue);
-    FilterExpression& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API FilterExpression();
+    AWS_GLUE_API FilterExpression(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API FilterExpression& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

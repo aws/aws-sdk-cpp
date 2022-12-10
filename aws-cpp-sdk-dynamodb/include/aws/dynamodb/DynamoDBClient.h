@@ -7,6 +7,7 @@
 #include <aws/dynamodb/DynamoDB_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/dynamodb/DynamoDBServiceClientModel.h>
 
@@ -32,7 +33,7 @@ namespace DynamoDB
    * Zones in an Amazon Web Services Region, providing built-in high availability and
    * data durability.</p>
    */
-  class AWS_DYNAMODB_API DynamoDBClient : public Aws::Client::AWSJsonClient
+  class AWS_DYNAMODB_API DynamoDBClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<DynamoDBClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -86,7 +87,6 @@ namespace DynamoDB
 
         /* End of legacy constructors due deprecation */
         virtual ~DynamoDBClient();
-
 
         /**
          * <p>This operation allows you to perform batch reads or writes on data stored in
@@ -1573,6 +1573,7 @@ namespace DynamoDB
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<DynamoDBEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<DynamoDBClient>;
       void init(const DynamoDBClientConfiguration& clientConfiguration);
 
       mutable Aws::Utils::ConcurrentCache<Aws::String, Aws::String> m_endpointsCache;

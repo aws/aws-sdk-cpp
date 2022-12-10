@@ -27,12 +27,12 @@ namespace kendra
 {
 namespace Model
 {
-  class AWS_KENDRA_API DescribeAccessControlConfigurationResult
+  class DescribeAccessControlConfigurationResult
   {
   public:
-    DescribeAccessControlConfigurationResult();
-    DescribeAccessControlConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeAccessControlConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KENDRA_API DescribeAccessControlConfigurationResult();
+    AWS_KENDRA_API DescribeAccessControlConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_KENDRA_API DescribeAccessControlConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

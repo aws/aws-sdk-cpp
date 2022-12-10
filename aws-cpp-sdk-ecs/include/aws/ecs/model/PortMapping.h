@@ -40,13 +40,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/PortMapping">AWS API
    * Reference</a></p>
    */
-  class AWS_ECS_API PortMapping
+  class PortMapping
   {
   public:
-    PortMapping();
-    PortMapping(Aws::Utils::Json::JsonView jsonValue);
-    PortMapping& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ECS_API PortMapping();
+    AWS_ECS_API PortMapping(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECS_API PortMapping& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -255,10 +255,10 @@ namespace Model
     /**
      * <p>The name that's used for the port mapping. This parameter only applies to
      * Service Connect. This parameter is the name that you use in the
-     * <code>serviceConnectConfiguration</code> of a service. Up to 64 characters are
-     * allowed. The characters can include lowercase letters, numbers, underscores (_),
-     * and hyphens (-). A hyphen can't be the first character.</p> <p>For more
-     * information, see <a
+     * <code>serviceConnectConfiguration</code> of a service. The name can include up
+     * to 64 characters. The characters can include lowercase letters, numbers,
+     * underscores (_), and hyphens (-). The name can't start with a hyphen.</p> <p>For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service
      * Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
      */
@@ -267,10 +267,10 @@ namespace Model
     /**
      * <p>The name that's used for the port mapping. This parameter only applies to
      * Service Connect. This parameter is the name that you use in the
-     * <code>serviceConnectConfiguration</code> of a service. Up to 64 characters are
-     * allowed. The characters can include lowercase letters, numbers, underscores (_),
-     * and hyphens (-). A hyphen can't be the first character.</p> <p>For more
-     * information, see <a
+     * <code>serviceConnectConfiguration</code> of a service. The name can include up
+     * to 64 characters. The characters can include lowercase letters, numbers,
+     * underscores (_), and hyphens (-). The name can't start with a hyphen.</p> <p>For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service
      * Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
      */
@@ -279,10 +279,10 @@ namespace Model
     /**
      * <p>The name that's used for the port mapping. This parameter only applies to
      * Service Connect. This parameter is the name that you use in the
-     * <code>serviceConnectConfiguration</code> of a service. Up to 64 characters are
-     * allowed. The characters can include lowercase letters, numbers, underscores (_),
-     * and hyphens (-). A hyphen can't be the first character.</p> <p>For more
-     * information, see <a
+     * <code>serviceConnectConfiguration</code> of a service. The name can include up
+     * to 64 characters. The characters can include lowercase letters, numbers,
+     * underscores (_), and hyphens (-). The name can't start with a hyphen.</p> <p>For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service
      * Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
      */
@@ -291,10 +291,10 @@ namespace Model
     /**
      * <p>The name that's used for the port mapping. This parameter only applies to
      * Service Connect. This parameter is the name that you use in the
-     * <code>serviceConnectConfiguration</code> of a service. Up to 64 characters are
-     * allowed. The characters can include lowercase letters, numbers, underscores (_),
-     * and hyphens (-). A hyphen can't be the first character.</p> <p>For more
-     * information, see <a
+     * <code>serviceConnectConfiguration</code> of a service. The name can include up
+     * to 64 characters. The characters can include lowercase letters, numbers,
+     * underscores (_), and hyphens (-). The name can't start with a hyphen.</p> <p>For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service
      * Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
      */
@@ -303,10 +303,10 @@ namespace Model
     /**
      * <p>The name that's used for the port mapping. This parameter only applies to
      * Service Connect. This parameter is the name that you use in the
-     * <code>serviceConnectConfiguration</code> of a service. Up to 64 characters are
-     * allowed. The characters can include lowercase letters, numbers, underscores (_),
-     * and hyphens (-). A hyphen can't be the first character.</p> <p>For more
-     * information, see <a
+     * <code>serviceConnectConfiguration</code> of a service. The name can include up
+     * to 64 characters. The characters can include lowercase letters, numbers,
+     * underscores (_), and hyphens (-). The name can't start with a hyphen.</p> <p>For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service
      * Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
      */
@@ -315,10 +315,10 @@ namespace Model
     /**
      * <p>The name that's used for the port mapping. This parameter only applies to
      * Service Connect. This parameter is the name that you use in the
-     * <code>serviceConnectConfiguration</code> of a service. Up to 64 characters are
-     * allowed. The characters can include lowercase letters, numbers, underscores (_),
-     * and hyphens (-). A hyphen can't be the first character.</p> <p>For more
-     * information, see <a
+     * <code>serviceConnectConfiguration</code> of a service. The name can include up
+     * to 64 characters. The characters can include lowercase letters, numbers,
+     * underscores (_), and hyphens (-). The name can't start with a hyphen.</p> <p>For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service
      * Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
      */
@@ -327,10 +327,10 @@ namespace Model
     /**
      * <p>The name that's used for the port mapping. This parameter only applies to
      * Service Connect. This parameter is the name that you use in the
-     * <code>serviceConnectConfiguration</code> of a service. Up to 64 characters are
-     * allowed. The characters can include lowercase letters, numbers, underscores (_),
-     * and hyphens (-). A hyphen can't be the first character.</p> <p>For more
-     * information, see <a
+     * <code>serviceConnectConfiguration</code> of a service. The name can include up
+     * to 64 characters. The characters can include lowercase letters, numbers,
+     * underscores (_), and hyphens (-). The name can't start with a hyphen.</p> <p>For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service
      * Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
      */
@@ -339,10 +339,10 @@ namespace Model
     /**
      * <p>The name that's used for the port mapping. This parameter only applies to
      * Service Connect. This parameter is the name that you use in the
-     * <code>serviceConnectConfiguration</code> of a service. Up to 64 characters are
-     * allowed. The characters can include lowercase letters, numbers, underscores (_),
-     * and hyphens (-). A hyphen can't be the first character.</p> <p>For more
-     * information, see <a
+     * <code>serviceConnectConfiguration</code> of a service. The name can include up
+     * to 64 characters. The characters can include lowercase letters, numbers,
+     * underscores (_), and hyphens (-). The name can't start with a hyphen.</p> <p>For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service
      * Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
      */

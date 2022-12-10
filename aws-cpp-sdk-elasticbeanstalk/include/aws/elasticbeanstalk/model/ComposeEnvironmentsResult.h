@@ -33,12 +33,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/EnvironmentDescriptionsMessage">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICBEANSTALK_API ComposeEnvironmentsResult
+  class ComposeEnvironmentsResult
   {
   public:
-    ComposeEnvironmentsResult();
-    ComposeEnvironmentsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ComposeEnvironmentsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ELASTICBEANSTALK_API ComposeEnvironmentsResult();
+    AWS_ELASTICBEANSTALK_API ComposeEnvironmentsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ELASTICBEANSTALK_API ComposeEnvironmentsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

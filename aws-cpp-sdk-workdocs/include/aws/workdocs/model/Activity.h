@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/Activity">AWS
    * API Reference</a></p>
    */
-  class AWS_WORKDOCS_API Activity
+  class Activity
   {
   public:
-    Activity();
-    Activity(Aws::Utils::Json::JsonView jsonValue);
-    Activity& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WORKDOCS_API Activity();
+    AWS_WORKDOCS_API Activity(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKDOCS_API Activity& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKDOCS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

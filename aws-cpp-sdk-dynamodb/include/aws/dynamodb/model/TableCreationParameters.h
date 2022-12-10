@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/TableCreationParameters">AWS
    * API Reference</a></p>
    */
-  class AWS_DYNAMODB_API TableCreationParameters
+  class TableCreationParameters
   {
   public:
-    TableCreationParameters();
-    TableCreationParameters(Aws::Utils::Json::JsonView jsonValue);
-    TableCreationParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DYNAMODB_API TableCreationParameters();
+    AWS_DYNAMODB_API TableCreationParameters(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API TableCreationParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

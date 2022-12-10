@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/runtime.lex.v2-2020-08-07/ActiveContext">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXRUNTIMEV2_API ActiveContext
+  class ActiveContext
   {
   public:
-    ActiveContext();
-    ActiveContext(Aws::Utils::Json::JsonView jsonValue);
-    ActiveContext& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXRUNTIMEV2_API ActiveContext();
+    AWS_LEXRUNTIMEV2_API ActiveContext(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXRUNTIMEV2_API ActiveContext& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXRUNTIMEV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

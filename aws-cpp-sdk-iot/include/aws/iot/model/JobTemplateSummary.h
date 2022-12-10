@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/JobTemplateSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API JobTemplateSummary
+  class JobTemplateSummary
   {
   public:
-    JobTemplateSummary();
-    JobTemplateSummary(Aws::Utils::Json::JsonView jsonValue);
-    JobTemplateSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API JobTemplateSummary();
+    AWS_IOT_API JobTemplateSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API JobTemplateSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

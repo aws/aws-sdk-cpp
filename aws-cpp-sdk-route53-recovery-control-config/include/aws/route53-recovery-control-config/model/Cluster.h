@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/Cluster">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53RECOVERYCONTROLCONFIG_API Cluster
+  class Cluster
   {
   public:
-    Cluster();
-    Cluster(Aws::Utils::Json::JsonView jsonValue);
-    Cluster& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ROUTE53RECOVERYCONTROLCONFIG_API Cluster();
+    AWS_ROUTE53RECOVERYCONTROLCONFIG_API Cluster(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROUTE53RECOVERYCONTROLCONFIG_API Cluster& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROUTE53RECOVERYCONTROLCONFIG_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

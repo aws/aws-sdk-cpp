@@ -35,14 +35,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/Distribution">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFRONT_API Distribution
+  class Distribution
   {
   public:
-    Distribution();
-    Distribution(const Aws::Utils::Xml::XmlNode& xmlNode);
-    Distribution& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API Distribution();
+    AWS_CLOUDFRONT_API Distribution(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API Distribution& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**

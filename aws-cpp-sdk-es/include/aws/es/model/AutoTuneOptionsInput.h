@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/AutoTuneOptionsInput">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICSEARCHSERVICE_API AutoTuneOptionsInput
+  class AutoTuneOptionsInput
   {
   public:
-    AutoTuneOptionsInput();
-    AutoTuneOptionsInput(Aws::Utils::Json::JsonView jsonValue);
-    AutoTuneOptionsInput& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ELASTICSEARCHSERVICE_API AutoTuneOptionsInput();
+    AWS_ELASTICSEARCHSERVICE_API AutoTuneOptionsInput(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICSEARCHSERVICE_API AutoTuneOptionsInput& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

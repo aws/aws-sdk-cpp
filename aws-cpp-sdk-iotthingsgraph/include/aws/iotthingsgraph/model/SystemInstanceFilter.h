@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/SystemInstanceFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTTHINGSGRAPH_API SystemInstanceFilter
+  class SystemInstanceFilter
   {
   public:
-    SystemInstanceFilter();
-    SystemInstanceFilter(Aws::Utils::Json::JsonView jsonValue);
-    SystemInstanceFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTTHINGSGRAPH_API SystemInstanceFilter();
+    AWS_IOTTHINGSGRAPH_API SystemInstanceFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTTHINGSGRAPH_API SystemInstanceFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTTHINGSGRAPH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

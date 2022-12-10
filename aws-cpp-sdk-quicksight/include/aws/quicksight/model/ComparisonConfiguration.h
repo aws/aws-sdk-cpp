@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ComparisonConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API ComparisonConfiguration
+  class ComparisonConfiguration
   {
   public:
-    ComparisonConfiguration();
-    ComparisonConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    ComparisonConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API ComparisonConfiguration();
+    AWS_QUICKSIGHT_API ComparisonConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API ComparisonConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

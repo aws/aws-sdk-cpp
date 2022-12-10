@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ConnectorConfigRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_EKS_API ConnectorConfigRequest
+  class ConnectorConfigRequest
   {
   public:
-    ConnectorConfigRequest();
-    ConnectorConfigRequest(Aws::Utils::Json::JsonView jsonValue);
-    ConnectorConfigRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EKS_API ConnectorConfigRequest();
+    AWS_EKS_API ConnectorConfigRequest(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EKS_API ConnectorConfigRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EKS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

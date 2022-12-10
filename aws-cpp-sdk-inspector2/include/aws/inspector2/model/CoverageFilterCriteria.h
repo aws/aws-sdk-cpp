@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/CoverageFilterCriteria">AWS
    * API Reference</a></p>
    */
-  class AWS_INSPECTOR2_API CoverageFilterCriteria
+  class CoverageFilterCriteria
   {
   public:
-    CoverageFilterCriteria();
-    CoverageFilterCriteria(Aws::Utils::Json::JsonView jsonValue);
-    CoverageFilterCriteria& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_INSPECTOR2_API CoverageFilterCriteria();
+    AWS_INSPECTOR2_API CoverageFilterCriteria(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR2_API CoverageFilterCriteria& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

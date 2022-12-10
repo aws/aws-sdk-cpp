@@ -25,13 +25,13 @@ namespace Lambda
 namespace Model
 {
 
-  class AWS_LAMBDA_API FunctionEventInvokeConfig
+  class FunctionEventInvokeConfig
   {
   public:
-    FunctionEventInvokeConfig();
-    FunctionEventInvokeConfig(Aws::Utils::Json::JsonView jsonValue);
-    FunctionEventInvokeConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LAMBDA_API FunctionEventInvokeConfig();
+    AWS_LAMBDA_API FunctionEventInvokeConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAMBDA_API FunctionEventInvokeConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAMBDA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

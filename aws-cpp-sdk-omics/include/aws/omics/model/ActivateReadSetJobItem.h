@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ActivateReadSetJobItem">AWS
    * API Reference</a></p>
    */
-  class AWS_OMICS_API ActivateReadSetJobItem
+  class ActivateReadSetJobItem
   {
   public:
-    ActivateReadSetJobItem();
-    ActivateReadSetJobItem(Aws::Utils::Json::JsonView jsonValue);
-    ActivateReadSetJobItem& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OMICS_API ActivateReadSetJobItem();
+    AWS_OMICS_API ActivateReadSetJobItem(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OMICS_API ActivateReadSetJobItem& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OMICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

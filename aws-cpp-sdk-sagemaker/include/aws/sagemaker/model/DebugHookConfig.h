@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DebugHookConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API DebugHookConfig
+  class DebugHookConfig
   {
   public:
-    DebugHookConfig();
-    DebugHookConfig(Aws::Utils::Json::JsonView jsonValue);
-    DebugHookConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API DebugHookConfig();
+    AWS_SAGEMAKER_API DebugHookConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API DebugHookConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

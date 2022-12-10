@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/connectcampaigns-2021-01-30/FailedRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECTCAMPAIGNS_API FailedRequest
+  class FailedRequest
   {
   public:
-    FailedRequest();
-    FailedRequest(Aws::Utils::Json::JsonView jsonValue);
-    FailedRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECTCAMPAIGNS_API FailedRequest();
+    AWS_CONNECTCAMPAIGNS_API FailedRequest(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTCAMPAIGNS_API FailedRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTCAMPAIGNS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

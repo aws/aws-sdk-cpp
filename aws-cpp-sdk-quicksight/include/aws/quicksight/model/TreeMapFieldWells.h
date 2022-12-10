@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/TreeMapFieldWells">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API TreeMapFieldWells
+  class TreeMapFieldWells
   {
   public:
-    TreeMapFieldWells();
-    TreeMapFieldWells(Aws::Utils::Json::JsonView jsonValue);
-    TreeMapFieldWells& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API TreeMapFieldWells();
+    AWS_QUICKSIGHT_API TreeMapFieldWells(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API TreeMapFieldWells& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

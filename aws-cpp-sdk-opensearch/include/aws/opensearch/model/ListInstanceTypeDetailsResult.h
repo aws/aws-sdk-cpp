@@ -26,12 +26,12 @@ namespace OpenSearchService
 {
 namespace Model
 {
-  class AWS_OPENSEARCHSERVICE_API ListInstanceTypeDetailsResult
+  class ListInstanceTypeDetailsResult
   {
   public:
-    ListInstanceTypeDetailsResult();
-    ListInstanceTypeDetailsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListInstanceTypeDetailsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OPENSEARCHSERVICE_API ListInstanceTypeDetailsResult();
+    AWS_OPENSEARCHSERVICE_API ListInstanceTypeDetailsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OPENSEARCHSERVICE_API ListInstanceTypeDetailsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

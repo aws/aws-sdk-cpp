@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/EC2DeleteRouteAction">AWS
    * API Reference</a></p>
    */
-  class AWS_FMS_API EC2DeleteRouteAction
+  class EC2DeleteRouteAction
   {
   public:
-    EC2DeleteRouteAction();
-    EC2DeleteRouteAction(Aws::Utils::Json::JsonView jsonValue);
-    EC2DeleteRouteAction& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FMS_API EC2DeleteRouteAction();
+    AWS_FMS_API EC2DeleteRouteAction(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FMS_API EC2DeleteRouteAction& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

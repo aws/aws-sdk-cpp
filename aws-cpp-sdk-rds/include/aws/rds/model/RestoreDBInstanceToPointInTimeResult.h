@@ -25,12 +25,12 @@ namespace RDS
 {
 namespace Model
 {
-  class AWS_RDS_API RestoreDBInstanceToPointInTimeResult
+  class RestoreDBInstanceToPointInTimeResult
   {
   public:
-    RestoreDBInstanceToPointInTimeResult();
-    RestoreDBInstanceToPointInTimeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    RestoreDBInstanceToPointInTimeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_RDS_API RestoreDBInstanceToPointInTimeResult();
+    AWS_RDS_API RestoreDBInstanceToPointInTimeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_RDS_API RestoreDBInstanceToPointInTimeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     

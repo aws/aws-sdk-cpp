@@ -27,12 +27,12 @@ namespace EC2
 {
 namespace Model
 {
-  class AWS_EC2_API GetTransitGatewayAttachmentPropagationsResponse
+  class GetTransitGatewayAttachmentPropagationsResponse
   {
   public:
-    GetTransitGatewayAttachmentPropagationsResponse();
-    GetTransitGatewayAttachmentPropagationsResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    GetTransitGatewayAttachmentPropagationsResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API GetTransitGatewayAttachmentPropagationsResponse();
+    AWS_EC2_API GetTransitGatewayAttachmentPropagationsResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API GetTransitGatewayAttachmentPropagationsResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

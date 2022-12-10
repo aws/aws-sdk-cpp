@@ -7,6 +7,7 @@
 #include <aws/backup-gateway/BackupGateway_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/backup-gateway/BackupGatewayServiceClientModel.h>
 
@@ -27,7 +28,7 @@ namespace BackupGateway
    * navigate to the Backup console, choose <b>Gateways</b>, then choose <b>Create
    * gateway</b>.</p></p>
    */
-  class AWS_BACKUPGATEWAY_API BackupGatewayClient : public Aws::Client::AWSJsonClient
+  class AWS_BACKUPGATEWAY_API BackupGatewayClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<BackupGatewayClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -81,7 +82,6 @@ namespace BackupGateway
 
         /* End of legacy constructors due deprecation */
         virtual ~BackupGatewayClient();
-
 
         /**
          * <p>Associates a backup gateway with your server. After you complete the
@@ -430,6 +430,7 @@ namespace BackupGateway
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<BackupGatewayEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<BackupGatewayClient>;
       void init(const BackupGatewayClientConfiguration& clientConfiguration);
 
       BackupGatewayClientConfiguration m_clientConfiguration;

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ReferenceStoreFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_OMICS_API ReferenceStoreFilter
+  class ReferenceStoreFilter
   {
   public:
-    ReferenceStoreFilter();
-    ReferenceStoreFilter(Aws::Utils::Json::JsonView jsonValue);
-    ReferenceStoreFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OMICS_API ReferenceStoreFilter();
+    AWS_OMICS_API ReferenceStoreFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OMICS_API ReferenceStoreFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OMICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

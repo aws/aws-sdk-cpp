@@ -28,12 +28,12 @@ namespace SFN
 {
 namespace Model
 {
-  class AWS_SFN_API DescribeMapRunResult
+  class DescribeMapRunResult
   {
   public:
-    DescribeMapRunResult();
-    DescribeMapRunResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeMapRunResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SFN_API DescribeMapRunResult();
+    AWS_SFN_API DescribeMapRunResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SFN_API DescribeMapRunResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/StreamSessionSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_IVS_API StreamSessionSummary
+  class StreamSessionSummary
   {
   public:
-    StreamSessionSummary();
-    StreamSessionSummary(Aws::Utils::Json::JsonView jsonValue);
-    StreamSessionSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IVS_API StreamSessionSummary();
+    AWS_IVS_API StreamSessionSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IVS_API StreamSessionSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IVS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -22,6 +22,7 @@
 #include <aws/migrationhubstrategy/model/GetApplicationComponentStrategiesResult.h>
 #include <aws/migrationhubstrategy/model/GetAssessmentResult.h>
 #include <aws/migrationhubstrategy/model/GetImportFileTaskResult.h>
+#include <aws/migrationhubstrategy/model/GetLatestAssessmentIdResult.h>
 #include <aws/migrationhubstrategy/model/GetPortfolioPreferencesResult.h>
 #include <aws/migrationhubstrategy/model/GetPortfolioSummaryResult.h>
 #include <aws/migrationhubstrategy/model/GetRecommendationReportDetailsResult.h>
@@ -82,6 +83,7 @@ namespace Aws
       class GetApplicationComponentStrategiesRequest;
       class GetAssessmentRequest;
       class GetImportFileTaskRequest;
+      class GetLatestAssessmentIdRequest;
       class GetPortfolioPreferencesRequest;
       class GetPortfolioSummaryRequest;
       class GetRecommendationReportDetailsRequest;
@@ -105,6 +107,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<GetApplicationComponentStrategiesResult, MigrationHubStrategyRecommendationsError> GetApplicationComponentStrategiesOutcome;
       typedef Aws::Utils::Outcome<GetAssessmentResult, MigrationHubStrategyRecommendationsError> GetAssessmentOutcome;
       typedef Aws::Utils::Outcome<GetImportFileTaskResult, MigrationHubStrategyRecommendationsError> GetImportFileTaskOutcome;
+      typedef Aws::Utils::Outcome<GetLatestAssessmentIdResult, MigrationHubStrategyRecommendationsError> GetLatestAssessmentIdOutcome;
       typedef Aws::Utils::Outcome<GetPortfolioPreferencesResult, MigrationHubStrategyRecommendationsError> GetPortfolioPreferencesOutcome;
       typedef Aws::Utils::Outcome<GetPortfolioSummaryResult, MigrationHubStrategyRecommendationsError> GetPortfolioSummaryOutcome;
       typedef Aws::Utils::Outcome<GetRecommendationReportDetailsResult, MigrationHubStrategyRecommendationsError> GetRecommendationReportDetailsOutcome;
@@ -128,6 +131,7 @@ namespace Aws
       typedef std::future<GetApplicationComponentStrategiesOutcome> GetApplicationComponentStrategiesOutcomeCallable;
       typedef std::future<GetAssessmentOutcome> GetAssessmentOutcomeCallable;
       typedef std::future<GetImportFileTaskOutcome> GetImportFileTaskOutcomeCallable;
+      typedef std::future<GetLatestAssessmentIdOutcome> GetLatestAssessmentIdOutcomeCallable;
       typedef std::future<GetPortfolioPreferencesOutcome> GetPortfolioPreferencesOutcomeCallable;
       typedef std::future<GetPortfolioSummaryOutcome> GetPortfolioSummaryOutcomeCallable;
       typedef std::future<GetRecommendationReportDetailsOutcome> GetRecommendationReportDetailsOutcomeCallable;
@@ -154,6 +158,7 @@ namespace Aws
     typedef std::function<void(const MigrationHubStrategyRecommendationsClient*, const Model::GetApplicationComponentStrategiesRequest&, const Model::GetApplicationComponentStrategiesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetApplicationComponentStrategiesResponseReceivedHandler;
     typedef std::function<void(const MigrationHubStrategyRecommendationsClient*, const Model::GetAssessmentRequest&, const Model::GetAssessmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAssessmentResponseReceivedHandler;
     typedef std::function<void(const MigrationHubStrategyRecommendationsClient*, const Model::GetImportFileTaskRequest&, const Model::GetImportFileTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetImportFileTaskResponseReceivedHandler;
+    typedef std::function<void(const MigrationHubStrategyRecommendationsClient*, const Model::GetLatestAssessmentIdRequest&, const Model::GetLatestAssessmentIdOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetLatestAssessmentIdResponseReceivedHandler;
     typedef std::function<void(const MigrationHubStrategyRecommendationsClient*, const Model::GetPortfolioPreferencesRequest&, const Model::GetPortfolioPreferencesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPortfolioPreferencesResponseReceivedHandler;
     typedef std::function<void(const MigrationHubStrategyRecommendationsClient*, const Model::GetPortfolioSummaryRequest&, const Model::GetPortfolioSummaryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPortfolioSummaryResponseReceivedHandler;
     typedef std::function<void(const MigrationHubStrategyRecommendationsClient*, const Model::GetRecommendationReportDetailsRequest&, const Model::GetRecommendationReportDetailsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetRecommendationReportDetailsResponseReceivedHandler;

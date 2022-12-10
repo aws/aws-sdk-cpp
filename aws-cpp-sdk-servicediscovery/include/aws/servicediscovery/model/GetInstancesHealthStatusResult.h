@@ -26,12 +26,12 @@ namespace ServiceDiscovery
 {
 namespace Model
 {
-  class AWS_SERVICEDISCOVERY_API GetInstancesHealthStatusResult
+  class GetInstancesHealthStatusResult
   {
   public:
-    GetInstancesHealthStatusResult();
-    GetInstancesHealthStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetInstancesHealthStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SERVICEDISCOVERY_API GetInstancesHealthStatusResult();
+    AWS_SERVICEDISCOVERY_API GetInstancesHealthStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SERVICEDISCOVERY_API GetInstancesHealthStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

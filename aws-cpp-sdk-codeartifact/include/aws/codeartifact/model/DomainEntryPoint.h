@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/DomainEntryPoint">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEARTIFACT_API DomainEntryPoint
+  class DomainEntryPoint
   {
   public:
-    DomainEntryPoint();
-    DomainEntryPoint(Aws::Utils::Json::JsonView jsonValue);
-    DomainEntryPoint& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEARTIFACT_API DomainEntryPoint();
+    AWS_CODEARTIFACT_API DomainEntryPoint(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEARTIFACT_API DomainEntryPoint& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEARTIFACT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

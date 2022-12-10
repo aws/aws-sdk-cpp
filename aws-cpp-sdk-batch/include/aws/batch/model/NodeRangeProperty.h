@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/NodeRangeProperty">AWS
    * API Reference</a></p>
    */
-  class AWS_BATCH_API NodeRangeProperty
+  class NodeRangeProperty
   {
   public:
-    NodeRangeProperty();
-    NodeRangeProperty(Aws::Utils::Json::JsonView jsonValue);
-    NodeRangeProperty& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BATCH_API NodeRangeProperty();
+    AWS_BATCH_API NodeRangeProperty(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BATCH_API NodeRangeProperty& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BATCH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

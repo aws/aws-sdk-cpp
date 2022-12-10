@@ -37,13 +37,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/FunnelChartVisual">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API FunnelChartVisual
+  class FunnelChartVisual
   {
   public:
-    FunnelChartVisual();
-    FunnelChartVisual(Aws::Utils::Json::JsonView jsonValue);
-    FunnelChartVisual& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API FunnelChartVisual();
+    AWS_QUICKSIGHT_API FunnelChartVisual(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API FunnelChartVisual& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

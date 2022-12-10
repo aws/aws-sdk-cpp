@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/SnapshotLimits">AWS
    * API Reference</a></p>
    */
-  class AWS_DIRECTORYSERVICE_API SnapshotLimits
+  class SnapshotLimits
   {
   public:
-    SnapshotLimits();
-    SnapshotLimits(Aws::Utils::Json::JsonView jsonValue);
-    SnapshotLimits& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DIRECTORYSERVICE_API SnapshotLimits();
+    AWS_DIRECTORYSERVICE_API SnapshotLimits(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTORYSERVICE_API SnapshotLimits& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTORYSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

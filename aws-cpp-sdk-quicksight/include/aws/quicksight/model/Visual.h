@@ -51,13 +51,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/Visual">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API Visual
+  class Visual
   {
   public:
-    Visual();
-    Visual(Aws::Utils::Json::JsonView jsonValue);
-    Visual& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API Visual();
+    AWS_QUICKSIGHT_API Visual(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Visual& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

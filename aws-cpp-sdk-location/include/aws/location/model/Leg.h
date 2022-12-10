@@ -44,13 +44,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/Leg">AWS API
    * Reference</a></p>
    */
-  class AWS_LOCATIONSERVICE_API Leg
+  class Leg
   {
   public:
-    Leg();
-    Leg(Aws::Utils::Json::JsonView jsonValue);
-    Leg& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LOCATIONSERVICE_API Leg();
+    AWS_LOCATIONSERVICE_API Leg(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOCATIONSERVICE_API Leg& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOCATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

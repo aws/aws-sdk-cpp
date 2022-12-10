@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ReportDestination">AWS
    * API Reference</a></p>
    */
-  class AWS_BACKUP_API ReportDestination
+  class ReportDestination
   {
   public:
-    ReportDestination();
-    ReportDestination(Aws::Utils::Json::JsonView jsonValue);
-    ReportDestination& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BACKUP_API ReportDestination();
+    AWS_BACKUP_API ReportDestination(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BACKUP_API ReportDestination& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BACKUP_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

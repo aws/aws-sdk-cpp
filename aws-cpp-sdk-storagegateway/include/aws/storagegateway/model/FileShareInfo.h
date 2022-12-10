@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/FileShareInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_STORAGEGATEWAY_API FileShareInfo
+  class FileShareInfo
   {
   public:
-    FileShareInfo();
-    FileShareInfo(Aws::Utils::Json::JsonView jsonValue);
-    FileShareInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_STORAGEGATEWAY_API FileShareInfo();
+    AWS_STORAGEGATEWAY_API FileShareInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_STORAGEGATEWAY_API FileShareInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_STORAGEGATEWAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

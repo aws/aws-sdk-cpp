@@ -7,6 +7,7 @@
 #include <aws/migrationhubstrategy/MigrationHubStrategyRecommendations_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/migrationhubstrategy/MigrationHubStrategyRecommendationsServiceClientModel.h>
 
@@ -25,7 +26,7 @@ namespace MigrationHubStrategyRecommendations
    * href=&quot;http://aws.amazon.com/tools/#SDKs&quot;&gt;AWS
    * SDKs&lt;/a&gt;.&lt;/p&gt; </code></pre>
    */
-  class AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API MigrationHubStrategyRecommendationsClient : public Aws::Client::AWSJsonClient
+  class AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API MigrationHubStrategyRecommendationsClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<MigrationHubStrategyRecommendationsClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -79,7 +80,6 @@ namespace MigrationHubStrategyRecommendations
 
         /* End of legacy constructors due deprecation */
         virtual ~MigrationHubStrategyRecommendationsClient();
-
 
         /**
          * <p> Retrieves details about an application component. </p><p><h3>See Also:</h3> 
@@ -152,6 +152,24 @@ namespace MigrationHubStrategyRecommendations
          * An Async wrapper for GetImportFileTask that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetImportFileTaskAsync(const Model::GetImportFileTaskRequest& request, const GetImportFileTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Retrieve the latest ID of a specific assessment task.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/migrationhubstrategy-2020-02-19/GetLatestAssessmentId">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetLatestAssessmentIdOutcome GetLatestAssessmentId(const Model::GetLatestAssessmentIdRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetLatestAssessmentId that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetLatestAssessmentIdOutcomeCallable GetLatestAssessmentIdCallable(const Model::GetLatestAssessmentIdRequest& request) const;
+
+        /**
+         * An Async wrapper for GetLatestAssessmentId that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetLatestAssessmentIdAsync(const Model::GetLatestAssessmentIdRequest& request, const GetLatestAssessmentIdResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Retrieves your migration and modernization preferences. </p><p><h3>See
@@ -442,6 +460,7 @@ namespace MigrationHubStrategyRecommendations
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<MigrationHubStrategyRecommendationsEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<MigrationHubStrategyRecommendationsClient>;
       void init(const MigrationHubStrategyRecommendationsClientConfiguration& clientConfiguration);
 
       MigrationHubStrategyRecommendationsClientConfiguration m_clientConfiguration;

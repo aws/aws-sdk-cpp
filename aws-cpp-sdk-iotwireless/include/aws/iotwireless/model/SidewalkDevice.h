@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/SidewalkDevice">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTWIRELESS_API SidewalkDevice
+  class SidewalkDevice
   {
   public:
-    SidewalkDevice();
-    SidewalkDevice(Aws::Utils::Json::JsonView jsonValue);
-    SidewalkDevice& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTWIRELESS_API SidewalkDevice();
+    AWS_IOTWIRELESS_API SidewalkDevice(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API SidewalkDevice& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

@@ -7,6 +7,7 @@
 #include <aws/macie/Macie_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/macie/MacieServiceClientModel.h>
 
@@ -26,7 +27,7 @@ namespace Macie
    * href="https://docs.aws.amazon.com/macie/latest/user/what-is-macie.html">Amazon
    * Macie User Guide</a>.</p>
    */
-  class AWS_MACIE_API MacieClient : public Aws::Client::AWSJsonClient
+  class AWS_MACIE_API MacieClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<MacieClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -80,7 +81,6 @@ namespace Macie
 
         /* End of legacy constructors due deprecation */
         virtual ~MacieClient();
-
 
         /**
          * <p>(Discontinued) Associates a specified Amazon Web Services account with Amazon
@@ -229,6 +229,7 @@ namespace Macie
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<MacieEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<MacieClient>;
       void init(const MacieClientConfiguration& clientConfiguration);
 
       MacieClientConfiguration m_clientConfiguration;

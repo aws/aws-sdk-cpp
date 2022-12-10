@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/WorkflowExecutionInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_SWF_API WorkflowExecutionInfo
+  class WorkflowExecutionInfo
   {
   public:
-    WorkflowExecutionInfo();
-    WorkflowExecutionInfo(Aws::Utils::Json::JsonView jsonValue);
-    WorkflowExecutionInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SWF_API WorkflowExecutionInfo();
+    AWS_SWF_API WorkflowExecutionInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SWF_API WorkflowExecutionInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SWF_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

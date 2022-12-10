@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/Profile">AWS
    * API Reference</a></p>
    */
-  class AWS_CUSTOMERPROFILES_API Profile
+  class Profile
   {
   public:
-    Profile();
-    Profile(Aws::Utils::Json::JsonView jsonValue);
-    Profile& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CUSTOMERPROFILES_API Profile();
+    AWS_CUSTOMERPROFILES_API Profile(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CUSTOMERPROFILES_API Profile& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CUSTOMERPROFILES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

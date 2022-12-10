@@ -40,13 +40,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/AbsoluteTimeRange">AWS
    * API Reference</a></p>
    */
-  class AWS_TRANSCRIBESERVICE_API AbsoluteTimeRange
+  class AbsoluteTimeRange
   {
   public:
-    AbsoluteTimeRange();
-    AbsoluteTimeRange(Aws::Utils::Json::JsonView jsonValue);
-    AbsoluteTimeRange& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TRANSCRIBESERVICE_API AbsoluteTimeRange();
+    AWS_TRANSCRIBESERVICE_API AbsoluteTimeRange(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSCRIBESERVICE_API AbsoluteTimeRange& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSCRIBESERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

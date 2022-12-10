@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/CmafEncryptionSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONVERT_API CmafEncryptionSettings
+  class CmafEncryptionSettings
   {
   public:
-    CmafEncryptionSettings();
-    CmafEncryptionSettings(Aws::Utils::Json::JsonView jsonValue);
-    CmafEncryptionSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONVERT_API CmafEncryptionSettings();
+    AWS_MEDIACONVERT_API CmafEncryptionSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API CmafEncryptionSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

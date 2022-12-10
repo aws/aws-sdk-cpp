@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/TooManyRequestsException">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API TooManyRequestsException
+  class TooManyRequestsException
   {
   public:
-    TooManyRequestsException();
-    TooManyRequestsException(Aws::Utils::Json::JsonView jsonValue);
-    TooManyRequestsException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API TooManyRequestsException();
+    AWS_PINPOINT_API TooManyRequestsException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API TooManyRequestsException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

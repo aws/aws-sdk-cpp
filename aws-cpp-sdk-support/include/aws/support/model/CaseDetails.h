@@ -63,13 +63,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/CaseDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SUPPORT_API CaseDetails
+  class CaseDetails
   {
   public:
-    CaseDetails();
-    CaseDetails(Aws::Utils::Json::JsonView jsonValue);
-    CaseDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SUPPORT_API CaseDetails();
+    AWS_SUPPORT_API CaseDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SUPPORT_API CaseDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SUPPORT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

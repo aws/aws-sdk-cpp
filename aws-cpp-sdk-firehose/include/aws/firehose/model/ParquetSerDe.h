@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/ParquetSerDe">AWS
    * API Reference</a></p>
    */
-  class AWS_FIREHOSE_API ParquetSerDe
+  class ParquetSerDe
   {
   public:
-    ParquetSerDe();
-    ParquetSerDe(Aws::Utils::Json::JsonView jsonValue);
-    ParquetSerDe& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FIREHOSE_API ParquetSerDe();
+    AWS_FIREHOSE_API ParquetSerDe(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FIREHOSE_API ParquetSerDe& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FIREHOSE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

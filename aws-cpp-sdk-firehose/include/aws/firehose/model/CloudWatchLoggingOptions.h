@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/CloudWatchLoggingOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_FIREHOSE_API CloudWatchLoggingOptions
+  class CloudWatchLoggingOptions
   {
   public:
-    CloudWatchLoggingOptions();
-    CloudWatchLoggingOptions(Aws::Utils::Json::JsonView jsonValue);
-    CloudWatchLoggingOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FIREHOSE_API CloudWatchLoggingOptions();
+    AWS_FIREHOSE_API CloudWatchLoggingOptions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FIREHOSE_API CloudWatchLoggingOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FIREHOSE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

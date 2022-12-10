@@ -29,15 +29,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/importexport-2010-06-01/Artifact">AWS
    * API Reference</a></p>
    */
-  class AWS_IMPORTEXPORT_API Artifact
+  class Artifact
   {
   public:
-    Artifact();
-    Artifact(const Aws::Utils::Xml::XmlNode& xmlNode);
-    Artifact& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_IMPORTEXPORT_API Artifact();
+    AWS_IMPORTEXPORT_API Artifact(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_IMPORTEXPORT_API Artifact& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_IMPORTEXPORT_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_IMPORTEXPORT_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     

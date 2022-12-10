@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/PivotTableConditionalFormatting">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API PivotTableConditionalFormatting
+  class PivotTableConditionalFormatting
   {
   public:
-    PivotTableConditionalFormatting();
-    PivotTableConditionalFormatting(Aws::Utils::Json::JsonView jsonValue);
-    PivotTableConditionalFormatting& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API PivotTableConditionalFormatting();
+    AWS_QUICKSIGHT_API PivotTableConditionalFormatting(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API PivotTableConditionalFormatting& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/RunCommandTarget">AWS
    * API Reference</a></p>
    */
-  class AWS_EVENTBRIDGE_API RunCommandTarget
+  class RunCommandTarget
   {
   public:
-    RunCommandTarget();
-    RunCommandTarget(Aws::Utils::Json::JsonView jsonValue);
-    RunCommandTarget& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EVENTBRIDGE_API RunCommandTarget();
+    AWS_EVENTBRIDGE_API RunCommandTarget(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EVENTBRIDGE_API RunCommandTarget& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EVENTBRIDGE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

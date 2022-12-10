@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/S3Target">AWS API
    * Reference</a></p>
    */
-  class AWS_GLUE_API S3Target
+  class S3Target
   {
   public:
-    S3Target();
-    S3Target(Aws::Utils::Json::JsonView jsonValue);
-    S3Target& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API S3Target();
+    AWS_GLUE_API S3Target(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API S3Target& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

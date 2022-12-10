@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/CustomConnectorProfileCredentials">AWS
    * API Reference</a></p>
    */
-  class AWS_APPFLOW_API CustomConnectorProfileCredentials
+  class CustomConnectorProfileCredentials
   {
   public:
-    CustomConnectorProfileCredentials();
-    CustomConnectorProfileCredentials(Aws::Utils::Json::JsonView jsonValue);
-    CustomConnectorProfileCredentials& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPFLOW_API CustomConnectorProfileCredentials();
+    AWS_APPFLOW_API CustomConnectorProfileCredentials(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API CustomConnectorProfileCredentials& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

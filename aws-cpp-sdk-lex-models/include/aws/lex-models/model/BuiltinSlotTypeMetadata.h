@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/BuiltinSlotTypeMetadata">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELBUILDINGSERVICE_API BuiltinSlotTypeMetadata
+  class BuiltinSlotTypeMetadata
   {
   public:
-    BuiltinSlotTypeMetadata();
-    BuiltinSlotTypeMetadata(Aws::Utils::Json::JsonView jsonValue);
-    BuiltinSlotTypeMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELBUILDINGSERVICE_API BuiltinSlotTypeMetadata();
+    AWS_LEXMODELBUILDINGSERVICE_API BuiltinSlotTypeMetadata(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELBUILDINGSERVICE_API BuiltinSlotTypeMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELBUILDINGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -38,13 +38,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/VirtualCluster">AWS
    * API Reference</a></p>
    */
-  class AWS_EMRCONTAINERS_API VirtualCluster
+  class VirtualCluster
   {
   public:
-    VirtualCluster();
-    VirtualCluster(Aws::Utils::Json::JsonView jsonValue);
-    VirtualCluster& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EMRCONTAINERS_API VirtualCluster();
+    AWS_EMRCONTAINERS_API VirtualCluster(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMRCONTAINERS_API VirtualCluster& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMRCONTAINERS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

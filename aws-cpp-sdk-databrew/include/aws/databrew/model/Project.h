@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/Project">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUEDATABREW_API Project
+  class Project
   {
   public:
-    Project();
-    Project(Aws::Utils::Json::JsonView jsonValue);
-    Project& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUEDATABREW_API Project();
+    AWS_GLUEDATABREW_API Project(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUEDATABREW_API Project& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUEDATABREW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

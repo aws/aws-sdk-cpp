@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/RevealConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_MACIE2_API RevealConfiguration
+  class RevealConfiguration
   {
   public:
-    RevealConfiguration();
-    RevealConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    RevealConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MACIE2_API RevealConfiguration();
+    AWS_MACIE2_API RevealConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API RevealConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/LabelCountersForWorkteam">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API LabelCountersForWorkteam
+  class LabelCountersForWorkteam
   {
   public:
-    LabelCountersForWorkteam();
-    LabelCountersForWorkteam(Aws::Utils::Json::JsonView jsonValue);
-    LabelCountersForWorkteam& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API LabelCountersForWorkteam();
+    AWS_SAGEMAKER_API LabelCountersForWorkteam(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API LabelCountersForWorkteam& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

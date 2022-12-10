@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/ExecutionSucceededEventDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SFN_API ExecutionSucceededEventDetails
+  class ExecutionSucceededEventDetails
   {
   public:
-    ExecutionSucceededEventDetails();
-    ExecutionSucceededEventDetails(Aws::Utils::Json::JsonView jsonValue);
-    ExecutionSucceededEventDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SFN_API ExecutionSucceededEventDetails();
+    AWS_SFN_API ExecutionSucceededEventDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SFN_API ExecutionSucceededEventDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SFN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

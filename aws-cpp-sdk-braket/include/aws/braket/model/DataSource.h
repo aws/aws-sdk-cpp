@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/braket-2019-09-01/DataSource">AWS
    * API Reference</a></p>
    */
-  class AWS_BRAKET_API DataSource
+  class DataSource
   {
   public:
-    DataSource();
-    DataSource(Aws::Utils::Json::JsonView jsonValue);
-    DataSource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BRAKET_API DataSource();
+    AWS_BRAKET_API DataSource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BRAKET_API DataSource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BRAKET_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

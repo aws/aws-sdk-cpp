@@ -22,12 +22,12 @@ namespace CodeStar
 {
 namespace Model
 {
-  class AWS_CODESTAR_API DisassociateTeamMemberResult
+  class DisassociateTeamMemberResult
   {
   public:
-    DisassociateTeamMemberResult();
-    DisassociateTeamMemberResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DisassociateTeamMemberResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODESTAR_API DisassociateTeamMemberResult();
+    AWS_CODESTAR_API DisassociateTeamMemberResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODESTAR_API DisassociateTeamMemberResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

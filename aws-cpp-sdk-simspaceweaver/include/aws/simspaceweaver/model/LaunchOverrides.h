@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/simspaceweaver-2022-10-28/LaunchOverrides">AWS
    * API Reference</a></p>
    */
-  class AWS_SIMSPACEWEAVER_API LaunchOverrides
+  class LaunchOverrides
   {
   public:
-    LaunchOverrides();
-    LaunchOverrides(Aws::Utils::Json::JsonView jsonValue);
-    LaunchOverrides& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SIMSPACEWEAVER_API LaunchOverrides();
+    AWS_SIMSPACEWEAVER_API LaunchOverrides(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SIMSPACEWEAVER_API LaunchOverrides& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SIMSPACEWEAVER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

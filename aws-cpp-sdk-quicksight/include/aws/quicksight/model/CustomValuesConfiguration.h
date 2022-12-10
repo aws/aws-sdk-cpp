@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CustomValuesConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API CustomValuesConfiguration
+  class CustomValuesConfiguration
   {
   public:
-    CustomValuesConfiguration();
-    CustomValuesConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    CustomValuesConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API CustomValuesConfiguration();
+    AWS_QUICKSIGHT_API CustomValuesConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API CustomValuesConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

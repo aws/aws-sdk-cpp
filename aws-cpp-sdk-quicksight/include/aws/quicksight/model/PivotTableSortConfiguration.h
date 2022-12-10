@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/PivotTableSortConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API PivotTableSortConfiguration
+  class PivotTableSortConfiguration
   {
   public:
-    PivotTableSortConfiguration();
-    PivotTableSortConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    PivotTableSortConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API PivotTableSortConfiguration();
+    AWS_QUICKSIGHT_API PivotTableSortConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API PivotTableSortConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

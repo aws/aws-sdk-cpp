@@ -25,12 +25,12 @@ namespace MemoryDB
 {
 namespace Model
 {
-  class AWS_MEMORYDB_API ListAllowedNodeTypeUpdatesResult
+  class ListAllowedNodeTypeUpdatesResult
   {
   public:
-    ListAllowedNodeTypeUpdatesResult();
-    ListAllowedNodeTypeUpdatesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListAllowedNodeTypeUpdatesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MEMORYDB_API ListAllowedNodeTypeUpdatesResult();
+    AWS_MEMORYDB_API ListAllowedNodeTypeUpdatesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MEMORYDB_API ListAllowedNodeTypeUpdatesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

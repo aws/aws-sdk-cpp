@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     GITHUB,
-    GITHUB_ENTERPRISE
+    GITHUB_ENTERPRISE,
+    AZURE_DEVOPS_GIT
   };
 
 namespace VersionControlMapper

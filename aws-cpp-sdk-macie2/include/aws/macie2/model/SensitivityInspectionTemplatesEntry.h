@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/SensitivityInspectionTemplatesEntry">AWS
    * API Reference</a></p>
    */
-  class AWS_MACIE2_API SensitivityInspectionTemplatesEntry
+  class SensitivityInspectionTemplatesEntry
   {
   public:
-    SensitivityInspectionTemplatesEntry();
-    SensitivityInspectionTemplatesEntry(Aws::Utils::Json::JsonView jsonValue);
-    SensitivityInspectionTemplatesEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MACIE2_API SensitivityInspectionTemplatesEntry();
+    AWS_MACIE2_API SensitivityInspectionTemplatesEntry(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API SensitivityInspectionTemplatesEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/StreamSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API StreamSummary
+  class StreamSummary
   {
   public:
-    StreamSummary();
-    StreamSummary(Aws::Utils::Json::JsonView jsonValue);
-    StreamSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API StreamSummary();
+    AWS_IOT_API StreamSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API StreamSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

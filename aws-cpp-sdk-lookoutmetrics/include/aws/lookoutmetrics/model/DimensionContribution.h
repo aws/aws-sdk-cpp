@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/DimensionContribution">AWS
    * API Reference</a></p>
    */
-  class AWS_LOOKOUTMETRICS_API DimensionContribution
+  class DimensionContribution
   {
   public:
-    DimensionContribution();
-    DimensionContribution(Aws::Utils::Json::JsonView jsonValue);
-    DimensionContribution& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LOOKOUTMETRICS_API DimensionContribution();
+    AWS_LOOKOUTMETRICS_API DimensionContribution(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTMETRICS_API DimensionContribution& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTMETRICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CloudwatchAlarmAction">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API CloudwatchAlarmAction
+  class CloudwatchAlarmAction
   {
   public:
-    CloudwatchAlarmAction();
-    CloudwatchAlarmAction(Aws::Utils::Json::JsonView jsonValue);
-    CloudwatchAlarmAction& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API CloudwatchAlarmAction();
+    AWS_IOT_API CloudwatchAlarmAction(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API CloudwatchAlarmAction& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

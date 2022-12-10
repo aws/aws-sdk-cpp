@@ -24,12 +24,12 @@ namespace mgn
 {
 namespace Model
 {
-  class AWS_MGN_API TerminateTargetInstancesResult
+  class TerminateTargetInstancesResult
   {
   public:
-    TerminateTargetInstancesResult();
-    TerminateTargetInstancesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    TerminateTargetInstancesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MGN_API TerminateTargetInstancesResult();
+    AWS_MGN_API TerminateTargetInstancesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MGN_API TerminateTargetInstancesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

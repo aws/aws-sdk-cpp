@@ -24,12 +24,12 @@ namespace EC2
 {
 namespace Model
 {
-  class AWS_EC2_API DisableAwsNetworkPerformanceMetricSubscriptionResponse
+  class DisableAwsNetworkPerformanceMetricSubscriptionResponse
   {
   public:
-    DisableAwsNetworkPerformanceMetricSubscriptionResponse();
-    DisableAwsNetworkPerformanceMetricSubscriptionResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DisableAwsNetworkPerformanceMetricSubscriptionResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API DisableAwsNetworkPerformanceMetricSubscriptionResponse();
+    AWS_EC2_API DisableAwsNetworkPerformanceMetricSubscriptionResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API DisableAwsNetworkPerformanceMetricSubscriptionResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

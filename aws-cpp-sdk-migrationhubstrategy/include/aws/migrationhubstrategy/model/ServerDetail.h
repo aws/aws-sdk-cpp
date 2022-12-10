@@ -12,6 +12,7 @@
 #include <aws/migrationhubstrategy/model/RunTimeAssessmentStatus.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/migrationhubstrategy/model/RecommendationSet.h>
+#include <aws/migrationhubstrategy/model/ServerError.h>
 #include <aws/migrationhubstrategy/model/SystemInfo.h>
 #include <aws/migrationhubstrategy/model/StrategySummary.h>
 #include <aws/migrationhubstrategy/model/AntipatternSeveritySummary.h>
@@ -37,13 +38,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/migrationhubstrategy-2020-02-19/ServerDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API ServerDetail
+  class ServerDetail
   {
   public:
-    ServerDetail();
-    ServerDetail(Aws::Utils::Json::JsonView jsonValue);
-    ServerDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API ServerDetail();
+    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API ServerDetail(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API ServerDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -407,6 +408,37 @@ namespace Model
 
 
     /**
+     * <p>The error in server analysis.</p>
+     */
+    inline const ServerError& GetServerError() const{ return m_serverError; }
+
+    /**
+     * <p>The error in server analysis.</p>
+     */
+    inline bool ServerErrorHasBeenSet() const { return m_serverErrorHasBeenSet; }
+
+    /**
+     * <p>The error in server analysis.</p>
+     */
+    inline void SetServerError(const ServerError& value) { m_serverErrorHasBeenSet = true; m_serverError = value; }
+
+    /**
+     * <p>The error in server analysis.</p>
+     */
+    inline void SetServerError(ServerError&& value) { m_serverErrorHasBeenSet = true; m_serverError = std::move(value); }
+
+    /**
+     * <p>The error in server analysis.</p>
+     */
+    inline ServerDetail& WithServerError(const ServerError& value) { SetServerError(value); return *this;}
+
+    /**
+     * <p>The error in server analysis.</p>
+     */
+    inline ServerDetail& WithServerError(ServerError&& value) { SetServerError(std::move(value)); return *this;}
+
+
+    /**
      * <p> The type of server. </p>
      */
     inline const Aws::String& GetServerType() const{ return m_serverType; }
@@ -557,6 +589,9 @@ namespace Model
 
     RecommendationSet m_recommendationSet;
     bool m_recommendationSetHasBeenSet = false;
+
+    ServerError m_serverError;
+    bool m_serverErrorHasBeenSet = false;
 
     Aws::String m_serverType;
     bool m_serverTypeHasBeenSet = false;

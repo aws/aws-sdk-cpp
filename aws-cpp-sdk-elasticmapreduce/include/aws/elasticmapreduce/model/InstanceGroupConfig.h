@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/InstanceGroupConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_EMR_API InstanceGroupConfig
+  class InstanceGroupConfig
   {
   public:
-    InstanceGroupConfig();
-    InstanceGroupConfig(Aws::Utils::Json::JsonView jsonValue);
-    InstanceGroupConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EMR_API InstanceGroupConfig();
+    AWS_EMR_API InstanceGroupConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMR_API InstanceGroupConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

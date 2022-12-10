@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/TLEData">AWS
    * API Reference</a></p>
    */
-  class AWS_GROUNDSTATION_API TLEData
+  class TLEData
   {
   public:
-    TLEData();
-    TLEData(Aws::Utils::Json::JsonView jsonValue);
-    TLEData& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GROUNDSTATION_API TLEData();
+    AWS_GROUNDSTATION_API TLEData(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GROUNDSTATION_API TLEData& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GROUNDSTATION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

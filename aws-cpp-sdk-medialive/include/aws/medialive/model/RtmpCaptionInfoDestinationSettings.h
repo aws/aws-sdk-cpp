@@ -26,13 +26,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/RtmpCaptionInfoDestinationSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API RtmpCaptionInfoDestinationSettings
+  class RtmpCaptionInfoDestinationSettings
   {
   public:
-    RtmpCaptionInfoDestinationSettings();
-    RtmpCaptionInfoDestinationSettings(Aws::Utils::Json::JsonView jsonValue);
-    RtmpCaptionInfoDestinationSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API RtmpCaptionInfoDestinationSettings();
+    AWS_MEDIALIVE_API RtmpCaptionInfoDestinationSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API RtmpCaptionInfoDestinationSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
   };
 

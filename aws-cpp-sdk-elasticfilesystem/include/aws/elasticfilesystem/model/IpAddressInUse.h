@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/IpAddressInUse">AWS
    * API Reference</a></p>
    */
-  class AWS_EFS_API IpAddressInUse
+  class IpAddressInUse
   {
   public:
-    IpAddressInUse();
-    IpAddressInUse(Aws::Utils::Json::JsonView jsonValue);
-    IpAddressInUse& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EFS_API IpAddressInUse();
+    AWS_EFS_API IpAddressInUse(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EFS_API IpAddressInUse& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EFS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

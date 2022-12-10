@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-geospatial-2020-05-27/MultiPolygonGeometryInput">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKERGEOSPATIAL_API MultiPolygonGeometryInput
+  class MultiPolygonGeometryInput
   {
   public:
-    MultiPolygonGeometryInput();
-    MultiPolygonGeometryInput(Aws::Utils::Json::JsonView jsonValue);
-    MultiPolygonGeometryInput& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKERGEOSPATIAL_API MultiPolygonGeometryInput();
+    AWS_SAGEMAKERGEOSPATIAL_API MultiPolygonGeometryInput(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKERGEOSPATIAL_API MultiPolygonGeometryInput& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKERGEOSPATIAL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -116,6 +116,7 @@
 #include <aws/cloudfront/model/UpdateCloudFrontOriginAccessIdentity2020_05_31Request.h>
 #include <aws/cloudfront/model/UpdateContinuousDeploymentPolicy2020_05_31Request.h>
 #include <aws/cloudfront/model/UpdateDistribution2020_05_31Request.h>
+#include <aws/cloudfront/model/UpdateDistributionWithStagingConfig2020_05_31Request.h>
 #include <aws/cloudfront/model/UpdateFieldLevelEncryptionConfig2020_05_31Request.h>
 #include <aws/cloudfront/model/UpdateFieldLevelEncryptionProfile2020_05_31Request.h>
 #include <aws/cloudfront/model/UpdateFunction2020_05_31Request.h>
@@ -3063,6 +3064,38 @@ void CloudFrontClient::UpdateDistribution2020_05_31Async(const UpdateDistributio
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, UpdateDistribution2020_05_31(request), context);
+    } );
+}
+
+UpdateDistributionWithStagingConfig2020_05_31Outcome CloudFrontClient::UpdateDistributionWithStagingConfig2020_05_31(const UpdateDistributionWithStagingConfig2020_05_31Request& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateDistributionWithStagingConfig2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateDistributionWithStagingConfig2020_05_31", "Required field: Id, is not set");
+    return UpdateDistributionWithStagingConfig2020_05_31Outcome(Aws::Client::AWSError<CloudFrontErrors>(CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateDistributionWithStagingConfig2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/2020-05-31/distribution/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/promote-staging-config");
+  return UpdateDistributionWithStagingConfig2020_05_31Outcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT));
+}
+
+UpdateDistributionWithStagingConfig2020_05_31OutcomeCallable CloudFrontClient::UpdateDistributionWithStagingConfig2020_05_31Callable(const UpdateDistributionWithStagingConfig2020_05_31Request& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateDistributionWithStagingConfig2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateDistributionWithStagingConfig2020_05_31(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudFrontClient::UpdateDistributionWithStagingConfig2020_05_31Async(const UpdateDistributionWithStagingConfig2020_05_31Request& request, const UpdateDistributionWithStagingConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateDistributionWithStagingConfig2020_05_31(request), context);
     } );
 }
 

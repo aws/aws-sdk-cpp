@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/JwtTokenTypeConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_KENDRA_API JwtTokenTypeConfiguration
+  class JwtTokenTypeConfiguration
   {
   public:
-    JwtTokenTypeConfiguration();
-    JwtTokenTypeConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    JwtTokenTypeConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KENDRA_API JwtTokenTypeConfiguration();
+    AWS_KENDRA_API JwtTokenTypeConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API JwtTokenTypeConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

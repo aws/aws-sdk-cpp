@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/Activation">AWS API
    * Reference</a></p>
    */
-  class AWS_SSM_API Activation
+  class Activation
   {
   public:
-    Activation();
-    Activation(Aws::Utils::Json::JsonView jsonValue);
-    Activation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SSM_API Activation();
+    AWS_SSM_API Activation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API Activation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

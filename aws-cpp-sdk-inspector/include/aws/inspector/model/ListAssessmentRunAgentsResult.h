@@ -26,12 +26,12 @@ namespace Inspector
 {
 namespace Model
 {
-  class AWS_INSPECTOR_API ListAssessmentRunAgentsResult
+  class ListAssessmentRunAgentsResult
   {
   public:
-    ListAssessmentRunAgentsResult();
-    ListAssessmentRunAgentsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListAssessmentRunAgentsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_INSPECTOR_API ListAssessmentRunAgentsResult();
+    AWS_INSPECTOR_API ListAssessmentRunAgentsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_INSPECTOR_API ListAssessmentRunAgentsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

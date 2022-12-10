@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DynamoDBTarget">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API DynamoDBTarget
+  class DynamoDBTarget
   {
   public:
-    DynamoDBTarget();
-    DynamoDBTarget(Aws::Utils::Json::JsonView jsonValue);
-    DynamoDBTarget& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API DynamoDBTarget();
+    AWS_GLUE_API DynamoDBTarget(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API DynamoDBTarget& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

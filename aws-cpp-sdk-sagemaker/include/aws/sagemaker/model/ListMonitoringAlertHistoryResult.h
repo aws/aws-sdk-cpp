@@ -26,12 +26,12 @@ namespace SageMaker
 {
 namespace Model
 {
-  class AWS_SAGEMAKER_API ListMonitoringAlertHistoryResult
+  class ListMonitoringAlertHistoryResult
   {
   public:
-    ListMonitoringAlertHistoryResult();
-    ListMonitoringAlertHistoryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListMonitoringAlertHistoryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SAGEMAKER_API ListMonitoringAlertHistoryResult();
+    AWS_SAGEMAKER_API ListMonitoringAlertHistoryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SAGEMAKER_API ListMonitoringAlertHistoryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

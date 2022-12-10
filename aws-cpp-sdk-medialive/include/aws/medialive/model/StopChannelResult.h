@@ -43,12 +43,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/StopChannelResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API StopChannelResult
+  class StopChannelResult
   {
   public:
-    StopChannelResult();
-    StopChannelResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    StopChannelResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MEDIALIVE_API StopChannelResult();
+    AWS_MEDIALIVE_API StopChannelResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MEDIALIVE_API StopChannelResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

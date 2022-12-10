@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/DkimSigningAttributes">AWS
    * API Reference</a></p>
    */
-  class AWS_SESV2_API DkimSigningAttributes
+  class DkimSigningAttributes
   {
   public:
-    DkimSigningAttributes();
-    DkimSigningAttributes(Aws::Utils::Json::JsonView jsonValue);
-    DkimSigningAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SESV2_API DkimSigningAttributes();
+    AWS_SESV2_API DkimSigningAttributes(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SESV2_API DkimSigningAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SESV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

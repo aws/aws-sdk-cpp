@@ -7,6 +7,7 @@
 #include <aws/proton/Proton_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/proton/ProtonServiceClientModel.h>
 
@@ -102,7 +103,7 @@ namespace Proton
    * retry returns an empty response.</p> <p>Asynchronous idempotent delete APIs:</p>
    * <ul> <li> <p>DeleteEnvironment</p> </li> <li> <p>DeleteService</p> </li> </ul>
    */
-  class AWS_PROTON_API ProtonClient : public Aws::Client::AWSJsonClient
+  class AWS_PROTON_API ProtonClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<ProtonClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -156,7 +157,6 @@ namespace Proton
 
         /* End of legacy constructors due deprecation */
         virtual ~ProtonClient();
-
 
         /**
          * <p>In a management account, an environment account connection request is
@@ -1751,6 +1751,7 @@ namespace Proton
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<ProtonEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<ProtonClient>;
       void init(const ProtonClientConfiguration& clientConfiguration);
 
       ProtonClientConfiguration m_clientConfiguration;

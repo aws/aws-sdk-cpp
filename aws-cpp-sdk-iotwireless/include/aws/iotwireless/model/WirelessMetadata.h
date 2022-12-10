@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/WirelessMetadata">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTWIRELESS_API WirelessMetadata
+  class WirelessMetadata
   {
   public:
-    WirelessMetadata();
-    WirelessMetadata(Aws::Utils::Json::JsonView jsonValue);
-    WirelessMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTWIRELESS_API WirelessMetadata();
+    AWS_IOTWIRELESS_API WirelessMetadata(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API WirelessMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

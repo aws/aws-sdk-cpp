@@ -29,10 +29,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSetInput">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFORMATION_API CreateChangeSetRequest : public CloudFormationRequest
+  class CreateChangeSetRequest : public CloudFormationRequest
   {
   public:
-    CreateChangeSetRequest();
+    AWS_CLOUDFORMATION_API CreateChangeSetRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,10 +40,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "CreateChangeSet"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_CLOUDFORMATION_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_CLOUDFORMATION_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 

@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-data-2018-08-01/StructValue">AWS
    * API Reference</a></p>
    */
-  class AWS_RDSDATASERVICE_API StructValue
+  class StructValue
   {
   public:
-    StructValue();
-    StructValue(Aws::Utils::Json::JsonView jsonValue);
-    StructValue& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_RDSDATASERVICE_API StructValue();
+    AWS_RDSDATASERVICE_API StructValue(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RDSDATASERVICE_API StructValue& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RDSDATASERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

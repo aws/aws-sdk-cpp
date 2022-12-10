@@ -26,12 +26,12 @@ namespace LexModelsV2
 {
 namespace Model
 {
-  class AWS_LEXMODELSV2_API DescribeCustomVocabularyMetadataResult
+  class DescribeCustomVocabularyMetadataResult
   {
   public:
-    DescribeCustomVocabularyMetadataResult();
-    DescribeCustomVocabularyMetadataResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeCustomVocabularyMetadataResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LEXMODELSV2_API DescribeCustomVocabularyMetadataResult();
+    AWS_LEXMODELSV2_API DescribeCustomVocabularyMetadataResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LEXMODELSV2_API DescribeCustomVocabularyMetadataResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

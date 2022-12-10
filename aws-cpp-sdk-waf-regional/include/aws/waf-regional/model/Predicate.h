@@ -42,13 +42,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/Predicate">AWS
    * API Reference</a></p>
    */
-  class AWS_WAFREGIONAL_API Predicate
+  class Predicate
   {
   public:
-    Predicate();
-    Predicate(Aws::Utils::Json::JsonView jsonValue);
-    Predicate& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WAFREGIONAL_API Predicate();
+    AWS_WAFREGIONAL_API Predicate(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFREGIONAL_API Predicate& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFREGIONAL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

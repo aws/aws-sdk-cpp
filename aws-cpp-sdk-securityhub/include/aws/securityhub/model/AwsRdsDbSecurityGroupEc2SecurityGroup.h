@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsRdsDbSecurityGroupEc2SecurityGroup">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsRdsDbSecurityGroupEc2SecurityGroup
+  class AwsRdsDbSecurityGroupEc2SecurityGroup
   {
   public:
-    AwsRdsDbSecurityGroupEc2SecurityGroup();
-    AwsRdsDbSecurityGroupEc2SecurityGroup(Aws::Utils::Json::JsonView jsonValue);
-    AwsRdsDbSecurityGroupEc2SecurityGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsRdsDbSecurityGroupEc2SecurityGroup();
+    AWS_SECURITYHUB_API AwsRdsDbSecurityGroupEc2SecurityGroup(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsRdsDbSecurityGroupEc2SecurityGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

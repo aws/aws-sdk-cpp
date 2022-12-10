@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ProvisioningArtifact">AWS
    * API Reference</a></p>
    */
-  class AWS_SERVICECATALOG_API ProvisioningArtifact
+  class ProvisioningArtifact
   {
   public:
-    ProvisioningArtifact();
-    ProvisioningArtifact(Aws::Utils::Json::JsonView jsonValue);
-    ProvisioningArtifact& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SERVICECATALOG_API ProvisioningArtifact();
+    AWS_SERVICECATALOG_API ProvisioningArtifact(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICECATALOG_API ProvisioningArtifact& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICECATALOG_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListJobsFilterCriteria">AWS
    * API Reference</a></p>
    */
-  class AWS_MACIE2_API ListJobsFilterCriteria
+  class ListJobsFilterCriteria
   {
   public:
-    ListJobsFilterCriteria();
-    ListJobsFilterCriteria(Aws::Utils::Json::JsonView jsonValue);
-    ListJobsFilterCriteria& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MACIE2_API ListJobsFilterCriteria();
+    AWS_MACIE2_API ListJobsFilterCriteria(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API ListJobsFilterCriteria& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -29,12 +29,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/datapipeline-2012-10-29/EvaluateExpressionOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_DATAPIPELINE_API EvaluateExpressionResult
+  class EvaluateExpressionResult
   {
   public:
-    EvaluateExpressionResult();
-    EvaluateExpressionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    EvaluateExpressionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DATAPIPELINE_API EvaluateExpressionResult();
+    AWS_DATAPIPELINE_API EvaluateExpressionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DATAPIPELINE_API EvaluateExpressionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

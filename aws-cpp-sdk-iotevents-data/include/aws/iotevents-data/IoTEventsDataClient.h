@@ -7,6 +7,7 @@
 #include <aws/iotevents-data/IoTEventsData_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/iotevents-data/IoTEventsDataServiceClientModel.h>
 
@@ -22,7 +23,7 @@ namespace IoTEventsData
    * href="https://docs.aws.amazon.com/iotevents/latest/developerguide/what-is-iotevents.html">What
    * is IoT Events?</a> in the <i>IoT Events Developer Guide</i>.</p>
    */
-  class AWS_IOTEVENTSDATA_API IoTEventsDataClient : public Aws::Client::AWSJsonClient
+  class AWS_IOTEVENTSDATA_API IoTEventsDataClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<IoTEventsDataClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -76,7 +77,6 @@ namespace IoTEventsData
 
         /* End of legacy constructors due deprecation */
         virtual ~IoTEventsDataClient();
-
 
         /**
          * <p>Acknowledges one or more alarms. The alarms change to the
@@ -307,6 +307,7 @@ namespace IoTEventsData
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<IoTEventsDataEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<IoTEventsDataClient>;
       void init(const IoTEventsDataClientConfiguration& clientConfiguration);
 
       IoTEventsDataClientConfiguration m_clientConfiguration;

@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/VersionInformation">AWS
    * API Reference</a></p>
    */
-  class AWS_GREENGRASS_API VersionInformation
+  class VersionInformation
   {
   public:
-    VersionInformation();
-    VersionInformation(Aws::Utils::Json::JsonView jsonValue);
-    VersionInformation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GREENGRASS_API VersionInformation();
+    AWS_GREENGRASS_API VersionInformation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASS_API VersionInformation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

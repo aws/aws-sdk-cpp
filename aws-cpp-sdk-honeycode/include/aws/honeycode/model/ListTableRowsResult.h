@@ -26,12 +26,12 @@ namespace Honeycode
 {
 namespace Model
 {
-  class AWS_HONEYCODE_API ListTableRowsResult
+  class ListTableRowsResult
   {
   public:
-    ListTableRowsResult();
-    ListTableRowsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListTableRowsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_HONEYCODE_API ListTableRowsResult();
+    AWS_HONEYCODE_API ListTableRowsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_HONEYCODE_API ListTableRowsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

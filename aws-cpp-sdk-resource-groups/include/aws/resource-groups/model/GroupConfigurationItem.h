@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/GroupConfigurationItem">AWS
    * API Reference</a></p>
    */
-  class AWS_RESOURCEGROUPS_API GroupConfigurationItem
+  class GroupConfigurationItem
   {
   public:
-    GroupConfigurationItem();
-    GroupConfigurationItem(Aws::Utils::Json::JsonView jsonValue);
-    GroupConfigurationItem& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_RESOURCEGROUPS_API GroupConfigurationItem();
+    AWS_RESOURCEGROUPS_API GroupConfigurationItem(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RESOURCEGROUPS_API GroupConfigurationItem& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RESOURCEGROUPS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

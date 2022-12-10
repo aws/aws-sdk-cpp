@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/Channel">AWS API
    * Reference</a></p>
    */
-  class AWS_IVS_API Channel
+  class Channel
   {
   public:
-    Channel();
-    Channel(Aws::Utils::Json::JsonView jsonValue);
-    Channel& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IVS_API Channel();
+    AWS_IVS_API Channel(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IVS_API Channel& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IVS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

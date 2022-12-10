@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/BatchDeleteGeofenceError">AWS
    * API Reference</a></p>
    */
-  class AWS_LOCATIONSERVICE_API BatchDeleteGeofenceError
+  class BatchDeleteGeofenceError
   {
   public:
-    BatchDeleteGeofenceError();
-    BatchDeleteGeofenceError(Aws::Utils::Json::JsonView jsonValue);
-    BatchDeleteGeofenceError& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LOCATIONSERVICE_API BatchDeleteGeofenceError();
+    AWS_LOCATIONSERVICE_API BatchDeleteGeofenceError(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOCATIONSERVICE_API BatchDeleteGeofenceError& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOCATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

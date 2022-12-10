@@ -27,10 +27,10 @@ namespace Model
 
   /**
    */
-  class AWS_TRANSCRIBESTREAMINGSERVICE_API StartMedicalStreamTranscriptionRequest : public TranscribeStreamingServiceRequest
+  class StartMedicalStreamTranscriptionRequest : public TranscribeStreamingServiceRequest
   {
   public:
-    StartMedicalStreamTranscriptionRequest();
+    AWS_TRANSCRIBESTREAMINGSERVICE_API StartMedicalStreamTranscriptionRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,9 +41,9 @@ namespace Model
     inline virtual bool IsEventStreamRequest() const override { return true; }
     // SerializePayload will not be invoked.
     // This request is sent by encoding its data in event-streams which is sent as IOStream via GetBody()
-    Aws::String SerializePayload() const override { return {}; }
-    std::shared_ptr<Aws::IOStream> GetBody() const override;
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_TRANSCRIBESTREAMINGSERVICE_API Aws::String SerializePayload() const override { return {}; }
+    AWS_TRANSCRIBESTREAMINGSERVICE_API std::shared_ptr<Aws::IOStream> GetBody() const override;
+    AWS_TRANSCRIBESTREAMINGSERVICE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
     /**
      * Underlying Event Stream Decoder.
@@ -433,13 +433,13 @@ namespace Model
 
 
     
-    std::shared_ptr<AudioStream> GetAudioStream() const { return m_audioStream; }
+    AWS_TRANSCRIBESTREAMINGSERVICE_API std::shared_ptr<AudioStream> GetAudioStream() const { return m_audioStream; }
 
     
-    void SetAudioStream(const std::shared_ptr<AudioStream>& value) { m_audioStream = value; }
+    AWS_TRANSCRIBESTREAMINGSERVICE_API void SetAudioStream(const std::shared_ptr<AudioStream>& value) { m_audioStream = value; }
 
     
-    StartMedicalStreamTranscriptionRequest& WithAudioStream(const std::shared_ptr<AudioStream>& value) { SetAudioStream(value); return *this;}
+    AWS_TRANSCRIBESTREAMINGSERVICE_API StartMedicalStreamTranscriptionRequest& WithAudioStream(const std::shared_ptr<AudioStream>& value) { SetAudioStream(value); return *this;}
 
 
     /**

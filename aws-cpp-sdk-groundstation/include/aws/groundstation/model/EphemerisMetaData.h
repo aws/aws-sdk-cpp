@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/EphemerisMetaData">AWS
    * API Reference</a></p>
    */
-  class AWS_GROUNDSTATION_API EphemerisMetaData
+  class EphemerisMetaData
   {
   public:
-    EphemerisMetaData();
-    EphemerisMetaData(Aws::Utils::Json::JsonView jsonValue);
-    EphemerisMetaData& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GROUNDSTATION_API EphemerisMetaData();
+    AWS_GROUNDSTATION_API EphemerisMetaData(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GROUNDSTATION_API EphemerisMetaData& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GROUNDSTATION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/LookoutMetricsDestinationProperties">AWS
    * API Reference</a></p>
    */
-  class AWS_APPFLOW_API LookoutMetricsDestinationProperties
+  class LookoutMetricsDestinationProperties
   {
   public:
-    LookoutMetricsDestinationProperties();
-    LookoutMetricsDestinationProperties(Aws::Utils::Json::JsonView jsonValue);
-    LookoutMetricsDestinationProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPFLOW_API LookoutMetricsDestinationProperties();
+    AWS_APPFLOW_API LookoutMetricsDestinationProperties(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API LookoutMetricsDestinationProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
   };
 

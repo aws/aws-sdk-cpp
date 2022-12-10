@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/InvalidSensorData">AWS
    * API Reference</a></p>
    */
-  class AWS_LOOKOUTEQUIPMENT_API InvalidSensorData
+  class InvalidSensorData
   {
   public:
-    InvalidSensorData();
-    InvalidSensorData(Aws::Utils::Json::JsonView jsonValue);
-    InvalidSensorData& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LOOKOUTEQUIPMENT_API InvalidSensorData();
+    AWS_LOOKOUTEQUIPMENT_API InvalidSensorData(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTEQUIPMENT_API InvalidSensorData& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTEQUIPMENT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/MaximumLabelType">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API MaximumLabelType
+  class MaximumLabelType
   {
   public:
-    MaximumLabelType();
-    MaximumLabelType(Aws::Utils::Json::JsonView jsonValue);
-    MaximumLabelType& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API MaximumLabelType();
+    AWS_QUICKSIGHT_API MaximumLabelType(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API MaximumLabelType& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

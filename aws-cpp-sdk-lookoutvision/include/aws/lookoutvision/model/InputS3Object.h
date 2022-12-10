@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutvision-2020-11-20/InputS3Object">AWS
    * API Reference</a></p>
    */
-  class AWS_LOOKOUTFORVISION_API InputS3Object
+  class InputS3Object
   {
   public:
-    InputS3Object();
-    InputS3Object(Aws::Utils::Json::JsonView jsonValue);
-    InputS3Object& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LOOKOUTFORVISION_API InputS3Object();
+    AWS_LOOKOUTFORVISION_API InputS3Object(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTFORVISION_API InputS3Object& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTFORVISION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

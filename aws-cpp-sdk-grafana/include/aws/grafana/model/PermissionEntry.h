@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/PermissionEntry">AWS
    * API Reference</a></p>
    */
-  class AWS_MANAGEDGRAFANA_API PermissionEntry
+  class PermissionEntry
   {
   public:
-    PermissionEntry();
-    PermissionEntry(Aws::Utils::Json::JsonView jsonValue);
-    PermissionEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MANAGEDGRAFANA_API PermissionEntry();
+    AWS_MANAGEDGRAFANA_API PermissionEntry(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MANAGEDGRAFANA_API PermissionEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MANAGEDGRAFANA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

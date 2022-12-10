@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/ProgressDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_ROBOMAKER_API ProgressDetail
+  class ProgressDetail
   {
   public:
-    ProgressDetail();
-    ProgressDetail(Aws::Utils::Json::JsonView jsonValue);
-    ProgressDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ROBOMAKER_API ProgressDetail();
+    AWS_ROBOMAKER_API ProgressDetail(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROBOMAKER_API ProgressDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROBOMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

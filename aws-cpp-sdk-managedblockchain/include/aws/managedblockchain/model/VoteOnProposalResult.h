@@ -22,12 +22,12 @@ namespace ManagedBlockchain
 {
 namespace Model
 {
-  class AWS_MANAGEDBLOCKCHAIN_API VoteOnProposalResult
+  class VoteOnProposalResult
   {
   public:
-    VoteOnProposalResult();
-    VoteOnProposalResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    VoteOnProposalResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MANAGEDBLOCKCHAIN_API VoteOnProposalResult();
+    AWS_MANAGEDBLOCKCHAIN_API VoteOnProposalResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MANAGEDBLOCKCHAIN_API VoteOnProposalResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

@@ -35,14 +35,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ResponseHeadersPolicyCorsConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFRONT_API ResponseHeadersPolicyCorsConfig
+  class ResponseHeadersPolicyCorsConfig
   {
   public:
-    ResponseHeadersPolicyCorsConfig();
-    ResponseHeadersPolicyCorsConfig(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ResponseHeadersPolicyCorsConfig& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API ResponseHeadersPolicyCorsConfig();
+    AWS_CLOUDFRONT_API ResponseHeadersPolicyCorsConfig(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API ResponseHeadersPolicyCorsConfig& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**

@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/FileValidationMessage">AWS
    * API Reference</a></p>
    */
-  class AWS_FRAUDDETECTOR_API FileValidationMessage
+  class FileValidationMessage
   {
   public:
-    FileValidationMessage();
-    FileValidationMessage(Aws::Utils::Json::JsonView jsonValue);
-    FileValidationMessage& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FRAUDDETECTOR_API FileValidationMessage();
+    AWS_FRAUDDETECTOR_API FileValidationMessage(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FRAUDDETECTOR_API FileValidationMessage& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FRAUDDETECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

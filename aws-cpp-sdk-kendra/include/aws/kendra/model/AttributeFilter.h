@@ -41,13 +41,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/AttributeFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_KENDRA_API AttributeFilter
+  class AttributeFilter
   {
   public:
-    AttributeFilter();
-    AttributeFilter(Aws::Utils::Json::JsonView jsonValue);
-    AttributeFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KENDRA_API AttributeFilter();
+    AWS_KENDRA_API AttributeFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API AttributeFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -135,32 +135,32 @@ namespace Model
     /**
      * <p>Performs a logical <code>NOT</code> operation on all supplied filters.</p>
      */
-    const AttributeFilter& GetNotFilter() const;
+    AWS_KENDRA_API const AttributeFilter& GetNotFilter() const;
 
     /**
      * <p>Performs a logical <code>NOT</code> operation on all supplied filters.</p>
      */
-    bool NotFilterHasBeenSet() const;
+    AWS_KENDRA_API bool NotFilterHasBeenSet() const;
 
     /**
      * <p>Performs a logical <code>NOT</code> operation on all supplied filters.</p>
      */
-    void SetNotFilter(const AttributeFilter& value);
+    AWS_KENDRA_API void SetNotFilter(const AttributeFilter& value);
 
     /**
      * <p>Performs a logical <code>NOT</code> operation on all supplied filters.</p>
      */
-    void SetNotFilter(AttributeFilter&& value);
+    AWS_KENDRA_API void SetNotFilter(AttributeFilter&& value);
 
     /**
      * <p>Performs a logical <code>NOT</code> operation on all supplied filters.</p>
      */
-    AttributeFilter& WithNotFilter(const AttributeFilter& value);
+    AWS_KENDRA_API AttributeFilter& WithNotFilter(const AttributeFilter& value);
 
     /**
      * <p>Performs a logical <code>NOT</code> operation on all supplied filters.</p>
      */
-    AttributeFilter& WithNotFilter(AttributeFilter&& value);
+    AWS_KENDRA_API AttributeFilter& WithNotFilter(AttributeFilter&& value);
 
 
     /**

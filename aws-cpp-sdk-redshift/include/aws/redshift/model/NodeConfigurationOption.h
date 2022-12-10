@@ -29,15 +29,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/NodeConfigurationOption">AWS
    * API Reference</a></p>
    */
-  class AWS_REDSHIFT_API NodeConfigurationOption
+  class NodeConfigurationOption
   {
   public:
-    NodeConfigurationOption();
-    NodeConfigurationOption(const Aws::Utils::Xml::XmlNode& xmlNode);
-    NodeConfigurationOption& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_REDSHIFT_API NodeConfigurationOption();
+    AWS_REDSHIFT_API NodeConfigurationOption(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_REDSHIFT_API NodeConfigurationOption& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_REDSHIFT_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_REDSHIFT_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**

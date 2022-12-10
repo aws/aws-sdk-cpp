@@ -22,12 +22,12 @@ namespace Firehose
 {
 namespace Model
 {
-  class AWS_FIREHOSE_API StopDeliveryStreamEncryptionResult
+  class StopDeliveryStreamEncryptionResult
   {
   public:
-    StopDeliveryStreamEncryptionResult();
-    StopDeliveryStreamEncryptionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    StopDeliveryStreamEncryptionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_FIREHOSE_API StopDeliveryStreamEncryptionResult();
+    AWS_FIREHOSE_API StopDeliveryStreamEncryptionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_FIREHOSE_API StopDeliveryStreamEncryptionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

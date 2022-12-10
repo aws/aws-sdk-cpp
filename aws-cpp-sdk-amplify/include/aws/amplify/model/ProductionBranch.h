@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/ProductionBranch">AWS
    * API Reference</a></p>
    */
-  class AWS_AMPLIFY_API ProductionBranch
+  class ProductionBranch
   {
   public:
-    ProductionBranch();
-    ProductionBranch(Aws::Utils::Json::JsonView jsonValue);
-    ProductionBranch& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_AMPLIFY_API ProductionBranch();
+    AWS_AMPLIFY_API ProductionBranch(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFY_API ProductionBranch& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

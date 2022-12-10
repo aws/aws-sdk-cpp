@@ -44,13 +44,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/Insights">AWS
    * API Reference</a></p>
    */
-  class AWS_AUDITMANAGER_API Insights
+  class Insights
   {
   public:
-    Insights();
-    Insights(Aws::Utils::Json::JsonView jsonValue);
-    Insights& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_AUDITMANAGER_API Insights();
+    AWS_AUDITMANAGER_API Insights(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AUDITMANAGER_API Insights& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AUDITMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

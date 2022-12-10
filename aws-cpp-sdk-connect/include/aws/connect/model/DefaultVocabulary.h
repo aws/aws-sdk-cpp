@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DefaultVocabulary">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECT_API DefaultVocabulary
+  class DefaultVocabulary
   {
   public:
-    DefaultVocabulary();
-    DefaultVocabulary(Aws::Utils::Json::JsonView jsonValue);
-    DefaultVocabulary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECT_API DefaultVocabulary();
+    AWS_CONNECT_API DefaultVocabulary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API DefaultVocabulary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

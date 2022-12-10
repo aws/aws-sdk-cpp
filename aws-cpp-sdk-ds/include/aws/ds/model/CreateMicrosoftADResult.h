@@ -29,12 +29,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateMicrosoftADResult">AWS
    * API Reference</a></p>
    */
-  class AWS_DIRECTORYSERVICE_API CreateMicrosoftADResult
+  class CreateMicrosoftADResult
   {
   public:
-    CreateMicrosoftADResult();
-    CreateMicrosoftADResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateMicrosoftADResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DIRECTORYSERVICE_API CreateMicrosoftADResult();
+    AWS_DIRECTORYSERVICE_API CreateMicrosoftADResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DIRECTORYSERVICE_API CreateMicrosoftADResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

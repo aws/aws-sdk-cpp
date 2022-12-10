@@ -28,12 +28,12 @@ namespace CostExplorer
 {
 namespace Model
 {
-  class AWS_COSTEXPLORER_API GetCostAndUsageWithResourcesResult
+  class GetCostAndUsageWithResourcesResult
   {
   public:
-    GetCostAndUsageWithResourcesResult();
-    GetCostAndUsageWithResourcesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetCostAndUsageWithResourcesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_COSTEXPLORER_API GetCostAndUsageWithResourcesResult();
+    AWS_COSTEXPLORER_API GetCostAndUsageWithResourcesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_COSTEXPLORER_API GetCostAndUsageWithResourcesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

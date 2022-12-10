@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UnsupportedMediaTypeException">AWS
    * API Reference</a></p>
    */
-  class AWS_LAMBDA_API UnsupportedMediaTypeException
+  class UnsupportedMediaTypeException
   {
   public:
-    UnsupportedMediaTypeException();
-    UnsupportedMediaTypeException(Aws::Utils::Json::JsonView jsonValue);
-    UnsupportedMediaTypeException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LAMBDA_API UnsupportedMediaTypeException();
+    AWS_LAMBDA_API UnsupportedMediaTypeException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAMBDA_API UnsupportedMediaTypeException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAMBDA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

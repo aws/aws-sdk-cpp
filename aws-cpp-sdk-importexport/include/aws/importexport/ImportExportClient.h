@@ -8,6 +8,7 @@
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/importexport/ImportExportServiceClientModel.h>
 
@@ -23,7 +24,7 @@ namespace ImportExport
    * bypassing the Internet. For large data sets, AWS Import/Export is often faster
    * than Internet transfer and more cost effective than upgrading your connectivity.
    */
-  class AWS_IMPORTEXPORT_API ImportExportClient : public Aws::Client::AWSXMLClient
+  class AWS_IMPORTEXPORT_API ImportExportClient : public Aws::Client::AWSXMLClient, public Aws::Client::ClientWithAsyncTemplateMethods<ImportExportClient>
   {
     public:
       typedef Aws::Client::AWSXMLClient BASECLASS;
@@ -209,6 +210,7 @@ namespace ImportExport
         void OverrideEndpoint(const Aws::String& endpoint);
         std::shared_ptr<ImportExportEndpointProviderBase>& accessEndpointProvider();
   private:
+        friend class Aws::Client::ClientWithAsyncTemplateMethods<ImportExportClient>;
         void init(const ImportExportClientConfiguration& clientConfiguration);
 
         ImportExportClientConfiguration m_clientConfiguration;

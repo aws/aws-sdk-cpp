@@ -29,15 +29,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBLogFilesDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_RDS_API DescribeDBLogFilesDetails
+  class DescribeDBLogFilesDetails
   {
   public:
-    DescribeDBLogFilesDetails();
-    DescribeDBLogFilesDetails(const Aws::Utils::Xml::XmlNode& xmlNode);
-    DescribeDBLogFilesDetails& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_RDS_API DescribeDBLogFilesDetails();
+    AWS_RDS_API DescribeDBLogFilesDetails(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_RDS_API DescribeDBLogFilesDetails& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_RDS_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_RDS_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**

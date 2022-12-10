@@ -32,12 +32,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetDeploymentGroupsOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEDEPLOY_API BatchGetDeploymentGroupsResult
+  class BatchGetDeploymentGroupsResult
   {
   public:
-    BatchGetDeploymentGroupsResult();
-    BatchGetDeploymentGroupsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    BatchGetDeploymentGroupsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODEDEPLOY_API BatchGetDeploymentGroupsResult();
+    AWS_CODEDEPLOY_API BatchGetDeploymentGroupsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODEDEPLOY_API BatchGetDeploymentGroupsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

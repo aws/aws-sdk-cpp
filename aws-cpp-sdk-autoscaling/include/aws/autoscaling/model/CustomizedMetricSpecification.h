@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/autoscaling/model/MetricStatistic.h>
 #include <aws/autoscaling/model/MetricDimension.h>
+#include <aws/autoscaling/model/TargetTrackingMetricDataQuery.h>
 #include <utility>
 
 namespace Aws
@@ -50,15 +51,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/CustomizedMetricSpecification">AWS
    * API Reference</a></p>
    */
-  class AWS_AUTOSCALING_API CustomizedMetricSpecification
+  class CustomizedMetricSpecification
   {
   public:
-    CustomizedMetricSpecification();
-    CustomizedMetricSpecification(const Aws::Utils::Xml::XmlNode& xmlNode);
-    CustomizedMetricSpecification& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_AUTOSCALING_API CustomizedMetricSpecification();
+    AWS_AUTOSCALING_API CustomizedMetricSpecification(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_AUTOSCALING_API CustomizedMetricSpecification& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_AUTOSCALING_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_AUTOSCALING_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**
@@ -327,6 +328,55 @@ namespace Model
      */
     inline CustomizedMetricSpecification& WithUnit(const char* value) { SetUnit(value); return *this;}
 
+
+    /**
+     * <p>The metrics to include in the target tracking scaling policy, as a metric
+     * data query. This can include both raw metric and metric math expressions.</p>
+     */
+    inline const Aws::Vector<TargetTrackingMetricDataQuery>& GetMetrics() const{ return m_metrics; }
+
+    /**
+     * <p>The metrics to include in the target tracking scaling policy, as a metric
+     * data query. This can include both raw metric and metric math expressions.</p>
+     */
+    inline bool MetricsHasBeenSet() const { return m_metricsHasBeenSet; }
+
+    /**
+     * <p>The metrics to include in the target tracking scaling policy, as a metric
+     * data query. This can include both raw metric and metric math expressions.</p>
+     */
+    inline void SetMetrics(const Aws::Vector<TargetTrackingMetricDataQuery>& value) { m_metricsHasBeenSet = true; m_metrics = value; }
+
+    /**
+     * <p>The metrics to include in the target tracking scaling policy, as a metric
+     * data query. This can include both raw metric and metric math expressions.</p>
+     */
+    inline void SetMetrics(Aws::Vector<TargetTrackingMetricDataQuery>&& value) { m_metricsHasBeenSet = true; m_metrics = std::move(value); }
+
+    /**
+     * <p>The metrics to include in the target tracking scaling policy, as a metric
+     * data query. This can include both raw metric and metric math expressions.</p>
+     */
+    inline CustomizedMetricSpecification& WithMetrics(const Aws::Vector<TargetTrackingMetricDataQuery>& value) { SetMetrics(value); return *this;}
+
+    /**
+     * <p>The metrics to include in the target tracking scaling policy, as a metric
+     * data query. This can include both raw metric and metric math expressions.</p>
+     */
+    inline CustomizedMetricSpecification& WithMetrics(Aws::Vector<TargetTrackingMetricDataQuery>&& value) { SetMetrics(std::move(value)); return *this;}
+
+    /**
+     * <p>The metrics to include in the target tracking scaling policy, as a metric
+     * data query. This can include both raw metric and metric math expressions.</p>
+     */
+    inline CustomizedMetricSpecification& AddMetrics(const TargetTrackingMetricDataQuery& value) { m_metricsHasBeenSet = true; m_metrics.push_back(value); return *this; }
+
+    /**
+     * <p>The metrics to include in the target tracking scaling policy, as a metric
+     * data query. This can include both raw metric and metric math expressions.</p>
+     */
+    inline CustomizedMetricSpecification& AddMetrics(TargetTrackingMetricDataQuery&& value) { m_metricsHasBeenSet = true; m_metrics.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_metricName;
@@ -343,6 +393,9 @@ namespace Model
 
     Aws::String m_unit;
     bool m_unitHasBeenSet = false;
+
+    Aws::Vector<TargetTrackingMetricDataQuery> m_metrics;
+    bool m_metricsHasBeenSet = false;
   };
 
 } // namespace Model

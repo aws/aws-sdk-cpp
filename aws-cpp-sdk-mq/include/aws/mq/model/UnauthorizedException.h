@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/UnauthorizedException">AWS
    * API Reference</a></p>
    */
-  class AWS_MQ_API UnauthorizedException
+  class UnauthorizedException
   {
   public:
-    UnauthorizedException();
-    UnauthorizedException(Aws::Utils::Json::JsonView jsonValue);
-    UnauthorizedException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MQ_API UnauthorizedException();
+    AWS_MQ_API UnauthorizedException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MQ_API UnauthorizedException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MQ_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

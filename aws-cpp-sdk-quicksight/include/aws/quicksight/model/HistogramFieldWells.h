@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/HistogramFieldWells">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API HistogramFieldWells
+  class HistogramFieldWells
   {
   public:
-    HistogramFieldWells();
-    HistogramFieldWells(Aws::Utils::Json::JsonView jsonValue);
-    HistogramFieldWells& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API HistogramFieldWells();
+    AWS_QUICKSIGHT_API HistogramFieldWells(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API HistogramFieldWells& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

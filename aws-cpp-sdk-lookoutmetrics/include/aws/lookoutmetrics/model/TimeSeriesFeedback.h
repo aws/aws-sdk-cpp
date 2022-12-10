@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/TimeSeriesFeedback">AWS
    * API Reference</a></p>
    */
-  class AWS_LOOKOUTMETRICS_API TimeSeriesFeedback
+  class TimeSeriesFeedback
   {
   public:
-    TimeSeriesFeedback();
-    TimeSeriesFeedback(Aws::Utils::Json::JsonView jsonValue);
-    TimeSeriesFeedback& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LOOKOUTMETRICS_API TimeSeriesFeedback();
+    AWS_LOOKOUTMETRICS_API TimeSeriesFeedback(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTMETRICS_API TimeSeriesFeedback& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTMETRICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

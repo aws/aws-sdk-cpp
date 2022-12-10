@@ -24,10 +24,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/UpdateFlowEntitlementRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONNECT_API UpdateFlowEntitlementRequest : public MediaConnectRequest
+  class UpdateFlowEntitlementRequest : public MediaConnectRequest
   {
   public:
-    UpdateFlowEntitlementRequest();
+    AWS_MEDIACONNECT_API UpdateFlowEntitlementRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -35,7 +35,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateFlowEntitlement"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_MEDIACONNECT_API Aws::String SerializePayload() const override;
 
 
     /**

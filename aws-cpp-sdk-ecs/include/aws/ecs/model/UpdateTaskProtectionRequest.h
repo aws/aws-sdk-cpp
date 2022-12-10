@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_ECS_API UpdateTaskProtectionRequest : public ECSRequest
+  class UpdateTaskProtectionRequest : public ECSRequest
   {
   public:
-    UpdateTaskProtectionRequest();
+    AWS_ECS_API UpdateTaskProtectionRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,9 +30,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateTaskProtection"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_ECS_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_ECS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
@@ -161,7 +161,7 @@ namespace Model
      * from 1 minute to up to 2,880 minutes (48 hours). During this time, your task
      * will not be terminated by scale-in events from Service Auto Scaling or
      * deployments. After this time period lapses, <code>protectionEnabled</code> will
-     * be reset to <code>false</code>.</p> <p>If you don���t specify the time, then the
+     * be reset to <code>false</code>.</p> <p>If you don’t specify the time, then the
      * task is automatically protected for 120 minutes (2 hours).</p>
      */
     inline int GetExpiresInMinutes() const{ return m_expiresInMinutes; }
@@ -172,7 +172,7 @@ namespace Model
      * from 1 minute to up to 2,880 minutes (48 hours). During this time, your task
      * will not be terminated by scale-in events from Service Auto Scaling or
      * deployments. After this time period lapses, <code>protectionEnabled</code> will
-     * be reset to <code>false</code>.</p> <p>If you don���t specify the time, then the
+     * be reset to <code>false</code>.</p> <p>If you don’t specify the time, then the
      * task is automatically protected for 120 minutes (2 hours).</p>
      */
     inline bool ExpiresInMinutesHasBeenSet() const { return m_expiresInMinutesHasBeenSet; }
@@ -183,7 +183,7 @@ namespace Model
      * from 1 minute to up to 2,880 minutes (48 hours). During this time, your task
      * will not be terminated by scale-in events from Service Auto Scaling or
      * deployments. After this time period lapses, <code>protectionEnabled</code> will
-     * be reset to <code>false</code>.</p> <p>If you don���t specify the time, then the
+     * be reset to <code>false</code>.</p> <p>If you don’t specify the time, then the
      * task is automatically protected for 120 minutes (2 hours).</p>
      */
     inline void SetExpiresInMinutes(int value) { m_expiresInMinutesHasBeenSet = true; m_expiresInMinutes = value; }
@@ -194,7 +194,7 @@ namespace Model
      * from 1 minute to up to 2,880 minutes (48 hours). During this time, your task
      * will not be terminated by scale-in events from Service Auto Scaling or
      * deployments. After this time period lapses, <code>protectionEnabled</code> will
-     * be reset to <code>false</code>.</p> <p>If you don���t specify the time, then the
+     * be reset to <code>false</code>.</p> <p>If you don’t specify the time, then the
      * task is automatically protected for 120 minutes (2 hours).</p>
      */
     inline UpdateTaskProtectionRequest& WithExpiresInMinutes(int value) { SetExpiresInMinutes(value); return *this;}

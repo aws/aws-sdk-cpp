@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/MissingDataConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API MissingDataConfiguration
+  class MissingDataConfiguration
   {
   public:
-    MissingDataConfiguration();
-    MissingDataConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    MissingDataConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API MissingDataConfiguration();
+    AWS_QUICKSIGHT_API MissingDataConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API MissingDataConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

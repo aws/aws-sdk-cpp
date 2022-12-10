@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/TableFieldOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API TableFieldOptions
+  class TableFieldOptions
   {
   public:
-    TableFieldOptions();
-    TableFieldOptions(Aws::Utils::Json::JsonView jsonValue);
-    TableFieldOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API TableFieldOptions();
+    AWS_QUICKSIGHT_API TableFieldOptions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API TableFieldOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

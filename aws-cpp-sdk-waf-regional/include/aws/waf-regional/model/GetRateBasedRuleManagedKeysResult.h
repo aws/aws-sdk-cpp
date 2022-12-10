@@ -25,12 +25,12 @@ namespace WAFRegional
 {
 namespace Model
 {
-  class AWS_WAFREGIONAL_API GetRateBasedRuleManagedKeysResult
+  class GetRateBasedRuleManagedKeysResult
   {
   public:
-    GetRateBasedRuleManagedKeysResult();
-    GetRateBasedRuleManagedKeysResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetRateBasedRuleManagedKeysResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WAFREGIONAL_API GetRateBasedRuleManagedKeysResult();
+    AWS_WAFREGIONAL_API GetRateBasedRuleManagedKeysResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WAFREGIONAL_API GetRateBasedRuleManagedKeysResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

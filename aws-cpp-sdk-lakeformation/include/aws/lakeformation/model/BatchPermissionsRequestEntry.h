@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/BatchPermissionsRequestEntry">AWS
    * API Reference</a></p>
    */
-  class AWS_LAKEFORMATION_API BatchPermissionsRequestEntry
+  class BatchPermissionsRequestEntry
   {
   public:
-    BatchPermissionsRequestEntry();
-    BatchPermissionsRequestEntry(Aws::Utils::Json::JsonView jsonValue);
-    BatchPermissionsRequestEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LAKEFORMATION_API BatchPermissionsRequestEntry();
+    AWS_LAKEFORMATION_API BatchPermissionsRequestEntry(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAKEFORMATION_API BatchPermissionsRequestEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAKEFORMATION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

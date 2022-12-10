@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/Details">AWS
    * API Reference</a></p>
    */
-  class AWS_DATAEXCHANGE_API Details
+  class Details
   {
   public:
-    Details();
-    Details(Aws::Utils::Json::JsonView jsonValue);
-    Details& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DATAEXCHANGE_API Details();
+    AWS_DATAEXCHANGE_API Details(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATAEXCHANGE_API Details& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DATAEXCHANGE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

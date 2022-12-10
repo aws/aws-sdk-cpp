@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutvision-2020-11-20/GreengrassOutputDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_LOOKOUTFORVISION_API GreengrassOutputDetails
+  class GreengrassOutputDetails
   {
   public:
-    GreengrassOutputDetails();
-    GreengrassOutputDetails(Aws::Utils::Json::JsonView jsonValue);
-    GreengrassOutputDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LOOKOUTFORVISION_API GreengrassOutputDetails();
+    AWS_LOOKOUTFORVISION_API GreengrassOutputDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTFORVISION_API GreengrassOutputDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTFORVISION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

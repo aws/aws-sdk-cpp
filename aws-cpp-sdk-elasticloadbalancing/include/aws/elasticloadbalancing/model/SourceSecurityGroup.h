@@ -28,15 +28,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/SourceSecurityGroup">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICLOADBALANCING_API SourceSecurityGroup
+  class SourceSecurityGroup
   {
   public:
-    SourceSecurityGroup();
-    SourceSecurityGroup(const Aws::Utils::Xml::XmlNode& xmlNode);
-    SourceSecurityGroup& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICLOADBALANCING_API SourceSecurityGroup();
+    AWS_ELASTICLOADBALANCING_API SourceSecurityGroup(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICLOADBALANCING_API SourceSecurityGroup& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_ELASTICLOADBALANCING_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_ELASTICLOADBALANCING_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**

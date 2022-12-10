@@ -7,6 +7,7 @@
 #include <aws/es/ElasticsearchService_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/es/ElasticsearchServiceServiceClientModel.h>
 
@@ -29,7 +30,7 @@ namespace ElasticsearchService
    * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#elasticsearch-service-regions"
    * target="_blank">Regions and Endpoints</a>.</p>
    */
-  class AWS_ELASTICSEARCHSERVICE_API ElasticsearchServiceClient : public Aws::Client::AWSJsonClient
+  class AWS_ELASTICSEARCHSERVICE_API ElasticsearchServiceClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<ElasticsearchServiceClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -83,7 +84,6 @@ namespace ElasticsearchService
 
         /* End of legacy constructors due deprecation */
         virtual ~ElasticsearchServiceClient();
-
 
         /**
          * <p>Allows the destination domain owner to accept an inbound cross-cluster search
@@ -1006,6 +1006,7 @@ namespace ElasticsearchService
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<ElasticsearchServiceEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<ElasticsearchServiceClient>;
       void init(const ElasticsearchServiceClientConfiguration& clientConfiguration);
 
       ElasticsearchServiceClientConfiguration m_clientConfiguration;

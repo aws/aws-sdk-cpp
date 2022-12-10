@@ -26,12 +26,12 @@ namespace OAM
 {
 namespace Model
 {
-  class AWS_OAM_API ListSinksResult
+  class ListSinksResult
   {
   public:
-    ListSinksResult();
-    ListSinksResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListSinksResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OAM_API ListSinksResult();
+    AWS_OAM_API ListSinksResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OAM_API ListSinksResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

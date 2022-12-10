@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/BatchDeleteObjectResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDDIRECTORY_API BatchDeleteObjectResponse
+  class BatchDeleteObjectResponse
   {
   public:
-    BatchDeleteObjectResponse();
-    BatchDeleteObjectResponse(Aws::Utils::Json::JsonView jsonValue);
-    BatchDeleteObjectResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDDIRECTORY_API BatchDeleteObjectResponse();
+    AWS_CLOUDDIRECTORY_API BatchDeleteObjectResponse(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDDIRECTORY_API BatchDeleteObjectResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDDIRECTORY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
   };
 

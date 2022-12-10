@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/synthetics-2017-10-11/VpcConfigOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_SYNTHETICS_API VpcConfigOutput
+  class VpcConfigOutput
   {
   public:
-    VpcConfigOutput();
-    VpcConfigOutput(Aws::Utils::Json::JsonView jsonValue);
-    VpcConfigOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SYNTHETICS_API VpcConfigOutput();
+    AWS_SYNTHETICS_API VpcConfigOutput(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SYNTHETICS_API VpcConfigOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SYNTHETICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

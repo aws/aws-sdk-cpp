@@ -22,12 +22,12 @@ namespace Panorama
 {
 namespace Model
 {
-  class AWS_PANORAMA_API RemoveApplicationInstanceResult
+  class RemoveApplicationInstanceResult
   {
   public:
-    RemoveApplicationInstanceResult();
-    RemoveApplicationInstanceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    RemoveApplicationInstanceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PANORAMA_API RemoveApplicationInstanceResult();
+    AWS_PANORAMA_API RemoveApplicationInstanceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_PANORAMA_API RemoveApplicationInstanceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

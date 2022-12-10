@@ -22,12 +22,12 @@ namespace drs
 {
 namespace Model
 {
-  class AWS_DRS_API DeleteReplicationConfigurationTemplateResult
+  class DeleteReplicationConfigurationTemplateResult
   {
   public:
-    DeleteReplicationConfigurationTemplateResult();
-    DeleteReplicationConfigurationTemplateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteReplicationConfigurationTemplateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DRS_API DeleteReplicationConfigurationTemplateResult();
+    AWS_DRS_API DeleteReplicationConfigurationTemplateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DRS_API DeleteReplicationConfigurationTemplateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

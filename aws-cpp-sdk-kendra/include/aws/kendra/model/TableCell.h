@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/TableCell">AWS
    * API Reference</a></p>
    */
-  class AWS_KENDRA_API TableCell
+  class TableCell
   {
   public:
-    TableCell();
-    TableCell(Aws::Utils::Json::JsonView jsonValue);
-    TableCell& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KENDRA_API TableCell();
+    AWS_KENDRA_API TableCell(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API TableCell& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

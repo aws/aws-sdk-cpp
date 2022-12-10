@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/EksContainer">AWS
    * API Reference</a></p>
    */
-  class AWS_BATCH_API EksContainer
+  class EksContainer
   {
   public:
-    EksContainer();
-    EksContainer(Aws::Utils::Json::JsonView jsonValue);
-    EksContainer& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BATCH_API EksContainer();
+    AWS_BATCH_API EksContainer(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BATCH_API EksContainer& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BATCH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

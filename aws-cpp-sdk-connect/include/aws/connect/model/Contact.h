@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/Contact">AWS API
    * Reference</a></p>
    */
-  class AWS_CONNECT_API Contact
+  class Contact
   {
   public:
-    Contact();
-    Contact(Aws::Utils::Json::JsonView jsonValue);
-    Contact& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECT_API Contact();
+    AWS_CONNECT_API Contact(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API Contact& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

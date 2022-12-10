@@ -33,14 +33,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ResponseHeadersPolicyAccessControlAllowOrigins">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFRONT_API ResponseHeadersPolicyAccessControlAllowOrigins
+  class ResponseHeadersPolicyAccessControlAllowOrigins
   {
   public:
-    ResponseHeadersPolicyAccessControlAllowOrigins();
-    ResponseHeadersPolicyAccessControlAllowOrigins(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ResponseHeadersPolicyAccessControlAllowOrigins& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API ResponseHeadersPolicyAccessControlAllowOrigins();
+    AWS_CLOUDFRONT_API ResponseHeadersPolicyAccessControlAllowOrigins(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API ResponseHeadersPolicyAccessControlAllowOrigins& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**

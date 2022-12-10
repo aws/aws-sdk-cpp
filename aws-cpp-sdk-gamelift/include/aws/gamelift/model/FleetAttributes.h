@@ -41,13 +41,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/FleetAttributes">AWS
    * API Reference</a></p>
    */
-  class AWS_GAMELIFT_API FleetAttributes
+  class FleetAttributes
   {
   public:
-    FleetAttributes();
-    FleetAttributes(Aws::Utils::Json::JsonView jsonValue);
-    FleetAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GAMELIFT_API FleetAttributes();
+    AWS_GAMELIFT_API FleetAttributes(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMELIFT_API FleetAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

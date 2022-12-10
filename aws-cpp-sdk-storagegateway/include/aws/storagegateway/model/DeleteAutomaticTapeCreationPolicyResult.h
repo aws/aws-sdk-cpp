@@ -24,12 +24,12 @@ namespace StorageGateway
 {
 namespace Model
 {
-  class AWS_STORAGEGATEWAY_API DeleteAutomaticTapeCreationPolicyResult
+  class DeleteAutomaticTapeCreationPolicyResult
   {
   public:
-    DeleteAutomaticTapeCreationPolicyResult();
-    DeleteAutomaticTapeCreationPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteAutomaticTapeCreationPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_STORAGEGATEWAY_API DeleteAutomaticTapeCreationPolicyResult();
+    AWS_STORAGEGATEWAY_API DeleteAutomaticTapeCreationPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_STORAGEGATEWAY_API DeleteAutomaticTapeCreationPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     

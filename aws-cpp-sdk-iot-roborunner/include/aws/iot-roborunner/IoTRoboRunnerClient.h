@@ -7,6 +7,7 @@
 #include <aws/iot-roborunner/IoTRoboRunner_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/iot-roborunner/IoTRoboRunnerServiceClientModel.h>
 
@@ -18,7 +19,7 @@ namespace IoTRoboRunner
    * <p>An example service, deployed with the Octane Service creator, which will echo
    * the string</p>
    */
-  class AWS_IOTROBORUNNER_API IoTRoboRunnerClient : public Aws::Client::AWSJsonClient
+  class AWS_IOTROBORUNNER_API IoTRoboRunnerClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<IoTRoboRunnerClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -72,7 +73,6 @@ namespace IoTRoboRunner
 
         /* End of legacy constructors due deprecation */
         virtual ~IoTRoboRunnerClient();
-
 
         /**
          * <p>Grants permission to create a destination</p><p><h3>See Also:</h3>   <a
@@ -418,6 +418,7 @@ namespace IoTRoboRunner
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<IoTRoboRunnerEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<IoTRoboRunnerClient>;
       void init(const IoTRoboRunnerClientConfiguration& clientConfiguration);
 
       IoTRoboRunnerClientConfiguration m_clientConfiguration;

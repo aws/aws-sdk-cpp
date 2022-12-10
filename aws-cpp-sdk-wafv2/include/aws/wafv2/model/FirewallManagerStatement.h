@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/FirewallManagerStatement">AWS
    * API Reference</a></p>
    */
-  class AWS_WAFV2_API FirewallManagerStatement
+  class FirewallManagerStatement
   {
   public:
-    FirewallManagerStatement();
-    FirewallManagerStatement(Aws::Utils::Json::JsonView jsonValue);
-    FirewallManagerStatement& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WAFV2_API FirewallManagerStatement();
+    AWS_WAFV2_API FirewallManagerStatement(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API FirewallManagerStatement& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/FoundByKeyValue">AWS
    * API Reference</a></p>
    */
-  class AWS_CUSTOMERPROFILES_API FoundByKeyValue
+  class FoundByKeyValue
   {
   public:
-    FoundByKeyValue();
-    FoundByKeyValue(Aws::Utils::Json::JsonView jsonValue);
-    FoundByKeyValue& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CUSTOMERPROFILES_API FoundByKeyValue();
+    AWS_CUSTOMERPROFILES_API FoundByKeyValue(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CUSTOMERPROFILES_API FoundByKeyValue& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CUSTOMERPROFILES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

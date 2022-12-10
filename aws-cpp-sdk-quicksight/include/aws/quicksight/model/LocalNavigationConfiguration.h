@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/LocalNavigationConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API LocalNavigationConfiguration
+  class LocalNavigationConfiguration
   {
   public:
-    LocalNavigationConfiguration();
-    LocalNavigationConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    LocalNavigationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API LocalNavigationConfiguration();
+    AWS_QUICKSIGHT_API LocalNavigationConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API LocalNavigationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/RelationalDatabaseBundle">AWS
    * API Reference</a></p>
    */
-  class AWS_LIGHTSAIL_API RelationalDatabaseBundle
+  class RelationalDatabaseBundle
   {
   public:
-    RelationalDatabaseBundle();
-    RelationalDatabaseBundle(Aws::Utils::Json::JsonView jsonValue);
-    RelationalDatabaseBundle& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LIGHTSAIL_API RelationalDatabaseBundle();
+    AWS_LIGHTSAIL_API RelationalDatabaseBundle(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API RelationalDatabaseBundle& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

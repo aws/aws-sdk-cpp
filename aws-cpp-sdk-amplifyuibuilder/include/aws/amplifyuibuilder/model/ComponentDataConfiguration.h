@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/ComponentDataConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_AMPLIFYUIBUILDER_API ComponentDataConfiguration
+  class ComponentDataConfiguration
   {
   public:
-    ComponentDataConfiguration();
-    ComponentDataConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    ComponentDataConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_AMPLIFYUIBUILDER_API ComponentDataConfiguration();
+    AWS_AMPLIFYUIBUILDER_API ComponentDataConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFYUIBUILDER_API ComponentDataConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AMPLIFYUIBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

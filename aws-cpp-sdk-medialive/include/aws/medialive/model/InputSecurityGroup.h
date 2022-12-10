@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/InputSecurityGroup">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API InputSecurityGroup
+  class InputSecurityGroup
   {
   public:
-    InputSecurityGroup();
-    InputSecurityGroup(Aws::Utils::Json::JsonView jsonValue);
-    InputSecurityGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API InputSecurityGroup();
+    AWS_MEDIALIVE_API InputSecurityGroup(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API InputSecurityGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

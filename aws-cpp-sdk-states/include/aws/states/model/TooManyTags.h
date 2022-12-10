@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/TooManyTags">AWS
    * API Reference</a></p>
    */
-  class AWS_SFN_API TooManyTags
+  class TooManyTags
   {
   public:
-    TooManyTags();
-    TooManyTags(Aws::Utils::Json::JsonView jsonValue);
-    TooManyTags& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SFN_API TooManyTags();
+    AWS_SFN_API TooManyTags(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SFN_API TooManyTags& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SFN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

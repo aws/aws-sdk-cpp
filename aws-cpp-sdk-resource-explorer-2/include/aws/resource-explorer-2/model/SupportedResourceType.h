@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/resource-explorer-2-2022-07-28/SupportedResourceType">AWS
    * API Reference</a></p>
    */
-  class AWS_RESOURCEEXPLORER2_API SupportedResourceType
+  class SupportedResourceType
   {
   public:
-    SupportedResourceType();
-    SupportedResourceType(Aws::Utils::Json::JsonView jsonValue);
-    SupportedResourceType& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_RESOURCEEXPLORER2_API SupportedResourceType();
+    AWS_RESOURCEEXPLORER2_API SupportedResourceType(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RESOURCEEXPLORER2_API SupportedResourceType& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RESOURCEEXPLORER2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

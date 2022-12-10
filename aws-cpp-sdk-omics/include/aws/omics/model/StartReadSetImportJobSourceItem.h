@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/StartReadSetImportJobSourceItem">AWS
    * API Reference</a></p>
    */
-  class AWS_OMICS_API StartReadSetImportJobSourceItem
+  class StartReadSetImportJobSourceItem
   {
   public:
-    StartReadSetImportJobSourceItem();
-    StartReadSetImportJobSourceItem(Aws::Utils::Json::JsonView jsonValue);
-    StartReadSetImportJobSourceItem& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OMICS_API StartReadSetImportJobSourceItem();
+    AWS_OMICS_API StartReadSetImportJobSourceItem(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OMICS_API StartReadSetImportJobSourceItem& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OMICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/WorkerBlock">AWS
    * API Reference</a></p>
    */
-  class AWS_MTURK_API WorkerBlock
+  class WorkerBlock
   {
   public:
-    WorkerBlock();
-    WorkerBlock(Aws::Utils::Json::JsonView jsonValue);
-    WorkerBlock& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MTURK_API WorkerBlock();
+    AWS_MTURK_API WorkerBlock(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MTURK_API WorkerBlock& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MTURK_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

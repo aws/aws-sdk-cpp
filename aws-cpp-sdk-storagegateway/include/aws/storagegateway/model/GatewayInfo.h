@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/GatewayInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_STORAGEGATEWAY_API GatewayInfo
+  class GatewayInfo
   {
   public:
-    GatewayInfo();
-    GatewayInfo(Aws::Utils::Json::JsonView jsonValue);
-    GatewayInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_STORAGEGATEWAY_API GatewayInfo();
+    AWS_STORAGEGATEWAY_API GatewayInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_STORAGEGATEWAY_API GatewayInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_STORAGEGATEWAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

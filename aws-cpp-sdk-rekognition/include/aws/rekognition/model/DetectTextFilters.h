@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DetectTextFilters">AWS
    * API Reference</a></p>
    */
-  class AWS_REKOGNITION_API DetectTextFilters
+  class DetectTextFilters
   {
   public:
-    DetectTextFilters();
-    DetectTextFilters(Aws::Utils::Json::JsonView jsonValue);
-    DetectTextFilters& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_REKOGNITION_API DetectTextFilters();
+    AWS_REKOGNITION_API DetectTextFilters(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API DetectTextFilters& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

@@ -28,12 +28,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutEmailIdentityDkimAttributesResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_SESV2_API PutEmailIdentityDkimAttributesResult
+  class PutEmailIdentityDkimAttributesResult
   {
   public:
-    PutEmailIdentityDkimAttributesResult();
-    PutEmailIdentityDkimAttributesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PutEmailIdentityDkimAttributesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SESV2_API PutEmailIdentityDkimAttributesResult();
+    AWS_SESV2_API PutEmailIdentityDkimAttributesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SESV2_API PutEmailIdentityDkimAttributesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

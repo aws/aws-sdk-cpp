@@ -24,12 +24,12 @@ namespace LexRuntimeService
 {
 namespace Model
 {
-  class AWS_LEXRUNTIMESERVICE_API DeleteSessionResult
+  class DeleteSessionResult
   {
   public:
-    DeleteSessionResult();
-    DeleteSessionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DeleteSessionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LEXRUNTIMESERVICE_API DeleteSessionResult();
+    AWS_LEXRUNTIMESERVICE_API DeleteSessionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LEXRUNTIMESERVICE_API DeleteSessionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

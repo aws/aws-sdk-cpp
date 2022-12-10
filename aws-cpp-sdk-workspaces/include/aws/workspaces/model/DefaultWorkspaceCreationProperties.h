@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DefaultWorkspaceCreationProperties">AWS
    * API Reference</a></p>
    */
-  class AWS_WORKSPACES_API DefaultWorkspaceCreationProperties
+  class DefaultWorkspaceCreationProperties
   {
   public:
-    DefaultWorkspaceCreationProperties();
-    DefaultWorkspaceCreationProperties(Aws::Utils::Json::JsonView jsonValue);
-    DefaultWorkspaceCreationProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WORKSPACES_API DefaultWorkspaceCreationProperties();
+    AWS_WORKSPACES_API DefaultWorkspaceCreationProperties(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKSPACES_API DefaultWorkspaceCreationProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

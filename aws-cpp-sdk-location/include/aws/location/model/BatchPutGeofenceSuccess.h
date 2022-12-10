@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/BatchPutGeofenceSuccess">AWS
    * API Reference</a></p>
    */
-  class AWS_LOCATIONSERVICE_API BatchPutGeofenceSuccess
+  class BatchPutGeofenceSuccess
   {
   public:
-    BatchPutGeofenceSuccess();
-    BatchPutGeofenceSuccess(Aws::Utils::Json::JsonView jsonValue);
-    BatchPutGeofenceSuccess& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LOCATIONSERVICE_API BatchPutGeofenceSuccess();
+    AWS_LOCATIONSERVICE_API BatchPutGeofenceSuccess(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOCATIONSERVICE_API BatchPutGeofenceSuccess& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOCATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

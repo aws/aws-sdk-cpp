@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/SetSourceRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIACONNECT_API SetSourceRequest
+  class SetSourceRequest
   {
   public:
-    SetSourceRequest();
-    SetSourceRequest(Aws::Utils::Json::JsonView jsonValue);
-    SetSourceRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIACONNECT_API SetSourceRequest();
+    AWS_MEDIACONNECT_API SetSourceRequest(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONNECT_API SetSourceRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIACONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

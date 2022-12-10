@@ -23,10 +23,10 @@ namespace Model
 
   /**
    */
-  class AWS_IOTSITEWISE_API UpdateAssetModelRequest : public IoTSiteWiseRequest
+  class UpdateAssetModelRequest : public IoTSiteWiseRequest
   {
   public:
-    UpdateAssetModelRequest();
+    AWS_IOTSITEWISE_API UpdateAssetModelRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,7 +34,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateAssetModel"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_IOTSITEWISE_API Aws::String SerializePayload() const override;
 
 
     /**

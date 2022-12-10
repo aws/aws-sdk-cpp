@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/ViewFrame">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUEDATABREW_API ViewFrame
+  class ViewFrame
   {
   public:
-    ViewFrame();
-    ViewFrame(Aws::Utils::Json::JsonView jsonValue);
-    ViewFrame& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUEDATABREW_API ViewFrame();
+    AWS_GLUEDATABREW_API ViewFrame(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUEDATABREW_API ViewFrame& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUEDATABREW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

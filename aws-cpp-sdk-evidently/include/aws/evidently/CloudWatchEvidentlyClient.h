@@ -7,6 +7,7 @@
 #include <aws/evidently/CloudWatchEvidently_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/evidently/CloudWatchEvidentlyServiceClientModel.h>
 
@@ -26,7 +27,7 @@ namespace CloudWatchEvidently
    * provides clear recommendations about which variations perform better. You can
    * test both user-facing features and backend features.</p>
    */
-  class AWS_CLOUDWATCHEVIDENTLY_API CloudWatchEvidentlyClient : public Aws::Client::AWSJsonClient
+  class AWS_CLOUDWATCHEVIDENTLY_API CloudWatchEvidentlyClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<CloudWatchEvidentlyClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -80,7 +81,6 @@ namespace CloudWatchEvidently
 
         /* End of legacy constructors due deprecation */
         virtual ~CloudWatchEvidentlyClient();
-
 
         /**
          * <p>This operation assigns feature variation to user sessions. For each user
@@ -913,6 +913,7 @@ namespace CloudWatchEvidently
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<CloudWatchEvidentlyEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<CloudWatchEvidentlyClient>;
       void init(const CloudWatchEvidentlyClientConfiguration& clientConfiguration);
 
       CloudWatchEvidentlyClientConfiguration m_clientConfiguration;

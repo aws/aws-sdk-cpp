@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/EndpointRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API EndpointRequest
+  class EndpointRequest
   {
   public:
-    EndpointRequest();
-    EndpointRequest(Aws::Utils::Json::JsonView jsonValue);
-    EndpointRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API EndpointRequest();
+    AWS_PINPOINT_API EndpointRequest(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API EndpointRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

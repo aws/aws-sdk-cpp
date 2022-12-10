@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/AmazonopensearchserviceRetryOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_FIREHOSE_API AmazonopensearchserviceRetryOptions
+  class AmazonopensearchserviceRetryOptions
   {
   public:
-    AmazonopensearchserviceRetryOptions();
-    AmazonopensearchserviceRetryOptions(Aws::Utils::Json::JsonView jsonValue);
-    AmazonopensearchserviceRetryOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FIREHOSE_API AmazonopensearchserviceRetryOptions();
+    AWS_FIREHOSE_API AmazonopensearchserviceRetryOptions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FIREHOSE_API AmazonopensearchserviceRetryOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FIREHOSE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

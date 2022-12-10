@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ProjectOperation">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API ProjectOperation
+  class ProjectOperation
   {
   public:
-    ProjectOperation();
-    ProjectOperation(Aws::Utils::Json::JsonView jsonValue);
-    ProjectOperation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API ProjectOperation();
+    AWS_QUICKSIGHT_API ProjectOperation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API ProjectOperation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

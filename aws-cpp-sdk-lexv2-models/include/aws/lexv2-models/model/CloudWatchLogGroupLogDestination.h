@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/CloudWatchLogGroupLogDestination">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELSV2_API CloudWatchLogGroupLogDestination
+  class CloudWatchLogGroupLogDestination
   {
   public:
-    CloudWatchLogGroupLogDestination();
-    CloudWatchLogGroupLogDestination(Aws::Utils::Json::JsonView jsonValue);
-    CloudWatchLogGroupLogDestination& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELSV2_API CloudWatchLogGroupLogDestination();
+    AWS_LEXMODELSV2_API CloudWatchLogGroupLogDestination(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API CloudWatchLogGroupLogDestination& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/resource-explorer-2-2022-07-28/ValidationException">AWS
    * API Reference</a></p>
    */
-  class AWS_RESOURCEEXPLORER2_API ValidationException
+  class ValidationException
   {
   public:
-    ValidationException();
-    ValidationException(Aws::Utils::Json::JsonView jsonValue);
-    ValidationException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_RESOURCEEXPLORER2_API ValidationException();
+    AWS_RESOURCEEXPLORER2_API ValidationException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RESOURCEEXPLORER2_API ValidationException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RESOURCEEXPLORER2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

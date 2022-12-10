@@ -33,12 +33,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListVirtualMFADevicesResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_IAM_API ListVirtualMFADevicesResult
+  class ListVirtualMFADevicesResult
   {
   public:
-    ListVirtualMFADevicesResult();
-    ListVirtualMFADevicesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ListVirtualMFADevicesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_IAM_API ListVirtualMFADevicesResult();
+    AWS_IAM_API ListVirtualMFADevicesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_IAM_API ListVirtualMFADevicesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

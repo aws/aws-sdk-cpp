@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DirectConnectGatewayAssociation">AWS
    * API Reference</a></p>
    */
-  class AWS_DIRECTCONNECT_API DirectConnectGatewayAssociation
+  class DirectConnectGatewayAssociation
   {
   public:
-    DirectConnectGatewayAssociation();
-    DirectConnectGatewayAssociation(Aws::Utils::Json::JsonView jsonValue);
-    DirectConnectGatewayAssociation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DIRECTCONNECT_API DirectConnectGatewayAssociation();
+    AWS_DIRECTCONNECT_API DirectConnectGatewayAssociation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTCONNECT_API DirectConnectGatewayAssociation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTCONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

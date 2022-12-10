@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/CustomPluginSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_KAFKACONNECT_API CustomPluginSummary
+  class CustomPluginSummary
   {
   public:
-    CustomPluginSummary();
-    CustomPluginSummary(Aws::Utils::Json::JsonView jsonValue);
-    CustomPluginSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KAFKACONNECT_API CustomPluginSummary();
+    AWS_KAFKACONNECT_API CustomPluginSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKACONNECT_API CustomPluginSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KAFKACONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

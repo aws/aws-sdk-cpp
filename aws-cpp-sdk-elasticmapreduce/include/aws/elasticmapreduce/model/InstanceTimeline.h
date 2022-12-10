@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/InstanceTimeline">AWS
    * API Reference</a></p>
    */
-  class AWS_EMR_API InstanceTimeline
+  class InstanceTimeline
   {
   public:
-    InstanceTimeline();
-    InstanceTimeline(Aws::Utils::Json::JsonView jsonValue);
-    InstanceTimeline& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EMR_API InstanceTimeline();
+    AWS_EMR_API InstanceTimeline(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMR_API InstanceTimeline& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

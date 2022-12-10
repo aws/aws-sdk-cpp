@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/FleetSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTFLEETWISE_API FleetSummary
+  class FleetSummary
   {
   public:
-    FleetSummary();
-    FleetSummary(Aws::Utils::Json::JsonView jsonValue);
-    FleetSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTFLEETWISE_API FleetSummary();
+    AWS_IOTFLEETWISE_API FleetSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTFLEETWISE_API FleetSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTFLEETWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

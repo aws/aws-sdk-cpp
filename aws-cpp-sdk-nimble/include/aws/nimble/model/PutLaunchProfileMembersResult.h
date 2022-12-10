@@ -22,12 +22,12 @@ namespace NimbleStudio
 {
 namespace Model
 {
-  class AWS_NIMBLESTUDIO_API PutLaunchProfileMembersResult
+  class PutLaunchProfileMembersResult
   {
   public:
-    PutLaunchProfileMembersResult();
-    PutLaunchProfileMembersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PutLaunchProfileMembersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_NIMBLESTUDIO_API PutLaunchProfileMembersResult();
+    AWS_NIMBLESTUDIO_API PutLaunchProfileMembersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_NIMBLESTUDIO_API PutLaunchProfileMembersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ThemeSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API ThemeSummary
+  class ThemeSummary
   {
   public:
-    ThemeSummary();
-    ThemeSummary(Aws::Utils::Json::JsonView jsonValue);
-    ThemeSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API ThemeSummary();
+    AWS_QUICKSIGHT_API ThemeSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API ThemeSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

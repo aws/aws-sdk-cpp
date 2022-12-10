@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/EventFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API EventFilter
+  class EventFilter
   {
   public:
-    EventFilter();
-    EventFilter(Aws::Utils::Json::JsonView jsonValue);
-    EventFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API EventFilter();
+    AWS_PINPOINT_API EventFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API EventFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

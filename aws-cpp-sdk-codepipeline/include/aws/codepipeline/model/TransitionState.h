@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/TransitionState">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEPIPELINE_API TransitionState
+  class TransitionState
   {
   public:
-    TransitionState();
-    TransitionState(Aws::Utils::Json::JsonView jsonValue);
-    TransitionState& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEPIPELINE_API TransitionState();
+    AWS_CODEPIPELINE_API TransitionState(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEPIPELINE_API TransitionState& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

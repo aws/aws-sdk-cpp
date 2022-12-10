@@ -26,12 +26,12 @@ namespace MQ
 {
 namespace Model
 {
-  class AWS_MQ_API ListConfigurationsResult
+  class ListConfigurationsResult
   {
   public:
-    ListConfigurationsResult();
-    ListConfigurationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListConfigurationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MQ_API ListConfigurationsResult();
+    AWS_MQ_API ListConfigurationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MQ_API ListConfigurationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

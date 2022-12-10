@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/EksConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_BATCH_API EksConfiguration
+  class EksConfiguration
   {
   public:
-    EksConfiguration();
-    EksConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    EksConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BATCH_API EksConfiguration();
+    AWS_BATCH_API EksConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BATCH_API EksConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BATCH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/Source">AWS API
    * Reference</a></p>
    */
-  class AWS_OPSWORKS_API Source
+  class Source
   {
   public:
-    Source();
-    Source(Aws::Utils::Json::JsonView jsonValue);
-    Source& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OPSWORKS_API Source();
+    AWS_OPSWORKS_API Source(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPSWORKS_API Source& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPSWORKS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

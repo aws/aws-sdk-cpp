@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsCloudFrontDistributionDefaultCacheBehavior">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsCloudFrontDistributionDefaultCacheBehavior
+  class AwsCloudFrontDistributionDefaultCacheBehavior
   {
   public:
-    AwsCloudFrontDistributionDefaultCacheBehavior();
-    AwsCloudFrontDistributionDefaultCacheBehavior(Aws::Utils::Json::JsonView jsonValue);
-    AwsCloudFrontDistributionDefaultCacheBehavior& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsCloudFrontDistributionDefaultCacheBehavior();
+    AWS_SECURITYHUB_API AwsCloudFrontDistributionDefaultCacheBehavior(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsCloudFrontDistributionDefaultCacheBehavior& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

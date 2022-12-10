@@ -24,13 +24,13 @@ namespace Schemas
 namespace Model
 {
 
-  class AWS_SCHEMAS_API SchemaVersionSummary
+  class SchemaVersionSummary
   {
   public:
-    SchemaVersionSummary();
-    SchemaVersionSummary(Aws::Utils::Json::JsonView jsonValue);
-    SchemaVersionSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SCHEMAS_API SchemaVersionSummary();
+    AWS_SCHEMAS_API SchemaVersionSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SCHEMAS_API SchemaVersionSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SCHEMAS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

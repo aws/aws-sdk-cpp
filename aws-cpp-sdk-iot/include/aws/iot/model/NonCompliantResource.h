@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/NonCompliantResource">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API NonCompliantResource
+  class NonCompliantResource
   {
   public:
-    NonCompliantResource();
-    NonCompliantResource(Aws::Utils::Json::JsonView jsonValue);
-    NonCompliantResource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API NonCompliantResource();
+    AWS_IOT_API NonCompliantResource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API NonCompliantResource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

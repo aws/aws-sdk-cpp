@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/RelationalDatabaseBlueprint">AWS
    * API Reference</a></p>
    */
-  class AWS_LIGHTSAIL_API RelationalDatabaseBlueprint
+  class RelationalDatabaseBlueprint
   {
   public:
-    RelationalDatabaseBlueprint();
-    RelationalDatabaseBlueprint(Aws::Utils::Json::JsonView jsonValue);
-    RelationalDatabaseBlueprint& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LIGHTSAIL_API RelationalDatabaseBlueprint();
+    AWS_LIGHTSAIL_API RelationalDatabaseBlueprint(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API RelationalDatabaseBlueprint& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

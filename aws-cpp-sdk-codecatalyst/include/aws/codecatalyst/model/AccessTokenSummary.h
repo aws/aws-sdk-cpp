@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codecatalyst-2022-09-28/AccessTokenSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_CODECATALYST_API AccessTokenSummary
+  class AccessTokenSummary
   {
   public:
-    AccessTokenSummary();
-    AccessTokenSummary(Aws::Utils::Json::JsonView jsonValue);
-    AccessTokenSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODECATALYST_API AccessTokenSummary();
+    AWS_CODECATALYST_API AccessTokenSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODECATALYST_API AccessTokenSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODECATALYST_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

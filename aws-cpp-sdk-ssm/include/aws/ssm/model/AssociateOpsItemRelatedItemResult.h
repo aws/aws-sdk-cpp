@@ -24,12 +24,12 @@ namespace SSM
 {
 namespace Model
 {
-  class AWS_SSM_API AssociateOpsItemRelatedItemResult
+  class AssociateOpsItemRelatedItemResult
   {
   public:
-    AssociateOpsItemRelatedItemResult();
-    AssociateOpsItemRelatedItemResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AssociateOpsItemRelatedItemResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSM_API AssociateOpsItemRelatedItemResult();
+    AWS_SSM_API AssociateOpsItemRelatedItemResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSM_API AssociateOpsItemRelatedItemResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/RecoveryPointMember">AWS
    * API Reference</a></p>
    */
-  class AWS_BACKUP_API RecoveryPointMember
+  class RecoveryPointMember
   {
   public:
-    RecoveryPointMember();
-    RecoveryPointMember(Aws::Utils::Json::JsonView jsonValue);
-    RecoveryPointMember& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BACKUP_API RecoveryPointMember();
+    AWS_BACKUP_API RecoveryPointMember(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BACKUP_API RecoveryPointMember& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BACKUP_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

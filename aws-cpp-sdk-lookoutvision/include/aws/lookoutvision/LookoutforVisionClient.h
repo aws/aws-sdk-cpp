@@ -7,6 +7,7 @@
 #include <aws/lookoutvision/LookoutforVision_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/lookoutvision/LookoutforVisionServiceClientModel.h>
 
@@ -24,7 +25,7 @@ namespace LookoutforVision
    * physical item where quality is important such as a missing capacitor on printed
    * circuit boards.</p>
    */
-  class AWS_LOOKOUTFORVISION_API LookoutforVisionClient : public Aws::Client::AWSJsonClient
+  class AWS_LOOKOUTFORVISION_API LookoutforVisionClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<LookoutforVisionClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -78,7 +79,6 @@ namespace LookoutforVision
 
         /* End of legacy constructors due deprecation */
         virtual ~LookoutforVisionClient();
-
 
         /**
          * <p>Creates a new dataset in an Amazon Lookout for Vision project.
@@ -604,6 +604,7 @@ namespace LookoutforVision
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<LookoutforVisionEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<LookoutforVisionClient>;
       void init(const LookoutforVisionClientConfiguration& clientConfiguration);
 
       LookoutforVisionClientConfiguration m_clientConfiguration;

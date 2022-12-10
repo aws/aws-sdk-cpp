@@ -44,7 +44,9 @@ DistributionSummary::DistributionSummary() :
     m_httpVersionHasBeenSet(false),
     m_isIPV6Enabled(false),
     m_isIPV6EnabledHasBeenSet(false),
-    m_aliasICPRecordalsHasBeenSet(false)
+    m_aliasICPRecordalsHasBeenSet(false),
+    m_staging(false),
+    m_stagingHasBeenSet(false)
 {
 }
 
@@ -72,7 +74,9 @@ DistributionSummary::DistributionSummary(const XmlNode& xmlNode) :
     m_httpVersionHasBeenSet(false),
     m_isIPV6Enabled(false),
     m_isIPV6EnabledHasBeenSet(false),
-    m_aliasICPRecordalsHasBeenSet(false)
+    m_aliasICPRecordalsHasBeenSet(false),
+    m_staging(false),
+    m_stagingHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -209,6 +213,12 @@ DistributionSummary& DistributionSummary::operator =(const XmlNode& xmlNode)
 
       m_aliasICPRecordalsHasBeenSet = true;
     }
+    XmlNode stagingNode = resultNode.FirstChild("Staging");
+    if(!stagingNode.IsNull())
+    {
+      m_staging = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stagingNode.GetText()).c_str()).c_str());
+      m_stagingHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -343,6 +353,14 @@ void DistributionSummary::AddToNode(XmlNode& parentNode) const
      XmlNode aliasICPRecordalsNode = aliasICPRecordalsParentNode.CreateChildElement("AliasICPRecordal");
      item.AddToNode(aliasICPRecordalsNode);
    }
+  }
+
+  if(m_stagingHasBeenSet)
+  {
+   XmlNode stagingNode = parentNode.CreateChildElement("Staging");
+   ss << std::boolalpha << m_staging;
+   stagingNode.SetText(ss.str());
+   ss.str("");
   }
 
 }

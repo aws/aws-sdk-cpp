@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/RecommendationJobPayloadConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API RecommendationJobPayloadConfig
+  class RecommendationJobPayloadConfig
   {
   public:
-    RecommendationJobPayloadConfig();
-    RecommendationJobPayloadConfig(Aws::Utils::Json::JsonView jsonValue);
-    RecommendationJobPayloadConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API RecommendationJobPayloadConfig();
+    AWS_SAGEMAKER_API RecommendationJobPayloadConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API RecommendationJobPayloadConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

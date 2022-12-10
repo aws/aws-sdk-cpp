@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/S3ExportingConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_CUSTOMERPROFILES_API S3ExportingConfig
+  class S3ExportingConfig
   {
   public:
-    S3ExportingConfig();
-    S3ExportingConfig(Aws::Utils::Json::JsonView jsonValue);
-    S3ExportingConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CUSTOMERPROFILES_API S3ExportingConfig();
+    AWS_CUSTOMERPROFILES_API S3ExportingConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CUSTOMERPROFILES_API S3ExportingConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CUSTOMERPROFILES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

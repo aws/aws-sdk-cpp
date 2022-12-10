@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/streams-dynamodb-2012-08-10/AttributeValue">AWS
    * API Reference</a></p>
    */
-  class AWS_DYNAMODBSTREAMS_API AttributeValue
+  class AttributeValue
   {
   public:
-    AttributeValue();
-    AttributeValue(Aws::Utils::Json::JsonView jsonValue);
-    AttributeValue& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DYNAMODBSTREAMS_API AttributeValue();
+    AWS_DYNAMODBSTREAMS_API AttributeValue(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODBSTREAMS_API AttributeValue& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODBSTREAMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -44,13 +44,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/Studio">AWS API
    * Reference</a></p>
    */
-  class AWS_NIMBLESTUDIO_API Studio
+  class Studio
   {
   public:
-    Studio();
-    Studio(Aws::Utils::Json::JsonView jsonValue);
-    Studio& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_NIMBLESTUDIO_API Studio();
+    AWS_NIMBLESTUDIO_API Studio(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NIMBLESTUDIO_API Studio& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_NIMBLESTUDIO_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

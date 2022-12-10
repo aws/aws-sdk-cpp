@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/OpenIDConnectConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_APPSYNC_API OpenIDConnectConfig
+  class OpenIDConnectConfig
   {
   public:
-    OpenIDConnectConfig();
-    OpenIDConnectConfig(Aws::Utils::Json::JsonView jsonValue);
-    OpenIDConnectConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPSYNC_API OpenIDConnectConfig();
+    AWS_APPSYNC_API OpenIDConnectConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPSYNC_API OpenIDConnectConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPSYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

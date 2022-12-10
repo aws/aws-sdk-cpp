@@ -26,13 +26,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-geospatial-2020-05-27/ViewSunAzimuthInput">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKERGEOSPATIAL_API ViewSunAzimuthInput
+  class ViewSunAzimuthInput
   {
   public:
-    ViewSunAzimuthInput();
-    ViewSunAzimuthInput(Aws::Utils::Json::JsonView jsonValue);
-    ViewSunAzimuthInput& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKERGEOSPATIAL_API ViewSunAzimuthInput();
+    AWS_SAGEMAKERGEOSPATIAL_API ViewSunAzimuthInput(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKERGEOSPATIAL_API ViewSunAzimuthInput& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKERGEOSPATIAL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

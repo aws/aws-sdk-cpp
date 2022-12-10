@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/ParameterNameValue">AWS
    * API Reference</a></p>
    */
-  class AWS_DAX_API ParameterNameValue
+  class ParameterNameValue
   {
   public:
-    ParameterNameValue();
-    ParameterNameValue(Aws::Utils::Json::JsonView jsonValue);
-    ParameterNameValue& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DAX_API ParameterNameValue();
+    AWS_DAX_API ParameterNameValue(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DAX_API ParameterNameValue& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DAX_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

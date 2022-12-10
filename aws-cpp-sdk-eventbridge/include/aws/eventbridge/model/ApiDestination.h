@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/ApiDestination">AWS
    * API Reference</a></p>
    */
-  class AWS_EVENTBRIDGE_API ApiDestination
+  class ApiDestination
   {
   public:
-    ApiDestination();
-    ApiDestination(Aws::Utils::Json::JsonView jsonValue);
-    ApiDestination& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EVENTBRIDGE_API ApiDestination();
+    AWS_EVENTBRIDGE_API ApiDestination(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EVENTBRIDGE_API ApiDestination& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EVENTBRIDGE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

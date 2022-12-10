@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ExpectedRoute">AWS
    * API Reference</a></p>
    */
-  class AWS_FMS_API ExpectedRoute
+  class ExpectedRoute
   {
   public:
-    ExpectedRoute();
-    ExpectedRoute(Aws::Utils::Json::JsonView jsonValue);
-    ExpectedRoute& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FMS_API ExpectedRoute();
+    AWS_FMS_API ExpectedRoute(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FMS_API ExpectedRoute& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

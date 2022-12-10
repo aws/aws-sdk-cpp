@@ -28,12 +28,12 @@ namespace Honeycode
 {
 namespace Model
 {
-  class AWS_HONEYCODE_API BatchUpsertTableRowsResult
+  class BatchUpsertTableRowsResult
   {
   public:
-    BatchUpsertTableRowsResult();
-    BatchUpsertTableRowsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    BatchUpsertTableRowsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_HONEYCODE_API BatchUpsertTableRowsResult();
+    AWS_HONEYCODE_API BatchUpsertTableRowsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_HONEYCODE_API BatchUpsertTableRowsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

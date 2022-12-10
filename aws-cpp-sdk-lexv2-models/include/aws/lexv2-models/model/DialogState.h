@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DialogState">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELSV2_API DialogState
+  class DialogState
   {
   public:
-    DialogState();
-    DialogState(Aws::Utils::Json::JsonView jsonValue);
-    DialogState& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELSV2_API DialogState();
+    AWS_LEXMODELSV2_API DialogState(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API DialogState& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

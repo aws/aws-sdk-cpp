@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/connectcampaigns-2021-01-30/InstanceIdFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECTCAMPAIGNS_API InstanceIdFilter
+  class InstanceIdFilter
   {
   public:
-    InstanceIdFilter();
-    InstanceIdFilter(Aws::Utils::Json::JsonView jsonValue);
-    InstanceIdFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECTCAMPAIGNS_API InstanceIdFilter();
+    AWS_CONNECTCAMPAIGNS_API InstanceIdFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTCAMPAIGNS_API InstanceIdFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTCAMPAIGNS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

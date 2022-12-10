@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/DevicePositionUpdate">AWS
    * API Reference</a></p>
    */
-  class AWS_LOCATIONSERVICE_API DevicePositionUpdate
+  class DevicePositionUpdate
   {
   public:
-    DevicePositionUpdate();
-    DevicePositionUpdate(Aws::Utils::Json::JsonView jsonValue);
-    DevicePositionUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LOCATIONSERVICE_API DevicePositionUpdate();
+    AWS_LOCATIONSERVICE_API DevicePositionUpdate(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOCATIONSERVICE_API DevicePositionUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOCATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

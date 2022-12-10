@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/Status">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTTWINMAKER_API Status
+  class Status
   {
   public:
-    Status();
-    Status(Aws::Utils::Json::JsonView jsonValue);
-    Status& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTTWINMAKER_API Status();
+    AWS_IOTTWINMAKER_API Status(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTTWINMAKER_API Status& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTTWINMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -25,21 +25,21 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/GetJobOutputOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_GLACIER_API GetJobOutputResult
+  class GetJobOutputResult
   {
   public:
-    GetJobOutputResult();
+    AWS_GLACIER_API GetJobOutputResult();
     //We have to define these because Microsoft doesn't auto generate them
-    GetJobOutputResult(GetJobOutputResult&&);
-    GetJobOutputResult& operator=(GetJobOutputResult&&);
+    AWS_GLACIER_API GetJobOutputResult(GetJobOutputResult&&);
+    AWS_GLACIER_API GetJobOutputResult& operator=(GetJobOutputResult&&);
     //we delete these because Microsoft doesn't handle move generation correctly
     //and we therefore don't trust them to get it right here either.
     GetJobOutputResult(const GetJobOutputResult&) = delete;
     GetJobOutputResult& operator=(const GetJobOutputResult&) = delete;
 
 
-    GetJobOutputResult(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
-    GetJobOutputResult& operator=(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
+    AWS_GLACIER_API GetJobOutputResult(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
+    AWS_GLACIER_API GetJobOutputResult& operator=(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
 
 
 

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/braket-2019-09-01/ContainerImage">AWS
    * API Reference</a></p>
    */
-  class AWS_BRAKET_API ContainerImage
+  class ContainerImage
   {
   public:
-    ContainerImage();
-    ContainerImage(Aws::Utils::Json::JsonView jsonValue);
-    ContainerImage& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BRAKET_API ContainerImage();
+    AWS_BRAKET_API ContainerImage(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BRAKET_API ContainerImage& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BRAKET_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

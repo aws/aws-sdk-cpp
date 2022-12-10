@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/EndpointIdentifier">AWS
    * API Reference</a></p>
    */
-  class AWS_GLOBALACCELERATOR_API EndpointIdentifier
+  class EndpointIdentifier
   {
   public:
-    EndpointIdentifier();
-    EndpointIdentifier(Aws::Utils::Json::JsonView jsonValue);
-    EndpointIdentifier& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLOBALACCELERATOR_API EndpointIdentifier();
+    AWS_GLOBALACCELERATOR_API EndpointIdentifier(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLOBALACCELERATOR_API EndpointIdentifier& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLOBALACCELERATOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

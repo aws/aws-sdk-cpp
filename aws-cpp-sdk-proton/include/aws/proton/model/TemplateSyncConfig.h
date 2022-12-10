@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/TemplateSyncConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_PROTON_API TemplateSyncConfig
+  class TemplateSyncConfig
   {
   public:
-    TemplateSyncConfig();
-    TemplateSyncConfig(Aws::Utils::Json::JsonView jsonValue);
-    TemplateSyncConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PROTON_API TemplateSyncConfig();
+    AWS_PROTON_API TemplateSyncConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PROTON_API TemplateSyncConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PROTON_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

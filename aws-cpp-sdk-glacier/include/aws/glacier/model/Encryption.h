@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/Encryption">AWS
    * API Reference</a></p>
    */
-  class AWS_GLACIER_API Encryption
+  class Encryption
   {
   public:
-    Encryption();
-    Encryption(Aws::Utils::Json::JsonView jsonValue);
-    Encryption& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLACIER_API Encryption();
+    AWS_GLACIER_API Encryption(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLACIER_API Encryption& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLACIER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

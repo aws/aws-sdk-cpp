@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/ListRouteCalculatorsResponseEntry">AWS
    * API Reference</a></p>
    */
-  class AWS_LOCATIONSERVICE_API ListRouteCalculatorsResponseEntry
+  class ListRouteCalculatorsResponseEntry
   {
   public:
-    ListRouteCalculatorsResponseEntry();
-    ListRouteCalculatorsResponseEntry(Aws::Utils::Json::JsonView jsonValue);
-    ListRouteCalculatorsResponseEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LOCATIONSERVICE_API ListRouteCalculatorsResponseEntry();
+    AWS_LOCATIONSERVICE_API ListRouteCalculatorsResponseEntry(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOCATIONSERVICE_API ListRouteCalculatorsResponseEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOCATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

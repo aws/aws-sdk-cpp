@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-geospatial-2020-05-27/OutputResolutionStackInput">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKERGEOSPATIAL_API OutputResolutionStackInput
+  class OutputResolutionStackInput
   {
   public:
-    OutputResolutionStackInput();
-    OutputResolutionStackInput(Aws::Utils::Json::JsonView jsonValue);
-    OutputResolutionStackInput& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKERGEOSPATIAL_API OutputResolutionStackInput();
+    AWS_SAGEMAKERGEOSPATIAL_API OutputResolutionStackInput(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKERGEOSPATIAL_API OutputResolutionStackInput& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKERGEOSPATIAL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

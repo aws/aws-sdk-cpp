@@ -24,10 +24,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeInstancesHealthRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICBEANSTALK_API DescribeInstancesHealthRequest : public ElasticBeanstalkRequest
+  class DescribeInstancesHealthRequest : public ElasticBeanstalkRequest
   {
   public:
-    DescribeInstancesHealthRequest();
+    AWS_ELASTICBEANSTALK_API DescribeInstancesHealthRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -35,10 +35,10 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "DescribeInstancesHealth"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_ELASTICBEANSTALK_API Aws::String SerializePayload() const override;
 
   protected:
-    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_ELASTICBEANSTALK_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
 

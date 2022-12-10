@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CompatibleEnvironmentTemplateInput">AWS
    * API Reference</a></p>
    */
-  class AWS_PROTON_API CompatibleEnvironmentTemplateInput
+  class CompatibleEnvironmentTemplateInput
   {
   public:
-    CompatibleEnvironmentTemplateInput();
-    CompatibleEnvironmentTemplateInput(Aws::Utils::Json::JsonView jsonValue);
-    CompatibleEnvironmentTemplateInput& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PROTON_API CompatibleEnvironmentTemplateInput();
+    AWS_PROTON_API CompatibleEnvironmentTemplateInput(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PROTON_API CompatibleEnvironmentTemplateInput& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PROTON_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

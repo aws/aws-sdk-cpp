@@ -33,12 +33,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListAttachedRolePoliciesResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_IAM_API ListAttachedRolePoliciesResult
+  class ListAttachedRolePoliciesResult
   {
   public:
-    ListAttachedRolePoliciesResult();
-    ListAttachedRolePoliciesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ListAttachedRolePoliciesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_IAM_API ListAttachedRolePoliciesResult();
+    AWS_IAM_API ListAttachedRolePoliciesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_IAM_API ListAttachedRolePoliciesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

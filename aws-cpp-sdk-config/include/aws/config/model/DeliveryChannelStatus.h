@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeliveryChannelStatus">AWS
    * API Reference</a></p>
    */
-  class AWS_CONFIGSERVICE_API DeliveryChannelStatus
+  class DeliveryChannelStatus
   {
   public:
-    DeliveryChannelStatus();
-    DeliveryChannelStatus(Aws::Utils::Json::JsonView jsonValue);
-    DeliveryChannelStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONFIGSERVICE_API DeliveryChannelStatus();
+    AWS_CONFIGSERVICE_API DeliveryChannelStatus(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API DeliveryChannelStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -7,6 +7,7 @@
 #include <aws/controltower/ControlTower_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/controltower/ControlTowerServiceClientModel.h>
 
@@ -60,7 +61,7 @@ namespace ControlTower
    * Guide. To learn more about CloudTrail, including how to turn it on and find your
    * log files, see the AWS CloudTrail User Guide.</p>
    */
-  class AWS_CONTROLTOWER_API ControlTowerClient : public Aws::Client::AWSJsonClient
+  class AWS_CONTROLTOWER_API ControlTowerClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<ControlTowerClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -114,7 +115,6 @@ namespace ControlTower
 
         /* End of legacy constructors due deprecation */
         virtual ~ControlTowerClient();
-
 
         /**
          * <p>This API call turns off a control. It starts an asynchronous operation that
@@ -198,6 +198,7 @@ namespace ControlTower
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<ControlTowerEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<ControlTowerClient>;
       void init(const ControlTowerClientConfiguration& clientConfiguration);
 
       ControlTowerClientConfiguration m_clientConfiguration;

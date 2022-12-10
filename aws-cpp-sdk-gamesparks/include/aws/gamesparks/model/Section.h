@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamesparks-2021-08-17/Section">AWS
    * API Reference</a></p>
    */
-  class AWS_GAMESPARKS_API Section
+  class Section
   {
   public:
-    Section();
-    Section(Aws::Utils::Json::JsonView jsonValue);
-    Section& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GAMESPARKS_API Section();
+    AWS_GAMESPARKS_API Section(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMESPARKS_API Section& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GAMESPARKS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

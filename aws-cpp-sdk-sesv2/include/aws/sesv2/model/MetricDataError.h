@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/MetricDataError">AWS
    * API Reference</a></p>
    */
-  class AWS_SESV2_API MetricDataError
+  class MetricDataError
   {
   public:
-    MetricDataError();
-    MetricDataError(Aws::Utils::Json::JsonView jsonValue);
-    MetricDataError& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SESV2_API MetricDataError();
+    AWS_SESV2_API MetricDataError(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SESV2_API MetricDataError& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SESV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

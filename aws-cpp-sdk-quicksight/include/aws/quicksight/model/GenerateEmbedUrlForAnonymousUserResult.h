@@ -24,12 +24,12 @@ namespace QuickSight
 {
 namespace Model
 {
-  class AWS_QUICKSIGHT_API GenerateEmbedUrlForAnonymousUserResult
+  class GenerateEmbedUrlForAnonymousUserResult
   {
   public:
-    GenerateEmbedUrlForAnonymousUserResult();
-    GenerateEmbedUrlForAnonymousUserResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GenerateEmbedUrlForAnonymousUserResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_QUICKSIGHT_API GenerateEmbedUrlForAnonymousUserResult();
+    AWS_QUICKSIGHT_API GenerateEmbedUrlForAnonymousUserResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_QUICKSIGHT_API GenerateEmbedUrlForAnonymousUserResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/EventIncludedData">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECTCASES_API EventIncludedData
+  class EventIncludedData
   {
   public:
-    EventIncludedData();
-    EventIncludedData(Aws::Utils::Json::JsonView jsonValue);
-    EventIncludedData& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECTCASES_API EventIncludedData();
+    AWS_CONNECTCASES_API EventIncludedData(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTCASES_API EventIncludedData& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTCASES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

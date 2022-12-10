@@ -7,6 +7,7 @@
 #include <aws/cognito-idp/CognitoIdentityProvider_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/cognito-idp/CognitoIdentityProviderServiceClientModel.h>
 
@@ -23,7 +24,7 @@ namespace CognitoIdentityProvider
    * href="https://docs.aws.amazon.com/cognito/latest/developerguide/what-is-amazon-cognito.html">Amazon
    * Cognito Documentation</a>.</p>
    */
-  class AWS_COGNITOIDENTITYPROVIDER_API CognitoIdentityProviderClient : public Aws::Client::AWSJsonClient
+  class AWS_COGNITOIDENTITYPROVIDER_API CognitoIdentityProviderClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<CognitoIdentityProviderClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -77,7 +78,6 @@ namespace CognitoIdentityProvider
 
         /* End of legacy constructors due deprecation */
         virtual ~CognitoIdentityProviderClient();
-
 
         /**
          * <p>Adds additional user attributes to the user pool schema.</p><p><h3>See
@@ -2329,6 +2329,7 @@ namespace CognitoIdentityProvider
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<CognitoIdentityProviderEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<CognitoIdentityProviderClient>;
       void init(const CognitoIdentityProviderClientConfiguration& clientConfiguration);
 
       CognitoIdentityProviderClientConfiguration m_clientConfiguration;

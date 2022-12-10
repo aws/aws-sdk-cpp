@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ResultReuseConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_ATHENA_API ResultReuseConfiguration
+  class ResultReuseConfiguration
   {
   public:
-    ResultReuseConfiguration();
-    ResultReuseConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    ResultReuseConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ATHENA_API ResultReuseConfiguration();
+    AWS_ATHENA_API ResultReuseConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ATHENA_API ResultReuseConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ATHENA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -34,12 +34,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ReservedDBInstancesOfferingMessage">AWS
    * API Reference</a></p>
    */
-  class AWS_RDS_API DescribeReservedDBInstancesOfferingsResult
+  class DescribeReservedDBInstancesOfferingsResult
   {
   public:
-    DescribeReservedDBInstancesOfferingsResult();
-    DescribeReservedDBInstancesOfferingsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeReservedDBInstancesOfferingsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_RDS_API DescribeReservedDBInstancesOfferingsResult();
+    AWS_RDS_API DescribeReservedDBInstancesOfferingsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_RDS_API DescribeReservedDBInstancesOfferingsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

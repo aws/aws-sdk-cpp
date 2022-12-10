@@ -38,14 +38,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DistributionConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFRONT_API DistributionConfig
+  class DistributionConfig
   {
   public:
-    DistributionConfig();
-    DistributionConfig(const Aws::Utils::Xml::XmlNode& xmlNode);
-    DistributionConfig& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API DistributionConfig();
+    AWS_CLOUDFRONT_API DistributionConfig(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API DistributionConfig& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
@@ -1246,6 +1246,84 @@ namespace Model
      */
     inline DistributionConfig& WithIsIPV6Enabled(bool value) { SetIsIPV6Enabled(value); return *this;}
 
+
+    /**
+     * <p>The identifier of a continuous deployment policy. For more information, see
+     * <code>CreateContinuousDeploymentPolicy</code>.</p>
+     */
+    inline const Aws::String& GetContinuousDeploymentPolicyId() const{ return m_continuousDeploymentPolicyId; }
+
+    /**
+     * <p>The identifier of a continuous deployment policy. For more information, see
+     * <code>CreateContinuousDeploymentPolicy</code>.</p>
+     */
+    inline bool ContinuousDeploymentPolicyIdHasBeenSet() const { return m_continuousDeploymentPolicyIdHasBeenSet; }
+
+    /**
+     * <p>The identifier of a continuous deployment policy. For more information, see
+     * <code>CreateContinuousDeploymentPolicy</code>.</p>
+     */
+    inline void SetContinuousDeploymentPolicyId(const Aws::String& value) { m_continuousDeploymentPolicyIdHasBeenSet = true; m_continuousDeploymentPolicyId = value; }
+
+    /**
+     * <p>The identifier of a continuous deployment policy. For more information, see
+     * <code>CreateContinuousDeploymentPolicy</code>.</p>
+     */
+    inline void SetContinuousDeploymentPolicyId(Aws::String&& value) { m_continuousDeploymentPolicyIdHasBeenSet = true; m_continuousDeploymentPolicyId = std::move(value); }
+
+    /**
+     * <p>The identifier of a continuous deployment policy. For more information, see
+     * <code>CreateContinuousDeploymentPolicy</code>.</p>
+     */
+    inline void SetContinuousDeploymentPolicyId(const char* value) { m_continuousDeploymentPolicyIdHasBeenSet = true; m_continuousDeploymentPolicyId.assign(value); }
+
+    /**
+     * <p>The identifier of a continuous deployment policy. For more information, see
+     * <code>CreateContinuousDeploymentPolicy</code>.</p>
+     */
+    inline DistributionConfig& WithContinuousDeploymentPolicyId(const Aws::String& value) { SetContinuousDeploymentPolicyId(value); return *this;}
+
+    /**
+     * <p>The identifier of a continuous deployment policy. For more information, see
+     * <code>CreateContinuousDeploymentPolicy</code>.</p>
+     */
+    inline DistributionConfig& WithContinuousDeploymentPolicyId(Aws::String&& value) { SetContinuousDeploymentPolicyId(std::move(value)); return *this;}
+
+    /**
+     * <p>The identifier of a continuous deployment policy. For more information, see
+     * <code>CreateContinuousDeploymentPolicy</code>.</p>
+     */
+    inline DistributionConfig& WithContinuousDeploymentPolicyId(const char* value) { SetContinuousDeploymentPolicyId(value); return *this;}
+
+
+    /**
+     * <p>A Boolean that indicates whether this is a staging distribution. When this
+     * value is <code>true</code>, this is a staging distribution. When this value is
+     * <code>false</code>, this is not a staging distribution.</p>
+     */
+    inline bool GetStaging() const{ return m_staging; }
+
+    /**
+     * <p>A Boolean that indicates whether this is a staging distribution. When this
+     * value is <code>true</code>, this is a staging distribution. When this value is
+     * <code>false</code>, this is not a staging distribution.</p>
+     */
+    inline bool StagingHasBeenSet() const { return m_stagingHasBeenSet; }
+
+    /**
+     * <p>A Boolean that indicates whether this is a staging distribution. When this
+     * value is <code>true</code>, this is a staging distribution. When this value is
+     * <code>false</code>, this is not a staging distribution.</p>
+     */
+    inline void SetStaging(bool value) { m_stagingHasBeenSet = true; m_staging = value; }
+
+    /**
+     * <p>A Boolean that indicates whether this is a staging distribution. When this
+     * value is <code>true</code>, this is a staging distribution. When this value is
+     * <code>false</code>, this is not a staging distribution.</p>
+     */
+    inline DistributionConfig& WithStaging(bool value) { SetStaging(value); return *this;}
+
   private:
 
     Aws::String m_callerReference;
@@ -1298,6 +1376,12 @@ namespace Model
 
     bool m_isIPV6Enabled;
     bool m_isIPV6EnabledHasBeenSet = false;
+
+    Aws::String m_continuousDeploymentPolicyId;
+    bool m_continuousDeploymentPolicyIdHasBeenSet = false;
+
+    bool m_staging;
+    bool m_stagingHasBeenSet = false;
   };
 
 } // namespace Model

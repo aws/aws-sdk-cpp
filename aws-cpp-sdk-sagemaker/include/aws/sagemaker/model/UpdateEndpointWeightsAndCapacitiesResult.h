@@ -24,12 +24,12 @@ namespace SageMaker
 {
 namespace Model
 {
-  class AWS_SAGEMAKER_API UpdateEndpointWeightsAndCapacitiesResult
+  class UpdateEndpointWeightsAndCapacitiesResult
   {
   public:
-    UpdateEndpointWeightsAndCapacitiesResult();
-    UpdateEndpointWeightsAndCapacitiesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateEndpointWeightsAndCapacitiesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SAGEMAKER_API UpdateEndpointWeightsAndCapacitiesResult();
+    AWS_SAGEMAKER_API UpdateEndpointWeightsAndCapacitiesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SAGEMAKER_API UpdateEndpointWeightsAndCapacitiesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

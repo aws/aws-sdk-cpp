@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/DatabaseInputDefinition">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUEDATABREW_API DatabaseInputDefinition
+  class DatabaseInputDefinition
   {
   public:
-    DatabaseInputDefinition();
-    DatabaseInputDefinition(Aws::Utils::Json::JsonView jsonValue);
-    DatabaseInputDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUEDATABREW_API DatabaseInputDefinition();
+    AWS_GLUEDATABREW_API DatabaseInputDefinition(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUEDATABREW_API DatabaseInputDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUEDATABREW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

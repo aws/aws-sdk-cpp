@@ -7,6 +7,7 @@
 #include <aws/ce/CostExplorer_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/ce/CostExplorerServiceClientModel.h>
 
@@ -26,7 +27,7 @@ namespace CostExplorer
    * <a href="http://aws.amazon.com/aws-cost-management/pricing/">Amazon Web Services
    * Cost Management Pricing</a>.</p>
    */
-  class AWS_COSTEXPLORER_API CostExplorerClient : public Aws::Client::AWSJsonClient
+  class AWS_COSTEXPLORER_API CostExplorerClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<CostExplorerClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -80,7 +81,6 @@ namespace CostExplorer
 
         /* End of legacy constructors due deprecation */
         virtual ~CostExplorerClient();
-
 
         /**
          * <p>Creates a new cost anomaly detection monitor with the requested type and
@@ -522,8 +522,11 @@ namespace CostExplorer
         virtual void GetSavingsPlansCoverageAsync(const Model::GetSavingsPlansCoverageRequest& request, const GetSavingsPlansCoverageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves your request parameters, Savings Plan Recommendations Summary and
-         * Details. </p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves the Savings Plans recommendations for your account. First use
+         * <code>StartSavingsPlansPurchaseRecommendationGeneration</code> to generate a new
+         * set of recommendations, and then use
+         * <code>GetSavingsPlansPurchaseRecommendation</code> to retrieve
+         * them.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetSavingsPlansPurchaseRecommendation">AWS
          * API Reference</a></p>
          */
@@ -668,6 +671,24 @@ namespace CostExplorer
         virtual void ListCostCategoryDefinitionsAsync(const Model::ListCostCategoryDefinitionsRequest& request, const ListCostCategoryDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Retrieves a list of your historical recommendation generations within the
+         * past 30 days.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/ListSavingsPlansPurchaseRecommendationGeneration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListSavingsPlansPurchaseRecommendationGenerationOutcome ListSavingsPlansPurchaseRecommendationGeneration(const Model::ListSavingsPlansPurchaseRecommendationGenerationRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListSavingsPlansPurchaseRecommendationGeneration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListSavingsPlansPurchaseRecommendationGenerationOutcomeCallable ListSavingsPlansPurchaseRecommendationGenerationCallable(const Model::ListSavingsPlansPurchaseRecommendationGenerationRequest& request) const;
+
+        /**
+         * An Async wrapper for ListSavingsPlansPurchaseRecommendationGeneration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListSavingsPlansPurchaseRecommendationGenerationAsync(const Model::ListSavingsPlansPurchaseRecommendationGenerationRequest& request, const ListSavingsPlansPurchaseRecommendationGenerationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Returns a list of resource tags associated with the resource specified by the
          * Amazon Resource Name (ARN). </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/ListTagsForResource">AWS
@@ -702,6 +723,30 @@ namespace CostExplorer
          * An Async wrapper for ProvideAnomalyFeedback that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ProvideAnomalyFeedbackAsync(const Model::ProvideAnomalyFeedbackRequest& request, const ProvideAnomalyFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Requests a Savings Plans recommendation generation. This enables you to
+         * calculate a fresh set of Savings Plans recommendations that takes your latest
+         * usage data and current Savings Plans inventory into account. You can refresh
+         * Savings Plans recommendations up to three times daily for a consolidated billing
+         * family.</p>  <p>
+         * <code>StartSavingsPlansPurchaseRecommendationGeneration</code> has no request
+         * syntax because no input parameters are needed to support this operation.</p>
+         * <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/StartSavingsPlansPurchaseRecommendationGeneration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartSavingsPlansPurchaseRecommendationGenerationOutcome StartSavingsPlansPurchaseRecommendationGeneration(const Model::StartSavingsPlansPurchaseRecommendationGenerationRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartSavingsPlansPurchaseRecommendationGeneration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::StartSavingsPlansPurchaseRecommendationGenerationOutcomeCallable StartSavingsPlansPurchaseRecommendationGenerationCallable(const Model::StartSavingsPlansPurchaseRecommendationGenerationRequest& request) const;
+
+        /**
+         * An Async wrapper for StartSavingsPlansPurchaseRecommendationGeneration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void StartSavingsPlansPurchaseRecommendationGenerationAsync(const Model::StartSavingsPlansPurchaseRecommendationGenerationRequest& request, const StartSavingsPlansPurchaseRecommendationGenerationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>An API operation for adding one or more tags (key-value pairs) to a
@@ -826,6 +871,7 @@ namespace CostExplorer
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<CostExplorerEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<CostExplorerClient>;
       void init(const CostExplorerClientConfiguration& clientConfiguration);
 
       CostExplorerClientConfiguration m_clientConfiguration;

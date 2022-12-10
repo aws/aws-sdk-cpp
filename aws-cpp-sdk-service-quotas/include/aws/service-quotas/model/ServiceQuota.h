@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/ServiceQuota">AWS
    * API Reference</a></p>
    */
-  class AWS_SERVICEQUOTAS_API ServiceQuota
+  class ServiceQuota
   {
   public:
-    ServiceQuota();
-    ServiceQuota(Aws::Utils::Json::JsonView jsonValue);
-    ServiceQuota& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SERVICEQUOTAS_API ServiceQuota();
+    AWS_SERVICEQUOTAS_API ServiceQuota(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICEQUOTAS_API ServiceQuota& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICEQUOTAS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

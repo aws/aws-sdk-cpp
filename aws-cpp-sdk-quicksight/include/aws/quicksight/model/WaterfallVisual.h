@@ -37,13 +37,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/WaterfallVisual">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API WaterfallVisual
+  class WaterfallVisual
   {
   public:
-    WaterfallVisual();
-    WaterfallVisual(Aws::Utils::Json::JsonView jsonValue);
-    WaterfallVisual& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API WaterfallVisual();
+    AWS_QUICKSIGHT_API WaterfallVisual(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API WaterfallVisual& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

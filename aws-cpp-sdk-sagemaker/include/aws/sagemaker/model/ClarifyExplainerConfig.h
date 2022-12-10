@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ClarifyExplainerConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API ClarifyExplainerConfig
+  class ClarifyExplainerConfig
   {
   public:
-    ClarifyExplainerConfig();
-    ClarifyExplainerConfig(Aws::Utils::Json::JsonView jsonValue);
-    ClarifyExplainerConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API ClarifyExplainerConfig();
+    AWS_SAGEMAKER_API ClarifyExplainerConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API ClarifyExplainerConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

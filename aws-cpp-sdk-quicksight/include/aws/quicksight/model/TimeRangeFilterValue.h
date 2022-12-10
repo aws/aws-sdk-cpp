@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/TimeRangeFilterValue">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API TimeRangeFilterValue
+  class TimeRangeFilterValue
   {
   public:
-    TimeRangeFilterValue();
-    TimeRangeFilterValue(Aws::Utils::Json::JsonView jsonValue);
-    TimeRangeFilterValue& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API TimeRangeFilterValue();
+    AWS_QUICKSIGHT_API TimeRangeFilterValue(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API TimeRangeFilterValue& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

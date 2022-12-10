@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/SankeyDiagramSortConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API SankeyDiagramSortConfiguration
+  class SankeyDiagramSortConfiguration
   {
   public:
-    SankeyDiagramSortConfiguration();
-    SankeyDiagramSortConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    SankeyDiagramSortConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API SankeyDiagramSortConfiguration();
+    AWS_QUICKSIGHT_API SankeyDiagramSortConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API SankeyDiagramSortConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

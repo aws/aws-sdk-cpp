@@ -32,14 +32,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/AsyncOperation">AWS
    * API Reference</a></p>
    */
-  class AWS_S3CONTROL_API AsyncOperation
+  class AsyncOperation
   {
   public:
-    AsyncOperation();
-    AsyncOperation(const Aws::Utils::Xml::XmlNode& xmlNode);
-    AsyncOperation& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CONTROL_API AsyncOperation();
+    AWS_S3CONTROL_API AsyncOperation(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CONTROL_API AsyncOperation& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_S3CONTROL_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**

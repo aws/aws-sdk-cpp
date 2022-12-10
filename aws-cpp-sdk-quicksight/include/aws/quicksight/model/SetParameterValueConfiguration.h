@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/SetParameterValueConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API SetParameterValueConfiguration
+  class SetParameterValueConfiguration
   {
   public:
-    SetParameterValueConfiguration();
-    SetParameterValueConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    SetParameterValueConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API SetParameterValueConfiguration();
+    AWS_QUICKSIGHT_API SetParameterValueConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API SetParameterValueConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

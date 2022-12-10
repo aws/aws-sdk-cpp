@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/Account">AWS
    * API Reference</a></p>
    */
-  class AWS_ORGANIZATIONS_API Account
+  class Account
   {
   public:
-    Account();
-    Account(Aws::Utils::Json::JsonView jsonValue);
-    Account& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ORGANIZATIONS_API Account();
+    AWS_ORGANIZATIONS_API Account(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ORGANIZATIONS_API Account& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ORGANIZATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -20,7 +20,9 @@ namespace Model
     hi_IN,
     es_US,
     en_GB,
-    en_AU
+    en_AU,
+    de_DE,
+    ja_JP
   };
 
 namespace CLMLanguageCodeMapper

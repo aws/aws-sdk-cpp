@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pipes-2015-10-07/BatchRetryStrategy">AWS
    * API Reference</a></p>
    */
-  class AWS_PIPES_API BatchRetryStrategy
+  class BatchRetryStrategy
   {
   public:
-    BatchRetryStrategy();
-    BatchRetryStrategy(Aws::Utils::Json::JsonView jsonValue);
-    BatchRetryStrategy& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PIPES_API BatchRetryStrategy();
+    AWS_PIPES_API BatchRetryStrategy(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PIPES_API BatchRetryStrategy& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PIPES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

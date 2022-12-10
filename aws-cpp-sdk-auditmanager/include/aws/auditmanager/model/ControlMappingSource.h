@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/ControlMappingSource">AWS
    * API Reference</a></p>
    */
-  class AWS_AUDITMANAGER_API ControlMappingSource
+  class ControlMappingSource
   {
   public:
-    ControlMappingSource();
-    ControlMappingSource(Aws::Utils::Json::JsonView jsonValue);
-    ControlMappingSource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_AUDITMANAGER_API ControlMappingSource();
+    AWS_AUDITMANAGER_API ControlMappingSource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AUDITMANAGER_API ControlMappingSource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AUDITMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/Comment">AWS
    * API Reference</a></p>
    */
-  class AWS_WORKDOCS_API Comment
+  class Comment
   {
   public:
-    Comment();
-    Comment(Aws::Utils::Json::JsonView jsonValue);
-    Comment& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_WORKDOCS_API Comment();
+    AWS_WORKDOCS_API Comment(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKDOCS_API Comment& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WORKDOCS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

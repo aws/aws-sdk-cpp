@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CanvasAppSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API CanvasAppSettings
+  class CanvasAppSettings
   {
   public:
-    CanvasAppSettings();
-    CanvasAppSettings(Aws::Utils::Json::JsonView jsonValue);
-    CanvasAppSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API CanvasAppSettings();
+    AWS_SAGEMAKER_API CanvasAppSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API CanvasAppSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

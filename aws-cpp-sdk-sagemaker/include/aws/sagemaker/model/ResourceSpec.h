@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ResourceSpec">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API ResourceSpec
+  class ResourceSpec
   {
   public:
-    ResourceSpec();
-    ResourceSpec(Aws::Utils::Json::JsonView jsonValue);
-    ResourceSpec& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API ResourceSpec();
+    AWS_SAGEMAKER_API ResourceSpec(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API ResourceSpec& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

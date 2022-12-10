@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/Product">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API Product
+  class Product
   {
   public:
-    Product();
-    Product(Aws::Utils::Json::JsonView jsonValue);
-    Product& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API Product();
+    AWS_SECURITYHUB_API Product(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Product& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

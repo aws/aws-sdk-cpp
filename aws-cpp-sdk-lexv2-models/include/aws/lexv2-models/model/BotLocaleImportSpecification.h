@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/BotLocaleImportSpecification">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELSV2_API BotLocaleImportSpecification
+  class BotLocaleImportSpecification
   {
   public:
-    BotLocaleImportSpecification();
-    BotLocaleImportSpecification(Aws::Utils::Json::JsonView jsonValue);
-    BotLocaleImportSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELSV2_API BotLocaleImportSpecification();
+    AWS_LEXMODELSV2_API BotLocaleImportSpecification(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API BotLocaleImportSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

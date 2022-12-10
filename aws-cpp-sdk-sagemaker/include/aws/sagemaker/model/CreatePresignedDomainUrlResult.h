@@ -24,12 +24,12 @@ namespace SageMaker
 {
 namespace Model
 {
-  class AWS_SAGEMAKER_API CreatePresignedDomainUrlResult
+  class CreatePresignedDomainUrlResult
   {
   public:
-    CreatePresignedDomainUrlResult();
-    CreatePresignedDomainUrlResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreatePresignedDomainUrlResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SAGEMAKER_API CreatePresignedDomainUrlResult();
+    AWS_SAGEMAKER_API CreatePresignedDomainUrlResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SAGEMAKER_API CreatePresignedDomainUrlResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

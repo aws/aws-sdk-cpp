@@ -25,12 +25,12 @@ namespace EC2
 {
 namespace Model
 {
-  class AWS_EC2_API ModifyInstanceEventStartTimeResponse
+  class ModifyInstanceEventStartTimeResponse
   {
   public:
-    ModifyInstanceEventStartTimeResponse();
-    ModifyInstanceEventStartTimeResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ModifyInstanceEventStartTimeResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API ModifyInstanceEventStartTimeResponse();
+    AWS_EC2_API ModifyInstanceEventStartTimeResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API ModifyInstanceEventStartTimeResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

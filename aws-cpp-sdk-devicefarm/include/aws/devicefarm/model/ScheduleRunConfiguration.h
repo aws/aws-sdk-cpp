@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ScheduleRunConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_DEVICEFARM_API ScheduleRunConfiguration
+  class ScheduleRunConfiguration
   {
   public:
-    ScheduleRunConfiguration();
-    ScheduleRunConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    ScheduleRunConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DEVICEFARM_API ScheduleRunConfiguration();
+    AWS_DEVICEFARM_API ScheduleRunConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVICEFARM_API ScheduleRunConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVICEFARM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeviceEvent">AWS
    * API Reference</a></p>
    */
-  class AWS_ALEXAFORBUSINESS_API DeviceEvent
+  class DeviceEvent
   {
   public:
-    DeviceEvent();
-    DeviceEvent(Aws::Utils::Json::JsonView jsonValue);
-    DeviceEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ALEXAFORBUSINESS_API DeviceEvent();
+    AWS_ALEXAFORBUSINESS_API DeviceEvent(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ALEXAFORBUSINESS_API DeviceEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ALEXAFORBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

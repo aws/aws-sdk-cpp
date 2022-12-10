@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/ServiceTemporarilyUnavailableException">AWS
    * API Reference</a></p>
    */
-  class AWS_INSPECTOR_API ServiceTemporarilyUnavailableException
+  class ServiceTemporarilyUnavailableException
   {
   public:
-    ServiceTemporarilyUnavailableException();
-    ServiceTemporarilyUnavailableException(Aws::Utils::Json::JsonView jsonValue);
-    ServiceTemporarilyUnavailableException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_INSPECTOR_API ServiceTemporarilyUnavailableException();
+    AWS_INSPECTOR_API ServiceTemporarilyUnavailableException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR_API ServiceTemporarilyUnavailableException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

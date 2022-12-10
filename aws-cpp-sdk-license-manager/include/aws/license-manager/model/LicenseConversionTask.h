@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/LicenseConversionTask">AWS
    * API Reference</a></p>
    */
-  class AWS_LICENSEMANAGER_API LicenseConversionTask
+  class LicenseConversionTask
   {
   public:
-    LicenseConversionTask();
-    LicenseConversionTask(Aws::Utils::Json::JsonView jsonValue);
-    LicenseConversionTask& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LICENSEMANAGER_API LicenseConversionTask();
+    AWS_LICENSEMANAGER_API LicenseConversionTask(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LICENSEMANAGER_API LicenseConversionTask& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LICENSEMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

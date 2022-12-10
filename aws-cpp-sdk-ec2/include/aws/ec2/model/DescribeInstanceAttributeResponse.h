@@ -37,12 +37,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/InstanceAttribute">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API DescribeInstanceAttributeResponse
+  class DescribeInstanceAttributeResponse
   {
   public:
-    DescribeInstanceAttributeResponse();
-    DescribeInstanceAttributeResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeInstanceAttributeResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API DescribeInstanceAttributeResponse();
+    AWS_EC2_API DescribeInstanceAttributeResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API DescribeInstanceAttributeResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

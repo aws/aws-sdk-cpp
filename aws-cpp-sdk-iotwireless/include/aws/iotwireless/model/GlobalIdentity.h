@@ -26,13 +26,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GlobalIdentity">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTWIRELESS_API GlobalIdentity
+  class GlobalIdentity
   {
   public:
-    GlobalIdentity();
-    GlobalIdentity(Aws::Utils::Json::JsonView jsonValue);
-    GlobalIdentity& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTWIRELESS_API GlobalIdentity();
+    AWS_IOTWIRELESS_API GlobalIdentity(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API GlobalIdentity& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

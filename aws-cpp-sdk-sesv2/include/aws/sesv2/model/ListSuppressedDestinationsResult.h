@@ -31,12 +31,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/ListSuppressedDestinationsResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_SESV2_API ListSuppressedDestinationsResult
+  class ListSuppressedDestinationsResult
   {
   public:
-    ListSuppressedDestinationsResult();
-    ListSuppressedDestinationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListSuppressedDestinationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SESV2_API ListSuppressedDestinationsResult();
+    AWS_SESV2_API ListSuppressedDestinationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SESV2_API ListSuppressedDestinationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

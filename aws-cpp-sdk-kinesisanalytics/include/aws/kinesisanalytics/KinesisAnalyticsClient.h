@@ -7,6 +7,7 @@
 #include <aws/kinesisanalytics/KinesisAnalytics_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/kinesisanalytics/KinesisAnalyticsServiceClientModel.h>
 
@@ -24,7 +25,7 @@ namespace KinesisAnalytics
    * v1 API Reference</i>. The Amazon Kinesis Analytics Developer Guide provides
    * additional information. </p>
    */
-  class AWS_KINESISANALYTICS_API KinesisAnalyticsClient : public Aws::Client::AWSJsonClient
+  class AWS_KINESISANALYTICS_API KinesisAnalyticsClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<KinesisAnalyticsClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -78,7 +79,6 @@ namespace KinesisAnalytics
 
         /* End of legacy constructors due deprecation */
         virtual ~KinesisAnalyticsClient();
-
 
         /**
          *  <p>This documentation is for version 1 of the Amazon Kinesis Data
@@ -660,6 +660,7 @@ namespace KinesisAnalytics
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<KinesisAnalyticsEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<KinesisAnalyticsClient>;
       void init(const KinesisAnalyticsClientConfiguration& clientConfiguration);
 
       KinesisAnalyticsClientConfiguration m_clientConfiguration;

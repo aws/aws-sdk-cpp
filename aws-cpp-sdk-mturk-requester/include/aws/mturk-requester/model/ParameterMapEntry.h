@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/ParameterMapEntry">AWS
    * API Reference</a></p>
    */
-  class AWS_MTURK_API ParameterMapEntry
+  class ParameterMapEntry
   {
   public:
-    ParameterMapEntry();
-    ParameterMapEntry(Aws::Utils::Json::JsonView jsonValue);
-    ParameterMapEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MTURK_API ParameterMapEntry();
+    AWS_MTURK_API ParameterMapEntry(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MTURK_API ParameterMapEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MTURK_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

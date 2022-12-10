@@ -37,13 +37,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/AmazonopensearchserviceDestinationDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_FIREHOSE_API AmazonopensearchserviceDestinationDescription
+  class AmazonopensearchserviceDestinationDescription
   {
   public:
-    AmazonopensearchserviceDestinationDescription();
-    AmazonopensearchserviceDestinationDescription(Aws::Utils::Json::JsonView jsonValue);
-    AmazonopensearchserviceDestinationDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FIREHOSE_API AmazonopensearchserviceDestinationDescription();
+    AWS_FIREHOSE_API AmazonopensearchserviceDestinationDescription(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FIREHOSE_API AmazonopensearchserviceDestinationDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FIREHOSE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

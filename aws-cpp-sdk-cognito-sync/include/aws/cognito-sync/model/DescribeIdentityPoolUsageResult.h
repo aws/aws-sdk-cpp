@@ -30,12 +30,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-sync-2014-06-30/DescribeIdentityPoolUsageResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_COGNITOSYNC_API DescribeIdentityPoolUsageResult
+  class DescribeIdentityPoolUsageResult
   {
   public:
-    DescribeIdentityPoolUsageResult();
-    DescribeIdentityPoolUsageResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeIdentityPoolUsageResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_COGNITOSYNC_API DescribeIdentityPoolUsageResult();
+    AWS_COGNITOSYNC_API DescribeIdentityPoolUsageResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_COGNITOSYNC_API DescribeIdentityPoolUsageResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -7,6 +7,7 @@
 #include <aws/iotevents/IoTEvents_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/iotevents/IoTEventsServiceClientModel.h>
 
@@ -20,7 +21,7 @@ namespace IoTEvents
    * AWS IoT Events API operations to create, read, update, and delete inputs and
    * detector models, and to list their versions.</p>
    */
-  class AWS_IOTEVENTS_API IoTEventsClient : public Aws::Client::AWSJsonClient
+  class AWS_IOTEVENTS_API IoTEventsClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<IoTEventsClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -74,7 +75,6 @@ namespace IoTEvents
 
         /* End of legacy constructors due deprecation */
         virtual ~IoTEventsClient();
-
 
         /**
          * <p>Creates an alarm model to monitor an AWS IoT Events input attribute. You can
@@ -558,6 +558,7 @@ namespace IoTEvents
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<IoTEventsEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<IoTEventsClient>;
       void init(const IoTEventsClientConfiguration& clientConfiguration);
 
       IoTEventsClientConfiguration m_clientConfiguration;

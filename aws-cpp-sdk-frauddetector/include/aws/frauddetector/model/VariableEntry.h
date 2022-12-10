@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/VariableEntry">AWS
    * API Reference</a></p>
    */
-  class AWS_FRAUDDETECTOR_API VariableEntry
+  class VariableEntry
   {
   public:
-    VariableEntry();
-    VariableEntry(Aws::Utils::Json::JsonView jsonValue);
-    VariableEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FRAUDDETECTOR_API VariableEntry();
+    AWS_FRAUDDETECTOR_API VariableEntry(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FRAUDDETECTOR_API VariableEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FRAUDDETECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

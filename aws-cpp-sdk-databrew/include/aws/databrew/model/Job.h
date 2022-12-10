@@ -40,13 +40,13 @@ namespace Model
    * <a href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/Job">AWS API
    * Reference</a></p>
    */
-  class AWS_GLUEDATABREW_API Job
+  class Job
   {
   public:
-    Job();
-    Job(Aws::Utils::Json::JsonView jsonValue);
-    Job& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUEDATABREW_API Job();
+    AWS_GLUEDATABREW_API Job(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUEDATABREW_API Job& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUEDATABREW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

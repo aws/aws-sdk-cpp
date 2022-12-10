@@ -7,6 +7,7 @@
 #include <aws/rum/CloudWatchRUM_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/rum/CloudWatchRUMServiceClientModel.h>
 
@@ -27,7 +28,7 @@ namespace CloudWatchRUM
    * understand the range of end-user impact including the number of users,
    * geolocations, and browsers used.</p>
    */
-  class AWS_CLOUDWATCHRUM_API CloudWatchRUMClient : public Aws::Client::AWSJsonClient
+  class AWS_CLOUDWATCHRUM_API CloudWatchRUMClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<CloudWatchRUMClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -81,7 +82,6 @@ namespace CloudWatchRUM
 
         /* End of legacy constructors due deprecation */
         virtual ~CloudWatchRUMClient();
-
 
         /**
          * <p>Specifies the extended metrics that you want a CloudWatch RUM app monitor to
@@ -471,6 +471,7 @@ namespace CloudWatchRUM
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<CloudWatchRUMEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<CloudWatchRUMClient>;
       void init(const CloudWatchRUMClientConfiguration& clientConfiguration);
 
       CloudWatchRUMClientConfiguration m_clientConfiguration;

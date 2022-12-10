@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/ExportJobProperties">AWS
    * API Reference</a></p>
    */
-  class AWS_HEALTHLAKE_API ExportJobProperties
+  class ExportJobProperties
   {
   public:
-    ExportJobProperties();
-    ExportJobProperties(Aws::Utils::Json::JsonView jsonValue);
-    ExportJobProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_HEALTHLAKE_API ExportJobProperties();
+    AWS_HEALTHLAKE_API ExportJobProperties(Aws::Utils::Json::JsonView jsonValue);
+    AWS_HEALTHLAKE_API ExportJobProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_HEALTHLAKE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

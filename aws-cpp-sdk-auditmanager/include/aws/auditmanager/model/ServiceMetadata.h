@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/ServiceMetadata">AWS
    * API Reference</a></p>
    */
-  class AWS_AUDITMANAGER_API ServiceMetadata
+  class ServiceMetadata
   {
   public:
-    ServiceMetadata();
-    ServiceMetadata(Aws::Utils::Json::JsonView jsonValue);
-    ServiceMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_AUDITMANAGER_API ServiceMetadata();
+    AWS_AUDITMANAGER_API ServiceMetadata(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AUDITMANAGER_API ServiceMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_AUDITMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

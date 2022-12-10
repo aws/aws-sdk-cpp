@@ -7,6 +7,7 @@
 #include <aws/devicefarm/DeviceFarm_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/devicefarm/DeviceFarmServiceClientModel.h>
 
@@ -28,7 +29,7 @@ namespace DeviceFarm
    * href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/">Device Farm
    * Developer Guide</a>.</p> </li> </ul>
    */
-  class AWS_DEVICEFARM_API DeviceFarmClient : public Aws::Client::AWSJsonClient
+  class AWS_DEVICEFARM_API DeviceFarmClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<DeviceFarmClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -82,7 +83,6 @@ namespace DeviceFarm
 
         /* End of legacy constructors due deprecation */
         virtual ~DeviceFarmClient();
-
 
         /**
          * <p>Creates a device pool.</p><p><h3>See Also:</h3>   <a
@@ -1499,6 +1499,7 @@ namespace DeviceFarm
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<DeviceFarmEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<DeviceFarmClient>;
       void init(const DeviceFarmClientConfiguration& clientConfiguration);
 
       DeviceFarmClientConfiguration m_clientConfiguration;

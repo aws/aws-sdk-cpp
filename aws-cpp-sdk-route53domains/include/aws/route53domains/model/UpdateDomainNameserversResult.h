@@ -30,12 +30,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/UpdateDomainNameserversResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53DOMAINS_API UpdateDomainNameserversResult
+  class UpdateDomainNameserversResult
   {
   public:
-    UpdateDomainNameserversResult();
-    UpdateDomainNameserversResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateDomainNameserversResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ROUTE53DOMAINS_API UpdateDomainNameserversResult();
+    AWS_ROUTE53DOMAINS_API UpdateDomainNameserversResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ROUTE53DOMAINS_API UpdateDomainNameserversResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

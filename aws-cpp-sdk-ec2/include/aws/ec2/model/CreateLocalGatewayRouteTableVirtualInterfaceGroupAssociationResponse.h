@@ -25,12 +25,12 @@ namespace EC2
 {
 namespace Model
 {
-  class AWS_EC2_API CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationResponse
+  class CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationResponse
   {
   public:
-    CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationResponse();
-    CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationResponse();
+    AWS_EC2_API CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

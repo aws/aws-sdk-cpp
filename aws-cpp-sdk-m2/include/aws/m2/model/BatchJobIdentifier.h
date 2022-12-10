@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/BatchJobIdentifier">AWS
    * API Reference</a></p>
    */
-  class AWS_MAINFRAMEMODERNIZATION_API BatchJobIdentifier
+  class BatchJobIdentifier
   {
   public:
-    BatchJobIdentifier();
-    BatchJobIdentifier(Aws::Utils::Json::JsonView jsonValue);
-    BatchJobIdentifier& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MAINFRAMEMODERNIZATION_API BatchJobIdentifier();
+    AWS_MAINFRAMEMODERNIZATION_API BatchJobIdentifier(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MAINFRAMEMODERNIZATION_API BatchJobIdentifier& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MAINFRAMEMODERNIZATION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

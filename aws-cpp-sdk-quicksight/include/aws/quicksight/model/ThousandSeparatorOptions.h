@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ThousandSeparatorOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API ThousandSeparatorOptions
+  class ThousandSeparatorOptions
   {
   public:
-    ThousandSeparatorOptions();
-    ThousandSeparatorOptions(Aws::Utils::Json::JsonView jsonValue);
-    ThousandSeparatorOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API ThousandSeparatorOptions();
+    AWS_QUICKSIGHT_API ThousandSeparatorOptions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API ThousandSeparatorOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

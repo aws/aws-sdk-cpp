@@ -28,12 +28,12 @@ namespace AutoScaling
 {
 namespace Model
 {
-  class AWS_AUTOSCALING_API DescribeWarmPoolResult
+  class DescribeWarmPoolResult
   {
   public:
-    DescribeWarmPoolResult();
-    DescribeWarmPoolResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeWarmPoolResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_AUTOSCALING_API DescribeWarmPoolResult();
+    AWS_AUTOSCALING_API DescribeWarmPoolResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_AUTOSCALING_API DescribeWarmPoolResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**
@@ -99,44 +99,58 @@ namespace Model
 
 
     /**
-     * <p>The token for the next set of items to return. (You received this token from
-     * a previous call.)</p>
+     * <p>This string indicates that the response contains more items than can be
+     * returned in a single response. To receive additional items, specify this string
+     * for the <code>NextToken</code> value when requesting the next set of items. This
+     * value is null when there are no more items to return.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>The token for the next set of items to return. (You received this token from
-     * a previous call.)</p>
+     * <p>This string indicates that the response contains more items than can be
+     * returned in a single response. To receive additional items, specify this string
+     * for the <code>NextToken</code> value when requesting the next set of items. This
+     * value is null when there are no more items to return.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
-     * <p>The token for the next set of items to return. (You received this token from
-     * a previous call.)</p>
+     * <p>This string indicates that the response contains more items than can be
+     * returned in a single response. To receive additional items, specify this string
+     * for the <code>NextToken</code> value when requesting the next set of items. This
+     * value is null when there are no more items to return.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
-     * <p>The token for the next set of items to return. (You received this token from
-     * a previous call.)</p>
+     * <p>This string indicates that the response contains more items than can be
+     * returned in a single response. To receive additional items, specify this string
+     * for the <code>NextToken</code> value when requesting the next set of items. This
+     * value is null when there are no more items to return.</p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
-     * <p>The token for the next set of items to return. (You received this token from
-     * a previous call.)</p>
+     * <p>This string indicates that the response contains more items than can be
+     * returned in a single response. To receive additional items, specify this string
+     * for the <code>NextToken</code> value when requesting the next set of items. This
+     * value is null when there are no more items to return.</p>
      */
     inline DescribeWarmPoolResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>The token for the next set of items to return. (You received this token from
-     * a previous call.)</p>
+     * <p>This string indicates that the response contains more items than can be
+     * returned in a single response. To receive additional items, specify this string
+     * for the <code>NextToken</code> value when requesting the next set of items. This
+     * value is null when there are no more items to return.</p>
      */
     inline DescribeWarmPoolResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>The token for the next set of items to return. (You received this token from
-     * a previous call.)</p>
+     * <p>This string indicates that the response contains more items than can be
+     * returned in a single response. To receive additional items, specify this string
+     * for the <code>NextToken</code> value when requesting the next set of items. This
+     * value is null when there are no more items to return.</p>
      */
     inline DescribeWarmPoolResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/SigningJob">AWS
    * API Reference</a></p>
    */
-  class AWS_SIGNER_API SigningJob
+  class SigningJob
   {
   public:
-    SigningJob();
-    SigningJob(Aws::Utils::Json::JsonView jsonValue);
-    SigningJob& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SIGNER_API SigningJob();
+    AWS_SIGNER_API SigningJob(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SIGNER_API SigningJob& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SIGNER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

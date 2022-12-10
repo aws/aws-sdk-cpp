@@ -7,6 +7,7 @@
 #include <aws/kms/KMS_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/kms/KMSServiceClientModel.h>
 
@@ -78,7 +79,7 @@ namespace KMS
    * <a>GenerateDataKey</a> </p> </li> <li> <p>
    * <a>GenerateDataKeyWithoutPlaintext</a> </p> </li> </ul>
    */
-  class AWS_KMS_API KMSClient : public Aws::Client::AWSJsonClient
+  class AWS_KMS_API KMSClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<KMSClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -132,7 +133,6 @@ namespace KMS
 
         /* End of legacy constructors due deprecation */
         virtual ~KMSClient();
-
 
         /**
          * <p>Cancels the deletion of a KMS key. When this operation succeeds, the key
@@ -885,20 +885,21 @@ namespace KMS
          * origin and expiration date (if any) of the key material. It includes fields,
          * like <code>KeySpec</code>, that help you distinguish different types of KMS
          * keys. It also displays the key usage (encryption, signing, or generating and
-         * verifying MACs) and the algorithms that the KMS key supports. For <a
+         * verifying MACs) and the algorithms that the KMS key supports. </p> <p>For <a
          * href="kms/latest/developerguide/multi-region-keys-overview.html">multi-Region
-         * keys</a>, it displays the primary key and all related replica keys. For KMS keys
-         * in <a href="kms/latest/developerguide/keystore-cloudhsm.html">CloudHSM key
-         * stores</a>, it includes information about the custom key store, such as the key
-         * store ID and the CloudHSM cluster ID. For KMS key in <a
+         * keys</a>, <code>DescribeKey</code> displays the primary key and all related
+         * replica keys. For KMS keys in <a
+         * href="kms/latest/developerguide/keystore-cloudhsm.html">CloudHSM key stores</a>,
+         * it includes information about the key store, such as the key store ID and the
+         * CloudHSM cluster ID. For KMS keys in <a
          * href="kms/latest/developerguide/keystore-external.html">external key stores</a>,
-         * it includes the custom key store ID and the ID and status of the associated
-         * external key.</p> <p> <code>DescribeKey</code> does not return the following
-         * information:</p> <ul> <li> <p>Aliases associated with the KMS key. To get this
-         * information, use <a>ListAliases</a>.</p> </li> <li> <p>Whether automatic key
-         * rotation is enabled on the KMS key. To get this information, use
-         * <a>GetKeyRotationStatus</a>. Also, some key states prevent a KMS key from being
-         * automatically rotated. For details, see <a
+         * it includes the custom key store ID and the ID of the external key.</p> <p>
+         * <code>DescribeKey</code> does not return the following information:</p> <ul>
+         * <li> <p>Aliases associated with the KMS key. To get this information, use
+         * <a>ListAliases</a>.</p> </li> <li> <p>Whether automatic key rotation is enabled
+         * on the KMS key. To get this information, use <a>GetKeyRotationStatus</a>. Also,
+         * some key states prevent a KMS key from being automatically rotated. For details,
+         * see <a
          * href="https://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html#rotate-keys-how-it-works">How
          * Automatic Key Rotation Works</a> in the <i>Key Management Service Developer
          * Guide</i>.</p> </li> <li> <p>Tags on the KMS key. To get this information, use
@@ -2910,6 +2911,7 @@ namespace KMS
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<KMSEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<KMSClient>;
       void init(const KMSClientConfiguration& clientConfiguration);
 
       KMSClientConfiguration m_clientConfiguration;

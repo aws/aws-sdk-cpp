@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/SectionBasedLayoutCanvasSizeOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API SectionBasedLayoutCanvasSizeOptions
+  class SectionBasedLayoutCanvasSizeOptions
   {
   public:
-    SectionBasedLayoutCanvasSizeOptions();
-    SectionBasedLayoutCanvasSizeOptions(Aws::Utils::Json::JsonView jsonValue);
-    SectionBasedLayoutCanvasSizeOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API SectionBasedLayoutCanvasSizeOptions();
+    AWS_QUICKSIGHT_API SectionBasedLayoutCanvasSizeOptions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API SectionBasedLayoutCanvasSizeOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

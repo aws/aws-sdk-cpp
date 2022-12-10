@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DefaultConditionalBranch">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELSV2_API DefaultConditionalBranch
+  class DefaultConditionalBranch
   {
   public:
-    DefaultConditionalBranch();
-    DefaultConditionalBranch(Aws::Utils::Json::JsonView jsonValue);
-    DefaultConditionalBranch& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELSV2_API DefaultConditionalBranch();
+    AWS_LEXMODELSV2_API DefaultConditionalBranch(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API DefaultConditionalBranch& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

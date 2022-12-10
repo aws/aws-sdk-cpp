@@ -40,13 +40,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CaptionDestinationSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API CaptionDestinationSettings
+  class CaptionDestinationSettings
   {
   public:
-    CaptionDestinationSettings();
-    CaptionDestinationSettings(Aws::Utils::Json::JsonView jsonValue);
-    CaptionDestinationSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API CaptionDestinationSettings();
+    AWS_MEDIALIVE_API CaptionDestinationSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API CaptionDestinationSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/FilteredLogEvent">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDWATCHLOGS_API FilteredLogEvent
+  class FilteredLogEvent
   {
   public:
-    FilteredLogEvent();
-    FilteredLogEvent(Aws::Utils::Json::JsonView jsonValue);
-    FilteredLogEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDWATCHLOGS_API FilteredLogEvent();
+    AWS_CLOUDWATCHLOGS_API FilteredLogEvent(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHLOGS_API FilteredLogEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHLOGS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -39,13 +39,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/GrpcRetryPolicy">AWS
    * API Reference</a></p>
    */
-  class AWS_APPMESH_API GrpcRetryPolicy
+  class GrpcRetryPolicy
   {
   public:
-    GrpcRetryPolicy();
-    GrpcRetryPolicy(Aws::Utils::Json::JsonView jsonValue);
-    GrpcRetryPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPMESH_API GrpcRetryPolicy();
+    AWS_APPMESH_API GrpcRetryPolicy(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API GrpcRetryPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

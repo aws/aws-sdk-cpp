@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/RedshiftTarget">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API RedshiftTarget
+  class RedshiftTarget
   {
   public:
-    RedshiftTarget();
-    RedshiftTarget(Aws::Utils::Json::JsonView jsonValue);
-    RedshiftTarget& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API RedshiftTarget();
+    AWS_GLUE_API RedshiftTarget(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API RedshiftTarget& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/SourceControlDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API SourceControlDetails
+  class SourceControlDetails
   {
   public:
-    SourceControlDetails();
-    SourceControlDetails(Aws::Utils::Json::JsonView jsonValue);
-    SourceControlDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API SourceControlDetails();
+    AWS_GLUE_API SourceControlDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API SourceControlDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/RepositorySyncAttempt">AWS
    * API Reference</a></p>
    */
-  class AWS_PROTON_API RepositorySyncAttempt
+  class RepositorySyncAttempt
   {
   public:
-    RepositorySyncAttempt();
-    RepositorySyncAttempt(Aws::Utils::Json::JsonView jsonValue);
-    RepositorySyncAttempt& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PROTON_API RepositorySyncAttempt();
+    AWS_PROTON_API RepositorySyncAttempt(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PROTON_API RepositorySyncAttempt& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PROTON_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

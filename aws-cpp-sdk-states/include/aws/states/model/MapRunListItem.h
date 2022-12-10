@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/MapRunListItem">AWS
    * API Reference</a></p>
    */
-  class AWS_SFN_API MapRunListItem
+  class MapRunListItem
   {
   public:
-    MapRunListItem();
-    MapRunListItem(Aws::Utils::Json::JsonView jsonValue);
-    MapRunListItem& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SFN_API MapRunListItem();
+    AWS_SFN_API MapRunListItem(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SFN_API MapRunListItem& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SFN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -7,6 +7,7 @@
 #include <aws/apigateway/APIGateway_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/apigateway/APIGatewayServiceClientModel.h>
 
@@ -21,7 +22,7 @@ namespace APIGateway
    * APIs that run on AWS Lambda, Amazon EC2, or other publicly addressable web
    * services that are hosted outside of AWS.</p>
    */
-  class AWS_APIGATEWAY_API APIGatewayClient : public Aws::Client::AWSJsonClient
+  class AWS_APIGATEWAY_API APIGatewayClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<APIGatewayClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -75,7 +76,6 @@ namespace APIGateway
 
         /* End of legacy constructors due deprecation */
         virtual ~APIGatewayClient();
-
 
         /**
          * <p>Create an ApiKey resource. </p><p><h3>See Also:</h3>   <a
@@ -2180,6 +2180,7 @@ namespace APIGateway
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<APIGatewayEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<APIGatewayClient>;
       void init(const APIGatewayClientConfiguration& clientConfiguration);
 
       APIGatewayClientConfiguration m_clientConfiguration;

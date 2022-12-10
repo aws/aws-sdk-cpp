@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/PutFileEntry">AWS
    * API Reference</a></p>
    */
-  class AWS_CODECOMMIT_API PutFileEntry
+  class PutFileEntry
   {
   public:
-    PutFileEntry();
-    PutFileEntry(Aws::Utils::Json::JsonView jsonValue);
-    PutFileEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODECOMMIT_API PutFileEntry();
+    AWS_CODECOMMIT_API PutFileEntry(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODECOMMIT_API PutFileEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODECOMMIT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

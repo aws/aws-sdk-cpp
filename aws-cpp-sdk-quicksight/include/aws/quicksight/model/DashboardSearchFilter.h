@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DashboardSearchFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API DashboardSearchFilter
+  class DashboardSearchFilter
   {
   public:
-    DashboardSearchFilter();
-    DashboardSearchFilter(Aws::Utils::Json::JsonView jsonValue);
-    DashboardSearchFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API DashboardSearchFilter();
+    AWS_QUICKSIGHT_API DashboardSearchFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API DashboardSearchFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

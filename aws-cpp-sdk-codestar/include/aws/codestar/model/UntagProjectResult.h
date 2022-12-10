@@ -22,12 +22,12 @@ namespace CodeStar
 {
 namespace Model
 {
-  class AWS_CODESTAR_API UntagProjectResult
+  class UntagProjectResult
   {
   public:
-    UntagProjectResult();
-    UntagProjectResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UntagProjectResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODESTAR_API UntagProjectResult();
+    AWS_CODESTAR_API UntagProjectResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CODESTAR_API UntagProjectResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

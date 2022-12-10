@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutvision-2020-11-20/ModelPerformance">AWS
    * API Reference</a></p>
    */
-  class AWS_LOOKOUTFORVISION_API ModelPerformance
+  class ModelPerformance
   {
   public:
-    ModelPerformance();
-    ModelPerformance(Aws::Utils::Json::JsonView jsonValue);
-    ModelPerformance& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LOOKOUTFORVISION_API ModelPerformance();
+    AWS_LOOKOUTFORVISION_API ModelPerformance(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTFORVISION_API ModelPerformance& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LOOKOUTFORVISION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

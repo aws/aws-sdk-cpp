@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/GaugeChartFieldWells">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API GaugeChartFieldWells
+  class GaugeChartFieldWells
   {
   public:
-    GaugeChartFieldWells();
-    GaugeChartFieldWells(Aws::Utils::Json::JsonView jsonValue);
-    GaugeChartFieldWells& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API GaugeChartFieldWells();
+    AWS_QUICKSIGHT_API GaugeChartFieldWells(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API GaugeChartFieldWells& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

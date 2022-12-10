@@ -27,12 +27,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/RegisterEventTopicResult">AWS
    * API Reference</a></p>
    */
-  class AWS_DIRECTORYSERVICE_API RegisterEventTopicResult
+  class RegisterEventTopicResult
   {
   public:
-    RegisterEventTopicResult();
-    RegisterEventTopicResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    RegisterEventTopicResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DIRECTORYSERVICE_API RegisterEventTopicResult();
+    AWS_DIRECTORYSERVICE_API RegisterEventTopicResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DIRECTORYSERVICE_API RegisterEventTopicResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

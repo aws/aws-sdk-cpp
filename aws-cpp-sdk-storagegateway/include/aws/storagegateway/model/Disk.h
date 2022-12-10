@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/Disk">AWS
    * API Reference</a></p>
    */
-  class AWS_STORAGEGATEWAY_API Disk
+  class Disk
   {
   public:
-    Disk();
-    Disk(Aws::Utils::Json::JsonView jsonValue);
-    Disk& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_STORAGEGATEWAY_API Disk();
+    AWS_STORAGEGATEWAY_API Disk(Aws::Utils::Json::JsonView jsonValue);
+    AWS_STORAGEGATEWAY_API Disk& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_STORAGEGATEWAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

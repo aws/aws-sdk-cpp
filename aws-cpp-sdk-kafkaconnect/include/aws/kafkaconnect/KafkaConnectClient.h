@@ -7,6 +7,7 @@
 #include <aws/kafkaconnect/KafkaConnect_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/kafkaconnect/KafkaConnectServiceClientModel.h>
 
@@ -17,7 +18,7 @@ namespace KafkaConnect
   /**
    * <p/>
    */
-  class AWS_KAFKACONNECT_API KafkaConnectClient : public Aws::Client::AWSJsonClient
+  class AWS_KAFKACONNECT_API KafkaConnectClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<KafkaConnectClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -71,7 +72,6 @@ namespace KafkaConnect
 
         /* End of legacy constructors due deprecation */
         virtual ~KafkaConnectClient();
-
 
         /**
          * <p>Creates a connector using the specified properties.</p><p><h3>See Also:</h3> 
@@ -291,6 +291,7 @@ namespace KafkaConnect
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<KafkaConnectEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<KafkaConnectClient>;
       void init(const KafkaConnectClientConfiguration& clientConfiguration);
 
       KafkaConnectClientConfiguration m_clientConfiguration;

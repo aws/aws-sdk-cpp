@@ -24,12 +24,12 @@ namespace Firehose
 {
 namespace Model
 {
-  class AWS_FIREHOSE_API PutRecordResult
+  class PutRecordResult
   {
   public:
-    PutRecordResult();
-    PutRecordResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PutRecordResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_FIREHOSE_API PutRecordResult();
+    AWS_FIREHOSE_API PutRecordResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_FIREHOSE_API PutRecordResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

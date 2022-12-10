@@ -7,6 +7,7 @@
 #include <aws/cloudhsm/CloudHSM_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/cloudhsm/CloudHSMServiceClientModel.h>
 
@@ -30,7 +31,7 @@ namespace CloudHSM
    * href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM
    * API Reference</a>.</p>
    */
-  class AWS_CLOUDHSM_API CloudHSMClient : public Aws::Client::AWSJsonClient
+  class AWS_CLOUDHSM_API CloudHSMClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<CloudHSMClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -84,7 +85,6 @@ namespace CloudHSM
 
         /* End of legacy constructors due deprecation */
         virtual ~CloudHSMClient();
-
 
         /**
          * <p>This is documentation for <b>AWS CloudHSM Classic</b>. For more information,
@@ -718,6 +718,7 @@ namespace CloudHSM
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<CloudHSMEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<CloudHSMClient>;
       void init(const CloudHSMClientConfiguration& clientConfiguration);
 
       CloudHSMClientConfiguration m_clientConfiguration;

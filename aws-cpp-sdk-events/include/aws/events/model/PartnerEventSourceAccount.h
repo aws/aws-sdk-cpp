@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/PartnerEventSourceAccount">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDWATCHEVENTS_API PartnerEventSourceAccount
+  class PartnerEventSourceAccount
   {
   public:
-    PartnerEventSourceAccount();
-    PartnerEventSourceAccount(Aws::Utils::Json::JsonView jsonValue);
-    PartnerEventSourceAccount& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDWATCHEVENTS_API PartnerEventSourceAccount();
+    AWS_CLOUDWATCHEVENTS_API PartnerEventSourceAccount(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHEVENTS_API PartnerEventSourceAccount& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHEVENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

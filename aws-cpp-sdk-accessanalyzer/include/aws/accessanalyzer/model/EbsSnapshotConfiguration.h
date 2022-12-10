@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/EbsSnapshotConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_ACCESSANALYZER_API EbsSnapshotConfiguration
+  class EbsSnapshotConfiguration
   {
   public:
-    EbsSnapshotConfiguration();
-    EbsSnapshotConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    EbsSnapshotConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ACCESSANALYZER_API EbsSnapshotConfiguration();
+    AWS_ACCESSANALYZER_API EbsSnapshotConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACCESSANALYZER_API EbsSnapshotConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ACCESSANALYZER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

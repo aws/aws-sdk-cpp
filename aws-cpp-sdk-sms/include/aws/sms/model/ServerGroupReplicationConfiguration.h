@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/ServerGroupReplicationConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_SMS_API ServerGroupReplicationConfiguration
+  class ServerGroupReplicationConfiguration
   {
   public:
-    ServerGroupReplicationConfiguration();
-    ServerGroupReplicationConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    ServerGroupReplicationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SMS_API ServerGroupReplicationConfiguration();
+    AWS_SMS_API ServerGroupReplicationConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SMS_API ServerGroupReplicationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

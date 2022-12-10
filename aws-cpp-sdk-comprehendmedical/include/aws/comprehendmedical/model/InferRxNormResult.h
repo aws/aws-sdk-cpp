@@ -26,12 +26,12 @@ namespace ComprehendMedical
 {
 namespace Model
 {
-  class AWS_COMPREHENDMEDICAL_API InferRxNormResult
+  class InferRxNormResult
   {
   public:
-    InferRxNormResult();
-    InferRxNormResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    InferRxNormResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_COMPREHENDMEDICAL_API InferRxNormResult();
+    AWS_COMPREHENDMEDICAL_API InferRxNormResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_COMPREHENDMEDICAL_API InferRxNormResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

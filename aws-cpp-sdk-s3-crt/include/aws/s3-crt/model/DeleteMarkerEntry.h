@@ -29,14 +29,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteMarkerEntry">AWS
    * API Reference</a></p>
    */
-  class AWS_S3CRT_API DeleteMarkerEntry
+  class DeleteMarkerEntry
   {
   public:
-    DeleteMarkerEntry();
-    DeleteMarkerEntry(const Aws::Utils::Xml::XmlNode& xmlNode);
-    DeleteMarkerEntry& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CRT_API DeleteMarkerEntry();
+    AWS_S3CRT_API DeleteMarkerEntry(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3CRT_API DeleteMarkerEntry& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_S3CRT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**

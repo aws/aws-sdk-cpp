@@ -21,10 +21,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/UpdateBackendJobRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_AMPLIFYBACKEND_API UpdateBackendJobRequest : public AmplifyBackendRequest
+  class UpdateBackendJobRequest : public AmplifyBackendRequest
   {
   public:
-    UpdateBackendJobRequest();
+    AWS_AMPLIFYBACKEND_API UpdateBackendJobRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -32,7 +32,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateBackendJob"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_AMPLIFYBACKEND_API Aws::String SerializePayload() const override;
 
 
     /**

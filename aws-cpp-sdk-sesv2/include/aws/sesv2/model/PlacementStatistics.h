@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PlacementStatistics">AWS
    * API Reference</a></p>
    */
-  class AWS_SESV2_API PlacementStatistics
+  class PlacementStatistics
   {
   public:
-    PlacementStatistics();
-    PlacementStatistics(Aws::Utils::Json::JsonView jsonValue);
-    PlacementStatistics& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SESV2_API PlacementStatistics();
+    AWS_SESV2_API PlacementStatistics(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SESV2_API PlacementStatistics& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SESV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

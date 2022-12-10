@@ -24,12 +24,12 @@ namespace ApplicationCostProfiler
 {
 namespace Model
 {
-  class AWS_APPLICATIONCOSTPROFILER_API ImportApplicationUsageResult
+  class ImportApplicationUsageResult
   {
   public:
-    ImportApplicationUsageResult();
-    ImportApplicationUsageResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ImportApplicationUsageResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPLICATIONCOSTPROFILER_API ImportApplicationUsageResult();
+    AWS_APPLICATIONCOSTPROFILER_API ImportApplicationUsageResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPLICATIONCOSTPROFILER_API ImportApplicationUsageResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

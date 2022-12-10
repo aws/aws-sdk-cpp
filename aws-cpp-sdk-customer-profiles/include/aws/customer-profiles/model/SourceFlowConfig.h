@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/SourceFlowConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_CUSTOMERPROFILES_API SourceFlowConfig
+  class SourceFlowConfig
   {
   public:
-    SourceFlowConfig();
-    SourceFlowConfig(Aws::Utils::Json::JsonView jsonValue);
-    SourceFlowConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CUSTOMERPROFILES_API SourceFlowConfig();
+    AWS_CUSTOMERPROFILES_API SourceFlowConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CUSTOMERPROFILES_API SourceFlowConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CUSTOMERPROFILES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

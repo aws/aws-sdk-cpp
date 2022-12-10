@@ -30,15 +30,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/S3Storage">AWS API
    * Reference</a></p>
    */
-  class AWS_EC2_API S3Storage
+  class S3Storage
   {
   public:
-    S3Storage();
-    S3Storage(const Aws::Utils::Xml::XmlNode& xmlNode);
-    S3Storage& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API S3Storage();
+    AWS_EC2_API S3Storage(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API S3Storage& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/FileCacheFailureDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_FSX_API FileCacheFailureDetails
+  class FileCacheFailureDetails
   {
   public:
-    FileCacheFailureDetails();
-    FileCacheFailureDetails(Aws::Utils::Json::JsonView jsonValue);
-    FileCacheFailureDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FSX_API FileCacheFailureDetails();
+    AWS_FSX_API FileCacheFailureDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API FileCacheFailureDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

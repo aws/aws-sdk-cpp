@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rolesanywhere-2018-05-10/ProfileDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_ROLESANYWHERE_API ProfileDetail
+  class ProfileDetail
   {
   public:
-    ProfileDetail();
-    ProfileDetail(Aws::Utils::Json::JsonView jsonValue);
-    ProfileDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ROLESANYWHERE_API ProfileDetail();
+    AWS_ROLESANYWHERE_API ProfileDetail(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROLESANYWHERE_API ProfileDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROLESANYWHERE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

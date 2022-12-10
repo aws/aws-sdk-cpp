@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/Cors">AWS
    * API Reference</a></p>
    */
-  class AWS_APIGATEWAYV2_API Cors
+  class Cors
   {
   public:
-    Cors();
-    Cors(Aws::Utils::Json::JsonView jsonValue);
-    Cors& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APIGATEWAYV2_API Cors();
+    AWS_APIGATEWAYV2_API Cors(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APIGATEWAYV2_API Cors& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APIGATEWAYV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

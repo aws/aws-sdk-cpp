@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/Interconnect">AWS
    * API Reference</a></p>
    */
-  class AWS_DIRECTCONNECT_API Interconnect
+  class Interconnect
   {
   public:
-    Interconnect();
-    Interconnect(Aws::Utils::Json::JsonView jsonValue);
-    Interconnect& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DIRECTCONNECT_API Interconnect();
+    AWS_DIRECTCONNECT_API Interconnect(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTCONNECT_API Interconnect& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTCONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

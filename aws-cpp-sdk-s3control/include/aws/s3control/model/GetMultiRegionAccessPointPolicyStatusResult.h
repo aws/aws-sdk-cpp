@@ -24,12 +24,12 @@ namespace S3Control
 {
 namespace Model
 {
-  class AWS_S3CONTROL_API GetMultiRegionAccessPointPolicyStatusResult
+  class GetMultiRegionAccessPointPolicyStatusResult
   {
   public:
-    GetMultiRegionAccessPointPolicyStatusResult();
-    GetMultiRegionAccessPointPolicyStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    GetMultiRegionAccessPointPolicyStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_S3CONTROL_API GetMultiRegionAccessPointPolicyStatusResult();
+    AWS_S3CONTROL_API GetMultiRegionAccessPointPolicyStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_S3CONTROL_API GetMultiRegionAccessPointPolicyStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     

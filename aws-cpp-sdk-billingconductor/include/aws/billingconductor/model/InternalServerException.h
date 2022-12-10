@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/InternalServerException">AWS
    * API Reference</a></p>
    */
-  class AWS_BILLINGCONDUCTOR_API InternalServerException
+  class InternalServerException
   {
   public:
-    InternalServerException();
-    InternalServerException(Aws::Utils::Json::JsonView jsonValue);
-    InternalServerException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BILLINGCONDUCTOR_API InternalServerException();
+    AWS_BILLINGCONDUCTOR_API InternalServerException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BILLINGCONDUCTOR_API InternalServerException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BILLINGCONDUCTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

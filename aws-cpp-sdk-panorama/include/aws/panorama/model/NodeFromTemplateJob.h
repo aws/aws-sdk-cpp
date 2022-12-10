@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/panorama-2019-07-24/NodeFromTemplateJob">AWS
    * API Reference</a></p>
    */
-  class AWS_PANORAMA_API NodeFromTemplateJob
+  class NodeFromTemplateJob
   {
   public:
-    NodeFromTemplateJob();
-    NodeFromTemplateJob(Aws::Utils::Json::JsonView jsonValue);
-    NodeFromTemplateJob& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PANORAMA_API NodeFromTemplateJob();
+    AWS_PANORAMA_API NodeFromTemplateJob(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PANORAMA_API NodeFromTemplateJob& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PANORAMA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

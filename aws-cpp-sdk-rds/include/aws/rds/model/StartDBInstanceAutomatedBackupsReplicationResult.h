@@ -25,12 +25,12 @@ namespace RDS
 {
 namespace Model
 {
-  class AWS_RDS_API StartDBInstanceAutomatedBackupsReplicationResult
+  class StartDBInstanceAutomatedBackupsReplicationResult
   {
   public:
-    StartDBInstanceAutomatedBackupsReplicationResult();
-    StartDBInstanceAutomatedBackupsReplicationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    StartDBInstanceAutomatedBackupsReplicationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_RDS_API StartDBInstanceAutomatedBackupsReplicationResult();
+    AWS_RDS_API StartDBInstanceAutomatedBackupsReplicationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_RDS_API StartDBInstanceAutomatedBackupsReplicationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     

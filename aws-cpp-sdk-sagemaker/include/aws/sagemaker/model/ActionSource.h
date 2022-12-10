@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ActionSource">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API ActionSource
+  class ActionSource
   {
   public:
-    ActionSource();
-    ActionSource(Aws::Utils::Json::JsonView jsonValue);
-    ActionSource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API ActionSource();
+    AWS_SAGEMAKER_API ActionSource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API ActionSource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

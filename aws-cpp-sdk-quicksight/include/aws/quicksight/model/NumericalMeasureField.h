@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/NumericalMeasureField">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API NumericalMeasureField
+  class NumericalMeasureField
   {
   public:
-    NumericalMeasureField();
-    NumericalMeasureField(Aws::Utils::Json::JsonView jsonValue);
-    NumericalMeasureField& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API NumericalMeasureField();
+    AWS_QUICKSIGHT_API NumericalMeasureField(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API NumericalMeasureField& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

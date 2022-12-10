@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/CapacityProviderStrategyItem">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDWATCHEVENTS_API CapacityProviderStrategyItem
+  class CapacityProviderStrategyItem
   {
   public:
-    CapacityProviderStrategyItem();
-    CapacityProviderStrategyItem(Aws::Utils::Json::JsonView jsonValue);
-    CapacityProviderStrategyItem& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDWATCHEVENTS_API CapacityProviderStrategyItem();
+    AWS_CLOUDWATCHEVENTS_API CapacityProviderStrategyItem(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHEVENTS_API CapacityProviderStrategyItem& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDWATCHEVENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

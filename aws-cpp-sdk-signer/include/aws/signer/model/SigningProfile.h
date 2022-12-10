@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/SigningProfile">AWS
    * API Reference</a></p>
    */
-  class AWS_SIGNER_API SigningProfile
+  class SigningProfile
   {
   public:
-    SigningProfile();
-    SigningProfile(Aws::Utils::Json::JsonView jsonValue);
-    SigningProfile& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SIGNER_API SigningProfile();
+    AWS_SIGNER_API SigningProfile(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SIGNER_API SigningProfile& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SIGNER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

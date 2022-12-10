@@ -33,12 +33,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListTrafficPolicyInstancesByHostedZoneResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53_API ListTrafficPolicyInstancesByHostedZoneResult
+  class ListTrafficPolicyInstancesByHostedZoneResult
   {
   public:
-    ListTrafficPolicyInstancesByHostedZoneResult();
-    ListTrafficPolicyInstancesByHostedZoneResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ListTrafficPolicyInstancesByHostedZoneResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ROUTE53_API ListTrafficPolicyInstancesByHostedZoneResult();
+    AWS_ROUTE53_API ListTrafficPolicyInstancesByHostedZoneResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_ROUTE53_API ListTrafficPolicyInstancesByHostedZoneResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

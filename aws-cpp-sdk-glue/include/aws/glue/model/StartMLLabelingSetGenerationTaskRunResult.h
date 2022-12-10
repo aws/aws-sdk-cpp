@@ -24,12 +24,12 @@ namespace Glue
 {
 namespace Model
 {
-  class AWS_GLUE_API StartMLLabelingSetGenerationTaskRunResult
+  class StartMLLabelingSetGenerationTaskRunResult
   {
   public:
-    StartMLLabelingSetGenerationTaskRunResult();
-    StartMLLabelingSetGenerationTaskRunResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    StartMLLabelingSetGenerationTaskRunResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GLUE_API StartMLLabelingSetGenerationTaskRunResult();
+    AWS_GLUE_API StartMLLabelingSetGenerationTaskRunResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GLUE_API StartMLLabelingSetGenerationTaskRunResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

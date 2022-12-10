@@ -30,15 +30,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/PredefinedMetricSpecification">AWS
    * API Reference</a></p>
    */
-  class AWS_AUTOSCALING_API PredefinedMetricSpecification
+  class PredefinedMetricSpecification
   {
   public:
-    PredefinedMetricSpecification();
-    PredefinedMetricSpecification(const Aws::Utils::Xml::XmlNode& xmlNode);
-    PredefinedMetricSpecification& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_AUTOSCALING_API PredefinedMetricSpecification();
+    AWS_AUTOSCALING_API PredefinedMetricSpecification(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_AUTOSCALING_API PredefinedMetricSpecification& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_AUTOSCALING_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_AUTOSCALING_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**

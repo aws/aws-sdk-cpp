@@ -22,12 +22,12 @@ namespace Macie2
 {
 namespace Model
 {
-  class AWS_MACIE2_API UpdateResourceProfileDetectionsResult
+  class UpdateResourceProfileDetectionsResult
   {
   public:
-    UpdateResourceProfileDetectionsResult();
-    UpdateResourceProfileDetectionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateResourceProfileDetectionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MACIE2_API UpdateResourceProfileDetectionsResult();
+    AWS_MACIE2_API UpdateResourceProfileDetectionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MACIE2_API UpdateResourceProfileDetectionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

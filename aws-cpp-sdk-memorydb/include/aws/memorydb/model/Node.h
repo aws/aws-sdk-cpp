@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/Node">AWS API
    * Reference</a></p>
    */
-  class AWS_MEMORYDB_API Node
+  class Node
   {
   public:
-    Node();
-    Node(Aws::Utils::Json::JsonView jsonValue);
-    Node& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEMORYDB_API Node();
+    AWS_MEMORYDB_API Node(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEMORYDB_API Node& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEMORYDB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

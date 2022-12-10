@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/SAMLOptionsOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICSEARCHSERVICE_API SAMLOptionsOutput
+  class SAMLOptionsOutput
   {
   public:
-    SAMLOptionsOutput();
-    SAMLOptionsOutput(Aws::Utils::Json::JsonView jsonValue);
-    SAMLOptionsOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ELASTICSEARCHSERVICE_API SAMLOptionsOutput();
+    AWS_ELASTICSEARCHSERVICE_API SAMLOptionsOutput(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICSEARCHSERVICE_API SAMLOptionsOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

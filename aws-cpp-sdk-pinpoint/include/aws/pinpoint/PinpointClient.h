@@ -7,6 +7,7 @@
 #include <aws/pinpoint/Pinpoint_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/pinpoint/PinpointServiceClientModel.h>
 
@@ -17,7 +18,7 @@ namespace Pinpoint
   /**
    * <p>Doc Engage API - Amazon Pinpoint API</p>
    */
-  class AWS_PINPOINT_API PinpointClient : public Aws::Client::AWSJsonClient
+  class AWS_PINPOINT_API PinpointClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<PinpointClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -71,7 +72,6 @@ namespace Pinpoint
 
         /* End of legacy constructors due deprecation */
         virtual ~PinpointClient();
-
 
         /**
          * <p>Creates an application.</p><p><h3>See Also:</h3>   <a
@@ -2220,6 +2220,7 @@ namespace Pinpoint
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<PinpointEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<PinpointClient>;
       void init(const PinpointClientConfiguration& clientConfiguration);
 
       PinpointClientConfiguration m_clientConfiguration;

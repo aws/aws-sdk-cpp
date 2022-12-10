@@ -23,13 +23,13 @@ namespace IoT1ClickDevicesService
 namespace Model
 {
 
-  class AWS_IOT1CLICKDEVICESSERVICE_API ResourceConflictException
+  class ResourceConflictException
   {
   public:
-    ResourceConflictException();
-    ResourceConflictException(Aws::Utils::Json::JsonView jsonValue);
-    ResourceConflictException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT1CLICKDEVICESSERVICE_API ResourceConflictException();
+    AWS_IOT1CLICKDEVICESSERVICE_API ResourceConflictException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT1CLICKDEVICESSERVICE_API ResourceConflictException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT1CLICKDEVICESSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

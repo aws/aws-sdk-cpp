@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/ContactListDestination">AWS
    * API Reference</a></p>
    */
-  class AWS_SESV2_API ContactListDestination
+  class ContactListDestination
   {
   public:
-    ContactListDestination();
-    ContactListDestination(Aws::Utils::Json::JsonView jsonValue);
-    ContactListDestination& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SESV2_API ContactListDestination();
+    AWS_SESV2_API ContactListDestination(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SESV2_API ContactListDestination& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SESV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

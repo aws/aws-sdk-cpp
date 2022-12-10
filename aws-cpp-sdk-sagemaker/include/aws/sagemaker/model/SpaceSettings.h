@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/SpaceSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API SpaceSettings
+  class SpaceSettings
   {
   public:
-    SpaceSettings();
-    SpaceSettings(Aws::Utils::Json::JsonView jsonValue);
-    SpaceSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API SpaceSettings();
+    AWS_SAGEMAKER_API SpaceSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API SpaceSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

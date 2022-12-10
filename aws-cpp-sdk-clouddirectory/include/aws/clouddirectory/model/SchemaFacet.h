@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/SchemaFacet">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDDIRECTORY_API SchemaFacet
+  class SchemaFacet
   {
   public:
-    SchemaFacet();
-    SchemaFacet(Aws::Utils::Json::JsonView jsonValue);
-    SchemaFacet& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDDIRECTORY_API SchemaFacet();
+    AWS_CLOUDDIRECTORY_API SchemaFacet(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDDIRECTORY_API SchemaFacet& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDDIRECTORY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

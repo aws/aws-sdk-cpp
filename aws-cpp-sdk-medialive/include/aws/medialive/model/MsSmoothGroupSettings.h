@@ -38,13 +38,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/MsSmoothGroupSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API MsSmoothGroupSettings
+  class MsSmoothGroupSettings
   {
   public:
-    MsSmoothGroupSettings();
-    MsSmoothGroupSettings(Aws::Utils::Json::JsonView jsonValue);
-    MsSmoothGroupSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIALIVE_API MsSmoothGroupSettings();
+    AWS_MEDIALIVE_API MsSmoothGroupSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API MsSmoothGroupSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

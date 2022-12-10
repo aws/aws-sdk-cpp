@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/EC2ThrottledException">AWS
    * API Reference</a></p>
    */
-  class AWS_LAMBDA_API EC2ThrottledException
+  class EC2ThrottledException
   {
   public:
-    EC2ThrottledException();
-    EC2ThrottledException(Aws::Utils::Json::JsonView jsonValue);
-    EC2ThrottledException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LAMBDA_API EC2ThrottledException();
+    AWS_LAMBDA_API EC2ThrottledException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAMBDA_API EC2ThrottledException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAMBDA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

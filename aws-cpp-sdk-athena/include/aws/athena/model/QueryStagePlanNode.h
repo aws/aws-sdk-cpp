@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/QueryStagePlanNode">AWS
    * API Reference</a></p>
    */
-  class AWS_ATHENA_API QueryStagePlanNode
+  class QueryStagePlanNode
   {
   public:
-    QueryStagePlanNode();
-    QueryStagePlanNode(Aws::Utils::Json::JsonView jsonValue);
-    QueryStagePlanNode& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ATHENA_API QueryStagePlanNode();
+    AWS_ATHENA_API QueryStagePlanNode(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ATHENA_API QueryStagePlanNode& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ATHENA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

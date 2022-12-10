@@ -25,12 +25,12 @@ namespace ServiceCatalog
 {
 namespace Model
 {
-  class AWS_SERVICECATALOG_API DescribeServiceActionExecutionParametersResult
+  class DescribeServiceActionExecutionParametersResult
   {
   public:
-    DescribeServiceActionExecutionParametersResult();
-    DescribeServiceActionExecutionParametersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeServiceActionExecutionParametersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SERVICECATALOG_API DescribeServiceActionExecutionParametersResult();
+    AWS_SERVICECATALOG_API DescribeServiceActionExecutionParametersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SERVICECATALOG_API DescribeServiceActionExecutionParametersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

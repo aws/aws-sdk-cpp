@@ -37,13 +37,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ResolverRuleAssociation">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53RESOLVER_API ResolverRuleAssociation
+  class ResolverRuleAssociation
   {
   public:
-    ResolverRuleAssociation();
-    ResolverRuleAssociation(Aws::Utils::Json::JsonView jsonValue);
-    ResolverRuleAssociation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ROUTE53RESOLVER_API ResolverRuleAssociation();
+    AWS_ROUTE53RESOLVER_API ResolverRuleAssociation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROUTE53RESOLVER_API ResolverRuleAssociation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROUTE53RESOLVER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

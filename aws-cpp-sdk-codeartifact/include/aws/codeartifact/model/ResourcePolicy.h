@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/ResourcePolicy">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEARTIFACT_API ResourcePolicy
+  class ResourcePolicy
   {
   public:
-    ResourcePolicy();
-    ResourcePolicy(Aws::Utils::Json::JsonView jsonValue);
-    ResourcePolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEARTIFACT_API ResourcePolicy();
+    AWS_CODEARTIFACT_API ResourcePolicy(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEARTIFACT_API ResourcePolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEARTIFACT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

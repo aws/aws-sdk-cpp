@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/MitigationActionIdentifier">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API MitigationActionIdentifier
+  class MitigationActionIdentifier
   {
   public:
-    MitigationActionIdentifier();
-    MitigationActionIdentifier(Aws::Utils::Json::JsonView jsonValue);
-    MitigationActionIdentifier& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API MitigationActionIdentifier();
+    AWS_IOT_API MitigationActionIdentifier(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API MitigationActionIdentifier& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -18,10 +18,10 @@ namespace Model
 
   /**
    */
-  class AWS_REDSHIFTDATAAPISERVICE_API ListSchemasRequest : public RedshiftDataAPIServiceRequest
+  class ListSchemasRequest : public RedshiftDataAPIServiceRequest
   {
   public:
-    ListSchemasRequest();
+    AWS_REDSHIFTDATAAPISERVICE_API ListSchemasRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -29,9 +29,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ListSchemas"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_REDSHIFTDATAAPISERVICE_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_REDSHIFTDATAAPISERVICE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**

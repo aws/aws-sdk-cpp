@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/WorkDocsConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_KENDRA_API WorkDocsConfiguration
+  class WorkDocsConfiguration
   {
   public:
-    WorkDocsConfiguration();
-    WorkDocsConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    WorkDocsConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KENDRA_API WorkDocsConfiguration();
+    AWS_KENDRA_API WorkDocsConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API WorkDocsConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

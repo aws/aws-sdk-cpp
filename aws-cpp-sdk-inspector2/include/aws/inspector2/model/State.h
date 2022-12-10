@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/State">AWS
    * API Reference</a></p>
    */
-  class AWS_INSPECTOR2_API State
+  class State
   {
   public:
-    State();
-    State(Aws::Utils::Json::JsonView jsonValue);
-    State& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_INSPECTOR2_API State();
+    AWS_INSPECTOR2_API State(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR2_API State& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

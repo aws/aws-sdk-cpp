@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeviceStatusDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_ALEXAFORBUSINESS_API DeviceStatusDetail
+  class DeviceStatusDetail
   {
   public:
-    DeviceStatusDetail();
-    DeviceStatusDetail(Aws::Utils::Json::JsonView jsonValue);
-    DeviceStatusDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ALEXAFORBUSINESS_API DeviceStatusDetail();
+    AWS_ALEXAFORBUSINESS_API DeviceStatusDetail(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ALEXAFORBUSINESS_API DeviceStatusDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ALEXAFORBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

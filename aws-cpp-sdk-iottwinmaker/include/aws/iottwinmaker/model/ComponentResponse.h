@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/ComponentResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTTWINMAKER_API ComponentResponse
+  class ComponentResponse
   {
   public:
-    ComponentResponse();
-    ComponentResponse(Aws::Utils::Json::JsonView jsonValue);
-    ComponentResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTTWINMAKER_API ComponentResponse();
+    AWS_IOTTWINMAKER_API ComponentResponse(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTTWINMAKER_API ComponentResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTTWINMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -370,6 +370,47 @@ namespace Model
      */
     inline ComponentResponse& AddPropertyGroups(const char* key, const ComponentPropertyGroupResponse& value) { m_propertyGroupsHasBeenSet = true; m_propertyGroups.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>The syncSource of the sync job, if this entity was created by a sync job.</p>
+     */
+    inline const Aws::String& GetSyncSource() const{ return m_syncSource; }
+
+    /**
+     * <p>The syncSource of the sync job, if this entity was created by a sync job.</p>
+     */
+    inline bool SyncSourceHasBeenSet() const { return m_syncSourceHasBeenSet; }
+
+    /**
+     * <p>The syncSource of the sync job, if this entity was created by a sync job.</p>
+     */
+    inline void SetSyncSource(const Aws::String& value) { m_syncSourceHasBeenSet = true; m_syncSource = value; }
+
+    /**
+     * <p>The syncSource of the sync job, if this entity was created by a sync job.</p>
+     */
+    inline void SetSyncSource(Aws::String&& value) { m_syncSourceHasBeenSet = true; m_syncSource = std::move(value); }
+
+    /**
+     * <p>The syncSource of the sync job, if this entity was created by a sync job.</p>
+     */
+    inline void SetSyncSource(const char* value) { m_syncSourceHasBeenSet = true; m_syncSource.assign(value); }
+
+    /**
+     * <p>The syncSource of the sync job, if this entity was created by a sync job.</p>
+     */
+    inline ComponentResponse& WithSyncSource(const Aws::String& value) { SetSyncSource(value); return *this;}
+
+    /**
+     * <p>The syncSource of the sync job, if this entity was created by a sync job.</p>
+     */
+    inline ComponentResponse& WithSyncSource(Aws::String&& value) { SetSyncSource(std::move(value)); return *this;}
+
+    /**
+     * <p>The syncSource of the sync job, if this entity was created by a sync job.</p>
+     */
+    inline ComponentResponse& WithSyncSource(const char* value) { SetSyncSource(value); return *this;}
+
   private:
 
     Aws::String m_componentName;
@@ -392,6 +433,9 @@ namespace Model
 
     Aws::Map<Aws::String, ComponentPropertyGroupResponse> m_propertyGroups;
     bool m_propertyGroupsHasBeenSet = false;
+
+    Aws::String m_syncSource;
+    bool m_syncSourceHasBeenSet = false;
   };
 
 } // namespace Model

@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StringColumnStatisticsData">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API StringColumnStatisticsData
+  class StringColumnStatisticsData
   {
   public:
-    StringColumnStatisticsData();
-    StringColumnStatisticsData(Aws::Utils::Json::JsonView jsonValue);
-    StringColumnStatisticsData& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API StringColumnStatisticsData();
+    AWS_GLUE_API StringColumnStatisticsData(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API StringColumnStatisticsData& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

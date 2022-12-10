@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ProcessingClusterConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API ProcessingClusterConfig
+  class ProcessingClusterConfig
   {
   public:
-    ProcessingClusterConfig();
-    ProcessingClusterConfig(Aws::Utils::Json::JsonView jsonValue);
-    ProcessingClusterConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API ProcessingClusterConfig();
+    AWS_SAGEMAKER_API ProcessingClusterConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API ProcessingClusterConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

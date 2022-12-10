@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/EC2CreateRouteAction">AWS
    * API Reference</a></p>
    */
-  class AWS_FMS_API EC2CreateRouteAction
+  class EC2CreateRouteAction
   {
   public:
-    EC2CreateRouteAction();
-    EC2CreateRouteAction(Aws::Utils::Json::JsonView jsonValue);
-    EC2CreateRouteAction& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FMS_API EC2CreateRouteAction();
+    AWS_FMS_API EC2CreateRouteAction(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FMS_API EC2CreateRouteAction& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/AutoMLDataSplitConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API AutoMLDataSplitConfig
+  class AutoMLDataSplitConfig
   {
   public:
-    AutoMLDataSplitConfig();
-    AutoMLDataSplitConfig(Aws::Utils::Json::JsonView jsonValue);
-    AutoMLDataSplitConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API AutoMLDataSplitConfig();
+    AWS_SAGEMAKER_API AutoMLDataSplitConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API AutoMLDataSplitConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

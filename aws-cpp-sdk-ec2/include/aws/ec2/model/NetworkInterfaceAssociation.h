@@ -30,15 +30,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/NetworkInterfaceAssociation">AWS
    * API Reference</a></p>
    */
-  class AWS_EC2_API NetworkInterfaceAssociation
+  class NetworkInterfaceAssociation
   {
   public:
-    NetworkInterfaceAssociation();
-    NetworkInterfaceAssociation(const Aws::Utils::Xml::XmlNode& xmlNode);
-    NetworkInterfaceAssociation& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API NetworkInterfaceAssociation();
+    AWS_EC2_API NetworkInterfaceAssociation(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_EC2_API NetworkInterfaceAssociation& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/simspaceweaver-2022-10-28/SimulationClock">AWS
    * API Reference</a></p>
    */
-  class AWS_SIMSPACEWEAVER_API SimulationClock
+  class SimulationClock
   {
   public:
-    SimulationClock();
-    SimulationClock(Aws::Utils::Json::JsonView jsonValue);
-    SimulationClock& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SIMSPACEWEAVER_API SimulationClock();
+    AWS_SIMSPACEWEAVER_API SimulationClock(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SIMSPACEWEAVER_API SimulationClock& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SIMSPACEWEAVER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -25,12 +25,12 @@ namespace Connect
 {
 namespace Model
 {
-  class AWS_CONNECT_API GetFederationTokenResult
+  class GetFederationTokenResult
   {
   public:
-    GetFederationTokenResult();
-    GetFederationTokenResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetFederationTokenResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CONNECT_API GetFederationTokenResult();
+    AWS_CONNECT_API GetFederationTokenResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CONNECT_API GetFederationTokenResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

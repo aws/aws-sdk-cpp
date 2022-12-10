@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/OutpostConfigRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_EKS_API OutpostConfigRequest
+  class OutpostConfigRequest
   {
   public:
-    OutpostConfigRequest();
-    OutpostConfigRequest(Aws::Utils::Json::JsonView jsonValue);
-    OutpostConfigRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EKS_API OutpostConfigRequest();
+    AWS_EKS_API OutpostConfigRequest(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EKS_API OutpostConfigRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EKS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

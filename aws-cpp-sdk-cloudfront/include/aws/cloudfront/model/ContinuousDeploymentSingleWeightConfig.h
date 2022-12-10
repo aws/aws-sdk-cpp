@@ -23,42 +23,42 @@ namespace Model
 {
 
   /**
-   * <p>Contains the percentage of traffic to send to a staging distribution,
-   * expressed as a decimal number between 0 and 1.</p><p><h3>See Also:</h3>   <a
+   * <p>Contains the percentage of traffic to send to a staging
+   * distribution.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ContinuousDeploymentSingleWeightConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFRONT_API ContinuousDeploymentSingleWeightConfig
+  class ContinuousDeploymentSingleWeightConfig
   {
   public:
-    ContinuousDeploymentSingleWeightConfig();
-    ContinuousDeploymentSingleWeightConfig(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ContinuousDeploymentSingleWeightConfig& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API ContinuousDeploymentSingleWeightConfig();
+    AWS_CLOUDFRONT_API ContinuousDeploymentSingleWeightConfig(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFRONT_API ContinuousDeploymentSingleWeightConfig& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**
-     * <p>The percentage of traffic to send to the staging distribution, expressed as a
-     * decimal number between 0 and 1.</p>
+     * <p>The percentage of traffic to send to a staging distribution, expressed as a
+     * decimal number between 0 and .15.</p>
      */
     inline double GetWeight() const{ return m_weight; }
 
     /**
-     * <p>The percentage of traffic to send to the staging distribution, expressed as a
-     * decimal number between 0 and 1.</p>
+     * <p>The percentage of traffic to send to a staging distribution, expressed as a
+     * decimal number between 0 and .15.</p>
      */
     inline bool WeightHasBeenSet() const { return m_weightHasBeenSet; }
 
     /**
-     * <p>The percentage of traffic to send to the staging distribution, expressed as a
-     * decimal number between 0 and 1.</p>
+     * <p>The percentage of traffic to send to a staging distribution, expressed as a
+     * decimal number between 0 and .15.</p>
      */
     inline void SetWeight(double value) { m_weightHasBeenSet = true; m_weight = value; }
 
     /**
-     * <p>The percentage of traffic to send to the staging distribution, expressed as a
-     * decimal number between 0 and 1.</p>
+     * <p>The percentage of traffic to send to a staging distribution, expressed as a
+     * decimal number between 0 and .15.</p>
      */
     inline ContinuousDeploymentSingleWeightConfig& WithWeight(double value) { SetWeight(value); return *this;}
 

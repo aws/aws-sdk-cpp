@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/RelatedDeployments">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEDEPLOY_API RelatedDeployments
+  class RelatedDeployments
   {
   public:
-    RelatedDeployments();
-    RelatedDeployments(Aws::Utils::Json::JsonView jsonValue);
-    RelatedDeployments& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEDEPLOY_API RelatedDeployments();
+    AWS_CODEDEPLOY_API RelatedDeployments(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEDEPLOY_API RelatedDeployments& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEDEPLOY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

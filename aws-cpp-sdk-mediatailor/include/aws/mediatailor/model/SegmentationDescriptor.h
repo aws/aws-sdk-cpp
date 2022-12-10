@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/SegmentationDescriptor">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIATAILOR_API SegmentationDescriptor
+  class SegmentationDescriptor
   {
   public:
-    SegmentationDescriptor();
-    SegmentationDescriptor(Aws::Utils::Json::JsonView jsonValue);
-    SegmentationDescriptor& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MEDIATAILOR_API SegmentationDescriptor();
+    AWS_MEDIATAILOR_API SegmentationDescriptor(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIATAILOR_API SegmentationDescriptor& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MEDIATAILOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

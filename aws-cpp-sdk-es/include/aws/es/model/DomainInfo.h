@@ -24,13 +24,13 @@ namespace ElasticsearchService
 namespace Model
 {
 
-  class AWS_ELASTICSEARCHSERVICE_API DomainInfo
+  class DomainInfo
   {
   public:
-    DomainInfo();
-    DomainInfo(Aws::Utils::Json::JsonView jsonValue);
-    DomainInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ELASTICSEARCHSERVICE_API DomainInfo();
+    AWS_ELASTICSEARCHSERVICE_API DomainInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICSEARCHSERVICE_API DomainInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

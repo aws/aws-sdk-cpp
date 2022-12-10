@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-geospatial-2020-05-27/ExportErrorDetailsOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKERGEOSPATIAL_API ExportErrorDetailsOutput
+  class ExportErrorDetailsOutput
   {
   public:
-    ExportErrorDetailsOutput();
-    ExportErrorDetailsOutput(Aws::Utils::Json::JsonView jsonValue);
-    ExportErrorDetailsOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKERGEOSPATIAL_API ExportErrorDetailsOutput();
+    AWS_SAGEMAKERGEOSPATIAL_API ExportErrorDetailsOutput(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKERGEOSPATIAL_API ExportErrorDetailsOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKERGEOSPATIAL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CurrencyDisplayFormatConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API CurrencyDisplayFormatConfiguration
+  class CurrencyDisplayFormatConfiguration
   {
   public:
-    CurrencyDisplayFormatConfiguration();
-    CurrencyDisplayFormatConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    CurrencyDisplayFormatConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API CurrencyDisplayFormatConfiguration();
+    AWS_QUICKSIGHT_API CurrencyDisplayFormatConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API CurrencyDisplayFormatConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

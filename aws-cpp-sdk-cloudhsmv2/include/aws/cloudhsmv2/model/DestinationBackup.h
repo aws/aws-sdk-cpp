@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/DestinationBackup">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDHSMV2_API DestinationBackup
+  class DestinationBackup
   {
   public:
-    DestinationBackup();
-    DestinationBackup(Aws::Utils::Json::JsonView jsonValue);
-    DestinationBackup& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDHSMV2_API DestinationBackup();
+    AWS_CLOUDHSMV2_API DestinationBackup(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDHSMV2_API DestinationBackup& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDHSMV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

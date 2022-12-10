@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/ResourceInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_APPREGISTRY_API ResourceInfo
+  class ResourceInfo
   {
   public:
-    ResourceInfo();
-    ResourceInfo(Aws::Utils::Json::JsonView jsonValue);
-    ResourceInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPREGISTRY_API ResourceInfo();
+    AWS_APPREGISTRY_API ResourceInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPREGISTRY_API ResourceInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPREGISTRY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

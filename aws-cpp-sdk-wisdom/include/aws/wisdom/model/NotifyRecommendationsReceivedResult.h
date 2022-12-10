@@ -26,12 +26,12 @@ namespace ConnectWisdomService
 {
 namespace Model
 {
-  class AWS_CONNECTWISDOMSERVICE_API NotifyRecommendationsReceivedResult
+  class NotifyRecommendationsReceivedResult
   {
   public:
-    NotifyRecommendationsReceivedResult();
-    NotifyRecommendationsReceivedResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    NotifyRecommendationsReceivedResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CONNECTWISDOMSERVICE_API NotifyRecommendationsReceivedResult();
+    AWS_CONNECTWISDOMSERVICE_API NotifyRecommendationsReceivedResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_CONNECTWISDOMSERVICE_API NotifyRecommendationsReceivedResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

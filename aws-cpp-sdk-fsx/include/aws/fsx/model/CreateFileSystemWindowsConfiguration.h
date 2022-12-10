@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateFileSystemWindowsConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_FSX_API CreateFileSystemWindowsConfiguration
+  class CreateFileSystemWindowsConfiguration
   {
   public:
-    CreateFileSystemWindowsConfiguration();
-    CreateFileSystemWindowsConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    CreateFileSystemWindowsConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FSX_API CreateFileSystemWindowsConfiguration();
+    AWS_FSX_API CreateFileSystemWindowsConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API CreateFileSystemWindowsConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

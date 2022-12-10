@@ -22,12 +22,12 @@ namespace AutoScalingPlans
 {
 namespace Model
 {
-  class AWS_AUTOSCALINGPLANS_API UpdateScalingPlanResult
+  class UpdateScalingPlanResult
   {
   public:
-    UpdateScalingPlanResult();
-    UpdateScalingPlanResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateScalingPlanResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_AUTOSCALINGPLANS_API UpdateScalingPlanResult();
+    AWS_AUTOSCALINGPLANS_API UpdateScalingPlanResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_AUTOSCALINGPLANS_API UpdateScalingPlanResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

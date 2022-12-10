@@ -27,12 +27,12 @@ namespace RDS
 {
 namespace Model
 {
-  class AWS_RDS_API DescribeDBProxyEndpointsResult
+  class DescribeDBProxyEndpointsResult
   {
   public:
-    DescribeDBProxyEndpointsResult();
-    DescribeDBProxyEndpointsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeDBProxyEndpointsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_RDS_API DescribeDBProxyEndpointsResult();
+    AWS_RDS_API DescribeDBProxyEndpointsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_RDS_API DescribeDBProxyEndpointsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

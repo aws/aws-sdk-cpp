@@ -26,15 +26,15 @@ namespace ElastiCache
 namespace Model
 {
 
-  class AWS_ELASTICACHE_API User
+  class User
   {
   public:
-    User();
-    User(const Aws::Utils::Xml::XmlNode& xmlNode);
-    User& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICACHE_API User();
+    AWS_ELASTICACHE_API User(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICACHE_API User& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_ELASTICACHE_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_ELASTICACHE_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**

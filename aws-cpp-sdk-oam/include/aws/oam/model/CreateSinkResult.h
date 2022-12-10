@@ -25,12 +25,12 @@ namespace OAM
 {
 namespace Model
 {
-  class AWS_OAM_API CreateSinkResult
+  class CreateSinkResult
   {
   public:
-    CreateSinkResult();
-    CreateSinkResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateSinkResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OAM_API CreateSinkResult();
+    AWS_OAM_API CreateSinkResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OAM_API CreateSinkResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

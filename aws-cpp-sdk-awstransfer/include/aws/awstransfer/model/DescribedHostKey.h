@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribedHostKey">AWS
    * API Reference</a></p>
    */
-  class AWS_TRANSFER_API DescribedHostKey
+  class DescribedHostKey
   {
   public:
-    DescribedHostKey();
-    DescribedHostKey(Aws::Utils::Json::JsonView jsonValue);
-    DescribedHostKey& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TRANSFER_API DescribedHostKey();
+    AWS_TRANSFER_API DescribedHostKey(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSFER_API DescribedHostKey& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSFER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

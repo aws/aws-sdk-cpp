@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/BodySectionContent">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API BodySectionContent
+  class BodySectionContent
   {
   public:
-    BodySectionContent();
-    BodySectionContent(Aws::Utils::Json::JsonView jsonValue);
-    BodySectionContent& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API BodySectionContent();
+    AWS_QUICKSIGHT_API BodySectionContent(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API BodySectionContent& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

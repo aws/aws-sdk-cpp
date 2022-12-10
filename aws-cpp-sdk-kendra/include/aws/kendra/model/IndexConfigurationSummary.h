@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/IndexConfigurationSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_KENDRA_API IndexConfigurationSummary
+  class IndexConfigurationSummary
   {
   public:
-    IndexConfigurationSummary();
-    IndexConfigurationSummary(Aws::Utils::Json::JsonView jsonValue);
-    IndexConfigurationSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KENDRA_API IndexConfigurationSummary();
+    AWS_KENDRA_API IndexConfigurationSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API IndexConfigurationSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ConversationLogSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELSV2_API ConversationLogSettings
+  class ConversationLogSettings
   {
   public:
-    ConversationLogSettings();
-    ConversationLogSettings(Aws::Utils::Json::JsonView jsonValue);
-    ConversationLogSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELSV2_API ConversationLogSettings();
+    AWS_LEXMODELSV2_API ConversationLogSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API ConversationLogSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

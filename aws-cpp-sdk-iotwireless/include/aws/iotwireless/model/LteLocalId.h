@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/LteLocalId">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTWIRELESS_API LteLocalId
+  class LteLocalId
   {
   public:
-    LteLocalId();
-    LteLocalId(Aws::Utils::Json::JsonView jsonValue);
-    LteLocalId& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTWIRELESS_API LteLocalId();
+    AWS_IOTWIRELESS_API LteLocalId(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API LteLocalId& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

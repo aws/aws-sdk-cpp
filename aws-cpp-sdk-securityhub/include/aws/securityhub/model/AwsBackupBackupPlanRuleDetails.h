@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsBackupBackupPlanRuleDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsBackupBackupPlanRuleDetails
+  class AwsBackupBackupPlanRuleDetails
   {
   public:
-    AwsBackupBackupPlanRuleDetails();
-    AwsBackupBackupPlanRuleDetails(Aws::Utils::Json::JsonView jsonValue);
-    AwsBackupBackupPlanRuleDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsBackupBackupPlanRuleDetails();
+    AWS_SECURITYHUB_API AwsBackupBackupPlanRuleDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsBackupBackupPlanRuleDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

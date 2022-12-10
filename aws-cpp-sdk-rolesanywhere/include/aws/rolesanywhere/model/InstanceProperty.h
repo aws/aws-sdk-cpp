@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rolesanywhere-2018-05-10/InstanceProperty">AWS
    * API Reference</a></p>
    */
-  class AWS_ROLESANYWHERE_API InstanceProperty
+  class InstanceProperty
   {
   public:
-    InstanceProperty();
-    InstanceProperty(Aws::Utils::Json::JsonView jsonValue);
-    InstanceProperty& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ROLESANYWHERE_API InstanceProperty();
+    AWS_ROLESANYWHERE_API InstanceProperty(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROLESANYWHERE_API InstanceProperty& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROLESANYWHERE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

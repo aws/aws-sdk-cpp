@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/Coverage">AWS API
    * Reference</a></p>
    */
-  class AWS_COSTEXPLORER_API Coverage
+  class Coverage
   {
   public:
-    Coverage();
-    Coverage(Aws::Utils::Json::JsonView jsonValue);
-    Coverage& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COSTEXPLORER_API Coverage();
+    AWS_COSTEXPLORER_API Coverage(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API Coverage& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COSTEXPLORER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/SchedulingPolicyDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_BATCH_API SchedulingPolicyDetail
+  class SchedulingPolicyDetail
   {
   public:
-    SchedulingPolicyDetail();
-    SchedulingPolicyDetail(Aws::Utils::Json::JsonView jsonValue);
-    SchedulingPolicyDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BATCH_API SchedulingPolicyDetail();
+    AWS_BATCH_API SchedulingPolicyDetail(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BATCH_API SchedulingPolicyDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BATCH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

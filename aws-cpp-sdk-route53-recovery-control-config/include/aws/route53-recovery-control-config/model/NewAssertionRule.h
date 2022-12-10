@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/NewAssertionRule">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53RECOVERYCONTROLCONFIG_API NewAssertionRule
+  class NewAssertionRule
   {
   public:
-    NewAssertionRule();
-    NewAssertionRule(Aws::Utils::Json::JsonView jsonValue);
-    NewAssertionRule& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ROUTE53RECOVERYCONTROLCONFIG_API NewAssertionRule();
+    AWS_ROUTE53RECOVERYCONTROLCONFIG_API NewAssertionRule(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROUTE53RECOVERYCONTROLCONFIG_API NewAssertionRule& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROUTE53RECOVERYCONTROLCONFIG_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

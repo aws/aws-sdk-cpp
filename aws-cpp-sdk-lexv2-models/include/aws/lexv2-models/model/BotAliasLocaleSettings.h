@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/BotAliasLocaleSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_LEXMODELSV2_API BotAliasLocaleSettings
+  class BotAliasLocaleSettings
   {
   public:
-    BotAliasLocaleSettings();
-    BotAliasLocaleSettings(Aws::Utils::Json::JsonView jsonValue);
-    BotAliasLocaleSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LEXMODELSV2_API BotAliasLocaleSettings();
+    AWS_LEXMODELSV2_API BotAliasLocaleSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API BotAliasLocaleSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

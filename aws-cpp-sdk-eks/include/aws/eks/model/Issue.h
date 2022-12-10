@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/Issue">AWS API
    * Reference</a></p>
    */
-  class AWS_EKS_API Issue
+  class Issue
   {
   public:
-    Issue();
-    Issue(Aws::Utils::Json::JsonView jsonValue);
-    Issue& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EKS_API Issue();
+    AWS_EKS_API Issue(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EKS_API Issue& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EKS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

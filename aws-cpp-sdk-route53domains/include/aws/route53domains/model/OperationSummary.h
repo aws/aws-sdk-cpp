@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/OperationSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53DOMAINS_API OperationSummary
+  class OperationSummary
   {
   public:
-    OperationSummary();
-    OperationSummary(Aws::Utils::Json::JsonView jsonValue);
-    OperationSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ROUTE53DOMAINS_API OperationSummary();
+    AWS_ROUTE53DOMAINS_API OperationSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROUTE53DOMAINS_API OperationSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ROUTE53DOMAINS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

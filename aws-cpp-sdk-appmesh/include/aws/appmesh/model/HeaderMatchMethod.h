@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/HeaderMatchMethod">AWS
    * API Reference</a></p>
    */
-  class AWS_APPMESH_API HeaderMatchMethod
+  class HeaderMatchMethod
   {
   public:
-    HeaderMatchMethod();
-    HeaderMatchMethod(Aws::Utils::Json::JsonView jsonValue);
-    HeaderMatchMethod& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPMESH_API HeaderMatchMethod();
+    AWS_APPMESH_API HeaderMatchMethod(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API HeaderMatchMethod& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/BuildBatchPhase">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEBUILD_API BuildBatchPhase
+  class BuildBatchPhase
   {
   public:
-    BuildBatchPhase();
-    BuildBatchPhase(Aws::Utils::Json::JsonView jsonValue);
-    BuildBatchPhase& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEBUILD_API BuildBatchPhase();
+    AWS_CODEBUILD_API BuildBatchPhase(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEBUILD_API BuildBatchPhase& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEBUILD_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

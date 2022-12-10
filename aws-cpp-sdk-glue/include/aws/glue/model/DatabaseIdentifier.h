@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DatabaseIdentifier">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API DatabaseIdentifier
+  class DatabaseIdentifier
   {
   public:
-    DatabaseIdentifier();
-    DatabaseIdentifier(Aws::Utils::Json::JsonView jsonValue);
-    DatabaseIdentifier& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API DatabaseIdentifier();
+    AWS_GLUE_API DatabaseIdentifier(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API DatabaseIdentifier& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

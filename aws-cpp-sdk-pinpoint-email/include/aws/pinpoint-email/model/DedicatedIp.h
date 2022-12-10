@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/DedicatedIp">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINTEMAIL_API DedicatedIp
+  class DedicatedIp
   {
   public:
-    DedicatedIp();
-    DedicatedIp(Aws::Utils::Json::JsonView jsonValue);
-    DedicatedIp& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINTEMAIL_API DedicatedIp();
+    AWS_PINPOINTEMAIL_API DedicatedIp(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINTEMAIL_API DedicatedIp& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINTEMAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

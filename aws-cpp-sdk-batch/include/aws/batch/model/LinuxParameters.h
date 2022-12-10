@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/LinuxParameters">AWS
    * API Reference</a></p>
    */
-  class AWS_BATCH_API LinuxParameters
+  class LinuxParameters
   {
   public:
-    LinuxParameters();
-    LinuxParameters(Aws::Utils::Json::JsonView jsonValue);
-    LinuxParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_BATCH_API LinuxParameters();
+    AWS_BATCH_API LinuxParameters(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BATCH_API LinuxParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_BATCH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

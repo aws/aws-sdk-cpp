@@ -7,6 +7,7 @@
 #include <aws/route53domains/Route53Domains_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/route53domains/Route53DomainsServiceClientModel.h>
 
@@ -18,7 +19,7 @@ namespace Route53Domains
    * <p>Amazon Route 53 API actions let you register domain names and perform related
    * operations.</p>
    */
-  class AWS_ROUTE53DOMAINS_API Route53DomainsClient : public Aws::Client::AWSJsonClient
+  class AWS_ROUTE53DOMAINS_API Route53DomainsClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<Route53DomainsClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -72,7 +73,6 @@ namespace Route53Domains
 
         /* End of legacy constructors due deprecation */
         virtual ~Route53DomainsClient();
-
 
         /**
          * <p>Accepts the transfer of a domain from another Amazon Web Services account to
@@ -812,6 +812,7 @@ namespace Route53Domains
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<Route53DomainsEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<Route53DomainsClient>;
       void init(const Route53DomainsClientConfiguration& clientConfiguration);
 
       Route53DomainsClientConfiguration m_clientConfiguration;

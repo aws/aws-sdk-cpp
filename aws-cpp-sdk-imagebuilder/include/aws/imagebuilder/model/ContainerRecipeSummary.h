@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ContainerRecipeSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_IMAGEBUILDER_API ContainerRecipeSummary
+  class ContainerRecipeSummary
   {
   public:
-    ContainerRecipeSummary();
-    ContainerRecipeSummary(Aws::Utils::Json::JsonView jsonValue);
-    ContainerRecipeSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IMAGEBUILDER_API ContainerRecipeSummary();
+    AWS_IMAGEBUILDER_API ContainerRecipeSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IMAGEBUILDER_API ContainerRecipeSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IMAGEBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

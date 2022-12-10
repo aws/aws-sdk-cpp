@@ -21,13 +21,13 @@ namespace ChimeSDKVoice
 namespace Model
 {
 
-  class AWS_CHIMESDKVOICE_API LoggingConfiguration
+  class LoggingConfiguration
   {
   public:
-    LoggingConfiguration();
-    LoggingConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    LoggingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIMESDKVOICE_API LoggingConfiguration();
+    AWS_CHIMESDKVOICE_API LoggingConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKVOICE_API LoggingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKVOICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

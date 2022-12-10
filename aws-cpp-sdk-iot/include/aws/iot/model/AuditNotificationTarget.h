@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/AuditNotificationTarget">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API AuditNotificationTarget
+  class AuditNotificationTarget
   {
   public:
-    AuditNotificationTarget();
-    AuditNotificationTarget(Aws::Utils::Json::JsonView jsonValue);
-    AuditNotificationTarget& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API AuditNotificationTarget();
+    AWS_IOT_API AuditNotificationTarget(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API AuditNotificationTarget& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

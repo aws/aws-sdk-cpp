@@ -25,12 +25,12 @@ namespace Appflow
 {
 namespace Model
 {
-  class AWS_APPFLOW_API StopFlowResult
+  class StopFlowResult
   {
   public:
-    StopFlowResult();
-    StopFlowResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    StopFlowResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPFLOW_API StopFlowResult();
+    AWS_APPFLOW_API StopFlowResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_APPFLOW_API StopFlowResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

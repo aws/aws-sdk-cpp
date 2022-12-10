@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/InferenceExperimentSchedule">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API InferenceExperimentSchedule
+  class InferenceExperimentSchedule
   {
   public:
-    InferenceExperimentSchedule();
-    InferenceExperimentSchedule(Aws::Utils::Json::JsonView jsonValue);
-    InferenceExperimentSchedule& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API InferenceExperimentSchedule();
+    AWS_SAGEMAKER_API InferenceExperimentSchedule(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API InferenceExperimentSchedule& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

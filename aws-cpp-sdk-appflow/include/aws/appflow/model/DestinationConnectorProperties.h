@@ -41,13 +41,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/DestinationConnectorProperties">AWS
    * API Reference</a></p>
    */
-  class AWS_APPFLOW_API DestinationConnectorProperties
+  class DestinationConnectorProperties
   {
   public:
-    DestinationConnectorProperties();
-    DestinationConnectorProperties(Aws::Utils::Json::JsonView jsonValue);
-    DestinationConnectorProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPFLOW_API DestinationConnectorProperties();
+    AWS_APPFLOW_API DestinationConnectorProperties(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API DestinationConnectorProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

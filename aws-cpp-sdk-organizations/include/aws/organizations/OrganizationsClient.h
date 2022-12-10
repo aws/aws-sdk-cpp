@@ -7,6 +7,7 @@
 #include <aws/organizations/Organizations_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/organizations/OrganizationsServiceClientModel.h>
 
@@ -62,7 +63,7 @@ namespace Organizations
    * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/what_is_cloud_trail_top_level.html">CloudTrail
    * User Guide</a>.</p>
    */
-  class AWS_ORGANIZATIONS_API OrganizationsClient : public Aws::Client::AWSJsonClient
+  class AWS_ORGANIZATIONS_API OrganizationsClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<OrganizationsClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -116,7 +117,6 @@ namespace Organizations
 
         /* End of legacy constructors due deprecation */
         virtual ~OrganizationsClient();
-
 
         /**
          * <p>Sends a response to the originator of a handshake agreeing to the action
@@ -1776,6 +1776,7 @@ namespace Organizations
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<OrganizationsEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<OrganizationsClient>;
       void init(const OrganizationsClientConfiguration& clientConfiguration);
 
       OrganizationsClientConfiguration m_clientConfiguration;

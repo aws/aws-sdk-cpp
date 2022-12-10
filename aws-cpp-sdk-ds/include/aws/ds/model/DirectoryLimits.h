@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DirectoryLimits">AWS
    * API Reference</a></p>
    */
-  class AWS_DIRECTORYSERVICE_API DirectoryLimits
+  class DirectoryLimits
   {
   public:
-    DirectoryLimits();
-    DirectoryLimits(Aws::Utils::Json::JsonView jsonValue);
-    DirectoryLimits& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DIRECTORYSERVICE_API DirectoryLimits();
+    AWS_DIRECTORYSERVICE_API DirectoryLimits(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTORYSERVICE_API DirectoryLimits& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTORYSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

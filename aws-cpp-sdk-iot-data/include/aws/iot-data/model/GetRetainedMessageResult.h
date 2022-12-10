@@ -31,12 +31,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-data-2015-05-28/GetRetainedMessageResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTDATAPLANE_API GetRetainedMessageResult
+  class GetRetainedMessageResult
   {
   public:
-    GetRetainedMessageResult();
-    GetRetainedMessageResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetRetainedMessageResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOTDATAPLANE_API GetRetainedMessageResult();
+    AWS_IOTDATAPLANE_API GetRetainedMessageResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOTDATAPLANE_API GetRetainedMessageResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/BatchRestrictions">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEBUILD_API BatchRestrictions
+  class BatchRestrictions
   {
   public:
-    BatchRestrictions();
-    BatchRestrictions(Aws::Utils::Json::JsonView jsonValue);
-    BatchRestrictions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEBUILD_API BatchRestrictions();
+    AWS_CODEBUILD_API BatchRestrictions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEBUILD_API BatchRestrictions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEBUILD_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

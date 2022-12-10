@@ -31,12 +31,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeLoadBasedAutoScalingResult">AWS
    * API Reference</a></p>
    */
-  class AWS_OPSWORKS_API DescribeLoadBasedAutoScalingResult
+  class DescribeLoadBasedAutoScalingResult
   {
   public:
-    DescribeLoadBasedAutoScalingResult();
-    DescribeLoadBasedAutoScalingResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DescribeLoadBasedAutoScalingResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OPSWORKS_API DescribeLoadBasedAutoScalingResult();
+    AWS_OPSWORKS_API DescribeLoadBasedAutoScalingResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OPSWORKS_API DescribeLoadBasedAutoScalingResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

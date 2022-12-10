@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-roborunner-2018-05-10/CartesianCoordinates">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTROBORUNNER_API CartesianCoordinates
+  class CartesianCoordinates
   {
   public:
-    CartesianCoordinates();
-    CartesianCoordinates(Aws::Utils::Json::JsonView jsonValue);
-    CartesianCoordinates& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTROBORUNNER_API CartesianCoordinates();
+    AWS_IOTROBORUNNER_API CartesianCoordinates(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTROBORUNNER_API CartesianCoordinates& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTROBORUNNER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

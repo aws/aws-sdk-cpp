@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/WorkflowTypeInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_SWF_API WorkflowTypeInfo
+  class WorkflowTypeInfo
   {
   public:
-    WorkflowTypeInfo();
-    WorkflowTypeInfo(Aws::Utils::Json::JsonView jsonValue);
-    WorkflowTypeInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SWF_API WorkflowTypeInfo();
+    AWS_SWF_API WorkflowTypeInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SWF_API WorkflowTypeInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SWF_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

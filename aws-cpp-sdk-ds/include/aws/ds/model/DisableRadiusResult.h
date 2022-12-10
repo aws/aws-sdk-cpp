@@ -28,12 +28,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DisableRadiusResult">AWS
    * API Reference</a></p>
    */
-  class AWS_DIRECTORYSERVICE_API DisableRadiusResult
+  class DisableRadiusResult
   {
   public:
-    DisableRadiusResult();
-    DisableRadiusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    DisableRadiusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DIRECTORYSERVICE_API DisableRadiusResult();
+    AWS_DIRECTORYSERVICE_API DisableRadiusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_DIRECTORYSERVICE_API DisableRadiusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

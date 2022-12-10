@@ -7,6 +7,7 @@
 #include <aws/pi/PI_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/pi/PIServiceClientModel.h>
 
@@ -39,7 +40,7 @@ namespace PI
    * href="https://docs.aws.amazon.com/documentdb/latest/developerguide/performance-insights.html">
    * Amazon DocumentDB Developer Guide</a> </i>.</p> </li> </ul>
    */
-  class AWS_PI_API PIClient : public Aws::Client::AWSJsonClient
+  class AWS_PI_API PIClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<PIClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -93,7 +94,6 @@ namespace PI
 
         /* End of legacy constructors due deprecation */
         virtual ~PIClient();
-
 
         /**
          * <p>For a specific time period, retrieve the top <code>N</code> dimension keys
@@ -219,6 +219,7 @@ namespace PI
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<PIEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<PIClient>;
       void init(const PIClientConfiguration& clientConfiguration);
 
       PIClientConfiguration m_clientConfiguration;

@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/ContainerServicePower">AWS
    * API Reference</a></p>
    */
-  class AWS_LIGHTSAIL_API ContainerServicePower
+  class ContainerServicePower
   {
   public:
-    ContainerServicePower();
-    ContainerServicePower(Aws::Utils::Json::JsonView jsonValue);
-    ContainerServicePower& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LIGHTSAIL_API ContainerServicePower();
+    AWS_LIGHTSAIL_API ContainerServicePower(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API ContainerServicePower& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

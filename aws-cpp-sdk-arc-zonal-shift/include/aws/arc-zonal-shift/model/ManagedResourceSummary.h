@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/arc-zonal-shift-2022-10-30/ManagedResourceSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_ARCZONALSHIFT_API ManagedResourceSummary
+  class ManagedResourceSummary
   {
   public:
-    ManagedResourceSummary();
-    ManagedResourceSummary(Aws::Utils::Json::JsonView jsonValue);
-    ManagedResourceSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ARCZONALSHIFT_API ManagedResourceSummary();
+    AWS_ARCZONALSHIFT_API ManagedResourceSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ARCZONALSHIFT_API ManagedResourceSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ARCZONALSHIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

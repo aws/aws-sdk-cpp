@@ -7,6 +7,7 @@
 #include <aws/finspace/Finspace_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/finspace/FinspaceServiceClientModel.h>
 
@@ -18,7 +19,7 @@ namespace finspace
    * <p>The FinSpace management service provides the APIs for managing FinSpace
    * environments.</p>
    */
-  class AWS_FINSPACE_API FinspaceClient : public Aws::Client::AWSJsonClient
+  class AWS_FINSPACE_API FinspaceClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<FinspaceClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -72,7 +73,6 @@ namespace finspace
 
         /* End of legacy constructors due deprecation */
         virtual ~FinspaceClient();
-
 
         /**
          * <p>Create a new FinSpace environment.</p><p><h3>See Also:</h3>   <a
@@ -214,6 +214,7 @@ namespace finspace
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<FinspaceEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<FinspaceClient>;
       void init(const FinspaceClientConfiguration& clientConfiguration);
 
       FinspaceClientConfiguration m_clientConfiguration;

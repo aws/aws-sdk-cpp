@@ -31,12 +31,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/ListAnalyzersResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_ACCESSANALYZER_API ListAnalyzersResult
+  class ListAnalyzersResult
   {
   public:
-    ListAnalyzersResult();
-    ListAnalyzersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListAnalyzersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ACCESSANALYZER_API ListAnalyzersResult();
+    AWS_ACCESSANALYZER_API ListAnalyzersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ACCESSANALYZER_API ListAnalyzersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

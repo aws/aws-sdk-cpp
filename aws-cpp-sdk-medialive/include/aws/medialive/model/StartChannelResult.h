@@ -43,12 +43,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/StartChannelResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_MEDIALIVE_API StartChannelResult
+  class StartChannelResult
   {
   public:
-    StartChannelResult();
-    StartChannelResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    StartChannelResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MEDIALIVE_API StartChannelResult();
+    AWS_MEDIALIVE_API StartChannelResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MEDIALIVE_API StartChannelResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

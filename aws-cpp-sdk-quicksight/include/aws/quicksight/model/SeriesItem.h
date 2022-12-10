@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/SeriesItem">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API SeriesItem
+  class SeriesItem
   {
   public:
-    SeriesItem();
-    SeriesItem(Aws::Utils::Json::JsonView jsonValue);
-    SeriesItem& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API SeriesItem();
+    AWS_QUICKSIGHT_API SeriesItem(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API SeriesItem& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

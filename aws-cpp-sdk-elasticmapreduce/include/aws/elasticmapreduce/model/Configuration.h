@@ -38,13 +38,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/Configuration">AWS
    * API Reference</a></p>
    */
-  class AWS_EMR_API Configuration
+  class Configuration
   {
   public:
-    Configuration();
-    Configuration(Aws::Utils::Json::JsonView jsonValue);
-    Configuration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EMR_API Configuration();
+    AWS_EMR_API Configuration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMR_API Configuration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

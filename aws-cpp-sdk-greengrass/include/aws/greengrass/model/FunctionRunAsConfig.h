@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/FunctionRunAsConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_GREENGRASS_API FunctionRunAsConfig
+  class FunctionRunAsConfig
   {
   public:
-    FunctionRunAsConfig();
-    FunctionRunAsConfig(Aws::Utils::Json::JsonView jsonValue);
-    FunctionRunAsConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GREENGRASS_API FunctionRunAsConfig();
+    AWS_GREENGRASS_API FunctionRunAsConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASS_API FunctionRunAsConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GREENGRASS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

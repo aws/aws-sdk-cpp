@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/HumanLoopActivationOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_REKOGNITION_API HumanLoopActivationOutput
+  class HumanLoopActivationOutput
   {
   public:
-    HumanLoopActivationOutput();
-    HumanLoopActivationOutput(Aws::Utils::Json::JsonView jsonValue);
-    HumanLoopActivationOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_REKOGNITION_API HumanLoopActivationOutput();
+    AWS_REKOGNITION_API HumanLoopActivationOutput(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API HumanLoopActivationOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

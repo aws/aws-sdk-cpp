@@ -25,12 +25,12 @@ namespace RAM
 {
 namespace Model
 {
-  class AWS_RAM_API AcceptResourceShareInvitationResult
+  class AcceptResourceShareInvitationResult
   {
   public:
-    AcceptResourceShareInvitationResult();
-    AcceptResourceShareInvitationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AcceptResourceShareInvitationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_RAM_API AcceptResourceShareInvitationResult();
+    AWS_RAM_API AcceptResourceShareInvitationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_RAM_API AcceptResourceShareInvitationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

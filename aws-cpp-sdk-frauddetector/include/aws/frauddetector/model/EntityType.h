@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/EntityType">AWS
    * API Reference</a></p>
    */
-  class AWS_FRAUDDETECTOR_API EntityType
+  class EntityType
   {
   public:
-    EntityType();
-    EntityType(Aws::Utils::Json::JsonView jsonValue);
-    EntityType& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FRAUDDETECTOR_API EntityType();
+    AWS_FRAUDDETECTOR_API EntityType(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FRAUDDETECTOR_API EntityType& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FRAUDDETECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

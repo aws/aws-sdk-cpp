@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/ResourceInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_LAKEFORMATION_API ResourceInfo
+  class ResourceInfo
   {
   public:
-    ResourceInfo();
-    ResourceInfo(Aws::Utils::Json::JsonView jsonValue);
-    ResourceInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LAKEFORMATION_API ResourceInfo();
+    AWS_LAKEFORMATION_API ResourceInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAKEFORMATION_API ResourceInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAKEFORMATION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

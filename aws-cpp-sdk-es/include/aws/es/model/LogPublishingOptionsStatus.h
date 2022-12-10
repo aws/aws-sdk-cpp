@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/LogPublishingOptionsStatus">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICSEARCHSERVICE_API LogPublishingOptionsStatus
+  class LogPublishingOptionsStatus
   {
   public:
-    LogPublishingOptionsStatus();
-    LogPublishingOptionsStatus(Aws::Utils::Json::JsonView jsonValue);
-    LogPublishingOptionsStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ELASTICSEARCHSERVICE_API LogPublishingOptionsStatus();
+    AWS_ELASTICSEARCHSERVICE_API LogPublishingOptionsStatus(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICSEARCHSERVICE_API LogPublishingOptionsStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ELASTICSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

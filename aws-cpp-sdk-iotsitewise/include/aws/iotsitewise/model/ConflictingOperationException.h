@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ConflictingOperationException">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTSITEWISE_API ConflictingOperationException
+  class ConflictingOperationException
   {
   public:
-    ConflictingOperationException();
-    ConflictingOperationException(Aws::Utils::Json::JsonView jsonValue);
-    ConflictingOperationException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTSITEWISE_API ConflictingOperationException();
+    AWS_IOTSITEWISE_API ConflictingOperationException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API ConflictingOperationException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

@@ -7,6 +7,7 @@
 #include <aws/imagebuilder/Imagebuilder_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/imagebuilder/ImagebuilderServiceClientModel.h>
 
@@ -20,7 +21,7 @@ namespace imagebuilder
    * secure, and up-to-date "golden" server images that are pre-installed and
    * pre-configured with software and settings to meet specific IT standards.</p>
    */
-  class AWS_IMAGEBUILDER_API ImagebuilderClient : public Aws::Client::AWSJsonClient
+  class AWS_IMAGEBUILDER_API ImagebuilderClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<ImagebuilderClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -74,7 +75,6 @@ namespace imagebuilder
 
         /* End of legacy constructors due deprecation */
         virtual ~ImagebuilderClient();
-
 
         /**
          * <p>CancelImageCreation cancels the creation of Image. This operation can only be
@@ -1026,6 +1026,7 @@ namespace imagebuilder
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<ImagebuilderEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<ImagebuilderClient>;
       void init(const ImagebuilderClientConfiguration& clientConfiguration);
 
       ImagebuilderClientConfiguration m_clientConfiguration;

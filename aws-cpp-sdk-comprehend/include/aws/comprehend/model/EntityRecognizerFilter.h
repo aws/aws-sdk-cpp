@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/EntityRecognizerFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_COMPREHEND_API EntityRecognizerFilter
+  class EntityRecognizerFilter
   {
   public:
-    EntityRecognizerFilter();
-    EntityRecognizerFilter(Aws::Utils::Json::JsonView jsonValue);
-    EntityRecognizerFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COMPREHEND_API EntityRecognizerFilter();
+    AWS_COMPREHEND_API EntityRecognizerFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHEND_API EntityRecognizerFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHEND_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

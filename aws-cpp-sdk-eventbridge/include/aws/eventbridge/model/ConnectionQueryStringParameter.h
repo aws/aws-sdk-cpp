@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/ConnectionQueryStringParameter">AWS
    * API Reference</a></p>
    */
-  class AWS_EVENTBRIDGE_API ConnectionQueryStringParameter
+  class ConnectionQueryStringParameter
   {
   public:
-    ConnectionQueryStringParameter();
-    ConnectionQueryStringParameter(Aws::Utils::Json::JsonView jsonValue);
-    ConnectionQueryStringParameter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EVENTBRIDGE_API ConnectionQueryStringParameter();
+    AWS_EVENTBRIDGE_API ConnectionQueryStringParameter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EVENTBRIDGE_API ConnectionQueryStringParameter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EVENTBRIDGE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

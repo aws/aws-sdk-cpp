@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/LimitExceededException">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTFLEETWISE_API LimitExceededException
+  class LimitExceededException
   {
   public:
-    LimitExceededException();
-    LimitExceededException(Aws::Utils::Json::JsonView jsonValue);
-    LimitExceededException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTFLEETWISE_API LimitExceededException();
+    AWS_IOTFLEETWISE_API LimitExceededException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTFLEETWISE_API LimitExceededException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTFLEETWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

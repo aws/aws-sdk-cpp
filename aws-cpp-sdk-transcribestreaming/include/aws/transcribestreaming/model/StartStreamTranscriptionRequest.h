@@ -28,10 +28,10 @@ namespace Model
 
   /**
    */
-  class AWS_TRANSCRIBESTREAMINGSERVICE_API StartStreamTranscriptionRequest : public TranscribeStreamingServiceRequest
+  class StartStreamTranscriptionRequest : public TranscribeStreamingServiceRequest
   {
   public:
-    StartStreamTranscriptionRequest();
+    AWS_TRANSCRIBESTREAMINGSERVICE_API StartStreamTranscriptionRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,9 +42,9 @@ namespace Model
     inline virtual bool IsEventStreamRequest() const override { return true; }
     // SerializePayload will not be invoked.
     // This request is sent by encoding its data in event-streams which is sent as IOStream via GetBody()
-    Aws::String SerializePayload() const override { return {}; }
-    std::shared_ptr<Aws::IOStream> GetBody() const override;
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_TRANSCRIBESTREAMINGSERVICE_API Aws::String SerializePayload() const override { return {}; }
+    AWS_TRANSCRIBESTREAMINGSERVICE_API std::shared_ptr<Aws::IOStream> GetBody() const override;
+    AWS_TRANSCRIBESTREAMINGSERVICE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
     /**
      * Underlying Event Stream Decoder.
@@ -420,7 +420,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/streaming.html">Transcribing
      * streaming audio</a>.</p>
      */
-    std::shared_ptr<AudioStream> GetAudioStream() const { return m_audioStream; }
+    AWS_TRANSCRIBESTREAMINGSERVICE_API std::shared_ptr<AudioStream> GetAudioStream() const { return m_audioStream; }
 
     /**
      * <p>An encoded stream of audio blobs. Audio streams are encoded as either HTTP/2
@@ -428,7 +428,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/streaming.html">Transcribing
      * streaming audio</a>.</p>
      */
-    void SetAudioStream(const std::shared_ptr<AudioStream>& value) { m_audioStream = value; }
+    AWS_TRANSCRIBESTREAMINGSERVICE_API void SetAudioStream(const std::shared_ptr<AudioStream>& value) { m_audioStream = value; }
 
     /**
      * <p>An encoded stream of audio blobs. Audio streams are encoded as either HTTP/2
@@ -436,7 +436,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/streaming.html">Transcribing
      * streaming audio</a>.</p>
      */
-    StartStreamTranscriptionRequest& WithAudioStream(const std::shared_ptr<AudioStream>& value) { SetAudioStream(value); return *this;}
+    AWS_TRANSCRIBESTREAMINGSERVICE_API StartStreamTranscriptionRequest& WithAudioStream(const std::shared_ptr<AudioStream>& value) { SetAudioStream(value); return *this;}
 
 
     /**

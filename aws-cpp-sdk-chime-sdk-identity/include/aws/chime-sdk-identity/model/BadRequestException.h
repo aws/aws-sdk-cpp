@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/BadRequestException">AWS
    * API Reference</a></p>
    */
-  class AWS_CHIMESDKIDENTITY_API BadRequestException
+  class BadRequestException
   {
   public:
-    BadRequestException();
-    BadRequestException(Aws::Utils::Json::JsonView jsonValue);
-    BadRequestException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIMESDKIDENTITY_API BadRequestException();
+    AWS_CHIMESDKIDENTITY_API BadRequestException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKIDENTITY_API BadRequestException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIMESDKIDENTITY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

@@ -29,13 +29,13 @@ namespace Model
    * <a href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/Tag">AWS
    * API Reference</a></p>
    */
-  class AWS_EVENTBRIDGE_API Tag
+  class Tag
   {
   public:
-    Tag();
-    Tag(Aws::Utils::Json::JsonView jsonValue);
-    Tag& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EVENTBRIDGE_API Tag();
+    AWS_EVENTBRIDGE_API Tag(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EVENTBRIDGE_API Tag& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EVENTBRIDGE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

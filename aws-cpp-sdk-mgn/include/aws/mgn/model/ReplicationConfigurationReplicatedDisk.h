@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ReplicationConfigurationReplicatedDisk">AWS
    * API Reference</a></p>
    */
-  class AWS_MGN_API ReplicationConfigurationReplicatedDisk
+  class ReplicationConfigurationReplicatedDisk
   {
   public:
-    ReplicationConfigurationReplicatedDisk();
-    ReplicationConfigurationReplicatedDisk(Aws::Utils::Json::JsonView jsonValue);
-    ReplicationConfigurationReplicatedDisk& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MGN_API ReplicationConfigurationReplicatedDisk();
+    AWS_MGN_API ReplicationConfigurationReplicatedDisk(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MGN_API ReplicationConfigurationReplicatedDisk& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MGN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

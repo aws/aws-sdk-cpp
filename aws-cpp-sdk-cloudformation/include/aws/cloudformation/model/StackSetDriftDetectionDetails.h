@@ -38,15 +38,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/StackSetDriftDetectionDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDFORMATION_API StackSetDriftDetectionDetails
+  class StackSetDriftDetectionDetails
   {
   public:
-    StackSetDriftDetectionDetails();
-    StackSetDriftDetectionDetails(const Aws::Utils::Xml::XmlNode& xmlNode);
-    StackSetDriftDetectionDetails& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFORMATION_API StackSetDriftDetectionDetails();
+    AWS_CLOUDFORMATION_API StackSetDriftDetectionDetails(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_CLOUDFORMATION_API StackSetDriftDetectionDetails& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_CLOUDFORMATION_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_CLOUDFORMATION_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**

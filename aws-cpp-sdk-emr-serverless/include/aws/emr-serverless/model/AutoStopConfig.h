@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/emr-serverless-2021-07-13/AutoStopConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_EMRSERVERLESS_API AutoStopConfig
+  class AutoStopConfig
   {
   public:
-    AutoStopConfig();
-    AutoStopConfig(Aws::Utils::Json::JsonView jsonValue);
-    AutoStopConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EMRSERVERLESS_API AutoStopConfig();
+    AWS_EMRSERVERLESS_API AutoStopConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMRSERVERLESS_API AutoStopConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EMRSERVERLESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

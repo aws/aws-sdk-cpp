@@ -7,6 +7,7 @@
 #include <aws/iotthingsgraph/IoTThingsGraph_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/iotthingsgraph/IoTThingsGraphServiceClientModel.h>
 
@@ -25,7 +26,7 @@ namespace IoTThingsGraph
    * href="https://docs.aws.amazon.com/thingsgraph/latest/ug/iot-tg-whatis.html">User
    * Guide</a>.</p> <p>The AWS IoT Things Graph service is discontinued.</p>
    */
-  class AWS_IOTTHINGSGRAPH_API IoTThingsGraphClient : public Aws::Client::AWSJsonClient
+  class AWS_IOTTHINGSGRAPH_API IoTThingsGraphClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<IoTThingsGraphClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -81,10 +82,10 @@ namespace IoTThingsGraph
         virtual ~IoTThingsGraphClient();
 
 
-
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<IoTThingsGraphEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<IoTThingsGraphClient>;
       void init(const IoTThingsGraphClientConfiguration& clientConfiguration);
 
       IoTThingsGraphClientConfiguration m_clientConfiguration;

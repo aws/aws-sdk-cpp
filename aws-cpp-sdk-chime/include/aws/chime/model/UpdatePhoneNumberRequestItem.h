@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdatePhoneNumberRequestItem">AWS
    * API Reference</a></p>
    */
-  class AWS_CHIME_API UpdatePhoneNumberRequestItem
+  class UpdatePhoneNumberRequestItem
   {
   public:
-    UpdatePhoneNumberRequestItem();
-    UpdatePhoneNumberRequestItem(Aws::Utils::Json::JsonView jsonValue);
-    UpdatePhoneNumberRequestItem& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIME_API UpdatePhoneNumberRequestItem();
+    AWS_CHIME_API UpdatePhoneNumberRequestItem(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API UpdatePhoneNumberRequestItem& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

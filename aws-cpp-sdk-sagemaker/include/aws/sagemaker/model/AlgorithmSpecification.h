@@ -37,13 +37,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/AlgorithmSpecification">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API AlgorithmSpecification
+  class AlgorithmSpecification
   {
   public:
-    AlgorithmSpecification();
-    AlgorithmSpecification(Aws::Utils::Json::JsonView jsonValue);
-    AlgorithmSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API AlgorithmSpecification();
+    AWS_SAGEMAKER_API AlgorithmSpecification(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API AlgorithmSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

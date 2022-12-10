@@ -7,6 +7,7 @@
 #include <aws/elasticfilesystem/EFS_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/elasticfilesystem/EFSServiceClientModel.h>
 
@@ -26,7 +27,7 @@ namespace EFS
    * href="https://docs.aws.amazon.com/efs/latest/ug/whatisefs.html">Amazon Elastic
    * File System User Guide</a>.</p>
    */
-  class AWS_EFS_API EFSClient : public Aws::Client::AWSJsonClient
+  class AWS_EFS_API EFSClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<EFSClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -80,7 +81,6 @@ namespace EFS
 
         /* End of legacy constructors due deprecation */
         virtual ~EFSClient();
-
 
         /**
          * <p>Creates an EFS access point. An access point is an application-specific view
@@ -916,6 +916,7 @@ namespace EFS
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<EFSEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<EFSClient>;
       void init(const EFSClientConfiguration& clientConfiguration);
 
       EFSClientConfiguration m_clientConfiguration;

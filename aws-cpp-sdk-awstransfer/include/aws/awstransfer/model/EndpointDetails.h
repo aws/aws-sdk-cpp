@@ -42,13 +42,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/EndpointDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_TRANSFER_API EndpointDetails
+  class EndpointDetails
   {
   public:
-    EndpointDetails();
-    EndpointDetails(Aws::Utils::Json::JsonView jsonValue);
-    EndpointDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TRANSFER_API EndpointDetails();
+    AWS_TRANSFER_API EndpointDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSFER_API EndpointDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TRANSFER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

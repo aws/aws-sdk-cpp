@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/VariantImportJobItem">AWS
    * API Reference</a></p>
    */
-  class AWS_OMICS_API VariantImportJobItem
+  class VariantImportJobItem
   {
   public:
-    VariantImportJobItem();
-    VariantImportJobItem(Aws::Utils::Json::JsonView jsonValue);
-    VariantImportJobItem& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OMICS_API VariantImportJobItem();
+    AWS_OMICS_API VariantImportJobItem(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OMICS_API VariantImportJobItem& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OMICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

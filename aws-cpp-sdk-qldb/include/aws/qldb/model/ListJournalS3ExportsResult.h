@@ -26,12 +26,12 @@ namespace QLDB
 {
 namespace Model
 {
-  class AWS_QLDB_API ListJournalS3ExportsResult
+  class ListJournalS3ExportsResult
   {
   public:
-    ListJournalS3ExportsResult();
-    ListJournalS3ExportsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListJournalS3ExportsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_QLDB_API ListJournalS3ExportsResult();
+    AWS_QLDB_API ListJournalS3ExportsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_QLDB_API ListJournalS3ExportsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

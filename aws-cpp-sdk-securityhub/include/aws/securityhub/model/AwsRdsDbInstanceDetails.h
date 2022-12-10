@@ -40,13 +40,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsRdsDbInstanceDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsRdsDbInstanceDetails
+  class AwsRdsDbInstanceDetails
   {
   public:
-    AwsRdsDbInstanceDetails();
-    AwsRdsDbInstanceDetails(Aws::Utils::Json::JsonView jsonValue);
-    AwsRdsDbInstanceDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsRdsDbInstanceDetails();
+    AWS_SECURITYHUB_API AwsRdsDbInstanceDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsRdsDbInstanceDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

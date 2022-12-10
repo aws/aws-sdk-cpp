@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/NetworkFirewallInvalidRouteConfigurationViolation">AWS
    * API Reference</a></p>
    */
-  class AWS_FMS_API NetworkFirewallInvalidRouteConfigurationViolation
+  class NetworkFirewallInvalidRouteConfigurationViolation
   {
   public:
-    NetworkFirewallInvalidRouteConfigurationViolation();
-    NetworkFirewallInvalidRouteConfigurationViolation(Aws::Utils::Json::JsonView jsonValue);
-    NetworkFirewallInvalidRouteConfigurationViolation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FMS_API NetworkFirewallInvalidRouteConfigurationViolation();
+    AWS_FMS_API NetworkFirewallInvalidRouteConfigurationViolation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FMS_API NetworkFirewallInvalidRouteConfigurationViolation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

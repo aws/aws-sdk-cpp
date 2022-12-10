@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/Shipment">AWS
    * API Reference</a></p>
    */
-  class AWS_SNOWBALL_API Shipment
+  class Shipment
   {
   public:
-    Shipment();
-    Shipment(Aws::Utils::Json::JsonView jsonValue);
-    Shipment& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SNOWBALL_API Shipment();
+    AWS_SNOWBALL_API Shipment(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SNOWBALL_API Shipment& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SNOWBALL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

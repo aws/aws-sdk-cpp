@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CodeRepositorySummary">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API CodeRepositorySummary
+  class CodeRepositorySummary
   {
   public:
-    CodeRepositorySummary();
-    CodeRepositorySummary(Aws::Utils::Json::JsonView jsonValue);
-    CodeRepositorySummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API CodeRepositorySummary();
+    AWS_SAGEMAKER_API CodeRepositorySummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API CodeRepositorySummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

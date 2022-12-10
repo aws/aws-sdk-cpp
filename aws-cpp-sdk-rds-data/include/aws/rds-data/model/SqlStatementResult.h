@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-data-2018-08-01/SqlStatementResult">AWS
    * API Reference</a></p>
    */
-  class AWS_RDSDATASERVICE_API SqlStatementResult
+  class SqlStatementResult
   {
   public:
-    SqlStatementResult();
-    SqlStatementResult(Aws::Utils::Json::JsonView jsonValue);
-    SqlStatementResult& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_RDSDATASERVICE_API SqlStatementResult();
+    AWS_RDSDATASERVICE_API SqlStatementResult(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RDSDATASERVICE_API SqlStatementResult& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RDSDATASERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -30,12 +30,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/RetrieveDomainAuthCodeResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_ROUTE53DOMAINS_API RetrieveDomainAuthCodeResult
+  class RetrieveDomainAuthCodeResult
   {
   public:
-    RetrieveDomainAuthCodeResult();
-    RetrieveDomainAuthCodeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    RetrieveDomainAuthCodeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ROUTE53DOMAINS_API RetrieveDomainAuthCodeResult();
+    AWS_ROUTE53DOMAINS_API RetrieveDomainAuthCodeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_ROUTE53DOMAINS_API RetrieveDomainAuthCodeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

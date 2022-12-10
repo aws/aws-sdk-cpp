@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ChapInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_STORAGEGATEWAY_API ChapInfo
+  class ChapInfo
   {
   public:
-    ChapInfo();
-    ChapInfo(Aws::Utils::Json::JsonView jsonValue);
-    ChapInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_STORAGEGATEWAY_API ChapInfo();
+    AWS_STORAGEGATEWAY_API ChapInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_STORAGEGATEWAY_API ChapInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_STORAGEGATEWAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -8,6 +8,7 @@
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/ec2/EC2ServiceClientModel.h>
 
@@ -39,7 +40,7 @@ namespace EC2
    * href="http://aws.amazon.com/documentation/vpn">Amazon Web Services VPN
    * documentation</a> </p> </li> </ul>
    */
-  class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient
+  class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient, public Aws::Client::ClientWithAsyncTemplateMethods<EC2Client>
   {
     public:
       typedef Aws::Client::AWSXMLClient BASECLASS;
@@ -5064,7 +5065,7 @@ namespace EC2
         virtual void DescribeAvailabilityZonesAsync(const Model::DescribeAvailabilityZonesRequest& request, const DescribeAvailabilityZonesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes the curent Infrastructure Performance metric
+         * <p>Describes the current Infrastructure Performance metric
          * subscriptions.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAwsNetworkPerformanceMetricSubscriptions">AWS
          * API Reference</a></p>
@@ -8738,7 +8739,13 @@ namespace EC2
         virtual void EnableIpamOrganizationAdminAccountAsync(const Model::EnableIpamOrganizationAdminAccountRequest& request, const EnableIpamOrganizationAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * 
+         * <p>Establishes a trust relationship between Reachability Analyzer and
+         * Organizations. This operation must be performed by the management account for
+         * the organization.</p> <p>After you establish a trust relationship, a user in the
+         * management account or a delegated administrator account can run a cross-account
+         * analysis using resources from the member accounts.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableReachabilityAnalyzerOrganizationSharing">AWS
+         * API Reference</a></p>
          */
         virtual Model::EnableReachabilityAnalyzerOrganizationSharingOutcome EnableReachabilityAnalyzerOrganizationSharing(const Model::EnableReachabilityAnalyzerOrganizationSharingRequest& request) const;
 
@@ -13130,6 +13137,7 @@ namespace EC2
         void OverrideEndpoint(const Aws::String& endpoint);
         std::shared_ptr<EC2EndpointProviderBase>& accessEndpointProvider();
   private:
+        friend class Aws::Client::ClientWithAsyncTemplateMethods<EC2Client>;
         void init(const EC2ClientConfiguration& clientConfiguration);
 
         EC2ClientConfiguration m_clientConfiguration;

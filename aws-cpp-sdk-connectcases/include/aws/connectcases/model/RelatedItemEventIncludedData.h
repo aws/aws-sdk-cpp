@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/RelatedItemEventIncludedData">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECTCASES_API RelatedItemEventIncludedData
+  class RelatedItemEventIncludedData
   {
   public:
-    RelatedItemEventIncludedData();
-    RelatedItemEventIncludedData(Aws::Utils::Json::JsonView jsonValue);
-    RelatedItemEventIncludedData& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECTCASES_API RelatedItemEventIncludedData();
+    AWS_CONNECTCASES_API RelatedItemEventIncludedData(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTCASES_API RelatedItemEventIncludedData& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECTCASES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

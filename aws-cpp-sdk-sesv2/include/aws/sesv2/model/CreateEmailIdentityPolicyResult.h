@@ -28,12 +28,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/CreateEmailIdentityPolicyResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_SESV2_API CreateEmailIdentityPolicyResult
+  class CreateEmailIdentityPolicyResult
   {
   public:
-    CreateEmailIdentityPolicyResult();
-    CreateEmailIdentityPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateEmailIdentityPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SESV2_API CreateEmailIdentityPolicyResult();
+    AWS_SESV2_API CreateEmailIdentityPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SESV2_API CreateEmailIdentityPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

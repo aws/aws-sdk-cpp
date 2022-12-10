@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/ResourceIdPreference">AWS
    * API Reference</a></p>
    */
-  class AWS_EFS_API ResourceIdPreference
+  class ResourceIdPreference
   {
   public:
-    ResourceIdPreference();
-    ResourceIdPreference(Aws::Utils::Json::JsonView jsonValue);
-    ResourceIdPreference& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EFS_API ResourceIdPreference();
+    AWS_EFS_API ResourceIdPreference(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EFS_API ResourceIdPreference& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EFS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

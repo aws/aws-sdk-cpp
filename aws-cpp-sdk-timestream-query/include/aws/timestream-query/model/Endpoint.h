@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/timestream-query-2018-11-01/Endpoint">AWS
    * API Reference</a></p>
    */
-  class AWS_TIMESTREAMQUERY_API Endpoint
+  class Endpoint
   {
   public:
-    Endpoint();
-    Endpoint(Aws::Utils::Json::JsonView jsonValue);
-    Endpoint& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_TIMESTREAMQUERY_API Endpoint();
+    AWS_TIMESTREAMQUERY_API Endpoint(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TIMESTREAMQUERY_API Endpoint& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_TIMESTREAMQUERY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

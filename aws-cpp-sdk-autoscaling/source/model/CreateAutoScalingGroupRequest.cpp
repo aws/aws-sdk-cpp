@@ -45,7 +45,8 @@ CreateAutoScalingGroupRequest::CreateAutoScalingGroupRequest() :
     m_contextHasBeenSet(false),
     m_desiredCapacityTypeHasBeenSet(false),
     m_defaultInstanceWarmup(0),
-    m_defaultInstanceWarmupHasBeenSet(false)
+    m_defaultInstanceWarmupHasBeenSet(false),
+    m_trafficSourcesHasBeenSet(false)
 {
 }
 
@@ -215,6 +216,16 @@ Aws::String CreateAutoScalingGroupRequest::SerializePayload() const
   if(m_defaultInstanceWarmupHasBeenSet)
   {
     ss << "DefaultInstanceWarmup=" << m_defaultInstanceWarmup << "&";
+  }
+
+  if(m_trafficSourcesHasBeenSet)
+  {
+    unsigned trafficSourcesCount = 1;
+    for(auto& item : m_trafficSources)
+    {
+      item.OutputToStream(ss, "TrafficSources.member.", trafficSourcesCount, "");
+      trafficSourcesCount++;
+    }
   }
 
   ss << "Version=2011-01-01";

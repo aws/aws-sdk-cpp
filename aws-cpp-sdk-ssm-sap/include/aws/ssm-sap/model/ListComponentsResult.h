@@ -26,12 +26,12 @@ namespace SsmSap
 {
 namespace Model
 {
-  class AWS_SSMSAP_API ListComponentsResult
+  class ListComponentsResult
   {
   public:
-    ListComponentsResult();
-    ListComponentsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListComponentsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSMSAP_API ListComponentsResult();
+    AWS_SSMSAP_API ListComponentsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SSMSAP_API ListComponentsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

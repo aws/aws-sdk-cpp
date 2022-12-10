@@ -26,13 +26,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/AmplitudeMetadata">AWS
    * API Reference</a></p>
    */
-  class AWS_APPFLOW_API AmplitudeMetadata
+  class AmplitudeMetadata
   {
   public:
-    AmplitudeMetadata();
-    AmplitudeMetadata(Aws::Utils::Json::JsonView jsonValue);
-    AmplitudeMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPFLOW_API AmplitudeMetadata();
+    AWS_APPFLOW_API AmplitudeMetadata(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API AmplitudeMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
   };
 

@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UserProperty">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API UserProperty
+  class UserProperty
   {
   public:
-    UserProperty();
-    UserProperty(Aws::Utils::Json::JsonView jsonValue);
-    UserProperty& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API UserProperty();
+    AWS_IOT_API UserProperty(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API UserProperty& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

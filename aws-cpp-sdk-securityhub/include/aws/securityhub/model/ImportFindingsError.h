@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ImportFindingsError">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API ImportFindingsError
+  class ImportFindingsError
   {
   public:
-    ImportFindingsError();
-    ImportFindingsError(Aws::Utils::Json::JsonView jsonValue);
-    ImportFindingsError& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API ImportFindingsError();
+    AWS_SECURITYHUB_API ImportFindingsError(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API ImportFindingsError& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

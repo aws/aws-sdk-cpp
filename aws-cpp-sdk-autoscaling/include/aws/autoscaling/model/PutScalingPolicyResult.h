@@ -32,12 +32,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/PolicyARNType">AWS
    * API Reference</a></p>
    */
-  class AWS_AUTOSCALING_API PutScalingPolicyResult
+  class PutScalingPolicyResult
   {
   public:
-    PutScalingPolicyResult();
-    PutScalingPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    PutScalingPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_AUTOSCALING_API PutScalingPolicyResult();
+    AWS_AUTOSCALING_API PutScalingPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_AUTOSCALING_API PutScalingPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

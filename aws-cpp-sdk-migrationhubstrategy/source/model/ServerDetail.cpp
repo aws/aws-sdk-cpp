@@ -31,6 +31,7 @@ ServerDetail::ServerDetail() :
     m_listAntipatternSeveritySummaryHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_recommendationSetHasBeenSet(false),
+    m_serverErrorHasBeenSet(false),
     m_serverTypeHasBeenSet(false),
     m_statusMessageHasBeenSet(false),
     m_systemInfoHasBeenSet(false)
@@ -50,6 +51,7 @@ ServerDetail::ServerDetail(JsonView jsonValue) :
     m_listAntipatternSeveritySummaryHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_recommendationSetHasBeenSet(false),
+    m_serverErrorHasBeenSet(false),
     m_serverTypeHasBeenSet(false),
     m_statusMessageHasBeenSet(false),
     m_systemInfoHasBeenSet(false)
@@ -133,6 +135,13 @@ ServerDetail& ServerDetail::operator =(JsonView jsonValue)
     m_recommendationSet = jsonValue.GetObject("recommendationSet");
 
     m_recommendationSetHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("serverError"))
+  {
+    m_serverError = jsonValue.GetObject("serverError");
+
+    m_serverErrorHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("serverType"))
@@ -227,6 +236,12 @@ JsonValue ServerDetail::Jsonize() const
   if(m_recommendationSetHasBeenSet)
   {
    payload.WithObject("recommendationSet", m_recommendationSet.Jsonize());
+
+  }
+
+  if(m_serverErrorHasBeenSet)
+  {
+   payload.WithObject("serverError", m_serverError.Jsonize());
 
   }
 

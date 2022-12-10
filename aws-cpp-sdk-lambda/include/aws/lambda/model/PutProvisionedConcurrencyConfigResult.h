@@ -25,12 +25,12 @@ namespace Lambda
 {
 namespace Model
 {
-  class AWS_LAMBDA_API PutProvisionedConcurrencyConfigResult
+  class PutProvisionedConcurrencyConfigResult
   {
   public:
-    PutProvisionedConcurrencyConfigResult();
-    PutProvisionedConcurrencyConfigResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    PutProvisionedConcurrencyConfigResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LAMBDA_API PutProvisionedConcurrencyConfigResult();
+    AWS_LAMBDA_API PutProvisionedConcurrencyConfigResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LAMBDA_API PutProvisionedConcurrencyConfigResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

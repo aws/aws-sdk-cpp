@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/PackageVersionHistory">AWS
    * API Reference</a></p>
    */
-  class AWS_OPENSEARCHSERVICE_API PackageVersionHistory
+  class PackageVersionHistory
   {
   public:
-    PackageVersionHistory();
-    PackageVersionHistory(Aws::Utils::Json::JsonView jsonValue);
-    PackageVersionHistory& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_OPENSEARCHSERVICE_API PackageVersionHistory();
+    AWS_OPENSEARCHSERVICE_API PackageVersionHistory(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPENSEARCHSERVICE_API PackageVersionHistory& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_OPENSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

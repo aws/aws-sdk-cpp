@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/ConfigurationEvent">AWS
    * API Reference</a></p>
    */
-  class AWS_APPLICATIONINSIGHTS_API ConfigurationEvent
+  class ConfigurationEvent
   {
   public:
-    ConfigurationEvent();
-    ConfigurationEvent(Aws::Utils::Json::JsonView jsonValue);
-    ConfigurationEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPLICATIONINSIGHTS_API ConfigurationEvent();
+    AWS_APPLICATIONINSIGHTS_API ConfigurationEvent(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPLICATIONINSIGHTS_API ConfigurationEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPLICATIONINSIGHTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

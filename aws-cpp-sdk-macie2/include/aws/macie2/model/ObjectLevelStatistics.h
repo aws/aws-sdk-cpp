@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ObjectLevelStatistics">AWS
    * API Reference</a></p>
    */
-  class AWS_MACIE2_API ObjectLevelStatistics
+  class ObjectLevelStatistics
   {
   public:
-    ObjectLevelStatistics();
-    ObjectLevelStatistics(Aws::Utils::Json::JsonView jsonValue);
-    ObjectLevelStatistics& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MACIE2_API ObjectLevelStatistics();
+    AWS_MACIE2_API ObjectLevelStatistics(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API ObjectLevelStatistics& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

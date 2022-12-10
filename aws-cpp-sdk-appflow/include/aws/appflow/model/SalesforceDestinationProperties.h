@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/SalesforceDestinationProperties">AWS
    * API Reference</a></p>
    */
-  class AWS_APPFLOW_API SalesforceDestinationProperties
+  class SalesforceDestinationProperties
   {
   public:
-    SalesforceDestinationProperties();
-    SalesforceDestinationProperties(Aws::Utils::Json::JsonView jsonValue);
-    SalesforceDestinationProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPFLOW_API SalesforceDestinationProperties();
+    AWS_APPFLOW_API SalesforceDestinationProperties(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API SalesforceDestinationProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

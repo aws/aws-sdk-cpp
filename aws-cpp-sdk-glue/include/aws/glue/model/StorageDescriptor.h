@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StorageDescriptor">AWS
    * API Reference</a></p>
    */
-  class AWS_GLUE_API StorageDescriptor
+  class StorageDescriptor
   {
   public:
-    StorageDescriptor();
-    StorageDescriptor(Aws::Utils::Json::JsonView jsonValue);
-    StorageDescriptor& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_GLUE_API StorageDescriptor();
+    AWS_GLUE_API StorageDescriptor(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API StorageDescriptor& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

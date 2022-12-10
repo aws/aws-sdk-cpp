@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/VideoArtifactsConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_CHIME_API VideoArtifactsConfiguration
+  class VideoArtifactsConfiguration
   {
   public:
-    VideoArtifactsConfiguration();
-    VideoArtifactsConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    VideoArtifactsConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIME_API VideoArtifactsConfiguration();
+    AWS_CHIME_API VideoArtifactsConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API VideoArtifactsConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

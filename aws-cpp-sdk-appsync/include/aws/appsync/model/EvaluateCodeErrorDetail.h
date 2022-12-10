@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/EvaluateCodeErrorDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_APPSYNC_API EvaluateCodeErrorDetail
+  class EvaluateCodeErrorDetail
   {
   public:
-    EvaluateCodeErrorDetail();
-    EvaluateCodeErrorDetail(Aws::Utils::Json::JsonView jsonValue);
-    EvaluateCodeErrorDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_APPSYNC_API EvaluateCodeErrorDetail();
+    AWS_APPSYNC_API EvaluateCodeErrorDetail(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPSYNC_API EvaluateCodeErrorDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_APPSYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

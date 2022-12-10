@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CascadingControlSource">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API CascadingControlSource
+  class CascadingControlSource
   {
   public:
-    CascadingControlSource();
-    CascadingControlSource(Aws::Utils::Json::JsonView jsonValue);
-    CascadingControlSource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API CascadingControlSource();
+    AWS_QUICKSIGHT_API CascadingControlSource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API CascadingControlSource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

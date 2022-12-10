@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/PortInfo">AWS
    * API Reference</a></p>
    */
-  class AWS_LIGHTSAIL_API PortInfo
+  class PortInfo
   {
   public:
-    PortInfo();
-    PortInfo(Aws::Utils::Json::JsonView jsonValue);
-    PortInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LIGHTSAIL_API PortInfo();
+    AWS_LIGHTSAIL_API PortInfo(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API PortInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

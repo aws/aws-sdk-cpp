@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/KernelGatewayAppSettings">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API KernelGatewayAppSettings
+  class KernelGatewayAppSettings
   {
   public:
-    KernelGatewayAppSettings();
-    KernelGatewayAppSettings(Aws::Utils::Json::JsonView jsonValue);
-    KernelGatewayAppSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API KernelGatewayAppSettings();
+    AWS_SAGEMAKER_API KernelGatewayAppSettings(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API KernelGatewayAppSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

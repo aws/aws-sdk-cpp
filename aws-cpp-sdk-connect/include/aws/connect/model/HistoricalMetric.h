@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/HistoricalMetric">AWS
    * API Reference</a></p>
    */
-  class AWS_CONNECT_API HistoricalMetric
+  class HistoricalMetric
   {
   public:
-    HistoricalMetric();
-    HistoricalMetric(Aws::Utils::Json::JsonView jsonValue);
-    HistoricalMetric& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECT_API HistoricalMetric();
+    AWS_CONNECT_API HistoricalMetric(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API HistoricalMetric& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

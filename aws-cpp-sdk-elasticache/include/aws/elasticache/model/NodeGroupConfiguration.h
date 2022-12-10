@@ -32,15 +32,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/NodeGroupConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICACHE_API NodeGroupConfiguration
+  class NodeGroupConfiguration
   {
   public:
-    NodeGroupConfiguration();
-    NodeGroupConfiguration(const Aws::Utils::Xml::XmlNode& xmlNode);
-    NodeGroupConfiguration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICACHE_API NodeGroupConfiguration();
+    AWS_ELASTICACHE_API NodeGroupConfiguration(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICACHE_API NodeGroupConfiguration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_ELASTICACHE_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_ELASTICACHE_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**

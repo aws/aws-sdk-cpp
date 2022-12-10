@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/OrganizationResourceDetailedStatusFilters">AWS
    * API Reference</a></p>
    */
-  class AWS_CONFIGSERVICE_API OrganizationResourceDetailedStatusFilters
+  class OrganizationResourceDetailedStatusFilters
   {
   public:
-    OrganizationResourceDetailedStatusFilters();
-    OrganizationResourceDetailedStatusFilters(Aws::Utils::Json::JsonView jsonValue);
-    OrganizationResourceDetailedStatusFilters& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONFIGSERVICE_API OrganizationResourceDetailedStatusFilters();
+    AWS_CONFIGSERVICE_API OrganizationResourceDetailedStatusFilters(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API OrganizationResourceDetailedStatusFilters& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

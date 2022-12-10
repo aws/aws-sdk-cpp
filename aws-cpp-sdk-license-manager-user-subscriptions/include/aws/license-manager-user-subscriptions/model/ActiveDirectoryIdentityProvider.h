@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-user-subscriptions-2018-05-10/ActiveDirectoryIdentityProvider">AWS
    * API Reference</a></p>
    */
-  class AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API ActiveDirectoryIdentityProvider
+  class ActiveDirectoryIdentityProvider
   {
   public:
-    ActiveDirectoryIdentityProvider();
-    ActiveDirectoryIdentityProvider(Aws::Utils::Json::JsonView jsonValue);
-    ActiveDirectoryIdentityProvider& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API ActiveDirectoryIdentityProvider();
+    AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API ActiveDirectoryIdentityProvider(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API ActiveDirectoryIdentityProvider& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

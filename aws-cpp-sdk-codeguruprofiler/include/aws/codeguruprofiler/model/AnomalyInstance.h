@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/AnomalyInstance">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEGURUPROFILER_API AnomalyInstance
+  class AnomalyInstance
   {
   public:
-    AnomalyInstance();
-    AnomalyInstance(Aws::Utils::Json::JsonView jsonValue);
-    AnomalyInstance& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEGURUPROFILER_API AnomalyInstance();
+    AWS_CODEGURUPROFILER_API AnomalyInstance(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEGURUPROFILER_API AnomalyInstance& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEGURUPROFILER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

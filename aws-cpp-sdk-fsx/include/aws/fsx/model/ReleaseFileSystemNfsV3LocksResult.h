@@ -24,12 +24,12 @@ namespace FSx
 {
 namespace Model
 {
-  class AWS_FSX_API ReleaseFileSystemNfsV3LocksResult
+  class ReleaseFileSystemNfsV3LocksResult
   {
   public:
-    ReleaseFileSystemNfsV3LocksResult();
-    ReleaseFileSystemNfsV3LocksResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ReleaseFileSystemNfsV3LocksResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_FSX_API ReleaseFileSystemNfsV3LocksResult();
+    AWS_FSX_API ReleaseFileSystemNfsV3LocksResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_FSX_API ReleaseFileSystemNfsV3LocksResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     

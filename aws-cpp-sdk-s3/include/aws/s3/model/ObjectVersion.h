@@ -32,14 +32,14 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ObjectVersion">AWS
    * API Reference</a></p>
    */
-  class AWS_S3_API ObjectVersion
+  class ObjectVersion
   {
   public:
-    ObjectVersion();
-    ObjectVersion(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ObjectVersion& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3_API ObjectVersion();
+    AWS_S3_API ObjectVersion(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_S3_API ObjectVersion& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+    AWS_S3_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
     /**

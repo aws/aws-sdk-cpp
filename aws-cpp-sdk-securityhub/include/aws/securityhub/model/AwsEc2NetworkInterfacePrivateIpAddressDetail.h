@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsEc2NetworkInterfacePrivateIpAddressDetail">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsEc2NetworkInterfacePrivateIpAddressDetail
+  class AwsEc2NetworkInterfacePrivateIpAddressDetail
   {
   public:
-    AwsEc2NetworkInterfacePrivateIpAddressDetail();
-    AwsEc2NetworkInterfacePrivateIpAddressDetail(Aws::Utils::Json::JsonView jsonValue);
-    AwsEc2NetworkInterfacePrivateIpAddressDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsEc2NetworkInterfacePrivateIpAddressDetail();
+    AWS_SECURITYHUB_API AwsEc2NetworkInterfacePrivateIpAddressDetail(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsEc2NetworkInterfacePrivateIpAddressDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

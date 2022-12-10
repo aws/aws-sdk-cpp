@@ -28,12 +28,12 @@ namespace Omics
 {
 namespace Model
 {
-  class AWS_OMICS_API GetReadSetImportJobResult
+  class GetReadSetImportJobResult
   {
   public:
-    GetReadSetImportJobResult();
-    GetReadSetImportJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetReadSetImportJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OMICS_API GetReadSetImportJobResult();
+    AWS_OMICS_API GetReadSetImportJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_OMICS_API GetReadSetImportJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

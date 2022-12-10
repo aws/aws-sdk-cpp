@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-roborunner-2018-05-10/Worker">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTROBORUNNER_API Worker
+  class Worker
   {
   public:
-    Worker();
-    Worker(Aws::Utils::Json::JsonView jsonValue);
-    Worker& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTROBORUNNER_API Worker();
+    AWS_IOTROBORUNNER_API Worker(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTROBORUNNER_API Worker& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTROBORUNNER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

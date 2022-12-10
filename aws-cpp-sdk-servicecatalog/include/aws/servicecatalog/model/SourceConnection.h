@@ -35,13 +35,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/SourceConnection">AWS
    * API Reference</a></p>
    */
-  class AWS_SERVICECATALOG_API SourceConnection
+  class SourceConnection
   {
   public:
-    SourceConnection();
-    SourceConnection(Aws::Utils::Json::JsonView jsonValue);
-    SourceConnection& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SERVICECATALOG_API SourceConnection();
+    AWS_SERVICECATALOG_API SourceConnection(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICECATALOG_API SourceConnection& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SERVICECATALOG_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

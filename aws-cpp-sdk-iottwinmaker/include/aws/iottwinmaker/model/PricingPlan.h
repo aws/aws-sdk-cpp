@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/PricingPlan">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTTWINMAKER_API PricingPlan
+  class PricingPlan
   {
   public:
-    PricingPlan();
-    PricingPlan(Aws::Utils::Json::JsonView jsonValue);
-    PricingPlan& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTTWINMAKER_API PricingPlan();
+    AWS_IOTTWINMAKER_API PricingPlan(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTTWINMAKER_API PricingPlan& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTTWINMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

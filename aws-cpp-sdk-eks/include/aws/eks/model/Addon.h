@@ -35,13 +35,13 @@ namespace Model
    * <a href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/Addon">AWS API
    * Reference</a></p>
    */
-  class AWS_EKS_API Addon
+  class Addon
   {
   public:
-    Addon();
-    Addon(Aws::Utils::Json::JsonView jsonValue);
-    Addon& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EKS_API Addon();
+    AWS_EKS_API Addon(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EKS_API Addon& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EKS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
@@ -604,6 +604,47 @@ namespace Model
      */
     inline Addon& WithMarketplaceInformation(MarketplaceInformation&& value) { SetMarketplaceInformation(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The provided configuration values.</p>
+     */
+    inline const Aws::String& GetConfigurationValues() const{ return m_configurationValues; }
+
+    /**
+     * <p>The provided configuration values.</p>
+     */
+    inline bool ConfigurationValuesHasBeenSet() const { return m_configurationValuesHasBeenSet; }
+
+    /**
+     * <p>The provided configuration values.</p>
+     */
+    inline void SetConfigurationValues(const Aws::String& value) { m_configurationValuesHasBeenSet = true; m_configurationValues = value; }
+
+    /**
+     * <p>The provided configuration values.</p>
+     */
+    inline void SetConfigurationValues(Aws::String&& value) { m_configurationValuesHasBeenSet = true; m_configurationValues = std::move(value); }
+
+    /**
+     * <p>The provided configuration values.</p>
+     */
+    inline void SetConfigurationValues(const char* value) { m_configurationValuesHasBeenSet = true; m_configurationValues.assign(value); }
+
+    /**
+     * <p>The provided configuration values.</p>
+     */
+    inline Addon& WithConfigurationValues(const Aws::String& value) { SetConfigurationValues(value); return *this;}
+
+    /**
+     * <p>The provided configuration values.</p>
+     */
+    inline Addon& WithConfigurationValues(Aws::String&& value) { SetConfigurationValues(std::move(value)); return *this;}
+
+    /**
+     * <p>The provided configuration values.</p>
+     */
+    inline Addon& WithConfigurationValues(const char* value) { SetConfigurationValues(value); return *this;}
+
   private:
 
     Aws::String m_addonName;
@@ -644,6 +685,9 @@ namespace Model
 
     MarketplaceInformation m_marketplaceInformation;
     bool m_marketplaceInformationHasBeenSet = false;
+
+    Aws::String m_configurationValues;
+    bool m_configurationValuesHasBeenSet = false;
   };
 
 } // namespace Model

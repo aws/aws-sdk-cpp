@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/AttackVectorDescription">AWS
    * API Reference</a></p>
    */
-  class AWS_SHIELD_API AttackVectorDescription
+  class AttackVectorDescription
   {
   public:
-    AttackVectorDescription();
-    AttackVectorDescription(Aws::Utils::Json::JsonView jsonValue);
-    AttackVectorDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SHIELD_API AttackVectorDescription();
+    AWS_SHIELD_API AttackVectorDescription(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SHIELD_API AttackVectorDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SHIELD_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

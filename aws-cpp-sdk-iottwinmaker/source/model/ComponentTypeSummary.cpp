@@ -24,7 +24,8 @@ ComponentTypeSummary::ComponentTypeSummary() :
     m_creationDateTimeHasBeenSet(false),
     m_updateDateTimeHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_componentTypeNameHasBeenSet(false)
 {
 }
 
@@ -34,7 +35,8 @@ ComponentTypeSummary::ComponentTypeSummary(JsonView jsonValue) :
     m_creationDateTimeHasBeenSet(false),
     m_updateDateTimeHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_componentTypeNameHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -83,6 +85,13 @@ ComponentTypeSummary& ComponentTypeSummary::operator =(JsonView jsonValue)
     m_statusHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("componentTypeName"))
+  {
+    m_componentTypeName = jsonValue.GetString("componentTypeName");
+
+    m_componentTypeNameHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -121,6 +130,12 @@ JsonValue ComponentTypeSummary::Jsonize() const
   if(m_statusHasBeenSet)
   {
    payload.WithObject("status", m_status.Jsonize());
+
+  }
+
+  if(m_componentTypeNameHasBeenSet)
+  {
+   payload.WithString("componentTypeName", m_componentTypeName);
 
   }
 

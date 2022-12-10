@@ -22,10 +22,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/AddApplicationInputRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_KINESISANALYTICS_API AddApplicationInputRequest : public KinesisAnalyticsRequest
+  class AddApplicationInputRequest : public KinesisAnalyticsRequest
   {
   public:
-    AddApplicationInputRequest();
+    AWS_KINESISANALYTICS_API AddApplicationInputRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -33,9 +33,9 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "AddApplicationInput"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_KINESISANALYTICS_API Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_KINESISANALYTICS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**

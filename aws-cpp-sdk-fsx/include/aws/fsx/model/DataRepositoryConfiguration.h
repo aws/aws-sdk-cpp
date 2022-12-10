@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DataRepositoryConfiguration">AWS
    * API Reference</a></p>
    */
-  class AWS_FSX_API DataRepositoryConfiguration
+  class DataRepositoryConfiguration
   {
   public:
-    DataRepositoryConfiguration();
-    DataRepositoryConfiguration(Aws::Utils::Json::JsonView jsonValue);
-    DataRepositoryConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_FSX_API DataRepositoryConfiguration();
+    AWS_FSX_API DataRepositoryConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API DataRepositoryConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

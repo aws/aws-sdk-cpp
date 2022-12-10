@@ -27,12 +27,12 @@ namespace ServiceCatalog
 {
 namespace Model
 {
-  class AWS_SERVICECATALOG_API UpdateProvisionedProductPropertiesResult
+  class UpdateProvisionedProductPropertiesResult
   {
   public:
-    UpdateProvisionedProductPropertiesResult();
-    UpdateProvisionedProductPropertiesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateProvisionedProductPropertiesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SERVICECATALOG_API UpdateProvisionedProductPropertiesResult();
+    AWS_SERVICECATALOG_API UpdateProvisionedProductPropertiesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SERVICECATALOG_API UpdateProvisionedProductPropertiesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

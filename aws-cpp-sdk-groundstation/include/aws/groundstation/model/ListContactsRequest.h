@@ -24,10 +24,10 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/ListContactsRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_GROUNDSTATION_API ListContactsRequest : public GroundStationRequest
+  class ListContactsRequest : public GroundStationRequest
   {
   public:
-    ListContactsRequest();
+    AWS_GROUNDSTATION_API ListContactsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -35,7 +35,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "ListContacts"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_GROUNDSTATION_API Aws::String SerializePayload() const override;
 
 
     /**

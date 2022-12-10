@@ -7,6 +7,7 @@
 #include <aws/meteringmarketplace/MarketplaceMetering_EXPORTS.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/meteringmarketplace/MarketplaceMeteringServiceClientModel.h>
 
@@ -51,7 +52,7 @@ namespace MarketplaceMetering
    * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-concepts.html">AWS
    * CloudTrail User Guide</a>.</i> </p>
    */
-  class AWS_MARKETPLACEMETERING_API MarketplaceMeteringClient : public Aws::Client::AWSJsonClient
+  class AWS_MARKETPLACEMETERING_API MarketplaceMeteringClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<MarketplaceMeteringClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
@@ -105,7 +106,6 @@ namespace MarketplaceMetering
 
         /* End of legacy constructors due deprecation */
         virtual ~MarketplaceMeteringClient();
-
 
         /**
          * <p> <code>BatchMeterUsage</code> is called from a SaaS application listed on AWS
@@ -248,6 +248,7 @@ namespace MarketplaceMetering
       void OverrideEndpoint(const Aws::String& endpoint);
       std::shared_ptr<MarketplaceMeteringEndpointProviderBase>& accessEndpointProvider();
     private:
+      friend class Aws::Client::ClientWithAsyncTemplateMethods<MarketplaceMeteringClient>;
       void init(const MarketplaceMeteringClientConfiguration& clientConfiguration);
 
       MarketplaceMeteringClientConfiguration m_clientConfiguration;

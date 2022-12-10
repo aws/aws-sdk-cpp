@@ -31,15 +31,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ReservedNodeOffering">AWS
    * API Reference</a></p>
    */
-  class AWS_REDSHIFT_API ReservedNodeOffering
+  class ReservedNodeOffering
   {
   public:
-    ReservedNodeOffering();
-    ReservedNodeOffering(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ReservedNodeOffering& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_REDSHIFT_API ReservedNodeOffering();
+    AWS_REDSHIFT_API ReservedNodeOffering(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_REDSHIFT_API ReservedNodeOffering& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_REDSHIFT_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_REDSHIFT_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**

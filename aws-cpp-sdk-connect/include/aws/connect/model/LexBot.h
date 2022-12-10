@@ -28,13 +28,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/LexBot">AWS API
    * Reference</a></p>
    */
-  class AWS_CONNECT_API LexBot
+  class LexBot
   {
   public:
-    LexBot();
-    LexBot(Aws::Utils::Json::JsonView jsonValue);
-    LexBot& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CONNECT_API LexBot();
+    AWS_CONNECT_API LexBot(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API LexBot& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

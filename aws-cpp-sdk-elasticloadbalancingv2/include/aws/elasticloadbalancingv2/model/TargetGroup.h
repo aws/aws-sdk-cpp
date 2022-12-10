@@ -33,15 +33,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/TargetGroup">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICLOADBALANCINGV2_API TargetGroup
+  class TargetGroup
   {
   public:
-    TargetGroup();
-    TargetGroup(const Aws::Utils::Xml::XmlNode& xmlNode);
-    TargetGroup& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICLOADBALANCINGV2_API TargetGroup();
+    AWS_ELASTICLOADBALANCINGV2_API TargetGroup(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICLOADBALANCINGV2_API TargetGroup& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_ELASTICLOADBALANCINGV2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_ELASTICLOADBALANCINGV2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**

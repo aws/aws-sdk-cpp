@@ -36,13 +36,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/KeysAndAttributes">AWS
    * API Reference</a></p>
    */
-  class AWS_DYNAMODB_API KeysAndAttributes
+  class KeysAndAttributes
   {
   public:
-    KeysAndAttributes();
-    KeysAndAttributes(Aws::Utils::Json::JsonView jsonValue);
-    KeysAndAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DYNAMODB_API KeysAndAttributes();
+    AWS_DYNAMODB_API KeysAndAttributes(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API KeysAndAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

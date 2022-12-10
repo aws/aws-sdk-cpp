@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/KinesisStreamsInputUpdate">AWS
    * API Reference</a></p>
    */
-  class AWS_KINESISANALYTICSV2_API KinesisStreamsInputUpdate
+  class KinesisStreamsInputUpdate
   {
   public:
-    KinesisStreamsInputUpdate();
-    KinesisStreamsInputUpdate(Aws::Utils::Json::JsonView jsonValue);
-    KinesisStreamsInputUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_KINESISANALYTICSV2_API KinesisStreamsInputUpdate();
+    AWS_KINESISANALYTICSV2_API KinesisStreamsInputUpdate(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICSV2_API KinesisStreamsInputUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_KINESISANALYTICSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

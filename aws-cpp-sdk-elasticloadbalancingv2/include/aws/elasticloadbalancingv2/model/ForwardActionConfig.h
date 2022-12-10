@@ -30,15 +30,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/ForwardActionConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_ELASTICLOADBALANCINGV2_API ForwardActionConfig
+  class ForwardActionConfig
   {
   public:
-    ForwardActionConfig();
-    ForwardActionConfig(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ForwardActionConfig& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICLOADBALANCINGV2_API ForwardActionConfig();
+    AWS_ELASTICLOADBALANCINGV2_API ForwardActionConfig(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_ELASTICLOADBALANCINGV2_API ForwardActionConfig& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_ELASTICLOADBALANCINGV2_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_ELASTICLOADBALANCINGV2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**

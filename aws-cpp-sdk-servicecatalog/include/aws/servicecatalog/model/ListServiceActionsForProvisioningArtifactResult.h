@@ -26,12 +26,12 @@ namespace ServiceCatalog
 {
 namespace Model
 {
-  class AWS_SERVICECATALOG_API ListServiceActionsForProvisioningArtifactResult
+  class ListServiceActionsForProvisioningArtifactResult
   {
   public:
-    ListServiceActionsForProvisioningArtifactResult();
-    ListServiceActionsForProvisioningArtifactResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListServiceActionsForProvisioningArtifactResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SERVICECATALOG_API ListServiceActionsForProvisioningArtifactResult();
+    AWS_SERVICECATALOG_API ListServiceActionsForProvisioningArtifactResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SERVICECATALOG_API ListServiceActionsForProvisioningArtifactResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

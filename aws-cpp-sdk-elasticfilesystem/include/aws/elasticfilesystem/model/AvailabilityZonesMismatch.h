@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/AvailabilityZonesMismatch">AWS
    * API Reference</a></p>
    */
-  class AWS_EFS_API AvailabilityZonesMismatch
+  class AvailabilityZonesMismatch
   {
   public:
-    AvailabilityZonesMismatch();
-    AvailabilityZonesMismatch(Aws::Utils::Json::JsonView jsonValue);
-    AvailabilityZonesMismatch& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_EFS_API AvailabilityZonesMismatch();
+    AWS_EFS_API AvailabilityZonesMismatch(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EFS_API AvailabilityZonesMismatch& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_EFS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

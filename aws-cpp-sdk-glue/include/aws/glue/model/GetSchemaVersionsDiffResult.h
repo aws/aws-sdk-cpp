@@ -24,12 +24,12 @@ namespace Glue
 {
 namespace Model
 {
-  class AWS_GLUE_API GetSchemaVersionsDiffResult
+  class GetSchemaVersionsDiffResult
   {
   public:
-    GetSchemaVersionsDiffResult();
-    GetSchemaVersionsDiffResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetSchemaVersionsDiffResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GLUE_API GetSchemaVersionsDiffResult();
+    AWS_GLUE_API GetSchemaVersionsDiffResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_GLUE_API GetSchemaVersionsDiffResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

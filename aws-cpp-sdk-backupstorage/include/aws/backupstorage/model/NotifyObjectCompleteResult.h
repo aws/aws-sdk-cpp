@@ -25,12 +25,12 @@ namespace BackupStorage
 {
 namespace Model
 {
-  class AWS_BACKUPSTORAGE_API NotifyObjectCompleteResult
+  class NotifyObjectCompleteResult
   {
   public:
-    NotifyObjectCompleteResult();
-    NotifyObjectCompleteResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    NotifyObjectCompleteResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_BACKUPSTORAGE_API NotifyObjectCompleteResult();
+    AWS_BACKUPSTORAGE_API NotifyObjectCompleteResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_BACKUPSTORAGE_API NotifyObjectCompleteResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

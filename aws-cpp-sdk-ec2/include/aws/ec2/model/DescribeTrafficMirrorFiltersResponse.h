@@ -27,12 +27,12 @@ namespace EC2
 {
 namespace Model
 {
-  class AWS_EC2_API DescribeTrafficMirrorFiltersResponse
+  class DescribeTrafficMirrorFiltersResponse
   {
   public:
-    DescribeTrafficMirrorFiltersResponse();
-    DescribeTrafficMirrorFiltersResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeTrafficMirrorFiltersResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API DescribeTrafficMirrorFiltersResponse();
+    AWS_EC2_API DescribeTrafficMirrorFiltersResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_EC2_API DescribeTrafficMirrorFiltersResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

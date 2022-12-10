@@ -25,12 +25,12 @@ namespace CloudFront
 {
 namespace Model
 {
-  class AWS_CLOUDFRONT_API CreateContinuousDeploymentPolicy2020_05_31Result
+  class CreateContinuousDeploymentPolicy2020_05_31Result
   {
   public:
-    CreateContinuousDeploymentPolicy2020_05_31Result();
-    CreateContinuousDeploymentPolicy2020_05_31Result(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    CreateContinuousDeploymentPolicy2020_05_31Result& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_CLOUDFRONT_API CreateContinuousDeploymentPolicy2020_05_31Result();
+    AWS_CLOUDFRONT_API CreateContinuousDeploymentPolicy2020_05_31Result(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_CLOUDFRONT_API CreateContinuousDeploymentPolicy2020_05_31Result& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

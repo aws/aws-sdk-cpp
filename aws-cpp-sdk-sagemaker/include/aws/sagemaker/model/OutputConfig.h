@@ -37,13 +37,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/OutputConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API OutputConfig
+  class OutputConfig
   {
   public:
-    OutputConfig();
-    OutputConfig(Aws::Utils::Json::JsonView jsonValue);
-    OutputConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API OutputConfig();
+    AWS_SAGEMAKER_API OutputConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API OutputConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

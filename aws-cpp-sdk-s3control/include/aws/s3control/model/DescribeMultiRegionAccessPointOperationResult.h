@@ -24,12 +24,12 @@ namespace S3Control
 {
 namespace Model
 {
-  class AWS_S3CONTROL_API DescribeMultiRegionAccessPointOperationResult
+  class DescribeMultiRegionAccessPointOperationResult
   {
   public:
-    DescribeMultiRegionAccessPointOperationResult();
-    DescribeMultiRegionAccessPointOperationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    DescribeMultiRegionAccessPointOperationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_S3CONTROL_API DescribeMultiRegionAccessPointOperationResult();
+    AWS_S3CONTROL_API DescribeMultiRegionAccessPointOperationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_S3CONTROL_API DescribeMultiRegionAccessPointOperationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**

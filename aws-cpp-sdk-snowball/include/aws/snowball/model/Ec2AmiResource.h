@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/Ec2AmiResource">AWS
    * API Reference</a></p>
    */
-  class AWS_SNOWBALL_API Ec2AmiResource
+  class Ec2AmiResource
   {
   public:
-    Ec2AmiResource();
-    Ec2AmiResource(Aws::Utils::Json::JsonView jsonValue);
-    Ec2AmiResource& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SNOWBALL_API Ec2AmiResource();
+    AWS_SNOWBALL_API Ec2AmiResource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SNOWBALL_API Ec2AmiResource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SNOWBALL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

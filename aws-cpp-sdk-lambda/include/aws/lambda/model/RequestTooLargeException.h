@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/RequestTooLargeException">AWS
    * API Reference</a></p>
    */
-  class AWS_LAMBDA_API RequestTooLargeException
+  class RequestTooLargeException
   {
   public:
-    RequestTooLargeException();
-    RequestTooLargeException(Aws::Utils::Json::JsonView jsonValue);
-    RequestTooLargeException& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_LAMBDA_API RequestTooLargeException();
+    AWS_LAMBDA_API RequestTooLargeException(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAMBDA_API RequestTooLargeException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_LAMBDA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     

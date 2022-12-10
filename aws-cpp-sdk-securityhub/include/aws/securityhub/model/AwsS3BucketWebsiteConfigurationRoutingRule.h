@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsS3BucketWebsiteConfigurationRoutingRule">AWS
    * API Reference</a></p>
    */
-  class AWS_SECURITYHUB_API AwsS3BucketWebsiteConfigurationRoutingRule
+  class AwsS3BucketWebsiteConfigurationRoutingRule
   {
   public:
-    AwsS3BucketWebsiteConfigurationRoutingRule();
-    AwsS3BucketWebsiteConfigurationRoutingRule(Aws::Utils::Json::JsonView jsonValue);
-    AwsS3BucketWebsiteConfigurationRoutingRule& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SECURITYHUB_API AwsS3BucketWebsiteConfigurationRoutingRule();
+    AWS_SECURITYHUB_API AwsS3BucketWebsiteConfigurationRoutingRule(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API AwsS3BucketWebsiteConfigurationRoutingRule& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

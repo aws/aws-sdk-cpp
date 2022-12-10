@@ -25,12 +25,12 @@ namespace RAM
 {
 namespace Model
 {
-  class AWS_RAM_API RejectResourceShareInvitationResult
+  class RejectResourceShareInvitationResult
   {
   public:
-    RejectResourceShareInvitationResult();
-    RejectResourceShareInvitationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    RejectResourceShareInvitationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_RAM_API RejectResourceShareInvitationResult();
+    AWS_RAM_API RejectResourceShareInvitationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_RAM_API RejectResourceShareInvitationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

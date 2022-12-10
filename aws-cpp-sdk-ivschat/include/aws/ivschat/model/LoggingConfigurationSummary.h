@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ivschat-2020-07-14/LoggingConfigurationSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_IVSCHAT_API LoggingConfigurationSummary
+  class LoggingConfigurationSummary
   {
   public:
-    LoggingConfigurationSummary();
-    LoggingConfigurationSummary(Aws::Utils::Json::JsonView jsonValue);
-    LoggingConfigurationSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IVSCHAT_API LoggingConfigurationSummary();
+    AWS_IVSCHAT_API LoggingConfigurationSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IVSCHAT_API LoggingConfigurationSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IVSCHAT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

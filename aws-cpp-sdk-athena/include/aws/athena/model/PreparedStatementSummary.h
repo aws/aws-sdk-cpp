@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/PreparedStatementSummary">AWS
    * API Reference</a></p>
    */
-  class AWS_ATHENA_API PreparedStatementSummary
+  class PreparedStatementSummary
   {
   public:
-    PreparedStatementSummary();
-    PreparedStatementSummary(Aws::Utils::Json::JsonView jsonValue);
-    PreparedStatementSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ATHENA_API PreparedStatementSummary();
+    AWS_ATHENA_API PreparedStatementSummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ATHENA_API PreparedStatementSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ATHENA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

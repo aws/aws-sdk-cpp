@@ -25,12 +25,12 @@ namespace NetworkManager
 {
 namespace Model
 {
-  class AWS_NETWORKMANAGER_API ListOrganizationServiceAccessStatusResult
+  class ListOrganizationServiceAccessStatusResult
   {
   public:
-    ListOrganizationServiceAccessStatusResult();
-    ListOrganizationServiceAccessStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListOrganizationServiceAccessStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_NETWORKMANAGER_API ListOrganizationServiceAccessStatusResult();
+    AWS_NETWORKMANAGER_API ListOrganizationServiceAccessStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_NETWORKMANAGER_API ListOrganizationServiceAccessStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

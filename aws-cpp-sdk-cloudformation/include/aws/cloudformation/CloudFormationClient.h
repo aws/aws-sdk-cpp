@@ -8,6 +8,7 @@
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/cloudformation/CloudFormationServiceClientModel.h>
 
@@ -34,7 +35,7 @@ namespace CloudFormation
    * Services product, you can find the product's technical documentation at <a
    * href="https://docs.aws.amazon.com/"> <code>docs.aws.amazon.com</code> </a>.</p>
    */
-  class AWS_CLOUDFORMATION_API CloudFormationClient : public Aws::Client::AWSXMLClient
+  class AWS_CLOUDFORMATION_API CloudFormationClient : public Aws::Client::AWSXMLClient, public Aws::Client::ClientWithAsyncTemplateMethods<CloudFormationClient>
   {
     public:
       typedef Aws::Client::AWSXMLClient BASECLASS;
@@ -1667,6 +1668,7 @@ namespace CloudFormation
         void OverrideEndpoint(const Aws::String& endpoint);
         std::shared_ptr<CloudFormationEndpointProviderBase>& accessEndpointProvider();
   private:
+        friend class Aws::Client::ClientWithAsyncTemplateMethods<CloudFormationClient>;
         void init(const CloudFormationClientConfiguration& clientConfiguration);
 
         CloudFormationClientConfiguration m_clientConfiguration;

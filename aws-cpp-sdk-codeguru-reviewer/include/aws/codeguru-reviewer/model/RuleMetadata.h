@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/RuleMetadata">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEGURUREVIEWER_API RuleMetadata
+  class RuleMetadata
   {
   public:
-    RuleMetadata();
-    RuleMetadata(Aws::Utils::Json::JsonView jsonValue);
-    RuleMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEGURUREVIEWER_API RuleMetadata();
+    AWS_CODEGURUREVIEWER_API RuleMetadata(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEGURUREVIEWER_API RuleMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEGURUREVIEWER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

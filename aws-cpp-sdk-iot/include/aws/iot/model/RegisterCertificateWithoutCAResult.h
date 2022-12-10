@@ -24,12 +24,12 @@ namespace IoT
 {
 namespace Model
 {
-  class AWS_IOT_API RegisterCertificateWithoutCAResult
+  class RegisterCertificateWithoutCAResult
   {
   public:
-    RegisterCertificateWithoutCAResult();
-    RegisterCertificateWithoutCAResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    RegisterCertificateWithoutCAResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOT_API RegisterCertificateWithoutCAResult();
+    AWS_IOT_API RegisterCertificateWithoutCAResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_IOT_API RegisterCertificateWithoutCAResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

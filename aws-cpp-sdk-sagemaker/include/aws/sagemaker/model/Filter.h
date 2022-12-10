@@ -52,13 +52,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/Filter">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API Filter
+  class Filter
   {
   public:
-    Filter();
-    Filter(Aws::Utils::Json::JsonView jsonValue);
-    Filter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API Filter();
+    AWS_SAGEMAKER_API Filter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Filter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

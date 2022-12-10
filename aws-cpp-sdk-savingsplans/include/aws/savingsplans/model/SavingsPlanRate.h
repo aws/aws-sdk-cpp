@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/savingsplans-2019-06-28/SavingsPlanRate">AWS
    * API Reference</a></p>
    */
-  class AWS_SAVINGSPLANS_API SavingsPlanRate
+  class SavingsPlanRate
   {
   public:
-    SavingsPlanRate();
-    SavingsPlanRate(Aws::Utils::Json::JsonView jsonValue);
-    SavingsPlanRate& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAVINGSPLANS_API SavingsPlanRate();
+    AWS_SAVINGSPLANS_API SavingsPlanRate(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAVINGSPLANS_API SavingsPlanRate& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAVINGSPLANS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

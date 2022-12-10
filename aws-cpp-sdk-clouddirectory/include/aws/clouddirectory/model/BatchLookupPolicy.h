@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/BatchLookupPolicy">AWS
    * API Reference</a></p>
    */
-  class AWS_CLOUDDIRECTORY_API BatchLookupPolicy
+  class BatchLookupPolicy
   {
   public:
-    BatchLookupPolicy();
-    BatchLookupPolicy(Aws::Utils::Json::JsonView jsonValue);
-    BatchLookupPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CLOUDDIRECTORY_API BatchLookupPolicy();
+    AWS_CLOUDDIRECTORY_API BatchLookupPolicy(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDDIRECTORY_API BatchLookupPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CLOUDDIRECTORY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

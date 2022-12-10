@@ -37,13 +37,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/Cluster">AWS API
    * Reference</a></p>
    */
-  class AWS_DAX_API Cluster
+  class Cluster
   {
   public:
-    Cluster();
-    Cluster(Aws::Utils::Json::JsonView jsonValue);
-    Cluster& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DAX_API Cluster();
+    AWS_DAX_API Cluster(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DAX_API Cluster& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DAX_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/panorama-2019-07-24/NodeInstance">AWS
    * API Reference</a></p>
    */
-  class AWS_PANORAMA_API NodeInstance
+  class NodeInstance
   {
   public:
-    NodeInstance();
-    NodeInstance(Aws::Utils::Json::JsonView jsonValue);
-    NodeInstance& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PANORAMA_API NodeInstance();
+    AWS_PANORAMA_API NodeInstance(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PANORAMA_API NodeInstance& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PANORAMA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/FailedAccount">AWS
    * API Reference</a></p>
    */
-  class AWS_INSPECTOR2_API FailedAccount
+  class FailedAccount
   {
   public:
-    FailedAccount();
-    FailedAccount(Aws::Utils::Json::JsonView jsonValue);
-    FailedAccount& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_INSPECTOR2_API FailedAccount();
+    AWS_INSPECTOR2_API FailedAccount(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR2_API FailedAccount& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

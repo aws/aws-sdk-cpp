@@ -27,13 +27,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/NodeCounts">AWS
    * API Reference</a></p>
    */
-  class AWS_IOTFLEETWISE_API NodeCounts
+  class NodeCounts
   {
   public:
-    NodeCounts();
-    NodeCounts(Aws::Utils::Json::JsonView jsonValue);
-    NodeCounts& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOTFLEETWISE_API NodeCounts();
+    AWS_IOTFLEETWISE_API NodeCounts(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTFLEETWISE_API NodeCounts& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOTFLEETWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ResourceIdentifier">AWS
    * API Reference</a></p>
    */
-  class AWS_IOT_API ResourceIdentifier
+  class ResourceIdentifier
   {
   public:
-    ResourceIdentifier();
-    ResourceIdentifier(Aws::Utils::Json::JsonView jsonValue);
-    ResourceIdentifier& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_IOT_API ResourceIdentifier();
+    AWS_IOT_API ResourceIdentifier(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API ResourceIdentifier& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

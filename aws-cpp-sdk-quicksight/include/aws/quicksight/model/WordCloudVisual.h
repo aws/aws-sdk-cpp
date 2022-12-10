@@ -37,13 +37,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/WordCloudVisual">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API WordCloudVisual
+  class WordCloudVisual
   {
   public:
-    WordCloudVisual();
-    WordCloudVisual(Aws::Utils::Json::JsonView jsonValue);
-    WordCloudVisual& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API WordCloudVisual();
+    AWS_QUICKSIGHT_API WordCloudVisual(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API WordCloudVisual& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

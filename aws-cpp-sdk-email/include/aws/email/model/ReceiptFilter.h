@@ -33,15 +33,15 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ReceiptFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_SES_API ReceiptFilter
+  class ReceiptFilter
   {
   public:
-    ReceiptFilter();
-    ReceiptFilter(const Aws::Utils::Xml::XmlNode& xmlNode);
-    ReceiptFilter& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_SES_API ReceiptFilter();
+    AWS_SES_API ReceiptFilter(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_SES_API ReceiptFilter& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
-    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_SES_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_SES_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**

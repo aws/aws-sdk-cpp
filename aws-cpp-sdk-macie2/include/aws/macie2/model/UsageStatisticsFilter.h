@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UsageStatisticsFilter">AWS
    * API Reference</a></p>
    */
-  class AWS_MACIE2_API UsageStatisticsFilter
+  class UsageStatisticsFilter
   {
   public:
-    UsageStatisticsFilter();
-    UsageStatisticsFilter(Aws::Utils::Json::JsonView jsonValue);
-    UsageStatisticsFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MACIE2_API UsageStatisticsFilter();
+    AWS_MACIE2_API UsageStatisticsFilter(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API UsageStatisticsFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

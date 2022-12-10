@@ -98,6 +98,12 @@ UpdatePricingRuleResult& UpdatePricingRuleResult::operator =(const Aws::AmazonWe
 
   }
 
+  if(jsonValue.ValueExists("Tiering"))
+  {
+    m_tiering = jsonValue.GetObject("Tiering");
+
+  }
+
 
 
   return *this;

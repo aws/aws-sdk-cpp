@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DecisionTaskStartedEventAttributes">AWS
    * API Reference</a></p>
    */
-  class AWS_SWF_API DecisionTaskStartedEventAttributes
+  class DecisionTaskStartedEventAttributes
   {
   public:
-    DecisionTaskStartedEventAttributes();
-    DecisionTaskStartedEventAttributes(Aws::Utils::Json::JsonView jsonValue);
-    DecisionTaskStartedEventAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SWF_API DecisionTaskStartedEventAttributes();
+    AWS_SWF_API DecisionTaskStartedEventAttributes(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SWF_API DecisionTaskStartedEventAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SWF_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

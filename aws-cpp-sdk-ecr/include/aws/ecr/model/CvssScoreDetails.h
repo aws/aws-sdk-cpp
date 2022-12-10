@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/CvssScoreDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_ECR_API CvssScoreDetails
+  class CvssScoreDetails
   {
   public:
-    CvssScoreDetails();
-    CvssScoreDetails(Aws::Utils::Json::JsonView jsonValue);
-    CvssScoreDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_ECR_API CvssScoreDetails();
+    AWS_ECR_API CvssScoreDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECR_API CvssScoreDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_ECR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

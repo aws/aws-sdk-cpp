@@ -33,13 +33,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/PartOfSpeechTag">AWS
    * API Reference</a></p>
    */
-  class AWS_COMPREHEND_API PartOfSpeechTag
+  class PartOfSpeechTag
   {
   public:
-    PartOfSpeechTag();
-    PartOfSpeechTag(Aws::Utils::Json::JsonView jsonValue);
-    PartOfSpeechTag& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_COMPREHEND_API PartOfSpeechTag();
+    AWS_COMPREHEND_API PartOfSpeechTag(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHEND_API PartOfSpeechTag& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_COMPREHEND_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

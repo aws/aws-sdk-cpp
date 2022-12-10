@@ -25,6 +25,7 @@
 #include <aws/migrationhubstrategy/model/GetApplicationComponentStrategiesRequest.h>
 #include <aws/migrationhubstrategy/model/GetAssessmentRequest.h>
 #include <aws/migrationhubstrategy/model/GetImportFileTaskRequest.h>
+#include <aws/migrationhubstrategy/model/GetLatestAssessmentIdRequest.h>
 #include <aws/migrationhubstrategy/model/GetPortfolioPreferencesRequest.h>
 #include <aws/migrationhubstrategy/model/GetPortfolioSummaryRequest.h>
 #include <aws/migrationhubstrategy/model/GetRecommendationReportDetailsRequest.h>
@@ -290,6 +291,31 @@ void MigrationHubStrategyRecommendationsClient::GetImportFileTaskAsync(const Get
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, GetImportFileTask(request), context);
+    } );
+}
+
+GetLatestAssessmentIdOutcome MigrationHubStrategyRecommendationsClient::GetLatestAssessmentId(const GetLatestAssessmentIdRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetLatestAssessmentId, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetLatestAssessmentId, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/get-latest-assessment-id");
+  return GetLatestAssessmentIdOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetLatestAssessmentIdOutcomeCallable MigrationHubStrategyRecommendationsClient::GetLatestAssessmentIdCallable(const GetLatestAssessmentIdRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetLatestAssessmentIdOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetLatestAssessmentId(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void MigrationHubStrategyRecommendationsClient::GetLatestAssessmentIdAsync(const GetLatestAssessmentIdRequest& request, const GetLatestAssessmentIdResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetLatestAssessmentId(request), context);
     } );
 }
 

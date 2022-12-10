@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-catalog-2018-09-17/EntitySummary">AWS
    * API Reference</a></p>
    */
-  class AWS_MARKETPLACECATALOG_API EntitySummary
+  class EntitySummary
   {
   public:
-    EntitySummary();
-    EntitySummary(Aws::Utils::Json::JsonView jsonValue);
-    EntitySummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MARKETPLACECATALOG_API EntitySummary();
+    AWS_MARKETPLACECATALOG_API EntitySummary(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MARKETPLACECATALOG_API EntitySummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MARKETPLACECATALOG_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

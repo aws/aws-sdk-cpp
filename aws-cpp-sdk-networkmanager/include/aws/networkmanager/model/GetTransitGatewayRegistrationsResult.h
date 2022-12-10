@@ -26,12 +26,12 @@ namespace NetworkManager
 {
 namespace Model
 {
-  class AWS_NETWORKMANAGER_API GetTransitGatewayRegistrationsResult
+  class GetTransitGatewayRegistrationsResult
   {
   public:
-    GetTransitGatewayRegistrationsResult();
-    GetTransitGatewayRegistrationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    GetTransitGatewayRegistrationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_NETWORKMANAGER_API GetTransitGatewayRegistrationsResult();
+    AWS_NETWORKMANAGER_API GetTransitGatewayRegistrationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_NETWORKMANAGER_API GetTransitGatewayRegistrationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

@@ -24,12 +24,12 @@ namespace EKS
 {
 namespace Model
 {
-  class AWS_EKS_API UpdateNodegroupConfigResult
+  class UpdateNodegroupConfigResult
   {
   public:
-    UpdateNodegroupConfigResult();
-    UpdateNodegroupConfigResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateNodegroupConfigResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_EKS_API UpdateNodegroupConfigResult();
+    AWS_EKS_API UpdateNodegroupConfigResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_EKS_API UpdateNodegroupConfigResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     

@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/snow-device-management-2021-08-04/EbsInstanceBlockDevice">AWS
    * API Reference</a></p>
    */
-  class AWS_SNOWDEVICEMANAGEMENT_API EbsInstanceBlockDevice
+  class EbsInstanceBlockDevice
   {
   public:
-    EbsInstanceBlockDevice();
-    EbsInstanceBlockDevice(Aws::Utils::Json::JsonView jsonValue);
-    EbsInstanceBlockDevice& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SNOWDEVICEMANAGEMENT_API EbsInstanceBlockDevice();
+    AWS_SNOWDEVICEMANAGEMENT_API EbsInstanceBlockDevice(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SNOWDEVICEMANAGEMENT_API EbsInstanceBlockDevice& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SNOWDEVICEMANAGEMENT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

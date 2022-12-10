@@ -23,10 +23,10 @@ namespace Model
 
   /**
    */
-  class AWS_LEXRUNTIMEV2_API StartConversationRequest : public LexRuntimeV2Request
+  class StartConversationRequest : public LexRuntimeV2Request
   {
   public:
-    StartConversationRequest();
+    AWS_LEXRUNTIMEV2_API StartConversationRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,9 +37,9 @@ namespace Model
     inline virtual bool IsEventStreamRequest() const override { return true; }
     // SerializePayload will not be invoked.
     // This request is sent by encoding its data in event-streams which is sent as IOStream via GetBody()
-    Aws::String SerializePayload() const override { return {}; }
-    std::shared_ptr<Aws::IOStream> GetBody() const override;
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+    AWS_LEXRUNTIMEV2_API Aws::String SerializePayload() const override { return {}; }
+    AWS_LEXRUNTIMEV2_API std::shared_ptr<Aws::IOStream> GetBody() const override;
+    AWS_LEXRUNTIMEV2_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
     /**
      * Underlying Event Stream Decoder.
@@ -273,19 +273,19 @@ namespace Model
      * <p>Represents the stream of events to Amazon Lex V2 from your application. The
      * events are encoded as HTTP/2 data frames.</p>
      */
-    std::shared_ptr<StartConversationRequestEventStream> GetRequestEventStream() const { return m_requestEventStream; }
+    AWS_LEXRUNTIMEV2_API std::shared_ptr<StartConversationRequestEventStream> GetRequestEventStream() const { return m_requestEventStream; }
 
     /**
      * <p>Represents the stream of events to Amazon Lex V2 from your application. The
      * events are encoded as HTTP/2 data frames.</p>
      */
-    void SetRequestEventStream(const std::shared_ptr<StartConversationRequestEventStream>& value) { m_requestEventStream = value; }
+    AWS_LEXRUNTIMEV2_API void SetRequestEventStream(const std::shared_ptr<StartConversationRequestEventStream>& value) { m_requestEventStream = value; }
 
     /**
      * <p>Represents the stream of events to Amazon Lex V2 from your application. The
      * events are encoded as HTTP/2 data frames.</p>
      */
-    StartConversationRequest& WithRequestEventStream(const std::shared_ptr<StartConversationRequestEventStream>& value) { SetRequestEventStream(value); return *this;}
+    AWS_LEXRUNTIMEV2_API StartConversationRequest& WithRequestEventStream(const std::shared_ptr<StartConversationRequestEventStream>& value) { SetRequestEventStream(value); return *this;}
 
   private:
 

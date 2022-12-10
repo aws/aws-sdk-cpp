@@ -37,13 +37,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/RemoteAccessSession">AWS
    * API Reference</a></p>
    */
-  class AWS_DEVICEFARM_API RemoteAccessSession
+  class RemoteAccessSession
   {
   public:
-    RemoteAccessSession();
-    RemoteAccessSession(Aws::Utils::Json::JsonView jsonValue);
-    RemoteAccessSession& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DEVICEFARM_API RemoteAccessSession();
+    AWS_DEVICEFARM_API RemoteAccessSession(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVICEFARM_API RemoteAccessSession& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DEVICEFARM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

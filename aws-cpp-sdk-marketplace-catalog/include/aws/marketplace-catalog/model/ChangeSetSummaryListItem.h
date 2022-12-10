@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-catalog-2018-09-17/ChangeSetSummaryListItem">AWS
    * API Reference</a></p>
    */
-  class AWS_MARKETPLACECATALOG_API ChangeSetSummaryListItem
+  class ChangeSetSummaryListItem
   {
   public:
-    ChangeSetSummaryListItem();
-    ChangeSetSummaryListItem(Aws::Utils::Json::JsonView jsonValue);
-    ChangeSetSummaryListItem& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MARKETPLACECATALOG_API ChangeSetSummaryListItem();
+    AWS_MARKETPLACECATALOG_API ChangeSetSummaryListItem(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MARKETPLACECATALOG_API ChangeSetSummaryListItem& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MARKETPLACECATALOG_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

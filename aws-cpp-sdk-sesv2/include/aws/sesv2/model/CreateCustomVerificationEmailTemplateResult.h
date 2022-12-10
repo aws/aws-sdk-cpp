@@ -28,12 +28,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/CreateCustomVerificationEmailTemplateResponse">AWS
    * API Reference</a></p>
    */
-  class AWS_SESV2_API CreateCustomVerificationEmailTemplateResult
+  class CreateCustomVerificationEmailTemplateResult
   {
   public:
-    CreateCustomVerificationEmailTemplateResult();
-    CreateCustomVerificationEmailTemplateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    CreateCustomVerificationEmailTemplateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SESV2_API CreateCustomVerificationEmailTemplateResult();
+    AWS_SESV2_API CreateCustomVerificationEmailTemplateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SESV2_API CreateCustomVerificationEmailTemplateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

@@ -24,12 +24,12 @@ namespace SecretsManager
 {
 namespace Model
 {
-  class AWS_SECRETSMANAGER_API UpdateSecretVersionStageResult
+  class UpdateSecretVersionStageResult
   {
   public:
-    UpdateSecretVersionStageResult();
-    UpdateSecretVersionStageResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UpdateSecretVersionStageResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SECRETSMANAGER_API UpdateSecretVersionStageResult();
+    AWS_SECRETSMANAGER_API UpdateSecretVersionStageResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SECRETSMANAGER_API UpdateSecretVersionStageResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

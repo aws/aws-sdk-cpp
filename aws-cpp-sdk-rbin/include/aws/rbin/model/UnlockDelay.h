@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rbin-2021-06-15/UnlockDelay">AWS
    * API Reference</a></p>
    */
-  class AWS_RECYCLEBIN_API UnlockDelay
+  class UnlockDelay
   {
   public:
-    UnlockDelay();
-    UnlockDelay(Aws::Utils::Json::JsonView jsonValue);
-    UnlockDelay& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_RECYCLEBIN_API UnlockDelay();
+    AWS_RECYCLEBIN_API UnlockDelay(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RECYCLEBIN_API UnlockDelay& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_RECYCLEBIN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

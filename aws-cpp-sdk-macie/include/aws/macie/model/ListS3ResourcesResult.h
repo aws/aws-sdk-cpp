@@ -26,12 +26,12 @@ namespace Macie
 {
 namespace Model
 {
-  class AWS_MACIE_API ListS3ResourcesResult
+  class ListS3ResourcesResult
   {
   public:
-    ListS3ResourcesResult();
-    ListS3ResourcesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListS3ResourcesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MACIE_API ListS3ResourcesResult();
+    AWS_MACIE_API ListS3ResourcesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MACIE_API ListS3ResourcesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**

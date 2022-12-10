@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/Trust">AWS API
    * Reference</a></p>
    */
-  class AWS_DIRECTORYSERVICE_API Trust
+  class Trust
   {
   public:
-    Trust();
-    Trust(Aws::Utils::Json::JsonView jsonValue);
-    Trust& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_DIRECTORYSERVICE_API Trust();
+    AWS_DIRECTORYSERVICE_API Trust(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTORYSERVICE_API Trust& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_DIRECTORYSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

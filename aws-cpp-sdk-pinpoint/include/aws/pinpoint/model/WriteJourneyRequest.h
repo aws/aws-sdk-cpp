@@ -39,13 +39,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/WriteJourneyRequest">AWS
    * API Reference</a></p>
    */
-  class AWS_PINPOINT_API WriteJourneyRequest
+  class WriteJourneyRequest
   {
   public:
-    WriteJourneyRequest();
-    WriteJourneyRequest(Aws::Utils::Json::JsonView jsonValue);
-    WriteJourneyRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_PINPOINT_API WriteJourneyRequest();
+    AWS_PINPOINT_API WriteJourneyRequest(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API WriteJourneyRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

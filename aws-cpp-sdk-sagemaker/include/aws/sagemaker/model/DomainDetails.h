@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DomainDetails">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API DomainDetails
+  class DomainDetails
   {
   public:
-    DomainDetails();
-    DomainDetails(Aws::Utils::Json::JsonView jsonValue);
-    DomainDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API DomainDetails();
+    AWS_SAGEMAKER_API DomainDetails(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API DomainDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

@@ -34,13 +34,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/DomainDeliverabilityTrackingOption">AWS
    * API Reference</a></p>
    */
-  class AWS_SESV2_API DomainDeliverabilityTrackingOption
+  class DomainDeliverabilityTrackingOption
   {
   public:
-    DomainDeliverabilityTrackingOption();
-    DomainDeliverabilityTrackingOption(Aws::Utils::Json::JsonView jsonValue);
-    DomainDeliverabilityTrackingOption& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SESV2_API DomainDeliverabilityTrackingOption();
+    AWS_SESV2_API DomainDeliverabilityTrackingOption(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SESV2_API DomainDeliverabilityTrackingOption& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SESV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

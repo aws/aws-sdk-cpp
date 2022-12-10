@@ -19,10 +19,10 @@ namespace Model
 
   /**
    */
-  class AWS_MIGRATIONHUBREFACTORSPACES_API UpdateRouteRequest : public MigrationHubRefactorSpacesRequest
+  class UpdateRouteRequest : public MigrationHubRefactorSpacesRequest
   {
   public:
-    UpdateRouteRequest();
+    AWS_MIGRATIONHUBREFACTORSPACES_API UpdateRouteRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -30,7 +30,7 @@ namespace Model
     // so we can not get operation's name from response.
     inline virtual const char* GetServiceRequestName() const override { return "UpdateRoute"; }
 
-    Aws::String SerializePayload() const override;
+    AWS_MIGRATIONHUBREFACTORSPACES_API Aws::String SerializePayload() const override;
 
 
     /**

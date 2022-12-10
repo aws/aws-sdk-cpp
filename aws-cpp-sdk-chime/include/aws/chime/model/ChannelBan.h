@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ChannelBan">AWS
    * API Reference</a></p>
    */
-  class AWS_CHIME_API ChannelBan
+  class ChannelBan
   {
   public:
-    ChannelBan();
-    ChannelBan(Aws::Utils::Json::JsonView jsonValue);
-    ChannelBan& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CHIME_API ChannelBan();
+    AWS_CHIME_API ChannelBan(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API ChannelBan& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CHIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

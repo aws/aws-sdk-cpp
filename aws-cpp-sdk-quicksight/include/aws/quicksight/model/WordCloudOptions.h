@@ -32,13 +32,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/WordCloudOptions">AWS
    * API Reference</a></p>
    */
-  class AWS_QUICKSIGHT_API WordCloudOptions
+  class WordCloudOptions
   {
   public:
-    WordCloudOptions();
-    WordCloudOptions(Aws::Utils::Json::JsonView jsonValue);
-    WordCloudOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_QUICKSIGHT_API WordCloudOptions();
+    AWS_QUICKSIGHT_API WordCloudOptions(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API WordCloudOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

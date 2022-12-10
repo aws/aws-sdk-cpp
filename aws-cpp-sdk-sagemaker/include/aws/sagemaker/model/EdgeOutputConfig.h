@@ -29,13 +29,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/EdgeOutputConfig">AWS
    * API Reference</a></p>
    */
-  class AWS_SAGEMAKER_API EdgeOutputConfig
+  class EdgeOutputConfig
   {
   public:
-    EdgeOutputConfig();
-    EdgeOutputConfig(Aws::Utils::Json::JsonView jsonValue);
-    EdgeOutputConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SAGEMAKER_API EdgeOutputConfig();
+    AWS_SAGEMAKER_API EdgeOutputConfig(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API EdgeOutputConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

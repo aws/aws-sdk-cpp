@@ -31,13 +31,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/meteringmarketplace-2016-01-14/UsageAllocation">AWS
    * API Reference</a></p>
    */
-  class AWS_MARKETPLACEMETERING_API UsageAllocation
+  class UsageAllocation
   {
   public:
-    UsageAllocation();
-    UsageAllocation(Aws::Utils::Json::JsonView jsonValue);
-    UsageAllocation& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_MARKETPLACEMETERING_API UsageAllocation();
+    AWS_MARKETPLACEMETERING_API UsageAllocation(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MARKETPLACEMETERING_API UsageAllocation& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_MARKETPLACEMETERING_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

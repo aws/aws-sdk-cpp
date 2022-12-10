@@ -30,13 +30,13 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/FrameMetricDatum">AWS
    * API Reference</a></p>
    */
-  class AWS_CODEGURUPROFILER_API FrameMetricDatum
+  class FrameMetricDatum
   {
   public:
-    FrameMetricDatum();
-    FrameMetricDatum(Aws::Utils::Json::JsonView jsonValue);
-    FrameMetricDatum& operator=(Aws::Utils::Json::JsonView jsonValue);
-    Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_CODEGURUPROFILER_API FrameMetricDatum();
+    AWS_CODEGURUPROFILER_API FrameMetricDatum(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEGURUPROFILER_API FrameMetricDatum& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CODEGURUPROFILER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     
