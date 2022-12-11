@@ -90,7 +90,7 @@ typedef struct {
  *       hence writing to / reading from it is disabled in this code.
  *
  *       See https://cjson.docsforge.com/#thread-safety (concurrent reads)
- *       See https://github.com/awslabs/aws-c-common/issues/953 (concurrent writes)
+ *       See https://github.com/aws/aws-sdk-cpp/pull/2231 (concurrent writes)
 static error global_error = { NULL, 0 };
 
 CJSON_AS4CPP_PUBLIC(const char *) cJSON_AS4CPP_GetErrorPtr(void)
