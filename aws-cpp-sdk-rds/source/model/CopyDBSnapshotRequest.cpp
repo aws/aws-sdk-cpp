@@ -20,6 +20,8 @@ CopyDBSnapshotRequest::CopyDBSnapshotRequest() :
     m_preSignedUrlHasBeenSet(false),
     m_optionGroupNameHasBeenSet(false),
     m_targetCustomAvailabilityZoneHasBeenSet(false),
+    m_copyOptionGroup(false),
+    m_copyOptionGroupHasBeenSet(false),
     m_sourceRegionHasBeenSet(false)
 {
 }
@@ -71,6 +73,11 @@ Aws::String CopyDBSnapshotRequest::SerializePayload() const
   if(m_targetCustomAvailabilityZoneHasBeenSet)
   {
     ss << "TargetCustomAvailabilityZone=" << StringUtils::URLEncode(m_targetCustomAvailabilityZone.c_str()) << "&";
+  }
+
+  if(m_copyOptionGroupHasBeenSet)
+  {
+    ss << "CopyOptionGroup=" << std::boolalpha << m_copyOptionGroup << "&";
   }
 
   ss << "Version=2014-10-31";

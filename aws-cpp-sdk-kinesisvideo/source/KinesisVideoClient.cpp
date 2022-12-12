@@ -25,6 +25,7 @@
 #include <aws/kinesisvideo/model/CreateStreamRequest.h>
 #include <aws/kinesisvideo/model/DeleteSignalingChannelRequest.h>
 #include <aws/kinesisvideo/model/DeleteStreamRequest.h>
+#include <aws/kinesisvideo/model/DescribeEdgeConfigurationRequest.h>
 #include <aws/kinesisvideo/model/DescribeImageGenerationConfigurationRequest.h>
 #include <aws/kinesisvideo/model/DescribeNotificationConfigurationRequest.h>
 #include <aws/kinesisvideo/model/DescribeSignalingChannelRequest.h>
@@ -35,6 +36,7 @@
 #include <aws/kinesisvideo/model/ListStreamsRequest.h>
 #include <aws/kinesisvideo/model/ListTagsForResourceRequest.h>
 #include <aws/kinesisvideo/model/ListTagsForStreamRequest.h>
+#include <aws/kinesisvideo/model/StartEdgeConfigurationUpdateRequest.h>
 #include <aws/kinesisvideo/model/TagResourceRequest.h>
 #include <aws/kinesisvideo/model/TagStreamRequest.h>
 #include <aws/kinesisvideo/model/UntagResourceRequest.h>
@@ -269,6 +271,31 @@ void KinesisVideoClient::DeleteStreamAsync(const DeleteStreamRequest& request, c
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, DeleteStream(request), context);
+    } );
+}
+
+DescribeEdgeConfigurationOutcome KinesisVideoClient::DescribeEdgeConfiguration(const DescribeEdgeConfigurationRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeEdgeConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeEdgeConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/describeEdgeConfiguration");
+  return DescribeEdgeConfigurationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeEdgeConfigurationOutcomeCallable KinesisVideoClient::DescribeEdgeConfigurationCallable(const DescribeEdgeConfigurationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeEdgeConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeEdgeConfiguration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void KinesisVideoClient::DescribeEdgeConfigurationAsync(const DescribeEdgeConfigurationRequest& request, const DescribeEdgeConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeEdgeConfiguration(request), context);
     } );
 }
 
@@ -519,6 +546,31 @@ void KinesisVideoClient::ListTagsForStreamAsync(const ListTagsForStreamRequest& 
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, ListTagsForStream(request), context);
+    } );
+}
+
+StartEdgeConfigurationUpdateOutcome KinesisVideoClient::StartEdgeConfigurationUpdate(const StartEdgeConfigurationUpdateRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartEdgeConfigurationUpdate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartEdgeConfigurationUpdate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/startEdgeConfigurationUpdate");
+  return StartEdgeConfigurationUpdateOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+StartEdgeConfigurationUpdateOutcomeCallable KinesisVideoClient::StartEdgeConfigurationUpdateCallable(const StartEdgeConfigurationUpdateRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StartEdgeConfigurationUpdateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartEdgeConfigurationUpdate(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void KinesisVideoClient::StartEdgeConfigurationUpdateAsync(const StartEdgeConfigurationUpdateRequest& request, const StartEdgeConfigurationUpdateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, StartEdgeConfigurationUpdate(request), context);
     } );
 }
 

@@ -18,7 +18,9 @@ StartLabelDetectionRequest::StartLabelDetectionRequest() :
     m_minConfidence(0.0),
     m_minConfidenceHasBeenSet(false),
     m_notificationChannelHasBeenSet(false),
-    m_jobTagHasBeenSet(false)
+    m_jobTagHasBeenSet(false),
+    m_featuresHasBeenSet(false),
+    m_settingsHasBeenSet(false)
 {
 }
 
@@ -53,6 +55,23 @@ Aws::String StartLabelDetectionRequest::SerializePayload() const
   if(m_jobTagHasBeenSet)
   {
    payload.WithString("JobTag", m_jobTag);
+
+  }
+
+  if(m_featuresHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> featuresJsonList(m_features.size());
+   for(unsigned featuresIndex = 0; featuresIndex < featuresJsonList.GetLength(); ++featuresIndex)
+   {
+     featuresJsonList[featuresIndex].AsString(LabelDetectionFeatureNameMapper::GetNameForLabelDetectionFeatureName(m_features[featuresIndex]));
+   }
+   payload.WithArray("Features", std::move(featuresJsonList));
+
+  }
+
+  if(m_settingsHasBeenSet)
+  {
+   payload.WithObject("Settings", m_settings.Jsonize());
 
   }
 

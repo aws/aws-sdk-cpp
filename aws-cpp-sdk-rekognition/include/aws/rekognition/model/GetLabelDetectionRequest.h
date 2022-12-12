@@ -8,6 +8,7 @@
 #include <aws/rekognition/RekognitionRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/rekognition/model/LabelDetectionSortBy.h>
+#include <aws/rekognition/model/LabelDetectionAggregateBy.h>
 #include <utility>
 
 namespace Aws
@@ -232,6 +233,43 @@ namespace Model
      */
     inline GetLabelDetectionRequest& WithSortBy(LabelDetectionSortBy&& value) { SetSortBy(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Defines how to aggregate the returned results. Results can be aggregated by
+     * timestamps or segments.</p>
+     */
+    inline const LabelDetectionAggregateBy& GetAggregateBy() const{ return m_aggregateBy; }
+
+    /**
+     * <p>Defines how to aggregate the returned results. Results can be aggregated by
+     * timestamps or segments.</p>
+     */
+    inline bool AggregateByHasBeenSet() const { return m_aggregateByHasBeenSet; }
+
+    /**
+     * <p>Defines how to aggregate the returned results. Results can be aggregated by
+     * timestamps or segments.</p>
+     */
+    inline void SetAggregateBy(const LabelDetectionAggregateBy& value) { m_aggregateByHasBeenSet = true; m_aggregateBy = value; }
+
+    /**
+     * <p>Defines how to aggregate the returned results. Results can be aggregated by
+     * timestamps or segments.</p>
+     */
+    inline void SetAggregateBy(LabelDetectionAggregateBy&& value) { m_aggregateByHasBeenSet = true; m_aggregateBy = std::move(value); }
+
+    /**
+     * <p>Defines how to aggregate the returned results. Results can be aggregated by
+     * timestamps or segments.</p>
+     */
+    inline GetLabelDetectionRequest& WithAggregateBy(const LabelDetectionAggregateBy& value) { SetAggregateBy(value); return *this;}
+
+    /**
+     * <p>Defines how to aggregate the returned results. Results can be aggregated by
+     * timestamps or segments.</p>
+     */
+    inline GetLabelDetectionRequest& WithAggregateBy(LabelDetectionAggregateBy&& value) { SetAggregateBy(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_jobId;
@@ -245,6 +283,9 @@ namespace Model
 
     LabelDetectionSortBy m_sortBy;
     bool m_sortByHasBeenSet = false;
+
+    LabelDetectionAggregateBy m_aggregateBy;
+    bool m_aggregateByHasBeenSet = false;
   };
 
 } // namespace Model

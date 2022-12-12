@@ -486,8 +486,9 @@ namespace LookoutforVision
          * API.</p> <p>This operation requires the following permissions:</p> <ul> <li> <p>
          * <code>lookoutvision:StartModelPackagingJob</code> </p> </li> <li> <p>
          * <code>s3:PutObject</code> </p> </li> <li> <p> <code>s3:GetBucketLocation</code>
-         * </p> </li> <li> <p> <code>greengrass:CreateComponentVersion</code> </p> </li>
-         * <li> <p> <code>greengrass:DescribeComponent</code> </p> </li> <li> <p>(Optional)
+         * </p> </li> <li> <p> <code>kms:GenerateDataKey</code> </p> </li> <li> <p>
+         * <code>greengrass:CreateComponentVersion</code> </p> </li> <li> <p>
+         * <code>greengrass:DescribeComponent</code> </p> </li> <li> <p>(Optional)
          * <code>greengrass:TagResource</code>. Only required if you want to tag the
          * component.</p> </li> </ul> <p>For more information, see <i>Using your Amazon
          * Lookout for Vision model on an edge device</i> in the Amazon Lookout for Vision

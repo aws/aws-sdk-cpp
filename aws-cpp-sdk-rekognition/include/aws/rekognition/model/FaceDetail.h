@@ -48,7 +48,7 @@ namespace Model
    * to return, use the <code>FaceAttributes</code> input parameter for
    * <a>StartFaceDetection</a>. The following Amazon Rekognition Video operations
    * return only the default attributes. The corresponding Start operations don't
-   * have a <code>FaceAttributes</code> input parameter.</p> <ul> <li>
+   * have a <code>FaceAttributes</code> input parameter:</p> <ul> <li>
    * <p>GetCelebrityRecognition</p> </li> <li> <p>GetPersonTracking</p> </li> <li>
    * <p>GetFaceSearch</p> </li> </ul> <p>The Amazon Rekognition Image
    * <a>DetectFaces</a> and <a>IndexFaces</a> operations can return all facial

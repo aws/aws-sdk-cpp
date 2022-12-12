@@ -18,7 +18,9 @@ GetLabelDetectionRequest::GetLabelDetectionRequest() :
     m_maxResultsHasBeenSet(false),
     m_nextTokenHasBeenSet(false),
     m_sortBy(LabelDetectionSortBy::NOT_SET),
-    m_sortByHasBeenSet(false)
+    m_sortByHasBeenSet(false),
+    m_aggregateBy(LabelDetectionAggregateBy::NOT_SET),
+    m_aggregateByHasBeenSet(false)
 {
 }
 
@@ -47,6 +49,11 @@ Aws::String GetLabelDetectionRequest::SerializePayload() const
   if(m_sortByHasBeenSet)
   {
    payload.WithString("SortBy", LabelDetectionSortByMapper::GetNameForLabelDetectionSortBy(m_sortBy));
+  }
+
+  if(m_aggregateByHasBeenSet)
+  {
+   payload.WithString("AggregateBy", LabelDetectionAggregateByMapper::GetNameForLabelDetectionAggregateBy(m_aggregateBy));
   }
 
   return payload.View().WriteReadable();

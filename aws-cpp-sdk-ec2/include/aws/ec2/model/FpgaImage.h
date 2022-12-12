@@ -595,6 +595,34 @@ namespace Model
      */
     inline FpgaImage& WithDataRetentionSupport(bool value) { SetDataRetentionSupport(value); return *this;}
 
+
+    
+    inline const Aws::Vector<Aws::String>& GetInstanceTypes() const{ return m_instanceTypes; }
+
+    
+    inline bool InstanceTypesHasBeenSet() const { return m_instanceTypesHasBeenSet; }
+
+    
+    inline void SetInstanceTypes(const Aws::Vector<Aws::String>& value) { m_instanceTypesHasBeenSet = true; m_instanceTypes = value; }
+
+    
+    inline void SetInstanceTypes(Aws::Vector<Aws::String>&& value) { m_instanceTypesHasBeenSet = true; m_instanceTypes = std::move(value); }
+
+    
+    inline FpgaImage& WithInstanceTypes(const Aws::Vector<Aws::String>& value) { SetInstanceTypes(value); return *this;}
+
+    
+    inline FpgaImage& WithInstanceTypes(Aws::Vector<Aws::String>&& value) { SetInstanceTypes(std::move(value)); return *this;}
+
+    
+    inline FpgaImage& AddInstanceTypes(const Aws::String& value) { m_instanceTypesHasBeenSet = true; m_instanceTypes.push_back(value); return *this; }
+
+    
+    inline FpgaImage& AddInstanceTypes(Aws::String&& value) { m_instanceTypesHasBeenSet = true; m_instanceTypes.push_back(std::move(value)); return *this; }
+
+    
+    inline FpgaImage& AddInstanceTypes(const char* value) { m_instanceTypesHasBeenSet = true; m_instanceTypes.push_back(value); return *this; }
+
   private:
 
     Aws::String m_fpgaImageId;
@@ -641,6 +669,9 @@ namespace Model
 
     bool m_dataRetentionSupport;
     bool m_dataRetentionSupportHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_instanceTypes;
+    bool m_instanceTypesHasBeenSet = false;
   };
 
 } // namespace Model

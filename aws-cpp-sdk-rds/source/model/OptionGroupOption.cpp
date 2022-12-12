@@ -43,7 +43,9 @@ OptionGroupOption::OptionGroupOption() :
     m_supportsOptionVersionDowngrade(false),
     m_supportsOptionVersionDowngradeHasBeenSet(false),
     m_optionGroupOptionSettingsHasBeenSet(false),
-    m_optionGroupOptionVersionsHasBeenSet(false)
+    m_optionGroupOptionVersionsHasBeenSet(false),
+    m_copyableCrossAccount(false),
+    m_copyableCrossAccountHasBeenSet(false)
 {
 }
 
@@ -70,7 +72,9 @@ OptionGroupOption::OptionGroupOption(const XmlNode& xmlNode) :
     m_supportsOptionVersionDowngrade(false),
     m_supportsOptionVersionDowngradeHasBeenSet(false),
     m_optionGroupOptionSettingsHasBeenSet(false),
-    m_optionGroupOptionVersionsHasBeenSet(false)
+    m_optionGroupOptionVersionsHasBeenSet(false),
+    m_copyableCrossAccount(false),
+    m_copyableCrossAccountHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -201,6 +205,12 @@ OptionGroupOption& OptionGroupOption::operator =(const XmlNode& xmlNode)
 
       m_optionGroupOptionVersionsHasBeenSet = true;
     }
+    XmlNode copyableCrossAccountNode = resultNode.FirstChild("CopyableCrossAccount");
+    if(!copyableCrossAccountNode.IsNull())
+    {
+      m_copyableCrossAccount = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(copyableCrossAccountNode.GetText()).c_str()).c_str());
+      m_copyableCrossAccountHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -308,6 +318,11 @@ void OptionGroupOption::OutputToStream(Aws::OStream& oStream, const char* locati
       }
   }
 
+  if(m_copyableCrossAccountHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".CopyableCrossAccount=" << std::boolalpha << m_copyableCrossAccount << "&";
+  }
+
 }
 
 void OptionGroupOption::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -395,6 +410,10 @@ void OptionGroupOption::OutputToStream(Aws::OStream& oStream, const char* locati
         optionGroupOptionVersionsSs << location <<  ".OptionVersion." << optionGroupOptionVersionsIdx++;
         item.OutputToStream(oStream, optionGroupOptionVersionsSs.str().c_str());
       }
+  }
+  if(m_copyableCrossAccountHasBeenSet)
+  {
+      oStream << location << ".CopyableCrossAccount=" << std::boolalpha << m_copyableCrossAccount << "&";
   }
 }
 

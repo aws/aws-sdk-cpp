@@ -102,6 +102,7 @@ namespace Aws
         static const int verified_access_policy_HASH = HashingUtils::HashString("verified-access-policy");
         static const int verified_access_trust_provider_HASH = HashingUtils::HashString("verified-access-trust-provider");
         static const int vpn_connection_device_type_HASH = HashingUtils::HashString("vpn-connection-device-type");
+        static const int vpc_block_public_access_exclusion_HASH = HashingUtils::HashString("vpc-block-public-access-exclusion");
 
 
         ResourceType GetResourceTypeForName(const Aws::String& name)
@@ -435,6 +436,10 @@ namespace Aws
           {
             return ResourceType::vpn_connection_device_type;
           }
+          else if (hashCode == vpc_block_public_access_exclusion_HASH)
+          {
+            return ResourceType::vpc_block_public_access_exclusion;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -613,6 +618,8 @@ namespace Aws
             return "verified-access-trust-provider";
           case ResourceType::vpn_connection_device_type:
             return "vpn-connection-device-type";
+          case ResourceType::vpc_block_public_access_exclusion:
+            return "vpc-block-public-access-exclusion";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
