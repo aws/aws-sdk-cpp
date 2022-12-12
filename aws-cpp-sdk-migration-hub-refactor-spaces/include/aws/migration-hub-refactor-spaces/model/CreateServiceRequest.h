@@ -398,32 +398,56 @@ namespace Model
 
 
     /**
-     * <p>The configuration for the URL endpoint type.</p>
+     * <p>The configuration for the URL endpoint type. When creating a route to a
+     * service, Refactor Spaces automatically resolves the address in the
+     * <code>UrlEndpointInput</code> object URL when the Domain Name System (DNS)
+     * time-to-live (TTL) expires, or every 60 seconds for TTLs less than 60
+     * seconds.</p>
      */
     inline const UrlEndpointInput& GetUrlEndpoint() const{ return m_urlEndpoint; }
 
     /**
-     * <p>The configuration for the URL endpoint type.</p>
+     * <p>The configuration for the URL endpoint type. When creating a route to a
+     * service, Refactor Spaces automatically resolves the address in the
+     * <code>UrlEndpointInput</code> object URL when the Domain Name System (DNS)
+     * time-to-live (TTL) expires, or every 60 seconds for TTLs less than 60
+     * seconds.</p>
      */
     inline bool UrlEndpointHasBeenSet() const { return m_urlEndpointHasBeenSet; }
 
     /**
-     * <p>The configuration for the URL endpoint type.</p>
+     * <p>The configuration for the URL endpoint type. When creating a route to a
+     * service, Refactor Spaces automatically resolves the address in the
+     * <code>UrlEndpointInput</code> object URL when the Domain Name System (DNS)
+     * time-to-live (TTL) expires, or every 60 seconds for TTLs less than 60
+     * seconds.</p>
      */
     inline void SetUrlEndpoint(const UrlEndpointInput& value) { m_urlEndpointHasBeenSet = true; m_urlEndpoint = value; }
 
     /**
-     * <p>The configuration for the URL endpoint type.</p>
+     * <p>The configuration for the URL endpoint type. When creating a route to a
+     * service, Refactor Spaces automatically resolves the address in the
+     * <code>UrlEndpointInput</code> object URL when the Domain Name System (DNS)
+     * time-to-live (TTL) expires, or every 60 seconds for TTLs less than 60
+     * seconds.</p>
      */
     inline void SetUrlEndpoint(UrlEndpointInput&& value) { m_urlEndpointHasBeenSet = true; m_urlEndpoint = std::move(value); }
 
     /**
-     * <p>The configuration for the URL endpoint type.</p>
+     * <p>The configuration for the URL endpoint type. When creating a route to a
+     * service, Refactor Spaces automatically resolves the address in the
+     * <code>UrlEndpointInput</code> object URL when the Domain Name System (DNS)
+     * time-to-live (TTL) expires, or every 60 seconds for TTLs less than 60
+     * seconds.</p>
      */
     inline CreateServiceRequest& WithUrlEndpoint(const UrlEndpointInput& value) { SetUrlEndpoint(value); return *this;}
 
     /**
-     * <p>The configuration for the URL endpoint type.</p>
+     * <p>The configuration for the URL endpoint type. When creating a route to a
+     * service, Refactor Spaces automatically resolves the address in the
+     * <code>UrlEndpointInput</code> object URL when the Domain Name System (DNS)
+     * time-to-live (TTL) expires, or every 60 seconds for TTLs less than 60
+     * seconds.</p>
      */
     inline CreateServiceRequest& WithUrlEndpoint(UrlEndpointInput&& value) { SetUrlEndpoint(std::move(value)); return *this;}
 

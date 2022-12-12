@@ -97,6 +97,81 @@ namespace Model
      */
     inline LabelDetection& WithLabel(Label&& value) { SetLabel(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The time in milliseconds defining the start of the timeline segment
+     * containing a continuously detected label.</p>
+     */
+    inline long long GetStartTimestampMillis() const{ return m_startTimestampMillis; }
+
+    /**
+     * <p>The time in milliseconds defining the start of the timeline segment
+     * containing a continuously detected label.</p>
+     */
+    inline bool StartTimestampMillisHasBeenSet() const { return m_startTimestampMillisHasBeenSet; }
+
+    /**
+     * <p>The time in milliseconds defining the start of the timeline segment
+     * containing a continuously detected label.</p>
+     */
+    inline void SetStartTimestampMillis(long long value) { m_startTimestampMillisHasBeenSet = true; m_startTimestampMillis = value; }
+
+    /**
+     * <p>The time in milliseconds defining the start of the timeline segment
+     * containing a continuously detected label.</p>
+     */
+    inline LabelDetection& WithStartTimestampMillis(long long value) { SetStartTimestampMillis(value); return *this;}
+
+
+    /**
+     * <p>The time in milliseconds defining the end of the timeline segment containing
+     * a continuously detected label.</p>
+     */
+    inline long long GetEndTimestampMillis() const{ return m_endTimestampMillis; }
+
+    /**
+     * <p>The time in milliseconds defining the end of the timeline segment containing
+     * a continuously detected label.</p>
+     */
+    inline bool EndTimestampMillisHasBeenSet() const { return m_endTimestampMillisHasBeenSet; }
+
+    /**
+     * <p>The time in milliseconds defining the end of the timeline segment containing
+     * a continuously detected label.</p>
+     */
+    inline void SetEndTimestampMillis(long long value) { m_endTimestampMillisHasBeenSet = true; m_endTimestampMillis = value; }
+
+    /**
+     * <p>The time in milliseconds defining the end of the timeline segment containing
+     * a continuously detected label.</p>
+     */
+    inline LabelDetection& WithEndTimestampMillis(long long value) { SetEndTimestampMillis(value); return *this;}
+
+
+    /**
+     * <p>The time duration of a segment in milliseconds, I.e. time elapsed from
+     * StartTimestampMillis to EndTimestampMillis.</p>
+     */
+    inline long long GetDurationMillis() const{ return m_durationMillis; }
+
+    /**
+     * <p>The time duration of a segment in milliseconds, I.e. time elapsed from
+     * StartTimestampMillis to EndTimestampMillis.</p>
+     */
+    inline bool DurationMillisHasBeenSet() const { return m_durationMillisHasBeenSet; }
+
+    /**
+     * <p>The time duration of a segment in milliseconds, I.e. time elapsed from
+     * StartTimestampMillis to EndTimestampMillis.</p>
+     */
+    inline void SetDurationMillis(long long value) { m_durationMillisHasBeenSet = true; m_durationMillis = value; }
+
+    /**
+     * <p>The time duration of a segment in milliseconds, I.e. time elapsed from
+     * StartTimestampMillis to EndTimestampMillis.</p>
+     */
+    inline LabelDetection& WithDurationMillis(long long value) { SetDurationMillis(value); return *this;}
+
   private:
 
     long long m_timestamp;
@@ -104,6 +179,15 @@ namespace Model
 
     Label m_label;
     bool m_labelHasBeenSet = false;
+
+    long long m_startTimestampMillis;
+    bool m_startTimestampMillisHasBeenSet = false;
+
+    long long m_endTimestampMillis;
+    bool m_endTimestampMillisHasBeenSet = false;
+
+    long long m_durationMillis;
+    bool m_durationMillisHasBeenSet = false;
   };
 
 } // namespace Model

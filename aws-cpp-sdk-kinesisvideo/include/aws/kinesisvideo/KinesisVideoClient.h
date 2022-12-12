@@ -160,6 +160,26 @@ namespace KinesisVideo
         virtual void DeleteStreamAsync(const Model::DeleteStreamRequest& request, const DeleteStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Describes a stream’s edge configuration that was set using the
+         * <code>StartEdgeConfigurationUpdate</code> API. Use this API to get the status of
+         * the configuration if the configuration is in sync with the Edge
+         * Agent.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/DescribeEdgeConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeEdgeConfigurationOutcome DescribeEdgeConfiguration(const Model::DescribeEdgeConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeEdgeConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeEdgeConfigurationOutcomeCallable DescribeEdgeConfigurationCallable(const Model::DescribeEdgeConfigurationRequest& request) const;
+
+        /**
+         * An Async wrapper for DescribeEdgeConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeEdgeConfigurationAsync(const Model::DescribeEdgeConfigurationRequest& request, const DescribeEdgeConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Gets the <code>ImageGenerationConfiguration</code> for a given Kinesis video
          * stream.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/DescribeImageGenerationConfiguration">AWS
@@ -361,6 +381,36 @@ namespace KinesisVideo
          * An Async wrapper for ListTagsForStream that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListTagsForStreamAsync(const Model::ListTagsForStreamRequest& request, const ListTagsForStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>An asynchronous API that updates a stream’s existing edge configuration. If
+         * this API is invoked for the first time, a new edge configuration will be created
+         * for the stream, and the sync status will be set to <code>SYNCING</code>. </p>
+         * <p>The Kinesis Video Stream will sync the stream’s edge configuration with the
+         * Edge Agent IoT Greengrass component that runs on an IoT Hub Device setup at your
+         * premise. The time to sync can vary and depends on the connectivity of the Hub
+         * Device. The <code>SyncStatus</code> will be updated as the edge configuration is
+         * acknowledged, and synced with the Edge Agent. You will have to wait for the sync
+         * status to reach a terminal state such as: <code>IN_SYNC</code> and
+         * <code>SYNC_FAILED</code>, before using this API again.</p> <p>If you invoke this
+         * API during the syncing process, a <code>ResourceInUseException</code> will be
+         * thrown. The connectivity of the stream's edge configuration and the Edge Agent
+         * will be retried for 15 minutes. After 15 minutes, the status will transition
+         * into the <code>SYNC_FAILED</code> state. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/StartEdgeConfigurationUpdate">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartEdgeConfigurationUpdateOutcome StartEdgeConfigurationUpdate(const Model::StartEdgeConfigurationUpdateRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartEdgeConfigurationUpdate that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::StartEdgeConfigurationUpdateOutcomeCallable StartEdgeConfigurationUpdateCallable(const Model::StartEdgeConfigurationUpdateRequest& request) const;
+
+        /**
+         * An Async wrapper for StartEdgeConfigurationUpdate that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void StartEdgeConfigurationUpdateAsync(const Model::StartEdgeConfigurationUpdateRequest& request, const StartEdgeConfigurationUpdateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds one or more tags to a signaling channel. A <i>tag</i> is a key-value
