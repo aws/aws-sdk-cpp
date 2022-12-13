@@ -24,3 +24,12 @@ AmazonWebServiceRequest::EndpointParameters AmazonWebServiceRequest::GetEndpoint
     return EMPTY_CONTEXT;
 }
 
+const Aws::Http::HeaderValueCollection& AmazonWebServiceRequest::GetAdditionalCustomHeaders() const
+{
+    return m_additionalCustomHeaders;
+}
+
+void AmazonWebServiceRequest::SetAdditionalCustomHeaderValue(const Aws::String& headerName, const Aws::String& headerValue)
+{
+    m_additionalCustomHeaders[Utils::StringUtils::ToLower(headerName.c_str())] = Utils::StringUtils::Trim(headerValue.c_str());
+}

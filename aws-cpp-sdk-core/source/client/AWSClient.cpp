@@ -882,6 +882,7 @@ void AWSClient::BuildHttpRequest(const Aws::AmazonWebServiceRequest& request,
 {
     //do headers first since the request likely will set content-length as it's own header.
     AddHeadersToRequest(httpRequest, request.GetHeaders());
+    AddHeadersToRequest(httpRequest, request.GetAdditionalCustomHeaders());
 
     AddChecksumToRequest(httpRequest, request);
 

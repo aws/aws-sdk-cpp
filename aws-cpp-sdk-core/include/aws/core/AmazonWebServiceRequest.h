@@ -53,6 +53,15 @@ namespace Aws
          */
         virtual Aws::Http::HeaderValueCollection GetHeaders() const = 0;
         /**
+         * Get the additional user-set custom headers for the request
+         */
+        virtual const Aws::Http::HeaderValueCollection& GetAdditionalCustomHeaders() const;
+        /**
+         * Set an additional custom header value under a key. This value will overwrite any previously set or regular header.
+         */
+        virtual void SetAdditionalCustomHeaderValue(const Aws::String& headerName, const Aws::String& headerValue);
+
+        /**
          * Do nothing virtual, override this to add query strings to the request
          */
         virtual void AddQueryStringParameters(Aws::Http::URI& uri) const { AWS_UNREFERENCED_PARAM(uri); }
@@ -179,6 +188,7 @@ namespace Aws
          */
         virtual void DumpBodyToUrl(Aws::Http::URI& uri) const { AWS_UNREFERENCED_PARAM(uri); }
 
+        Aws::Http::HeaderValueCollection m_additionalCustomHeaders;
     private:
         Aws::IOStreamFactory m_responseStreamFactory;
 
