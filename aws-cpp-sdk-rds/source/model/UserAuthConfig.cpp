@@ -27,7 +27,9 @@ UserAuthConfig::UserAuthConfig() :
     m_authSchemeHasBeenSet(false),
     m_secretArnHasBeenSet(false),
     m_iAMAuth(IAMAuthMode::NOT_SET),
-    m_iAMAuthHasBeenSet(false)
+    m_iAMAuthHasBeenSet(false),
+    m_clientPasswordAuthType(ClientPasswordAuthType::NOT_SET),
+    m_clientPasswordAuthTypeHasBeenSet(false)
 {
 }
 
@@ -38,7 +40,9 @@ UserAuthConfig::UserAuthConfig(const XmlNode& xmlNode) :
     m_authSchemeHasBeenSet(false),
     m_secretArnHasBeenSet(false),
     m_iAMAuth(IAMAuthMode::NOT_SET),
-    m_iAMAuthHasBeenSet(false)
+    m_iAMAuthHasBeenSet(false),
+    m_clientPasswordAuthType(ClientPasswordAuthType::NOT_SET),
+    m_clientPasswordAuthTypeHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -79,6 +83,12 @@ UserAuthConfig& UserAuthConfig::operator =(const XmlNode& xmlNode)
       m_iAMAuth = IAMAuthModeMapper::GetIAMAuthModeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(iAMAuthNode.GetText()).c_str()).c_str());
       m_iAMAuthHasBeenSet = true;
     }
+    XmlNode clientPasswordAuthTypeNode = resultNode.FirstChild("ClientPasswordAuthType");
+    if(!clientPasswordAuthTypeNode.IsNull())
+    {
+      m_clientPasswordAuthType = ClientPasswordAuthTypeMapper::GetClientPasswordAuthTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(clientPasswordAuthTypeNode.GetText()).c_str()).c_str());
+      m_clientPasswordAuthTypeHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -111,6 +121,11 @@ void UserAuthConfig::OutputToStream(Aws::OStream& oStream, const char* location,
       oStream << location << index << locationValue << ".IAMAuth=" << IAMAuthModeMapper::GetNameForIAMAuthMode(m_iAMAuth) << "&";
   }
 
+  if(m_clientPasswordAuthTypeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ClientPasswordAuthType=" << ClientPasswordAuthTypeMapper::GetNameForClientPasswordAuthType(m_clientPasswordAuthType) << "&";
+  }
+
 }
 
 void UserAuthConfig::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -134,6 +149,10 @@ void UserAuthConfig::OutputToStream(Aws::OStream& oStream, const char* location)
   if(m_iAMAuthHasBeenSet)
   {
       oStream << location << ".IAMAuth=" << IAMAuthModeMapper::GetNameForIAMAuthMode(m_iAMAuth) << "&";
+  }
+  if(m_clientPasswordAuthTypeHasBeenSet)
+  {
+      oStream << location << ".ClientPasswordAuthType=" << ClientPasswordAuthTypeMapper::GetNameForClientPasswordAuthType(m_clientPasswordAuthType) << "&";
   }
 }
 
