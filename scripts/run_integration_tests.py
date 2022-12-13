@@ -46,7 +46,7 @@ def main():
         "aws-cpp-sdk-kinesis-integration-tests",
         "aws-cpp-sdk-logs-integration-tests",
         "aws-cpp-sdk-elasticfilesystem-integration-tests",
-        "aws-cpp-sdk-rds-integration-tests",
+        #"aws-cpp-sdk-rds-integration-tests",
         "aws-cpp-sdk-ec2-integration-tests"]
 
     random.shuffle(test_list)
