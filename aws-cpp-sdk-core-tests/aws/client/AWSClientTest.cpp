@@ -663,6 +663,56 @@ TEST(AWSClientTest, TestBuildHttpRequestWithHeadersAndBody)
     ASSERT_EQ(contentLengthExpected.str(), finalHeaders[Http::CONTENT_LENGTH_HEADER]);
 }
 
+TEST(AWSClientTest, TestBuildHttpRequestWithAdditionalHeadersAndBody)
+{
+    HeaderValueCollection headerValues;
+    headerValues["test1"] = "testValue1";
+    headerValues["test2"] = "testValue2";
+    headerValues["test3"] = "testValue3regular";
+
+    AmazonWebServiceRequestMock amazonWebServiceRequest;
+    amazonWebServiceRequest.SetHeaders(headerValues);
+    amazonWebServiceRequest.SetAdditionalCustomHeaderValue("test3", "testValue3custom");
+    amazonWebServiceRequest.SetAdditionalCustomHeaderValue("x-amz-request-payer", "requester");
+    amazonWebServiceRequest.SetComputeContentMd5(true);
+
+    std::shared_ptr<Aws::StringStream> ss = Aws::MakeShared<Aws::StringStream>(ALLOCATION_TAG);
+    *ss << "test";
+    amazonWebServiceRequest.SetBody(ss);
+
+    URI uri("http://www.uri.com");
+    std::shared_ptr<Standard::StandardHttpRequest> httpRequest = Aws::MakeShared<Standard::StandardHttpRequest>(ALLOCATION_TAG, uri, HttpMethod::HTTP_GET);
+
+    //content-length should be added if body is set. If it is not there is should be added.
+    AccessViolatingAWSClient awsClient;
+    awsClient.InvokeBuildHttpRequest(amazonWebServiceRequest, httpRequest);
+
+    ASSERT_TRUE(httpRequest->HasHeader("test1"));
+    ASSERT_TRUE(httpRequest->HasHeader("test2"));
+    ASSERT_TRUE(httpRequest->HasHeader("test3"));
+    ASSERT_TRUE(httpRequest->HasHeader("x-amz-request-payer"));
+    ASSERT_TRUE(httpRequest->HasHeader(Http::USER_AGENT_HEADER));
+    ASSERT_TRUE(httpRequest->HasHeader(Http::HOST_HEADER));
+    ASSERT_TRUE(httpRequest->HasHeader(Http::CONTENT_LENGTH_HEADER));
+    ASSERT_TRUE(httpRequest->HasHeader(Http::CONTENT_MD5_HEADER));
+
+    auto hashResult = Utils::HashingUtils::Base64Encode(Utils::HashingUtils::CalculateMD5(*ss));
+
+    HeaderValueCollection finalHeaders = httpRequest->GetHeaders();
+    ASSERT_EQ(8u, finalHeaders.size());
+    ASSERT_EQ("testValue1", finalHeaders["test1"]);
+    ASSERT_EQ("testValue2", finalHeaders["test2"]);
+    ASSERT_EQ("testValue3custom", finalHeaders["test3"]);
+    ASSERT_EQ("requester", finalHeaders["x-amz-request-payer"]);
+    ASSERT_EQ("www.uri.com", finalHeaders[Http::HOST_HEADER]);
+    ASSERT_EQ(hashResult, finalHeaders[Http::CONTENT_MD5_HEADER]);
+    ASSERT_FALSE(finalHeaders[Http::USER_AGENT_HEADER].empty());
+
+    Aws::StringStream contentLengthExpected;
+    contentLengthExpected << ss->str().length();
+    ASSERT_EQ(contentLengthExpected.str(), finalHeaders[Http::CONTENT_LENGTH_HEADER]);
+}
+
 TEST(AWSClientTest, TestHostHeaderWithNonStandardHttpPort)
 {
     Standard::StandardHttpRequest r1("http://example.amazonaws.com:8080", HttpMethod::HTTP_GET);
