@@ -69,8 +69,8 @@ static const int INVALID_KMS_KEY_ID_HASH = HashingUtils::HashString("InvalidKmsK
 static const int EVENT_DATA_STORE_A_R_N_INVALID_HASH = HashingUtils::HashString("EventDataStoreARNInvalidException");
 static const int INVALID_PARAMETER_HASH = HashingUtils::HashString("InvalidParameterException");
 static const int UNSUPPORTED_OPERATION_HASH = HashingUtils::HashString("UnsupportedOperationException");
-static const int INVALID_TIME_RANGE_HASH = HashingUtils::HashString("InvalidTimeRangeException");
 static const int INVALID_EVENT_SELECTORS_HASH = HashingUtils::HashString("InvalidEventSelectorsException");
+static const int INVALID_TIME_RANGE_HASH = HashingUtils::HashString("InvalidTimeRangeException");
 static const int QUERY_ID_NOT_FOUND_HASH = HashingUtils::HashString("QueryIdNotFoundException");
 static const int OPERATION_NOT_PERMITTED_HASH = HashingUtils::HashString("OperationNotPermittedException");
 static const int ACCOUNT_NOT_FOUND_HASH = HashingUtils::HashString("AccountNotFoundException");
@@ -298,13 +298,13 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::UNSUPPORTED_OPERATION), false);
   }
-  else if (hashCode == INVALID_TIME_RANGE_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::INVALID_TIME_RANGE), false);
-  }
   else if (hashCode == INVALID_EVENT_SELECTORS_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::INVALID_EVENT_SELECTORS), false);
+  }
+  else if (hashCode == INVALID_TIME_RANGE_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::INVALID_TIME_RANGE), false);
   }
   else if (hashCode == QUERY_ID_NOT_FOUND_HASH)
   {
