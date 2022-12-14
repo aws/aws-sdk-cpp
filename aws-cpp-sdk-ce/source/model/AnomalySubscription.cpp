@@ -23,11 +23,10 @@ AnomalySubscription::AnomalySubscription() :
     m_accountIdHasBeenSet(false),
     m_monitorArnListHasBeenSet(false),
     m_subscribersHasBeenSet(false),
-    m_threshold(0.0),
-    m_thresholdHasBeenSet(false),
     m_frequency(AnomalySubscriptionFrequency::NOT_SET),
     m_frequencyHasBeenSet(false),
-    m_subscriptionNameHasBeenSet(false)
+    m_subscriptionNameHasBeenSet(false),
+    m_thresholdExpressionHasBeenSet(false)
 {
 }
 
@@ -36,11 +35,10 @@ AnomalySubscription::AnomalySubscription(JsonView jsonValue) :
     m_accountIdHasBeenSet(false),
     m_monitorArnListHasBeenSet(false),
     m_subscribersHasBeenSet(false),
-    m_threshold(0.0),
-    m_thresholdHasBeenSet(false),
     m_frequency(AnomalySubscriptionFrequency::NOT_SET),
     m_frequencyHasBeenSet(false),
-    m_subscriptionNameHasBeenSet(false)
+    m_subscriptionNameHasBeenSet(false),
+    m_thresholdExpressionHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -81,13 +79,6 @@ AnomalySubscription& AnomalySubscription::operator =(JsonView jsonValue)
     m_subscribersHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("Threshold"))
-  {
-    m_threshold = jsonValue.GetDouble("Threshold");
-
-    m_thresholdHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("Frequency"))
   {
     m_frequency = AnomalySubscriptionFrequencyMapper::GetAnomalySubscriptionFrequencyForName(jsonValue.GetString("Frequency"));
@@ -100,6 +91,13 @@ AnomalySubscription& AnomalySubscription::operator =(JsonView jsonValue)
     m_subscriptionName = jsonValue.GetString("SubscriptionName");
 
     m_subscriptionNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ThresholdExpression"))
+  {
+    m_thresholdExpression = jsonValue.GetObject("ThresholdExpression");
+
+    m_thresholdExpressionHasBeenSet = true;
   }
 
   return *this;
@@ -143,12 +141,6 @@ JsonValue AnomalySubscription::Jsonize() const
 
   }
 
-  if(m_thresholdHasBeenSet)
-  {
-   payload.WithDouble("Threshold", m_threshold);
-
-  }
-
   if(m_frequencyHasBeenSet)
   {
    payload.WithString("Frequency", AnomalySubscriptionFrequencyMapper::GetNameForAnomalySubscriptionFrequency(m_frequency));
@@ -157,6 +149,12 @@ JsonValue AnomalySubscription::Jsonize() const
   if(m_subscriptionNameHasBeenSet)
   {
    payload.WithString("SubscriptionName", m_subscriptionName);
+
+  }
+
+  if(m_thresholdExpressionHasBeenSet)
+  {
+   payload.WithObject("ThresholdExpression", m_thresholdExpression.Jsonize());
 
   }
 

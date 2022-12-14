@@ -56,7 +56,10 @@ MetricAlarm::MetricAlarm() :
     m_treatMissingDataHasBeenSet(false),
     m_evaluateLowSampleCountPercentileHasBeenSet(false),
     m_metricsHasBeenSet(false),
-    m_thresholdMetricIdHasBeenSet(false)
+    m_thresholdMetricIdHasBeenSet(false),
+    m_evaluationState(EvaluationState::NOT_SET),
+    m_evaluationStateHasBeenSet(false),
+    m_stateTransitionedTimestampHasBeenSet(false)
 {
 }
 
@@ -96,7 +99,10 @@ MetricAlarm::MetricAlarm(const XmlNode& xmlNode) :
     m_treatMissingDataHasBeenSet(false),
     m_evaluateLowSampleCountPercentileHasBeenSet(false),
     m_metricsHasBeenSet(false),
-    m_thresholdMetricIdHasBeenSet(false)
+    m_thresholdMetricIdHasBeenSet(false),
+    m_evaluationState(EvaluationState::NOT_SET),
+    m_evaluationStateHasBeenSet(false),
+    m_stateTransitionedTimestampHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -299,6 +305,18 @@ MetricAlarm& MetricAlarm::operator =(const XmlNode& xmlNode)
       m_thresholdMetricId = Aws::Utils::Xml::DecodeEscapedXmlText(thresholdMetricIdNode.GetText());
       m_thresholdMetricIdHasBeenSet = true;
     }
+    XmlNode evaluationStateNode = resultNode.FirstChild("EvaluationState");
+    if(!evaluationStateNode.IsNull())
+    {
+      m_evaluationState = EvaluationStateMapper::GetEvaluationStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(evaluationStateNode.GetText()).c_str()).c_str());
+      m_evaluationStateHasBeenSet = true;
+    }
+    XmlNode stateTransitionedTimestampNode = resultNode.FirstChild("StateTransitionedTimestamp");
+    if(!stateTransitionedTimestampNode.IsNull())
+    {
+      m_stateTransitionedTimestamp = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateTransitionedTimestampNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
+      m_stateTransitionedTimestampHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -465,6 +483,16 @@ void MetricAlarm::OutputToStream(Aws::OStream& oStream, const char* location, un
       oStream << location << index << locationValue << ".ThresholdMetricId=" << StringUtils::URLEncode(m_thresholdMetricId.c_str()) << "&";
   }
 
+  if(m_evaluationStateHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".EvaluationState=" << EvaluationStateMapper::GetNameForEvaluationState(m_evaluationState) << "&";
+  }
+
+  if(m_stateTransitionedTimestampHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".StateTransitionedTimestamp=" << StringUtils::URLEncode(m_stateTransitionedTimestamp.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
+  }
+
 }
 
 void MetricAlarm::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -600,6 +628,14 @@ void MetricAlarm::OutputToStream(Aws::OStream& oStream, const char* location) co
   if(m_thresholdMetricIdHasBeenSet)
   {
       oStream << location << ".ThresholdMetricId=" << StringUtils::URLEncode(m_thresholdMetricId.c_str()) << "&";
+  }
+  if(m_evaluationStateHasBeenSet)
+  {
+      oStream << location << ".EvaluationState=" << EvaluationStateMapper::GetNameForEvaluationState(m_evaluationState) << "&";
+  }
+  if(m_stateTransitionedTimestampHasBeenSet)
+  {
+      oStream << location << ".StateTransitionedTimestamp=" << StringUtils::URLEncode(m_stateTransitionedTimestamp.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 }
 

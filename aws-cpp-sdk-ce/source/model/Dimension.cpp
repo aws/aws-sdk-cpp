@@ -52,6 +52,8 @@ namespace Aws
         static const int AGREEMENT_END_DATE_TIME_AFTER_HASH = HashingUtils::HashString("AGREEMENT_END_DATE_TIME_AFTER");
         static const int AGREEMENT_END_DATE_TIME_BEFORE_HASH = HashingUtils::HashString("AGREEMENT_END_DATE_TIME_BEFORE");
         static const int INVOICING_ENTITY_HASH = HashingUtils::HashString("INVOICING_ENTITY");
+        static const int ANOMALY_TOTAL_IMPACT_ABSOLUTE_HASH = HashingUtils::HashString("ANOMALY_TOTAL_IMPACT_ABSOLUTE");
+        static const int ANOMALY_TOTAL_IMPACT_PERCENTAGE_HASH = HashingUtils::HashString("ANOMALY_TOTAL_IMPACT_PERCENTAGE");
 
 
         Dimension GetDimensionForName(const Aws::String& name)
@@ -185,6 +187,14 @@ namespace Aws
           {
             return Dimension::INVOICING_ENTITY;
           }
+          else if (hashCode == ANOMALY_TOTAL_IMPACT_ABSOLUTE_HASH)
+          {
+            return Dimension::ANOMALY_TOTAL_IMPACT_ABSOLUTE;
+          }
+          else if (hashCode == ANOMALY_TOTAL_IMPACT_PERCENTAGE_HASH)
+          {
+            return Dimension::ANOMALY_TOTAL_IMPACT_PERCENTAGE;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -263,6 +273,10 @@ namespace Aws
             return "AGREEMENT_END_DATE_TIME_BEFORE";
           case Dimension::INVOICING_ENTITY:
             return "INVOICING_ENTITY";
+          case Dimension::ANOMALY_TOTAL_IMPACT_ABSOLUTE:
+            return "ANOMALY_TOTAL_IMPACT_ABSOLUTE";
+          case Dimension::ANOMALY_TOTAL_IMPACT_PERCENTAGE:
+            return "ANOMALY_TOTAL_IMPACT_PERCENTAGE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

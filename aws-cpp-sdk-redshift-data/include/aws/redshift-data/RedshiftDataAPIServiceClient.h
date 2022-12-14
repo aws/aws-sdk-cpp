@@ -21,8 +21,8 @@ namespace RedshiftDataAPIService
    * succeeds. </p> <p>For more information about the Amazon Redshift Data API and
    * CLI usage examples, see <a
    * href="https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html">Using the
-   * Amazon Redshift Data API</a> in the <i>Amazon Redshift Cluster Management
-   * Guide</i>. </p>
+   * Amazon Redshift Data API</a> in the <i>Amazon Redshift Management Guide</i>.
+   * </p>
    */
   class AWS_REDSHIFTDATAAPISERVICE_API RedshiftDataAPIServiceClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<RedshiftDataAPIServiceClient>
   {
@@ -93,7 +93,11 @@ namespace RedshiftDataAPIService
          * required. When connecting to a serverless workgroup, specify the workgroup name
          * and database name. Also, permission to call the
          * <code>redshift-serverless:GetCredentials</code> operation is required. </p>
-         * </li> </ul><p><h3>See Also:</h3>   <a
+         * </li> </ul> <p>For more information about the Amazon Redshift Data API and CLI
+         * usage examples, see <a
+         * href="https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html">Using the
+         * Amazon Redshift Data API</a> in the <i>Amazon Redshift Management Guide</i>.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-data-2019-12-20/BatchExecuteStatement">AWS
          * API Reference</a></p>
          */
@@ -110,7 +114,10 @@ namespace RedshiftDataAPIService
         virtual void BatchExecuteStatementAsync(const Model::BatchExecuteStatementRequest& request, const BatchExecuteStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Cancels a running query. To be canceled, a query must be running.
+         * <p>Cancels a running query. To be canceled, a query must be running. </p> <p>For
+         * more information about the Amazon Redshift Data API and CLI usage examples, see
+         * <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html">Using
+         * the Amazon Redshift Data API</a> in the <i>Amazon Redshift Management Guide</i>.
          * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-data-2019-12-20/CancelStatement">AWS
          * API Reference</a></p>
@@ -131,7 +138,11 @@ namespace RedshiftDataAPIService
          * <p>Describes the details about a specific instance when a query was run by the
          * Amazon Redshift Data API. The information includes when the query started, when
          * it finished, the query status, the number of rows returned, and the SQL
-         * statement. </p><p><h3>See Also:</h3>   <a
+         * statement. </p> <p>For more information about the Amazon Redshift Data API and
+         * CLI usage examples, see <a
+         * href="https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html">Using the
+         * Amazon Redshift Data API</a> in the <i>Amazon Redshift Management Guide</i>.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-data-2019-12-20/DescribeStatement">AWS
          * API Reference</a></p>
          */
@@ -162,7 +173,11 @@ namespace RedshiftDataAPIService
          * connecting to a serverless workgroup, specify the workgroup name and database
          * name. Also, permission to call the
          * <code>redshift-serverless:GetCredentials</code> operation is required. </p>
-         * </li> </ul><p><h3>See Also:</h3>   <a
+         * </li> </ul> <p>For more information about the Amazon Redshift Data API and CLI
+         * usage examples, see <a
+         * href="https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html">Using the
+         * Amazon Redshift Data API</a> in the <i>Amazon Redshift Management Guide</i>.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-data-2019-12-20/DescribeTable">AWS
          * API Reference</a></p>
          */
@@ -193,7 +208,11 @@ namespace RedshiftDataAPIService
          * connecting to a serverless workgroup, specify the workgroup name and database
          * name. Also, permission to call the
          * <code>redshift-serverless:GetCredentials</code> operation is required. </p>
-         * </li> </ul><p><h3>See Also:</h3>   <a
+         * </li> </ul> <p>For more information about the Amazon Redshift Data API and CLI
+         * usage examples, see <a
+         * href="https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html">Using the
+         * Amazon Redshift Data API</a> in the <i>Amazon Redshift Management Guide</i>.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-data-2019-12-20/ExecuteStatement">AWS
          * API Reference</a></p>
          */
@@ -211,7 +230,11 @@ namespace RedshiftDataAPIService
 
         /**
          * <p>Fetches the temporarily cached result of an SQL statement. A token is
-         * returned to page through the statement results. </p><p><h3>See Also:</h3>   <a
+         * returned to page through the statement results. </p> <p>For more information
+         * about the Amazon Redshift Data API and CLI usage examples, see <a
+         * href="https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html">Using the
+         * Amazon Redshift Data API</a> in the <i>Amazon Redshift Management Guide</i>.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-data-2019-12-20/GetStatementResult">AWS
          * API Reference</a></p>
          */
@@ -241,7 +264,11 @@ namespace RedshiftDataAPIService
          * connecting to a serverless workgroup, specify the workgroup name and database
          * name. Also, permission to call the
          * <code>redshift-serverless:GetCredentials</code> operation is required. </p>
-         * </li> </ul><p><h3>See Also:</h3>   <a
+         * </li> </ul> <p>For more information about the Amazon Redshift Data API and CLI
+         * usage examples, see <a
+         * href="https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html">Using the
+         * Amazon Redshift Data API</a> in the <i>Amazon Redshift Management Guide</i>.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-data-2019-12-20/ListDatabases">AWS
          * API Reference</a></p>
          */
@@ -271,7 +298,11 @@ namespace RedshiftDataAPIService
          * connecting to a serverless workgroup, specify the workgroup name and database
          * name. Also, permission to call the
          * <code>redshift-serverless:GetCredentials</code> operation is required. </p>
-         * </li> </ul><p><h3>See Also:</h3>   <a
+         * </li> </ul> <p>For more information about the Amazon Redshift Data API and CLI
+         * usage examples, see <a
+         * href="https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html">Using the
+         * Amazon Redshift Data API</a> in the <i>Amazon Redshift Management Guide</i>.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-data-2019-12-20/ListSchemas">AWS
          * API Reference</a></p>
          */
@@ -289,8 +320,11 @@ namespace RedshiftDataAPIService
 
         /**
          * <p>List of SQL statements. By default, only finished statements are shown. A
-         * token is returned to page through the statement list. </p><p><h3>See Also:</h3> 
-         * <a
+         * token is returned to page through the statement list. </p> <p>For more
+         * information about the Amazon Redshift Data API and CLI usage examples, see <a
+         * href="https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html">Using the
+         * Amazon Redshift Data API</a> in the <i>Amazon Redshift Management Guide</i>.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-data-2019-12-20/ListStatements">AWS
          * API Reference</a></p>
          */
@@ -322,7 +356,11 @@ namespace RedshiftDataAPIService
          * connecting to a serverless workgroup, specify the workgroup name and database
          * name. Also, permission to call the
          * <code>redshift-serverless:GetCredentials</code> operation is required. </p>
-         * </li> </ul><p><h3>See Also:</h3>   <a
+         * </li> </ul> <p>For more information about the Amazon Redshift Data API and CLI
+         * usage examples, see <a
+         * href="https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html">Using the
+         * Amazon Redshift Data API</a> in the <i>Amazon Redshift Management Guide</i>.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-data-2019-12-20/ListTables">AWS
          * API Reference</a></p>
          */

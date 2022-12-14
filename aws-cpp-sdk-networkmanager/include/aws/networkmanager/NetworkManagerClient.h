@@ -1418,9 +1418,9 @@ namespace NetworkManager
         virtual void RestoreCoreNetworkPolicyVersionAsync(const Model::RestoreCoreNetworkPolicyVersionRequest& request, const RestoreCoreNetworkPolicyVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Enables for the Network Manager service for an Amazon Web Services
-         * Organization. This can only be called by a management account within the
-         * organization. </p><p><h3>See Also:</h3>   <a
+         * <p>Enables the Network Manager service for an Amazon Web Services Organization.
+         * This can only be called by a management account within the organization.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/StartOrganizationServiceAccessUpdate">AWS
          * API Reference</a></p>
          */

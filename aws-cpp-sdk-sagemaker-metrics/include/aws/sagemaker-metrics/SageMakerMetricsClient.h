@@ -78,9 +78,9 @@ namespace SageMakerMetrics
         virtual ~SageMakerMetricsClient();
 
         /**
-         * <p>Used to ingest training metrics into SageMaker which can be visualized in
-         * SageMaker Studio and retrieved with the <code>GetMetrics</code> API.
-         * </p><p><h3>See Also:</h3>   <a
+         * <p>Used to ingest training metrics into SageMaker. These metrics can be
+         * visualized in SageMaker Studio and retrieved with the <code>GetMetrics</code>
+         * API. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-metrics-2022-09-30/BatchPutMetrics">AWS
          * API Reference</a></p>
          */

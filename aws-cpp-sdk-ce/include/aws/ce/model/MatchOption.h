@@ -22,7 +22,8 @@ namespace Model
     ENDS_WITH,
     CONTAINS,
     CASE_SENSITIVE,
-    CASE_INSENSITIVE
+    CASE_INSENSITIVE,
+    GREATER_THAN_OR_EQUAL
   };
 
 namespace MatchOptionMapper
