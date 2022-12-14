@@ -81,53 +81,53 @@ namespace Model
 
 
     /**
-     * <p>The time when the metric was recorded.</p>
+     * <p>The time that the metric was recorded.</p>
      */
     inline const Aws::Utils::DateTime& GetTimestamp() const{ return m_timestamp; }
 
     /**
-     * <p>The time when the metric was recorded.</p>
+     * <p>The time that the metric was recorded.</p>
      */
     inline bool TimestampHasBeenSet() const { return m_timestampHasBeenSet; }
 
     /**
-     * <p>The time when the metric was recorded.</p>
+     * <p>The time that the metric was recorded.</p>
      */
     inline void SetTimestamp(const Aws::Utils::DateTime& value) { m_timestampHasBeenSet = true; m_timestamp = value; }
 
     /**
-     * <p>The time when the metric was recorded.</p>
+     * <p>The time that the metric was recorded.</p>
      */
     inline void SetTimestamp(Aws::Utils::DateTime&& value) { m_timestampHasBeenSet = true; m_timestamp = std::move(value); }
 
     /**
-     * <p>The time when the metric was recorded.</p>
+     * <p>The time that the metric was recorded.</p>
      */
     inline RawMetricData& WithTimestamp(const Aws::Utils::DateTime& value) { SetTimestamp(value); return *this;}
 
     /**
-     * <p>The time when the metric was recorded.</p>
+     * <p>The time that the metric was recorded.</p>
      */
     inline RawMetricData& WithTimestamp(Aws::Utils::DateTime&& value) { SetTimestamp(std::move(value)); return *this;}
 
 
     /**
-     * <p>Metric step (aka Epoch). </p>
+     * <p>The metric step (epoch). </p>
      */
     inline int GetStep() const{ return m_step; }
 
     /**
-     * <p>Metric step (aka Epoch). </p>
+     * <p>The metric step (epoch). </p>
      */
     inline bool StepHasBeenSet() const { return m_stepHasBeenSet; }
 
     /**
-     * <p>Metric step (aka Epoch). </p>
+     * <p>The metric step (epoch). </p>
      */
     inline void SetStep(int value) { m_stepHasBeenSet = true; m_step = value; }
 
     /**
-     * <p>Metric step (aka Epoch). </p>
+     * <p>The metric step (epoch). </p>
      */
     inline RawMetricData& WithStep(int value) { SetStep(value); return *this;}
 

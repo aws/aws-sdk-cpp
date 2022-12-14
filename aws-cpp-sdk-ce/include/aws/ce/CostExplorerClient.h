@@ -101,10 +101,10 @@ namespace CostExplorer
         virtual void CreateAnomalyMonitorAsync(const Model::CreateAnomalyMonitorRequest& request, const CreateAnomalyMonitorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Adds a subscription to a cost anomaly detection monitor. You can use each
-         * subscription to define subscribers with email or SNS notifications. Email
-         * subscribers can set a dollar threshold and a time frequency for receiving
-         * notifications. </p><p><h3>See Also:</h3>   <a
+         * <p>Adds an alert subscription to a cost anomaly detection monitor. You can use
+         * each subscription to define subscribers with email or SNS notifications. Email
+         * subscribers can set an absolute or percentage threshold and a time frequency for
+         * receiving notifications. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/CreateAnomalySubscription">AWS
          * API Reference</a></p>
          */
@@ -215,8 +215,8 @@ namespace CostExplorer
 
         /**
          * <p>Retrieves all of the cost anomalies detected on your account during the time
-         * period that's specified by the <code>DateInterval</code> object. </p><p><h3>See
-         * Also:</h3>   <a
+         * period that's specified by the <code>DateInterval</code> object. Anomalies are
+         * available for up to 90 days.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetAnomalies">AWS API
          * Reference</a></p>
          */
@@ -650,8 +650,8 @@ namespace CostExplorer
          * effective dates of all Cost Categories defined in the account. You have the
          * option to use <code>EffectiveOn</code> to return a list of Cost Categories that
          * were active on a specific date. If there is no <code>EffectiveOn</code>
-         * specified, you’ll see Cost Categories that are effective on the current date. If
-         * Cost Category is still effective, <code>EffectiveEnd</code> is omitted in the
+         * specified, you��ll see Cost Categories that are effective on the current date.
+         * If Cost Category is still effective, <code>EffectiveEnd</code> is omitted in the
          * response. <code>ListCostCategoryDefinitions</code> supports pagination. The
          * request can have a <code>MaxResults</code> range up to 100.</p><p><h3>See
          * Also:</h3>   <a

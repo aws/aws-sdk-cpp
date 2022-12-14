@@ -14,13 +14,12 @@ using namespace Aws::Utils;
 
 UpdateAnomalySubscriptionRequest::UpdateAnomalySubscriptionRequest() : 
     m_subscriptionArnHasBeenSet(false),
-    m_threshold(0.0),
-    m_thresholdHasBeenSet(false),
     m_frequency(AnomalySubscriptionFrequency::NOT_SET),
     m_frequencyHasBeenSet(false),
     m_monitorArnListHasBeenSet(false),
     m_subscribersHasBeenSet(false),
-    m_subscriptionNameHasBeenSet(false)
+    m_subscriptionNameHasBeenSet(false),
+    m_thresholdExpressionHasBeenSet(false)
 {
 }
 
@@ -31,12 +30,6 @@ Aws::String UpdateAnomalySubscriptionRequest::SerializePayload() const
   if(m_subscriptionArnHasBeenSet)
   {
    payload.WithString("SubscriptionArn", m_subscriptionArn);
-
-  }
-
-  if(m_thresholdHasBeenSet)
-  {
-   payload.WithDouble("Threshold", m_threshold);
 
   }
 
@@ -70,6 +63,12 @@ Aws::String UpdateAnomalySubscriptionRequest::SerializePayload() const
   if(m_subscriptionNameHasBeenSet)
   {
    payload.WithString("SubscriptionName", m_subscriptionName);
+
+  }
+
+  if(m_thresholdExpressionHasBeenSet)
+  {
+   payload.WithObject("ThresholdExpression", m_thresholdExpression.Jsonize());
 
   }
 

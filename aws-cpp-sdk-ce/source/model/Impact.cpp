@@ -22,7 +22,13 @@ Impact::Impact() :
     m_maxImpact(0.0),
     m_maxImpactHasBeenSet(false),
     m_totalImpact(0.0),
-    m_totalImpactHasBeenSet(false)
+    m_totalImpactHasBeenSet(false),
+    m_totalActualSpend(0.0),
+    m_totalActualSpendHasBeenSet(false),
+    m_totalExpectedSpend(0.0),
+    m_totalExpectedSpendHasBeenSet(false),
+    m_totalImpactPercentage(0.0),
+    m_totalImpactPercentageHasBeenSet(false)
 {
 }
 
@@ -30,7 +36,13 @@ Impact::Impact(JsonView jsonValue) :
     m_maxImpact(0.0),
     m_maxImpactHasBeenSet(false),
     m_totalImpact(0.0),
-    m_totalImpactHasBeenSet(false)
+    m_totalImpactHasBeenSet(false),
+    m_totalActualSpend(0.0),
+    m_totalActualSpendHasBeenSet(false),
+    m_totalExpectedSpend(0.0),
+    m_totalExpectedSpendHasBeenSet(false),
+    m_totalImpactPercentage(0.0),
+    m_totalImpactPercentageHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -51,6 +63,27 @@ Impact& Impact::operator =(JsonView jsonValue)
     m_totalImpactHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("TotalActualSpend"))
+  {
+    m_totalActualSpend = jsonValue.GetDouble("TotalActualSpend");
+
+    m_totalActualSpendHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("TotalExpectedSpend"))
+  {
+    m_totalExpectedSpend = jsonValue.GetDouble("TotalExpectedSpend");
+
+    m_totalExpectedSpendHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("TotalImpactPercentage"))
+  {
+    m_totalImpactPercentage = jsonValue.GetDouble("TotalImpactPercentage");
+
+    m_totalImpactPercentageHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -67,6 +100,24 @@ JsonValue Impact::Jsonize() const
   if(m_totalImpactHasBeenSet)
   {
    payload.WithDouble("TotalImpact", m_totalImpact);
+
+  }
+
+  if(m_totalActualSpendHasBeenSet)
+  {
+   payload.WithDouble("TotalActualSpend", m_totalActualSpend);
+
+  }
+
+  if(m_totalExpectedSpendHasBeenSet)
+  {
+   payload.WithDouble("TotalExpectedSpend", m_totalExpectedSpend);
+
+  }
+
+  if(m_totalImpactPercentageHasBeenSet)
+  {
+   payload.WithDouble("TotalImpactPercentage", m_totalImpactPercentage);
 
   }
 
