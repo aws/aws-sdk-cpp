@@ -39,27 +39,27 @@ namespace Model
 
 
     /**
-     * <p>The <code>DistributionList</code> type. </p>
+     * <p>The <code>DistributionList</code> type.</p>
      */
     inline const DistributionList& GetDistributionList() const{ return m_distributionList; }
 
     /**
-     * <p>The <code>DistributionList</code> type. </p>
+     * <p>The <code>DistributionList</code> type.</p>
      */
     inline void SetDistributionList(const DistributionList& value) { m_distributionList = value; }
 
     /**
-     * <p>The <code>DistributionList</code> type. </p>
+     * <p>The <code>DistributionList</code> type.</p>
      */
     inline void SetDistributionList(DistributionList&& value) { m_distributionList = std::move(value); }
 
     /**
-     * <p>The <code>DistributionList</code> type. </p>
+     * <p>The <code>DistributionList</code> type.</p>
      */
     inline ListDistributionsByWebACLId2020_05_31Result& WithDistributionList(const DistributionList& value) { SetDistributionList(value); return *this;}
 
     /**
-     * <p>The <code>DistributionList</code> type. </p>
+     * <p>The <code>DistributionList</code> type.</p>
      */
     inline ListDistributionsByWebACLId2020_05_31Result& WithDistributionList(DistributionList&& value) { SetDistributionList(std::move(value)); return *this;}
 

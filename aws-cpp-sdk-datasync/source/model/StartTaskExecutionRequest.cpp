@@ -16,7 +16,8 @@ StartTaskExecutionRequest::StartTaskExecutionRequest() :
     m_taskArnHasBeenSet(false),
     m_overrideOptionsHasBeenSet(false),
     m_includesHasBeenSet(false),
-    m_excludesHasBeenSet(false)
+    m_excludesHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -55,6 +56,17 @@ Aws::String StartTaskExecutionRequest::SerializePayload() const
      excludesJsonList[excludesIndex].AsObject(m_excludes[excludesIndex].Jsonize());
    }
    payload.WithArray("Excludes", std::move(excludesJsonList));
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("Tags", std::move(tagsJsonList));
 
   }
 

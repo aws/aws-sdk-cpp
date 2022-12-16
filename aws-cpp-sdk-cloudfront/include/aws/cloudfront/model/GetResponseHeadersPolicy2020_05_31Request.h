@@ -34,8 +34,8 @@ namespace Model
 
     /**
      * <p>The identifier for the response headers policy.</p> <p>If the response
-     * headers policy is attached to a distribution’s cache behavior, you can get the
-     * policy’s identifier using <code>ListDistributions</code> or
+     * headers policy is attached to a distribution's cache behavior, you can get the
+     * policy's identifier using <code>ListDistributions</code> or
      * <code>GetDistribution</code>. If the response headers policy is not attached to
      * a cache behavior, you can get the identifier using
      * <code>ListResponseHeadersPolicies</code>.</p>
@@ -44,8 +44,8 @@ namespace Model
 
     /**
      * <p>The identifier for the response headers policy.</p> <p>If the response
-     * headers policy is attached to a distribution’s cache behavior, you can get the
-     * policy’s identifier using <code>ListDistributions</code> or
+     * headers policy is attached to a distribution's cache behavior, you can get the
+     * policy's identifier using <code>ListDistributions</code> or
      * <code>GetDistribution</code>. If the response headers policy is not attached to
      * a cache behavior, you can get the identifier using
      * <code>ListResponseHeadersPolicies</code>.</p>
@@ -54,8 +54,8 @@ namespace Model
 
     /**
      * <p>The identifier for the response headers policy.</p> <p>If the response
-     * headers policy is attached to a distribution’s cache behavior, you can get the
-     * policy’s identifier using <code>ListDistributions</code> or
+     * headers policy is attached to a distribution's cache behavior, you can get the
+     * policy's identifier using <code>ListDistributions</code> or
      * <code>GetDistribution</code>. If the response headers policy is not attached to
      * a cache behavior, you can get the identifier using
      * <code>ListResponseHeadersPolicies</code>.</p>
@@ -64,8 +64,8 @@ namespace Model
 
     /**
      * <p>The identifier for the response headers policy.</p> <p>If the response
-     * headers policy is attached to a distribution’s cache behavior, you can get the
-     * policy’s identifier using <code>ListDistributions</code> or
+     * headers policy is attached to a distribution's cache behavior, you can get the
+     * policy's identifier using <code>ListDistributions</code> or
      * <code>GetDistribution</code>. If the response headers policy is not attached to
      * a cache behavior, you can get the identifier using
      * <code>ListResponseHeadersPolicies</code>.</p>
@@ -74,8 +74,8 @@ namespace Model
 
     /**
      * <p>The identifier for the response headers policy.</p> <p>If the response
-     * headers policy is attached to a distribution’s cache behavior, you can get the
-     * policy’s identifier using <code>ListDistributions</code> or
+     * headers policy is attached to a distribution's cache behavior, you can get the
+     * policy's identifier using <code>ListDistributions</code> or
      * <code>GetDistribution</code>. If the response headers policy is not attached to
      * a cache behavior, you can get the identifier using
      * <code>ListResponseHeadersPolicies</code>.</p>
@@ -84,8 +84,8 @@ namespace Model
 
     /**
      * <p>The identifier for the response headers policy.</p> <p>If the response
-     * headers policy is attached to a distribution’s cache behavior, you can get the
-     * policy’s identifier using <code>ListDistributions</code> or
+     * headers policy is attached to a distribution's cache behavior, you can get the
+     * policy's identifier using <code>ListDistributions</code> or
      * <code>GetDistribution</code>. If the response headers policy is not attached to
      * a cache behavior, you can get the identifier using
      * <code>ListResponseHeadersPolicies</code>.</p>
@@ -94,8 +94,8 @@ namespace Model
 
     /**
      * <p>The identifier for the response headers policy.</p> <p>If the response
-     * headers policy is attached to a distribution’s cache behavior, you can get the
-     * policy’s identifier using <code>ListDistributions</code> or
+     * headers policy is attached to a distribution's cache behavior, you can get the
+     * policy's identifier using <code>ListDistributions</code> or
      * <code>GetDistribution</code>. If the response headers policy is not attached to
      * a cache behavior, you can get the identifier using
      * <code>ListResponseHeadersPolicies</code>.</p>
@@ -104,8 +104,8 @@ namespace Model
 
     /**
      * <p>The identifier for the response headers policy.</p> <p>If the response
-     * headers policy is attached to a distribution’s cache behavior, you can get the
-     * policy’s identifier using <code>ListDistributions</code> or
+     * headers policy is attached to a distribution's cache behavior, you can get the
+     * policy's identifier using <code>ListDistributions</code> or
      * <code>GetDistribution</code>. If the response headers policy is not attached to
      * a cache behavior, you can get the identifier using
      * <code>ListResponseHeadersPolicies</code>.</p>

@@ -85,7 +85,7 @@ namespace Model
 
     /**
      * <p>The version of the origin request policy that you are deleting. The version
-     * is the origin request policy’s <code>ETag</code> value, which you can get using
+     * is the origin request policy's <code>ETag</code> value, which you can get using
      * <code>ListOriginRequestPolicies</code>, <code>GetOriginRequestPolicy</code>, or
      * <code>GetOriginRequestPolicyConfig</code>.</p>
      */
@@ -93,7 +93,7 @@ namespace Model
 
     /**
      * <p>The version of the origin request policy that you are deleting. The version
-     * is the origin request policy’s <code>ETag</code> value, which you can get using
+     * is the origin request policy's <code>ETag</code> value, which you can get using
      * <code>ListOriginRequestPolicies</code>, <code>GetOriginRequestPolicy</code>, or
      * <code>GetOriginRequestPolicyConfig</code>.</p>
      */
@@ -101,7 +101,7 @@ namespace Model
 
     /**
      * <p>The version of the origin request policy that you are deleting. The version
-     * is the origin request policy’s <code>ETag</code> value, which you can get using
+     * is the origin request policy's <code>ETag</code> value, which you can get using
      * <code>ListOriginRequestPolicies</code>, <code>GetOriginRequestPolicy</code>, or
      * <code>GetOriginRequestPolicyConfig</code>.</p>
      */
@@ -109,7 +109,7 @@ namespace Model
 
     /**
      * <p>The version of the origin request policy that you are deleting. The version
-     * is the origin request policy’s <code>ETag</code> value, which you can get using
+     * is the origin request policy's <code>ETag</code> value, which you can get using
      * <code>ListOriginRequestPolicies</code>, <code>GetOriginRequestPolicy</code>, or
      * <code>GetOriginRequestPolicyConfig</code>.</p>
      */
@@ -117,7 +117,7 @@ namespace Model
 
     /**
      * <p>The version of the origin request policy that you are deleting. The version
-     * is the origin request policy’s <code>ETag</code> value, which you can get using
+     * is the origin request policy's <code>ETag</code> value, which you can get using
      * <code>ListOriginRequestPolicies</code>, <code>GetOriginRequestPolicy</code>, or
      * <code>GetOriginRequestPolicyConfig</code>.</p>
      */
@@ -125,7 +125,7 @@ namespace Model
 
     /**
      * <p>The version of the origin request policy that you are deleting. The version
-     * is the origin request policy’s <code>ETag</code> value, which you can get using
+     * is the origin request policy's <code>ETag</code> value, which you can get using
      * <code>ListOriginRequestPolicies</code>, <code>GetOriginRequestPolicy</code>, or
      * <code>GetOriginRequestPolicyConfig</code>.</p>
      */
@@ -133,7 +133,7 @@ namespace Model
 
     /**
      * <p>The version of the origin request policy that you are deleting. The version
-     * is the origin request policy’s <code>ETag</code> value, which you can get using
+     * is the origin request policy's <code>ETag</code> value, which you can get using
      * <code>ListOriginRequestPolicies</code>, <code>GetOriginRequestPolicy</code>, or
      * <code>GetOriginRequestPolicyConfig</code>.</p>
      */
@@ -141,7 +141,7 @@ namespace Model
 
     /**
      * <p>The version of the origin request policy that you are deleting. The version
-     * is the origin request policy’s <code>ETag</code> value, which you can get using
+     * is the origin request policy's <code>ETag</code> value, which you can get using
      * <code>ListOriginRequestPolicies</code>, <code>GetOriginRequestPolicy</code>, or
      * <code>GetOriginRequestPolicyConfig</code>.</p>
      */

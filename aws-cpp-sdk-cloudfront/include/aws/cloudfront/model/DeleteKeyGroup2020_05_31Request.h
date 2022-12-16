@@ -85,56 +85,56 @@ namespace Model
 
     /**
      * <p>The version of the key group that you are deleting. The version is the key
-     * group’s <code>ETag</code> value. To get the <code>ETag</code>, use
+     * group's <code>ETag</code> value. To get the <code>ETag</code>, use
      * <code>GetKeyGroup</code> or <code>GetKeyGroupConfig</code>.</p>
      */
     inline const Aws::String& GetIfMatch() const{ return m_ifMatch; }
 
     /**
      * <p>The version of the key group that you are deleting. The version is the key
-     * group’s <code>ETag</code> value. To get the <code>ETag</code>, use
+     * group's <code>ETag</code> value. To get the <code>ETag</code>, use
      * <code>GetKeyGroup</code> or <code>GetKeyGroupConfig</code>.</p>
      */
     inline bool IfMatchHasBeenSet() const { return m_ifMatchHasBeenSet; }
 
     /**
      * <p>The version of the key group that you are deleting. The version is the key
-     * group’s <code>ETag</code> value. To get the <code>ETag</code>, use
+     * group's <code>ETag</code> value. To get the <code>ETag</code>, use
      * <code>GetKeyGroup</code> or <code>GetKeyGroupConfig</code>.</p>
      */
     inline void SetIfMatch(const Aws::String& value) { m_ifMatchHasBeenSet = true; m_ifMatch = value; }
 
     /**
      * <p>The version of the key group that you are deleting. The version is the key
-     * group’s <code>ETag</code> value. To get the <code>ETag</code>, use
+     * group's <code>ETag</code> value. To get the <code>ETag</code>, use
      * <code>GetKeyGroup</code> or <code>GetKeyGroupConfig</code>.</p>
      */
     inline void SetIfMatch(Aws::String&& value) { m_ifMatchHasBeenSet = true; m_ifMatch = std::move(value); }
 
     /**
      * <p>The version of the key group that you are deleting. The version is the key
-     * group’s <code>ETag</code> value. To get the <code>ETag</code>, use
+     * group's <code>ETag</code> value. To get the <code>ETag</code>, use
      * <code>GetKeyGroup</code> or <code>GetKeyGroupConfig</code>.</p>
      */
     inline void SetIfMatch(const char* value) { m_ifMatchHasBeenSet = true; m_ifMatch.assign(value); }
 
     /**
      * <p>The version of the key group that you are deleting. The version is the key
-     * group’s <code>ETag</code> value. To get the <code>ETag</code>, use
+     * group's <code>ETag</code> value. To get the <code>ETag</code>, use
      * <code>GetKeyGroup</code> or <code>GetKeyGroupConfig</code>.</p>
      */
     inline DeleteKeyGroup2020_05_31Request& WithIfMatch(const Aws::String& value) { SetIfMatch(value); return *this;}
 
     /**
      * <p>The version of the key group that you are deleting. The version is the key
-     * group’s <code>ETag</code> value. To get the <code>ETag</code>, use
+     * group's <code>ETag</code> value. To get the <code>ETag</code>, use
      * <code>GetKeyGroup</code> or <code>GetKeyGroupConfig</code>.</p>
      */
     inline DeleteKeyGroup2020_05_31Request& WithIfMatch(Aws::String&& value) { SetIfMatch(std::move(value)); return *this;}
 
     /**
      * <p>The version of the key group that you are deleting. The version is the key
-     * group’s <code>ETag</code> value. To get the <code>ETag</code>, use
+     * group's <code>ETag</code> value. To get the <code>ETag</code>, use
      * <code>GetKeyGroup</code> or <code>GetKeyGroupConfig</code>.</p>
      */
     inline DeleteKeyGroup2020_05_31Request& WithIfMatch(const char* value) { SetIfMatch(value); return *this;}

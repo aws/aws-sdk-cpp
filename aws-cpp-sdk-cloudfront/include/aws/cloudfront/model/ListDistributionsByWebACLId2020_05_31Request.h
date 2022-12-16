@@ -48,7 +48,7 @@ namespace Model
      * the request, the response includes a <code>NextMarker</code> element. To get the
      * next page of results, submit another request. For the value of
      * <code>Marker</code>, specify the value of <code>NextMarker</code> from the last
-     * response. (For the first request, omit <code>Marker</code>.) </p>
+     * response. (For the first request, omit <code>Marker</code>.)</p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
 
@@ -58,7 +58,7 @@ namespace Model
      * the request, the response includes a <code>NextMarker</code> element. To get the
      * next page of results, submit another request. For the value of
      * <code>Marker</code>, specify the value of <code>NextMarker</code> from the last
-     * response. (For the first request, omit <code>Marker</code>.) </p>
+     * response. (For the first request, omit <code>Marker</code>.)</p>
      */
     inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
 
@@ -68,7 +68,7 @@ namespace Model
      * the request, the response includes a <code>NextMarker</code> element. To get the
      * next page of results, submit another request. For the value of
      * <code>Marker</code>, specify the value of <code>NextMarker</code> from the last
-     * response. (For the first request, omit <code>Marker</code>.) </p>
+     * response. (For the first request, omit <code>Marker</code>.)</p>
      */
     inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
 
@@ -78,7 +78,7 @@ namespace Model
      * the request, the response includes a <code>NextMarker</code> element. To get the
      * next page of results, submit another request. For the value of
      * <code>Marker</code>, specify the value of <code>NextMarker</code> from the last
-     * response. (For the first request, omit <code>Marker</code>.) </p>
+     * response. (For the first request, omit <code>Marker</code>.)</p>
      */
     inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
 
@@ -88,7 +88,7 @@ namespace Model
      * the request, the response includes a <code>NextMarker</code> element. To get the
      * next page of results, submit another request. For the value of
      * <code>Marker</code>, specify the value of <code>NextMarker</code> from the last
-     * response. (For the first request, omit <code>Marker</code>.) </p>
+     * response. (For the first request, omit <code>Marker</code>.)</p>
      */
     inline void SetMarker(const char* value) { m_markerHasBeenSet = true; m_marker.assign(value); }
 
@@ -98,7 +98,7 @@ namespace Model
      * the request, the response includes a <code>NextMarker</code> element. To get the
      * next page of results, submit another request. For the value of
      * <code>Marker</code>, specify the value of <code>NextMarker</code> from the last
-     * response. (For the first request, omit <code>Marker</code>.) </p>
+     * response. (For the first request, omit <code>Marker</code>.)</p>
      */
     inline ListDistributionsByWebACLId2020_05_31Request& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
 
@@ -108,7 +108,7 @@ namespace Model
      * the request, the response includes a <code>NextMarker</code> element. To get the
      * next page of results, submit another request. For the value of
      * <code>Marker</code>, specify the value of <code>NextMarker</code> from the last
-     * response. (For the first request, omit <code>Marker</code>.) </p>
+     * response. (For the first request, omit <code>Marker</code>.)</p>
      */
     inline ListDistributionsByWebACLId2020_05_31Request& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
@@ -118,7 +118,7 @@ namespace Model
      * the request, the response includes a <code>NextMarker</code> element. To get the
      * next page of results, submit another request. For the value of
      * <code>Marker</code>, specify the value of <code>NextMarker</code> from the last
-     * response. (For the first request, omit <code>Marker</code>.) </p>
+     * response. (For the first request, omit <code>Marker</code>.)</p>
      */
     inline ListDistributionsByWebACLId2020_05_31Request& WithMarker(const char* value) { SetMarker(value); return *this;}
 

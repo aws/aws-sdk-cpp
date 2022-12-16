@@ -25,7 +25,7 @@ namespace CloudFront
 namespace Model
 {
   /**
-   * <p>The returned result of the corresponding request. </p><p><h3>See Also:</h3>  
+   * <p>The returned result of the corresponding request.</p><p><h3>See Also:</h3>  
    * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributionsResult">AWS
    * API Reference</a></p>
@@ -39,27 +39,27 @@ namespace Model
 
 
     /**
-     * <p>The <code>DistributionList</code> type. </p>
+     * <p>The <code>DistributionList</code> type.</p>
      */
     inline const DistributionList& GetDistributionList() const{ return m_distributionList; }
 
     /**
-     * <p>The <code>DistributionList</code> type. </p>
+     * <p>The <code>DistributionList</code> type.</p>
      */
     inline void SetDistributionList(const DistributionList& value) { m_distributionList = value; }
 
     /**
-     * <p>The <code>DistributionList</code> type. </p>
+     * <p>The <code>DistributionList</code> type.</p>
      */
     inline void SetDistributionList(DistributionList&& value) { m_distributionList = std::move(value); }
 
     /**
-     * <p>The <code>DistributionList</code> type. </p>
+     * <p>The <code>DistributionList</code> type.</p>
      */
     inline ListDistributions2020_05_31Result& WithDistributionList(const DistributionList& value) { SetDistributionList(value); return *this;}
 
     /**
-     * <p>The <code>DistributionList</code> type. </p>
+     * <p>The <code>DistributionList</code> type.</p>
      */
     inline ListDistributions2020_05_31Result& WithDistributionList(DistributionList&& value) { SetDistributionList(std::move(value)); return *this;}
 

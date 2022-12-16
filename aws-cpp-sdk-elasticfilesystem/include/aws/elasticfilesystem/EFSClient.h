@@ -804,16 +804,16 @@ namespace EFS
         virtual void PutFileSystemPolicyAsync(const Model::PutFileSystemPolicyRequest& request, const PutFileSystemPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Use this action to manage EFS lifecycle management and intelligent tiering. A
-         * <code>LifecycleConfiguration</code> consists of one or more
-         * <code>LifecyclePolicy</code> objects that define the following:</p> <ul> <li>
-         * <p> <b>EFS Lifecycle management</b> - When Amazon EFS automatically transitions
-         * files in a file system into the lower-cost Infrequent Access (IA) storage
-         * class.</p> <p>To enable EFS Lifecycle management, set the value of
+         * <p>Use this action to manage EFS lifecycle management and EFS
+         * Intelligent-Tiering. A <code>LifecycleConfiguration</code> consists of one or
+         * more <code>LifecyclePolicy</code> objects that define the following:</p> <ul>
+         * <li> <p> <b>EFS Lifecycle management</b> - When Amazon EFS automatically
+         * transitions files in a file system into the lower-cost EFS Infrequent Access
+         * (IA) storage class.</p> <p>To enable EFS Lifecycle management, set the value of
          * <code>TransitionToIA</code> to one of the available options.</p> </li> <li> <p>
-         * <b>EFS Intelligent tiering</b> - When Amazon EFS automatically transitions files
-         * from IA back into the file system's primary storage class (Standard or One Zone
-         * Standard.</p> <p>To enable EFS Intelligent Tiering, set the value of
+         * <b>EFS Intelligent-Tiering</b> - When Amazon EFS automatically transitions files
+         * from IA back into the file system's primary storage class (EFS Standard or EFS
+         * One Zone Standard).</p> <p>To enable EFS Intelligent-Tiering, set the value of
          * <code>TransitionToPrimaryStorageClass</code> to <code>AFTER_1_ACCESS</code>.</p>
          * </li> </ul> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/efs/latest/ug/lifecycle-management-efs.html">EFS
@@ -823,11 +823,11 @@ namespace EFS
          * system, a <code>PutLifecycleConfiguration</code> call modifies the existing
          * configuration. A <code>PutLifecycleConfiguration</code> call with an empty
          * <code>LifecyclePolicies</code> array in the request body deletes any existing
-         * <code>LifecycleConfiguration</code> and turns off lifecycle management and
-         * intelligent tiering for the file system.</p> <p>In the request, specify the
+         * <code>LifecycleConfiguration</code> and turns off lifecycle management and EFS
+         * Intelligent-Tiering for the file system.</p> <p>In the request, specify the
          * following: </p> <ul> <li> <p>The ID for the file system for which you are
-         * enabling, disabling, or modifying lifecycle management and intelligent
-         * tiering.</p> </li> <li> <p>A <code>LifecyclePolicies</code> array of
+         * enabling, disabling, or modifying lifecycle management and EFS
+         * Intelligent-Tiering.</p> </li> <li> <p>A <code>LifecyclePolicies</code> array of
          * <code>LifecyclePolicy</code> objects that define when files are moved into IA
          * storage, and when they are moved back to Standard storage.</p>  <p>Amazon
          * EFS requires that each <code>LifecyclePolicy</code> object have only have a

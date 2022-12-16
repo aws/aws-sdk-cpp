@@ -24,7 +24,7 @@ namespace Model
 
   /**
    * <p>A complex type that contains <code>HeaderName</code> and
-   * <code>HeaderValue</code> elements, if any, for this distribution. </p><p><h3>See
+   * <code>HeaderValue</code> elements, if any, for this distribution.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/OriginCustomHeader">AWS
    * API Reference</a></p>

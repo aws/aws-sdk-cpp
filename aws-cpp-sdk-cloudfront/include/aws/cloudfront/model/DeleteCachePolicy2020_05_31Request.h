@@ -85,7 +85,7 @@ namespace Model
 
     /**
      * <p>The version of the cache policy that you are deleting. The version is the
-     * cache policy’s <code>ETag</code> value, which you can get using
+     * cache policy's <code>ETag</code> value, which you can get using
      * <code>ListCachePolicies</code>, <code>GetCachePolicy</code>, or
      * <code>GetCachePolicyConfig</code>.</p>
      */
@@ -93,7 +93,7 @@ namespace Model
 
     /**
      * <p>The version of the cache policy that you are deleting. The version is the
-     * cache policy’s <code>ETag</code> value, which you can get using
+     * cache policy's <code>ETag</code> value, which you can get using
      * <code>ListCachePolicies</code>, <code>GetCachePolicy</code>, or
      * <code>GetCachePolicyConfig</code>.</p>
      */
@@ -101,7 +101,7 @@ namespace Model
 
     /**
      * <p>The version of the cache policy that you are deleting. The version is the
-     * cache policy’s <code>ETag</code> value, which you can get using
+     * cache policy's <code>ETag</code> value, which you can get using
      * <code>ListCachePolicies</code>, <code>GetCachePolicy</code>, or
      * <code>GetCachePolicyConfig</code>.</p>
      */
@@ -109,7 +109,7 @@ namespace Model
 
     /**
      * <p>The version of the cache policy that you are deleting. The version is the
-     * cache policy’s <code>ETag</code> value, which you can get using
+     * cache policy's <code>ETag</code> value, which you can get using
      * <code>ListCachePolicies</code>, <code>GetCachePolicy</code>, or
      * <code>GetCachePolicyConfig</code>.</p>
      */
@@ -117,7 +117,7 @@ namespace Model
 
     /**
      * <p>The version of the cache policy that you are deleting. The version is the
-     * cache policy’s <code>ETag</code> value, which you can get using
+     * cache policy's <code>ETag</code> value, which you can get using
      * <code>ListCachePolicies</code>, <code>GetCachePolicy</code>, or
      * <code>GetCachePolicyConfig</code>.</p>
      */
@@ -125,7 +125,7 @@ namespace Model
 
     /**
      * <p>The version of the cache policy that you are deleting. The version is the
-     * cache policy’s <code>ETag</code> value, which you can get using
+     * cache policy's <code>ETag</code> value, which you can get using
      * <code>ListCachePolicies</code>, <code>GetCachePolicy</code>, or
      * <code>GetCachePolicyConfig</code>.</p>
      */
@@ -133,7 +133,7 @@ namespace Model
 
     /**
      * <p>The version of the cache policy that you are deleting. The version is the
-     * cache policy’s <code>ETag</code> value, which you can get using
+     * cache policy's <code>ETag</code> value, which you can get using
      * <code>ListCachePolicies</code>, <code>GetCachePolicy</code>, or
      * <code>GetCachePolicyConfig</code>.</p>
      */
@@ -141,7 +141,7 @@ namespace Model
 
     /**
      * <p>The version of the cache policy that you are deleting. The version is the
-     * cache policy’s <code>ETag</code> value, which you can get using
+     * cache policy's <code>ETag</code> value, which you can get using
      * <code>ListCachePolicies</code>, <code>GetCachePolicy</code>, or
      * <code>GetCachePolicyConfig</code>.</p>
      */

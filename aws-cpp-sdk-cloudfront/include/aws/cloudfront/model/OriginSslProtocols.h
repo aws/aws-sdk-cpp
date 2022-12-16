@@ -25,8 +25,8 @@ namespace Model
 
   /**
    * <p>A complex type that contains information about the SSL/TLS protocols that
-   * CloudFront can use when establishing an HTTPS connection with your origin.
-   * </p><p><h3>See Also:</h3>   <a
+   * CloudFront can use when establishing an HTTPS connection with your
+   * origin.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/OriginSslProtocols">AWS
    * API Reference</a></p>
    */
@@ -42,25 +42,25 @@ namespace Model
 
     /**
      * <p>The number of SSL/TLS protocols that you want to allow CloudFront to use when
-     * establishing an HTTPS connection with this origin. </p>
+     * establishing an HTTPS connection with this origin.</p>
      */
     inline int GetQuantity() const{ return m_quantity; }
 
     /**
      * <p>The number of SSL/TLS protocols that you want to allow CloudFront to use when
-     * establishing an HTTPS connection with this origin. </p>
+     * establishing an HTTPS connection with this origin.</p>
      */
     inline bool QuantityHasBeenSet() const { return m_quantityHasBeenSet; }
 
     /**
      * <p>The number of SSL/TLS protocols that you want to allow CloudFront to use when
-     * establishing an HTTPS connection with this origin. </p>
+     * establishing an HTTPS connection with this origin.</p>
      */
     inline void SetQuantity(int value) { m_quantityHasBeenSet = true; m_quantity = value; }
 
     /**
      * <p>The number of SSL/TLS protocols that you want to allow CloudFront to use when
-     * establishing an HTTPS connection with this origin. </p>
+     * establishing an HTTPS connection with this origin.</p>
      */
     inline OriginSslProtocols& WithQuantity(int value) { SetQuantity(value); return *this;}
 

@@ -26,7 +26,7 @@ namespace Model
   /**
    * <p>A list of HTTP response header names and their values. CloudFront includes
    * these headers in HTTP responses that it sends for requests that match a cache
-   * behavior that’s associated with this response headers policy.</p><p><h3>See
+   * behavior that's associated with this response headers policy.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ResponseHeadersPolicyCustomHeadersConfig">AWS
    * API Reference</a></p>

@@ -231,145 +231,121 @@ namespace Model
 
 
     /**
-     * <p>The set of configuration options that control the behavior of a single
-     * execution of the task that occurs when you call <code>StartTaskExecution</code>.
-     * You can configure these options to preserve metadata such as user ID (UID) and
-     * group ID (GID), file permissions, data integrity verification, and so on.</p>
-     * <p>For each individual task execution, you can override these options by
-     * specifying the <code>OverrideOptions</code> before starting the task execution.
-     * For more information, see the <a
-     * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>
-     * operation. </p>
+     * <p>Specifies the configuration options for a task. Some options include
+     * preserving file or object metadata and verifying data integrity.</p> <p>You can
+     * also override these options before starting an individual run of a task (also
+     * known as a <i>task execution</i>). For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>.</p>
      */
     inline const Options& GetOptions() const{ return m_options; }
 
     /**
-     * <p>The set of configuration options that control the behavior of a single
-     * execution of the task that occurs when you call <code>StartTaskExecution</code>.
-     * You can configure these options to preserve metadata such as user ID (UID) and
-     * group ID (GID), file permissions, data integrity verification, and so on.</p>
-     * <p>For each individual task execution, you can override these options by
-     * specifying the <code>OverrideOptions</code> before starting the task execution.
-     * For more information, see the <a
-     * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>
-     * operation. </p>
+     * <p>Specifies the configuration options for a task. Some options include
+     * preserving file or object metadata and verifying data integrity.</p> <p>You can
+     * also override these options before starting an individual run of a task (also
+     * known as a <i>task execution</i>). For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>.</p>
      */
     inline bool OptionsHasBeenSet() const { return m_optionsHasBeenSet; }
 
     /**
-     * <p>The set of configuration options that control the behavior of a single
-     * execution of the task that occurs when you call <code>StartTaskExecution</code>.
-     * You can configure these options to preserve metadata such as user ID (UID) and
-     * group ID (GID), file permissions, data integrity verification, and so on.</p>
-     * <p>For each individual task execution, you can override these options by
-     * specifying the <code>OverrideOptions</code> before starting the task execution.
-     * For more information, see the <a
-     * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>
-     * operation. </p>
+     * <p>Specifies the configuration options for a task. Some options include
+     * preserving file or object metadata and verifying data integrity.</p> <p>You can
+     * also override these options before starting an individual run of a task (also
+     * known as a <i>task execution</i>). For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>.</p>
      */
     inline void SetOptions(const Options& value) { m_optionsHasBeenSet = true; m_options = value; }
 
     /**
-     * <p>The set of configuration options that control the behavior of a single
-     * execution of the task that occurs when you call <code>StartTaskExecution</code>.
-     * You can configure these options to preserve metadata such as user ID (UID) and
-     * group ID (GID), file permissions, data integrity verification, and so on.</p>
-     * <p>For each individual task execution, you can override these options by
-     * specifying the <code>OverrideOptions</code> before starting the task execution.
-     * For more information, see the <a
-     * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>
-     * operation. </p>
+     * <p>Specifies the configuration options for a task. Some options include
+     * preserving file or object metadata and verifying data integrity.</p> <p>You can
+     * also override these options before starting an individual run of a task (also
+     * known as a <i>task execution</i>). For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>.</p>
      */
     inline void SetOptions(Options&& value) { m_optionsHasBeenSet = true; m_options = std::move(value); }
 
     /**
-     * <p>The set of configuration options that control the behavior of a single
-     * execution of the task that occurs when you call <code>StartTaskExecution</code>.
-     * You can configure these options to preserve metadata such as user ID (UID) and
-     * group ID (GID), file permissions, data integrity verification, and so on.</p>
-     * <p>For each individual task execution, you can override these options by
-     * specifying the <code>OverrideOptions</code> before starting the task execution.
-     * For more information, see the <a
-     * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>
-     * operation. </p>
+     * <p>Specifies the configuration options for a task. Some options include
+     * preserving file or object metadata and verifying data integrity.</p> <p>You can
+     * also override these options before starting an individual run of a task (also
+     * known as a <i>task execution</i>). For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>.</p>
      */
     inline CreateTaskRequest& WithOptions(const Options& value) { SetOptions(value); return *this;}
 
     /**
-     * <p>The set of configuration options that control the behavior of a single
-     * execution of the task that occurs when you call <code>StartTaskExecution</code>.
-     * You can configure these options to preserve metadata such as user ID (UID) and
-     * group ID (GID), file permissions, data integrity verification, and so on.</p>
-     * <p>For each individual task execution, you can override these options by
-     * specifying the <code>OverrideOptions</code> before starting the task execution.
-     * For more information, see the <a
-     * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>
-     * operation. </p>
+     * <p>Specifies the configuration options for a task. Some options include
+     * preserving file or object metadata and verifying data integrity.</p> <p>You can
+     * also override these options before starting an individual run of a task (also
+     * known as a <i>task execution</i>). For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>.</p>
      */
     inline CreateTaskRequest& WithOptions(Options&& value) { SetOptions(std::move(value)); return *this;}
 
 
     /**
-     * <p>A list of filter rules that determines which files to exclude from a task.
-     * The list should contain a single filter string that consists of the patterns to
-     * exclude. The patterns are delimited by "|" (that is, a pipe), for example,
-     * <code>"/folder1|/folder2"</code>. </p> <p> </p>
+     * <p>Specifies a list of filter rules that exclude specific data during your
+     * transfer. For more information and examples, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering
+     * data transferred by DataSync</a>.</p>
      */
     inline const Aws::Vector<FilterRule>& GetExcludes() const{ return m_excludes; }
 
     /**
-     * <p>A list of filter rules that determines which files to exclude from a task.
-     * The list should contain a single filter string that consists of the patterns to
-     * exclude. The patterns are delimited by "|" (that is, a pipe), for example,
-     * <code>"/folder1|/folder2"</code>. </p> <p> </p>
+     * <p>Specifies a list of filter rules that exclude specific data during your
+     * transfer. For more information and examples, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering
+     * data transferred by DataSync</a>.</p>
      */
     inline bool ExcludesHasBeenSet() const { return m_excludesHasBeenSet; }
 
     /**
-     * <p>A list of filter rules that determines which files to exclude from a task.
-     * The list should contain a single filter string that consists of the patterns to
-     * exclude. The patterns are delimited by "|" (that is, a pipe), for example,
-     * <code>"/folder1|/folder2"</code>. </p> <p> </p>
+     * <p>Specifies a list of filter rules that exclude specific data during your
+     * transfer. For more information and examples, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering
+     * data transferred by DataSync</a>.</p>
      */
     inline void SetExcludes(const Aws::Vector<FilterRule>& value) { m_excludesHasBeenSet = true; m_excludes = value; }
 
     /**
-     * <p>A list of filter rules that determines which files to exclude from a task.
-     * The list should contain a single filter string that consists of the patterns to
-     * exclude. The patterns are delimited by "|" (that is, a pipe), for example,
-     * <code>"/folder1|/folder2"</code>. </p> <p> </p>
+     * <p>Specifies a list of filter rules that exclude specific data during your
+     * transfer. For more information and examples, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering
+     * data transferred by DataSync</a>.</p>
      */
     inline void SetExcludes(Aws::Vector<FilterRule>&& value) { m_excludesHasBeenSet = true; m_excludes = std::move(value); }
 
     /**
-     * <p>A list of filter rules that determines which files to exclude from a task.
-     * The list should contain a single filter string that consists of the patterns to
-     * exclude. The patterns are delimited by "|" (that is, a pipe), for example,
-     * <code>"/folder1|/folder2"</code>. </p> <p> </p>
+     * <p>Specifies a list of filter rules that exclude specific data during your
+     * transfer. For more information and examples, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering
+     * data transferred by DataSync</a>.</p>
      */
     inline CreateTaskRequest& WithExcludes(const Aws::Vector<FilterRule>& value) { SetExcludes(value); return *this;}
 
     /**
-     * <p>A list of filter rules that determines which files to exclude from a task.
-     * The list should contain a single filter string that consists of the patterns to
-     * exclude. The patterns are delimited by "|" (that is, a pipe), for example,
-     * <code>"/folder1|/folder2"</code>. </p> <p> </p>
+     * <p>Specifies a list of filter rules that exclude specific data during your
+     * transfer. For more information and examples, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering
+     * data transferred by DataSync</a>.</p>
      */
     inline CreateTaskRequest& WithExcludes(Aws::Vector<FilterRule>&& value) { SetExcludes(std::move(value)); return *this;}
 
     /**
-     * <p>A list of filter rules that determines which files to exclude from a task.
-     * The list should contain a single filter string that consists of the patterns to
-     * exclude. The patterns are delimited by "|" (that is, a pipe), for example,
-     * <code>"/folder1|/folder2"</code>. </p> <p> </p>
+     * <p>Specifies a list of filter rules that exclude specific data during your
+     * transfer. For more information and examples, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering
+     * data transferred by DataSync</a>.</p>
      */
     inline CreateTaskRequest& AddExcludes(const FilterRule& value) { m_excludesHasBeenSet = true; m_excludes.push_back(value); return *this; }
 
     /**
-     * <p>A list of filter rules that determines which files to exclude from a task.
-     * The list should contain a single filter string that consists of the patterns to
-     * exclude. The patterns are delimited by "|" (that is, a pipe), for example,
-     * <code>"/folder1|/folder2"</code>. </p> <p> </p>
+     * <p>Specifies a list of filter rules that exclude specific data during your
+     * transfer. For more information and examples, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering
+     * data transferred by DataSync</a>.</p>
      */
     inline CreateTaskRequest& AddExcludes(FilterRule&& value) { m_excludesHasBeenSet = true; m_excludes.push_back(std::move(value)); return *this; }
 
@@ -430,115 +406,123 @@ namespace Model
 
 
     /**
-     * <p>The key-value pair that represents the tag that you want to add to the
-     * resource. The value can be an empty string. </p>
+     * <p>Specifies the tags that you want to apply to the Amazon Resource Name (ARN)
+     * representing the task.</p> <p> <i>Tags</i> are key-value pairs that help you
+     * manage, filter, and search for your DataSync resources.</p>
      */
     inline const Aws::Vector<TagListEntry>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>The key-value pair that represents the tag that you want to add to the
-     * resource. The value can be an empty string. </p>
+     * <p>Specifies the tags that you want to apply to the Amazon Resource Name (ARN)
+     * representing the task.</p> <p> <i>Tags</i> are key-value pairs that help you
+     * manage, filter, and search for your DataSync resources.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>The key-value pair that represents the tag that you want to add to the
-     * resource. The value can be an empty string. </p>
+     * <p>Specifies the tags that you want to apply to the Amazon Resource Name (ARN)
+     * representing the task.</p> <p> <i>Tags</i> are key-value pairs that help you
+     * manage, filter, and search for your DataSync resources.</p>
      */
     inline void SetTags(const Aws::Vector<TagListEntry>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>The key-value pair that represents the tag that you want to add to the
-     * resource. The value can be an empty string. </p>
+     * <p>Specifies the tags that you want to apply to the Amazon Resource Name (ARN)
+     * representing the task.</p> <p> <i>Tags</i> are key-value pairs that help you
+     * manage, filter, and search for your DataSync resources.</p>
      */
     inline void SetTags(Aws::Vector<TagListEntry>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>The key-value pair that represents the tag that you want to add to the
-     * resource. The value can be an empty string. </p>
+     * <p>Specifies the tags that you want to apply to the Amazon Resource Name (ARN)
+     * representing the task.</p> <p> <i>Tags</i> are key-value pairs that help you
+     * manage, filter, and search for your DataSync resources.</p>
      */
     inline CreateTaskRequest& WithTags(const Aws::Vector<TagListEntry>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>The key-value pair that represents the tag that you want to add to the
-     * resource. The value can be an empty string. </p>
+     * <p>Specifies the tags that you want to apply to the Amazon Resource Name (ARN)
+     * representing the task.</p> <p> <i>Tags</i> are key-value pairs that help you
+     * manage, filter, and search for your DataSync resources.</p>
      */
     inline CreateTaskRequest& WithTags(Aws::Vector<TagListEntry>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>The key-value pair that represents the tag that you want to add to the
-     * resource. The value can be an empty string. </p>
+     * <p>Specifies the tags that you want to apply to the Amazon Resource Name (ARN)
+     * representing the task.</p> <p> <i>Tags</i> are key-value pairs that help you
+     * manage, filter, and search for your DataSync resources.</p>
      */
     inline CreateTaskRequest& AddTags(const TagListEntry& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
-     * <p>The key-value pair that represents the tag that you want to add to the
-     * resource. The value can be an empty string. </p>
+     * <p>Specifies the tags that you want to apply to the Amazon Resource Name (ARN)
+     * representing the task.</p> <p> <i>Tags</i> are key-value pairs that help you
+     * manage, filter, and search for your DataSync resources.</p>
      */
     inline CreateTaskRequest& AddTags(TagListEntry&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>A list of filter rules that determines which files to include when running a
-     * task. The pattern contains a single filter string that consists of the patterns
-     * to include. The patterns are delimited by "|" (that is, a pipe), for example,
-     * <code>"/folder1|/folder2"</code>.</p>
+     * <p>Specifies a list of filter rules that include specific data during your
+     * transfer. For more information and examples, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering
+     * data transferred by DataSync</a>.</p>
      */
     inline const Aws::Vector<FilterRule>& GetIncludes() const{ return m_includes; }
 
     /**
-     * <p>A list of filter rules that determines which files to include when running a
-     * task. The pattern contains a single filter string that consists of the patterns
-     * to include. The patterns are delimited by "|" (that is, a pipe), for example,
-     * <code>"/folder1|/folder2"</code>.</p>
+     * <p>Specifies a list of filter rules that include specific data during your
+     * transfer. For more information and examples, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering
+     * data transferred by DataSync</a>.</p>
      */
     inline bool IncludesHasBeenSet() const { return m_includesHasBeenSet; }
 
     /**
-     * <p>A list of filter rules that determines which files to include when running a
-     * task. The pattern contains a single filter string that consists of the patterns
-     * to include. The patterns are delimited by "|" (that is, a pipe), for example,
-     * <code>"/folder1|/folder2"</code>.</p>
+     * <p>Specifies a list of filter rules that include specific data during your
+     * transfer. For more information and examples, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering
+     * data transferred by DataSync</a>.</p>
      */
     inline void SetIncludes(const Aws::Vector<FilterRule>& value) { m_includesHasBeenSet = true; m_includes = value; }
 
     /**
-     * <p>A list of filter rules that determines which files to include when running a
-     * task. The pattern contains a single filter string that consists of the patterns
-     * to include. The patterns are delimited by "|" (that is, a pipe), for example,
-     * <code>"/folder1|/folder2"</code>.</p>
+     * <p>Specifies a list of filter rules that include specific data during your
+     * transfer. For more information and examples, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering
+     * data transferred by DataSync</a>.</p>
      */
     inline void SetIncludes(Aws::Vector<FilterRule>&& value) { m_includesHasBeenSet = true; m_includes = std::move(value); }
 
     /**
-     * <p>A list of filter rules that determines which files to include when running a
-     * task. The pattern contains a single filter string that consists of the patterns
-     * to include. The patterns are delimited by "|" (that is, a pipe), for example,
-     * <code>"/folder1|/folder2"</code>.</p>
+     * <p>Specifies a list of filter rules that include specific data during your
+     * transfer. For more information and examples, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering
+     * data transferred by DataSync</a>.</p>
      */
     inline CreateTaskRequest& WithIncludes(const Aws::Vector<FilterRule>& value) { SetIncludes(value); return *this;}
 
     /**
-     * <p>A list of filter rules that determines which files to include when running a
-     * task. The pattern contains a single filter string that consists of the patterns
-     * to include. The patterns are delimited by "|" (that is, a pipe), for example,
-     * <code>"/folder1|/folder2"</code>.</p>
+     * <p>Specifies a list of filter rules that include specific data during your
+     * transfer. For more information and examples, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering
+     * data transferred by DataSync</a>.</p>
      */
     inline CreateTaskRequest& WithIncludes(Aws::Vector<FilterRule>&& value) { SetIncludes(std::move(value)); return *this;}
 
     /**
-     * <p>A list of filter rules that determines which files to include when running a
-     * task. The pattern contains a single filter string that consists of the patterns
-     * to include. The patterns are delimited by "|" (that is, a pipe), for example,
-     * <code>"/folder1|/folder2"</code>.</p>
+     * <p>Specifies a list of filter rules that include specific data during your
+     * transfer. For more information and examples, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering
+     * data transferred by DataSync</a>.</p>
      */
     inline CreateTaskRequest& AddIncludes(const FilterRule& value) { m_includesHasBeenSet = true; m_includes.push_back(value); return *this; }
 
     /**
-     * <p>A list of filter rules that determines which files to include when running a
-     * task. The pattern contains a single filter string that consists of the patterns
-     * to include. The patterns are delimited by "|" (that is, a pipe), for example,
-     * <code>"/folder1|/folder2"</code>.</p>
+     * <p>Specifies a list of filter rules that include specific data during your
+     * transfer. For more information and examples, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering
+     * data transferred by DataSync</a>.</p>
      */
     inline CreateTaskRequest& AddIncludes(FilterRule&& value) { m_includesHasBeenSet = true; m_includes.push_back(std::move(value)); return *this; }
 

@@ -43,7 +43,7 @@ namespace Model
      * profiles. The results include profiles in the list that occur after the marker.
      * To get the next page of results, set the <code>Marker</code> to the value of the
      * <code>NextMarker</code> from the current page's response (which is also the ID
-     * of the last profile on that page). </p>
+     * of the last profile on that page).</p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
 
@@ -52,7 +52,7 @@ namespace Model
      * profiles. The results include profiles in the list that occur after the marker.
      * To get the next page of results, set the <code>Marker</code> to the value of the
      * <code>NextMarker</code> from the current page's response (which is also the ID
-     * of the last profile on that page). </p>
+     * of the last profile on that page).</p>
      */
     inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
 
@@ -61,7 +61,7 @@ namespace Model
      * profiles. The results include profiles in the list that occur after the marker.
      * To get the next page of results, set the <code>Marker</code> to the value of the
      * <code>NextMarker</code> from the current page's response (which is also the ID
-     * of the last profile on that page). </p>
+     * of the last profile on that page).</p>
      */
     inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
 
@@ -70,7 +70,7 @@ namespace Model
      * profiles. The results include profiles in the list that occur after the marker.
      * To get the next page of results, set the <code>Marker</code> to the value of the
      * <code>NextMarker</code> from the current page's response (which is also the ID
-     * of the last profile on that page). </p>
+     * of the last profile on that page).</p>
      */
     inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
 
@@ -79,7 +79,7 @@ namespace Model
      * profiles. The results include profiles in the list that occur after the marker.
      * To get the next page of results, set the <code>Marker</code> to the value of the
      * <code>NextMarker</code> from the current page's response (which is also the ID
-     * of the last profile on that page). </p>
+     * of the last profile on that page).</p>
      */
     inline void SetMarker(const char* value) { m_markerHasBeenSet = true; m_marker.assign(value); }
 
@@ -88,7 +88,7 @@ namespace Model
      * profiles. The results include profiles in the list that occur after the marker.
      * To get the next page of results, set the <code>Marker</code> to the value of the
      * <code>NextMarker</code> from the current page's response (which is also the ID
-     * of the last profile on that page). </p>
+     * of the last profile on that page).</p>
      */
     inline ListFieldLevelEncryptionProfiles2020_05_31Request& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
 
@@ -97,7 +97,7 @@ namespace Model
      * profiles. The results include profiles in the list that occur after the marker.
      * To get the next page of results, set the <code>Marker</code> to the value of the
      * <code>NextMarker</code> from the current page's response (which is also the ID
-     * of the last profile on that page). </p>
+     * of the last profile on that page).</p>
      */
     inline ListFieldLevelEncryptionProfiles2020_05_31Request& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
@@ -106,7 +106,7 @@ namespace Model
      * profiles. The results include profiles in the list that occur after the marker.
      * To get the next page of results, set the <code>Marker</code> to the value of the
      * <code>NextMarker</code> from the current page's response (which is also the ID
-     * of the last profile on that page). </p>
+     * of the last profile on that page).</p>
      */
     inline ListFieldLevelEncryptionProfiles2020_05_31Request& WithMarker(const char* value) { SetMarker(value); return *this;}
 

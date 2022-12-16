@@ -36,73 +36,73 @@ namespace Model
 
 
     /**
-     * <p>Request to update a field-level encryption profile. </p>
+     * <p>Request to update a field-level encryption profile.</p>
      */
     inline const FieldLevelEncryptionProfileConfig& GetFieldLevelEncryptionProfileConfig() const{ return m_fieldLevelEncryptionProfileConfig; }
 
     /**
-     * <p>Request to update a field-level encryption profile. </p>
+     * <p>Request to update a field-level encryption profile.</p>
      */
     inline bool FieldLevelEncryptionProfileConfigHasBeenSet() const { return m_fieldLevelEncryptionProfileConfigHasBeenSet; }
 
     /**
-     * <p>Request to update a field-level encryption profile. </p>
+     * <p>Request to update a field-level encryption profile.</p>
      */
     inline void SetFieldLevelEncryptionProfileConfig(const FieldLevelEncryptionProfileConfig& value) { m_fieldLevelEncryptionProfileConfigHasBeenSet = true; m_fieldLevelEncryptionProfileConfig = value; }
 
     /**
-     * <p>Request to update a field-level encryption profile. </p>
+     * <p>Request to update a field-level encryption profile.</p>
      */
     inline void SetFieldLevelEncryptionProfileConfig(FieldLevelEncryptionProfileConfig&& value) { m_fieldLevelEncryptionProfileConfigHasBeenSet = true; m_fieldLevelEncryptionProfileConfig = std::move(value); }
 
     /**
-     * <p>Request to update a field-level encryption profile. </p>
+     * <p>Request to update a field-level encryption profile.</p>
      */
     inline UpdateFieldLevelEncryptionProfile2020_05_31Request& WithFieldLevelEncryptionProfileConfig(const FieldLevelEncryptionProfileConfig& value) { SetFieldLevelEncryptionProfileConfig(value); return *this;}
 
     /**
-     * <p>Request to update a field-level encryption profile. </p>
+     * <p>Request to update a field-level encryption profile.</p>
      */
     inline UpdateFieldLevelEncryptionProfile2020_05_31Request& WithFieldLevelEncryptionProfileConfig(FieldLevelEncryptionProfileConfig&& value) { SetFieldLevelEncryptionProfileConfig(std::move(value)); return *this;}
 
 
     /**
-     * <p>The ID of the field-level encryption profile request. </p>
+     * <p>The ID of the field-level encryption profile request.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * <p>The ID of the field-level encryption profile request. </p>
+     * <p>The ID of the field-level encryption profile request.</p>
      */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
     /**
-     * <p>The ID of the field-level encryption profile request. </p>
+     * <p>The ID of the field-level encryption profile request.</p>
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
-     * <p>The ID of the field-level encryption profile request. </p>
+     * <p>The ID of the field-level encryption profile request.</p>
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
-     * <p>The ID of the field-level encryption profile request. </p>
+     * <p>The ID of the field-level encryption profile request.</p>
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /**
-     * <p>The ID of the field-level encryption profile request. </p>
+     * <p>The ID of the field-level encryption profile request.</p>
      */
     inline UpdateFieldLevelEncryptionProfile2020_05_31Request& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * <p>The ID of the field-level encryption profile request. </p>
+     * <p>The ID of the field-level encryption profile request.</p>
      */
     inline UpdateFieldLevelEncryptionProfile2020_05_31Request& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the field-level encryption profile request. </p>
+     * <p>The ID of the field-level encryption profile request.</p>
      */
     inline UpdateFieldLevelEncryptionProfile2020_05_31Request& WithId(const char* value) { SetId(value); return *this;}
 

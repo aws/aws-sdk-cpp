@@ -68,7 +68,7 @@ namespace Model
 
     /**
      * <p>The unique identifier for the origin request policy that you are updating.
-     * The identifier is returned in a cache behavior’s
+     * The identifier is returned in a cache behavior's
      * <code>OriginRequestPolicyId</code> field in the response to
      * <code>GetDistributionConfig</code>.</p>
      */
@@ -76,7 +76,7 @@ namespace Model
 
     /**
      * <p>The unique identifier for the origin request policy that you are updating.
-     * The identifier is returned in a cache behavior’s
+     * The identifier is returned in a cache behavior's
      * <code>OriginRequestPolicyId</code> field in the response to
      * <code>GetDistributionConfig</code>.</p>
      */
@@ -84,7 +84,7 @@ namespace Model
 
     /**
      * <p>The unique identifier for the origin request policy that you are updating.
-     * The identifier is returned in a cache behavior’s
+     * The identifier is returned in a cache behavior's
      * <code>OriginRequestPolicyId</code> field in the response to
      * <code>GetDistributionConfig</code>.</p>
      */
@@ -92,7 +92,7 @@ namespace Model
 
     /**
      * <p>The unique identifier for the origin request policy that you are updating.
-     * The identifier is returned in a cache behavior’s
+     * The identifier is returned in a cache behavior's
      * <code>OriginRequestPolicyId</code> field in the response to
      * <code>GetDistributionConfig</code>.</p>
      */
@@ -100,7 +100,7 @@ namespace Model
 
     /**
      * <p>The unique identifier for the origin request policy that you are updating.
-     * The identifier is returned in a cache behavior’s
+     * The identifier is returned in a cache behavior's
      * <code>OriginRequestPolicyId</code> field in the response to
      * <code>GetDistributionConfig</code>.</p>
      */
@@ -108,7 +108,7 @@ namespace Model
 
     /**
      * <p>The unique identifier for the origin request policy that you are updating.
-     * The identifier is returned in a cache behavior’s
+     * The identifier is returned in a cache behavior's
      * <code>OriginRequestPolicyId</code> field in the response to
      * <code>GetDistributionConfig</code>.</p>
      */
@@ -116,7 +116,7 @@ namespace Model
 
     /**
      * <p>The unique identifier for the origin request policy that you are updating.
-     * The identifier is returned in a cache behavior’s
+     * The identifier is returned in a cache behavior's
      * <code>OriginRequestPolicyId</code> field in the response to
      * <code>GetDistributionConfig</code>.</p>
      */
@@ -124,7 +124,7 @@ namespace Model
 
     /**
      * <p>The unique identifier for the origin request policy that you are updating.
-     * The identifier is returned in a cache behavior’s
+     * The identifier is returned in a cache behavior's
      * <code>OriginRequestPolicyId</code> field in the response to
      * <code>GetDistributionConfig</code>.</p>
      */
@@ -133,56 +133,56 @@ namespace Model
 
     /**
      * <p>The version of the origin request policy that you are updating. The version
-     * is returned in the origin request policy’s <code>ETag</code> field in the
+     * is returned in the origin request policy's <code>ETag</code> field in the
      * response to <code>GetOriginRequestPolicyConfig</code>.</p>
      */
     inline const Aws::String& GetIfMatch() const{ return m_ifMatch; }
 
     /**
      * <p>The version of the origin request policy that you are updating. The version
-     * is returned in the origin request policy’s <code>ETag</code> field in the
+     * is returned in the origin request policy's <code>ETag</code> field in the
      * response to <code>GetOriginRequestPolicyConfig</code>.</p>
      */
     inline bool IfMatchHasBeenSet() const { return m_ifMatchHasBeenSet; }
 
     /**
      * <p>The version of the origin request policy that you are updating. The version
-     * is returned in the origin request policy’s <code>ETag</code> field in the
+     * is returned in the origin request policy's <code>ETag</code> field in the
      * response to <code>GetOriginRequestPolicyConfig</code>.</p>
      */
     inline void SetIfMatch(const Aws::String& value) { m_ifMatchHasBeenSet = true; m_ifMatch = value; }
 
     /**
      * <p>The version of the origin request policy that you are updating. The version
-     * is returned in the origin request policy’s <code>ETag</code> field in the
+     * is returned in the origin request policy's <code>ETag</code> field in the
      * response to <code>GetOriginRequestPolicyConfig</code>.</p>
      */
     inline void SetIfMatch(Aws::String&& value) { m_ifMatchHasBeenSet = true; m_ifMatch = std::move(value); }
 
     /**
      * <p>The version of the origin request policy that you are updating. The version
-     * is returned in the origin request policy’s <code>ETag</code> field in the
+     * is returned in the origin request policy's <code>ETag</code> field in the
      * response to <code>GetOriginRequestPolicyConfig</code>.</p>
      */
     inline void SetIfMatch(const char* value) { m_ifMatchHasBeenSet = true; m_ifMatch.assign(value); }
 
     /**
      * <p>The version of the origin request policy that you are updating. The version
-     * is returned in the origin request policy’s <code>ETag</code> field in the
+     * is returned in the origin request policy's <code>ETag</code> field in the
      * response to <code>GetOriginRequestPolicyConfig</code>.</p>
      */
     inline UpdateOriginRequestPolicy2020_05_31Request& WithIfMatch(const Aws::String& value) { SetIfMatch(value); return *this;}
 
     /**
      * <p>The version of the origin request policy that you are updating. The version
-     * is returned in the origin request policy’s <code>ETag</code> field in the
+     * is returned in the origin request policy's <code>ETag</code> field in the
      * response to <code>GetOriginRequestPolicyConfig</code>.</p>
      */
     inline UpdateOriginRequestPolicy2020_05_31Request& WithIfMatch(Aws::String&& value) { SetIfMatch(std::move(value)); return *this;}
 
     /**
      * <p>The version of the origin request policy that you are updating. The version
-     * is returned in the origin request policy’s <code>ETag</code> field in the
+     * is returned in the origin request policy's <code>ETag</code> field in the
      * response to <code>GetOriginRequestPolicyConfig</code>.</p>
      */
     inline UpdateOriginRequestPolicy2020_05_31Request& WithIfMatch(const char* value) { SetIfMatch(value); return *this;}

@@ -23,7 +23,7 @@ namespace Model
    * more information, see <a
    * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html">
    * Restricting Access to Amazon S3 Content by Using an Origin Access Identity</a>
-   * in the <i>Amazon CloudFront Developer Guide</i>. </p><p><h3>See Also:</h3>   <a
+   * in the <i>Amazon CloudFront Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateCloudFrontOriginAccessIdentityRequest">AWS
    * API Reference</a></p>
    */

@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>An invalidation. </p><p><h3>See Also:</h3>   <a
+   * <p>An invalidation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/Invalidation">AWS
    * API Reference</a></p>
    */
@@ -138,63 +138,63 @@ namespace Model
 
 
     /**
-     * <p>The date and time the invalidation request was first made. </p>
+     * <p>The date and time the invalidation request was first made.</p>
      */
     inline const Aws::Utils::DateTime& GetCreateTime() const{ return m_createTime; }
 
     /**
-     * <p>The date and time the invalidation request was first made. </p>
+     * <p>The date and time the invalidation request was first made.</p>
      */
     inline bool CreateTimeHasBeenSet() const { return m_createTimeHasBeenSet; }
 
     /**
-     * <p>The date and time the invalidation request was first made. </p>
+     * <p>The date and time the invalidation request was first made.</p>
      */
     inline void SetCreateTime(const Aws::Utils::DateTime& value) { m_createTimeHasBeenSet = true; m_createTime = value; }
 
     /**
-     * <p>The date and time the invalidation request was first made. </p>
+     * <p>The date and time the invalidation request was first made.</p>
      */
     inline void SetCreateTime(Aws::Utils::DateTime&& value) { m_createTimeHasBeenSet = true; m_createTime = std::move(value); }
 
     /**
-     * <p>The date and time the invalidation request was first made. </p>
+     * <p>The date and time the invalidation request was first made.</p>
      */
     inline Invalidation& WithCreateTime(const Aws::Utils::DateTime& value) { SetCreateTime(value); return *this;}
 
     /**
-     * <p>The date and time the invalidation request was first made. </p>
+     * <p>The date and time the invalidation request was first made.</p>
      */
     inline Invalidation& WithCreateTime(Aws::Utils::DateTime&& value) { SetCreateTime(std::move(value)); return *this;}
 
 
     /**
-     * <p>The current invalidation information for the batch request. </p>
+     * <p>The current invalidation information for the batch request.</p>
      */
     inline const InvalidationBatch& GetInvalidationBatch() const{ return m_invalidationBatch; }
 
     /**
-     * <p>The current invalidation information for the batch request. </p>
+     * <p>The current invalidation information for the batch request.</p>
      */
     inline bool InvalidationBatchHasBeenSet() const { return m_invalidationBatchHasBeenSet; }
 
     /**
-     * <p>The current invalidation information for the batch request. </p>
+     * <p>The current invalidation information for the batch request.</p>
      */
     inline void SetInvalidationBatch(const InvalidationBatch& value) { m_invalidationBatchHasBeenSet = true; m_invalidationBatch = value; }
 
     /**
-     * <p>The current invalidation information for the batch request. </p>
+     * <p>The current invalidation information for the batch request.</p>
      */
     inline void SetInvalidationBatch(InvalidationBatch&& value) { m_invalidationBatchHasBeenSet = true; m_invalidationBatch = std::move(value); }
 
     /**
-     * <p>The current invalidation information for the batch request. </p>
+     * <p>The current invalidation information for the batch request.</p>
      */
     inline Invalidation& WithInvalidationBatch(const InvalidationBatch& value) { SetInvalidationBatch(value); return *this;}
 
     /**
-     * <p>The current invalidation information for the batch request. </p>
+     * <p>The current invalidation information for the batch request.</p>
      */
     inline Invalidation& WithInvalidationBatch(InvalidationBatch&& value) { SetInvalidationBatch(std::move(value)); return *this;}
 

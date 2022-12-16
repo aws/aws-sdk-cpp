@@ -10,6 +10,7 @@
 #include <aws/datasync/model/Options.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/datasync/model/FilterRule.h>
+#include <aws/datasync/model/TagListEntry.h>
 #include <utility>
 
 namespace Aws
@@ -41,42 +42,50 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the task to start.</p>
+     * <p>Specifies the Amazon Resource Name (ARN) of the task that you want to
+     * start.</p>
      */
     inline const Aws::String& GetTaskArn() const{ return m_taskArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the task to start.</p>
+     * <p>Specifies the Amazon Resource Name (ARN) of the task that you want to
+     * start.</p>
      */
     inline bool TaskArnHasBeenSet() const { return m_taskArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the task to start.</p>
+     * <p>Specifies the Amazon Resource Name (ARN) of the task that you want to
+     * start.</p>
      */
     inline void SetTaskArn(const Aws::String& value) { m_taskArnHasBeenSet = true; m_taskArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the task to start.</p>
+     * <p>Specifies the Amazon Resource Name (ARN) of the task that you want to
+     * start.</p>
      */
     inline void SetTaskArn(Aws::String&& value) { m_taskArnHasBeenSet = true; m_taskArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the task to start.</p>
+     * <p>Specifies the Amazon Resource Name (ARN) of the task that you want to
+     * start.</p>
      */
     inline void SetTaskArn(const char* value) { m_taskArnHasBeenSet = true; m_taskArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the task to start.</p>
+     * <p>Specifies the Amazon Resource Name (ARN) of the task that you want to
+     * start.</p>
      */
     inline StartTaskExecutionRequest& WithTaskArn(const Aws::String& value) { SetTaskArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the task to start.</p>
+     * <p>Specifies the Amazon Resource Name (ARN) of the task that you want to
+     * start.</p>
      */
     inline StartTaskExecutionRequest& WithTaskArn(Aws::String&& value) { SetTaskArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the task to start.</p>
+     * <p>Specifies the Amazon Resource Name (ARN) of the task that you want to
+     * start.</p>
      */
     inline StartTaskExecutionRequest& WithTaskArn(const char* value) { SetTaskArn(value); return *this;}
 
@@ -101,133 +110,190 @@ namespace Model
 
 
     /**
-     * <p>A list of filter rules that determines which files to include when running a
-     * task. The pattern should contain a single filter string that consists of the
-     * patterns to include. The patterns are delimited by "|" (that is, a pipe), for
-     * example, <code>"/folder1|/folder2"</code>. </p> <p> </p>
+     * <p>Specifies a list of filter rules that determines which files to include when
+     * running a task. The pattern should contain a single filter string that consists
+     * of the patterns to include. The patterns are delimited by "|" (that is, a pipe),
+     * for example, <code>"/folder1|/folder2"</code>. </p>
      */
     inline const Aws::Vector<FilterRule>& GetIncludes() const{ return m_includes; }
 
     /**
-     * <p>A list of filter rules that determines which files to include when running a
-     * task. The pattern should contain a single filter string that consists of the
-     * patterns to include. The patterns are delimited by "|" (that is, a pipe), for
-     * example, <code>"/folder1|/folder2"</code>. </p> <p> </p>
+     * <p>Specifies a list of filter rules that determines which files to include when
+     * running a task. The pattern should contain a single filter string that consists
+     * of the patterns to include. The patterns are delimited by "|" (that is, a pipe),
+     * for example, <code>"/folder1|/folder2"</code>. </p>
      */
     inline bool IncludesHasBeenSet() const { return m_includesHasBeenSet; }
 
     /**
-     * <p>A list of filter rules that determines which files to include when running a
-     * task. The pattern should contain a single filter string that consists of the
-     * patterns to include. The patterns are delimited by "|" (that is, a pipe), for
-     * example, <code>"/folder1|/folder2"</code>. </p> <p> </p>
+     * <p>Specifies a list of filter rules that determines which files to include when
+     * running a task. The pattern should contain a single filter string that consists
+     * of the patterns to include. The patterns are delimited by "|" (that is, a pipe),
+     * for example, <code>"/folder1|/folder2"</code>. </p>
      */
     inline void SetIncludes(const Aws::Vector<FilterRule>& value) { m_includesHasBeenSet = true; m_includes = value; }
 
     /**
-     * <p>A list of filter rules that determines which files to include when running a
-     * task. The pattern should contain a single filter string that consists of the
-     * patterns to include. The patterns are delimited by "|" (that is, a pipe), for
-     * example, <code>"/folder1|/folder2"</code>. </p> <p> </p>
+     * <p>Specifies a list of filter rules that determines which files to include when
+     * running a task. The pattern should contain a single filter string that consists
+     * of the patterns to include. The patterns are delimited by "|" (that is, a pipe),
+     * for example, <code>"/folder1|/folder2"</code>. </p>
      */
     inline void SetIncludes(Aws::Vector<FilterRule>&& value) { m_includesHasBeenSet = true; m_includes = std::move(value); }
 
     /**
-     * <p>A list of filter rules that determines which files to include when running a
-     * task. The pattern should contain a single filter string that consists of the
-     * patterns to include. The patterns are delimited by "|" (that is, a pipe), for
-     * example, <code>"/folder1|/folder2"</code>. </p> <p> </p>
+     * <p>Specifies a list of filter rules that determines which files to include when
+     * running a task. The pattern should contain a single filter string that consists
+     * of the patterns to include. The patterns are delimited by "|" (that is, a pipe),
+     * for example, <code>"/folder1|/folder2"</code>. </p>
      */
     inline StartTaskExecutionRequest& WithIncludes(const Aws::Vector<FilterRule>& value) { SetIncludes(value); return *this;}
 
     /**
-     * <p>A list of filter rules that determines which files to include when running a
-     * task. The pattern should contain a single filter string that consists of the
-     * patterns to include. The patterns are delimited by "|" (that is, a pipe), for
-     * example, <code>"/folder1|/folder2"</code>. </p> <p> </p>
+     * <p>Specifies a list of filter rules that determines which files to include when
+     * running a task. The pattern should contain a single filter string that consists
+     * of the patterns to include. The patterns are delimited by "|" (that is, a pipe),
+     * for example, <code>"/folder1|/folder2"</code>. </p>
      */
     inline StartTaskExecutionRequest& WithIncludes(Aws::Vector<FilterRule>&& value) { SetIncludes(std::move(value)); return *this;}
 
     /**
-     * <p>A list of filter rules that determines which files to include when running a
-     * task. The pattern should contain a single filter string that consists of the
-     * patterns to include. The patterns are delimited by "|" (that is, a pipe), for
-     * example, <code>"/folder1|/folder2"</code>. </p> <p> </p>
+     * <p>Specifies a list of filter rules that determines which files to include when
+     * running a task. The pattern should contain a single filter string that consists
+     * of the patterns to include. The patterns are delimited by "|" (that is, a pipe),
+     * for example, <code>"/folder1|/folder2"</code>. </p>
      */
     inline StartTaskExecutionRequest& AddIncludes(const FilterRule& value) { m_includesHasBeenSet = true; m_includes.push_back(value); return *this; }
 
     /**
-     * <p>A list of filter rules that determines which files to include when running a
-     * task. The pattern should contain a single filter string that consists of the
-     * patterns to include. The patterns are delimited by "|" (that is, a pipe), for
-     * example, <code>"/folder1|/folder2"</code>. </p> <p> </p>
+     * <p>Specifies a list of filter rules that determines which files to include when
+     * running a task. The pattern should contain a single filter string that consists
+     * of the patterns to include. The patterns are delimited by "|" (that is, a pipe),
+     * for example, <code>"/folder1|/folder2"</code>. </p>
      */
     inline StartTaskExecutionRequest& AddIncludes(FilterRule&& value) { m_includesHasBeenSet = true; m_includes.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>A list of filter rules that determines which files to exclude from a task.
-     * The list contains a single filter string that consists of the patterns to
-     * exclude. The patterns are delimited by "|" (that is, a pipe), for example,
+     * <p>Specifies a list of filter rules that determines which files to exclude from
+     * a task. The list contains a single filter string that consists of the patterns
+     * to exclude. The patterns are delimited by "|" (that is, a pipe), for example,
      * <code>"/folder1|/folder2"</code>. </p>
      */
     inline const Aws::Vector<FilterRule>& GetExcludes() const{ return m_excludes; }
 
     /**
-     * <p>A list of filter rules that determines which files to exclude from a task.
-     * The list contains a single filter string that consists of the patterns to
-     * exclude. The patterns are delimited by "|" (that is, a pipe), for example,
+     * <p>Specifies a list of filter rules that determines which files to exclude from
+     * a task. The list contains a single filter string that consists of the patterns
+     * to exclude. The patterns are delimited by "|" (that is, a pipe), for example,
      * <code>"/folder1|/folder2"</code>. </p>
      */
     inline bool ExcludesHasBeenSet() const { return m_excludesHasBeenSet; }
 
     /**
-     * <p>A list of filter rules that determines which files to exclude from a task.
-     * The list contains a single filter string that consists of the patterns to
-     * exclude. The patterns are delimited by "|" (that is, a pipe), for example,
+     * <p>Specifies a list of filter rules that determines which files to exclude from
+     * a task. The list contains a single filter string that consists of the patterns
+     * to exclude. The patterns are delimited by "|" (that is, a pipe), for example,
      * <code>"/folder1|/folder2"</code>. </p>
      */
     inline void SetExcludes(const Aws::Vector<FilterRule>& value) { m_excludesHasBeenSet = true; m_excludes = value; }
 
     /**
-     * <p>A list of filter rules that determines which files to exclude from a task.
-     * The list contains a single filter string that consists of the patterns to
-     * exclude. The patterns are delimited by "|" (that is, a pipe), for example,
+     * <p>Specifies a list of filter rules that determines which files to exclude from
+     * a task. The list contains a single filter string that consists of the patterns
+     * to exclude. The patterns are delimited by "|" (that is, a pipe), for example,
      * <code>"/folder1|/folder2"</code>. </p>
      */
     inline void SetExcludes(Aws::Vector<FilterRule>&& value) { m_excludesHasBeenSet = true; m_excludes = std::move(value); }
 
     /**
-     * <p>A list of filter rules that determines which files to exclude from a task.
-     * The list contains a single filter string that consists of the patterns to
-     * exclude. The patterns are delimited by "|" (that is, a pipe), for example,
+     * <p>Specifies a list of filter rules that determines which files to exclude from
+     * a task. The list contains a single filter string that consists of the patterns
+     * to exclude. The patterns are delimited by "|" (that is, a pipe), for example,
      * <code>"/folder1|/folder2"</code>. </p>
      */
     inline StartTaskExecutionRequest& WithExcludes(const Aws::Vector<FilterRule>& value) { SetExcludes(value); return *this;}
 
     /**
-     * <p>A list of filter rules that determines which files to exclude from a task.
-     * The list contains a single filter string that consists of the patterns to
-     * exclude. The patterns are delimited by "|" (that is, a pipe), for example,
+     * <p>Specifies a list of filter rules that determines which files to exclude from
+     * a task. The list contains a single filter string that consists of the patterns
+     * to exclude. The patterns are delimited by "|" (that is, a pipe), for example,
      * <code>"/folder1|/folder2"</code>. </p>
      */
     inline StartTaskExecutionRequest& WithExcludes(Aws::Vector<FilterRule>&& value) { SetExcludes(std::move(value)); return *this;}
 
     /**
-     * <p>A list of filter rules that determines which files to exclude from a task.
-     * The list contains a single filter string that consists of the patterns to
-     * exclude. The patterns are delimited by "|" (that is, a pipe), for example,
+     * <p>Specifies a list of filter rules that determines which files to exclude from
+     * a task. The list contains a single filter string that consists of the patterns
+     * to exclude. The patterns are delimited by "|" (that is, a pipe), for example,
      * <code>"/folder1|/folder2"</code>. </p>
      */
     inline StartTaskExecutionRequest& AddExcludes(const FilterRule& value) { m_excludesHasBeenSet = true; m_excludes.push_back(value); return *this; }
 
     /**
-     * <p>A list of filter rules that determines which files to exclude from a task.
-     * The list contains a single filter string that consists of the patterns to
-     * exclude. The patterns are delimited by "|" (that is, a pipe), for example,
+     * <p>Specifies a list of filter rules that determines which files to exclude from
+     * a task. The list contains a single filter string that consists of the patterns
+     * to exclude. The patterns are delimited by "|" (that is, a pipe), for example,
      * <code>"/folder1|/folder2"</code>. </p>
      */
     inline StartTaskExecutionRequest& AddExcludes(FilterRule&& value) { m_excludesHasBeenSet = true; m_excludes.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>Specifies the tags that you want to apply to the Amazon Resource Name (ARN)
+     * representing the task execution.</p> <p> <i>Tags</i> are key-value pairs that
+     * help you manage, filter, and search for your DataSync resources.</p>
+     */
+    inline const Aws::Vector<TagListEntry>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>Specifies the tags that you want to apply to the Amazon Resource Name (ARN)
+     * representing the task execution.</p> <p> <i>Tags</i> are key-value pairs that
+     * help you manage, filter, and search for your DataSync resources.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>Specifies the tags that you want to apply to the Amazon Resource Name (ARN)
+     * representing the task execution.</p> <p> <i>Tags</i> are key-value pairs that
+     * help you manage, filter, and search for your DataSync resources.</p>
+     */
+    inline void SetTags(const Aws::Vector<TagListEntry>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>Specifies the tags that you want to apply to the Amazon Resource Name (ARN)
+     * representing the task execution.</p> <p> <i>Tags</i> are key-value pairs that
+     * help you manage, filter, and search for your DataSync resources.</p>
+     */
+    inline void SetTags(Aws::Vector<TagListEntry>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>Specifies the tags that you want to apply to the Amazon Resource Name (ARN)
+     * representing the task execution.</p> <p> <i>Tags</i> are key-value pairs that
+     * help you manage, filter, and search for your DataSync resources.</p>
+     */
+    inline StartTaskExecutionRequest& WithTags(const Aws::Vector<TagListEntry>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>Specifies the tags that you want to apply to the Amazon Resource Name (ARN)
+     * representing the task execution.</p> <p> <i>Tags</i> are key-value pairs that
+     * help you manage, filter, and search for your DataSync resources.</p>
+     */
+    inline StartTaskExecutionRequest& WithTags(Aws::Vector<TagListEntry>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>Specifies the tags that you want to apply to the Amazon Resource Name (ARN)
+     * representing the task execution.</p> <p> <i>Tags</i> are key-value pairs that
+     * help you manage, filter, and search for your DataSync resources.</p>
+     */
+    inline StartTaskExecutionRequest& AddTags(const TagListEntry& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>Specifies the tags that you want to apply to the Amazon Resource Name (ARN)
+     * representing the task execution.</p> <p> <i>Tags</i> are key-value pairs that
+     * help you manage, filter, and search for your DataSync resources.</p>
+     */
+    inline StartTaskExecutionRequest& AddTags(TagListEntry&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:
 
@@ -242,6 +308,9 @@ namespace Model
 
     Aws::Vector<FilterRule> m_excludes;
     bool m_excludesHasBeenSet = false;
+
+    Aws::Vector<TagListEntry> m_tags;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

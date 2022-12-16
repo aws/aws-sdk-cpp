@@ -40,27 +40,27 @@ namespace Model
 
 
     /**
-     * <p>The origin access identity's configuration information. </p>
+     * <p>The origin access identity's configuration information.</p>
      */
     inline const CloudFrontOriginAccessIdentityConfig& GetCloudFrontOriginAccessIdentityConfig() const{ return m_cloudFrontOriginAccessIdentityConfig; }
 
     /**
-     * <p>The origin access identity's configuration information. </p>
+     * <p>The origin access identity's configuration information.</p>
      */
     inline void SetCloudFrontOriginAccessIdentityConfig(const CloudFrontOriginAccessIdentityConfig& value) { m_cloudFrontOriginAccessIdentityConfig = value; }
 
     /**
-     * <p>The origin access identity's configuration information. </p>
+     * <p>The origin access identity's configuration information.</p>
      */
     inline void SetCloudFrontOriginAccessIdentityConfig(CloudFrontOriginAccessIdentityConfig&& value) { m_cloudFrontOriginAccessIdentityConfig = std::move(value); }
 
     /**
-     * <p>The origin access identity's configuration information. </p>
+     * <p>The origin access identity's configuration information.</p>
      */
     inline GetCloudFrontOriginAccessIdentityConfig2020_05_31Result& WithCloudFrontOriginAccessIdentityConfig(const CloudFrontOriginAccessIdentityConfig& value) { SetCloudFrontOriginAccessIdentityConfig(value); return *this;}
 
     /**
-     * <p>The origin access identity's configuration information. </p>
+     * <p>The origin access identity's configuration information.</p>
      */
     inline GetCloudFrontOriginAccessIdentityConfig2020_05_31Result& WithCloudFrontOriginAccessIdentityConfig(CloudFrontOriginAccessIdentityConfig&& value) { SetCloudFrontOriginAccessIdentityConfig(std::move(value)); return *this;}
 

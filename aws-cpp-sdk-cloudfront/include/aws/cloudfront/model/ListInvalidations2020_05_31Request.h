@@ -21,7 +21,7 @@ namespace Model
 {
 
   /**
-   * <p>The request to list invalidations. </p><p><h3>See Also:</h3>   <a
+   * <p>The request to list invalidations.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListInvalidationsRequest">AWS
    * API Reference</a></p>
    */
@@ -89,7 +89,7 @@ namespace Model
      * the second page will contain earlier results, and so on. To get the next page of
      * results, set <code>Marker</code> to the value of the <code>NextMarker</code>
      * from the current page's response. This value is the same as the ID of the last
-     * invalidation batch on that page. </p>
+     * invalidation batch on that page.</p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
 
@@ -100,7 +100,7 @@ namespace Model
      * the second page will contain earlier results, and so on. To get the next page of
      * results, set <code>Marker</code> to the value of the <code>NextMarker</code>
      * from the current page's response. This value is the same as the ID of the last
-     * invalidation batch on that page. </p>
+     * invalidation batch on that page.</p>
      */
     inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
 
@@ -111,7 +111,7 @@ namespace Model
      * the second page will contain earlier results, and so on. To get the next page of
      * results, set <code>Marker</code> to the value of the <code>NextMarker</code>
      * from the current page's response. This value is the same as the ID of the last
-     * invalidation batch on that page. </p>
+     * invalidation batch on that page.</p>
      */
     inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
 
@@ -122,7 +122,7 @@ namespace Model
      * the second page will contain earlier results, and so on. To get the next page of
      * results, set <code>Marker</code> to the value of the <code>NextMarker</code>
      * from the current page's response. This value is the same as the ID of the last
-     * invalidation batch on that page. </p>
+     * invalidation batch on that page.</p>
      */
     inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
 
@@ -133,7 +133,7 @@ namespace Model
      * the second page will contain earlier results, and so on. To get the next page of
      * results, set <code>Marker</code> to the value of the <code>NextMarker</code>
      * from the current page's response. This value is the same as the ID of the last
-     * invalidation batch on that page. </p>
+     * invalidation batch on that page.</p>
      */
     inline void SetMarker(const char* value) { m_markerHasBeenSet = true; m_marker.assign(value); }
 
@@ -144,7 +144,7 @@ namespace Model
      * the second page will contain earlier results, and so on. To get the next page of
      * results, set <code>Marker</code> to the value of the <code>NextMarker</code>
      * from the current page's response. This value is the same as the ID of the last
-     * invalidation batch on that page. </p>
+     * invalidation batch on that page.</p>
      */
     inline ListInvalidations2020_05_31Request& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
 
@@ -155,7 +155,7 @@ namespace Model
      * the second page will contain earlier results, and so on. To get the next page of
      * results, set <code>Marker</code> to the value of the <code>NextMarker</code>
      * from the current page's response. This value is the same as the ID of the last
-     * invalidation batch on that page. </p>
+     * invalidation batch on that page.</p>
      */
     inline ListInvalidations2020_05_31Request& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
@@ -166,7 +166,7 @@ namespace Model
      * the second page will contain earlier results, and so on. To get the next page of
      * results, set <code>Marker</code> to the value of the <code>NextMarker</code>
      * from the current page's response. This value is the same as the ID of the last
-     * invalidation batch on that page. </p>
+     * invalidation batch on that page.</p>
      */
     inline ListInvalidations2020_05_31Request& WithMarker(const char* value) { SetMarker(value); return *this;}
 

@@ -34,7 +34,7 @@ namespace Model
 
     /**
      * <p>The unique identifier for the origin request policy. If the origin request
-     * policy is attached to a distribution’s cache behavior, you can get the policy’s
+     * policy is attached to a distribution's cache behavior, you can get the policy's
      * identifier using <code>ListDistributions</code> or <code>GetDistribution</code>.
      * If the origin request policy is not attached to a cache behavior, you can get
      * the identifier using <code>ListOriginRequestPolicies</code>.</p>
@@ -43,7 +43,7 @@ namespace Model
 
     /**
      * <p>The unique identifier for the origin request policy. If the origin request
-     * policy is attached to a distribution’s cache behavior, you can get the policy’s
+     * policy is attached to a distribution's cache behavior, you can get the policy's
      * identifier using <code>ListDistributions</code> or <code>GetDistribution</code>.
      * If the origin request policy is not attached to a cache behavior, you can get
      * the identifier using <code>ListOriginRequestPolicies</code>.</p>
@@ -52,7 +52,7 @@ namespace Model
 
     /**
      * <p>The unique identifier for the origin request policy. If the origin request
-     * policy is attached to a distribution’s cache behavior, you can get the policy’s
+     * policy is attached to a distribution's cache behavior, you can get the policy's
      * identifier using <code>ListDistributions</code> or <code>GetDistribution</code>.
      * If the origin request policy is not attached to a cache behavior, you can get
      * the identifier using <code>ListOriginRequestPolicies</code>.</p>
@@ -61,7 +61,7 @@ namespace Model
 
     /**
      * <p>The unique identifier for the origin request policy. If the origin request
-     * policy is attached to a distribution’s cache behavior, you can get the policy’s
+     * policy is attached to a distribution's cache behavior, you can get the policy's
      * identifier using <code>ListDistributions</code> or <code>GetDistribution</code>.
      * If the origin request policy is not attached to a cache behavior, you can get
      * the identifier using <code>ListOriginRequestPolicies</code>.</p>
@@ -70,7 +70,7 @@ namespace Model
 
     /**
      * <p>The unique identifier for the origin request policy. If the origin request
-     * policy is attached to a distribution’s cache behavior, you can get the policy’s
+     * policy is attached to a distribution's cache behavior, you can get the policy's
      * identifier using <code>ListDistributions</code> or <code>GetDistribution</code>.
      * If the origin request policy is not attached to a cache behavior, you can get
      * the identifier using <code>ListOriginRequestPolicies</code>.</p>
@@ -79,7 +79,7 @@ namespace Model
 
     /**
      * <p>The unique identifier for the origin request policy. If the origin request
-     * policy is attached to a distribution’s cache behavior, you can get the policy’s
+     * policy is attached to a distribution's cache behavior, you can get the policy's
      * identifier using <code>ListDistributions</code> or <code>GetDistribution</code>.
      * If the origin request policy is not attached to a cache behavior, you can get
      * the identifier using <code>ListOriginRequestPolicies</code>.</p>
@@ -88,7 +88,7 @@ namespace Model
 
     /**
      * <p>The unique identifier for the origin request policy. If the origin request
-     * policy is attached to a distribution’s cache behavior, you can get the policy’s
+     * policy is attached to a distribution's cache behavior, you can get the policy's
      * identifier using <code>ListDistributions</code> or <code>GetDistribution</code>.
      * If the origin request policy is not attached to a cache behavior, you can get
      * the identifier using <code>ListOriginRequestPolicies</code>.</p>
@@ -97,7 +97,7 @@ namespace Model
 
     /**
      * <p>The unique identifier for the origin request policy. If the origin request
-     * policy is attached to a distribution’s cache behavior, you can get the policy’s
+     * policy is attached to a distribution's cache behavior, you can get the policy's
      * identifier using <code>ListDistributions</code> or <code>GetDistribution</code>.
      * If the origin request policy is not attached to a cache behavior, you can get
      * the identifier using <code>ListOriginRequestPolicies</code>.</p>

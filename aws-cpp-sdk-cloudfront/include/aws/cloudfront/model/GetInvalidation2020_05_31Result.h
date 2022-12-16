@@ -41,35 +41,35 @@ namespace Model
     /**
      * <p>The invalidation's information. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/InvalidationDatatype.html">Invalidation
-     * Complex Type</a>. </p>
+     * Complex Type</a>.</p>
      */
     inline const Invalidation& GetInvalidation() const{ return m_invalidation; }
 
     /**
      * <p>The invalidation's information. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/InvalidationDatatype.html">Invalidation
-     * Complex Type</a>. </p>
+     * Complex Type</a>.</p>
      */
     inline void SetInvalidation(const Invalidation& value) { m_invalidation = value; }
 
     /**
      * <p>The invalidation's information. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/InvalidationDatatype.html">Invalidation
-     * Complex Type</a>. </p>
+     * Complex Type</a>.</p>
      */
     inline void SetInvalidation(Invalidation&& value) { m_invalidation = std::move(value); }
 
     /**
      * <p>The invalidation's information. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/InvalidationDatatype.html">Invalidation
-     * Complex Type</a>. </p>
+     * Complex Type</a>.</p>
      */
     inline GetInvalidation2020_05_31Result& WithInvalidation(const Invalidation& value) { SetInvalidation(value); return *this;}
 
     /**
      * <p>The invalidation's information. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/InvalidationDatatype.html">Invalidation
-     * Complex Type</a>. </p>
+     * Complex Type</a>.</p>
      */
     inline GetInvalidation2020_05_31Result& WithInvalidation(Invalidation&& value) { SetInvalidation(std::move(value)); return *this;}
 

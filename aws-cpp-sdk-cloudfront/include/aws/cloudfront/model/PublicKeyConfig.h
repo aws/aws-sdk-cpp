@@ -42,49 +42,49 @@ namespace Model
 
 
     /**
-     * <p>A string included in the request to help make sure that the request can’t be
+     * <p>A string included in the request to help make sure that the request can't be
      * replayed.</p>
      */
     inline const Aws::String& GetCallerReference() const{ return m_callerReference; }
 
     /**
-     * <p>A string included in the request to help make sure that the request can’t be
+     * <p>A string included in the request to help make sure that the request can't be
      * replayed.</p>
      */
     inline bool CallerReferenceHasBeenSet() const { return m_callerReferenceHasBeenSet; }
 
     /**
-     * <p>A string included in the request to help make sure that the request can’t be
+     * <p>A string included in the request to help make sure that the request can't be
      * replayed.</p>
      */
     inline void SetCallerReference(const Aws::String& value) { m_callerReferenceHasBeenSet = true; m_callerReference = value; }
 
     /**
-     * <p>A string included in the request to help make sure that the request can’t be
+     * <p>A string included in the request to help make sure that the request can't be
      * replayed.</p>
      */
     inline void SetCallerReference(Aws::String&& value) { m_callerReferenceHasBeenSet = true; m_callerReference = std::move(value); }
 
     /**
-     * <p>A string included in the request to help make sure that the request can’t be
+     * <p>A string included in the request to help make sure that the request can't be
      * replayed.</p>
      */
     inline void SetCallerReference(const char* value) { m_callerReferenceHasBeenSet = true; m_callerReference.assign(value); }
 
     /**
-     * <p>A string included in the request to help make sure that the request can’t be
+     * <p>A string included in the request to help make sure that the request can't be
      * replayed.</p>
      */
     inline PublicKeyConfig& WithCallerReference(const Aws::String& value) { SetCallerReference(value); return *this;}
 
     /**
-     * <p>A string included in the request to help make sure that the request can’t be
+     * <p>A string included in the request to help make sure that the request can't be
      * replayed.</p>
      */
     inline PublicKeyConfig& WithCallerReference(Aws::String&& value) { SetCallerReference(std::move(value)); return *this;}
 
     /**
-     * <p>A string included in the request to help make sure that the request can’t be
+     * <p>A string included in the request to help make sure that the request can't be
      * replayed.</p>
      */
     inline PublicKeyConfig& WithCallerReference(const char* value) { SetCallerReference(value); return *this;}

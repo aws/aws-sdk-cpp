@@ -21,7 +21,7 @@ namespace Model
 {
 
   /**
-   * <p>The request to list origin access identities. </p><p><h3>See Also:</h3>   <a
+   * <p>The request to list origin access identities.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListCloudFrontOriginAccessIdentitiesRequest">AWS
    * API Reference</a></p>
    */
@@ -115,50 +115,50 @@ namespace Model
 
 
     /**
-     * <p>The maximum number of origin access identities you want in the response body.
-     * </p>
+     * <p>The maximum number of origin access identities you want in the response
+     * body.</p>
      */
     inline const Aws::String& GetMaxItems() const{ return m_maxItems; }
 
     /**
-     * <p>The maximum number of origin access identities you want in the response body.
-     * </p>
+     * <p>The maximum number of origin access identities you want in the response
+     * body.</p>
      */
     inline bool MaxItemsHasBeenSet() const { return m_maxItemsHasBeenSet; }
 
     /**
-     * <p>The maximum number of origin access identities you want in the response body.
-     * </p>
+     * <p>The maximum number of origin access identities you want in the response
+     * body.</p>
      */
     inline void SetMaxItems(const Aws::String& value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
 
     /**
-     * <p>The maximum number of origin access identities you want in the response body.
-     * </p>
+     * <p>The maximum number of origin access identities you want in the response
+     * body.</p>
      */
     inline void SetMaxItems(Aws::String&& value) { m_maxItemsHasBeenSet = true; m_maxItems = std::move(value); }
 
     /**
-     * <p>The maximum number of origin access identities you want in the response body.
-     * </p>
+     * <p>The maximum number of origin access identities you want in the response
+     * body.</p>
      */
     inline void SetMaxItems(const char* value) { m_maxItemsHasBeenSet = true; m_maxItems.assign(value); }
 
     /**
-     * <p>The maximum number of origin access identities you want in the response body.
-     * </p>
+     * <p>The maximum number of origin access identities you want in the response
+     * body.</p>
      */
     inline ListCloudFrontOriginAccessIdentities2020_05_31Request& WithMaxItems(const Aws::String& value) { SetMaxItems(value); return *this;}
 
     /**
-     * <p>The maximum number of origin access identities you want in the response body.
-     * </p>
+     * <p>The maximum number of origin access identities you want in the response
+     * body.</p>
      */
     inline ListCloudFrontOriginAccessIdentities2020_05_31Request& WithMaxItems(Aws::String&& value) { SetMaxItems(std::move(value)); return *this;}
 
     /**
-     * <p>The maximum number of origin access identities you want in the response body.
-     * </p>
+     * <p>The maximum number of origin access identities you want in the response
+     * body.</p>
      */
     inline ListCloudFrontOriginAccessIdentities2020_05_31Request& WithMaxItems(const char* value) { SetMaxItems(value); return *this;}
 

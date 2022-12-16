@@ -41,29 +41,29 @@ namespace Model
 
     /**
      * <p>The amount of time after which you want sessions to cease if no requests are
-     * received.&#x2028;Allowed values are 300–3600 seconds (5–60 minutes).</p> <p>The
-     * value must be less than or equal to <code>MaximumTTL</code>.</p>
+     * received. Allowed values are 300–3600 seconds (5–60 minutes).</p> <p>The value
+     * must be less than or equal to <code>MaximumTTL</code>.</p>
      */
     inline int GetIdleTTL() const{ return m_idleTTL; }
 
     /**
      * <p>The amount of time after which you want sessions to cease if no requests are
-     * received.&#x2028;Allowed values are 300–3600 seconds (5–60 minutes).</p> <p>The
-     * value must be less than or equal to <code>MaximumTTL</code>.</p>
+     * received. Allowed values are 300–3600 seconds (5–60 minutes).</p> <p>The value
+     * must be less than or equal to <code>MaximumTTL</code>.</p>
      */
     inline bool IdleTTLHasBeenSet() const { return m_idleTTLHasBeenSet; }
 
     /**
      * <p>The amount of time after which you want sessions to cease if no requests are
-     * received.&#x2028;Allowed values are 300–3600 seconds (5–60 minutes).</p> <p>The
-     * value must be less than or equal to <code>MaximumTTL</code>.</p>
+     * received. Allowed values are 300–3600 seconds (5–60 minutes).</p> <p>The value
+     * must be less than or equal to <code>MaximumTTL</code>.</p>
      */
     inline void SetIdleTTL(int value) { m_idleTTLHasBeenSet = true; m_idleTTL = value; }
 
     /**
      * <p>The amount of time after which you want sessions to cease if no requests are
-     * received.&#x2028;Allowed values are 300–3600 seconds (5–60 minutes).</p> <p>The
-     * value must be less than or equal to <code>MaximumTTL</code>.</p>
+     * received. Allowed values are 300–3600 seconds (5–60 minutes).</p> <p>The value
+     * must be less than or equal to <code>MaximumTTL</code>.</p>
      */
     inline SessionStickinessConfig& WithIdleTTL(int value) { SetIdleTTL(value); return *this;}
 

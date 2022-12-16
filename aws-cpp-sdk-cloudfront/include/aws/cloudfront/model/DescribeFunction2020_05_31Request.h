@@ -81,37 +81,37 @@ namespace Model
 
 
     /**
-     * <p>The function’s stage, either <code>DEVELOPMENT</code> or
+     * <p>The function's stage, either <code>DEVELOPMENT</code> or
      * <code>LIVE</code>.</p>
      */
     inline const FunctionStage& GetStage() const{ return m_stage; }
 
     /**
-     * <p>The function’s stage, either <code>DEVELOPMENT</code> or
+     * <p>The function's stage, either <code>DEVELOPMENT</code> or
      * <code>LIVE</code>.</p>
      */
     inline bool StageHasBeenSet() const { return m_stageHasBeenSet; }
 
     /**
-     * <p>The function’s stage, either <code>DEVELOPMENT</code> or
+     * <p>The function's stage, either <code>DEVELOPMENT</code> or
      * <code>LIVE</code>.</p>
      */
     inline void SetStage(const FunctionStage& value) { m_stageHasBeenSet = true; m_stage = value; }
 
     /**
-     * <p>The function’s stage, either <code>DEVELOPMENT</code> or
+     * <p>The function's stage, either <code>DEVELOPMENT</code> or
      * <code>LIVE</code>.</p>
      */
     inline void SetStage(FunctionStage&& value) { m_stageHasBeenSet = true; m_stage = std::move(value); }
 
     /**
-     * <p>The function’s stage, either <code>DEVELOPMENT</code> or
+     * <p>The function's stage, either <code>DEVELOPMENT</code> or
      * <code>LIVE</code>.</p>
      */
     inline DescribeFunction2020_05_31Request& WithStage(const FunctionStage& value) { SetStage(value); return *this;}
 
     /**
-     * <p>The function’s stage, either <code>DEVELOPMENT</code> or
+     * <p>The function's stage, either <code>DEVELOPMENT</code> or
      * <code>LIVE</code>.</p>
      */
     inline DescribeFunction2020_05_31Request& WithStage(FunctionStage&& value) { SetStage(std::move(value)); return *this;}

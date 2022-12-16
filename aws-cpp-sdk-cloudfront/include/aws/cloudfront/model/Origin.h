@@ -389,9 +389,9 @@ namespace Model
 
     /**
      * <p>The number of times that CloudFront attempts to connect to the origin. The
-     * minimum number is 1, the maximum is 3, and the default (if you don’t specify
+     * minimum number is 1, the maximum is 3, and the default (if you don't specify
      * otherwise) is 3.</p> <p>For a custom origin (including an Amazon S3 bucket
-     * that’s configured with static website hosting), this value also specifies the
+     * that's configured with static website hosting), this value also specifies the
      * number of times that CloudFront attempts to get a response from the origin, in
      * the case of an <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginResponseTimeout">Origin
@@ -403,9 +403,9 @@ namespace Model
 
     /**
      * <p>The number of times that CloudFront attempts to connect to the origin. The
-     * minimum number is 1, the maximum is 3, and the default (if you don’t specify
+     * minimum number is 1, the maximum is 3, and the default (if you don't specify
      * otherwise) is 3.</p> <p>For a custom origin (including an Amazon S3 bucket
-     * that’s configured with static website hosting), this value also specifies the
+     * that's configured with static website hosting), this value also specifies the
      * number of times that CloudFront attempts to get a response from the origin, in
      * the case of an <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginResponseTimeout">Origin
@@ -417,9 +417,9 @@ namespace Model
 
     /**
      * <p>The number of times that CloudFront attempts to connect to the origin. The
-     * minimum number is 1, the maximum is 3, and the default (if you don’t specify
+     * minimum number is 1, the maximum is 3, and the default (if you don't specify
      * otherwise) is 3.</p> <p>For a custom origin (including an Amazon S3 bucket
-     * that’s configured with static website hosting), this value also specifies the
+     * that's configured with static website hosting), this value also specifies the
      * number of times that CloudFront attempts to get a response from the origin, in
      * the case of an <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginResponseTimeout">Origin
@@ -431,9 +431,9 @@ namespace Model
 
     /**
      * <p>The number of times that CloudFront attempts to connect to the origin. The
-     * minimum number is 1, the maximum is 3, and the default (if you don’t specify
+     * minimum number is 1, the maximum is 3, and the default (if you don't specify
      * otherwise) is 3.</p> <p>For a custom origin (including an Amazon S3 bucket
-     * that’s configured with static website hosting), this value also specifies the
+     * that's configured with static website hosting), this value also specifies the
      * number of times that CloudFront attempts to get a response from the origin, in
      * the case of an <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginResponseTimeout">Origin
@@ -447,7 +447,7 @@ namespace Model
     /**
      * <p>The number of seconds that CloudFront waits when trying to establish a
      * connection to the origin. The minimum timeout is 1 second, the maximum is 10
-     * seconds, and the default (if you don’t specify otherwise) is 10 seconds.</p>
+     * seconds, and the default (if you don't specify otherwise) is 10 seconds.</p>
      * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#origin-connection-timeout">Origin
      * Connection Timeout</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
@@ -457,7 +457,7 @@ namespace Model
     /**
      * <p>The number of seconds that CloudFront waits when trying to establish a
      * connection to the origin. The minimum timeout is 1 second, the maximum is 10
-     * seconds, and the default (if you don’t specify otherwise) is 10 seconds.</p>
+     * seconds, and the default (if you don't specify otherwise) is 10 seconds.</p>
      * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#origin-connection-timeout">Origin
      * Connection Timeout</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
@@ -467,7 +467,7 @@ namespace Model
     /**
      * <p>The number of seconds that CloudFront waits when trying to establish a
      * connection to the origin. The minimum timeout is 1 second, the maximum is 10
-     * seconds, and the default (if you don’t specify otherwise) is 10 seconds.</p>
+     * seconds, and the default (if you don't specify otherwise) is 10 seconds.</p>
      * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#origin-connection-timeout">Origin
      * Connection Timeout</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
@@ -477,7 +477,7 @@ namespace Model
     /**
      * <p>The number of seconds that CloudFront waits when trying to establish a
      * connection to the origin. The minimum timeout is 1 second, the maximum is 10
-     * seconds, and the default (if you don’t specify otherwise) is 10 seconds.</p>
+     * seconds, and the default (if you don't specify otherwise) is 10 seconds.</p>
      * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#origin-connection-timeout">Origin
      * Connection Timeout</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>

@@ -93,8 +93,8 @@ namespace Model
      * <code>LIVE</code>.</p> <p>When a function is in the <code>DEVELOPMENT</code>
      * stage, you can test the function with <code>TestFunction</code>, and update it
      * with <code>UpdateFunction</code>.</p> <p>When a function is in the
-     * <code>LIVE</code> stage, you can attach the function to a distribution’s cache
-     * behavior, using the function’s ARN.</p>
+     * <code>LIVE</code> stage, you can attach the function to a distribution's cache
+     * behavior, using the function's ARN.</p>
      */
     inline const FunctionStage& GetStage() const{ return m_stage; }
 
@@ -103,8 +103,8 @@ namespace Model
      * <code>LIVE</code>.</p> <p>When a function is in the <code>DEVELOPMENT</code>
      * stage, you can test the function with <code>TestFunction</code>, and update it
      * with <code>UpdateFunction</code>.</p> <p>When a function is in the
-     * <code>LIVE</code> stage, you can attach the function to a distribution’s cache
-     * behavior, using the function’s ARN.</p>
+     * <code>LIVE</code> stage, you can attach the function to a distribution's cache
+     * behavior, using the function's ARN.</p>
      */
     inline bool StageHasBeenSet() const { return m_stageHasBeenSet; }
 
@@ -113,8 +113,8 @@ namespace Model
      * <code>LIVE</code>.</p> <p>When a function is in the <code>DEVELOPMENT</code>
      * stage, you can test the function with <code>TestFunction</code>, and update it
      * with <code>UpdateFunction</code>.</p> <p>When a function is in the
-     * <code>LIVE</code> stage, you can attach the function to a distribution’s cache
-     * behavior, using the function’s ARN.</p>
+     * <code>LIVE</code> stage, you can attach the function to a distribution's cache
+     * behavior, using the function's ARN.</p>
      */
     inline void SetStage(const FunctionStage& value) { m_stageHasBeenSet = true; m_stage = value; }
 
@@ -123,8 +123,8 @@ namespace Model
      * <code>LIVE</code>.</p> <p>When a function is in the <code>DEVELOPMENT</code>
      * stage, you can test the function with <code>TestFunction</code>, and update it
      * with <code>UpdateFunction</code>.</p> <p>When a function is in the
-     * <code>LIVE</code> stage, you can attach the function to a distribution’s cache
-     * behavior, using the function’s ARN.</p>
+     * <code>LIVE</code> stage, you can attach the function to a distribution's cache
+     * behavior, using the function's ARN.</p>
      */
     inline void SetStage(FunctionStage&& value) { m_stageHasBeenSet = true; m_stage = std::move(value); }
 
@@ -133,8 +133,8 @@ namespace Model
      * <code>LIVE</code>.</p> <p>When a function is in the <code>DEVELOPMENT</code>
      * stage, you can test the function with <code>TestFunction</code>, and update it
      * with <code>UpdateFunction</code>.</p> <p>When a function is in the
-     * <code>LIVE</code> stage, you can attach the function to a distribution’s cache
-     * behavior, using the function’s ARN.</p>
+     * <code>LIVE</code> stage, you can attach the function to a distribution's cache
+     * behavior, using the function's ARN.</p>
      */
     inline FunctionMetadata& WithStage(const FunctionStage& value) { SetStage(value); return *this;}
 
@@ -143,8 +143,8 @@ namespace Model
      * <code>LIVE</code>.</p> <p>When a function is in the <code>DEVELOPMENT</code>
      * stage, you can test the function with <code>TestFunction</code>, and update it
      * with <code>UpdateFunction</code>.</p> <p>When a function is in the
-     * <code>LIVE</code> stage, you can attach the function to a distribution’s cache
-     * behavior, using the function’s ARN.</p>
+     * <code>LIVE</code> stage, you can attach the function to a distribution's cache
+     * behavior, using the function's ARN.</p>
      */
     inline FunctionMetadata& WithStage(FunctionStage&& value) { SetStage(std::move(value)); return *this;}
 
