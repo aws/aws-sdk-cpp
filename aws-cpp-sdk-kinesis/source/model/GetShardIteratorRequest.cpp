@@ -18,7 +18,8 @@ GetShardIteratorRequest::GetShardIteratorRequest() :
     m_shardIteratorType(ShardIteratorType::NOT_SET),
     m_shardIteratorTypeHasBeenSet(false),
     m_startingSequenceNumberHasBeenSet(false),
-    m_timestampHasBeenSet(false)
+    m_timestampHasBeenSet(false),
+    m_streamARNHasBeenSet(false)
 {
 }
 
@@ -54,6 +55,12 @@ Aws::String GetShardIteratorRequest::SerializePayload() const
    payload.WithDouble("Timestamp", m_timestamp.SecondsWithMSPrecision());
   }
 
+  if(m_streamARNHasBeenSet)
+  {
+   payload.WithString("StreamARN", m_streamARN);
+
+  }
+
   return payload.View().WriteReadable();
 }
 
@@ -66,5 +73,17 @@ Aws::Http::HeaderValueCollection GetShardIteratorRequest::GetRequestSpecificHead
 }
 
 
+
+GetShardIteratorRequest::EndpointParameters GetShardIteratorRequest::GetEndpointContextParams() const
+{
+    EndpointParameters parameters;
+    // Static context parameters
+    parameters.emplace_back(Aws::String("OperationType"), "data", Aws::Endpoint::EndpointParameter::ParameterOrigin::STATIC_CONTEXT);
+    // Operation context parameters
+    if (StreamARNHasBeenSet()) {
+        parameters.emplace_back(Aws::String("StreamARN"), this->GetStreamARN(), Aws::Endpoint::EndpointParameter::ParameterOrigin::OPERATION_CONTEXT);
+    }
+    return parameters;
+}
 
 

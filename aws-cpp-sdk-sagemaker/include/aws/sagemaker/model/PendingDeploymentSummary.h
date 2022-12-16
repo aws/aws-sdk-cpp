@@ -83,42 +83,50 @@ namespace Model
 
 
     /**
-     * <p>List of <code>PendingProductionVariantSummary</code> objects.</p>
+     * <p>An array of <a>PendingProductionVariantSummary</a> objects, one for each
+     * model hosted behind this endpoint for the in-progress deployment.</p>
      */
     inline const Aws::Vector<PendingProductionVariantSummary>& GetProductionVariants() const{ return m_productionVariants; }
 
     /**
-     * <p>List of <code>PendingProductionVariantSummary</code> objects.</p>
+     * <p>An array of <a>PendingProductionVariantSummary</a> objects, one for each
+     * model hosted behind this endpoint for the in-progress deployment.</p>
      */
     inline bool ProductionVariantsHasBeenSet() const { return m_productionVariantsHasBeenSet; }
 
     /**
-     * <p>List of <code>PendingProductionVariantSummary</code> objects.</p>
+     * <p>An array of <a>PendingProductionVariantSummary</a> objects, one for each
+     * model hosted behind this endpoint for the in-progress deployment.</p>
      */
     inline void SetProductionVariants(const Aws::Vector<PendingProductionVariantSummary>& value) { m_productionVariantsHasBeenSet = true; m_productionVariants = value; }
 
     /**
-     * <p>List of <code>PendingProductionVariantSummary</code> objects.</p>
+     * <p>An array of <a>PendingProductionVariantSummary</a> objects, one for each
+     * model hosted behind this endpoint for the in-progress deployment.</p>
      */
     inline void SetProductionVariants(Aws::Vector<PendingProductionVariantSummary>&& value) { m_productionVariantsHasBeenSet = true; m_productionVariants = std::move(value); }
 
     /**
-     * <p>List of <code>PendingProductionVariantSummary</code> objects.</p>
+     * <p>An array of <a>PendingProductionVariantSummary</a> objects, one for each
+     * model hosted behind this endpoint for the in-progress deployment.</p>
      */
     inline PendingDeploymentSummary& WithProductionVariants(const Aws::Vector<PendingProductionVariantSummary>& value) { SetProductionVariants(value); return *this;}
 
     /**
-     * <p>List of <code>PendingProductionVariantSummary</code> objects.</p>
+     * <p>An array of <a>PendingProductionVariantSummary</a> objects, one for each
+     * model hosted behind this endpoint for the in-progress deployment.</p>
      */
     inline PendingDeploymentSummary& WithProductionVariants(Aws::Vector<PendingProductionVariantSummary>&& value) { SetProductionVariants(std::move(value)); return *this;}
 
     /**
-     * <p>List of <code>PendingProductionVariantSummary</code> objects.</p>
+     * <p>An array of <a>PendingProductionVariantSummary</a> objects, one for each
+     * model hosted behind this endpoint for the in-progress deployment.</p>
      */
     inline PendingDeploymentSummary& AddProductionVariants(const PendingProductionVariantSummary& value) { m_productionVariantsHasBeenSet = true; m_productionVariants.push_back(value); return *this; }
 
     /**
-     * <p>List of <code>PendingProductionVariantSummary</code> objects.</p>
+     * <p>An array of <a>PendingProductionVariantSummary</a> objects, one for each
+     * model hosted behind this endpoint for the in-progress deployment.</p>
      */
     inline PendingDeploymentSummary& AddProductionVariants(PendingProductionVariantSummary&& value) { m_productionVariantsHasBeenSet = true; m_productionVariants.push_back(std::move(value)); return *this; }
 
@@ -155,74 +163,66 @@ namespace Model
 
 
     /**
-     * <p> Array of <code>ProductionVariant</code> objects, one for each model that you
-     * want to host at this endpoint in shadow mode with production traffic replicated
-     * from the model specified on <code>ProductionVariants</code>.If you use this
-     * field, you can only specify one variant for <code>ProductionVariants</code> and
-     * one variant for <code>ShadowProductionVariants</code>. </p>
+     * <p>An array of <a>PendingProductionVariantSummary</a> objects, one for each
+     * model hosted behind this endpoint in shadow mode with production traffic
+     * replicated from the model specified on <code>ProductionVariants</code> for the
+     * in-progress deployment.</p>
      */
     inline const Aws::Vector<PendingProductionVariantSummary>& GetShadowProductionVariants() const{ return m_shadowProductionVariants; }
 
     /**
-     * <p> Array of <code>ProductionVariant</code> objects, one for each model that you
-     * want to host at this endpoint in shadow mode with production traffic replicated
-     * from the model specified on <code>ProductionVariants</code>.If you use this
-     * field, you can only specify one variant for <code>ProductionVariants</code> and
-     * one variant for <code>ShadowProductionVariants</code>. </p>
+     * <p>An array of <a>PendingProductionVariantSummary</a> objects, one for each
+     * model hosted behind this endpoint in shadow mode with production traffic
+     * replicated from the model specified on <code>ProductionVariants</code> for the
+     * in-progress deployment.</p>
      */
     inline bool ShadowProductionVariantsHasBeenSet() const { return m_shadowProductionVariantsHasBeenSet; }
 
     /**
-     * <p> Array of <code>ProductionVariant</code> objects, one for each model that you
-     * want to host at this endpoint in shadow mode with production traffic replicated
-     * from the model specified on <code>ProductionVariants</code>.If you use this
-     * field, you can only specify one variant for <code>ProductionVariants</code> and
-     * one variant for <code>ShadowProductionVariants</code>. </p>
+     * <p>An array of <a>PendingProductionVariantSummary</a> objects, one for each
+     * model hosted behind this endpoint in shadow mode with production traffic
+     * replicated from the model specified on <code>ProductionVariants</code> for the
+     * in-progress deployment.</p>
      */
     inline void SetShadowProductionVariants(const Aws::Vector<PendingProductionVariantSummary>& value) { m_shadowProductionVariantsHasBeenSet = true; m_shadowProductionVariants = value; }
 
     /**
-     * <p> Array of <code>ProductionVariant</code> objects, one for each model that you
-     * want to host at this endpoint in shadow mode with production traffic replicated
-     * from the model specified on <code>ProductionVariants</code>.If you use this
-     * field, you can only specify one variant for <code>ProductionVariants</code> and
-     * one variant for <code>ShadowProductionVariants</code>. </p>
+     * <p>An array of <a>PendingProductionVariantSummary</a> objects, one for each
+     * model hosted behind this endpoint in shadow mode with production traffic
+     * replicated from the model specified on <code>ProductionVariants</code> for the
+     * in-progress deployment.</p>
      */
     inline void SetShadowProductionVariants(Aws::Vector<PendingProductionVariantSummary>&& value) { m_shadowProductionVariantsHasBeenSet = true; m_shadowProductionVariants = std::move(value); }
 
     /**
-     * <p> Array of <code>ProductionVariant</code> objects, one for each model that you
-     * want to host at this endpoint in shadow mode with production traffic replicated
-     * from the model specified on <code>ProductionVariants</code>.If you use this
-     * field, you can only specify one variant for <code>ProductionVariants</code> and
-     * one variant for <code>ShadowProductionVariants</code>. </p>
+     * <p>An array of <a>PendingProductionVariantSummary</a> objects, one for each
+     * model hosted behind this endpoint in shadow mode with production traffic
+     * replicated from the model specified on <code>ProductionVariants</code> for the
+     * in-progress deployment.</p>
      */
     inline PendingDeploymentSummary& WithShadowProductionVariants(const Aws::Vector<PendingProductionVariantSummary>& value) { SetShadowProductionVariants(value); return *this;}
 
     /**
-     * <p> Array of <code>ProductionVariant</code> objects, one for each model that you
-     * want to host at this endpoint in shadow mode with production traffic replicated
-     * from the model specified on <code>ProductionVariants</code>.If you use this
-     * field, you can only specify one variant for <code>ProductionVariants</code> and
-     * one variant for <code>ShadowProductionVariants</code>. </p>
+     * <p>An array of <a>PendingProductionVariantSummary</a> objects, one for each
+     * model hosted behind this endpoint in shadow mode with production traffic
+     * replicated from the model specified on <code>ProductionVariants</code> for the
+     * in-progress deployment.</p>
      */
     inline PendingDeploymentSummary& WithShadowProductionVariants(Aws::Vector<PendingProductionVariantSummary>&& value) { SetShadowProductionVariants(std::move(value)); return *this;}
 
     /**
-     * <p> Array of <code>ProductionVariant</code> objects, one for each model that you
-     * want to host at this endpoint in shadow mode with production traffic replicated
-     * from the model specified on <code>ProductionVariants</code>.If you use this
-     * field, you can only specify one variant for <code>ProductionVariants</code> and
-     * one variant for <code>ShadowProductionVariants</code>. </p>
+     * <p>An array of <a>PendingProductionVariantSummary</a> objects, one for each
+     * model hosted behind this endpoint in shadow mode with production traffic
+     * replicated from the model specified on <code>ProductionVariants</code> for the
+     * in-progress deployment.</p>
      */
     inline PendingDeploymentSummary& AddShadowProductionVariants(const PendingProductionVariantSummary& value) { m_shadowProductionVariantsHasBeenSet = true; m_shadowProductionVariants.push_back(value); return *this; }
 
     /**
-     * <p> Array of <code>ProductionVariant</code> objects, one for each model that you
-     * want to host at this endpoint in shadow mode with production traffic replicated
-     * from the model specified on <code>ProductionVariants</code>.If you use this
-     * field, you can only specify one variant for <code>ProductionVariants</code> and
-     * one variant for <code>ShadowProductionVariants</code>. </p>
+     * <p>An array of <a>PendingProductionVariantSummary</a> objects, one for each
+     * model hosted behind this endpoint in shadow mode with production traffic
+     * replicated from the model specified on <code>ProductionVariants</code> for the
+     * in-progress deployment.</p>
      */
     inline PendingDeploymentSummary& AddShadowProductionVariants(PendingProductionVariantSummary&& value) { m_shadowProductionVariantsHasBeenSet = true; m_shadowProductionVariants.push_back(std::move(value)); return *this; }
 

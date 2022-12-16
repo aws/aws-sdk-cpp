@@ -10,6 +10,7 @@
 #include <aws/sagemaker/model/RecommendationJobResourceLimit.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sagemaker/model/RecommendationJobContainerConfig.h>
+#include <aws/sagemaker/model/RecommendationJobVpcConfig.h>
 #include <aws/sagemaker/model/EndpointInputConfiguration.h>
 #include <aws/sagemaker/model/EndpointInfo.h>
 #include <utility>
@@ -485,6 +486,43 @@ namespace Model
      */
     inline RecommendationJobInputConfig& AddEndpoints(EndpointInfo&& value) { m_endpointsHasBeenSet = true; m_endpoints.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Inference Recommender provisions SageMaker endpoints with access to VPC in
+     * the inference recommendation job.</p>
+     */
+    inline const RecommendationJobVpcConfig& GetVpcConfig() const{ return m_vpcConfig; }
+
+    /**
+     * <p>Inference Recommender provisions SageMaker endpoints with access to VPC in
+     * the inference recommendation job.</p>
+     */
+    inline bool VpcConfigHasBeenSet() const { return m_vpcConfigHasBeenSet; }
+
+    /**
+     * <p>Inference Recommender provisions SageMaker endpoints with access to VPC in
+     * the inference recommendation job.</p>
+     */
+    inline void SetVpcConfig(const RecommendationJobVpcConfig& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = value; }
+
+    /**
+     * <p>Inference Recommender provisions SageMaker endpoints with access to VPC in
+     * the inference recommendation job.</p>
+     */
+    inline void SetVpcConfig(RecommendationJobVpcConfig&& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = std::move(value); }
+
+    /**
+     * <p>Inference Recommender provisions SageMaker endpoints with access to VPC in
+     * the inference recommendation job.</p>
+     */
+    inline RecommendationJobInputConfig& WithVpcConfig(const RecommendationJobVpcConfig& value) { SetVpcConfig(value); return *this;}
+
+    /**
+     * <p>Inference Recommender provisions SageMaker endpoints with access to VPC in
+     * the inference recommendation job.</p>
+     */
+    inline RecommendationJobInputConfig& WithVpcConfig(RecommendationJobVpcConfig&& value) { SetVpcConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_modelPackageVersionArn;
@@ -510,6 +548,9 @@ namespace Model
 
     Aws::Vector<EndpointInfo> m_endpoints;
     bool m_endpointsHasBeenSet = false;
+
+    RecommendationJobVpcConfig m_vpcConfig;
+    bool m_vpcConfigHasBeenSet = false;
   };
 
 } // namespace Model

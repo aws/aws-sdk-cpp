@@ -28,6 +28,10 @@ namespace Aws
         static const int BOTTLEROCKET_x86_64_HASH = HashingUtils::HashString("BOTTLEROCKET_x86_64");
         static const int BOTTLEROCKET_ARM_64_NVIDIA_HASH = HashingUtils::HashString("BOTTLEROCKET_ARM_64_NVIDIA");
         static const int BOTTLEROCKET_x86_64_NVIDIA_HASH = HashingUtils::HashString("BOTTLEROCKET_x86_64_NVIDIA");
+        static const int WINDOWS_CORE_2019_x86_64_HASH = HashingUtils::HashString("WINDOWS_CORE_2019_x86_64");
+        static const int WINDOWS_FULL_2019_x86_64_HASH = HashingUtils::HashString("WINDOWS_FULL_2019_x86_64");
+        static const int WINDOWS_CORE_2022_x86_64_HASH = HashingUtils::HashString("WINDOWS_CORE_2022_x86_64");
+        static const int WINDOWS_FULL_2022_x86_64_HASH = HashingUtils::HashString("WINDOWS_FULL_2022_x86_64");
 
 
         AMITypes GetAMITypesForName(const Aws::String& name)
@@ -65,6 +69,22 @@ namespace Aws
           {
             return AMITypes::BOTTLEROCKET_x86_64_NVIDIA;
           }
+          else if (hashCode == WINDOWS_CORE_2019_x86_64_HASH)
+          {
+            return AMITypes::WINDOWS_CORE_2019_x86_64;
+          }
+          else if (hashCode == WINDOWS_FULL_2019_x86_64_HASH)
+          {
+            return AMITypes::WINDOWS_FULL_2019_x86_64;
+          }
+          else if (hashCode == WINDOWS_CORE_2022_x86_64_HASH)
+          {
+            return AMITypes::WINDOWS_CORE_2022_x86_64;
+          }
+          else if (hashCode == WINDOWS_FULL_2022_x86_64_HASH)
+          {
+            return AMITypes::WINDOWS_FULL_2022_x86_64;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -95,6 +115,14 @@ namespace Aws
             return "BOTTLEROCKET_ARM_64_NVIDIA";
           case AMITypes::BOTTLEROCKET_x86_64_NVIDIA:
             return "BOTTLEROCKET_x86_64_NVIDIA";
+          case AMITypes::WINDOWS_CORE_2019_x86_64:
+            return "WINDOWS_CORE_2019_x86_64";
+          case AMITypes::WINDOWS_FULL_2019_x86_64:
+            return "WINDOWS_FULL_2019_x86_64";
+          case AMITypes::WINDOWS_CORE_2022_x86_64:
+            return "WINDOWS_CORE_2022_x86_64";
+          case AMITypes::WINDOWS_FULL_2022_x86_64:
+            return "WINDOWS_FULL_2022_x86_64";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

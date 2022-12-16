@@ -23,14 +23,20 @@
 #include <aws/backup-gateway/model/DeleteGatewayResult.h>
 #include <aws/backup-gateway/model/DeleteHypervisorResult.h>
 #include <aws/backup-gateway/model/DisassociateGatewayFromServerResult.h>
+#include <aws/backup-gateway/model/GetBandwidthRateLimitScheduleResult.h>
 #include <aws/backup-gateway/model/GetGatewayResult.h>
+#include <aws/backup-gateway/model/GetHypervisorResult.h>
+#include <aws/backup-gateway/model/GetHypervisorPropertyMappingsResult.h>
 #include <aws/backup-gateway/model/GetVirtualMachineResult.h>
 #include <aws/backup-gateway/model/ImportHypervisorConfigurationResult.h>
 #include <aws/backup-gateway/model/ListGatewaysResult.h>
 #include <aws/backup-gateway/model/ListHypervisorsResult.h>
 #include <aws/backup-gateway/model/ListTagsForResourceResult.h>
 #include <aws/backup-gateway/model/ListVirtualMachinesResult.h>
+#include <aws/backup-gateway/model/PutBandwidthRateLimitScheduleResult.h>
+#include <aws/backup-gateway/model/PutHypervisorPropertyMappingsResult.h>
 #include <aws/backup-gateway/model/PutMaintenanceStartTimeResult.h>
+#include <aws/backup-gateway/model/StartVirtualMachinesMetadataSyncResult.h>
 #include <aws/backup-gateway/model/TagResourceResult.h>
 #include <aws/backup-gateway/model/TestHypervisorConfigurationResult.h>
 #include <aws/backup-gateway/model/UntagResourceResult.h>
@@ -82,14 +88,20 @@ namespace Aws
       class DeleteGatewayRequest;
       class DeleteHypervisorRequest;
       class DisassociateGatewayFromServerRequest;
+      class GetBandwidthRateLimitScheduleRequest;
       class GetGatewayRequest;
+      class GetHypervisorRequest;
+      class GetHypervisorPropertyMappingsRequest;
       class GetVirtualMachineRequest;
       class ImportHypervisorConfigurationRequest;
       class ListGatewaysRequest;
       class ListHypervisorsRequest;
       class ListTagsForResourceRequest;
       class ListVirtualMachinesRequest;
+      class PutBandwidthRateLimitScheduleRequest;
+      class PutHypervisorPropertyMappingsRequest;
       class PutMaintenanceStartTimeRequest;
+      class StartVirtualMachinesMetadataSyncRequest;
       class TagResourceRequest;
       class TestHypervisorConfigurationRequest;
       class UntagResourceRequest;
@@ -104,14 +116,20 @@ namespace Aws
       typedef Aws::Utils::Outcome<DeleteGatewayResult, BackupGatewayError> DeleteGatewayOutcome;
       typedef Aws::Utils::Outcome<DeleteHypervisorResult, BackupGatewayError> DeleteHypervisorOutcome;
       typedef Aws::Utils::Outcome<DisassociateGatewayFromServerResult, BackupGatewayError> DisassociateGatewayFromServerOutcome;
+      typedef Aws::Utils::Outcome<GetBandwidthRateLimitScheduleResult, BackupGatewayError> GetBandwidthRateLimitScheduleOutcome;
       typedef Aws::Utils::Outcome<GetGatewayResult, BackupGatewayError> GetGatewayOutcome;
+      typedef Aws::Utils::Outcome<GetHypervisorResult, BackupGatewayError> GetHypervisorOutcome;
+      typedef Aws::Utils::Outcome<GetHypervisorPropertyMappingsResult, BackupGatewayError> GetHypervisorPropertyMappingsOutcome;
       typedef Aws::Utils::Outcome<GetVirtualMachineResult, BackupGatewayError> GetVirtualMachineOutcome;
       typedef Aws::Utils::Outcome<ImportHypervisorConfigurationResult, BackupGatewayError> ImportHypervisorConfigurationOutcome;
       typedef Aws::Utils::Outcome<ListGatewaysResult, BackupGatewayError> ListGatewaysOutcome;
       typedef Aws::Utils::Outcome<ListHypervisorsResult, BackupGatewayError> ListHypervisorsOutcome;
       typedef Aws::Utils::Outcome<ListTagsForResourceResult, BackupGatewayError> ListTagsForResourceOutcome;
       typedef Aws::Utils::Outcome<ListVirtualMachinesResult, BackupGatewayError> ListVirtualMachinesOutcome;
+      typedef Aws::Utils::Outcome<PutBandwidthRateLimitScheduleResult, BackupGatewayError> PutBandwidthRateLimitScheduleOutcome;
+      typedef Aws::Utils::Outcome<PutHypervisorPropertyMappingsResult, BackupGatewayError> PutHypervisorPropertyMappingsOutcome;
       typedef Aws::Utils::Outcome<PutMaintenanceStartTimeResult, BackupGatewayError> PutMaintenanceStartTimeOutcome;
+      typedef Aws::Utils::Outcome<StartVirtualMachinesMetadataSyncResult, BackupGatewayError> StartVirtualMachinesMetadataSyncOutcome;
       typedef Aws::Utils::Outcome<TagResourceResult, BackupGatewayError> TagResourceOutcome;
       typedef Aws::Utils::Outcome<TestHypervisorConfigurationResult, BackupGatewayError> TestHypervisorConfigurationOutcome;
       typedef Aws::Utils::Outcome<UntagResourceResult, BackupGatewayError> UntagResourceOutcome;
@@ -126,14 +144,20 @@ namespace Aws
       typedef std::future<DeleteGatewayOutcome> DeleteGatewayOutcomeCallable;
       typedef std::future<DeleteHypervisorOutcome> DeleteHypervisorOutcomeCallable;
       typedef std::future<DisassociateGatewayFromServerOutcome> DisassociateGatewayFromServerOutcomeCallable;
+      typedef std::future<GetBandwidthRateLimitScheduleOutcome> GetBandwidthRateLimitScheduleOutcomeCallable;
       typedef std::future<GetGatewayOutcome> GetGatewayOutcomeCallable;
+      typedef std::future<GetHypervisorOutcome> GetHypervisorOutcomeCallable;
+      typedef std::future<GetHypervisorPropertyMappingsOutcome> GetHypervisorPropertyMappingsOutcomeCallable;
       typedef std::future<GetVirtualMachineOutcome> GetVirtualMachineOutcomeCallable;
       typedef std::future<ImportHypervisorConfigurationOutcome> ImportHypervisorConfigurationOutcomeCallable;
       typedef std::future<ListGatewaysOutcome> ListGatewaysOutcomeCallable;
       typedef std::future<ListHypervisorsOutcome> ListHypervisorsOutcomeCallable;
       typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
       typedef std::future<ListVirtualMachinesOutcome> ListVirtualMachinesOutcomeCallable;
+      typedef std::future<PutBandwidthRateLimitScheduleOutcome> PutBandwidthRateLimitScheduleOutcomeCallable;
+      typedef std::future<PutHypervisorPropertyMappingsOutcome> PutHypervisorPropertyMappingsOutcomeCallable;
       typedef std::future<PutMaintenanceStartTimeOutcome> PutMaintenanceStartTimeOutcomeCallable;
+      typedef std::future<StartVirtualMachinesMetadataSyncOutcome> StartVirtualMachinesMetadataSyncOutcomeCallable;
       typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
       typedef std::future<TestHypervisorConfigurationOutcome> TestHypervisorConfigurationOutcomeCallable;
       typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
@@ -151,14 +175,20 @@ namespace Aws
     typedef std::function<void(const BackupGatewayClient*, const Model::DeleteGatewayRequest&, const Model::DeleteGatewayOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteGatewayResponseReceivedHandler;
     typedef std::function<void(const BackupGatewayClient*, const Model::DeleteHypervisorRequest&, const Model::DeleteHypervisorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteHypervisorResponseReceivedHandler;
     typedef std::function<void(const BackupGatewayClient*, const Model::DisassociateGatewayFromServerRequest&, const Model::DisassociateGatewayFromServerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateGatewayFromServerResponseReceivedHandler;
+    typedef std::function<void(const BackupGatewayClient*, const Model::GetBandwidthRateLimitScheduleRequest&, const Model::GetBandwidthRateLimitScheduleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetBandwidthRateLimitScheduleResponseReceivedHandler;
     typedef std::function<void(const BackupGatewayClient*, const Model::GetGatewayRequest&, const Model::GetGatewayOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetGatewayResponseReceivedHandler;
+    typedef std::function<void(const BackupGatewayClient*, const Model::GetHypervisorRequest&, const Model::GetHypervisorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetHypervisorResponseReceivedHandler;
+    typedef std::function<void(const BackupGatewayClient*, const Model::GetHypervisorPropertyMappingsRequest&, const Model::GetHypervisorPropertyMappingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetHypervisorPropertyMappingsResponseReceivedHandler;
     typedef std::function<void(const BackupGatewayClient*, const Model::GetVirtualMachineRequest&, const Model::GetVirtualMachineOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetVirtualMachineResponseReceivedHandler;
     typedef std::function<void(const BackupGatewayClient*, const Model::ImportHypervisorConfigurationRequest&, const Model::ImportHypervisorConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ImportHypervisorConfigurationResponseReceivedHandler;
     typedef std::function<void(const BackupGatewayClient*, const Model::ListGatewaysRequest&, const Model::ListGatewaysOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListGatewaysResponseReceivedHandler;
     typedef std::function<void(const BackupGatewayClient*, const Model::ListHypervisorsRequest&, const Model::ListHypervisorsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListHypervisorsResponseReceivedHandler;
     typedef std::function<void(const BackupGatewayClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const BackupGatewayClient*, const Model::ListVirtualMachinesRequest&, const Model::ListVirtualMachinesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListVirtualMachinesResponseReceivedHandler;
+    typedef std::function<void(const BackupGatewayClient*, const Model::PutBandwidthRateLimitScheduleRequest&, const Model::PutBandwidthRateLimitScheduleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutBandwidthRateLimitScheduleResponseReceivedHandler;
+    typedef std::function<void(const BackupGatewayClient*, const Model::PutHypervisorPropertyMappingsRequest&, const Model::PutHypervisorPropertyMappingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutHypervisorPropertyMappingsResponseReceivedHandler;
     typedef std::function<void(const BackupGatewayClient*, const Model::PutMaintenanceStartTimeRequest&, const Model::PutMaintenanceStartTimeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutMaintenanceStartTimeResponseReceivedHandler;
+    typedef std::function<void(const BackupGatewayClient*, const Model::StartVirtualMachinesMetadataSyncRequest&, const Model::StartVirtualMachinesMetadataSyncOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartVirtualMachinesMetadataSyncResponseReceivedHandler;
     typedef std::function<void(const BackupGatewayClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const BackupGatewayClient*, const Model::TestHypervisorConfigurationRequest&, const Model::TestHypervisorConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TestHypervisorConfigurationResponseReceivedHandler;
     typedef std::function<void(const BackupGatewayClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;

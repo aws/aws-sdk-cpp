@@ -19,6 +19,7 @@ CreateApplicationRequest::CreateApplicationRequest() :
     m_descriptionHasBeenSet(false),
     m_engineType(EngineType::NOT_SET),
     m_engineTypeHasBeenSet(false),
+    m_kmsKeyIdHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
@@ -49,6 +50,12 @@ Aws::String CreateApplicationRequest::SerializePayload() const
   if(m_engineTypeHasBeenSet)
   {
    payload.WithString("engineType", EngineTypeMapper::GetNameForEngineType(m_engineType));
+  }
+
+  if(m_kmsKeyIdHasBeenSet)
+  {
+   payload.WithString("kmsKeyId", m_kmsKeyId);
+
   }
 
   if(m_nameHasBeenSet)

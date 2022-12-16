@@ -27,7 +27,8 @@ RecommendationJobInputConfig::RecommendationJobInputConfig() :
     m_endpointConfigurationsHasBeenSet(false),
     m_volumeKmsKeyIdHasBeenSet(false),
     m_containerConfigHasBeenSet(false),
-    m_endpointsHasBeenSet(false)
+    m_endpointsHasBeenSet(false),
+    m_vpcConfigHasBeenSet(false)
 {
 }
 
@@ -40,7 +41,8 @@ RecommendationJobInputConfig::RecommendationJobInputConfig(JsonView jsonValue) :
     m_endpointConfigurationsHasBeenSet(false),
     m_volumeKmsKeyIdHasBeenSet(false),
     m_containerConfigHasBeenSet(false),
-    m_endpointsHasBeenSet(false)
+    m_endpointsHasBeenSet(false),
+    m_vpcConfigHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -109,6 +111,13 @@ RecommendationJobInputConfig& RecommendationJobInputConfig::operator =(JsonView 
     m_endpointsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("VpcConfig"))
+  {
+    m_vpcConfig = jsonValue.GetObject("VpcConfig");
+
+    m_vpcConfigHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -171,6 +180,12 @@ JsonValue RecommendationJobInputConfig::Jsonize() const
      endpointsJsonList[endpointsIndex].AsObject(m_endpoints[endpointsIndex].Jsonize());
    }
    payload.WithArray("Endpoints", std::move(endpointsJsonList));
+
+  }
+
+  if(m_vpcConfigHasBeenSet)
+  {
+   payload.WithObject("VpcConfig", m_vpcConfig.Jsonize());
 
   }
 

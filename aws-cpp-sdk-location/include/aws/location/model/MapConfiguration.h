@@ -85,7 +85,18 @@ namespace Model
      * based on total tiles retrieved.</p>  <p>Hybrid styles use both vector and
      * raster tiles when rendering the map that you see. This means that more tiles are
      * retrieved than when using either vector or raster tiles alone. Your charges will
-     * include all tiles retrieved.</p>  </li> </ul>
+     * include all tiles retrieved.</p>  </li> </ul> <p>Valid <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/open-data.html">Open
+     * Data (Preview) map styles</a>:</p> <ul> <li> <p>
+     * <code>VectorOpenDataStandardLight</code> – The Open Data Standard Light
+     * (preview) map style provides a detailed basemap for the world suitable for
+     * website and mobile application use. The map includes highways major roads, minor
+     * roads, railways, water features, cities, parks, landmarks, building footprints,
+     * and administrative boundaries.</p>  <p>Open Data maps is in preview.
+     * We may add, change, or remove features before announcing general availability.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/open-data.html#open-data-preview">Open
+     * Data is in preview release</a>.</p>  </li> </ul>
      */
     inline const Aws::String& GetStyle() const{ return m_style; }
 
@@ -136,7 +147,18 @@ namespace Model
      * based on total tiles retrieved.</p>  <p>Hybrid styles use both vector and
      * raster tiles when rendering the map that you see. This means that more tiles are
      * retrieved than when using either vector or raster tiles alone. Your charges will
-     * include all tiles retrieved.</p>  </li> </ul>
+     * include all tiles retrieved.</p>  </li> </ul> <p>Valid <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/open-data.html">Open
+     * Data (Preview) map styles</a>:</p> <ul> <li> <p>
+     * <code>VectorOpenDataStandardLight</code> – The Open Data Standard Light
+     * (preview) map style provides a detailed basemap for the world suitable for
+     * website and mobile application use. The map includes highways major roads, minor
+     * roads, railways, water features, cities, parks, landmarks, building footprints,
+     * and administrative boundaries.</p>  <p>Open Data maps is in preview.
+     * We may add, change, or remove features before announcing general availability.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/open-data.html#open-data-preview">Open
+     * Data is in preview release</a>.</p>  </li> </ul>
      */
     inline bool StyleHasBeenSet() const { return m_styleHasBeenSet; }
 
@@ -187,7 +209,18 @@ namespace Model
      * based on total tiles retrieved.</p>  <p>Hybrid styles use both vector and
      * raster tiles when rendering the map that you see. This means that more tiles are
      * retrieved than when using either vector or raster tiles alone. Your charges will
-     * include all tiles retrieved.</p>  </li> </ul>
+     * include all tiles retrieved.</p>  </li> </ul> <p>Valid <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/open-data.html">Open
+     * Data (Preview) map styles</a>:</p> <ul> <li> <p>
+     * <code>VectorOpenDataStandardLight</code> – The Open Data Standard Light
+     * (preview) map style provides a detailed basemap for the world suitable for
+     * website and mobile application use. The map includes highways major roads, minor
+     * roads, railways, water features, cities, parks, landmarks, building footprints,
+     * and administrative boundaries.</p>  <p>Open Data maps is in preview.
+     * We may add, change, or remove features before announcing general availability.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/open-data.html#open-data-preview">Open
+     * Data is in preview release</a>.</p>  </li> </ul>
      */
     inline void SetStyle(const Aws::String& value) { m_styleHasBeenSet = true; m_style = value; }
 
@@ -238,7 +271,18 @@ namespace Model
      * based on total tiles retrieved.</p>  <p>Hybrid styles use both vector and
      * raster tiles when rendering the map that you see. This means that more tiles are
      * retrieved than when using either vector or raster tiles alone. Your charges will
-     * include all tiles retrieved.</p>  </li> </ul>
+     * include all tiles retrieved.</p>  </li> </ul> <p>Valid <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/open-data.html">Open
+     * Data (Preview) map styles</a>:</p> <ul> <li> <p>
+     * <code>VectorOpenDataStandardLight</code> – The Open Data Standard Light
+     * (preview) map style provides a detailed basemap for the world suitable for
+     * website and mobile application use. The map includes highways major roads, minor
+     * roads, railways, water features, cities, parks, landmarks, building footprints,
+     * and administrative boundaries.</p>  <p>Open Data maps is in preview.
+     * We may add, change, or remove features before announcing general availability.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/open-data.html#open-data-preview">Open
+     * Data is in preview release</a>.</p>  </li> </ul>
      */
     inline void SetStyle(Aws::String&& value) { m_styleHasBeenSet = true; m_style = std::move(value); }
 
@@ -289,7 +333,18 @@ namespace Model
      * based on total tiles retrieved.</p>  <p>Hybrid styles use both vector and
      * raster tiles when rendering the map that you see. This means that more tiles are
      * retrieved than when using either vector or raster tiles alone. Your charges will
-     * include all tiles retrieved.</p>  </li> </ul>
+     * include all tiles retrieved.</p>  </li> </ul> <p>Valid <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/open-data.html">Open
+     * Data (Preview) map styles</a>:</p> <ul> <li> <p>
+     * <code>VectorOpenDataStandardLight</code> – The Open Data Standard Light
+     * (preview) map style provides a detailed basemap for the world suitable for
+     * website and mobile application use. The map includes highways major roads, minor
+     * roads, railways, water features, cities, parks, landmarks, building footprints,
+     * and administrative boundaries.</p>  <p>Open Data maps is in preview.
+     * We may add, change, or remove features before announcing general availability.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/open-data.html#open-data-preview">Open
+     * Data is in preview release</a>.</p>  </li> </ul>
      */
     inline void SetStyle(const char* value) { m_styleHasBeenSet = true; m_style.assign(value); }
 
@@ -340,7 +395,18 @@ namespace Model
      * based on total tiles retrieved.</p>  <p>Hybrid styles use both vector and
      * raster tiles when rendering the map that you see. This means that more tiles are
      * retrieved than when using either vector or raster tiles alone. Your charges will
-     * include all tiles retrieved.</p>  </li> </ul>
+     * include all tiles retrieved.</p>  </li> </ul> <p>Valid <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/open-data.html">Open
+     * Data (Preview) map styles</a>:</p> <ul> <li> <p>
+     * <code>VectorOpenDataStandardLight</code> – The Open Data Standard Light
+     * (preview) map style provides a detailed basemap for the world suitable for
+     * website and mobile application use. The map includes highways major roads, minor
+     * roads, railways, water features, cities, parks, landmarks, building footprints,
+     * and administrative boundaries.</p>  <p>Open Data maps is in preview.
+     * We may add, change, or remove features before announcing general availability.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/open-data.html#open-data-preview">Open
+     * Data is in preview release</a>.</p>  </li> </ul>
      */
     inline MapConfiguration& WithStyle(const Aws::String& value) { SetStyle(value); return *this;}
 
@@ -391,7 +457,18 @@ namespace Model
      * based on total tiles retrieved.</p>  <p>Hybrid styles use both vector and
      * raster tiles when rendering the map that you see. This means that more tiles are
      * retrieved than when using either vector or raster tiles alone. Your charges will
-     * include all tiles retrieved.</p>  </li> </ul>
+     * include all tiles retrieved.</p>  </li> </ul> <p>Valid <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/open-data.html">Open
+     * Data (Preview) map styles</a>:</p> <ul> <li> <p>
+     * <code>VectorOpenDataStandardLight</code> – The Open Data Standard Light
+     * (preview) map style provides a detailed basemap for the world suitable for
+     * website and mobile application use. The map includes highways major roads, minor
+     * roads, railways, water features, cities, parks, landmarks, building footprints,
+     * and administrative boundaries.</p>  <p>Open Data maps is in preview.
+     * We may add, change, or remove features before announcing general availability.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/open-data.html#open-data-preview">Open
+     * Data is in preview release</a>.</p>  </li> </ul>
      */
     inline MapConfiguration& WithStyle(Aws::String&& value) { SetStyle(std::move(value)); return *this;}
 
@@ -442,7 +519,18 @@ namespace Model
      * based on total tiles retrieved.</p>  <p>Hybrid styles use both vector and
      * raster tiles when rendering the map that you see. This means that more tiles are
      * retrieved than when using either vector or raster tiles alone. Your charges will
-     * include all tiles retrieved.</p>  </li> </ul>
+     * include all tiles retrieved.</p>  </li> </ul> <p>Valid <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/open-data.html">Open
+     * Data (Preview) map styles</a>:</p> <ul> <li> <p>
+     * <code>VectorOpenDataStandardLight</code> – The Open Data Standard Light
+     * (preview) map style provides a detailed basemap for the world suitable for
+     * website and mobile application use. The map includes highways major roads, minor
+     * roads, railways, water features, cities, parks, landmarks, building footprints,
+     * and administrative boundaries.</p>  <p>Open Data maps is in preview.
+     * We may add, change, or remove features before announcing general availability.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/open-data.html#open-data-preview">Open
+     * Data is in preview release</a>.</p>  </li> </ul>
      */
     inline MapConfiguration& WithStyle(const char* value) { SetStyle(value); return *this;}
 

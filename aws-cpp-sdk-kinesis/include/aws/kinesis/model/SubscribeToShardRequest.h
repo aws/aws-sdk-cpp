@@ -56,6 +56,10 @@ namespace Model
      */
     inline SubscribeToShardRequest& WithEventStreamHandler(const SubscribeToShardHandler& value) { SetEventStreamHandler(value); return *this; }
 
+    /**
+     * Helper function to collect parameters (configurable and static hardcoded) required for endpoint computation.
+     */
+    AWS_KINESIS_API EndpointParameters GetEndpointContextParams() const override;
 
     /**
      * <p>For this parameter, use the value you obtained when you called

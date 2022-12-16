@@ -26,14 +26,20 @@
 #include <aws/backup-gateway/model/DeleteGatewayRequest.h>
 #include <aws/backup-gateway/model/DeleteHypervisorRequest.h>
 #include <aws/backup-gateway/model/DisassociateGatewayFromServerRequest.h>
+#include <aws/backup-gateway/model/GetBandwidthRateLimitScheduleRequest.h>
 #include <aws/backup-gateway/model/GetGatewayRequest.h>
+#include <aws/backup-gateway/model/GetHypervisorRequest.h>
+#include <aws/backup-gateway/model/GetHypervisorPropertyMappingsRequest.h>
 #include <aws/backup-gateway/model/GetVirtualMachineRequest.h>
 #include <aws/backup-gateway/model/ImportHypervisorConfigurationRequest.h>
 #include <aws/backup-gateway/model/ListGatewaysRequest.h>
 #include <aws/backup-gateway/model/ListHypervisorsRequest.h>
 #include <aws/backup-gateway/model/ListTagsForResourceRequest.h>
 #include <aws/backup-gateway/model/ListVirtualMachinesRequest.h>
+#include <aws/backup-gateway/model/PutBandwidthRateLimitScheduleRequest.h>
+#include <aws/backup-gateway/model/PutHypervisorPropertyMappingsRequest.h>
 #include <aws/backup-gateway/model/PutMaintenanceStartTimeRequest.h>
+#include <aws/backup-gateway/model/StartVirtualMachinesMetadataSyncRequest.h>
 #include <aws/backup-gateway/model/TagResourceRequest.h>
 #include <aws/backup-gateway/model/TestHypervisorConfigurationRequest.h>
 #include <aws/backup-gateway/model/UntagResourceRequest.h>
@@ -288,6 +294,30 @@ void BackupGatewayClient::DisassociateGatewayFromServerAsync(const DisassociateG
     } );
 }
 
+GetBandwidthRateLimitScheduleOutcome BackupGatewayClient::GetBandwidthRateLimitSchedule(const GetBandwidthRateLimitScheduleRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetBandwidthRateLimitSchedule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetBandwidthRateLimitSchedule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetBandwidthRateLimitScheduleOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetBandwidthRateLimitScheduleOutcomeCallable BackupGatewayClient::GetBandwidthRateLimitScheduleCallable(const GetBandwidthRateLimitScheduleRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetBandwidthRateLimitScheduleOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetBandwidthRateLimitSchedule(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void BackupGatewayClient::GetBandwidthRateLimitScheduleAsync(const GetBandwidthRateLimitScheduleRequest& request, const GetBandwidthRateLimitScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetBandwidthRateLimitSchedule(request), context);
+    } );
+}
+
 GetGatewayOutcome BackupGatewayClient::GetGateway(const GetGatewayRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetGateway, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -309,6 +339,54 @@ void BackupGatewayClient::GetGatewayAsync(const GetGatewayRequest& request, cons
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, GetGateway(request), context);
+    } );
+}
+
+GetHypervisorOutcome BackupGatewayClient::GetHypervisor(const GetHypervisorRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetHypervisor, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetHypervisor, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetHypervisorOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetHypervisorOutcomeCallable BackupGatewayClient::GetHypervisorCallable(const GetHypervisorRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetHypervisorOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetHypervisor(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void BackupGatewayClient::GetHypervisorAsync(const GetHypervisorRequest& request, const GetHypervisorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetHypervisor(request), context);
+    } );
+}
+
+GetHypervisorPropertyMappingsOutcome BackupGatewayClient::GetHypervisorPropertyMappings(const GetHypervisorPropertyMappingsRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetHypervisorPropertyMappings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetHypervisorPropertyMappings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetHypervisorPropertyMappingsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetHypervisorPropertyMappingsOutcomeCallable BackupGatewayClient::GetHypervisorPropertyMappingsCallable(const GetHypervisorPropertyMappingsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetHypervisorPropertyMappingsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetHypervisorPropertyMappings(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void BackupGatewayClient::GetHypervisorPropertyMappingsAsync(const GetHypervisorPropertyMappingsRequest& request, const GetHypervisorPropertyMappingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetHypervisorPropertyMappings(request), context);
     } );
 }
 
@@ -456,6 +534,54 @@ void BackupGatewayClient::ListVirtualMachinesAsync(const ListVirtualMachinesRequ
     } );
 }
 
+PutBandwidthRateLimitScheduleOutcome BackupGatewayClient::PutBandwidthRateLimitSchedule(const PutBandwidthRateLimitScheduleRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutBandwidthRateLimitSchedule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutBandwidthRateLimitSchedule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return PutBandwidthRateLimitScheduleOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+PutBandwidthRateLimitScheduleOutcomeCallable BackupGatewayClient::PutBandwidthRateLimitScheduleCallable(const PutBandwidthRateLimitScheduleRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutBandwidthRateLimitScheduleOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutBandwidthRateLimitSchedule(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void BackupGatewayClient::PutBandwidthRateLimitScheduleAsync(const PutBandwidthRateLimitScheduleRequest& request, const PutBandwidthRateLimitScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PutBandwidthRateLimitSchedule(request), context);
+    } );
+}
+
+PutHypervisorPropertyMappingsOutcome BackupGatewayClient::PutHypervisorPropertyMappings(const PutHypervisorPropertyMappingsRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutHypervisorPropertyMappings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutHypervisorPropertyMappings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return PutHypervisorPropertyMappingsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+PutHypervisorPropertyMappingsOutcomeCallable BackupGatewayClient::PutHypervisorPropertyMappingsCallable(const PutHypervisorPropertyMappingsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutHypervisorPropertyMappingsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutHypervisorPropertyMappings(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void BackupGatewayClient::PutHypervisorPropertyMappingsAsync(const PutHypervisorPropertyMappingsRequest& request, const PutHypervisorPropertyMappingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PutHypervisorPropertyMappings(request), context);
+    } );
+}
+
 PutMaintenanceStartTimeOutcome BackupGatewayClient::PutMaintenanceStartTime(const PutMaintenanceStartTimeRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutMaintenanceStartTime, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -477,6 +603,30 @@ void BackupGatewayClient::PutMaintenanceStartTimeAsync(const PutMaintenanceStart
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, PutMaintenanceStartTime(request), context);
+    } );
+}
+
+StartVirtualMachinesMetadataSyncOutcome BackupGatewayClient::StartVirtualMachinesMetadataSync(const StartVirtualMachinesMetadataSyncRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartVirtualMachinesMetadataSync, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartVirtualMachinesMetadataSync, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return StartVirtualMachinesMetadataSyncOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+StartVirtualMachinesMetadataSyncOutcomeCallable BackupGatewayClient::StartVirtualMachinesMetadataSyncCallable(const StartVirtualMachinesMetadataSyncRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StartVirtualMachinesMetadataSyncOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartVirtualMachinesMetadataSync(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void BackupGatewayClient::StartVirtualMachinesMetadataSyncAsync(const StartVirtualMachinesMetadataSyncRequest& request, const StartVirtualMachinesMetadataSyncResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, StartVirtualMachinesMetadataSync(request), context);
     } );
 }
 

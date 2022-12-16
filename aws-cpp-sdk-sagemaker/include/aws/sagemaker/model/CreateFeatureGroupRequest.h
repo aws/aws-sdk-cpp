@@ -547,7 +547,9 @@ namespace Model
      * key. By defining your <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucket-key.html">bucket-level
      * key</a> for SSE, you can reduce Amazon Web Services KMS requests costs by up to
-     * 99 percent.</p> </li> </ul> <p>To learn more about this parameter, see
+     * 99 percent.</p> </li> <li> <p>Format for the offline store table. Supported
+     * formats are Glue (Default) and <a href="https://iceberg.apache.org/">Apache
+     * Iceberg</a>.</p> </li> </ul> <p>To learn more about this parameter, see
      * <a>OfflineStoreConfig</a>.</p>
      */
     inline const OfflineStoreConfig& GetOfflineStoreConfig() const{ return m_offlineStoreConfig; }
@@ -563,7 +565,9 @@ namespace Model
      * key. By defining your <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucket-key.html">bucket-level
      * key</a> for SSE, you can reduce Amazon Web Services KMS requests costs by up to
-     * 99 percent.</p> </li> </ul> <p>To learn more about this parameter, see
+     * 99 percent.</p> </li> <li> <p>Format for the offline store table. Supported
+     * formats are Glue (Default) and <a href="https://iceberg.apache.org/">Apache
+     * Iceberg</a>.</p> </li> </ul> <p>To learn more about this parameter, see
      * <a>OfflineStoreConfig</a>.</p>
      */
     inline bool OfflineStoreConfigHasBeenSet() const { return m_offlineStoreConfigHasBeenSet; }
@@ -579,7 +583,9 @@ namespace Model
      * key. By defining your <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucket-key.html">bucket-level
      * key</a> for SSE, you can reduce Amazon Web Services KMS requests costs by up to
-     * 99 percent.</p> </li> </ul> <p>To learn more about this parameter, see
+     * 99 percent.</p> </li> <li> <p>Format for the offline store table. Supported
+     * formats are Glue (Default) and <a href="https://iceberg.apache.org/">Apache
+     * Iceberg</a>.</p> </li> </ul> <p>To learn more about this parameter, see
      * <a>OfflineStoreConfig</a>.</p>
      */
     inline void SetOfflineStoreConfig(const OfflineStoreConfig& value) { m_offlineStoreConfigHasBeenSet = true; m_offlineStoreConfig = value; }
@@ -595,7 +601,9 @@ namespace Model
      * key. By defining your <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucket-key.html">bucket-level
      * key</a> for SSE, you can reduce Amazon Web Services KMS requests costs by up to
-     * 99 percent.</p> </li> </ul> <p>To learn more about this parameter, see
+     * 99 percent.</p> </li> <li> <p>Format for the offline store table. Supported
+     * formats are Glue (Default) and <a href="https://iceberg.apache.org/">Apache
+     * Iceberg</a>.</p> </li> </ul> <p>To learn more about this parameter, see
      * <a>OfflineStoreConfig</a>.</p>
      */
     inline void SetOfflineStoreConfig(OfflineStoreConfig&& value) { m_offlineStoreConfigHasBeenSet = true; m_offlineStoreConfig = std::move(value); }
@@ -611,7 +619,9 @@ namespace Model
      * key. By defining your <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucket-key.html">bucket-level
      * key</a> for SSE, you can reduce Amazon Web Services KMS requests costs by up to
-     * 99 percent.</p> </li> </ul> <p>To learn more about this parameter, see
+     * 99 percent.</p> </li> <li> <p>Format for the offline store table. Supported
+     * formats are Glue (Default) and <a href="https://iceberg.apache.org/">Apache
+     * Iceberg</a>.</p> </li> </ul> <p>To learn more about this parameter, see
      * <a>OfflineStoreConfig</a>.</p>
      */
     inline CreateFeatureGroupRequest& WithOfflineStoreConfig(const OfflineStoreConfig& value) { SetOfflineStoreConfig(value); return *this;}
@@ -627,7 +637,9 @@ namespace Model
      * key. By defining your <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucket-key.html">bucket-level
      * key</a> for SSE, you can reduce Amazon Web Services KMS requests costs by up to
-     * 99 percent.</p> </li> </ul> <p>To learn more about this parameter, see
+     * 99 percent.</p> </li> <li> <p>Format for the offline store table. Supported
+     * formats are Glue (Default) and <a href="https://iceberg.apache.org/">Apache
+     * Iceberg</a>.</p> </li> </ul> <p>To learn more about this parameter, see
      * <a>OfflineStoreConfig</a>.</p>
      */
     inline CreateFeatureGroupRequest& WithOfflineStoreConfig(OfflineStoreConfig&& value) { SetOfflineStoreConfig(std::move(value)); return *this;}

@@ -19,7 +19,8 @@ namespace Model
     Creating,
     Available,
     Deleting,
-    Failed
+    Failed,
+    Updating
   };
 
 namespace EnvironmentLifecycleMapper

@@ -61,4 +61,16 @@ Aws::Http::HeaderValueCollection ListStreamConsumersRequest::GetRequestSpecificH
 
 
 
+ListStreamConsumersRequest::EndpointParameters ListStreamConsumersRequest::GetEndpointContextParams() const
+{
+    EndpointParameters parameters;
+    // Static context parameters
+    parameters.emplace_back(Aws::String("OperationType"), "control", Aws::Endpoint::EndpointParameter::ParameterOrigin::STATIC_CONTEXT);
+    // Operation context parameters
+    if (StreamARNHasBeenSet()) {
+        parameters.emplace_back(Aws::String("StreamARN"), this->GetStreamARN(), Aws::Endpoint::EndpointParameter::ParameterOrigin::OPERATION_CONTEXT);
+    }
+    return parameters;
+}
+
 

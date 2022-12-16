@@ -144,38 +144,38 @@ namespace Model
 
 
     /**
-     * <p>Format for the offline store feature group. <code>Iceberg</code> is the
-     * optimal format for feature groups shared between offline and online stores.</p>
+     * <p>Format for the offline store table. Supported formats are Glue (Default) and
+     * <a href="https://iceberg.apache.org/">Apache Iceberg</a>.</p>
      */
     inline const TableFormat& GetTableFormat() const{ return m_tableFormat; }
 
     /**
-     * <p>Format for the offline store feature group. <code>Iceberg</code> is the
-     * optimal format for feature groups shared between offline and online stores.</p>
+     * <p>Format for the offline store table. Supported formats are Glue (Default) and
+     * <a href="https://iceberg.apache.org/">Apache Iceberg</a>.</p>
      */
     inline bool TableFormatHasBeenSet() const { return m_tableFormatHasBeenSet; }
 
     /**
-     * <p>Format for the offline store feature group. <code>Iceberg</code> is the
-     * optimal format for feature groups shared between offline and online stores.</p>
+     * <p>Format for the offline store table. Supported formats are Glue (Default) and
+     * <a href="https://iceberg.apache.org/">Apache Iceberg</a>.</p>
      */
     inline void SetTableFormat(const TableFormat& value) { m_tableFormatHasBeenSet = true; m_tableFormat = value; }
 
     /**
-     * <p>Format for the offline store feature group. <code>Iceberg</code> is the
-     * optimal format for feature groups shared between offline and online stores.</p>
+     * <p>Format for the offline store table. Supported formats are Glue (Default) and
+     * <a href="https://iceberg.apache.org/">Apache Iceberg</a>.</p>
      */
     inline void SetTableFormat(TableFormat&& value) { m_tableFormatHasBeenSet = true; m_tableFormat = std::move(value); }
 
     /**
-     * <p>Format for the offline store feature group. <code>Iceberg</code> is the
-     * optimal format for feature groups shared between offline and online stores.</p>
+     * <p>Format for the offline store table. Supported formats are Glue (Default) and
+     * <a href="https://iceberg.apache.org/">Apache Iceberg</a>.</p>
      */
     inline OfflineStoreConfig& WithTableFormat(const TableFormat& value) { SetTableFormat(value); return *this;}
 
     /**
-     * <p>Format for the offline store feature group. <code>Iceberg</code> is the
-     * optimal format for feature groups shared between offline and online stores.</p>
+     * <p>Format for the offline store table. Supported formats are Glue (Default) and
+     * <a href="https://iceberg.apache.org/">Apache Iceberg</a>.</p>
      */
     inline OfflineStoreConfig& WithTableFormat(TableFormat&& value) { SetTableFormat(std::move(value)); return *this;}
 

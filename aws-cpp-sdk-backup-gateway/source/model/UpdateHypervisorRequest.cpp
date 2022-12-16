@@ -15,6 +15,7 @@ using namespace Aws::Utils;
 UpdateHypervisorRequest::UpdateHypervisorRequest() : 
     m_hostHasBeenSet(false),
     m_hypervisorArnHasBeenSet(false),
+    m_logGroupArnHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_passwordHasBeenSet(false),
     m_usernameHasBeenSet(false)
@@ -34,6 +35,12 @@ Aws::String UpdateHypervisorRequest::SerializePayload() const
   if(m_hypervisorArnHasBeenSet)
   {
    payload.WithString("HypervisorArn", m_hypervisorArn);
+
+  }
+
+  if(m_logGroupArnHasBeenSet)
+  {
+   payload.WithString("LogGroupArn", m_logGroupArn);
 
   }
 

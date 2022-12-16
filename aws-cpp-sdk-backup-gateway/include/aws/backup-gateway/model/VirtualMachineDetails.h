@@ -7,6 +7,8 @@
 #include <aws/backup-gateway/BackupGateway_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/backup-gateway/model/VmwareTag.h>
 #include <utility>
 
 namespace Aws
@@ -288,6 +290,55 @@ namespace Model
      */
     inline VirtualMachineDetails& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
 
+
+    /**
+     * <p>These are the details of the VMware tags associated with the specified
+     * virtual machine.</p>
+     */
+    inline const Aws::Vector<VmwareTag>& GetVmwareTags() const{ return m_vmwareTags; }
+
+    /**
+     * <p>These are the details of the VMware tags associated with the specified
+     * virtual machine.</p>
+     */
+    inline bool VmwareTagsHasBeenSet() const { return m_vmwareTagsHasBeenSet; }
+
+    /**
+     * <p>These are the details of the VMware tags associated with the specified
+     * virtual machine.</p>
+     */
+    inline void SetVmwareTags(const Aws::Vector<VmwareTag>& value) { m_vmwareTagsHasBeenSet = true; m_vmwareTags = value; }
+
+    /**
+     * <p>These are the details of the VMware tags associated with the specified
+     * virtual machine.</p>
+     */
+    inline void SetVmwareTags(Aws::Vector<VmwareTag>&& value) { m_vmwareTagsHasBeenSet = true; m_vmwareTags = std::move(value); }
+
+    /**
+     * <p>These are the details of the VMware tags associated with the specified
+     * virtual machine.</p>
+     */
+    inline VirtualMachineDetails& WithVmwareTags(const Aws::Vector<VmwareTag>& value) { SetVmwareTags(value); return *this;}
+
+    /**
+     * <p>These are the details of the VMware tags associated with the specified
+     * virtual machine.</p>
+     */
+    inline VirtualMachineDetails& WithVmwareTags(Aws::Vector<VmwareTag>&& value) { SetVmwareTags(std::move(value)); return *this;}
+
+    /**
+     * <p>These are the details of the VMware tags associated with the specified
+     * virtual machine.</p>
+     */
+    inline VirtualMachineDetails& AddVmwareTags(const VmwareTag& value) { m_vmwareTagsHasBeenSet = true; m_vmwareTags.push_back(value); return *this; }
+
+    /**
+     * <p>These are the details of the VMware tags associated with the specified
+     * virtual machine.</p>
+     */
+    inline VirtualMachineDetails& AddVmwareTags(VmwareTag&& value) { m_vmwareTagsHasBeenSet = true; m_vmwareTags.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_hostName;
@@ -307,6 +358,9 @@ namespace Model
 
     Aws::String m_resourceArn;
     bool m_resourceArnHasBeenSet = false;
+
+    Aws::Vector<VmwareTag> m_vmwareTags;
+    bool m_vmwareTagsHasBeenSet = false;
   };
 
 } // namespace Model

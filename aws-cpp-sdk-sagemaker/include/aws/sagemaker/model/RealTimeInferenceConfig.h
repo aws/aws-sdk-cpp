@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>The infrastructure configuration for deploying the model to real-time
-   * inference.</p><p><h3>See Also:</h3>   <a
+   * <p>The infrastructure configuration for deploying the model to a real-time
+   * inference endpoint.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/RealTimeInferenceConfig">AWS
    * API Reference</a></p>
    */
@@ -39,59 +39,57 @@ namespace Model
 
 
     /**
-     * <p>The number of instances of the type specified by
-     * <code>InstanceType</code>.</p>
+     * <p>The instance type the model is deployed to.</p>
      */
     inline const InstanceType& GetInstanceType() const{ return m_instanceType; }
 
     /**
-     * <p>The number of instances of the type specified by
-     * <code>InstanceType</code>.</p>
+     * <p>The instance type the model is deployed to.</p>
      */
     inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
 
     /**
-     * <p>The number of instances of the type specified by
-     * <code>InstanceType</code>.</p>
+     * <p>The instance type the model is deployed to.</p>
      */
     inline void SetInstanceType(const InstanceType& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
 
     /**
-     * <p>The number of instances of the type specified by
-     * <code>InstanceType</code>.</p>
+     * <p>The instance type the model is deployed to.</p>
      */
     inline void SetInstanceType(InstanceType&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
 
     /**
-     * <p>The number of instances of the type specified by
-     * <code>InstanceType</code>.</p>
+     * <p>The instance type the model is deployed to.</p>
      */
     inline RealTimeInferenceConfig& WithInstanceType(const InstanceType& value) { SetInstanceType(value); return *this;}
 
     /**
-     * <p>The number of instances of the type specified by
-     * <code>InstanceType</code>.</p>
+     * <p>The instance type the model is deployed to.</p>
      */
     inline RealTimeInferenceConfig& WithInstanceType(InstanceType&& value) { SetInstanceType(std::move(value)); return *this;}
 
 
     /**
-     * <p>The instance type the model is deployed to.</p>
+     * <p>The number of instances of the type specified by
+     * <code>InstanceType</code>.</p>
      */
     inline int GetInstanceCount() const{ return m_instanceCount; }
 
     /**
-     * <p>The instance type the model is deployed to.</p>
+     * <p>The number of instances of the type specified by
+     * <code>InstanceType</code>.</p>
      */
     inline bool InstanceCountHasBeenSet() const { return m_instanceCountHasBeenSet; }
 
     /**
-     * <p>The instance type the model is deployed to.</p>
+     * <p>The number of instances of the type specified by
+     * <code>InstanceType</code>.</p>
      */
     inline void SetInstanceCount(int value) { m_instanceCountHasBeenSet = true; m_instanceCount = value; }
 
     /**
-     * <p>The instance type the model is deployed to.</p>
+     * <p>The number of instances of the type specified by
+     * <code>InstanceType</code>.</p>
      */
     inline RealTimeInferenceConfig& WithInstanceCount(int value) { SetInstanceCount(value); return *this;}
 

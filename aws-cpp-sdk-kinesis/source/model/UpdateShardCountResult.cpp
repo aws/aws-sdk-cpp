@@ -50,6 +50,12 @@ UpdateShardCountResult& UpdateShardCountResult::operator =(const Aws::AmazonWebS
 
   }
 
+  if(jsonValue.ValueExists("StreamARN"))
+  {
+    m_streamARN = jsonValue.GetString("StreamARN");
+
+  }
+
 
 
   return *this;

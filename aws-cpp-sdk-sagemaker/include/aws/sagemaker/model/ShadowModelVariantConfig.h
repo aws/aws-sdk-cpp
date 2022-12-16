@@ -80,26 +80,26 @@ namespace Model
 
 
     /**
-     * <p>The percentage of inference requests that are replicated to the shadow
-     * variant.</p>
+     * <p> The percentage of inference requests that Amazon SageMaker replicates from
+     * the production variant to the shadow variant. </p>
      */
     inline int GetSamplingPercentage() const{ return m_samplingPercentage; }
 
     /**
-     * <p>The percentage of inference requests that are replicated to the shadow
-     * variant.</p>
+     * <p> The percentage of inference requests that Amazon SageMaker replicates from
+     * the production variant to the shadow variant. </p>
      */
     inline bool SamplingPercentageHasBeenSet() const { return m_samplingPercentageHasBeenSet; }
 
     /**
-     * <p>The percentage of inference requests that are replicated to the shadow
-     * variant.</p>
+     * <p> The percentage of inference requests that Amazon SageMaker replicates from
+     * the production variant to the shadow variant. </p>
      */
     inline void SetSamplingPercentage(int value) { m_samplingPercentageHasBeenSet = true; m_samplingPercentage = value; }
 
     /**
-     * <p>The percentage of inference requests that are replicated to the shadow
-     * variant.</p>
+     * <p> The percentage of inference requests that Amazon SageMaker replicates from
+     * the production variant to the shadow variant. </p>
      */
     inline ShadowModelVariantConfig& WithSamplingPercentage(int value) { SetSamplingPercentage(value); return *this;}
 

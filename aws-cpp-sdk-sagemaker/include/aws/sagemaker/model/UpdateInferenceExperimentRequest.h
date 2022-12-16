@@ -171,112 +171,142 @@ namespace Model
 
 
     /**
-     * <p> Array of <code>ModelVariantConfigSummary</code> objects. There is one for
-     * each variant, whose infrastructure configuration you want to update. </p>
+     * <p> An array of <code>ModelVariantConfig</code> objects. There is one for each
+     * variant, whose infrastructure configuration you want to update. </p>
      */
     inline const Aws::Vector<ModelVariantConfig>& GetModelVariants() const{ return m_modelVariants; }
 
     /**
-     * <p> Array of <code>ModelVariantConfigSummary</code> objects. There is one for
-     * each variant, whose infrastructure configuration you want to update. </p>
+     * <p> An array of <code>ModelVariantConfig</code> objects. There is one for each
+     * variant, whose infrastructure configuration you want to update. </p>
      */
     inline bool ModelVariantsHasBeenSet() const { return m_modelVariantsHasBeenSet; }
 
     /**
-     * <p> Array of <code>ModelVariantConfigSummary</code> objects. There is one for
-     * each variant, whose infrastructure configuration you want to update. </p>
+     * <p> An array of <code>ModelVariantConfig</code> objects. There is one for each
+     * variant, whose infrastructure configuration you want to update. </p>
      */
     inline void SetModelVariants(const Aws::Vector<ModelVariantConfig>& value) { m_modelVariantsHasBeenSet = true; m_modelVariants = value; }
 
     /**
-     * <p> Array of <code>ModelVariantConfigSummary</code> objects. There is one for
-     * each variant, whose infrastructure configuration you want to update. </p>
+     * <p> An array of <code>ModelVariantConfig</code> objects. There is one for each
+     * variant, whose infrastructure configuration you want to update. </p>
      */
     inline void SetModelVariants(Aws::Vector<ModelVariantConfig>&& value) { m_modelVariantsHasBeenSet = true; m_modelVariants = std::move(value); }
 
     /**
-     * <p> Array of <code>ModelVariantConfigSummary</code> objects. There is one for
-     * each variant, whose infrastructure configuration you want to update. </p>
+     * <p> An array of <code>ModelVariantConfig</code> objects. There is one for each
+     * variant, whose infrastructure configuration you want to update. </p>
      */
     inline UpdateInferenceExperimentRequest& WithModelVariants(const Aws::Vector<ModelVariantConfig>& value) { SetModelVariants(value); return *this;}
 
     /**
-     * <p> Array of <code>ModelVariantConfigSummary</code> objects. There is one for
-     * each variant, whose infrastructure configuration you want to update. </p>
+     * <p> An array of <code>ModelVariantConfig</code> objects. There is one for each
+     * variant, whose infrastructure configuration you want to update. </p>
      */
     inline UpdateInferenceExperimentRequest& WithModelVariants(Aws::Vector<ModelVariantConfig>&& value) { SetModelVariants(std::move(value)); return *this;}
 
     /**
-     * <p> Array of <code>ModelVariantConfigSummary</code> objects. There is one for
-     * each variant, whose infrastructure configuration you want to update. </p>
+     * <p> An array of <code>ModelVariantConfig</code> objects. There is one for each
+     * variant, whose infrastructure configuration you want to update. </p>
      */
     inline UpdateInferenceExperimentRequest& AddModelVariants(const ModelVariantConfig& value) { m_modelVariantsHasBeenSet = true; m_modelVariants.push_back(value); return *this; }
 
     /**
-     * <p> Array of <code>ModelVariantConfigSummary</code> objects. There is one for
-     * each variant, whose infrastructure configuration you want to update. </p>
+     * <p> An array of <code>ModelVariantConfig</code> objects. There is one for each
+     * variant, whose infrastructure configuration you want to update. </p>
      */
     inline UpdateInferenceExperimentRequest& AddModelVariants(ModelVariantConfig&& value) { m_modelVariantsHasBeenSet = true; m_modelVariants.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>The Amazon S3 storage configuration for the inference experiment.</p>
+     * <p>The Amazon S3 location and configuration for storing inference request and
+     * response data.</p>
      */
     inline const InferenceExperimentDataStorageConfig& GetDataStorageConfig() const{ return m_dataStorageConfig; }
 
     /**
-     * <p>The Amazon S3 storage configuration for the inference experiment.</p>
+     * <p>The Amazon S3 location and configuration for storing inference request and
+     * response data.</p>
      */
     inline bool DataStorageConfigHasBeenSet() const { return m_dataStorageConfigHasBeenSet; }
 
     /**
-     * <p>The Amazon S3 storage configuration for the inference experiment.</p>
+     * <p>The Amazon S3 location and configuration for storing inference request and
+     * response data.</p>
      */
     inline void SetDataStorageConfig(const InferenceExperimentDataStorageConfig& value) { m_dataStorageConfigHasBeenSet = true; m_dataStorageConfig = value; }
 
     /**
-     * <p>The Amazon S3 storage configuration for the inference experiment.</p>
+     * <p>The Amazon S3 location and configuration for storing inference request and
+     * response data.</p>
      */
     inline void SetDataStorageConfig(InferenceExperimentDataStorageConfig&& value) { m_dataStorageConfigHasBeenSet = true; m_dataStorageConfig = std::move(value); }
 
     /**
-     * <p>The Amazon S3 storage configuration for the inference experiment.</p>
+     * <p>The Amazon S3 location and configuration for storing inference request and
+     * response data.</p>
      */
     inline UpdateInferenceExperimentRequest& WithDataStorageConfig(const InferenceExperimentDataStorageConfig& value) { SetDataStorageConfig(value); return *this;}
 
     /**
-     * <p>The Amazon S3 storage configuration for the inference experiment.</p>
+     * <p>The Amazon S3 location and configuration for storing inference request and
+     * response data.</p>
      */
     inline UpdateInferenceExperimentRequest& WithDataStorageConfig(InferenceExperimentDataStorageConfig&& value) { SetDataStorageConfig(std::move(value)); return *this;}
 
 
     /**
-     * <p>The Amazon S3 storage configuration for the inference experiment.</p>
+     * <p> The configuration of <code>ShadowMode</code> inference experiment type. Use
+     * this field to specify a production variant which takes all the inference
+     * requests, and a shadow variant to which Amazon SageMaker replicates a percentage
+     * of the inference requests. For the shadow variant also specify the percentage of
+     * requests that Amazon SageMaker replicates. </p>
      */
     inline const ShadowModeConfig& GetShadowModeConfig() const{ return m_shadowModeConfig; }
 
     /**
-     * <p>The Amazon S3 storage configuration for the inference experiment.</p>
+     * <p> The configuration of <code>ShadowMode</code> inference experiment type. Use
+     * this field to specify a production variant which takes all the inference
+     * requests, and a shadow variant to which Amazon SageMaker replicates a percentage
+     * of the inference requests. For the shadow variant also specify the percentage of
+     * requests that Amazon SageMaker replicates. </p>
      */
     inline bool ShadowModeConfigHasBeenSet() const { return m_shadowModeConfigHasBeenSet; }
 
     /**
-     * <p>The Amazon S3 storage configuration for the inference experiment.</p>
+     * <p> The configuration of <code>ShadowMode</code> inference experiment type. Use
+     * this field to specify a production variant which takes all the inference
+     * requests, and a shadow variant to which Amazon SageMaker replicates a percentage
+     * of the inference requests. For the shadow variant also specify the percentage of
+     * requests that Amazon SageMaker replicates. </p>
      */
     inline void SetShadowModeConfig(const ShadowModeConfig& value) { m_shadowModeConfigHasBeenSet = true; m_shadowModeConfig = value; }
 
     /**
-     * <p>The Amazon S3 storage configuration for the inference experiment.</p>
+     * <p> The configuration of <code>ShadowMode</code> inference experiment type. Use
+     * this field to specify a production variant which takes all the inference
+     * requests, and a shadow variant to which Amazon SageMaker replicates a percentage
+     * of the inference requests. For the shadow variant also specify the percentage of
+     * requests that Amazon SageMaker replicates. </p>
      */
     inline void SetShadowModeConfig(ShadowModeConfig&& value) { m_shadowModeConfigHasBeenSet = true; m_shadowModeConfig = std::move(value); }
 
     /**
-     * <p>The Amazon S3 storage configuration for the inference experiment.</p>
+     * <p> The configuration of <code>ShadowMode</code> inference experiment type. Use
+     * this field to specify a production variant which takes all the inference
+     * requests, and a shadow variant to which Amazon SageMaker replicates a percentage
+     * of the inference requests. For the shadow variant also specify the percentage of
+     * requests that Amazon SageMaker replicates. </p>
      */
     inline UpdateInferenceExperimentRequest& WithShadowModeConfig(const ShadowModeConfig& value) { SetShadowModeConfig(value); return *this;}
 
     /**
-     * <p>The Amazon S3 storage configuration for the inference experiment.</p>
+     * <p> The configuration of <code>ShadowMode</code> inference experiment type. Use
+     * this field to specify a production variant which takes all the inference
+     * requests, and a shadow variant to which Amazon SageMaker replicates a percentage
+     * of the inference requests. For the shadow variant also specify the percentage of
+     * requests that Amazon SageMaker replicates. </p>
      */
     inline UpdateInferenceExperimentRequest& WithShadowModeConfig(ShadowModeConfig&& value) { SetShadowModeConfig(std::move(value)); return *this;}
 

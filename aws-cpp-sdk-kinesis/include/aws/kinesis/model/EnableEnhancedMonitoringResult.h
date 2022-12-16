@@ -161,6 +161,42 @@ namespace Model
      */
     inline EnableEnhancedMonitoringResult& AddDesiredShardLevelMetrics(MetricsName&& value) { m_desiredShardLevelMetrics.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The ARN of the stream.</p>
+     */
+    inline const Aws::String& GetStreamARN() const{ return m_streamARN; }
+
+    /**
+     * <p>The ARN of the stream.</p>
+     */
+    inline void SetStreamARN(const Aws::String& value) { m_streamARN = value; }
+
+    /**
+     * <p>The ARN of the stream.</p>
+     */
+    inline void SetStreamARN(Aws::String&& value) { m_streamARN = std::move(value); }
+
+    /**
+     * <p>The ARN of the stream.</p>
+     */
+    inline void SetStreamARN(const char* value) { m_streamARN.assign(value); }
+
+    /**
+     * <p>The ARN of the stream.</p>
+     */
+    inline EnableEnhancedMonitoringResult& WithStreamARN(const Aws::String& value) { SetStreamARN(value); return *this;}
+
+    /**
+     * <p>The ARN of the stream.</p>
+     */
+    inline EnableEnhancedMonitoringResult& WithStreamARN(Aws::String&& value) { SetStreamARN(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN of the stream.</p>
+     */
+    inline EnableEnhancedMonitoringResult& WithStreamARN(const char* value) { SetStreamARN(value); return *this;}
+
   private:
 
     Aws::String m_streamName;
@@ -168,6 +204,8 @@ namespace Model
     Aws::Vector<MetricsName> m_currentShardLevelMetrics;
 
     Aws::Vector<MetricsName> m_desiredShardLevelMetrics;
+
+    Aws::String m_streamARN;
   };
 
 } // namespace Model

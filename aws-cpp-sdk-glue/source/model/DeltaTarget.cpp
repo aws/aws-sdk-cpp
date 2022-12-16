@@ -22,7 +22,9 @@ DeltaTarget::DeltaTarget() :
     m_deltaTablesHasBeenSet(false),
     m_connectionNameHasBeenSet(false),
     m_writeManifest(false),
-    m_writeManifestHasBeenSet(false)
+    m_writeManifestHasBeenSet(false),
+    m_createNativeDeltaTable(false),
+    m_createNativeDeltaTableHasBeenSet(false)
 {
 }
 
@@ -30,7 +32,9 @@ DeltaTarget::DeltaTarget(JsonView jsonValue) :
     m_deltaTablesHasBeenSet(false),
     m_connectionNameHasBeenSet(false),
     m_writeManifest(false),
-    m_writeManifestHasBeenSet(false)
+    m_writeManifestHasBeenSet(false),
+    m_createNativeDeltaTable(false),
+    m_createNativeDeltaTableHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -61,6 +65,13 @@ DeltaTarget& DeltaTarget::operator =(JsonView jsonValue)
     m_writeManifestHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("CreateNativeDeltaTable"))
+  {
+    m_createNativeDeltaTable = jsonValue.GetBool("CreateNativeDeltaTable");
+
+    m_createNativeDeltaTableHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -88,6 +99,12 @@ JsonValue DeltaTarget::Jsonize() const
   if(m_writeManifestHasBeenSet)
   {
    payload.WithBool("WriteManifest", m_writeManifest);
+
+  }
+
+  if(m_createNativeDeltaTableHasBeenSet)
+  {
+   payload.WithBool("CreateNativeDeltaTable", m_createNativeDeltaTable);
 
   }
 

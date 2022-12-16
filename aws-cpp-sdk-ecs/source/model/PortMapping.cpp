@@ -27,7 +27,8 @@ PortMapping::PortMapping() :
     m_protocolHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_appProtocol(ApplicationProtocol::NOT_SET),
-    m_appProtocolHasBeenSet(false)
+    m_appProtocolHasBeenSet(false),
+    m_containerPortRangeHasBeenSet(false)
 {
 }
 
@@ -40,7 +41,8 @@ PortMapping::PortMapping(JsonView jsonValue) :
     m_protocolHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_appProtocol(ApplicationProtocol::NOT_SET),
-    m_appProtocolHasBeenSet(false)
+    m_appProtocolHasBeenSet(false),
+    m_containerPortRangeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -82,6 +84,13 @@ PortMapping& PortMapping::operator =(JsonView jsonValue)
     m_appProtocolHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("containerPortRange"))
+  {
+    m_containerPortRange = jsonValue.GetString("containerPortRange");
+
+    m_containerPortRangeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -115,6 +124,12 @@ JsonValue PortMapping::Jsonize() const
   if(m_appProtocolHasBeenSet)
   {
    payload.WithString("appProtocol", ApplicationProtocolMapper::GetNameForApplicationProtocol(m_appProtocol));
+  }
+
+  if(m_containerPortRangeHasBeenSet)
+  {
+   payload.WithString("containerPortRange", m_containerPortRange);
+
   }
 
   return payload;

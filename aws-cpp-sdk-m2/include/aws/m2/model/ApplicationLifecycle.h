@@ -25,7 +25,8 @@ namespace Model
     Stopping,
     Stopped,
     Failed,
-    Deleting
+    Deleting,
+    Deleting_From_Environment
   };
 
 namespace ApplicationLifecycleMapper

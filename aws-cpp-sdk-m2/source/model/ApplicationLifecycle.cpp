@@ -30,6 +30,7 @@ namespace Aws
         static const int Stopped_HASH = HashingUtils::HashString("Stopped");
         static const int Failed_HASH = HashingUtils::HashString("Failed");
         static const int Deleting_HASH = HashingUtils::HashString("Deleting");
+        static const int Deleting_From_Environment_HASH = HashingUtils::HashString("Deleting From Environment");
 
 
         ApplicationLifecycle GetApplicationLifecycleForName(const Aws::String& name)
@@ -75,6 +76,10 @@ namespace Aws
           {
             return ApplicationLifecycle::Deleting;
           }
+          else if (hashCode == Deleting_From_Environment_HASH)
+          {
+            return ApplicationLifecycle::Deleting_From_Environment;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -109,6 +114,8 @@ namespace Aws
             return "Failed";
           case ApplicationLifecycle::Deleting:
             return "Deleting";
+          case ApplicationLifecycle::Deleting_From_Environment:
+            return "Deleting From Environment";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

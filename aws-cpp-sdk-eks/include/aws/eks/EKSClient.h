@@ -243,11 +243,11 @@ namespace EKS
          * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
          * template support</a>.</p> <p>An Amazon EKS managed node group is an Amazon EC2
          * Auto Scaling group and associated Amazon EC2 instances that are managed by
-         * Amazon Web Services for an Amazon EKS cluster. Each node group uses a version of
-         * the Amazon EKS optimized Amazon Linux 2 AMI. For more information, see <a
+         * Amazon Web Services for an Amazon EKS cluster. For more information, see <a
          * href="https://docs.aws.amazon.com/eks/latest/userguide/managed-node-groups.html">Managed
-         * Node Groups</a> in the <i>Amazon EKS User Guide</i>. </p><p><h3>See Also:</h3>  
-         * <a
+         * node groups</a> in the <i>Amazon EKS User Guide</i>.</p>  <p>Windows AMI
+         * types are only supported for commercial Regions that support Windows Amazon
+         * EKS.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/CreateNodegroup">AWS
          * API Reference</a></p>
          */
@@ -854,16 +854,19 @@ namespace EKS
          * the latest available AMI version of a node group's current Kubernetes version by
          * not specifying a Kubernetes version in the request. You can update to the latest
          * AMI version of your cluster's current Kubernetes version by specifying your
-         * cluster's Kubernetes version in the request. For more information, see <a
+         * cluster's Kubernetes version in the request. For information about Linux
+         * versions, see <a
          * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon
-         * EKS optimized Amazon Linux 2 AMI versions</a> in the <i>Amazon EKS User
-         * Guide</i>.</p> <p>You cannot roll back a node group to an earlier Kubernetes
-         * version or AMI version.</p> <p>When a node in a managed node group is terminated
-         * due to a scaling action or update, the pods in that node are drained first.
-         * Amazon EKS attempts to drain the nodes gracefully and will fail if it is unable
-         * to do so. You can <code>force</code> the update if Amazon EKS is unable to drain
-         * the nodes as a result of a pod disruption budget issue.</p><p><h3>See Also:</h3>
-         * <a
+         * EKS optimized Amazon Linux AMI versions</a> in the <i>Amazon EKS User Guide</i>.
+         * For information about Windows versions, see <a
+         * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-ami-versions-windows.html">Amazon
+         * EKS optimized Windows AMI versions</a> in the <i>Amazon EKS User Guide</i>. </p>
+         * <p>You cannot roll back a node group to an earlier Kubernetes version or AMI
+         * version.</p> <p>When a node in a managed node group is terminated due to a
+         * scaling action or update, the pods in that node are drained first. Amazon EKS
+         * attempts to drain the nodes gracefully and will fail if it is unable to do so.
+         * You can <code>force</code> the update if Amazon EKS is unable to drain the nodes
+         * as a result of a pod disruption budget issue.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/UpdateNodegroupVersion">AWS
          * API Reference</a></p>
          */

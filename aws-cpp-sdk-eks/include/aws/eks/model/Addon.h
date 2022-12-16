@@ -199,32 +199,32 @@ namespace Model
 
 
     /**
-     * <p>An object representing the health of the add-on.</p>
+     * <p>An object that represents the health of the add-on.</p>
      */
     inline const AddonHealth& GetHealth() const{ return m_health; }
 
     /**
-     * <p>An object representing the health of the add-on.</p>
+     * <p>An object that represents the health of the add-on.</p>
      */
     inline bool HealthHasBeenSet() const { return m_healthHasBeenSet; }
 
     /**
-     * <p>An object representing the health of the add-on.</p>
+     * <p>An object that represents the health of the add-on.</p>
      */
     inline void SetHealth(const AddonHealth& value) { m_healthHasBeenSet = true; m_health = value; }
 
     /**
-     * <p>An object representing the health of the add-on.</p>
+     * <p>An object that represents the health of the add-on.</p>
      */
     inline void SetHealth(AddonHealth&& value) { m_healthHasBeenSet = true; m_health = std::move(value); }
 
     /**
-     * <p>An object representing the health of the add-on.</p>
+     * <p>An object that represents the health of the add-on.</p>
      */
     inline Addon& WithHealth(const AddonHealth& value) { SetHealth(value); return *this;}
 
     /**
-     * <p>An object representing the health of the add-on.</p>
+     * <p>An object that represents the health of the add-on.</p>
      */
     inline Addon& WithHealth(AddonHealth&& value) { SetHealth(std::move(value)); return *this;}
 
@@ -333,50 +333,50 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role that is bound to the
-     * Kubernetes service account used by the add-on.</p>
+     * <p>The Amazon Resource Name (ARN) of the IAM role that's bound to the Kubernetes
+     * service account that the add-on uses.</p>
      */
     inline const Aws::String& GetServiceAccountRoleArn() const{ return m_serviceAccountRoleArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role that is bound to the
-     * Kubernetes service account used by the add-on.</p>
+     * <p>The Amazon Resource Name (ARN) of the IAM role that's bound to the Kubernetes
+     * service account that the add-on uses.</p>
      */
     inline bool ServiceAccountRoleArnHasBeenSet() const { return m_serviceAccountRoleArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role that is bound to the
-     * Kubernetes service account used by the add-on.</p>
+     * <p>The Amazon Resource Name (ARN) of the IAM role that's bound to the Kubernetes
+     * service account that the add-on uses.</p>
      */
     inline void SetServiceAccountRoleArn(const Aws::String& value) { m_serviceAccountRoleArnHasBeenSet = true; m_serviceAccountRoleArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role that is bound to the
-     * Kubernetes service account used by the add-on.</p>
+     * <p>The Amazon Resource Name (ARN) of the IAM role that's bound to the Kubernetes
+     * service account that the add-on uses.</p>
      */
     inline void SetServiceAccountRoleArn(Aws::String&& value) { m_serviceAccountRoleArnHasBeenSet = true; m_serviceAccountRoleArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role that is bound to the
-     * Kubernetes service account used by the add-on.</p>
+     * <p>The Amazon Resource Name (ARN) of the IAM role that's bound to the Kubernetes
+     * service account that the add-on uses.</p>
      */
     inline void SetServiceAccountRoleArn(const char* value) { m_serviceAccountRoleArnHasBeenSet = true; m_serviceAccountRoleArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role that is bound to the
-     * Kubernetes service account used by the add-on.</p>
+     * <p>The Amazon Resource Name (ARN) of the IAM role that's bound to the Kubernetes
+     * service account that the add-on uses.</p>
      */
     inline Addon& WithServiceAccountRoleArn(const Aws::String& value) { SetServiceAccountRoleArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role that is bound to the
-     * Kubernetes service account used by the add-on.</p>
+     * <p>The Amazon Resource Name (ARN) of the IAM role that's bound to the Kubernetes
+     * service account that the add-on uses.</p>
      */
     inline Addon& WithServiceAccountRoleArn(Aws::String&& value) { SetServiceAccountRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role that is bound to the
-     * Kubernetes service account used by the add-on.</p>
+     * <p>The Amazon Resource Name (ARN) of the IAM role that's bound to the Kubernetes
+     * service account that the add-on uses.</p>
      */
     inline Addon& WithServiceAccountRoleArn(const char* value) { SetServiceAccountRoleArn(value); return *this;}
 
@@ -606,42 +606,42 @@ namespace Model
 
 
     /**
-     * <p>The provided configuration values.</p>
+     * <p>The configuration values that you provided.</p>
      */
     inline const Aws::String& GetConfigurationValues() const{ return m_configurationValues; }
 
     /**
-     * <p>The provided configuration values.</p>
+     * <p>The configuration values that you provided.</p>
      */
     inline bool ConfigurationValuesHasBeenSet() const { return m_configurationValuesHasBeenSet; }
 
     /**
-     * <p>The provided configuration values.</p>
+     * <p>The configuration values that you provided.</p>
      */
     inline void SetConfigurationValues(const Aws::String& value) { m_configurationValuesHasBeenSet = true; m_configurationValues = value; }
 
     /**
-     * <p>The provided configuration values.</p>
+     * <p>The configuration values that you provided.</p>
      */
     inline void SetConfigurationValues(Aws::String&& value) { m_configurationValuesHasBeenSet = true; m_configurationValues = std::move(value); }
 
     /**
-     * <p>The provided configuration values.</p>
+     * <p>The configuration values that you provided.</p>
      */
     inline void SetConfigurationValues(const char* value) { m_configurationValuesHasBeenSet = true; m_configurationValues.assign(value); }
 
     /**
-     * <p>The provided configuration values.</p>
+     * <p>The configuration values that you provided.</p>
      */
     inline Addon& WithConfigurationValues(const Aws::String& value) { SetConfigurationValues(value); return *this;}
 
     /**
-     * <p>The provided configuration values.</p>
+     * <p>The configuration values that you provided.</p>
      */
     inline Addon& WithConfigurationValues(Aws::String&& value) { SetConfigurationValues(std::move(value)); return *this;}
 
     /**
-     * <p>The provided configuration values.</p>
+     * <p>The configuration values that you provided.</p>
      */
     inline Addon& WithConfigurationValues(const char* value) { SetConfigurationValues(value); return *this;}
 

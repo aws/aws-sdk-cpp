@@ -90,6 +90,12 @@ GetEnvironmentResult& GetEnvironmentResult::operator =(const Aws::AmazonWebServi
 
   }
 
+  if(jsonValue.ValueExists("kmsKeyId"))
+  {
+    m_kmsKeyId = jsonValue.GetString("kmsKeyId");
+
+  }
+
   if(jsonValue.ValueExists("loadBalancerArn"))
   {
     m_loadBalancerArn = jsonValue.GetString("loadBalancerArn");

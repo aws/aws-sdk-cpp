@@ -139,43 +139,43 @@ namespace Model
 
     /**
      * <p> The duration for which you want the inference experiment to run. If you
-     * don't specify this field, the experiment automatically concludes after 7 days.
-     * </p>
+     * don't specify this field, the experiment automatically starts immediately upon
+     * creation and concludes after 7 days. </p>
      */
     inline const InferenceExperimentSchedule& GetSchedule() const{ return m_schedule; }
 
     /**
      * <p> The duration for which you want the inference experiment to run. If you
-     * don't specify this field, the experiment automatically concludes after 7 days.
-     * </p>
+     * don't specify this field, the experiment automatically starts immediately upon
+     * creation and concludes after 7 days. </p>
      */
     inline bool ScheduleHasBeenSet() const { return m_scheduleHasBeenSet; }
 
     /**
      * <p> The duration for which you want the inference experiment to run. If you
-     * don't specify this field, the experiment automatically concludes after 7 days.
-     * </p>
+     * don't specify this field, the experiment automatically starts immediately upon
+     * creation and concludes after 7 days. </p>
      */
     inline void SetSchedule(const InferenceExperimentSchedule& value) { m_scheduleHasBeenSet = true; m_schedule = value; }
 
     /**
      * <p> The duration for which you want the inference experiment to run. If you
-     * don't specify this field, the experiment automatically concludes after 7 days.
-     * </p>
+     * don't specify this field, the experiment automatically starts immediately upon
+     * creation and concludes after 7 days. </p>
      */
     inline void SetSchedule(InferenceExperimentSchedule&& value) { m_scheduleHasBeenSet = true; m_schedule = std::move(value); }
 
     /**
      * <p> The duration for which you want the inference experiment to run. If you
-     * don't specify this field, the experiment automatically concludes after 7 days.
-     * </p>
+     * don't specify this field, the experiment automatically starts immediately upon
+     * creation and concludes after 7 days. </p>
      */
     inline CreateInferenceExperimentRequest& WithSchedule(const InferenceExperimentSchedule& value) { SetSchedule(value); return *this;}
 
     /**
      * <p> The duration for which you want the inference experiment to run. If you
-     * don't specify this field, the experiment automatically concludes after 7 days.
-     * </p>
+     * don't specify this field, the experiment automatically starts immediately upon
+     * creation and concludes after 7 days. </p>
      */
     inline CreateInferenceExperimentRequest& WithSchedule(InferenceExperimentSchedule&& value) { SetSchedule(std::move(value)); return *this;}
 
@@ -223,49 +223,57 @@ namespace Model
 
     /**
      * <p> The ARN of the IAM role that Amazon SageMaker can assume to access model
-     * artifacts and container images. </p>
+     * artifacts and container images, and manage Amazon SageMaker Inference endpoints
+     * for model deployment. </p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
     /**
      * <p> The ARN of the IAM role that Amazon SageMaker can assume to access model
-     * artifacts and container images. </p>
+     * artifacts and container images, and manage Amazon SageMaker Inference endpoints
+     * for model deployment. </p>
      */
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
      * <p> The ARN of the IAM role that Amazon SageMaker can assume to access model
-     * artifacts and container images. </p>
+     * artifacts and container images, and manage Amazon SageMaker Inference endpoints
+     * for model deployment. </p>
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
      * <p> The ARN of the IAM role that Amazon SageMaker can assume to access model
-     * artifacts and container images. </p>
+     * artifacts and container images, and manage Amazon SageMaker Inference endpoints
+     * for model deployment. </p>
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
 
     /**
      * <p> The ARN of the IAM role that Amazon SageMaker can assume to access model
-     * artifacts and container images. </p>
+     * artifacts and container images, and manage Amazon SageMaker Inference endpoints
+     * for model deployment. </p>
      */
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
 
     /**
      * <p> The ARN of the IAM role that Amazon SageMaker can assume to access model
-     * artifacts and container images. </p>
+     * artifacts and container images, and manage Amazon SageMaker Inference endpoints
+     * for model deployment. </p>
      */
     inline CreateInferenceExperimentRequest& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
     /**
      * <p> The ARN of the IAM role that Amazon SageMaker can assume to access model
-     * artifacts and container images. </p>
+     * artifacts and container images, and manage Amazon SageMaker Inference endpoints
+     * for model deployment. </p>
      */
     inline CreateInferenceExperimentRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
      * <p> The ARN of the IAM role that Amazon SageMaker can assume to access model
-     * artifacts and container images. </p>
+     * artifacts and container images, and manage Amazon SageMaker Inference endpoints
+     * for model deployment. </p>
      */
     inline CreateInferenceExperimentRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 
@@ -320,113 +328,119 @@ namespace Model
 
 
     /**
-     * <p> Array of <code>ModelVariantConfigSummary</code> objects. There is one for
-     * each variant in the inference experiment. Each
-     * <code>ModelVariantConfigSummary</code> object in the array describes the
-     * infrastructure configuration for the corresponding variant. </p>
+     * <p> An array of <code>ModelVariantConfig</code> objects. There is one for each
+     * variant in the inference experiment. Each <code>ModelVariantConfig</code> object
+     * in the array describes the infrastructure configuration for the corresponding
+     * variant. </p>
      */
     inline const Aws::Vector<ModelVariantConfig>& GetModelVariants() const{ return m_modelVariants; }
 
     /**
-     * <p> Array of <code>ModelVariantConfigSummary</code> objects. There is one for
-     * each variant in the inference experiment. Each
-     * <code>ModelVariantConfigSummary</code> object in the array describes the
-     * infrastructure configuration for the corresponding variant. </p>
+     * <p> An array of <code>ModelVariantConfig</code> objects. There is one for each
+     * variant in the inference experiment. Each <code>ModelVariantConfig</code> object
+     * in the array describes the infrastructure configuration for the corresponding
+     * variant. </p>
      */
     inline bool ModelVariantsHasBeenSet() const { return m_modelVariantsHasBeenSet; }
 
     /**
-     * <p> Array of <code>ModelVariantConfigSummary</code> objects. There is one for
-     * each variant in the inference experiment. Each
-     * <code>ModelVariantConfigSummary</code> object in the array describes the
-     * infrastructure configuration for the corresponding variant. </p>
+     * <p> An array of <code>ModelVariantConfig</code> objects. There is one for each
+     * variant in the inference experiment. Each <code>ModelVariantConfig</code> object
+     * in the array describes the infrastructure configuration for the corresponding
+     * variant. </p>
      */
     inline void SetModelVariants(const Aws::Vector<ModelVariantConfig>& value) { m_modelVariantsHasBeenSet = true; m_modelVariants = value; }
 
     /**
-     * <p> Array of <code>ModelVariantConfigSummary</code> objects. There is one for
-     * each variant in the inference experiment. Each
-     * <code>ModelVariantConfigSummary</code> object in the array describes the
-     * infrastructure configuration for the corresponding variant. </p>
+     * <p> An array of <code>ModelVariantConfig</code> objects. There is one for each
+     * variant in the inference experiment. Each <code>ModelVariantConfig</code> object
+     * in the array describes the infrastructure configuration for the corresponding
+     * variant. </p>
      */
     inline void SetModelVariants(Aws::Vector<ModelVariantConfig>&& value) { m_modelVariantsHasBeenSet = true; m_modelVariants = std::move(value); }
 
     /**
-     * <p> Array of <code>ModelVariantConfigSummary</code> objects. There is one for
-     * each variant in the inference experiment. Each
-     * <code>ModelVariantConfigSummary</code> object in the array describes the
-     * infrastructure configuration for the corresponding variant. </p>
+     * <p> An array of <code>ModelVariantConfig</code> objects. There is one for each
+     * variant in the inference experiment. Each <code>ModelVariantConfig</code> object
+     * in the array describes the infrastructure configuration for the corresponding
+     * variant. </p>
      */
     inline CreateInferenceExperimentRequest& WithModelVariants(const Aws::Vector<ModelVariantConfig>& value) { SetModelVariants(value); return *this;}
 
     /**
-     * <p> Array of <code>ModelVariantConfigSummary</code> objects. There is one for
-     * each variant in the inference experiment. Each
-     * <code>ModelVariantConfigSummary</code> object in the array describes the
-     * infrastructure configuration for the corresponding variant. </p>
+     * <p> An array of <code>ModelVariantConfig</code> objects. There is one for each
+     * variant in the inference experiment. Each <code>ModelVariantConfig</code> object
+     * in the array describes the infrastructure configuration for the corresponding
+     * variant. </p>
      */
     inline CreateInferenceExperimentRequest& WithModelVariants(Aws::Vector<ModelVariantConfig>&& value) { SetModelVariants(std::move(value)); return *this;}
 
     /**
-     * <p> Array of <code>ModelVariantConfigSummary</code> objects. There is one for
-     * each variant in the inference experiment. Each
-     * <code>ModelVariantConfigSummary</code> object in the array describes the
-     * infrastructure configuration for the corresponding variant. </p>
+     * <p> An array of <code>ModelVariantConfig</code> objects. There is one for each
+     * variant in the inference experiment. Each <code>ModelVariantConfig</code> object
+     * in the array describes the infrastructure configuration for the corresponding
+     * variant. </p>
      */
     inline CreateInferenceExperimentRequest& AddModelVariants(const ModelVariantConfig& value) { m_modelVariantsHasBeenSet = true; m_modelVariants.push_back(value); return *this; }
 
     /**
-     * <p> Array of <code>ModelVariantConfigSummary</code> objects. There is one for
-     * each variant in the inference experiment. Each
-     * <code>ModelVariantConfigSummary</code> object in the array describes the
-     * infrastructure configuration for the corresponding variant. </p>
+     * <p> An array of <code>ModelVariantConfig</code> objects. There is one for each
+     * variant in the inference experiment. Each <code>ModelVariantConfig</code> object
+     * in the array describes the infrastructure configuration for the corresponding
+     * variant. </p>
      */
     inline CreateInferenceExperimentRequest& AddModelVariants(ModelVariantConfig&& value) { m_modelVariantsHasBeenSet = true; m_modelVariants.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p> The storage configuration for the inference experiment. This is an optional
-     * parameter that you can use for data capture. For more information, see <a
+     * <p> The Amazon S3 location and configuration for storing inference request and
+     * response data. </p> <p> This is an optional parameter that you can use for data
+     * capture. For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-data-capture.html">Capture
      * data</a>. </p>
      */
     inline const InferenceExperimentDataStorageConfig& GetDataStorageConfig() const{ return m_dataStorageConfig; }
 
     /**
-     * <p> The storage configuration for the inference experiment. This is an optional
-     * parameter that you can use for data capture. For more information, see <a
+     * <p> The Amazon S3 location and configuration for storing inference request and
+     * response data. </p> <p> This is an optional parameter that you can use for data
+     * capture. For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-data-capture.html">Capture
      * data</a>. </p>
      */
     inline bool DataStorageConfigHasBeenSet() const { return m_dataStorageConfigHasBeenSet; }
 
     /**
-     * <p> The storage configuration for the inference experiment. This is an optional
-     * parameter that you can use for data capture. For more information, see <a
+     * <p> The Amazon S3 location and configuration for storing inference request and
+     * response data. </p> <p> This is an optional parameter that you can use for data
+     * capture. For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-data-capture.html">Capture
      * data</a>. </p>
      */
     inline void SetDataStorageConfig(const InferenceExperimentDataStorageConfig& value) { m_dataStorageConfigHasBeenSet = true; m_dataStorageConfig = value; }
 
     /**
-     * <p> The storage configuration for the inference experiment. This is an optional
-     * parameter that you can use for data capture. For more information, see <a
+     * <p> The Amazon S3 location and configuration for storing inference request and
+     * response data. </p> <p> This is an optional parameter that you can use for data
+     * capture. For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-data-capture.html">Capture
      * data</a>. </p>
      */
     inline void SetDataStorageConfig(InferenceExperimentDataStorageConfig&& value) { m_dataStorageConfigHasBeenSet = true; m_dataStorageConfig = std::move(value); }
 
     /**
-     * <p> The storage configuration for the inference experiment. This is an optional
-     * parameter that you can use for data capture. For more information, see <a
+     * <p> The Amazon S3 location and configuration for storing inference request and
+     * response data. </p> <p> This is an optional parameter that you can use for data
+     * capture. For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-data-capture.html">Capture
      * data</a>. </p>
      */
     inline CreateInferenceExperimentRequest& WithDataStorageConfig(const InferenceExperimentDataStorageConfig& value) { SetDataStorageConfig(value); return *this;}
 
     /**
-     * <p> The storage configuration for the inference experiment. This is an optional
-     * parameter that you can use for data capture. For more information, see <a
+     * <p> The Amazon S3 location and configuration for storing inference request and
+     * response data. </p> <p> This is an optional parameter that you can use for data
+     * capture. For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-data-capture.html">Capture
      * data</a>. </p>
      */
@@ -434,38 +448,56 @@ namespace Model
 
 
     /**
-     * <p> Shows which variant is the production variant and which variant is the
-     * shadow variant. For the shadow variant, also shows the sampling percentage. </p>
+     * <p> The configuration of <code>ShadowMode</code> inference experiment type. Use
+     * this field to specify a production variant which takes all the inference
+     * requests, and a shadow variant to which Amazon SageMaker replicates a percentage
+     * of the inference requests. For the shadow variant also specify the percentage of
+     * requests that Amazon SageMaker replicates. </p>
      */
     inline const ShadowModeConfig& GetShadowModeConfig() const{ return m_shadowModeConfig; }
 
     /**
-     * <p> Shows which variant is the production variant and which variant is the
-     * shadow variant. For the shadow variant, also shows the sampling percentage. </p>
+     * <p> The configuration of <code>ShadowMode</code> inference experiment type. Use
+     * this field to specify a production variant which takes all the inference
+     * requests, and a shadow variant to which Amazon SageMaker replicates a percentage
+     * of the inference requests. For the shadow variant also specify the percentage of
+     * requests that Amazon SageMaker replicates. </p>
      */
     inline bool ShadowModeConfigHasBeenSet() const { return m_shadowModeConfigHasBeenSet; }
 
     /**
-     * <p> Shows which variant is the production variant and which variant is the
-     * shadow variant. For the shadow variant, also shows the sampling percentage. </p>
+     * <p> The configuration of <code>ShadowMode</code> inference experiment type. Use
+     * this field to specify a production variant which takes all the inference
+     * requests, and a shadow variant to which Amazon SageMaker replicates a percentage
+     * of the inference requests. For the shadow variant also specify the percentage of
+     * requests that Amazon SageMaker replicates. </p>
      */
     inline void SetShadowModeConfig(const ShadowModeConfig& value) { m_shadowModeConfigHasBeenSet = true; m_shadowModeConfig = value; }
 
     /**
-     * <p> Shows which variant is the production variant and which variant is the
-     * shadow variant. For the shadow variant, also shows the sampling percentage. </p>
+     * <p> The configuration of <code>ShadowMode</code> inference experiment type. Use
+     * this field to specify a production variant which takes all the inference
+     * requests, and a shadow variant to which Amazon SageMaker replicates a percentage
+     * of the inference requests. For the shadow variant also specify the percentage of
+     * requests that Amazon SageMaker replicates. </p>
      */
     inline void SetShadowModeConfig(ShadowModeConfig&& value) { m_shadowModeConfigHasBeenSet = true; m_shadowModeConfig = std::move(value); }
 
     /**
-     * <p> Shows which variant is the production variant and which variant is the
-     * shadow variant. For the shadow variant, also shows the sampling percentage. </p>
+     * <p> The configuration of <code>ShadowMode</code> inference experiment type. Use
+     * this field to specify a production variant which takes all the inference
+     * requests, and a shadow variant to which Amazon SageMaker replicates a percentage
+     * of the inference requests. For the shadow variant also specify the percentage of
+     * requests that Amazon SageMaker replicates. </p>
      */
     inline CreateInferenceExperimentRequest& WithShadowModeConfig(const ShadowModeConfig& value) { SetShadowModeConfig(value); return *this;}
 
     /**
-     * <p> Shows which variant is the production variant and which variant is the
-     * shadow variant. For the shadow variant, also shows the sampling percentage. </p>
+     * <p> The configuration of <code>ShadowMode</code> inference experiment type. Use
+     * this field to specify a production variant which takes all the inference
+     * requests, and a shadow variant to which Amazon SageMaker replicates a percentage
+     * of the inference requests. For the shadow variant also specify the percentage of
+     * requests that Amazon SageMaker replicates. </p>
      */
     inline CreateInferenceExperimentRequest& WithShadowModeConfig(ShadowModeConfig&& value) { SetShadowModeConfig(std::move(value)); return *this;}
 

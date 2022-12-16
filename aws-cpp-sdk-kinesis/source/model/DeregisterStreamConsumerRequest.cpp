@@ -54,4 +54,19 @@ Aws::Http::HeaderValueCollection DeregisterStreamConsumerRequest::GetRequestSpec
 
 
 
+DeregisterStreamConsumerRequest::EndpointParameters DeregisterStreamConsumerRequest::GetEndpointContextParams() const
+{
+    EndpointParameters parameters;
+    // Static context parameters
+    parameters.emplace_back(Aws::String("OperationType"), "control", Aws::Endpoint::EndpointParameter::ParameterOrigin::STATIC_CONTEXT);
+    // Operation context parameters
+    if (StreamARNHasBeenSet()) {
+        parameters.emplace_back(Aws::String("StreamARN"), this->GetStreamARN(), Aws::Endpoint::EndpointParameter::ParameterOrigin::OPERATION_CONTEXT);
+    }
+    if (ConsumerARNHasBeenSet()) {
+        parameters.emplace_back(Aws::String("ConsumerARN"), this->GetConsumerARN(), Aws::Endpoint::EndpointParameter::ParameterOrigin::OPERATION_CONTEXT);
+    }
+    return parameters;
+}
+
 

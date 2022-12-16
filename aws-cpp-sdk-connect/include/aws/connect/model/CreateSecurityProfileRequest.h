@@ -398,55 +398,73 @@ namespace Model
 
     /**
      * <p>The list of resources that a security profile applies tag restrictions to in
-     * Amazon Connect.</p>
+     * Amazon Connect. Following are acceptable ResourceNames: <code>User</code> |
+     * <code>SecurityProfile</code> | <code>Queue</code> | <code>RoutingProfile</code>
+     * </p>
      */
     inline const Aws::Vector<Aws::String>& GetTagRestrictedResources() const{ return m_tagRestrictedResources; }
 
     /**
      * <p>The list of resources that a security profile applies tag restrictions to in
-     * Amazon Connect.</p>
+     * Amazon Connect. Following are acceptable ResourceNames: <code>User</code> |
+     * <code>SecurityProfile</code> | <code>Queue</code> | <code>RoutingProfile</code>
+     * </p>
      */
     inline bool TagRestrictedResourcesHasBeenSet() const { return m_tagRestrictedResourcesHasBeenSet; }
 
     /**
      * <p>The list of resources that a security profile applies tag restrictions to in
-     * Amazon Connect.</p>
+     * Amazon Connect. Following are acceptable ResourceNames: <code>User</code> |
+     * <code>SecurityProfile</code> | <code>Queue</code> | <code>RoutingProfile</code>
+     * </p>
      */
     inline void SetTagRestrictedResources(const Aws::Vector<Aws::String>& value) { m_tagRestrictedResourcesHasBeenSet = true; m_tagRestrictedResources = value; }
 
     /**
      * <p>The list of resources that a security profile applies tag restrictions to in
-     * Amazon Connect.</p>
+     * Amazon Connect. Following are acceptable ResourceNames: <code>User</code> |
+     * <code>SecurityProfile</code> | <code>Queue</code> | <code>RoutingProfile</code>
+     * </p>
      */
     inline void SetTagRestrictedResources(Aws::Vector<Aws::String>&& value) { m_tagRestrictedResourcesHasBeenSet = true; m_tagRestrictedResources = std::move(value); }
 
     /**
      * <p>The list of resources that a security profile applies tag restrictions to in
-     * Amazon Connect.</p>
+     * Amazon Connect. Following are acceptable ResourceNames: <code>User</code> |
+     * <code>SecurityProfile</code> | <code>Queue</code> | <code>RoutingProfile</code>
+     * </p>
      */
     inline CreateSecurityProfileRequest& WithTagRestrictedResources(const Aws::Vector<Aws::String>& value) { SetTagRestrictedResources(value); return *this;}
 
     /**
      * <p>The list of resources that a security profile applies tag restrictions to in
-     * Amazon Connect.</p>
+     * Amazon Connect. Following are acceptable ResourceNames: <code>User</code> |
+     * <code>SecurityProfile</code> | <code>Queue</code> | <code>RoutingProfile</code>
+     * </p>
      */
     inline CreateSecurityProfileRequest& WithTagRestrictedResources(Aws::Vector<Aws::String>&& value) { SetTagRestrictedResources(std::move(value)); return *this;}
 
     /**
      * <p>The list of resources that a security profile applies tag restrictions to in
-     * Amazon Connect.</p>
+     * Amazon Connect. Following are acceptable ResourceNames: <code>User</code> |
+     * <code>SecurityProfile</code> | <code>Queue</code> | <code>RoutingProfile</code>
+     * </p>
      */
     inline CreateSecurityProfileRequest& AddTagRestrictedResources(const Aws::String& value) { m_tagRestrictedResourcesHasBeenSet = true; m_tagRestrictedResources.push_back(value); return *this; }
 
     /**
      * <p>The list of resources that a security profile applies tag restrictions to in
-     * Amazon Connect.</p>
+     * Amazon Connect. Following are acceptable ResourceNames: <code>User</code> |
+     * <code>SecurityProfile</code> | <code>Queue</code> | <code>RoutingProfile</code>
+     * </p>
      */
     inline CreateSecurityProfileRequest& AddTagRestrictedResources(Aws::String&& value) { m_tagRestrictedResourcesHasBeenSet = true; m_tagRestrictedResources.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The list of resources that a security profile applies tag restrictions to in
-     * Amazon Connect.</p>
+     * Amazon Connect. Following are acceptable ResourceNames: <code>User</code> |
+     * <code>SecurityProfile</code> | <code>Queue</code> | <code>RoutingProfile</code>
+     * </p>
      */
     inline CreateSecurityProfileRequest& AddTagRestrictedResources(const char* value) { m_tagRestrictedResourcesHasBeenSet = true; m_tagRestrictedResources.push_back(value); return *this; }
 

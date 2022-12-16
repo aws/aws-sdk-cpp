@@ -25,7 +25,9 @@ NetworkBinding::NetworkBinding() :
     m_hostPort(0),
     m_hostPortHasBeenSet(false),
     m_protocol(TransportProtocol::NOT_SET),
-    m_protocolHasBeenSet(false)
+    m_protocolHasBeenSet(false),
+    m_containerPortRangeHasBeenSet(false),
+    m_hostPortRangeHasBeenSet(false)
 {
 }
 
@@ -36,7 +38,9 @@ NetworkBinding::NetworkBinding(JsonView jsonValue) :
     m_hostPort(0),
     m_hostPortHasBeenSet(false),
     m_protocol(TransportProtocol::NOT_SET),
-    m_protocolHasBeenSet(false)
+    m_protocolHasBeenSet(false),
+    m_containerPortRangeHasBeenSet(false),
+    m_hostPortRangeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -71,6 +75,20 @@ NetworkBinding& NetworkBinding::operator =(JsonView jsonValue)
     m_protocolHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("containerPortRange"))
+  {
+    m_containerPortRange = jsonValue.GetString("containerPortRange");
+
+    m_containerPortRangeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("hostPortRange"))
+  {
+    m_hostPortRange = jsonValue.GetString("hostPortRange");
+
+    m_hostPortRangeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -99,6 +117,18 @@ JsonValue NetworkBinding::Jsonize() const
   if(m_protocolHasBeenSet)
   {
    payload.WithString("protocol", TransportProtocolMapper::GetNameForTransportProtocol(m_protocol));
+  }
+
+  if(m_containerPortRangeHasBeenSet)
+  {
+   payload.WithString("containerPortRange", m_containerPortRange);
+
+  }
+
+  if(m_hostPortRangeHasBeenSet)
+  {
+   payload.WithString("hostPortRange", m_hostPortRange);
+
   }
 
   return payload;

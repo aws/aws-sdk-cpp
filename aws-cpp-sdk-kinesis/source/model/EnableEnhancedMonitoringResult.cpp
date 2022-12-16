@@ -52,6 +52,12 @@ EnableEnhancedMonitoringResult& EnableEnhancedMonitoringResult::operator =(const
     }
   }
 
+  if(jsonValue.ValueExists("StreamARN"))
+  {
+    m_streamARN = jsonValue.GetString("StreamARN");
+
+  }
+
 
 
   return *this;

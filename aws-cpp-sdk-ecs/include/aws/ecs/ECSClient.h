@@ -627,8 +627,11 @@ namespace ECS
          * condition key in your IAM policy to refine the conditions for the policy
          * statement, for example limit the actions to a specific cluster, you receive an
          * <code>AccessDeniedException</code> when there is a mismatch between the
-         * condition key value and the corresponding parameter value.</p><p><h3>See
-         * Also:</h3>   <a
+         * condition key value and the corresponding parameter value.</p> <p>For
+         * information about required permissions and considerations, see <a
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-exec.htm">Using
+         * Amazon ECS Exec for debugging</a> in the <i>Amazon ECS Developer Guide</i>.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ExecuteCommand">AWS
          * API Reference</a></p>
          */
