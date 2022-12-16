@@ -29,12 +29,14 @@ namespace Aws
 
         Aws::Vector<void*> OnRequestStarted(const Aws::String& serviceName, const Aws::String& requestName, const std::shared_ptr<const Aws::Http::HttpRequest>& request)
         {
-            assert(s_monitors);
             Aws::Vector<void*> contexts;
-            contexts.reserve(s_monitors->size());
-            for (const auto& interface: *s_monitors)
+            if (s_monitors)
             {
-                contexts.emplace_back(interface->OnRequestStarted(serviceName, requestName, request));
+                contexts.reserve(s_monitors->size());
+                for (const auto& interface: *s_monitors)
+                {
+                    contexts.emplace_back(interface->OnRequestStarted(serviceName, requestName, request));
+                }
             }
             return contexts;
         }
@@ -42,48 +44,56 @@ namespace Aws
         void OnRequestSucceeded(const Aws::String& serviceName, const Aws::String& requestName, const std::shared_ptr<const Aws::Http::HttpRequest>& request,
                 const Aws::Client::HttpResponseOutcome& outcome, const CoreMetricsCollection& metricsFromCore, const Aws::Vector<void*>& contexts)
         {
-            assert(s_monitors);
-            assert(contexts.size() == s_monitors->size());
-            size_t index = 0;
-            for (const auto& interface: *s_monitors)
+            if (s_monitors)
             {
-                interface->OnRequestSucceeded(serviceName, requestName, request, outcome, metricsFromCore, contexts[index++]);
+                assert(contexts.size() == s_monitors->size());
+                size_t index = 0;
+                for (const auto& interface: *s_monitors)
+                {
+                    interface->OnRequestSucceeded(serviceName, requestName, request, outcome, metricsFromCore, contexts[index++]);
+                }
             }
         }
 
         void OnRequestFailed(const Aws::String& serviceName, const Aws::String& requestName, const std::shared_ptr<const Aws::Http::HttpRequest>& request,
                 const Aws::Client::HttpResponseOutcome& outcome, const CoreMetricsCollection& metricsFromCore, const Aws::Vector<void*>& contexts)
         {
-            assert(s_monitors);
-            assert(contexts.size() == s_monitors->size());
-            size_t index = 0;
-            for (const auto& interface: *s_monitors)
+            if (s_monitors)
             {
-                interface->OnRequestFailed(serviceName, requestName, request, outcome, metricsFromCore, contexts[index++]);
+                assert(contexts.size() == s_monitors->size());
+                size_t index = 0;
+                for (const auto& interface: *s_monitors)
+                {
+                    interface->OnRequestFailed(serviceName, requestName, request, outcome, metricsFromCore, contexts[index++]);
+                }
             }
         }
 
         void OnRequestRetry(const Aws::String& serviceName, const Aws::String& requestName,
                 const std::shared_ptr<const Aws::Http::HttpRequest>& request, const Aws::Vector<void*>& contexts)
         {
-            assert(s_monitors);
-            assert(contexts.size() == s_monitors->size());
-            size_t index = 0;
-            for (const auto& interface: *s_monitors)
+            if (s_monitors)
             {
-                interface->OnRequestRetry(serviceName, requestName, request, contexts[index++]);
+                assert(contexts.size() == s_monitors->size());
+                size_t index = 0;
+                for (const auto& interface: *s_monitors)
+                {
+                    interface->OnRequestRetry(serviceName, requestName, request, contexts[index++]);
+                }
             }
         }
 
         void OnFinish(const Aws::String& serviceName, const Aws::String& requestName,
                 const std::shared_ptr<const Aws::Http::HttpRequest>& request, const Aws::Vector<void*>& contexts)
         {
-            assert(s_monitors);
-            assert(contexts.size() == s_monitors->size());
-            size_t index = 0;
-            for (const auto& interface: *s_monitors)
+            if (s_monitors)
             {
-                interface->OnFinish(serviceName, requestName, request, contexts[index++]);
+                assert(contexts.size() == s_monitors->size());
+                size_t index = 0;
+                for (const auto& interface: *s_monitors)
+                {
+                    interface->OnFinish(serviceName, requestName, request, contexts[index++]);
+                }
             }
         }
 
