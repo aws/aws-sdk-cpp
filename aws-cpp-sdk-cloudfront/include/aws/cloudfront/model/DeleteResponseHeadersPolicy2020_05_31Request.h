@@ -93,7 +93,7 @@ namespace Model
 
     /**
      * <p>The version of the response headers policy that you are deleting.</p> <p>The
-     * version is the response headers policy’s <code>ETag</code> value, which you can
+     * version is the response headers policy's <code>ETag</code> value, which you can
      * get using <code>ListResponseHeadersPolicies</code>,
      * <code>GetResponseHeadersPolicy</code>, or
      * <code>GetResponseHeadersPolicyConfig</code>.</p>
@@ -102,7 +102,7 @@ namespace Model
 
     /**
      * <p>The version of the response headers policy that you are deleting.</p> <p>The
-     * version is the response headers policy’s <code>ETag</code> value, which you can
+     * version is the response headers policy's <code>ETag</code> value, which you can
      * get using <code>ListResponseHeadersPolicies</code>,
      * <code>GetResponseHeadersPolicy</code>, or
      * <code>GetResponseHeadersPolicyConfig</code>.</p>
@@ -111,7 +111,7 @@ namespace Model
 
     /**
      * <p>The version of the response headers policy that you are deleting.</p> <p>The
-     * version is the response headers policy’s <code>ETag</code> value, which you can
+     * version is the response headers policy's <code>ETag</code> value, which you can
      * get using <code>ListResponseHeadersPolicies</code>,
      * <code>GetResponseHeadersPolicy</code>, or
      * <code>GetResponseHeadersPolicyConfig</code>.</p>
@@ -120,7 +120,7 @@ namespace Model
 
     /**
      * <p>The version of the response headers policy that you are deleting.</p> <p>The
-     * version is the response headers policy’s <code>ETag</code> value, which you can
+     * version is the response headers policy's <code>ETag</code> value, which you can
      * get using <code>ListResponseHeadersPolicies</code>,
      * <code>GetResponseHeadersPolicy</code>, or
      * <code>GetResponseHeadersPolicyConfig</code>.</p>
@@ -129,7 +129,7 @@ namespace Model
 
     /**
      * <p>The version of the response headers policy that you are deleting.</p> <p>The
-     * version is the response headers policy’s <code>ETag</code> value, which you can
+     * version is the response headers policy's <code>ETag</code> value, which you can
      * get using <code>ListResponseHeadersPolicies</code>,
      * <code>GetResponseHeadersPolicy</code>, or
      * <code>GetResponseHeadersPolicyConfig</code>.</p>
@@ -138,7 +138,7 @@ namespace Model
 
     /**
      * <p>The version of the response headers policy that you are deleting.</p> <p>The
-     * version is the response headers policy’s <code>ETag</code> value, which you can
+     * version is the response headers policy's <code>ETag</code> value, which you can
      * get using <code>ListResponseHeadersPolicies</code>,
      * <code>GetResponseHeadersPolicy</code>, or
      * <code>GetResponseHeadersPolicyConfig</code>.</p>
@@ -147,7 +147,7 @@ namespace Model
 
     /**
      * <p>The version of the response headers policy that you are deleting.</p> <p>The
-     * version is the response headers policy’s <code>ETag</code> value, which you can
+     * version is the response headers policy's <code>ETag</code> value, which you can
      * get using <code>ListResponseHeadersPolicies</code>,
      * <code>GetResponseHeadersPolicy</code>, or
      * <code>GetResponseHeadersPolicyConfig</code>.</p>
@@ -156,7 +156,7 @@ namespace Model
 
     /**
      * <p>The version of the response headers policy that you are deleting.</p> <p>The
-     * version is the response headers policy’s <code>ETag</code> value, which you can
+     * version is the response headers policy's <code>ETag</code> value, which you can
      * get using <code>ListResponseHeadersPolicies</code>,
      * <code>GetResponseHeadersPolicy</code>, or
      * <code>GetResponseHeadersPolicyConfig</code>.</p>

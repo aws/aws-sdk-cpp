@@ -27,7 +27,9 @@ HyperParameterTuningJobConfig::HyperParameterTuningJobConfig() :
     m_parameterRangesHasBeenSet(false),
     m_trainingJobEarlyStoppingType(TrainingJobEarlyStoppingType::NOT_SET),
     m_trainingJobEarlyStoppingTypeHasBeenSet(false),
-    m_tuningJobCompletionCriteriaHasBeenSet(false)
+    m_tuningJobCompletionCriteriaHasBeenSet(false),
+    m_randomSeed(0),
+    m_randomSeedHasBeenSet(false)
 {
 }
 
@@ -40,7 +42,9 @@ HyperParameterTuningJobConfig::HyperParameterTuningJobConfig(JsonView jsonValue)
     m_parameterRangesHasBeenSet(false),
     m_trainingJobEarlyStoppingType(TrainingJobEarlyStoppingType::NOT_SET),
     m_trainingJobEarlyStoppingTypeHasBeenSet(false),
-    m_tuningJobCompletionCriteriaHasBeenSet(false)
+    m_tuningJobCompletionCriteriaHasBeenSet(false),
+    m_randomSeed(0),
+    m_randomSeedHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -96,6 +100,13 @@ HyperParameterTuningJobConfig& HyperParameterTuningJobConfig::operator =(JsonVie
     m_tuningJobCompletionCriteriaHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("RandomSeed"))
+  {
+    m_randomSeed = jsonValue.GetInteger("RandomSeed");
+
+    m_randomSeedHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -140,6 +151,12 @@ JsonValue HyperParameterTuningJobConfig::Jsonize() const
   if(m_tuningJobCompletionCriteriaHasBeenSet)
   {
    payload.WithObject("TuningJobCompletionCriteria", m_tuningJobCompletionCriteria.Jsonize());
+
+  }
+
+  if(m_randomSeedHasBeenSet)
+  {
+   payload.WithInteger("RandomSeed", m_randomSeed);
 
   }
 

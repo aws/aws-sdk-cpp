@@ -40,42 +40,42 @@ namespace Model
 
 
     /**
-     * <p>The DNS name of the Amazon S3 origin. </p>
+     * <p>The DNS name of the Amazon S3 origin.</p>
      */
     inline const Aws::String& GetDomainName() const{ return m_domainName; }
 
     /**
-     * <p>The DNS name of the Amazon S3 origin. </p>
+     * <p>The DNS name of the Amazon S3 origin.</p>
      */
     inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
 
     /**
-     * <p>The DNS name of the Amazon S3 origin. </p>
+     * <p>The DNS name of the Amazon S3 origin.</p>
      */
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
 
     /**
-     * <p>The DNS name of the Amazon S3 origin. </p>
+     * <p>The DNS name of the Amazon S3 origin.</p>
      */
     inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
 
     /**
-     * <p>The DNS name of the Amazon S3 origin. </p>
+     * <p>The DNS name of the Amazon S3 origin.</p>
      */
     inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
 
     /**
-     * <p>The DNS name of the Amazon S3 origin. </p>
+     * <p>The DNS name of the Amazon S3 origin.</p>
      */
     inline S3Origin& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
 
     /**
-     * <p>The DNS name of the Amazon S3 origin. </p>
+     * <p>The DNS name of the Amazon S3 origin.</p>
      */
     inline S3Origin& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
 
     /**
-     * <p>The DNS name of the Amazon S3 origin. </p>
+     * <p>The DNS name of the Amazon S3 origin.</p>
      */
     inline S3Origin& WithDomainName(const char* value) { SetDomainName(value); return *this;}
 

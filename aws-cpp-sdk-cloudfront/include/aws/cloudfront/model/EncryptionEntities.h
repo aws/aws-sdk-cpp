@@ -25,7 +25,7 @@ namespace Model
 
   /**
    * <p>Complex data type for field-level encryption profiles that includes all of
-   * the encryption entities. </p><p><h3>See Also:</h3>   <a
+   * the encryption entities.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/EncryptionEntities">AWS
    * API Reference</a></p>
    */
@@ -41,25 +41,25 @@ namespace Model
 
     /**
      * <p>Number of field pattern items in a field-level encryption content
-     * type-profile mapping. </p>
+     * type-profile mapping.</p>
      */
     inline int GetQuantity() const{ return m_quantity; }
 
     /**
      * <p>Number of field pattern items in a field-level encryption content
-     * type-profile mapping. </p>
+     * type-profile mapping.</p>
      */
     inline bool QuantityHasBeenSet() const { return m_quantityHasBeenSet; }
 
     /**
      * <p>Number of field pattern items in a field-level encryption content
-     * type-profile mapping. </p>
+     * type-profile mapping.</p>
      */
     inline void SetQuantity(int value) { m_quantityHasBeenSet = true; m_quantity = value; }
 
     /**
      * <p>Number of field pattern items in a field-level encryption content
-     * type-profile mapping. </p>
+     * type-profile mapping.</p>
      */
     inline EncryptionEntities& WithQuantity(int value) { SetQuantity(value); return *this;}
 

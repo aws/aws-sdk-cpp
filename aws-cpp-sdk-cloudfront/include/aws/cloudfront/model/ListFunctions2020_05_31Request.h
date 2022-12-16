@@ -42,64 +42,64 @@ namespace Model
     /**
      * <p>Use this field when paginating results to indicate where to begin in your
      * list of functions. The response includes functions in the list that occur after
-     * the marker. To get the next page of the list, set this field’s value to the
-     * value of <code>NextMarker</code> from the current page’s response.</p>
+     * the marker. To get the next page of the list, set this field's value to the
+     * value of <code>NextMarker</code> from the current page's response.</p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
 
     /**
      * <p>Use this field when paginating results to indicate where to begin in your
      * list of functions. The response includes functions in the list that occur after
-     * the marker. To get the next page of the list, set this field’s value to the
-     * value of <code>NextMarker</code> from the current page’s response.</p>
+     * the marker. To get the next page of the list, set this field's value to the
+     * value of <code>NextMarker</code> from the current page's response.</p>
      */
     inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
 
     /**
      * <p>Use this field when paginating results to indicate where to begin in your
      * list of functions. The response includes functions in the list that occur after
-     * the marker. To get the next page of the list, set this field’s value to the
-     * value of <code>NextMarker</code> from the current page’s response.</p>
+     * the marker. To get the next page of the list, set this field's value to the
+     * value of <code>NextMarker</code> from the current page's response.</p>
      */
     inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
 
     /**
      * <p>Use this field when paginating results to indicate where to begin in your
      * list of functions. The response includes functions in the list that occur after
-     * the marker. To get the next page of the list, set this field’s value to the
-     * value of <code>NextMarker</code> from the current page’s response.</p>
+     * the marker. To get the next page of the list, set this field's value to the
+     * value of <code>NextMarker</code> from the current page's response.</p>
      */
     inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
 
     /**
      * <p>Use this field when paginating results to indicate where to begin in your
      * list of functions. The response includes functions in the list that occur after
-     * the marker. To get the next page of the list, set this field’s value to the
-     * value of <code>NextMarker</code> from the current page’s response.</p>
+     * the marker. To get the next page of the list, set this field's value to the
+     * value of <code>NextMarker</code> from the current page's response.</p>
      */
     inline void SetMarker(const char* value) { m_markerHasBeenSet = true; m_marker.assign(value); }
 
     /**
      * <p>Use this field when paginating results to indicate where to begin in your
      * list of functions. The response includes functions in the list that occur after
-     * the marker. To get the next page of the list, set this field’s value to the
-     * value of <code>NextMarker</code> from the current page’s response.</p>
+     * the marker. To get the next page of the list, set this field's value to the
+     * value of <code>NextMarker</code> from the current page's response.</p>
      */
     inline ListFunctions2020_05_31Request& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
 
     /**
      * <p>Use this field when paginating results to indicate where to begin in your
      * list of functions. The response includes functions in the list that occur after
-     * the marker. To get the next page of the list, set this field’s value to the
-     * value of <code>NextMarker</code> from the current page’s response.</p>
+     * the marker. To get the next page of the list, set this field's value to the
+     * value of <code>NextMarker</code> from the current page's response.</p>
      */
     inline ListFunctions2020_05_31Request& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
      * <p>Use this field when paginating results to indicate where to begin in your
      * list of functions. The response includes functions in the list that occur after
-     * the marker. To get the next page of the list, set this field’s value to the
-     * value of <code>NextMarker</code> from the current page’s response.</p>
+     * the marker. To get the next page of the list, set this field's value to the
+     * value of <code>NextMarker</code> from the current page's response.</p>
      */
     inline ListFunctions2020_05_31Request& WithMarker(const char* value) { SetMarker(value); return *this;}
 

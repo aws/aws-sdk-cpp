@@ -42,33 +42,33 @@ namespace Model
 
 
     /**
-     * <p>A flag that specifies whether Origin Shield is enabled.</p> <p>When it’s
+     * <p>A flag that specifies whether Origin Shield is enabled.</p> <p>When it's
      * enabled, CloudFront routes all requests through Origin Shield, which can help
-     * protect your origin. When it’s disabled, CloudFront might send requests directly
+     * protect your origin. When it's disabled, CloudFront might send requests directly
      * to your origin from multiple edge locations or regional edge caches.</p>
      */
     inline bool GetEnabled() const{ return m_enabled; }
 
     /**
-     * <p>A flag that specifies whether Origin Shield is enabled.</p> <p>When it’s
+     * <p>A flag that specifies whether Origin Shield is enabled.</p> <p>When it's
      * enabled, CloudFront routes all requests through Origin Shield, which can help
-     * protect your origin. When it’s disabled, CloudFront might send requests directly
+     * protect your origin. When it's disabled, CloudFront might send requests directly
      * to your origin from multiple edge locations or regional edge caches.</p>
      */
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
 
     /**
-     * <p>A flag that specifies whether Origin Shield is enabled.</p> <p>When it’s
+     * <p>A flag that specifies whether Origin Shield is enabled.</p> <p>When it's
      * enabled, CloudFront routes all requests through Origin Shield, which can help
-     * protect your origin. When it’s disabled, CloudFront might send requests directly
+     * protect your origin. When it's disabled, CloudFront might send requests directly
      * to your origin from multiple edge locations or regional edge caches.</p>
      */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
 
     /**
-     * <p>A flag that specifies whether Origin Shield is enabled.</p> <p>When it’s
+     * <p>A flag that specifies whether Origin Shield is enabled.</p> <p>When it's
      * enabled, CloudFront routes all requests through Origin Shield, which can help
-     * protect your origin. When it’s disabled, CloudFront might send requests directly
+     * protect your origin. When it's disabled, CloudFront might send requests directly
      * to your origin from multiple edge locations or regional edge caches.</p>
      */
     inline OriginShield& WithEnabled(bool value) { SetEnabled(value); return *this;}

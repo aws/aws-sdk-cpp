@@ -47,42 +47,42 @@ namespace Model
 
 
     /**
-     * <p>A domain name associated with a distribution. </p>
+     * <p>A domain name associated with a distribution.</p>
      */
     inline const Aws::String& GetCNAME() const{ return m_cNAME; }
 
     /**
-     * <p>A domain name associated with a distribution. </p>
+     * <p>A domain name associated with a distribution.</p>
      */
     inline bool CNAMEHasBeenSet() const { return m_cNAMEHasBeenSet; }
 
     /**
-     * <p>A domain name associated with a distribution. </p>
+     * <p>A domain name associated with a distribution.</p>
      */
     inline void SetCNAME(const Aws::String& value) { m_cNAMEHasBeenSet = true; m_cNAME = value; }
 
     /**
-     * <p>A domain name associated with a distribution. </p>
+     * <p>A domain name associated with a distribution.</p>
      */
     inline void SetCNAME(Aws::String&& value) { m_cNAMEHasBeenSet = true; m_cNAME = std::move(value); }
 
     /**
-     * <p>A domain name associated with a distribution. </p>
+     * <p>A domain name associated with a distribution.</p>
      */
     inline void SetCNAME(const char* value) { m_cNAMEHasBeenSet = true; m_cNAME.assign(value); }
 
     /**
-     * <p>A domain name associated with a distribution. </p>
+     * <p>A domain name associated with a distribution.</p>
      */
     inline AliasICPRecordal& WithCNAME(const Aws::String& value) { SetCNAME(value); return *this;}
 
     /**
-     * <p>A domain name associated with a distribution. </p>
+     * <p>A domain name associated with a distribution.</p>
      */
     inline AliasICPRecordal& WithCNAME(Aws::String&& value) { SetCNAME(std::move(value)); return *this;}
 
     /**
-     * <p>A domain name associated with a distribution. </p>
+     * <p>A domain name associated with a distribution.</p>
      */
     inline AliasICPRecordal& WithCNAME(const char* value) { SetCNAME(value); return *this;}
 
@@ -90,8 +90,8 @@ namespace Model
     /**
      * <p>The Internet Content Provider (ICP) recordal status for a CNAME. The
      * ICPRecordalStatus is set to APPROVED for all CNAMEs (aliases) in regions outside
-     * of China. </p> <p>The status values returned are the following:</p> <ul> <li>
-     * <p> <b>APPROVED</b> indicates that the associated CNAME has a valid ICP recordal
+     * of China.</p> <p>The status values returned are the following:</p> <ul> <li> <p>
+     * <b>APPROVED</b> indicates that the associated CNAME has a valid ICP recordal
      * number. Multiple CNAMEs can be associated with a distribution, and CNAMEs can
      * correspond to different ICP recordals. To be marked as APPROVED, that is, valid
      * to use with China region, a CNAME must have one ICP recordal number associated
@@ -107,8 +107,8 @@ namespace Model
     /**
      * <p>The Internet Content Provider (ICP) recordal status for a CNAME. The
      * ICPRecordalStatus is set to APPROVED for all CNAMEs (aliases) in regions outside
-     * of China. </p> <p>The status values returned are the following:</p> <ul> <li>
-     * <p> <b>APPROVED</b> indicates that the associated CNAME has a valid ICP recordal
+     * of China.</p> <p>The status values returned are the following:</p> <ul> <li> <p>
+     * <b>APPROVED</b> indicates that the associated CNAME has a valid ICP recordal
      * number. Multiple CNAMEs can be associated with a distribution, and CNAMEs can
      * correspond to different ICP recordals. To be marked as APPROVED, that is, valid
      * to use with China region, a CNAME must have one ICP recordal number associated
@@ -124,8 +124,8 @@ namespace Model
     /**
      * <p>The Internet Content Provider (ICP) recordal status for a CNAME. The
      * ICPRecordalStatus is set to APPROVED for all CNAMEs (aliases) in regions outside
-     * of China. </p> <p>The status values returned are the following:</p> <ul> <li>
-     * <p> <b>APPROVED</b> indicates that the associated CNAME has a valid ICP recordal
+     * of China.</p> <p>The status values returned are the following:</p> <ul> <li> <p>
+     * <b>APPROVED</b> indicates that the associated CNAME has a valid ICP recordal
      * number. Multiple CNAMEs can be associated with a distribution, and CNAMEs can
      * correspond to different ICP recordals. To be marked as APPROVED, that is, valid
      * to use with China region, a CNAME must have one ICP recordal number associated
@@ -141,8 +141,8 @@ namespace Model
     /**
      * <p>The Internet Content Provider (ICP) recordal status for a CNAME. The
      * ICPRecordalStatus is set to APPROVED for all CNAMEs (aliases) in regions outside
-     * of China. </p> <p>The status values returned are the following:</p> <ul> <li>
-     * <p> <b>APPROVED</b> indicates that the associated CNAME has a valid ICP recordal
+     * of China.</p> <p>The status values returned are the following:</p> <ul> <li> <p>
+     * <b>APPROVED</b> indicates that the associated CNAME has a valid ICP recordal
      * number. Multiple CNAMEs can be associated with a distribution, and CNAMEs can
      * correspond to different ICP recordals. To be marked as APPROVED, that is, valid
      * to use with China region, a CNAME must have one ICP recordal number associated
@@ -158,8 +158,8 @@ namespace Model
     /**
      * <p>The Internet Content Provider (ICP) recordal status for a CNAME. The
      * ICPRecordalStatus is set to APPROVED for all CNAMEs (aliases) in regions outside
-     * of China. </p> <p>The status values returned are the following:</p> <ul> <li>
-     * <p> <b>APPROVED</b> indicates that the associated CNAME has a valid ICP recordal
+     * of China.</p> <p>The status values returned are the following:</p> <ul> <li> <p>
+     * <b>APPROVED</b> indicates that the associated CNAME has a valid ICP recordal
      * number. Multiple CNAMEs can be associated with a distribution, and CNAMEs can
      * correspond to different ICP recordals. To be marked as APPROVED, that is, valid
      * to use with China region, a CNAME must have one ICP recordal number associated
@@ -175,8 +175,8 @@ namespace Model
     /**
      * <p>The Internet Content Provider (ICP) recordal status for a CNAME. The
      * ICPRecordalStatus is set to APPROVED for all CNAMEs (aliases) in regions outside
-     * of China. </p> <p>The status values returned are the following:</p> <ul> <li>
-     * <p> <b>APPROVED</b> indicates that the associated CNAME has a valid ICP recordal
+     * of China.</p> <p>The status values returned are the following:</p> <ul> <li> <p>
+     * <b>APPROVED</b> indicates that the associated CNAME has a valid ICP recordal
      * number. Multiple CNAMEs can be associated with a distribution, and CNAMEs can
      * correspond to different ICP recordals. To be marked as APPROVED, that is, valid
      * to use with China region, a CNAME must have one ICP recordal number associated

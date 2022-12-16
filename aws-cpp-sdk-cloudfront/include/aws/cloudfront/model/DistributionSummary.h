@@ -369,37 +369,37 @@ namespace Model
 
 
     /**
-     * <p> A complex type that contains information about origin groups for this
+     * <p>A complex type that contains information about origin groups for this
      * distribution.</p>
      */
     inline const OriginGroups& GetOriginGroups() const{ return m_originGroups; }
 
     /**
-     * <p> A complex type that contains information about origin groups for this
+     * <p>A complex type that contains information about origin groups for this
      * distribution.</p>
      */
     inline bool OriginGroupsHasBeenSet() const { return m_originGroupsHasBeenSet; }
 
     /**
-     * <p> A complex type that contains information about origin groups for this
+     * <p>A complex type that contains information about origin groups for this
      * distribution.</p>
      */
     inline void SetOriginGroups(const OriginGroups& value) { m_originGroupsHasBeenSet = true; m_originGroups = value; }
 
     /**
-     * <p> A complex type that contains information about origin groups for this
+     * <p>A complex type that contains information about origin groups for this
      * distribution.</p>
      */
     inline void SetOriginGroups(OriginGroups&& value) { m_originGroupsHasBeenSet = true; m_originGroups = std::move(value); }
 
     /**
-     * <p> A complex type that contains information about origin groups for this
+     * <p>A complex type that contains information about origin groups for this
      * distribution.</p>
      */
     inline DistributionSummary& WithOriginGroups(const OriginGroups& value) { SetOriginGroups(value); return *this;}
 
     /**
-     * <p> A complex type that contains information about origin groups for this
+     * <p>A complex type that contains information about origin groups for this
      * distribution.</p>
      */
     inline DistributionSummary& WithOriginGroups(OriginGroups&& value) { SetOriginGroups(std::move(value)); return *this;}
@@ -571,37 +571,37 @@ namespace Model
 
     /**
      * <p>A complex type that contains information about price class for this streaming
-     * distribution. </p>
+     * distribution.</p>
      */
     inline const PriceClass& GetPriceClass() const{ return m_priceClass; }
 
     /**
      * <p>A complex type that contains information about price class for this streaming
-     * distribution. </p>
+     * distribution.</p>
      */
     inline bool PriceClassHasBeenSet() const { return m_priceClassHasBeenSet; }
 
     /**
      * <p>A complex type that contains information about price class for this streaming
-     * distribution. </p>
+     * distribution.</p>
      */
     inline void SetPriceClass(const PriceClass& value) { m_priceClassHasBeenSet = true; m_priceClass = value; }
 
     /**
      * <p>A complex type that contains information about price class for this streaming
-     * distribution. </p>
+     * distribution.</p>
      */
     inline void SetPriceClass(PriceClass&& value) { m_priceClassHasBeenSet = true; m_priceClass = std::move(value); }
 
     /**
      * <p>A complex type that contains information about price class for this streaming
-     * distribution. </p>
+     * distribution.</p>
      */
     inline DistributionSummary& WithPriceClass(const PriceClass& value) { SetPriceClass(value); return *this;}
 
     /**
      * <p>A complex type that contains information about price class for this streaming
-     * distribution. </p>
+     * distribution.</p>
      */
     inline DistributionSummary& WithPriceClass(PriceClass&& value) { SetPriceClass(std::move(value)); return *this;}
 
@@ -628,37 +628,37 @@ namespace Model
 
 
     /**
-     * <p>A complex type that determines the distribution’s SSL/TLS configuration for
+     * <p>A complex type that determines the distribution's SSL/TLS configuration for
      * communicating with viewers.</p>
      */
     inline const ViewerCertificate& GetViewerCertificate() const{ return m_viewerCertificate; }
 
     /**
-     * <p>A complex type that determines the distribution’s SSL/TLS configuration for
+     * <p>A complex type that determines the distribution's SSL/TLS configuration for
      * communicating with viewers.</p>
      */
     inline bool ViewerCertificateHasBeenSet() const { return m_viewerCertificateHasBeenSet; }
 
     /**
-     * <p>A complex type that determines the distribution’s SSL/TLS configuration for
+     * <p>A complex type that determines the distribution's SSL/TLS configuration for
      * communicating with viewers.</p>
      */
     inline void SetViewerCertificate(const ViewerCertificate& value) { m_viewerCertificateHasBeenSet = true; m_viewerCertificate = value; }
 
     /**
-     * <p>A complex type that determines the distribution’s SSL/TLS configuration for
+     * <p>A complex type that determines the distribution's SSL/TLS configuration for
      * communicating with viewers.</p>
      */
     inline void SetViewerCertificate(ViewerCertificate&& value) { m_viewerCertificateHasBeenSet = true; m_viewerCertificate = std::move(value); }
 
     /**
-     * <p>A complex type that determines the distribution’s SSL/TLS configuration for
+     * <p>A complex type that determines the distribution's SSL/TLS configuration for
      * communicating with viewers.</p>
      */
     inline DistributionSummary& WithViewerCertificate(const ViewerCertificate& value) { SetViewerCertificate(value); return *this;}
 
     /**
-     * <p>A complex type that determines the distribution’s SSL/TLS configuration for
+     * <p>A complex type that determines the distribution's SSL/TLS configuration for
      * communicating with viewers.</p>
      */
     inline DistributionSummary& WithViewerCertificate(ViewerCertificate&& value) { SetViewerCertificate(std::move(value)); return *this;}
@@ -743,7 +743,7 @@ namespace Model
 
 
     /**
-     * <p> Specify the maximum HTTP version that you want viewers to use to communicate
+     * <p>Specify the maximum HTTP version that you want viewers to use to communicate
      * with CloudFront. The default value for new web distributions is
      * <code>http2</code>. Viewers that don't support <code>HTTP/2</code> will
      * automatically use an earlier version.</p>
@@ -751,7 +751,7 @@ namespace Model
     inline const HttpVersion& GetHttpVersion() const{ return m_httpVersion; }
 
     /**
-     * <p> Specify the maximum HTTP version that you want viewers to use to communicate
+     * <p>Specify the maximum HTTP version that you want viewers to use to communicate
      * with CloudFront. The default value for new web distributions is
      * <code>http2</code>. Viewers that don't support <code>HTTP/2</code> will
      * automatically use an earlier version.</p>
@@ -759,7 +759,7 @@ namespace Model
     inline bool HttpVersionHasBeenSet() const { return m_httpVersionHasBeenSet; }
 
     /**
-     * <p> Specify the maximum HTTP version that you want viewers to use to communicate
+     * <p>Specify the maximum HTTP version that you want viewers to use to communicate
      * with CloudFront. The default value for new web distributions is
      * <code>http2</code>. Viewers that don't support <code>HTTP/2</code> will
      * automatically use an earlier version.</p>
@@ -767,7 +767,7 @@ namespace Model
     inline void SetHttpVersion(const HttpVersion& value) { m_httpVersionHasBeenSet = true; m_httpVersion = value; }
 
     /**
-     * <p> Specify the maximum HTTP version that you want viewers to use to communicate
+     * <p>Specify the maximum HTTP version that you want viewers to use to communicate
      * with CloudFront. The default value for new web distributions is
      * <code>http2</code>. Viewers that don't support <code>HTTP/2</code> will
      * automatically use an earlier version.</p>
@@ -775,7 +775,7 @@ namespace Model
     inline void SetHttpVersion(HttpVersion&& value) { m_httpVersionHasBeenSet = true; m_httpVersion = std::move(value); }
 
     /**
-     * <p> Specify the maximum HTTP version that you want viewers to use to communicate
+     * <p>Specify the maximum HTTP version that you want viewers to use to communicate
      * with CloudFront. The default value for new web distributions is
      * <code>http2</code>. Viewers that don't support <code>HTTP/2</code> will
      * automatically use an earlier version.</p>
@@ -783,7 +783,7 @@ namespace Model
     inline DistributionSummary& WithHttpVersion(const HttpVersion& value) { SetHttpVersion(value); return *this;}
 
     /**
-     * <p> Specify the maximum HTTP version that you want viewers to use to communicate
+     * <p>Specify the maximum HTTP version that you want viewers to use to communicate
      * with CloudFront. The default value for new web distributions is
      * <code>http2</code>. Viewers that don't support <code>HTTP/2</code> will
      * automatically use an earlier version.</p>

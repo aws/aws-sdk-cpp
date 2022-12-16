@@ -92,7 +92,7 @@ namespace Model
      * <p>Specifies the event type that triggers a Lambda@Edge function invocation. You
      * can specify the following values:</p> <ul> <li> <p> <code>viewer-request</code>:
      * The function executes when CloudFront receives a request from a viewer and
-     * before it checks to see whether the requested object is in the edge cache. </p>
+     * before it checks to see whether the requested object is in the edge cache.</p>
      * </li> <li> <p> <code>origin-request</code>: The function executes only when
      * CloudFront sends a request to your origin. When the requested object is in the
      * edge cache, the function doesn't execute.</p> </li> <li> <p>
@@ -111,7 +111,7 @@ namespace Model
      * <p>Specifies the event type that triggers a Lambda@Edge function invocation. You
      * can specify the following values:</p> <ul> <li> <p> <code>viewer-request</code>:
      * The function executes when CloudFront receives a request from a viewer and
-     * before it checks to see whether the requested object is in the edge cache. </p>
+     * before it checks to see whether the requested object is in the edge cache.</p>
      * </li> <li> <p> <code>origin-request</code>: The function executes only when
      * CloudFront sends a request to your origin. When the requested object is in the
      * edge cache, the function doesn't execute.</p> </li> <li> <p>
@@ -130,7 +130,7 @@ namespace Model
      * <p>Specifies the event type that triggers a Lambda@Edge function invocation. You
      * can specify the following values:</p> <ul> <li> <p> <code>viewer-request</code>:
      * The function executes when CloudFront receives a request from a viewer and
-     * before it checks to see whether the requested object is in the edge cache. </p>
+     * before it checks to see whether the requested object is in the edge cache.</p>
      * </li> <li> <p> <code>origin-request</code>: The function executes only when
      * CloudFront sends a request to your origin. When the requested object is in the
      * edge cache, the function doesn't execute.</p> </li> <li> <p>
@@ -149,7 +149,7 @@ namespace Model
      * <p>Specifies the event type that triggers a Lambda@Edge function invocation. You
      * can specify the following values:</p> <ul> <li> <p> <code>viewer-request</code>:
      * The function executes when CloudFront receives a request from a viewer and
-     * before it checks to see whether the requested object is in the edge cache. </p>
+     * before it checks to see whether the requested object is in the edge cache.</p>
      * </li> <li> <p> <code>origin-request</code>: The function executes only when
      * CloudFront sends a request to your origin. When the requested object is in the
      * edge cache, the function doesn't execute.</p> </li> <li> <p>
@@ -168,7 +168,7 @@ namespace Model
      * <p>Specifies the event type that triggers a Lambda@Edge function invocation. You
      * can specify the following values:</p> <ul> <li> <p> <code>viewer-request</code>:
      * The function executes when CloudFront receives a request from a viewer and
-     * before it checks to see whether the requested object is in the edge cache. </p>
+     * before it checks to see whether the requested object is in the edge cache.</p>
      * </li> <li> <p> <code>origin-request</code>: The function executes only when
      * CloudFront sends a request to your origin. When the requested object is in the
      * edge cache, the function doesn't execute.</p> </li> <li> <p>
@@ -187,7 +187,7 @@ namespace Model
      * <p>Specifies the event type that triggers a Lambda@Edge function invocation. You
      * can specify the following values:</p> <ul> <li> <p> <code>viewer-request</code>:
      * The function executes when CloudFront receives a request from a viewer and
-     * before it checks to see whether the requested object is in the edge cache. </p>
+     * before it checks to see whether the requested object is in the edge cache.</p>
      * </li> <li> <p> <code>origin-request</code>: The function executes only when
      * CloudFront sends a request to your origin. When the requested object is in the
      * edge cache, the function doesn't execute.</p> </li> <li> <p>

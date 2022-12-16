@@ -80,42 +80,50 @@ namespace Model
 
 
     /**
-     * <p>The user profile name.</p>
+     * <p>The user profile name. If this value is not set, then <code>SpaceName</code>
+     * must be set.</p>
      */
     inline const Aws::String& GetUserProfileName() const{ return m_userProfileName; }
 
     /**
-     * <p>The user profile name.</p>
+     * <p>The user profile name. If this value is not set, then <code>SpaceName</code>
+     * must be set.</p>
      */
     inline bool UserProfileNameHasBeenSet() const { return m_userProfileNameHasBeenSet; }
 
     /**
-     * <p>The user profile name.</p>
+     * <p>The user profile name. If this value is not set, then <code>SpaceName</code>
+     * must be set.</p>
      */
     inline void SetUserProfileName(const Aws::String& value) { m_userProfileNameHasBeenSet = true; m_userProfileName = value; }
 
     /**
-     * <p>The user profile name.</p>
+     * <p>The user profile name. If this value is not set, then <code>SpaceName</code>
+     * must be set.</p>
      */
     inline void SetUserProfileName(Aws::String&& value) { m_userProfileNameHasBeenSet = true; m_userProfileName = std::move(value); }
 
     /**
-     * <p>The user profile name.</p>
+     * <p>The user profile name. If this value is not set, then <code>SpaceName</code>
+     * must be set.</p>
      */
     inline void SetUserProfileName(const char* value) { m_userProfileNameHasBeenSet = true; m_userProfileName.assign(value); }
 
     /**
-     * <p>The user profile name.</p>
+     * <p>The user profile name. If this value is not set, then <code>SpaceName</code>
+     * must be set.</p>
      */
     inline CreateAppRequest& WithUserProfileName(const Aws::String& value) { SetUserProfileName(value); return *this;}
 
     /**
-     * <p>The user profile name.</p>
+     * <p>The user profile name. If this value is not set, then <code>SpaceName</code>
+     * must be set.</p>
      */
     inline CreateAppRequest& WithUserProfileName(Aws::String&& value) { SetUserProfileName(std::move(value)); return *this;}
 
     /**
-     * <p>The user profile name.</p>
+     * <p>The user profile name. If this value is not set, then <code>SpaceName</code>
+     * must be set.</p>
      */
     inline CreateAppRequest& WithUserProfileName(const char* value) { SetUserProfileName(value); return *this;}
 
@@ -315,42 +323,50 @@ namespace Model
 
 
     /**
-     * <p>The name of the space.</p>
+     * <p>The name of the space. If this value is not set, then
+     * <code>UserProfileName</code> must be set.</p>
      */
     inline const Aws::String& GetSpaceName() const{ return m_spaceName; }
 
     /**
-     * <p>The name of the space.</p>
+     * <p>The name of the space. If this value is not set, then
+     * <code>UserProfileName</code> must be set.</p>
      */
     inline bool SpaceNameHasBeenSet() const { return m_spaceNameHasBeenSet; }
 
     /**
-     * <p>The name of the space.</p>
+     * <p>The name of the space. If this value is not set, then
+     * <code>UserProfileName</code> must be set.</p>
      */
     inline void SetSpaceName(const Aws::String& value) { m_spaceNameHasBeenSet = true; m_spaceName = value; }
 
     /**
-     * <p>The name of the space.</p>
+     * <p>The name of the space. If this value is not set, then
+     * <code>UserProfileName</code> must be set.</p>
      */
     inline void SetSpaceName(Aws::String&& value) { m_spaceNameHasBeenSet = true; m_spaceName = std::move(value); }
 
     /**
-     * <p>The name of the space.</p>
+     * <p>The name of the space. If this value is not set, then
+     * <code>UserProfileName</code> must be set.</p>
      */
     inline void SetSpaceName(const char* value) { m_spaceNameHasBeenSet = true; m_spaceName.assign(value); }
 
     /**
-     * <p>The name of the space.</p>
+     * <p>The name of the space. If this value is not set, then
+     * <code>UserProfileName</code> must be set.</p>
      */
     inline CreateAppRequest& WithSpaceName(const Aws::String& value) { SetSpaceName(value); return *this;}
 
     /**
-     * <p>The name of the space.</p>
+     * <p>The name of the space. If this value is not set, then
+     * <code>UserProfileName</code> must be set.</p>
      */
     inline CreateAppRequest& WithSpaceName(Aws::String&& value) { SetSpaceName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the space.</p>
+     * <p>The name of the space. If this value is not set, then
+     * <code>UserProfileName</code> must be set.</p>
      */
     inline CreateAppRequest& WithSpaceName(const char* value) { SetSpaceName(value); return *this;}
 

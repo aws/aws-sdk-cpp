@@ -21,7 +21,7 @@ namespace Model
 {
 
   /**
-   * <p> The request to list tags for a CloudFront resource.</p><p><h3>See Also:</h3>
+   * <p>The request to list tags for a CloudFront resource.</p><p><h3>See Also:</h3> 
    * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListTagsForResourceRequest">AWS
    * API Reference</a></p>
@@ -43,42 +43,42 @@ namespace Model
 
 
     /**
-     * <p> An ARN of a CloudFront resource.</p>
+     * <p>An ARN of a CloudFront resource.</p>
      */
     inline const Aws::String& GetResource() const{ return m_resource; }
 
     /**
-     * <p> An ARN of a CloudFront resource.</p>
+     * <p>An ARN of a CloudFront resource.</p>
      */
     inline bool ResourceHasBeenSet() const { return m_resourceHasBeenSet; }
 
     /**
-     * <p> An ARN of a CloudFront resource.</p>
+     * <p>An ARN of a CloudFront resource.</p>
      */
     inline void SetResource(const Aws::String& value) { m_resourceHasBeenSet = true; m_resource = value; }
 
     /**
-     * <p> An ARN of a CloudFront resource.</p>
+     * <p>An ARN of a CloudFront resource.</p>
      */
     inline void SetResource(Aws::String&& value) { m_resourceHasBeenSet = true; m_resource = std::move(value); }
 
     /**
-     * <p> An ARN of a CloudFront resource.</p>
+     * <p>An ARN of a CloudFront resource.</p>
      */
     inline void SetResource(const char* value) { m_resourceHasBeenSet = true; m_resource.assign(value); }
 
     /**
-     * <p> An ARN of a CloudFront resource.</p>
+     * <p>An ARN of a CloudFront resource.</p>
      */
     inline ListTagsForResource2020_05_31Request& WithResource(const Aws::String& value) { SetResource(value); return *this;}
 
     /**
-     * <p> An ARN of a CloudFront resource.</p>
+     * <p>An ARN of a CloudFront resource.</p>
      */
     inline ListTagsForResource2020_05_31Request& WithResource(Aws::String&& value) { SetResource(std::move(value)); return *this;}
 
     /**
-     * <p> An ARN of a CloudFront resource.</p>
+     * <p>An ARN of a CloudFront resource.</p>
      */
     inline ListTagsForResource2020_05_31Request& WithResource(const char* value) { SetResource(value); return *this;}
 

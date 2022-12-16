@@ -210,83 +210,99 @@ namespace Model
 
 
     /**
-     * <p>A parameter to search by user profile name.</p>
+     * <p>A parameter to search by user profile name. If <code>SpaceNameEquals</code>
+     * is set, then this value cannot be set.</p>
      */
     inline const Aws::String& GetUserProfileNameEquals() const{ return m_userProfileNameEquals; }
 
     /**
-     * <p>A parameter to search by user profile name.</p>
+     * <p>A parameter to search by user profile name. If <code>SpaceNameEquals</code>
+     * is set, then this value cannot be set.</p>
      */
     inline bool UserProfileNameEqualsHasBeenSet() const { return m_userProfileNameEqualsHasBeenSet; }
 
     /**
-     * <p>A parameter to search by user profile name.</p>
+     * <p>A parameter to search by user profile name. If <code>SpaceNameEquals</code>
+     * is set, then this value cannot be set.</p>
      */
     inline void SetUserProfileNameEquals(const Aws::String& value) { m_userProfileNameEqualsHasBeenSet = true; m_userProfileNameEquals = value; }
 
     /**
-     * <p>A parameter to search by user profile name.</p>
+     * <p>A parameter to search by user profile name. If <code>SpaceNameEquals</code>
+     * is set, then this value cannot be set.</p>
      */
     inline void SetUserProfileNameEquals(Aws::String&& value) { m_userProfileNameEqualsHasBeenSet = true; m_userProfileNameEquals = std::move(value); }
 
     /**
-     * <p>A parameter to search by user profile name.</p>
+     * <p>A parameter to search by user profile name. If <code>SpaceNameEquals</code>
+     * is set, then this value cannot be set.</p>
      */
     inline void SetUserProfileNameEquals(const char* value) { m_userProfileNameEqualsHasBeenSet = true; m_userProfileNameEquals.assign(value); }
 
     /**
-     * <p>A parameter to search by user profile name.</p>
+     * <p>A parameter to search by user profile name. If <code>SpaceNameEquals</code>
+     * is set, then this value cannot be set.</p>
      */
     inline ListAppsRequest& WithUserProfileNameEquals(const Aws::String& value) { SetUserProfileNameEquals(value); return *this;}
 
     /**
-     * <p>A parameter to search by user profile name.</p>
+     * <p>A parameter to search by user profile name. If <code>SpaceNameEquals</code>
+     * is set, then this value cannot be set.</p>
      */
     inline ListAppsRequest& WithUserProfileNameEquals(Aws::String&& value) { SetUserProfileNameEquals(std::move(value)); return *this;}
 
     /**
-     * <p>A parameter to search by user profile name.</p>
+     * <p>A parameter to search by user profile name. If <code>SpaceNameEquals</code>
+     * is set, then this value cannot be set.</p>
      */
     inline ListAppsRequest& WithUserProfileNameEquals(const char* value) { SetUserProfileNameEquals(value); return *this;}
 
 
     /**
-     * <p>A parameter to search by space name.</p>
+     * <p>A parameter to search by space name. If <code>UserProfileNameEquals</code> is
+     * set, then this value cannot be set.</p>
      */
     inline const Aws::String& GetSpaceNameEquals() const{ return m_spaceNameEquals; }
 
     /**
-     * <p>A parameter to search by space name.</p>
+     * <p>A parameter to search by space name. If <code>UserProfileNameEquals</code> is
+     * set, then this value cannot be set.</p>
      */
     inline bool SpaceNameEqualsHasBeenSet() const { return m_spaceNameEqualsHasBeenSet; }
 
     /**
-     * <p>A parameter to search by space name.</p>
+     * <p>A parameter to search by space name. If <code>UserProfileNameEquals</code> is
+     * set, then this value cannot be set.</p>
      */
     inline void SetSpaceNameEquals(const Aws::String& value) { m_spaceNameEqualsHasBeenSet = true; m_spaceNameEquals = value; }
 
     /**
-     * <p>A parameter to search by space name.</p>
+     * <p>A parameter to search by space name. If <code>UserProfileNameEquals</code> is
+     * set, then this value cannot be set.</p>
      */
     inline void SetSpaceNameEquals(Aws::String&& value) { m_spaceNameEqualsHasBeenSet = true; m_spaceNameEquals = std::move(value); }
 
     /**
-     * <p>A parameter to search by space name.</p>
+     * <p>A parameter to search by space name. If <code>UserProfileNameEquals</code> is
+     * set, then this value cannot be set.</p>
      */
     inline void SetSpaceNameEquals(const char* value) { m_spaceNameEqualsHasBeenSet = true; m_spaceNameEquals.assign(value); }
 
     /**
-     * <p>A parameter to search by space name.</p>
+     * <p>A parameter to search by space name. If <code>UserProfileNameEquals</code> is
+     * set, then this value cannot be set.</p>
      */
     inline ListAppsRequest& WithSpaceNameEquals(const Aws::String& value) { SetSpaceNameEquals(value); return *this;}
 
     /**
-     * <p>A parameter to search by space name.</p>
+     * <p>A parameter to search by space name. If <code>UserProfileNameEquals</code> is
+     * set, then this value cannot be set.</p>
      */
     inline ListAppsRequest& WithSpaceNameEquals(Aws::String&& value) { SetSpaceNameEquals(std::move(value)); return *this;}
 
     /**
-     * <p>A parameter to search by space name.</p>
+     * <p>A parameter to search by space name. If <code>UserProfileNameEquals</code> is
+     * set, then this value cannot be set.</p>
      */
     inline ListAppsRequest& WithSpaceNameEquals(const char* value) { SetSpaceNameEquals(value); return *this;}
 

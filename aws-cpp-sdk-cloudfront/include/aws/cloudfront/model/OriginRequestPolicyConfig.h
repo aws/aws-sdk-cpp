@@ -36,7 +36,7 @@ namespace Model
    * HTTP headers, cookies, and URL query strings that are specified in the cache
    * policy or the origin request policy. These can include items from the viewer
    * request and, in the case of headers, additional ones that are added by
-   * CloudFront.</p> </li> </ul> <p>CloudFront sends a request when it can’t find an
+   * CloudFront.</p> </li> </ul> <p>CloudFront sends a request when it can't find an
    * object in its cache that matches the request. If you want to send values to the
    * origin and also include them in the cache key, use
    * <code>CachePolicy</code>.</p><p><h3>See Also:</h3>   <a

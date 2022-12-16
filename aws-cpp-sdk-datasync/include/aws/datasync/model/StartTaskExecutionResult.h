@@ -38,44 +38,37 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the specific task execution that was
-     * started.</p>
+     * <p>The ARN of the running task execution.</p>
      */
     inline const Aws::String& GetTaskExecutionArn() const{ return m_taskExecutionArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the specific task execution that was
-     * started.</p>
+     * <p>The ARN of the running task execution.</p>
      */
     inline void SetTaskExecutionArn(const Aws::String& value) { m_taskExecutionArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the specific task execution that was
-     * started.</p>
+     * <p>The ARN of the running task execution.</p>
      */
     inline void SetTaskExecutionArn(Aws::String&& value) { m_taskExecutionArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the specific task execution that was
-     * started.</p>
+     * <p>The ARN of the running task execution.</p>
      */
     inline void SetTaskExecutionArn(const char* value) { m_taskExecutionArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the specific task execution that was
-     * started.</p>
+     * <p>The ARN of the running task execution.</p>
      */
     inline StartTaskExecutionResult& WithTaskExecutionArn(const Aws::String& value) { SetTaskExecutionArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the specific task execution that was
-     * started.</p>
+     * <p>The ARN of the running task execution.</p>
      */
     inline StartTaskExecutionResult& WithTaskExecutionArn(Aws::String&& value) { SetTaskExecutionArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the specific task execution that was
-     * started.</p>
+     * <p>The ARN of the running task execution.</p>
      */
     inline StartTaskExecutionResult& WithTaskExecutionArn(const char* value) { SetTaskExecutionArn(value); return *this;}
 

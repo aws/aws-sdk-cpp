@@ -25,7 +25,7 @@ namespace Model
   /**
    * <p>A complex type that controls:</p> <ul> <li> <p>Whether CloudFront replaces
    * HTTP status codes in the 4xx and 5xx range with custom error messages before
-   * returning the response to the viewer. </p> </li> <li> <p>How long CloudFront
+   * returning the response to the viewer.</p> </li> <li> <p>How long CloudFront
    * caches HTTP status codes in the 4xx and 5xx range.</p> </li> </ul> <p>For more
    * information about custom error pages, see <a
    * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/custom-error-pages.html">Customizing
@@ -81,7 +81,7 @@ namespace Model
      * Amazon S3 bucket in a directory named <code>/4xx-errors</code>. Your
      * distribution must include a cache behavior for which the path pattern routes
      * requests for your custom error pages to that location, for example,
-     * <code>/4xx-errors/ *</code>. </p> </li> <li> <p>The value of
+     * <code>/4xx-errors/ *</code>.</p> </li> <li> <p>The value of
      * <code>TargetOriginId</code> specifies the value of the <code>ID</code> element
      * for the origin that contains your custom error pages.</p> </li> </ul> <p>If you
      * specify a value for <code>ResponsePagePath</code>, you must also specify a value
@@ -104,7 +104,7 @@ namespace Model
      * Amazon S3 bucket in a directory named <code>/4xx-errors</code>. Your
      * distribution must include a cache behavior for which the path pattern routes
      * requests for your custom error pages to that location, for example,
-     * <code>/4xx-errors/ *</code>. </p> </li> <li> <p>The value of
+     * <code>/4xx-errors/ *</code>.</p> </li> <li> <p>The value of
      * <code>TargetOriginId</code> specifies the value of the <code>ID</code> element
      * for the origin that contains your custom error pages.</p> </li> </ul> <p>If you
      * specify a value for <code>ResponsePagePath</code>, you must also specify a value
@@ -127,7 +127,7 @@ namespace Model
      * Amazon S3 bucket in a directory named <code>/4xx-errors</code>. Your
      * distribution must include a cache behavior for which the path pattern routes
      * requests for your custom error pages to that location, for example,
-     * <code>/4xx-errors/ *</code>. </p> </li> <li> <p>The value of
+     * <code>/4xx-errors/ *</code>.</p> </li> <li> <p>The value of
      * <code>TargetOriginId</code> specifies the value of the <code>ID</code> element
      * for the origin that contains your custom error pages.</p> </li> </ul> <p>If you
      * specify a value for <code>ResponsePagePath</code>, you must also specify a value
@@ -150,7 +150,7 @@ namespace Model
      * Amazon S3 bucket in a directory named <code>/4xx-errors</code>. Your
      * distribution must include a cache behavior for which the path pattern routes
      * requests for your custom error pages to that location, for example,
-     * <code>/4xx-errors/ *</code>. </p> </li> <li> <p>The value of
+     * <code>/4xx-errors/ *</code>.</p> </li> <li> <p>The value of
      * <code>TargetOriginId</code> specifies the value of the <code>ID</code> element
      * for the origin that contains your custom error pages.</p> </li> </ul> <p>If you
      * specify a value for <code>ResponsePagePath</code>, you must also specify a value
@@ -173,7 +173,7 @@ namespace Model
      * Amazon S3 bucket in a directory named <code>/4xx-errors</code>. Your
      * distribution must include a cache behavior for which the path pattern routes
      * requests for your custom error pages to that location, for example,
-     * <code>/4xx-errors/ *</code>. </p> </li> <li> <p>The value of
+     * <code>/4xx-errors/ *</code>.</p> </li> <li> <p>The value of
      * <code>TargetOriginId</code> specifies the value of the <code>ID</code> element
      * for the origin that contains your custom error pages.</p> </li> </ul> <p>If you
      * specify a value for <code>ResponsePagePath</code>, you must also specify a value
@@ -196,7 +196,7 @@ namespace Model
      * Amazon S3 bucket in a directory named <code>/4xx-errors</code>. Your
      * distribution must include a cache behavior for which the path pattern routes
      * requests for your custom error pages to that location, for example,
-     * <code>/4xx-errors/ *</code>. </p> </li> <li> <p>The value of
+     * <code>/4xx-errors/ *</code>.</p> </li> <li> <p>The value of
      * <code>TargetOriginId</code> specifies the value of the <code>ID</code> element
      * for the origin that contains your custom error pages.</p> </li> </ul> <p>If you
      * specify a value for <code>ResponsePagePath</code>, you must also specify a value
@@ -219,7 +219,7 @@ namespace Model
      * Amazon S3 bucket in a directory named <code>/4xx-errors</code>. Your
      * distribution must include a cache behavior for which the path pattern routes
      * requests for your custom error pages to that location, for example,
-     * <code>/4xx-errors/ *</code>. </p> </li> <li> <p>The value of
+     * <code>/4xx-errors/ *</code>.</p> </li> <li> <p>The value of
      * <code>TargetOriginId</code> specifies the value of the <code>ID</code> element
      * for the origin that contains your custom error pages.</p> </li> </ul> <p>If you
      * specify a value for <code>ResponsePagePath</code>, you must also specify a value
@@ -242,7 +242,7 @@ namespace Model
      * Amazon S3 bucket in a directory named <code>/4xx-errors</code>. Your
      * distribution must include a cache behavior for which the path pattern routes
      * requests for your custom error pages to that location, for example,
-     * <code>/4xx-errors/ *</code>. </p> </li> <li> <p>The value of
+     * <code>/4xx-errors/ *</code>.</p> </li> <li> <p>The value of
      * <code>TargetOriginId</code> specifies the value of the <code>ID</code> element
      * for the origin that contains your custom error pages.</p> </li> </ul> <p>If you
      * specify a value for <code>ResponsePagePath</code>, you must also specify a value

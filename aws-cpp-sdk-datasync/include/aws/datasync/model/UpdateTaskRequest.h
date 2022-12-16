@@ -110,66 +110,66 @@ namespace Model
 
 
     /**
-     * <p>A list of filter rules that determines which files to exclude from a task.
-     * The list should contain a single filter string that consists of the patterns to
-     * exclude. The patterns are delimited by "|" (that is, a pipe), for example,
-     * <code>"/folder1|/folder2"</code>.</p> <p> </p>
+     * <p>Specifies a list of filter rules that exclude specific data during your
+     * transfer. For more information and examples, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering
+     * data transferred by DataSync</a>.</p>
      */
     inline const Aws::Vector<FilterRule>& GetExcludes() const{ return m_excludes; }
 
     /**
-     * <p>A list of filter rules that determines which files to exclude from a task.
-     * The list should contain a single filter string that consists of the patterns to
-     * exclude. The patterns are delimited by "|" (that is, a pipe), for example,
-     * <code>"/folder1|/folder2"</code>.</p> <p> </p>
+     * <p>Specifies a list of filter rules that exclude specific data during your
+     * transfer. For more information and examples, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering
+     * data transferred by DataSync</a>.</p>
      */
     inline bool ExcludesHasBeenSet() const { return m_excludesHasBeenSet; }
 
     /**
-     * <p>A list of filter rules that determines which files to exclude from a task.
-     * The list should contain a single filter string that consists of the patterns to
-     * exclude. The patterns are delimited by "|" (that is, a pipe), for example,
-     * <code>"/folder1|/folder2"</code>.</p> <p> </p>
+     * <p>Specifies a list of filter rules that exclude specific data during your
+     * transfer. For more information and examples, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering
+     * data transferred by DataSync</a>.</p>
      */
     inline void SetExcludes(const Aws::Vector<FilterRule>& value) { m_excludesHasBeenSet = true; m_excludes = value; }
 
     /**
-     * <p>A list of filter rules that determines which files to exclude from a task.
-     * The list should contain a single filter string that consists of the patterns to
-     * exclude. The patterns are delimited by "|" (that is, a pipe), for example,
-     * <code>"/folder1|/folder2"</code>.</p> <p> </p>
+     * <p>Specifies a list of filter rules that exclude specific data during your
+     * transfer. For more information and examples, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering
+     * data transferred by DataSync</a>.</p>
      */
     inline void SetExcludes(Aws::Vector<FilterRule>&& value) { m_excludesHasBeenSet = true; m_excludes = std::move(value); }
 
     /**
-     * <p>A list of filter rules that determines which files to exclude from a task.
-     * The list should contain a single filter string that consists of the patterns to
-     * exclude. The patterns are delimited by "|" (that is, a pipe), for example,
-     * <code>"/folder1|/folder2"</code>.</p> <p> </p>
+     * <p>Specifies a list of filter rules that exclude specific data during your
+     * transfer. For more information and examples, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering
+     * data transferred by DataSync</a>.</p>
      */
     inline UpdateTaskRequest& WithExcludes(const Aws::Vector<FilterRule>& value) { SetExcludes(value); return *this;}
 
     /**
-     * <p>A list of filter rules that determines which files to exclude from a task.
-     * The list should contain a single filter string that consists of the patterns to
-     * exclude. The patterns are delimited by "|" (that is, a pipe), for example,
-     * <code>"/folder1|/folder2"</code>.</p> <p> </p>
+     * <p>Specifies a list of filter rules that exclude specific data during your
+     * transfer. For more information and examples, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering
+     * data transferred by DataSync</a>.</p>
      */
     inline UpdateTaskRequest& WithExcludes(Aws::Vector<FilterRule>&& value) { SetExcludes(std::move(value)); return *this;}
 
     /**
-     * <p>A list of filter rules that determines which files to exclude from a task.
-     * The list should contain a single filter string that consists of the patterns to
-     * exclude. The patterns are delimited by "|" (that is, a pipe), for example,
-     * <code>"/folder1|/folder2"</code>.</p> <p> </p>
+     * <p>Specifies a list of filter rules that exclude specific data during your
+     * transfer. For more information and examples, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering
+     * data transferred by DataSync</a>.</p>
      */
     inline UpdateTaskRequest& AddExcludes(const FilterRule& value) { m_excludesHasBeenSet = true; m_excludes.push_back(value); return *this; }
 
     /**
-     * <p>A list of filter rules that determines which files to exclude from a task.
-     * The list should contain a single filter string that consists of the patterns to
-     * exclude. The patterns are delimited by "|" (that is, a pipe), for example,
-     * <code>"/folder1|/folder2"</code>.</p> <p> </p>
+     * <p>Specifies a list of filter rules that exclude specific data during your
+     * transfer. For more information and examples, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering
+     * data transferred by DataSync</a>.</p>
      */
     inline UpdateTaskRequest& AddExcludes(FilterRule&& value) { m_excludesHasBeenSet = true; m_excludes.push_back(std::move(value)); return *this; }
 
@@ -332,66 +332,66 @@ namespace Model
 
 
     /**
-     * <p>A list of filter rules that determines which files to include when running a
-     * task. The pattern contains a single filter string that consists of the patterns
-     * to include. The patterns are delimited by "|" (that is, a pipe), for example,
-     * <code>"/folder1|/folder2"</code>.</p>
+     * <p>Specifies a list of filter rules that include specific data during your
+     * transfer. For more information and examples, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering
+     * data transferred by DataSync</a>.</p>
      */
     inline const Aws::Vector<FilterRule>& GetIncludes() const{ return m_includes; }
 
     /**
-     * <p>A list of filter rules that determines which files to include when running a
-     * task. The pattern contains a single filter string that consists of the patterns
-     * to include. The patterns are delimited by "|" (that is, a pipe), for example,
-     * <code>"/folder1|/folder2"</code>.</p>
+     * <p>Specifies a list of filter rules that include specific data during your
+     * transfer. For more information and examples, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering
+     * data transferred by DataSync</a>.</p>
      */
     inline bool IncludesHasBeenSet() const { return m_includesHasBeenSet; }
 
     /**
-     * <p>A list of filter rules that determines which files to include when running a
-     * task. The pattern contains a single filter string that consists of the patterns
-     * to include. The patterns are delimited by "|" (that is, a pipe), for example,
-     * <code>"/folder1|/folder2"</code>.</p>
+     * <p>Specifies a list of filter rules that include specific data during your
+     * transfer. For more information and examples, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering
+     * data transferred by DataSync</a>.</p>
      */
     inline void SetIncludes(const Aws::Vector<FilterRule>& value) { m_includesHasBeenSet = true; m_includes = value; }
 
     /**
-     * <p>A list of filter rules that determines which files to include when running a
-     * task. The pattern contains a single filter string that consists of the patterns
-     * to include. The patterns are delimited by "|" (that is, a pipe), for example,
-     * <code>"/folder1|/folder2"</code>.</p>
+     * <p>Specifies a list of filter rules that include specific data during your
+     * transfer. For more information and examples, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering
+     * data transferred by DataSync</a>.</p>
      */
     inline void SetIncludes(Aws::Vector<FilterRule>&& value) { m_includesHasBeenSet = true; m_includes = std::move(value); }
 
     /**
-     * <p>A list of filter rules that determines which files to include when running a
-     * task. The pattern contains a single filter string that consists of the patterns
-     * to include. The patterns are delimited by "|" (that is, a pipe), for example,
-     * <code>"/folder1|/folder2"</code>.</p>
+     * <p>Specifies a list of filter rules that include specific data during your
+     * transfer. For more information and examples, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering
+     * data transferred by DataSync</a>.</p>
      */
     inline UpdateTaskRequest& WithIncludes(const Aws::Vector<FilterRule>& value) { SetIncludes(value); return *this;}
 
     /**
-     * <p>A list of filter rules that determines which files to include when running a
-     * task. The pattern contains a single filter string that consists of the patterns
-     * to include. The patterns are delimited by "|" (that is, a pipe), for example,
-     * <code>"/folder1|/folder2"</code>.</p>
+     * <p>Specifies a list of filter rules that include specific data during your
+     * transfer. For more information and examples, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering
+     * data transferred by DataSync</a>.</p>
      */
     inline UpdateTaskRequest& WithIncludes(Aws::Vector<FilterRule>&& value) { SetIncludes(std::move(value)); return *this;}
 
     /**
-     * <p>A list of filter rules that determines which files to include when running a
-     * task. The pattern contains a single filter string that consists of the patterns
-     * to include. The patterns are delimited by "|" (that is, a pipe), for example,
-     * <code>"/folder1|/folder2"</code>.</p>
+     * <p>Specifies a list of filter rules that include specific data during your
+     * transfer. For more information and examples, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering
+     * data transferred by DataSync</a>.</p>
      */
     inline UpdateTaskRequest& AddIncludes(const FilterRule& value) { m_includesHasBeenSet = true; m_includes.push_back(value); return *this; }
 
     /**
-     * <p>A list of filter rules that determines which files to include when running a
-     * task. The pattern contains a single filter string that consists of the patterns
-     * to include. The patterns are delimited by "|" (that is, a pipe), for example,
-     * <code>"/folder1|/folder2"</code>.</p>
+     * <p>Specifies a list of filter rules that include specific data during your
+     * transfer. For more information and examples, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering
+     * data transferred by DataSync</a>.</p>
      */
     inline UpdateTaskRequest& AddIncludes(FilterRule&& value) { m_includesHasBeenSet = true; m_includes.push_back(std::move(value)); return *this; }
 

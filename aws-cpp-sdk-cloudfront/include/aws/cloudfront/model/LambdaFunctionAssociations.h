@@ -33,8 +33,8 @@ namespace Model
    * value of <code>EventType</code>) and each <code>EventType</code> can be
    * associated with only one function.</p> <p>If you don't want to invoke any
    * Lambda@Edge functions for the requests that match <code>PathPattern</code>,
-   * specify <code>0</code> for <code>Quantity</code> and omit <code>Items</code>.
-   * </p><p><h3>See Also:</h3>   <a
+   * specify <code>0</code> for <code>Quantity</code> and omit
+   * <code>Items</code>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/LambdaFunctionAssociations">AWS
    * API Reference</a></p>
    */

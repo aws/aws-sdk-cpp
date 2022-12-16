@@ -68,56 +68,56 @@ namespace Model
 
     /**
      * <p>The unique identifier for the cache policy that you are updating. The
-     * identifier is returned in a cache behavior’s <code>CachePolicyId</code> field in
+     * identifier is returned in a cache behavior's <code>CachePolicyId</code> field in
      * the response to <code>GetDistributionConfig</code>.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
      * <p>The unique identifier for the cache policy that you are updating. The
-     * identifier is returned in a cache behavior’s <code>CachePolicyId</code> field in
+     * identifier is returned in a cache behavior's <code>CachePolicyId</code> field in
      * the response to <code>GetDistributionConfig</code>.</p>
      */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
     /**
      * <p>The unique identifier for the cache policy that you are updating. The
-     * identifier is returned in a cache behavior’s <code>CachePolicyId</code> field in
+     * identifier is returned in a cache behavior's <code>CachePolicyId</code> field in
      * the response to <code>GetDistributionConfig</code>.</p>
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
      * <p>The unique identifier for the cache policy that you are updating. The
-     * identifier is returned in a cache behavior’s <code>CachePolicyId</code> field in
+     * identifier is returned in a cache behavior's <code>CachePolicyId</code> field in
      * the response to <code>GetDistributionConfig</code>.</p>
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
      * <p>The unique identifier for the cache policy that you are updating. The
-     * identifier is returned in a cache behavior’s <code>CachePolicyId</code> field in
+     * identifier is returned in a cache behavior's <code>CachePolicyId</code> field in
      * the response to <code>GetDistributionConfig</code>.</p>
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /**
      * <p>The unique identifier for the cache policy that you are updating. The
-     * identifier is returned in a cache behavior’s <code>CachePolicyId</code> field in
+     * identifier is returned in a cache behavior's <code>CachePolicyId</code> field in
      * the response to <code>GetDistributionConfig</code>.</p>
      */
     inline UpdateCachePolicy2020_05_31Request& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
      * <p>The unique identifier for the cache policy that you are updating. The
-     * identifier is returned in a cache behavior’s <code>CachePolicyId</code> field in
+     * identifier is returned in a cache behavior's <code>CachePolicyId</code> field in
      * the response to <code>GetDistributionConfig</code>.</p>
      */
     inline UpdateCachePolicy2020_05_31Request& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
      * <p>The unique identifier for the cache policy that you are updating. The
-     * identifier is returned in a cache behavior’s <code>CachePolicyId</code> field in
+     * identifier is returned in a cache behavior's <code>CachePolicyId</code> field in
      * the response to <code>GetDistributionConfig</code>.</p>
      */
     inline UpdateCachePolicy2020_05_31Request& WithId(const char* value) { SetId(value); return *this;}
@@ -125,56 +125,56 @@ namespace Model
 
     /**
      * <p>The version of the cache policy that you are updating. The version is
-     * returned in the cache policy’s <code>ETag</code> field in the response to
+     * returned in the cache policy's <code>ETag</code> field in the response to
      * <code>GetCachePolicyConfig</code>.</p>
      */
     inline const Aws::String& GetIfMatch() const{ return m_ifMatch; }
 
     /**
      * <p>The version of the cache policy that you are updating. The version is
-     * returned in the cache policy’s <code>ETag</code> field in the response to
+     * returned in the cache policy's <code>ETag</code> field in the response to
      * <code>GetCachePolicyConfig</code>.</p>
      */
     inline bool IfMatchHasBeenSet() const { return m_ifMatchHasBeenSet; }
 
     /**
      * <p>The version of the cache policy that you are updating. The version is
-     * returned in the cache policy’s <code>ETag</code> field in the response to
+     * returned in the cache policy's <code>ETag</code> field in the response to
      * <code>GetCachePolicyConfig</code>.</p>
      */
     inline void SetIfMatch(const Aws::String& value) { m_ifMatchHasBeenSet = true; m_ifMatch = value; }
 
     /**
      * <p>The version of the cache policy that you are updating. The version is
-     * returned in the cache policy’s <code>ETag</code> field in the response to
+     * returned in the cache policy's <code>ETag</code> field in the response to
      * <code>GetCachePolicyConfig</code>.</p>
      */
     inline void SetIfMatch(Aws::String&& value) { m_ifMatchHasBeenSet = true; m_ifMatch = std::move(value); }
 
     /**
      * <p>The version of the cache policy that you are updating. The version is
-     * returned in the cache policy’s <code>ETag</code> field in the response to
+     * returned in the cache policy's <code>ETag</code> field in the response to
      * <code>GetCachePolicyConfig</code>.</p>
      */
     inline void SetIfMatch(const char* value) { m_ifMatchHasBeenSet = true; m_ifMatch.assign(value); }
 
     /**
      * <p>The version of the cache policy that you are updating. The version is
-     * returned in the cache policy’s <code>ETag</code> field in the response to
+     * returned in the cache policy's <code>ETag</code> field in the response to
      * <code>GetCachePolicyConfig</code>.</p>
      */
     inline UpdateCachePolicy2020_05_31Request& WithIfMatch(const Aws::String& value) { SetIfMatch(value); return *this;}
 
     /**
      * <p>The version of the cache policy that you are updating. The version is
-     * returned in the cache policy’s <code>ETag</code> field in the response to
+     * returned in the cache policy's <code>ETag</code> field in the response to
      * <code>GetCachePolicyConfig</code>.</p>
      */
     inline UpdateCachePolicy2020_05_31Request& WithIfMatch(Aws::String&& value) { SetIfMatch(std::move(value)); return *this;}
 
     /**
      * <p>The version of the cache policy that you are updating. The version is
-     * returned in the cache policy’s <code>ETag</code> field in the response to
+     * returned in the cache policy's <code>ETag</code> field in the response to
      * <code>GetCachePolicyConfig</code>.</p>
      */
     inline UpdateCachePolicy2020_05_31Request& WithIfMatch(const char* value) { SetIfMatch(value); return *this;}

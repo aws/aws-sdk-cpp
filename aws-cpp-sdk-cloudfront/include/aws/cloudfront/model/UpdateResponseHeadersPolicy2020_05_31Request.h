@@ -109,56 +109,56 @@ namespace Model
 
     /**
      * <p>The version of the response headers policy that you are updating.</p> <p>The
-     * version is returned in the cache policy’s <code>ETag</code> field in the
+     * version is returned in the cache policy's <code>ETag</code> field in the
      * response to <code>GetResponseHeadersPolicyConfig</code>.</p>
      */
     inline const Aws::String& GetIfMatch() const{ return m_ifMatch; }
 
     /**
      * <p>The version of the response headers policy that you are updating.</p> <p>The
-     * version is returned in the cache policy’s <code>ETag</code> field in the
+     * version is returned in the cache policy's <code>ETag</code> field in the
      * response to <code>GetResponseHeadersPolicyConfig</code>.</p>
      */
     inline bool IfMatchHasBeenSet() const { return m_ifMatchHasBeenSet; }
 
     /**
      * <p>The version of the response headers policy that you are updating.</p> <p>The
-     * version is returned in the cache policy’s <code>ETag</code> field in the
+     * version is returned in the cache policy's <code>ETag</code> field in the
      * response to <code>GetResponseHeadersPolicyConfig</code>.</p>
      */
     inline void SetIfMatch(const Aws::String& value) { m_ifMatchHasBeenSet = true; m_ifMatch = value; }
 
     /**
      * <p>The version of the response headers policy that you are updating.</p> <p>The
-     * version is returned in the cache policy’s <code>ETag</code> field in the
+     * version is returned in the cache policy's <code>ETag</code> field in the
      * response to <code>GetResponseHeadersPolicyConfig</code>.</p>
      */
     inline void SetIfMatch(Aws::String&& value) { m_ifMatchHasBeenSet = true; m_ifMatch = std::move(value); }
 
     /**
      * <p>The version of the response headers policy that you are updating.</p> <p>The
-     * version is returned in the cache policy’s <code>ETag</code> field in the
+     * version is returned in the cache policy's <code>ETag</code> field in the
      * response to <code>GetResponseHeadersPolicyConfig</code>.</p>
      */
     inline void SetIfMatch(const char* value) { m_ifMatchHasBeenSet = true; m_ifMatch.assign(value); }
 
     /**
      * <p>The version of the response headers policy that you are updating.</p> <p>The
-     * version is returned in the cache policy’s <code>ETag</code> field in the
+     * version is returned in the cache policy's <code>ETag</code> field in the
      * response to <code>GetResponseHeadersPolicyConfig</code>.</p>
      */
     inline UpdateResponseHeadersPolicy2020_05_31Request& WithIfMatch(const Aws::String& value) { SetIfMatch(value); return *this;}
 
     /**
      * <p>The version of the response headers policy that you are updating.</p> <p>The
-     * version is returned in the cache policy’s <code>ETag</code> field in the
+     * version is returned in the cache policy's <code>ETag</code> field in the
      * response to <code>GetResponseHeadersPolicyConfig</code>.</p>
      */
     inline UpdateResponseHeadersPolicy2020_05_31Request& WithIfMatch(Aws::String&& value) { SetIfMatch(std::move(value)); return *this;}
 
     /**
      * <p>The version of the response headers policy that you are updating.</p> <p>The
-     * version is returned in the cache policy’s <code>ETag</code> field in the
+     * version is returned in the cache policy's <code>ETag</code> field in the
      * response to <code>GetResponseHeadersPolicyConfig</code>.</p>
      */
     inline UpdateResponseHeadersPolicy2020_05_31Request& WithIfMatch(const char* value) { SetIfMatch(value); return *this;}

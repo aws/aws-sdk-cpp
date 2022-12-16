@@ -46,7 +46,7 @@ namespace Model
      * <code>empty Bucket</code> and <code>Prefix</code> elements. If you specify
      * <code>false</code> for <code>Enabled</code> but you specify values for
      * <code>Bucket</code> and <code>Prefix</code>, the values are automatically
-     * deleted. </p>
+     * deleted.</p>
      */
     inline bool GetEnabled() const{ return m_enabled; }
 
@@ -58,7 +58,7 @@ namespace Model
      * <code>empty Bucket</code> and <code>Prefix</code> elements. If you specify
      * <code>false</code> for <code>Enabled</code> but you specify values for
      * <code>Bucket</code> and <code>Prefix</code>, the values are automatically
-     * deleted. </p>
+     * deleted.</p>
      */
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
 
@@ -70,7 +70,7 @@ namespace Model
      * <code>empty Bucket</code> and <code>Prefix</code> elements. If you specify
      * <code>false</code> for <code>Enabled</code> but you specify values for
      * <code>Bucket</code> and <code>Prefix</code>, the values are automatically
-     * deleted. </p>
+     * deleted.</p>
      */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
 
@@ -82,7 +82,7 @@ namespace Model
      * <code>empty Bucket</code> and <code>Prefix</code> elements. If you specify
      * <code>false</code> for <code>Enabled</code> but you specify values for
      * <code>Bucket</code> and <code>Prefix</code>, the values are automatically
-     * deleted. </p>
+     * deleted.</p>
      */
     inline StreamingLoggingConfig& WithEnabled(bool value) { SetEnabled(value); return *this;}
 

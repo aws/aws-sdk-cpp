@@ -26,7 +26,7 @@ namespace Model
 
   /**
    * <p>A complex data type that includes the profile configurations and other
-   * options specified for field-level encryption. </p><p><h3>See Also:</h3>   <a
+   * options specified for field-level encryption.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/FieldLevelEncryption">AWS
    * API Reference</a></p>
    */
@@ -98,69 +98,69 @@ namespace Model
 
 
     /**
-     * <p>The last time the field-level encryption configuration was changed. </p>
+     * <p>The last time the field-level encryption configuration was changed.</p>
      */
     inline const Aws::Utils::DateTime& GetLastModifiedTime() const{ return m_lastModifiedTime; }
 
     /**
-     * <p>The last time the field-level encryption configuration was changed. </p>
+     * <p>The last time the field-level encryption configuration was changed.</p>
      */
     inline bool LastModifiedTimeHasBeenSet() const { return m_lastModifiedTimeHasBeenSet; }
 
     /**
-     * <p>The last time the field-level encryption configuration was changed. </p>
+     * <p>The last time the field-level encryption configuration was changed.</p>
      */
     inline void SetLastModifiedTime(const Aws::Utils::DateTime& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = value; }
 
     /**
-     * <p>The last time the field-level encryption configuration was changed. </p>
+     * <p>The last time the field-level encryption configuration was changed.</p>
      */
     inline void SetLastModifiedTime(Aws::Utils::DateTime&& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = std::move(value); }
 
     /**
-     * <p>The last time the field-level encryption configuration was changed. </p>
+     * <p>The last time the field-level encryption configuration was changed.</p>
      */
     inline FieldLevelEncryption& WithLastModifiedTime(const Aws::Utils::DateTime& value) { SetLastModifiedTime(value); return *this;}
 
     /**
-     * <p>The last time the field-level encryption configuration was changed. </p>
+     * <p>The last time the field-level encryption configuration was changed.</p>
      */
     inline FieldLevelEncryption& WithLastModifiedTime(Aws::Utils::DateTime&& value) { SetLastModifiedTime(std::move(value)); return *this;}
 
 
     /**
      * <p>A complex data type that includes the profile configurations specified for
-     * field-level encryption. </p>
+     * field-level encryption.</p>
      */
     inline const FieldLevelEncryptionConfig& GetFieldLevelEncryptionConfig() const{ return m_fieldLevelEncryptionConfig; }
 
     /**
      * <p>A complex data type that includes the profile configurations specified for
-     * field-level encryption. </p>
+     * field-level encryption.</p>
      */
     inline bool FieldLevelEncryptionConfigHasBeenSet() const { return m_fieldLevelEncryptionConfigHasBeenSet; }
 
     /**
      * <p>A complex data type that includes the profile configurations specified for
-     * field-level encryption. </p>
+     * field-level encryption.</p>
      */
     inline void SetFieldLevelEncryptionConfig(const FieldLevelEncryptionConfig& value) { m_fieldLevelEncryptionConfigHasBeenSet = true; m_fieldLevelEncryptionConfig = value; }
 
     /**
      * <p>A complex data type that includes the profile configurations specified for
-     * field-level encryption. </p>
+     * field-level encryption.</p>
      */
     inline void SetFieldLevelEncryptionConfig(FieldLevelEncryptionConfig&& value) { m_fieldLevelEncryptionConfigHasBeenSet = true; m_fieldLevelEncryptionConfig = std::move(value); }
 
     /**
      * <p>A complex data type that includes the profile configurations specified for
-     * field-level encryption. </p>
+     * field-level encryption.</p>
      */
     inline FieldLevelEncryption& WithFieldLevelEncryptionConfig(const FieldLevelEncryptionConfig& value) { SetFieldLevelEncryptionConfig(value); return *this;}
 
     /**
      * <p>A complex data type that includes the profile configurations specified for
-     * field-level encryption. </p>
+     * field-level encryption.</p>
      */
     inline FieldLevelEncryption& WithFieldLevelEncryptionConfig(FieldLevelEncryptionConfig&& value) { SetFieldLevelEncryptionConfig(std::move(value)); return *this;}
 

@@ -46,139 +46,139 @@ namespace Model
 
 
     /**
-     * <p>The distribution’s identifier. For example: <code>E1U5RQF7T870K0</code>.</p>
+     * <p>The distribution's identifier. For example: <code>E1U5RQF7T870K0</code>.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * <p>The distribution’s identifier. For example: <code>E1U5RQF7T870K0</code>.</p>
+     * <p>The distribution's identifier. For example: <code>E1U5RQF7T870K0</code>.</p>
      */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
     /**
-     * <p>The distribution’s identifier. For example: <code>E1U5RQF7T870K0</code>.</p>
+     * <p>The distribution's identifier. For example: <code>E1U5RQF7T870K0</code>.</p>
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
-     * <p>The distribution’s identifier. For example: <code>E1U5RQF7T870K0</code>.</p>
+     * <p>The distribution's identifier. For example: <code>E1U5RQF7T870K0</code>.</p>
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
-     * <p>The distribution’s identifier. For example: <code>E1U5RQF7T870K0</code>.</p>
+     * <p>The distribution's identifier. For example: <code>E1U5RQF7T870K0</code>.</p>
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /**
-     * <p>The distribution’s identifier. For example: <code>E1U5RQF7T870K0</code>.</p>
+     * <p>The distribution's identifier. For example: <code>E1U5RQF7T870K0</code>.</p>
      */
     inline Distribution& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * <p>The distribution’s identifier. For example: <code>E1U5RQF7T870K0</code>.</p>
+     * <p>The distribution's identifier. For example: <code>E1U5RQF7T870K0</code>.</p>
      */
     inline Distribution& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
-     * <p>The distribution’s identifier. For example: <code>E1U5RQF7T870K0</code>.</p>
+     * <p>The distribution's identifier. For example: <code>E1U5RQF7T870K0</code>.</p>
      */
     inline Distribution& WithId(const char* value) { SetId(value); return *this;}
 
 
     /**
-     * <p>The distribution’s Amazon Resource Name (ARN).</p>
+     * <p>The distribution's Amazon Resource Name (ARN).</p>
      */
     inline const Aws::String& GetARN() const{ return m_aRN; }
 
     /**
-     * <p>The distribution’s Amazon Resource Name (ARN).</p>
+     * <p>The distribution's Amazon Resource Name (ARN).</p>
      */
     inline bool ARNHasBeenSet() const { return m_aRNHasBeenSet; }
 
     /**
-     * <p>The distribution’s Amazon Resource Name (ARN).</p>
+     * <p>The distribution's Amazon Resource Name (ARN).</p>
      */
     inline void SetARN(const Aws::String& value) { m_aRNHasBeenSet = true; m_aRN = value; }
 
     /**
-     * <p>The distribution’s Amazon Resource Name (ARN).</p>
+     * <p>The distribution's Amazon Resource Name (ARN).</p>
      */
     inline void SetARN(Aws::String&& value) { m_aRNHasBeenSet = true; m_aRN = std::move(value); }
 
     /**
-     * <p>The distribution’s Amazon Resource Name (ARN).</p>
+     * <p>The distribution's Amazon Resource Name (ARN).</p>
      */
     inline void SetARN(const char* value) { m_aRNHasBeenSet = true; m_aRN.assign(value); }
 
     /**
-     * <p>The distribution’s Amazon Resource Name (ARN).</p>
+     * <p>The distribution's Amazon Resource Name (ARN).</p>
      */
     inline Distribution& WithARN(const Aws::String& value) { SetARN(value); return *this;}
 
     /**
-     * <p>The distribution’s Amazon Resource Name (ARN).</p>
+     * <p>The distribution's Amazon Resource Name (ARN).</p>
      */
     inline Distribution& WithARN(Aws::String&& value) { SetARN(std::move(value)); return *this;}
 
     /**
-     * <p>The distribution’s Amazon Resource Name (ARN).</p>
+     * <p>The distribution's Amazon Resource Name (ARN).</p>
      */
     inline Distribution& WithARN(const char* value) { SetARN(value); return *this;}
 
 
     /**
-     * <p>The distribution’s status. When the status is <code>Deployed</code>, the
-     * distribution’s information is fully propagated to all CloudFront edge
+     * <p>The distribution's status. When the status is <code>Deployed</code>, the
+     * distribution's information is fully propagated to all CloudFront edge
      * locations.</p>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The distribution’s status. When the status is <code>Deployed</code>, the
-     * distribution’s information is fully propagated to all CloudFront edge
+     * <p>The distribution's status. When the status is <code>Deployed</code>, the
+     * distribution's information is fully propagated to all CloudFront edge
      * locations.</p>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p>The distribution’s status. When the status is <code>Deployed</code>, the
-     * distribution’s information is fully propagated to all CloudFront edge
+     * <p>The distribution's status. When the status is <code>Deployed</code>, the
+     * distribution's information is fully propagated to all CloudFront edge
      * locations.</p>
      */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The distribution’s status. When the status is <code>Deployed</code>, the
-     * distribution’s information is fully propagated to all CloudFront edge
+     * <p>The distribution's status. When the status is <code>Deployed</code>, the
+     * distribution's information is fully propagated to all CloudFront edge
      * locations.</p>
      */
     inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>The distribution’s status. When the status is <code>Deployed</code>, the
-     * distribution’s information is fully propagated to all CloudFront edge
+     * <p>The distribution's status. When the status is <code>Deployed</code>, the
+     * distribution's information is fully propagated to all CloudFront edge
      * locations.</p>
      */
     inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
 
     /**
-     * <p>The distribution’s status. When the status is <code>Deployed</code>, the
-     * distribution’s information is fully propagated to all CloudFront edge
+     * <p>The distribution's status. When the status is <code>Deployed</code>, the
+     * distribution's information is fully propagated to all CloudFront edge
      * locations.</p>
      */
     inline Distribution& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The distribution’s status. When the status is <code>Deployed</code>, the
-     * distribution’s information is fully propagated to all CloudFront edge
+     * <p>The distribution's status. When the status is <code>Deployed</code>, the
+     * distribution's information is fully propagated to all CloudFront edge
      * locations.</p>
      */
     inline Distribution& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
-     * <p>The distribution’s status. When the status is <code>Deployed</code>, the
-     * distribution’s information is fully propagated to all CloudFront edge
+     * <p>The distribution's status. When the status is <code>Deployed</code>, the
+     * distribution's information is fully propagated to all CloudFront edge
      * locations.</p>
      */
     inline Distribution& WithStatus(const char* value) { SetStatus(value); return *this;}
@@ -216,70 +216,70 @@ namespace Model
 
 
     /**
-     * <p>The number of invalidation batches currently in progress. </p>
+     * <p>The number of invalidation batches currently in progress.</p>
      */
     inline int GetInProgressInvalidationBatches() const{ return m_inProgressInvalidationBatches; }
 
     /**
-     * <p>The number of invalidation batches currently in progress. </p>
+     * <p>The number of invalidation batches currently in progress.</p>
      */
     inline bool InProgressInvalidationBatchesHasBeenSet() const { return m_inProgressInvalidationBatchesHasBeenSet; }
 
     /**
-     * <p>The number of invalidation batches currently in progress. </p>
+     * <p>The number of invalidation batches currently in progress.</p>
      */
     inline void SetInProgressInvalidationBatches(int value) { m_inProgressInvalidationBatchesHasBeenSet = true; m_inProgressInvalidationBatches = value; }
 
     /**
-     * <p>The number of invalidation batches currently in progress. </p>
+     * <p>The number of invalidation batches currently in progress.</p>
      */
     inline Distribution& WithInProgressInvalidationBatches(int value) { SetInProgressInvalidationBatches(value); return *this;}
 
 
     /**
-     * <p>The distribution’s CloudFront domain name. For example:
+     * <p>The distribution's CloudFront domain name. For example:
      * <code>d111111abcdef8.cloudfront.net</code>.</p>
      */
     inline const Aws::String& GetDomainName() const{ return m_domainName; }
 
     /**
-     * <p>The distribution’s CloudFront domain name. For example:
+     * <p>The distribution's CloudFront domain name. For example:
      * <code>d111111abcdef8.cloudfront.net</code>.</p>
      */
     inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
 
     /**
-     * <p>The distribution’s CloudFront domain name. For example:
+     * <p>The distribution's CloudFront domain name. For example:
      * <code>d111111abcdef8.cloudfront.net</code>.</p>
      */
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
 
     /**
-     * <p>The distribution’s CloudFront domain name. For example:
+     * <p>The distribution's CloudFront domain name. For example:
      * <code>d111111abcdef8.cloudfront.net</code>.</p>
      */
     inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
 
     /**
-     * <p>The distribution’s CloudFront domain name. For example:
+     * <p>The distribution's CloudFront domain name. For example:
      * <code>d111111abcdef8.cloudfront.net</code>.</p>
      */
     inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
 
     /**
-     * <p>The distribution’s CloudFront domain name. For example:
+     * <p>The distribution's CloudFront domain name. For example:
      * <code>d111111abcdef8.cloudfront.net</code>.</p>
      */
     inline Distribution& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
 
     /**
-     * <p>The distribution’s CloudFront domain name. For example:
+     * <p>The distribution's CloudFront domain name. For example:
      * <code>d111111abcdef8.cloudfront.net</code>.</p>
      */
     inline Distribution& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
 
     /**
-     * <p>The distribution’s CloudFront domain name. For example:
+     * <p>The distribution's CloudFront domain name. For example:
      * <code>d111111abcdef8.cloudfront.net</code>.</p>
      */
     inline Distribution& WithDomainName(const char* value) { SetDomainName(value); return *this;}
@@ -287,153 +287,129 @@ namespace Model
 
     /**
      *  <p>We recommend using <code>TrustedKeyGroups</code> instead of
-     * <code>TrustedSigners</code>.</p>  <p>CloudFront automatically adds
-     * this field to the response if you’ve configured a cache behavior in this
-     * distribution to serve private content using trusted signers. This field contains
-     * a list of Amazon Web Services account IDs and the active CloudFront key pairs in
-     * each account that CloudFront can use to verify the signatures of signed URLs or
+     * <code>TrustedSigners</code>.</p>  <p>This field contains a list of
+     * Amazon Web Services account IDs and the active CloudFront key pairs in each
+     * account that CloudFront can use to verify the signatures of signed URLs or
      * signed cookies.</p>
      */
     inline const ActiveTrustedSigners& GetActiveTrustedSigners() const{ return m_activeTrustedSigners; }
 
     /**
      *  <p>We recommend using <code>TrustedKeyGroups</code> instead of
-     * <code>TrustedSigners</code>.</p>  <p>CloudFront automatically adds
-     * this field to the response if you’ve configured a cache behavior in this
-     * distribution to serve private content using trusted signers. This field contains
-     * a list of Amazon Web Services account IDs and the active CloudFront key pairs in
-     * each account that CloudFront can use to verify the signatures of signed URLs or
+     * <code>TrustedSigners</code>.</p>  <p>This field contains a list of
+     * Amazon Web Services account IDs and the active CloudFront key pairs in each
+     * account that CloudFront can use to verify the signatures of signed URLs or
      * signed cookies.</p>
      */
     inline bool ActiveTrustedSignersHasBeenSet() const { return m_activeTrustedSignersHasBeenSet; }
 
     /**
      *  <p>We recommend using <code>TrustedKeyGroups</code> instead of
-     * <code>TrustedSigners</code>.</p>  <p>CloudFront automatically adds
-     * this field to the response if you’ve configured a cache behavior in this
-     * distribution to serve private content using trusted signers. This field contains
-     * a list of Amazon Web Services account IDs and the active CloudFront key pairs in
-     * each account that CloudFront can use to verify the signatures of signed URLs or
+     * <code>TrustedSigners</code>.</p>  <p>This field contains a list of
+     * Amazon Web Services account IDs and the active CloudFront key pairs in each
+     * account that CloudFront can use to verify the signatures of signed URLs or
      * signed cookies.</p>
      */
     inline void SetActiveTrustedSigners(const ActiveTrustedSigners& value) { m_activeTrustedSignersHasBeenSet = true; m_activeTrustedSigners = value; }
 
     /**
      *  <p>We recommend using <code>TrustedKeyGroups</code> instead of
-     * <code>TrustedSigners</code>.</p>  <p>CloudFront automatically adds
-     * this field to the response if you’ve configured a cache behavior in this
-     * distribution to serve private content using trusted signers. This field contains
-     * a list of Amazon Web Services account IDs and the active CloudFront key pairs in
-     * each account that CloudFront can use to verify the signatures of signed URLs or
+     * <code>TrustedSigners</code>.</p>  <p>This field contains a list of
+     * Amazon Web Services account IDs and the active CloudFront key pairs in each
+     * account that CloudFront can use to verify the signatures of signed URLs or
      * signed cookies.</p>
      */
     inline void SetActiveTrustedSigners(ActiveTrustedSigners&& value) { m_activeTrustedSignersHasBeenSet = true; m_activeTrustedSigners = std::move(value); }
 
     /**
      *  <p>We recommend using <code>TrustedKeyGroups</code> instead of
-     * <code>TrustedSigners</code>.</p>  <p>CloudFront automatically adds
-     * this field to the response if you’ve configured a cache behavior in this
-     * distribution to serve private content using trusted signers. This field contains
-     * a list of Amazon Web Services account IDs and the active CloudFront key pairs in
-     * each account that CloudFront can use to verify the signatures of signed URLs or
+     * <code>TrustedSigners</code>.</p>  <p>This field contains a list of
+     * Amazon Web Services account IDs and the active CloudFront key pairs in each
+     * account that CloudFront can use to verify the signatures of signed URLs or
      * signed cookies.</p>
      */
     inline Distribution& WithActiveTrustedSigners(const ActiveTrustedSigners& value) { SetActiveTrustedSigners(value); return *this;}
 
     /**
      *  <p>We recommend using <code>TrustedKeyGroups</code> instead of
-     * <code>TrustedSigners</code>.</p>  <p>CloudFront automatically adds
-     * this field to the response if you’ve configured a cache behavior in this
-     * distribution to serve private content using trusted signers. This field contains
-     * a list of Amazon Web Services account IDs and the active CloudFront key pairs in
-     * each account that CloudFront can use to verify the signatures of signed URLs or
+     * <code>TrustedSigners</code>.</p>  <p>This field contains a list of
+     * Amazon Web Services account IDs and the active CloudFront key pairs in each
+     * account that CloudFront can use to verify the signatures of signed URLs or
      * signed cookies.</p>
      */
     inline Distribution& WithActiveTrustedSigners(ActiveTrustedSigners&& value) { SetActiveTrustedSigners(std::move(value)); return *this;}
 
 
     /**
-     * <p>CloudFront automatically adds this field to the response if you’ve configured
-     * a cache behavior in this distribution to serve private content using key groups.
-     * This field contains a list of key groups and the public keys in each key group
-     * that CloudFront can use to verify the signatures of signed URLs or signed
+     * <p>This field contains a list of key groups and the public keys in each key
+     * group that CloudFront can use to verify the signatures of signed URLs or signed
      * cookies.</p>
      */
     inline const ActiveTrustedKeyGroups& GetActiveTrustedKeyGroups() const{ return m_activeTrustedKeyGroups; }
 
     /**
-     * <p>CloudFront automatically adds this field to the response if you’ve configured
-     * a cache behavior in this distribution to serve private content using key groups.
-     * This field contains a list of key groups and the public keys in each key group
-     * that CloudFront can use to verify the signatures of signed URLs or signed
+     * <p>This field contains a list of key groups and the public keys in each key
+     * group that CloudFront can use to verify the signatures of signed URLs or signed
      * cookies.</p>
      */
     inline bool ActiveTrustedKeyGroupsHasBeenSet() const { return m_activeTrustedKeyGroupsHasBeenSet; }
 
     /**
-     * <p>CloudFront automatically adds this field to the response if you’ve configured
-     * a cache behavior in this distribution to serve private content using key groups.
-     * This field contains a list of key groups and the public keys in each key group
-     * that CloudFront can use to verify the signatures of signed URLs or signed
+     * <p>This field contains a list of key groups and the public keys in each key
+     * group that CloudFront can use to verify the signatures of signed URLs or signed
      * cookies.</p>
      */
     inline void SetActiveTrustedKeyGroups(const ActiveTrustedKeyGroups& value) { m_activeTrustedKeyGroupsHasBeenSet = true; m_activeTrustedKeyGroups = value; }
 
     /**
-     * <p>CloudFront automatically adds this field to the response if you’ve configured
-     * a cache behavior in this distribution to serve private content using key groups.
-     * This field contains a list of key groups and the public keys in each key group
-     * that CloudFront can use to verify the signatures of signed URLs or signed
+     * <p>This field contains a list of key groups and the public keys in each key
+     * group that CloudFront can use to verify the signatures of signed URLs or signed
      * cookies.</p>
      */
     inline void SetActiveTrustedKeyGroups(ActiveTrustedKeyGroups&& value) { m_activeTrustedKeyGroupsHasBeenSet = true; m_activeTrustedKeyGroups = std::move(value); }
 
     /**
-     * <p>CloudFront automatically adds this field to the response if you’ve configured
-     * a cache behavior in this distribution to serve private content using key groups.
-     * This field contains a list of key groups and the public keys in each key group
-     * that CloudFront can use to verify the signatures of signed URLs or signed
+     * <p>This field contains a list of key groups and the public keys in each key
+     * group that CloudFront can use to verify the signatures of signed URLs or signed
      * cookies.</p>
      */
     inline Distribution& WithActiveTrustedKeyGroups(const ActiveTrustedKeyGroups& value) { SetActiveTrustedKeyGroups(value); return *this;}
 
     /**
-     * <p>CloudFront automatically adds this field to the response if you’ve configured
-     * a cache behavior in this distribution to serve private content using key groups.
-     * This field contains a list of key groups and the public keys in each key group
-     * that CloudFront can use to verify the signatures of signed URLs or signed
+     * <p>This field contains a list of key groups and the public keys in each key
+     * group that CloudFront can use to verify the signatures of signed URLs or signed
      * cookies.</p>
      */
     inline Distribution& WithActiveTrustedKeyGroups(ActiveTrustedKeyGroups&& value) { SetActiveTrustedKeyGroups(std::move(value)); return *this;}
 
 
     /**
-     * <p>The distribution’s configuration.</p>
+     * <p>The distribution's configuration.</p>
      */
     inline const DistributionConfig& GetDistributionConfig() const{ return m_distributionConfig; }
 
     /**
-     * <p>The distribution’s configuration.</p>
+     * <p>The distribution's configuration.</p>
      */
     inline bool DistributionConfigHasBeenSet() const { return m_distributionConfigHasBeenSet; }
 
     /**
-     * <p>The distribution’s configuration.</p>
+     * <p>The distribution's configuration.</p>
      */
     inline void SetDistributionConfig(const DistributionConfig& value) { m_distributionConfigHasBeenSet = true; m_distributionConfig = value; }
 
     /**
-     * <p>The distribution’s configuration.</p>
+     * <p>The distribution's configuration.</p>
      */
     inline void SetDistributionConfig(DistributionConfig&& value) { m_distributionConfigHasBeenSet = true; m_distributionConfig = std::move(value); }
 
     /**
-     * <p>The distribution’s configuration.</p>
+     * <p>The distribution's configuration.</p>
      */
     inline Distribution& WithDistributionConfig(const DistributionConfig& value) { SetDistributionConfig(value); return *this;}
 
     /**
-     * <p>The distribution’s configuration.</p>
+     * <p>The distribution's configuration.</p>
      */
     inline Distribution& WithDistributionConfig(DistributionConfig&& value) { SetDistributionConfig(std::move(value)); return *this;}
 

@@ -26,7 +26,7 @@ namespace CloudFront
 namespace Model
 {
   /**
-   * <p>The returned result of the corresponding request. </p><p><h3>See Also:</h3>  
+   * <p>The returned result of the corresponding request.</p><p><h3>See Also:</h3>  
    * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateDistributionWithTagsResult">AWS
    * API Reference</a></p>
@@ -40,27 +40,27 @@ namespace Model
 
 
     /**
-     * <p>The distribution's information. </p>
+     * <p>The distribution's information.</p>
      */
     inline const Distribution& GetDistribution() const{ return m_distribution; }
 
     /**
-     * <p>The distribution's information. </p>
+     * <p>The distribution's information.</p>
      */
     inline void SetDistribution(const Distribution& value) { m_distribution = value; }
 
     /**
-     * <p>The distribution's information. </p>
+     * <p>The distribution's information.</p>
      */
     inline void SetDistribution(Distribution&& value) { m_distribution = std::move(value); }
 
     /**
-     * <p>The distribution's information. </p>
+     * <p>The distribution's information.</p>
      */
     inline CreateDistributionWithTags2020_05_31Result& WithDistribution(const Distribution& value) { SetDistribution(value); return *this;}
 
     /**
-     * <p>The distribution's information. </p>
+     * <p>The distribution's information.</p>
      */
     inline CreateDistributionWithTags2020_05_31Result& WithDistribution(Distribution&& value) { SetDistribution(std::move(value)); return *this;}
 

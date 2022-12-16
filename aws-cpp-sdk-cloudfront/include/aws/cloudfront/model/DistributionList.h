@@ -83,56 +83,56 @@ namespace Model
     /**
      * <p>If <code>IsTruncated</code> is <code>true</code>, this element is present and
      * contains the value you can use for the <code>Marker</code> request parameter to
-     * continue listing your distributions where they left off. </p>
+     * continue listing your distributions where they left off.</p>
      */
     inline const Aws::String& GetNextMarker() const{ return m_nextMarker; }
 
     /**
      * <p>If <code>IsTruncated</code> is <code>true</code>, this element is present and
      * contains the value you can use for the <code>Marker</code> request parameter to
-     * continue listing your distributions where they left off. </p>
+     * continue listing your distributions where they left off.</p>
      */
     inline bool NextMarkerHasBeenSet() const { return m_nextMarkerHasBeenSet; }
 
     /**
      * <p>If <code>IsTruncated</code> is <code>true</code>, this element is present and
      * contains the value you can use for the <code>Marker</code> request parameter to
-     * continue listing your distributions where they left off. </p>
+     * continue listing your distributions where they left off.</p>
      */
     inline void SetNextMarker(const Aws::String& value) { m_nextMarkerHasBeenSet = true; m_nextMarker = value; }
 
     /**
      * <p>If <code>IsTruncated</code> is <code>true</code>, this element is present and
      * contains the value you can use for the <code>Marker</code> request parameter to
-     * continue listing your distributions where they left off. </p>
+     * continue listing your distributions where they left off.</p>
      */
     inline void SetNextMarker(Aws::String&& value) { m_nextMarkerHasBeenSet = true; m_nextMarker = std::move(value); }
 
     /**
      * <p>If <code>IsTruncated</code> is <code>true</code>, this element is present and
      * contains the value you can use for the <code>Marker</code> request parameter to
-     * continue listing your distributions where they left off. </p>
+     * continue listing your distributions where they left off.</p>
      */
     inline void SetNextMarker(const char* value) { m_nextMarkerHasBeenSet = true; m_nextMarker.assign(value); }
 
     /**
      * <p>If <code>IsTruncated</code> is <code>true</code>, this element is present and
      * contains the value you can use for the <code>Marker</code> request parameter to
-     * continue listing your distributions where they left off. </p>
+     * continue listing your distributions where they left off.</p>
      */
     inline DistributionList& WithNextMarker(const Aws::String& value) { SetNextMarker(value); return *this;}
 
     /**
      * <p>If <code>IsTruncated</code> is <code>true</code>, this element is present and
      * contains the value you can use for the <code>Marker</code> request parameter to
-     * continue listing your distributions where they left off. </p>
+     * continue listing your distributions where they left off.</p>
      */
     inline DistributionList& WithNextMarker(Aws::String&& value) { SetNextMarker(std::move(value)); return *this;}
 
     /**
      * <p>If <code>IsTruncated</code> is <code>true</code>, this element is present and
      * contains the value you can use for the <code>Marker</code> request parameter to
-     * continue listing your distributions where they left off. </p>
+     * continue listing your distributions where they left off.</p>
      */
     inline DistributionList& WithNextMarker(const char* value) { SetNextMarker(value); return *this;}
 

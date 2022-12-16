@@ -42,8 +42,8 @@ namespace Model
      * <p>A complex type that contains information about the objects that you want to
      * invalidate. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Invalidation.html#invalidation-specifying-objects">Specifying
-     * the Objects to Invalidate</a> in the <i>Amazon CloudFront Developer Guide</i>.
-     * </p>
+     * the Objects to Invalidate</a> in the <i>Amazon CloudFront Developer
+     * Guide</i>.</p>
      */
     inline const Paths& GetPaths() const{ return m_paths; }
 
@@ -51,8 +51,8 @@ namespace Model
      * <p>A complex type that contains information about the objects that you want to
      * invalidate. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Invalidation.html#invalidation-specifying-objects">Specifying
-     * the Objects to Invalidate</a> in the <i>Amazon CloudFront Developer Guide</i>.
-     * </p>
+     * the Objects to Invalidate</a> in the <i>Amazon CloudFront Developer
+     * Guide</i>.</p>
      */
     inline bool PathsHasBeenSet() const { return m_pathsHasBeenSet; }
 
@@ -60,8 +60,8 @@ namespace Model
      * <p>A complex type that contains information about the objects that you want to
      * invalidate. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Invalidation.html#invalidation-specifying-objects">Specifying
-     * the Objects to Invalidate</a> in the <i>Amazon CloudFront Developer Guide</i>.
-     * </p>
+     * the Objects to Invalidate</a> in the <i>Amazon CloudFront Developer
+     * Guide</i>.</p>
      */
     inline void SetPaths(const Paths& value) { m_pathsHasBeenSet = true; m_paths = value; }
 
@@ -69,8 +69,8 @@ namespace Model
      * <p>A complex type that contains information about the objects that you want to
      * invalidate. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Invalidation.html#invalidation-specifying-objects">Specifying
-     * the Objects to Invalidate</a> in the <i>Amazon CloudFront Developer Guide</i>.
-     * </p>
+     * the Objects to Invalidate</a> in the <i>Amazon CloudFront Developer
+     * Guide</i>.</p>
      */
     inline void SetPaths(Paths&& value) { m_pathsHasBeenSet = true; m_paths = std::move(value); }
 
@@ -78,8 +78,8 @@ namespace Model
      * <p>A complex type that contains information about the objects that you want to
      * invalidate. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Invalidation.html#invalidation-specifying-objects">Specifying
-     * the Objects to Invalidate</a> in the <i>Amazon CloudFront Developer Guide</i>.
-     * </p>
+     * the Objects to Invalidate</a> in the <i>Amazon CloudFront Developer
+     * Guide</i>.</p>
      */
     inline InvalidationBatch& WithPaths(const Paths& value) { SetPaths(value); return *this;}
 
@@ -87,8 +87,8 @@ namespace Model
      * <p>A complex type that contains information about the objects that you want to
      * invalidate. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Invalidation.html#invalidation-specifying-objects">Specifying
-     * the Objects to Invalidate</a> in the <i>Amazon CloudFront Developer Guide</i>.
-     * </p>
+     * the Objects to Invalidate</a> in the <i>Amazon CloudFront Developer
+     * Guide</i>.</p>
      */
     inline InvalidationBatch& WithPaths(Paths&& value) { SetPaths(std::move(value)); return *this;}
 

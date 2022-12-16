@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>A complex type that contains the list of Custom Headers for each origin.
-   * </p><p><h3>See Also:</h3>   <a
+   * <p>A complex type that contains the list of Custom Headers for each
+   * origin.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CustomHeaders">AWS
    * API Reference</a></p>
    */

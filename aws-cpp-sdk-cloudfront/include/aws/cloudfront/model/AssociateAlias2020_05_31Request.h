@@ -39,42 +39,42 @@ namespace Model
 
 
     /**
-     * <p>The ID of the distribution that you’re associating the alias with.</p>
+     * <p>The ID of the distribution that you're associating the alias with.</p>
      */
     inline const Aws::String& GetTargetDistributionId() const{ return m_targetDistributionId; }
 
     /**
-     * <p>The ID of the distribution that you’re associating the alias with.</p>
+     * <p>The ID of the distribution that you're associating the alias with.</p>
      */
     inline bool TargetDistributionIdHasBeenSet() const { return m_targetDistributionIdHasBeenSet; }
 
     /**
-     * <p>The ID of the distribution that you’re associating the alias with.</p>
+     * <p>The ID of the distribution that you're associating the alias with.</p>
      */
     inline void SetTargetDistributionId(const Aws::String& value) { m_targetDistributionIdHasBeenSet = true; m_targetDistributionId = value; }
 
     /**
-     * <p>The ID of the distribution that you’re associating the alias with.</p>
+     * <p>The ID of the distribution that you're associating the alias with.</p>
      */
     inline void SetTargetDistributionId(Aws::String&& value) { m_targetDistributionIdHasBeenSet = true; m_targetDistributionId = std::move(value); }
 
     /**
-     * <p>The ID of the distribution that you’re associating the alias with.</p>
+     * <p>The ID of the distribution that you're associating the alias with.</p>
      */
     inline void SetTargetDistributionId(const char* value) { m_targetDistributionIdHasBeenSet = true; m_targetDistributionId.assign(value); }
 
     /**
-     * <p>The ID of the distribution that you’re associating the alias with.</p>
+     * <p>The ID of the distribution that you're associating the alias with.</p>
      */
     inline AssociateAlias2020_05_31Request& WithTargetDistributionId(const Aws::String& value) { SetTargetDistributionId(value); return *this;}
 
     /**
-     * <p>The ID of the distribution that you’re associating the alias with.</p>
+     * <p>The ID of the distribution that you're associating the alias with.</p>
      */
     inline AssociateAlias2020_05_31Request& WithTargetDistributionId(Aws::String&& value) { SetTargetDistributionId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the distribution that you’re associating the alias with.</p>
+     * <p>The ID of the distribution that you're associating the alias with.</p>
      */
     inline AssociateAlias2020_05_31Request& WithTargetDistributionId(const char* value) { SetTargetDistributionId(value); return *this;}
 

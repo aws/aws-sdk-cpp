@@ -77,37 +77,37 @@ namespace Model
 
     /**
      * <p>Configuration information about the function, including an optional comment
-     * and the function’s runtime.</p>
+     * and the function's runtime.</p>
      */
     inline const FunctionConfig& GetFunctionConfig() const{ return m_functionConfig; }
 
     /**
      * <p>Configuration information about the function, including an optional comment
-     * and the function’s runtime.</p>
+     * and the function's runtime.</p>
      */
     inline bool FunctionConfigHasBeenSet() const { return m_functionConfigHasBeenSet; }
 
     /**
      * <p>Configuration information about the function, including an optional comment
-     * and the function’s runtime.</p>
+     * and the function's runtime.</p>
      */
     inline void SetFunctionConfig(const FunctionConfig& value) { m_functionConfigHasBeenSet = true; m_functionConfig = value; }
 
     /**
      * <p>Configuration information about the function, including an optional comment
-     * and the function’s runtime.</p>
+     * and the function's runtime.</p>
      */
     inline void SetFunctionConfig(FunctionConfig&& value) { m_functionConfigHasBeenSet = true; m_functionConfig = std::move(value); }
 
     /**
      * <p>Configuration information about the function, including an optional comment
-     * and the function’s runtime.</p>
+     * and the function's runtime.</p>
      */
     inline CreateFunction2020_05_31Request& WithFunctionConfig(const FunctionConfig& value) { SetFunctionConfig(value); return *this;}
 
     /**
      * <p>Configuration information about the function, including an optional comment
-     * and the function’s runtime.</p>
+     * and the function's runtime.</p>
      */
     inline CreateFunction2020_05_31Request& WithFunctionConfig(FunctionConfig&& value) { SetFunctionConfig(std::move(value)); return *this;}
 

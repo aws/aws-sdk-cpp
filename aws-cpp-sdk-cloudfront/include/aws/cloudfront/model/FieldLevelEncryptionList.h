@@ -97,22 +97,22 @@ namespace Model
 
 
     /**
-     * <p>The maximum number of elements you want in the response body. </p>
+     * <p>The maximum number of elements you want in the response body.</p>
      */
     inline int GetMaxItems() const{ return m_maxItems; }
 
     /**
-     * <p>The maximum number of elements you want in the response body. </p>
+     * <p>The maximum number of elements you want in the response body.</p>
      */
     inline bool MaxItemsHasBeenSet() const { return m_maxItemsHasBeenSet; }
 
     /**
-     * <p>The maximum number of elements you want in the response body. </p>
+     * <p>The maximum number of elements you want in the response body.</p>
      */
     inline void SetMaxItems(int value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
 
     /**
-     * <p>The maximum number of elements you want in the response body. </p>
+     * <p>The maximum number of elements you want in the response body.</p>
      */
     inline FieldLevelEncryptionList& WithMaxItems(int value) { SetMaxItems(value); return *this;}
 

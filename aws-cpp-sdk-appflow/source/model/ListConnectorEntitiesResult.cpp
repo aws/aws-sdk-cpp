@@ -44,6 +44,12 @@ ListConnectorEntitiesResult& ListConnectorEntitiesResult::operator =(const Aws::
     }
   }
 
+  if(jsonValue.ValueExists("nextToken"))
+  {
+    m_nextToken = jsonValue.GetString("nextToken");
+
+  }
+
 
 
   return *this;

@@ -36,32 +36,32 @@ namespace Model
 
 
     /**
-     * <p>Request to update a field-level encryption configuration. </p>
+     * <p>Request to update a field-level encryption configuration.</p>
      */
     inline const FieldLevelEncryptionConfig& GetFieldLevelEncryptionConfig() const{ return m_fieldLevelEncryptionConfig; }
 
     /**
-     * <p>Request to update a field-level encryption configuration. </p>
+     * <p>Request to update a field-level encryption configuration.</p>
      */
     inline bool FieldLevelEncryptionConfigHasBeenSet() const { return m_fieldLevelEncryptionConfigHasBeenSet; }
 
     /**
-     * <p>Request to update a field-level encryption configuration. </p>
+     * <p>Request to update a field-level encryption configuration.</p>
      */
     inline void SetFieldLevelEncryptionConfig(const FieldLevelEncryptionConfig& value) { m_fieldLevelEncryptionConfigHasBeenSet = true; m_fieldLevelEncryptionConfig = value; }
 
     /**
-     * <p>Request to update a field-level encryption configuration. </p>
+     * <p>Request to update a field-level encryption configuration.</p>
      */
     inline void SetFieldLevelEncryptionConfig(FieldLevelEncryptionConfig&& value) { m_fieldLevelEncryptionConfigHasBeenSet = true; m_fieldLevelEncryptionConfig = std::move(value); }
 
     /**
-     * <p>Request to update a field-level encryption configuration. </p>
+     * <p>Request to update a field-level encryption configuration.</p>
      */
     inline UpdateFieldLevelEncryptionConfig2020_05_31Request& WithFieldLevelEncryptionConfig(const FieldLevelEncryptionConfig& value) { SetFieldLevelEncryptionConfig(value); return *this;}
 
     /**
-     * <p>Request to update a field-level encryption configuration. </p>
+     * <p>Request to update a field-level encryption configuration.</p>
      */
     inline UpdateFieldLevelEncryptionConfig2020_05_31Request& WithFieldLevelEncryptionConfig(FieldLevelEncryptionConfig&& value) { SetFieldLevelEncryptionConfig(std::move(value)); return *this;}
 

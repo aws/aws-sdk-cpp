@@ -318,32 +318,32 @@ namespace Model
 
 
     /**
-     * <p>Represents the reason the scan was triggered.</p>
+     * <p>Specifies the reason why the scan was initiated.</p>
      */
     inline const TriggerDetails& GetTriggerDetails() const{ return m_triggerDetails; }
 
     /**
-     * <p>Represents the reason the scan was triggered.</p>
+     * <p>Specifies the reason why the scan was initiated.</p>
      */
     inline bool TriggerDetailsHasBeenSet() const { return m_triggerDetailsHasBeenSet; }
 
     /**
-     * <p>Represents the reason the scan was triggered.</p>
+     * <p>Specifies the reason why the scan was initiated.</p>
      */
     inline void SetTriggerDetails(const TriggerDetails& value) { m_triggerDetailsHasBeenSet = true; m_triggerDetails = value; }
 
     /**
-     * <p>Represents the reason the scan was triggered.</p>
+     * <p>Specifies the reason why the scan was initiated.</p>
      */
     inline void SetTriggerDetails(TriggerDetails&& value) { m_triggerDetailsHasBeenSet = true; m_triggerDetails = std::move(value); }
 
     /**
-     * <p>Represents the reason the scan was triggered.</p>
+     * <p>Specifies the reason why the scan was initiated.</p>
      */
     inline Scan& WithTriggerDetails(const TriggerDetails& value) { SetTriggerDetails(value); return *this;}
 
     /**
-     * <p>Represents the reason the scan was triggered.</p>
+     * <p>Specifies the reason why the scan was initiated.</p>
      */
     inline Scan& WithTriggerDetails(TriggerDetails&& value) { SetTriggerDetails(std::move(value)); return *this;}
 

@@ -24,11 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>Represents a single entry in a list of Amazon Web Services resource tags.
-   * <code>TagListEntry</code> returns an array that contains a list of tasks when
-   * the <a
-   * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_ListTagsForResource.html">ListTagsForResource</a>
-   * operation is called.</p><p><h3>See Also:</h3>   <a
+   * <p>A key-value pair representing a single tag that's been applied to an Amazon
+   * Web Services resource.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/TagListEntry">AWS
    * API Reference</a></p>
    */

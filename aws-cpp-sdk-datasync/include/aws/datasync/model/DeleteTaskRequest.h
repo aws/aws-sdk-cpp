@@ -38,42 +38,50 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the task to delete.</p>
+     * <p>Specifies the Amazon Resource Name (ARN) of the task that you want to
+     * delete.</p>
      */
     inline const Aws::String& GetTaskArn() const{ return m_taskArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the task to delete.</p>
+     * <p>Specifies the Amazon Resource Name (ARN) of the task that you want to
+     * delete.</p>
      */
     inline bool TaskArnHasBeenSet() const { return m_taskArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the task to delete.</p>
+     * <p>Specifies the Amazon Resource Name (ARN) of the task that you want to
+     * delete.</p>
      */
     inline void SetTaskArn(const Aws::String& value) { m_taskArnHasBeenSet = true; m_taskArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the task to delete.</p>
+     * <p>Specifies the Amazon Resource Name (ARN) of the task that you want to
+     * delete.</p>
      */
     inline void SetTaskArn(Aws::String&& value) { m_taskArnHasBeenSet = true; m_taskArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the task to delete.</p>
+     * <p>Specifies the Amazon Resource Name (ARN) of the task that you want to
+     * delete.</p>
      */
     inline void SetTaskArn(const char* value) { m_taskArnHasBeenSet = true; m_taskArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the task to delete.</p>
+     * <p>Specifies the Amazon Resource Name (ARN) of the task that you want to
+     * delete.</p>
      */
     inline DeleteTaskRequest& WithTaskArn(const Aws::String& value) { SetTaskArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the task to delete.</p>
+     * <p>Specifies the Amazon Resource Name (ARN) of the task that you want to
+     * delete.</p>
      */
     inline DeleteTaskRequest& WithTaskArn(Aws::String&& value) { SetTaskArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the task to delete.</p>
+     * <p>Specifies the Amazon Resource Name (ARN) of the task that you want to
+     * delete.</p>
      */
     inline DeleteTaskRequest& WithTaskArn(const char* value) { SetTaskArn(value); return *this;}
 

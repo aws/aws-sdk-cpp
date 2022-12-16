@@ -38,42 +38,42 @@ namespace Model
 
 
     /**
-     * <p>The distribution ID. </p>
+     * <p>The distribution ID.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * <p>The distribution ID. </p>
+     * <p>The distribution ID.</p>
      */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
     /**
-     * <p>The distribution ID. </p>
+     * <p>The distribution ID.</p>
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
-     * <p>The distribution ID. </p>
+     * <p>The distribution ID.</p>
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
-     * <p>The distribution ID. </p>
+     * <p>The distribution ID.</p>
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /**
-     * <p>The distribution ID. </p>
+     * <p>The distribution ID.</p>
      */
     inline DeleteStreamingDistribution2020_05_31Request& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * <p>The distribution ID. </p>
+     * <p>The distribution ID.</p>
      */
     inline DeleteStreamingDistribution2020_05_31Request& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
-     * <p>The distribution ID. </p>
+     * <p>The distribution ID.</p>
      */
     inline DeleteStreamingDistribution2020_05_31Request& WithId(const char* value) { SetId(value); return *this;}
 
