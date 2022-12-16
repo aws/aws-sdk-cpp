@@ -80,32 +80,32 @@ namespace Model
 
 
     /**
-     * <p>The maintenance schedule for the engine version.</p>
+     * <p>The maintenance schedule for the runtime engine version.</p>
      */
     inline const MaintenanceSchedule& GetSchedule() const{ return m_schedule; }
 
     /**
-     * <p>The maintenance schedule for the engine version.</p>
+     * <p>The maintenance schedule for the runtime engine version.</p>
      */
     inline bool ScheduleHasBeenSet() const { return m_scheduleHasBeenSet; }
 
     /**
-     * <p>The maintenance schedule for the engine version.</p>
+     * <p>The maintenance schedule for the runtime engine version.</p>
      */
     inline void SetSchedule(const MaintenanceSchedule& value) { m_scheduleHasBeenSet = true; m_schedule = value; }
 
     /**
-     * <p>The maintenance schedule for the engine version.</p>
+     * <p>The maintenance schedule for the runtime engine version.</p>
      */
     inline void SetSchedule(MaintenanceSchedule&& value) { m_scheduleHasBeenSet = true; m_schedule = std::move(value); }
 
     /**
-     * <p>The maintenance schedule for the engine version.</p>
+     * <p>The maintenance schedule for the runtime engine version.</p>
      */
     inline PendingMaintenance& WithSchedule(const MaintenanceSchedule& value) { SetSchedule(value); return *this;}
 
     /**
-     * <p>The maintenance schedule for the engine version.</p>
+     * <p>The maintenance schedule for the runtime engine version.</p>
      */
     inline PendingMaintenance& WithSchedule(MaintenanceSchedule&& value) { SetSchedule(std::move(value)); return *this;}
 

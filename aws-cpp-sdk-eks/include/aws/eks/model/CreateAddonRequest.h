@@ -77,58 +77,58 @@ namespace Model
 
 
     /**
-     * <p>The name of the add-on. The name must match one of the names returned by <a
+     * <p>The name of the add-on. The name must match one of the names that <a
      * href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html">
-     * <code>DescribeAddonVersions</code> </a>.</p>
+     * <code>DescribeAddonVersions</code> </a> returns.</p>
      */
     inline const Aws::String& GetAddonName() const{ return m_addonName; }
 
     /**
-     * <p>The name of the add-on. The name must match one of the names returned by <a
+     * <p>The name of the add-on. The name must match one of the names that <a
      * href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html">
-     * <code>DescribeAddonVersions</code> </a>.</p>
+     * <code>DescribeAddonVersions</code> </a> returns.</p>
      */
     inline bool AddonNameHasBeenSet() const { return m_addonNameHasBeenSet; }
 
     /**
-     * <p>The name of the add-on. The name must match one of the names returned by <a
+     * <p>The name of the add-on. The name must match one of the names that <a
      * href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html">
-     * <code>DescribeAddonVersions</code> </a>.</p>
+     * <code>DescribeAddonVersions</code> </a> returns.</p>
      */
     inline void SetAddonName(const Aws::String& value) { m_addonNameHasBeenSet = true; m_addonName = value; }
 
     /**
-     * <p>The name of the add-on. The name must match one of the names returned by <a
+     * <p>The name of the add-on. The name must match one of the names that <a
      * href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html">
-     * <code>DescribeAddonVersions</code> </a>.</p>
+     * <code>DescribeAddonVersions</code> </a> returns.</p>
      */
     inline void SetAddonName(Aws::String&& value) { m_addonNameHasBeenSet = true; m_addonName = std::move(value); }
 
     /**
-     * <p>The name of the add-on. The name must match one of the names returned by <a
+     * <p>The name of the add-on. The name must match one of the names that <a
      * href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html">
-     * <code>DescribeAddonVersions</code> </a>.</p>
+     * <code>DescribeAddonVersions</code> </a> returns.</p>
      */
     inline void SetAddonName(const char* value) { m_addonNameHasBeenSet = true; m_addonName.assign(value); }
 
     /**
-     * <p>The name of the add-on. The name must match one of the names returned by <a
+     * <p>The name of the add-on. The name must match one of the names that <a
      * href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html">
-     * <code>DescribeAddonVersions</code> </a>.</p>
+     * <code>DescribeAddonVersions</code> </a> returns.</p>
      */
     inline CreateAddonRequest& WithAddonName(const Aws::String& value) { SetAddonName(value); return *this;}
 
     /**
-     * <p>The name of the add-on. The name must match one of the names returned by <a
+     * <p>The name of the add-on. The name must match one of the names that <a
      * href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html">
-     * <code>DescribeAddonVersions</code> </a>.</p>
+     * <code>DescribeAddonVersions</code> </a> returns.</p>
      */
     inline CreateAddonRequest& WithAddonName(Aws::String&& value) { SetAddonName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the add-on. The name must match one of the names returned by <a
+     * <p>The name of the add-on. The name must match one of the names that <a
      * href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html">
-     * <code>DescribeAddonVersions</code> </a>.</p>
+     * <code>DescribeAddonVersions</code> </a> returns.</p>
      */
     inline CreateAddonRequest& WithAddonName(const char* value) { SetAddonName(value); return *this;}
 
@@ -570,64 +570,64 @@ namespace Model
 
 
     /**
-     * <p> The set of configuration values for the add-on being created. Whatever
-     * values provided here are validated against the schema from <a
+     * <p>The set of configuration values for the add-on that's created. The values
+     * that you provide are validated against the schema in <a
      * href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonConfiguration.html">
      * <code>DescribeAddonConfiguration</code> </a>.</p>
      */
     inline const Aws::String& GetConfigurationValues() const{ return m_configurationValues; }
 
     /**
-     * <p> The set of configuration values for the add-on being created. Whatever
-     * values provided here are validated against the schema from <a
+     * <p>The set of configuration values for the add-on that's created. The values
+     * that you provide are validated against the schema in <a
      * href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonConfiguration.html">
      * <code>DescribeAddonConfiguration</code> </a>.</p>
      */
     inline bool ConfigurationValuesHasBeenSet() const { return m_configurationValuesHasBeenSet; }
 
     /**
-     * <p> The set of configuration values for the add-on being created. Whatever
-     * values provided here are validated against the schema from <a
+     * <p>The set of configuration values for the add-on that's created. The values
+     * that you provide are validated against the schema in <a
      * href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonConfiguration.html">
      * <code>DescribeAddonConfiguration</code> </a>.</p>
      */
     inline void SetConfigurationValues(const Aws::String& value) { m_configurationValuesHasBeenSet = true; m_configurationValues = value; }
 
     /**
-     * <p> The set of configuration values for the add-on being created. Whatever
-     * values provided here are validated against the schema from <a
+     * <p>The set of configuration values for the add-on that's created. The values
+     * that you provide are validated against the schema in <a
      * href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonConfiguration.html">
      * <code>DescribeAddonConfiguration</code> </a>.</p>
      */
     inline void SetConfigurationValues(Aws::String&& value) { m_configurationValuesHasBeenSet = true; m_configurationValues = std::move(value); }
 
     /**
-     * <p> The set of configuration values for the add-on being created. Whatever
-     * values provided here are validated against the schema from <a
+     * <p>The set of configuration values for the add-on that's created. The values
+     * that you provide are validated against the schema in <a
      * href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonConfiguration.html">
      * <code>DescribeAddonConfiguration</code> </a>.</p>
      */
     inline void SetConfigurationValues(const char* value) { m_configurationValuesHasBeenSet = true; m_configurationValues.assign(value); }
 
     /**
-     * <p> The set of configuration values for the add-on being created. Whatever
-     * values provided here are validated against the schema from <a
+     * <p>The set of configuration values for the add-on that's created. The values
+     * that you provide are validated against the schema in <a
      * href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonConfiguration.html">
      * <code>DescribeAddonConfiguration</code> </a>.</p>
      */
     inline CreateAddonRequest& WithConfigurationValues(const Aws::String& value) { SetConfigurationValues(value); return *this;}
 
     /**
-     * <p> The set of configuration values for the add-on being created. Whatever
-     * values provided here are validated against the schema from <a
+     * <p>The set of configuration values for the add-on that's created. The values
+     * that you provide are validated against the schema in <a
      * href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonConfiguration.html">
      * <code>DescribeAddonConfiguration</code> </a>.</p>
      */
     inline CreateAddonRequest& WithConfigurationValues(Aws::String&& value) { SetConfigurationValues(std::move(value)); return *this;}
 
     /**
-     * <p> The set of configuration values for the add-on being created. Whatever
-     * values provided here are validated against the schema from <a
+     * <p>The set of configuration values for the add-on that's created. The values
+     * that you provide are validated against the schema in <a
      * href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonConfiguration.html">
      * <code>DescribeAddonConfiguration</code> </a>.</p>
      */

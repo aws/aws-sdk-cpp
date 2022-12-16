@@ -36,7 +36,9 @@ namespace Model
     ko_KR,
     pt_BR,
     pt_PT,
-    zh_CN
+    zh_CN,
+    en_NZ,
+    en_ZA
   };
 
 namespace VocabularyLanguageCodeMapper

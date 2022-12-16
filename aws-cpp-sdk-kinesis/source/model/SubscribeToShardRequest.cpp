@@ -55,4 +55,16 @@ Aws::Http::HeaderValueCollection SubscribeToShardRequest::GetRequestSpecificHead
 
 
 
+SubscribeToShardRequest::EndpointParameters SubscribeToShardRequest::GetEndpointContextParams() const
+{
+    EndpointParameters parameters;
+    // Static context parameters
+    parameters.emplace_back(Aws::String("OperationType"), "data", Aws::Endpoint::EndpointParameter::ParameterOrigin::STATIC_CONTEXT);
+    // Operation context parameters
+    if (ConsumerARNHasBeenSet()) {
+        parameters.emplace_back(Aws::String("ConsumerARN"), this->GetConsumerARN(), Aws::Endpoint::EndpointParameter::ParameterOrigin::OPERATION_CONTEXT);
+    }
+    return parameters;
+}
+
 

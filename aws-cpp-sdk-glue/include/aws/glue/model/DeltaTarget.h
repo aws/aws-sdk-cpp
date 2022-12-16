@@ -146,6 +146,35 @@ namespace Model
      */
     inline DeltaTarget& WithWriteManifest(bool value) { SetWriteManifest(value); return *this;}
 
+
+    /**
+     * <p>Specifies whether the crawler will create native tables, to allow integration
+     * with query engines that support querying of the Delta transaction log
+     * directly.</p>
+     */
+    inline bool GetCreateNativeDeltaTable() const{ return m_createNativeDeltaTable; }
+
+    /**
+     * <p>Specifies whether the crawler will create native tables, to allow integration
+     * with query engines that support querying of the Delta transaction log
+     * directly.</p>
+     */
+    inline bool CreateNativeDeltaTableHasBeenSet() const { return m_createNativeDeltaTableHasBeenSet; }
+
+    /**
+     * <p>Specifies whether the crawler will create native tables, to allow integration
+     * with query engines that support querying of the Delta transaction log
+     * directly.</p>
+     */
+    inline void SetCreateNativeDeltaTable(bool value) { m_createNativeDeltaTableHasBeenSet = true; m_createNativeDeltaTable = value; }
+
+    /**
+     * <p>Specifies whether the crawler will create native tables, to allow integration
+     * with query engines that support querying of the Delta transaction log
+     * directly.</p>
+     */
+    inline DeltaTarget& WithCreateNativeDeltaTable(bool value) { SetCreateNativeDeltaTable(value); return *this;}
+
   private:
 
     Aws::Vector<Aws::String> m_deltaTables;
@@ -156,6 +185,9 @@ namespace Model
 
     bool m_writeManifest;
     bool m_writeManifestHasBeenSet = false;
+
+    bool m_createNativeDeltaTable;
+    bool m_createNativeDeltaTableHasBeenSet = false;
   };
 
 } // namespace Model

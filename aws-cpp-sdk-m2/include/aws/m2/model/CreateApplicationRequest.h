@@ -227,6 +227,47 @@ namespace Model
 
 
     /**
+     * <p>The identifier of a customer managed key.</p>
+     */
+    inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
+
+    /**
+     * <p>The identifier of a customer managed key.</p>
+     */
+    inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
+
+    /**
+     * <p>The identifier of a customer managed key.</p>
+     */
+    inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
+
+    /**
+     * <p>The identifier of a customer managed key.</p>
+     */
+    inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
+
+    /**
+     * <p>The identifier of a customer managed key.</p>
+     */
+    inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
+
+    /**
+     * <p>The identifier of a customer managed key.</p>
+     */
+    inline CreateApplicationRequest& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
+
+    /**
+     * <p>The identifier of a customer managed key.</p>
+     */
+    inline CreateApplicationRequest& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
+
+    /**
+     * <p>The identifier of a customer managed key.</p>
+     */
+    inline CreateApplicationRequest& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
+
+
+    /**
      * <p>The unique identifier of the application.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
@@ -345,6 +386,9 @@ namespace Model
 
     EngineType m_engineType;
     bool m_engineTypeHasBeenSet = false;
+
+    Aws::String m_kmsKeyId;
+    bool m_kmsKeyIdHasBeenSet = false;
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;

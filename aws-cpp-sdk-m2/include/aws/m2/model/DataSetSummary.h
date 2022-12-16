@@ -111,50 +111,42 @@ namespace Model
 
 
     /**
-     * <p>The type of data set. Possible values include VSAM, IS, PS, GDG, PO, PS, or
-     * unknown.</p>
+     * <p>The type of data set. The only supported value is VSAM.</p>
      */
     inline const Aws::String& GetDataSetOrg() const{ return m_dataSetOrg; }
 
     /**
-     * <p>The type of data set. Possible values include VSAM, IS, PS, GDG, PO, PS, or
-     * unknown.</p>
+     * <p>The type of data set. The only supported value is VSAM.</p>
      */
     inline bool DataSetOrgHasBeenSet() const { return m_dataSetOrgHasBeenSet; }
 
     /**
-     * <p>The type of data set. Possible values include VSAM, IS, PS, GDG, PO, PS, or
-     * unknown.</p>
+     * <p>The type of data set. The only supported value is VSAM.</p>
      */
     inline void SetDataSetOrg(const Aws::String& value) { m_dataSetOrgHasBeenSet = true; m_dataSetOrg = value; }
 
     /**
-     * <p>The type of data set. Possible values include VSAM, IS, PS, GDG, PO, PS, or
-     * unknown.</p>
+     * <p>The type of data set. The only supported value is VSAM.</p>
      */
     inline void SetDataSetOrg(Aws::String&& value) { m_dataSetOrgHasBeenSet = true; m_dataSetOrg = std::move(value); }
 
     /**
-     * <p>The type of data set. Possible values include VSAM, IS, PS, GDG, PO, PS, or
-     * unknown.</p>
+     * <p>The type of data set. The only supported value is VSAM.</p>
      */
     inline void SetDataSetOrg(const char* value) { m_dataSetOrgHasBeenSet = true; m_dataSetOrg.assign(value); }
 
     /**
-     * <p>The type of data set. Possible values include VSAM, IS, PS, GDG, PO, PS, or
-     * unknown.</p>
+     * <p>The type of data set. The only supported value is VSAM.</p>
      */
     inline DataSetSummary& WithDataSetOrg(const Aws::String& value) { SetDataSetOrg(value); return *this;}
 
     /**
-     * <p>The type of data set. Possible values include VSAM, IS, PS, GDG, PO, PS, or
-     * unknown.</p>
+     * <p>The type of data set. The only supported value is VSAM.</p>
      */
     inline DataSetSummary& WithDataSetOrg(Aws::String&& value) { SetDataSetOrg(std::move(value)); return *this;}
 
     /**
-     * <p>The type of data set. Possible values include VSAM, IS, PS, GDG, PO, PS, or
-     * unknown.</p>
+     * <p>The type of data set. The only supported value is VSAM.</p>
      */
     inline DataSetSummary& WithDataSetOrg(const char* value) { SetDataSetOrg(value); return *this;}
 

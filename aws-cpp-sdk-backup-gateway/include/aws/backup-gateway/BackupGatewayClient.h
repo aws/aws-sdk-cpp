@@ -175,6 +175,26 @@ namespace BackupGateway
         virtual void DisassociateGatewayFromServerAsync(const Model::DisassociateGatewayFromServerRequest& request, const DisassociateGatewayFromServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Retrieves the bandwidth rate limit schedule for a specified gateway. By
+         * default, gateways do not have bandwidth rate limit schedules, which means no
+         * bandwidth rate limiting is in effect. Use this to get a gateway's bandwidth rate
+         * limit schedule.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/GetBandwidthRateLimitSchedule">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetBandwidthRateLimitScheduleOutcome GetBandwidthRateLimitSchedule(const Model::GetBandwidthRateLimitScheduleRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetBandwidthRateLimitSchedule that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetBandwidthRateLimitScheduleOutcomeCallable GetBandwidthRateLimitScheduleCallable(const Model::GetBandwidthRateLimitScheduleRequest& request) const;
+
+        /**
+         * An Async wrapper for GetBandwidthRateLimitSchedule that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetBandwidthRateLimitScheduleAsync(const Model::GetBandwidthRateLimitScheduleRequest& request, const GetBandwidthRateLimitScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>By providing the ARN (Amazon Resource Name), this API returns the
          * gateway.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/GetGateway">AWS
@@ -191,6 +211,46 @@ namespace BackupGateway
          * An Async wrapper for GetGateway that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetGatewayAsync(const Model::GetGatewayRequest& request, const GetGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>This action requests information about the specified hypervisor to which the
+         * gateway will connect. A hypervisor is hardware, software, or firmware that
+         * creates and manages virtual machines, and allocates resources to
+         * them.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/GetHypervisor">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetHypervisorOutcome GetHypervisor(const Model::GetHypervisorRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetHypervisor that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetHypervisorOutcomeCallable GetHypervisorCallable(const Model::GetHypervisorRequest& request) const;
+
+        /**
+         * An Async wrapper for GetHypervisor that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetHypervisorAsync(const Model::GetHypervisorRequest& request, const GetHypervisorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>This action retrieves the property mappings for the specified hypervisor. A
+         * hypervisor property mapping displays the relationship of entity properties
+         * available from the on-premises hypervisor to the properties available in Amazon
+         * Web Services.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/GetHypervisorPropertyMappings">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetHypervisorPropertyMappingsOutcome GetHypervisorPropertyMappings(const Model::GetHypervisorPropertyMappingsRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetHypervisorPropertyMappings that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetHypervisorPropertyMappingsOutcomeCallable GetHypervisorPropertyMappingsCallable(const Model::GetHypervisorPropertyMappingsRequest& request) const;
+
+        /**
+         * An Async wrapper for GetHypervisorPropertyMappings that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetHypervisorPropertyMappingsAsync(const Model::GetHypervisorPropertyMappingsRequest& request, const GetHypervisorPropertyMappingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>By providing the ARN (Amazon Resource Name), this API returns the virtual
@@ -300,6 +360,46 @@ namespace BackupGateway
         virtual void ListVirtualMachinesAsync(const Model::ListVirtualMachinesRequest& request, const ListVirtualMachinesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>This action sets the bandwidth rate limit schedule for a specified gateway.
+         * By default, gateways do not have a bandwidth rate limit schedule, which means no
+         * bandwidth rate limiting is in effect. Use this to initiate a gateway's bandwidth
+         * rate limit schedule.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/PutBandwidthRateLimitSchedule">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutBandwidthRateLimitScheduleOutcome PutBandwidthRateLimitSchedule(const Model::PutBandwidthRateLimitScheduleRequest& request) const;
+
+        /**
+         * A Callable wrapper for PutBandwidthRateLimitSchedule that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::PutBandwidthRateLimitScheduleOutcomeCallable PutBandwidthRateLimitScheduleCallable(const Model::PutBandwidthRateLimitScheduleRequest& request) const;
+
+        /**
+         * An Async wrapper for PutBandwidthRateLimitSchedule that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void PutBandwidthRateLimitScheduleAsync(const Model::PutBandwidthRateLimitScheduleRequest& request, const PutBandwidthRateLimitScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>This action sets the property mappings for the specified hypervisor. A
+         * hypervisor property mapping displays the relationship of entity properties
+         * available from the on-premises hypervisor to the properties available in Amazon
+         * Web Services.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/PutHypervisorPropertyMappings">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutHypervisorPropertyMappingsOutcome PutHypervisorPropertyMappings(const Model::PutHypervisorPropertyMappingsRequest& request) const;
+
+        /**
+         * A Callable wrapper for PutHypervisorPropertyMappings that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::PutHypervisorPropertyMappingsOutcomeCallable PutHypervisorPropertyMappingsCallable(const Model::PutHypervisorPropertyMappingsRequest& request) const;
+
+        /**
+         * An Async wrapper for PutHypervisorPropertyMappings that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void PutHypervisorPropertyMappingsAsync(const Model::PutHypervisorPropertyMappingsRequest& request, const PutHypervisorPropertyMappingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Set the maintenance start time for a gateway.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/PutMaintenanceStartTime">AWS
          * API Reference</a></p>
@@ -315,6 +415,24 @@ namespace BackupGateway
          * An Async wrapper for PutMaintenanceStartTime that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void PutMaintenanceStartTimeAsync(const Model::PutMaintenanceStartTimeRequest& request, const PutMaintenanceStartTimeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>This action sends a request to sync metadata across the specified virtual
+         * machines.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/StartVirtualMachinesMetadataSync">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartVirtualMachinesMetadataSyncOutcome StartVirtualMachinesMetadataSync(const Model::StartVirtualMachinesMetadataSyncRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartVirtualMachinesMetadataSync that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::StartVirtualMachinesMetadataSyncOutcomeCallable StartVirtualMachinesMetadataSyncCallable(const Model::StartVirtualMachinesMetadataSyncRequest& request) const;
+
+        /**
+         * An Async wrapper for StartVirtualMachinesMetadataSync that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void StartVirtualMachinesMetadataSyncAsync(const Model::StartVirtualMachinesMetadataSyncRequest& request, const StartVirtualMachinesMetadataSyncResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Tag the resource.</p><p><h3>See Also:</h3>   <a

@@ -158,50 +158,58 @@ namespace Model
 
 
     /**
-     * <p> If the status of the endpoint is <code>Failed</code>, this provides the
-     * reason why it failed. </p>
+     * <p> If the status of the endpoint is <code>Failed</code>, or the status is
+     * <code>InService</code> but update operation fails, this provides the reason why
+     * it failed. </p>
      */
     inline const Aws::String& GetFailureReason() const{ return m_failureReason; }
 
     /**
-     * <p> If the status of the endpoint is <code>Failed</code>, this provides the
-     * reason why it failed. </p>
+     * <p> If the status of the endpoint is <code>Failed</code>, or the status is
+     * <code>InService</code> but update operation fails, this provides the reason why
+     * it failed. </p>
      */
     inline bool FailureReasonHasBeenSet() const { return m_failureReasonHasBeenSet; }
 
     /**
-     * <p> If the status of the endpoint is <code>Failed</code>, this provides the
-     * reason why it failed. </p>
+     * <p> If the status of the endpoint is <code>Failed</code>, or the status is
+     * <code>InService</code> but update operation fails, this provides the reason why
+     * it failed. </p>
      */
     inline void SetFailureReason(const Aws::String& value) { m_failureReasonHasBeenSet = true; m_failureReason = value; }
 
     /**
-     * <p> If the status of the endpoint is <code>Failed</code>, this provides the
-     * reason why it failed. </p>
+     * <p> If the status of the endpoint is <code>Failed</code>, or the status is
+     * <code>InService</code> but update operation fails, this provides the reason why
+     * it failed. </p>
      */
     inline void SetFailureReason(Aws::String&& value) { m_failureReasonHasBeenSet = true; m_failureReason = std::move(value); }
 
     /**
-     * <p> If the status of the endpoint is <code>Failed</code>, this provides the
-     * reason why it failed. </p>
+     * <p> If the status of the endpoint is <code>Failed</code>, or the status is
+     * <code>InService</code> but update operation fails, this provides the reason why
+     * it failed. </p>
      */
     inline void SetFailureReason(const char* value) { m_failureReasonHasBeenSet = true; m_failureReason.assign(value); }
 
     /**
-     * <p> If the status of the endpoint is <code>Failed</code>, this provides the
-     * reason why it failed. </p>
+     * <p> If the status of the endpoint is <code>Failed</code>, or the status is
+     * <code>InService</code> but update operation fails, this provides the reason why
+     * it failed. </p>
      */
     inline EndpointMetadata& WithFailureReason(const Aws::String& value) { SetFailureReason(value); return *this;}
 
     /**
-     * <p> If the status of the endpoint is <code>Failed</code>, this provides the
-     * reason why it failed. </p>
+     * <p> If the status of the endpoint is <code>Failed</code>, or the status is
+     * <code>InService</code> but update operation fails, this provides the reason why
+     * it failed. </p>
      */
     inline EndpointMetadata& WithFailureReason(Aws::String&& value) { SetFailureReason(std::move(value)); return *this;}
 
     /**
-     * <p> If the status of the endpoint is <code>Failed</code>, this provides the
-     * reason why it failed. </p>
+     * <p> If the status of the endpoint is <code>Failed</code>, or the status is
+     * <code>InService</code> but update operation fails, this provides the reason why
+     * it failed. </p>
      */
     inline EndpointMetadata& WithFailureReason(const char* value) { SetFailureReason(value); return *this;}
 

@@ -24,7 +24,8 @@ VirtualMachineDetails::VirtualMachineDetails() :
     m_lastBackupDateHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_pathHasBeenSet(false),
-    m_resourceArnHasBeenSet(false)
+    m_resourceArnHasBeenSet(false),
+    m_vmwareTagsHasBeenSet(false)
 {
 }
 
@@ -34,7 +35,8 @@ VirtualMachineDetails::VirtualMachineDetails(JsonView jsonValue) :
     m_lastBackupDateHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_pathHasBeenSet(false),
-    m_resourceArnHasBeenSet(false)
+    m_resourceArnHasBeenSet(false),
+    m_vmwareTagsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -83,6 +85,16 @@ VirtualMachineDetails& VirtualMachineDetails::operator =(JsonView jsonValue)
     m_resourceArnHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("VmwareTags"))
+  {
+    Aws::Utils::Array<JsonView> vmwareTagsJsonList = jsonValue.GetArray("VmwareTags");
+    for(unsigned vmwareTagsIndex = 0; vmwareTagsIndex < vmwareTagsJsonList.GetLength(); ++vmwareTagsIndex)
+    {
+      m_vmwareTags.push_back(vmwareTagsJsonList[vmwareTagsIndex].AsObject());
+    }
+    m_vmwareTagsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -122,6 +134,17 @@ JsonValue VirtualMachineDetails::Jsonize() const
   if(m_resourceArnHasBeenSet)
   {
    payload.WithString("ResourceArn", m_resourceArn);
+
+  }
+
+  if(m_vmwareTagsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> vmwareTagsJsonList(m_vmwareTags.size());
+   for(unsigned vmwareTagsIndex = 0; vmwareTagsIndex < vmwareTagsJsonList.GetLength(); ++vmwareTagsIndex)
+   {
+     vmwareTagsJsonList[vmwareTagsIndex].AsObject(m_vmwareTags[vmwareTagsIndex].Jsonize());
+   }
+   payload.WithArray("VmwareTags", std::move(vmwareTagsJsonList));
 
   }
 

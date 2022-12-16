@@ -41,42 +41,42 @@ namespace Model
 
 
     /**
-     * <p>The name of the model.</p>
+     * <p>The name of the Amazon SageMaker Model entity.</p>
      */
     inline const Aws::String& GetModelName() const{ return m_modelName; }
 
     /**
-     * <p>The name of the model.</p>
+     * <p>The name of the Amazon SageMaker Model entity.</p>
      */
     inline bool ModelNameHasBeenSet() const { return m_modelNameHasBeenSet; }
 
     /**
-     * <p>The name of the model.</p>
+     * <p>The name of the Amazon SageMaker Model entity.</p>
      */
     inline void SetModelName(const Aws::String& value) { m_modelNameHasBeenSet = true; m_modelName = value; }
 
     /**
-     * <p>The name of the model.</p>
+     * <p>The name of the Amazon SageMaker Model entity.</p>
      */
     inline void SetModelName(Aws::String&& value) { m_modelNameHasBeenSet = true; m_modelName = std::move(value); }
 
     /**
-     * <p>The name of the model.</p>
+     * <p>The name of the Amazon SageMaker Model entity.</p>
      */
     inline void SetModelName(const char* value) { m_modelNameHasBeenSet = true; m_modelName.assign(value); }
 
     /**
-     * <p>The name of the model.</p>
+     * <p>The name of the Amazon SageMaker Model entity.</p>
      */
     inline ModelVariantConfigSummary& WithModelName(const Aws::String& value) { SetModelName(value); return *this;}
 
     /**
-     * <p>The name of the model.</p>
+     * <p>The name of the Amazon SageMaker Model entity.</p>
      */
     inline ModelVariantConfigSummary& WithModelName(Aws::String&& value) { SetModelName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the model.</p>
+     * <p>The name of the Amazon SageMaker Model entity.</p>
      */
     inline ModelVariantConfigSummary& WithModelName(const char* value) { SetModelName(value); return *this;}
 
@@ -160,32 +160,86 @@ namespace Model
 
 
     /**
-     * <p>The status of the deployment.</p>
+     * <p>The status of deployment for the model variant on the hosted inference
+     * endpoint.</p> <ul> <li> <p> <code>Creating</code> - Amazon SageMaker is
+     * preparing the model variant on the hosted inference endpoint. </p> </li> <li>
+     * <p> <code>InService</code> - The model variant is running on the hosted
+     * inference endpoint. </p> </li> <li> <p> <code>Updating</code> - Amazon SageMaker
+     * is updating the model variant on the hosted inference endpoint. </p> </li> <li>
+     * <p> <code>Deleting</code> - Amazon SageMaker is deleting the model variant on
+     * the hosted inference endpoint. </p> </li> <li> <p> <code>Deleted</code> - The
+     * model variant has been deleted on the hosted inference endpoint. This can only
+     * happen after stopping the experiment. </p> </li> </ul>
      */
     inline const ModelVariantStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The status of the deployment.</p>
+     * <p>The status of deployment for the model variant on the hosted inference
+     * endpoint.</p> <ul> <li> <p> <code>Creating</code> - Amazon SageMaker is
+     * preparing the model variant on the hosted inference endpoint. </p> </li> <li>
+     * <p> <code>InService</code> - The model variant is running on the hosted
+     * inference endpoint. </p> </li> <li> <p> <code>Updating</code> - Amazon SageMaker
+     * is updating the model variant on the hosted inference endpoint. </p> </li> <li>
+     * <p> <code>Deleting</code> - Amazon SageMaker is deleting the model variant on
+     * the hosted inference endpoint. </p> </li> <li> <p> <code>Deleted</code> - The
+     * model variant has been deleted on the hosted inference endpoint. This can only
+     * happen after stopping the experiment. </p> </li> </ul>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p>The status of the deployment.</p>
+     * <p>The status of deployment for the model variant on the hosted inference
+     * endpoint.</p> <ul> <li> <p> <code>Creating</code> - Amazon SageMaker is
+     * preparing the model variant on the hosted inference endpoint. </p> </li> <li>
+     * <p> <code>InService</code> - The model variant is running on the hosted
+     * inference endpoint. </p> </li> <li> <p> <code>Updating</code> - Amazon SageMaker
+     * is updating the model variant on the hosted inference endpoint. </p> </li> <li>
+     * <p> <code>Deleting</code> - Amazon SageMaker is deleting the model variant on
+     * the hosted inference endpoint. </p> </li> <li> <p> <code>Deleted</code> - The
+     * model variant has been deleted on the hosted inference endpoint. This can only
+     * happen after stopping the experiment. </p> </li> </ul>
      */
     inline void SetStatus(const ModelVariantStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The status of the deployment.</p>
+     * <p>The status of deployment for the model variant on the hosted inference
+     * endpoint.</p> <ul> <li> <p> <code>Creating</code> - Amazon SageMaker is
+     * preparing the model variant on the hosted inference endpoint. </p> </li> <li>
+     * <p> <code>InService</code> - The model variant is running on the hosted
+     * inference endpoint. </p> </li> <li> <p> <code>Updating</code> - Amazon SageMaker
+     * is updating the model variant on the hosted inference endpoint. </p> </li> <li>
+     * <p> <code>Deleting</code> - Amazon SageMaker is deleting the model variant on
+     * the hosted inference endpoint. </p> </li> <li> <p> <code>Deleted</code> - The
+     * model variant has been deleted on the hosted inference endpoint. This can only
+     * happen after stopping the experiment. </p> </li> </ul>
      */
     inline void SetStatus(ModelVariantStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>The status of the deployment.</p>
+     * <p>The status of deployment for the model variant on the hosted inference
+     * endpoint.</p> <ul> <li> <p> <code>Creating</code> - Amazon SageMaker is
+     * preparing the model variant on the hosted inference endpoint. </p> </li> <li>
+     * <p> <code>InService</code> - The model variant is running on the hosted
+     * inference endpoint. </p> </li> <li> <p> <code>Updating</code> - Amazon SageMaker
+     * is updating the model variant on the hosted inference endpoint. </p> </li> <li>
+     * <p> <code>Deleting</code> - Amazon SageMaker is deleting the model variant on
+     * the hosted inference endpoint. </p> </li> <li> <p> <code>Deleted</code> - The
+     * model variant has been deleted on the hosted inference endpoint. This can only
+     * happen after stopping the experiment. </p> </li> </ul>
      */
     inline ModelVariantConfigSummary& WithStatus(const ModelVariantStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The status of the deployment.</p>
+     * <p>The status of deployment for the model variant on the hosted inference
+     * endpoint.</p> <ul> <li> <p> <code>Creating</code> - Amazon SageMaker is
+     * preparing the model variant on the hosted inference endpoint. </p> </li> <li>
+     * <p> <code>InService</code> - The model variant is running on the hosted
+     * inference endpoint. </p> </li> <li> <p> <code>Updating</code> - Amazon SageMaker
+     * is updating the model variant on the hosted inference endpoint. </p> </li> <li>
+     * <p> <code>Deleting</code> - Amazon SageMaker is deleting the model variant on
+     * the hosted inference endpoint. </p> </li> <li> <p> <code>Deleted</code> - The
+     * model variant has been deleted on the hosted inference endpoint. This can only
+     * happen after stopping the experiment. </p> </li> </ul>
      */
     inline ModelVariantConfigSummary& WithStatus(ModelVariantStatus&& value) { SetStatus(std::move(value)); return *this;}
 

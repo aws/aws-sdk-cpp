@@ -359,49 +359,57 @@ namespace Model
 
     /**
      * <p> The ARN of the IAM role that Amazon SageMaker can assume to access model
-     * artifacts and container images. </p>
+     * artifacts and container images, and manage Amazon SageMaker Inference endpoints
+     * for model deployment. </p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
     /**
      * <p> The ARN of the IAM role that Amazon SageMaker can assume to access model
-     * artifacts and container images. </p>
+     * artifacts and container images, and manage Amazon SageMaker Inference endpoints
+     * for model deployment. </p>
      */
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
      * <p> The ARN of the IAM role that Amazon SageMaker can assume to access model
-     * artifacts and container images. </p>
+     * artifacts and container images, and manage Amazon SageMaker Inference endpoints
+     * for model deployment. </p>
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
      * <p> The ARN of the IAM role that Amazon SageMaker can assume to access model
-     * artifacts and container images. </p>
+     * artifacts and container images, and manage Amazon SageMaker Inference endpoints
+     * for model deployment. </p>
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
 
     /**
      * <p> The ARN of the IAM role that Amazon SageMaker can assume to access model
-     * artifacts and container images. </p>
+     * artifacts and container images, and manage Amazon SageMaker Inference endpoints
+     * for model deployment. </p>
      */
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
 
     /**
      * <p> The ARN of the IAM role that Amazon SageMaker can assume to access model
-     * artifacts and container images. </p>
+     * artifacts and container images, and manage Amazon SageMaker Inference endpoints
+     * for model deployment. </p>
      */
     inline InferenceExperimentSummary& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
     /**
      * <p> The ARN of the IAM role that Amazon SageMaker can assume to access model
-     * artifacts and container images. </p>
+     * artifacts and container images, and manage Amazon SageMaker Inference endpoints
+     * for model deployment. </p>
      */
     inline InferenceExperimentSummary& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
      * <p> The ARN of the IAM role that Amazon SageMaker can assume to access model
-     * artifacts and container images. </p>
+     * artifacts and container images, and manage Amazon SageMaker Inference endpoints
+     * for model deployment. </p>
      */
     inline InferenceExperimentSummary& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 

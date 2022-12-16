@@ -35,43 +35,43 @@ namespace Model
 
 
     /**
-     * <p>Returns a list of summary details for all the applications in an
+     * <p>Returns a list of summary details for all the applications in a runtime
      * environment.</p>
      */
     inline const Aws::Vector<ApplicationSummary>& GetApplications() const{ return m_applications; }
 
     /**
-     * <p>Returns a list of summary details for all the applications in an
+     * <p>Returns a list of summary details for all the applications in a runtime
      * environment.</p>
      */
     inline void SetApplications(const Aws::Vector<ApplicationSummary>& value) { m_applications = value; }
 
     /**
-     * <p>Returns a list of summary details for all the applications in an
+     * <p>Returns a list of summary details for all the applications in a runtime
      * environment.</p>
      */
     inline void SetApplications(Aws::Vector<ApplicationSummary>&& value) { m_applications = std::move(value); }
 
     /**
-     * <p>Returns a list of summary details for all the applications in an
+     * <p>Returns a list of summary details for all the applications in a runtime
      * environment.</p>
      */
     inline ListApplicationsResult& WithApplications(const Aws::Vector<ApplicationSummary>& value) { SetApplications(value); return *this;}
 
     /**
-     * <p>Returns a list of summary details for all the applications in an
+     * <p>Returns a list of summary details for all the applications in a runtime
      * environment.</p>
      */
     inline ListApplicationsResult& WithApplications(Aws::Vector<ApplicationSummary>&& value) { SetApplications(std::move(value)); return *this;}
 
     /**
-     * <p>Returns a list of summary details for all the applications in an
+     * <p>Returns a list of summary details for all the applications in a runtime
      * environment.</p>
      */
     inline ListApplicationsResult& AddApplications(const ApplicationSummary& value) { m_applications.push_back(value); return *this; }
 
     /**
-     * <p>Returns a list of summary details for all the applications in an
+     * <p>Returns a list of summary details for all the applications in a runtime
      * environment.</p>
      */
     inline ListApplicationsResult& AddApplications(ApplicationSummary&& value) { m_applications.push_back(std::move(value)); return *this; }

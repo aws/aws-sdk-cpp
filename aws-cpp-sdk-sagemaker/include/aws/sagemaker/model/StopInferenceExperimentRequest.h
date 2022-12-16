@@ -190,7 +190,7 @@ namespace Model
 
 
     /**
-     * <p> Array of <code>ModelVariantConfig</code> objects. There is one for each
+     * <p> An array of <code>ModelVariantConfig</code> objects. There is one for each
      * variant that you want to deploy after the inference experiment stops. Each
      * <code>ModelVariantConfig</code> describes the infrastructure configuration for
      * deploying the corresponding variant. </p>
@@ -198,7 +198,7 @@ namespace Model
     inline const Aws::Vector<ModelVariantConfig>& GetDesiredModelVariants() const{ return m_desiredModelVariants; }
 
     /**
-     * <p> Array of <code>ModelVariantConfig</code> objects. There is one for each
+     * <p> An array of <code>ModelVariantConfig</code> objects. There is one for each
      * variant that you want to deploy after the inference experiment stops. Each
      * <code>ModelVariantConfig</code> describes the infrastructure configuration for
      * deploying the corresponding variant. </p>
@@ -206,7 +206,7 @@ namespace Model
     inline bool DesiredModelVariantsHasBeenSet() const { return m_desiredModelVariantsHasBeenSet; }
 
     /**
-     * <p> Array of <code>ModelVariantConfig</code> objects. There is one for each
+     * <p> An array of <code>ModelVariantConfig</code> objects. There is one for each
      * variant that you want to deploy after the inference experiment stops. Each
      * <code>ModelVariantConfig</code> describes the infrastructure configuration for
      * deploying the corresponding variant. </p>
@@ -214,7 +214,7 @@ namespace Model
     inline void SetDesiredModelVariants(const Aws::Vector<ModelVariantConfig>& value) { m_desiredModelVariantsHasBeenSet = true; m_desiredModelVariants = value; }
 
     /**
-     * <p> Array of <code>ModelVariantConfig</code> objects. There is one for each
+     * <p> An array of <code>ModelVariantConfig</code> objects. There is one for each
      * variant that you want to deploy after the inference experiment stops. Each
      * <code>ModelVariantConfig</code> describes the infrastructure configuration for
      * deploying the corresponding variant. </p>
@@ -222,7 +222,7 @@ namespace Model
     inline void SetDesiredModelVariants(Aws::Vector<ModelVariantConfig>&& value) { m_desiredModelVariantsHasBeenSet = true; m_desiredModelVariants = std::move(value); }
 
     /**
-     * <p> Array of <code>ModelVariantConfig</code> objects. There is one for each
+     * <p> An array of <code>ModelVariantConfig</code> objects. There is one for each
      * variant that you want to deploy after the inference experiment stops. Each
      * <code>ModelVariantConfig</code> describes the infrastructure configuration for
      * deploying the corresponding variant. </p>
@@ -230,7 +230,7 @@ namespace Model
     inline StopInferenceExperimentRequest& WithDesiredModelVariants(const Aws::Vector<ModelVariantConfig>& value) { SetDesiredModelVariants(value); return *this;}
 
     /**
-     * <p> Array of <code>ModelVariantConfig</code> objects. There is one for each
+     * <p> An array of <code>ModelVariantConfig</code> objects. There is one for each
      * variant that you want to deploy after the inference experiment stops. Each
      * <code>ModelVariantConfig</code> describes the infrastructure configuration for
      * deploying the corresponding variant. </p>
@@ -238,7 +238,7 @@ namespace Model
     inline StopInferenceExperimentRequest& WithDesiredModelVariants(Aws::Vector<ModelVariantConfig>&& value) { SetDesiredModelVariants(std::move(value)); return *this;}
 
     /**
-     * <p> Array of <code>ModelVariantConfig</code> objects. There is one for each
+     * <p> An array of <code>ModelVariantConfig</code> objects. There is one for each
      * variant that you want to deploy after the inference experiment stops. Each
      * <code>ModelVariantConfig</code> describes the infrastructure configuration for
      * deploying the corresponding variant. </p>
@@ -246,7 +246,7 @@ namespace Model
     inline StopInferenceExperimentRequest& AddDesiredModelVariants(const ModelVariantConfig& value) { m_desiredModelVariantsHasBeenSet = true; m_desiredModelVariants.push_back(value); return *this; }
 
     /**
-     * <p> Array of <code>ModelVariantConfig</code> objects. There is one for each
+     * <p> An array of <code>ModelVariantConfig</code> objects. There is one for each
      * variant that you want to deploy after the inference experiment stops. Each
      * <code>ModelVariantConfig</code> describes the infrastructure configuration for
      * deploying the corresponding variant. </p>

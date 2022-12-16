@@ -222,66 +222,90 @@ namespace Model
 
 
     /**
-     * <p>The language code of the input language. For a list of language codes, see <a
+     * <p>The language code of the input language. Specify the language if all input
+     * documents share the same language. If you don't know the language of the source
+     * files, or your input documents contains different source languages, select
+     * <code>auto</code>. Amazon Translate auto detects the source language for each
+     * input document. For a list of supported language codes, see <a
      * href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported
-     * languages</a>.</p> <p>Amazon Translate does not automatically detect a source
-     * language during batch translation jobs.</p>
+     * languages</a>.</p>
      */
     inline const Aws::String& GetSourceLanguageCode() const{ return m_sourceLanguageCode; }
 
     /**
-     * <p>The language code of the input language. For a list of language codes, see <a
+     * <p>The language code of the input language. Specify the language if all input
+     * documents share the same language. If you don't know the language of the source
+     * files, or your input documents contains different source languages, select
+     * <code>auto</code>. Amazon Translate auto detects the source language for each
+     * input document. For a list of supported language codes, see <a
      * href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported
-     * languages</a>.</p> <p>Amazon Translate does not automatically detect a source
-     * language during batch translation jobs.</p>
+     * languages</a>.</p>
      */
     inline bool SourceLanguageCodeHasBeenSet() const { return m_sourceLanguageCodeHasBeenSet; }
 
     /**
-     * <p>The language code of the input language. For a list of language codes, see <a
+     * <p>The language code of the input language. Specify the language if all input
+     * documents share the same language. If you don't know the language of the source
+     * files, or your input documents contains different source languages, select
+     * <code>auto</code>. Amazon Translate auto detects the source language for each
+     * input document. For a list of supported language codes, see <a
      * href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported
-     * languages</a>.</p> <p>Amazon Translate does not automatically detect a source
-     * language during batch translation jobs.</p>
+     * languages</a>.</p>
      */
     inline void SetSourceLanguageCode(const Aws::String& value) { m_sourceLanguageCodeHasBeenSet = true; m_sourceLanguageCode = value; }
 
     /**
-     * <p>The language code of the input language. For a list of language codes, see <a
+     * <p>The language code of the input language. Specify the language if all input
+     * documents share the same language. If you don't know the language of the source
+     * files, or your input documents contains different source languages, select
+     * <code>auto</code>. Amazon Translate auto detects the source language for each
+     * input document. For a list of supported language codes, see <a
      * href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported
-     * languages</a>.</p> <p>Amazon Translate does not automatically detect a source
-     * language during batch translation jobs.</p>
+     * languages</a>.</p>
      */
     inline void SetSourceLanguageCode(Aws::String&& value) { m_sourceLanguageCodeHasBeenSet = true; m_sourceLanguageCode = std::move(value); }
 
     /**
-     * <p>The language code of the input language. For a list of language codes, see <a
+     * <p>The language code of the input language. Specify the language if all input
+     * documents share the same language. If you don't know the language of the source
+     * files, or your input documents contains different source languages, select
+     * <code>auto</code>. Amazon Translate auto detects the source language for each
+     * input document. For a list of supported language codes, see <a
      * href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported
-     * languages</a>.</p> <p>Amazon Translate does not automatically detect a source
-     * language during batch translation jobs.</p>
+     * languages</a>.</p>
      */
     inline void SetSourceLanguageCode(const char* value) { m_sourceLanguageCodeHasBeenSet = true; m_sourceLanguageCode.assign(value); }
 
     /**
-     * <p>The language code of the input language. For a list of language codes, see <a
+     * <p>The language code of the input language. Specify the language if all input
+     * documents share the same language. If you don't know the language of the source
+     * files, or your input documents contains different source languages, select
+     * <code>auto</code>. Amazon Translate auto detects the source language for each
+     * input document. For a list of supported language codes, see <a
      * href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported
-     * languages</a>.</p> <p>Amazon Translate does not automatically detect a source
-     * language during batch translation jobs.</p>
+     * languages</a>.</p>
      */
     inline StartTextTranslationJobRequest& WithSourceLanguageCode(const Aws::String& value) { SetSourceLanguageCode(value); return *this;}
 
     /**
-     * <p>The language code of the input language. For a list of language codes, see <a
+     * <p>The language code of the input language. Specify the language if all input
+     * documents share the same language. If you don't know the language of the source
+     * files, or your input documents contains different source languages, select
+     * <code>auto</code>. Amazon Translate auto detects the source language for each
+     * input document. For a list of supported language codes, see <a
      * href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported
-     * languages</a>.</p> <p>Amazon Translate does not automatically detect a source
-     * language during batch translation jobs.</p>
+     * languages</a>.</p>
      */
     inline StartTextTranslationJobRequest& WithSourceLanguageCode(Aws::String&& value) { SetSourceLanguageCode(std::move(value)); return *this;}
 
     /**
-     * <p>The language code of the input language. For a list of language codes, see <a
+     * <p>The language code of the input language. Specify the language if all input
+     * documents share the same language. If you don't know the language of the source
+     * files, or your input documents contains different source languages, select
+     * <code>auto</code>. Amazon Translate auto detects the source language for each
+     * input document. For a list of supported language codes, see <a
      * href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported
-     * languages</a>.</p> <p>Amazon Translate does not automatically detect a source
-     * language during batch translation jobs.</p>
+     * languages</a>.</p>
      */
     inline StartTextTranslationJobRequest& WithSourceLanguageCode(const char* value) { SetSourceLanguageCode(value); return *this;}
 
@@ -289,7 +313,7 @@ namespace Model
     /**
      * <p>The target languages of the translation job. Enter up to 10 language codes.
      * Each input file is translated into each target language.</p> <p>Each language
-     * code is two or five characters long. For a list of language codes, see <a
+     * code is 2 or 5 characters long. For a list of language codes, see <a
      * href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported
      * languages</a>.</p>
      */
@@ -298,7 +322,7 @@ namespace Model
     /**
      * <p>The target languages of the translation job. Enter up to 10 language codes.
      * Each input file is translated into each target language.</p> <p>Each language
-     * code is two or five characters long. For a list of language codes, see <a
+     * code is 2 or 5 characters long. For a list of language codes, see <a
      * href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported
      * languages</a>.</p>
      */
@@ -307,7 +331,7 @@ namespace Model
     /**
      * <p>The target languages of the translation job. Enter up to 10 language codes.
      * Each input file is translated into each target language.</p> <p>Each language
-     * code is two or five characters long. For a list of language codes, see <a
+     * code is 2 or 5 characters long. For a list of language codes, see <a
      * href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported
      * languages</a>.</p>
      */
@@ -316,7 +340,7 @@ namespace Model
     /**
      * <p>The target languages of the translation job. Enter up to 10 language codes.
      * Each input file is translated into each target language.</p> <p>Each language
-     * code is two or five characters long. For a list of language codes, see <a
+     * code is 2 or 5 characters long. For a list of language codes, see <a
      * href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported
      * languages</a>.</p>
      */
@@ -325,7 +349,7 @@ namespace Model
     /**
      * <p>The target languages of the translation job. Enter up to 10 language codes.
      * Each input file is translated into each target language.</p> <p>Each language
-     * code is two or five characters long. For a list of language codes, see <a
+     * code is 2 or 5 characters long. For a list of language codes, see <a
      * href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported
      * languages</a>.</p>
      */
@@ -334,7 +358,7 @@ namespace Model
     /**
      * <p>The target languages of the translation job. Enter up to 10 language codes.
      * Each input file is translated into each target language.</p> <p>Each language
-     * code is two or five characters long. For a list of language codes, see <a
+     * code is 2 or 5 characters long. For a list of language codes, see <a
      * href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported
      * languages</a>.</p>
      */
@@ -343,7 +367,7 @@ namespace Model
     /**
      * <p>The target languages of the translation job. Enter up to 10 language codes.
      * Each input file is translated into each target language.</p> <p>Each language
-     * code is two or five characters long. For a list of language codes, see <a
+     * code is 2 or 5 characters long. For a list of language codes, see <a
      * href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported
      * languages</a>.</p>
      */
@@ -352,7 +376,7 @@ namespace Model
     /**
      * <p>The target languages of the translation job. Enter up to 10 language codes.
      * Each input file is translated into each target language.</p> <p>Each language
-     * code is two or five characters long. For a list of language codes, see <a
+     * code is 2 or 5 characters long. For a list of language codes, see <a
      * href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported
      * languages</a>.</p>
      */
@@ -361,7 +385,7 @@ namespace Model
     /**
      * <p>The target languages of the translation job. Enter up to 10 language codes.
      * Each input file is translated into each target language.</p> <p>Each language
-     * code is two or five characters long. For a list of language codes, see <a
+     * code is 2 or 5 characters long. For a list of language codes, see <a
      * href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported
      * languages</a>.</p>
      */

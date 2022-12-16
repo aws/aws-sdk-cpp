@@ -37,6 +37,10 @@ namespace Model
 
     AWS_KINESIS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+    /**
+     * Helper function to collect parameters (configurable and static hardcoded) required for endpoint computation.
+     */
+    AWS_KINESIS_API EndpointParameters GetEndpointContextParams() const override;
 
     /**
      * <p>The name of the stream to modify.</p>
@@ -103,6 +107,47 @@ namespace Model
      */
     inline DecreaseStreamRetentionPeriodRequest& WithRetentionPeriodHours(int value) { SetRetentionPeriodHours(value); return *this;}
 
+
+    /**
+     * <p>The ARN of the stream.</p>
+     */
+    inline const Aws::String& GetStreamARN() const{ return m_streamARN; }
+
+    /**
+     * <p>The ARN of the stream.</p>
+     */
+    inline bool StreamARNHasBeenSet() const { return m_streamARNHasBeenSet; }
+
+    /**
+     * <p>The ARN of the stream.</p>
+     */
+    inline void SetStreamARN(const Aws::String& value) { m_streamARNHasBeenSet = true; m_streamARN = value; }
+
+    /**
+     * <p>The ARN of the stream.</p>
+     */
+    inline void SetStreamARN(Aws::String&& value) { m_streamARNHasBeenSet = true; m_streamARN = std::move(value); }
+
+    /**
+     * <p>The ARN of the stream.</p>
+     */
+    inline void SetStreamARN(const char* value) { m_streamARNHasBeenSet = true; m_streamARN.assign(value); }
+
+    /**
+     * <p>The ARN of the stream.</p>
+     */
+    inline DecreaseStreamRetentionPeriodRequest& WithStreamARN(const Aws::String& value) { SetStreamARN(value); return *this;}
+
+    /**
+     * <p>The ARN of the stream.</p>
+     */
+    inline DecreaseStreamRetentionPeriodRequest& WithStreamARN(Aws::String&& value) { SetStreamARN(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN of the stream.</p>
+     */
+    inline DecreaseStreamRetentionPeriodRequest& WithStreamARN(const char* value) { SetStreamARN(value); return *this;}
+
   private:
 
     Aws::String m_streamName;
@@ -110,6 +155,9 @@ namespace Model
 
     int m_retentionPeriodHours;
     bool m_retentionPeriodHoursHasBeenSet = false;
+
+    Aws::String m_streamARN;
+    bool m_streamARNHasBeenSet = false;
   };
 
 } // namespace Model

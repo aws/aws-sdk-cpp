@@ -29,9 +29,7 @@ namespace Connect
    * <p>You can connect programmatically to an Amazon Web Services service by using
    * an endpoint. For a list of Amazon Connect endpoints, see <a
    * href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
-   * Connect Endpoints</a>.</p>  <p>Working with flows? Check out the <a
-   * href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon
-   * Connect Flow language</a>.</p> 
+   * Connect Endpoints</a>.</p>
    */
   class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<ConnectClient>
   {
@@ -343,7 +341,7 @@ namespace Connect
         /**
          * <p>Creates a flow for the specified Amazon Connect instance.</p> <p>You can also
          * create and update flows using the <a
-         * href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon
+         * href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language.html">Amazon
          * Connect Flow language</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateContactFlow">AWS
          * API Reference</a></p>
@@ -506,8 +504,10 @@ namespace Connect
         virtual void CreateRoutingProfileAsync(const Model::CreateRoutingProfileRequest& request, const CreateRoutingProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a rule for the specified Amazon Connect instance.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Creates a rule for the specified Amazon Connect instance.</p> <p>Use the <a
+         * href="https://docs.aws.amazon.com/connect/latest/APIReference/connect-rules-language.html">Rules
+         * Function language</a> to code conditions for the rule. </p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateRule">AWS
          * API Reference</a></p>
          */
@@ -964,7 +964,7 @@ namespace Connect
         /**
          * <p>Describes the specified flow.</p> <p>You can also create and update flows
          * using the <a
-         * href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon
+         * href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language.html">Amazon
          * Connect Flow language</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeContactFlow">AWS
          * API Reference</a></p>
@@ -1696,7 +1696,7 @@ namespace Connect
         /**
          * <p>Provides information about the flows for the specified Amazon Connect
          * instance.</p> <p>You can also create and update flows using the <a
-         * href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon
+         * href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language.html">Amazon
          * Connect Flow language</a>.</p> <p>For more information about flows, see <a
          * href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-contact-flows.html">Flows</a>
          * in the <i>Amazon Connect Administrator Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -2850,7 +2850,7 @@ namespace Connect
         /**
          * <p>Updates the specified flow.</p> <p>You can also create and update flows using
          * the <a
-         * href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon
+         * href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language.html">Amazon
          * Connect Flow language</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateContactFlowContent">AWS
          * API Reference</a></p>
@@ -2922,7 +2922,7 @@ namespace Connect
         /**
          * <p>The name of the flow.</p> <p>You can also create and update flows using the
          * <a
-         * href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon
+         * href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language.html">Amazon
          * Connect Flow language</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateContactFlowName">AWS
          * API Reference</a></p>
@@ -3254,8 +3254,10 @@ namespace Connect
         virtual void UpdateRoutingProfileQueuesAsync(const Model::UpdateRoutingProfileQueuesRequest& request, const UpdateRoutingProfileQueuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates a rule for the specified Amazon Connect instance.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Updates a rule for the specified Amazon Connect instance.</p> <p>Use the <a
+         * href="https://docs.aws.amazon.com/connect/latest/APIReference/connect-rules-language.html">Rules
+         * Function language</a> to code conditions for the rule. </p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateRule">AWS
          * API Reference</a></p>
          */

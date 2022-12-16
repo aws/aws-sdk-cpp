@@ -169,16 +169,17 @@ namespace Model
      * <p> The status of the inference experiment. The following are the possible
      * statuses for an inference experiment: </p> <ul> <li> <p> <code>Creating</code> -
      * Amazon SageMaker is creating your experiment. </p> </li> <li> <p>
-     * <code>Created</code> - Amazon SageMaker has finished creating your experiment
-     * and it will begin at the scheduled time. </p> </li> <li> <p>
-     * <code>Updating</code> - When you make changes to your experiment, your
+     * <code>Created</code> - Amazon SageMaker has finished the creation of your
+     * experiment and will begin the experiment at the scheduled time. </p> </li> <li>
+     * <p> <code>Updating</code> - When you make changes to your experiment, your
      * experiment shows as updating. </p> </li> <li> <p> <code>Starting</code> - Amazon
      * SageMaker is beginning your experiment. </p> </li> <li> <p> <code>Running</code>
      * - Your experiment is in progress. </p> </li> <li> <p> <code>Stopping</code> -
      * Amazon SageMaker is stopping your experiment. </p> </li> <li> <p>
      * <code>Completed</code> - Your experiment has completed. </p> </li> <li> <p>
-     * <code>Cancelled</code> - When you conclude your experiment early, it shows as
-     * canceled. </p> </li> </ul>
+     * <code>Cancelled</code> - When you conclude your experiment early using the
+     * <a>StopInferenceExperiment</a> API, or if any operation fails with an unexpected
+     * error, it shows as cancelled. </p> </li> </ul>
      */
     inline const InferenceExperimentStatus& GetStatus() const{ return m_status; }
 
@@ -186,16 +187,17 @@ namespace Model
      * <p> The status of the inference experiment. The following are the possible
      * statuses for an inference experiment: </p> <ul> <li> <p> <code>Creating</code> -
      * Amazon SageMaker is creating your experiment. </p> </li> <li> <p>
-     * <code>Created</code> - Amazon SageMaker has finished creating your experiment
-     * and it will begin at the scheduled time. </p> </li> <li> <p>
-     * <code>Updating</code> - When you make changes to your experiment, your
+     * <code>Created</code> - Amazon SageMaker has finished the creation of your
+     * experiment and will begin the experiment at the scheduled time. </p> </li> <li>
+     * <p> <code>Updating</code> - When you make changes to your experiment, your
      * experiment shows as updating. </p> </li> <li> <p> <code>Starting</code> - Amazon
      * SageMaker is beginning your experiment. </p> </li> <li> <p> <code>Running</code>
      * - Your experiment is in progress. </p> </li> <li> <p> <code>Stopping</code> -
      * Amazon SageMaker is stopping your experiment. </p> </li> <li> <p>
      * <code>Completed</code> - Your experiment has completed. </p> </li> <li> <p>
-     * <code>Cancelled</code> - When you conclude your experiment early, it shows as
-     * canceled. </p> </li> </ul>
+     * <code>Cancelled</code> - When you conclude your experiment early using the
+     * <a>StopInferenceExperiment</a> API, or if any operation fails with an unexpected
+     * error, it shows as cancelled. </p> </li> </ul>
      */
     inline void SetStatus(const InferenceExperimentStatus& value) { m_status = value; }
 
@@ -203,16 +205,17 @@ namespace Model
      * <p> The status of the inference experiment. The following are the possible
      * statuses for an inference experiment: </p> <ul> <li> <p> <code>Creating</code> -
      * Amazon SageMaker is creating your experiment. </p> </li> <li> <p>
-     * <code>Created</code> - Amazon SageMaker has finished creating your experiment
-     * and it will begin at the scheduled time. </p> </li> <li> <p>
-     * <code>Updating</code> - When you make changes to your experiment, your
+     * <code>Created</code> - Amazon SageMaker has finished the creation of your
+     * experiment and will begin the experiment at the scheduled time. </p> </li> <li>
+     * <p> <code>Updating</code> - When you make changes to your experiment, your
      * experiment shows as updating. </p> </li> <li> <p> <code>Starting</code> - Amazon
      * SageMaker is beginning your experiment. </p> </li> <li> <p> <code>Running</code>
      * - Your experiment is in progress. </p> </li> <li> <p> <code>Stopping</code> -
      * Amazon SageMaker is stopping your experiment. </p> </li> <li> <p>
      * <code>Completed</code> - Your experiment has completed. </p> </li> <li> <p>
-     * <code>Cancelled</code> - When you conclude your experiment early, it shows as
-     * canceled. </p> </li> </ul>
+     * <code>Cancelled</code> - When you conclude your experiment early using the
+     * <a>StopInferenceExperiment</a> API, or if any operation fails with an unexpected
+     * error, it shows as cancelled. </p> </li> </ul>
      */
     inline void SetStatus(InferenceExperimentStatus&& value) { m_status = std::move(value); }
 
@@ -220,16 +223,17 @@ namespace Model
      * <p> The status of the inference experiment. The following are the possible
      * statuses for an inference experiment: </p> <ul> <li> <p> <code>Creating</code> -
      * Amazon SageMaker is creating your experiment. </p> </li> <li> <p>
-     * <code>Created</code> - Amazon SageMaker has finished creating your experiment
-     * and it will begin at the scheduled time. </p> </li> <li> <p>
-     * <code>Updating</code> - When you make changes to your experiment, your
+     * <code>Created</code> - Amazon SageMaker has finished the creation of your
+     * experiment and will begin the experiment at the scheduled time. </p> </li> <li>
+     * <p> <code>Updating</code> - When you make changes to your experiment, your
      * experiment shows as updating. </p> </li> <li> <p> <code>Starting</code> - Amazon
      * SageMaker is beginning your experiment. </p> </li> <li> <p> <code>Running</code>
      * - Your experiment is in progress. </p> </li> <li> <p> <code>Stopping</code> -
      * Amazon SageMaker is stopping your experiment. </p> </li> <li> <p>
      * <code>Completed</code> - Your experiment has completed. </p> </li> <li> <p>
-     * <code>Cancelled</code> - When you conclude your experiment early, it shows as
-     * canceled. </p> </li> </ul>
+     * <code>Cancelled</code> - When you conclude your experiment early using the
+     * <a>StopInferenceExperiment</a> API, or if any operation fails with an unexpected
+     * error, it shows as cancelled. </p> </li> </ul>
      */
     inline DescribeInferenceExperimentResult& WithStatus(const InferenceExperimentStatus& value) { SetStatus(value); return *this;}
 
@@ -237,52 +241,67 @@ namespace Model
      * <p> The status of the inference experiment. The following are the possible
      * statuses for an inference experiment: </p> <ul> <li> <p> <code>Creating</code> -
      * Amazon SageMaker is creating your experiment. </p> </li> <li> <p>
-     * <code>Created</code> - Amazon SageMaker has finished creating your experiment
-     * and it will begin at the scheduled time. </p> </li> <li> <p>
-     * <code>Updating</code> - When you make changes to your experiment, your
+     * <code>Created</code> - Amazon SageMaker has finished the creation of your
+     * experiment and will begin the experiment at the scheduled time. </p> </li> <li>
+     * <p> <code>Updating</code> - When you make changes to your experiment, your
      * experiment shows as updating. </p> </li> <li> <p> <code>Starting</code> - Amazon
      * SageMaker is beginning your experiment. </p> </li> <li> <p> <code>Running</code>
      * - Your experiment is in progress. </p> </li> <li> <p> <code>Stopping</code> -
      * Amazon SageMaker is stopping your experiment. </p> </li> <li> <p>
      * <code>Completed</code> - Your experiment has completed. </p> </li> <li> <p>
-     * <code>Cancelled</code> - When you conclude your experiment early, it shows as
-     * canceled. </p> </li> </ul>
+     * <code>Cancelled</code> - When you conclude your experiment early using the
+     * <a>StopInferenceExperiment</a> API, or if any operation fails with an unexpected
+     * error, it shows as cancelled. </p> </li> </ul>
      */
     inline DescribeInferenceExperimentResult& WithStatus(InferenceExperimentStatus&& value) { SetStatus(std::move(value)); return *this;}
 
 
     /**
-     * <p>The error message for the inference experiment status result.</p>
+     * <p> The error message or client-specified <code>Reason</code> from the
+     * <a>StopInferenceExperiment</a> API, that explains the status of the inference
+     * experiment. </p>
      */
     inline const Aws::String& GetStatusReason() const{ return m_statusReason; }
 
     /**
-     * <p>The error message for the inference experiment status result.</p>
+     * <p> The error message or client-specified <code>Reason</code> from the
+     * <a>StopInferenceExperiment</a> API, that explains the status of the inference
+     * experiment. </p>
      */
     inline void SetStatusReason(const Aws::String& value) { m_statusReason = value; }
 
     /**
-     * <p>The error message for the inference experiment status result.</p>
+     * <p> The error message or client-specified <code>Reason</code> from the
+     * <a>StopInferenceExperiment</a> API, that explains the status of the inference
+     * experiment. </p>
      */
     inline void SetStatusReason(Aws::String&& value) { m_statusReason = std::move(value); }
 
     /**
-     * <p>The error message for the inference experiment status result.</p>
+     * <p> The error message or client-specified <code>Reason</code> from the
+     * <a>StopInferenceExperiment</a> API, that explains the status of the inference
+     * experiment. </p>
      */
     inline void SetStatusReason(const char* value) { m_statusReason.assign(value); }
 
     /**
-     * <p>The error message for the inference experiment status result.</p>
+     * <p> The error message or client-specified <code>Reason</code> from the
+     * <a>StopInferenceExperiment</a> API, that explains the status of the inference
+     * experiment. </p>
      */
     inline DescribeInferenceExperimentResult& WithStatusReason(const Aws::String& value) { SetStatusReason(value); return *this;}
 
     /**
-     * <p>The error message for the inference experiment status result.</p>
+     * <p> The error message or client-specified <code>Reason</code> from the
+     * <a>StopInferenceExperiment</a> API, that explains the status of the inference
+     * experiment. </p>
      */
     inline DescribeInferenceExperimentResult& WithStatusReason(Aws::String&& value) { SetStatusReason(std::move(value)); return *this;}
 
     /**
-     * <p>The error message for the inference experiment status result.</p>
+     * <p> The error message or client-specified <code>Reason</code> from the
+     * <a>StopInferenceExperiment</a> API, that explains the status of the inference
+     * experiment. </p>
      */
     inline DescribeInferenceExperimentResult& WithStatusReason(const char* value) { SetStatusReason(value); return *this;}
 
@@ -350,32 +369,27 @@ namespace Model
 
 
     /**
-     * <p> The timestamp at which the inference experiment was completed or will
-     * complete. </p>
+     * <p> The timestamp at which the inference experiment was completed. </p>
      */
     inline const Aws::Utils::DateTime& GetCompletionTime() const{ return m_completionTime; }
 
     /**
-     * <p> The timestamp at which the inference experiment was completed or will
-     * complete. </p>
+     * <p> The timestamp at which the inference experiment was completed. </p>
      */
     inline void SetCompletionTime(const Aws::Utils::DateTime& value) { m_completionTime = value; }
 
     /**
-     * <p> The timestamp at which the inference experiment was completed or will
-     * complete. </p>
+     * <p> The timestamp at which the inference experiment was completed. </p>
      */
     inline void SetCompletionTime(Aws::Utils::DateTime&& value) { m_completionTime = std::move(value); }
 
     /**
-     * <p> The timestamp at which the inference experiment was completed or will
-     * complete. </p>
+     * <p> The timestamp at which the inference experiment was completed. </p>
      */
     inline DescribeInferenceExperimentResult& WithCompletionTime(const Aws::Utils::DateTime& value) { SetCompletionTime(value); return *this;}
 
     /**
-     * <p> The timestamp at which the inference experiment was completed or will
-     * complete. </p>
+     * <p> The timestamp at which the inference experiment was completed. </p>
      */
     inline DescribeInferenceExperimentResult& WithCompletionTime(Aws::Utils::DateTime&& value) { SetCompletionTime(std::move(value)); return *this;}
 
@@ -408,43 +422,50 @@ namespace Model
 
     /**
      * <p> The ARN of the IAM role that Amazon SageMaker can assume to access model
-     * artifacts and container images. </p>
+     * artifacts and container images, and manage Amazon SageMaker Inference endpoints
+     * for model deployment. </p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
     /**
      * <p> The ARN of the IAM role that Amazon SageMaker can assume to access model
-     * artifacts and container images. </p>
+     * artifacts and container images, and manage Amazon SageMaker Inference endpoints
+     * for model deployment. </p>
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArn = value; }
 
     /**
      * <p> The ARN of the IAM role that Amazon SageMaker can assume to access model
-     * artifacts and container images. </p>
+     * artifacts and container images, and manage Amazon SageMaker Inference endpoints
+     * for model deployment. </p>
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArn = std::move(value); }
 
     /**
      * <p> The ARN of the IAM role that Amazon SageMaker can assume to access model
-     * artifacts and container images. </p>
+     * artifacts and container images, and manage Amazon SageMaker Inference endpoints
+     * for model deployment. </p>
      */
     inline void SetRoleArn(const char* value) { m_roleArn.assign(value); }
 
     /**
      * <p> The ARN of the IAM role that Amazon SageMaker can assume to access model
-     * artifacts and container images. </p>
+     * artifacts and container images, and manage Amazon SageMaker Inference endpoints
+     * for model deployment. </p>
      */
     inline DescribeInferenceExperimentResult& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
     /**
      * <p> The ARN of the IAM role that Amazon SageMaker can assume to access model
-     * artifacts and container images. </p>
+     * artifacts and container images, and manage Amazon SageMaker Inference endpoints
+     * for model deployment. </p>
      */
     inline DescribeInferenceExperimentResult& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
      * <p> The ARN of the IAM role that Amazon SageMaker can assume to access model
-     * artifacts and container images. </p>
+     * artifacts and container images, and manage Amazon SageMaker Inference endpoints
+     * for model deployment. </p>
      */
     inline DescribeInferenceExperimentResult& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 
@@ -476,7 +497,7 @@ namespace Model
 
 
     /**
-     * <p> Array of <code>ModelVariantConfigSummary</code> objects. There is one for
+     * <p> An array of <code>ModelVariantConfigSummary</code> objects. There is one for
      * each variant in the inference experiment. Each
      * <code>ModelVariantConfigSummary</code> object in the array describes the
      * infrastructure configuration for deploying the corresponding variant. </p>
@@ -484,7 +505,7 @@ namespace Model
     inline const Aws::Vector<ModelVariantConfigSummary>& GetModelVariants() const{ return m_modelVariants; }
 
     /**
-     * <p> Array of <code>ModelVariantConfigSummary</code> objects. There is one for
+     * <p> An array of <code>ModelVariantConfigSummary</code> objects. There is one for
      * each variant in the inference experiment. Each
      * <code>ModelVariantConfigSummary</code> object in the array describes the
      * infrastructure configuration for deploying the corresponding variant. </p>
@@ -492,7 +513,7 @@ namespace Model
     inline void SetModelVariants(const Aws::Vector<ModelVariantConfigSummary>& value) { m_modelVariants = value; }
 
     /**
-     * <p> Array of <code>ModelVariantConfigSummary</code> objects. There is one for
+     * <p> An array of <code>ModelVariantConfigSummary</code> objects. There is one for
      * each variant in the inference experiment. Each
      * <code>ModelVariantConfigSummary</code> object in the array describes the
      * infrastructure configuration for deploying the corresponding variant. </p>
@@ -500,7 +521,7 @@ namespace Model
     inline void SetModelVariants(Aws::Vector<ModelVariantConfigSummary>&& value) { m_modelVariants = std::move(value); }
 
     /**
-     * <p> Array of <code>ModelVariantConfigSummary</code> objects. There is one for
+     * <p> An array of <code>ModelVariantConfigSummary</code> objects. There is one for
      * each variant in the inference experiment. Each
      * <code>ModelVariantConfigSummary</code> object in the array describes the
      * infrastructure configuration for deploying the corresponding variant. </p>
@@ -508,7 +529,7 @@ namespace Model
     inline DescribeInferenceExperimentResult& WithModelVariants(const Aws::Vector<ModelVariantConfigSummary>& value) { SetModelVariants(value); return *this;}
 
     /**
-     * <p> Array of <code>ModelVariantConfigSummary</code> objects. There is one for
+     * <p> An array of <code>ModelVariantConfigSummary</code> objects. There is one for
      * each variant in the inference experiment. Each
      * <code>ModelVariantConfigSummary</code> object in the array describes the
      * infrastructure configuration for deploying the corresponding variant. </p>
@@ -516,7 +537,7 @@ namespace Model
     inline DescribeInferenceExperimentResult& WithModelVariants(Aws::Vector<ModelVariantConfigSummary>&& value) { SetModelVariants(std::move(value)); return *this;}
 
     /**
-     * <p> Array of <code>ModelVariantConfigSummary</code> objects. There is one for
+     * <p> An array of <code>ModelVariantConfigSummary</code> objects. There is one for
      * each variant in the inference experiment. Each
      * <code>ModelVariantConfigSummary</code> object in the array describes the
      * infrastructure configuration for deploying the corresponding variant. </p>
@@ -524,7 +545,7 @@ namespace Model
     inline DescribeInferenceExperimentResult& AddModelVariants(const ModelVariantConfigSummary& value) { m_modelVariants.push_back(value); return *this; }
 
     /**
-     * <p> Array of <code>ModelVariantConfigSummary</code> objects. There is one for
+     * <p> An array of <code>ModelVariantConfigSummary</code> objects. There is one for
      * each variant in the inference experiment. Each
      * <code>ModelVariantConfigSummary</code> object in the array describes the
      * infrastructure configuration for deploying the corresponding variant. </p>
@@ -533,58 +554,78 @@ namespace Model
 
 
     /**
-     * <p>The Amazon S3 storage configuration for the inference experiment.</p>
+     * <p>The Amazon S3 location and configuration for storing inference request and
+     * response data.</p>
      */
     inline const InferenceExperimentDataStorageConfig& GetDataStorageConfig() const{ return m_dataStorageConfig; }
 
     /**
-     * <p>The Amazon S3 storage configuration for the inference experiment.</p>
+     * <p>The Amazon S3 location and configuration for storing inference request and
+     * response data.</p>
      */
     inline void SetDataStorageConfig(const InferenceExperimentDataStorageConfig& value) { m_dataStorageConfig = value; }
 
     /**
-     * <p>The Amazon S3 storage configuration for the inference experiment.</p>
+     * <p>The Amazon S3 location and configuration for storing inference request and
+     * response data.</p>
      */
     inline void SetDataStorageConfig(InferenceExperimentDataStorageConfig&& value) { m_dataStorageConfig = std::move(value); }
 
     /**
-     * <p>The Amazon S3 storage configuration for the inference experiment.</p>
+     * <p>The Amazon S3 location and configuration for storing inference request and
+     * response data.</p>
      */
     inline DescribeInferenceExperimentResult& WithDataStorageConfig(const InferenceExperimentDataStorageConfig& value) { SetDataStorageConfig(value); return *this;}
 
     /**
-     * <p>The Amazon S3 storage configuration for the inference experiment.</p>
+     * <p>The Amazon S3 location and configuration for storing inference request and
+     * response data.</p>
      */
     inline DescribeInferenceExperimentResult& WithDataStorageConfig(InferenceExperimentDataStorageConfig&& value) { SetDataStorageConfig(std::move(value)); return *this;}
 
 
     /**
-     * <p> Shows which variant is a production variant and which variant is a shadow
-     * variant. For shadow variants, also shows the sampling percentage. </p>
+     * <p> The configuration of <code>ShadowMode</code> inference experiment type,
+     * which shows the production variant that takes all the inference requests, and
+     * the shadow variant to which Amazon SageMaker replicates a percentage of the
+     * inference requests. For the shadow variant it also shows the percentage of
+     * requests that Amazon SageMaker replicates. </p>
      */
     inline const ShadowModeConfig& GetShadowModeConfig() const{ return m_shadowModeConfig; }
 
     /**
-     * <p> Shows which variant is a production variant and which variant is a shadow
-     * variant. For shadow variants, also shows the sampling percentage. </p>
+     * <p> The configuration of <code>ShadowMode</code> inference experiment type,
+     * which shows the production variant that takes all the inference requests, and
+     * the shadow variant to which Amazon SageMaker replicates a percentage of the
+     * inference requests. For the shadow variant it also shows the percentage of
+     * requests that Amazon SageMaker replicates. </p>
      */
     inline void SetShadowModeConfig(const ShadowModeConfig& value) { m_shadowModeConfig = value; }
 
     /**
-     * <p> Shows which variant is a production variant and which variant is a shadow
-     * variant. For shadow variants, also shows the sampling percentage. </p>
+     * <p> The configuration of <code>ShadowMode</code> inference experiment type,
+     * which shows the production variant that takes all the inference requests, and
+     * the shadow variant to which Amazon SageMaker replicates a percentage of the
+     * inference requests. For the shadow variant it also shows the percentage of
+     * requests that Amazon SageMaker replicates. </p>
      */
     inline void SetShadowModeConfig(ShadowModeConfig&& value) { m_shadowModeConfig = std::move(value); }
 
     /**
-     * <p> Shows which variant is a production variant and which variant is a shadow
-     * variant. For shadow variants, also shows the sampling percentage. </p>
+     * <p> The configuration of <code>ShadowMode</code> inference experiment type,
+     * which shows the production variant that takes all the inference requests, and
+     * the shadow variant to which Amazon SageMaker replicates a percentage of the
+     * inference requests. For the shadow variant it also shows the percentage of
+     * requests that Amazon SageMaker replicates. </p>
      */
     inline DescribeInferenceExperimentResult& WithShadowModeConfig(const ShadowModeConfig& value) { SetShadowModeConfig(value); return *this;}
 
     /**
-     * <p> Shows which variant is a production variant and which variant is a shadow
-     * variant. For shadow variants, also shows the sampling percentage. </p>
+     * <p> The configuration of <code>ShadowMode</code> inference experiment type,
+     * which shows the production variant that takes all the inference requests, and
+     * the shadow variant to which Amazon SageMaker replicates a percentage of the
+     * inference requests. For the shadow variant it also shows the percentage of
+     * requests that Amazon SageMaker replicates. </p>
      */
     inline DescribeInferenceExperimentResult& WithShadowModeConfig(ShadowModeConfig&& value) { SetShadowModeConfig(std::move(value)); return *this;}
 

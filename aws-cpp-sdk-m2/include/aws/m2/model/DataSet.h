@@ -81,38 +81,32 @@ namespace Model
 
 
     /**
-     * <p>The type of dataset. Possible values include VSAM, IS, PS, GDG, PO, PS,
-     * UNKNOWN etc.</p>
+     * <p>The type of dataset. The only supported value is VSAM.</p>
      */
     inline const DatasetOrgAttributes& GetDatasetOrg() const{ return m_datasetOrg; }
 
     /**
-     * <p>The type of dataset. Possible values include VSAM, IS, PS, GDG, PO, PS,
-     * UNKNOWN etc.</p>
+     * <p>The type of dataset. The only supported value is VSAM.</p>
      */
     inline bool DatasetOrgHasBeenSet() const { return m_datasetOrgHasBeenSet; }
 
     /**
-     * <p>The type of dataset. Possible values include VSAM, IS, PS, GDG, PO, PS,
-     * UNKNOWN etc.</p>
+     * <p>The type of dataset. The only supported value is VSAM.</p>
      */
     inline void SetDatasetOrg(const DatasetOrgAttributes& value) { m_datasetOrgHasBeenSet = true; m_datasetOrg = value; }
 
     /**
-     * <p>The type of dataset. Possible values include VSAM, IS, PS, GDG, PO, PS,
-     * UNKNOWN etc.</p>
+     * <p>The type of dataset. The only supported value is VSAM.</p>
      */
     inline void SetDatasetOrg(DatasetOrgAttributes&& value) { m_datasetOrgHasBeenSet = true; m_datasetOrg = std::move(value); }
 
     /**
-     * <p>The type of dataset. Possible values include VSAM, IS, PS, GDG, PO, PS,
-     * UNKNOWN etc.</p>
+     * <p>The type of dataset. The only supported value is VSAM.</p>
      */
     inline DataSet& WithDatasetOrg(const DatasetOrgAttributes& value) { SetDatasetOrg(value); return *this;}
 
     /**
-     * <p>The type of dataset. Possible values include VSAM, IS, PS, GDG, PO, PS,
-     * UNKNOWN etc.</p>
+     * <p>The type of dataset. The only supported value is VSAM.</p>
      */
     inline DataSet& WithDatasetOrg(DatasetOrgAttributes&& value) { SetDatasetOrg(std::move(value)); return *this;}
 

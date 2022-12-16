@@ -38,6 +38,10 @@ namespace Model
 
     AWS_KINESIS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+    /**
+     * Helper function to collect parameters (configurable and static hardcoded) required for endpoint computation.
+     */
+    AWS_KINESIS_API EndpointParameters GetEndpointContextParams() const override;
 
     /**
      * <p>The records associated with the request.</p>
@@ -120,6 +124,47 @@ namespace Model
      */
     inline PutRecordsRequest& WithStreamName(const char* value) { SetStreamName(value); return *this;}
 
+
+    /**
+     * <p>The ARN of the stream.</p>
+     */
+    inline const Aws::String& GetStreamARN() const{ return m_streamARN; }
+
+    /**
+     * <p>The ARN of the stream.</p>
+     */
+    inline bool StreamARNHasBeenSet() const { return m_streamARNHasBeenSet; }
+
+    /**
+     * <p>The ARN of the stream.</p>
+     */
+    inline void SetStreamARN(const Aws::String& value) { m_streamARNHasBeenSet = true; m_streamARN = value; }
+
+    /**
+     * <p>The ARN of the stream.</p>
+     */
+    inline void SetStreamARN(Aws::String&& value) { m_streamARNHasBeenSet = true; m_streamARN = std::move(value); }
+
+    /**
+     * <p>The ARN of the stream.</p>
+     */
+    inline void SetStreamARN(const char* value) { m_streamARNHasBeenSet = true; m_streamARN.assign(value); }
+
+    /**
+     * <p>The ARN of the stream.</p>
+     */
+    inline PutRecordsRequest& WithStreamARN(const Aws::String& value) { SetStreamARN(value); return *this;}
+
+    /**
+     * <p>The ARN of the stream.</p>
+     */
+    inline PutRecordsRequest& WithStreamARN(Aws::String&& value) { SetStreamARN(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN of the stream.</p>
+     */
+    inline PutRecordsRequest& WithStreamARN(const char* value) { SetStreamARN(value); return *this;}
+
   private:
 
     Aws::Vector<PutRecordsRequestEntry> m_records;
@@ -127,6 +172,9 @@ namespace Model
 
     Aws::String m_streamName;
     bool m_streamNameHasBeenSet = false;
+
+    Aws::String m_streamARN;
+    bool m_streamARNHasBeenSet = false;
   };
 
 } // namespace Model

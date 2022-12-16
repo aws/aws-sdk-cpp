@@ -78,49 +78,49 @@ namespace Model
 
     /**
      * <p>The content of the application definition. This is a JSON object that
-     * contains the resource configuration/definitions that identify an
+     * contains the resource configuration and definitions that identify an
      * application.</p>
      */
     inline const Aws::String& GetDefinitionContent() const{ return m_definitionContent; }
 
     /**
      * <p>The content of the application definition. This is a JSON object that
-     * contains the resource configuration/definitions that identify an
+     * contains the resource configuration and definitions that identify an
      * application.</p>
      */
     inline void SetDefinitionContent(const Aws::String& value) { m_definitionContent = value; }
 
     /**
      * <p>The content of the application definition. This is a JSON object that
-     * contains the resource configuration/definitions that identify an
+     * contains the resource configuration and definitions that identify an
      * application.</p>
      */
     inline void SetDefinitionContent(Aws::String&& value) { m_definitionContent = std::move(value); }
 
     /**
      * <p>The content of the application definition. This is a JSON object that
-     * contains the resource configuration/definitions that identify an
+     * contains the resource configuration and definitions that identify an
      * application.</p>
      */
     inline void SetDefinitionContent(const char* value) { m_definitionContent.assign(value); }
 
     /**
      * <p>The content of the application definition. This is a JSON object that
-     * contains the resource configuration/definitions that identify an
+     * contains the resource configuration and definitions that identify an
      * application.</p>
      */
     inline GetApplicationVersionResult& WithDefinitionContent(const Aws::String& value) { SetDefinitionContent(value); return *this;}
 
     /**
      * <p>The content of the application definition. This is a JSON object that
-     * contains the resource configuration/definitions that identify an
+     * contains the resource configuration and definitions that identify an
      * application.</p>
      */
     inline GetApplicationVersionResult& WithDefinitionContent(Aws::String&& value) { SetDefinitionContent(std::move(value)); return *this;}
 
     /**
      * <p>The content of the application definition. This is a JSON object that
-     * contains the resource configuration/definitions that identify an
+     * contains the resource configuration and definitions that identify an
      * application.</p>
      */
     inline GetApplicationVersionResult& WithDefinitionContent(const char* value) { SetDefinitionContent(value); return *this;}

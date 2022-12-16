@@ -74,6 +74,12 @@ GetApplicationResult& GetApplicationResult::operator =(const Aws::AmazonWebServi
 
   }
 
+  if(jsonValue.ValueExists("kmsKeyId"))
+  {
+    m_kmsKeyId = jsonValue.GetString("kmsKeyId");
+
+  }
+
   if(jsonValue.ValueExists("lastStartTime"))
   {
     m_lastStartTime = jsonValue.GetDouble("lastStartTime");

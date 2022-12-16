@@ -24,9 +24,9 @@ namespace Model
 {
 
   /**
-   * <p>A subset of the attributes about a log group. In CloudWatch a log group is a
-   * group of log streams that share the same retention, monitoring, and access
-   * control settings.</p><p><h3>See Also:</h3>   <a
+   * <p>A subset of the attributes that describe a log group. In CloudWatch a log
+   * group is a group of log streams that share the same retention, monitoring, and
+   * access control settings.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/LogGroupSummary">AWS
    * API Reference</a></p>
    */
