@@ -99,6 +99,47 @@ namespace Model
      */
     inline DescribeImageVersionRequest& WithVersion(int value) { SetVersion(value); return *this;}
 
+
+    /**
+     * <p>The alias of the image version.</p>
+     */
+    inline const Aws::String& GetAlias() const{ return m_alias; }
+
+    /**
+     * <p>The alias of the image version.</p>
+     */
+    inline bool AliasHasBeenSet() const { return m_aliasHasBeenSet; }
+
+    /**
+     * <p>The alias of the image version.</p>
+     */
+    inline void SetAlias(const Aws::String& value) { m_aliasHasBeenSet = true; m_alias = value; }
+
+    /**
+     * <p>The alias of the image version.</p>
+     */
+    inline void SetAlias(Aws::String&& value) { m_aliasHasBeenSet = true; m_alias = std::move(value); }
+
+    /**
+     * <p>The alias of the image version.</p>
+     */
+    inline void SetAlias(const char* value) { m_aliasHasBeenSet = true; m_alias.assign(value); }
+
+    /**
+     * <p>The alias of the image version.</p>
+     */
+    inline DescribeImageVersionRequest& WithAlias(const Aws::String& value) { SetAlias(value); return *this;}
+
+    /**
+     * <p>The alias of the image version.</p>
+     */
+    inline DescribeImageVersionRequest& WithAlias(Aws::String&& value) { SetAlias(std::move(value)); return *this;}
+
+    /**
+     * <p>The alias of the image version.</p>
+     */
+    inline DescribeImageVersionRequest& WithAlias(const char* value) { SetAlias(value); return *this;}
+
   private:
 
     Aws::String m_imageName;
@@ -106,6 +147,9 @@ namespace Model
 
     int m_version;
     bool m_versionHasBeenSet = false;
+
+    Aws::String m_alias;
+    bool m_aliasHasBeenSet = false;
   };
 
 } // namespace Model

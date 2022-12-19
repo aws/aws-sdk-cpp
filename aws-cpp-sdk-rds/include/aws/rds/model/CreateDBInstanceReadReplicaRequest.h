@@ -2885,6 +2885,67 @@ namespace Model
 
 
     /**
+     * <p>A value that indicates whether to enable a customer-owned IP address (CoIP)
+     * for an RDS on Outposts read replica.</p> <p>A <i>CoIP</i> provides local or
+     * external connectivity to resources in your Outpost subnets through your
+     * on-premises network. For some use cases, a CoIP can provide lower latency for
+     * connections to the read replica from outside of its virtual private cloud (VPC)
+     * on your local network.</p> <p>For more information about RDS on Outposts, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working
+     * with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User
+     * Guide</i>.</p> <p>For more information about CoIPs, see <a
+     * href="https://docs.aws.amazon.com/outposts/latest/userguide/routing.html#ip-addressing">Customer-owned
+     * IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.</p>
+     */
+    inline bool GetEnableCustomerOwnedIp() const{ return m_enableCustomerOwnedIp; }
+
+    /**
+     * <p>A value that indicates whether to enable a customer-owned IP address (CoIP)
+     * for an RDS on Outposts read replica.</p> <p>A <i>CoIP</i> provides local or
+     * external connectivity to resources in your Outpost subnets through your
+     * on-premises network. For some use cases, a CoIP can provide lower latency for
+     * connections to the read replica from outside of its virtual private cloud (VPC)
+     * on your local network.</p> <p>For more information about RDS on Outposts, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working
+     * with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User
+     * Guide</i>.</p> <p>For more information about CoIPs, see <a
+     * href="https://docs.aws.amazon.com/outposts/latest/userguide/routing.html#ip-addressing">Customer-owned
+     * IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.</p>
+     */
+    inline bool EnableCustomerOwnedIpHasBeenSet() const { return m_enableCustomerOwnedIpHasBeenSet; }
+
+    /**
+     * <p>A value that indicates whether to enable a customer-owned IP address (CoIP)
+     * for an RDS on Outposts read replica.</p> <p>A <i>CoIP</i> provides local or
+     * external connectivity to resources in your Outpost subnets through your
+     * on-premises network. For some use cases, a CoIP can provide lower latency for
+     * connections to the read replica from outside of its virtual private cloud (VPC)
+     * on your local network.</p> <p>For more information about RDS on Outposts, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working
+     * with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User
+     * Guide</i>.</p> <p>For more information about CoIPs, see <a
+     * href="https://docs.aws.amazon.com/outposts/latest/userguide/routing.html#ip-addressing">Customer-owned
+     * IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.</p>
+     */
+    inline void SetEnableCustomerOwnedIp(bool value) { m_enableCustomerOwnedIpHasBeenSet = true; m_enableCustomerOwnedIp = value; }
+
+    /**
+     * <p>A value that indicates whether to enable a customer-owned IP address (CoIP)
+     * for an RDS on Outposts read replica.</p> <p>A <i>CoIP</i> provides local or
+     * external connectivity to resources in your Outpost subnets through your
+     * on-premises network. For some use cases, a CoIP can provide lower latency for
+     * connections to the read replica from outside of its virtual private cloud (VPC)
+     * on your local network.</p> <p>For more information about RDS on Outposts, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working
+     * with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User
+     * Guide</i>.</p> <p>For more information about CoIPs, see <a
+     * href="https://docs.aws.amazon.com/outposts/latest/userguide/routing.html#ip-addressing">Customer-owned
+     * IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.</p>
+     */
+    inline CreateDBInstanceReadReplicaRequest& WithEnableCustomerOwnedIp(bool value) { SetEnableCustomerOwnedIp(value); return *this;}
+
+
+    /**
      * If SourceRegion is specified, SDKs will generate pre-signed URLs and populate the pre-signed URL field.
      */
     inline const Aws::String& GetSourceRegion() const{ return m_sourceRegion; }
@@ -3030,6 +3091,9 @@ namespace Model
 
     int m_storageThroughput;
     bool m_storageThroughputHasBeenSet = false;
+
+    bool m_enableCustomerOwnedIp;
+    bool m_enableCustomerOwnedIpHasBeenSet = false;
 
     Aws::String m_sourceRegion;
     bool m_sourceRegionHasBeenSet = false;

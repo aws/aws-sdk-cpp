@@ -90,38 +90,44 @@ namespace Model
 
 
     /**
-     * <p>The Uniform Resource Identifier (Uri) type. The <code>FILE_URI</code> value
-     * can be used to stream local media files.</p>
+     * <p>The Uniform Resource Identifier (URI) type. The <code>FILE_URI</code> value
+     * can be used to stream local media files.</p>  <p>Preview only supports the
+     * <code>RTSP_URI</code> media source URI format .</p> 
      */
     inline const MediaUriType& GetMediaUriType() const{ return m_mediaUriType; }
 
     /**
-     * <p>The Uniform Resource Identifier (Uri) type. The <code>FILE_URI</code> value
-     * can be used to stream local media files.</p>
+     * <p>The Uniform Resource Identifier (URI) type. The <code>FILE_URI</code> value
+     * can be used to stream local media files.</p>  <p>Preview only supports the
+     * <code>RTSP_URI</code> media source URI format .</p> 
      */
     inline bool MediaUriTypeHasBeenSet() const { return m_mediaUriTypeHasBeenSet; }
 
     /**
-     * <p>The Uniform Resource Identifier (Uri) type. The <code>FILE_URI</code> value
-     * can be used to stream local media files.</p>
+     * <p>The Uniform Resource Identifier (URI) type. The <code>FILE_URI</code> value
+     * can be used to stream local media files.</p>  <p>Preview only supports the
+     * <code>RTSP_URI</code> media source URI format .</p> 
      */
     inline void SetMediaUriType(const MediaUriType& value) { m_mediaUriTypeHasBeenSet = true; m_mediaUriType = value; }
 
     /**
-     * <p>The Uniform Resource Identifier (Uri) type. The <code>FILE_URI</code> value
-     * can be used to stream local media files.</p>
+     * <p>The Uniform Resource Identifier (URI) type. The <code>FILE_URI</code> value
+     * can be used to stream local media files.</p>  <p>Preview only supports the
+     * <code>RTSP_URI</code> media source URI format .</p> 
      */
     inline void SetMediaUriType(MediaUriType&& value) { m_mediaUriTypeHasBeenSet = true; m_mediaUriType = std::move(value); }
 
     /**
-     * <p>The Uniform Resource Identifier (Uri) type. The <code>FILE_URI</code> value
-     * can be used to stream local media files.</p>
+     * <p>The Uniform Resource Identifier (URI) type. The <code>FILE_URI</code> value
+     * can be used to stream local media files.</p>  <p>Preview only supports the
+     * <code>RTSP_URI</code> media source URI format .</p> 
      */
     inline MediaSourceConfig& WithMediaUriType(const MediaUriType& value) { SetMediaUriType(value); return *this;}
 
     /**
-     * <p>The Uniform Resource Identifier (Uri) type. The <code>FILE_URI</code> value
-     * can be used to stream local media files.</p>
+     * <p>The Uniform Resource Identifier (URI) type. The <code>FILE_URI</code> value
+     * can be used to stream local media files.</p>  <p>Preview only supports the
+     * <code>RTSP_URI</code> media source URI format .</p> 
      */
     inline MediaSourceConfig& WithMediaUriType(MediaUriType&& value) { SetMediaUriType(std::move(value)); return *this;}
 
