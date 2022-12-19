@@ -27,6 +27,8 @@
 #include <aws/kinesisvideo/model/DeleteStreamRequest.h>
 #include <aws/kinesisvideo/model/DescribeEdgeConfigurationRequest.h>
 #include <aws/kinesisvideo/model/DescribeImageGenerationConfigurationRequest.h>
+#include <aws/kinesisvideo/model/DescribeMappedResourceConfigurationRequest.h>
+#include <aws/kinesisvideo/model/DescribeMediaStorageConfigurationRequest.h>
 #include <aws/kinesisvideo/model/DescribeNotificationConfigurationRequest.h>
 #include <aws/kinesisvideo/model/DescribeSignalingChannelRequest.h>
 #include <aws/kinesisvideo/model/DescribeStreamRequest.h>
@@ -43,6 +45,7 @@
 #include <aws/kinesisvideo/model/UntagStreamRequest.h>
 #include <aws/kinesisvideo/model/UpdateDataRetentionRequest.h>
 #include <aws/kinesisvideo/model/UpdateImageGenerationConfigurationRequest.h>
+#include <aws/kinesisvideo/model/UpdateMediaStorageConfigurationRequest.h>
 #include <aws/kinesisvideo/model/UpdateNotificationConfigurationRequest.h>
 #include <aws/kinesisvideo/model/UpdateSignalingChannelRequest.h>
 #include <aws/kinesisvideo/model/UpdateStreamRequest.h>
@@ -321,6 +324,56 @@ void KinesisVideoClient::DescribeImageGenerationConfigurationAsync(const Describ
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, DescribeImageGenerationConfiguration(request), context);
+    } );
+}
+
+DescribeMappedResourceConfigurationOutcome KinesisVideoClient::DescribeMappedResourceConfiguration(const DescribeMappedResourceConfigurationRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeMappedResourceConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeMappedResourceConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/describeMappedResourceConfiguration");
+  return DescribeMappedResourceConfigurationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeMappedResourceConfigurationOutcomeCallable KinesisVideoClient::DescribeMappedResourceConfigurationCallable(const DescribeMappedResourceConfigurationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeMappedResourceConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeMappedResourceConfiguration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void KinesisVideoClient::DescribeMappedResourceConfigurationAsync(const DescribeMappedResourceConfigurationRequest& request, const DescribeMappedResourceConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeMappedResourceConfiguration(request), context);
+    } );
+}
+
+DescribeMediaStorageConfigurationOutcome KinesisVideoClient::DescribeMediaStorageConfiguration(const DescribeMediaStorageConfigurationRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeMediaStorageConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeMediaStorageConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/describeMediaStorageConfiguration");
+  return DescribeMediaStorageConfigurationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeMediaStorageConfigurationOutcomeCallable KinesisVideoClient::DescribeMediaStorageConfigurationCallable(const DescribeMediaStorageConfigurationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeMediaStorageConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeMediaStorageConfiguration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void KinesisVideoClient::DescribeMediaStorageConfigurationAsync(const DescribeMediaStorageConfigurationRequest& request, const DescribeMediaStorageConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeMediaStorageConfiguration(request), context);
     } );
 }
 
@@ -721,6 +774,31 @@ void KinesisVideoClient::UpdateImageGenerationConfigurationAsync(const UpdateIma
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, UpdateImageGenerationConfiguration(request), context);
+    } );
+}
+
+UpdateMediaStorageConfigurationOutcome KinesisVideoClient::UpdateMediaStorageConfiguration(const UpdateMediaStorageConfigurationRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateMediaStorageConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateMediaStorageConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/updateMediaStorageConfiguration");
+  return UpdateMediaStorageConfigurationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateMediaStorageConfigurationOutcomeCallable KinesisVideoClient::UpdateMediaStorageConfigurationCallable(const UpdateMediaStorageConfigurationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateMediaStorageConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateMediaStorageConfiguration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void KinesisVideoClient::UpdateMediaStorageConfigurationAsync(const UpdateMediaStorageConfigurationRequest& request, const UpdateMediaStorageConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateMediaStorageConfiguration(request), context);
     } );
 }
 

@@ -24,9 +24,11 @@ namespace Model
 {
 
   /**
-   * <p>The configuration that consists of the <code>ScheduleConfig</code> attribute
-   * that's required, to schedule the jobs to upload the recorded media files onto
-   * the Edge Agent in a Kinesis Video Stream. </p><p><h3>See Also:</h3>   <a
+   * <p>The configuration that consists of the <code>ScheduleExpression</code> and
+   * the <code>DurationInMinutesdetails</code>, that specify the scheduling to record
+   * from a camera, or local media file, onto the Edge Agent. If the
+   * <code>ScheduleExpression</code> is not provided, then the Edge Agent will always
+   * be in upload mode. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/UploaderConfig">AWS
    * API Reference</a></p>
    */

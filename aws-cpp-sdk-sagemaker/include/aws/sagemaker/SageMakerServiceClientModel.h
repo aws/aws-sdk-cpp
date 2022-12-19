@@ -156,6 +156,7 @@
 #include <aws/sagemaker/model/ImportHubContentResult.h>
 #include <aws/sagemaker/model/ListActionsResult.h>
 #include <aws/sagemaker/model/ListAlgorithmsResult.h>
+#include <aws/sagemaker/model/ListAliasesResult.h>
 #include <aws/sagemaker/model/ListAppImageConfigsResult.h>
 #include <aws/sagemaker/model/ListAppsResult.h>
 #include <aws/sagemaker/model/ListArtifactsResult.h>
@@ -247,6 +248,7 @@
 #include <aws/sagemaker/model/UpdateFeatureGroupResult.h>
 #include <aws/sagemaker/model/UpdateHubResult.h>
 #include <aws/sagemaker/model/UpdateImageResult.h>
+#include <aws/sagemaker/model/UpdateImageVersionResult.h>
 #include <aws/sagemaker/model/UpdateInferenceExperimentResult.h>
 #include <aws/sagemaker/model/UpdateModelCardResult.h>
 #include <aws/sagemaker/model/UpdateModelPackageResult.h>
@@ -476,6 +478,7 @@ namespace Aws
       class ImportHubContentRequest;
       class ListActionsRequest;
       class ListAlgorithmsRequest;
+      class ListAliasesRequest;
       class ListAppImageConfigsRequest;
       class ListAppsRequest;
       class ListArtifactsRequest;
@@ -586,6 +589,7 @@ namespace Aws
       class UpdateFeatureMetadataRequest;
       class UpdateHubRequest;
       class UpdateImageRequest;
+      class UpdateImageVersionRequest;
       class UpdateInferenceExperimentRequest;
       class UpdateModelCardRequest;
       class UpdateModelPackageRequest;
@@ -777,6 +781,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<ImportHubContentResult, SageMakerError> ImportHubContentOutcome;
       typedef Aws::Utils::Outcome<ListActionsResult, SageMakerError> ListActionsOutcome;
       typedef Aws::Utils::Outcome<ListAlgorithmsResult, SageMakerError> ListAlgorithmsOutcome;
+      typedef Aws::Utils::Outcome<ListAliasesResult, SageMakerError> ListAliasesOutcome;
       typedef Aws::Utils::Outcome<ListAppImageConfigsResult, SageMakerError> ListAppImageConfigsOutcome;
       typedef Aws::Utils::Outcome<ListAppsResult, SageMakerError> ListAppsOutcome;
       typedef Aws::Utils::Outcome<ListArtifactsResult, SageMakerError> ListArtifactsOutcome;
@@ -887,6 +892,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> UpdateFeatureMetadataOutcome;
       typedef Aws::Utils::Outcome<UpdateHubResult, SageMakerError> UpdateHubOutcome;
       typedef Aws::Utils::Outcome<UpdateImageResult, SageMakerError> UpdateImageOutcome;
+      typedef Aws::Utils::Outcome<UpdateImageVersionResult, SageMakerError> UpdateImageVersionOutcome;
       typedef Aws::Utils::Outcome<UpdateInferenceExperimentResult, SageMakerError> UpdateInferenceExperimentOutcome;
       typedef Aws::Utils::Outcome<UpdateModelCardResult, SageMakerError> UpdateModelCardOutcome;
       typedef Aws::Utils::Outcome<UpdateModelPackageResult, SageMakerError> UpdateModelPackageOutcome;
@@ -1078,6 +1084,7 @@ namespace Aws
       typedef std::future<ImportHubContentOutcome> ImportHubContentOutcomeCallable;
       typedef std::future<ListActionsOutcome> ListActionsOutcomeCallable;
       typedef std::future<ListAlgorithmsOutcome> ListAlgorithmsOutcomeCallable;
+      typedef std::future<ListAliasesOutcome> ListAliasesOutcomeCallable;
       typedef std::future<ListAppImageConfigsOutcome> ListAppImageConfigsOutcomeCallable;
       typedef std::future<ListAppsOutcome> ListAppsOutcomeCallable;
       typedef std::future<ListArtifactsOutcome> ListArtifactsOutcomeCallable;
@@ -1188,6 +1195,7 @@ namespace Aws
       typedef std::future<UpdateFeatureMetadataOutcome> UpdateFeatureMetadataOutcomeCallable;
       typedef std::future<UpdateHubOutcome> UpdateHubOutcomeCallable;
       typedef std::future<UpdateImageOutcome> UpdateImageOutcomeCallable;
+      typedef std::future<UpdateImageVersionOutcome> UpdateImageVersionOutcomeCallable;
       typedef std::future<UpdateInferenceExperimentOutcome> UpdateInferenceExperimentOutcomeCallable;
       typedef std::future<UpdateModelCardOutcome> UpdateModelCardOutcomeCallable;
       typedef std::future<UpdateModelPackageOutcome> UpdateModelPackageOutcomeCallable;
@@ -1382,6 +1390,7 @@ namespace Aws
     typedef std::function<void(const SageMakerClient*, const Model::ImportHubContentRequest&, const Model::ImportHubContentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ImportHubContentResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListActionsRequest&, const Model::ListActionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListActionsResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListAlgorithmsRequest&, const Model::ListAlgorithmsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAlgorithmsResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::ListAliasesRequest&, const Model::ListAliasesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAliasesResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListAppImageConfigsRequest&, const Model::ListAppImageConfigsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAppImageConfigsResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListAppsRequest&, const Model::ListAppsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAppsResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListArtifactsRequest&, const Model::ListArtifactsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListArtifactsResponseReceivedHandler;
@@ -1492,6 +1501,7 @@ namespace Aws
     typedef std::function<void(const SageMakerClient*, const Model::UpdateFeatureMetadataRequest&, const Model::UpdateFeatureMetadataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateFeatureMetadataResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::UpdateHubRequest&, const Model::UpdateHubOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateHubResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::UpdateImageRequest&, const Model::UpdateImageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateImageResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::UpdateImageVersionRequest&, const Model::UpdateImageVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateImageVersionResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::UpdateInferenceExperimentRequest&, const Model::UpdateInferenceExperimentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateInferenceExperimentResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::UpdateModelCardRequest&, const Model::UpdateModelCardOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateModelCardResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::UpdateModelPackageRequest&, const Model::UpdateModelPackageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateModelPackageResponseReceivedHandler;

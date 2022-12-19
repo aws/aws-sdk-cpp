@@ -15,7 +15,8 @@ using namespace Aws::Utils;
 DeleteImageVersionRequest::DeleteImageVersionRequest() : 
     m_imageNameHasBeenSet(false),
     m_version(0),
-    m_versionHasBeenSet(false)
+    m_versionHasBeenSet(false),
+    m_aliasHasBeenSet(false)
 {
 }
 
@@ -32,6 +33,12 @@ Aws::String DeleteImageVersionRequest::SerializePayload() const
   if(m_versionHasBeenSet)
   {
    payload.WithInteger("Version", m_version);
+
+  }
+
+  if(m_aliasHasBeenSet)
+  {
+   payload.WithString("Alias", m_alias);
 
   }
 

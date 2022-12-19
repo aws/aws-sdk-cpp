@@ -23,7 +23,8 @@ DeploymentConfiguration::DeploymentConfiguration() :
     m_maximumPercent(0),
     m_maximumPercentHasBeenSet(false),
     m_minimumHealthyPercent(0),
-    m_minimumHealthyPercentHasBeenSet(false)
+    m_minimumHealthyPercentHasBeenSet(false),
+    m_alarmsHasBeenSet(false)
 {
 }
 
@@ -32,7 +33,8 @@ DeploymentConfiguration::DeploymentConfiguration(JsonView jsonValue) :
     m_maximumPercent(0),
     m_maximumPercentHasBeenSet(false),
     m_minimumHealthyPercent(0),
-    m_minimumHealthyPercentHasBeenSet(false)
+    m_minimumHealthyPercentHasBeenSet(false),
+    m_alarmsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -60,6 +62,13 @@ DeploymentConfiguration& DeploymentConfiguration::operator =(JsonView jsonValue)
     m_minimumHealthyPercentHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("alarms"))
+  {
+    m_alarms = jsonValue.GetObject("alarms");
+
+    m_alarmsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -82,6 +91,12 @@ JsonValue DeploymentConfiguration::Jsonize() const
   if(m_minimumHealthyPercentHasBeenSet)
   {
    payload.WithInteger("minimumHealthyPercent", m_minimumHealthyPercent);
+
+  }
+
+  if(m_alarmsHasBeenSet)
+  {
+   payload.WithObject("alarms", m_alarms.Jsonize());
 
   }
 

@@ -192,6 +192,7 @@
 #include <aws/sagemaker/model/ImportHubContentRequest.h>
 #include <aws/sagemaker/model/ListActionsRequest.h>
 #include <aws/sagemaker/model/ListAlgorithmsRequest.h>
+#include <aws/sagemaker/model/ListAliasesRequest.h>
 #include <aws/sagemaker/model/ListAppImageConfigsRequest.h>
 #include <aws/sagemaker/model/ListAppsRequest.h>
 #include <aws/sagemaker/model/ListArtifactsRequest.h>
@@ -302,6 +303,7 @@
 #include <aws/sagemaker/model/UpdateFeatureMetadataRequest.h>
 #include <aws/sagemaker/model/UpdateHubRequest.h>
 #include <aws/sagemaker/model/UpdateImageRequest.h>
+#include <aws/sagemaker/model/UpdateImageVersionRequest.h>
 #include <aws/sagemaker/model/UpdateInferenceExperimentRequest.h>
 #include <aws/sagemaker/model/UpdateModelCardRequest.h>
 #include <aws/sagemaker/model/UpdateModelPackageRequest.h>
@@ -4551,6 +4553,30 @@ void SageMakerClient::ListAlgorithmsAsync(const ListAlgorithmsRequest& request, 
     } );
 }
 
+ListAliasesOutcome SageMakerClient::ListAliases(const ListAliasesRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListAliases, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListAliases, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ListAliasesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListAliasesOutcomeCallable SageMakerClient::ListAliasesCallable(const ListAliasesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListAliasesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListAliases(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SageMakerClient::ListAliasesAsync(const ListAliasesRequest& request, const ListAliasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListAliases(request), context);
+    } );
+}
+
 ListAppImageConfigsOutcome SageMakerClient::ListAppImageConfigs(const ListAppImageConfigsRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListAppImageConfigs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -7188,6 +7214,30 @@ void SageMakerClient::UpdateImageAsync(const UpdateImageRequest& request, const 
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, UpdateImage(request), context);
+    } );
+}
+
+UpdateImageVersionOutcome SageMakerClient::UpdateImageVersion(const UpdateImageVersionRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateImageVersion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateImageVersion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return UpdateImageVersionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateImageVersionOutcomeCallable SageMakerClient::UpdateImageVersionCallable(const UpdateImageVersionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateImageVersionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateImageVersion(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SageMakerClient::UpdateImageVersionAsync(const UpdateImageVersionRequest& request, const UpdateImageVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateImageVersion(request), context);
     } );
 }
 

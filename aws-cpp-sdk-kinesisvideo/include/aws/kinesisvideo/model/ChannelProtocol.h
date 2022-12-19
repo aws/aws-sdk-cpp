@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     WSS,
-    HTTPS
+    HTTPS,
+    WEBRTC
   };
 
 namespace ChannelProtocolMapper

@@ -279,38 +279,6 @@ static const Aws::Vector<KinesisVideoEndpointProviderEndpointTestCase> TEST_CASE
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 28*/
-  {"For region eu-north-1 with FIPS enabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "eu-north-1"), EpParam("UseDualStack", true)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://kinesisvideo-fips.eu-north-1.api.aws",
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 29*/
-  {"For region eu-north-1 with FIPS enabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "eu-north-1"), EpParam("UseDualStack", false)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://kinesisvideo-fips.eu-north-1.amazonaws.com",
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 30*/
-  {"For region eu-north-1 with FIPS disabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "eu-north-1"), EpParam("UseDualStack", true)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://kinesisvideo.eu-north-1.api.aws",
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 31*/
-  {"For region eu-north-1 with FIPS disabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "eu-north-1"), EpParam("UseDualStack", false)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://kinesisvideo.eu-north-1.amazonaws.com",
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 32*/
   {"For region eu-west-3 with FIPS enabled and DualStack enabled", // documentation
     {EpParam("UseFIPS", true), EpParam("Region", "eu-west-3"), EpParam("UseDualStack", true)}, // params
     {}, // tags
@@ -318,7 +286,7 @@ static const Aws::Vector<KinesisVideoEndpointProviderEndpointTestCase> TEST_CASE
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 33*/
+  /*TEST CASE 29*/
   {"For region eu-west-3 with FIPS enabled and DualStack disabled", // documentation
     {EpParam("UseFIPS", true), EpParam("Region", "eu-west-3"), EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -326,7 +294,7 @@ static const Aws::Vector<KinesisVideoEndpointProviderEndpointTestCase> TEST_CASE
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 34*/
+  /*TEST CASE 30*/
   {"For region eu-west-3 with FIPS disabled and DualStack enabled", // documentation
     {EpParam("UseFIPS", false), EpParam("Region", "eu-west-3"), EpParam("UseDualStack", true)}, // params
     {}, // tags
@@ -334,7 +302,7 @@ static const Aws::Vector<KinesisVideoEndpointProviderEndpointTestCase> TEST_CASE
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 35*/
+  /*TEST CASE 31*/
   {"For region eu-west-3 with FIPS disabled and DualStack disabled", // documentation
     {EpParam("UseFIPS", false), EpParam("Region", "eu-west-3"), EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -342,7 +310,7 @@ static const Aws::Vector<KinesisVideoEndpointProviderEndpointTestCase> TEST_CASE
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 36*/
+  /*TEST CASE 32*/
   {"For region eu-west-2 with FIPS enabled and DualStack enabled", // documentation
     {EpParam("UseFIPS", true), EpParam("Region", "eu-west-2"), EpParam("UseDualStack", true)}, // params
     {}, // tags
@@ -350,7 +318,7 @@ static const Aws::Vector<KinesisVideoEndpointProviderEndpointTestCase> TEST_CASE
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 37*/
+  /*TEST CASE 33*/
   {"For region eu-west-2 with FIPS enabled and DualStack disabled", // documentation
     {EpParam("UseFIPS", true), EpParam("Region", "eu-west-2"), EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -358,7 +326,7 @@ static const Aws::Vector<KinesisVideoEndpointProviderEndpointTestCase> TEST_CASE
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 38*/
+  /*TEST CASE 34*/
   {"For region eu-west-2 with FIPS disabled and DualStack enabled", // documentation
     {EpParam("UseFIPS", false), EpParam("Region", "eu-west-2"), EpParam("UseDualStack", true)}, // params
     {}, // tags
@@ -366,7 +334,7 @@ static const Aws::Vector<KinesisVideoEndpointProviderEndpointTestCase> TEST_CASE
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 39*/
+  /*TEST CASE 35*/
   {"For region eu-west-2 with FIPS disabled and DualStack disabled", // documentation
     {EpParam("UseFIPS", false), EpParam("Region", "eu-west-2"), EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -374,7 +342,7 @@ static const Aws::Vector<KinesisVideoEndpointProviderEndpointTestCase> TEST_CASE
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 40*/
+  /*TEST CASE 36*/
   {"For region eu-west-1 with FIPS enabled and DualStack enabled", // documentation
     {EpParam("UseFIPS", true), EpParam("Region", "eu-west-1"), EpParam("UseDualStack", true)}, // params
     {}, // tags
@@ -382,7 +350,7 @@ static const Aws::Vector<KinesisVideoEndpointProviderEndpointTestCase> TEST_CASE
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 41*/
+  /*TEST CASE 37*/
   {"For region eu-west-1 with FIPS enabled and DualStack disabled", // documentation
     {EpParam("UseFIPS", true), EpParam("Region", "eu-west-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -390,7 +358,7 @@ static const Aws::Vector<KinesisVideoEndpointProviderEndpointTestCase> TEST_CASE
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 42*/
+  /*TEST CASE 38*/
   {"For region eu-west-1 with FIPS disabled and DualStack enabled", // documentation
     {EpParam("UseFIPS", false), EpParam("Region", "eu-west-1"), EpParam("UseDualStack", true)}, // params
     {}, // tags
@@ -398,7 +366,7 @@ static const Aws::Vector<KinesisVideoEndpointProviderEndpointTestCase> TEST_CASE
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 43*/
+  /*TEST CASE 39*/
   {"For region eu-west-1 with FIPS disabled and DualStack disabled", // documentation
     {EpParam("UseFIPS", false), EpParam("Region", "eu-west-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -406,7 +374,7 @@ static const Aws::Vector<KinesisVideoEndpointProviderEndpointTestCase> TEST_CASE
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 44*/
+  /*TEST CASE 40*/
   {"For region ap-northeast-2 with FIPS enabled and DualStack enabled", // documentation
     {EpParam("UseFIPS", true), EpParam("Region", "ap-northeast-2"), EpParam("UseDualStack", true)}, // params
     {}, // tags
@@ -414,7 +382,7 @@ static const Aws::Vector<KinesisVideoEndpointProviderEndpointTestCase> TEST_CASE
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 45*/
+  /*TEST CASE 41*/
   {"For region ap-northeast-2 with FIPS enabled and DualStack disabled", // documentation
     {EpParam("UseFIPS", true), EpParam("Region", "ap-northeast-2"), EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -422,7 +390,7 @@ static const Aws::Vector<KinesisVideoEndpointProviderEndpointTestCase> TEST_CASE
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 46*/
+  /*TEST CASE 42*/
   {"For region ap-northeast-2 with FIPS disabled and DualStack enabled", // documentation
     {EpParam("UseFIPS", false), EpParam("Region", "ap-northeast-2"), EpParam("UseDualStack", true)}, // params
     {}, // tags
@@ -430,7 +398,7 @@ static const Aws::Vector<KinesisVideoEndpointProviderEndpointTestCase> TEST_CASE
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 47*/
+  /*TEST CASE 43*/
   {"For region ap-northeast-2 with FIPS disabled and DualStack disabled", // documentation
     {EpParam("UseFIPS", false), EpParam("Region", "ap-northeast-2"), EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -438,7 +406,7 @@ static const Aws::Vector<KinesisVideoEndpointProviderEndpointTestCase> TEST_CASE
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 48*/
+  /*TEST CASE 44*/
   {"For region ap-northeast-1 with FIPS enabled and DualStack enabled", // documentation
     {EpParam("UseFIPS", true), EpParam("Region", "ap-northeast-1"), EpParam("UseDualStack", true)}, // params
     {}, // tags
@@ -446,7 +414,7 @@ static const Aws::Vector<KinesisVideoEndpointProviderEndpointTestCase> TEST_CASE
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 49*/
+  /*TEST CASE 45*/
   {"For region ap-northeast-1 with FIPS enabled and DualStack disabled", // documentation
     {EpParam("UseFIPS", true), EpParam("Region", "ap-northeast-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -454,7 +422,7 @@ static const Aws::Vector<KinesisVideoEndpointProviderEndpointTestCase> TEST_CASE
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 50*/
+  /*TEST CASE 46*/
   {"For region ap-northeast-1 with FIPS disabled and DualStack enabled", // documentation
     {EpParam("UseFIPS", false), EpParam("Region", "ap-northeast-1"), EpParam("UseDualStack", true)}, // params
     {}, // tags
@@ -462,7 +430,7 @@ static const Aws::Vector<KinesisVideoEndpointProviderEndpointTestCase> TEST_CASE
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 51*/
+  /*TEST CASE 47*/
   {"For region ap-northeast-1 with FIPS disabled and DualStack disabled", // documentation
     {EpParam("UseFIPS", false), EpParam("Region", "ap-northeast-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -470,39 +438,7 @@ static const Aws::Vector<KinesisVideoEndpointProviderEndpointTestCase> TEST_CASE
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 52*/
-  {"For region me-south-1 with FIPS enabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "me-south-1"), EpParam("UseDualStack", true)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://kinesisvideo-fips.me-south-1.api.aws",
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 53*/
-  {"For region me-south-1 with FIPS enabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "me-south-1"), EpParam("UseDualStack", false)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://kinesisvideo-fips.me-south-1.amazonaws.com",
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 54*/
-  {"For region me-south-1 with FIPS disabled and DualStack enabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "me-south-1"), EpParam("UseDualStack", true)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://kinesisvideo.me-south-1.api.aws",
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 55*/
-  {"For region me-south-1 with FIPS disabled and DualStack disabled", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "me-south-1"), EpParam("UseDualStack", false)}, // params
-    {}, // tags
-    {{/*epUrl*/"https://kinesisvideo.me-south-1.amazonaws.com",
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 56*/
+  /*TEST CASE 48*/
   {"For region sa-east-1 with FIPS enabled and DualStack enabled", // documentation
     {EpParam("UseFIPS", true), EpParam("Region", "sa-east-1"), EpParam("UseDualStack", true)}, // params
     {}, // tags
@@ -510,7 +446,7 @@ static const Aws::Vector<KinesisVideoEndpointProviderEndpointTestCase> TEST_CASE
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 57*/
+  /*TEST CASE 49*/
   {"For region sa-east-1 with FIPS enabled and DualStack disabled", // documentation
     {EpParam("UseFIPS", true), EpParam("Region", "sa-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -518,7 +454,7 @@ static const Aws::Vector<KinesisVideoEndpointProviderEndpointTestCase> TEST_CASE
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 58*/
+  /*TEST CASE 50*/
   {"For region sa-east-1 with FIPS disabled and DualStack enabled", // documentation
     {EpParam("UseFIPS", false), EpParam("Region", "sa-east-1"), EpParam("UseDualStack", true)}, // params
     {}, // tags
@@ -526,7 +462,7 @@ static const Aws::Vector<KinesisVideoEndpointProviderEndpointTestCase> TEST_CASE
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 59*/
+  /*TEST CASE 51*/
   {"For region sa-east-1 with FIPS disabled and DualStack disabled", // documentation
     {EpParam("UseFIPS", false), EpParam("Region", "sa-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -534,7 +470,7 @@ static const Aws::Vector<KinesisVideoEndpointProviderEndpointTestCase> TEST_CASE
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 60*/
+  /*TEST CASE 52*/
   {"For region ap-east-1 with FIPS enabled and DualStack enabled", // documentation
     {EpParam("UseFIPS", true), EpParam("Region", "ap-east-1"), EpParam("UseDualStack", true)}, // params
     {}, // tags
@@ -542,7 +478,7 @@ static const Aws::Vector<KinesisVideoEndpointProviderEndpointTestCase> TEST_CASE
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 61*/
+  /*TEST CASE 53*/
   {"For region ap-east-1 with FIPS enabled and DualStack disabled", // documentation
     {EpParam("UseFIPS", true), EpParam("Region", "ap-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -550,7 +486,7 @@ static const Aws::Vector<KinesisVideoEndpointProviderEndpointTestCase> TEST_CASE
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 62*/
+  /*TEST CASE 54*/
   {"For region ap-east-1 with FIPS disabled and DualStack enabled", // documentation
     {EpParam("UseFIPS", false), EpParam("Region", "ap-east-1"), EpParam("UseDualStack", true)}, // params
     {}, // tags
@@ -558,7 +494,7 @@ static const Aws::Vector<KinesisVideoEndpointProviderEndpointTestCase> TEST_CASE
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 63*/
+  /*TEST CASE 55*/
   {"For region ap-east-1 with FIPS disabled and DualStack disabled", // documentation
     {EpParam("UseFIPS", false), EpParam("Region", "ap-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -566,7 +502,7 @@ static const Aws::Vector<KinesisVideoEndpointProviderEndpointTestCase> TEST_CASE
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 64*/
+  /*TEST CASE 56*/
   {"For region cn-north-1 with FIPS enabled and DualStack enabled", // documentation
     {EpParam("UseFIPS", true), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", true)}, // params
     {}, // tags
@@ -574,7 +510,7 @@ static const Aws::Vector<KinesisVideoEndpointProviderEndpointTestCase> TEST_CASE
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 65*/
+  /*TEST CASE 57*/
   {"For region cn-north-1 with FIPS enabled and DualStack disabled", // documentation
     {EpParam("UseFIPS", true), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -582,7 +518,7 @@ static const Aws::Vector<KinesisVideoEndpointProviderEndpointTestCase> TEST_CASE
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 66*/
+  /*TEST CASE 58*/
   {"For region cn-north-1 with FIPS disabled and DualStack enabled", // documentation
     {EpParam("UseFIPS", false), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", true)}, // params
     {}, // tags
@@ -590,7 +526,7 @@ static const Aws::Vector<KinesisVideoEndpointProviderEndpointTestCase> TEST_CASE
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 67*/
+  /*TEST CASE 59*/
   {"For region cn-north-1 with FIPS disabled and DualStack disabled", // documentation
     {EpParam("UseFIPS", false), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -598,7 +534,7 @@ static const Aws::Vector<KinesisVideoEndpointProviderEndpointTestCase> TEST_CASE
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 68*/
+  /*TEST CASE 60*/
   {"For region us-gov-west-1 with FIPS enabled and DualStack enabled", // documentation
     {EpParam("UseFIPS", true), EpParam("Region", "us-gov-west-1"), EpParam("UseDualStack", true)}, // params
     {}, // tags
@@ -606,7 +542,7 @@ static const Aws::Vector<KinesisVideoEndpointProviderEndpointTestCase> TEST_CASE
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 69*/
+  /*TEST CASE 61*/
   {"For region us-gov-west-1 with FIPS enabled and DualStack disabled", // documentation
     {EpParam("UseFIPS", true), EpParam("Region", "us-gov-west-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -614,7 +550,7 @@ static const Aws::Vector<KinesisVideoEndpointProviderEndpointTestCase> TEST_CASE
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 70*/
+  /*TEST CASE 62*/
   {"For region us-gov-west-1 with FIPS disabled and DualStack enabled", // documentation
     {EpParam("UseFIPS", false), EpParam("Region", "us-gov-west-1"), EpParam("UseDualStack", true)}, // params
     {}, // tags
@@ -622,7 +558,7 @@ static const Aws::Vector<KinesisVideoEndpointProviderEndpointTestCase> TEST_CASE
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 71*/
+  /*TEST CASE 63*/
   {"For region us-gov-west-1 with FIPS disabled and DualStack disabled", // documentation
     {EpParam("UseFIPS", false), EpParam("Region", "us-gov-west-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -630,7 +566,7 @@ static const Aws::Vector<KinesisVideoEndpointProviderEndpointTestCase> TEST_CASE
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 72*/
+  /*TEST CASE 64*/
   {"For region ap-southeast-1 with FIPS enabled and DualStack enabled", // documentation
     {EpParam("UseFIPS", true), EpParam("Region", "ap-southeast-1"), EpParam("UseDualStack", true)}, // params
     {}, // tags
@@ -638,7 +574,7 @@ static const Aws::Vector<KinesisVideoEndpointProviderEndpointTestCase> TEST_CASE
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 73*/
+  /*TEST CASE 65*/
   {"For region ap-southeast-1 with FIPS enabled and DualStack disabled", // documentation
     {EpParam("UseFIPS", true), EpParam("Region", "ap-southeast-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -646,7 +582,7 @@ static const Aws::Vector<KinesisVideoEndpointProviderEndpointTestCase> TEST_CASE
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 74*/
+  /*TEST CASE 66*/
   {"For region ap-southeast-1 with FIPS disabled and DualStack enabled", // documentation
     {EpParam("UseFIPS", false), EpParam("Region", "ap-southeast-1"), EpParam("UseDualStack", true)}, // params
     {}, // tags
@@ -654,7 +590,7 @@ static const Aws::Vector<KinesisVideoEndpointProviderEndpointTestCase> TEST_CASE
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 75*/
+  /*TEST CASE 67*/
   {"For region ap-southeast-1 with FIPS disabled and DualStack disabled", // documentation
     {EpParam("UseFIPS", false), EpParam("Region", "ap-southeast-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -662,7 +598,7 @@ static const Aws::Vector<KinesisVideoEndpointProviderEndpointTestCase> TEST_CASE
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 76*/
+  /*TEST CASE 68*/
   {"For region ap-southeast-2 with FIPS enabled and DualStack enabled", // documentation
     {EpParam("UseFIPS", true), EpParam("Region", "ap-southeast-2"), EpParam("UseDualStack", true)}, // params
     {}, // tags
@@ -670,7 +606,7 @@ static const Aws::Vector<KinesisVideoEndpointProviderEndpointTestCase> TEST_CASE
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 77*/
+  /*TEST CASE 69*/
   {"For region ap-southeast-2 with FIPS enabled and DualStack disabled", // documentation
     {EpParam("UseFIPS", true), EpParam("Region", "ap-southeast-2"), EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -678,7 +614,7 @@ static const Aws::Vector<KinesisVideoEndpointProviderEndpointTestCase> TEST_CASE
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 78*/
+  /*TEST CASE 70*/
   {"For region ap-southeast-2 with FIPS disabled and DualStack enabled", // documentation
     {EpParam("UseFIPS", false), EpParam("Region", "ap-southeast-2"), EpParam("UseDualStack", true)}, // params
     {}, // tags
@@ -686,7 +622,7 @@ static const Aws::Vector<KinesisVideoEndpointProviderEndpointTestCase> TEST_CASE
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 79*/
+  /*TEST CASE 71*/
   {"For region ap-southeast-2 with FIPS disabled and DualStack disabled", // documentation
     {EpParam("UseFIPS", false), EpParam("Region", "ap-southeast-2"), EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -694,13 +630,13 @@ static const Aws::Vector<KinesisVideoEndpointProviderEndpointTestCase> TEST_CASE
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 80*/
+  /*TEST CASE 72*/
   {"For region us-iso-east-1 with FIPS enabled and DualStack enabled", // documentation
     {EpParam("UseFIPS", true), EpParam("Region", "us-iso-east-1"), EpParam("UseDualStack", true)}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"FIPS and DualStack are enabled, but this partition does not support one or both"} // expect
   },
-  /*TEST CASE 81*/
+  /*TEST CASE 73*/
   {"For region us-iso-east-1 with FIPS enabled and DualStack disabled", // documentation
     {EpParam("UseFIPS", true), EpParam("Region", "us-iso-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -708,13 +644,13 @@ static const Aws::Vector<KinesisVideoEndpointProviderEndpointTestCase> TEST_CASE
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 82*/
+  /*TEST CASE 74*/
   {"For region us-iso-east-1 with FIPS disabled and DualStack enabled", // documentation
     {EpParam("UseFIPS", false), EpParam("Region", "us-iso-east-1"), EpParam("UseDualStack", true)}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"DualStack is enabled but this partition does not support DualStack"} // expect
   },
-  /*TEST CASE 83*/
+  /*TEST CASE 75*/
   {"For region us-iso-east-1 with FIPS disabled and DualStack disabled", // documentation
     {EpParam("UseFIPS", false), EpParam("Region", "us-iso-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -722,7 +658,7 @@ static const Aws::Vector<KinesisVideoEndpointProviderEndpointTestCase> TEST_CASE
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 84*/
+  /*TEST CASE 76*/
   {"For region us-east-1 with FIPS enabled and DualStack enabled", // documentation
     {EpParam("UseFIPS", true), EpParam("Region", "us-east-1"), EpParam("UseDualStack", true)}, // params
     {}, // tags
@@ -730,7 +666,7 @@ static const Aws::Vector<KinesisVideoEndpointProviderEndpointTestCase> TEST_CASE
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 85*/
+  /*TEST CASE 77*/
   {"For region us-east-1 with FIPS enabled and DualStack disabled", // documentation
     {EpParam("UseFIPS", true), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -738,7 +674,7 @@ static const Aws::Vector<KinesisVideoEndpointProviderEndpointTestCase> TEST_CASE
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 86*/
+  /*TEST CASE 78*/
   {"For region us-east-1 with FIPS disabled and DualStack enabled", // documentation
     {EpParam("UseFIPS", false), EpParam("Region", "us-east-1"), EpParam("UseDualStack", true)}, // params
     {}, // tags
@@ -746,7 +682,7 @@ static const Aws::Vector<KinesisVideoEndpointProviderEndpointTestCase> TEST_CASE
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 87*/
+  /*TEST CASE 79*/
   {"For region us-east-1 with FIPS disabled and DualStack disabled", // documentation
     {EpParam("UseFIPS", false), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -754,7 +690,7 @@ static const Aws::Vector<KinesisVideoEndpointProviderEndpointTestCase> TEST_CASE
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 88*/
+  /*TEST CASE 80*/
   {"For region us-east-2 with FIPS enabled and DualStack enabled", // documentation
     {EpParam("UseFIPS", true), EpParam("Region", "us-east-2"), EpParam("UseDualStack", true)}, // params
     {}, // tags
@@ -762,7 +698,7 @@ static const Aws::Vector<KinesisVideoEndpointProviderEndpointTestCase> TEST_CASE
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 89*/
+  /*TEST CASE 81*/
   {"For region us-east-2 with FIPS enabled and DualStack disabled", // documentation
     {EpParam("UseFIPS", true), EpParam("Region", "us-east-2"), EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -770,7 +706,7 @@ static const Aws::Vector<KinesisVideoEndpointProviderEndpointTestCase> TEST_CASE
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 90*/
+  /*TEST CASE 82*/
   {"For region us-east-2 with FIPS disabled and DualStack enabled", // documentation
     {EpParam("UseFIPS", false), EpParam("Region", "us-east-2"), EpParam("UseDualStack", true)}, // params
     {}, // tags
@@ -778,7 +714,7 @@ static const Aws::Vector<KinesisVideoEndpointProviderEndpointTestCase> TEST_CASE
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 91*/
+  /*TEST CASE 83*/
   {"For region us-east-2 with FIPS disabled and DualStack disabled", // documentation
     {EpParam("UseFIPS", false), EpParam("Region", "us-east-2"), EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -786,13 +722,13 @@ static const Aws::Vector<KinesisVideoEndpointProviderEndpointTestCase> TEST_CASE
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 92*/
+  /*TEST CASE 84*/
   {"For region us-isob-east-1 with FIPS enabled and DualStack enabled", // documentation
     {EpParam("UseFIPS", true), EpParam("Region", "us-isob-east-1"), EpParam("UseDualStack", true)}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"FIPS and DualStack are enabled, but this partition does not support one or both"} // expect
   },
-  /*TEST CASE 93*/
+  /*TEST CASE 85*/
   {"For region us-isob-east-1 with FIPS enabled and DualStack disabled", // documentation
     {EpParam("UseFIPS", true), EpParam("Region", "us-isob-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -800,13 +736,13 @@ static const Aws::Vector<KinesisVideoEndpointProviderEndpointTestCase> TEST_CASE
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 94*/
+  /*TEST CASE 86*/
   {"For region us-isob-east-1 with FIPS disabled and DualStack enabled", // documentation
     {EpParam("UseFIPS", false), EpParam("Region", "us-isob-east-1"), EpParam("UseDualStack", true)}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"DualStack is enabled but this partition does not support DualStack"} // expect
   },
-  /*TEST CASE 95*/
+  /*TEST CASE 87*/
   {"For region us-isob-east-1 with FIPS disabled and DualStack disabled", // documentation
     {EpParam("UseFIPS", false), EpParam("Region", "us-isob-east-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -814,7 +750,7 @@ static const Aws::Vector<KinesisVideoEndpointProviderEndpointTestCase> TEST_CASE
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 96*/
+  /*TEST CASE 88*/
   {"For custom endpoint with fips disabled and dualstack disabled", // documentation
     {EpParam("UseFIPS", false), EpParam("Endpoint", "https://example.com"), EpParam("Region", "us-east-1"),
      EpParam("UseDualStack", false)}, // params
@@ -823,14 +759,14 @@ static const Aws::Vector<KinesisVideoEndpointProviderEndpointTestCase> TEST_CASE
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 97*/
+  /*TEST CASE 89*/
   {"For custom endpoint with fips enabled and dualstack disabled", // documentation
     {EpParam("UseFIPS", true), EpParam("Endpoint", "https://example.com"), EpParam("Region", "us-east-1"),
      EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: FIPS and custom endpoint are not supported"} // expect
   },
-  /*TEST CASE 98*/
+  /*TEST CASE 90*/
   {"For custom endpoint with fips disabled and dualstack enabled", // documentation
     {EpParam("UseFIPS", false), EpParam("Endpoint", "https://example.com"), EpParam("Region", "us-east-1"),
      EpParam("UseDualStack", true)}, // params

@@ -33,37 +33,37 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the image.</p>
+     * <p>The ARN of the image.</p>
      */
     inline const Aws::String& GetImageArn() const{ return m_imageArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the image.</p>
+     * <p>The ARN of the image.</p>
      */
     inline void SetImageArn(const Aws::String& value) { m_imageArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the image.</p>
+     * <p>The ARN of the image.</p>
      */
     inline void SetImageArn(Aws::String&& value) { m_imageArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the image.</p>
+     * <p>The ARN of the image.</p>
      */
     inline void SetImageArn(const char* value) { m_imageArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the image.</p>
+     * <p>The ARN of the image.</p>
      */
     inline CreateImageResult& WithImageArn(const Aws::String& value) { SetImageArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the image.</p>
+     * <p>The ARN of the image.</p>
      */
     inline CreateImageResult& WithImageArn(Aws::String&& value) { SetImageArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the image.</p>
+     * <p>The ARN of the image.</p>
      */
     inline CreateImageResult& WithImageArn(const char* value) { SetImageArn(value); return *this;}
 

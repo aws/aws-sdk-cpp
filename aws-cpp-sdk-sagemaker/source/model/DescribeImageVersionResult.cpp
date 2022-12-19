@@ -18,13 +18,21 @@ using namespace Aws;
 
 DescribeImageVersionResult::DescribeImageVersionResult() : 
     m_imageVersionStatus(ImageVersionStatus::NOT_SET),
-    m_version(0)
+    m_version(0),
+    m_vendorGuidance(VendorGuidance::NOT_SET),
+    m_jobType(JobType::NOT_SET),
+    m_processor(Processor::NOT_SET),
+    m_horovod(false)
 {
 }
 
 DescribeImageVersionResult::DescribeImageVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_imageVersionStatus(ImageVersionStatus::NOT_SET),
-    m_version(0)
+    m_version(0),
+    m_vendorGuidance(VendorGuidance::NOT_SET),
+    m_jobType(JobType::NOT_SET),
+    m_processor(Processor::NOT_SET),
+    m_horovod(false)
 {
   *this = result;
 }
@@ -83,6 +91,48 @@ DescribeImageVersionResult& DescribeImageVersionResult::operator =(const Aws::Am
   if(jsonValue.ValueExists("Version"))
   {
     m_version = jsonValue.GetInteger("Version");
+
+  }
+
+  if(jsonValue.ValueExists("VendorGuidance"))
+  {
+    m_vendorGuidance = VendorGuidanceMapper::GetVendorGuidanceForName(jsonValue.GetString("VendorGuidance"));
+
+  }
+
+  if(jsonValue.ValueExists("JobType"))
+  {
+    m_jobType = JobTypeMapper::GetJobTypeForName(jsonValue.GetString("JobType"));
+
+  }
+
+  if(jsonValue.ValueExists("MLFramework"))
+  {
+    m_mLFramework = jsonValue.GetString("MLFramework");
+
+  }
+
+  if(jsonValue.ValueExists("ProgrammingLang"))
+  {
+    m_programmingLang = jsonValue.GetString("ProgrammingLang");
+
+  }
+
+  if(jsonValue.ValueExists("Processor"))
+  {
+    m_processor = ProcessorMapper::GetProcessorForName(jsonValue.GetString("Processor"));
+
+  }
+
+  if(jsonValue.ValueExists("Horovod"))
+  {
+    m_horovod = jsonValue.GetBool("Horovod");
+
+  }
+
+  if(jsonValue.ValueExists("ReleaseNotes"))
+  {
+    m_releaseNotes = jsonValue.GetString("ReleaseNotes");
 
   }
 

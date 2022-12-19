@@ -128,43 +128,43 @@ namespace Model
 
     /**
      * <p>The uploader configuration contains the <code>ScheduleExpression</code>
-     * details that are used, to schedule upload jobs for the recorded media files from
-     * the Edge Agent, to a Kinesis Video Stream.</p>
+     * details that are used to schedule upload jobs for the recorded media files from
+     * the Edge Agent to a Kinesis Video Stream.</p>
      */
     inline const UploaderConfig& GetUploaderConfig() const{ return m_uploaderConfig; }
 
     /**
      * <p>The uploader configuration contains the <code>ScheduleExpression</code>
-     * details that are used, to schedule upload jobs for the recorded media files from
-     * the Edge Agent, to a Kinesis Video Stream.</p>
+     * details that are used to schedule upload jobs for the recorded media files from
+     * the Edge Agent to a Kinesis Video Stream.</p>
      */
     inline bool UploaderConfigHasBeenSet() const { return m_uploaderConfigHasBeenSet; }
 
     /**
      * <p>The uploader configuration contains the <code>ScheduleExpression</code>
-     * details that are used, to schedule upload jobs for the recorded media files from
-     * the Edge Agent, to a Kinesis Video Stream.</p>
+     * details that are used to schedule upload jobs for the recorded media files from
+     * the Edge Agent to a Kinesis Video Stream.</p>
      */
     inline void SetUploaderConfig(const UploaderConfig& value) { m_uploaderConfigHasBeenSet = true; m_uploaderConfig = value; }
 
     /**
      * <p>The uploader configuration contains the <code>ScheduleExpression</code>
-     * details that are used, to schedule upload jobs for the recorded media files from
-     * the Edge Agent, to a Kinesis Video Stream.</p>
+     * details that are used to schedule upload jobs for the recorded media files from
+     * the Edge Agent to a Kinesis Video Stream.</p>
      */
     inline void SetUploaderConfig(UploaderConfig&& value) { m_uploaderConfigHasBeenSet = true; m_uploaderConfig = std::move(value); }
 
     /**
      * <p>The uploader configuration contains the <code>ScheduleExpression</code>
-     * details that are used, to schedule upload jobs for the recorded media files from
-     * the Edge Agent, to a Kinesis Video Stream.</p>
+     * details that are used to schedule upload jobs for the recorded media files from
+     * the Edge Agent to a Kinesis Video Stream.</p>
      */
     inline EdgeConfig& WithUploaderConfig(const UploaderConfig& value) { SetUploaderConfig(value); return *this;}
 
     /**
      * <p>The uploader configuration contains the <code>ScheduleExpression</code>
-     * details that are used, to schedule upload jobs for the recorded media files from
-     * the Edge Agent, to a Kinesis Video Stream.</p>
+     * details that are used to schedule upload jobs for the recorded media files from
+     * the Edge Agent to a Kinesis Video Stream.</p>
      */
     inline EdgeConfig& WithUploaderConfig(UploaderConfig&& value) { SetUploaderConfig(std::move(value)); return *this;}
 

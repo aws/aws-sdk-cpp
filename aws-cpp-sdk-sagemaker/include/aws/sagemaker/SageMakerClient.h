@@ -3683,6 +3683,24 @@ namespace SageMaker
         virtual void ListAlgorithmsAsync(const Model::ListAlgorithmsRequest& request, const ListAlgorithmsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Lists the aliases of a specified image or image version.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListAliases">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListAliasesOutcome ListAliases(const Model::ListAliasesRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListAliases that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListAliasesOutcomeCallable ListAliasesCallable(const Model::ListAliasesRequest& request) const;
+
+        /**
+         * An Async wrapper for ListAliases that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListAliasesAsync(const Model::ListAliasesRequest& request, const ListAliasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Lists the AppImageConfigs in your account and their properties. The list can
          * be filtered by creation time or modified time, and whether the AppImageConfig
          * name contains a specified string.</p><p><h3>See Also:</h3>   <a
@@ -5730,6 +5748,24 @@ namespace SageMaker
          * An Async wrapper for UpdateImage that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateImageAsync(const Model::UpdateImageRequest& request, const UpdateImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Updates the properties of a SageMaker image version.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateImageVersion">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateImageVersionOutcome UpdateImageVersion(const Model::UpdateImageVersionRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateImageVersion that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateImageVersionOutcomeCallable UpdateImageVersionCallable(const Model::UpdateImageVersionRequest& request) const;
+
+        /**
+         * An Async wrapper for UpdateImageVersion that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateImageVersionAsync(const Model::UpdateImageVersionRequest& request, const UpdateImageVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Updates an inference experiment that you created. The status of the
