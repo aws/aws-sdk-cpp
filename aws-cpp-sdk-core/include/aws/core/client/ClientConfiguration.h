@@ -107,7 +107,7 @@ namespace Aws
              */
             long requestTimeoutMs = 0;
             /**
-             * Socket connect timeout. Default 1000 ms. Unless you are very far away from your the data center you are talking to. 1000ms is more than sufficient.
+             * Socket connect timeout. Default 1000 ms. Unless you are very far away from your the data center you are talking to, 1000ms is more than sufficient.
              */
             long connectTimeoutMs = 1000;
             /**
@@ -189,7 +189,7 @@ namespace Aws
             std::shared_ptr<Aws::Utils::Threading::Executor> executor;
             /**
              * If you need to test and want to get around TLS validation errors, do that here.
-             * you probably shouldn't use this flag in a production scenario.
+             * You probably shouldn't use this flag in a production scenario.
              */
             bool verifySSL = true;
             /**
