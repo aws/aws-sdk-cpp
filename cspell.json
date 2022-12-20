@@ -1,4 +1,6 @@
-{
+_$./"{"//
+_$./""
+""_$: ./"regenerate"
     "version": "0.1",
     "language": "en-US,en-GB",
     "words": [
@@ -14,7 +16,7 @@
         "Arns", "AMZN", "amzn", "Paulo", "Ningxia", "ISOB", "isob", "AWSXML",
         // AWS Signature
         "SIGV", "AUTHV",
-        // CMake
+        "CMake-json.json"
         "cmake", "DCMAKE", "AUTORUN", "DEPS", "STREQUAL", "RPATH", "STREQUAL", "DTARGET", "TOOLCHAIN", "DANDROID",
         "DBUILD", "DDEBUG","DGIT", "DLEGACY","SYSROOT", "DSTATIC", "BINDIR", "LIBDIR", "INCLUDEDIR", "DHAS",
         "PythonInterp",
