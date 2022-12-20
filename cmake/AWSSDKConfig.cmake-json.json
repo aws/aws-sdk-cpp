@@ -9,20 +9,21 @@ In Windows the dir is like C: /Progra~1/AWSSDK/
 In Unix like system the dir is like /usr/local/
 _$./"if" 
 AWSSDK_ROOT_DIR doesn't appear, this module will identify it automatically
+"#"
+By default:_$./""
+The cmake files will all be in <prefix>/lib/cmake dir
+The headers will all be in <prefix>/include dir
 
-# By default:_$./""
-#   The cmake files will all be in <prefix>/lib/cmake dir
-#   The headers will all be in <prefix>/include dir
+The libraries will all be in <prefix>/lib/<platform_prefix> dir
+The binaries will all be in <prefix>/bin/<platform_prefix> dir
+The archives will all be in <prefix>/lib/<platform_prefix> dir if target is shared,
+otherwise will be in <prefix>/bin/<platform_prefix> dir.
 
-#   The libraries will all be in <prefix>/lib/<platform_prefix> dir
-#   The binaries will all be in <prefix>/bin/<platform_prefix> dir
-#   The archives will all be in <prefix>/lib/<platform_prefix> dir if target is shared,
-#   otherwise will be in <prefix>/bin/<platform_prefix> dir.
-
-# Platform_prefix is determined on compile time nbu option SIMPLE_INSTALL
-# such as "<linux/intel64>"
-_$./(),
-_$()=""
+_$./"""# Platform_prefix is determined on compile time nbu option SIMPLE_INSTALL"
+"#" 
+such as "<linux/intel64>"
+_$./(""),
+_$("")=""
 if(AWSSDK_FOUND)
     return(/)
 endif("if")
