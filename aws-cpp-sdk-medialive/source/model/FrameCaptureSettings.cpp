@@ -22,7 +22,8 @@ FrameCaptureSettings::FrameCaptureSettings() :
     m_captureInterval(0),
     m_captureIntervalHasBeenSet(false),
     m_captureIntervalUnits(FrameCaptureIntervalUnit::NOT_SET),
-    m_captureIntervalUnitsHasBeenSet(false)
+    m_captureIntervalUnitsHasBeenSet(false),
+    m_timecodeBurninSettingsHasBeenSet(false)
 {
 }
 
@@ -30,7 +31,8 @@ FrameCaptureSettings::FrameCaptureSettings(JsonView jsonValue) :
     m_captureInterval(0),
     m_captureIntervalHasBeenSet(false),
     m_captureIntervalUnits(FrameCaptureIntervalUnit::NOT_SET),
-    m_captureIntervalUnitsHasBeenSet(false)
+    m_captureIntervalUnitsHasBeenSet(false),
+    m_timecodeBurninSettingsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -51,6 +53,13 @@ FrameCaptureSettings& FrameCaptureSettings::operator =(JsonView jsonValue)
     m_captureIntervalUnitsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("timecodeBurninSettings"))
+  {
+    m_timecodeBurninSettings = jsonValue.GetObject("timecodeBurninSettings");
+
+    m_timecodeBurninSettingsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -67,6 +76,12 @@ JsonValue FrameCaptureSettings::Jsonize() const
   if(m_captureIntervalUnitsHasBeenSet)
   {
    payload.WithString("captureIntervalUnits", FrameCaptureIntervalUnitMapper::GetNameForFrameCaptureIntervalUnit(m_captureIntervalUnits));
+  }
+
+  if(m_timecodeBurninSettingsHasBeenSet)
+  {
+   payload.WithObject("timecodeBurninSettings", m_timecodeBurninSettings.Jsonize());
+
   }
 
   return payload;

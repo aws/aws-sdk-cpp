@@ -98,7 +98,8 @@ H264Settings::H264Settings() :
     m_temporalAq(H264TemporalAq::NOT_SET),
     m_temporalAqHasBeenSet(false),
     m_timecodeInsertion(H264TimecodeInsertionBehavior::NOT_SET),
-    m_timecodeInsertionHasBeenSet(false)
+    m_timecodeInsertionHasBeenSet(false),
+    m_timecodeBurninSettingsHasBeenSet(false)
 {
 }
 
@@ -182,7 +183,8 @@ H264Settings::H264Settings(JsonView jsonValue) :
     m_temporalAq(H264TemporalAq::NOT_SET),
     m_temporalAqHasBeenSet(false),
     m_timecodeInsertion(H264TimecodeInsertionBehavior::NOT_SET),
-    m_timecodeInsertionHasBeenSet(false)
+    m_timecodeInsertionHasBeenSet(false),
+    m_timecodeBurninSettingsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -476,6 +478,13 @@ H264Settings& H264Settings::operator =(JsonView jsonValue)
     m_timecodeInsertionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("timecodeBurninSettings"))
+  {
+    m_timecodeBurninSettings = jsonValue.GetObject("timecodeBurninSettings");
+
+    m_timecodeBurninSettingsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -704,6 +713,12 @@ JsonValue H264Settings::Jsonize() const
   if(m_timecodeInsertionHasBeenSet)
   {
    payload.WithString("timecodeInsertion", H264TimecodeInsertionBehaviorMapper::GetNameForH264TimecodeInsertionBehavior(m_timecodeInsertion));
+  }
+
+  if(m_timecodeBurninSettingsHasBeenSet)
+  {
+   payload.WithObject("timecodeBurninSettings", m_timecodeBurninSettings.Jsonize());
+
   }
 
   return payload;

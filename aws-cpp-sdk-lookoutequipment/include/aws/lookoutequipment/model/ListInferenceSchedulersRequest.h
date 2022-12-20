@@ -7,6 +7,7 @@
 #include <aws/lookoutequipment/LookoutEquipment_EXPORTS.h>
 #include <aws/lookoutequipment/LookoutEquipmentRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/lookoutequipment/model/InferenceSchedulerStatus.h>
 #include <utility>
 
 namespace Aws
@@ -185,6 +186,37 @@ namespace Model
      */
     inline ListInferenceSchedulersRequest& WithModelName(const char* value) { SetModelName(value); return *this;}
 
+
+    /**
+     * <p>Specifies the current status of the inference schedulers to list.</p>
+     */
+    inline const InferenceSchedulerStatus& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>Specifies the current status of the inference schedulers to list.</p>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>Specifies the current status of the inference schedulers to list.</p>
+     */
+    inline void SetStatus(const InferenceSchedulerStatus& value) { m_statusHasBeenSet = true; m_status = value; }
+
+    /**
+     * <p>Specifies the current status of the inference schedulers to list.</p>
+     */
+    inline void SetStatus(InferenceSchedulerStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
+
+    /**
+     * <p>Specifies the current status of the inference schedulers to list.</p>
+     */
+    inline ListInferenceSchedulersRequest& WithStatus(const InferenceSchedulerStatus& value) { SetStatus(value); return *this;}
+
+    /**
+     * <p>Specifies the current status of the inference schedulers to list.</p>
+     */
+    inline ListInferenceSchedulersRequest& WithStatus(InferenceSchedulerStatus&& value) { SetStatus(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_nextToken;
@@ -198,6 +230,9 @@ namespace Model
 
     Aws::String m_modelName;
     bool m_modelNameHasBeenSet = false;
+
+    InferenceSchedulerStatus m_status;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

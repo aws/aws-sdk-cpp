@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * Settings for the "scte35 input" action<p><h3>See Also:</h3>   <a
+   * Scte35Input Schedule Action Settings<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/Scte35InputScheduleActionSettings">AWS
    * API Reference</a></p>
    */

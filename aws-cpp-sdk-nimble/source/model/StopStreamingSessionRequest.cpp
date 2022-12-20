@@ -17,13 +17,22 @@ StopStreamingSessionRequest::StopStreamingSessionRequest() :
     m_clientToken(Aws::Utils::UUID::RandomUUID()),
     m_clientTokenHasBeenSet(true),
     m_sessionIdHasBeenSet(false),
-    m_studioIdHasBeenSet(false)
+    m_studioIdHasBeenSet(false),
+    m_volumeRetentionMode(VolumeRetentionMode::NOT_SET),
+    m_volumeRetentionModeHasBeenSet(false)
 {
 }
 
 Aws::String StopStreamingSessionRequest::SerializePayload() const
 {
-  return {};
+  JsonValue payload;
+
+  if(m_volumeRetentionModeHasBeenSet)
+  {
+   payload.WithString("volumeRetentionMode", VolumeRetentionModeMapper::GetNameForVolumeRetentionMode(m_volumeRetentionMode));
+  }
+
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection StopStreamingSessionRequest::GetRequestSpecificHeaders() const

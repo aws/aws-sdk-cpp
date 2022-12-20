@@ -38,6 +38,7 @@ namespace Aws
         static const int ENCRYPTION_KEY_ACCESS_DENIED_HASH = HashingUtils::HashString("ENCRYPTION_KEY_ACCESS_DENIED");
         static const int AWS_SSO_CONFIGURATION_REPAIRED_HASH = HashingUtils::HashString("AWS_SSO_CONFIGURATION_REPAIRED");
         static const int AWS_SSO_CONFIGURATION_REPAIR_IN_PROGRESS_HASH = HashingUtils::HashString("AWS_SSO_CONFIGURATION_REPAIR_IN_PROGRESS");
+        static const int AWS_STS_REGION_DISABLED_HASH = HashingUtils::HashString("AWS_STS_REGION_DISABLED");
 
 
         StudioStatusCode GetStudioStatusCodeForName(const Aws::String& name)
@@ -115,6 +116,10 @@ namespace Aws
           {
             return StudioStatusCode::AWS_SSO_CONFIGURATION_REPAIR_IN_PROGRESS;
           }
+          else if (hashCode == AWS_STS_REGION_DISABLED_HASH)
+          {
+            return StudioStatusCode::AWS_STS_REGION_DISABLED;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -165,6 +170,8 @@ namespace Aws
             return "AWS_SSO_CONFIGURATION_REPAIRED";
           case StudioStatusCode::AWS_SSO_CONFIGURATION_REPAIR_IN_PROGRESS:
             return "AWS_SSO_CONFIGURATION_REPAIR_IN_PROGRESS";
+          case StudioStatusCode::AWS_STS_REGION_DISABLED:
+            return "AWS_STS_REGION_DISABLED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

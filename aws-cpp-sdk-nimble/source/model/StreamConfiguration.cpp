@@ -19,6 +19,8 @@ namespace Model
 {
 
 StreamConfiguration::StreamConfiguration() : 
+    m_automaticTerminationMode(AutomaticTerminationMode::NOT_SET),
+    m_automaticTerminationModeHasBeenSet(false),
     m_clipboardMode(StreamingClipboardMode::NOT_SET),
     m_clipboardModeHasBeenSet(false),
     m_ec2InstanceTypesHasBeenSet(false),
@@ -26,12 +28,18 @@ StreamConfiguration::StreamConfiguration() :
     m_maxSessionLengthInMinutesHasBeenSet(false),
     m_maxStoppedSessionLengthInMinutes(0),
     m_maxStoppedSessionLengthInMinutesHasBeenSet(false),
+    m_sessionBackupHasBeenSet(false),
+    m_sessionPersistenceMode(SessionPersistenceMode::NOT_SET),
+    m_sessionPersistenceModeHasBeenSet(false),
     m_sessionStorageHasBeenSet(false),
-    m_streamingImageIdsHasBeenSet(false)
+    m_streamingImageIdsHasBeenSet(false),
+    m_volumeConfigurationHasBeenSet(false)
 {
 }
 
 StreamConfiguration::StreamConfiguration(JsonView jsonValue) : 
+    m_automaticTerminationMode(AutomaticTerminationMode::NOT_SET),
+    m_automaticTerminationModeHasBeenSet(false),
     m_clipboardMode(StreamingClipboardMode::NOT_SET),
     m_clipboardModeHasBeenSet(false),
     m_ec2InstanceTypesHasBeenSet(false),
@@ -39,14 +47,25 @@ StreamConfiguration::StreamConfiguration(JsonView jsonValue) :
     m_maxSessionLengthInMinutesHasBeenSet(false),
     m_maxStoppedSessionLengthInMinutes(0),
     m_maxStoppedSessionLengthInMinutesHasBeenSet(false),
+    m_sessionBackupHasBeenSet(false),
+    m_sessionPersistenceMode(SessionPersistenceMode::NOT_SET),
+    m_sessionPersistenceModeHasBeenSet(false),
     m_sessionStorageHasBeenSet(false),
-    m_streamingImageIdsHasBeenSet(false)
+    m_streamingImageIdsHasBeenSet(false),
+    m_volumeConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 StreamConfiguration& StreamConfiguration::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("automaticTerminationMode"))
+  {
+    m_automaticTerminationMode = AutomaticTerminationModeMapper::GetAutomaticTerminationModeForName(jsonValue.GetString("automaticTerminationMode"));
+
+    m_automaticTerminationModeHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("clipboardMode"))
   {
     m_clipboardMode = StreamingClipboardModeMapper::GetStreamingClipboardModeForName(jsonValue.GetString("clipboardMode"));
@@ -78,6 +97,20 @@ StreamConfiguration& StreamConfiguration::operator =(JsonView jsonValue)
     m_maxStoppedSessionLengthInMinutesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("sessionBackup"))
+  {
+    m_sessionBackup = jsonValue.GetObject("sessionBackup");
+
+    m_sessionBackupHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("sessionPersistenceMode"))
+  {
+    m_sessionPersistenceMode = SessionPersistenceModeMapper::GetSessionPersistenceModeForName(jsonValue.GetString("sessionPersistenceMode"));
+
+    m_sessionPersistenceModeHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("sessionStorage"))
   {
     m_sessionStorage = jsonValue.GetObject("sessionStorage");
@@ -95,12 +128,24 @@ StreamConfiguration& StreamConfiguration::operator =(JsonView jsonValue)
     m_streamingImageIdsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("volumeConfiguration"))
+  {
+    m_volumeConfiguration = jsonValue.GetObject("volumeConfiguration");
+
+    m_volumeConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
 JsonValue StreamConfiguration::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_automaticTerminationModeHasBeenSet)
+  {
+   payload.WithString("automaticTerminationMode", AutomaticTerminationModeMapper::GetNameForAutomaticTerminationMode(m_automaticTerminationMode));
+  }
 
   if(m_clipboardModeHasBeenSet)
   {
@@ -130,6 +175,17 @@ JsonValue StreamConfiguration::Jsonize() const
 
   }
 
+  if(m_sessionBackupHasBeenSet)
+  {
+   payload.WithObject("sessionBackup", m_sessionBackup.Jsonize());
+
+  }
+
+  if(m_sessionPersistenceModeHasBeenSet)
+  {
+   payload.WithString("sessionPersistenceMode", SessionPersistenceModeMapper::GetNameForSessionPersistenceMode(m_sessionPersistenceMode));
+  }
+
   if(m_sessionStorageHasBeenSet)
   {
    payload.WithObject("sessionStorage", m_sessionStorage.Jsonize());
@@ -144,6 +200,12 @@ JsonValue StreamConfiguration::Jsonize() const
      streamingImageIdsJsonList[streamingImageIdsIndex].AsString(m_streamingImageIds[streamingImageIdsIndex]);
    }
    payload.WithArray("streamingImageIds", std::move(streamingImageIdsJsonList));
+
+  }
+
+  if(m_volumeConfigurationHasBeenSet)
+  {
+   payload.WithObject("volumeConfiguration", m_volumeConfiguration.Jsonize());
 
   }
 

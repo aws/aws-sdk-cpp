@@ -74,7 +74,8 @@ H265Settings::H265Settings() :
     m_tier(H265Tier::NOT_SET),
     m_tierHasBeenSet(false),
     m_timecodeInsertion(H265TimecodeInsertionBehavior::NOT_SET),
-    m_timecodeInsertionHasBeenSet(false)
+    m_timecodeInsertionHasBeenSet(false),
+    m_timecodeBurninSettingsHasBeenSet(false)
 {
 }
 
@@ -134,7 +135,8 @@ H265Settings::H265Settings(JsonView jsonValue) :
     m_tier(H265Tier::NOT_SET),
     m_tierHasBeenSet(false),
     m_timecodeInsertion(H265TimecodeInsertionBehavior::NOT_SET),
-    m_timecodeInsertionHasBeenSet(false)
+    m_timecodeInsertionHasBeenSet(false),
+    m_timecodeBurninSettingsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -344,6 +346,13 @@ H265Settings& H265Settings::operator =(JsonView jsonValue)
     m_timecodeInsertionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("timecodeBurninSettings"))
+  {
+    m_timecodeBurninSettings = jsonValue.GetObject("timecodeBurninSettings");
+
+    m_timecodeBurninSettingsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -508,6 +517,12 @@ JsonValue H265Settings::Jsonize() const
   if(m_timecodeInsertionHasBeenSet)
   {
    payload.WithString("timecodeInsertion", H265TimecodeInsertionBehaviorMapper::GetNameForH265TimecodeInsertionBehavior(m_timecodeInsertion));
+  }
+
+  if(m_timecodeBurninSettingsHasBeenSet)
+  {
+   payload.WithObject("timecodeBurninSettings", m_timecodeBurninSettings.Jsonize());
+
   }
 
   return payload;

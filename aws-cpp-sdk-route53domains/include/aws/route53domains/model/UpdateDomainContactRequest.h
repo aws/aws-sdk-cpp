@@ -8,6 +8,7 @@
 #include <aws/route53domains/Route53DomainsRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/route53domains/model/ContactDetail.h>
+#include <aws/route53domains/model/Consent.h>
 #include <utility>
 
 namespace Aws
@@ -172,6 +173,37 @@ namespace Model
      */
     inline UpdateDomainContactRequest& WithTechContact(ContactDetail&& value) { SetTechContact(std::move(value)); return *this;}
 
+
+    /**
+     * <p> Customer's consent for the owner change request. </p>
+     */
+    inline const Consent& GetConsent() const{ return m_consent; }
+
+    /**
+     * <p> Customer's consent for the owner change request. </p>
+     */
+    inline bool ConsentHasBeenSet() const { return m_consentHasBeenSet; }
+
+    /**
+     * <p> Customer's consent for the owner change request. </p>
+     */
+    inline void SetConsent(const Consent& value) { m_consentHasBeenSet = true; m_consent = value; }
+
+    /**
+     * <p> Customer's consent for the owner change request. </p>
+     */
+    inline void SetConsent(Consent&& value) { m_consentHasBeenSet = true; m_consent = std::move(value); }
+
+    /**
+     * <p> Customer's consent for the owner change request. </p>
+     */
+    inline UpdateDomainContactRequest& WithConsent(const Consent& value) { SetConsent(value); return *this;}
+
+    /**
+     * <p> Customer's consent for the owner change request. </p>
+     */
+    inline UpdateDomainContactRequest& WithConsent(Consent&& value) { SetConsent(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_domainName;
@@ -185,6 +217,9 @@ namespace Model
 
     ContactDetail m_techContact;
     bool m_techContactHasBeenSet = false;
+
+    Consent m_consent;
+    bool m_consentHasBeenSet = false;
   };
 
 } // namespace Model

@@ -361,7 +361,7 @@ namespace Model
      * href="https://github.com/awslabs/python-uefivars">python-uefivars tool</a> on
      * GitHub. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/uefi-secure-boot.html">UEFI
-     * Secure Boot</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * Secure Boot</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline const AttributeValue& GetUefiData() const{ return m_uefiData; }
 
@@ -373,7 +373,7 @@ namespace Model
      * href="https://github.com/awslabs/python-uefivars">python-uefivars tool</a> on
      * GitHub. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/uefi-secure-boot.html">UEFI
-     * Secure Boot</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * Secure Boot</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline void SetUefiData(const AttributeValue& value) { m_uefiData = value; }
 
@@ -385,7 +385,7 @@ namespace Model
      * href="https://github.com/awslabs/python-uefivars">python-uefivars tool</a> on
      * GitHub. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/uefi-secure-boot.html">UEFI
-     * Secure Boot</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * Secure Boot</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline void SetUefiData(AttributeValue&& value) { m_uefiData = std::move(value); }
 
@@ -397,7 +397,7 @@ namespace Model
      * href="https://github.com/awslabs/python-uefivars">python-uefivars tool</a> on
      * GitHub. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/uefi-secure-boot.html">UEFI
-     * Secure Boot</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * Secure Boot</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline DescribeImageAttributeResponse& WithUefiData(const AttributeValue& value) { SetUefiData(value); return *this;}
 
@@ -409,7 +409,7 @@ namespace Model
      * href="https://github.com/awslabs/python-uefivars">python-uefivars tool</a> on
      * GitHub. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/uefi-secure-boot.html">UEFI
-     * Secure Boot</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * Secure Boot</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline DescribeImageAttributeResponse& WithUefiData(AttributeValue&& value) { SetUefiData(std::move(value)); return *this;}
 
@@ -468,7 +468,7 @@ namespace Model
      * <code>HttpPutResponseHopLimit</code> is set to <code>2</code>. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration">Configure
-     * the AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * the AMI</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline const AttributeValue& GetImdsSupport() const{ return m_imdsSupport; }
 
@@ -480,7 +480,7 @@ namespace Model
      * <code>HttpPutResponseHopLimit</code> is set to <code>2</code>. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration">Configure
-     * the AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * the AMI</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline void SetImdsSupport(const AttributeValue& value) { m_imdsSupport = value; }
 
@@ -492,7 +492,7 @@ namespace Model
      * <code>HttpPutResponseHopLimit</code> is set to <code>2</code>. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration">Configure
-     * the AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * the AMI</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline void SetImdsSupport(AttributeValue&& value) { m_imdsSupport = std::move(value); }
 
@@ -504,7 +504,7 @@ namespace Model
      * <code>HttpPutResponseHopLimit</code> is set to <code>2</code>. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration">Configure
-     * the AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * the AMI</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline DescribeImageAttributeResponse& WithImdsSupport(const AttributeValue& value) { SetImdsSupport(value); return *this;}
 
@@ -516,7 +516,7 @@ namespace Model
      * <code>HttpPutResponseHopLimit</code> is set to <code>2</code>. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration">Configure
-     * the AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * the AMI</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline DescribeImageAttributeResponse& WithImdsSupport(AttributeValue&& value) { SetImdsSupport(std::move(value)); return *this;}
 

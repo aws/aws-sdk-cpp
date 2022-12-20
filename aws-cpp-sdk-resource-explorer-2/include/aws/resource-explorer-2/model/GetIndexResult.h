@@ -140,162 +140,157 @@ namespace Model
 
 
     /**
-     * <p>If this index is <code>Type=AGGREGATOR</code>, then this response value
-     * contains a list of the Amazon Web Services Regions that replicate their content
-     * to the index in this Region. Not present for a local index.</p>
+     * <p>This response value is present only if this index is
+     * <code>Type=AGGREGATOR</code>.</p> <p>A list of the Amazon Web Services Regions
+     * that replicate their content to the index in this Region.</p>
      */
     inline const Aws::Vector<Aws::String>& GetReplicatingFrom() const{ return m_replicatingFrom; }
 
     /**
-     * <p>If this index is <code>Type=AGGREGATOR</code>, then this response value
-     * contains a list of the Amazon Web Services Regions that replicate their content
-     * to the index in this Region. Not present for a local index.</p>
+     * <p>This response value is present only if this index is
+     * <code>Type=AGGREGATOR</code>.</p> <p>A list of the Amazon Web Services Regions
+     * that replicate their content to the index in this Region.</p>
      */
     inline void SetReplicatingFrom(const Aws::Vector<Aws::String>& value) { m_replicatingFrom = value; }
 
     /**
-     * <p>If this index is <code>Type=AGGREGATOR</code>, then this response value
-     * contains a list of the Amazon Web Services Regions that replicate their content
-     * to the index in this Region. Not present for a local index.</p>
+     * <p>This response value is present only if this index is
+     * <code>Type=AGGREGATOR</code>.</p> <p>A list of the Amazon Web Services Regions
+     * that replicate their content to the index in this Region.</p>
      */
     inline void SetReplicatingFrom(Aws::Vector<Aws::String>&& value) { m_replicatingFrom = std::move(value); }
 
     /**
-     * <p>If this index is <code>Type=AGGREGATOR</code>, then this response value
-     * contains a list of the Amazon Web Services Regions that replicate their content
-     * to the index in this Region. Not present for a local index.</p>
+     * <p>This response value is present only if this index is
+     * <code>Type=AGGREGATOR</code>.</p> <p>A list of the Amazon Web Services Regions
+     * that replicate their content to the index in this Region.</p>
      */
     inline GetIndexResult& WithReplicatingFrom(const Aws::Vector<Aws::String>& value) { SetReplicatingFrom(value); return *this;}
 
     /**
-     * <p>If this index is <code>Type=AGGREGATOR</code>, then this response value
-     * contains a list of the Amazon Web Services Regions that replicate their content
-     * to the index in this Region. Not present for a local index.</p>
+     * <p>This response value is present only if this index is
+     * <code>Type=AGGREGATOR</code>.</p> <p>A list of the Amazon Web Services Regions
+     * that replicate their content to the index in this Region.</p>
      */
     inline GetIndexResult& WithReplicatingFrom(Aws::Vector<Aws::String>&& value) { SetReplicatingFrom(std::move(value)); return *this;}
 
     /**
-     * <p>If this index is <code>Type=AGGREGATOR</code>, then this response value
-     * contains a list of the Amazon Web Services Regions that replicate their content
-     * to the index in this Region. Not present for a local index.</p>
+     * <p>This response value is present only if this index is
+     * <code>Type=AGGREGATOR</code>.</p> <p>A list of the Amazon Web Services Regions
+     * that replicate their content to the index in this Region.</p>
      */
     inline GetIndexResult& AddReplicatingFrom(const Aws::String& value) { m_replicatingFrom.push_back(value); return *this; }
 
     /**
-     * <p>If this index is <code>Type=AGGREGATOR</code>, then this response value
-     * contains a list of the Amazon Web Services Regions that replicate their content
-     * to the index in this Region. Not present for a local index.</p>
+     * <p>This response value is present only if this index is
+     * <code>Type=AGGREGATOR</code>.</p> <p>A list of the Amazon Web Services Regions
+     * that replicate their content to the index in this Region.</p>
      */
     inline GetIndexResult& AddReplicatingFrom(Aws::String&& value) { m_replicatingFrom.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>If this index is <code>Type=AGGREGATOR</code>, then this response value
-     * contains a list of the Amazon Web Services Regions that replicate their content
-     * to the index in this Region. Not present for a local index.</p>
+     * <p>This response value is present only if this index is
+     * <code>Type=AGGREGATOR</code>.</p> <p>A list of the Amazon Web Services Regions
+     * that replicate their content to the index in this Region.</p>
      */
     inline GetIndexResult& AddReplicatingFrom(const char* value) { m_replicatingFrom.push_back(value); return *this; }
 
 
     /**
-     * <p>Identifies the Amazon Web Services Region that has an index set to
-     * <code>Type=AGGREGATOR</code>, if one exists. If it does, then the Region you
-     * called this operation in replicates its index information to the Region
-     * specified in this response value. Not present if there isn't an aggregator index
-     * in the account.</p>
+     * <p>This response value is present only if this index is
+     * <code>Type=LOCAL</code>.</p> <p>The Amazon Web Services Region that contains the
+     * aggregator index, if one exists. If an aggregator index does exist then the
+     * Region in which you called this operation replicates its index information to
+     * the Region specified in this response value. </p>
      */
     inline const Aws::Vector<Aws::String>& GetReplicatingTo() const{ return m_replicatingTo; }
 
     /**
-     * <p>Identifies the Amazon Web Services Region that has an index set to
-     * <code>Type=AGGREGATOR</code>, if one exists. If it does, then the Region you
-     * called this operation in replicates its index information to the Region
-     * specified in this response value. Not present if there isn't an aggregator index
-     * in the account.</p>
+     * <p>This response value is present only if this index is
+     * <code>Type=LOCAL</code>.</p> <p>The Amazon Web Services Region that contains the
+     * aggregator index, if one exists. If an aggregator index does exist then the
+     * Region in which you called this operation replicates its index information to
+     * the Region specified in this response value. </p>
      */
     inline void SetReplicatingTo(const Aws::Vector<Aws::String>& value) { m_replicatingTo = value; }
 
     /**
-     * <p>Identifies the Amazon Web Services Region that has an index set to
-     * <code>Type=AGGREGATOR</code>, if one exists. If it does, then the Region you
-     * called this operation in replicates its index information to the Region
-     * specified in this response value. Not present if there isn't an aggregator index
-     * in the account.</p>
+     * <p>This response value is present only if this index is
+     * <code>Type=LOCAL</code>.</p> <p>The Amazon Web Services Region that contains the
+     * aggregator index, if one exists. If an aggregator index does exist then the
+     * Region in which you called this operation replicates its index information to
+     * the Region specified in this response value. </p>
      */
     inline void SetReplicatingTo(Aws::Vector<Aws::String>&& value) { m_replicatingTo = std::move(value); }
 
     /**
-     * <p>Identifies the Amazon Web Services Region that has an index set to
-     * <code>Type=AGGREGATOR</code>, if one exists. If it does, then the Region you
-     * called this operation in replicates its index information to the Region
-     * specified in this response value. Not present if there isn't an aggregator index
-     * in the account.</p>
+     * <p>This response value is present only if this index is
+     * <code>Type=LOCAL</code>.</p> <p>The Amazon Web Services Region that contains the
+     * aggregator index, if one exists. If an aggregator index does exist then the
+     * Region in which you called this operation replicates its index information to
+     * the Region specified in this response value. </p>
      */
     inline GetIndexResult& WithReplicatingTo(const Aws::Vector<Aws::String>& value) { SetReplicatingTo(value); return *this;}
 
     /**
-     * <p>Identifies the Amazon Web Services Region that has an index set to
-     * <code>Type=AGGREGATOR</code>, if one exists. If it does, then the Region you
-     * called this operation in replicates its index information to the Region
-     * specified in this response value. Not present if there isn't an aggregator index
-     * in the account.</p>
+     * <p>This response value is present only if this index is
+     * <code>Type=LOCAL</code>.</p> <p>The Amazon Web Services Region that contains the
+     * aggregator index, if one exists. If an aggregator index does exist then the
+     * Region in which you called this operation replicates its index information to
+     * the Region specified in this response value. </p>
      */
     inline GetIndexResult& WithReplicatingTo(Aws::Vector<Aws::String>&& value) { SetReplicatingTo(std::move(value)); return *this;}
 
     /**
-     * <p>Identifies the Amazon Web Services Region that has an index set to
-     * <code>Type=AGGREGATOR</code>, if one exists. If it does, then the Region you
-     * called this operation in replicates its index information to the Region
-     * specified in this response value. Not present if there isn't an aggregator index
-     * in the account.</p>
+     * <p>This response value is present only if this index is
+     * <code>Type=LOCAL</code>.</p> <p>The Amazon Web Services Region that contains the
+     * aggregator index, if one exists. If an aggregator index does exist then the
+     * Region in which you called this operation replicates its index information to
+     * the Region specified in this response value. </p>
      */
     inline GetIndexResult& AddReplicatingTo(const Aws::String& value) { m_replicatingTo.push_back(value); return *this; }
 
     /**
-     * <p>Identifies the Amazon Web Services Region that has an index set to
-     * <code>Type=AGGREGATOR</code>, if one exists. If it does, then the Region you
-     * called this operation in replicates its index information to the Region
-     * specified in this response value. Not present if there isn't an aggregator index
-     * in the account.</p>
+     * <p>This response value is present only if this index is
+     * <code>Type=LOCAL</code>.</p> <p>The Amazon Web Services Region that contains the
+     * aggregator index, if one exists. If an aggregator index does exist then the
+     * Region in which you called this operation replicates its index information to
+     * the Region specified in this response value. </p>
      */
     inline GetIndexResult& AddReplicatingTo(Aws::String&& value) { m_replicatingTo.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>Identifies the Amazon Web Services Region that has an index set to
-     * <code>Type=AGGREGATOR</code>, if one exists. If it does, then the Region you
-     * called this operation in replicates its index information to the Region
-     * specified in this response value. Not present if there isn't an aggregator index
-     * in the account.</p>
+     * <p>This response value is present only if this index is
+     * <code>Type=LOCAL</code>.</p> <p>The Amazon Web Services Region that contains the
+     * aggregator index, if one exists. If an aggregator index does exist then the
+     * Region in which you called this operation replicates its index information to
+     * the Region specified in this response value. </p>
      */
     inline GetIndexResult& AddReplicatingTo(const char* value) { m_replicatingTo.push_back(value); return *this; }
 
 
     /**
-     * <p>Indicates the current state of the index in this Amazon Web Services
-     * Region.</p>
+     * <p>The current state of the index in this Amazon Web Services Region.</p>
      */
     inline const IndexState& GetState() const{ return m_state; }
 
     /**
-     * <p>Indicates the current state of the index in this Amazon Web Services
-     * Region.</p>
+     * <p>The current state of the index in this Amazon Web Services Region.</p>
      */
     inline void SetState(const IndexState& value) { m_state = value; }
 
     /**
-     * <p>Indicates the current state of the index in this Amazon Web Services
-     * Region.</p>
+     * <p>The current state of the index in this Amazon Web Services Region.</p>
      */
     inline void SetState(IndexState&& value) { m_state = std::move(value); }
 
     /**
-     * <p>Indicates the current state of the index in this Amazon Web Services
-     * Region.</p>
+     * <p>The current state of the index in this Amazon Web Services Region.</p>
      */
     inline GetIndexResult& WithState(const IndexState& value) { SetState(value); return *this;}
 
     /**
-     * <p>Indicates the current state of the index in this Amazon Web Services
-     * Region.</p>
+     * <p>The current state of the index in this Amazon Web Services Region.</p>
      */
     inline GetIndexResult& WithState(IndexState&& value) { SetState(std::move(value)); return *this;}
 
@@ -362,40 +357,40 @@ namespace Model
 
 
     /**
-     * <p>Specifies the type of the index in this Region. For information about the
-     * aggregator index and how it differs from a local index, see <a
+     * <p>The type of the index in this Region. For information about the aggregator
+     * index and how it differs from a local index, see <a
      * href="https://docs.aws.amazon.com/resource-explorer/latest/userguide/manage-aggregator-region.html">Turning
      * on cross-Region search by creating an aggregator index</a>.</p>
      */
     inline const IndexType& GetType() const{ return m_type; }
 
     /**
-     * <p>Specifies the type of the index in this Region. For information about the
-     * aggregator index and how it differs from a local index, see <a
+     * <p>The type of the index in this Region. For information about the aggregator
+     * index and how it differs from a local index, see <a
      * href="https://docs.aws.amazon.com/resource-explorer/latest/userguide/manage-aggregator-region.html">Turning
      * on cross-Region search by creating an aggregator index</a>.</p>
      */
     inline void SetType(const IndexType& value) { m_type = value; }
 
     /**
-     * <p>Specifies the type of the index in this Region. For information about the
-     * aggregator index and how it differs from a local index, see <a
+     * <p>The type of the index in this Region. For information about the aggregator
+     * index and how it differs from a local index, see <a
      * href="https://docs.aws.amazon.com/resource-explorer/latest/userguide/manage-aggregator-region.html">Turning
      * on cross-Region search by creating an aggregator index</a>.</p>
      */
     inline void SetType(IndexType&& value) { m_type = std::move(value); }
 
     /**
-     * <p>Specifies the type of the index in this Region. For information about the
-     * aggregator index and how it differs from a local index, see <a
+     * <p>The type of the index in this Region. For information about the aggregator
+     * index and how it differs from a local index, see <a
      * href="https://docs.aws.amazon.com/resource-explorer/latest/userguide/manage-aggregator-region.html">Turning
      * on cross-Region search by creating an aggregator index</a>.</p>
      */
     inline GetIndexResult& WithType(const IndexType& value) { SetType(value); return *this;}
 
     /**
-     * <p>Specifies the type of the index in this Region. For information about the
-     * aggregator index and how it differs from a local index, see <a
+     * <p>The type of the index in this Region. For information about the aggregator
+     * index and how it differs from a local index, see <a
      * href="https://docs.aws.amazon.com/resource-explorer/latest/userguide/manage-aggregator-region.html">Turning
      * on cross-Region search by creating an aggregator index</a>.</p>
      */

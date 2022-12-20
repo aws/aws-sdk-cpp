@@ -40,7 +40,9 @@ namespace Model
      * <p>The job timeout time (in seconds) that's measured from the job attempt's
      * <code>startedAt</code> timestamp. After this time passes, Batch terminates your
      * jobs if they aren't finished. The minimum value for the timeout is 60
-     * seconds.</p>
+     * seconds.</p> <p>For array jobs, the timeout applies to the child jobs, not to
+     * the parent array job.</p> <p>For multi-node parallel (MNP) jobs, the timeout
+     * applies to the whole job, not to the individual nodes.</p>
      */
     inline int GetAttemptDurationSeconds() const{ return m_attemptDurationSeconds; }
 
@@ -48,7 +50,9 @@ namespace Model
      * <p>The job timeout time (in seconds) that's measured from the job attempt's
      * <code>startedAt</code> timestamp. After this time passes, Batch terminates your
      * jobs if they aren't finished. The minimum value for the timeout is 60
-     * seconds.</p>
+     * seconds.</p> <p>For array jobs, the timeout applies to the child jobs, not to
+     * the parent array job.</p> <p>For multi-node parallel (MNP) jobs, the timeout
+     * applies to the whole job, not to the individual nodes.</p>
      */
     inline bool AttemptDurationSecondsHasBeenSet() const { return m_attemptDurationSecondsHasBeenSet; }
 
@@ -56,7 +60,9 @@ namespace Model
      * <p>The job timeout time (in seconds) that's measured from the job attempt's
      * <code>startedAt</code> timestamp. After this time passes, Batch terminates your
      * jobs if they aren't finished. The minimum value for the timeout is 60
-     * seconds.</p>
+     * seconds.</p> <p>For array jobs, the timeout applies to the child jobs, not to
+     * the parent array job.</p> <p>For multi-node parallel (MNP) jobs, the timeout
+     * applies to the whole job, not to the individual nodes.</p>
      */
     inline void SetAttemptDurationSeconds(int value) { m_attemptDurationSecondsHasBeenSet = true; m_attemptDurationSeconds = value; }
 
@@ -64,7 +70,9 @@ namespace Model
      * <p>The job timeout time (in seconds) that's measured from the job attempt's
      * <code>startedAt</code> timestamp. After this time passes, Batch terminates your
      * jobs if they aren't finished. The minimum value for the timeout is 60
-     * seconds.</p>
+     * seconds.</p> <p>For array jobs, the timeout applies to the child jobs, not to
+     * the parent array job.</p> <p>For multi-node parallel (MNP) jobs, the timeout
+     * applies to the whole job, not to the individual nodes.</p>
      */
     inline JobTimeout& WithAttemptDurationSeconds(int value) { SetAttemptDurationSeconds(value); return *this;}
 

@@ -1128,8 +1128,8 @@ namespace EC2
          * <p>Removes your Amazon Web Services account from the launch permissions for the
          * specified AMI. For more information, see <a
          * href="https://docs.aws.amazon.com/">Cancel having an AMI shared with your Amazon
-         * Web Services account</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * Web Services account</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelImageLaunchPermission">AWS
          * API Reference</a></p>
          */
@@ -1284,12 +1284,11 @@ namespace EC2
          * different key that you specify in the request using <b>KmsKeyId</b>. Outposts do
          * not support unencrypted snapshots. For more information, <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#ami">
-         * Amazon EBS local snapshots on Outposts</a> in the <i>Amazon Elastic Compute
-         * Cloud User Guide</i>.</p> <p>For more information about the prerequisites and
-         * limits when copying an AMI, see <a
+         * Amazon EBS local snapshots on Outposts</a> in the <i>Amazon EC2 User
+         * Guide</i>.</p> <p>For more information about the prerequisites and limits when
+         * copying an AMI, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/CopyingAMIs.html">Copy
-         * an AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * an AMI</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CopyImage">AWS API
          * Reference</a></p>
          */
@@ -2383,11 +2382,11 @@ namespace EC2
          * <p>To use this API, you must have the required permissions. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-store-restore.html#ami-s3-permissions">Permissions
-         * for storing and restoring AMIs using Amazon S3</a> in the <i>Amazon Elastic
-         * Compute Cloud User Guide</i>.</p> <p>For more information, see <a
+         * for storing and restoring AMIs using Amazon S3</a> in the <i>Amazon EC2 User
+         * Guide</i>.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-store-restore.html">Store
-         * and restore an AMI using Amazon S3</a> in the <i>Amazon Elastic Compute Cloud
-         * User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * and restore an AMI using Amazon S3</a> in the <i>Amazon EC2 User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateRestoreImageTask">AWS
          * API Reference</a></p>
          */
@@ -2600,11 +2599,11 @@ namespace EC2
          * <p>Stores an AMI as a single object in an Amazon S3 bucket.</p> <p>To use this
          * API, you must have the required permissions. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-store-restore.html#ami-s3-permissions">Permissions
-         * for storing and restoring AMIs using Amazon S3</a> in the <i>Amazon Elastic
-         * Compute Cloud User Guide</i>.</p> <p>For more information, see <a
+         * for storing and restoring AMIs using Amazon S3</a> in the <i>Amazon EC2 User
+         * Guide</i>.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-store-restore.html">Store
-         * and restore an AMI using Amazon S3</a> in the <i>Amazon Elastic Compute Cloud
-         * User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * and restore an AMI using Amazon S3</a> in the <i>Amazon EC2 User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateStoreImageTask">AWS
          * API Reference</a></p>
          */
@@ -4823,13 +4822,13 @@ namespace EC2
          * Bin retention rule, the AMI is retained in the Recycle Bin for the specified
          * retention period. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin.html">Recycle
-         * Bin</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>When you
-         * deregister an AMI, it doesn't affect any instances that you've already launched
-         * from the AMI. You'll continue to incur usage costs for those instances until you
-         * terminate them.</p> <p>When you deregister an Amazon EBS-backed AMI, it doesn't
-         * affect the snapshot that was created for the root volume of the instance during
-         * the AMI creation process. When you deregister an instance store-backed AMI, it
-         * doesn't affect the files that you uploaded to Amazon S3 when you created the
+         * Bin</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>When you deregister an AMI,
+         * it doesn't affect any instances that you've already launched from the AMI.
+         * You'll continue to incur usage costs for those instances until you terminate
+         * them.</p> <p>When you deregister an Amazon EBS-backed AMI, it doesn't affect the
+         * snapshot that was created for the root volume of the instance during the AMI
+         * creation process. When you deregister an instance store-backed AMI, it doesn't
+         * affect the files that you uploaded to Amazon S3 when you created the
          * AMI.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeregisterImage">AWS
          * API Reference</a></p>
@@ -7155,11 +7154,11 @@ namespace EC2
          * only tasks from the past 31 days can be viewed.</p> <p>To use this API, you must
          * have the required permissions. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-store-restore.html#ami-s3-permissions">Permissions
-         * for storing and restoring AMIs using Amazon S3</a> in the <i>Amazon Elastic
-         * Compute Cloud User Guide</i>.</p> <p>For more information, see <a
+         * for storing and restoring AMIs using Amazon S3</a> in the <i>Amazon EC2 User
+         * Guide</i>.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-store-restore.html">Store
-         * and restore an AMI using Amazon S3</a> in the <i>Amazon Elastic Compute Cloud
-         * User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * and restore an AMI using Amazon S3</a> in the <i>Amazon EC2 User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeStoreImageTasks">AWS
          * API Reference</a></p>
          */
@@ -8181,8 +8180,7 @@ namespace EC2
          * <p>Cancels the deprecation of the specified AMI.</p> <p>For more information,
          * see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-deprecate.html">Deprecate
-         * an AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * an AMI</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableImageDeprecation">AWS
          * API Reference</a></p>
          */
@@ -8699,8 +8697,7 @@ namespace EC2
          * <p>Enables deprecation of the specified AMI at the specified date and time.</p>
          * <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-deprecate.html">Deprecate
-         * an AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * an AMI</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableImageDeprecation">AWS
          * API Reference</a></p>
          */
@@ -9960,8 +9957,7 @@ namespace EC2
          * <p>Lists one or more AMIs that are currently in the Recycle Bin. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin.html">Recycle
-         * Bin</a> in the Amazon Elastic Compute Cloud User Guide.</p><p><h3>See Also:</h3>
-         * <a
+         * Bin</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ListImagesInRecycleBin">AWS
          * API Reference</a></p>
          */
@@ -11780,8 +11776,8 @@ namespace EC2
          * On-Demand Instance. For information about how to obtain the platform details and
          * billing information of an AMI, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Understand
-         * AMI billing information</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * AMI billing information</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RegisterImage">AWS
          * API Reference</a></p>
          */
@@ -12449,8 +12445,7 @@ namespace EC2
         /**
          * <p>Restores an AMI from the Recycle Bin. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin.html">Recycle
-         * Bin</a> in the Amazon Elastic Compute Cloud User Guide.</p><p><h3>See Also:</h3>
-         * <a
+         * Bin</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RestoreImageFromRecycleBin">AWS
          * API Reference</a></p>
          */

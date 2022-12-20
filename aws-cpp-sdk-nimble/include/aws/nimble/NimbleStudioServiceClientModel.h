@@ -39,6 +39,7 @@
 #include <aws/nimble/model/GetLaunchProfileMemberResult.h>
 #include <aws/nimble/model/GetStreamingImageResult.h>
 #include <aws/nimble/model/GetStreamingSessionResult.h>
+#include <aws/nimble/model/GetStreamingSessionBackupResult.h>
 #include <aws/nimble/model/GetStreamingSessionStreamResult.h>
 #include <aws/nimble/model/GetStudioResult.h>
 #include <aws/nimble/model/GetStudioComponentResult.h>
@@ -48,6 +49,7 @@
 #include <aws/nimble/model/ListLaunchProfileMembersResult.h>
 #include <aws/nimble/model/ListLaunchProfilesResult.h>
 #include <aws/nimble/model/ListStreamingImagesResult.h>
+#include <aws/nimble/model/ListStreamingSessionBackupsResult.h>
 #include <aws/nimble/model/ListStreamingSessionsResult.h>
 #include <aws/nimble/model/ListStudioComponentsResult.h>
 #include <aws/nimble/model/ListStudioMembersResult.h>
@@ -126,6 +128,7 @@ namespace Aws
       class GetLaunchProfileMemberRequest;
       class GetStreamingImageRequest;
       class GetStreamingSessionRequest;
+      class GetStreamingSessionBackupRequest;
       class GetStreamingSessionStreamRequest;
       class GetStudioRequest;
       class GetStudioComponentRequest;
@@ -135,6 +138,7 @@ namespace Aws
       class ListLaunchProfileMembersRequest;
       class ListLaunchProfilesRequest;
       class ListStreamingImagesRequest;
+      class ListStreamingSessionBackupsRequest;
       class ListStreamingSessionsRequest;
       class ListStudioComponentsRequest;
       class ListStudioMembersRequest;
@@ -176,6 +180,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<GetLaunchProfileMemberResult, NimbleStudioError> GetLaunchProfileMemberOutcome;
       typedef Aws::Utils::Outcome<GetStreamingImageResult, NimbleStudioError> GetStreamingImageOutcome;
       typedef Aws::Utils::Outcome<GetStreamingSessionResult, NimbleStudioError> GetStreamingSessionOutcome;
+      typedef Aws::Utils::Outcome<GetStreamingSessionBackupResult, NimbleStudioError> GetStreamingSessionBackupOutcome;
       typedef Aws::Utils::Outcome<GetStreamingSessionStreamResult, NimbleStudioError> GetStreamingSessionStreamOutcome;
       typedef Aws::Utils::Outcome<GetStudioResult, NimbleStudioError> GetStudioOutcome;
       typedef Aws::Utils::Outcome<GetStudioComponentResult, NimbleStudioError> GetStudioComponentOutcome;
@@ -185,6 +190,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListLaunchProfileMembersResult, NimbleStudioError> ListLaunchProfileMembersOutcome;
       typedef Aws::Utils::Outcome<ListLaunchProfilesResult, NimbleStudioError> ListLaunchProfilesOutcome;
       typedef Aws::Utils::Outcome<ListStreamingImagesResult, NimbleStudioError> ListStreamingImagesOutcome;
+      typedef Aws::Utils::Outcome<ListStreamingSessionBackupsResult, NimbleStudioError> ListStreamingSessionBackupsOutcome;
       typedef Aws::Utils::Outcome<ListStreamingSessionsResult, NimbleStudioError> ListStreamingSessionsOutcome;
       typedef Aws::Utils::Outcome<ListStudioComponentsResult, NimbleStudioError> ListStudioComponentsOutcome;
       typedef Aws::Utils::Outcome<ListStudioMembersResult, NimbleStudioError> ListStudioMembersOutcome;
@@ -226,6 +232,7 @@ namespace Aws
       typedef std::future<GetLaunchProfileMemberOutcome> GetLaunchProfileMemberOutcomeCallable;
       typedef std::future<GetStreamingImageOutcome> GetStreamingImageOutcomeCallable;
       typedef std::future<GetStreamingSessionOutcome> GetStreamingSessionOutcomeCallable;
+      typedef std::future<GetStreamingSessionBackupOutcome> GetStreamingSessionBackupOutcomeCallable;
       typedef std::future<GetStreamingSessionStreamOutcome> GetStreamingSessionStreamOutcomeCallable;
       typedef std::future<GetStudioOutcome> GetStudioOutcomeCallable;
       typedef std::future<GetStudioComponentOutcome> GetStudioComponentOutcomeCallable;
@@ -235,6 +242,7 @@ namespace Aws
       typedef std::future<ListLaunchProfileMembersOutcome> ListLaunchProfileMembersOutcomeCallable;
       typedef std::future<ListLaunchProfilesOutcome> ListLaunchProfilesOutcomeCallable;
       typedef std::future<ListStreamingImagesOutcome> ListStreamingImagesOutcomeCallable;
+      typedef std::future<ListStreamingSessionBackupsOutcome> ListStreamingSessionBackupsOutcomeCallable;
       typedef std::future<ListStreamingSessionsOutcome> ListStreamingSessionsOutcomeCallable;
       typedef std::future<ListStudioComponentsOutcome> ListStudioComponentsOutcomeCallable;
       typedef std::future<ListStudioMembersOutcome> ListStudioMembersOutcomeCallable;
@@ -279,6 +287,7 @@ namespace Aws
     typedef std::function<void(const NimbleStudioClient*, const Model::GetLaunchProfileMemberRequest&, const Model::GetLaunchProfileMemberOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetLaunchProfileMemberResponseReceivedHandler;
     typedef std::function<void(const NimbleStudioClient*, const Model::GetStreamingImageRequest&, const Model::GetStreamingImageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetStreamingImageResponseReceivedHandler;
     typedef std::function<void(const NimbleStudioClient*, const Model::GetStreamingSessionRequest&, const Model::GetStreamingSessionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetStreamingSessionResponseReceivedHandler;
+    typedef std::function<void(const NimbleStudioClient*, const Model::GetStreamingSessionBackupRequest&, const Model::GetStreamingSessionBackupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetStreamingSessionBackupResponseReceivedHandler;
     typedef std::function<void(const NimbleStudioClient*, const Model::GetStreamingSessionStreamRequest&, const Model::GetStreamingSessionStreamOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetStreamingSessionStreamResponseReceivedHandler;
     typedef std::function<void(const NimbleStudioClient*, const Model::GetStudioRequest&, const Model::GetStudioOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetStudioResponseReceivedHandler;
     typedef std::function<void(const NimbleStudioClient*, const Model::GetStudioComponentRequest&, const Model::GetStudioComponentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetStudioComponentResponseReceivedHandler;
@@ -288,6 +297,7 @@ namespace Aws
     typedef std::function<void(const NimbleStudioClient*, const Model::ListLaunchProfileMembersRequest&, const Model::ListLaunchProfileMembersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListLaunchProfileMembersResponseReceivedHandler;
     typedef std::function<void(const NimbleStudioClient*, const Model::ListLaunchProfilesRequest&, const Model::ListLaunchProfilesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListLaunchProfilesResponseReceivedHandler;
     typedef std::function<void(const NimbleStudioClient*, const Model::ListStreamingImagesRequest&, const Model::ListStreamingImagesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListStreamingImagesResponseReceivedHandler;
+    typedef std::function<void(const NimbleStudioClient*, const Model::ListStreamingSessionBackupsRequest&, const Model::ListStreamingSessionBackupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListStreamingSessionBackupsResponseReceivedHandler;
     typedef std::function<void(const NimbleStudioClient*, const Model::ListStreamingSessionsRequest&, const Model::ListStreamingSessionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListStreamingSessionsResponseReceivedHandler;
     typedef std::function<void(const NimbleStudioClient*, const Model::ListStudioComponentsRequest&, const Model::ListStudioComponentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListStudioComponentsResponseReceivedHandler;
     typedef std::function<void(const NimbleStudioClient*, const Model::ListStudioMembersRequest&, const Model::ListStudioMembersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListStudioMembersResponseReceivedHandler;

@@ -40,42 +40,50 @@ namespace Model
 
 
     /**
-     * <p>The Launch Profile ID.</p>
+     * <p>The ID of the launch profile used to control access from the streaming
+     * session.</p>
      */
     inline const Aws::String& GetLaunchProfileId() const{ return m_launchProfileId; }
 
     /**
-     * <p>The Launch Profile ID.</p>
+     * <p>The ID of the launch profile used to control access from the streaming
+     * session.</p>
      */
     inline bool LaunchProfileIdHasBeenSet() const { return m_launchProfileIdHasBeenSet; }
 
     /**
-     * <p>The Launch Profile ID.</p>
+     * <p>The ID of the launch profile used to control access from the streaming
+     * session.</p>
      */
     inline void SetLaunchProfileId(const Aws::String& value) { m_launchProfileIdHasBeenSet = true; m_launchProfileId = value; }
 
     /**
-     * <p>The Launch Profile ID.</p>
+     * <p>The ID of the launch profile used to control access from the streaming
+     * session.</p>
      */
     inline void SetLaunchProfileId(Aws::String&& value) { m_launchProfileIdHasBeenSet = true; m_launchProfileId = std::move(value); }
 
     /**
-     * <p>The Launch Profile ID.</p>
+     * <p>The ID of the launch profile used to control access from the streaming
+     * session.</p>
      */
     inline void SetLaunchProfileId(const char* value) { m_launchProfileIdHasBeenSet = true; m_launchProfileId.assign(value); }
 
     /**
-     * <p>The Launch Profile ID.</p>
+     * <p>The ID of the launch profile used to control access from the streaming
+     * session.</p>
      */
     inline GetLaunchProfileInitializationRequest& WithLaunchProfileId(const Aws::String& value) { SetLaunchProfileId(value); return *this;}
 
     /**
-     * <p>The Launch Profile ID.</p>
+     * <p>The ID of the launch profile used to control access from the streaming
+     * session.</p>
      */
     inline GetLaunchProfileInitializationRequest& WithLaunchProfileId(Aws::String&& value) { SetLaunchProfileId(std::move(value)); return *this;}
 
     /**
-     * <p>The Launch Profile ID.</p>
+     * <p>The ID of the launch profile used to control access from the streaming
+     * session.</p>
      */
     inline GetLaunchProfileInitializationRequest& WithLaunchProfileId(const char* value) { SetLaunchProfileId(value); return *this;}
 
@@ -168,50 +176,50 @@ namespace Model
 
 
     /**
-     * <p>The platform where this Launch Profile will be used, either WINDOWS or
-     * LINUX.</p>
+     * <p>The platform where this Launch Profile will be used, either Windows or
+     * Linux.</p>
      */
     inline const Aws::String& GetPlatform() const{ return m_platform; }
 
     /**
-     * <p>The platform where this Launch Profile will be used, either WINDOWS or
-     * LINUX.</p>
+     * <p>The platform where this Launch Profile will be used, either Windows or
+     * Linux.</p>
      */
     inline bool PlatformHasBeenSet() const { return m_platformHasBeenSet; }
 
     /**
-     * <p>The platform where this Launch Profile will be used, either WINDOWS or
-     * LINUX.</p>
+     * <p>The platform where this Launch Profile will be used, either Windows or
+     * Linux.</p>
      */
     inline void SetPlatform(const Aws::String& value) { m_platformHasBeenSet = true; m_platform = value; }
 
     /**
-     * <p>The platform where this Launch Profile will be used, either WINDOWS or
-     * LINUX.</p>
+     * <p>The platform where this Launch Profile will be used, either Windows or
+     * Linux.</p>
      */
     inline void SetPlatform(Aws::String&& value) { m_platformHasBeenSet = true; m_platform = std::move(value); }
 
     /**
-     * <p>The platform where this Launch Profile will be used, either WINDOWS or
-     * LINUX.</p>
+     * <p>The platform where this Launch Profile will be used, either Windows or
+     * Linux.</p>
      */
     inline void SetPlatform(const char* value) { m_platformHasBeenSet = true; m_platform.assign(value); }
 
     /**
-     * <p>The platform where this Launch Profile will be used, either WINDOWS or
-     * LINUX.</p>
+     * <p>The platform where this Launch Profile will be used, either Windows or
+     * Linux.</p>
      */
     inline GetLaunchProfileInitializationRequest& WithPlatform(const Aws::String& value) { SetPlatform(value); return *this;}
 
     /**
-     * <p>The platform where this Launch Profile will be used, either WINDOWS or
-     * LINUX.</p>
+     * <p>The platform where this Launch Profile will be used, either Windows or
+     * Linux.</p>
      */
     inline GetLaunchProfileInitializationRequest& WithPlatform(Aws::String&& value) { SetPlatform(std::move(value)); return *this;}
 
     /**
-     * <p>The platform where this Launch Profile will be used, either WINDOWS or
-     * LINUX.</p>
+     * <p>The platform where this Launch Profile will be used, either Windows or
+     * Linux.</p>
      */
     inline GetLaunchProfileInitializationRequest& WithPlatform(const char* value) { SetPlatform(value); return *this;}
 

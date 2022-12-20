@@ -42,6 +42,7 @@
 #include <aws/nimble/model/GetLaunchProfileMemberRequest.h>
 #include <aws/nimble/model/GetStreamingImageRequest.h>
 #include <aws/nimble/model/GetStreamingSessionRequest.h>
+#include <aws/nimble/model/GetStreamingSessionBackupRequest.h>
 #include <aws/nimble/model/GetStreamingSessionStreamRequest.h>
 #include <aws/nimble/model/GetStudioRequest.h>
 #include <aws/nimble/model/GetStudioComponentRequest.h>
@@ -51,6 +52,7 @@
 #include <aws/nimble/model/ListLaunchProfileMembersRequest.h>
 #include <aws/nimble/model/ListLaunchProfilesRequest.h>
 #include <aws/nimble/model/ListStreamingImagesRequest.h>
+#include <aws/nimble/model/ListStreamingSessionBackupsRequest.h>
 #include <aws/nimble/model/ListStreamingSessionsRequest.h>
 #include <aws/nimble/model/ListStudioComponentsRequest.h>
 #include <aws/nimble/model/ListStudioMembersRequest.h>
@@ -969,6 +971,44 @@ void NimbleStudioClient::GetStreamingSessionAsync(const GetStreamingSessionReque
     } );
 }
 
+GetStreamingSessionBackupOutcome NimbleStudioClient::GetStreamingSessionBackup(const GetStreamingSessionBackupRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetStreamingSessionBackup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.BackupIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetStreamingSessionBackup", "Required field: BackupId, is not set");
+    return GetStreamingSessionBackupOutcome(Aws::Client::AWSError<NimbleStudioErrors>(NimbleStudioErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BackupId]", false));
+  }
+  if (!request.StudioIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetStreamingSessionBackup", "Required field: StudioId, is not set");
+    return GetStreamingSessionBackupOutcome(Aws::Client::AWSError<NimbleStudioErrors>(NimbleStudioErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StudioId]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetStreamingSessionBackup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/2020-08-01/studios/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetStudioId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/streaming-session-backups/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBackupId());
+  return GetStreamingSessionBackupOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetStreamingSessionBackupOutcomeCallable NimbleStudioClient::GetStreamingSessionBackupCallable(const GetStreamingSessionBackupRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetStreamingSessionBackupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetStreamingSessionBackup(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void NimbleStudioClient::GetStreamingSessionBackupAsync(const GetStreamingSessionBackupRequest& request, const GetStreamingSessionBackupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetStreamingSessionBackup(request), context);
+    } );
+}
+
 GetStreamingSessionStreamOutcome NimbleStudioClient::GetStreamingSessionStream(const GetStreamingSessionStreamRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetStreamingSessionStream, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -1278,6 +1318,38 @@ void NimbleStudioClient::ListStreamingImagesAsync(const ListStreamingImagesReque
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, ListStreamingImages(request), context);
+    } );
+}
+
+ListStreamingSessionBackupsOutcome NimbleStudioClient::ListStreamingSessionBackups(const ListStreamingSessionBackupsRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListStreamingSessionBackups, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.StudioIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListStreamingSessionBackups", "Required field: StudioId, is not set");
+    return ListStreamingSessionBackupsOutcome(Aws::Client::AWSError<NimbleStudioErrors>(NimbleStudioErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StudioId]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListStreamingSessionBackups, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/2020-08-01/studios/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetStudioId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/streaming-session-backups");
+  return ListStreamingSessionBackupsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListStreamingSessionBackupsOutcomeCallable NimbleStudioClient::ListStreamingSessionBackupsCallable(const ListStreamingSessionBackupsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListStreamingSessionBackupsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListStreamingSessionBackups(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void NimbleStudioClient::ListStreamingSessionBackupsAsync(const ListStreamingSessionBackupsRequest& request, const ListStreamingSessionBackupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListStreamingSessionBackups(request), context);
     } );
 }
 

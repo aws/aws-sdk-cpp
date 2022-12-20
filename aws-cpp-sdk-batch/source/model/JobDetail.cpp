@@ -50,7 +50,11 @@ JobDetail::JobDetail() :
     m_propagateTagsHasBeenSet(false),
     m_platformCapabilitiesHasBeenSet(false),
     m_eksPropertiesHasBeenSet(false),
-    m_eksAttemptsHasBeenSet(false)
+    m_eksAttemptsHasBeenSet(false),
+    m_isCancelled(false),
+    m_isCancelledHasBeenSet(false),
+    m_isTerminated(false),
+    m_isTerminatedHasBeenSet(false)
 {
 }
 
@@ -86,7 +90,11 @@ JobDetail::JobDetail(JsonView jsonValue) :
     m_propagateTagsHasBeenSet(false),
     m_platformCapabilitiesHasBeenSet(false),
     m_eksPropertiesHasBeenSet(false),
-    m_eksAttemptsHasBeenSet(false)
+    m_eksAttemptsHasBeenSet(false),
+    m_isCancelled(false),
+    m_isCancelledHasBeenSet(false),
+    m_isTerminated(false),
+    m_isTerminatedHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -293,6 +301,20 @@ JobDetail& JobDetail::operator =(JsonView jsonValue)
     m_eksAttemptsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("isCancelled"))
+  {
+    m_isCancelled = jsonValue.GetBool("isCancelled");
+
+    m_isCancelledHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("isTerminated"))
+  {
+    m_isTerminated = jsonValue.GetBool("isTerminated");
+
+    m_isTerminatedHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -482,6 +504,18 @@ JsonValue JobDetail::Jsonize() const
      eksAttemptsJsonList[eksAttemptsIndex].AsObject(m_eksAttempts[eksAttemptsIndex].Jsonize());
    }
    payload.WithArray("eksAttempts", std::move(eksAttemptsJsonList));
+
+  }
+
+  if(m_isCancelledHasBeenSet)
+  {
+   payload.WithBool("isCancelled", m_isCancelled);
+
+  }
+
+  if(m_isTerminatedHasBeenSet)
+  {
+   payload.WithBool("isTerminated", m_isTerminated);
 
   }
 

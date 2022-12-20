@@ -39,42 +39,50 @@ namespace Model
 
 
     /**
-     * <p>The token to request the next page of results. </p>
+     * <p>The token for the next set of results, or null if there are no more
+     * results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>The token to request the next page of results. </p>
+     * <p>The token for the next set of results, or null if there are no more
+     * results.</p>
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
-     * <p>The token to request the next page of results. </p>
+     * <p>The token for the next set of results, or null if there are no more
+     * results.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p>The token to request the next page of results. </p>
+     * <p>The token for the next set of results, or null if there are no more
+     * results.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
-     * <p>The token to request the next page of results. </p>
+     * <p>The token for the next set of results, or null if there are no more
+     * results.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * <p>The token to request the next page of results. </p>
+     * <p>The token for the next set of results, or null if there are no more
+     * results.</p>
      */
     inline ListStudiosRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>The token to request the next page of results. </p>
+     * <p>The token for the next set of results, or null if there are no more
+     * results.</p>
      */
     inline ListStudiosRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>The token to request the next page of results. </p>
+     * <p>The token for the next set of results, or null if there are no more
+     * results.</p>
      */
     inline ListStudiosRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

@@ -107,6 +107,30 @@ namespace Route53Domains
         virtual void AcceptDomainTransferFromAnotherAwsAccountAsync(const Model::AcceptDomainTransferFromAnotherAwsAccountRequest& request, const AcceptDomainTransferFromAnotherAwsAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p> Creates a delegation signer (DS) record in the registry zone for this domain
+         * name.</p> <p>Note that creating DS record at the registry impacts DNSSEC
+         * validation of your DNS records. This action may render your domain name
+         * unavailable on the internet if the steps are completed in the wrong order, or
+         * with incorrect timing. For more information about DNSSEC signing, see <a
+         * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-configuring-dnssec.html">Configuring
+         * DNSSEC signing</a> in the <i>Route 53 developer guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/AssociateDelegationSignerToDomain">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::AssociateDelegationSignerToDomainOutcome AssociateDelegationSignerToDomain(const Model::AssociateDelegationSignerToDomainRequest& request) const;
+
+        /**
+         * A Callable wrapper for AssociateDelegationSignerToDomain that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::AssociateDelegationSignerToDomainOutcomeCallable AssociateDelegationSignerToDomainCallable(const Model::AssociateDelegationSignerToDomainRequest& request) const;
+
+        /**
+         * An Async wrapper for AssociateDelegationSignerToDomain that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void AssociateDelegationSignerToDomainAsync(const Model::AssociateDelegationSignerToDomainRequest& request, const AssociateDelegationSignerToDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Cancels the transfer of a domain from the current Amazon Web Services account
          * to another Amazon Web Services account. You initiate a transfer betweenAmazon
          * Web Services accounts using <a
@@ -263,6 +287,24 @@ namespace Route53Domains
          * An Async wrapper for DisableDomainTransferLock that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DisableDomainTransferLockAsync(const Model::DisableDomainTransferLockRequest& request, const DisableDomainTransferLockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes a delegation signer (DS) record in the registry zone for this domain
+         * name.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/DisassociateDelegationSignerFromDomain">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DisassociateDelegationSignerFromDomainOutcome DisassociateDelegationSignerFromDomain(const Model::DisassociateDelegationSignerFromDomainRequest& request) const;
+
+        /**
+         * A Callable wrapper for DisassociateDelegationSignerFromDomain that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DisassociateDelegationSignerFromDomainOutcomeCallable DisassociateDelegationSignerFromDomainCallable(const Model::DisassociateDelegationSignerFromDomainRequest& request) const;
+
+        /**
+         * An Async wrapper for DisassociateDelegationSignerFromDomain that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DisassociateDelegationSignerFromDomainAsync(const Model::DisassociateDelegationSignerFromDomainRequest& request, const DisassociateDelegationSignerFromDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>This operation configures Amazon Route 53 to automatically renew the
@@ -469,6 +511,26 @@ namespace Route53Domains
         virtual void ListTagsForDomainAsync(const Model::ListTagsForDomainRequest& request, const ListTagsForDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p> Moves a domain from Amazon Web Services to another registrar. </p>
+         * <p>Supported actions:</p> <ul> <li> <p>Changes the IPS tags of a .uk domain, and
+         * pushes it to transit. Transit means that the domain is ready to be transferred
+         * to another registrar.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/PushDomain">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PushDomainOutcome PushDomain(const Model::PushDomainRequest& request) const;
+
+        /**
+         * A Callable wrapper for PushDomain that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::PushDomainOutcomeCallable PushDomainCallable(const Model::PushDomainRequest& request) const;
+
+        /**
+         * An Async wrapper for PushDomain that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void PushDomainAsync(const Model::PushDomainRequest& request, const PushDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>This operation registers a domain. Domains are registered either by Amazon
          * Registrar (for .com, .net, and .org domains) or by our registrar associate,
          * Gandi (for all other domains). For some top-level domains (TLDs), this operation
@@ -476,7 +538,7 @@ namespace Route53Domains
          * does the following:</p> <ul> <li> <p>Creates a Route 53 hosted zone that has the
          * same name as the domain. Route 53 assigns four name servers to your hosted zone
          * and automatically updates your domain registration with the names of these name
-         * servers.</p> </li> <li> <p>Enables autorenew, so your domain registration will
+         * servers.</p> </li> <li> <p>Enables auto renew, so your domain registration will
          * renew automatically each year. We'll notify you in advance of the renewal date
          * so you can choose whether to renew the registration.</p> </li> <li>
          * <p>Optionally enables privacy protection, so WHOIS queries return contact
@@ -581,9 +643,27 @@ namespace Route53Domains
         virtual void ResendContactReachabilityEmailAsync(const Model::ResendContactReachabilityEmailRequest& request, const ResendContactReachabilityEmailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>This operation returns the AuthCode for the domain. To transfer a domain to
-         * another registrar, you provide this value to the new registrar.</p><p><h3>See
+         * <p> Resend the form of authorization email for this operation. </p><p><h3>See
          * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/ResendOperationAuthorization">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ResendOperationAuthorizationOutcome ResendOperationAuthorization(const Model::ResendOperationAuthorizationRequest& request) const;
+
+        /**
+         * A Callable wrapper for ResendOperationAuthorization that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ResendOperationAuthorizationOutcomeCallable ResendOperationAuthorizationCallable(const Model::ResendOperationAuthorizationRequest& request) const;
+
+        /**
+         * An Async wrapper for ResendOperationAuthorization that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ResendOperationAuthorizationAsync(const Model::ResendOperationAuthorizationRequest& request, const ResendOperationAuthorizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>This operation returns the authorization code for the domain. To transfer a
+         * domain to another registrar, you provide this value to the new
+         * registrar.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/RetrieveDomainAuthCode">AWS
          * API Reference</a></p>
          */
@@ -692,9 +772,9 @@ namespace Route53Domains
          * <p>This operation updates the contact information for a particular domain. You
          * must specify information for at least one contact: registrant, administrator, or
          * technical.</p> <p>If the update is successful, this method returns an operation
-         * ID that you can use to track the progress and completion of the action. If the
-         * request is not completed successfully, the domain registrant will be notified by
-         * email.</p><p><h3>See Also:</h3>   <a
+         * ID that you can use to track the progress and completion of the operation. If
+         * the request is not completed successfully, the domain registrant will be
+         * notified by email.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/UpdateDomainContact">AWS
          * API Reference</a></p>
          */

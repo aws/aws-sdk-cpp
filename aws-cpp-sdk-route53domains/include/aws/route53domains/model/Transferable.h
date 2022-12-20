@@ -18,7 +18,10 @@ namespace Model
     NOT_SET,
     TRANSFERABLE,
     UNTRANSFERABLE,
-    DONT_KNOW
+    DONT_KNOW,
+    DOMAIN_IN_OWN_ACCOUNT,
+    DOMAIN_IN_ANOTHER_ACCOUNT,
+    PREMIUM_DOMAIN
   };
 
 namespace TransferableMapper

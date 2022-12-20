@@ -49,6 +49,11 @@ DescribeImagesResponse& DescribeImagesResponse::operator =(const Aws::AmazonWebS
       }
 
     }
+    XmlNode nextTokenNode = resultNode.FirstChild("nextToken");
+    if(!nextTokenNode.IsNull())
+    {
+      m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+    }
   }
 
   if (!rootNode.IsNull()) {

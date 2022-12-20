@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>Nameserver includes the following elements.</p><p><h3>See Also:</h3>   <a
+   * <p>Name server includes the following elements.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/Nameserver">AWS
    * API Reference</a></p>
    */

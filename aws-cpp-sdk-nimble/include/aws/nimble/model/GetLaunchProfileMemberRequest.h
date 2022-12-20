@@ -33,42 +33,50 @@ namespace Model
 
 
     /**
-     * <p>The Launch Profile ID.</p>
+     * <p>The ID of the launch profile used to control access from the streaming
+     * session.</p>
      */
     inline const Aws::String& GetLaunchProfileId() const{ return m_launchProfileId; }
 
     /**
-     * <p>The Launch Profile ID.</p>
+     * <p>The ID of the launch profile used to control access from the streaming
+     * session.</p>
      */
     inline bool LaunchProfileIdHasBeenSet() const { return m_launchProfileIdHasBeenSet; }
 
     /**
-     * <p>The Launch Profile ID.</p>
+     * <p>The ID of the launch profile used to control access from the streaming
+     * session.</p>
      */
     inline void SetLaunchProfileId(const Aws::String& value) { m_launchProfileIdHasBeenSet = true; m_launchProfileId = value; }
 
     /**
-     * <p>The Launch Profile ID.</p>
+     * <p>The ID of the launch profile used to control access from the streaming
+     * session.</p>
      */
     inline void SetLaunchProfileId(Aws::String&& value) { m_launchProfileIdHasBeenSet = true; m_launchProfileId = std::move(value); }
 
     /**
-     * <p>The Launch Profile ID.</p>
+     * <p>The ID of the launch profile used to control access from the streaming
+     * session.</p>
      */
     inline void SetLaunchProfileId(const char* value) { m_launchProfileIdHasBeenSet = true; m_launchProfileId.assign(value); }
 
     /**
-     * <p>The Launch Profile ID.</p>
+     * <p>The ID of the launch profile used to control access from the streaming
+     * session.</p>
      */
     inline GetLaunchProfileMemberRequest& WithLaunchProfileId(const Aws::String& value) { SetLaunchProfileId(value); return *this;}
 
     /**
-     * <p>The Launch Profile ID.</p>
+     * <p>The ID of the launch profile used to control access from the streaming
+     * session.</p>
      */
     inline GetLaunchProfileMemberRequest& WithLaunchProfileId(Aws::String&& value) { SetLaunchProfileId(std::move(value)); return *this;}
 
     /**
-     * <p>The Launch Profile ID.</p>
+     * <p>The ID of the launch profile used to control access from the streaming
+     * session.</p>
      */
     inline GetLaunchProfileMemberRequest& WithLaunchProfileId(const char* value) { SetLaunchProfileId(value); return *this;}
 

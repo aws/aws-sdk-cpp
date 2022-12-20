@@ -183,7 +183,7 @@ namespace Model
      * <li> <p> <code>RU_PASSPORT_DATA</code> </p> </li> </ul> </dd> <dt>.se</dt> <dd>
      * <ul> <li> <p> <code>BIRTH_COUNTRY</code> </p> </li> <li> <p>
      * <code>SE_ID_NUMBER</code> </p> </li> </ul> </dd> <dt>.sg</dt> <dd> <ul> <li> <p>
-     * <code>SG_ID_NUMBER</code> </p> </li> </ul> </dd> <dt>.co.uk, .me.uk, and
+     * <code>SG_ID_NUMBER</code> </p> </li> </ul> </dd> <dt>.uk, .co.uk, .me.uk, and
      * .org.uk</dt> <dd> <ul> <li> <p> <code>UK_CONTACT_TYPE</code> </p> <p>Valid
      * values include the following:</p> <ul> <li> <p> <code>CRC</code> (UK Corporation
      * by Royal Charter)</p> </li> <li> <p> <code>FCORP</code> (Non-UK Corporation)</p>
@@ -350,7 +350,7 @@ namespace Model
      * <li> <p> <code>RU_PASSPORT_DATA</code> </p> </li> </ul> </dd> <dt>.se</dt> <dd>
      * <ul> <li> <p> <code>BIRTH_COUNTRY</code> </p> </li> <li> <p>
      * <code>SE_ID_NUMBER</code> </p> </li> </ul> </dd> <dt>.sg</dt> <dd> <ul> <li> <p>
-     * <code>SG_ID_NUMBER</code> </p> </li> </ul> </dd> <dt>.co.uk, .me.uk, and
+     * <code>SG_ID_NUMBER</code> </p> </li> </ul> </dd> <dt>.uk, .co.uk, .me.uk, and
      * .org.uk</dt> <dd> <ul> <li> <p> <code>UK_CONTACT_TYPE</code> </p> <p>Valid
      * values include the following:</p> <ul> <li> <p> <code>CRC</code> (UK Corporation
      * by Royal Charter)</p> </li> <li> <p> <code>FCORP</code> (Non-UK Corporation)</p>
@@ -517,7 +517,7 @@ namespace Model
      * <li> <p> <code>RU_PASSPORT_DATA</code> </p> </li> </ul> </dd> <dt>.se</dt> <dd>
      * <ul> <li> <p> <code>BIRTH_COUNTRY</code> </p> </li> <li> <p>
      * <code>SE_ID_NUMBER</code> </p> </li> </ul> </dd> <dt>.sg</dt> <dd> <ul> <li> <p>
-     * <code>SG_ID_NUMBER</code> </p> </li> </ul> </dd> <dt>.co.uk, .me.uk, and
+     * <code>SG_ID_NUMBER</code> </p> </li> </ul> </dd> <dt>.uk, .co.uk, .me.uk, and
      * .org.uk</dt> <dd> <ul> <li> <p> <code>UK_CONTACT_TYPE</code> </p> <p>Valid
      * values include the following:</p> <ul> <li> <p> <code>CRC</code> (UK Corporation
      * by Royal Charter)</p> </li> <li> <p> <code>FCORP</code> (Non-UK Corporation)</p>
@@ -684,7 +684,7 @@ namespace Model
      * <li> <p> <code>RU_PASSPORT_DATA</code> </p> </li> </ul> </dd> <dt>.se</dt> <dd>
      * <ul> <li> <p> <code>BIRTH_COUNTRY</code> </p> </li> <li> <p>
      * <code>SE_ID_NUMBER</code> </p> </li> </ul> </dd> <dt>.sg</dt> <dd> <ul> <li> <p>
-     * <code>SG_ID_NUMBER</code> </p> </li> </ul> </dd> <dt>.co.uk, .me.uk, and
+     * <code>SG_ID_NUMBER</code> </p> </li> </ul> </dd> <dt>.uk, .co.uk, .me.uk, and
      * .org.uk</dt> <dd> <ul> <li> <p> <code>UK_CONTACT_TYPE</code> </p> <p>Valid
      * values include the following:</p> <ul> <li> <p> <code>CRC</code> (UK Corporation
      * by Royal Charter)</p> </li> <li> <p> <code>FCORP</code> (Non-UK Corporation)</p>
@@ -851,7 +851,7 @@ namespace Model
      * <li> <p> <code>RU_PASSPORT_DATA</code> </p> </li> </ul> </dd> <dt>.se</dt> <dd>
      * <ul> <li> <p> <code>BIRTH_COUNTRY</code> </p> </li> <li> <p>
      * <code>SE_ID_NUMBER</code> </p> </li> </ul> </dd> <dt>.sg</dt> <dd> <ul> <li> <p>
-     * <code>SG_ID_NUMBER</code> </p> </li> </ul> </dd> <dt>.co.uk, .me.uk, and
+     * <code>SG_ID_NUMBER</code> </p> </li> </ul> </dd> <dt>.uk, .co.uk, .me.uk, and
      * .org.uk</dt> <dd> <ul> <li> <p> <code>UK_CONTACT_TYPE</code> </p> <p>Valid
      * values include the following:</p> <ul> <li> <p> <code>CRC</code> (UK Corporation
      * by Royal Charter)</p> </li> <li> <p> <code>FCORP</code> (Non-UK Corporation)</p>
@@ -1018,7 +1018,7 @@ namespace Model
      * <li> <p> <code>RU_PASSPORT_DATA</code> </p> </li> </ul> </dd> <dt>.se</dt> <dd>
      * <ul> <li> <p> <code>BIRTH_COUNTRY</code> </p> </li> <li> <p>
      * <code>SE_ID_NUMBER</code> </p> </li> </ul> </dd> <dt>.sg</dt> <dd> <ul> <li> <p>
-     * <code>SG_ID_NUMBER</code> </p> </li> </ul> </dd> <dt>.co.uk, .me.uk, and
+     * <code>SG_ID_NUMBER</code> </p> </li> </ul> </dd> <dt>.uk, .co.uk, .me.uk, and
      * .org.uk</dt> <dd> <ul> <li> <p> <code>UK_CONTACT_TYPE</code> </p> <p>Valid
      * values include the following:</p> <ul> <li> <p> <code>CRC</code> (UK Corporation
      * by Royal Charter)</p> </li> <li> <p> <code>FCORP</code> (Non-UK Corporation)</p>

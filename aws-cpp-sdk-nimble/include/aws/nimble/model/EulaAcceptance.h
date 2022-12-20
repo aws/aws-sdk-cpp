@@ -40,32 +40,32 @@ namespace Model
 
 
     /**
-     * <p>The Unix epoch timestamp in seconds for when the EULA was accepted.</p>
+     * <p>The ISO timestamp in seconds for when the EULA was accepted.</p>
      */
     inline const Aws::Utils::DateTime& GetAcceptedAt() const{ return m_acceptedAt; }
 
     /**
-     * <p>The Unix epoch timestamp in seconds for when the EULA was accepted.</p>
+     * <p>The ISO timestamp in seconds for when the EULA was accepted.</p>
      */
     inline bool AcceptedAtHasBeenSet() const { return m_acceptedAtHasBeenSet; }
 
     /**
-     * <p>The Unix epoch timestamp in seconds for when the EULA was accepted.</p>
+     * <p>The ISO timestamp in seconds for when the EULA was accepted.</p>
      */
     inline void SetAcceptedAt(const Aws::Utils::DateTime& value) { m_acceptedAtHasBeenSet = true; m_acceptedAt = value; }
 
     /**
-     * <p>The Unix epoch timestamp in seconds for when the EULA was accepted.</p>
+     * <p>The ISO timestamp in seconds for when the EULA was accepted.</p>
      */
     inline void SetAcceptedAt(Aws::Utils::DateTime&& value) { m_acceptedAtHasBeenSet = true; m_acceptedAt = std::move(value); }
 
     /**
-     * <p>The Unix epoch timestamp in seconds for when the EULA was accepted.</p>
+     * <p>The ISO timestamp in seconds for when the EULA was accepted.</p>
      */
     inline EulaAcceptance& WithAcceptedAt(const Aws::Utils::DateTime& value) { SetAcceptedAt(value); return *this;}
 
     /**
-     * <p>The Unix epoch timestamp in seconds for when the EULA was accepted.</p>
+     * <p>The ISO timestamp in seconds for when the EULA was accepted.</p>
      */
     inline EulaAcceptance& WithAcceptedAt(Aws::Utils::DateTime&& value) { SetAcceptedAt(std::move(value)); return *this;}
 

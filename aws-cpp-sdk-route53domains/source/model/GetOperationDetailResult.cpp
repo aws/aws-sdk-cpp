@@ -18,13 +18,15 @@ using namespace Aws;
 
 GetOperationDetailResult::GetOperationDetailResult() : 
     m_status(OperationStatus::NOT_SET),
-    m_type(OperationType::NOT_SET)
+    m_type(OperationType::NOT_SET),
+    m_statusFlag(StatusFlag::NOT_SET)
 {
 }
 
 GetOperationDetailResult::GetOperationDetailResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_status(OperationStatus::NOT_SET),
-    m_type(OperationType::NOT_SET)
+    m_type(OperationType::NOT_SET),
+    m_statusFlag(StatusFlag::NOT_SET)
 {
   *this = result;
 }
@@ -65,6 +67,18 @@ GetOperationDetailResult& GetOperationDetailResult::operator =(const Aws::Amazon
   if(jsonValue.ValueExists("SubmittedDate"))
   {
     m_submittedDate = jsonValue.GetDouble("SubmittedDate");
+
+  }
+
+  if(jsonValue.ValueExists("LastUpdatedDate"))
+  {
+    m_lastUpdatedDate = jsonValue.GetDouble("LastUpdatedDate");
+
+  }
+
+  if(jsonValue.ValueExists("StatusFlag"))
+  {
+    m_statusFlag = StatusFlagMapper::GetStatusFlagForName(jsonValue.GetString("StatusFlag"));
 
   }
 

@@ -460,27 +460,42 @@ namespace Model
 
 
     /**
-     * <p>Returns the job's best <code>AutoMLCandidate</code>.</p>
+     * <p>The best model candidate selected by SageMaker Autopilot using both the best
+     * objective metric and lowest <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-metrics-validation.html">InferenceLatency</a>
+     * for an experiment.</p>
      */
     inline const AutoMLCandidate& GetBestCandidate() const{ return m_bestCandidate; }
 
     /**
-     * <p>Returns the job's best <code>AutoMLCandidate</code>.</p>
+     * <p>The best model candidate selected by SageMaker Autopilot using both the best
+     * objective metric and lowest <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-metrics-validation.html">InferenceLatency</a>
+     * for an experiment.</p>
      */
     inline void SetBestCandidate(const AutoMLCandidate& value) { m_bestCandidate = value; }
 
     /**
-     * <p>Returns the job's best <code>AutoMLCandidate</code>.</p>
+     * <p>The best model candidate selected by SageMaker Autopilot using both the best
+     * objective metric and lowest <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-metrics-validation.html">InferenceLatency</a>
+     * for an experiment.</p>
      */
     inline void SetBestCandidate(AutoMLCandidate&& value) { m_bestCandidate = std::move(value); }
 
     /**
-     * <p>Returns the job's best <code>AutoMLCandidate</code>.</p>
+     * <p>The best model candidate selected by SageMaker Autopilot using both the best
+     * objective metric and lowest <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-metrics-validation.html">InferenceLatency</a>
+     * for an experiment.</p>
      */
     inline DescribeAutoMLJobResult& WithBestCandidate(const AutoMLCandidate& value) { SetBestCandidate(value); return *this;}
 
     /**
-     * <p>Returns the job's best <code>AutoMLCandidate</code>.</p>
+     * <p>The best model candidate selected by SageMaker Autopilot using both the best
+     * objective metric and lowest <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-metrics-validation.html">InferenceLatency</a>
+     * for an experiment.</p>
      */
     inline DescribeAutoMLJobResult& WithBestCandidate(AutoMLCandidate&& value) { SetBestCandidate(std::move(value)); return *this;}
 

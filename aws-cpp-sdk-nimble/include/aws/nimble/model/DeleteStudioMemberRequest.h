@@ -37,57 +37,65 @@ namespace Model
 
     /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request. If you don’t specify a client token, the AWS SDK automatically
-     * generates a client token and uses it for the request to ensure idempotency.</p>
+     * of the request. If you don’t specify a client token, the Amazon Web Services SDK
+     * automatically generates a client token and uses it for the request to ensure
+     * idempotency.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
 
     /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request. If you don’t specify a client token, the AWS SDK automatically
-     * generates a client token and uses it for the request to ensure idempotency.</p>
+     * of the request. If you don’t specify a client token, the Amazon Web Services SDK
+     * automatically generates a client token and uses it for the request to ensure
+     * idempotency.</p>
      */
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
 
     /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request. If you don’t specify a client token, the AWS SDK automatically
-     * generates a client token and uses it for the request to ensure idempotency.</p>
+     * of the request. If you don’t specify a client token, the Amazon Web Services SDK
+     * automatically generates a client token and uses it for the request to ensure
+     * idempotency.</p>
      */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
 
     /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request. If you don’t specify a client token, the AWS SDK automatically
-     * generates a client token and uses it for the request to ensure idempotency.</p>
+     * of the request. If you don’t specify a client token, the Amazon Web Services SDK
+     * automatically generates a client token and uses it for the request to ensure
+     * idempotency.</p>
      */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
     /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request. If you don’t specify a client token, the AWS SDK automatically
-     * generates a client token and uses it for the request to ensure idempotency.</p>
+     * of the request. If you don’t specify a client token, the Amazon Web Services SDK
+     * automatically generates a client token and uses it for the request to ensure
+     * idempotency.</p>
      */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
 
     /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request. If you don’t specify a client token, the AWS SDK automatically
-     * generates a client token and uses it for the request to ensure idempotency.</p>
+     * of the request. If you don’t specify a client token, the Amazon Web Services SDK
+     * automatically generates a client token and uses it for the request to ensure
+     * idempotency.</p>
      */
     inline DeleteStudioMemberRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
 
     /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request. If you don’t specify a client token, the AWS SDK automatically
-     * generates a client token and uses it for the request to ensure idempotency.</p>
+     * of the request. If you don’t specify a client token, the Amazon Web Services SDK
+     * automatically generates a client token and uses it for the request to ensure
+     * idempotency.</p>
      */
     inline DeleteStudioMemberRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
     /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request. If you don’t specify a client token, the AWS SDK automatically
-     * generates a client token and uses it for the request to ensure idempotency.</p>
+     * of the request. If you don’t specify a client token, the Amazon Web Services SDK
+     * automatically generates a client token and uses it for the request to ensure
+     * idempotency.</p>
      */
     inline DeleteStudioMemberRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 

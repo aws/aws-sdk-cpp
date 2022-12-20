@@ -52,7 +52,9 @@ namespace Model
     zh_TW,
     th_TH,
     en_ZA,
-    en_NZ
+    en_NZ,
+    vi_VN,
+    sv_SE
   };
 
 namespace LanguageCodeMapper

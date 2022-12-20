@@ -49,7 +49,8 @@ Mpeg2Settings::Mpeg2Settings() :
     m_subgopLength(Mpeg2SubGopLength::NOT_SET),
     m_subgopLengthHasBeenSet(false),
     m_timecodeInsertion(Mpeg2TimecodeInsertionBehavior::NOT_SET),
-    m_timecodeInsertionHasBeenSet(false)
+    m_timecodeInsertionHasBeenSet(false),
+    m_timecodeBurninSettingsHasBeenSet(false)
 {
 }
 
@@ -84,7 +85,8 @@ Mpeg2Settings::Mpeg2Settings(JsonView jsonValue) :
     m_subgopLength(Mpeg2SubGopLength::NOT_SET),
     m_subgopLengthHasBeenSet(false),
     m_timecodeInsertion(Mpeg2TimecodeInsertionBehavior::NOT_SET),
-    m_timecodeInsertionHasBeenSet(false)
+    m_timecodeInsertionHasBeenSet(false),
+    m_timecodeBurninSettingsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -203,6 +205,13 @@ Mpeg2Settings& Mpeg2Settings::operator =(JsonView jsonValue)
     m_timecodeInsertionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("timecodeBurninSettings"))
+  {
+    m_timecodeBurninSettings = jsonValue.GetObject("timecodeBurninSettings");
+
+    m_timecodeBurninSettingsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -294,6 +303,12 @@ JsonValue Mpeg2Settings::Jsonize() const
   if(m_timecodeInsertionHasBeenSet)
   {
    payload.WithString("timecodeInsertion", Mpeg2TimecodeInsertionBehaviorMapper::GetNameForMpeg2TimecodeInsertionBehavior(m_timecodeInsertion));
+  }
+
+  if(m_timecodeBurninSettingsHasBeenSet)
+  {
+   payload.WithObject("timecodeBurninSettings", m_timecodeBurninSettings.Jsonize());
+
   }
 
   return payload;

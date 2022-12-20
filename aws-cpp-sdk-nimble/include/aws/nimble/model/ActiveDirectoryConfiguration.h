@@ -26,8 +26,8 @@ namespace Model
 {
 
   /**
-   * <p>The configuration for a Microsoft Active Directory (Microsoft AD) studio
-   * resource.</p><p><h3>See Also:</h3>   <a
+   * <p>The configuration for a Directory Service for Microsoft Active Directory
+   * studio resource.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/ActiveDirectoryConfiguration">AWS
    * API Reference</a></p>
    */

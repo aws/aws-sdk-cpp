@@ -324,28 +324,28 @@ namespace Model
 
     /**
      * <p>Indicates whether the domain will be automatically renewed (true) or not
-     * (false). Autorenewal only takes effect after the account is charged.</p>
+     * (false). Auto renewal only takes effect after the account is charged.</p>
      * <p>Default: true</p>
      */
     inline bool GetAutoRenew() const{ return m_autoRenew; }
 
     /**
      * <p>Indicates whether the domain will be automatically renewed (true) or not
-     * (false). Autorenewal only takes effect after the account is charged.</p>
+     * (false). Auto renewal only takes effect after the account is charged.</p>
      * <p>Default: true</p>
      */
     inline bool AutoRenewHasBeenSet() const { return m_autoRenewHasBeenSet; }
 
     /**
      * <p>Indicates whether the domain will be automatically renewed (true) or not
-     * (false). Autorenewal only takes effect after the account is charged.</p>
+     * (false). Auto renewal only takes effect after the account is charged.</p>
      * <p>Default: true</p>
      */
     inline void SetAutoRenew(bool value) { m_autoRenewHasBeenSet = true; m_autoRenew = value; }
 
     /**
      * <p>Indicates whether the domain will be automatically renewed (true) or not
-     * (false). Autorenewal only takes effect after the account is charged.</p>
+     * (false). Auto renewal only takes effect after the account is charged.</p>
      * <p>Default: true</p>
      */
     inline TransferDomainRequest& WithAutoRenew(bool value) { SetAutoRenew(value); return *this;}
