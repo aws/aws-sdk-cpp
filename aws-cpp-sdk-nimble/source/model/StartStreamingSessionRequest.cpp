@@ -14,6 +14,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 StartStreamingSessionRequest::StartStreamingSessionRequest() : 
+    m_backupIdHasBeenSet(false),
     m_clientToken(Aws::Utils::UUID::RandomUUID()),
     m_clientTokenHasBeenSet(true),
     m_sessionIdHasBeenSet(false),
@@ -23,7 +24,15 @@ StartStreamingSessionRequest::StartStreamingSessionRequest() :
 
 Aws::String StartStreamingSessionRequest::SerializePayload() const
 {
-  return {};
+  JsonValue payload;
+
+  if(m_backupIdHasBeenSet)
+  {
+   payload.WithString("backupId", m_backupId);
+
+  }
+
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection StartStreamingSessionRequest::GetRequestSpecificHeaders() const

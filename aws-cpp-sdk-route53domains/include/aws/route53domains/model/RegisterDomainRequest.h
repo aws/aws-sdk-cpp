@@ -292,28 +292,28 @@ namespace Model
 
     /**
      * <p>Indicates whether the domain will be automatically renewed
-     * (<code>true</code>) or not (<code>false</code>). Autorenewal only takes effect
+     * (<code>true</code>) or not (<code>false</code>). Auto renewal only takes effect
      * after the account is charged.</p> <p>Default: <code>true</code> </p>
      */
     inline bool GetAutoRenew() const{ return m_autoRenew; }
 
     /**
      * <p>Indicates whether the domain will be automatically renewed
-     * (<code>true</code>) or not (<code>false</code>). Autorenewal only takes effect
+     * (<code>true</code>) or not (<code>false</code>). Auto renewal only takes effect
      * after the account is charged.</p> <p>Default: <code>true</code> </p>
      */
     inline bool AutoRenewHasBeenSet() const { return m_autoRenewHasBeenSet; }
 
     /**
      * <p>Indicates whether the domain will be automatically renewed
-     * (<code>true</code>) or not (<code>false</code>). Autorenewal only takes effect
+     * (<code>true</code>) or not (<code>false</code>). Auto renewal only takes effect
      * after the account is charged.</p> <p>Default: <code>true</code> </p>
      */
     inline void SetAutoRenew(bool value) { m_autoRenewHasBeenSet = true; m_autoRenew = value; }
 
     /**
      * <p>Indicates whether the domain will be automatically renewed
-     * (<code>true</code>) or not (<code>false</code>). Autorenewal only takes effect
+     * (<code>true</code>) or not (<code>false</code>). Auto renewal only takes effect
      * after the account is charged.</p> <p>Default: <code>true</code> </p>
      */
     inline RegisterDomainRequest& WithAutoRenew(bool value) { SetAutoRenew(value); return *this;}

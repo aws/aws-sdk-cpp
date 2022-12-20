@@ -230,7 +230,7 @@ namespace Model
     /**
      * <p>The <a>ParameterRanges</a> object that specifies the ranges of
      * hyperparameters that this tuning job searches over to find the optimal
-     * configuration for the highest model performance against .your chosen objective
+     * configuration for the highest model performance against your chosen objective
      * metric. </p>
      */
     inline const ParameterRanges& GetParameterRanges() const{ return m_parameterRanges; }
@@ -238,7 +238,7 @@ namespace Model
     /**
      * <p>The <a>ParameterRanges</a> object that specifies the ranges of
      * hyperparameters that this tuning job searches over to find the optimal
-     * configuration for the highest model performance against .your chosen objective
+     * configuration for the highest model performance against your chosen objective
      * metric. </p>
      */
     inline bool ParameterRangesHasBeenSet() const { return m_parameterRangesHasBeenSet; }
@@ -246,7 +246,7 @@ namespace Model
     /**
      * <p>The <a>ParameterRanges</a> object that specifies the ranges of
      * hyperparameters that this tuning job searches over to find the optimal
-     * configuration for the highest model performance against .your chosen objective
+     * configuration for the highest model performance against your chosen objective
      * metric. </p>
      */
     inline void SetParameterRanges(const ParameterRanges& value) { m_parameterRangesHasBeenSet = true; m_parameterRanges = value; }
@@ -254,7 +254,7 @@ namespace Model
     /**
      * <p>The <a>ParameterRanges</a> object that specifies the ranges of
      * hyperparameters that this tuning job searches over to find the optimal
-     * configuration for the highest model performance against .your chosen objective
+     * configuration for the highest model performance against your chosen objective
      * metric. </p>
      */
     inline void SetParameterRanges(ParameterRanges&& value) { m_parameterRangesHasBeenSet = true; m_parameterRanges = std::move(value); }
@@ -262,7 +262,7 @@ namespace Model
     /**
      * <p>The <a>ParameterRanges</a> object that specifies the ranges of
      * hyperparameters that this tuning job searches over to find the optimal
-     * configuration for the highest model performance against .your chosen objective
+     * configuration for the highest model performance against your chosen objective
      * metric. </p>
      */
     inline HyperParameterTuningJobConfig& WithParameterRanges(const ParameterRanges& value) { SetParameterRanges(value); return *this;}
@@ -270,7 +270,7 @@ namespace Model
     /**
      * <p>The <a>ParameterRanges</a> object that specifies the ranges of
      * hyperparameters that this tuning job searches over to find the optimal
-     * configuration for the highest model performance against .your chosen objective
+     * configuration for the highest model performance against your chosen objective
      * metric. </p>
      */
     inline HyperParameterTuningJobConfig& WithParameterRanges(ParameterRanges&& value) { SetParameterRanges(std::move(value)); return *this;}

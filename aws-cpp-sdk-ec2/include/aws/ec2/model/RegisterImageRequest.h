@@ -168,9 +168,8 @@ namespace Model
      * snapshots must be on the same Outpost or in the Region of that Outpost. AMIs on
      * an Outpost that include local snapshots can be used to launch instances on the
      * same Outpost only. For more information, <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#ami">
-     * Amazon EBS local snapshots on Outposts</a> in the <i>Amazon Elastic Compute
-     * Cloud User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#ami">Amazon
+     * EBS local snapshots on Outposts</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline const Aws::Vector<BlockDeviceMapping>& GetBlockDeviceMappings() const{ return m_blockDeviceMappings; }
 
@@ -181,9 +180,8 @@ namespace Model
      * snapshots must be on the same Outpost or in the Region of that Outpost. AMIs on
      * an Outpost that include local snapshots can be used to launch instances on the
      * same Outpost only. For more information, <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#ami">
-     * Amazon EBS local snapshots on Outposts</a> in the <i>Amazon Elastic Compute
-     * Cloud User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#ami">Amazon
+     * EBS local snapshots on Outposts</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline bool BlockDeviceMappingsHasBeenSet() const { return m_blockDeviceMappingsHasBeenSet; }
 
@@ -194,9 +192,8 @@ namespace Model
      * snapshots must be on the same Outpost or in the Region of that Outpost. AMIs on
      * an Outpost that include local snapshots can be used to launch instances on the
      * same Outpost only. For more information, <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#ami">
-     * Amazon EBS local snapshots on Outposts</a> in the <i>Amazon Elastic Compute
-     * Cloud User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#ami">Amazon
+     * EBS local snapshots on Outposts</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline void SetBlockDeviceMappings(const Aws::Vector<BlockDeviceMapping>& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings = value; }
 
@@ -207,9 +204,8 @@ namespace Model
      * snapshots must be on the same Outpost or in the Region of that Outpost. AMIs on
      * an Outpost that include local snapshots can be used to launch instances on the
      * same Outpost only. For more information, <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#ami">
-     * Amazon EBS local snapshots on Outposts</a> in the <i>Amazon Elastic Compute
-     * Cloud User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#ami">Amazon
+     * EBS local snapshots on Outposts</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline void SetBlockDeviceMappings(Aws::Vector<BlockDeviceMapping>&& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings = std::move(value); }
 
@@ -220,9 +216,8 @@ namespace Model
      * snapshots must be on the same Outpost or in the Region of that Outpost. AMIs on
      * an Outpost that include local snapshots can be used to launch instances on the
      * same Outpost only. For more information, <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#ami">
-     * Amazon EBS local snapshots on Outposts</a> in the <i>Amazon Elastic Compute
-     * Cloud User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#ami">Amazon
+     * EBS local snapshots on Outposts</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline RegisterImageRequest& WithBlockDeviceMappings(const Aws::Vector<BlockDeviceMapping>& value) { SetBlockDeviceMappings(value); return *this;}
 
@@ -233,9 +228,8 @@ namespace Model
      * snapshots must be on the same Outpost or in the Region of that Outpost. AMIs on
      * an Outpost that include local snapshots can be used to launch instances on the
      * same Outpost only. For more information, <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#ami">
-     * Amazon EBS local snapshots on Outposts</a> in the <i>Amazon Elastic Compute
-     * Cloud User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#ami">Amazon
+     * EBS local snapshots on Outposts</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline RegisterImageRequest& WithBlockDeviceMappings(Aws::Vector<BlockDeviceMapping>&& value) { SetBlockDeviceMappings(std::move(value)); return *this;}
 
@@ -246,9 +240,8 @@ namespace Model
      * snapshots must be on the same Outpost or in the Region of that Outpost. AMIs on
      * an Outpost that include local snapshots can be used to launch instances on the
      * same Outpost only. For more information, <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#ami">
-     * Amazon EBS local snapshots on Outposts</a> in the <i>Amazon Elastic Compute
-     * Cloud User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#ami">Amazon
+     * EBS local snapshots on Outposts</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline RegisterImageRequest& AddBlockDeviceMappings(const BlockDeviceMapping& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings.push_back(value); return *this; }
 
@@ -259,9 +252,8 @@ namespace Model
      * snapshots must be on the same Outpost or in the Region of that Outpost. AMIs on
      * an Outpost that include local snapshots can be used to launch instances on the
      * same Outpost only. For more information, <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#ami">
-     * Amazon EBS local snapshots on Outposts</a> in the <i>Amazon Elastic Compute
-     * Cloud User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#ami">Amazon
+     * EBS local snapshots on Outposts</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline RegisterImageRequest& AddBlockDeviceMappings(BlockDeviceMapping&& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings.push_back(std::move(value)); return *this; }
 
@@ -473,64 +465,118 @@ namespace Model
 
     /**
      * <p>The billing product codes. Your account must be authorized to specify billing
-     * product codes. Otherwise, you can use the Amazon Web Services Marketplace to
-     * bill for the use of an AMI.</p>
+     * product codes.</p> <p>If your account is not authorized to specify billing
+     * product codes, you can publish AMIs that include billable software and list them
+     * on the Amazon Web Services Marketplace. You must first register as a seller on
+     * the Amazon Web Services Marketplace. For more information, see <a
+     * href="https://docs.aws.amazon.com/marketplace/latest/userguide/user-guide-for-sellers.html">Getting
+     * started as a seller</a> and <a
+     * href="https://docs.aws.amazon.com/marketplace/latest/userguide/ami-products.html">AMI-based
+     * products</a> in the <i>Amazon Web Services Marketplace Seller Guide</i>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetBillingProducts() const{ return m_billingProducts; }
 
     /**
      * <p>The billing product codes. Your account must be authorized to specify billing
-     * product codes. Otherwise, you can use the Amazon Web Services Marketplace to
-     * bill for the use of an AMI.</p>
+     * product codes.</p> <p>If your account is not authorized to specify billing
+     * product codes, you can publish AMIs that include billable software and list them
+     * on the Amazon Web Services Marketplace. You must first register as a seller on
+     * the Amazon Web Services Marketplace. For more information, see <a
+     * href="https://docs.aws.amazon.com/marketplace/latest/userguide/user-guide-for-sellers.html">Getting
+     * started as a seller</a> and <a
+     * href="https://docs.aws.amazon.com/marketplace/latest/userguide/ami-products.html">AMI-based
+     * products</a> in the <i>Amazon Web Services Marketplace Seller Guide</i>.</p>
      */
     inline bool BillingProductsHasBeenSet() const { return m_billingProductsHasBeenSet; }
 
     /**
      * <p>The billing product codes. Your account must be authorized to specify billing
-     * product codes. Otherwise, you can use the Amazon Web Services Marketplace to
-     * bill for the use of an AMI.</p>
+     * product codes.</p> <p>If your account is not authorized to specify billing
+     * product codes, you can publish AMIs that include billable software and list them
+     * on the Amazon Web Services Marketplace. You must first register as a seller on
+     * the Amazon Web Services Marketplace. For more information, see <a
+     * href="https://docs.aws.amazon.com/marketplace/latest/userguide/user-guide-for-sellers.html">Getting
+     * started as a seller</a> and <a
+     * href="https://docs.aws.amazon.com/marketplace/latest/userguide/ami-products.html">AMI-based
+     * products</a> in the <i>Amazon Web Services Marketplace Seller Guide</i>.</p>
      */
     inline void SetBillingProducts(const Aws::Vector<Aws::String>& value) { m_billingProductsHasBeenSet = true; m_billingProducts = value; }
 
     /**
      * <p>The billing product codes. Your account must be authorized to specify billing
-     * product codes. Otherwise, you can use the Amazon Web Services Marketplace to
-     * bill for the use of an AMI.</p>
+     * product codes.</p> <p>If your account is not authorized to specify billing
+     * product codes, you can publish AMIs that include billable software and list them
+     * on the Amazon Web Services Marketplace. You must first register as a seller on
+     * the Amazon Web Services Marketplace. For more information, see <a
+     * href="https://docs.aws.amazon.com/marketplace/latest/userguide/user-guide-for-sellers.html">Getting
+     * started as a seller</a> and <a
+     * href="https://docs.aws.amazon.com/marketplace/latest/userguide/ami-products.html">AMI-based
+     * products</a> in the <i>Amazon Web Services Marketplace Seller Guide</i>.</p>
      */
     inline void SetBillingProducts(Aws::Vector<Aws::String>&& value) { m_billingProductsHasBeenSet = true; m_billingProducts = std::move(value); }
 
     /**
      * <p>The billing product codes. Your account must be authorized to specify billing
-     * product codes. Otherwise, you can use the Amazon Web Services Marketplace to
-     * bill for the use of an AMI.</p>
+     * product codes.</p> <p>If your account is not authorized to specify billing
+     * product codes, you can publish AMIs that include billable software and list them
+     * on the Amazon Web Services Marketplace. You must first register as a seller on
+     * the Amazon Web Services Marketplace. For more information, see <a
+     * href="https://docs.aws.amazon.com/marketplace/latest/userguide/user-guide-for-sellers.html">Getting
+     * started as a seller</a> and <a
+     * href="https://docs.aws.amazon.com/marketplace/latest/userguide/ami-products.html">AMI-based
+     * products</a> in the <i>Amazon Web Services Marketplace Seller Guide</i>.</p>
      */
     inline RegisterImageRequest& WithBillingProducts(const Aws::Vector<Aws::String>& value) { SetBillingProducts(value); return *this;}
 
     /**
      * <p>The billing product codes. Your account must be authorized to specify billing
-     * product codes. Otherwise, you can use the Amazon Web Services Marketplace to
-     * bill for the use of an AMI.</p>
+     * product codes.</p> <p>If your account is not authorized to specify billing
+     * product codes, you can publish AMIs that include billable software and list them
+     * on the Amazon Web Services Marketplace. You must first register as a seller on
+     * the Amazon Web Services Marketplace. For more information, see <a
+     * href="https://docs.aws.amazon.com/marketplace/latest/userguide/user-guide-for-sellers.html">Getting
+     * started as a seller</a> and <a
+     * href="https://docs.aws.amazon.com/marketplace/latest/userguide/ami-products.html">AMI-based
+     * products</a> in the <i>Amazon Web Services Marketplace Seller Guide</i>.</p>
      */
     inline RegisterImageRequest& WithBillingProducts(Aws::Vector<Aws::String>&& value) { SetBillingProducts(std::move(value)); return *this;}
 
     /**
      * <p>The billing product codes. Your account must be authorized to specify billing
-     * product codes. Otherwise, you can use the Amazon Web Services Marketplace to
-     * bill for the use of an AMI.</p>
+     * product codes.</p> <p>If your account is not authorized to specify billing
+     * product codes, you can publish AMIs that include billable software and list them
+     * on the Amazon Web Services Marketplace. You must first register as a seller on
+     * the Amazon Web Services Marketplace. For more information, see <a
+     * href="https://docs.aws.amazon.com/marketplace/latest/userguide/user-guide-for-sellers.html">Getting
+     * started as a seller</a> and <a
+     * href="https://docs.aws.amazon.com/marketplace/latest/userguide/ami-products.html">AMI-based
+     * products</a> in the <i>Amazon Web Services Marketplace Seller Guide</i>.</p>
      */
     inline RegisterImageRequest& AddBillingProducts(const Aws::String& value) { m_billingProductsHasBeenSet = true; m_billingProducts.push_back(value); return *this; }
 
     /**
      * <p>The billing product codes. Your account must be authorized to specify billing
-     * product codes. Otherwise, you can use the Amazon Web Services Marketplace to
-     * bill for the use of an AMI.</p>
+     * product codes.</p> <p>If your account is not authorized to specify billing
+     * product codes, you can publish AMIs that include billable software and list them
+     * on the Amazon Web Services Marketplace. You must first register as a seller on
+     * the Amazon Web Services Marketplace. For more information, see <a
+     * href="https://docs.aws.amazon.com/marketplace/latest/userguide/user-guide-for-sellers.html">Getting
+     * started as a seller</a> and <a
+     * href="https://docs.aws.amazon.com/marketplace/latest/userguide/ami-products.html">AMI-based
+     * products</a> in the <i>Amazon Web Services Marketplace Seller Guide</i>.</p>
      */
     inline RegisterImageRequest& AddBillingProducts(Aws::String&& value) { m_billingProductsHasBeenSet = true; m_billingProducts.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The billing product codes. Your account must be authorized to specify billing
-     * product codes. Otherwise, you can use the Amazon Web Services Marketplace to
-     * bill for the use of an AMI.</p>
+     * product codes.</p> <p>If your account is not authorized to specify billing
+     * product codes, you can publish AMIs that include billable software and list them
+     * on the Amazon Web Services Marketplace. You must first register as a seller on
+     * the Amazon Web Services Marketplace. For more information, see <a
+     * href="https://docs.aws.amazon.com/marketplace/latest/userguide/user-guide-for-sellers.html">Getting
+     * started as a seller</a> and <a
+     * href="https://docs.aws.amazon.com/marketplace/latest/userguide/ami-products.html">AMI-based
+     * products</a> in the <i>Amazon Web Services Marketplace Seller Guide</i>.</p>
      */
     inline RegisterImageRequest& AddBillingProducts(const char* value) { m_billingProductsHasBeenSet = true; m_billingProducts.push_back(value); return *this; }
 
@@ -750,42 +796,42 @@ namespace Model
     /**
      * <p>The boot mode of the AMI. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot
-     * modes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * modes</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline const BootModeValues& GetBootMode() const{ return m_bootMode; }
 
     /**
      * <p>The boot mode of the AMI. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot
-     * modes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * modes</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline bool BootModeHasBeenSet() const { return m_bootModeHasBeenSet; }
 
     /**
      * <p>The boot mode of the AMI. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot
-     * modes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * modes</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline void SetBootMode(const BootModeValues& value) { m_bootModeHasBeenSet = true; m_bootMode = value; }
 
     /**
      * <p>The boot mode of the AMI. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot
-     * modes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * modes</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline void SetBootMode(BootModeValues&& value) { m_bootModeHasBeenSet = true; m_bootMode = std::move(value); }
 
     /**
      * <p>The boot mode of the AMI. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot
-     * modes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * modes</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline RegisterImageRequest& WithBootMode(const BootModeValues& value) { SetBootMode(value); return *this;}
 
     /**
      * <p>The boot mode of the AMI. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot
-     * modes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * modes</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline RegisterImageRequest& WithBootMode(BootModeValues&& value) { SetBootMode(std::move(value)); return *this;}
 
@@ -794,7 +840,7 @@ namespace Model
      * <p>Set to <code>v2.0</code> to enable Trusted Platform Module (TPM) support. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitrotpm.html">NitroTPM</a>
-     * in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline const TpmSupportValues& GetTpmSupport() const{ return m_tpmSupport; }
 
@@ -802,7 +848,7 @@ namespace Model
      * <p>Set to <code>v2.0</code> to enable Trusted Platform Module (TPM) support. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitrotpm.html">NitroTPM</a>
-     * in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline bool TpmSupportHasBeenSet() const { return m_tpmSupportHasBeenSet; }
 
@@ -810,7 +856,7 @@ namespace Model
      * <p>Set to <code>v2.0</code> to enable Trusted Platform Module (TPM) support. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitrotpm.html">NitroTPM</a>
-     * in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline void SetTpmSupport(const TpmSupportValues& value) { m_tpmSupportHasBeenSet = true; m_tpmSupport = value; }
 
@@ -818,7 +864,7 @@ namespace Model
      * <p>Set to <code>v2.0</code> to enable Trusted Platform Module (TPM) support. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitrotpm.html">NitroTPM</a>
-     * in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline void SetTpmSupport(TpmSupportValues&& value) { m_tpmSupportHasBeenSet = true; m_tpmSupport = std::move(value); }
 
@@ -826,7 +872,7 @@ namespace Model
      * <p>Set to <code>v2.0</code> to enable Trusted Platform Module (TPM) support. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitrotpm.html">NitroTPM</a>
-     * in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline RegisterImageRequest& WithTpmSupport(const TpmSupportValues& value) { SetTpmSupport(value); return *this;}
 
@@ -834,7 +880,7 @@ namespace Model
      * <p>Set to <code>v2.0</code> to enable Trusted Platform Module (TPM) support. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitrotpm.html">NitroTPM</a>
-     * in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline RegisterImageRequest& WithTpmSupport(TpmSupportValues&& value) { SetTpmSupport(std::move(value)); return *this;}
 
@@ -847,7 +893,7 @@ namespace Model
      * href="https://github.com/awslabs/python-uefivars">python-uefivars tool</a> on
      * GitHub. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/uefi-secure-boot.html">UEFI
-     * Secure Boot</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * Secure Boot</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline const Aws::String& GetUefiData() const{ return m_uefiData; }
 
@@ -859,7 +905,7 @@ namespace Model
      * href="https://github.com/awslabs/python-uefivars">python-uefivars tool</a> on
      * GitHub. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/uefi-secure-boot.html">UEFI
-     * Secure Boot</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * Secure Boot</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline bool UefiDataHasBeenSet() const { return m_uefiDataHasBeenSet; }
 
@@ -871,7 +917,7 @@ namespace Model
      * href="https://github.com/awslabs/python-uefivars">python-uefivars tool</a> on
      * GitHub. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/uefi-secure-boot.html">UEFI
-     * Secure Boot</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * Secure Boot</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline void SetUefiData(const Aws::String& value) { m_uefiDataHasBeenSet = true; m_uefiData = value; }
 
@@ -883,7 +929,7 @@ namespace Model
      * href="https://github.com/awslabs/python-uefivars">python-uefivars tool</a> on
      * GitHub. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/uefi-secure-boot.html">UEFI
-     * Secure Boot</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * Secure Boot</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline void SetUefiData(Aws::String&& value) { m_uefiDataHasBeenSet = true; m_uefiData = std::move(value); }
 
@@ -895,7 +941,7 @@ namespace Model
      * href="https://github.com/awslabs/python-uefivars">python-uefivars tool</a> on
      * GitHub. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/uefi-secure-boot.html">UEFI
-     * Secure Boot</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * Secure Boot</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline void SetUefiData(const char* value) { m_uefiDataHasBeenSet = true; m_uefiData.assign(value); }
 
@@ -907,7 +953,7 @@ namespace Model
      * href="https://github.com/awslabs/python-uefivars">python-uefivars tool</a> on
      * GitHub. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/uefi-secure-boot.html">UEFI
-     * Secure Boot</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * Secure Boot</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline RegisterImageRequest& WithUefiData(const Aws::String& value) { SetUefiData(value); return *this;}
 
@@ -919,7 +965,7 @@ namespace Model
      * href="https://github.com/awslabs/python-uefivars">python-uefivars tool</a> on
      * GitHub. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/uefi-secure-boot.html">UEFI
-     * Secure Boot</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * Secure Boot</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline RegisterImageRequest& WithUefiData(Aws::String&& value) { SetUefiData(std::move(value)); return *this;}
 
@@ -931,7 +977,7 @@ namespace Model
      * href="https://github.com/awslabs/python-uefivars">python-uefivars tool</a> on
      * GitHub. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/uefi-secure-boot.html">UEFI
-     * Secure Boot</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * Secure Boot</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline RegisterImageRequest& WithUefiData(const char* value) { SetUefiData(value); return *this;}
 
@@ -944,9 +990,9 @@ namespace Model
      * <code>HttpPutResponseHopLimit</code> is set to <code>2</code>. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration">Configure
-     * the AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> 
-     * <p>If you set the value to <code>v2.0</code>, make sure that your AMI software
-     * can support IMDSv2.</p> 
+     * the AMI</a> in the <i>Amazon EC2 User Guide</i>.</p>  <p>If you set the
+     * value to <code>v2.0</code>, make sure that your AMI software can support
+     * IMDSv2.</p> 
      */
     inline const ImdsSupportValues& GetImdsSupport() const{ return m_imdsSupport; }
 
@@ -958,9 +1004,9 @@ namespace Model
      * <code>HttpPutResponseHopLimit</code> is set to <code>2</code>. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration">Configure
-     * the AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> 
-     * <p>If you set the value to <code>v2.0</code>, make sure that your AMI software
-     * can support IMDSv2.</p> 
+     * the AMI</a> in the <i>Amazon EC2 User Guide</i>.</p>  <p>If you set the
+     * value to <code>v2.0</code>, make sure that your AMI software can support
+     * IMDSv2.</p> 
      */
     inline bool ImdsSupportHasBeenSet() const { return m_imdsSupportHasBeenSet; }
 
@@ -972,9 +1018,9 @@ namespace Model
      * <code>HttpPutResponseHopLimit</code> is set to <code>2</code>. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration">Configure
-     * the AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> 
-     * <p>If you set the value to <code>v2.0</code>, make sure that your AMI software
-     * can support IMDSv2.</p> 
+     * the AMI</a> in the <i>Amazon EC2 User Guide</i>.</p>  <p>If you set the
+     * value to <code>v2.0</code>, make sure that your AMI software can support
+     * IMDSv2.</p> 
      */
     inline void SetImdsSupport(const ImdsSupportValues& value) { m_imdsSupportHasBeenSet = true; m_imdsSupport = value; }
 
@@ -986,9 +1032,9 @@ namespace Model
      * <code>HttpPutResponseHopLimit</code> is set to <code>2</code>. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration">Configure
-     * the AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> 
-     * <p>If you set the value to <code>v2.0</code>, make sure that your AMI software
-     * can support IMDSv2.</p> 
+     * the AMI</a> in the <i>Amazon EC2 User Guide</i>.</p>  <p>If you set the
+     * value to <code>v2.0</code>, make sure that your AMI software can support
+     * IMDSv2.</p> 
      */
     inline void SetImdsSupport(ImdsSupportValues&& value) { m_imdsSupportHasBeenSet = true; m_imdsSupport = std::move(value); }
 
@@ -1000,9 +1046,9 @@ namespace Model
      * <code>HttpPutResponseHopLimit</code> is set to <code>2</code>. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration">Configure
-     * the AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> 
-     * <p>If you set the value to <code>v2.0</code>, make sure that your AMI software
-     * can support IMDSv2.</p> 
+     * the AMI</a> in the <i>Amazon EC2 User Guide</i>.</p>  <p>If you set the
+     * value to <code>v2.0</code>, make sure that your AMI software can support
+     * IMDSv2.</p> 
      */
     inline RegisterImageRequest& WithImdsSupport(const ImdsSupportValues& value) { SetImdsSupport(value); return *this;}
 
@@ -1014,9 +1060,9 @@ namespace Model
      * <code>HttpPutResponseHopLimit</code> is set to <code>2</code>. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration">Configure
-     * the AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> 
-     * <p>If you set the value to <code>v2.0</code>, make sure that your AMI software
-     * can support IMDSv2.</p> 
+     * the AMI</a> in the <i>Amazon EC2 User Guide</i>.</p>  <p>If you set the
+     * value to <code>v2.0</code>, make sure that your AMI software can support
+     * IMDSv2.</p> 
      */
     inline RegisterImageRequest& WithImdsSupport(ImdsSupportValues&& value) { SetImdsSupport(std::move(value)); return *this;}
 

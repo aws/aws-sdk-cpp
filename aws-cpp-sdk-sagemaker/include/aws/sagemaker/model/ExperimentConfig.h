@@ -42,42 +42,42 @@ namespace Model
 
 
     /**
-     * <p>The name of an existing experiment to associate the trial component with.</p>
+     * <p>The name of an existing experiment to associate with the trial component.</p>
      */
     inline const Aws::String& GetExperimentName() const{ return m_experimentName; }
 
     /**
-     * <p>The name of an existing experiment to associate the trial component with.</p>
+     * <p>The name of an existing experiment to associate with the trial component.</p>
      */
     inline bool ExperimentNameHasBeenSet() const { return m_experimentNameHasBeenSet; }
 
     /**
-     * <p>The name of an existing experiment to associate the trial component with.</p>
+     * <p>The name of an existing experiment to associate with the trial component.</p>
      */
     inline void SetExperimentName(const Aws::String& value) { m_experimentNameHasBeenSet = true; m_experimentName = value; }
 
     /**
-     * <p>The name of an existing experiment to associate the trial component with.</p>
+     * <p>The name of an existing experiment to associate with the trial component.</p>
      */
     inline void SetExperimentName(Aws::String&& value) { m_experimentNameHasBeenSet = true; m_experimentName = std::move(value); }
 
     /**
-     * <p>The name of an existing experiment to associate the trial component with.</p>
+     * <p>The name of an existing experiment to associate with the trial component.</p>
      */
     inline void SetExperimentName(const char* value) { m_experimentNameHasBeenSet = true; m_experimentName.assign(value); }
 
     /**
-     * <p>The name of an existing experiment to associate the trial component with.</p>
+     * <p>The name of an existing experiment to associate with the trial component.</p>
      */
     inline ExperimentConfig& WithExperimentName(const Aws::String& value) { SetExperimentName(value); return *this;}
 
     /**
-     * <p>The name of an existing experiment to associate the trial component with.</p>
+     * <p>The name of an existing experiment to associate with the trial component.</p>
      */
     inline ExperimentConfig& WithExperimentName(Aws::String&& value) { SetExperimentName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of an existing experiment to associate the trial component with.</p>
+     * <p>The name of an existing experiment to associate with the trial component.</p>
      */
     inline ExperimentConfig& WithExperimentName(const char* value) { SetExperimentName(value); return *this;}
 
@@ -181,42 +181,42 @@ namespace Model
 
 
     /**
-     * <p>The name of the experiment run to associate the trial component with.</p>
+     * <p>The name of the experiment run to associate with the trial component.</p>
      */
     inline const Aws::String& GetRunName() const{ return m_runName; }
 
     /**
-     * <p>The name of the experiment run to associate the trial component with.</p>
+     * <p>The name of the experiment run to associate with the trial component.</p>
      */
     inline bool RunNameHasBeenSet() const { return m_runNameHasBeenSet; }
 
     /**
-     * <p>The name of the experiment run to associate the trial component with.</p>
+     * <p>The name of the experiment run to associate with the trial component.</p>
      */
     inline void SetRunName(const Aws::String& value) { m_runNameHasBeenSet = true; m_runName = value; }
 
     /**
-     * <p>The name of the experiment run to associate the trial component with.</p>
+     * <p>The name of the experiment run to associate with the trial component.</p>
      */
     inline void SetRunName(Aws::String&& value) { m_runNameHasBeenSet = true; m_runName = std::move(value); }
 
     /**
-     * <p>The name of the experiment run to associate the trial component with.</p>
+     * <p>The name of the experiment run to associate with the trial component.</p>
      */
     inline void SetRunName(const char* value) { m_runNameHasBeenSet = true; m_runName.assign(value); }
 
     /**
-     * <p>The name of the experiment run to associate the trial component with.</p>
+     * <p>The name of the experiment run to associate with the trial component.</p>
      */
     inline ExperimentConfig& WithRunName(const Aws::String& value) { SetRunName(value); return *this;}
 
     /**
-     * <p>The name of the experiment run to associate the trial component with.</p>
+     * <p>The name of the experiment run to associate with the trial component.</p>
      */
     inline ExperimentConfig& WithRunName(Aws::String&& value) { SetRunName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the experiment run to associate the trial component with.</p>
+     * <p>The name of the experiment run to associate with the trial component.</p>
      */
     inline ExperimentConfig& WithRunName(const char* value) { SetRunName(value); return *this;}
 

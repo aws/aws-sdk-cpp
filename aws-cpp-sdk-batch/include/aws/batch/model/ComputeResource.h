@@ -643,7 +643,18 @@ namespace Model
      * be within the same VPC. Fargate compute resources can contain up to 16 subnets.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs
-     * and subnets</a> in the <i>Amazon VPC User Guide</i>.</p>
+     * and subnets</a> in the <i>Amazon VPC User Guide</i>.</p>  <p>Batch on
+     * Amazon EC2 and Batch on Amazon EKS support Local Zones. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-local-zones">
+     * Local Zones</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>, <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/local-zones.html">Amazon
+     * EKS and Amazon Web Services Local Zones</a> in the <i>Amazon EKS User Guide</i>
+     * and <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-regions-zones.html#clusters-local-zones">
+     * Amazon ECS clusters in Local Zones, Wavelength Zones, and Amazon Web Services
+     * Outposts</a> in the <i>Amazon ECS Developer Guide</i>.</p> <p>Batch on Fargate
+     * doesn't currently support Local Zones.</p> 
      */
     inline const Aws::Vector<Aws::String>& GetSubnets() const{ return m_subnets; }
 
@@ -652,7 +663,18 @@ namespace Model
      * be within the same VPC. Fargate compute resources can contain up to 16 subnets.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs
-     * and subnets</a> in the <i>Amazon VPC User Guide</i>.</p>
+     * and subnets</a> in the <i>Amazon VPC User Guide</i>.</p>  <p>Batch on
+     * Amazon EC2 and Batch on Amazon EKS support Local Zones. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-local-zones">
+     * Local Zones</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>, <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/local-zones.html">Amazon
+     * EKS and Amazon Web Services Local Zones</a> in the <i>Amazon EKS User Guide</i>
+     * and <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-regions-zones.html#clusters-local-zones">
+     * Amazon ECS clusters in Local Zones, Wavelength Zones, and Amazon Web Services
+     * Outposts</a> in the <i>Amazon ECS Developer Guide</i>.</p> <p>Batch on Fargate
+     * doesn't currently support Local Zones.</p> 
      */
     inline bool SubnetsHasBeenSet() const { return m_subnetsHasBeenSet; }
 
@@ -661,7 +683,18 @@ namespace Model
      * be within the same VPC. Fargate compute resources can contain up to 16 subnets.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs
-     * and subnets</a> in the <i>Amazon VPC User Guide</i>.</p>
+     * and subnets</a> in the <i>Amazon VPC User Guide</i>.</p>  <p>Batch on
+     * Amazon EC2 and Batch on Amazon EKS support Local Zones. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-local-zones">
+     * Local Zones</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>, <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/local-zones.html">Amazon
+     * EKS and Amazon Web Services Local Zones</a> in the <i>Amazon EKS User Guide</i>
+     * and <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-regions-zones.html#clusters-local-zones">
+     * Amazon ECS clusters in Local Zones, Wavelength Zones, and Amazon Web Services
+     * Outposts</a> in the <i>Amazon ECS Developer Guide</i>.</p> <p>Batch on Fargate
+     * doesn't currently support Local Zones.</p> 
      */
     inline void SetSubnets(const Aws::Vector<Aws::String>& value) { m_subnetsHasBeenSet = true; m_subnets = value; }
 
@@ -670,7 +703,18 @@ namespace Model
      * be within the same VPC. Fargate compute resources can contain up to 16 subnets.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs
-     * and subnets</a> in the <i>Amazon VPC User Guide</i>.</p>
+     * and subnets</a> in the <i>Amazon VPC User Guide</i>.</p>  <p>Batch on
+     * Amazon EC2 and Batch on Amazon EKS support Local Zones. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-local-zones">
+     * Local Zones</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>, <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/local-zones.html">Amazon
+     * EKS and Amazon Web Services Local Zones</a> in the <i>Amazon EKS User Guide</i>
+     * and <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-regions-zones.html#clusters-local-zones">
+     * Amazon ECS clusters in Local Zones, Wavelength Zones, and Amazon Web Services
+     * Outposts</a> in the <i>Amazon ECS Developer Guide</i>.</p> <p>Batch on Fargate
+     * doesn't currently support Local Zones.</p> 
      */
     inline void SetSubnets(Aws::Vector<Aws::String>&& value) { m_subnetsHasBeenSet = true; m_subnets = std::move(value); }
 
@@ -679,7 +723,18 @@ namespace Model
      * be within the same VPC. Fargate compute resources can contain up to 16 subnets.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs
-     * and subnets</a> in the <i>Amazon VPC User Guide</i>.</p>
+     * and subnets</a> in the <i>Amazon VPC User Guide</i>.</p>  <p>Batch on
+     * Amazon EC2 and Batch on Amazon EKS support Local Zones. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-local-zones">
+     * Local Zones</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>, <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/local-zones.html">Amazon
+     * EKS and Amazon Web Services Local Zones</a> in the <i>Amazon EKS User Guide</i>
+     * and <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-regions-zones.html#clusters-local-zones">
+     * Amazon ECS clusters in Local Zones, Wavelength Zones, and Amazon Web Services
+     * Outposts</a> in the <i>Amazon ECS Developer Guide</i>.</p> <p>Batch on Fargate
+     * doesn't currently support Local Zones.</p> 
      */
     inline ComputeResource& WithSubnets(const Aws::Vector<Aws::String>& value) { SetSubnets(value); return *this;}
 
@@ -688,7 +743,18 @@ namespace Model
      * be within the same VPC. Fargate compute resources can contain up to 16 subnets.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs
-     * and subnets</a> in the <i>Amazon VPC User Guide</i>.</p>
+     * and subnets</a> in the <i>Amazon VPC User Guide</i>.</p>  <p>Batch on
+     * Amazon EC2 and Batch on Amazon EKS support Local Zones. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-local-zones">
+     * Local Zones</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>, <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/local-zones.html">Amazon
+     * EKS and Amazon Web Services Local Zones</a> in the <i>Amazon EKS User Guide</i>
+     * and <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-regions-zones.html#clusters-local-zones">
+     * Amazon ECS clusters in Local Zones, Wavelength Zones, and Amazon Web Services
+     * Outposts</a> in the <i>Amazon ECS Developer Guide</i>.</p> <p>Batch on Fargate
+     * doesn't currently support Local Zones.</p> 
      */
     inline ComputeResource& WithSubnets(Aws::Vector<Aws::String>&& value) { SetSubnets(std::move(value)); return *this;}
 
@@ -697,7 +763,18 @@ namespace Model
      * be within the same VPC. Fargate compute resources can contain up to 16 subnets.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs
-     * and subnets</a> in the <i>Amazon VPC User Guide</i>.</p>
+     * and subnets</a> in the <i>Amazon VPC User Guide</i>.</p>  <p>Batch on
+     * Amazon EC2 and Batch on Amazon EKS support Local Zones. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-local-zones">
+     * Local Zones</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>, <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/local-zones.html">Amazon
+     * EKS and Amazon Web Services Local Zones</a> in the <i>Amazon EKS User Guide</i>
+     * and <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-regions-zones.html#clusters-local-zones">
+     * Amazon ECS clusters in Local Zones, Wavelength Zones, and Amazon Web Services
+     * Outposts</a> in the <i>Amazon ECS Developer Guide</i>.</p> <p>Batch on Fargate
+     * doesn't currently support Local Zones.</p> 
      */
     inline ComputeResource& AddSubnets(const Aws::String& value) { m_subnetsHasBeenSet = true; m_subnets.push_back(value); return *this; }
 
@@ -706,7 +783,18 @@ namespace Model
      * be within the same VPC. Fargate compute resources can contain up to 16 subnets.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs
-     * and subnets</a> in the <i>Amazon VPC User Guide</i>.</p>
+     * and subnets</a> in the <i>Amazon VPC User Guide</i>.</p>  <p>Batch on
+     * Amazon EC2 and Batch on Amazon EKS support Local Zones. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-local-zones">
+     * Local Zones</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>, <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/local-zones.html">Amazon
+     * EKS and Amazon Web Services Local Zones</a> in the <i>Amazon EKS User Guide</i>
+     * and <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-regions-zones.html#clusters-local-zones">
+     * Amazon ECS clusters in Local Zones, Wavelength Zones, and Amazon Web Services
+     * Outposts</a> in the <i>Amazon ECS Developer Guide</i>.</p> <p>Batch on Fargate
+     * doesn't currently support Local Zones.</p> 
      */
     inline ComputeResource& AddSubnets(Aws::String&& value) { m_subnetsHasBeenSet = true; m_subnets.push_back(std::move(value)); return *this; }
 
@@ -715,7 +803,18 @@ namespace Model
      * be within the same VPC. Fargate compute resources can contain up to 16 subnets.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs
-     * and subnets</a> in the <i>Amazon VPC User Guide</i>.</p>
+     * and subnets</a> in the <i>Amazon VPC User Guide</i>.</p>  <p>Batch on
+     * Amazon EC2 and Batch on Amazon EKS support Local Zones. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-local-zones">
+     * Local Zones</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>, <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/local-zones.html">Amazon
+     * EKS and Amazon Web Services Local Zones</a> in the <i>Amazon EKS User Guide</i>
+     * and <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-regions-zones.html#clusters-local-zones">
+     * Amazon ECS clusters in Local Zones, Wavelength Zones, and Amazon Web Services
+     * Outposts</a> in the <i>Amazon ECS Developer Guide</i>.</p> <p>Batch on Fargate
+     * doesn't currently support Local Zones.</p> 
      */
     inline ComputeResource& AddSubnets(const char* value) { m_subnetsHasBeenSet = true; m_subnets.push_back(value); return *this; }
 
@@ -1327,9 +1426,10 @@ namespace Model
      * example, if your maximum percentage is 20%, then the Spot price must be less
      * than 20% of the current On-Demand price for that Amazon EC2 instance. You always
      * pay the lowest (market) price and never more than your maximum percentage. If
-     * you leave this field empty, the default value is 100% of the On-Demand
-     * price.</p>  <p>This parameter isn't applicable to jobs that are running on
-     * Fargate resources. Don't specify it.</p> 
+     * you leave this field empty, the default value is 100% of the On-Demand price.
+     * For most use cases, we recommend leaving this field empty.</p>  <p>This
+     * parameter isn't applicable to jobs that are running on Fargate resources. Don't
+     * specify it.</p> 
      */
     inline int GetBidPercentage() const{ return m_bidPercentage; }
 
@@ -1339,9 +1439,10 @@ namespace Model
      * example, if your maximum percentage is 20%, then the Spot price must be less
      * than 20% of the current On-Demand price for that Amazon EC2 instance. You always
      * pay the lowest (market) price and never more than your maximum percentage. If
-     * you leave this field empty, the default value is 100% of the On-Demand
-     * price.</p>  <p>This parameter isn't applicable to jobs that are running on
-     * Fargate resources. Don't specify it.</p> 
+     * you leave this field empty, the default value is 100% of the On-Demand price.
+     * For most use cases, we recommend leaving this field empty.</p>  <p>This
+     * parameter isn't applicable to jobs that are running on Fargate resources. Don't
+     * specify it.</p> 
      */
     inline bool BidPercentageHasBeenSet() const { return m_bidPercentageHasBeenSet; }
 
@@ -1351,9 +1452,10 @@ namespace Model
      * example, if your maximum percentage is 20%, then the Spot price must be less
      * than 20% of the current On-Demand price for that Amazon EC2 instance. You always
      * pay the lowest (market) price and never more than your maximum percentage. If
-     * you leave this field empty, the default value is 100% of the On-Demand
-     * price.</p>  <p>This parameter isn't applicable to jobs that are running on
-     * Fargate resources. Don't specify it.</p> 
+     * you leave this field empty, the default value is 100% of the On-Demand price.
+     * For most use cases, we recommend leaving this field empty.</p>  <p>This
+     * parameter isn't applicable to jobs that are running on Fargate resources. Don't
+     * specify it.</p> 
      */
     inline void SetBidPercentage(int value) { m_bidPercentageHasBeenSet = true; m_bidPercentage = value; }
 
@@ -1363,9 +1465,10 @@ namespace Model
      * example, if your maximum percentage is 20%, then the Spot price must be less
      * than 20% of the current On-Demand price for that Amazon EC2 instance. You always
      * pay the lowest (market) price and never more than your maximum percentage. If
-     * you leave this field empty, the default value is 100% of the On-Demand
-     * price.</p>  <p>This parameter isn't applicable to jobs that are running on
-     * Fargate resources. Don't specify it.</p> 
+     * you leave this field empty, the default value is 100% of the On-Demand price.
+     * For most use cases, we recommend leaving this field empty.</p>  <p>This
+     * parameter isn't applicable to jobs that are running on Fargate resources. Don't
+     * specify it.</p> 
      */
     inline ComputeResource& WithBidPercentage(int value) { SetBidPercentage(value); return *this;}
 

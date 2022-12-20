@@ -20,14 +20,23 @@ namespace Model
 
 StreamingSession::StreamingSession() : 
     m_arnHasBeenSet(false),
+    m_automaticTerminationMode(AutomaticTerminationMode::NOT_SET),
+    m_automaticTerminationModeHasBeenSet(false),
+    m_backupMode(SessionBackupMode::NOT_SET),
+    m_backupModeHasBeenSet(false),
     m_createdAtHasBeenSet(false),
     m_createdByHasBeenSet(false),
     m_ec2InstanceTypeHasBeenSet(false),
     m_launchProfileIdHasBeenSet(false),
+    m_maxBackupsToRetain(0),
+    m_maxBackupsToRetainHasBeenSet(false),
     m_ownedByHasBeenSet(false),
     m_sessionIdHasBeenSet(false),
+    m_sessionPersistenceMode(SessionPersistenceMode::NOT_SET),
+    m_sessionPersistenceModeHasBeenSet(false),
     m_startedAtHasBeenSet(false),
     m_startedByHasBeenSet(false),
+    m_startedFromBackupIdHasBeenSet(false),
     m_state(StreamingSessionState::NOT_SET),
     m_stateHasBeenSet(false),
     m_statusCode(StreamingSessionStatusCode::NOT_SET),
@@ -40,20 +49,32 @@ StreamingSession::StreamingSession() :
     m_tagsHasBeenSet(false),
     m_terminateAtHasBeenSet(false),
     m_updatedAtHasBeenSet(false),
-    m_updatedByHasBeenSet(false)
+    m_updatedByHasBeenSet(false),
+    m_volumeConfigurationHasBeenSet(false),
+    m_volumeRetentionMode(VolumeRetentionMode::NOT_SET),
+    m_volumeRetentionModeHasBeenSet(false)
 {
 }
 
 StreamingSession::StreamingSession(JsonView jsonValue) : 
     m_arnHasBeenSet(false),
+    m_automaticTerminationMode(AutomaticTerminationMode::NOT_SET),
+    m_automaticTerminationModeHasBeenSet(false),
+    m_backupMode(SessionBackupMode::NOT_SET),
+    m_backupModeHasBeenSet(false),
     m_createdAtHasBeenSet(false),
     m_createdByHasBeenSet(false),
     m_ec2InstanceTypeHasBeenSet(false),
     m_launchProfileIdHasBeenSet(false),
+    m_maxBackupsToRetain(0),
+    m_maxBackupsToRetainHasBeenSet(false),
     m_ownedByHasBeenSet(false),
     m_sessionIdHasBeenSet(false),
+    m_sessionPersistenceMode(SessionPersistenceMode::NOT_SET),
+    m_sessionPersistenceModeHasBeenSet(false),
     m_startedAtHasBeenSet(false),
     m_startedByHasBeenSet(false),
+    m_startedFromBackupIdHasBeenSet(false),
     m_state(StreamingSessionState::NOT_SET),
     m_stateHasBeenSet(false),
     m_statusCode(StreamingSessionStatusCode::NOT_SET),
@@ -66,7 +87,10 @@ StreamingSession::StreamingSession(JsonView jsonValue) :
     m_tagsHasBeenSet(false),
     m_terminateAtHasBeenSet(false),
     m_updatedAtHasBeenSet(false),
-    m_updatedByHasBeenSet(false)
+    m_updatedByHasBeenSet(false),
+    m_volumeConfigurationHasBeenSet(false),
+    m_volumeRetentionMode(VolumeRetentionMode::NOT_SET),
+    m_volumeRetentionModeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -78,6 +102,20 @@ StreamingSession& StreamingSession::operator =(JsonView jsonValue)
     m_arn = jsonValue.GetString("arn");
 
     m_arnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("automaticTerminationMode"))
+  {
+    m_automaticTerminationMode = AutomaticTerminationModeMapper::GetAutomaticTerminationModeForName(jsonValue.GetString("automaticTerminationMode"));
+
+    m_automaticTerminationModeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("backupMode"))
+  {
+    m_backupMode = SessionBackupModeMapper::GetSessionBackupModeForName(jsonValue.GetString("backupMode"));
+
+    m_backupModeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("createdAt"))
@@ -108,6 +146,13 @@ StreamingSession& StreamingSession::operator =(JsonView jsonValue)
     m_launchProfileIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("maxBackupsToRetain"))
+  {
+    m_maxBackupsToRetain = jsonValue.GetInteger("maxBackupsToRetain");
+
+    m_maxBackupsToRetainHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("ownedBy"))
   {
     m_ownedBy = jsonValue.GetString("ownedBy");
@@ -122,6 +167,13 @@ StreamingSession& StreamingSession::operator =(JsonView jsonValue)
     m_sessionIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("sessionPersistenceMode"))
+  {
+    m_sessionPersistenceMode = SessionPersistenceModeMapper::GetSessionPersistenceModeForName(jsonValue.GetString("sessionPersistenceMode"));
+
+    m_sessionPersistenceModeHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("startedAt"))
   {
     m_startedAt = jsonValue.GetString("startedAt");
@@ -134,6 +186,13 @@ StreamingSession& StreamingSession::operator =(JsonView jsonValue)
     m_startedBy = jsonValue.GetString("startedBy");
 
     m_startedByHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("startedFromBackupId"))
+  {
+    m_startedFromBackupId = jsonValue.GetString("startedFromBackupId");
+
+    m_startedFromBackupIdHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("state"))
@@ -216,6 +275,20 @@ StreamingSession& StreamingSession::operator =(JsonView jsonValue)
     m_updatedByHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("volumeConfiguration"))
+  {
+    m_volumeConfiguration = jsonValue.GetObject("volumeConfiguration");
+
+    m_volumeConfigurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("volumeRetentionMode"))
+  {
+    m_volumeRetentionMode = VolumeRetentionModeMapper::GetVolumeRetentionModeForName(jsonValue.GetString("volumeRetentionMode"));
+
+    m_volumeRetentionModeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -227,6 +300,16 @@ JsonValue StreamingSession::Jsonize() const
   {
    payload.WithString("arn", m_arn);
 
+  }
+
+  if(m_automaticTerminationModeHasBeenSet)
+  {
+   payload.WithString("automaticTerminationMode", AutomaticTerminationModeMapper::GetNameForAutomaticTerminationMode(m_automaticTerminationMode));
+  }
+
+  if(m_backupModeHasBeenSet)
+  {
+   payload.WithString("backupMode", SessionBackupModeMapper::GetNameForSessionBackupMode(m_backupMode));
   }
 
   if(m_createdAtHasBeenSet)
@@ -252,6 +335,12 @@ JsonValue StreamingSession::Jsonize() const
 
   }
 
+  if(m_maxBackupsToRetainHasBeenSet)
+  {
+   payload.WithInteger("maxBackupsToRetain", m_maxBackupsToRetain);
+
+  }
+
   if(m_ownedByHasBeenSet)
   {
    payload.WithString("ownedBy", m_ownedBy);
@@ -264,6 +353,11 @@ JsonValue StreamingSession::Jsonize() const
 
   }
 
+  if(m_sessionPersistenceModeHasBeenSet)
+  {
+   payload.WithString("sessionPersistenceMode", SessionPersistenceModeMapper::GetNameForSessionPersistenceMode(m_sessionPersistenceMode));
+  }
+
   if(m_startedAtHasBeenSet)
   {
    payload.WithString("startedAt", m_startedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
@@ -272,6 +366,12 @@ JsonValue StreamingSession::Jsonize() const
   if(m_startedByHasBeenSet)
   {
    payload.WithString("startedBy", m_startedBy);
+
+  }
+
+  if(m_startedFromBackupIdHasBeenSet)
+  {
+   payload.WithString("startedFromBackupId", m_startedFromBackupId);
 
   }
 
@@ -338,6 +438,17 @@ JsonValue StreamingSession::Jsonize() const
   {
    payload.WithString("updatedBy", m_updatedBy);
 
+  }
+
+  if(m_volumeConfigurationHasBeenSet)
+  {
+   payload.WithObject("volumeConfiguration", m_volumeConfiguration.Jsonize());
+
+  }
+
+  if(m_volumeRetentionModeHasBeenSet)
+  {
+   payload.WithString("volumeRetentionMode", VolumeRetentionModeMapper::GetNameForVolumeRetentionMode(m_volumeRetentionMode));
   }
 
   return payload;

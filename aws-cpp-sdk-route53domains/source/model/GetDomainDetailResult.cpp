@@ -168,6 +168,15 @@ GetDomainDetailResult& GetDomainDetailResult::operator =(const Aws::AmazonWebSer
     }
   }
 
+  if(jsonValue.ValueExists("DnssecKeys"))
+  {
+    Aws::Utils::Array<JsonView> dnssecKeysJsonList = jsonValue.GetArray("DnssecKeys");
+    for(unsigned dnssecKeysIndex = 0; dnssecKeysIndex < dnssecKeysJsonList.GetLength(); ++dnssecKeysIndex)
+    {
+      m_dnssecKeys.push_back(dnssecKeysJsonList[dnssecKeysIndex].AsObject());
+    }
+  }
+
 
 
   return *this;

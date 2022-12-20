@@ -632,44 +632,44 @@ namespace Model
 
 
     /**
-     * <p>A list of the Amazon Resource Name (ARN) and, if applicable, job type for
-     * multiple sources of an experiment run.</p>
+     * <p>A list of ARNs and, if applicable, job types for multiple sources of an
+     * experiment run.</p>
      */
     inline const Aws::Vector<TrialComponentSource>& GetSources() const{ return m_sources; }
 
     /**
-     * <p>A list of the Amazon Resource Name (ARN) and, if applicable, job type for
-     * multiple sources of an experiment run.</p>
+     * <p>A list of ARNs and, if applicable, job types for multiple sources of an
+     * experiment run.</p>
      */
     inline void SetSources(const Aws::Vector<TrialComponentSource>& value) { m_sources = value; }
 
     /**
-     * <p>A list of the Amazon Resource Name (ARN) and, if applicable, job type for
-     * multiple sources of an experiment run.</p>
+     * <p>A list of ARNs and, if applicable, job types for multiple sources of an
+     * experiment run.</p>
      */
     inline void SetSources(Aws::Vector<TrialComponentSource>&& value) { m_sources = std::move(value); }
 
     /**
-     * <p>A list of the Amazon Resource Name (ARN) and, if applicable, job type for
-     * multiple sources of an experiment run.</p>
+     * <p>A list of ARNs and, if applicable, job types for multiple sources of an
+     * experiment run.</p>
      */
     inline DescribeTrialComponentResult& WithSources(const Aws::Vector<TrialComponentSource>& value) { SetSources(value); return *this;}
 
     /**
-     * <p>A list of the Amazon Resource Name (ARN) and, if applicable, job type for
-     * multiple sources of an experiment run.</p>
+     * <p>A list of ARNs and, if applicable, job types for multiple sources of an
+     * experiment run.</p>
      */
     inline DescribeTrialComponentResult& WithSources(Aws::Vector<TrialComponentSource>&& value) { SetSources(std::move(value)); return *this;}
 
     /**
-     * <p>A list of the Amazon Resource Name (ARN) and, if applicable, job type for
-     * multiple sources of an experiment run.</p>
+     * <p>A list of ARNs and, if applicable, job types for multiple sources of an
+     * experiment run.</p>
      */
     inline DescribeTrialComponentResult& AddSources(const TrialComponentSource& value) { m_sources.push_back(value); return *this; }
 
     /**
-     * <p>A list of the Amazon Resource Name (ARN) and, if applicable, job type for
-     * multiple sources of an experiment run.</p>
+     * <p>A list of ARNs and, if applicable, job types for multiple sources of an
+     * experiment run.</p>
      */
     inline DescribeTrialComponentResult& AddSources(TrialComponentSource&& value) { m_sources.push_back(std::move(value)); return *this; }
 

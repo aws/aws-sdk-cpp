@@ -89,32 +89,32 @@ namespace Model
 
 
     /**
-     * <p>The platform of the initialization script, either WINDOWS or LINUX.</p>
+     * <p>The platform of the initialization script, either Windows or Linux.</p>
      */
     inline const LaunchProfilePlatform& GetPlatform() const{ return m_platform; }
 
     /**
-     * <p>The platform of the initialization script, either WINDOWS or LINUX.</p>
+     * <p>The platform of the initialization script, either Windows or Linux.</p>
      */
     inline bool PlatformHasBeenSet() const { return m_platformHasBeenSet; }
 
     /**
-     * <p>The platform of the initialization script, either WINDOWS or LINUX.</p>
+     * <p>The platform of the initialization script, either Windows or Linux.</p>
      */
     inline void SetPlatform(const LaunchProfilePlatform& value) { m_platformHasBeenSet = true; m_platform = value; }
 
     /**
-     * <p>The platform of the initialization script, either WINDOWS or LINUX.</p>
+     * <p>The platform of the initialization script, either Windows or Linux.</p>
      */
     inline void SetPlatform(LaunchProfilePlatform&& value) { m_platformHasBeenSet = true; m_platform = std::move(value); }
 
     /**
-     * <p>The platform of the initialization script, either WINDOWS or LINUX.</p>
+     * <p>The platform of the initialization script, either Windows or Linux.</p>
      */
     inline StudioComponentInitializationScript& WithPlatform(const LaunchProfilePlatform& value) { SetPlatform(value); return *this;}
 
     /**
-     * <p>The platform of the initialization script, either WINDOWS or LINUX.</p>
+     * <p>The platform of the initialization script, either Windows or Linux.</p>
      */
     inline StudioComponentInitializationScript& WithPlatform(LaunchProfilePlatform&& value) { SetPlatform(std::move(value)); return *this;}
 

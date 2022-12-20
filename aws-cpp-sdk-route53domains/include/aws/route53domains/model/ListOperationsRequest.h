@@ -8,6 +8,11 @@
 #include <aws/route53domains/Route53DomainsRequest.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/route53domains/model/ListOperationsSortAttributeName.h>
+#include <aws/route53domains/model/SortOrder.h>
+#include <aws/route53domains/model/OperationStatus.h>
+#include <aws/route53domains/model/OperationType.h>
 #include <utility>
 
 namespace Aws
@@ -183,6 +188,150 @@ namespace Model
      */
     inline ListOperationsRequest& WithMaxItems(int value) { SetMaxItems(value); return *this;}
 
+
+    /**
+     * <p> The status of the operations. </p>
+     */
+    inline const Aws::Vector<OperationStatus>& GetStatus() const{ return m_status; }
+
+    /**
+     * <p> The status of the operations. </p>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p> The status of the operations. </p>
+     */
+    inline void SetStatus(const Aws::Vector<OperationStatus>& value) { m_statusHasBeenSet = true; m_status = value; }
+
+    /**
+     * <p> The status of the operations. </p>
+     */
+    inline void SetStatus(Aws::Vector<OperationStatus>&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
+
+    /**
+     * <p> The status of the operations. </p>
+     */
+    inline ListOperationsRequest& WithStatus(const Aws::Vector<OperationStatus>& value) { SetStatus(value); return *this;}
+
+    /**
+     * <p> The status of the operations. </p>
+     */
+    inline ListOperationsRequest& WithStatus(Aws::Vector<OperationStatus>&& value) { SetStatus(std::move(value)); return *this;}
+
+    /**
+     * <p> The status of the operations. </p>
+     */
+    inline ListOperationsRequest& AddStatus(const OperationStatus& value) { m_statusHasBeenSet = true; m_status.push_back(value); return *this; }
+
+    /**
+     * <p> The status of the operations. </p>
+     */
+    inline ListOperationsRequest& AddStatus(OperationStatus&& value) { m_statusHasBeenSet = true; m_status.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p> An arrays of the domains operation types. </p>
+     */
+    inline const Aws::Vector<OperationType>& GetType() const{ return m_type; }
+
+    /**
+     * <p> An arrays of the domains operation types. </p>
+     */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p> An arrays of the domains operation types. </p>
+     */
+    inline void SetType(const Aws::Vector<OperationType>& value) { m_typeHasBeenSet = true; m_type = value; }
+
+    /**
+     * <p> An arrays of the domains operation types. </p>
+     */
+    inline void SetType(Aws::Vector<OperationType>&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
+
+    /**
+     * <p> An arrays of the domains operation types. </p>
+     */
+    inline ListOperationsRequest& WithType(const Aws::Vector<OperationType>& value) { SetType(value); return *this;}
+
+    /**
+     * <p> An arrays of the domains operation types. </p>
+     */
+    inline ListOperationsRequest& WithType(Aws::Vector<OperationType>&& value) { SetType(std::move(value)); return *this;}
+
+    /**
+     * <p> An arrays of the domains operation types. </p>
+     */
+    inline ListOperationsRequest& AddType(const OperationType& value) { m_typeHasBeenSet = true; m_type.push_back(value); return *this; }
+
+    /**
+     * <p> An arrays of the domains operation types. </p>
+     */
+    inline ListOperationsRequest& AddType(OperationType&& value) { m_typeHasBeenSet = true; m_type.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p> The sort type for returned values. </p>
+     */
+    inline const ListOperationsSortAttributeName& GetSortBy() const{ return m_sortBy; }
+
+    /**
+     * <p> The sort type for returned values. </p>
+     */
+    inline bool SortByHasBeenSet() const { return m_sortByHasBeenSet; }
+
+    /**
+     * <p> The sort type for returned values. </p>
+     */
+    inline void SetSortBy(const ListOperationsSortAttributeName& value) { m_sortByHasBeenSet = true; m_sortBy = value; }
+
+    /**
+     * <p> The sort type for returned values. </p>
+     */
+    inline void SetSortBy(ListOperationsSortAttributeName&& value) { m_sortByHasBeenSet = true; m_sortBy = std::move(value); }
+
+    /**
+     * <p> The sort type for returned values. </p>
+     */
+    inline ListOperationsRequest& WithSortBy(const ListOperationsSortAttributeName& value) { SetSortBy(value); return *this;}
+
+    /**
+     * <p> The sort type for returned values. </p>
+     */
+    inline ListOperationsRequest& WithSortBy(ListOperationsSortAttributeName&& value) { SetSortBy(std::move(value)); return *this;}
+
+
+    /**
+     * <p> The sort order ofr returned values, either ascending or descending. </p>
+     */
+    inline const SortOrder& GetSortOrder() const{ return m_sortOrder; }
+
+    /**
+     * <p> The sort order ofr returned values, either ascending or descending. </p>
+     */
+    inline bool SortOrderHasBeenSet() const { return m_sortOrderHasBeenSet; }
+
+    /**
+     * <p> The sort order ofr returned values, either ascending or descending. </p>
+     */
+    inline void SetSortOrder(const SortOrder& value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
+
+    /**
+     * <p> The sort order ofr returned values, either ascending or descending. </p>
+     */
+    inline void SetSortOrder(SortOrder&& value) { m_sortOrderHasBeenSet = true; m_sortOrder = std::move(value); }
+
+    /**
+     * <p> The sort order ofr returned values, either ascending or descending. </p>
+     */
+    inline ListOperationsRequest& WithSortOrder(const SortOrder& value) { SetSortOrder(value); return *this;}
+
+    /**
+     * <p> The sort order ofr returned values, either ascending or descending. </p>
+     */
+    inline ListOperationsRequest& WithSortOrder(SortOrder&& value) { SetSortOrder(std::move(value)); return *this;}
+
   private:
 
     Aws::Utils::DateTime m_submittedSince;
@@ -193,6 +342,18 @@ namespace Model
 
     int m_maxItems;
     bool m_maxItemsHasBeenSet = false;
+
+    Aws::Vector<OperationStatus> m_status;
+    bool m_statusHasBeenSet = false;
+
+    Aws::Vector<OperationType> m_type;
+    bool m_typeHasBeenSet = false;
+
+    ListOperationsSortAttributeName m_sortBy;
+    bool m_sortByHasBeenSet = false;
+
+    SortOrder m_sortOrder;
+    bool m_sortOrderHasBeenSet = false;
   };
 
 } // namespace Model

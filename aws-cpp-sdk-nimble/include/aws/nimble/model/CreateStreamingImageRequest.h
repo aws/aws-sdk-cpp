@@ -38,57 +38,65 @@ namespace Model
 
     /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request. If you don’t specify a client token, the AWS SDK automatically
-     * generates a client token and uses it for the request to ensure idempotency.</p>
+     * of the request. If you don’t specify a client token, the Amazon Web Services SDK
+     * automatically generates a client token and uses it for the request to ensure
+     * idempotency.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
 
     /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request. If you don’t specify a client token, the AWS SDK automatically
-     * generates a client token and uses it for the request to ensure idempotency.</p>
+     * of the request. If you don’t specify a client token, the Amazon Web Services SDK
+     * automatically generates a client token and uses it for the request to ensure
+     * idempotency.</p>
      */
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
 
     /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request. If you don’t specify a client token, the AWS SDK automatically
-     * generates a client token and uses it for the request to ensure idempotency.</p>
+     * of the request. If you don’t specify a client token, the Amazon Web Services SDK
+     * automatically generates a client token and uses it for the request to ensure
+     * idempotency.</p>
      */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
 
     /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request. If you don’t specify a client token, the AWS SDK automatically
-     * generates a client token and uses it for the request to ensure idempotency.</p>
+     * of the request. If you don’t specify a client token, the Amazon Web Services SDK
+     * automatically generates a client token and uses it for the request to ensure
+     * idempotency.</p>
      */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
     /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request. If you don’t specify a client token, the AWS SDK automatically
-     * generates a client token and uses it for the request to ensure idempotency.</p>
+     * of the request. If you don’t specify a client token, the Amazon Web Services SDK
+     * automatically generates a client token and uses it for the request to ensure
+     * idempotency.</p>
      */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
 
     /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request. If you don’t specify a client token, the AWS SDK automatically
-     * generates a client token and uses it for the request to ensure idempotency.</p>
+     * of the request. If you don’t specify a client token, the Amazon Web Services SDK
+     * automatically generates a client token and uses it for the request to ensure
+     * idempotency.</p>
      */
     inline CreateStreamingImageRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
 
     /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request. If you don’t specify a client token, the AWS SDK automatically
-     * generates a client token and uses it for the request to ensure idempotency.</p>
+     * of the request. If you don’t specify a client token, the Amazon Web Services SDK
+     * automatically generates a client token and uses it for the request to ensure
+     * idempotency.</p>
      */
     inline CreateStreamingImageRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
     /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request. If you don’t specify a client token, the AWS SDK automatically
-     * generates a client token and uses it for the request to ensure idempotency.</p>
+     * of the request. If you don’t specify a client token, the Amazon Web Services SDK
+     * automatically generates a client token and uses it for the request to ensure
+     * idempotency.</p>
      */
     inline CreateStreamingImageRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
@@ -258,79 +266,79 @@ namespace Model
 
 
     /**
-     * <p>A collection of labels, in the form of key:value pairs, that apply to this
+     * <p>A collection of labels, in the form of key-value pairs, that apply to this
      * resource.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>A collection of labels, in the form of key:value pairs, that apply to this
+     * <p>A collection of labels, in the form of key-value pairs, that apply to this
      * resource.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>A collection of labels, in the form of key:value pairs, that apply to this
+     * <p>A collection of labels, in the form of key-value pairs, that apply to this
      * resource.</p>
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>A collection of labels, in the form of key:value pairs, that apply to this
+     * <p>A collection of labels, in the form of key-value pairs, that apply to this
      * resource.</p>
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>A collection of labels, in the form of key:value pairs, that apply to this
+     * <p>A collection of labels, in the form of key-value pairs, that apply to this
      * resource.</p>
      */
     inline CreateStreamingImageRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>A collection of labels, in the form of key:value pairs, that apply to this
+     * <p>A collection of labels, in the form of key-value pairs, that apply to this
      * resource.</p>
      */
     inline CreateStreamingImageRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>A collection of labels, in the form of key:value pairs, that apply to this
+     * <p>A collection of labels, in the form of key-value pairs, that apply to this
      * resource.</p>
      */
     inline CreateStreamingImageRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
     /**
-     * <p>A collection of labels, in the form of key:value pairs, that apply to this
+     * <p>A collection of labels, in the form of key-value pairs, that apply to this
      * resource.</p>
      */
     inline CreateStreamingImageRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>A collection of labels, in the form of key:value pairs, that apply to this
+     * <p>A collection of labels, in the form of key-value pairs, that apply to this
      * resource.</p>
      */
     inline CreateStreamingImageRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>A collection of labels, in the form of key:value pairs, that apply to this
+     * <p>A collection of labels, in the form of key-value pairs, that apply to this
      * resource.</p>
      */
     inline CreateStreamingImageRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>A collection of labels, in the form of key:value pairs, that apply to this
+     * <p>A collection of labels, in the form of key-value pairs, that apply to this
      * resource.</p>
      */
     inline CreateStreamingImageRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>A collection of labels, in the form of key:value pairs, that apply to this
+     * <p>A collection of labels, in the form of key-value pairs, that apply to this
      * resource.</p>
      */
     inline CreateStreamingImageRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>A collection of labels, in the form of key:value pairs, that apply to this
+     * <p>A collection of labels, in the form of key-value pairs, that apply to this
      * resource.</p>
      */
     inline CreateStreamingImageRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }

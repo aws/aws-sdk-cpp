@@ -16,6 +16,7 @@
 #include <aws/medialive/model/Mpeg2ScanType.h>
 #include <aws/medialive/model/Mpeg2SubGopLength.h>
 #include <aws/medialive/model/Mpeg2TimecodeInsertionBehavior.h>
+#include <aws/medialive/model/TimecodeBurninSettings.h>
 #include <utility>
 
 namespace Aws
@@ -796,6 +797,37 @@ GOP_TIMECODE: Include timecode
      */
     inline Mpeg2Settings& WithTimecodeInsertion(Mpeg2TimecodeInsertionBehavior&& value) { SetTimecodeInsertion(std::move(value)); return *this;}
 
+
+    /**
+     * Timecode burn-in settings
+     */
+    inline const TimecodeBurninSettings& GetTimecodeBurninSettings() const{ return m_timecodeBurninSettings; }
+
+    /**
+     * Timecode burn-in settings
+     */
+    inline bool TimecodeBurninSettingsHasBeenSet() const { return m_timecodeBurninSettingsHasBeenSet; }
+
+    /**
+     * Timecode burn-in settings
+     */
+    inline void SetTimecodeBurninSettings(const TimecodeBurninSettings& value) { m_timecodeBurninSettingsHasBeenSet = true; m_timecodeBurninSettings = value; }
+
+    /**
+     * Timecode burn-in settings
+     */
+    inline void SetTimecodeBurninSettings(TimecodeBurninSettings&& value) { m_timecodeBurninSettingsHasBeenSet = true; m_timecodeBurninSettings = std::move(value); }
+
+    /**
+     * Timecode burn-in settings
+     */
+    inline Mpeg2Settings& WithTimecodeBurninSettings(const TimecodeBurninSettings& value) { SetTimecodeBurninSettings(value); return *this;}
+
+    /**
+     * Timecode burn-in settings
+     */
+    inline Mpeg2Settings& WithTimecodeBurninSettings(TimecodeBurninSettings&& value) { SetTimecodeBurninSettings(std::move(value)); return *this;}
+
   private:
 
     Mpeg2AdaptiveQuantization m_adaptiveQuantization;
@@ -845,6 +877,9 @@ GOP_TIMECODE: Include timecode
 
     Mpeg2TimecodeInsertionBehavior m_timecodeInsertion;
     bool m_timecodeInsertionHasBeenSet = false;
+
+    TimecodeBurninSettings m_timecodeBurninSettings;
+    bool m_timecodeBurninSettingsHasBeenSet = false;
   };
 
 } // namespace Model

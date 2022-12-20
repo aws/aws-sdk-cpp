@@ -399,8 +399,7 @@ namespace Model
      * <p>The platform details associated with the billing code of the AMI. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Understand
-     * AMI billing information</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>.</p>
+     * AMI billing information</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline const Aws::String& GetPlatformDetails() const{ return m_platformDetails; }
 
@@ -408,8 +407,7 @@ namespace Model
      * <p>The platform details associated with the billing code of the AMI. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Understand
-     * AMI billing information</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>.</p>
+     * AMI billing information</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline bool PlatformDetailsHasBeenSet() const { return m_platformDetailsHasBeenSet; }
 
@@ -417,8 +415,7 @@ namespace Model
      * <p>The platform details associated with the billing code of the AMI. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Understand
-     * AMI billing information</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>.</p>
+     * AMI billing information</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline void SetPlatformDetails(const Aws::String& value) { m_platformDetailsHasBeenSet = true; m_platformDetails = value; }
 
@@ -426,8 +423,7 @@ namespace Model
      * <p>The platform details associated with the billing code of the AMI. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Understand
-     * AMI billing information</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>.</p>
+     * AMI billing information</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline void SetPlatformDetails(Aws::String&& value) { m_platformDetailsHasBeenSet = true; m_platformDetails = std::move(value); }
 
@@ -435,8 +431,7 @@ namespace Model
      * <p>The platform details associated with the billing code of the AMI. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Understand
-     * AMI billing information</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>.</p>
+     * AMI billing information</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline void SetPlatformDetails(const char* value) { m_platformDetailsHasBeenSet = true; m_platformDetails.assign(value); }
 
@@ -444,8 +439,7 @@ namespace Model
      * <p>The platform details associated with the billing code of the AMI. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Understand
-     * AMI billing information</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>.</p>
+     * AMI billing information</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline Image& WithPlatformDetails(const Aws::String& value) { SetPlatformDetails(value); return *this;}
 
@@ -453,8 +447,7 @@ namespace Model
      * <p>The platform details associated with the billing code of the AMI. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Understand
-     * AMI billing information</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>.</p>
+     * AMI billing information</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline Image& WithPlatformDetails(Aws::String&& value) { SetPlatformDetails(std::move(value)); return *this;}
 
@@ -462,8 +455,7 @@ namespace Model
      * <p>The platform details associated with the billing code of the AMI. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Understand
-     * AMI billing information</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>.</p>
+     * AMI billing information</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline Image& WithPlatformDetails(const char* value) { SetPlatformDetails(value); return *this;}
 
@@ -1189,42 +1181,42 @@ namespace Model
     /**
      * <p>The boot mode of the image. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot
-     * modes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * modes</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline const BootModeValues& GetBootMode() const{ return m_bootMode; }
 
     /**
      * <p>The boot mode of the image. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot
-     * modes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * modes</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline bool BootModeHasBeenSet() const { return m_bootModeHasBeenSet; }
 
     /**
      * <p>The boot mode of the image. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot
-     * modes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * modes</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline void SetBootMode(const BootModeValues& value) { m_bootModeHasBeenSet = true; m_bootMode = value; }
 
     /**
      * <p>The boot mode of the image. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot
-     * modes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * modes</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline void SetBootMode(BootModeValues&& value) { m_bootModeHasBeenSet = true; m_bootMode = std::move(value); }
 
     /**
      * <p>The boot mode of the image. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot
-     * modes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * modes</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline Image& WithBootMode(const BootModeValues& value) { SetBootMode(value); return *this;}
 
     /**
      * <p>The boot mode of the image. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot
-     * modes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * modes</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline Image& WithBootMode(BootModeValues&& value) { SetBootMode(std::move(value)); return *this;}
 
@@ -1233,7 +1225,7 @@ namespace Model
      * <p>If the image is configured for NitroTPM support, the value is
      * <code>v2.0</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitrotpm.html">NitroTPM</a>
-     * in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline const TpmSupportValues& GetTpmSupport() const{ return m_tpmSupport; }
 
@@ -1241,7 +1233,7 @@ namespace Model
      * <p>If the image is configured for NitroTPM support, the value is
      * <code>v2.0</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitrotpm.html">NitroTPM</a>
-     * in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline bool TpmSupportHasBeenSet() const { return m_tpmSupportHasBeenSet; }
 
@@ -1249,7 +1241,7 @@ namespace Model
      * <p>If the image is configured for NitroTPM support, the value is
      * <code>v2.0</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitrotpm.html">NitroTPM</a>
-     * in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline void SetTpmSupport(const TpmSupportValues& value) { m_tpmSupportHasBeenSet = true; m_tpmSupport = value; }
 
@@ -1257,7 +1249,7 @@ namespace Model
      * <p>If the image is configured for NitroTPM support, the value is
      * <code>v2.0</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitrotpm.html">NitroTPM</a>
-     * in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline void SetTpmSupport(TpmSupportValues&& value) { m_tpmSupportHasBeenSet = true; m_tpmSupport = std::move(value); }
 
@@ -1265,7 +1257,7 @@ namespace Model
      * <p>If the image is configured for NitroTPM support, the value is
      * <code>v2.0</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitrotpm.html">NitroTPM</a>
-     * in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline Image& WithTpmSupport(const TpmSupportValues& value) { SetTpmSupport(value); return *this;}
 
@@ -1273,7 +1265,7 @@ namespace Model
      * <p>If the image is configured for NitroTPM support, the value is
      * <code>v2.0</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitrotpm.html">NitroTPM</a>
-     * in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline Image& WithTpmSupport(TpmSupportValues&& value) { SetTpmSupport(std::move(value)); return *this;}
 
@@ -1343,7 +1335,7 @@ namespace Model
      * <code>HttpPutResponseHopLimit</code> is set to <code>2</code>. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration">Configure
-     * the AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * the AMI</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline const ImdsSupportValues& GetImdsSupport() const{ return m_imdsSupport; }
 
@@ -1355,7 +1347,7 @@ namespace Model
      * <code>HttpPutResponseHopLimit</code> is set to <code>2</code>. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration">Configure
-     * the AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * the AMI</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline bool ImdsSupportHasBeenSet() const { return m_imdsSupportHasBeenSet; }
 
@@ -1367,7 +1359,7 @@ namespace Model
      * <code>HttpPutResponseHopLimit</code> is set to <code>2</code>. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration">Configure
-     * the AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * the AMI</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline void SetImdsSupport(const ImdsSupportValues& value) { m_imdsSupportHasBeenSet = true; m_imdsSupport = value; }
 
@@ -1379,7 +1371,7 @@ namespace Model
      * <code>HttpPutResponseHopLimit</code> is set to <code>2</code>. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration">Configure
-     * the AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * the AMI</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline void SetImdsSupport(ImdsSupportValues&& value) { m_imdsSupportHasBeenSet = true; m_imdsSupport = std::move(value); }
 
@@ -1391,7 +1383,7 @@ namespace Model
      * <code>HttpPutResponseHopLimit</code> is set to <code>2</code>. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration">Configure
-     * the AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * the AMI</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline Image& WithImdsSupport(const ImdsSupportValues& value) { SetImdsSupport(value); return *this;}
 
@@ -1403,7 +1395,7 @@ namespace Model
      * <code>HttpPutResponseHopLimit</code> is set to <code>2</code>. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration">Configure
-     * the AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * the AMI</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline Image& WithImdsSupport(ImdsSupportValues&& value) { SetImdsSupport(std::move(value)); return *this;}
 

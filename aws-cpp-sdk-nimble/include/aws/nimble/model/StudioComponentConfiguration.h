@@ -42,38 +42,38 @@ namespace Model
 
 
     /**
-     * <p>The configuration for a Microsoft Active Directory (Microsoft AD) studio
-     * resource.</p>
+     * <p>The configuration for a Directory Service for Microsoft Active Directory
+     * studio resource.</p>
      */
     inline const ActiveDirectoryConfiguration& GetActiveDirectoryConfiguration() const{ return m_activeDirectoryConfiguration; }
 
     /**
-     * <p>The configuration for a Microsoft Active Directory (Microsoft AD) studio
-     * resource.</p>
+     * <p>The configuration for a Directory Service for Microsoft Active Directory
+     * studio resource.</p>
      */
     inline bool ActiveDirectoryConfigurationHasBeenSet() const { return m_activeDirectoryConfigurationHasBeenSet; }
 
     /**
-     * <p>The configuration for a Microsoft Active Directory (Microsoft AD) studio
-     * resource.</p>
+     * <p>The configuration for a Directory Service for Microsoft Active Directory
+     * studio resource.</p>
      */
     inline void SetActiveDirectoryConfiguration(const ActiveDirectoryConfiguration& value) { m_activeDirectoryConfigurationHasBeenSet = true; m_activeDirectoryConfiguration = value; }
 
     /**
-     * <p>The configuration for a Microsoft Active Directory (Microsoft AD) studio
-     * resource.</p>
+     * <p>The configuration for a Directory Service for Microsoft Active Directory
+     * studio resource.</p>
      */
     inline void SetActiveDirectoryConfiguration(ActiveDirectoryConfiguration&& value) { m_activeDirectoryConfigurationHasBeenSet = true; m_activeDirectoryConfiguration = std::move(value); }
 
     /**
-     * <p>The configuration for a Microsoft Active Directory (Microsoft AD) studio
-     * resource.</p>
+     * <p>The configuration for a Directory Service for Microsoft Active Directory
+     * studio resource.</p>
      */
     inline StudioComponentConfiguration& WithActiveDirectoryConfiguration(const ActiveDirectoryConfiguration& value) { SetActiveDirectoryConfiguration(value); return *this;}
 
     /**
-     * <p>The configuration for a Microsoft Active Directory (Microsoft AD) studio
-     * resource.</p>
+     * <p>The configuration for a Directory Service for Microsoft Active Directory
+     * studio resource.</p>
      */
     inline StudioComponentConfiguration& WithActiveDirectoryConfiguration(ActiveDirectoryConfiguration&& value) { SetActiveDirectoryConfiguration(std::move(value)); return *this;}
 

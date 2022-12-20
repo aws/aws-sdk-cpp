@@ -20,7 +20,15 @@ namespace Model
     MSE,
     F1,
     F1macro,
-    AUC
+    AUC,
+    RMSE,
+    MAE,
+    R2,
+    BalancedAccuracy,
+    Precision,
+    PrecisionMacro,
+    Recall,
+    RecallMacro
   };
 
 namespace AutoMLMetricEnumMapper

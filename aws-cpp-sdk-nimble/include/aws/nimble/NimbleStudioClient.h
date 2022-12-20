@@ -131,7 +131,7 @@ namespace NimbleStudio
         /**
          * <p>Creates a streaming session in a studio.</p> <p>After invoking this
          * operation, you must poll GetStreamingSession until the streaming session is in
-         * state READY.</p><p><h3>See Also:</h3>   <a
+         * the <code>READY</code> state.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/CreateStreamingSession">AWS
          * API Reference</a></p>
          */
@@ -150,7 +150,8 @@ namespace NimbleStudio
         /**
          * <p>Creates a streaming session stream for a streaming session.</p> <p>After
          * invoking this API, invoke GetStreamingSessionStream with the returned streamId
-         * to poll the resource until it is in state READY.</p><p><h3>See Also:</h3>   <a
+         * to poll the resource until it is in the <code>READY</code> state.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/CreateStreamingSessionStream">AWS
          * API Reference</a></p>
          */
@@ -167,23 +168,23 @@ namespace NimbleStudio
         virtual void CreateStreamingSessionStreamAsync(const Model::CreateStreamingSessionStreamRequest& request, const CreateStreamingSessionStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Create a new Studio.</p> <p>When creating a Studio, two IAM roles must be
-         * provided: the admin role and the user Role. These roles are assumed by your
+         * <p>Create a new studio.</p> <p>When creating a studio, two IAM roles must be
+         * provided: the admin role and the user role. These roles are assumed by your
          * users when they log in to the Nimble Studio portal.</p> <p>The user role must
-         * have the AmazonNimbleStudio-StudioUser managed policy attached for the portal to
-         * function properly.</p> <p>The Admin Role must have the
-         * AmazonNimbleStudio-StudioAdmin managed policy attached for the portal to
-         * function properly.</p> <p>You may optionally specify a KMS key in the
-         * StudioEncryptionConfiguration.</p> <p>In Nimble Studio, resource names,
-         * descriptions, initialization scripts, and other data you provide are always
-         * encrypted at rest using an KMS key. By default, this key is owned by Amazon Web
-         * Services and managed on your behalf. You may provide your own KMS key when
-         * calling CreateStudio to encrypt this data using a key you own and manage.</p>
-         * <p>When providing an KMS key during studio creation, Nimble Studio creates KMS
-         * grants in your account to provide your studio user and admin roles access to
-         * these KMS keys.</p> <p>If you delete this grant, the studio will no longer be
-         * accessible to your portal users.</p> <p>If you delete the studio KMS key, your
-         * studio will no longer be accessible.</p><p><h3>See Also:</h3>   <a
+         * have the <code>AmazonNimbleStudio-StudioUser</code> managed policy attached for
+         * the portal to function properly.</p> <p>The admin role must have the
+         * <code>AmazonNimbleStudio-StudioAdmin</code> managed policy attached for the
+         * portal to function properly.</p> <p>You may optionally specify a KMS key in the
+         * <code>StudioEncryptionConfiguration</code>.</p> <p>In Nimble Studio, resource
+         * names, descriptions, initialization scripts, and other data you provide are
+         * always encrypted at rest using an KMS key. By default, this key is owned by
+         * Amazon Web Services and managed on your behalf. You may provide your own KMS key
+         * when calling <code>CreateStudio</code> to encrypt this data using a key you own
+         * and manage.</p> <p>When providing an KMS key during studio creation, Nimble
+         * Studio creates KMS grants in your account to provide your studio user and admin
+         * roles access to these KMS keys.</p> <p>If you delete this grant, the studio will
+         * no longer be accessible to your portal users.</p> <p>If you delete the studio
+         * KMS key, your studio will no longer be accessible.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/CreateStudio">AWS
          * API Reference</a></p>
          */
@@ -269,9 +270,10 @@ namespace NimbleStudio
 
         /**
          * <p>Deletes streaming session resource.</p> <p>After invoking this operation, use
-         * GetStreamingSession to poll the resource until it transitions to a DELETED
-         * state.</p> <p>A streaming session will count against your streaming session
-         * quota until it is marked DELETED.</p><p><h3>See Also:</h3>   <a
+         * GetStreamingSession to poll the resource until it transitions to a
+         * <code>DELETED</code> state.</p> <p>A streaming session will count against your
+         * streaming session quota until it is marked <code>DELETED</code>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/DeleteStreamingSession">AWS
          * API Reference</a></p>
          */
@@ -339,7 +341,7 @@ namespace NimbleStudio
         virtual void DeleteStudioMemberAsync(const Model::DeleteStudioMemberRequest& request, const DeleteStudioMemberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Get Eula.</p><p><h3>See Also:</h3>   <a
+         * <p>Get EULA.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/GetEula">AWS API
          * Reference</a></p>
          */
@@ -465,11 +467,31 @@ namespace NimbleStudio
         virtual void GetStreamingSessionAsync(const Model::GetStreamingSessionRequest& request, const GetStreamingSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Gets <code>StreamingSessionBackup</code> resource.</p> <p>Invoke this
+         * operation to poll for a streaming session backup while stopping a streaming
+         * session.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/GetStreamingSessionBackup">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetStreamingSessionBackupOutcome GetStreamingSessionBackup(const Model::GetStreamingSessionBackupRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetStreamingSessionBackup that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetStreamingSessionBackupOutcomeCallable GetStreamingSessionBackupCallable(const Model::GetStreamingSessionBackupRequest& request) const;
+
+        /**
+         * An Async wrapper for GetStreamingSessionBackup that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetStreamingSessionBackupAsync(const Model::GetStreamingSessionBackupRequest& request, const GetStreamingSessionBackupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Gets a StreamingSessionStream for a streaming session.</p> <p>Invoke this
-         * operation to poll the resource after invoking CreateStreamingSessionStream.</p>
-         * <p>After the StreamingSessionStream changes to the state READY, the url property
-         * will contain a stream to be used with the DCV streaming client.</p><p><h3>See
-         * Also:</h3>   <a
+         * operation to poll the resource after invoking
+         * <code>CreateStreamingSessionStream</code>.</p> <p>After the
+         * <code>StreamingSessionStream</code> changes to the <code>READY</code> state, the
+         * url property will contain a stream to be used with the DCV streaming
+         * client.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/GetStreamingSessionStream">AWS
          * API Reference</a></p>
          */
@@ -486,7 +508,7 @@ namespace NimbleStudio
         virtual void GetStreamingSessionStreamAsync(const Model::GetStreamingSessionStreamRequest& request, const GetStreamingSessionStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Get a Studio resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Get a studio resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/GetStudio">AWS
          * API Reference</a></p>
          */
@@ -537,7 +559,7 @@ namespace NimbleStudio
         virtual void GetStudioMemberAsync(const Model::GetStudioMemberRequest& request, const GetStudioMemberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>List Eula Acceptances.</p><p><h3>See Also:</h3>   <a
+         * <p>List EULA acceptances.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/ListEulaAcceptances">AWS
          * API Reference</a></p>
          */
@@ -554,7 +576,7 @@ namespace NimbleStudio
         virtual void ListEulaAcceptancesAsync(const Model::ListEulaAcceptancesRequest& request, const ListEulaAcceptancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>List Eulas.</p><p><h3>See Also:</h3>   <a
+         * <p>List EULAs.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/ListEulas">AWS
          * API Reference</a></p>
          */
@@ -625,6 +647,24 @@ namespace NimbleStudio
         virtual void ListStreamingImagesAsync(const Model::ListStreamingImagesRequest& request, const ListStreamingImagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Lists the backups of a streaming session in a studio.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/ListStreamingSessionBackups">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListStreamingSessionBackupsOutcome ListStreamingSessionBackups(const Model::ListStreamingSessionBackupsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListStreamingSessionBackups that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListStreamingSessionBackupsOutcomeCallable ListStreamingSessionBackupsCallable(const Model::ListStreamingSessionBackupsRequest& request) const;
+
+        /**
+         * An Async wrapper for ListStreamingSessionBackups that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListStreamingSessionBackupsAsync(const Model::ListStreamingSessionBackupsRequest& request, const ListStreamingSessionBackupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Lists the streaming sessions in a studio.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/ListStreamingSessions">AWS
          * API Reference</a></p>
@@ -642,7 +682,8 @@ namespace NimbleStudio
         virtual void ListStreamingSessionsAsync(const Model::ListStreamingSessionsRequest& request, const ListStreamingSessionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the StudioComponents in a studio.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the <code>StudioComponents</code> in a studio.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/ListStudioComponents">AWS
          * API Reference</a></p>
          */
@@ -678,7 +719,7 @@ namespace NimbleStudio
         virtual void ListStudioMembersAsync(const Model::ListStudioMembersRequest& request, const ListStudioMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>List studios in your Amazon Web Services account in the requested Amazon Web
+         * <p>List studios in your Amazon Web Services accounts in the requested Amazon Web
          * Services Region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/ListStudios">AWS
          * API Reference</a></p>
@@ -754,8 +795,9 @@ namespace NimbleStudio
         virtual void PutStudioMembersAsync(const Model::PutStudioMembersRequest& request, const PutStudioMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Transitions sessions from the STOPPED state into the READY state. The
-         * START_IN_PROGRESS state is the intermediate state between the STOPPED and READY
+         * <p>Transitions sessions from the <code>STOPPED</code> state into the
+         * <code>READY</code> state. The <code>START_IN_PROGRESS</code> state is the
+         * intermediate state between the <code>STOPPED</code> and <code>READY</code>
          * states.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/StartStreamingSession">AWS
          * API Reference</a></p>
@@ -778,9 +820,10 @@ namespace NimbleStudio
          * with it, this operation will fail with a validation error.</p> <p>If the studio
          * does not have a valid IAM Identity Center configuration currently associated
          * with it, then a new IAM Identity Center application is created for the studio
-         * and the studio is changed to the READY state.</p> <p>After the IAM Identity
-         * Center application is repaired, you must use the Amazon Nimble Studio console to
-         * add administrators and users to your studio.</p><p><h3>See Also:</h3>   <a
+         * and the studio is changed to the <code>READY</code> state.</p> <p>After the IAM
+         * Identity Center application is repaired, you must use the Amazon Nimble Studio
+         * console to add administrators and users to your studio.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/StartStudioSSOConfigurationRepair">AWS
          * API Reference</a></p>
          */
@@ -797,8 +840,9 @@ namespace NimbleStudio
         virtual void StartStudioSSOConfigurationRepairAsync(const Model::StartStudioSSOConfigurationRepairRequest& request, const StartStudioSSOConfigurationRepairResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Transitions sessions from the READY state into the STOPPED state. The
-         * STOP_IN_PROGRESS state is the intermediate state between the READY and STOPPED
+         * <p>Transitions sessions from the <code>READY</code> state into the
+         * <code>STOPPED</code> state. The <code>STOP_IN_PROGRESS</code> state is the
+         * intermediate state between the <code>READY</code> and <code>STOPPED</code>
          * states.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/StopStreamingSession">AWS
          * API Reference</a></p>

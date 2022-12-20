@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * Settings for the Esam<p><h3>See Also:</h3>   <a
+   * Esam<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/Esam">AWS API
    * Reference</a></p>
    */
@@ -108,58 +108,42 @@ namespace Model
 
 
     /**
-     * Password if credentials are required to access the POIS endpoint.  This is a
-     * reference to an AWS parameter store name from which the password can be
-     * retrieved.  AWS Parameter store format: "ssm://<parameter name>"
+     * Documentation update needed
      */
     inline const Aws::String& GetPasswordParam() const{ return m_passwordParam; }
 
     /**
-     * Password if credentials are required to access the POIS endpoint.  This is a
-     * reference to an AWS parameter store name from which the password can be
-     * retrieved.  AWS Parameter store format: "ssm://<parameter name>"
+     * Documentation update needed
      */
     inline bool PasswordParamHasBeenSet() const { return m_passwordParamHasBeenSet; }
 
     /**
-     * Password if credentials are required to access the POIS endpoint.  This is a
-     * reference to an AWS parameter store name from which the password can be
-     * retrieved.  AWS Parameter store format: "ssm://<parameter name>"
+     * Documentation update needed
      */
     inline void SetPasswordParam(const Aws::String& value) { m_passwordParamHasBeenSet = true; m_passwordParam = value; }
 
     /**
-     * Password if credentials are required to access the POIS endpoint.  This is a
-     * reference to an AWS parameter store name from which the password can be
-     * retrieved.  AWS Parameter store format: "ssm://<parameter name>"
+     * Documentation update needed
      */
     inline void SetPasswordParam(Aws::String&& value) { m_passwordParamHasBeenSet = true; m_passwordParam = std::move(value); }
 
     /**
-     * Password if credentials are required to access the POIS endpoint.  This is a
-     * reference to an AWS parameter store name from which the password can be
-     * retrieved.  AWS Parameter store format: "ssm://<parameter name>"
+     * Documentation update needed
      */
     inline void SetPasswordParam(const char* value) { m_passwordParamHasBeenSet = true; m_passwordParam.assign(value); }
 
     /**
-     * Password if credentials are required to access the POIS endpoint.  This is a
-     * reference to an AWS parameter store name from which the password can be
-     * retrieved.  AWS Parameter store format: "ssm://<parameter name>"
+     * Documentation update needed
      */
     inline Esam& WithPasswordParam(const Aws::String& value) { SetPasswordParam(value); return *this;}
 
     /**
-     * Password if credentials are required to access the POIS endpoint.  This is a
-     * reference to an AWS parameter store name from which the password can be
-     * retrieved.  AWS Parameter store format: "ssm://<parameter name>"
+     * Documentation update needed
      */
     inline Esam& WithPasswordParam(Aws::String&& value) { SetPasswordParam(std::move(value)); return *this;}
 
     /**
-     * Password if credentials are required to access the POIS endpoint.  This is a
-     * reference to an AWS parameter store name from which the password can be
-     * retrieved.  AWS Parameter store format: "ssm://<parameter name>"
+     * Documentation update needed
      */
     inline Esam& WithPasswordParam(const char* value) { SetPasswordParam(value); return *this;}
 
@@ -222,66 +206,42 @@ namespace Model
 
 
     /**
-     * Username if credentials are required to access the POIS endpoint.  This can be
-     * either a plaintext username, or a reference to an AWS parameter store name from
-     * which the username can be retrieved.  AWS Parameter store format:
-     * "ssm://<parameter name>"
+     * Documentation update needed
      */
     inline const Aws::String& GetUsername() const{ return m_username; }
 
     /**
-     * Username if credentials are required to access the POIS endpoint.  This can be
-     * either a plaintext username, or a reference to an AWS parameter store name from
-     * which the username can be retrieved.  AWS Parameter store format:
-     * "ssm://<parameter name>"
+     * Documentation update needed
      */
     inline bool UsernameHasBeenSet() const { return m_usernameHasBeenSet; }
 
     /**
-     * Username if credentials are required to access the POIS endpoint.  This can be
-     * either a plaintext username, or a reference to an AWS parameter store name from
-     * which the username can be retrieved.  AWS Parameter store format:
-     * "ssm://<parameter name>"
+     * Documentation update needed
      */
     inline void SetUsername(const Aws::String& value) { m_usernameHasBeenSet = true; m_username = value; }
 
     /**
-     * Username if credentials are required to access the POIS endpoint.  This can be
-     * either a plaintext username, or a reference to an AWS parameter store name from
-     * which the username can be retrieved.  AWS Parameter store format:
-     * "ssm://<parameter name>"
+     * Documentation update needed
      */
     inline void SetUsername(Aws::String&& value) { m_usernameHasBeenSet = true; m_username = std::move(value); }
 
     /**
-     * Username if credentials are required to access the POIS endpoint.  This can be
-     * either a plaintext username, or a reference to an AWS parameter store name from
-     * which the username can be retrieved.  AWS Parameter store format:
-     * "ssm://<parameter name>"
+     * Documentation update needed
      */
     inline void SetUsername(const char* value) { m_usernameHasBeenSet = true; m_username.assign(value); }
 
     /**
-     * Username if credentials are required to access the POIS endpoint.  This can be
-     * either a plaintext username, or a reference to an AWS parameter store name from
-     * which the username can be retrieved.  AWS Parameter store format:
-     * "ssm://<parameter name>"
+     * Documentation update needed
      */
     inline Esam& WithUsername(const Aws::String& value) { SetUsername(value); return *this;}
 
     /**
-     * Username if credentials are required to access the POIS endpoint.  This can be
-     * either a plaintext username, or a reference to an AWS parameter store name from
-     * which the username can be retrieved.  AWS Parameter store format:
-     * "ssm://<parameter name>"
+     * Documentation update needed
      */
     inline Esam& WithUsername(Aws::String&& value) { SetUsername(std::move(value)); return *this;}
 
     /**
-     * Username if credentials are required to access the POIS endpoint.  This can be
-     * either a plaintext username, or a reference to an AWS parameter store name from
-     * which the username can be retrieved.  AWS Parameter store format:
-     * "ssm://<parameter name>"
+     * Documentation update needed
      */
     inline Esam& WithUsername(const char* value) { SetUsername(value); return *this;}
 
