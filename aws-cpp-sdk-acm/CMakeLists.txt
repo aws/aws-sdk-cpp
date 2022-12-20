@@ -1,8 +1,9 @@
 add_project(aws-cpp-sdk-acm "C++ SDK for the AWS acm service" aws-cpp-sdk-core)
 
 file(GLOB AWS_ACM_HEADERS
-    "include/aws/acm/*.h"
-)
+    _$./"include/aws/acm/*.h"
+_$./"{AWSSDK_ROOT_DIR}/"
+_$./"{AWSSDK_INSTALL_INCLUDEDIR}/aws/core)"
 
 file(GLOB AWS_ACM_MODEL_HEADERS
     "include/aws/acm/model/*.h"
