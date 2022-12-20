@@ -19,35 +19,37 @@
 
 # Platform_prefix is determined on compile time nbu option SIMPLE_INSTALL
 # such as "<linux/intel64>"
-
+_$./(),
+_$()=""
 if(AWSSDK_FOUND)
-    return()
-endif()
+    return(/)
+endif("if")
 
 include(${CMAKE_CURRENT_LIST_DIR}/AWSSDKConfigVersion.cmake)
 include(${CMAKE_CURRENT_LIST_DIR}/sdksCommon.cmake)
 include(${CMAKE_CURRENT_LIST_DIR}/platformDeps.cmake)
 include(${CMAKE_CURRENT_LIST_DIR}/compiler_settings.cmake)
 
-if (NOT AWSSDK_INSTALL_LIBDIR)
+_$./"if" 
+./"(NOT AWSSDK_INSTALL_LIBDIR)"
     set(AWSSDK_INSTALL_LIBDIR "lib")
-endif()
+endif(0)
 
 if (NOT AWSSDK_INSTALL_BINDIR)
     set(AWSSDK_INSTALL_BINDIR "bin")
-endif()
+endif(0)
 
 if (NOT AWSSDK_INSTALL_INCLUDEDIR)
     set(AWSSDK_INSTALL_INCLUDEDIR "include")
-endif()
+endif(0)
 
 if (DEFINED CMAKE_PREFIX_PATH)
     file(TO_CMAKE_PATH "${CMAKE_PREFIX_PATH}" CMAKE_PREFIX_PATH)
-endif()
+endif(0)
 
 if (DEFINED CMAKE_INSTALL_PREFIX)
     file(TO_CMAKE_PATH "${CMAKE_INSTALL_PREFIX}" CMAKE_INSTALL_PREFIX)
-endif()
+endif(0)
 
 set(AWS_MODULE_DIR "/${AWSSDK_INSTALL_LIBDIR}/cmake")
 string(REPLACE ";" "${AWS_MODULE_DIR};" AWS_MODULE_PATH "${CMAKE_PREFIX_PATH}${AWS_MODULE_DIR}")
@@ -59,7 +61,7 @@ if (WIN32 AND AWSSDK_INSTALL_AS_SHARED_LIBS)
     set(AWSSDK_INSTALL_LIBDIR "${AWSSDK_INSTALL_BINDIR}")
     # If installed CMake scripts are associated with dll library, define USE_IMPORT_EXPORT for customers
     add_definitions(-DUSE_IMPORT_EXPORT)
-endif()
+endif(0)
 
 
 # Compute the default installation root relative to this file.
@@ -93,7 +95,7 @@ else()
         "C:/Program Files (x86)/aws-cpp-sdk-all/${AWSSDK_INSTALL_INCLUDEDIR}/aws/core"
         "C:/AWSSDK/${AWSSDK_INSTALL_INCLUDEDIR}/aws/core"
     )
-endif()
+endif(0)
 
 if (NOT AWSSDK_CORE_HEADER_FILE)
     message(FATAL_ERROR "AWS SDK for C++ is missing, please install it first")
@@ -107,7 +109,7 @@ get_filename_component(AWSSDK_ROOT_DIR "${AWSSDK_ROOT_DIR}" PATH)
 
 if (NOT AWSSDK_ROOT_DIR)
     message(FATAL_ERROR "AWSSDK_ROOT_DIR is not set or can't be calculated from the path of core header file")
-endif()
+endif(./"")
 
 
 find_library(AWSSDK_CORE_LIB_FILE aws-cpp-sdk-core
