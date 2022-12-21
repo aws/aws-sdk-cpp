@@ -76,51 +76,37 @@ namespace Model
 
 
     /**
-     * <p>ID of the current policy version. The hash helps to prevent a situation where
-     * multiple users attempt to overwrite a policy. You must provide this hash when
-     * updating or deleting a policy.</p>
+     * <p>ID of the current policy version.</p>
      */
     inline const Aws::String& GetPolicyHash() const{ return m_policyHash; }
 
     /**
-     * <p>ID of the current policy version. The hash helps to prevent a situation where
-     * multiple users attempt to overwrite a policy. You must provide this hash when
-     * updating or deleting a policy.</p>
+     * <p>ID of the current policy version.</p>
      */
     inline void SetPolicyHash(const Aws::String& value) { m_policyHash = value; }
 
     /**
-     * <p>ID of the current policy version. The hash helps to prevent a situation where
-     * multiple users attempt to overwrite a policy. You must provide this hash when
-     * updating or deleting a policy.</p>
+     * <p>ID of the current policy version.</p>
      */
     inline void SetPolicyHash(Aws::String&& value) { m_policyHash = std::move(value); }
 
     /**
-     * <p>ID of the current policy version. The hash helps to prevent a situation where
-     * multiple users attempt to overwrite a policy. You must provide this hash when
-     * updating or deleting a policy.</p>
+     * <p>ID of the current policy version.</p>
      */
     inline void SetPolicyHash(const char* value) { m_policyHash.assign(value); }
 
     /**
-     * <p>ID of the current policy version. The hash helps to prevent a situation where
-     * multiple users attempt to overwrite a policy. You must provide this hash when
-     * updating or deleting a policy.</p>
+     * <p>ID of the current policy version.</p>
      */
     inline PutResourcePolicyResult& WithPolicyHash(const Aws::String& value) { SetPolicyHash(value); return *this;}
 
     /**
-     * <p>ID of the current policy version. The hash helps to prevent a situation where
-     * multiple users attempt to overwrite a policy. You must provide this hash when
-     * updating or deleting a policy.</p>
+     * <p>ID of the current policy version.</p>
      */
     inline PutResourcePolicyResult& WithPolicyHash(Aws::String&& value) { SetPolicyHash(std::move(value)); return *this;}
 
     /**
-     * <p>ID of the current policy version. The hash helps to prevent a situation where
-     * multiple users attempt to overwrite a policy. You must provide this hash when
-     * updating or deleting a policy.</p>
+     * <p>ID of the current policy version.</p>
      */
     inline PutResourcePolicyResult& WithPolicyHash(const char* value) { SetPolicyHash(value); return *this;}
 

@@ -207,44 +207,32 @@ namespace Model
 
 
     /**
-     * <p>The algorithm that is used to encrypt the file.</p>  <p>You can only
-     * specify <code>NONE</code> if the URL for your connector uses HTTPS. This ensures
-     * that no traffic is sent in clear text.</p> 
+     * <p>The algorithm that is used to encrypt the file.</p>
      */
     inline const EncryptionAlg& GetEncryptionAlgorithm() const{ return m_encryptionAlgorithm; }
 
     /**
-     * <p>The algorithm that is used to encrypt the file.</p>  <p>You can only
-     * specify <code>NONE</code> if the URL for your connector uses HTTPS. This ensures
-     * that no traffic is sent in clear text.</p> 
+     * <p>The algorithm that is used to encrypt the file.</p>
      */
     inline bool EncryptionAlgorithmHasBeenSet() const { return m_encryptionAlgorithmHasBeenSet; }
 
     /**
-     * <p>The algorithm that is used to encrypt the file.</p>  <p>You can only
-     * specify <code>NONE</code> if the URL for your connector uses HTTPS. This ensures
-     * that no traffic is sent in clear text.</p> 
+     * <p>The algorithm that is used to encrypt the file.</p>
      */
     inline void SetEncryptionAlgorithm(const EncryptionAlg& value) { m_encryptionAlgorithmHasBeenSet = true; m_encryptionAlgorithm = value; }
 
     /**
-     * <p>The algorithm that is used to encrypt the file.</p>  <p>You can only
-     * specify <code>NONE</code> if the URL for your connector uses HTTPS. This ensures
-     * that no traffic is sent in clear text.</p> 
+     * <p>The algorithm that is used to encrypt the file.</p>
      */
     inline void SetEncryptionAlgorithm(EncryptionAlg&& value) { m_encryptionAlgorithmHasBeenSet = true; m_encryptionAlgorithm = std::move(value); }
 
     /**
-     * <p>The algorithm that is used to encrypt the file.</p>  <p>You can only
-     * specify <code>NONE</code> if the URL for your connector uses HTTPS. This ensures
-     * that no traffic is sent in clear text.</p> 
+     * <p>The algorithm that is used to encrypt the file.</p>
      */
     inline As2ConnectorConfig& WithEncryptionAlgorithm(const EncryptionAlg& value) { SetEncryptionAlgorithm(value); return *this;}
 
     /**
-     * <p>The algorithm that is used to encrypt the file.</p>  <p>You can only
-     * specify <code>NONE</code> if the URL for your connector uses HTTPS. This ensures
-     * that no traffic is sent in clear text.</p> 
+     * <p>The algorithm that is used to encrypt the file.</p>
      */
     inline As2ConnectorConfig& WithEncryptionAlgorithm(EncryptionAlg&& value) { SetEncryptionAlgorithm(std::move(value)); return *this;}
 
@@ -288,42 +276,42 @@ namespace Model
 
     /**
      * <p>The signing algorithm for the MDN response.</p>  <p>If set to DEFAULT
-     * (or not set at all), the value for <code>SigningAlgorithm</code> is used.</p>
+     * (or not set at all), the value for <code>SigningAlogorithm</code> is used.</p>
      * 
      */
     inline const MdnSigningAlg& GetMdnSigningAlgorithm() const{ return m_mdnSigningAlgorithm; }
 
     /**
      * <p>The signing algorithm for the MDN response.</p>  <p>If set to DEFAULT
-     * (or not set at all), the value for <code>SigningAlgorithm</code> is used.</p>
+     * (or not set at all), the value for <code>SigningAlogorithm</code> is used.</p>
      * 
      */
     inline bool MdnSigningAlgorithmHasBeenSet() const { return m_mdnSigningAlgorithmHasBeenSet; }
 
     /**
      * <p>The signing algorithm for the MDN response.</p>  <p>If set to DEFAULT
-     * (or not set at all), the value for <code>SigningAlgorithm</code> is used.</p>
+     * (or not set at all), the value for <code>SigningAlogorithm</code> is used.</p>
      * 
      */
     inline void SetMdnSigningAlgorithm(const MdnSigningAlg& value) { m_mdnSigningAlgorithmHasBeenSet = true; m_mdnSigningAlgorithm = value; }
 
     /**
      * <p>The signing algorithm for the MDN response.</p>  <p>If set to DEFAULT
-     * (or not set at all), the value for <code>SigningAlgorithm</code> is used.</p>
+     * (or not set at all), the value for <code>SigningAlogorithm</code> is used.</p>
      * 
      */
     inline void SetMdnSigningAlgorithm(MdnSigningAlg&& value) { m_mdnSigningAlgorithmHasBeenSet = true; m_mdnSigningAlgorithm = std::move(value); }
 
     /**
      * <p>The signing algorithm for the MDN response.</p>  <p>If set to DEFAULT
-     * (or not set at all), the value for <code>SigningAlgorithm</code> is used.</p>
+     * (or not set at all), the value for <code>SigningAlogorithm</code> is used.</p>
      * 
      */
     inline As2ConnectorConfig& WithMdnSigningAlgorithm(const MdnSigningAlg& value) { SetMdnSigningAlgorithm(value); return *this;}
 
     /**
      * <p>The signing algorithm for the MDN response.</p>  <p>If set to DEFAULT
-     * (or not set at all), the value for <code>SigningAlgorithm</code> is used.</p>
+     * (or not set at all), the value for <code>SigningAlogorithm</code> is used.</p>
      * 
      */
     inline As2ConnectorConfig& WithMdnSigningAlgorithm(MdnSigningAlg&& value) { SetMdnSigningAlgorithm(std::move(value)); return *this;}

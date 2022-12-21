@@ -24,6 +24,7 @@ namespace Aws
         static const int CUSTOM_HASH = HashingUtils::HashString("CUSTOM");
         static const int TAG_HASH = HashingUtils::HashString("TAG");
         static const int DELETE__HASH = HashingUtils::HashString("DELETE");
+        static const int DECRYPT_HASH = HashingUtils::HashString("DECRYPT");
 
 
         WorkflowStepType GetWorkflowStepTypeForName(const Aws::String& name)
@@ -44,6 +45,10 @@ namespace Aws
           else if (hashCode == DELETE__HASH)
           {
             return WorkflowStepType::DELETE_;
+          }
+          else if (hashCode == DECRYPT_HASH)
+          {
+            return WorkflowStepType::DECRYPT;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -67,6 +72,8 @@ namespace Aws
             return "TAG";
           case WorkflowStepType::DELETE_:
             return "DELETE";
+          case WorkflowStepType::DECRYPT:
+            return "DECRYPT";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
