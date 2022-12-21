@@ -24,7 +24,8 @@ WorkflowStep::WorkflowStep() :
     m_copyStepDetailsHasBeenSet(false),
     m_customStepDetailsHasBeenSet(false),
     m_deleteStepDetailsHasBeenSet(false),
-    m_tagStepDetailsHasBeenSet(false)
+    m_tagStepDetailsHasBeenSet(false),
+    m_decryptStepDetailsHasBeenSet(false)
 {
 }
 
@@ -34,7 +35,8 @@ WorkflowStep::WorkflowStep(JsonView jsonValue) :
     m_copyStepDetailsHasBeenSet(false),
     m_customStepDetailsHasBeenSet(false),
     m_deleteStepDetailsHasBeenSet(false),
-    m_tagStepDetailsHasBeenSet(false)
+    m_tagStepDetailsHasBeenSet(false),
+    m_decryptStepDetailsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -76,6 +78,13 @@ WorkflowStep& WorkflowStep::operator =(JsonView jsonValue)
     m_tagStepDetailsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DecryptStepDetails"))
+  {
+    m_decryptStepDetails = jsonValue.GetObject("DecryptStepDetails");
+
+    m_decryptStepDetailsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -109,6 +118,12 @@ JsonValue WorkflowStep::Jsonize() const
   if(m_tagStepDetailsHasBeenSet)
   {
    payload.WithObject("TagStepDetails", m_tagStepDetails.Jsonize());
+
+  }
+
+  if(m_decryptStepDetailsHasBeenSet)
+  {
+   payload.WithObject("DecryptStepDetails", m_decryptStepDetails.Jsonize());
 
   }
 

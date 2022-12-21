@@ -35,50 +35,50 @@ namespace Model
 
 
     /**
-     * <p>Amazon Resource Name (ARN) of the resource to which the policies are
-     * attached.</p>
+     * <p>Amazon Resource Name (ARN) of the resource to which you want to attach a
+     * policy.</p>
      */
     inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
 
     /**
-     * <p>Amazon Resource Name (ARN) of the resource to which the policies are
-     * attached.</p>
+     * <p>Amazon Resource Name (ARN) of the resource to which you want to attach a
+     * policy.</p>
      */
     inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
 
     /**
-     * <p>Amazon Resource Name (ARN) of the resource to which the policies are
-     * attached.</p>
+     * <p>Amazon Resource Name (ARN) of the resource to which you want to attach a
+     * policy.</p>
      */
     inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
 
     /**
-     * <p>Amazon Resource Name (ARN) of the resource to which the policies are
-     * attached.</p>
+     * <p>Amazon Resource Name (ARN) of the resource to which you want to attach a
+     * policy.</p>
      */
     inline void SetResourceArn(Aws::String&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::move(value); }
 
     /**
-     * <p>Amazon Resource Name (ARN) of the resource to which the policies are
-     * attached.</p>
+     * <p>Amazon Resource Name (ARN) of the resource to which you want to attach a
+     * policy.</p>
      */
     inline void SetResourceArn(const char* value) { m_resourceArnHasBeenSet = true; m_resourceArn.assign(value); }
 
     /**
-     * <p>Amazon Resource Name (ARN) of the resource to which the policies are
-     * attached.</p>
+     * <p>Amazon Resource Name (ARN) of the resource to which you want to attach a
+     * policy.</p>
      */
     inline PutResourcePolicyRequest& WithResourceArn(const Aws::String& value) { SetResourceArn(value); return *this;}
 
     /**
-     * <p>Amazon Resource Name (ARN) of the resource to which the policies are
-     * attached.</p>
+     * <p>Amazon Resource Name (ARN) of the resource to which you want to attach a
+     * policy.</p>
      */
     inline PutResourcePolicyRequest& WithResourceArn(Aws::String&& value) { SetResourceArn(std::move(value)); return *this;}
 
     /**
-     * <p>Amazon Resource Name (ARN) of the resource to which the policies are
-     * attached.</p>
+     * <p>Amazon Resource Name (ARN) of the resource to which you want to attach a
+     * policy.</p>
      */
     inline PutResourcePolicyRequest& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
 
@@ -167,49 +167,57 @@ namespace Model
 
     /**
      * <p>ID of the current policy version. The hash helps to prevent a situation where
-     * multiple users attempt to overwrite a policy.</p>
+     * multiple users attempt to overwrite a policy. You must provide this hash when
+     * updating or deleting a policy.</p>
      */
     inline const Aws::String& GetPolicyHash() const{ return m_policyHash; }
 
     /**
      * <p>ID of the current policy version. The hash helps to prevent a situation where
-     * multiple users attempt to overwrite a policy.</p>
+     * multiple users attempt to overwrite a policy. You must provide this hash when
+     * updating or deleting a policy.</p>
      */
     inline bool PolicyHashHasBeenSet() const { return m_policyHashHasBeenSet; }
 
     /**
      * <p>ID of the current policy version. The hash helps to prevent a situation where
-     * multiple users attempt to overwrite a policy.</p>
+     * multiple users attempt to overwrite a policy. You must provide this hash when
+     * updating or deleting a policy.</p>
      */
     inline void SetPolicyHash(const Aws::String& value) { m_policyHashHasBeenSet = true; m_policyHash = value; }
 
     /**
      * <p>ID of the current policy version. The hash helps to prevent a situation where
-     * multiple users attempt to overwrite a policy.</p>
+     * multiple users attempt to overwrite a policy. You must provide this hash when
+     * updating or deleting a policy.</p>
      */
     inline void SetPolicyHash(Aws::String&& value) { m_policyHashHasBeenSet = true; m_policyHash = std::move(value); }
 
     /**
      * <p>ID of the current policy version. The hash helps to prevent a situation where
-     * multiple users attempt to overwrite a policy.</p>
+     * multiple users attempt to overwrite a policy. You must provide this hash when
+     * updating or deleting a policy.</p>
      */
     inline void SetPolicyHash(const char* value) { m_policyHashHasBeenSet = true; m_policyHash.assign(value); }
 
     /**
      * <p>ID of the current policy version. The hash helps to prevent a situation where
-     * multiple users attempt to overwrite a policy.</p>
+     * multiple users attempt to overwrite a policy. You must provide this hash when
+     * updating or deleting a policy.</p>
      */
     inline PutResourcePolicyRequest& WithPolicyHash(const Aws::String& value) { SetPolicyHash(value); return *this;}
 
     /**
      * <p>ID of the current policy version. The hash helps to prevent a situation where
-     * multiple users attempt to overwrite a policy.</p>
+     * multiple users attempt to overwrite a policy. You must provide this hash when
+     * updating or deleting a policy.</p>
      */
     inline PutResourcePolicyRequest& WithPolicyHash(Aws::String&& value) { SetPolicyHash(std::move(value)); return *this;}
 
     /**
      * <p>ID of the current policy version. The hash helps to prevent a situation where
-     * multiple users attempt to overwrite a policy.</p>
+     * multiple users attempt to overwrite a policy. You must provide this hash when
+     * updating or deleting a policy.</p>
      */
     inline PutResourcePolicyRequest& WithPolicyHash(const char* value) { SetPolicyHash(value); return *this;}
 

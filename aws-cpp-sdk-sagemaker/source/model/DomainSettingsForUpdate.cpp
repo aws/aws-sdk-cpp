@@ -21,14 +21,16 @@ namespace Model
 DomainSettingsForUpdate::DomainSettingsForUpdate() : 
     m_rStudioServerProDomainSettingsForUpdateHasBeenSet(false),
     m_executionRoleIdentityConfig(ExecutionRoleIdentityConfig::NOT_SET),
-    m_executionRoleIdentityConfigHasBeenSet(false)
+    m_executionRoleIdentityConfigHasBeenSet(false),
+    m_securityGroupIdsHasBeenSet(false)
 {
 }
 
 DomainSettingsForUpdate::DomainSettingsForUpdate(JsonView jsonValue) : 
     m_rStudioServerProDomainSettingsForUpdateHasBeenSet(false),
     m_executionRoleIdentityConfig(ExecutionRoleIdentityConfig::NOT_SET),
-    m_executionRoleIdentityConfigHasBeenSet(false)
+    m_executionRoleIdentityConfigHasBeenSet(false),
+    m_securityGroupIdsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -49,6 +51,16 @@ DomainSettingsForUpdate& DomainSettingsForUpdate::operator =(JsonView jsonValue)
     m_executionRoleIdentityConfigHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SecurityGroupIds"))
+  {
+    Aws::Utils::Array<JsonView> securityGroupIdsJsonList = jsonValue.GetArray("SecurityGroupIds");
+    for(unsigned securityGroupIdsIndex = 0; securityGroupIdsIndex < securityGroupIdsJsonList.GetLength(); ++securityGroupIdsIndex)
+    {
+      m_securityGroupIds.push_back(securityGroupIdsJsonList[securityGroupIdsIndex].AsString());
+    }
+    m_securityGroupIdsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -65,6 +77,17 @@ JsonValue DomainSettingsForUpdate::Jsonize() const
   if(m_executionRoleIdentityConfigHasBeenSet)
   {
    payload.WithString("ExecutionRoleIdentityConfig", ExecutionRoleIdentityConfigMapper::GetNameForExecutionRoleIdentityConfig(m_executionRoleIdentityConfig));
+  }
+
+  if(m_securityGroupIdsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> securityGroupIdsJsonList(m_securityGroupIds.size());
+   for(unsigned securityGroupIdsIndex = 0; securityGroupIdsIndex < securityGroupIdsJsonList.GetLength(); ++securityGroupIdsIndex)
+   {
+     securityGroupIdsJsonList[securityGroupIdsIndex].AsString(m_securityGroupIds[securityGroupIdsIndex]);
+   }
+   payload.WithArray("SecurityGroupIds", std::move(securityGroupIdsJsonList));
+
   }
 
   return payload;

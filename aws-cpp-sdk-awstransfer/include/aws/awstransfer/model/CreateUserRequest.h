@@ -694,113 +694,57 @@ namespace Model
 
     /**
      * <p>The public portion of the Secure Shell (SSH) key used to authenticate the
-     * user to the server.</p> <p>The three standard SSH public key format elements are
-     * <code>&lt;key type&gt;</code>, <code>&lt;body base64&gt;</code>, and an optional
-     * <code>&lt;comment&gt;</code>, with spaces between each element.</p> <p>Transfer
-     * Family accepts RSA, ECDSA, and ED25519 keys.</p> <ul> <li> <p>For RSA keys, the
-     * key type is <code>ssh-rsa</code>.</p> </li> <li> <p>For ED25519 keys, the key
-     * type is <code>ssh-ed25519</code>.</p> </li> <li> <p>For ECDSA keys, the key type
-     * is either <code>ecdsa-sha2-nistp256</code>, <code>ecdsa-sha2-nistp384</code>, or
-     * <code>ecdsa-sha2-nistp521</code>, depending on the size of the key you
-     * generated.</p> </li> </ul>
+     * user to the server.</p> <p>Transfer Family accepts RSA, ECDSA, and ED25519
+     * keys.</p>
      */
     inline const Aws::String& GetSshPublicKeyBody() const{ return m_sshPublicKeyBody; }
 
     /**
      * <p>The public portion of the Secure Shell (SSH) key used to authenticate the
-     * user to the server.</p> <p>The three standard SSH public key format elements are
-     * <code>&lt;key type&gt;</code>, <code>&lt;body base64&gt;</code>, and an optional
-     * <code>&lt;comment&gt;</code>, with spaces between each element.</p> <p>Transfer
-     * Family accepts RSA, ECDSA, and ED25519 keys.</p> <ul> <li> <p>For RSA keys, the
-     * key type is <code>ssh-rsa</code>.</p> </li> <li> <p>For ED25519 keys, the key
-     * type is <code>ssh-ed25519</code>.</p> </li> <li> <p>For ECDSA keys, the key type
-     * is either <code>ecdsa-sha2-nistp256</code>, <code>ecdsa-sha2-nistp384</code>, or
-     * <code>ecdsa-sha2-nistp521</code>, depending on the size of the key you
-     * generated.</p> </li> </ul>
+     * user to the server.</p> <p>Transfer Family accepts RSA, ECDSA, and ED25519
+     * keys.</p>
      */
     inline bool SshPublicKeyBodyHasBeenSet() const { return m_sshPublicKeyBodyHasBeenSet; }
 
     /**
      * <p>The public portion of the Secure Shell (SSH) key used to authenticate the
-     * user to the server.</p> <p>The three standard SSH public key format elements are
-     * <code>&lt;key type&gt;</code>, <code>&lt;body base64&gt;</code>, and an optional
-     * <code>&lt;comment&gt;</code>, with spaces between each element.</p> <p>Transfer
-     * Family accepts RSA, ECDSA, and ED25519 keys.</p> <ul> <li> <p>For RSA keys, the
-     * key type is <code>ssh-rsa</code>.</p> </li> <li> <p>For ED25519 keys, the key
-     * type is <code>ssh-ed25519</code>.</p> </li> <li> <p>For ECDSA keys, the key type
-     * is either <code>ecdsa-sha2-nistp256</code>, <code>ecdsa-sha2-nistp384</code>, or
-     * <code>ecdsa-sha2-nistp521</code>, depending on the size of the key you
-     * generated.</p> </li> </ul>
+     * user to the server.</p> <p>Transfer Family accepts RSA, ECDSA, and ED25519
+     * keys.</p>
      */
     inline void SetSshPublicKeyBody(const Aws::String& value) { m_sshPublicKeyBodyHasBeenSet = true; m_sshPublicKeyBody = value; }
 
     /**
      * <p>The public portion of the Secure Shell (SSH) key used to authenticate the
-     * user to the server.</p> <p>The three standard SSH public key format elements are
-     * <code>&lt;key type&gt;</code>, <code>&lt;body base64&gt;</code>, and an optional
-     * <code>&lt;comment&gt;</code>, with spaces between each element.</p> <p>Transfer
-     * Family accepts RSA, ECDSA, and ED25519 keys.</p> <ul> <li> <p>For RSA keys, the
-     * key type is <code>ssh-rsa</code>.</p> </li> <li> <p>For ED25519 keys, the key
-     * type is <code>ssh-ed25519</code>.</p> </li> <li> <p>For ECDSA keys, the key type
-     * is either <code>ecdsa-sha2-nistp256</code>, <code>ecdsa-sha2-nistp384</code>, or
-     * <code>ecdsa-sha2-nistp521</code>, depending on the size of the key you
-     * generated.</p> </li> </ul>
+     * user to the server.</p> <p>Transfer Family accepts RSA, ECDSA, and ED25519
+     * keys.</p>
      */
     inline void SetSshPublicKeyBody(Aws::String&& value) { m_sshPublicKeyBodyHasBeenSet = true; m_sshPublicKeyBody = std::move(value); }
 
     /**
      * <p>The public portion of the Secure Shell (SSH) key used to authenticate the
-     * user to the server.</p> <p>The three standard SSH public key format elements are
-     * <code>&lt;key type&gt;</code>, <code>&lt;body base64&gt;</code>, and an optional
-     * <code>&lt;comment&gt;</code>, with spaces between each element.</p> <p>Transfer
-     * Family accepts RSA, ECDSA, and ED25519 keys.</p> <ul> <li> <p>For RSA keys, the
-     * key type is <code>ssh-rsa</code>.</p> </li> <li> <p>For ED25519 keys, the key
-     * type is <code>ssh-ed25519</code>.</p> </li> <li> <p>For ECDSA keys, the key type
-     * is either <code>ecdsa-sha2-nistp256</code>, <code>ecdsa-sha2-nistp384</code>, or
-     * <code>ecdsa-sha2-nistp521</code>, depending on the size of the key you
-     * generated.</p> </li> </ul>
+     * user to the server.</p> <p>Transfer Family accepts RSA, ECDSA, and ED25519
+     * keys.</p>
      */
     inline void SetSshPublicKeyBody(const char* value) { m_sshPublicKeyBodyHasBeenSet = true; m_sshPublicKeyBody.assign(value); }
 
     /**
      * <p>The public portion of the Secure Shell (SSH) key used to authenticate the
-     * user to the server.</p> <p>The three standard SSH public key format elements are
-     * <code>&lt;key type&gt;</code>, <code>&lt;body base64&gt;</code>, and an optional
-     * <code>&lt;comment&gt;</code>, with spaces between each element.</p> <p>Transfer
-     * Family accepts RSA, ECDSA, and ED25519 keys.</p> <ul> <li> <p>For RSA keys, the
-     * key type is <code>ssh-rsa</code>.</p> </li> <li> <p>For ED25519 keys, the key
-     * type is <code>ssh-ed25519</code>.</p> </li> <li> <p>For ECDSA keys, the key type
-     * is either <code>ecdsa-sha2-nistp256</code>, <code>ecdsa-sha2-nistp384</code>, or
-     * <code>ecdsa-sha2-nistp521</code>, depending on the size of the key you
-     * generated.</p> </li> </ul>
+     * user to the server.</p> <p>Transfer Family accepts RSA, ECDSA, and ED25519
+     * keys.</p>
      */
     inline CreateUserRequest& WithSshPublicKeyBody(const Aws::String& value) { SetSshPublicKeyBody(value); return *this;}
 
     /**
      * <p>The public portion of the Secure Shell (SSH) key used to authenticate the
-     * user to the server.</p> <p>The three standard SSH public key format elements are
-     * <code>&lt;key type&gt;</code>, <code>&lt;body base64&gt;</code>, and an optional
-     * <code>&lt;comment&gt;</code>, with spaces between each element.</p> <p>Transfer
-     * Family accepts RSA, ECDSA, and ED25519 keys.</p> <ul> <li> <p>For RSA keys, the
-     * key type is <code>ssh-rsa</code>.</p> </li> <li> <p>For ED25519 keys, the key
-     * type is <code>ssh-ed25519</code>.</p> </li> <li> <p>For ECDSA keys, the key type
-     * is either <code>ecdsa-sha2-nistp256</code>, <code>ecdsa-sha2-nistp384</code>, or
-     * <code>ecdsa-sha2-nistp521</code>, depending on the size of the key you
-     * generated.</p> </li> </ul>
+     * user to the server.</p> <p>Transfer Family accepts RSA, ECDSA, and ED25519
+     * keys.</p>
      */
     inline CreateUserRequest& WithSshPublicKeyBody(Aws::String&& value) { SetSshPublicKeyBody(std::move(value)); return *this;}
 
     /**
      * <p>The public portion of the Secure Shell (SSH) key used to authenticate the
-     * user to the server.</p> <p>The three standard SSH public key format elements are
-     * <code>&lt;key type&gt;</code>, <code>&lt;body base64&gt;</code>, and an optional
-     * <code>&lt;comment&gt;</code>, with spaces between each element.</p> <p>Transfer
-     * Family accepts RSA, ECDSA, and ED25519 keys.</p> <ul> <li> <p>For RSA keys, the
-     * key type is <code>ssh-rsa</code>.</p> </li> <li> <p>For ED25519 keys, the key
-     * type is <code>ssh-ed25519</code>.</p> </li> <li> <p>For ECDSA keys, the key type
-     * is either <code>ecdsa-sha2-nistp256</code>, <code>ecdsa-sha2-nistp384</code>, or
-     * <code>ecdsa-sha2-nistp521</code>, depending on the size of the key you
-     * generated.</p> </li> </ul>
+     * user to the server.</p> <p>Transfer Family accepts RSA, ECDSA, and ED25519
+     * keys.</p>
      */
     inline CreateUserRequest& WithSshPublicKeyBody(const char* value) { SetSshPublicKeyBody(value); return *this;}
 
