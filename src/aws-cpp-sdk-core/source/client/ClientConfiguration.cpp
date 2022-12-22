@@ -126,17 +126,22 @@ void setLegacyClientConfigurationParameters(ClientConfiguration& clientConfig)
         return;
     }
 
-    // Set the endpoint to interact with EC2 instance's metadata service
-    Aws::String ec2MetadataServiceEndpoint = Aws::Environment::GetEnv("AWS_EC2_METADATA_SERVICE_ENDPOINT");
-    if (! ec2MetadataServiceEndpoint.empty())
-    {
-        //By default we use the IPv4 default metadata service address
-        auto client = Aws::Internal::GetEC2MetadataClient();
-        if (client != nullptr)
-        {
-            client->SetEndpoint(ec2MetadataServiceEndpoint);
-        }
-    }
+    /// Don't try to access EC2 metadata by default.
+    /// This is needed to allow to subclass `ClientConfiguration`
+    /// so that any possible SDK client will use extended configuration
+    /// without circular dependencies `Client` -> `ClientConfiguration` -> `Client`.
+    ///
+    /// // Set the endpoint to interact with EC2 instance's metadata service
+    /// Aws::String ec2MetadataServiceEndpoint = Aws::Environment::GetEnv("AWS_EC2_METADATA_SERVICE_ENDPOINT");
+    /// if (! ec2MetadataServiceEndpoint.empty())
+    /// {
+    ///     //By default we use the IPv4 default metadata service address
+    ///     auto client = Aws::Internal::GetEC2MetadataClient();
+    ///     if (client != nullptr)
+    ///     {
+    ///         client->SetEndpoint(ec2MetadataServiceEndpoint);
+    ///     }
+    /// }
 }
 
 ClientConfiguration::ClientConfiguration()
@@ -254,7 +259,7 @@ std::shared_ptr<RetryStrategy> InitRetryStrategy(Aws::String retryMode)
         maxAttempts = static_cast<int>(Aws::Utils::StringUtils::ConvertToInt32(maxAttemptsString.c_str()));
         if (maxAttempts == 0)
         {
-            AWS_LOGSTREAM_WARN(CLIENT_CONFIG_TAG, "Retry Strategy will use the default max attempts.");
+            AWS_LOGSTREAM_DEBUG(CLIENT_CONFIG_TAG, "Retry Strategy will use the default max attempts.");
             maxAttempts = -1;
         }
     }

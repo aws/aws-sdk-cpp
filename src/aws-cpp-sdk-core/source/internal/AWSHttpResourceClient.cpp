@@ -145,7 +145,7 @@ namespace Aws
                         AWS_LOGSTREAM_ERROR(m_logtag.c_str(), "Http request to retrieve credentials failed");
                         return AWSError<CoreErrors>(CoreErrors::NETWORK_CONNECTION, true); // Retryable
                     }
-                    else if (m_errorMarshaller && response->GetResponseBody().tellp() > 0)
+                    else if (m_errorMarshaller && response->GetResponseBody().peek() != std::char_traits<char>::eof())
                     {
                         return m_errorMarshaller->Marshall(*response);
                     }
