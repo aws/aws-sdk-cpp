@@ -48,6 +48,8 @@ bool UploadPartCopyRequest::HasEmbeddedError(Aws::IOStream &body,
   // Header is unused
   (void) header;
 
+#ifndef NDEBUG
+  auto streamState = body.exceptions();
   auto readPointer = body.tellg();
   XmlDocument doc = XmlDocument::CreateFromXmlStream(body);
 
@@ -57,10 +59,13 @@ bool UploadPartCopyRequest::HasEmbeddedError(Aws::IOStream &body,
   }
 
   if (doc.GetRootElement().GetName() == "Error") {
-    body.seekg(readPointer);
-    return true;
+    /// Must not be here because earlier we already checked for an embedded error in PocoHTTPClient (see checkRequestCanReturn2xxAndErrorInBody).
+    AWS_FATAL_ASSERT(false);
   }
   body.seekg(readPointer);
+  AWS_FATAL_ASSERT(body.exceptions() == streamState);
+#endif
+
   return false;
 }
 
